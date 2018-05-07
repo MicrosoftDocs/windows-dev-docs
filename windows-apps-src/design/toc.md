@@ -2,11 +2,12 @@
 ## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
 ## [Fluent Design System](fluent-design-system/index.md)
-## [Command basics](basics/commanding-basics.md)
-## [Content basics](basics/content-basics.md)
-## [Navigation basics](basics/navigation-basics.md)
+## Navigation basics
+### [Overview](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
 ### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
+## [Command basics](basics/commanding-basics.md)
+## [Content basics](basics/content-basics.md)
 ## Tutorials
 ### [Create a user interface](basics/xaml-basics-ui.md)
 ### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
@@ -17,7 +18,7 @@
 ## [Page layout](layout/page-layout.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ## [Responsive design techniques](layout/responsive-design.md)
-## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
+## [Layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
 ## [Alignment, margin, and padding](layout/alignment-margin-padding.md)
 ## Layout panels
@@ -92,14 +93,15 @@
 
 # Style
 ## [Overview](style/index.md)
-## [Acrylic](style/acrylic.md)
 ## [Color](style/color.md)
-## [Icons](style/icons.md)
+## [Typography](style/typography.md)
+## Icons
+### [Overview](style/icons.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
+## [Acrylic](style/acrylic.md)
 ## [Reveal highlight](style/reveal.md)
 ## [Reveal focus](style/reveal-focus.md)
 ## [Sound](style/sound.md)
-## [Typography](style/typography.md)
 ## [Writing style](style/writing-style.md)
 ## [XAML brushes](style/brushes.md)
 ## [XAML styles](controls-and-patterns/xaml-styles.md)
@@ -109,13 +111,12 @@
 
 # Motion
 ## [Overview](motion/index.md)
-## [Connected animation](motion/connected-animation.md)
-## [Content transition](motion/content-transition-animations.md)
-## [Add and delete](motion/motion-list.md)
-## [Fade](motion/motion-fade.md)
+## [Timing and easing](motion/timing-and-easing.md)
+## [Directionality and gravity](motion/directionality-and-gravity.md)
+## [Motion in practice](motion/motion-in-practice.md)
 ## [Page transitions](motion/page-transitions.md)
+## [Connected animation](motion/connected-animation.md)
 ## [Parallax](motion/parallax.md)
-## [Press feedback](motion/motion-pointer.md)
 ## [Animations in XAML](motion/xaml-animation.md)
 ### [Storyboarded animations](motion/storyboarded-animations.md)
 ### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
@@ -136,6 +137,7 @@
 ### [Tile, toast notification support for language, scale, contrast](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [Pin your app to the taskbar](shell/pin-to-taskbar.md)
 ## [Title bar customization](shell/title-bar.md)
+## [Designing for Sets](shell/design-for-sets.md)
 
 ## Notifications
 ### Toast notifications
@@ -168,6 +170,7 @@
 ## [Overview](input/index.md)
 ## [Input primer](input/input-primer.md)
 ## [Pointer input](input/handle-pointer-input.md)
+## [Gaze](input/gaze-interactions.md)
 ## [Pen and Windows Ink](input/pen-and-stylus-interactions.md)
 ### [Tutorial: Add Inking support to your app](input/ink-walkthrough.md)
 ### [Recognize ink strokes](input/convert-ink-to-text.md)

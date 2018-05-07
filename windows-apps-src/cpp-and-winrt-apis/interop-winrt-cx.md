@@ -21,13 +21,13 @@ The helper function below converts a C++/CX object to an equivalent C++/WinRT ob
 template <typename T>
 T from_cx(Platform::Object^ from)
 {
-    T to{ nullptr };
- 
-    winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(),
-                         reinterpret_cast<void**>(winrt::put_abi(to))));
- 
-    return to;
+    T to{ nullptr };
+
+    winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
+        ->QueryInterface(winrt::guid_of<T>(),
+            reinterpret_cast<void**>(winrt::put_abi(to))));
+
+    return to;
 }
 ```
 
@@ -37,7 +37,7 @@ The helper function below converts a C++/WinRT object to an equivalent C++/CX ob
 template <typename T>
 T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 {
-    return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
+    return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
 }
 ```
 
@@ -56,51 +56,51 @@ using namespace InteropExample;
 
 namespace cx
 {
-	using namespace Windows::Foundation;
+    using namespace Windows::Foundation;
 }
 
 namespace winrt
 {
-	using namespace Windows::Foundation;
+    using namespace Windows::Foundation;
 }
 
 template <typename T>
 T from_cx(Platform::Object^ from)
 {
-	T to{ nullptr };
+    T to{ nullptr };
 
-	winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-		->QueryInterface(winrt::guid_of<T>(),
-			reinterpret_cast<void**>(winrt::put_abi(to))));
+    winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
+        ->QueryInterface(winrt::guid_of<T>(),
+            reinterpret_cast<void**>(winrt::put_abi(to))));
 
-	return to;
+    return to;
 }
 
 template <typename T>
 T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 {
-	return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
+    return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
 }
 
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	winrt::init_apartment(winrt::apartment_type::single_threaded);
+    winrt::init_apartment(winrt::apartment_type::single_threaded);
 
-	winrt::Uri uri(L"http://aka.ms/cppwinrt");
-	std::wstringstream wstringstream;
-	wstringstream << L"C++/WinRT: " << uri.Domain().c_str() << std::endl;
+    winrt::Uri uri(L"http://aka.ms/cppwinrt");
+    std::wstringstream wstringstream;
+    wstringstream << L"C++/WinRT: " << uri.Domain().c_str() << std::endl;
 
-	// Convert from a C++/WinRT type to a C++/CX type.
-	cx::Uri^ cx = to_cx<cx::Uri>(uri);
-	wstringstream << L"C++/CX: " << cx->Domain->Data() << std::endl;
-	::OutputDebugString(wstringstream.str().c_str());
+    // Convert from a C++/WinRT type to a C++/CX type.
+    cx::Uri^ cx = to_cx<cx::Uri>(uri);
+    wstringstream << L"C++/CX: " << cx->Domain->Data() << std::endl;
+    ::OutputDebugString(wstringstream.str().c_str());
 
-	// Convert from a C++/CX type to a C++/WinRT type.
-	winrt::Uri uri_from_cx = from_cx<winrt::Uri>(cx);
-	WINRT_ASSERT(uri.Domain() == uri_from_cx.Domain());
-	WINRT_ASSERT(uri == uri_from_cx);
+    // Convert from a C++/CX type to a C++/WinRT type.
+    winrt::Uri uri_from_cx = from_cx<winrt::Uri>(cx);
+    WINRT_ASSERT(uri.Domain() == uri_from_cx.Domain());
+    WINRT_ASSERT(uri == uri_from_cx);
 }
 ```
 

@@ -26,11 +26,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "landing/arm-docs/index.md",
-      "redirect_url": "https://docs.microsoft.com",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/controls-and-patterns/nav-pane.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview",
       "redirect_document_id": false
@@ -108,6 +103,11 @@
     {
       "source_path": "windows-apps-src/get-started/choose-a-uwp-version.md",
       "redirect_url": "/windows/uwp/get-started/../updates-and-versions/choose-a-uwp-version/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/learn-more.md",
+      "redirect_url": "/windows/uwp/get-started/create-uwp-apps",
       "redirect_document_id": false
     },
     {
@@ -1683,9 +1683,25 @@
     },
     {
       "source_path": "windows-apps-src/porting/hwa-to-uwp-root.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-access-features.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-chrome-conversion.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-mac.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false

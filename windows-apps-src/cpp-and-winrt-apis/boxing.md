@@ -24,9 +24,9 @@ The [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.
 ```cppwinrt
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
-	...
-	rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
-	...
+    ...
+    rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
+    ...
 }
 ```
 
@@ -44,9 +44,9 @@ In your own functions that expect **IInspectable**, you can use [**winrt::unbox_
 ```cppwinrt
 void Unbox(Windows::Foundation::IInspectable const& object)
 {
-	hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
-	hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
-	float floatValue = unbox_value_or<float>(object, 0.f); // Returns 0.0 if object is not a boxed float.
+    hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
+    hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
+    float floatValue = unbox_value_or<float>(object, 0.f); // Returns 0.0 if object is not a boxed float.
 }
 ```
 

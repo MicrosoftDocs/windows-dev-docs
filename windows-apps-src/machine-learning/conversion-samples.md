@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 # Convert existing ML models to ONNX
 
-[WinMLTools](https://aka.ms/winmltools) allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install the WinMLTools package and how to convert existing models in scikit-learn and Core ML into ONNX via Python code.
+[WinMLTools](https://pypi.org/project/winmltools/) allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install the WinMLTools package and how to convert existing models in scikit-learn and Core ML into ONNX via Python code.
 
 ## Install WinMLTools
 
@@ -43,6 +43,9 @@ Additional details on how to use WinMLTools can be found on the package specific
 ```
 help(winmltools)
 ```
+
+> [!NOTE]
+> With the Visual Studio Tools for AI extension, you can also use WinMLTools within the Visual Studio IDE for a more friendly, click-through experience to convert your models into ONNX format. To learn more, please visit [VS Tools for AI](https://github.com/Microsoft/vs-tools-for-ai/).
 
 ## Scikit-learn models
 

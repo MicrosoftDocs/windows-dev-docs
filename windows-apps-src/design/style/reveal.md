@@ -17,6 +17,8 @@ ms.localizationpriority: high
 ---
 # Reveal highlight
 
+![hero image](images/header-reveal-highlight.svg)
+
 Reveal highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them. 
 
 > **Important APIs**: [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)

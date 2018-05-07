@@ -57,8 +57,8 @@ The design and coding instructions in this section help you customize your UWP a
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="identify-input-devices.md">Identify input devices</a></h3>
-                        <p>Identify the input devices connected to a UWP device and identify their capabilities and attributes.</p>
+                        <h3><a href="gaze-interactions.md">NEW! Gaze input</a></h3>
+                        <p>Track a user's gaze based on the location and movement of their eyes and head.</p>
                     </div>
                 </div>
             </div>
@@ -79,6 +79,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Input</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identify input devices</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Pointer</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Pen and Windows Ink</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Touch</a></p>

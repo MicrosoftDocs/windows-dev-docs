@@ -17,10 +17,8 @@ In this tutorial, we'll build a simple UWP app that uses a trained machine learn
 
 ## Prerequisites
 
-- [Windows SDK - Build 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) 
-
-    **Note**: Inside the Visual Studio Installer, you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0).
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (Build 17110 or higher)
+- [Visual Studio](https://developer.microsoft.com/windows/downloads)
 
 ## 1. Download the sample
 
@@ -64,7 +62,7 @@ If you're interested in training your own model, you can follow this [tutorial](
 
 ## 5. Add the model
 
-After downloading the MNIST model, right click on the Assets folder in the Solution Explorer, and select "**Add** > **Existing Item**". Point the file picker to the location of your ONNX model, and click add. 
+After downloading the MNIST model, right click on the Assets folder in the Solution Explorer, and select "**Add** > **Existing Item**". Point the file picker to the location of your ONNX model, and click add.
 
 The project should now have two new files:
 
