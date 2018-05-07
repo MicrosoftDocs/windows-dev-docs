@@ -28,33 +28,29 @@ Here's a quick look at how these controls are organized architecturally. The nam
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK.  The controls that you'll add to your designer ship as Nuget packages in the Windows Community Toolkit.
 
-These new controls have limitations so before you use them, please take a moment to review what's not yet supported, what's not yet tested, and what's functional only with workarounds.
+These new controls have limitations so before you use them, please take a moment to review what's not yet supported, and what's functional only with workarounds.
 
 ### What's supported
 
-For the most part, everything is supported unless explicitely called out in the list below.
+For the most part, everything is supported unless explicitly called out in the list below.
 
 ### What's supported only with workarounds
 
 :heavy_check_mark: Hosting multiple inbox controls inside of multiple windows. You'll have to place each window in its own thread.
 
-:heavy_check_mark: Using ``x:Bind`` with hosted controls. You'll have to declare the data model in a UWP class library or in a .NET Standard library.
+:heavy_check_mark: Using ``x:Bind`` with hosted controls. You'll have to declare the data model in a .NET Standard library.
 
 :heavy_check_mark: C#-based third-party controls. If you have the source code to a third-party control, you can compile against it.
 
-### What's not yet tested
-
-:question: Accessibility tools that work seamlessly across the application and hosted controls.
-
-:question: Localized content in controls that you add to applications which don't contain a Windows app package.
-
-:question: Asset references made in XAML within applications that don't contain a Windows app package.
-
-:question: Controls properly responding to changes in DPI and scale.
-
-:question: C++-based third-party controls inside of applications that have a Windows app package.
-
 ### What's not yet supported
+
+:no_entry_sign: Accessibility tools that work seamlessly across the application and hosted controls.
+
+:no_entry_sign: Localized content in controls that you add to applications which don't contain a Windows app package.
+
+:no_entry_sign: Asset references made in XAML within applications that don't contain a Windows app package.
+
+:no_entry_sign: Controls properly responding to changes in DPI and scale.
 
 :no_entry_sign: Adding a **WebView** control to a custom user control, (Either on-thread, off-thread, or out of proc).
 
@@ -64,7 +60,7 @@ For the most part, everything is supported unless explicitely called out in the 
 
 :no_entry_sign: Assigning accelerator keys.
 
-:no_entry_sign: C++-based third-party controls inside of applications that don't contain a Windows app package.
+:no_entry_sign: C++-based third-party controls.
 
 :no_entry_sign: Hosting custom user controls.
 
