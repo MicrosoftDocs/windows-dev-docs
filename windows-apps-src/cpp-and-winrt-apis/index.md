@@ -48,6 +48,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
 | [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609). |
 | [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
+| [C++/WinRT code sample](photo-editor-sample.md) | The photo editor app is a UWP sample that highlights development with C++/WinRT. | 
 
 ## Important APIs
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
