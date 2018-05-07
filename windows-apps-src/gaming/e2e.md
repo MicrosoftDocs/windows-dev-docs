@@ -88,12 +88,12 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
         <td><a href="../xbox-live/index.md">Xbox Live developer guide</a></td>
     </tr>
     <tr>
-        <td>Xbox One developer documentation (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Xbox One XDK documentation</a></td>
+        <td>Xbox One development documentation (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Xbox One Development</a></td>
     </tr>
     <tr>
-        <td>Xbox One developer whitepapers (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">White Papers</a></td>
+        <td>Xbox One development whitepapers (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">White Papers</a></td>
     </tr>
     <tr>
         <td>Mixer Interactive documentation</td>
@@ -222,8 +222,8 @@ There are many Windows 10 game and app samples available to help you understand 
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
-        <td>Xbox One game samples (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">Samples</a></td>
+        <td>Xbox One game samples (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">Samples</a></td>
     </tr>
     <tr>
         <td>Windows game samples (MSDN Code Gallery)</td>
