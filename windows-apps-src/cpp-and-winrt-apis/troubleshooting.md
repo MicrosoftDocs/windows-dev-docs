@@ -3,7 +3,7 @@ author: stevewhims
 description: The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app.
 title: Troubleshooting C++/WinRT issues
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,10 +13,7 @@ ms.localizationpriority: medium
 
 # Troubleshooting [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) issues
 > [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-> [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 This topic is up front so that you're aware of it right away; even if you don't need it yet. The table of troubleshooting symptoms and remedies below may be helpful to you whether you're cutting new code or porting an existing app. If you're porting, and you're eager to forge ahead and get to the stage where your project builds and runs, then you can make temporary progress by commenting or stubbing out any non-essential code that's causing issues, and then returning to pay off that debt later.
 
@@ -43,5 +40,8 @@ If your app terminates and all you know is that an unhandled exception was throw
 | The C++ compiler produces "*error C2220: warning treated as error - no 'object' file generated*".|Either correct the warning, or set **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**.|
 | Your app crashes because an event handler in your C++/WinRT object is called after the object has been destroyed.|See [Using the *this* object in an event handler](handle-events.md#using-the-this-object-in-an-event-handler).|
 | The C++ compiler produces "*error C2338: This is only for weak ref support*".|You're requesting a weak reference for a type that passed the **winrt::no_weak_ref** marker struct as a template argument to its base class. See [Opting out of weak reference support](weak-references.md#opting-out-of-weak-reference-support)|
-| The C++ linker produces "*error LNK2019: Unresolved external symbol*" for an API from the Windows namespace headers for the C++/WinRT projection (in the winrt namespace).|The API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild.|
+| The C++ linker produces "*error LNK2019: Unresolved external symbol*" for an API from the Windows namespace headers for the C++/WinRT projection (in the winrt namespace).|The API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](get-started.md#cwinrt-projection-headers).|
 | The LLVM and Clang toolchain produces errors when used with C++/WinRT.|We don't support the LLVM and Clang toolchain for C++/WinRT, but if you wanted to emulate how we use it internally, then you could try an experiment such as the one described in [Can I use LLVM/Clang to compile with C++/WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
+
+> [!NOTE]
+> If this topic didn't answer your question, you might find help by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
