@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -67,7 +67,8 @@ After you create ad units for one or more apps in your account, these ad units a
 
 To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA compliance](#coppa) for the app in which the ad unit is used, click the ad unit name.
 
-Note that if an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from your dashboard. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
+> [!NOTE]
+> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from your dashboard. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
 
 <span id="mediation" />
 
@@ -81,10 +82,13 @@ When you [create a new UWP ad unit](#create-ad-unit) or [edit an existing UWP ad
 To configure ad mediation settings for a UWP ad unit in your app:
 
 1. [Create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units).
-2. On the **In-app ads** page, go to the **Mediation settings** section.
-3. By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. We recommend that you use this option. Otherwise, if you want to choose your own ad mediation settings, clear this check box.
+2. On the **In-app ads** page, go to the **Mediation settings** section and configuration your settings.
+
+    * By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. We recommend that you use this option. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. When you use this option, you can also choose the ad networks you want to use in the configuration. Uncheck the ad networks that you don't want to be part of the configuration and our algorithm will ensure that your app only receives ads from the selected ad networks.
+    * If you want to choose your own ad mediation settings, choose **Modify default settings**.
+
     > [!NOTE]
-    > The remaining steps in this section are only applicable if you clear this check box and choose your own ad mediation settings.
+    > The remaining steps in this section are only applicable if you choose **Modify default settings**.
 
 4. In the **Target** drop-down, choose **Baseline** to configure the default configuration for your ad mediation settings. This default configuration will be applied to all markets, except for markets where you define market-specific configurations.
 6. Next, specify the ratio of ads you want to show in your control from paid networks (which pay you revenue for impressions) and other ad networks (which do not pay you revenue for impressions). To do this, enter a value between 0 and 100 in the **Weight** fields for **Paid ad networks** and **Other ad networks**.  
