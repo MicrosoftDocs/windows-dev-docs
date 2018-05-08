@@ -86,8 +86,9 @@ You can submit additional assets for your product, including trailers and promot
 
 For more info, see [Additional art assets](app-screenshots-and-images.md#additional-art-assets).
 
+<a id="supplemental-information" />
 
-## Supplemental information
+## Supplemental fields
 
 The fields in this section are all optional. Review the info below to determine if providing this info makes sense for your submission. In particular, the **Short description** is recommended for most submissions. The other fields may help provide an optimal experience for your product in different scenarios.
 

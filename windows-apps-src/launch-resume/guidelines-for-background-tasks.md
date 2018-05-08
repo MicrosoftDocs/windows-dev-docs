@@ -44,6 +44,14 @@ Alternatively, request one deferral, and use **async/await** to complete asynchr
 
 **Update the app manifest:**  For background tasks that run out-of-process, declare each background task in the application manifest, along with the type of triggers it is used with. Otherwise your app will not be able to register the background task at runtime.
 
+If you have multiple background tasks, consider whether they should run in the same host process or be separated into different host processes. Put them in separate host processes if you are concerned that a failure in one background task could bring down other background tasks.  Use the **Resource group** entry in the manifest designer to group background tasks into different host processes. 
+
+To set the **Resource group**, open the Package.appxmanifest designer, choose **Declarations**, and add an **App Service** declaration:
+
+![Resource group setting](images/resourcegroup.png)
+
+See the [application schema reference](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) for more information about the resource group setting.
+
 Background tasks that run in the same process as the foreground app do not need to declare themselves in the application manifest. For more information about declaring background tasks that run out-of-process in the manifest, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
 **Prepare for app updates:** If your app will be updated, create and register a **ServicingComplete** background task (see [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) to unregister background tasks for the previous version of the app, and register the background tasks for the new version. This is also an appropriate time to perform app updates that may be necessary outside the context of running in the foreground.

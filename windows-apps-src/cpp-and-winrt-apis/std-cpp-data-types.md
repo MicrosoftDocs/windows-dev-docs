@@ -3,7 +3,7 @@ author: stevewhims
 description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 
 # Standard C++ data types and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types.
+With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](strings.md)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
 
 ## Standard initializer lists
 An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain Windows Runtime constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
@@ -90,9 +90,9 @@ dataWriter.WriteBytes(theArray); // theArray is converted to an array_view befor
 C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**, and it will be converted to the appropriate Windows Runtime collection of **winrt::hstring**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<winrt::hstring> const& vecH)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> const vecH)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH));
+	auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH));
 }
 ```
 
@@ -108,7 +108,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## Raw arrays, and pointer ranges
 Bearing in mind the caveat that an equivalent type may exist in the future in the C++ Standard Library, you can also work directly with **array_view** if you choose to, or need to.
 
-**array_view** has conversion constructors from a raw array, and from a range of **T*** (pointers to the element type).
+**array_view** has conversion constructors from a raw array, and from a range of **T&ast;** (pointers to the element type).
 
 ```cppwinrt
 using namespace winrt;
@@ -126,5 +126,33 @@ A host of constructors, operators, functions, and iterators are implemented for 
 
 For more examples and info, see the [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API reference topic.
 
+## **IVector&lt;T&gt;** and standard iteration constructs
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) is an example of a Windows Runtime API that returns a collection of type [**IVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.ivector_t_) (projected into C++/WinRT as **winrt::Windows::Foundation::Collections::IVector&lt;T&gt;**). You can use this type with standard iteration constructs, such as range-based `for`.
+
+```cppwinrt
+// main.cpp
+#include "pch.h"
+#include <winrt/Windows.Web.Syndication.h>
+#include <iostream>
+
+using namespace winrt;
+using namespace Windows::Web::Syndication;
+
+void PrintFeed(SyndicationFeed const& syndicationFeed)
+{
+    for (SyndicationItem const& syndicationItem : syndicationFeed.Items())
+    {
+        std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
+    }
+}
+```
+
+## C++ coroutines with asynchronous Windows Runtime APIs
+You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) when calling asynchronous Windows Runtime APIs. However, in many cases, C++ coroutines provide an efficient and more easily-coded idiom for interacting with asynchronous objects. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+
 ## Important APIs
+* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
+
+## Related topics
+* [String handling in C++/WinRT](strings.md)

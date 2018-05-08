@@ -88,6 +88,7 @@
 ## [Connect your app to actions on a contact card](../contacts-and-calendar/integrating-with-contacts.md)
 # [C++/WinRT](../cpp-and-winrt-apis/index.md)
 ## [Introduction to C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
+## [Get started with C++/WinRT](../cpp-and-winrt-apis/get-started.md)
 ## [Frequently-asked questions](../cpp-and-winrt-apis/faq.md)
 ## [Troubleshooting](../cpp-and-winrt-apis/troubleshooting.md)
 ## [Photo Editor C++/WinRT sample application](../cpp-and-winrt-apis/photo-editor-sample.md)

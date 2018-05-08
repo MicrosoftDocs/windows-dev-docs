@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,12 @@ ms.localizationpriority: medium
 ---
 
 # Consume APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows how to consume C++/WinRT APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
 
 ## If the API is in a Windows namespace
-This is the most common case in which you'll consume a Windows Runtime API. Here's a simple code example.
+This is the most common case in which you'll consume a Windows Runtime API. For every Windows Runtime type defined in metadata, C++/WinRT defines a C++-friendly equivalent type (called the *projected type*) with the same name as the Windows Runtime type, but placed in the C++ `winrt` namespace using C++ syntax. For example, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is projected into C++/WinRT as **winrt::Windows::Foundation::Uri**.
+
+Here's a simple code example.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -35,18 +34,20 @@ int main()
 
 The included header `winrt/Windows.Foundation.h` is part of the SDK, found inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\`. The headers in that folder contain Windows APIs projected into C++/WinRT. Whenever you want to use a type from a Windows namespace, include the C++/WinRT projection header corresponding to that namespace. The `using namespace` directives are optional, but convenient.
 
-In this example, `winrt/Windows.Foundation.h` contains the projected type for the runtime class [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri).
+In this example, `winrt/Windows.Foundation.h` contains **winrt::Windows::Foundation::Uri**, which is the projected type for the runtime class [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri).
 
 > [!TIP]
 > A *projected type* is a wrapper over a runtime class for purposes of consuming its APIs. A *projected interface* is a wrapper over a Windows Runtime interface.
 
-In the code example above, after initializing C++/WinRT, we construct the **Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's all you have to do.
+In the code example above, after initializing C++/WinRT, we construct the **Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_), in this example).
+
+For this, the most common use case, that's typically all you have to do. You can treat an instance of the C++/WinRT projected type as if it's an instance of the actual Windows Runtime type. It's only occasionally that you'll find yourself recognizing that the projected object is a proxy for the Windows Runtime object. Technically, when you call methods or access *properties* on the projected object, it forwards those calls to the actual Windows Runtime object, which is where the state changes occur.
 
 ## If the API is implemented in a Windows Runtime component
 This section applies whether you authored the component yourself, or it came from a vendor.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 In your application project, reference the Windows Runtime component's Windows Runtime metadata (`.winmd`) file, and build. During the build, the `cppwinrt.exe` tool generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface for the component. In other words, the generated library contains the projected types for the component.
 

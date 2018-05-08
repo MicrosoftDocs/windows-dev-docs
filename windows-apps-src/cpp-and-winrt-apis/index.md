@@ -3,7 +3,7 @@ author: stevewhims
 description: The Windows SDK includes C++/WinRT. This is a standard C++ language projection for Windows Runtime APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++ compiler.
 title: C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,6 +12,7 @@ ms.localizationpriority: medium
 ---
 
 # [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+&nbsp;
 > [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
 
 Introduced in version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
@@ -32,6 +33,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | Topic | Description |
 | - | - |
 | [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
+| [Get started with C++/WinRT](get-started.md) | To get you up to speed with using C++/WinRT, this topic walks through a simple code example. We also give info and tips on using the C++/WinRT projection headers. |
 | [Frequently-asked questions](faq.md) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
 | [Troubleshooting](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 | [Photo Editor C++/WinRT sample application](photo-editor-sample.md) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. | 
