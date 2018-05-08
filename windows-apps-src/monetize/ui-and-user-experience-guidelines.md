@@ -4,7 +4,7 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,6 +19,17 @@ This article provides guidelines for providing great experiences with banner ads
 > [!IMPORTANT]
 > Any use of advertising in your app must comply with the Microsoft Store Policies – including, without limitation, [policy 10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (Advertising Conduct and Content). In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Microsoft Store policy [policy 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content). This article includes examples of implementations that would violate this policy. These examples are provided for informational purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate the Microsoft Store Policies that are not listed in this article.
 
+## General best practices
+
+Before reviewing our guidelines for different types of ads in this article, first review these general best practices to improve your ad revenue.
+
+* [Plan your ad placements carefully](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). See our related guidance about [optimizing the viewability of your ad units](optimize-ad-unit-viewability.md).
+* [Use interstitial banner ads as a fallback for interstitial video ads](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Know your users to serve better targeted ads](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
+* [Use the latest advertising libraries](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
+* [Set the correct COPPA settings for your app](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+
+
 ## Guidelines for banner ads
 
 The following sections provide recommendations for how to implement [banner ads](banner-ads.md) in your app using [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and examples of implementations that violate [policy 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) of the Microsoft Store Policies.
@@ -27,19 +38,17 @@ The following sections provide recommendations for how to implement [banner ads]
 
 We recommend that you follow these best practices when you implement banner ads in your app:
 
+* [Use Interactive Advertising Bureau sizes](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes) that fit well with the layout for the device.
+
 * Devote most of your app's UI to functional controls and content.
 
 * Design advertising into your experience. Give your designers a sample ad to plan how the advertising is going to look. Two examples of well-planned ads in apps are the ads-as-content layout and the split layout.
 
   To see how different ad sizes will look and function within your app during the development and testing phase, you can utilize our [test ad units](set-up-ad-units-in-your-app.md#test-ad-units). When you’re done with testing, remember to [update your app with live ad units](set-up-ad-units-in-your-app.md#live-ad-units) before submitting the app for certification.
 
-* Use [ad sizes](supported-ad-sizes-for-banner-ads.md) that fit well with the layout for the running device.
-
 * Plan for times when no ads are available. There may be times when ads aren't being sent to your app. Lay out your pages in such a way that they look great whether they showcase an ad or not. For more information, see [Handle ad errors](error-handling-with-advertising-libraries.md).
 
 * If you have a scenario for alerting the user that is best handled with an overlay, call [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) while displaying the overlay and then call [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) when the alert scenario is finished.
-
-<span />
 
 ### Practices to avoid
 
@@ -50,8 +59,6 @@ We recommend that you avoid these practices when you implement banner ads in you
 * Don’t over-advertise and saturate your app. Too many ads in your app detract from its appearance and usability. You want to make money with advertising, but not at the expense of the app itself.
 
 * Don’t distract user from their core tasks. The primary focus should always be on the app. The ad space should be incorporated so it remains a secondary focus.
-
-<span />
 
 ### Examples of policy violations
 
@@ -69,7 +76,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
 
-<span id="interstitialbestpractices10">
+<span id="interstitialbestpractices10" />
 
 ## Guidelines for interstitial ads
 
@@ -107,13 +114,9 @@ We recommend that you follow these best practices when you implement interstitia
 
 * Use the default (30 second) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10 seconds. Interstitial ads take substantially longer to download than standard banner ads, especially in markets that don’t have high speed connections.
 
-<span/>
-
 * Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving an interstitial video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) class which can help.
 
 * Continuously improve your app after the initial submission. Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and interstitial video completion rates.
-
-<span />
 
 ### Practices to avoid
 
@@ -136,8 +139,6 @@ We recommend that you avoid these practices when you implement interstitial ads 
     * Have the app include a built-in experience that yields the same benefit as a real ad.
 
 * Don’t use interstitial ads to let a user gain a competitive advantage in a multi-player game. For example, don't entice the user with a better gun in a first-person shooter game if they view an interstitial ad. A custom shirt on the player’s avatar is fine, so long as it doesn’t provide camouflage!
-
-<span />
 
 ### Examples of policy violations
 

@@ -103,6 +103,7 @@
 ## [XAML controls; bind to a C++/WinRT property](../cpp-and-winrt-apis/binding-property.md)
 ## [XAML items controls; bind to a C++/WinRT collection](../cpp-and-winrt-apis/binding-collection.md)
 ## [Interop between C++/WinRT and C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
+## [Move to C++/WinRT from C++/CX](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
 ## [Interop between C++/WinRT and the ABI](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ## [Weak references](../cpp-and-winrt-apis/weak-references.md)
 ## [Agile objects](../cpp-and-winrt-apis/agile-objects.md)

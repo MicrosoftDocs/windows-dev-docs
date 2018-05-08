@@ -64,7 +64,7 @@ To use the gaze input APIs in your UWP app you'll need to:
 
 In this example, we demonstrate how to track the user's gaze within a UWP application and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.
 
-A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar) from the [Windows Community Toolkit](https://github.com/Microsoft/WindowsCommunityToolkit) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
+A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) from the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
 
 ![Gaze tracking with timer sample](images/gaze/gaze-input-timed2.gif)
 
@@ -401,7 +401,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
     We display and hide the gaze tracking ellipse in `GazeEntered` and `GazeExited`, respectively.
 
-    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar), which triggers repositioning of the progress bar. See next step for details.
+    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar), which triggers repositioning of the progress bar. See next step for details.
 
     ```csharp
     /// <summary>
@@ -596,7 +596,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 ### Resources
 
-- [Windows Community Toolkit Gaze library](https://github.com/Microsoft/UWPCommunityToolkit/blob/harishsk/gaze-integration/docs/gaze/Gaze.md)
+- [Windows Community Toolkit Gaze library](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
 
 ### Topic samples
 
