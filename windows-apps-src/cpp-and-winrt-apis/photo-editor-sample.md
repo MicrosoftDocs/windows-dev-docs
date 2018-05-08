@@ -21,6 +21,6 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample applic
 - Use of coroutines, including the use of co_await, co_return, [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction), and [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_).
 - Creation and use of custom Windows Runtime class (runtime class) projected types and implementation types. For more info about these terms, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 - [Event handling](handle-events.md), including the use of auto-revoking event tokens.
-- Use of the external Win2D NuGet package, and composition, for image effects.
+- Use of the external Win2D NuGet package, and [Windows::UI::Composition](/uwp/api/windows.ui.composition), for image effects.
 - XAML data binding, including the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
 - XAML styling and UI customization, including [connected animations](../design/motion/connected-animation.md).
