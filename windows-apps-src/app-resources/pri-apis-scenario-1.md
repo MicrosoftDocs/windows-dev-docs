@@ -4,7 +4,7 @@ Description: In this scenario, we'll make a new app to represent our custom buil
 title: Scenario 1 Generate a PRI file from string resources and asset files
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,6 @@ ms.localizationpriority: medium
 ---
 
 # Scenario 1: Generate a PRI file from string resources and asset files
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 In this scenario, we'll use the [package resource indexing (PRI) APIs](https://msdn.microsoft.com/library/windows/desktop/mt845690) to make a new app to represent our custom build system. The purpose of this custom build system, remember, is to create PRI files for a target UWP app. So, as part of this walkthrough, we'll create some sample resource files (containing strings, and other kinds of resources) to represent that target UWP app's resources.
 
 ## New project

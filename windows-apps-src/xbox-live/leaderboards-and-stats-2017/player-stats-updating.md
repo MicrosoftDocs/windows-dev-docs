@@ -20,8 +20,6 @@ It is up to your title to keep track of player stats, and you call `StatsManager
 
 > **Note** Do not flush stats too often.  Otherwise your title will be rate limited.  A best practice is to flush at most once every 5 minutes.
 
-If you do not flush stats, they will be sent to the service by the operating system.  So even if a player leaves your title, and there are pending stat updates, you can be assured these will be updated and reflect in any related Leaderboards or Featured Stats.
-
 ### Multiple Devices
 
 It is possible for a player to play your title on multiple devices.  In this case, you need to make certain effort to keep things in sync.
@@ -30,15 +28,12 @@ For example, if a player got 15 headshots on their Xbox at home.  Later, they go
 
 There are a few ways you can do this:
 
-1. Retrieve the latest stats from Xbox Live via `StatsManager` when a player launches your title, or starts a new session.  Cache these values locally and modify them as needed, and upload later.
-2. Store them using [Connected Storage](../storage-platform/connected-storage/connected-storage-technical-overview.md).  Usually you would use Connected Storage for per-user save data.  This data is kept in sync across different devices for a given user.
-3. Use your own web service to keep stats in sync if you already have one for performing auxillary tasks for your title.
+1. Store them using [Connected Storage](../storage-platform/connected-storage/connected-storage-technical-overview.md).  Usually you would use Connected Storage for per-user save data.  This data is kept in sync across different devices for a given user.
+2. Use your own web service to keep stats in sync if you already have one for performing auxillary tasks for your title.
 
 ### Offline
 
-As we mentioned above, the operating system is responsible for synchronizing events to the service, even if you do not flush.
-
-Therefore there is no special behavior you must do, if a player is playing your title without an Internet connection.
+As we mentioned above, your title is responsible to keep track of player stats and, therefore, responsbile to support offline scenarios. 
 
 ### Examples
 
@@ -49,9 +44,8 @@ A common stat in a racing game is lap time.  Usually lower is better for these s
 Your title would keep track of a user's lap times during their play session.  You would update the Stats Manager only if they had a lap time lower than their previous best.
 
 You can track their previous best in one of the following ways:
-1. Retrieve it from the service via `StatsManager` when a player starts the title.
-2. From the save file using Connected Storage.
-3. Your own web service.
+1. From the save file using Connected Storage.
+2. Your own web service.
 
 The service will replace the stat value no matter what.  So even if you were to update with a lap time that's greater than their previous best, then their previous best would be overwritten.
 
@@ -62,7 +56,6 @@ So please ensure in your title, that you are only sending the proper stat values
 Typically your flow for using stats is:
 
 1. Initialize the `StatsManager` API by passing in a local user.
-1. At the start of a gameplay session, retrieve the latest values from the Xbox Live service.
 1. As a user plays through your title, update stat values using the `set_stat` functions.
 1. These stat updates will be periodically flushed and written to Xbox Live.  You can also do this manually.
 
@@ -86,7 +79,7 @@ You write stats using the `stats_manager::set_stat` family of functions.  There 
 * `set_stat_integer` for integers.
 * `set_stat_string` for strings.
 
-When you call these, the stat updates are cached locally on the device.  Periodically these will be flushed to Xbox Live.  Even if the user quits the title.
+When you call these, the stat updates are cached locally on the device.  Periodically these will be flushed to Xbox Live.
 
 You have the option of manually flushing stats via the `stats_manager::request_flush_to_service` API.  Please note that if you call this function too often, you will be rate limited.  This does not mean that the stat will never get updated.  It merely means that the update will happen when the timeout expires.
 

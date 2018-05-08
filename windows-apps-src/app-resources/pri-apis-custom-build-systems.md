@@ -4,7 +4,7 @@ Description: With the package resource indexing (PRI) APIs, you can develop a cu
 title: Package resource indexing (PRI) APIs and custom build systems
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,6 @@ ms.localizationpriority: medium
 ---
 
 # Package resource indexing (PRI) APIs and custom build systems
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 With the [package resource indexing (PRI) APIs](https://msdn.microsoft.com/library/windows/desktop/mt845690), you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump (as XML) package resource index (PRI) files to whatever level of complexity your UWP app needs. If you have a custom build system that currently uses the MakePri.exe command-line tool (see [Compile resources manually with MakePri.exe](makepri-exe-command-options.md)) then, for increased performance and control, we recommend that you switch over to calling the PRI APIs instead of calling MakePri.exe.
 
 The PRI APIs were introduced in the Windows SDK for Windows 10, version 1803. The APIs take the form of Win32 Windows APIs, which means that you have a few options for calling them. You can call them directly from a Win32 app, or you can call them via [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live) from a .NET app or even from a UWP app.
