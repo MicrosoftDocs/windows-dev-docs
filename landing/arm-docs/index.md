@@ -18,7 +18,7 @@ Watch and learn how Windows 10 runs on ARM.
 
 <ul class="cols cols3">
     <li>
-        <a href="#"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
+        <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
         <h3>Building ARM64 Win32 C++ Apps</h3><p>Learn how to install the ARM64 tools for Visual Studio. Then we’ll walk you through the steps of creating and compiling a new ARM 64 project.</p>
     </li>
     <li>
@@ -40,7 +40,7 @@ Get to know the platform by looking at these resources.
             <div class="cardPadding">
                 <a class="card" href="/windows/uwp/porting/apps-on-arm" title="Get started link" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                            <img class="cardImage" role="presentation" alt="Get started icon" src="/media/common/i_get-started.svg?branch=master" data-linktype="external" />
+                            <img class="cardImage" role="presentation" alt="Get started icon" src="/media/common/i_get-started.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
@@ -55,7 +55,7 @@ Get to know the platform by looking at these resources.
             <div class="cardPadding">
                 <a class="card" href="/windows/uwp/porting/apps-on-arm-x86-emulation" title="Link to topic about x86 emulation" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                             <img class="cardImage" role="presentation" alt="x86 emulation icon" src="/media/common/i_advanced.svg?branch=master" data-linktype="external" />
+                             <img class="cardImage" role="presentation" alt="x86 emulation icon" src="/media/common/i_advanced.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
@@ -92,7 +92,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
             <div class="cardPadding">
                 <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="Link to building ARM64 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                            <img class="cardImage" role="presentation" alt="Build ARM64 Win32 apps blog icon" src="/media/common/i_build.svg?branch=master" data-linktype="external" />
+                            <img class="cardImage" role="presentation" alt="Build ARM64 Win32 apps blog icon" src="/media/common/i_build.svg" data-linktype="external" />
                     </div>
                     </a>
                 <div class="cardText">
@@ -107,7 +107,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
             <div class="cardPadding">
                 <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-arm32" title="Link to troubleshooting arm32 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                            <img class="cardImage" role="presentation" alt="UWP apps on ARM icon" src="/media/common/i_code-edit.svg?branch=master" data-linktype="external" />
+                            <img class="cardImage" role="presentation" alt="UWP apps on ARM icon" src="/media/common/i_code-edit.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
@@ -122,7 +122,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
             <div class="cardPadding">
                 <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="Link to debugging ARM64 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                             <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg?branch=master" data-linktype="external" />
+                             <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
@@ -137,7 +137,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
             <div class="cardPadding">
                 <a class="card" href="/windows-hardware/drivers/develop/building-arm64-drivers" title="Link to building ARM64 drivers" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                            <img class="cardImage" role="presentation" alt="Building ARM64 drivers icon" src="/media/common/i_drivers.svg?branch=master" data-linktype="external" />
+                            <img class="cardImage" role="presentation" alt="Building ARM64 drivers icon" src="/media/common/i_drivers.svg" data-linktype="external" />
                             </a>
                     </div>
                 </a>
@@ -153,7 +153,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
             <div class="cardPadding">
                 <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-x86" title="Link to troubleshooting x86 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
-                            <img class="cardImage" role="presentation" alt="x86 apps on ARM icon" src="/media/common/i_code-blocks.svg?branch=master" data-linktype="external" />
+                            <img class="cardImage" role="presentation" alt="x86 apps on ARM icon" src="/media/common/i_code-blocks.svg" data-linktype="external" />
                             </a>
                     </div>
                 </a>
@@ -192,7 +192,7 @@ We are continuously improving our product by leveraging feedback from you and ou
 <ul class="cardsM cols cols3">
 <li>
         <a class="card" href="feedback-hub://?tabid=2&contextid=803" data-linktype="absolute-path">
-            <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg?branch=master" data-linktype="external" />
+            <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Use the feedback hub</h3>
                 <p>Did we miss something? Do you have a great idea? Let us know in the Feedback Hub.</p>
@@ -201,7 +201,7 @@ We are continuously improving our product by leveraging feedback from you and ou
     </li>
     <li>
         <a class="card" href="mailto:woafeedback@microsoft.com" data-linktype="absolute-path">
-            <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg?branch=master" data-linktype="external" />
+            <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Report a bug</h3>
                 <p>Found a bug in our platform? Email us with the details.</p>
@@ -210,7 +210,7 @@ We are continuously improving our product by leveraging feedback from you and ou
     </li>
     <li>
         <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp" data-linktype="absolute-path">
-            <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg?branch=master" data-linktype="external" />
+            <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Give doc feedback</h3>
                 <p>Have you found an issue with our docs? Do you want us to make something clearer? Create an issue on our docs GitHub repo.</p>
