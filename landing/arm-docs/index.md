@@ -39,7 +39,7 @@ Get to know the platform by looking at these resources.
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm" title="Get started link" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm" title="Get started" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Get started icon" src="/media/common/i_get-started.svg" data-linktype="external" />
                     </div>
@@ -54,7 +54,7 @@ Get to know the platform by looking at these resources.
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-x86-emulation" title="Link to topic about x86 emulation" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-x86-emulation" title="Topic about x86 emulation" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="x86 emulation icon" src="/media/common/i_advanced.svg" data-linktype="external" />
                     </div>
@@ -91,7 +91,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="Link to building ARM64 apps" data-linktype="absolute-path">
+                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="Building ARM64 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Build ARM64 Win32 apps blog icon" src="/media/common/i_build.svg" data-linktype="external" />
                     </div>
@@ -106,7 +106,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-arm32" title="Link to troubleshooting arm32 apps" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-arm32" title="Troubleshooting arm32 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="UWP apps on ARM icon" src="/media/common/i_code-edit.svg" data-linktype="external" />
                     </div>
@@ -121,7 +121,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="Link to debugging ARM64 apps" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="Debugging ARM64 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
@@ -136,7 +136,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/develop/building-arm64-drivers" title="Link to building ARM64 drivers" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/develop/building-arm64-drivers" title="Building ARM64 drivers" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Building ARM64 drivers icon" src="/media/common/i_drivers.svg" data-linktype="external" />
                             </a>
@@ -152,7 +152,7 @@ Start tailoring your apps to Windows 10 on ARM and take advantage of the feature
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-x86" title="Link to troubleshooting x86 apps" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-x86" title="Troubleshooting x86 apps" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="x86 apps on ARM icon" src="/media/common/i_code-blocks.svg" data-linktype="external" />
                             </a>
