@@ -4,9 +4,10 @@ description: This page provides the information for you to get started developin
 title: Windows 10 on ARM
 author: msatranjr
 ms.author: misatran
-ms.date: 05/17/2018
+ms.date: 05/08/2018
 ms.prod: windows
 ms.topic: article
+ms.technology: uwp
 keywords: Windows 10 on ARM, ARM, building win32 ARM64 apps, building ARM64 drivers
 ---
 
