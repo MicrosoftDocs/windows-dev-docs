@@ -21,7 +21,8 @@ This section contains articles on how to use [Windows.Devices.PointOfService](ht
 |
 
 ## Device Index
-Refer to the topics below for device specific functionality
+Refer to the topics below for device specific functionality.
+
 |Topic |Description |
 |------|------------|
 | [Barcode Scanner](pos-barcodescanner.md) | Index of articles on Barcode Scanner |
