@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, 
 ms.localizationpriority: medium
 ---
 
-# Get started with C++/WinRT
+# Get started with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 To get you up to speed with using C++/WinRT, this topic walks through a simple code example. We also describe how to use the C++/WinRT projection headers.
 
 ## A C++/WinRT quick-start
@@ -46,12 +46,13 @@ int main()
 }
 ```
 
-The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. The `using namespace` directives are optional, but convenient.
+The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. In other words, for each Windows type, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. The `using namespace` directives are optional, but convenient.
+
+> [!NOTE]
+> Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
 
 > [!IMPORTANT]
-> Whenever you want to use a type from a Windows namespaces, include the corresponding C++/WinRT projection Windows namespace header as shown above. The *corresponding* header is the one with the same name as the type's namespace. For example, to use the C++/WinRT projection for the [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) runtime class, `#include <winrt/Windows.Foundation.Collections.h>`.
-
-All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
+> Whenever you want to use a type from a Windows namespaces, include the corresponding C++/WinRT Windows namespace header file as shown above. The *corresponding* header is the one with the same name as the type's namespace. For example, to use the C++/WinRT projection for the [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) runtime class, `#include <winrt/Windows.Foundation.Collections.h>`.
 
 [**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an example of an asynchronous Windows Runtime function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
