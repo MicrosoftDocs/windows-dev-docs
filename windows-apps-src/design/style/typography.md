@@ -10,10 +10,9 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Typography
 
-![Typography header image](images/type/header-typography.svg)
+![hero image](images/header-typography.svg)
 
 As the visual representation of language, typography’s main task is to communicate information. Its style should never get in the way of that goal. In this article, we'll discuss how to style typography in your UWP app to help users understand content easily and efficiently.
 

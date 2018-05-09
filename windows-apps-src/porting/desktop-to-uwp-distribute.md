@@ -95,11 +95,9 @@ private void MigrateUserData()
 
     if (sourceDir != null)
     {
-        String migrateMessage =
-            "Would you like to migrate your data from the previous version of this app?";
-
         DialogResult migrateResult = MessageBox.Show
-            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+            ("Would you like to migrate your data from the previous version of this app?",
+             "Data Migration", MessageBoxButtons.YesNo);
 
         if (migrateResult.Equals(DialogResult.Yes))
         {
@@ -141,11 +139,10 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, consider uninstalling the "
-            +" previous version of this app. Would you like to do that now?";
-
         DialogResult uninstallResult = MessageBox.Show
-            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+            ("To have the best experience, consider uninstalling the "
+              + " previous version of this app. Would you like to do that now?",
+              "Uninstall the previous version", MessageBoxButtons.YesNo);
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {

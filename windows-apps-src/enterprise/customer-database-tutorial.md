@@ -26,12 +26,12 @@ The starting point for this tutorial is a single-page app with minimal UI and fu
 ### Prerequisites
 
 * [Ensure you have the latest version of Visual Studio and the Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* [Clone or download the Customer Database Tutorial sample](https://github.com/microsoft/windows-tutorials-customer-database)
+* [Clone or download the Customer Database Tutorial sample](https://aka.ms/customer-database-tutorial)
 
 After you've cloned/downloaded the repo, you can edit the project by opening **CustomerDatabaseTutorial.sln** with Visual Studio.
 
 > [!NOTE]
-> If you want to cross-reference your work with the completed state of this tutorial, you can find it [here](https://github.com/Microsoft/windows-tutorials-customer-database/tree/end-point-for-reference). Alternatively, you can check out the [full Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) to see the app this tutorial was based on.
+> Check out the [full Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) to see the app this tutorial was based on.
 
 ## Part 1: Code of Interest
 
@@ -48,12 +48,12 @@ If you run your app immediately after opening it, you'll see a few buttons at th
 
 **ViewModels\CustomerListPageViewModel.cs** is where the fundamental logic of the app is located. Every user action taken in the view will be passed into this file for processing. In this tutorial, you'll add some new code, and implement the following methods:
 
-* **CreateNewCustomer**, which initializes a new CustomerViewModel object.
-* **DeleteCustomerAsync**, which removes a single customer from the database.
-* **DeleteAndUpdate**, which handles the delete button's logic.
+* **CreateNewCustomerAsync**, which initializes a new CustomerViewModel object.
+* **DeleteNewCustomerAsync**, which removes a new customer before it's displayed in the UI.
+* **DeleteAndUpdateAsync**, which handles the delete button's logic.
 * **GetCustomerListAsync**, which retrieves a list of customers from the database.
-* **SaveInitialChanges**, which adds a new customer's information to the database.
-* **UpdateCustomers**, which refreshes the UI to reflect any customers added or deleted.
+* **SaveInitialChangesAsync**, which adds a new customer's information to the database.
+* **UpdateCustomersAsync**, which refreshes the UI to reflect any customers added or deleted.
 
 **CustomerViewModel** is a wrapper for a customer's information, which tracks whether or not it's been recently modified. You won't need to add anything to this class, but some of the code you'll add elsewhere will reference it.
 
@@ -138,7 +138,7 @@ When it's initialized, **ViewModels\CustomerListPageViewModel.cs** calls the **G
 
 ## Part 4: Edit customers
 
-You can edit the entries in the data grid, but you need to ensure that any changes you make in the UI are also made to your collection of customers in the code-behind. This means you'll have to implement two-way data binding. If you want more information about this, check out our [introduction to data binding](../get-started/display-customers-in-list-learning-track.md).
+You can edit the entries in the data grid by double-clicking them, but you need to ensure that any changes you make in the UI are also made to your collection of customers in the code-behind. This means you'll have to implement two-way data binding. If you want more information about this, check out our [introduction to data binding](../get-started/display-customers-in-list-learning-track.md).
 
 1. First, declare that **ViewModels\CustomerListPageViewModel.cs** implements the **INotifyPropertyChanged** interface:
 
@@ -190,10 +190,10 @@ You can edit the entries in the data grid, but you need to ensure that any chang
 
 Now that you can see and edit your customers, you'll need to be able to push your changes to the database, and to pull any updates that have been made by others.
 
-1. Return to **ViewModels\CustomerListPageViewModel.cs**, and navigate to the **UpdateCustomers** method. Update it with this code, to push changes to the database and to retrieve any new information:
+1. Return to **ViewModels\CustomerListPageViewModel.cs**, and navigate to the **UpdateCustomersAsync** method. Update it with this code, to push changes to the database and to retrieve any new information:
 
     ```csharp
-    public async Task UpdateCustomers()
+    public async Task UpdateCustomersAsync()
     {
 	    foreach (var modifiedCustomer in Customers
 	        .Where(x => x.IsModified).Select(x => x.Model))
@@ -229,37 +229,62 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 	    }
     }
     ```
-    You'll now need a way to display the collapsible panel, and to create a customer to edit within it.
 
-2.  Update your **CreateNewCustomer** method to create a new customer, add it to the repository, and set it as the selected customer:
+2. Add a new public property to the ViewModel, an inverse of the value of **AddingNewCustomer**. This will be used to disable the regular command bar buttons when the panel is visible.
 
     ```csharp
-    public async Task CreateNewCustomer()
+    public bool EnableCommandBar => !AddingNewCustomer;
+    ```
+    You'll now need a way to display the collapsible panel, and to create a customer to edit within it. 
+
+3. Add a new private fiend and public property to the ViewModel, to hold the newly created customer.
+
+    ```csharp
+    private CustomerViewModel _newCustomer;
+
+    public CustomerViewModel NewCustomer
+    {
+        get => _newCustomer;
+        set
+        {
+            if {_newCustomer != value}
+            {
+                _newCustomer = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+    ```
+
+2.  Update your **CreateNewCustomerAsync** method to create a new customer, add it to the repository, and set it as the selected customer:
+
+    ```csharp
+    public async Task CreateNewCustomerAsync()
     {
         CustomerViewModel newCustomer = new CustomerViewModel(new Models.Customer());
-        SelectedCustomer = newCustomer;
-        await App.Repository.Customers.UpsertAsync(SelectedCustomer.Model);
+        NewCustomer = newCustomer;
+        await App.Repository.Customers.UpsertAsync(NewCustomer.Model);
         AddingNewCustomer = true;
     }
     ```
 
-3. Update the **SaveInitialChanges** method to add a newly-created customer to the repository, update the UI, and close the panel.
+3. Update the **SaveInitialChangesAsync** method to add a newly-created customer to the repository, update the UI, and close the panel.
 
     ```csharp
-    public async Task SaveInitialChanges()
+    public async Task SaveInitialChangesAsync()
     {
-        await App.Repository.Customers.UpsertAsync(SelectedCustomer.Model);
-        await GetCustomerListAsync();
+        await App.Repository.Customers.UpsertAsync(NewCustomer.Model);
+        await UpdateCustomersAsync();
         AddingNewCustomer = false;
     }
     ```
-4. Add the following line of code as the final line in the setter for **SelectedCustomer** and for the **UpdateCustomers** method:
+4. Add the following line of code as the final line in the setter for **AddingNewCustomer**:
 
     ```csharp
-    AddingNewCustomer = false;
+    OnPropertyChanged(nameof(EnableCommandBar));
     ```
 
-    This will ensure that only one customer can be added at a time.
+    This will ensure that **EnableCommandBar** is automatically updated whenever **AddingNewCustomer** is changed.
 
 ### Update the UI
 
@@ -294,25 +319,25 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 	        PlaceholderText="First"
 	        Margin="8,8,16,8"
 	        MinWidth="120"
-	        Text="{x:Bind ViewModel.SelectedCustomer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+	        Text="{x:Bind ViewModel.NewCustomer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 	    <TextBox
 	        Header="Last name"
 	        PlaceholderText="Last"
 	        Margin="0,8,16,8"
 	        MinWidth="120"
-	        Text="{x:Bind ViewModel.SelectedCustomer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+	        Text="{x:Bind ViewModel.NewCustomer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 	    <TextBox
 	        Header="Address"
 	        PlaceholderText="1234 Address St, Redmond WA 00000"
 	        Margin="0,8,16,8"
 	        MinWidth="280"
-	        Text="{x:Bind ViewModel.SelectedCustomer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+	        Text="{x:Bind ViewModel.NewCustomer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 	    <TextBox
 	        Header="Company"
 	        PlaceholderText="Company"
 	        Margin="0,8,16,8"
 	        MinWidth="120"
-	        Text="{x:Bind ViewModel.SelectedCustomer.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+	        Text="{x:Bind ViewModel.NewCustomer.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
     ```
 
@@ -323,26 +348,41 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
         <!--Text boxes from step 3-->
         <AppBarButton
             x:Name="SaveNewCustomer"
-            Click="{x:Bind ViewModel.SaveInitialChanges}"
+            Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
             Icon="Save"/>
     </StackPanel>
     ```
 
-5. Run your app. You can now create a customer and input its data in the stack panel.
+5. Update the **CommandBar**, so the regular create, delete, and update buttons are disabled when the stack panel is visible:
+
+    ```xaml
+    <CommandBar
+        x:Name="mainCommandBar"
+        HorizontalAlignment="Stretch"
+        IsEnabled="{x:Bind ViewModel.EnableCommandBar, Mode=OneWay}"
+        Background="AliceBlue">
+        <!--App bar buttons-->
+    </CommandBar>
+    ```
+
+6. Run your app. You can now create a customer and input its data in the stack panel.
 
 ![Creating a new customer](images/customer-database-tutorial/add-new-customer.png)
 
 ## Part 7: Delete a customer
 
-Deleting a customer is the final basic operation that you need to implement. When you delete a customer you've selected within the data grid, you'll want to immediately call **UpdateCustomers** in order to update the UI. However, you don't need to call that method if you're deleting a customer you've just created.
+Deleting a customer is the final basic operation that you need to implement. When you delete a customer you've selected within the data grid, you'll want to immediately call **UpdateCustomersAsync** in order to update the UI. However, you don't need to call that method if you're deleting a customer you've just created.
 
-1. Navigate to **ViewModels\CustomerListPageViewModel.cs**, and update the **DeleteAndUpdate** method:
+1. Navigate to **ViewModels\CustomerListPageViewModel.cs**, and update the **DeleteAndUpdateAsync** method:
 
     ```csharp
-    public async void DeleteAndUpdate()
+    public async void DeleteAndUpdateAsync()
     {
-        await DeleteCustomerAsync();
-        await UpdateCustomers();
+        if (SelectedCustomer != null)
+        {
+            await App.Repository.Customers.DeleteAsync(_selectedCustomer.Model.Id);
+        }
+        await UpdateCustomersAsync();
     }
     ```
 
@@ -350,26 +390,26 @@ Deleting a customer is the final basic operation that you need to implement. Whe
 
 	```xaml
 	<StackPanel>
-	    <!---Text boxes for adding a new customer-->
+	    <!--Text boxes for adding a new customer-->
 	    <AppBarButton
 	        x:Name="DeleteNewCustomer"
-	        Click="{x:Bind ViewModel.DeleteCustomerAsync}"
+	        Click="{x:Bind ViewModel.DeleteNewCustomerAsync}"
 	        Icon="Cancel"/>
 	    <AppBarButton
 	        x:Name="SaveNewCustomer"
-	        Click="{x:Bind ViewModel.SaveInitialChanges}"
+	        Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
 	        Icon="Save"/>
 	</StackPanel>
 	```
 
-3. In **ViewModels\CustomerListPageViewModel.cs**, update the **DeleteCustomerAsync** button to delete the selected customer:
+3. In **ViewModels\CustomerListPageViewModel.cs**, update the **DeleteNewCustomerAsync** method to delete the new customer:
 
     ```csharp
-    public async Task DeleteCustomerAsync()
+    public async Task DeleteNewCustomerAsync()
     {
-        if (SelectedCustomer != null)
+        if (NewCustomer != null)
         {
-            await App.Repository.Customers.DeleteAsync(_selectedCustomer.Model.Id);
+            await App.Repository.Customers.DeleteAsync(_newCustomer.Model.Id);
             AddingNewCustomer = false;
         }
     }

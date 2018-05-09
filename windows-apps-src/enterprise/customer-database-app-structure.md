@@ -21,7 +21,7 @@ While the [Customer database tutorial](customer-database-tutorial.md) presents a
 * Views are the UI of any given page.
 * ViewModels provide the application logic. This can include handling user actions from the View and/or managing interactions with the Models.
 
-While this app isn't a perfect and architypical example of MVVM, it does show the main priciples of separation of concerns in action.
+While this app isn't a perfect and architypical example of MVVM, it does show the main principles of separation of concerns in action. [Check out the app here.](https://github.com/Microsoft/windows-tutorials-customer-database)
 
 ## Application structure
 
@@ -40,22 +40,24 @@ All the app's UI is defined in the Views folder. Because our tutorial is a singl
 
 Though this app only has one View, is has two ViewModels. Why is this?
 
-**CustomerListPageViewModel.cs** is a standard ViewModel in the MVVM pattern. It's where the fundamental logic of the app's page is located, and the page you'll be working with the most in this tutorial. Every UI action taken by the user is passed through the View to this ViewModel for processing.
+**CustomerListPageViewModel.cs** is a standard ViewModel in the MVVM pattern. It's where the fundamental logic of the app's page is located, and the page you'll be working with the most in the tutorial. Every UI action taken by the user is passed through the View to this ViewModel for processing.
 
-**CustomerViewModel.cs**, however, isn't associated with any specific View. Instead, it associates a programatic concept (which properties have been edited) with the data contained in an individual customer's Model.
+**CustomerViewModel.cs**, however, isn't associated with any specific View. Instead, it associates a programmatic concept (which properties have been edited) with the data contained in an individual customer's Model.
 
 ### Models
 
-This app contains three Models, which store the app's data and provide interfaces for interacting with the repository. While these are critical parts of the app, they aren't something that you'll be directly editing in this tutorial.
+This app contains three Models, which store the app's data and provide interfaces for interacting with the repository. While these are critical parts of the app, they aren't something that you'll be directly editing in the tutorial.
 
-Most important is **Customer.cs**, which describes the Customer data structure which you'll be using in this tutorial.
+Most important is **Customer.cs**, which describes the Customer data structure which you'll be using in the tutorial.
 
 > [!NOTE]
-> This tutorial ignores the *Email* and *Phone* properties of the Customer object. If you want to go beyond what's presented here, adding these two properties into the UI of the app is a good first step.
+> The tutorial ignores the *Email* and *Phone* properties of the Customer object. If you want to go beyond what's presented here, adding these two properties into the UI of the app is a good first step.
 
 ### Repository
 
-The Respository folder contains that classes that construct and interact with the local SQLite database. For this tutorial, the SQLite database is presented as-is. While you'll be adding in code to **CustomerListPageViewMode.cs** to call methods defined by these classes, you won't need to make any changes in order to set them up.
+The Repository folder contains classes that construct and interact with the local SQLite database. For the tutorial, the SQLite database is presented as-is. While you'll be adding in code to **CustomerListPageViewModel.cs** to call methods defined by these classes, you won't need to make any changes in order to set them up.
+
+For more information on SQLite in UWP, [see this article](../data-access/sqlite-databases.md).
 
 If you try the "Going further" section of the tutorial, this is where you'll create a class to connect to the remote REST database. It will also implement the **ICustomerRepository** interface defined in the Models section, but it will look very different than its SQLite counterpart.
 
@@ -65,9 +67,9 @@ As is usual for UWP apps, the application launch behavior is defined in the **Ap
 
 * We've specified that the app should display **CustomerListPage** on launch.
 * We've created a Repository object, which will hold the data source we're using.
-* We've added an *SQLiteDatabase()* method, which initializes the local database and sets it as the specified Repository.
+* We've added a **SQLiteDatabase** method, which initializes the local database and sets it as the specified Repository.
 
-If you try the "Going further" section, you'll add a similar method to initialize a REST Respository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST opterations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
+If you try the "Going further" section, you'll add a similar method to initialize a REST Respository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST operations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
 
 ## Next steps
 

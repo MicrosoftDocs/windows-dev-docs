@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
@@ -39,7 +39,7 @@ If you selected **Store-managed consumable** for your product type, **Quantity**
 
 ## Subscription period
 
-If you selected **Subscription** for your product type, **Subscription period** is shown here. Choose an option to specify how frequently a customer will be charged for the subscription. The default option is **Monthly, but you can also select **3 months**, **6 months**, **Annually**, or **24 months** to 
+If you selected **Subscription** for your product type, **Subscription period** is shown here. Choose an option to specify how frequently a customer will be charged for the subscription. The default option is **Monthly**, but you can also select **3 months**, **6 months**, **Annually**, or **24 months**.
 
 > [!IMPORTANT]
 > After your add-on is published, you can't change your **Subscription period** selection.

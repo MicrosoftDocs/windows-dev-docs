@@ -3,7 +3,7 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ ms.localizationpriority: high
 The **Pricing** section of the [Pricing and availability](set-app-pricing-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.
 
 > [!NOTE]
-> Although this topic refers to apps, price selection for add-on submissions uses the same process.
+> Although this topic refers to apps, price selection for add-on submissions uses the same process. Note that for [subscription add-ons](../monetize/enable-subscription-add-ons-for-your-app.md), the base price that you select can't ever be increased (whether by changing the base price or by scheduling a price change), although it may be decreased.
 
 ## Base price
 

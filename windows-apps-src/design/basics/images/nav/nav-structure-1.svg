@@ -1,0 +1,32 @@
+<svg width="614" height="272" viewBox="0 0 614 272" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="nav-structure-1" clip-path="url(#clip0)">
+<rect width="614" height="272" fill="white"/>
+<g id="Group">
+<g id="Rectangle">
+<rect width="140" height="137" transform="translate(201 82) scale(-1 1)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle_2">
+<rect width="140" height="137" transform="translate(377 82) scale(-1 1)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle_3">
+<rect width="140" height="137" transform="translate(553 82) scale(-1 1)" fill="#50E6FF"/>
+</g>
+</g>
+<g id="Vector">
+<path d="M 0 36L 0 0L 364 0L 364 36" stroke-width="5" transform="translate(129 46)" stroke="#50E6FF"/>
+</g>
+<g id="Vector 2">
+<path d="M 0 0L 0 40" stroke-width="5" transform="translate(309 46)" stroke="#50E6FF"/>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="614" height="272" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

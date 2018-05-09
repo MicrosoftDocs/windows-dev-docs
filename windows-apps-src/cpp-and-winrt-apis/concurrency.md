@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -72,9 +72,9 @@ using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
 
-void PrintFeed(SyndicationFeed syndicationFeed)
+void PrintFeed(SyndicationFeed const& syndicationFeed)
 {
-    for (SyndicationItem syndicationItem : syndicationFeed.Items())
+    for (SyndicationItem const& syndicationItem : syndicationFeed.Items())
     {
         std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
     }
@@ -119,9 +119,9 @@ using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
 
-void PrintFeed(SyndicationFeed syndicationFeed)
+void PrintFeed(SyndicationFeed const& syndicationFeed)
 {
-    for (SyndicationItem syndicationItem : syndicationFeed.Items())
+    for (SyndicationItem const& syndicationItem : syndicationFeed.Items())
     {
         std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
     }
@@ -151,7 +151,7 @@ If you're asynchronously returning a Windows Runtime type (whether that's a firs
 The compiler will help you with a "*must be WinRT type*" error if you try to use one of these asychronous operation types with a non-Windows Runtime type.
 
 ## Asychronously return a non-Windows-Runtime type
-If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**task**](https://msdn.microsoft.com/library/hh750113). We recommend **task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
+If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**task**](/cpp/parallel/concrt/reference/task-class). We recommend **task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
 
 ```cppwinrt
 // main.cpp
@@ -187,6 +187,19 @@ int main()
 }
 ```
 
+## Parameter-passing
+For synchronous functions, you should use `const&` parameters by default. That will avoid copies and interlocked overhead. But your coroutines should use pass-by-value to ensure that they capture by value and avoid lifetime issues.
+
+```cppwinrt
+// synchronous function. 
+void DoWork(Param const& value);
+
+// coroutine 
+IASyncAction DoWorkAsync(Param value);
+```
+
+For more details, and a code example, see [Standard arrays and vectors](concurrency.md#standard-arrays-and-vectors).
+
 ## Important APIs
 * [concurrency::task](https://msdn.microsoft.com/library/hh750113)
 * [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
@@ -195,3 +208,6 @@ int main()
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
+
+## Related topics
+* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)

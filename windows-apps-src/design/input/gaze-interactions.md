@@ -34,9 +34,7 @@ Gaze input is a powerful way to interact and use Windows and UWP applications th
 In addition, gaze input offers equally compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).
 
 > [!NOTE]
-> Support for eye tracking hardware was introduced in Windows 10 Fall Creators Update along with [Eye control](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech. A set of [UWP APIs]([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) for building applications that can interact with eye tracking hardware is available with RS4 and newer.
-
-In this topic, we use a couple of examples to show how to track a user's gaze.
+> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech. A set of [UWP APIs]([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) for building applications that can interact with eye tracking hardware is available with **Windows 10 April 2018 Update (Version 1803, build 17134)** and newer.
 
 ## Privacy
 
@@ -64,7 +62,15 @@ To use the gaze input APIs in your UWP app you'll need to:
 
 ## Basic eye tracking
 
-In this example, we show how to track the user's eyes within a UWP application, display a small ellipse that shows where the gaze point is within the application viewport, and use a [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar) from the [Windows Community Toolkit](https://github.com/Microsoft/WindowsCommunityToolkit) on a timer to help train and improve gaze focus.
+In this example, we demonstrate how to track the user's gaze within a UWP application and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.
+
+A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) from the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
+
+![Gaze tracking with timer sample](images/gaze/gaze-input-timed2.gif)
+
+*Gaze tracking with timer sample*
+
+**Download this sample from [Gaze input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. First, we set up the UI (MainPage.xaml).
 
@@ -119,17 +125,11 @@ In this example, we show how to track the user's eyes within a UWP application, 
                            Margin="10,0,0,0"/>
                 </StackPanel>
                 <Canvas x:Name="gazePositionCanvas" Grid.Row="1">
-                    <Ellipse 
-                        x:Name="eyeGazePositionEllipse"  
-                        Width="20" Height="20" 
-                        Fill="Blue" 
-                        Opacity="0.5" 
-                        Visibility="Collapsed">
-                    </Ellipse>
                     <controls:RadialProgressBar
-                        x:Name="GazeRadialProgressBar"
+                        x:Name="GazeRadialProgressBar" 
                         Value="0"
                         Foreground="Blue" 
+                        Background="White"
                         Thickness="4"
                         Minimum="0"
                         Maximum="100"
@@ -137,6 +137,13 @@ In this example, we show how to track the user's eyes within a UWP application, 
                         Height="100"
                         Outline="Gray"
                         Visibility="Collapsed"/>
+                    <Ellipse 
+                        x:Name="eyeGazePositionEllipse"
+                        Width="20" Height="20"
+                        Fill="Blue" 
+                        Opacity="0.5" 
+                        Visibility="Collapsed">
+                    </Ellipse>
                 </Canvas>
             </Grid>
         </Grid>
@@ -145,7 +152,7 @@ In this example, we show how to track the user's eyes within a UWP application, 
 
 2. Next, we initialize our app.
 
-    In this snippet, we declare our global objects and override the [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) and [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) page events to start our [gaze device watcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
+    In this snippet, we declare our global objects and override the [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) page event to start our [gaze device watcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) and the [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) page event to stop our [gaze device watcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
 
     ```csharp
     using System;
@@ -189,10 +196,10 @@ In this example, we show how to track the user's eyes within a UWP application, 
             /// <summary>
             /// Tracker used to prevent gaze timer restarts.
             /// </summary>
-            bool timersStarted = false;
+            bool timerStarted = false;
     
             /// <summary>
-            /// Initialize our app and declare our gaze event handlers.
+            /// Initialize the app.
             /// </summary>
             public MainPage()
             {
@@ -205,14 +212,12 @@ In this example, we show how to track the user's eyes within a UWP application, 
             /// <param name="e">Event args for the NavigatedTo event</param>
             protected override void OnNavigatedTo(NavigationEventArgs e)
             {
-                //base.OnNavigatedTo(e);
-    
                 // Start listening for device events on navigation to eye-tracking page.
                 StartGazeDeviceWatcher();
             }
     
             /// <summary>
-            /// Override of OnNavigatedFrom page event starts GazeDeviceWatcher.
+            /// Override of OnNavigatedFrom page event stops GazeDeviceWatcher.
             /// </summary>
             /// <param name="e">Event args for the NavigatedFrom event</param>
             protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -222,13 +227,17 @@ In this example, we show how to track the user's eyes within a UWP application, 
             }
             ```
 
-3. Next, we add our gaze device watcher methods. In `StartGazeDeviceWatcher`, we call [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) and declare the eye-tracking device event listeners ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated), and [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)). 
+3. Next, we add our gaze device watcher methods. 
+    
+    In `StartGazeDeviceWatcher`, we call [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) and declare the eye-tracking device event listeners ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated), and [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
     In `DeviceAdded`, we check the state of the eye-tracking device. If a viable device, we increment our device count and enable gaze tracking. See next step for details.
 
     In `DeviceUpdated`, we also enable gaze tracking as this event is triggered if a device is recalibrated.
 
     In `DeviceRemoved`, we decrement our device counter and remove the device event handlers.
+
+    In `StopGazeDeviceWatcher`, we shut down the gaze device watcher. 
 
 ```csharp
     /// <summary>
@@ -243,6 +252,21 @@ In this example, we show how to track the user's eyes within a UWP application, 
             gazeDeviceWatcher.Updated += this.DeviceUpdated;
             gazeDeviceWatcher.Removed += this.DeviceRemoved;
             gazeDeviceWatcher.Start();
+        }
+    }
+
+    /// <summary>
+    /// Shut down gaze watcher and stop listening for events.
+    /// </summary>
+    private void StopGazeDeviceWatcher()
+    {
+        if (gazeDeviceWatcher != null)
+        {
+            gazeDeviceWatcher.Stop();
+            gazeDeviceWatcher.Added -= this.DeviceAdded;
+            gazeDeviceWatcher.Updated -= this.DeviceUpdated;
+            gazeDeviceWatcher.Removed -= this.DeviceRemoved;
+            gazeDeviceWatcher = null;
         }
     }
 
@@ -318,7 +342,7 @@ In this example, we show how to track the user's eyes within a UWP application, 
         if (IsSupportedDevice(gazeDevice))
         {
             timerGaze.Interval = new TimeSpan(0, 0, 0, 0, 20);
-            timerGaze.Tick += timerGaze_Tick;
+            timerGaze.Tick += TimerGaze_Tick;
 
             SetGazeTargetLocation();
 
@@ -373,11 +397,11 @@ In this example, we show how to track the user's eyes within a UWP application, 
     }
 ```
 
-5. Finally, we set up our gaze event handlers.
+5. Next, we set up our gaze event handlers.
 
     We display and hide the gaze tracking ellipse in `GazeEntered` and `GazeExited`, respectively.
 
-    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar), which triggers repositioning of the progress bar. See next step for details.
+    In `GazeMoved`, we move our gaze tracking ellipse based on the [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) provided by the [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) of the [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). We also manage the gaze focus timer on the [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar), which triggers repositioning of the progress bar. See next step for details.
 
     ```csharp
     /// <summary>
@@ -427,14 +451,22 @@ In this example, we show how to track the user's eyes within a UWP application, 
             double gazePointX = args.CurrentPoint.EyeGazePosition.Value.X;
             double gazePointY = args.CurrentPoint.EyeGazePosition.Value.Y;
 
-            double ellipseLeft = gazePointX - (eyeGazePositionEllipse.Width / 2.0f);
-            double ellipseTop = gazePointY - (eyeGazePositionEllipse.Height / 2.0f);
-            Canvas.SetLeft(
-                eyeGazePositionEllipse, ellipseLeft
-                );
-            Canvas.SetTop(
-                eyeGazePositionEllipse, ellipseTop
-                );
+            double ellipseLeft = 
+                gazePointX - 
+                (eyeGazePositionEllipse.Width / 2.0f);
+            double ellipseTop = 
+                gazePointY - 
+                (eyeGazePositionEllipse.Height / 2.0f) - 
+                (int)Header.ActualHeight;
+
+            // Translate transform for moving gaze ellipse.
+            TranslateTransform translateEllipse = new TranslateTransform
+            {
+                X = ellipseLeft,
+                Y = ellipseTop
+            };
+
+            eyeGazePositionEllipse.RenderTransform = translateEllipse;
 
             // The gaze point screen location.
             Point gazePoint = new Point(gazePointX, gazePointY);
@@ -483,17 +515,16 @@ In this example, we show how to track the user's eyes within a UWP application, 
             VisualTreeHelper.FindElementsInHostCoordinates(gazePoint, uiElement, true);
         foreach (UIElement item in elementStack)
         {
-            FrameworkElement feItem = item as FrameworkElement;
             //Cast to FrameworkElement and get element name.
-            if (feItem != null)
+            if (item is FrameworkElement feItem)
             {
                 if (feItem.Name.Equals(elementName))
                 {
-                    if (!timersStarted)
+                    if (!timerStarted)
                     {
                         // Start gaze timer if gaze over element.
                         timerGaze.Start();
-                        timersStarted = true;
+                        timerStarted = true;
                     }
                     return true;
                 }
@@ -503,7 +534,7 @@ In this example, we show how to track the user's eyes within a UWP application, 
         // Stop gaze timer and reset progress bar if gaze leaves element.
         timerGaze.Stop();
         GazeRadialProgressBar.Value = 0;
-        timersStarted = false;
+        timerStarted = false;
         return false;
     }
 
@@ -512,7 +543,7 @@ In this example, we show how to track the user's eyes within a UWP application, 
     /// </summary>
     /// <param name="sender">Source of the gaze entered event</param>
     /// <param name="e">Event args for the gaze entered event</param>
-    private void timerGaze_Tick(object sender, object e)
+    private void TimerGaze_Tick(object sender, object e)
     {
         // Increment progress bar.
         GazeRadialProgressBar.Value += 1;
@@ -540,9 +571,15 @@ In this example, we show how to track the user's eyes within a UWP application, 
         TranslateTransform translateTarget = new TranslateTransform();
 
         // Calculate random location within gaze canvas.
-        Random random = new Random();
-        int randomX = random.Next(0, (int)appBounds.Width - (int)GazeRadialProgressBar.Width);
-        int randomY = random.Next(0, (int)appBounds.Height - (int)GazeRadialProgressBar.Height - (int)HeaderPanel.Height);
+            Random random = new Random();
+            int randomX = 
+                random.Next(
+                    0, 
+                    (int)appBounds.Width - (int)GazeRadialProgressBar.Width);
+            int randomY = 
+                random.Next(
+                    0, 
+                    (int)appBounds.Height - (int)GazeRadialProgressBar.Height - (int)Header.ActualHeight);
 
         translateTarget.X = randomX;
         translateTarget.Y = randomY;
@@ -559,9 +596,8 @@ In this example, we show how to track the user's eyes within a UWP application, 
 
 ### Resources
 
-- [Windows Community Toolkit Gaze library](https://github.com/Microsoft/UWPCommunityToolkit/blob/harishsk/gaze-integration/docs/gaze/Gaze.md)
+- [Windows Community Toolkit Gaze library](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
 
 ### Topic samples
 
-- [Gaze sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/xxx.zip)
-- [Gaze sample (complex) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/xxx.zip)
+- [Gaze sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

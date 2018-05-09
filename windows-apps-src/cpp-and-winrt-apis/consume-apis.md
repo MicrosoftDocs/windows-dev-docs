@@ -42,6 +42,27 @@ In this example, `winrt/Windows.Foundation.h` contains the projected type for th
 
 In the code example above, after initializing C++/WinRT, we construct the **Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's all you have to do.
 
+If you want to delay fully initializing a runtime class object, then declare your field using the special C++/WinRT `nullptr_t` constructor that's provided on the projected type.
+
+```cppwinrt
+#include <winrt/Windows.Storage.Streams.h>
+using namespace winrt::Windows::Storage::Streams;
+
+struct Sample
+{
+    void DelayedInit()
+    {
+        // Allocate the actual buffer.
+        m_gamerPicBuffer = Buffer(MAX_IMAGE_SIZE);
+    }
+
+private:
+    Buffer m_gamerPicBuffer{ nullptr };
+};
+```
+
+All constructors *except* the `nullptr_t` constructor call [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to create the backing Windows Runtime object, and store that object's default interface inside the new projected value. The `nullptr_t` constructor avoids that work; it expects the projected value to be initialized at a subsequent time. So, even if a runtime class *has* a default constructor, this technique is more efficient for delayed initialization.
+
 ## If the API is implemented in a Windows Runtime component
 This section applies whether you authored the component yourself, or it came from a vendor.
 
@@ -67,7 +88,7 @@ For more details, code, and a walkthrough of consuming APIs implemented in a Win
 ## If the API is implemented in the consuming project
 A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
 
-For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its `nullptr` constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its `nullptr_t` constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. You use this technique because a runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
 
 ```cppwinrt
 // MainPage.h

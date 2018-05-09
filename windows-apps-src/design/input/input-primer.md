@@ -16,7 +16,6 @@ ms.localizationpriority: medium
 
 # Interaction primer
 
-
 ![windows input types](images/input-interactions/icons-inputdevices03.png)
 
 User interactions in the Universal Windows Platform (UWP) are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, **Cortana**, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
@@ -25,14 +24,34 @@ The UWP uses a "smart" contextual interaction system that, in most cases, elimin
 
 Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. This can help you decide whether the platform controls and affordances are sufficient for your app, or require you to provide customized interaction experiences.
 
-## Surface Dial
+## Gaze
 
-For Windows 10 Anniversary Update, we're introducing a new category of input device called Windows Wheel. The Surface Dial is the first in this class of device. 
+For **Windows 10 April 2018 Update**, we introduced support for Gaze input using eye and head tracking input devices. 
+
+> [!NOTE]
+> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech.
 
 ### Device support
 
--   Tablet
--   PCs and laptops
+- Tablet
+- PCs and laptops
+
+### Typical usage
+
+Track a user's gaze, attention, and presence based on the location and movement of their eyes. This powerful new way to use and interact with your UWP apps is especially useful as an assistive technology for users with neuro-muscular diseases (such as ALS) and other disabilities involving impaired muscle or nerve functions. Gaze input also provides compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).
+
+### More info
+
+[Gaze interactions and eye tracking](gaze-interactions.md)
+
+## Surface Dial
+
+For **Windows 10 Anniversary Update**, we introduced the Windows Wheel category of input device. The Surface Dial is the first in this class of device.
+
+### Device support
+
+- Tablet
+- PCs and laptops
 
 ### Typical usage
 
@@ -41,7 +60,6 @@ With a form factor based on a rotate action (or gesture), the Surface Dial is in
 ### More info
 
 [Surface Dial design guidelines](windows-wheel-interactions.md)
-
 
 ## Cortana
 

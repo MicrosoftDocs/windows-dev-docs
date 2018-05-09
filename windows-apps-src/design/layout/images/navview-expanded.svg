@@ -1,122 +1,75 @@
-<svg width="1152" height="648" viewBox="0 0 1152 648" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>navview-expanded</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-1309 12927)">
-<clipPath id="clip-0" clip-rule="evenodd">
-<path d="M 1309 -12927L 2461 -12927L 2461 -12279L 1309 -12279L 1309 -12927Z" fill="#FFFFFF"/>
-</clipPath>
-<g id="navview-expanded" clip-path="url(#clip-0)">
-<path d="M 1309 -12927L 2461 -12927L 2461 -12279L 1309 -12279L 1309 -12927Z" fill="#243A5E"/>
-<g id="BG">
-<g id="app-bg">
-<use xlink:href="#path0_fill" transform="translate(1373 -12871)" fill="#FFFFFF"/>
-<use xlink:href="#path0_fill" transform="translate(1373 -12871)" fill="#FFFFFF"/>
-</g>
-<g id="Mask Group">
-<mask id="mask0_alpha" mask-type="alpha">
-<g id="app-bg">
-<use xlink:href="#path1_fill" transform="translate(1373 -12871)" fill="#FFFFFF"/>
-<use xlink:href="#path1_fill" transform="translate(1373 -12871)" fill="#FFFFFF"/>
-</g>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none">
+<g clip-path="url(#clip0)">
+<rect width="1920" height="1080" fill="#243A5E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 1706.67 0L 1706.67 893.333L 0 893.333L 0 0Z" transform="translate(106.666 93.334)" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 1706.67 0L 1706.67 893.333L 0 893.333L 0 0Z" transform="translate(106.666 93.334)" fill="white"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="106" y="93" width="1708" height="894">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 3C 0 1.34314 1.34315 0 3 0L 1703.67 0C 1705.32 0 1706.67 1.34315 1706.67 3L 1706.67 890.333C 1706.67 891.99 1705.32 893.333 1703.67 893.333L 3 893.333C 1.34314 893.333 0 891.99 0 890.333L 0 3Z" transform="translate(106.666 93.334)" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 3C 0 1.34314 1.34315 0 3 0L 1703.67 0C 1705.32 0 1706.67 1.34315 1706.67 3L 1706.67 890.333C 1706.67 891.99 1705.32 893.333 1703.67 893.333L 3 893.333C 1.34314 893.333 0 891.99 0 890.333L 0 3Z" transform="translate(106.666 93.334)" fill="white"/>
 </mask>
-<g id="Rectangle 47" style="mix-blend-mode:multiply" opacity="0.7" mask="url(#mask0_alpha)">
-<use xlink:href="#path2_fill" transform="translate(1373 -12871)" fill="#DFE9F0"/>
+<g mask="url(#mask0)">
+<g style="mix-blend-mode:multiply" opacity="0.7">
+<rect width="453.333" height="893.333" transform="translate(106.666 93.334)" fill="#C8C8C8"/>
 </g>
 </g>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 240)" fill="#A6A6A6"/>
 </g>
-<g id="titlebar-controls" opacity="0.75">
-<g id="minimize">
-<use xlink:href="#path3_fill" transform="matrix(1 -2.44929e-16 2.44929e-16 1 2311 -12855.9)"/>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 240)" fill="#A6A6A6"/>
 </g>
-<g id="expand">
-<mask id="mask1_outline_ins">
-<use xlink:href="#path4_fill" fill="white" transform="translate(2343 -12860.9)"/>
-</mask>
-<g mask="url(#mask1_outline_ins)">
-<use xlink:href="#path5_stroke_2x" transform="translate(2343 -12860.9)"/>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 293.334)" fill="#A6A6A6"/>
 </g>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 293.334)" fill="#A6A6A6"/>
 </g>
-<g id="close">
-<g id="Line 3 (Stroke)">
-<use xlink:href="#path6_fill" transform="matrix(0.707107 -0.707107 0.707107 0.707107 2374.64 -12850)"/>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 346.666)" fill="#A6A6A6"/>
 </g>
-<g id="Line 3.1 (Stroke)">
-<use xlink:href="#path6_fill" transform="matrix(-0.707107 -0.707107 0.707107 -0.707107 2385.95 -12848.6)"/>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 346.666)" fill="#A6A6A6"/>
 </g>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 400)" fill="#A6A6A6"/>
 </g>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 400)" fill="#A6A6A6"/>
 </g>
-<g id="nav-items">
-<g id="Rectangle 2" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12783)" fill="#9CAEBA"/>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 453.334)" fill="#A6A6A6"/>
 </g>
-<g id="Rectangle 2.1" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12783)" fill="#9CAEBA"/>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 453.334)" fill="#A6A6A6"/>
 </g>
-<g id="Rectangle 2.2" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12751)" fill="#9CAEBA"/>
+<g opacity="0.75">
+<rect width="26.6667" height="26.6667" transform="translate(133.334 506.666)" fill="#A6A6A6"/>
 </g>
-<g id="Rectangle 2.3" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12751)" fill="#9CAEBA"/>
+<g opacity="0.75">
+<rect width="240" height="26.6667" transform="translate(173.334 506.666)" fill="#A6A6A6"/>
 </g>
-<g id="Rectangle 2.4" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12719)" fill="#9CAEBA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 10 0L 10 40L 0 40L 0 0Z" transform="translate(106.666 395)" fill="#007AD0"/>
+<rect width="108.333" height="13.3333" transform="translate(133.334 121.666)" fill="#B3B3B3"/>
+<rect width="1200" height="746.667" transform="translate(586.666 213.334)" fill="#F4F4F4"/>
+<g opacity="0.75">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 20 3.33333L 0 3.33333L 0 0L 20 0L 20 3.33333Z" transform="translate(1670 118.334)" fill="black"/>
+<rect x="1.5" y="1.5" width="17" height="17" stroke-width="3" transform="translate(1723.33 110)" stroke="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 12.9629 10.6055L 21.2129 2.35547L 18.8555 0L 10.6055 8.25L 2.35547 0L 0 2.35742L 8.25 10.6055L 0 18.8555L 2.35742 21.2129L 10.6055 12.9629L 18.8555 21.2129L 21.2129 18.8555L 12.9629 10.6055Z" transform="translate(1776.06 109.395)" fill="black"/>
 </g>
-<g id="Rectangle 2.5" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12719)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.6" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12687)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.7" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12687)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.8" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12655)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.9" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12655)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.10" opacity="0.75">
-<use xlink:href="#path7_fill" transform="translate(1389 -12623)" fill="#9CAEBA"/>
-</g>
-<g id="Rectangle 2.11" opacity="0.75">
-<use xlink:href="#path8_fill" transform="translate(1413 -12623)" fill="#9CAEBA"/>
-</g>
-</g>
-<g id="hamburger-menu" opacity="0.75">
-<g id="Line 2 (Stroke)">
-<use xlink:href="#path6_fill" transform="translate(1389 -12820)"/>
-</g>
-<g id="Line 2.1 (Stroke)">
-<use xlink:href="#path6_fill" transform="translate(1389 -12816)"/>
-</g>
-<g id="Line 2.2 (Stroke)">
-<use xlink:href="#path6_fill" transform="translate(1389 -12812)"/>
-</g>
-</g>
-<g id="Selection indicator">
-<use xlink:href="#path9_fill" transform="translate(1373 -12690)" fill="#007AD0"/>
-</g>
-<g id="app-title">
-<use xlink:href="#path10_fill" transform="translate(1389 -12854)" fill="#A7B7C2"/>
-</g>
-<g id="Rectangle">
-<use xlink:href="#path11_fill" transform="translate(1661 -12799)" fill="#F2F8FC"/>
+<g opacity="0.75">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 26.6667 2.33333C 26.6667 2.88562 26.219 3.33333 25.6667 3.33333L 1 3.33333C 0.447715 3.33333 0 2.88562 0 2.33333L 0 1C 0 0.447715 0.447715 0 1 0L 25.6667 0C 26.219 0 26.6667 0.447715 26.6667 1L 26.6667 2.33333Z" transform="translate(133.334 178.332)" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 26.6667 2.33333C 26.6667 2.88562 26.219 3.33333 25.6667 3.33333L 1 3.33333C 0.447715 3.33333 0 2.88562 0 2.33333L 0 1C 0 0.447715 0.447715 0 1 0L 25.6667 0C 26.219 0 26.6667 0.447715 26.6667 1L 26.6667 2.33333Z" transform="translate(133.334 185)" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 26.6667 2.33333C 26.6667 2.88562 26.219 3.33333 25.6667 3.33333L 1 3.33333C 0.447715 3.33333 0 2.88562 0 2.33333L 0 1C 0 0.447715 0.447715 0 1 0L 25.6667 0C 26.219 0 26.6667 0.447715 26.6667 1L 26.6667 2.33333Z" transform="translate(133.334 191.666)" fill="black"/>
 </g>
 </g>
 </g>
 <defs>
-<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 1024 0L 1024 536L 0 536L 0 0Z"/>
-<path id="path1_fill" fill-rule="evenodd" d="M 0 3C 0 1.34315 1.34315 0 3 0L 1021 0C 1022.66 0 1024 1.34315 1024 3L 1024 533C 1024 534.657 1022.66 536 1021 536L 3 536C 1.34315 536 0 534.657 0 533L 0 3Z"/>
-<path id="path2_fill" d="M 0 0L 272 0L 272 536L 0 536L 0 0Z"/>
-<path id="path3_fill" fill-rule="evenodd" d="M 12 1C 12 1.55228 11.5523 2 11 2L 1 2C 0.447715 2 0 1.55228 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1Z"/>
-<path id="path4_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1L 12 11C 12 11.5523 11.5523 12 11 12L 1 12C 0.447715 12 0 11.5523 0 11L 0 1Z"/>
-<path id="path5_stroke_2x" d="M 1 2L 11 2L 11 -2L 1 -2L 1 2ZM 10 1L 10 11L 14 11L 14 1L 10 1ZM 11 10L 1 10L 1 14L 11 14L 11 10ZM 2 11L 2 1L -2 1L -2 11L 2 11ZM 1 10C 1.55228 10 2 10.4477 2 11L -2 11C -2 12.6569 -0.656854 14 1 14L 1 10ZM 10 11C 10 10.4477 10.4477 10 11 10L 11 14C 12.6569 14 14 12.6569 14 11L 10 11ZM 11 2C 10.4477 2 10 1.55228 10 1L 14 1C 14 -0.656854 12.6569 -2 11 -2L 11 2ZM 1 -2C -0.656854 -2 -2 -0.656854 -2 1L 2 1C 2 1.55228 1.55228 2 1 2L 1 -2Z"/>
-<path id="path6_fill" fill-rule="evenodd" d="M 16 1C 16 1.55228 15.5523 2 15 2L 1 2C 0.447715 2 0 1.55228 0 1C 0 0.447715 0.447715 0 1 0L 15 0C 15.5523 0 16 0.447715 16 1Z"/>
-<path id="path7_fill" d="M 0 0L 16 0L 16 16L 0 16L 0 0Z"/>
-<path id="path8_fill" d="M 0 0L 144 0L 144 16L 0 16L 0 0Z"/>
-<path id="path9_fill" fill-rule="evenodd" d="M 0 0L 6 0L 6 24L 0 24L 0 0Z"/>
-<path id="path10_fill" d="M 0 0L 65 0L 65 8L 0 8L 0 0Z"/>
-<path id="path11_fill" d="M 0 0L 720 0L 720 448L 0 448L 0 0Z"/>
+
+<clipPath id="clip0">
+<rect width="1920" height="1080" fill="white"/>
+</clipPath>
+
 </defs>
 </svg>
+

@@ -1,0 +1,21 @@
+<svg width="1920" height="919" viewBox="0 0 1920 919" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="header-color" clip-path="url(#clip0)">
+<rect width="1920" height="918.333" fill="#C8C8C8"/>
+<g id="Group 27">
+<rect id="Rectangle 32" width="918" height="273.333" transform="matrix(0 1 -1 0 1920 0)" fill="#ADD8FF"/>
+<rect id="Rectangle 32.1" width="1062" height="300.06" transform="matrix(0 1 -1 0 1836 -93)" fill="#80B9EE"/>
+<rect id="Rectangle 32.2" width="1070" height="337" transform="matrix(0 1 -1 0 1727 -79)" fill="#559CE4"/>
+<rect id="Rectangle 32.3" width="918" height="352.952" transform="matrix(0 1 -1 0 1579.94 0)" fill="#0078D4"/>
+<rect id="Rectangle 32.4" width="918" height="496" transform="matrix(0 1 -1 0 1405 0)" fill="#235A9F"/>
+<rect id="Rectangle 32.5" width="918" height="655" transform="matrix(0 1 -1 0 1191 0)" fill="#174276"/>
+<rect id="Rectangle 32.6" width="918" height="947" transform="matrix(0 1 -1 0 947 0)" fill="#092642"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1920" height="918.333" fill="white"/>
+</clipPath>
+</defs>
+</svg>

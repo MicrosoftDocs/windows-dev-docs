@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,10 @@ ms.localizationpriority: medium
 ---
 
 # Handle events by using delegates in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows how to register and revoke event-handling delegates using C++/WinRT. You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## Register a delegate to handle an event
 A simple example is handling a button's click event. It's typical to use XAML markup to register a member function to handle the event, like this.

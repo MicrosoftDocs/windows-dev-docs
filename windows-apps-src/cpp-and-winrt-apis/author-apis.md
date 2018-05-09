@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Author APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows how to author C++/WinRT APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
 
 - You're *not* authoring a Windows Runtime class (runtime class); you just want to implement one or more Windows Runtime interfaces for local consumption within your app. You derive directly from **winrt::implements** in this case, and implement functions.
@@ -29,7 +26,7 @@ In both cases, the type that implements your C++/WinRT APIs is called the *imple
 The simplest scenario is where you're implementing a Windows Runtime interface for local consumption. You don't need a runtime class; just an ordinary C++ class. For example, you might be writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 In Visual Studio, the **Visual C++ Core App (C++/WinRT)** project template illustrates the **CoreApplication** pattern. The pattern begins with passing an implementation of [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) to [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -202,7 +199,7 @@ The procedure for consuming your runtime class in this scenario is described in 
 Here are some points to take away from the listings we've seen above.
 
 - Each constructor you declare in your IDL causes a constructor to be generated on both your implementation type and on your projected type. IDL-declared constructors are used to consume the runtime class from *a different* compilation unit.
-- Whether you have IDL-declared constructor(s) or not, a constructor overload that takes `nullptr` is generated on your projected type. Calling the `nullptr` constructor is *the first of two steps* in consuming the runtime class from *the same* compilation unit. For more details, and a code example, see [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- Whether you have IDL-declared constructor(s) or not, a constructor overload that takes `nullptr_t` is generated on your projected type. Calling the `nullptr_t` constructor is *the first of two steps* in consuming the runtime class from *the same* compilation unit. For more details, and a code example, see [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 - If you're consuming the runtime class from *the same* compilation unit, then you can also implement non-default constructors directly on the implementation type (which, remember, is in `MyRuntimeClass.h`).
 
 > [!NOTE]

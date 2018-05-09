@@ -3,7 +3,7 @@ author: stevewhims
 description: Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 title: Frequently-asked questions about C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Frequently-asked questions about [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 
 ## What are the requirements for the C++/WinRT [Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)?
@@ -70,3 +67,6 @@ windows.com
 Because C++/WinRT uses features from the C++17 standard, you'll need to use whatever compiler flags are necessary to get that support; such flags differ from one compiler to another.
 
 Visual Studio is the development tool that we support and recommend for C++/WinRT. See [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+
+> [!NOTE]
+> If this topic didn't answer your question, you might find help by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

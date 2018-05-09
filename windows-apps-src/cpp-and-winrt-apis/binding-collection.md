@@ -3,7 +3,7 @@ author: stevewhims
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
 ms.author: stwhi
-ms.date: 03/07/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # XAML items controls; bind to a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) collection
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable collections in C++/WinRT, and how to bind XAML items controls to them.
 
 This walkthrough builds on the project created in [XAML controls; bind to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.
@@ -28,7 +25,7 @@ If a runtime class that represents a collection chooses to raise the [**IObserva
 A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## Implement **single_threaded_observable_vector&lt;T&gt;**
 It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Here's a listing of a class called **single_threaded_observable_vector&lt;T&gt;**. In future, if this becomes a C++/WinRT type, it will be easy to switch over to using the official version of it.
