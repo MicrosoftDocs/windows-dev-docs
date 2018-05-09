@@ -4,7 +4,7 @@ title: Racing Wheel and Force Feedback
 description: Use the Windows.Gaming.Input racing wheel APIs to detect, determine capabilities, read, and send force feedback commands to racing wheels.
 ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,7 +28,7 @@ By reading this page, you'll learn:
 
 Racing wheels are input devices that resemble the feel of a real racecar cockpit. Racing wheels are the perfect input device for both arcade-style and simulation-style racing games that feature cars or trucks. Racing wheels are supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input][] namespace.
 
-Xbox One racing wheels are offered at a variety of price points, generally having more and better input and force feedback capabilities as their price points rise. All racing wheels are equipped with an analog steering wheel, analog throttle and break controls, and some on-wheel buttons. Some racing wheels are additionally equipped with analog clutch and handbreak controls, pattern shifters, and force feedback capabilities. Not all racing wheels are equipped with the same sets of features, and may also vary in their support for certain features&mdash;for example, steering wheels might support different ranges of rotation and pattern shifters might support different numbers of gears.
+Xbox One racing wheels are offered at a variety of price points, generally having more and better input and force feedback capabilities as their price points rise. All racing wheels are equipped with an analog steering wheel, analog throttle and brake controls, and some on-wheel buttons. Some racing wheels are additionally equipped with analog clutch and handbrake controls, pattern shifters, and force feedback capabilities. Not all racing wheels are equipped with the same sets of features, and may also vary in their support for certain features&mdash;for example, steering wheels might support different ranges of rotation and pattern shifters might support different numbers of gears.
 
 ### Device capabilities
 
@@ -231,7 +231,7 @@ Although wheel readings correspond to different degrees of physical rotation in 
 
 ### Reading the throttle and brake
 
-The throttle and break are required controls that each provide analog readings between 0.0 (fully released) and 1.0 (fully pressed) represented as floating-point values. The value of the throttle control is read from the `Throttle` property of the [RacingWheelReading][] struct; the value of the brake control is read from the `Brake` property.
+The throttle and brake are required controls that each provide analog readings between 0.0 (fully released) and 1.0 (fully pressed) represented as floating-point values. The value of the throttle control is read from the `Throttle` property of the [RacingWheelReading][] struct; the value of the brake control is read from the `Brake` property.
 
 ```cpp
 float throttle = reading.Throttle;  // returns a value between 0.0 and 1.0
