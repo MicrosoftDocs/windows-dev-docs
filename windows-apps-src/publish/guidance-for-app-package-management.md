@@ -27,7 +27,7 @@ Learn how your app's packages are made available to your customers, and how to m
 
 Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.
 
-Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. However, customers will only get those packages if the app doesn't include a package that targets the current OS version.
+Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. However, customers will only get those packages if the app doesn't include a package that targets their current OS version.
 
 For example, Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. 
 
@@ -72,29 +72,8 @@ Also note that this example app does not include any package that can run on Win
 |--------------------------------------|----------------------------------------------|
 | Windows 10 (universal device family) | Windows 10 (all device families)             |
 
-In example app 4, any device that is running Windows 10 can get the app, but it will not be available to customers on any previous OS version. Because the UWP package targets the universal device family, it will be available to any Windows 10 device.
+In example app 4, any device that is running Windows 10 can get the app, but it will not be available to customers on any previous OS version. Because the UWP package targets the universal device family, it will be available to any Windows 10 device (per your [device family availability selections](device-family-availability.md)).
 
-<a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
-
-## Adding packages for Windows 10 to a previously-published app
-
-If you have an app in the Store that targets Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, customers on Windows 10 who had your app will get your UWP package as an update from the Store. The UWP package will also be available for new acquisitions by customers on Windows 10.
-
-> [!IMPORTANT]
-> Once a customer on Windows 10 gets your UWP package, you can't roll that customer back to using a package for any previous OS version. 
-
-Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you include (or packages for those OS versions that you have previously published). For more info, see [Package version numbering](package-version-numbering.md).
-
-For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).
-
-> [!IMPORTANT]
-> Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
-> 
-> This happens even if you have excluded a specific device family in the [Device family availability](upload-app-packages.md#device-family-availability) step of your submission, since the **Device family availability** selection only applies to new acquisitions. If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your appx manifest to include only the particular device family you wish to support.
-> 
-> For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
-> 
-> For more info about device families, see [**Device families overview**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 ## Removing an app from the Store
 
@@ -115,11 +94,32 @@ After making the app unavailable, you'll still see it in your dashboard. If you 
 
 ## Removing packages for a previously-supported device family
 
-If you remove all packages for a certain device family that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.
+If you remove all packages for a certain [device family](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.
 
-When you publish a submission that removes packages for a device family that your app previously supported, new customers will not be able to acquire the app on that device family. You can always publish another update later to provide packages for that device family again.
+When you publish a submission that removes all of the packages that could run on a device family that your app previously supported, new customers will not be able to acquire the app on that device family. You can always publish another update later to provide packages for that device family again.
 
 Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.
+
+
+<a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
+
+## Adding packages for Windows 10 to a previously-published app
+
+If you have an app in the Store that targets Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, customers who already had your app and are now on Windows 10 will get your UWP package as an update from the Store. The UWP package will also be available for new acquisitions by customers on Windows 10.
+
+> [!NOTE]
+> Once a customer on Windows 10 gets your UWP package, you can't roll that customer back to using a package for any previous OS version. 
+
+Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you include (or packages for those OS versions that you have previously published). For more info, see [Package version numbering](package-version-numbering.md).
+
+For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).
+
+> [!IMPORTANT]
+> Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
+> 
+> This happens even if you have excluded a specific device family in the [Device family availability](device-family-availability.md) step of your submission, since that section only applies to new acquisitions. If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your appx manifest to include only the particular device family you wish to support.
+> 
+> For example, say you want your Windows 8 and Windows 8.1 customers who have upgraded to a Windows 10 desktop device to get your new UWP app, but you want any Windows Phone customers who are now on Windows 10 Mobile devices to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
 
 
 ## Maintaining package compatibility for Windows Phone 8.1
