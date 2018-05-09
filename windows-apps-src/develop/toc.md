@@ -531,7 +531,7 @@
 #### [Available UWP APIs](../porting/desktop-to-uwp-supported-api.md)
 ### [Extend with UWP](../porting/desktop-to-uwp-extend.md)
 ### [Run, debug, and test](../porting/desktop-to-uwp-debug.md)
-#### [Test for Windows 10 S](../porting/desktop-to-uwp-test-windows-s.md)
+#### [Test for Windows 10 in S mode](../porting/desktop-to-uwp-test-windows-s.md)
 ### [Distribute](../porting/desktop-to-uwp-distribute.md)
 ### [Behind the scenes](../porting/desktop-to-uwp-behind-the-scenes.md)
 ### [Known issues](../porting/desktop-to-uwp-known-issues.md)
