@@ -20,6 +20,7 @@ This section provides guidance for creating Universal Windows Platform (UWP) app
 |Topic |Description |
 |------|------------|
 | [Getting Started](pos-barcodescanner-get-started.md)  |  |
-| [Camera Barcode Scanner](pos-camerabarcode.md) | Beginning with Windows 10, version 1803, you can read barcodes through a standard camera lens from a Universal Windows Application. |
+| [Working with symbologies](pos-barcodescanner-symbologies.md) | Learn how to determine the  barcode types a barcode scanner supports and control which barcode types are recognized by the barcode scanner from your application. |
+| [Camera Barcode Scanner](pos-camerabarcode.md) | Read barcodes through a standard camera lens from a Universal Windows Platform application. Requires Windows 10 April 2018 Update (build 17134 or later). |
 |
  
