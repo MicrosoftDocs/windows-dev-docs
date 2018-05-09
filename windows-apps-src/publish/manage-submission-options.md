@@ -3,7 +3,7 @@ author: jnHs
 Description: Manage submission options such as publishing hold options, notes for certification, and more.
 title: Manage submission options
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,26 +18,26 @@ The **Submission options** page of the app submission process is where you can p
 
 ## Publishing hold options
 
-By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the  [Schedule](configure-precise-release-scheduling.md) section of the **Pricing and availability** page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below.
+By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the  [Schedule](configure-precise-release-scheduling.md) section of the **Pricing and availability** page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below. 
 
 
 ### Publish your submission as soon as it passes certification (or per dates you specify)
 
 **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** is the default selection, and means that your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [Schedule](configure-precise-release-scheduling.md) section of the **Pricing and availability** page.   
 
-For most submissions, we recommend leaving the **Publishing hold options** section set to this option. If you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Leaving this section set to the default option will not cause the submission to be published earlier than the date(s) that you set in the **Schedule** section. The dates you selected in the **Schedule** section will be used to determine when your app becomes available to customers in the Store.
+For most submissions, we recommend leaving the **Publishing hold options** section set to this option. If you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Leaving this section set to the default option will not cause the submission to be published earlier than the date(s) that you set in the **Schedule** section. The dates you selected in the **Schedule** section will be used to determine when your product becomes available to customers in the Store.
 
 
 ### Publish your submission manually
 
-If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Don't publish this submission until I select Publish now**. Choosing this option means that your submission won’t be published until you indicate that it should be. After your app passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date in the same manner as described below.
+If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Don't publish this submission until I select Publish now**. Choosing this option means that your submission won’t be published until you indicate that it should be. After your submission passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date in the same manner as described below.
 
 
 ### Start publishing your submission on a certain date
 
 Choose **Start publishing this submission on** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published. 
 
-You can change this release date after submitting your app, as long as it hasn’t entered the Publish step yet. 
+You can change this release date after submitting your product, as long as it hasn’t entered the Publish step yet. 
  
 As noted earlier, if you want to specify certain dates for your submission to be published, use the **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** and leave the **Publishing hold options** set to the default selection. Using the **Start publishing this submission on** option means that your submission will not start the publishing process until that date, but delays during certification or publishing could cause the actual release date to be later than the date you select. 
 

@@ -44,7 +44,7 @@ The color of any inactive tabs is updated and maintained by the system based on 
 
 By default, the selected and active tab respects the system theme color specified by the user in Windows Settings. You can customize tab color for your app only when the tab is active.
 
-![Tab states in Sets](images/tab_states.jpg)
+![Tab states in Sets](images/sets-tab-states.jpg)
 
 ### Coloring of active tabs
 
@@ -117,6 +117,10 @@ In you app manifest, specify an alternate-form unplated icon in addition to your
 
 If you don't specify an alternate icon in the app manifest, the system will re-plate your the tile icon with the tab color and use that.
 
+![Icons used in Sets](images/sets-icons.png)
+
+> The same icon is used in the task bar and in the app tab.
+
 ## Restore previous Sets with user activities
 
 A benefit of Sets is that it lets your users restore previously open tabs for apps and web content when they launch an app or open a document. (See the video in the [Introducing Sets](https://insider.windows.com/en-us/articles/introducing-sets/) blog post for more info.) This is enabled through _user activities_.
@@ -156,6 +160,10 @@ If your app uses the system back button rather than an in-app button, the system
 - If your app is in a Set, then the back button is rendered inside the system back bar.
 
 The system back bar is a "band" that is inserted between the tab band and the app's content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height that is large enough to ensure adequate touch target size for the back button.
+
+![The system back bar in Sets](images/sets-system-back-bar.png)
+
+> The system back bar shown in an app.
 
 The system back bar is displayed dynamically, based on back button visibility. When the back button is visible, the system back bar is inserted, shifting app content down below the tab band. When the back button is hidden, the system back bar is dynamically removed, shifting app content up to meet the tab band.
 
