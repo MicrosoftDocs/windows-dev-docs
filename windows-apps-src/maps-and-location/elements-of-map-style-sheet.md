@@ -70,6 +70,7 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | >>> sand                     | [MapElement](#mapelement) | Sandy areas like beaches. |
 | >>> shoppingCenter           | [MapElement](#mapelement) | Areas of ground allocated for malls or other shopping centers. |
 | >>> stadium                  | [MapElement](#mapelement) | Area of a stadium. |
+| >>> underground              | [MapElement](#mapelement) | Underground areas (For example: a metro station footprint). |
 | >>> vegetation               | [MapElement](#mapelement) | Forests, grassy areas, etc. |
 | >>>> forest                  | [MapElement](#mapelement) | Areas of forest land. |
 | >>>> golfCourse              | [MapElement](#mapelement) |  |
@@ -220,4 +221,4 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 | Property                     | Type    | Description                                                                                                                      |
 |------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------|
-| renderAsSurface              | Bool    | A flag that indicates that a 3D model should be rendered without depth fading against the ground, like a building.               |
+| renderAsSurface              | Bool    | A flag that indicates that a 3D model should be rendered like a building--without depth fading against the ground.               |

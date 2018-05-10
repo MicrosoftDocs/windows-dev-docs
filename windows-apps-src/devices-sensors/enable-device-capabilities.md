@@ -44,6 +44,7 @@ Some types of devices, such as printers, scanners, and sensors, don't need to be
 | Objects 3D | ![Available in Manifest Designer](images/ap-tools.png) | Provides programmatic access to the user's **3D Objects**, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in 3D apps and games that need to access the entire **3D Objects** library. | 
 | Phone Call | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to access all of the phone lines on the device and perform the following functions: place a call on the phone and show the system dialer without prompting the user; access line-related metadata; access line-related triggers. Allows the user-selected spam filter app to set and check the block list and call origin information. | 
 | Pictures Library | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files in the **Pictures Library** for the local PC and **HomeGroup** PCs. | 
+| Point of Service |  | Provides access to Point of Service peripherals. This capability is required to access APIs in the [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) namespace. | 
 | Private Networks (Client &amp; Server) | ![Available in Manifest Designer](images/ap-tools.png) | Provides inbound and outbound access to Intranet networks that have an authenticated domain controller, or that the user has designated as either home or work networks. Inbound access to critical ports is always blocked. | 
 | Proximity | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to connect to devices in close proximity to the PC via near-field communication (NFC). Near-field proximity may be used to send files or communicate with an app on the nearby device. | 
 | Removable Storage | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files on removable storage devices. The app can only access the file types on removable storage that are defined in the manifest using the **File Type Associations** declaration. The app can't access removable storage on **HomeGroup** PCs. | 
@@ -56,7 +57,6 @@ Some types of devices, such as printers, scanners, and sensors, don't need to be
 | Human Interface Device (HID) | | Provides access to Human Interface Devices (HID). This capability requires child elements. For more info, see [How to specify device capabilities for HID](https://msdn.microsoft.com/library/windows/apps/Dn263091). | 
 | Bluetooth GATT | | Provides access to Bluetooth LE devices through a collection of primary services, included services, characteristics, and descriptors. This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). | 
 | Bluetooth RFCOMM |  | Provides access to APIs that support the Basic Rate/Extended Data Rate (BR/EDR) transport and also lets your UWP app access a device that implements Serial Port Profile (SPP). This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
-| pointOfService |  | Provides access to Point of Service (POS) barcode scanners and magnetic stripe readers. This feature is not supported on Windows Phone. | 
 
 ## Use the Windows Runtime API for communicating with your device
 
@@ -74,5 +74,5 @@ The following table connects some of the capabilities to Windows Runtime APIs.
 | HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
-| Point of Service (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
+| Point of Service         | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
 

@@ -199,8 +199,10 @@ namespace AdaptiveStreaming_RS1
 
             MyLogMessageFunction("download completed for: " + args.ResourceType + " - " +
              args.ResourceUri +
-             " – RequestId:" + args.RequestId + 
-             " – Position:" + args.Position + 
+             " – RequestId:" + args.RequestId +
+             " – Position:" + args.Position +
+             " - Duration:" + args.ResourceDuration +
+             " - ContentType:" + args.ResourceContentType +
              " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
              " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
              " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
@@ -218,7 +220,9 @@ namespace AdaptiveStreaming_RS1
              " - " + args.ResourceUri +
              " – Error:" + args.ExtendedError.HResult +
              " - RequestId" + args.RequestId + 
-             " – Position:" + args.Position + 
+             " – Position:" + args.Position +
+             " - Duration:" + args.ResourceDuration +
+             " - ContentType:" + args.ResourceContentType +
              " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
              " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
              " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
@@ -251,6 +255,7 @@ namespace AdaptiveStreaming_RS1
             MySendTelemetryFunction(args.RequestId, args.Position,
                                     args.DiagnosticType, args.SegmentId,
                                     args.ResourceType, args.ResourceUri,
+                                    args.ResourceDuration, args.ResourceContentType,
                                     args.ResourceByteRangeOffset,
                                     args.ResourceByteRangeLength, 
                                     args.Bitrate,
@@ -267,6 +272,7 @@ namespace AdaptiveStreaming_RS1
         private void MySendTelemetryFunction(int? requestId, TimeSpan? position,
             AdaptiveMediaSourceDiagnosticType? type, ulong? segmentId,
             AdaptiveMediaSourceResourceType? resourceType, Uri resourceUri,
+            TimeSpan? duration, string resourceContentType,
             ulong? byteRangeOffset, ulong? byteRangeLength, uint? bitrate, Exception extendedError)
         {
 
