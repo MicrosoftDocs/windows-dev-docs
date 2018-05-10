@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
 title: Upload app packages
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 5/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,9 +27,7 @@ To upload packages, drag them into the upload field or click to browse your file
 
 If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
 
-If we detect issues with your packages while validating them, you'll need to remove the package, fix the issue, and then try uploading it again. For more info, see [Resolve package upload errors](resolve-package-upload-errors.md).
-
-You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
+If we detect errors with a package while validating it, we'll display a message to let you know what's wrong. You'll need to remove the package, fix the issue, and then try uploading it again. You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
 
 
 ## Device family availability

@@ -15,7 +15,7 @@ ms.localizationpriority: high
 
 # Publish Windows apps and games  
  
-You can use the Windows Dev Center dashboard to publish your apps and games to the Microsoft Store. <a href="//developer.microsoft.com/store/register">Sign up today!</a>
+You can use the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. <a href="//developer.microsoft.com/store/register">Sign up today!</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -118,8 +118,8 @@ You can use the Windows Dev Center dashboard to publish your apps and games to t
                 </div>
                 <div class="cardText">
                     <h3>Promote your apps</h3>   
-                    <p><a href="generate-promotional-codes.md">Generate promotional codes</a></p>
                     <p><a href="create-an-ad-campaign-for-your-app.md">Create ad campaigns</a></p>
+                    <p><a href="generate-promotional-codes.md">Generate promotional codes</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">Offer sale pricing</a></p>
                 </div>
             </div>

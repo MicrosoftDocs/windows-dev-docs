@@ -64,7 +64,7 @@ Use the contact card when you want to display contact info for a contact. If you
 1. Typically, you show a contact card because the user clicked something: a button or perhaps the [person picture control](person-picture.md). We don't want to hide the element. To avoid hiding it, we need to create a [Rect](/uwp/api/windows.foundation.rect) that describes the location and size of the element. 
 
     Let's create a utility function that does that for us--we'll use it later.
-    ``` C#
+    ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
     { 
@@ -77,7 +77,7 @@ Use the contact card when you want to display contact info for a contact. If you
     ```
 
 2. Determine whether you can display the contact card by calling the [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) method. If it's not supported, display an error message. (This example assumes that you'll be showing the contact card in response to a click event .)
-    ``` C#
+    ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
     { 
@@ -88,13 +88,13 @@ Use the contact card when you want to display contact info for a contact. If you
 
 3. Use the utility function you created in step 1 to get the bounds of the control that fired the event (so we don't cover it up with the contact card).
 
-    ``` C#
+    ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
 4. Get the [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact. 
 
-    ``` C#
+    ```csharp
                 // Retrieve the contact to display
                 var contact = new Contact(); 
                 var email = new ContactEmail(); 
@@ -103,7 +103,7 @@ Use the contact card when you want to display contact info for a contact. If you
     ```
 5. Show the contact card by calling the  [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_) method. 
 
-    ``` C#
+    ```csharp
             ContactManager.ShowFullContactCard(
                 contact, selectionRect, Placement.Default); 
         } 
@@ -112,7 +112,7 @@ Use the contact card when you want to display contact info for a contact. If you
 
 Here's the complete code example:
 
-``` C#
+```csharp
 // Gets the rectangle of the element 
 public static Rect GetElementRect(FrameworkElement element) 
 { 
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 To show the full contact card, call the [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) method instead of [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_).
 
-``` C#
+```csharp
 private void onUserClickShowContactCard() 
 { 
    

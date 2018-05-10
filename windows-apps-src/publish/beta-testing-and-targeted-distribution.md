@@ -4,7 +4,7 @@ Description: The Windows Dev Center dashboard gives you the option to make your 
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 05/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,9 +28,9 @@ Whichever method you choose, here are some things to keep in mind as you beta te
 
 ## Private audience
 
-If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](choose-visibility-options.md) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link.
+If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](choose-visibility-options.md) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link. 
 
-The **Private audience** option can be used with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
+The **Private audience** option can can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
 
 For more info, see [Private audience](choose-visibility-options.md#audience).
 
@@ -46,9 +46,9 @@ For more info, see [Package flights](package-flights.md).
 
 <span id="hide" />
 
-### Hiding the app in the Store and using promotional codes
+## Hiding the app in the Store and using promotional codes
 
-This option offers another way to limit distribution of an app to only a certain group of testers, without first publishing a submission that's broadly available. However, unlike the private audience option, it could be possible for anyone to see your app’s listing if they have the direct link. If confidentiality is critical for your submission, we recommend publishing to a private audience instead.
+This option offers another way to limit distribution of an app to only a certain group of testers, while preventing anyone else from discovering your app in the Store (or acquiring it without a promotional code). However, unlike the private audience option, it could be possible for anyone to see your app’s listing if they have the direct link. If confidentiality is critical for your submission, we recommend publishing to a private audience instead.
 
 Hiding the app and using promotional codes can be used with apps targeting any OS version, but your testers can only get the app if they are running Windows 10.
 
@@ -59,7 +59,7 @@ To use this option:
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 
 
-### Targeted distribution with a link to your app's listing
+## Targeted distribution with a link to your app's listing
 
 Unlike the options described above, this option works for customers on Windows Phone 8.1 as well as Windows 10 (though not on Windows 8.x). No customers will be able to find the app by searching or browsing the Store, but anyone with the direct link to its Store listing can download it on a device running Windows Phone 8.1 or earlier, or on Windows 10. Keep in mind that in order for your testers to download the app at no cost, you must set its price to **Free**.
 
@@ -69,7 +69,7 @@ To use this option:
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 
 
-### Targeted distribution to Windows Phone customers with specified email addresses
+## Targeted distribution to Windows Phone customers with specified email addresses
 
 > [!IMPORTANT]
 > This option is not available for new submissions. If you had previously selected this option for an app targeting Windows Phone 8.1 or earlier, you will be able to continue to use it for that app. You can make changes to the list of testers (up to 10,000) by creating a new submission. 
