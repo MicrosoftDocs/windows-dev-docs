@@ -22,7 +22,7 @@ Starting with the Windows Insider Preview, the Sets feature is available to your
 In this article, we go over the areas where you might want to optimize your app to provide the best experience in the Sets UI.
 
 > [!TIP]
-> For more info about Sets, see the [Introducing Sets](https://insider.windows.com/en-us/articles/introducing-sets/) blog post.
+> For more info about Sets, see the [Introducing Sets](https://insider.windows.com/en-us/articles/introducing-sets/) blog post and the [Developing for Sets](https://developer.microsoft.com/events/build/content/developing-for-sets-on-windows-10) talk from Microsoft Build 2018.
 
 ## Customizing tab visuals
 
