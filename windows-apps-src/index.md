@@ -114,7 +114,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                             <a href="packaging/index.md">Packaging apps</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP Community Toolkit</a>
+                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a>
                         </p>
                         <p>
                             <a href="porting/index.md">Porting apps to Windows 10</a>
