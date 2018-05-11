@@ -119,7 +119,12 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## If you're authoring a runtime class in a Windows Runtime Component
-If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class. We recommend that you declare each runtime class in its own Interface Definition Language (IDL) (`.idl`) file. Here's an example.
+If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class.
+
+> [!TIP]
+> We recommend that you declare each runtime class in its own Interface Definition Language (IDL) (.idl) file, in order to optimize build performance when you edit an IDL file, and for logical correspondence of an IDL file to its generated source code files. Visual Studio merges all of the resulting `.winmd` files into a single file with the same name as the root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
+
+Here's an example.
 
 ```idl
 // MyRuntimeClass.idl

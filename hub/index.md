@@ -452,6 +452,25 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
+                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/illustrations/dynamics-gdpr-center.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows Privacy</h3>
+                                                <p>Learn about privacy in Windows and get ready for General Data Protection Regulation (GDPR).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
                             <a href="https://docs.microsoft.com/en-us/microsoft-edge/deploy/">
                                 <div class="cardSize">
                                     <div class="cardPadding">

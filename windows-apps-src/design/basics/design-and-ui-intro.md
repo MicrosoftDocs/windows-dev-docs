@@ -70,7 +70,7 @@ Since UWP apps automatically scale to all devices, designing a UWP app for any d
 
 :::row:::
     :::column:::
-        You can think of your app' s UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
+        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::

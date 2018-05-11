@@ -12,14 +12,14 @@ ms.localizationpriority: medium
 ---
 
 # [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-&nbsp;
-> [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
-
 Introduced in version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
 
 C++/WinRT is for any developer interested in writing beautiful and fast code for Windows. Here's why.
 
 ## The case for C++/WinRT
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
+
 The C++ programming language is used both in the enterprise *and* independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
 
 From a language point of view, C++ has always been about authoring and consuming abstractions that are both type-rich and lightweight. But the language has changed radically since the raw pointers, raw loops, and painstaking memory allocation and releasing of C++98. Modern C++ (from C++11 onward) is about clear expression of ideas, simplicity, readability, and a much lower likelihood of introducing bugs.

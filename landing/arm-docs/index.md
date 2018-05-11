@@ -23,12 +23,12 @@ Watch and learn how Windows 10 runs on ARM.
         <h3>Building ARM64 Win32 C++ Apps</h3><p>Learn how to install the ARM64 tools for Visual Studio. Then we’ll walk you through the steps of creating and compiling a new ARM 64 project.</p>
     </li>
     <li>
-        <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Windows Community Standup with Kevin Gallo</h3><p>Get deep understanding of how Windows 10 runs on ARM64, and get a feel for apps and experiences on this platform.</p>
+        <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
+        <h3>Build 2018 Windows 10 on ARM for developers</h3><p>Learn about the Windows 10 on ARM devices, how the magic of x86 emulation works, and finally how to submit and build apps for Windows 10 on ARM. We will be showing how to build ARM64 apps for desktop and UWP.</p>
     </li>
     <li>
-        <a href="https://channel9.msdn.com/Events/Build/2017/P4171"><img alt="Build 2017 Windows 10 on ARM demo video" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>Windows 10 on ARM at Build 2017</h3><p>Hari Pulapaka and Arun Kishan demo Windows 10 on ARM and explain how x86 apps run on it with near-native performance.</p>
+        <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
+        <h3>Windows Community Standup with Kevin Gallo</h3><p>Get deep understanding of how Windows 10 runs on ARM64, and get a feel for apps and experiences on this platform.</p>
     </li>
 </ul>
 
