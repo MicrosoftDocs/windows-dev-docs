@@ -12,10 +12,13 @@ ms.localizationpriority: medium
 ---
 
 # Concurrency and asynchronous operations with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+> [!NOTE]
+> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 
 ## Asynchronous operations and Windows Runtime "Async" functions
-Any Windows Runtime API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function (with a name ending in "Async"). The implementation of an asynchronous function initiates the work on another thread and returns immediately with an object that represents the asynchronous operation. When the asynchronous operation completes, that returned object contains any value that resulted from the work. The **Windows::Foundation** Windows Runtime namespace contains four types of asynchronous operation object, and they are
+Any Windows Runtime API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function (with a name ending in "Async"). The implementation of an asynchronous function initiates the work on another thread and returns immediately with an object that represents the asynchronous operation. When the asynchronous operation completes, that returned object contains any value that resulted from the work. The **Windows::Foundation** Windows Runtime namespace contains four types of asynchronous operation object.
 
 - [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
 - [**IAsyncActionWithProgress&lt;TProgress&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_),
@@ -182,23 +185,94 @@ int main()
     winrt::init_apartment();
 
     auto firstTitleOp = RetrieveFirstTitleAsync();
-    // do other work.
+    // Do other work here.
     std::wcout << firstTitleOp.get() << std::endl;
 }
 ```
 
 ## Parameter-passing
-For synchronous functions, you should use `const&` parameters by default. That will avoid copies and interlocked overhead. But your coroutines should use pass-by-value to ensure that they capture by value and avoid lifetime issues.
-
+For synchronous functions, you should use `const&` parameters by default. That will avoid the overhead of copies (which involve reference counting, and that means interlocked increments and decrements). But your coroutines should use pass-by-value to ensure that they capture by value and avoid lifetime issues. It's also arguable that passing by const value is good practice. It won't have any effect on the value being copied, but it makes the intent extra-clear and helps if you inadvertently modify the copy.
+	
 ```cppwinrt
-// synchronous function. 
+// synchronous function.
 void DoWork(Param const& value);
 
-// coroutine 
+// coroutine
 IASyncAction DoWorkAsync(Param value);
+
+// coroutine with strictly unnecessary const (but arguably good practice).
+IASyncAction DoWorkAsync(Param const value);
 ```
 
-For more details, and a code example, see [Standard arrays and vectors](concurrency.md#standard-arrays-and-vectors).
+For more details, and a code example, see [Standard arrays and vectors](std-cpp-data-types.md#standard-arrays-and-vectors).
+
+## Offloading work onto the Windows thread pool
+Before you do compute-bound work in a coroutine, you need to return execution to the caller so that the caller isn't blocked (in other words, introduce a suspension point). If you're not already doing that by `co-await`-ing some other operation, then you can `co-await` the **winrt::resume_background** function. That returns control to the caller, and then immediately resumes execution on a thread pool thread.
+
+The thread pool being used in the implementation is the low-level [Windows thread pool](https://msdn.microsoft.com/library/windows/desktop/ms686766), so it's optimially efficient.
+
+```cppwinrt
+IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
+{
+    co_await winrt::resume_background(); // Return control; resume on thread pool.
+
+    uint32_t result;
+    for (uint32_t y = 0; y < height; ++y)
+    for (uint32_t x = 0; x < width; ++x)
+    {
+        // Do compute-bound work here.
+    }
+    co_return result;
+}
+```
+
+## Programming with thread affinity in mind
+This scenario expands on the previous one. You offload some work onto the thread pool, but then you want to display progress in the user interface (UI).
+
+```cppwinrt
+IAsyncAction DoWorkAsync(TextBlock textblock)
+{
+    co_await winrt::resume_background();
+    // Do compute-bound work here.
+
+    textblock.Text(L"Done!"); // Error: TextBlock has thread affinity.
+}
+```
+
+The code above throws a [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) exception, because a **TextBlock** must be updated from the thread that created it, which is the UI thread. One solution is to capture the thread context within which our coroutine was originally called. Instantiate a **winrt::apartment_context** object, and then `co_await` it.
+
+```cppwinrt
+IAsyncAction DoWorkAsync(TextBlock textblock)
+{
+    winrt::apartment_context ui_thread; // Capture calling context.
+
+    co_await winrt::resume_background();
+    // Do compute-bound work here.
+
+    co_await ui_thread; // Switch back to calling context.
+
+    textblock.Text(L"Done!"); // Ok if we really were called from the UI thread.
+}
+```
+
+As long as the coroutine above is called from the UI thread that created the **TextBlock**, then this technique works. There will be many cases in your app where you're certain of that.
+
+> [!NOTE]
+> **The following code example relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+
+For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can install the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later. Then, you can `co-await` the **winrt::resume_foreground** function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
+
+```cppwinrt
+IAsyncAction DoWorkAsync(TextBlock textblock)
+{
+    co_await winrt::resume_background();
+    // Do compute-bound work here.
+
+    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+
+    textblock.Text(L"Done!"); // Guaranteed to work.
+}
+```
 
 ## Important APIs
 * [concurrency::task](https://msdn.microsoft.com/library/hh750113)

@@ -2,7 +2,7 @@
 title: Troubleshooting x86 desktop apps
 description: Common issues with x86 apps when running on ARM, and how to fix them.
 ms.author: misatran
-ms.date: 02/15/2018
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,12 +11,15 @@ ms.localizationpriority: medium
 ---
 
 # Troubleshooting x86 desktop apps
+>[!IMPORTANT]
+> The ARM64 SDK is now available as part of Visual Studio 15.8 Preview 1. We recommend that you recompile your app to ARM64 so that your app runs at full native speed. For more info, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post.
+
 If an x86 desktop app doesn't work the way it does on an x86 machine, here's some guidance to help you troubleshoot.
 
 |Issue|Solution|
 |-----|--------|
 | Your app relies on a driver that isn't designed for ARM. | Recompile your x86 driver to ARM64. See [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
-| Your app is available only for x64. | If you develop for Microsoft Store, submit an ARM version of your app. For more info, see [App package architectures](../packaging/device-architecture.md). If you're a Win32 developer, distribute an x86 version of your app. |
+| Your app is available only for x64. | If you develop for Microsoft Store, submit an ARM version of your app. For more info, see [App package architectures](../packaging/device-architecture.md). If you're a Win32 developer, we recommend you recompile your app to ARM64. For more info see [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Your app uses an OpenGL version later than 1.1 or requires hardware-accelerated OpenGL. | Use the DirectX mode of the app, if it's available. x86 apps that use DirectX 9, DirectX 10, DirectX 11, and DirectX 12 will work on ARM. For more info, see [DirectX Graphics and Gaming](https://msdn.microsoft.com/en-us/library/windows/desktop/ee663274(v=vs.85).aspx). |
 | Your x86 app does not work as expected. | Try using the Compatibility Troubleshooter by following guidance from [Program Compatibility Troubleshooter on ARM](apps-on-arm-program-compat-troubleshooter.md). For some other troubleshooting steps, see the [Troubleshooting x86 apps on ARM](apps-on-arm-troubleshooting-x86.md) article. |
 
@@ -35,9 +38,7 @@ An app may place registry keys under the native registry view, or perform functi
 All kernel-mode drivers, [User-Mode Driver Framework (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) drivers, and print drivers must be compiled to match the architecture of the OS. If an x86 app has a driver, then that driver must be recompiled for ARM64. The x86 app may run fine under emulation however, its driver will need to be recompiled for ARM64 and any app experience that depends on the driver will not be available. For more info about compiling your driver for ARM64, see [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
 ## Shell extensions 
-Apps that try to hook Windows components or load their DLLs into Windows processes will need to recompile those DLLs to match the architecture of the system; i.e. ARM64. Typically, these are used by input method editors (IMEs), assistive technologies, and shell extension apps (e.g. to show cloud storage icons in Explorer or a right click Context menu). 
-
-The ARM64 Win32 SDK support will be coming soon. Also, see [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
+Apps that try to hook Windows components or load their DLLs into Windows processes will need to recompile those DLLs to match the architecture of the system; i.e. ARM64. Typically, these are used by input method editors (IMEs), assistive technologies, and shell extension apps (e.g. to show cloud storage icons in Explorer or a right click Context menu). To learn how to recompile your apps or DLLs to ARM64, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post. 
 
 ## Debugging
 To investigate your app's behavior in more depth, see [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
