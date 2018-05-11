@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # x:DeferLoadStrategy attribute
 
 > [!IMPORTANT]
-> Starting in Windows 10, version 1703 (Creators Update), **x:DeferLoadStrategy** is superceded by the [**x:Load attribute**](x-load-attribute.md). Using `x:Load="False"` is equivilent to `x:DeferLoadStrategy="Lazy"`, but provides the ability to unload the UI if required. See the [x:Load attribute](x-load-attribute.md) for more info.
+> Starting in Windows 10, version 1703 (Creators Update), **x:DeferLoadStrategy** is superseded by the [**x:Load attribute**](x-load-attribute.md). Using `x:Load="False"` is equivalent to `x:DeferLoadStrategy="Lazy"`, but provides the ability to unload the UI if required. See the [x:Load attribute](x-load-attribute.md) for more info.
 
 You can use **x:DeferLoadStrategy="Lazy"** to optimize the startup or tree creation performance of your XAML app. When you use **x:DeferLoadStrategy="Lazy"**, creation of an element and its children is delayed, which decreases startup time and memory costs. This is useful to reduce the costs of elements that are shown infrequently or conditionally. The element will be realized when it's referred to from code or VisualStateManager.
 
