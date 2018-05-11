@@ -4,7 +4,7 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
 ms.author: mcleans
-ms.date: 05/08/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -166,23 +166,23 @@ This section provides examples of interstitial ad scenarios that violate [policy
 
 ### Register the container for your native ad
 
-In your code, you must call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method of the **NativeAd** object to register the UI element that acts as a container for the native ad and optionally any specific controls that you want to register as clickable targets for the ad. This is required to properly track ad impressions and clicks.
+In your code, you must call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method of the **NativeAdV2** object to register the UI element that acts as a container for the native ad and optionally any specific controls that you want to register as clickable targets for the ad. This is required to properly track ad impressions and clicks.
 
 There are two overloads for the **RegisterAdContainer** method that you can use:
 
-* If you want the entire container for all the individual native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement)](https://msdn.microsoft.com/library/windows/apps/mt809188.aspx) method and pass the container control to the method. For example, if you display all of the native ad elements in separate controls that are all hosted in a **StackPanel** and you want the entire **StackPanel** to be clickable, pass the **StackPanel** to this method.
+* If you want the entire container for all the individual native ad elements to be clickable, call the **RegisterAdContainer(FrameworkElement)** method and pass the container control to the method. For example, if you display all of the native ad elements in separate controls that are all hosted in a **StackPanel** and you want the entire **StackPanel** to be clickable, pass the **StackPanel** to this method.
 
-* If you want only certain native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))](https://msdn.microsoft.com/library/windows/apps/mt809189.aspx) method. Only the controls that you pass to the second parameter will be clickable.
+* If you want only certain native ad elements to be clickable, call the **RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))** method. Only the controls that you pass to the second parameter will be clickable.
 
 ### Required native ad elements
 
-At a minimum, you must always show the following native ad elements to the user in your native ad design. If you fail to include these elements, you may see poor performance and low yields for your ad unit.
+At a minimum, you must always show the following native ad elements provided by properties of the **NativeAdV2** object to the user in your native ad design. If you fail to include these elements, you may see poor performance and low yields for your ad unit.
 
-1. Always display the title of the native ad (available in the [Title](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.title.aspx) property of the **NativeAd** object). Provide enough space to display at least 25 characters. If the title is longer, replace the additional text with an ellipsis.
+1. Always display the title of the native ad (available in the **Title** property). Provide enough space to display at least 25 characters. If the title is longer, replace the additional text with an ellipsis.
 2. Always display least one of the following elements to help differentiate the native ad experience from the rest of your app and clearly call out that the content is provided by an advertiser:
-  * The distinguishable *ad* icon (available in the [AdIcon](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.adicon.aspx) property of the **NativeAd** object). This icon is supplied by Microsoft.
-  * The *sponsored by* text (available in the [SponsoredBy](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.sponsoredby.aspx) property of the **NativeAd** object). This text is supplied by the advertiser.
-  * As an alternative to the *sponsored by* text, you can choose to display some other text that helps differentiate the native ad experience from the rest of your app, such as "Sponsored content", "Promotional content", "Recommended content", etc.
+    * The distinguishable *ad* icon (available in the **AdIcon** property). This icon is supplied by Microsoft.
+    * The *sponsored by* text (available in the **SponsoredBy** property). This text is supplied by the advertiser.
+    * As an alternative to the *sponsored by* text, you can choose to display some other text that helps differentiate the native ad experience from the rest of your app, such as "Sponsored content", "Promotional content", "Recommended content", etc.
 
 ### User experience
 
@@ -190,11 +190,11 @@ Your native ad should be clearly delineated from the rest of your app and have s
 
 ### Description
 
-If you choose to show the description for the ad (available in the [Description](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.description.aspx) property of the **NativeAd** object), provide enough space to display at least 75 characters. We recommend that you use an animation to show the full content of the ad description.
+If you choose to show the description for the ad (available in the **Description** property of the **NativeAdV2** object), provide enough space to display at least 75 characters. We recommend that you use an animation to show the full content of the ad description.
 
 ### Call to action
 
-The *call to action* text (available in the [CallToAction](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.calltoaction.aspx) property of the **NativeAd** object) is a critical component of the ad. If you choose to show this text, follow these guidelines:
+The *call to action* text (available in the **CallToAction** property of the **NativeAdV2** object) is a critical component of the ad. If you choose to show this text, follow these guidelines:
 
 * Always display the *call to action* text to the user on a clickable control such as a button or hyperlink.
 * Always display the *call to action* text in its entirety.
