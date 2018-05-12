@@ -69,7 +69,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-In `BankAccount.cpp`, implement the functions like this.
+In `BankAccount.cpp`, implement the functions as shown in the code example below. In C++/WinRT, an IDL-declared event is implemented as a set of overloaded functions (similar to the way a property is implemented as a pair of overloaded get and set functions). One overload takes a delegate to be registered, and returns a token. The other takes a token, and revokes the registration of the associated delegate.
 
 ```cppwinrt
 // BankAccount.cpp
