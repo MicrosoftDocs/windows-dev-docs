@@ -4,7 +4,7 @@ ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: Learn how to catch AdControl errors in your app.
 title: Error handling in XAML/C# walkthrough
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Error handling in XAML/C# walkthrough
 
-This walkthrough demonstrates how to catch ad-related errors in your app. This walkthrough uses an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), but the general concepts in it also apply to [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) and [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx).
+This walkthrough demonstrates how to catch ad-related errors in your app. This walkthrough uses an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.
 
 These examples assume that you have a XAML/C# app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md). 
 

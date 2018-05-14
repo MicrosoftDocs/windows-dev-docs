@@ -4,7 +4,7 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Learn how to add application ID and ad unit ID values from the Windows Dev Center dashboard to your app before you submit your app to the Store.
 title: Set up ad units in your app
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,11 +14,17 @@ ms.localizationpriority: medium
 
 # Set up ad units in your app
 
-Every ad control in your Universal Windows Platform (UWP) app has a corresponding *ad unit* that is used by our services to serve ads to the control. Each ad unit consists of an *ad unit ID* and *application ID* that you must assign to the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx),  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), or [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) in your app.
+Every ad control in your Universal Windows Platform (UWP) app has a corresponding *ad unit* that is used by our services to serve ads to the control. Each ad unit consists of an *ad unit ID* and *application ID* that you must assign to code in your app.
 
 We provide [test ad unit values](#test-ad-units) that you can use during testing to confirm that your app shows test ads. These test values can only be used in a test version of your app. If you try to use test values in your app after you publish it, your live app not receive ads.
 
 After you finish testing your UWP app and you are ready to submit it to Windows Dev Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](../publish/in-app-ads.md) page in the Windows Dev Center dashboard and update your app code to use the application ID and ad unit ID values for this ad unit.
+
+For more information about assigning the application ID and ad unit ID values in your app's code, see the following articles:
+* [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
+* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Interstitial ads](../monetize/interstitial-ads.md)
+* [Native ads](../monetize/native-ads.md)
 
 <span id="test-ad-units" />
 
@@ -53,13 +59,11 @@ To get a live ad unit from the Dev Center dashboard and use it in your app:
     > [!NOTE]
     > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
-3.  Assign the **Application ID** and **Ad unit ID** values in your app's code:
-
-    * If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
-
-    * If your app shows interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
-
-    * If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
+3.  Assign the application ID and ad unit ID values in your app's code. For more information, see the following articles:
+    * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
+    * [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+    * [Interstitial ads](../monetize/interstitial-ads.md)
+    * [Native ads](../monetize/native-ads.md)
 
 <span id="manage" />
 

@@ -14,6 +14,9 @@ ms.localizationpriority: medium
 # Move to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) from C++/CX
 This topic shows how to port [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) code to its equivalent in C++/WinRT.
 
+> [!NOTE]
+> Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
+
 ## Parameter-passing
 When writing C++/CX source code, you pass C++/CX types as function parameters as hat (\^) references.
 
