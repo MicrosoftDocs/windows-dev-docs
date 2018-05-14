@@ -45,7 +45,7 @@ namespace NativeAdSamples
         //<AdReady>
         void MyNativeAd_AdReady(object sender, NativeAdReadyEventArgs e)
         {
-            NativeAdV2 nativeAd = (NativeAd)e;
+            NativeAdV2 nativeAd = e.NativeAd;
 
             // Show the ad icon.
             if (nativeAd.AdIcon != null)
@@ -85,9 +85,9 @@ namespace NativeAdSamples
             }
 
             // Add the call to action string to the button.
-            if (!string.IsNullOrEmpty(nativeAd.CallToAction))
+            if (!string.IsNullOrEmpty(nativeAd.CallToActionText))
             {
-                CallToActionButton.Content = nativeAd.CallToAction;
+                CallToActionButton.Content = nativeAd.CallToActionText;
                 CallToActionButton.Visibility = Visibility.Visible;
             }
 
