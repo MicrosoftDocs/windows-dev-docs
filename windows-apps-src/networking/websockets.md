@@ -115,6 +115,87 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 }
 ```
 
+```cppwinrt
+#include "winrt/Windows.Foundation.h"
+#include "winrt/Windows.Networking.Sockets.h"
+#include "winrt/Windows.Storage.Streams.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+#include <sstream>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+...
+
+private:
+	Windows::Networking::Sockets::MessageWebSocket m_messageWebSocket;
+	winrt::event_token m_messageReceivedEventToken;
+	winrt::event_token m_closedEventToken;
+
+public:
+	IAsyncAction OnNavigatedTo(NavigationEventArgs const&)
+	{
+		// In this example, we send/receive a string, so we need to set the MessageType to Utf8.
+		m_messageWebSocket.Control().MessageType(Windows::Networking::Sockets::SocketMessageType::Utf8);
+
+		m_messageReceivedEventToken = m_messageWebSocket.MessageReceived({ this, &MainPage::OnWebSocketMessageReceived });
+		m_closedEventToken = m_messageWebSocket.Closed({ this, &MainPage::OnWebSocketClosed });
+
+		try
+		{
+			co_await m_messageWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+			SendMessageUsingMessageWebSocketAsync(L"Hello, World!");
+		}
+		catch (winrt::hresult_error const& ex)
+		{
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
+			// Add additional code here to handle exceptions.
+		}
+	}
+
+private:
+	IAsyncAction SendMessageUsingMessageWebSocketAsync(std::wstring const& message)
+	{
+		DataWriter dataWriter{ m_messageWebSocket.OutputStream() };
+		dataWriter.WriteString(message);
+
+		co_await dataWriter.StoreAsync();
+		dataWriter.DetachStream();
+		std::wstringstream wstringstream;
+		wstringstream << L"Sending message using MessageWebSocket: " << message.c_str() << std::endl;
+		::OutputDebugString(wstringstream.str().c_str());
+	}
+
+	void OnWebSocketMessageReceived(Windows::Networking::Sockets::MessageWebSocket const&, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs const& args)
+	{
+		try
+		{
+			DataReader dataReader{ args.GetDataReader() };
+
+			dataReader.UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding::Utf8);
+			auto message = dataReader.ReadString(dataReader.UnconsumedBufferLength());
+			std::wstringstream wstringstream;
+			wstringstream << L"Message received from MessageWebSocket: " << message.c_str() << std::endl;
+			::OutputDebugString(wstringstream.str().c_str());
+			m_messageWebSocket.Close(1000, L"");
+		}
+		catch (winrt::hresult_error const& ex)
+		{
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
+			// Add additional code here to handle exceptions.
+		}
+	}
+
+	void OnWebSocketClosed(Windows::Networking::Sockets::IWebSocket const&, Windows::Networking::Sockets::WebSocketClosedEventArgs const& args)
+	{
+		std::wstringstream wstringstream;
+		wstringstream << L"WebSocket_Closed; Code: " << args.Code() << ", Reason: \"" << args.Reason().c_str() << "\"" << std::endl;
+		::OutputDebugString(wstringstream.str().c_str());
+		// Add additional code here to handle the WebSocket being closed.
+	}
+```
+
 ```cpp
 #include <ppltasks.h>
 #include <sstream>
@@ -193,87 +274,6 @@ private:
 	{
 		std::wstringstream wstringstream;
 		wstringstream << L"WebSocket_Closed; Code: " << args->Code << ", Reason: \"" << args->Reason->Data() << "\"" << std::endl;
-		::OutputDebugString(wstringstream.str().c_str());
-		// Add additional code here to handle the WebSocket being closed.
-	}
-```
-
-```cppwinrt
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Networking.Sockets.h"
-#include "winrt/Windows.Storage.Streams.h"
-#include "winrt/Windows.UI.Xaml.Navigation.h"
-#include <sstream>
-
-using namespace winrt;
-using namespace Windows::Foundation;
-using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Xaml::Navigation;
-...
-
-private:
-	Windows::Networking::Sockets::MessageWebSocket m_messageWebSocket;
-	winrt::event_token m_messageReceivedEventToken;
-	winrt::event_token m_closedEventToken;
-
-public:
-	IAsyncAction OnNavigatedTo(NavigationEventArgs const&)
-	{
-		// In this example, we send/receive a string, so we need to set the MessageType to Utf8.
-		m_messageWebSocket.Control().MessageType(Windows::Networking::Sockets::SocketMessageType::Utf8);
-
-		m_messageReceivedEventToken = m_messageWebSocket.MessageReceived({ this, &MainPage::OnWebSocketMessageReceived });
-		m_closedEventToken = m_messageWebSocket.Closed({ this, &MainPage::OnWebSocketClosed });
-
-		try
-		{
-			co_await m_messageWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
-			SendMessageUsingMessageWebSocketAsync(L"Hello, World!");
-		}
-		catch (winrt::hresult_error const& ex)
-		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
-			// Add additional code here to handle exceptions.
-		}
-	}
-
-private:
-	IAsyncAction SendMessageUsingMessageWebSocketAsync(std::wstring const& message)
-	{
-		DataWriter dataWriter{ m_messageWebSocket.OutputStream() };
-		dataWriter.WriteString(message);
-
-		co_await dataWriter.StoreAsync();
-		dataWriter.DetachStream();
-		std::wstringstream wstringstream;
-		wstringstream << L"Sending message using MessageWebSocket: " << message.c_str() << std::endl;
-		::OutputDebugString(wstringstream.str().c_str());
-	}
-
-	void OnWebSocketMessageReceived(Windows::Networking::Sockets::MessageWebSocket const&, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs const& args)
-	{
-		try
-		{
-			DataReader dataReader{ args.GetDataReader() };
-
-			dataReader.UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding::Utf8);
-			auto message = dataReader.ReadString(dataReader.UnconsumedBufferLength());
-			std::wstringstream wstringstream;
-			wstringstream << L"Message received from MessageWebSocket: " << message.c_str() << std::endl;
-			::OutputDebugString(wstringstream.str().c_str());
-			m_messageWebSocket.Close(1000, L"");
-		}
-		catch (winrt::hresult_error const& ex)
-		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
-			// Add additional code here to handle exceptions.
-		}
-	}
-
-	void OnWebSocketClosed(Windows::Networking::Sockets::IWebSocket const&, Windows::Networking::Sockets::WebSocketClosedEventArgs const& args)
-	{
-		std::wstringstream wstringstream;
-		wstringstream << L"WebSocket_Closed; Code: " << args.Code() << ", Reason: \"" << args.Reason().c_str() << "\"" << std::endl;
 		::OutputDebugString(wstringstream.str().c_str());
 		// Add additional code here to handle the WebSocket being closed.
 	}

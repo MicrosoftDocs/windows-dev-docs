@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,11 +32,9 @@ To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial
 3.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
 4.  In the **Ad unit type** drop-down, select the ad type.
 
-    * If you are using an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) in your app to show banner ads, select **Banner**.
-    * If you are using an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) in your app to show interstitial video ads or interstitial banner ads, select **Video interstitial** or **Banner interstitial** (be sure to select the appropriate option for the type of interstitial ad you want to show).
-    * If you are using a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) in your app to show native ads, select **Native**.
-      > [!NOTE]
-      > The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
+    * If you are showing a banner ad in your app, select **Banner**.
+    * If you are showing an interstitial video ad or interstitial banner ad in your app, select **Video interstitial** or **Banner interstitial** (be sure to select the appropriate option for the type of interstitial ad you want to show).
+    * If you are showing a native ad in your app, select **Native**.
 
 5. In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
 
@@ -58,7 +56,7 @@ After you create ad units for one or more apps in your account, these ad units a
 
 * If your app shows [banner ads](../monetize/banner-ads.md), assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
 * If your app shows [interstitial ads](../monetize/interstitial-ads.md), pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
-* If your app shows [native ads](../monetize/native-ads.md), pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor.
+* If your app shows [native ads](../monetize/native-ads.md), pass these values to the **NativeAdsManagerV2** constructor.
   > [!IMPORTANT]
   > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 

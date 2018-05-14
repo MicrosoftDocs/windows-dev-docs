@@ -37,15 +37,43 @@ The included header `winrt/Windows.Foundation.h` is part of the SDK, found insid
 > [!TIP]
 > Whenever you want to use a type from a Windows namespace, include the C++/WinRT header corresponding to that namespace. The `using namespace` directives are optional, but convenient.
 
-In the code example above, after initializing C++/WinRT, we construct the **winrt::Windows::Foundation::Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's typically all you have to do. Once you have an instance of the C++/WinRT projected type, you can treat it as if it were an instance of the actual Windows Runtime type, since it has all the same members. It's only occasionally that you'll find yourself recognizing that the projected object is a proxy; it's a smart pointer to a backing object which is an instance of the underlying Windows Runtime class. Your calls to to the projected type's methods and *properties* actually delegate, via the smart pointer, to the backing object, which is where the state changes occur.
+In the code example above, after initializing C++/WinRT, we stack-allocate a value of the **winrt::Windows::Foundation::Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's typically all you have to do. Once you have a C++/WinRT projected type value, you can treat it as if it were an instance of the actual Windows Runtime type, since it has all the same members.
+
+In fact, that projected value is a proxy; it's essentially just a smart pointer to a backing object. The projected value's constructor(s) call [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to create an instance of the backing Windows Runtime class (**Windows.Foundation.Uri**, in this case), and store that object's default interface inside the new projected value. As illustrated below, your calls to to the projected value's members actually delegate, via the smart pointer, to the backing object; which is where state changes occur.
 
 ![The projected Windows::Foundation::Uri type](images/uri.png)
+
+When the `contosoUri` value falls out of scope, it destructs, and releases its reference to the default interface. If that reference is the last reference to the backing Windows Runtime **Windows.Foundation.Uri** object, the backing object destructs as well.
 
 > [!TIP]
 > A *projected type* is a wrapper over a runtime class for purposes of consuming its APIs. A *projected interface* is a wrapper over a Windows Runtime interface.
 
+## C++/WinRT projection headers
+To consume Windows namespace APIs from C++/WinRT, you include headers from the `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` folder. It's common for a type in a subordinate namespace to reference types in its immediate parent namespace. Consequently, each C++/WinRT projection header automatically includes its parent namespace header file; so you don't *need* to explicitly include it. Although, if you do, there will be no error.
+
+For example, for the [**Windows::Security::Cryptography::Certificates**](/uwp/api/windows.security.cryptography.certificates) namespace, the equivalent C++/WinRT type definitions reside in `winrt/Windows.Security.Cryptography.Certificates.h`. Types in **Windows::Security::Cryptography::Certificates** require types in the parent **Windows::Security::Cryptography** namespace; and types in that namespace could require types in its own parent, **Windows::Security**.
+
+So, when you include `winrt/Windows.Security.Cryptography.Certificates.h`, that file in turn includes `winrt/Windows.Security.Cryptography.h`; and `winrt/Windows.Security.Cryptography.h` includes `winrt/Windows.Security.h`. That's where the trail stops, since there is no `winrt/Windows.h`. This transitive inclusion process stops at the second-level namespace.
+
+This process transitively includes the header files that provide the necessary *declarations* and *implementations* for the classes defined in parent namespaces.
+
+A member of a type in one namespace can reference one or more types in other, unrelated, namespaces. In order for the compiler to compile these member definitions successfully, the compiler needs to see the type declarations for the closure of all these types. Consequently, each C++/WinRT projection header includes the namespace headers it needs to *declare* any dependent types. Unlike for parent namespaces, this process does *not* pull in the *implementations* for referenced types.
+
+> [!IMPORTANT]
+> When you want to actually *use* a type (instantiate, call methods, etc.) declared in an unrelated namespace, you must include the appropriate namespace header file for that type. Only *declarations*, not *implementations*, are automatically included.
+
+For example, if you only include `winrt/Windows.Security.Cryptography.Certificates.h`, then that causes declarations to be pulled in from these namespaces (and so on, transitively).
+
+- Windows.Foundation
+- Windows.Foundation.Collections
+- Windows.Networking
+- Windows.Storage.Streams
+- Windows.Security.Cryptography
+
+In other words, some APIs are forward-declared in a header that you've included. But their definitions are in a header that you haven't yet included. So, if you then call [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri), then you'll receive a linker error indicating that the member is undefined. The solution is to explicitly `#include <winrt/Windows.Foundation.h>`. In general, when you see a linker error such as this, include the header named for the API's namespace, and rebuild.
+
 ## Delayed initialization
-If you want to delay fully initializing a runtime class object, then declare your field using the special C++/WinRT `nullptr_t` constructor that's provided on the projected type.
+Even the default constructor of a projected type causes a backing Windows Runtime object to be created. If you want to construct a variable of a projected type without it in turn constructing a Windows Runtime object (so that you can delay that work until later), then you can. Declare your variable or field using the projected type's special C++/WinRT `nullptr_t` constructor.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -64,7 +92,7 @@ private:
 };
 ```
 
-All constructors on the projected type *except* the `nullptr_t` constructor call [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to create the backing Windows Runtime object, and store that object's default interface inside the new projected value. The `nullptr_t` constructor avoids that work; it expects the projected value to be initialized at a subsequent time. So, even if a runtime class *has* a default constructor, this technique is more efficient for delayed initialization.
+All constructors on the projected type *except* the `nullptr_t` constructor cause a backing Windows Runtime object to be created. The `nullptr_t` constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
 
 ## If the API is implemented in a Windows Runtime component
 This section applies whether you authored the component yourself, or it came from a vendor.
