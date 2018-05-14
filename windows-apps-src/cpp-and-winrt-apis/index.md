@@ -1,9 +1,9 @@
 ---
 author: stevewhims
-description: The Windows SDK includes C++/WinRT. This is a standard C++ language projection for Windows Runtime APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++ compiler.
+description: C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library.
 title: C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 
 # [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-Introduced in version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler. The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).
 
 C++/WinRT is for any developer interested in writing beautiful and fast code for Windows. Here's why.
 
