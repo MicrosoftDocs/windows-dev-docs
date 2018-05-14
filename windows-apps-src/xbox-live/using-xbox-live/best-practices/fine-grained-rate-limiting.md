@@ -150,7 +150,7 @@ Yes, more services and new services can and will be creating limits. Though just
 
 ### When will these changes take effect?
 
-Rate limites have been enforced since **May 2016**.  As of **April 2018**, titles exceeding the specified sustained limits by 10x or more will not pass the Xbox Certification process.
+Rate limits have been enforced since **May 2016**.  As of **April 2018**, titles exceeding the specified sustained limits by 10x or more will not pass the Xbox Certification process.
 
 ### What if we can’t adhere to the limits?
 
@@ -158,7 +158,7 @@ Please see the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.m
 
 If after following these steps, you are still unable to remain under the limits, please reach out to your Developer Account Manager.
 
-**NOTE: Titles at or above 10x the specified sustiain limit will not be allowed to pass cert after April 2018**.  For example, if the sustained limit at which FGRL takes effect is set to 300 calls in 300 seconds as specified in the table above, titles at or above 3000 calls in 300 seconds will fail certification.
+**NOTE: Titles at or above 10x the specified sustain limit will not be allowed to pass cert after April 2018**.  For example, if the sustained limit at which FGRL takes effect is set to 300 calls in 300 seconds as specified in the table above, titles at or above 3000 calls in 300 seconds will fail certification.
 
 ### What about my existing Title?
 
