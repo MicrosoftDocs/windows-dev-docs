@@ -275,7 +275,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 ```
 
 ## Important APIs
-* [concurrency::task](https://msdn.microsoft.com/library/hh750113)
+* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
 * [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation_tresult_)

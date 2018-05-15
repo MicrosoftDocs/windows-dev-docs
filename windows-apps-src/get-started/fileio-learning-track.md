@@ -80,7 +80,7 @@ Access the local folder with `Windows.Storage.ApplicationData.Current.LocalFolde
 
 - **RoamingState**: For data that should be replicated on all devices where the app is installed. Windows limits the amount of data that can be roamed, so only save user settings and small files here. Access the roaming folder with `Windows.Storage.ApplicationData.Current.RoamingFolder`.
 
-- **TempState**: For for data that may be deleted any time the app isn't running. Access the temporary folder with `Windows.Storage.ApplicationData.Current.TemporaryFolder`.
+- **TempState**: For data that may be deleted any time the app isn't running. Access the temporary folder with `Windows.Storage.ApplicationData.Current.TemporaryFolder`.
 
 ### Access the rest of the file system
 

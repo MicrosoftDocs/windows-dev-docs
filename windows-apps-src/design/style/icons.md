@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 
 Icons provide a visual shorthand for an action, concept, or product. By compressing meaning into a symbolic image, icons can cross language barriers and help conserve an extremely valuable resource: screen space. 
 
-Icons can appear in apps--and outside them: 
+Icons can appear in apps—and outside them: 
 
 :::row:::
     :::column:::
@@ -191,7 +191,7 @@ The are a few ways to add an icon to a button:
     :::column-end:::
 :::row-end:::
 
-The easiest way is to use the list of predefined icons we provide--simply specify the icon name, such as "Back" or "Stop", and the system will draw it: 
+The easiest way is to use the list of predefined icons we provide—simply specify the icon name, such as "Back" or "Stop", and the system will draw it: 
 
 ``` xaml
 <CommandBar>

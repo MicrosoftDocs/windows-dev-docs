@@ -276,19 +276,17 @@ foreach (uint id in toBeRemoved)
 ## Foreground event for notification added/dismissed
 
 > [!IMPORTANT] 
-> Known issue: The foreground event does not work (and we don't have immediate plans to fix this). 
+> Known issue: The foreground event will cause a CPU loop on recent versions of Windows, and previously did not work before that. Do NOT use the foreground event. In an upcoming update to Windows, we will fix this.
 
-If you have a scenario that requires the foreground event, please let us know. However, most (if not all) scenarios should actually use the background task anyways, since your app most likely needs to be woken up in the background for notification events. For example, your wearable accessory app is rarely in the foreground, and needs to know about new notifications from the background.
-
-Additionally, thanks to the [single process model](../../../launch-resume/create-and-register-an-inproc-background-task.md), it's effortless to use background task triggers from within your foreground app. So if you do need to receive foreground events, just use the background trigger with single process model.
+Instead of using the foreground event, use the code shown earlier for a [single process model](../../../launch-resume/create-and-register-an-inproc-background-task.md) background task. The background task will also allow you to receive change event notifications both while your app is closed or running.
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 

@@ -13,23 +13,18 @@ ms.localizationpriority: medium
 ---
 
 # Creating Windows Runtime Components in C# and Visual Basic
-
-
-
-Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#. This article outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime. In general, that support is designed to be transparent to the .NET Framework programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
+Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#. This topic outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime. In general, that support is designed to be transparent to the .NET Framework programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
 
 If you are creating a component for use only in UWP apps with Visual Basic or C#, and the component does not contain UWP controls, consider using the **Class Library** template instead of the **Windows Runtime Component** template. There are fewer restrictions on a simple class library.
 
-This article contains the following sections:
+This topic contains the following sections:
 
 ## Declaring types in Windows Runtime Components
-
-
 Internally, the Windows Runtime types in your component can use any .NET Framework functionality that's allowed in a Universal Windows app. (See [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) overview for more information.) Externally, the members of your types can expose only Windows Runtime types for their parameters and return values. The following list describes the limitations on .NET Framework types that are exposed from Windows Runtime Components.
 
 -   The fields, parameters, and return values of all the public types and members in your component must be Windows Runtime types.
 
-    This restriction includes the Windows Runtime types that you create as well as types that are provided by the Windows Runtime itself. It also includes a number of .NET Framework types. The inclusion of these types is part of the support the .NET Framework provides to enable the natural use of the Windows Runtime in managed code: Your code appears to use familiar .NET Framework types instead of the underlying Windows Runtime types. For example, you can use .NET Framework primitive types such as Int32 and Double, certain fundamental types such as DateTimeOffset and Uri, and some commonly used generic interface types such as IEnumerable&lt;T&gt; (IEnumerable(Of T) in Visual Basic) and IDictionary&lt;TKey,TValue&gt;. (Note that the type arguments of these generic types must be Windows Runtime types.) This is discussed in the sections Passing Windows Runtime types to managed code and Passing managed types to the Windows Runtime, later in this article.
+    This restriction includes the Windows Runtime types that you create as well as types that are provided by the Windows Runtime itself. It also includes a number of .NET Framework types. The inclusion of these types is part of the support the .NET Framework provides to enable the natural use of the Windows Runtime in managed code: Your code appears to use familiar .NET Framework types instead of the underlying Windows Runtime types. For example, you can use .NET Framework primitive types such as Int32 and Double, certain fundamental types such as DateTimeOffset and Uri, and some commonly used generic interface types such as IEnumerable&lt;T&gt; (IEnumerable(Of T) in Visual Basic) and IDictionary&lt;TKey,TValue&gt;. (Note that the type arguments of these generic types must be Windows Runtime types.) This is discussed in the sections Passing Windows Runtime types to managed code and Passing managed types to the Windows Runtime, later in this topic.
 
 -   Public classes and interfaces can contain methods, properties, and events. You can declare delegates for your events, or use the EventHandler&lt;T&gt; delegate. A public class or interface cannot:
 
@@ -44,14 +39,11 @@ Internally, the Windows Runtime types in your component can use any .NET Framewo
 -   Public classes must be **sealed** (**NotInheritable** in Visual Basic). If your programming model requires polymorphism, you can create a public interface and implement that interface on the classes that must be polymorphic.
 
 ## Debugging your component
-
-
 If both your Universal Windows app and your component are built with managed code, you can debug them at the same time.
 
 When you're testing your component as part of a Universal Windows app using C++, you can debug managed and native code at the same time. The default is native code only.
 
 ## **To debug both native C++ code and managed code**
-
 1.  Open the shortcut menu for your Visual C++ project, and choose **Properties**.
 2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
 3.  Choose **Debugger Type**, and in the drop-down list box change **Native Only** to **Mixed (Managed and Native)**. Choose **OK**.
@@ -60,15 +52,12 @@ When you're testing your component as part of a Universal Windows app using C++,
 When you're testing your component as part of a Universal Windows app using JavaScript, by default the solution is in JavaScript debugging mode. In Visual Studio, you can't debug JavaScript and managed code at the same time.
 
 ## **To debug managed code instead of JavaScript**
-
 1.  Open the shortcut menu for your JavaScript project, and choose **Properties**.
 2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
 3.  Choose **Debugger Type**, and in the drop-down list box change **Script Only** to **Managed Only**. Choose **OK**.
 4.  Set breakpoints in managed code and debug as usual.
 
 ## Passing Windows Runtime types to managed code
-
-
 As mentioned previously in the section Declaring types in Windows Runtime Components, certain .NET Framework types can appear in the signatures of members of public classes. This is part of the support that the .NET Framework provides to enable the natural use of the Windows Runtime in managed code. It includes primitive types and some classes and interfaces. When your component is used from JavaScript or from C++ code, it's important to know how your .NET Framework types appear to the caller. See [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) for examples with JavaScript. This section discusses commonly used types.
 
 In the .NET Framework, primitive types like the Int32 structure have many useful properties and methods, such as the TryParse method. By contrast, primitive types and structures in the Windows Runtime only have fields. When you pass these types to managed code, they appear to be .NET Framework types, and you can use the properties and methods of the .NET Framework types as you normally would. The following list summarizes the substitutions that are made automatically in the IDE:
@@ -98,24 +87,18 @@ For some commonly used collection types, the mapping is between the interfaces t
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
- 
-
 When a type implements more than one interface, you can use any of the interfaces it implements as a parameter type or return type of a member. For example, you can pass or return a Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) in Visual Basic) as IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, or IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
 **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
 In the Windows Runtime, IMap&lt;K, V&gt; and IMapView&lt;K, V&gt; are iterated by using IKeyValuePair. When you pass them to managed code, they appear as IDictionary&lt;TKey, TValue&gt; and IReadOnlyDictionary&lt;TKey, TValue&gt;, so naturally you use System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; to enumerate them.
 
-The way interfaces appear in managed code affects the way types that implement these interfaces appear. For example, the PropertySet class implements IMap&lt;K, V&gt;, which appears in managed code as IDictionary&lt;TKey, TValue&gt;. PropertySet appears as if it implemented IDictionary&lt;TKey, TValue&gt; instead of IMap&lt;K, V&gt;, so in managed code it appears to have an Add method, which behaves like the Add method on .NET Framework dictionaries. It doesn't appear to have an Insert method. You can see this example in the article [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+The way interfaces appear in managed code affects the way types that implement these interfaces appear. For example, the PropertySet class implements IMap&lt;K, V&gt;, which appears in managed code as IDictionary&lt;TKey, TValue&gt;. PropertySet appears as if it implemented IDictionary&lt;TKey, TValue&gt; instead of IMap&lt;K, V&gt;, so in managed code it appears to have an Add method, which behaves like the Add method on .NET Framework dictionaries. It doesn't appear to have an Insert method. You can see this example in the topic [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## Passing managed types to the Windows Runtime
-
-
 As discussed in the previous section, some Windows Runtime types can appear as .NET Framework types in the signatures of your component's members, or in the signatures of Windows Runtime members when you use them in the IDE. When you pass .NET Framework types to these members or use them as the return values of your component's members, they appear to the code on the other side as the corresponding Windows Runtime type. For examples of the effects this can have when your component is called from JavaScript, see the "Returning managed types from your component" section in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## Overloaded methods
-
-
 In the Windows Runtime, methods can be overloaded. However, if you declare multiple overloads with the same number of parameters, you must apply the [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to only one of those overloads. That overload is the only one you can call from JavaScript. For example, in the following code the overload that takes an **int** (**Integer** in Visual Basic) is the default overload.
 
 > [!div class="tabbedCodeSnippets"]
@@ -145,8 +128,6 @@ In the Windows Runtime, methods can be overloaded. However, if you declare multi
 You cannot apply the DefaultOverloadAttribute attribute to constructors. All the constructors in a class must have different numbers of parameters.
 
 ## Implementing IStringable
-
-
 Starting with Windows 8.1, the Windows Runtime includes an IStringable interface whose single method, IStringable.ToString, provides basic formatting support comparable to that provided by Object.ToString. If you do choose to implement IStringable in a public managed type that is exported in a Windows Runtime component, the following restrictions apply:
 
 -   You can define the IStringable interface only in a "class implements" relationship, such as the following code in C#:
@@ -181,8 +162,6 @@ Starting with Windows 8.1, the Windows Runtime includes an IStringable interface
 Note that under a variety of conditions, calls from native code to a managed type that implements IStringable or hides its ToString implementation can produce unexpected behavior.
 
 ## Asynchronous operations
-
-
 To implement an asynchronous method in your component, add "Async" to the end of the method name and return one of the Windows Runtime interfaces that represent asynchronous actions or operations: IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt;, or IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
 
 You can use .NET Framework tasks (the [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) class and generic [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) class) to implement your asynchronous method. You must return a task that represents an ongoing operation, such as a task that is returned from an asynchronous method written in C# or Visual Basic, or a task that is returned from the [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) method. If you use a constructor to create the task, you must call its [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) method before returning it.
@@ -256,8 +235,6 @@ Note that you can use the methods of the AsyncInfo class even if your asynchrono
 If you create an asynchronous method that optionally supports cancellation or progress reporting, consider adding overloads that don't have parameters for a cancellation token or the IProgress&lt;T&gt; interface.
 
 ## Throwing exceptions
-
-
 You can throw any exception type that is included in the .NET for Windows apps. You can't declare your own public exception types in a Windows Runtime component, but you can declare and throw non-public types.
 
 If your component doesn't handle the exception, a corresponding exception is raised in the code that called your component. The way the exception appears to the caller depends on the way the calling language supports the Windows Runtime.
@@ -274,7 +251,6 @@ When you throw an exception from your component, you can make it easier for a Ja
 > **Note**  Use a negative value for your HRESULT. A positive value is interpreted as success, and no exception is thrown in the JavaScript or C++ caller.
 
 ## Declaring and raising events
-
 When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET Framework application.
 
 When your Windows Runtime component is used from JavaScript or C++, the event follows the Windows Runtime event pattern that those languages expect. When you use the component from C# or Visual Basic, the event appears as an ordinary .NET Framework event. An example is provided in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript]().
@@ -282,14 +258,11 @@ When your Windows Runtime component is used from JavaScript or C++, the event fo
 If you implement custom event accessors (declare an event with the **Custom** keyword, in Visual Basic), you must follow the Windows Runtime event pattern in your implementation. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md). Note that when you handle the event from C# or Visual Basic code, it still appears to be an ordinary .NET Framework event.
 
 ## Next steps
-
-
 After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](https://msdn.microsoft.com/library/jj614475.aspx).
 
 For more information about Visual Basic and C# language features, and .NET Framework support for the Windows Runtime, see [Visual Basic and C# language reference](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
 
 ## Related topics
-
 * [.NET for UWP apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
