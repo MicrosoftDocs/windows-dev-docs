@@ -214,7 +214,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                 <div class="card">
                     <div class="cardText">
                         <h3>Developer tools</h3>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP Community Toolkit</a></p>
+                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>
