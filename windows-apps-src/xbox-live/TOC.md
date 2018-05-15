@@ -130,6 +130,7 @@
 ### [Use Game Chat 2 (C++)](multiplayer/chat/using-game-chat-2.md)
 ### [Use Game Chat 2 (WinRT Projections)](multiplayer/chat/using-game-chat-2-winrt.md)
 ### [Real-time audio manipulation](multiplayer/chat/real-time-audio-manipulation.md)
+### [Migration from Game Chat](multiplayer/chat/game-chat-2-migration.md)
 ## [Game Chat](multiplayer/chat/gamechat-overview.md)
 ### [Accessibility features](multiplayer/chat/chat-accessibility-overview.md)
 ## [Multiplayer Service Configuration](multiplayer/service-configuration/configure-the-multiplayer-service.md)
