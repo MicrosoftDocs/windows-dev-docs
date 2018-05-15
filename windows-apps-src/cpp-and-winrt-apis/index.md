@@ -41,6 +41,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Boxing and unboxing scalar values to IInspectable](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
 | [Consume APIs with C++/WinRT](consume-apis.md) | This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself. |
 | [Author APIs with C++/WinRT](author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
+| [Error handling with C++/WinRT](error-handling.md) | This topic discusses strategies for handling errors when programming with C++/WinRT. |
 | [Handle events by using delegates](handle-events.md) | This topic shows how to register and revoke event-handling delegates using C++/WinRT. |
 | [Author events](author-events.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Concurrency and asynchronous operations](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
