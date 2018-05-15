@@ -139,7 +139,7 @@ Fluent experiences use controls and patterns consistently, so they behave in way
 
         Buttons, command bars, keyboard shortcuts, and context menus enable users to interact with your app; they're the tools that change a static experience into something dynamic.
 
-		[Learn about commanding](/windows/uwp/design/commanding-basics/)
+		[Learn about commanding](/windows/uwp/design/basics/commanding-basics/)
 :::row-end:::
 
 :::row:::
