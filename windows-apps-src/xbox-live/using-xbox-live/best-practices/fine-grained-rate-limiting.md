@@ -101,12 +101,10 @@ The following services will have implemented FGRL limits, with enforcement of th
 | Social                     | 10                        | 30                         | 300                        |
 | Leaderboards               | 30                        | 100                        | 1000                       |
 | Achievements               | 100                       | 300                        | 3000                       |
-| Title                      | 100                       | 300                        | 3000                       |
 | Smart Match                | 10                        | 100                        | 1000                       |
 | User Posts                 | 100                       | 300                        | 3000                       |
 | Stats Write                | 100                       | 300                        | 3000                       |
 | Privacy                    | 10                        | 30                         | 300                        |
-| People                     | 10                        | 30                         | 300                        |
 | Clubs                      | 10                        | 30                         | 300                        |
 
 The table above represents the current list of services that were selected for FGRL. This list is not final as new services and existing services can be added. When a service is going to be added the table will be updated and an announcement will be made. The limits represented in the table should also not be viewed as finalized. As services change and evolve so too will the limits however you will be notified and the necessary legacy exemptions will be made.
@@ -124,12 +122,10 @@ As of **April 2018** titles will not pass certification if they exceed the susta
 | Social | social.xboxlive.com | Impacts all friends writes (e.g. adding a friend, making someone favorite etc.) and may impact friend reads (e.g. fetch my friend list). Developers are encouraged to call the peoplehub for read rather than social.xboxlive.com.
 | Leaderboards | leaderboards.xboxlive.com | In-game UX for leaderboards would not populate/update.
 | Achievements | achievements.xboxlive.com | In-game UX for achievements unlocked would not be updated.
-| Title | title.mgt.xboxlive.com | HTTP call will fail.  The service will return HTTP Code 429 (Too Many Requests) with a response body as described at:http://xboxwiki/wiki/Short_Stack/Handling_Throttled_Requests
 | Smart Match | momatch.xboxlive.com | Matches would not be successfully set up.
 | User Posts | userposts.xboxlive.com | User posts would not appear.
 | Stats Write | statswrite.xboxlive.com | Achievements or Leaderboards entries not updated.
 | Privacy | privacy.xboxlive.com | Privacy failures may result in blocked access for all callers.
-| People | Peoplehub.xboxlive.com | Friends list would not be updated and perhaps profile of users.
 | Clubs | Clubhub.xboxlive.com | Player may not be able to see their in-game clubs.
 
 **NOTE:** The latest API mapping is regularly updated and can be found under [Live Trace Analyzer API Mapping](https://github.com/Microsoft/xbox-live-trace-analyzer/blob/master/Source/XboxLiveTraceAnalyzer.APIMap.csv).
