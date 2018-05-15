@@ -106,7 +106,7 @@ You’ve displayed customers in a list, but data B=binding lets you do more. Wha
 * *One-Way*: This data binding will update the UI with any changes made to the data source.
 * *Two-Way*: This data binding will update the UI with any changes made to the data source, and also update the data with any changes made within the UI.
 
-If you've followed the code snippets from earlier, the binding you made uses x:Bind and doesn't specify a mode, making it a One-Time binding. If you want to edit your Customers directly from the UI, you'll need to change it to a Two-Way binding, so that changes from the data will be pssed back to the Customer objects. [Data binding in depth](../data-binding/data-binding-in-depth.md) has more information.
+If you've followed the code snippets from earlier, the binding you made uses x:Bind and doesn't specify a mode, making it a One-Time binding. If you want to edit your Customers directly from the UI, you'll need to change it to a Two-Way binding, so that changes from the data will be passed back to the Customer objects. [Data binding in depth](../data-binding/data-binding-in-depth.md) has more information.
 
 Two-way binding will also update the UI if the data source is changed. For this to work, you must implement [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) on the source and ensure its property setters raise the **PropertyChanged** event. Common practice is to have them call a helper method like the **OnPropertyChanged** method, as shown below:
 
