@@ -3,7 +3,7 @@ author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Create customer groups
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 05/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,9 @@ ms.localizationpriority: high
 
 # Create customer groups
 
-You can use the Windows Dev Center dashboard to target a subset of your app’s customer base by creating *customer groups* that include the customers that you want to target. These groups can be useful for promotions, testing, or other purposes.
+You can use the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) to create *customer groups* that include a subset of your app's customers that you want to target. These groups can be used for promotions, testing,and other purposes.
 
-To view and create customer groups, expand **Engage** in the left navigation menu, then select **Customer groups** near the top of your dashboard.
+To view and create customer groups, expand **Engage** in the left navigation menu, then select **Customer groups**.
 
 Currently, two types of customer groups are supported:
 

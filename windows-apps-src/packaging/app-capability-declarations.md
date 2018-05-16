@@ -4,7 +4,7 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.author: misatran
-ms.date: 5/02/2018
+ms.date: 5/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -120,7 +120,9 @@ During the certification process, our testers will review the info you provide t
 If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
 > [!NOTE]
-> If your submission uses a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Issue Type **Applications** and Subcategory **Other**, then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, or if you are not eligible to request access, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
+> If your submission uses a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
+>
+> You may also use this method of requesting approval (rather than providing this info during your submission), whether or not you're using a development sandbox, if you prefer to confirm that you are approved to use a restricted capability before you start your submission.
 
 <span id="restricted-and-special-use-capability-list" />
 
@@ -206,6 +208,10 @@ The following table lists the restricted capabilities. You may request approval 
 | **Development Mode Network** | The **developmentModeNetwork** capability allows apps to access network paths using the credentials from the signed-in user when calling the OpenFile Win32 API in a C++/CX UWP app or C++ Windows Runtime Component. <br /><br />We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 | **Broad Filesystem Access** | The **broadFileSystemAccess** capability allows apps to get the same access to the file system as the user who is currently running the app without any additional file-picker style prompts during runtime.<br/><br/>This capability works for the [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) APIs. It is important to note that the first use of any **Windows.Storage** APIs with this capability declared in your app package manifest will trigger a user-consent prompt where the user can grant or deny the permission. Users can also grant or deny the permission at any point by toggling Settings. It is also important that you do not declare any special folder capabilities such as **Documents**, **Pictures**, or **Videos** with this capability. |
 | **System Firmware and BIOS** | The **smbios** capability allows apps to access bios data and system firmware data. |
+| **Full Trust Permission Level** | The **runFullTrust** restricted capability allows apps to run at the full trust permission level on the user’s machine. This capability is required to use the [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API.<br /><br />This capability is also required for any desktop application that is delivered as an appx package (as with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)), and it will automatically appear in your manifest when packaging these apps using the Desktop App Converter (DAC) or Visual Studio. You won’t need to request approval to use this capability if you already received permission using our [form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). 
+ |
+
+
 
 ## Related topics
 

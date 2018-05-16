@@ -97,6 +97,7 @@
 ## [Boxing and unboxing scalar values to IInspectable](../cpp-and-winrt-apis/boxing.md)
 ## [Consume APIs with C++/WinRT](../cpp-and-winrt-apis/consume-apis.md)
 ## [Author APIs with C++/WinRT](../cpp-and-winrt-apis/author-apis.md)
+## [Error handling with C++/WinRT](../cpp-and-winrt-apis/error-handling.md)
 ## [Handle events by using delegates](../cpp-and-winrt-apis/handle-events.md)
 ## [Author events](../cpp-and-winrt-apis/author-events.md)
 ## [Concurrency and asynchronous operations](../cpp-and-winrt-apis/concurrency.md)
