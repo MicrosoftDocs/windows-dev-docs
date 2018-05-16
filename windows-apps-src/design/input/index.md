@@ -89,6 +89,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Multiple inputs</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Input injection</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Custom text input</a></p>                        
                     </div>
                 </div>
