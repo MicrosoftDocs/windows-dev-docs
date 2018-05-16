@@ -235,7 +235,7 @@ The `chat_user::chat_user_local::set_remote_user_muted()` method can be used to 
 
 ## Bad reputation auto-mute
 
-Typically remote users will start off unmuted. Game Chat 2 will start the users in a muted state when (1) the remote user isn't friends with the local user, and (2) the remote user has a bad reputation flag. When users are muted due to this operation, `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::reputation_restricted`. This state will be overridden by the first call to `chat_user::chat_user_local::set_remote_user_muted()` that includes the remote user as the target user.
+Typically, remote users will start off unmuted. Game Chat 2 will start the users in a muted state when (1) the remote user isn't friends with the local user, and (2) the remote user has a bad reputation flag. When users are muted due to this operation, `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::reputation_restricted`. This state will be overridden by the first call to `chat_user::chat_user_local::set_remote_user_muted()` that includes the remote user as the target user.
 
 ## Privilege and privacy
 

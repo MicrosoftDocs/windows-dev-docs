@@ -17,7 +17,7 @@ ms.localizationpriority: low
  Game chat is a technology that you can use to enable voice communications between users of a single title on remote consoles. It does not include wider independent communication among console users.
 
  > [!Note]
- > New titles should use [Game Chat 2](game-chat-2-overview.md) instead of Game Chat. The original Game Chat will be deprecated before the end of 2017.
+ > New titles should use [Game Chat 2](game-chat-2-overview.md) instead of Game Chat. The original Game Chat was deprecated at the end of 2017. Titles consuming the original Game Chat can use the [Game Chat 2 Migration Guide](game-chat-2-migration.md) to map Game Chat concepts and calling patterns to Game Chat 2.
 
  Xbox One has a specialized, hardware-accelerated voice chat codec that is used for encode and decode, and is exposed through the `Microsoft.Xbox.GameChat` Namespace. This codec supports several quality settings for title networking bandwidth flexibility, and its use is required for all voice chat communications transmitted by the console. No other codecs are supported.
 
