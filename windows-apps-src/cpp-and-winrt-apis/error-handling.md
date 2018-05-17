@@ -71,7 +71,7 @@ winrt::check_bool(::SetEvent(h.get()));
 If the value that you pass to **winrt::check_bool** is false, then the following sequence of actions take place.
 
 - **winrt::check_bool** calls the [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/throw-last-error) function.
-- **winrt::throw_last_error** calls [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) to retrieve the calling thread's last-error code value, and then then calls the [**winrt::throw_hresult**](throw-hresult.md) function.
+- **winrt::throw_last_error** calls [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) to retrieve the calling thread's last-error code value, and then then calls the [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/throw-hresult) function.
 - **winrt::throw_hresult** throws an exception using a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/hresult-error) object (or a standard object) that represents that error code.
 
 Because Windows APIs report run-time errors using various return-value types, there are in addition to **winrt::check_bool** a handful of other useful helper functions for checking values and throwing exceptions.
