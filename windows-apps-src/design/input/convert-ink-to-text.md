@@ -16,7 +16,6 @@ ms.localizationpriority: medium
 
 # Recognize Windows Ink strokes as text and shapes
 
-
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
 
 > **Important APIs**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)

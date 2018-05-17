@@ -26,11 +26,11 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 :::row:::
     :::column:::
         Acrylic in light theme
-        ![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
+        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
         Acrylic in dark theme
-        ![Acrylic in dark theme](images/Acrylic_LightTheme_Base.png)
+        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 
