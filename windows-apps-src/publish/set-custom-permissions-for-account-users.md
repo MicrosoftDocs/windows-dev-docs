@@ -4,7 +4,7 @@ Description: Set roles or custom permissions for account users.
 title: Set roles or custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 05/11/2018
+ms.date: 05/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -114,7 +114,7 @@ The permissions in this section cannot be limited to specific products. Granting
 <tr><td align="left">    <b>Community ads</b>                       </td><td align="left">  Can view free <a href="about-community-ads.md">community ad</a> usage for all products in the account.          </td><td align="left">  Can create, manage, and view free <a href="about-community-ads.md">community ad</a> usage for all products in the account.               </td></tr>
 <tr><td align="left">    <b>Contact info</b>                        </td><td align="left">  Can view <a href="managing-your-profile.md">contact info</a> in the Account settings section.        </td><td align="left">  Can edit and view <a href="managing-your-profile.md">contact info</a> in the Account settings section.            </td></tr>
 <tr><td align="left">    <b>COPPA compliance</b>                    </td><td align="left">  Can view <a href="in-app-ads.md#coppa-compliance">COPPA compliance</a> selections (indicating whether products are targeted at children under the age of 13) for all products in the account.                                            </td><td align="left">  Can edit and view <a href="in-app-ads.md#coppa-compliance">COPPA compliance</a>  selections (indicating whether products are targeted at children under the age of 13) for all products in the account.         </td></tr>
-<tr><td align="left">    <b>Customer groups</b>                     </td><td align="left">  Can view <a href="create-customer-groups.md">customer groups</a> (segments and flight groups) in the <b>Customers</b> section.      </td><td align="left">  Can create, edit, and view <a href="create-customer-groups.md">customer groups</a> (segments and flight groups) in the <b>Customers</b> section.       </td></tr>
+<tr><td align="left">    <b>Customer groups</b>                     </td><td align="left">  Can view <a href="create-customer-groups.md">customer groups</a> (segments and known user groups).      </td><td align="left">  Can create, edit, and view <a href="create-customer-groups.md">customer groups</a> (segments and known user groups).       </td></tr>
 <tr><td align="left">    <b>Manage product groups</b>&nbsp;*                            </td><td align="left">  Can view the new product group creation page, but can’t actually create new product groups.    </td><td align="left">  Can create and edit product groups.     </td></tr>
 <tr><td align="left">    <b>New apps</b>                            </td><td align="left">  Can view the new app creation page, but can’t actually create new apps in the account.    </td><td align="left">  Can <a href="create-your-app-by-reserving-a-name.md">create new apps</a> in the account by reserving new app names, and can create submissions and submit apps to the Store.     </td></tr>
 <tr><td align="left">    <b>New bundles</b>&nbsp;*                       </td><td align="left">  Can view the new bundle creation page, but can’t actually create new bundles in the account.     </td><td align="left">  Can create new bundles of products.          </td></tr>

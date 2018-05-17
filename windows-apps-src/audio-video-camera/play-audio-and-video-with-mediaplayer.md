@@ -74,6 +74,10 @@ The next example illustrates using a toggle button to toggle between normal play
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
 
+Starting with Windows 10, version 1803, you can set the rotation with which video is presented in the **MediaPlayer** in increments of 90 degrees.
+
+[!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
+
 ### Detect expected and unexpected buffering
 The **MediaPlaybackSession** object described in the previous section provides two events for detecting when the currently playing media file begins and ends buffering, **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** and **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**. This allows you to update your UI to show the user that buffering is occurring. Initial buffering is expected when a media file is first opened or when the user switches to a new item in a playlist. Unexpected buffering can occur when the network speed degrades or if the content management system providing the content experiences technical issues. Starting with RS3, you can use the **BufferingStarted** event to determine if the buffering event is expected or if it is unexpected and interrupting playback. You can use this information as telemetry data for your app or media delivery service. 
 

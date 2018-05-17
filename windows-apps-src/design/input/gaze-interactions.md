@@ -225,7 +225,10 @@ A small ellipse is used to show where the gaze point is within the application v
                 // Stop listening for device events on navigation from eye-tracking page.
                 StopGazeDeviceWatcher();
             }
-            ```
+            ...
+        }
+    }
+    ```
 
 3. Next, we add our gaze device watcher methods. 
     

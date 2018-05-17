@@ -185,16 +185,16 @@ If you choose to provide your own back stack navigation, the experience should b
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
-<p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as tabs/pivots or a docked navigation pane) that provides direct navigation to both pages.</p></td>
+<p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as a top navigation pane or a docked left navigation pane) that provides direct navigation to both pages.</p></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
-<p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use tabs or a docked navigation pane, so the navigation is added to the navigation history.</p>
+<p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use a top nav bar or a docked left nav pane, so the navigation is added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
-<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same tabs/pivots element, or both pages appear in a docked navigation pane.</p></td>
-<td style="vertical-align:top;"><strong>No</strong>
-<p>When the user presses back, go back to the last page before the user navigated to the current peer group.</p>
+<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same top pane element, or both pages appear in a docked left navigation pane.</p></td>
+<td style="vertical-align:top;"><strong>It depends</strong>
+<p>Yes, add to the navigation history, but with 2 notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational state/history within a page of the peer group, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

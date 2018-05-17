@@ -156,6 +156,8 @@ namespace MediaPlayer_Win10
             mediaPlayer.AudioCategory = MediaPlayerAudioCategory.Media;
             // </SnippetSetAudioCategory>
         }
+
+       
         private void VariousMediaPlayerFeatures()
         {
             mediaPlayer.SourceChanged += _mediaPlayer_SourceChanged;
@@ -192,6 +194,13 @@ namespace MediaPlayer_Win10
             mediaPlayer.PlaybackSession.PlaybackRate = 1.0;
         }
         // </SnippetSpeedChecked>
+
+        private void SetRotation()
+        {
+            //<SnippetSetRotation>
+            mediaPlayer.PlaybackSession.PlaybackRotation = MediaRotation.Clockwise90Degrees;
+            //</SnippetSetRotation>
+        }
 
         private void RegisterBufferHandlerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -750,8 +759,7 @@ namespace MediaPlayer_Win10
         }
         //</SnippetPolicyDegradation>
         #endregion
-    }
-        #endregion
+
         #region audio state monitor
 
         private void RegisterAudioMonitor_Click(object sender, RoutedEventArgs e)
@@ -809,9 +817,10 @@ namespace MediaPlayer_Win10
         }
         //</SnippetButtonUserClick>
         #endregion
-
-
     }
+
+
+
 
 
 

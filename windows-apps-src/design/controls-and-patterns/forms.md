@@ -57,7 +57,7 @@ This type of form gives the user flexibility in responding. Typically, this type
 To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms. 
 
 ### Labels
-[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property that to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
+[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
 
 To [design for accessibility](../accessibility/accessibility.md), label all individual and groups of controls for clarity for both human and screen readers. 
 
