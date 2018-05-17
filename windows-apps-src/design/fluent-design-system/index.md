@@ -41,6 +41,8 @@ Our design guidelines explain how to apply Fluent Design principles to apps. Wha
 
 Fluent Design features are built into UWP. Some of these features&mdash;such as effective pixels and the universal input system&mdash;are automatic. You don't have to write any extra code to take advantage of them. Other features, like acrylic, are optional; you add them to your app by writing code to include them.
 
+> We're bringing UWP controls to the desktop so that you can enhance the look, feel, and functionality of your existing WPF or Windows applications with Fluent Design features. To learn more, see [Host UWP controls in WPF and Windows Forms applications](/windows/uwp/xaml-platform/xaml-host-controls).
+
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
 In addition to design guidance, our Fluent Design articles also show you how to write the code that makes your designs happen. UWP uses XAML, a markup-based language that makes it easier to create user interfaces. Here's an example:
