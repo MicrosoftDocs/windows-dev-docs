@@ -248,11 +248,11 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
             FocusState.Keyboard && 
             args.NewFocusedElement != selectedContainer)
         {
-            args.NewFocusedElement = 
-                MyListView.ContainerFromItem(MyListView.SelectedItem);
+            args.TryRedirect(
+                MyListView.ContainerFromItem(MyListView.SelectedItem));
             args.Handled = true;
         }
-    }        
+    }
 }
 ```
 
@@ -278,8 +278,10 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     if (MyCommandBar.IsOpen == true && 
         IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
     {
-        args.Cancel = true;
-        args.Handled = true;
+        if (args.TryCancel())
+        {
+            args.Handled = true;
+        }
     }
 }
 ```
@@ -328,9 +330,9 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     }
 }
 ```
+
 ## Related articles
 
 - [Focus navigation for keyboard, gamepad, remote control, and accessibility tools](focus-navigation.md)
 - [Keyboard interactions](keyboard-interactions.md)
-- [Keyboard accessibility](../accessibility/keyboard-accessibility.md) 
-
+- [Keyboard accessibility](../accessibility/keyboard-accessibility.md)
