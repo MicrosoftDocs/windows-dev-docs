@@ -9,9 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
-# Unity Prefabs and Sign-In
+# Unity Prefabs and Scripted Sign-In
 
-Unity is a popular game engine for 2D and 3D games. You can learn more about Unity on their [website](https://unity3d.com/).
+This article will guide you through adding Xbox Live sign-in to your Unity projects. There are two ways you can achieve sign-in if you have downloaded the [Xbox Live Unity Plugin](https://github.com/Microsoft/xbox-live-unity-plugin). You may either use the prefabs contained within the plugin or use the scripts and included libraries to script Xbox Live sign-in into your own custom GameObjects.
+
+> [!IMPORTANT]
+> This article applies to a version of the plugin prior to an update made in May of 2018 (1804 Release). If you installed the Xbox Live Plugin after that time, or have not yet downloaded it you may have a newer version which has significant differences to how sign-in is performed. In addition to this you will find that the screenshots in this plugin do not match those of the most recent release. Please instead refer to the [article for the updated sign-in prefab](playerauthentication-prefab-sign-in.md) as well as [the article detailing the updated methods for scripting sign-in](sign-in-manager.md).
 
 ## Before you begin
 
