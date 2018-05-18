@@ -4,7 +4,7 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: Package an app manually (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -106,7 +106,7 @@ Here is an example [Resources](https://docs.microsoft.com/uwp/schemas/appxpackag
 ```
 ### Dependencies
 
-For desktop bridge apps, always set the ``Name`` attribute to ``Windows.Desktop``.
+For desktop apps that you package by using the desktop bridge, always set the ``Name`` attribute to ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -115,7 +115,7 @@ For desktop bridge apps, always set the ``Name`` attribute to ``Windows.Desktop`
 ```
 
 ### Capabilities
-For desktop bridge apps, you'll have to add the ``runFullTrust`` capability.
+For desktop apps that you package by using the desktop bridge, you'll have to add the ``runFullTrust`` capability.
 
 ```XML
 <Capabilities>
@@ -128,7 +128,7 @@ Fill in this template with information that describes your app.
 
 ### Application element
 
-For desktop bridge apps, the ``EntryPoint`` attribute of the Application element is always ``Windows.FullTrustApplication``.
+For desktop apps that you package by using the desktop bridge, the ``EntryPoint`` attribute of the Application element is always ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
