@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # Error handling with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 This topic discusses strategies for handling errors when programming with C++/WinRT. For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
-## Avoiding catching and throwing exceptions
+## Avoid catching and throwing exceptions
 We recommend that you continue to write [exception-safe code](/cpp/cpp/how-to-design-for-exception-safety), but that you prefer to avoid catching and throwing exceptions whenever possible. If there's no handler for an exception, then Windows automatically generates an error report (including a minidump of the crash), which will help you track down where the problem is.
 
 Don't throw an exception that you expect to catch. And don't use exceptions for expected failures. Throw an exception *only when an unexpected runtime error occurs*, and handle everything else with error/result codes&mdash;directly, and close to the source of the failure. That way, when an exception *is* thrown, you know that the cause is either a bug in your code, or an exceptional error state in the system.
@@ -28,9 +28,9 @@ Throwing exceptions tends to be slower than using error codes. If you only throw
 But a more likely performance hit involves the runtime overhead of ensuring that the appropriate destructors are called in the unlikely event that an exception is thrown. The cost of this assurance comes whether an exception is actually thrown or not. So, you should ensure that the compiler has a good idea of what functions can potentially throw exceptions. If the compiler can prove that there won't be any exceptions from certain functions (the `noexcept` specification), then it can optimize the code it generates.
 
 ## Catching exceptions
-Error conditions that arise at the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer are returned in the form of HRESULTs. When C++/WinRT detects an error HRESULT code at the ABI layer, it converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/hresult-error) exception, which you can catch and handle where appropriate.
+An error condition that arises at the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer is returned in the form of a HRESULT value. But you don't need to handle HRESULTs in your code. The C++/WinRT projection code that's generated for an API on the consuming side detects an error HRESULT code at the ABI layer and converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/hresult-error) exception, which you can catch and handle.
 
-For example, if the user happens to delete an image from the Pictures Library while your application is iterating over that collection, then an exception will be thrown. And this is a case where you'll have to catch and handle that exception. Here's a code example showing this case.
+For example, if the user happens to delete an image from the Pictures Library while your application is iterating over that collection, then the projection throws an exception. And this is a case where you'll have to catch and handle that exception. Here's a code example showing this case.
 
 ```cppwinrt
 using namespace winrt;
@@ -59,6 +59,8 @@ IAsyncAction MakeThumbnailsAsync()
 }
 ```
 
+Use this same pattern in a coroutine when calling a `co_await`-ed function.
+
 ## Throwing exceptions
 There will be cases where you decide that, should your call to a given function fail, your application won't be able to recover (you'll no longer be able to rely on it to function predictably). The code example below uses a **winrt::handle** value as a wrapper around the HANDLE returned from [**CreateEvent**](https://msdn.microsoft.com/library/windows/desktop/ms682396). It then passes the handle (creating a `bool` value from it) to the [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/check-bool) function template. **winrt::check_bool** works with a `bool`, or with any value that's convertible to `false` (an error condition), or `true` (a success condition).
 
@@ -81,7 +83,27 @@ Because Windows APIs report run-time errors using various return-value types, th
 - [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/check-pointer). Checks whether a pointer is null and, if so, calls **winrt::throw_last_error**.
 - [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/check-win32). Checks whether a code represents an error and, if so, calls **winrt::throw_hresult**.
 
-You can use these helper functions for common return code types, or you can respond to any error condition and call either **winrt::throw_last_error** or **winrt::throw_hresult**.
+You can use these helper functions for common return code types, or you can respond to any error condition and call either **winrt::throw_last_error** or **winrt::throw_hresult**. 
+
+## Throwing exceptions when authoring an API
+Since it's invalid for an exception to cross the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) boundary, an error condition that arises in an implementation is returned across the ABI layer in the form of an HRESULT error code. When you're authoring an API using C++/WinRT, code is generated for you to convert any exception that you *do* throw in your implementation into an HRESULT. The [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/to-hresult) function is used in that generated code in a pattern like this.
+
+```cppwinrt
+HRESULT DoWork() noexcept
+{
+    try
+    {
+        // Shim through to your C++/WinRT implementation.
+        return S_OK;
+    }
+    catch (...)
+    {
+        return winrt::to_hresult(); // Convert any exception to an HRESULT.
+    }
+}
+```
+
+**winrt::to_hresult** handles exceptions derived from **std::exception**, and [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/hresult-error) and its derived types. In your implementation, you should prefer **winrt::hresult_error**, or a derived type, so that consumers of your API receive rich error information. **std::exception** (which maps to E_FAIL) is supported in case exceptions arise from your use of the Standard Template Library.
 
 ## Assertions
 For internal assumptions in your application, there are assertions. Prefer **static_assert** for compile-time validation, wherever possible. For run-time conditions, use WINRT_ASSERT with a Boolean expression.
