@@ -32,6 +32,8 @@
 ### [Sign-in with SignInManager](get-started-with-creators/sign-in-manager.md)
 ### [Test Visual Studio build](get-started-with-creators/test-visual-studio-build.md)
 ### [Player stats and Leaderboards in Unity](get-started-with-creators/add-stats-and-leaderboards-in-unity.md)
+### [Setup Leaderboard Example Scene](get-started-with-creators/setup-leaderboard-example-scene.md)
+### [Script Unity Leaderboard](get-started-with-creators/unity-leaderboard-from-scratch.md)
 ### [Controller support on XBL Prefabs](get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md)
 ### [Multi-user support in Unity](get-started-with-creators/add-multi-user-support.md)
 ### [Check user privilege settings in Unity](get-started-with-creators/check-user-privileges-in-unity.md)
