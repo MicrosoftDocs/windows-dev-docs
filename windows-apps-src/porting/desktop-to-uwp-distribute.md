@@ -4,7 +4,7 @@ Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: Publish your packaged desktop app to a Windows store or sideload it onto one or more devices.
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 Publish your packaged desktop app to a Windows store or sideload it onto one or more devices.  
 
 > [!NOTE]
-> Do you have a plan for how you might transition users to your packaged app? Before you distribute your app, see the [Transition users to your desktop bridge app](#transition-users) section of this guide to get some ideas.
+> Do you have a plan for how you might transition users to your packaged app? Before you distribute your app, see the [Transition users to your packaged app](#transition-users) section of this guide to get some ideas.
 
 ## Distribute your app by publishing it to the Microsoft Store
 
@@ -64,19 +64,19 @@ To sideload your app onto other devices, see [Sideload LOB apps in Windows 10](h
 
 <a id="transition-users" />
 
-## Transition users to your desktop bridge app
+## Transition users to your packaged app
 
-Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your desktop bridge app. Here's a few things you can do.
+Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your packaged app. Here's a few things you can do.
 
-* Point existing Start tiles and taskbar buttons to your desktop bridge app.
+* Point existing Start tiles and taskbar buttons to your packaged app.
 * Associate your packaged app with a set of file types.
-* Make your desktop bridge app open certain types of files by default.
+* Make your packaged app open certain types of files by default.
 
 For the complete list of extensions and the guidance for how to use them, see [Transition users to your app](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
-Also, consider adding code to your desktop bridge app that accomplishes these tasks:
+Also, consider adding code to your packaged app that accomplishes these tasks:
 
-* Migrates user data associated with your desktop app to the appropriate folder locations of your desktop bridge app.
+* Migrates user data associated with your desktop app to the appropriate folder locations of your packaged app.
 * Gives users the option to uninstall the desktop version of your app.
 
 Let's talk about each one of these tasks. We'll start with user data migration.
@@ -85,7 +85,7 @@ Let's talk about each one of these tasks. We'll start with user data migration.
 
 If you're going to add code that migrates user data, it's best to run that code only when the app is first started. Before you migrate the users data, display a dialog box to the user that explains what is happening, why it is recommended, and what's going to happen to their existing data.
 
-Here's an example of how you could do this in a .NET-based desktop bridge app.
+Here's an example of how you could do this in a .NET-based packaged app.
 
 ```csharp
 private void MigrateUserData()
@@ -124,7 +124,7 @@ private void MigrateUserData()
 
 It is better not to uninstall the users desktop app without first asking them for permission. Display a dialog box that asks the user for that permission. Users might decide not to uninstall the desktop version of your app. If that happens, you'll have to decide whether you want to block usage of the desktop app or support the side-by-side use of both apps.
 
-Here's an example of how you could do this in a .NET-based desktop bridge app.
+Here's an example of how you could do this in a .NET-based packaged app.
 
 To view the complete context of this snippet, see the **MainWindow.cs** file of this sample [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
 

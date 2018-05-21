@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 02/21/2018
+ms.date: 05/18/20188
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -100,7 +100,7 @@ The dependencies will not get installed if the app is installed by sideloading. 
 
 + __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your app onto a system that runs the Windows 10 S, then your app won’t be able to start them at all. This could block your app from submission to the Microsoft Store because all apps submitted to the Microsoft Store must be compatible with Windows 10 S.
 
-Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app, and your app will behave as expected on systems running Windows 10 S.
+Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a app that you you've package with the desktop bridge, and your app will behave as expected on systems running Windows 10 S.
 
 + __Your app hosts add-ins, plug-ins, or extensions__.   In many cases, COM-style extensions will likely continue to work as long as the extension has not been packaged, and it installs as full trust. That's because those installers can use their full-trust capabilities to modify the registry and place extension files wherever your host app expects to find them.
 
