@@ -9,9 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
-# Unity Prefabs and Sign-In
+# Unity Prefabs and Scripted Sign-In
 
-Unity is a popular game engine for 2D and 3D games. You can learn more about Unity on their [website](https://unity3d.com/).
+This article will guide you through adding Xbox Live sign-in to your Unity projects. There are two ways you can achieve sign-in if you have downloaded the [Xbox Live Unity Plugin](https://github.com/Microsoft/xbox-live-unity-plugin). You may either use the prefabs contained within the plugin or use the scripts and included libraries to script Xbox Live sign-in into your own custom GameObjects.
+
+> [!IMPORTANT]
+> This article applies to a version of the plugin prior to an update made in May of 2018 (1804 Release). If you installed the Xbox Live Plugin after that time, or have not yet downloaded it you may have a newer version which has significant differences to how sign-in is performed. In addition to this you will find that the screenshots in this plugin do not match those of the most recent release. Please instead refer to the [article for the updated sign-in prefab](playerauthentication-prefab-sign-in.md) as well as [the article detailing the updated methods for scripting sign-in](sign-in-manager.md).
 
 ## Before you begin
 
@@ -39,10 +42,6 @@ If you expand the **UserProfile** prefab in the **Project** panel or in the **hi
 ### The XboxLiveUser prefab
 
 The **UserProfile** prefab uses a second social prefab in its code called the **XboxLiveUser**. This prefab's use is not immediately evident as it does not need to be added to the scene hierarchy, as it may simply be instantiated in code. The **XboxLiveUser** has no visual representation, it simply contains the details that pertain to the Xbox Live user. You will need an instance of the **XboxLiveUser** for every instance of the **UserProfile**. This is important when [adding multi-user support](../get-started-with-creators/add-multi-user-support.md) to your title. In addition to holding information about the user after sign-in this prefab is also a wrapper for the code used to sign-in an Xbox Live user.
-
-### The Social prefab
-
-The **Social** prefab allows your Unity title to display the friends and presence of a signed-in Xbox Live user. The prefab is a scroll-enabled friends list which will also allow users to filter their friends by presence. The **Social** prefab also contains a reference to the **XboxLiveUser** it uses to pull the appropriate friends list to display.
 
 ## Sign-in with the UserProfile prefab
 

@@ -143,6 +143,16 @@ If you enabled **script debugging** when you built the UWP solution from Unity, 
 > [!NOTE]
 > Before using your Visual Studio build to test your game with real data, follow [this checklist](test-visual-studio-build.md) to help ensure your title will be able to access the Xbox Live service.
 
+> [!IMPORTANT]
+> As of May 2018 it is now required that you make an update to the package.appxmanifest.xml file in order to test your UWP title properly in Visual Studio. To do this:
+> 
+> 1. Search the Solution Explorer for the package.appxmanifest.xml file
+> 2. Right click the file and choose View Code
+> 3. Under the `<Properties><\/Properties>` section, add the following line: `<uap:SupportedUsers>multiple<\/uap:SupportedUsers>.
+> 4. Deploy the game to your Xbox by starting a remote debugging build from Visual Studio. You can find instruction to set up your title on an Xbox in the [Set up your UWP on Xbox development environment](../../xbox-apps/development-environment-setup.md) article.
+> 
+> The piece of configuration changed may look like it is enabling multi-player but it is still necessary to run your game in single player scenarios.
+
 ## Try out the examples
 
 You're all set to start using Xbox Live in your Unity project! Try opening scenes in the **Xbox Live/Examples** folder to see the plugin in action, and for examples of how to use the functionality yourself. Running the examples in the editor will give you fake data, but if you build the project in Visual Studio and [associate your Xbox Live account with the sandbox](authorize-xbox-live-accounts.md), you can sign in with your gamertag.
