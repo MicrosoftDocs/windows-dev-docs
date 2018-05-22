@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Adaptive streaming
 
 
-This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
+This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content. Starting with Windows 10, version 1803, Smooth Streaming is supported by  **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**.
 
 For a list of supported HLS protocol tags, see [HLS tag support](hls-tag-support.md). 
 

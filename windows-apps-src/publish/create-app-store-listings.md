@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 05/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -119,7 +119,7 @@ A shorter, catchy description that may be used in the top of your product’s St
 
 For games, the short description may also appear in the Information section of the Game Hub on Xbox One.
 
-This field has a 500 character limit.
+For best results, keep your short description under 270 characters. The field has a 500 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
 
 
 ### Additional system requirements
