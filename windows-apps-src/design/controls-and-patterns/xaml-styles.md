@@ -154,6 +154,9 @@ Overriding the system brushes is generally done at the App or Page level, and in
                  <SolidColorBrush x:Key="ButtonForeground" Color="MediumSlateBlue"/>
                  <SolidColorBrush x:Key="ButtonBorderBrush" Color="MediumSlateBlue"/>
             </ResourceDictionary>
+            <!-- Included to enable resource lookup in the other themes (e.g. Dark and High Contrast) to fall back to the default colors defined at a higher scope. -->
+            <ResourceDictionary x:Key="Dark"/>
+            <ResourceDictionary x:Key="HighContrast"/>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Page.Resources>
@@ -187,6 +190,9 @@ In other cases, changing a single control on one page only to look a certain way
                         <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
                             Color="Purple"/>
                     </ResourceDictionary>
+                    <!-- Included to enable resource lookup in the other themes (e.g. Dark and High Contrast) to fall back to the default colors defined at a higher scope. -->
+                    <ResourceDictionary x:Key="Dark"/>
+                    <ResourceDictionary x:Key="HighContrast"/>
                 </ResourceDictionary.ThemeDictionaries>
             </ResourceDictionary>
         </CheckBox.Resources>
