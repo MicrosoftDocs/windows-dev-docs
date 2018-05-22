@@ -28,7 +28,7 @@ Some highlights of the dashboard experience are:
 - A single location in the top right corner to access profile and account details, payout statements, support, and notifications.
 - Instant access to all of your developer programs, without having to sign in and out to each one. We'll also suggest new programs you might be interested in as they become available.
 
-When you create a [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported OS version, and the Store will automatically offer customers the package that will work best for them.
+When you [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported OS version, and the Store will automatically offer customers the package that will work best for them.
 
 [Add-ons (in-app products)](add-on-submissions.md) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently.
 
