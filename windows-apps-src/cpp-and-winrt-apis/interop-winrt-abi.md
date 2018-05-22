@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects.
 title: Interop between C++/WinRT and the ABI
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 
 # Interop between [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) and the ABI
-This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
+This topic shows how to convert between SDK application binary interface (ABI) and C++/WinRT objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
 ## What is the Windows Runtime ABI, and what are ABI types?
 A Windows Runtime class (runtime class) is really an abstraction. This abstraction defines a binary interface (the Application Binary Interface, or ABI) that allows various programming languages to interact with an object. Regardless of programming language, client code interaction with a Windows Runtime object happens at the lowest level, with client language constructs translated into calls into the object's ABI.
@@ -23,7 +23,7 @@ The Windows SDK headers in the folder "%WindowsSdkDir%Include\10.0.17134.0\winrt
 #include <windows.foundation.h>
 ```
 
-And here's a simplified example of one of the ABI types that you'll find in that particular header.
+And here's a simplified example of one of the ABI types that you'll find in that particular SDK header. Note the **ABI** namespace; **Windows::Foundation**, and all other Windows namespaces, are declared by the SDK headers within the **ABI** namespace.
 
 ```
 namespace ABI::Windows::Foundation
@@ -65,7 +65,7 @@ The interface here is modern, standard C++. It does away with **HRESULT**s (C++/
 This topic is for cases when you want to interop with, or port, code that works at the Application Binary Interface (ABI) layer.
 
 ## Converting to and from ABI types in code
-For safety and simplicity, for conversions in both directions you can simply use [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function), and [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Here's a code example (based on the **Console App** project template), which also illustrates how you can deal with namespace collisions between the projection and the ABI.
+For safety and simplicity, for conversions in both directions you can simply use [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function), and [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Here's a code example (based on the **Console App** project template), which also illustrates how you can use namespace aliases for the different islands to deal with otherwise potential namespace collisions between the C++/WinRT projection and the ABI.
 
 ```cppwinrt
 // main.cpp
