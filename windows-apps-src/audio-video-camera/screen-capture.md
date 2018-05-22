@@ -4,7 +4,7 @@ title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.author: elcowle
-ms.date: 5/8/2018
+ms.date: 5/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,6 +17,9 @@ ms.localizationpriority: medium
 Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 
 With screen capture, developers invoke secure system UI for end users to pick the display or application window to be captured, and a yellow notification border is drawn by the system around the actively captured item. In the case of multiple simultaneous capture sessions, a yellow border is drawn around each item being captured.
+
+> [!NOTE]
+> The screen capture APIs require you to be running Windows 10 Pro or Enterprise.
 
 ## Add the screen capture capability
 

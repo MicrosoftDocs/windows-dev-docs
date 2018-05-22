@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows two helper functions that can be used to convert between C++/CX and C++/WinRT objects.
 title: Interop between C++/WinRT and C++/CX
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,7 +42,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 ```
 
 ## Code example
-Here's a code example (based on the C++/CX **Blank App** project template) showing the two helper functions in use. It also illustrates how you can deal with namespace collisions across the two projections.
+Here's a code example (based on the C++/CX **Blank App** project template) showing the two helper functions in use. It also illustrates how you can use namespace aliases for the different islands to deal with otherwise potential namespace collisions between the C++/WinRT projection and the C++/CX projection.
 
 ```cppwinrt
 // MainPage.xaml.cpp

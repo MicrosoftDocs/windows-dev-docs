@@ -3,7 +3,7 @@ author: stevewhims
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,7 +70,7 @@ using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
 ```
 
-The `using namespace` directives are optional, but convenient.
+The `using namespace` directives are optional, but convenient. The pattern shown above for such directives (allowing unqualified name lookup for anything in the **winrt** namespace) is suitable for when you're beginning a new project and C++/WinRT is the only language projection you're using inside of that project. If, on the other hand, you're mixing C++/WinRT code with [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and/or SDK application binary interface (ABI) code (you're either porting from, or interoperating with, one or both of those models), then see the topics [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md), [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md), and [Interop between C++/WinRT and the ABI](interop-winrt-abi.md).
 
 ```cppwinrt
 winrt::init_apartment();
@@ -104,9 +104,20 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 Gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (more details in [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via the **c_str** function, which reflects the pattern used with C++ Standard Library strings.
 
-As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner, programming style from traditional COM programming. You don't need to directly initialize COM, work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions such as [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) for a natural and modern programming style.
+As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner, programming style from traditional COM programming. You don't need to directly initialize COM, work with COM pointers.
+
+Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions such as [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) for a natural and modern programming style. For more info about error-handling, and code examples, see [Error handling with C++/WinRT](error-handling.md).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hresult-error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+
+## Related topics
+* [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
+* [Error handling with C++/WinRT](error-handling.md)
+* [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md)
+* [Interop between C++/WinRT and the ABI](interop-winrt-abi.md)
+* [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)
+* [String handling in C++/WinRT](strings.md)
