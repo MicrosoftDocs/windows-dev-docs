@@ -134,7 +134,11 @@ As of **April 2018** titles will not pass certification if they exceed the susta
 
 ## How can I determine I am being throttled and what steps can I take?
 
-Please refer to the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.md) document as it will contain steps for improving your call pattern as well as an explanation of how the XSAPI assertion, XSAPI Social and Multiplayer managers, and live trace tool (XLTA) can be used to notify you of and mitigate throttling issues. You can find the best practices paper on GDNP and SDK and XDK docs 1602 and higher
+Please refer to the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.md) document as it will contain steps for improving your call pattern as well as an explanation of how the XSAPI assertion and XSAPI Social and Multiplayer managers can be used to notify you of and mitigate throttling issues.
+
+Another option is to record a trace of the Xbox Live calls and then analyze that trace using the [Xbox Live Trace Analyzer tool](https://docs.microsoft.com/windows/uwp/xbox-live/tools/analyze-service-calls).  To record a trace, you can either use Fiddler to record a .SAZ file, or use the built-in trace logging of XSAPI. For more information, how to use turn on traces in XSAPI see the Xbox Live documentation page "Analyze calls to Xbox Live Services". Once you have a trace, the Xbox Live Trace Analyzer tool will warn upon detecting throttled calls.
+
+You can find the best practices paper on GDNP and SDK and XDK docs 1602 and higher.
 
 ### Can limits change?
 

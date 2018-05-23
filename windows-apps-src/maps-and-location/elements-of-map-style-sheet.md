@@ -126,7 +126,7 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | > userMapElement             | [MapElement](#mapelement) | All user entries are under this entry. |
 | >> userBillboard             | [MapElement](#mapelement) | The styling for default [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) instances. |
 | >> userLine                  | [MapElement](#mapelement) | The styling for default [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) instances. |
-| >> userModel3D               | [MapElement](#mapelement) | The styling for default [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) instances.  This is primarily for setting renderAsSurface. |
+| >> userModel3D               | [MapElement3D](#mapelement3d) | The styling for default [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) instances.  This is primarily for setting renderAsSurface. |
 | >> userPoint                 | [PointStyle](#pointstyle) | The styling for default [MapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon) instances. |
 
 
