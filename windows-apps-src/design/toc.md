@@ -55,6 +55,7 @@
 ## [Inking controls](controls-and-patterns/inking-controls.md)
 ## [Input validation](controls-and-patterns/input-validation.md)
 ## [Lists](controls-and-patterns/lists.md)
+### [Combo box](controls-and-patterns/combo-box.md)
 ### [List view and grid view](controls-and-patterns/listview-and-gridview.md)
 ### [Item containers and templates](controls-and-patterns/item-containers-templates.md)
 ### [Item templates for list view](controls-and-patterns/item-templates-listview.md)
