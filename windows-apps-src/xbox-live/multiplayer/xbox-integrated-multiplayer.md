@@ -30,6 +30,7 @@ XIM is oriented around a few key concepts:
 
 - XIM network - A logical representation of a set of interconnected users participating in a particular multiplayer experience, as well as basic state describing that collection. Participants can be in only one XIM network at a time, but can move seamlessly from one conceptual XIM network to another.
 - Matchmaking - The optional process of discovering additional remote players with similar interests or skill levels to participate in a XIM network without requiring an existing social relationship.
+- Querying - The optional process of discovering XIM networks without requiring an existing social relationship between participants.
 - `xim_player` - An object representing an individual human user signed in on a local or remote device and participating in a XIM network. A single physical user that joins, leaves, and then rejoins the same XIM network is considered to be two separate player instances.
 - `xim_state_change` - A structure representing a notification to the local device regarding an asynchronous change in some aspect of the XIM network.
 - `xim::start_processing_state_changes` and `xim::finish_processing_state_changes` - The pair of methods called by the app every UI frame to perform asynchronous operations, to retrieve results to be handled in the form of `xim_state_change` structures, and then to free the associated resources when finished.

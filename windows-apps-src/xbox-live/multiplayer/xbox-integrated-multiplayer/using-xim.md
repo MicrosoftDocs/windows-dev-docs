@@ -3,7 +3,7 @@ title: Using XIM (C++)
 author: KevinAsgari
 description: Learn how to use Xbox Integrated Multiplayer (XIM) with C++.
 ms.author: kevinasg
-ms.date: 01/24/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -38,6 +38,7 @@ This is a brief walkthrough on using XIM's C++ API. Game developers wanting to a
     - [Muting players](#muting-players)
     - [Configuring chat targets using player teams](#configuring-chat-targets-using-player-teams)
     - [Automatic background filling of player slots ("backfill" matchmaking)](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [Querying joinable networks](#querying-joinable-networks)
 
 ## Prerequisites
 
@@ -156,15 +157,17 @@ You can change the custom player context pointer assigned to a `xim_player` at a
 
 ## Enabling friends to join and inviting them
 
-For privacy and security, all new XIM networks are automatically configured by default to not be joinable by any additional players, and it's up to the app to explicitly allow joinability once it is ready. The following example shows how to use `xim::set_allowed_player_joins()` to begin allowing new local users to join as players, as well other users that have been invited or that are being "followed" (an Xbox Live social relationship):
+For privacy and security, all new XIM networks are automatically configured by default to be only joinable by local players, and it's up to the app to explicitly allow others once it is ready. The following example shows how to use `xim::network_configuration()` to retrieve the current network configuration and update joinability using `xim::set_network_configuration()` to begin allowing new local users to join as players, as well as other users that have been invited or that are being "followed" (an Xbox Live social relationship) by players already in the XIM network:
 
 ```cpp
-xim::singleton_instance().set_allowed_player_joins(xim_allowed_player_joins::local_invited_or_followed);
+xim_network_configuration networkConfiguration = *xim::singleton_instance.network_configuration();
+networkConfiguration.allowed_player_joins = xim_allowed_player_joins::local | xim_allowed_player_joins::invited | xim_allowed_player_joins::followed;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-`xim::set_allowed_player_joins()` executes asynchronoulsy. Once the previous code sample call completes, a `xim_allowed_player_joins_changed_state_change` is provided to notify the app that the joinability value has changed from its default of `xim_allowed_player_joins::none`. You can then query for the new value using `xim::allowed_player_joins()`.
+`xim::set_network_configuration()` executes asynchronoulsy. Once the previous code sample call completes, a `xim_network_configuration_changed_state_change` is provided to notify the app that the joinability value has changed from its default of `xim_allowed_player_joins::none`. You can then query for the new value by checking the `allowed_player_joins` property of the `xim_network_configuration` returned by `xim::network_configuration()`. 
 
-`xim::allowed_player_joins()` may be called at any time to determine the joinability setting on the network.
+The `allowed_player_joins` can be checked while the device is in a XIM network to determine the joinability of the network.
 
 Should one of the local players want to send out invitations to remote users to join this XIM network, the app can call `xim_player::xim_local::show_invite_ui()` to launch the system invitation UI. Here, the local user can select people they wish to invite and send out invitations. The following example demonstrates how this works and assumes that the variable 'ximPlayer' points to a valid local `xim_player`:
 
@@ -208,7 +211,9 @@ The following example initiates a move using a matchmaking configuration set up 
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
@@ -351,79 +356,82 @@ Newly created XIM networks always start with no network custom properties set. H
 
 Matching players by common interest in a particular app-specified game mode is a good base strategy. As the pool of available players grows, you should consider also matching players based on their personal skill or experience with your game so that veteran players can enjoy the challenge of healthy competition with other veterans, while newer players can grow by competing against others with similar abilities.
 
-To do this, start by providing the skill level for all local players in their per-player matchmaking configuration structure specified in calls to `xim_player::xim_local::set_matchmaking_configuration()` prior to starting a move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `xim_player` object, whose pointer is 'localPlayer', has an associated app-specific uint32_t skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
+To do this, start by providing the skill level for all local players in their per-player roles and skill configuration structure specified in calls to `xim_player::xim_local::set_roles_and_skill_configuration()` prior to starting to move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `xim_player` object, whose pointer is 'localPlayer', has an associated app-specific uint32_t skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
 
 ```cpp
- xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
- playerMatchmakingConfiguration.skill = playerSkillValue;
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.skill = playerSkillValue;
 
- localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-When this completes, all participants will be provided a `xim_player_matchmaking_configuration_changed_state_change` indicating this `xim_player` has changed its per-player matchmaking configuration. The new value can be retrieved by calling `xim_player::matchmaking_configuration()`. When all players have non-null matchmaking configuration applied, you can move to a XIM network using matchmaking with a value of true for the `require_player_matchmaking_configuration` field of the `xim_matchmaking_configuration` structure passed into `xim::move_to_network_using_matchmaking()`.
-
-The following example populates a matchmaking configuration to find a total of 2-8 players for a no-teams free-for-all. Additionally, this example uses an app-defined constant, which is of type uint64_t and named MYGAMEMODE_DEATHMATCH, that represents the game-mode to filter off of. This configures matchmaking to match the players of the XIM network with other players specifying those same values, as well as requiring per-player matchmaking configuration.
+When this completes, all participants will be provided a `xim_player_roles_and_skill_configuration_changed_state_change` indicating this `xim_player` has changed its per-player roles and skill configuration. The new value can be retrieved by calling `xim_player::roles_and_skill_configuration()`. When all players have non-null roles and skill configuration applied, you can move to a XIM network using matchmaking with a value of true for the `require_player_roles_and_skill_configuration` field of the `xim_matchmaking_configuration` structure specified to `xim::move_to_network_using_matchmaking()`. The following example populates a matchmaking configuration that will find a total of 2-8 players for a no-teams free-for-all, using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value, and that requires per-player roles and skill configuration:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
-When this structure is provided to `xim::move_to_network_using_matchmaking()`, the move operation will start normally as long as players moving have called `xim_player::xim_local::set_matchmaking_configuration()` with a non-null `xim_player_matchmaking_configuration` pointer. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` value. This includes players that subsequently join the XIM network through a previously sent invitation or through other social means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id`) before matchmaking has completed. Once all players have supplied their `xim_player_matchmaking_configuration` structures, matchmaking will resume.
+When this structure is provided to `xim::move_to_network_using_matchmaking()`, the move operation will start normally as long as players moving have called `xim_player::xim_local::set_roles_and_skill_configuration()` with a non-null `xim_player_roles_and_skill_configuration` pointer. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` value. This includes players that subsequently join the XIM network through a previously sent invitation or through other means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id()`) before matchmaking has completed. Once all players have supplied their `xim_player_roles_and_skill_configuration` structures, matchmaking will resume.
 
-Matchmaking using per-player skill can also be combined with matchmaking user per-player role, as explained in the next section. If only one is desired, you can specify a value of 0 for the other. This is because all players declaring they have a `xim_player_matchmaking_configuration` skill value of 0 will always match each other.
+Matchmaking using per-player skill can also be combined with matchmaking user per-player role, as explained in the next section. If only one is desired, you can specify a value of 0 for the other. This is because all players declaring they have a `xim_player_roles_and_skill_configuration` skill value of 0 will always match each other.
 
-Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_matchmaking_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_matchmaking_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_matchmaking_configuration()` again with a new structure pointer containing the most up-to-date information.
+Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_roles_and_skill_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_roles_and_skill_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_roles_and_skill_configuration()` again with a new structure pointer containing the most up-to-date information.
 
 ## Matchmaking using per-player role
 
-Another method of using per-player matchmaking configuration to improve users' matchmaking experience is through the use of required player roles. This is best suited to games that provide selectable character types that encourage different cooperative play styles. These character types are ones which don't simply alter in-game graphical representation and, instead, alter the gameplay style for the player. Users' may prefer to play as a particular specialization. However, if your game is designed such that it's functionally not possible to complete objectives without at least one person fulfilling each role, sometimes it's better to match such players together first than to match any players together then require them to negotiate play styles among themselves once gathered. You can do this by first defining a unique bit flag representing each role to be specified in a given player's `xim_player_matchmaking_configuration` structure.
+Another method of using per-player roles and skill configuration to improve users' matchmaking experience is through the use of required player roles. This is best suited to games that provide selectable character types that encourage different cooperative play styles; that is, types that don't simply alter in-game graphical representation, but control complementary, impactful attributes such as defensive "healers" vs. close-in "melee" offense vs. distant "range" attack support. Users' personalities mean they may prefer to play as a particular specialization. But if your game is designed such that it's functionally not possible to complete objectives without at least one person fulfilling each role, sometimes it's better to match such players together first than to match any players together then require them to negotiate play styles among themselves once gathered. You can do this by first defining a unique bit flag representing each role to be specified in a given player's `xim_player_roles_and_skill_configuration` structure.
 
-The following example sets an app-specific role value, which is of type uint8_t and named MYROLEBITFLAG_HEALER, for the local `xim_player` object, whose pointer is 'localPlayer':
+The following example sets an app-specific MYROLEBITFLAG_HEALER uint8_t role value for the local xim_player object, whose pointer is 'localPlayer':
 
 ```cpp
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.roles = MYROLEBITFLAG_HEALER;
 
-xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
-playerMatchmakingConfiguration.roles = MYROLEBITFLAG_HEALER;
-localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
-
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-When this completes, all participants will be provided a `xim_player_matchmaking_configuration_changed_state_change` indicating this `xim_player` has changed its per-player matchmaking configuration. The new value can be retrieved by calling `xim_player::matchmaking_configuration()`.
+When this completes, all participants will be provided a `xim_player_roles_and_skill_configuration_changed_state_change` indicating this `xim_player` has changed its per-player role configuration. The new value can be retrieved by calling `xim_player::roles_and_skill_configuration()`.
 
 The global `xim_matchmaking_configuration` structure specified to `xim::move_to_network_using_matchmaking()` should have all the required roles flags combined using bitwise-OR, and a value of true for the require_player_matchmaking_configuration field.
 
-The following example populates a matchmaking configuration that will find a total of 3 players for a no-teams free-for-all. Additionally, this example uses an app-defined constant, which is of type uint64_t and named MYGAMEMODE_COOPERATIVE, that represents the game-mode to filter off of. Also, the configuration is set up to require per-player matchmaking configuration where at least one player fulfills each app-specific uint8_t roles which were bitwise-OR'd together and placed in the configuration (MYROLEBITFLAG_HEALER, MYROLEBITFLAG_MELEE, and MYROLEBITFLAG_RANGE):
+The following example populates a matchmaking configuration that will find a total of 3 players for a no-teams free-for-all. Additionally, this example uses an app-defined constant, which is of type uint64_t and named MYGAMEMODE_COOPERATIVE, that represents the game-mode to filter off of. Also, the configuration is set up to require per-player roles and skill configuration where at least one player fulfills each app-specific uint8_t roles which were bitwise-OR'd together and placed in the configuration (MYROLEBITFLAG_HEALER, MYROLEBITFLAG_MELEE, and MYROLEBITFLAG_RANGE):
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_3_players_minimum_3;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 3;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 3;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_COOPERATIVE;
 matchmakingConfiguration.required_roles = MYROLEBITFLAG_HEALER | MYROLEBITFLAG_MELEE | MYROLEBITFLAG_RANGE;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
 When this structure is provided to `xim::move_to_network_using_matchmaking()`, the move operation will start as described above.
 
-Matchmaking using per-player role can also be combined with matchmaking user per-player skill. If only one is desired, specify a value of 0 for the other. This is because all players declaring they have a `xim_player_matchmaking_configuration` skill value of 0 will always match each other; and, if all bits are zero in the `xim_matchmaking_configuration` required_roles field, then no role bits are needed in order to match.
+Matchmaking using per-player role can also be combined with matchmaking user per-player skill. If only one is desired, specify a value of 0 for the other. This is because all players declaring they have a `xim_player_roles_and_skill_configuration` skill value of 0 will always match each other; and, if all bits are zero in the `xim_matchmaking_configuration` required_roles field, then no role bits are needed in order to match.
 
-Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_matchmaking_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_matchmaking_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_matchmaking_configuration()` again with a new structure pointer containing the most up-to-date information.
+Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_roles_and_skill_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_roles_and_skill_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_roles_and_skill_configuration()` again with a new structure pointer containing the most up-to-date information.
 
 ## How XIM works with player teams
 
-Multiplayer gaming often involves players organized onto opposing teams. XIM makes it easy to assign teams when matchmaking by using a `xim_team_matchmaking_mode` value requesting two or more teams in the specified configuration. The following example initiates a move using matchmaking configured to find a total of 8 players to place on two teams of 4 (although if 4 aren't found, 1-3 players are also acceptable). Additionally, this example uses an app-defined constant, which is of type uint64_t and named MYGAMEMODE_CAPTURETHEFLAG, that represents the game-mode to filter off of.  Also, the configuration is set up to bring along all socially-joined players from the current XIM network:
+Multiplayer gaming often involves players organized onto opposing teams. XIM makes it easy to assign teams when matchmaking by setting `xim_team_configuration`. The following example initiates a move using matchmaking configured to find a total of 8 players to place on two equal teams of 4 (although if 4 aren't found, 1-3 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_CAPTURETHEFLAG that will only match with other players specifying that same value, and bringing all socially-joined players from the current XIM network:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = two_teams_4v4_minimum_1_per_team;
+matchmakingConfiguration.team_configuration.team_count = 2;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 1;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 4;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_CAPTURETHEFLAG;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
 ```
 
-When such a XIM network move operation completes, the players will be assigned a team index value 1 through {n} corresponding to the {n} teams requested. The true meaning of any particular team index value is up to the app. A player's team index value is retrieved via `xim_player::team_index()`. When using a `xim_team_matchmaking_mode` with two or more teams, players will never be assigned a team index value of zero by the call to `xim::move_to_network_using_matchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
+When such a XIM network move operation completes, the players will be assigned a team index value 1 through {n} corresponding to the {n} teams requested. The true meaning of any particular team index value is up to the app. A player's team index value is retrieved via `xim_player::team_index()`. When using a `xim_team_configuration` with two or more teams, players will never be assigned a team index value of zero by the call to `xim::move_to_network_using_matchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
 
 The following example retrieves the team index for a xim_player object whose pointer is in the 'ximPlayer' variable:
 
@@ -528,28 +536,97 @@ As noted earlier, most XIM network move types will initially assign all players 
 
 ## Automatic background filling of player slots ("backfill" matchmaking)
 
-Disparate groups of players calling `xim::move_to_network_using_matchmaking()` at the same time gives the Xbox Live matchmaking service the greatest flexibility to organize them into new, optimal XIM networks quickly. However, some gameplay scenarios would like to keep a particular XIM network intact, and only matchmake additional players just to fill vacant player slots. XIM supports configuring matchmaking to operate in an automatic background filling mode, or "backfilling", by using the `xim::set_backfill_matchmaking_configuration()` method.
+Disparate groups of players calling `xim::move_to_network_using_matchmaking()` at the same time gives the Xbox Live matchmaking service the greatest flexibility to organize them into new, optimal XIM networks quickly. However, some gameplay scenarios would like to keep a particular XIM network intact, and only matchmake additional players just to fill vacant player slots. XIM supports configuring matchmaking to operate in an automatic background filling mode, or "backfilling", by calling `xim::set_network_configuration()` with a `xim_network_configuration` that has `xim_allowed_player_joins::matchmade` flag set on its `xim_network_configuration::allowed_player_joins` property.
 
-The following example populates a matchmaking configuration and configures backfill matchmaking to try to find a total of 8 players for a no-teams free-for-all (although if 8 aren't found, 2-7 players are also acceptable). Additionally, this example uses an app-defined constant, which is of type uint64_t and named MYGAMEMODE_DEATHMATCH, that represents the game-mode to filter off of:
-
-```cpp
- xim_matchmaking_configuration matchmakingConfiguration = { 0 };
- matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
- matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-
- xim::singleton_instance().set_backfill_matchmaking_configuration(&matchmakingConfiguration);
-```
-
-This makes the existing XIM network available to devices calling `xim::move_to_network_using_matchmaking()` in the normal manner. Those devices see no behavior change. The participants in the backfilling XIM network will not move, but will be provided a `xim_backfill_matchmaking_configuration_changed_state_change` signifying backfill turning on, as well as multiple `xim_matchmaking_progress_updated_state_change` notifications when applicable. Any matchmade player will be added to the XIM network using the normal `xim_player_joined_state_change`.
-
-By default, backfill matchmaking remains enabled indefinitely, although it won't try to add players if the XIM network already has the maximum number of players specified by the `xim_team_matchmaking_mode` value. Backfilling can be disabled by calling `xim::set_backfill_matchmaking_configuration()` with a null pointer:
+The following example configures backfill matchmaking to try to find a total of 8 players for a no-teams free-for-all (although if 8 aren't found, 2-7 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value:
 
 ```cpp
- xim::singleton_instance().set_backfill_matchmaking_configuration(nullptr);
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::matchmade;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 2;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
+
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-A corresponding `xim_backfill_matchmaking_configuration_changed_state_change` will be provided to all devices, and once this asynchronous process has completed, a final `xim_matchmaking_progress_updated_state_change` will be provided with `xim_matchmaking_status::none` to signify that no further matchmade players will be added to the XIM network.
+This makes the existing XIM network available to devices calling `xim::move_to_network_using_matchmaking()` in the normal manner. Those devices see no behavior change. The participants in the backfilling XIM network will not move, but will be provided a `xim_network_configuration_changed_state_change` signifying backfill turning on, as well as multiple `xim_matchmaking_progress_updated_state_change` notifications when applicable. Any matchmade player will be added to the XIM network using the normal `xim_player_joined_state_change`.
 
-When enabling backfill matchmaking with a `xim_team_matchmaking_mode` value that declares two or more teams, all existing players must have a valid team index that is between 1 and the number of teams. This includes players who have called `xim_player::xim_local::set_team_index()` to specify a custom value or who have joined using an invitation or through other social means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id`) and have been added with a default team index value of 0. If any player doesn't have a valid team index, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_team_index` value. Once all players have supplied or corrected their team index values with `xim_player::xim_local::set_team_index()`, backfill matchmaking will resume. More information can be found in the [How XIM works with player teams](#how-xim-works-with-player-teams) section of this document.
+By default, backfill matchmaking remains in progress indefinitely, although it won't try to add players if the XIM network already has the maximum number of players specified by the xim_team_configuration setting. Backfilling can be disabled by setting xim_allowed_player_joins to not allow matchmade. The following example disables backfilling by clearing the xim_allowed_player_joins::matchmade flag while preserving all other existing flags and network configuration settings.
 
-Similarly, when enabling backfill matchmaking with a `xim_matchmaking_configuration` structure with the require_player_matchmaking_configuration field set to true for roles or skill, then all players must have specified a non-null per-player matchmaking configuration. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` value. Once all players have supplied their `xim_player_matchmaking_configuration` structures, backfill matchmaking will resume. More information can be found in the [Matchmaking using per-player skill](#matchmaking-using-per-player-skill) and [Matchmaking using per-player role](#matchmaking-using-per-player-role) sections of this document.
+```cpp
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins &= ~xim_allowed_player_joins::matchmade;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
+```
+
+A corresponding `xim_network_configuration_changed_state_change` will be provided to all devices, and once this asynchronous process has completed, a final `xim_matchmaking_progress_updated_state_change` will be provided with `xim_matchmaking_status::none` to signify that no further matchmade players will be added to the XIM network.
+
+When enabling backfill matchmaking with a `xim_team_configuration` setting that declares two or more teams, all existing players must have a valid team index that is between 1 and the number of teams. This includes players who have called `xim_player::xim_local::set_team_index()` to specify a custom value or who have joined using an invitation or through other social means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id`) and have been added with a default team index value of 0. If any player doesn't have a valid team index, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_team_index` value. Once all players have supplied or corrected their team index values with `xim_player::xim_local::set_team_index()`, backfill matchmaking will resume. More information can be found in the [How XIM works with player teams](#how-xim-works-with-player-teams) section of this document.
+
+Similarly, when enabling backfill matchmaking with a `xim_network_configuration` structure with the `require_player_roles_and_skill_configuration` field set to true for roles or skill, then all players must have specified a non-null per-player matchmaking configuration. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` value. Once all players have supplied their `xim_player_roles_and_skill_configuration` structures, backfill matchmaking will resume. More information can be found in the [Matchmaking using per-player skill](#matchmaking-using-per-player-skill) and [Matchmaking using per-player role](#matchmaking-using-per-player-role) sections of this document.
+
+## Querying joinable networks
+
+While matchmaking is a great way to connect players together quickly, sometimes it's best to allow players to discover joinable networks using custom search criteria, and select the network they wish to join. This can be particularly advantageous when a game session might have a large set of configurable game rules and player preferences. To do this, an existing network must first be made queryable by enabling `xim_allowed_player_joins::queried` joinability and configuring the network information available to others outside the network through a call to `xim::set_network_configuration()`.
+
+The following example enables `xim_allowed_player_joins::queried` joinability, sets network configuration with a team configuration that allows a total of 1-8 players together in 1 team, an app-specific game mode constant uint64_t defined by the value GAME_MODE_BRAWL, a description "cat and sheep's boxing match", an app-specific map index constant uint32_t defined by the value MAP_KITCHEN and includes tags "chatrequired", "easy", "spectatorallowed":
+
+```cpp
+PCWSTR tags[] = { L"chatrequired", L"easy", L"spectatorallowed" };
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::queried;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 1;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = GAME_MODE_BRAWL;
+networkConfiguration.description = L"cat and sheep's boxing match";
+networkConfiguration.map_index = MAP_KITCHEN;
+networkConfiguration.tag_count = _countof(tags);
+networkConfiguration.tags = tags;
+
+xim::set_network_configuration(&networkConfiguration);
+```
+
+Other players outside the network can then find the network by calling `xim::start_joinable_network_query()` with a set of filters that match the network information in the previous `xim::set_network_configuration()` call. The following example starts a joinable network query with the game mode filter option that will only query for networks using the app-specific game mode defined by value GAME_MODE_BRAWL:
+
+```cpp
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+Here is another example that uses the tag filters option to query for networks having tag "easy" and "spectatorallowed" in their public queryable configuration:
+
+```cpp
+PCWSTR tagFilters[] = { L"easy", L"spectatorallowed" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+Different filter options can also be combined. The following example that uses both the game mode filter option and tag filter option to start a query for networks that both have the app-specific game mode constant GAME_MODE_BRAWL and tag "easy":
+
+```cpp
+PCWSTR tagFilters[] = { L"easy" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+If the query operation succeeds, the app will receive a `xim_start_joinable_network_query_completed_state_change` from which the app can retrieve a list of joinable networks. The app will also continuously receive `xim_joinable_network_query_updated_state_change` for additional joinable networks or any changes that happen to the returned list of joinable networks until it is stopped either manually or automatically. The in-progress query can be stopped manually by calling `xim::stop_joinable_network_query()`. It will be stopped automatically when calling `xim::start_joinable_network_query()` to start a new query.
+
+The app can try to join a network in the list of joinable networks by calling `xim::move_to_network_using_joinable_network_information()`. The following example assumes you are trying to join a `xim_joinable_network_information` pointed by pointer 'selectedNetwork' which is not secured by a passcode (so we are passing nullptr to the second parameter):
+
+```cpp
+xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr);
+```
+
+When enabling network query with a xim_team_configuration that declares two or more teams, players joined by calling `xim::move_to_network_using_joinable_network_information()` will have a default team index value of 0.

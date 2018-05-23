@@ -3,7 +3,7 @@ title: Using XIM (C#)
 author: KevinAsgari
 description: Learn how to use Xbox Integrated Multiplayer (XIM) with C#.
 ms.author: kevinasg
-ms.date: 01/24/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,6 +37,7 @@ This is a brief walkthrough on using XIM's C# API. Game developers wanting to ac
     - [Muting players](#muting-players)
     - [Configuring chat targets using player teams](#configuring-chat-targets-using-player-teams)
     - [Automatic background filling of player slots ("backfill" matchmaking)](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [Querying joinable networks](#querying-joinable-networks)
 
 ## Prerequisites
 
@@ -82,7 +83,7 @@ The call to `XboxIntegratedMultiplayer.MovetoNewNetwork()` initiates an asynchro
 
 ## Asynchronous operations and processing state changes
 
-The heart of XIM is the app's regular, frequent calls to the `XboxIntegratedMultiplayer.GetStateChanges()` method. This method is how XIM is informed that the app is ready to handle updates to multiplayer state, and how XIM provides those updates by returning a `XimStateChangeCollection` object containing all queued updates. `XboxIntegratedMultiplayer.GetStateChanges()` is designed to operate quickly such that it can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timings or multi-threaded callback complexity. The XIM API is actually optimized for this single-threaded pattern. It guarantees its state will remain unchanged while a `XimStateChangeCollection` object is being process and hasn’t been disposed.
+The heart of XIM is the app's regular, frequent calls to the `XboxIntegratedMultiplayer.GetStateChanges()` method. This method is how XIM is informed that the app is ready to handle updates to multiplayer state, and how XIM provides those updates by returning a `XimStateChangeCollection` object containing all queued updates. `XboxIntegratedMultiplayer.GetStateChanges()` is designed to operate quickly such that it can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timings or multi-threaded callback complexity. The XIM API is actually optimized for this single-threaded pattern. It guarantees its state will remain unchanged while a `XimStateChangeCollection` object is being process and hasn't been disposed.
 
 The `XimStateChangeCollection` is a collection of `IXimStateChange` objects.
 Apps should:
@@ -143,15 +144,17 @@ You can change this custom player context at any time.
 
 ## Enabling friends to join and inviting them
 
-For privacy and security, all new XIM networks are automatically configured by default to not be joinable by any additional players, and it's up to the app to explicitly allow them once it is ready. The following example shows how to use `XboxIntegratedMultiplayer.SetAllowedPlayerJoins()` to begin allowing new local users to join as players, as well other users that have been invited or that are being "followed" (an Xbox Live social relationship):
+For privacy and security, all new XIM networks are automatically configured by default to be only joinable by local players, and it's up to the app to explicitly allow others once it is ready. The following example shows how to use `XboxIntegratedMultiplayer.NetworkConfiguration` to retrieve the current network configuration and update joinability using `XboxIntegratedMultiplayer.SetNetworkConfiguration()` to begin allowing new local users to join as players, as well as other users that have been invited or that are being "followed" (an Xbox Live social relationship) by players already in the XIM network:
 
 ```cs
-XboxIntegratedMultiplayer.SetAllowedPlayerJoins(XimAllowedPlayerJoins.LocalInvitedOrFollowed);
+XimNetworkConfiguration currentConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+currentConfiguration.AllowedPlayerJoins = XimAllowedPlayerJoins.Local | XimAllowedPlayerJoins.Invited | XimAllowedPlayerJoins.Followed;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(currentConfiguration);
 ```
 
-`XboxIntegratedMultiplayer.SetAllowedPlayerJoins()` executes asynchronously. Once the previous code sample call completes, a `XimAllowedPlayerJoinsChangedStateChange` is provided to notify the app that the joinability value has changed from its default of `XimAllowedPlayerJoins.None`. You can then query the new value by checking the value of `XboxIntegratedMultiplayer.AllowedPlayerJoins`.
+`XboxIntegratedMultiplayer.SetNetworkConfiguration()` executes asynchronously. Once the previous code sample call completes, a `XimNetworkConfigurationChangedStateChange` is provided to notify the app that the joinability value has changed from its default of `XimAllowedPlayerJoins.None`. You can then query the new value by checking the value of `XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins`.
 
-`XboxIntegratedMultiplayer.AllowedPlayerJoins` can be checked at any time to determine the joinability setting on the network.
+`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` can be checked while the device is in a XIM network to determine the joinability of the network.
 
 Should one of the local players want to send out invitations to remote users to join this XIM network, the app can call `XimLocalPlayer.ShowInviteUI()` to launch the system invitation UI. Here, the local user can select people they wish to invite and send out invitations.
 
@@ -197,12 +200,11 @@ A simple way to initiate basic matchmaking with XIM is by calling `XboxIntegrate
 The following example initiates a move using a matchmaking configuration set up to find a total of 8 players for a no-teams free-for-all match. If 8 total players aren't found, the system might still match 2-7 players together. This example uses an app-defined constant, of type uint, named MYGAMEMODE_DEATHMATCH, that represents the game-mode to filter off of. XIM's matchmaking will only match this network with other players specifying that same value and brings along all socially-joined players from the current XIM network when providing the second parameter `XimPlayersToMove.BringExistingSocialPlayers` to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`:
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-    TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-    CustomGameMode = MYGAMEMODE_DEATHMATCH;
-};
-
+var matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 1;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+matchmakingConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
 XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration, XimPlayersToMove.BringExistingSocialPlayers);
 ```
 
@@ -283,7 +285,7 @@ The `NetworkPathInformation.RoundTripLatency` field represents the latency of th
 
 Choose a reasonable point to start throttling calls to `SendDataToOtherPlayers` based on the game's usage and requirements. Every message in the send queue represents an increase in the effective network latency.
 
-A value close to XIM’s max limit (currently 3500 messages) is far too high for most games and likely represents several seconds of data waiting to be sent depending on the rate of calling `SendDataToOtherPlayers` and how big each data payload is. Instead, choose a number that takes into account the game's latency requirements along with how jittery the game's `SendDataToOtherPlayers` calling pattern is.
+A value close to XIM's max limit (currently 3500 messages) is far too high for most games and likely represents several seconds of data waiting to be sent depending on the rate of calling `SendDataToOtherPlayers` and how big each data payload is. Instead, choose a number that takes into account the game's latency requirements along with how jittery the game's `SendDataToOtherPlayers` calling pattern is.
 
 ## Sharing data using player custom properties
 
@@ -331,68 +333,66 @@ Newly created XIM networks always start with no network custom properties set. H
 
 Matching players by common interest in a particular app-specified game mode is a good base strategy. As the pool of available players grows, you should consider also matching players based on their personal skill or experience with your game so that veteran players can enjoy the challenge of healthy competition with other veterans, while newer players can grow by competing against others with similar abilities.
 
-To do this, start by providing the skill level for all local players in their per-player matchmaking configuration structure specified in calls to `XimLocalPlayer.SetMatchmakingConfiguration()` prior to starting to move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `XimLocalPlayer` object, whose variable is 'localPlayer', has an associated app-specific integer skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
+To do this, start by providing the skill level for all local players in their per-player roles and skill configuration structure specified in calls to `XimLocalPlayer.SetRolesAndSkillConfiguration()` prior to starting to move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `XimLocalPlayer` object, whose variable is 'localPlayer', has an associated app-specific integer skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
 
 ```cs
-var config = new XimPlayerMatchmakingConfiguration();
+var config = new XimPlayerRolesAndSkillConfiguration();
 config.Skill = playerSkillValue;
-localPlayer.SetMatchmakingConfiguration(config);
+localPlayer.SetRolesAndSkillConfiguration(config);
 ```
 
-When this completes, all participants will be provided a `PlayerMatchmakingConfigurationStateChange` indicating this `IXIMPlayer` has changed its per-player matchmaking configuration. The new value can be retrieved by calling `IXIMPlayer.MatchmakingConfiguration`. When all players have non-null matchmaking configuration applied, you can move to a XIM network using matchmaking with a value of true for the `RequirePlayerMatchmakingConfiguration` field of the `MatchmakingConfiguration` structure specified to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`.
+When this completes, all participants will be provided a `XimPlayerRolesAndSkillConfigurationChangedStateChange` indicating this `IXIMPlayer` has changed its per-player roles and skill configuration. The new value can be retrieved by calling `IXIMPlayer.RolesAndSkillConfiguration`. When all players have non-null matchmaking configuration applied, you can move to a XIM network using matchmaking with a value of true for the `RequirePlayerRolesAndSkillConfiguration` field of the `XimMatchmakingConfiguration` structure specified to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`.
 
 The following example populates a matchmaking configuration to find a total of 2-8 players for a no-teams free-for-all. Additionally, this example uses an app-defined constant, which is of type Uint64 and named MYGAMEMODE_DEATHMATCH, that represents the game-mode to filter off of. This configures matchmaking to match the players of the XIM network with other players specifying those same values, as well as requiring per-player matchmaking configuration.
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-    TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-    CustomGameMode = MYGAMEMODE_DEATHMATCH;
-    RequirePlayerMatchmakingConfiguration = true;
-};
+XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 1;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+matchmakingConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
+matchmakingConfiguration.RequirePlayerRolesAndSkillConfiguration = true;
 ```
 
-When this structure is provided to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`, the move operation will start normally as long as players moving have called `XimLocalPlayer.SetMatchmakingConfiguration()` with a non-null `XimPlayerMatchmakingConfiguration` object. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `WaitingForPlayerMatchmakingConfiguration` value. This includes players that subsequently join the XIM network through a previously sent invitation or through other social means (e.g., a call to `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`) before matchmaking has completed. Once all players have supplied their `XimPlayerMatchmakingConfiguration` objects, matchmaking will resume.
+When this structure is provided to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`, the move operation will start normally as long as players moving have called `XimLocalPlayer.SetRolesAndSkillConfiguration()` with a non-null `XimPlayerRolesAndSkillConfiguration` object. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `WaitingForPlayerRolesAndSkillConfiguration` value. This includes players that subsequently join the XIM network through a previously sent invitation or through other social means (e.g., a call to `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`) before matchmaking has completed. Once all players have supplied their `XimPlayerRolesAndSkillConfiguration` objects, matchmaking will resume.
 
-Matchmaking using per-player skill can also be combined with matchmaking user per-player role, as explained in the next section. If only one is desired, you can specify a value of 0 for the other. This is because all players declaring they have a `xim_player_matchmaking_configuration` skill value of 0 will always match each other.
+Matchmaking using per-player skill can also be combined with matchmaking user per-player role, as explained in the next section. If only one is desired, you can specify a value of 0 for the other. This is because all players declaring they have a `XimPlayerRolesAndSkillConfiguration` skill value of 0 will always match each other.
 
-Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_matchmaking_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_matchmaking_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_matchmaking_configuration()` again with a new structure pointer containing the most up-to-date information.
+Once the `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` or any other XIM network move operation has completed, all players' `XimPlayerRolesAndSkillConfiguration` structures will automatically be cleared to a null pointer (with an accompanying `XimPlayerRolesAndSkillConfigurationChangedStateChange` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `XimLocalPlayer.SetRolesAndSkillConfiguration()` again with a object containing the most up-to-date information.
 
 ## Matchmaking using per-player role
 
-Another method of using per-player matchmaking configuration to improve users' matchmaking experience is through the use of required player roles. This is best suited to games that provide selectable character types that encourage different cooperative play styles. These character types are ones which don't simply alter in-game graphical representation and, instead, alter the gameplay style for the player. Users' may prefer to play as a particular specialization. However, if your game is designed such that it's functionally not possible to complete objectives without at least one person fulfilling each role, sometimes it's better to match such players together first than to match any players together then require them to negotiate play styles among themselves once gathered. You can do this by first defining a unique bit flag representing each role to be specified in a given player's `XimPlayerMatchmakingConfiguration` structure.
+Another method of using per-player roles and skill configuration to improve users' matchmaking experience is through the use of required player roles. This is best suited to games that provide selectable character types that encourage different cooperative play styles. These character types are ones which don't simply alter in-game graphical representation and, instead, alter the gameplay style for the player. Users' may prefer to play as a particular specialization. However, if your game is designed such that it's functionally not possible to complete objectives without at least one person fulfilling each role, sometimes it's better to match such players together first than to match any players together then require them to negotiate play styles among themselves once gathered. You can do this by first defining a unique bit flag representing each role to be specified in a given player's `XimPlayerRolesAndSkillConfiguration` structure.
 
 The following example sets an app-specific role value, which is of type byte and named MYROLEBITFLAG_HEALER, for the local `XimLocalPlayer` object, whose pointer is 'localPlayer':
 
 ```cs
-var config = new XimPlayerMatchmakingConfiguration();
+var config = new XimPlayerRolesAndSkillConfiguration();
 config.Roles = MYROLEBITFLAG_HEALER;
-localPlayer.SetMatchmakingConfiguration(config);
+localPlayer.SetRolesAndSkillConfiguration(config);
 ```
 
-When this completes, all participants will be provided a `PlayerMatchmakingConfigurationChangedStateChange` indicating this `IXimPlayer` has changed its per-player matchmaking configuration. The new value can be retrieved by calling `IXimPlayer.MatchmakingConfiguration`.
+When this completes, all participants will be provided a `XimPlayerRolesAndSkillConfigurationChangedStateChange` indicating this `IXimPlayer` has changed its per-player roles and skill configuration. The new value can be retrieved by calling `IXimPlayer.RolesAndSkillConfiguration`.
 
-The global `XimMatchmakingConfiguration` structure specified to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` should then have all the required roles flags combined using bitwise-OR, and a value of true for the `RequirePlayerMatchmakingConfiguration` field.
+The global `XimMatchmakingConfiguration` structure specified to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` should then have all the required roles flags combined using bitwise-OR, and a value of true for the `RequirePlayerRolesAndSkillConfiguration` field.
 
-Matchmaking using per-player role can also be combined with matchmaking user per-player skill. If only one is desired, specify a value of 0 for the other. This is because all players declaring they have a `PlayerMatchmakingConfiguration` skill value of 0 will always match each other; and, if all bits are zero in the `Player` required_roles field, then no role bits are needed in order to match.
+Matchmaking using per-player role can also be combined with matchmaking user per-player skill. If only one is desired, specify a value of 0 for the other. This is because all players declaring they have a `XimPlayerRolesAndSkillConfiguration` skill value of 0 will always match each other; and, if all bits are zero in the `XimMatchmakingConfiguration.RequiredRoles` field, then no role bits are needed in order to match.
 
-Once the `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` or any other XIM network move operation has completed, all players' `XimPlayerMatchmakingConfiguration` objects will automatically be cleared to null (with an accompanying `XimPlayerMatchmakingConfigurationChangedStateChange` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `XimLocalPlayer.SetMatchmakingConfiguration()` again with a object containing the most up-to-date information.
+Once the `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` or any other XIM network move operation has completed, all players' `XimPlayerRolesAndSkillConfiguration` objects will automatically be cleared to null (with an accompanying `XimPlayerRolesAndSkillConfigurationChangedStateChange` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `XimLocalPlayer.SetRolesAndSkillConfiguration()` again with a object containing the most up-to-date information.
 
 ## How XIM works with player teams
 
-Multiplayer gaming often involves players organized onto opposing teams. XIM makes it easy to assign teams when matchmaking by using a `XimTeamMatchmakingMode` value requesting two or more teams in the specified configuration. The following example initiates a move using matchmaking configured to find a total of 8 players to place on two teams of 4 (although if 4 aren't found, 1-3 players are also acceptable). Additionally, this example uses an app-defined constant, which is of type uint and named MYGAMEMODE_CAPTURETHEFLAG, that represents the game-mode to filter off of.  Also, the configuration is set up to bring along all socially-joined players from the current XIM network:
+Multiplayer gaming often involves players organized onto opposing teams. XIM makes it easy to assign teams when matchmaking by setting `XimMatchmakingConfiguration.TeamConfiguration`. The following example initiates a move using matchmaking configured to find a total of 8 players to place on two teams of 4 (although if 4 aren't found, 1-3 players are also acceptable). Additionally, this example uses an app-defined constant, which is of type uint and named MYGAMEMODE_CAPTURETHEFLAG, that represents the game-mode to filter off of.  Also, the configuration is set up to bring along all socially-joined players from the current XIM network:
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-     TeamMatchmakingMode = XimTeamMatchmakingMode.TwoTeams4v4Minimum1PerTeam;
-     CustomGameMode = MYGAMEMODE_CAPTURETHEFLAG;
-};
-
+var matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 2;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 1;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 4;
 XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration, XimPlayersToMove.BringExistingSocialPlayers);
 ```
 
-When such a XIM network move operation completes, the players will be assigned a team index value 1 through {n} corresponding to the {n} teams requested. A player's team index value is retrieved via `IXIMPlayer.TeamIndex`. When using a `XimTeamMatchmakingMode` with two or more teams, players will never be assigned a team index value of zero by the call to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
+When such a XIM network move operation completes, the players will be assigned a team index value 1 through {n} corresponding to the {n} teams requested. A player's team index value is retrieved via `IXIMPlayer.TeamIndex`. When using a `XimMatchmakingConfiguration.TeamConfiguration` with two or more teams, players will never be assigned a team index value of zero by the call to `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
 
 The following example retrieves the team index for a XIM player object stored in the 'ximPlayer' variable:
 
@@ -473,30 +473,89 @@ As noted earlier, most XIM network move types will initially assign all players 
 
 ## Automatic background filling of player slots ("backfill" matchmaking)
 
-Disparate groups of players calling `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` at the same time gives the Xbox Live matchmaking service the greatest flexibility to organize them into new, optimal XIM networks quickly. However, some gameplay scenarios would like to keep a particular XIM network intact, and only matchmake additional players just to fill vacant player slots. XIM supports configuring matchmaking to operate in an automatic background filling mode, or "backfilling", by using the `XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration()` method.
+Disparate groups of players calling `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` at the same time gives the Xbox Live matchmaking service the greatest flexibility to organize them into new, optimal XIM networks quickly. However, some gameplay scenarios would like to keep a particular XIM network intact, and only matchmake additional players just to fill vacant player slots. XIM supports configuring matchmaking to operate in an automatic background filling mode, or "backfilling", by calling `XboxIntegratedMultiplayer.SetNetworkConfiguration()` with a `XimNetworkConfiguration` that has `XimAllowedPlayerJoins.Matchmade` flag set on its `XimNetworkConfiguration.AllowedPlayerJoins` property.
 
-The following example populates a matchmaking configuration and configures backfill matchmaking to try to find a total of 8 players for a no-teams free-for-all (although if 8 aren't found, 2-7 players are also acceptable). Additionally, this example uses an app-defined constant, which is of type uint and named MYGAMEMODE_DEATHMATCH, that represents the game-mode to filter off of:
-
-```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-     TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-     CustomGameMode = MYGAMEMODE_DEATHMATCH;
-};
-
-XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration(matchmakingConfiguration);
-```
-
-This makes the existing XIM network available to devices calling `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` in the normal manner. Those devices see no behavior change. The participants in the backfilling XIM network will not move, but will be provided a `XimBackfillMatchmakingConfigurationChangedStateChange` signifying backfill turning on, as well as multiple `XimMatchmakingProgressUpdatedStateChange` notifications when applicable. Any matchmade player will be added to the XIM network using the normal `XimPlayerJoinedStateChange`.
-
-By default, backfill matchmaking remains enabled indefinitely, although it won't try to add players if the XIM network already has the maximum number of players specified by the `TeamMatchmakingMode` value. Backfilling can be disabled by calling `XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration()` again with null:
+The following example configures backfill matchmaking to try to find a total of 8 players for a no-teams free-for-all (although if 8 aren't found, 2-7 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value:
 
 ```cs
-XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration(null);
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins |= XimAllowedPlayerJoins.Matchmade;
+networkConfiguration.TeamConfiguration.TeamCount = 1;
+networkConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+networkConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+networkConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
 ```
 
-A corresponding `XimBackfillMatchmakingConfigurationChangedStateChange` will be provided to all devices, and once this asynchronous process has completed, a final `XimMatchmakingProgressUpdatedStateChange` will be provided with `MatchmakingStatus.None` to signify that no further matchmade players will be added to the XIM network.
+This makes the existing XIM network available to devices calling `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` in the normal manner. Those devices see no behavior change. The participants in the backfilling XIM network will not move, but will be provided a `XimNetworkConfigurationChangedStateChange` signifying backfill turning on, as well as multiple `XimMatchmakingProgressUpdatedStateChange` notifications when applicable. Any matchmade player will be added to the XIM network using the normal `XimPlayerJoinedStateChange`.
 
-When enabling backfill matchmaking with a `XimTeamMatchmakingMode` value that declares two or more teams, all existing players must have a valid team index that is between 1 and the number of teams. This includes players who have called `XimLocalPlayer.SetTeamIndex()` to specify a custom value or who have joined using an invitation or through other social means (e.g., a call to `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`) and have been added with a default team index value of 0. If any player doesn't have a valid team index, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `MatchmakingStatus.WaitingForPlayerTeamIndex` value. Once all players have supplied or corrected their team index values with `XimLocalPlayer.SetTeamIndex()`, backfill matchmaking will resume. More information can be found in the [How XIM works with player teams](#how-xim-works-with-player-teams) section of this document.
+By default, backfill matchmaking remains enabled indefinitely, although it won't try to add players if the XIM network already has the maximum number of players specified by the `XimNetworkConfiguration.TeamConfiguration` setting. Backfilling can be disabled by setting `XimNetworkConfiguration.AllowedPlayerJoins` not including `XimAllowedPlayerJoins.Matchmade`:
 
-Similarly, when enabling backfill matchmaking with a `MatchmakingConfiguration` structure with the `RequirePlayerMatchmakingConfiguration` field set to true for roles or skill, then all players must have specified a non-null per-player matchmaking configuration. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `XimMatchMakingStatus.WaitingForPlayerMatchmakingConfiguration` value. Once all players have supplied their `XimPlayerMatchmakingConfiguration` objects, backfill matchmaking will resume. More information can be found in the [Matchmaking using per-player skill](#matchmaking-using-per-player-skill) and [Matchmaking using per-player role](#matchmaking-using-per-player-role) sections of this document.
+```cs
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins &= ~XimAllowedPlayerJoins.Matchmade;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
+```
+
+A corresponding `XimNetworkConfigurationChangedStateChange` will be provided to all devices, and once this asynchronous process has completed, a final `XimMatchmakingProgressUpdatedStateChange` will be provided with `MatchmakingStatus.None` to signify that no further matchmade players will be added to the XIM network.
+
+When enabling backfill matchmaking with a `XimNetworkConfiguration.TeamConfiguration` setting that declares two or more teams, all existing players must have a valid team index that is between 1 and the number of teams. This includes players who have called `XimLocalPlayer.SetTeamIndex()` to specify a custom value or who have joined using an invitation or through other social means (e.g., a call to `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`) and have been added with a default team index value of 0. If any player doesn't have a valid team index, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `MatchmakingStatus.WaitingForPlayerTeamIndex` value. Once all players have supplied or corrected their team index values with `XimLocalPlayer.SetTeamIndex()`, backfill matchmaking will resume. More information can be found in the [How XIM works with player teams](#how-xim-works-with-player-teams) section of this document.
+
+Similarly, when enabling backfill matchmaking with a `XimNetworkConfiguration` structure with the `RequirePlayerRolesAndSkillConfiguration` field set to true, then all players must have specified a non-null per-player matchmaking configuration. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `XimMatchmakingProgressUpdatedStateChange` with a `XimMatchMakingStatus.WaitingForPlayerRolesAndSkillConfiguration` value. Once all players have supplied their `XimPlayerRolesAndSkillConfiguration` objects, backfill matchmaking will resume. More information can be found in the [Matchmaking using per-player skill](#matchmaking-using-per-player-skill) and [Matchmaking using per-player role](#matchmaking-using-per-player-role) sections of this document.
+
+## Querying joinable networks
+
+While matchmaking is a great way to connect players together quickly, sometimes it's best to allow players to discover joinable networks using custom search criteria, and select the network they wish to join. This can be particularly advantageous when a game session might have a large set of configurable game rules and player preferences. To do this, an existing network must first be made queryable by enabling `XimAllowedPlayerJoins.Queried` joinability and configuring the network information available to others outside the network through a call to `XboxIntegratedMultiplayer.SetNetworkConfiguration()`.
+
+The following example enables `XimAllowedPlayerJoins.Queried` joinability, sets network configuration with a team configuration that allows a total of 1-8 players together in 1 team, an app-specific game mode constant uint64_t defined by the value GAME_MODE_BRAWL, a description "cat and sheep's boxing match", an app-specific map index constant uint32_t defined by the value MAP_KITCHEN and includes tags "chatrequired", "easy", "spectatorallowed":
+
+```cs
+string[] tags = { "chatrequired", "easy", "spectatorallowed" };
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins |= XimAllowedPlayerJoins.Queried;
+networkConfiguration.TeamConfiguration.TeamCount = 1;
+networkConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 1;
+networkConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+networkConfiguration.CustomGameMode = GAME_MODE_BRAWL;
+networkConfiguration.Description = "Cat and sheep's boxing match";
+networkConfiguration.MapIndex = MAP_KITCHEN;
+networkConfiguration.SetTags(tags);
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
+```
+
+Other players outside the network can then find the network by calling xim::start_joinable_network_query() with a set of filters that match the network information in the previous xim::set_network_configuration() call. The following example starts a joinable network query with the game mode filter option that will only query for networks using the app-specific game mode defined by value GAME_MODE_BRAWL:
+
+```cs
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.CustomGameModeFilter = GAME_MODE_BRAWL;
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+Here is another example that uses the tag filters option to query for networks having tag "easy" and "spectatorallowed" in their public queryable configuration:
+
+```cs
+string[] tagFilters = { "easy", "spectatorallowed" };
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.SetTagFilters(tagFilters);
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+Different filter options can also be combined. The following example that uses both the game mode filter option and tag filter option to start a query for networks that both have the app-specific game mode constant GAME_MODE_BRAWL and tag "easy":
+
+```cs
+string[] tagFilters = { "easy" };
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.CustomGameModeFilter = GAME_MODE_BRAWL;
+queryFilters.SetTagFilters(tagFilters);
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+If the query operation succeeds, the app will receive a xim_start_joinable_network_query_completed_state_change from which the app can retrieve a list of joinable networks. The app will also continuously receive `XimJoinableNetworkUpdatedStateChange` for additional joinable networks or any changes that happen to the returned list of joinable networks until it is stopped either manually or automatically. The in-progress query can be stopped manually by calling `XboxIntegratedMultiplayer.StopJoinableNetworkQuery()`. It will be stopped automatically when calling `XboxIntegratedMultiplayer.StartJoinableNetworkQuery()` to start a new query.
+
+The app can try to join a network in the list of joinable networks by calling `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation()`. The following example assumes you are trying to join a network referenced by 'selectedNetwork' which is not secured by a passcode (so we are passing empty string to the second parameter):
+
+```cs
+XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedNetwork, "");
+```
+
+When enabling network query with a `XimNetworkConfiguration.TeamConfiguration` that declares two or more teams, players joined by calling XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() will have a default team index value of 0.
