@@ -22,8 +22,8 @@ Global title storage is used to store data that everyone can read, such as roste
 ## Multiplayer Session History Viewer
 Multiplayer Session History Viewer gives you the ability to view a historical timeline of all changes over a multiplayer session document's history (including deleted documents). Using this tool will give you a deeper understanding of what is happening with your MPSD session documents as it changes over time. It is available as a standalone tool in the [Development Tools](https://aka.ms/xboxliveuwptools) zip.
 
-## Player Reset
-The Player Reset tool can be used to reset a player's data in test sandboxes. You can reset data such as; achievements, leaderboards, stats and title history. The tool is available via command-line as part of the [Development Tools](https://aka.ms/xboxliveuwptools) zip. Custom tools can be created with the [Dev Tools library](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools).
+## Player Data Reset
+The Player Data Reset tool can be used to reset a player's data in test sandboxes. You can reset data such as; achievements, leaderboards, stats and title history. The tool is available via command-line as part of the [Development Tools](https://aka.ms/xboxliveuwptools) zip. Custom tools can be created with the [Dev Tools library](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools).
 
 ## Xbox Live Developer Account
 The Xbox Live Developer Account tool is used to manage authentication of a developer account. It is needed to interact with other developer tools that require a developer credential, such as Player Reset and Global Storage. The tool is available via command-line as part of the [Development Tools](https://aka.ms/xboxliveuwptools) zip.
@@ -34,3 +34,5 @@ Using [Xbox Live Trace Analyzer](analyze-service-calls.md), you can capture all 
 ## Xbox Live Account Tool  
 The [Xbox Live Account Tool](xbox-live-account-tool.md) is designed to help you set up existing test accounts for testing game scenarios. For example, you can use Xbox Live Account Tool to change an account's gamertag, or quickly add 1000 followers to an account's friends list. The tool is available via command-line as part of the [Development Tools](https://aka.ms/xboxliveuwptools) zip.
 
+## Config As Source
+[Config as Source](https://github.com/Microsoft/xbox-live-developer-tools/blob/master/CONFIGASSOURCE.md) is a suite of tools that Microsoft developed to accommodate advanced users, by providing officially supported tools and APIs for integrating into our configuration services. These Xbox Live services are normally configured for your title in Dev Center, including services ranging from leaderboards to achievements, to web services and relying parties. For many game developers, using Dev Center is sufficient. For advanced users, however, there is a desire to integrate common configuration tasks into their own processes and tools.  Config as Source is intended to support these scenarios by providing command line tools and new APIs to support custom integration into your existing workflows and pipelines. 
