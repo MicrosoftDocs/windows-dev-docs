@@ -96,7 +96,7 @@ If you're using Desktop Bridge (or if you support both), in your **Package.appxm
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
 3. In the **IgnorableNamespaces** attribute, **com** and **desktop**
-4. **com:Extension** for the COM server using the GUID from step #4. Be sure to include the `Arguments="-ToastActivated"` so that you know your launch was from a toast
+4. **com:Extension** for the COM activator using the GUID from step #4. Be sure to include the `Arguments="-ToastActivated"` so that you know your launch was from a toast
 5. **desktop:Extension** for **windows.toastNotificationActivation** to declare your toast activator CLSID (the GUID from step #4).
 
 **Package.appxmanifest**
@@ -232,6 +232,9 @@ var toast = new ToastNotification(doc);
 // And then show it
 DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
+
+> [!IMPORTANT]
+> Classic Win32 apps cannot use legacy toast templates (like ToastText02). Activation of the legacy templates will fail when the COM CLSID is specified. You must use the Windows 10 ToastGeneric templates as seen above.
 
 
 ## Step 8: Handling activation
@@ -401,4 +404,5 @@ If you've installed both your Desktop Bridge and classic Win32 app, note that th
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
+* [Toast notifications from desktop apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)

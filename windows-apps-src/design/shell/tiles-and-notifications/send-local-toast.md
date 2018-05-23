@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement.
 
 > [!IMPORTANT]
-> Desktop applications (both Desktop Bridge and classic Win32) have different steps for sending notifications and handling activation. Please see the [Desktop C#](send-local-toast-desktop.md) and [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation to learn how to implement toasts.
+> Desktop applications (both Desktop Bridge and classic Win32) have different steps for sending notifications and handling activation. Please see the [Desktop apps](toast-desktop-apps.md) documentation to learn how to implement toasts.
 
 We will go through the following things:
 
