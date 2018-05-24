@@ -377,6 +377,113 @@ This API has the following expected status codes.
 * IoT
 
 ---
+## Bluetooth
+---
+> [!WARNING]
+> The APIs in this section are part of a flighted build and are only available through the [Windows Insider Program](https://insider.windows.com/).
+
+### Get the Bluetooth radios on the machine
+
+**Request**
+
+You can get a list of the Bluetooth radios that are installed on the machine by using the following request format.
+ 
+| Method | Request URI |
+| :---   | :--- |
+| GET    | /api/bt/getdevices |
+
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes a JSON array of Bluetooth radios attached to the device.
+``` 
+{"BluetoothRadios" : [
+    {
+        "BluetoothAddress" : int64,
+        "DisplayName" : string,
+        "HasUnknownUsbDevice" : boolean,
+        "HasProblem" : boolean,
+        "ID" : string,
+        "ProblemCode" : int,
+        "State" : string
+    },...
+]}
+```
+**Status code**
+
+This API has the following expected status codes.
+
+| HTTP status code | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Error codes |
+| 5XX              | Error codes |
+
+**Available device families**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
+### Turn the Bluetooth radio on or off
+
+**Request**
+
+Sets a specific Bluetooth radio to On or Off.
+ 
+| Method | Request URI |
+| :---   | :--- |
+| POST   | /api/bt/setradio |
+
+**URI parameters**
+
+You can specify the following additional parameters on the request URI:
+
+| URI parameter | Description |
+| :---          | :--- |
+| ID            | (**required**) The device ID for the Bluetooth radio and must be base 64 encoded. |
+| State         | (**required**) This can be `"On"` or `"Off"` and must be base 64 encoded. |
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+| HTTP status code | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Error codes |
+| 5XX              | Error codes |
+
+**Available device families**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
 ## Device manager
 ---
 ### Get the installed devices on the machine
