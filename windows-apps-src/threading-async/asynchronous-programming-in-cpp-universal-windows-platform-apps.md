@@ -287,7 +287,7 @@ Nested tasks, which are new tasks that are created inside a continuation, don't 
 Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) or [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) property. A typical use of the delegate is to update a progress bar in the UI.
 
 ## Related topics
-* [Creating Asynchronous Operations in C++/CX for UWP apps][https://msdn.microsoft.com/library/hh750082]
+* [Creating Asynchronous Operations in C++/CX for UWP apps](https://msdn.microsoft.com/library/hh750082)
 * [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Asynchronous Programming][AsyncProgramming]
 * [Task Parallelism (Concurrency Runtime)][taskParallelism]
