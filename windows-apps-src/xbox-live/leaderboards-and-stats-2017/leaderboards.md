@@ -149,7 +149,7 @@ This continuation task is called in the context of the object that originally in
 
 #### 3. Display Leaderboard
 
-The leaderboard data is contained in ``leaderboard_result``` and the fields are self explanatory.  See below for an example.
+The leaderboard data is contained in ```leaderboard_result``` and the fields are self explanatory.  See below for an example.
 
 ```cpp
 auto leaderboard = result.payload();
@@ -165,4 +165,4 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
     m_console->Format(L"%18s %8d %14f %10s\n", row.gamertag().c_str(), row.rank(), row.percentile(), colValues.c_str());
 }
 
-````
+```
