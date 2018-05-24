@@ -450,7 +450,7 @@ private async void FillTreeNode(TreeViewNode node)
     foreach (var item in itemsList)
     {
         var newNode = new TreeViewNode();
-        newNode.Content = item;
+        newNode.Content = item.Name;
 
         if (item is StorageFolder)
         {
