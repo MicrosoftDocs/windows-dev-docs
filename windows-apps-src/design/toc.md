@@ -154,6 +154,7 @@
 #### [Progress bar](shell/tiles-and-notifications/toast-progress-bar.md)
 #### [Pending update](shell/tiles-and-notifications/toast-pending-update.md)
 #### [Custom timestamps](shell/tiles-and-notifications/custom-timestamps-on-toasts.md)
+#### [Collections](shell/tiles-and-notifications/toast-collections.md)
 #### [Headers](shell/tiles-and-notifications/toast-headers.md)
 #### [Notification Listener](shell/tiles-and-notifications/notification-listener.md)
 #### [Notification mirroring](shell/tiles-and-notifications/notification-mirroring.md)

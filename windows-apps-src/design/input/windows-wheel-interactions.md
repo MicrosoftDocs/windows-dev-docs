@@ -24,11 +24,11 @@ ms.localizationpriority: medium
 Windows wheel devices, such as the Surface Dial, are a new category of input device that enable a host of compelling and unique user interaction experiences for Windows and Windows apps. 
 
 > [!IMPORTANT]
-> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices.
+> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices. 
 
 | Videos |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| > [!VIDEO https://www.youtube.com/embed/WMklcdzcNcU] | > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player] |
 | *Surface Dial app partners* | *Surface Dial for devs* |
 
 With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse). 
