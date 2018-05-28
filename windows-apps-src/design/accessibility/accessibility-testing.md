@@ -6,7 +6,7 @@ title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 02/08/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,7 +25,9 @@ Testing procedures to follow to ensure that your Universal Windows Platform (UWP
 The Windows Software Development Kit (SDK) includes several accessibility testing tools such as [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). These tools can help you verify the accessibility of your app. Be sure to verify all app scenarios and UI elements.
 
 You can launch the accessibility testing tools either from a Microsoft Visual Studio command prompt or from the Windows SDK tools folder (the bin subdirectory of where the Windows SDK is installed on your development machine).
-
+  
+> [!VIDEO https://www.youtube.com/embed/ce0hKQfY9B8]
+  
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
