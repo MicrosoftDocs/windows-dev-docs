@@ -24,7 +24,7 @@ With notification mirroring and Cortana, users can receive and act on their phon
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-Developers get two great benefits from notification mirroring: The mirrored notifications result in more user engagement with your service, and they also help users discover your Windows Store desktop app! Your users might not even know that you have an awesome UWP app available for their Windows 10 desktop. When users receive the mirrored notification from their phone, users can click the toast notification to be taken to the Windows Store, where they can install your UWP desktop app.
+Developers get two great benefits from notification mirroring: The mirrored notifications result in more user engagement with your service, and they also help users discover your Microsoft Store desktop app! Your users might not even know that you have an awesome UWP app available for their Windows 10 desktop. When users receive the mirrored notification from their phone, users can click the toast notification to be taken to the Microsoft Store, where they can install your UWP desktop app.
 
 Mirroring works with both Windows Phone and Android. Users need to be logged into Cortana on both their phone and desktop for notification mirroring to work.
 
