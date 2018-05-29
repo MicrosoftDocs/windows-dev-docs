@@ -68,40 +68,92 @@ In UWP apps, shadows should be purposeful, not aesthetic. If shadows detract fro
 
 You can use shadows with either the ThemeShadow or DropShadow APIs.
 
-## Theme shadow
+## ThemeShadow
 
-The ThemeShadow property draws shadows appropriately based on x, y, z coordinates and automatically adjusts for other environmental specifications:
+The ThemeShadow type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates. ThemeShadow also automatically adjusts for other environmental specifications:
 
 - Adapts to changes in lighting, user theme, app environment, and shell.
-- Shadows elements automatically based on their z-depth.
-- Keeps elements in sync as they move and change z-depth.
+- Shadows elements automatically based on their elevation.
+- Keeps elements in sync as they move and change elevation.
 - Keeps shadows consistent throughout and across applications.
 
-To use ThemeShadow with pop-up UI elements, give your XAML element positive z-depth with the `Translation` property. Then use the `Shadow` property to add ThemeShadow.
+Here are examples of ThemeShadow at different elevations with the light and dark themes:
 
-Here, this example uses 32px which is the typical z-depth value we recommend using to add hierarchy to popup type UI. Start with this value and if there is any collisions with another UI element that would occupy the same elevation, inclease by increments of 8px. We recommend not to exceed 96px since value greater than that would add shadow that looks greater than the shadow from UI elements occupied by application in another window and may not look very natural. 
+![smart shadows with light theme](images/elevation-shadow/smartshadow-light.svg)
+
+![smart shadows with dark theme](images/elevation-shadow/smartshadow-dark.svg)
+
+### ThemeShadow in common controls
+
+The following common controls will automatically use ThemeShadow to cast shadows:
+
+- [Dialogs and flyouts](../controls-and-patterns/dialogs.md)
+- [NavigationView](../controls-and-patterns/navigationview.md)
+- [Media transport control](../controls-and-patterns/media-playback.md)
+- [Context menu](../controls-and-patterns/menus.md)
+- [Command bar](../controls-and-patterns/app-bars.md)
+- [AutoSuggest](../controls-and-patterns/auto-suggest-box.md), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [Calendar/Date/Time pickers](../controls-and-patterns/date-and-time.md), [Tooltip](../controls-and-patterns/tooltips.md)
+- [Access keys](../input/access-keys.md)
+
+### ThemeShadow in Popups
+
+ThemeShadow automatically casts shadows when applied to any XAML element in a [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup). It will cast shadows on the app background content behind it and any other open Popups below it.
+
+To use ThemeShadow with Popups, use the `Shadow` property to apply a ThemeShadow to a XAML element. Then, elevate the element from other elements behind it, for example by using the z component of the `Translation` property.
+For most Popup UI, the recommended default elevation relative to the app background content is 32 effective pixels.
+
+This example shows a Rectangle in a Popup casting a shadow onto the app background content and any other Popups behind it:
 
 ```xaml
-<Rectangle Translation="0,0,32" Shadow="ThemeShadow" />
+<Popup>
+    <Rectangle x:Name="PopupRectangle" Fill="White" Height="48" Width="96">
+        <Rectangle.Shadow>
+            <ThemeShadow />
+        </Rectangle.Shadow>
+    </Rectangle>
+</Popup>
+```
+
+```csharp
+// Elevate the rectangle by 32px
+PopupRectangle.Translation += new Vector3(0, 0, 32);
 ```
 
 ![shadow from code example](images/elevation-shadow/smartshadow-example.svg)
 
-Here are examples of ThemeShadow at different elevations with the light and dark themes.
+### ThemeShadow in other elements
 
-![theme shadows with light theme](images/elevation-shadow/smartshadow-light.svg)
+To cast a shadow from a XAML element that isn't in a Popup, you must explicitly specify the other elements that can receive the shadow in the `ThemeShadow.Receivers` collection.
 
-![theme shadows with dark theme](images/elevation-shadow/smartshadow-dark.svg)
+This example shows two Buttons that cast shadows onto a Grid behind them:
 
-### ThemeShadow in common controls
+```xaml
+<Grid x:Name="BackgroundGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.Resources>
+        <ThemeShadow x:Name="SharedShadow" />
+    </Grid.Resources>
 
-The following common controls will automatically use ThemeShadow:
+    <Button x:Name="Button1" Content="Button 1" Shadow="{StaticResource SharedShadow}" Margin="10" />
 
-- [Dialogs and flyouts](../controls-and-patterns/dialogs.md)
-- [NavigationView](../controls-and-patterns/navigationview.md)
-- [Context menu](../controls-and-patterns/menus.md)
-- [Command bar](../controls-and-patterns/app-bars.md)
-- [AutoSuggest](../controls-and-patterns/auto-suggest-box.md), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [Calendar/Date/Time pickers](../controls-and-patterns/date-and-time.md), [Tooltip](../controls-and-patterns/tooltips.md)
+    <Button x:Name="Button2" Content="Button 2" Shadow="{StaticResource SharedShadow}" Margin="120" />
+</Grid>
+```
+
+```csharp
+/// Add BackgroundGrid as a shadow receiver and elevate the casting buttons above it
+SharedShadow.Receivers.Add(BackgroundGrid);
+
+Button1.Translation += new Vector3(0, 0, 16);
+Button2.Translation += new Vector3(0, 0, 32);
+```
+
+### Performance best practices for ThemeShadow
+
+1. Limit the number of custom receiver elements to the minimum necessary. 
+
+2. If multiple receiver elements are at the same elevation then try to combine them by targeting a single parent element instead.
+
+3. If multiple elements will cast the same type of shadow onto the same receiver elements then add the shadow as a shared resource and reuse it.
 
 ## Drop shadow
 
