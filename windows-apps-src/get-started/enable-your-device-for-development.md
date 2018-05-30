@@ -102,7 +102,7 @@ For device specific setup instructions, see:
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
+If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package.  Note that enabling Developer Mode or Device Portal requires administrator privileges.  Make sure the account is an administrator or use an adminstrator account.
 
 ### SSH
 
