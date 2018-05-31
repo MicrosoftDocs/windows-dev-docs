@@ -167,7 +167,10 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 ``` 
 
 ## Asychronously return a non-Windows-Runtime type
-If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**task**](/cpp/parallel/concrt/reference/task-class). We recommend **task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
+If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**concurrency::task**](/cpp/parallel/concrt/reference/task-class). We recommend **concurrency::task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
+
+> [!TIP]
+> If you include `<pplawait.h>`, then you can use **concurrency::task** as a coroutine type.
 
 ```cppwinrt
 // main.cpp
