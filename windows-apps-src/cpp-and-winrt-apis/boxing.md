@@ -25,7 +25,7 @@ The [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     ...
-    rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
+    rootFrame.Navigate(winrt::xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
     ...
 }
 ```
@@ -36,13 +36,13 @@ To set the content property of a XAML [**Button**](/uwp/api/windows.ui.xaml.cont
 Button().Content(winrt::box_value(L"Clicked"));
 ```
 
-First, the **hstring** conversion constructor converts the string literal into an **hstring**. Then the overload of **winrt::box_value** that takes an **hstring** is invoked.
+First, the [**hstring**](/uwp/cpp-ref-for-winrt/hstring) conversion constructor converts the string literal into an **hstring**. Then the overload of **winrt::box_value** that takes an **hstring** is invoked.
 
 ## Examples of unboxing an IInspectable
 In your own functions that expect **IInspectable**, you can use [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) to unbox, and you can use [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) to unbox with a default value.
 
 ```cppwinrt
-void Unbox(Windows::Foundation::IInspectable const& object)
+void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 {
     hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
     hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
@@ -50,8 +50,19 @@ void Unbox(Windows::Foundation::IInspectable const& object)
 }
 ```
 
+## Determine the type of a boxed value
+If you receive a boxed value and you're unsure what type it contains (you need to know its type in order to unbox it), then you can query the boxed value for its [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) interface, and then call **Type** on that. Here's a code example.
+
+```cppwinrt
+float pi = 3.14f;
+auto piInspectable = winrt::box_value(pi);
+auto piPropertyValue = piInspectable.as<winrt::Windows::Foundation::IPropertyValue>();
+WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
+```
+
 ## Important APIs
 * [IInspectable interface](https://msdn.microsoft.com/library/windows/desktop/br205821)
 * [winrt::box_value function template](/uwp/cpp-ref-for-winrt/box-value)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::unbox_value function template](/uwp/cpp-ref-for-winrt/unbox-value)
 * [winrt::unbox_value_or function template](/uwp/cpp-ref-for-winrt/unbox-value-or)

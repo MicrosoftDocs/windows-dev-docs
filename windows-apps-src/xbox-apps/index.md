@@ -52,6 +52,5 @@ The following talks on Channel 9 are a great source of information for building 
 
 ## See also
 
-- [Overview of UWP apps on Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
 - [Automate launching Windows 10 UWP apps](automate-launching-uwp-apps.md)
 - [CPUSets for game development](cpusets-games.md)

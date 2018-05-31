@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from C++/CX
 ms.author: stwhi
-ms.date: 05/10/2018
+ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,21 @@ ms.localizationpriority: medium
 This topic shows how to port [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) code to its equivalent in C++/WinRT.
 
 > [!NOTE]
-> Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
+> Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you port from C++/CX to C++/WinRT at your own pace.
+
+The first step in porting to C++/WinRT is to manually add C++/WinRT support to your project (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). To do that, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that you can find and port all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
+
+Set project property **General** \> **Target Platform Version** to 10.0.17134.0 (Windows 10, version 1803) or greater.
+
+In your precompiled header file (usually `pch.h`), include `winrt/base.h`.
+
+```cppwinrt
+#include <winrt/base.h>
+```
+
+If you include any C++/WinRT projected Windows API headers (for example, `winrt/Windows.Foundation.h`), then you don't need to explicitly include `winrt/base.h` like this because it will be included automatically for you.
+
+If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) types, then see [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md).
 
 ## Parameter-passing
 When writing C++/CX source code, you pass C++/CX types as function parameters as hat (\^) references.
@@ -313,5 +327,6 @@ throw winrt::hresult_invalid_argument{ L"A valid User is required" };
 * [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [String handling in C++/WinRT](strings.md)
 * [Microsoft Interface Definition Language 3.0 reference](/uwp/midl-3)
+* [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md)
+* [String handling in C++/WinRT](strings.md)

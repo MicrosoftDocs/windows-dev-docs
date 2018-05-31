@@ -1,11 +1,11 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.author: jken
-ms.date: 03/12/2017
+ms.author: quradic
+ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,7 +37,7 @@ To enable Developer mode, or access other settings:
 2.  Read the disclaimer for the setting you chose, then click **Yes** to accept the change.
 
 > [!NOTE]
-> If your device is owned by an organization, some options might be disabled by your organization.
+> Enabling Developer mode requires administrator access. If your device is owned by an organization, this option might be disabled.
 
 Here's the settings page on the desktop device family:
 
