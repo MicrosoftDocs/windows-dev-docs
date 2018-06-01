@@ -29,6 +29,7 @@ int main()
 {
     winrt::init_apartment();
     Uri contosoUri{ L"http://www.contoso.com" };
+    Uri combinedUri = contosoUri.CombineUri(L"products");
 }
 ```
 
@@ -71,6 +72,32 @@ For example, if you only include `winrt/Windows.Security.Cryptography.Certificat
 - Windows.Security.Cryptography
 
 In other words, some APIs are forward-declared in a header that you've included. But their definitions are in a header that you haven't yet included. So, if you then call [**Windows::Foundation::Uri::RawUri**](/uwp/api/windows.foundation.uri.rawuri), then you'll receive a linker error indicating that the member is undefined. The solution is to explicitly `#include <winrt/Windows.Foundation.h>`. In general, when you see a linker error such as this, include the header named for the API's namespace, and rebuild.
+
+## Accessing members via the object, via an interface, or via the ABI
+With the C++/WinRT projection, the runtime representation of a Windows Runtime class is no more than the underlying ABI interfaces. But, for your convenience, you can code against classes in the way that their author intended. For example, you can call the **ToString** method of a [**Uri**](/uwp/api/windows.foundation.uri) as if that were a method of the class (in fact, under the covers, it's a method on the separate **IStringable** interface).
+
+```cppwinrt
+Uri contosoUri{ L"http://www.contoso.com" };
+WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
+```
+
+This convenience is achieved via a query for the appropriate interface. But you're always in control. You can opt to give away a little of that convenience for a little performance by retrieving the IStringable interface yourself and using it directly. In the code example below, you obtain an actual IStringable interface pointer at run time (via a one-time query). After that, your call to **ToString** is direct, and avoids any further call to **QueryInterface**.
+
+```cppwinrt
+IStringable stringable = contosoUri; // One-off QueryInterface.
+WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
+```
+
+You might choose this technique if you know you'll be calling several methods on the same interface.
+
+Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](interop-winrt-abi.md).
+
+```cppwinrt
+int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+
+winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+```
 
 ## Delayed initialization
 Even the default constructor of a projected type causes a backing Windows Runtime object to be created. If you want to construct a variable of a projected type without it in turn constructing a Windows Runtime object (so that you can delay that work until later), then you can. Declare your variable or field using the projected type's special C++/WinRT `nullptr_t` constructor.
@@ -180,10 +207,48 @@ void f(MyProject::MyRuntimeClass const& myrc)
 }
 ```
 
+## Activation factories
+The convenient, direct way to create a C++/WinRT object is as follows.
+
+```cppwinrt
+using namespace winrt::Windows::Globalization::NumberFormatting;
+...
+CurrencyFormatter currency{ L"USD" };
+```
+
+But there may be times that you'll want to create the activation factory yourself, and then create objects from it at your convenience. Here are some examples showing you how, using the [**winrt::get_activation_factory**](/uwp/cpp-ref-for-winrt/get-activation-factory) function template.
+
+```cppwinrt
+using namespace winrt::Windows::Globalization::NumberFormatting;
+...
+auto factory = winrt::get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>();
+CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
+```
+
+```cppwinrt
+using namespace winrt::Windows::Foundation;
+...
+auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
+Uri account = factory.CreateUri(L"http://www.contoso.com");
+```
+
+The classes in the two examples above are types from a Windows namespace. In this next example, **BankAccountWRC::BankAccount** is a custom type implemented in a Windows Runtime Component.
+
+```cppwinrt
+auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
+BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+```
+
 ## Important APIs
+* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [RoActivateInstance](https://msdn.microsoft.com/library/br224646)
+* [Windows::Foundation::Uri](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
 * [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Interop between C++/WinRT and the ABI](interop-winrt-abi.md)
+* [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md)
 * [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

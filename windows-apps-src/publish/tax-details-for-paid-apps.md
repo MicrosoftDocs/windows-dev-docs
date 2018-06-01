@@ -4,7 +4,7 @@ Description: To understand your tax considerations for price selection, payout i
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 1/1/2018
+ms.date: 6/1/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -204,13 +204,13 @@ To understand your tax considerations for price selection, payout implications, 
 | Tonga                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Trinidad and Tobago              | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Tunisia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Turkey                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| Turkey                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of (selected price minus 18% tax) | Microsoft          |
 | Turkmenistan                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Tuvalu                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Uganda                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Ukraine                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | United Arab Emirates             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of (selected price minus 5% tax)                 | Microsoft          |
-| United Kingdom                   | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
+| United Kingdom                   | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.            | 70% of (selected price minus 20% tax) | Microsoft          |
 | United States (includes Puerto Rico)  | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
 | Uruguay                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Uzbekistan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |

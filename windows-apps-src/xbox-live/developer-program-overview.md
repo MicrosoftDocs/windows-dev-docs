@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
 ms.author: kevinasg
-ms.date: 12/13/2017
+ms.date: 5/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ If you would like to develop Xbox Live enabled titles, there are several options
 
 ## Xbox Live Creators Program
 
-The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development. No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements. 
+The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development. No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements.
 
 The Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP games run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWP games on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).  
 
@@ -38,11 +38,11 @@ For a full list of supported services, see the [Feature Table](#feature-table).
 ### Supported third party game development engines
 Xbox Live Creators Program titles are UWP games which can be built with a number of popular game engines. Microsoft provides documentation for integrating Xbox Live services into UWP games built with the [Unity game engine](https://unity.com). You can find [documentation](get-started-with-creators/develop-creators-title-with-unity.md) detailing Xbox Live integration with Unity games here on this site, as well as download and learn about the Microsoft-built [Xbox Live Unity plugin](https://github.com/Microsoft/xbox-live-unity-plugin).
 
-Xbox Live Creators Program titles can also be built with the game engines [Construct (2 & 3)](https://www.scirra.com/construct2), and [Game Maker Studio](https://www.yoyogames.com/gamemaker). Both game engines have added Xbox Live support, however, that support is handled by the game engines creators and not Microsoft. For details and support for adding Xbox Live to your Construct or Game Maker Studio project you will have to consult each game engines documentation respectively.
+Xbox Live Creators Program titles can also be built with the game engines [Construct (2 & 3)](https://www.scirra.com/construct2), and [GameMaker Studio 2](https://www.yoyogames.com/gamemaker). Both game engines have added Xbox Live support, however, that support is handled by the game engines creators and not Microsoft. For details and support for adding Xbox Live to your Construct or GameMaker Studio 2 project you will have to consult each game engines documentation respectively.
 
 [Learn to integrate Xbox Live into your Construct project.](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
 
-[Learn to integrate Xbox Live into your Game Maker Studio project.](https://www.yoyogames.com/gamemaker/xblc)
+[Learn to integrate Xbox Live into your GameMaker Studio 2 project.](https://www.yoyogames.com/gamemaker/xblc)
 
 For other game development engines, like [MonoGame](http://www.monogame.net/) or [Xenko](https://xenko.com/), that do not have baked in Xbox Live functionality or a plug-in, you can still use the Xbox Live APIs to add Xbox Live to your title. To use the Xbox Live API from your project, you can either add references to the binaries with NuGet packages or add the API source. Adding NuGet packages makes compilation quicker while adding the source makes debugging easier.
 
