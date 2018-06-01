@@ -207,10 +207,48 @@ void f(MyProject::MyRuntimeClass const& myrc)
 }
 ```
 
+## Activation factories
+The convenient, direct way to create a C++/WinRT object is as follows.
+
+```cppwinrt
+using namespace winrt::Windows::Globalization::NumberFormatting;
+...
+CurrencyFormatter currency{ L"USD" };
+```
+
+But there may be times that you'll want to create the activation factory yourself, and then create objects from it at your convenience. Here are some examples showing you how, using the [**winrt::get_activation_factory**](/uwp/cpp-ref-for-winrt/get-activation-factory) function template.
+
+```cppwinrt
+using namespace winrt::Windows::Globalization::NumberFormatting;
+...
+auto factory = winrt::get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>();
+CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
+```
+
+```cppwinrt
+using namespace winrt::Windows::Foundation;
+...
+auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
+Uri account = factory.CreateUri(L"http://www.contoso.com");
+```
+
+The classes in the two examples above are types from a Windows namespace. In this next example, **BankAccountWRC::BankAccount** is a custom type implemented in a Windows Runtime Component.
+
+```cppwinrt
+auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
+BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+```
+
 ## Important APIs
+* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [RoActivateInstance](https://msdn.microsoft.com/library/br224646)
+* [Windows::Foundation::Uri](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
 * [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Interop between C++/WinRT and the ABI](interop-winrt-abi.md)
+* [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md)
 * [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
