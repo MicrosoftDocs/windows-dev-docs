@@ -1,6 +1,6 @@
 ---
 title: What's new for the Xbox Live
-author: staceyhaffner
+author: PhillipLucas
 description: What's new for the Xbox Live SDK
 ms.author: sthaff
 ms.date: 10/04/2017
@@ -148,4 +148,3 @@ There are the following new articles:
 * [September 2015](1509-whats-new.md)
 * [August 2015](1508-whats-new.md)
 * [June 2015](1506-whats-new.md)
-

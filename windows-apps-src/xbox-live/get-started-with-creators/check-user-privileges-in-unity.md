@@ -1,9 +1,9 @@
 ---
 title: Check user privilege settings in Unity
-author: StaceyHaffner
+author: aablackm
 description: Learn how to check privilege settings for a signed in Xbox Live account.
 ms.assetid:
-ms.author: sthaff
+ms.author: aablackm
 ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows

@@ -1,6 +1,6 @@
 ---
 title: Get started with Visual Studio for UWP games
-author: StaceyHaffner
+author: KevinAsgari
 description: Learn how to set up a Visual Studio project to enable Xbox Live for a UWP game
 ms.assetid: b53bc91f-79db-4d8f-8919-b9144e2d609b
 ms.author: kevinasg
@@ -50,21 +50,21 @@ To learn more about test accounts and how to create one, see [Xbox Live Test Acc
 If you do not already have an existing UWP project, you can create one by doing the following:
 
 1. In Visual Studio, **File** > **New** > **Project**.
-2. In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane. 
+2. In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane.
 3. In the lower portion of the dialog, give the project a name and specify the location of the project.
 4. Specify the Target Version and Minimum Version of the Windows 10 SDK. See [Choose a UWP version](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) for more information.
 
-![create project in VS](../images/getting_started/vs-create-project.gif) 
+![create project in VS](../images/getting_started/vs-create-project.gif)
 
 > [!NOTE]
 > Xbox Live API (XSAPI) requires a minimum version 10.0.10586.0 or higher.
 
 ### 2. Add references to the Xbox Live API (XSAPI) in your project
 
-The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT and have their namespace structured as **Microsoft.Xbox.Live.SDK.*.UWP** and **Microsoft.Xbox.Live.SDK.*.XboxOneXDK**. 
+The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT and have their namespace structured as **Microsoft.Xbox.Live.SDK.*.UWP** and **Microsoft.Xbox.Live.SDK.*.XboxOneXDK**.
 
-1. **UWP** is for developers who are building a UWP game, which can run on either PC, the Xbox One, or Windows Phone. 
-2. **XboxOneXDK** is for ID@Xbox and managed developers who are using the Xbox One XDK. 
+1. **UWP** is for developers who are building a UWP game, which can run on either PC, the Xbox One, or Windows Phone.
+2. **XboxOneXDK** is for ID@Xbox and managed developers who are using the Xbox One XDK.
 3. The C++ SDK can be used for C++ game engines, where as the  WinRT SDK is for game engines written with C++, C#, or JavaScript.
 4. When using WinRT with a C++ engine, you should use C++/CX which uses hats (^). C++ is the recommended API to use for C++ game engines.  
 
@@ -74,9 +74,9 @@ The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and Win
 To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source. Adding NuGet packages makes compilation quicker while adding the source makes debugging easier. This article will walk through using NuGet packages. If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](add-xbox-live-apis-source-to-a-uwp-project.md). You can add the Xbox Live SDK NuGet package by:
 
 1. In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
-2. In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box. 
+2. In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box.
 3. Select the version of the Xbox Live SDK that you want to use from the list on the left. In this case, we will use the Microsoft.Xbox.Live.SDK.WinRT.UWP package.
-3. On the right side of the window, check the box next to your project and click **Install**. 
+3. On the right side of the window, check the box next to your project and click **Install**.
 
 ![add XBL via NuGet](../images/getting_started/vs-add-nuget-xbl.gif)
 
@@ -90,9 +90,9 @@ Depending on the version of the Windows SDK that you are using, you may need to 
 #### Windows 10 SDK version 10.0.16299 or higher
 If you've targeted Windows 10 SDK 10.0.16299 or higher, then you will be able to access the Connected Storage namespace without doing any additional work. To access Secure Sockets, you will need to add a reference to **Windows Desktop Extensions for UWP**. You can do this by:
 
-1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...** 
+1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...**
 2. On the left side of the **Reference Manager** dialog, select **Universal Windows** > **Extensions**.
-3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK. 
+3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK.
 4. Click **OK**.
 
 ![add new reference in VS](../images/getting_started/get-started-vs-add-ref.png)
@@ -101,13 +101,13 @@ If you've targeted Windows 10 SDK 10.0.16299 or higher, then you will be able to
 If you want to use Connected Storage or Secure Sockets, you will need to install the Xbox Live Platforms Extensions SDK before you can add references to your project. You can do this by:
 
 1. Download and extract the [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk).
-2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using. 
+2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using.
 
 After you have installed the Xbox Live Platform Extensions SDK, you will need to add a reference to it in Visual Studio. You can do this by:
 
-1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...** 
+1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...**
 2. On the left side of the **Reference Manager** dialog, select **Universal Windows** > **Extensions**.
-3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK. 
+3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK.
 4. Click **OK**.
 
 ### 4. Associate your Visual Studio project with your UWP app
@@ -164,4 +164,4 @@ If you plan to add Multiplayer support to your title, and want to implement the 
 
 ## Learn More
 
-The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples) are a good way to see how Xbox Live APIs are used and showcase the APIs available to developers in the ID@Xbox program. To use the samples, you will need to change your sandbox to XDKS.1. 
+The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples) are a good way to see how Xbox Live APIs are used and showcase the APIs available to developers in the ID@Xbox program. To use the samples, you will need to change your sandbox to XDKS.1.

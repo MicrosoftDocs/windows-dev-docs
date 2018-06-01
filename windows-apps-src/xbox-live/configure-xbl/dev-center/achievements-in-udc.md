@@ -1,6 +1,6 @@
 ---
 title: Achievements 2017
-author: StaceyHaffner
+author: PhillipLucas
 description: Describes how you can configure achievements in Microsoft Dev Center to deliver rewards.
 ms.assetid:
 ms.author: kevinasg
