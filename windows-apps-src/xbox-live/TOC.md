@@ -104,6 +104,7 @@
 ## [Xbox Integrated Multiplayer (XIM)](multiplayer/xbox-integrated-multiplayer.md)
 ### [Use XIM (C++)](multiplayer/xbox-integrated-multiplayer/using-xim.md)
 ### [Use XIM (C#)](multiplayer/xbox-integrated-multiplayer/using-xim-cs.md)
+### [Use XIM (Unity with IL2CPP)](multiplayer/xbox-integrated-multiplayer/xim-unity-uwp-il2cpp.md)
 ### [XIM as a dedicated chat solution](multiplayer/xbox-integrated-multiplayer/xim-reservations.md)
 ### [XIM Project Configuration](multiplayer/xbox-integrated-multiplayer/xim-manifest.md)
 ### [XIM Release Notes](multiplayer/xbox-integrated-multiplayer/xim-release-notes.md)
