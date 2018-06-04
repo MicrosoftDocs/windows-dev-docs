@@ -144,6 +144,9 @@ Sometimes, due to network or administrative issues, Developer Mode won't install
 
 See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more. 
 
+> [!NOTE]
+> If Developer Mode doesn't install correctly, we encourage you to file a feedback request. In the **Feedback Hub** app, select **Add new feedback**, and choose the **Developer Platform** category and the **Developer Mode** subcategory. Submitting feedback will help Microsoft resolve the issue you encountered.
+
 ### Failed to locate the package
 
 "Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
