@@ -74,6 +74,7 @@
 ### [Troubleshoot Windows PC setup](using-xbox-live/troubleshooting/troubleshooting-pc-setup.md)
 ### [Troubleshoot sign-in](using-xbox-live/troubleshooting/troubleshooting-sign-in.md)
 ### [Troubleshoot with Fiddler ](using-xbox-live/troubleshooting/how-to-set-up-fiddler-for-debugging.md)
+## [Async C API](flatc-async-patterns.md)
 ## [Port XBL code from XDK to UWP](using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)
 # [Social Platform](social-platform/social-platform.md)
 ## [The People System](social-platform/people-system/xbox-live-people-system.md)
