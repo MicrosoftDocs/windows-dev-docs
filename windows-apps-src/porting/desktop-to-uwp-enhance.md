@@ -53,12 +53,10 @@ In the **General** settings of the **C/C++** settings group, set the **Consume W
 
 Open the **Additional #using Directories** dialog box, and add these directories.
 
-* C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages
+* %VSInstallDir%\Common7\IDE\VC\vcpackages
 * C:\Program Files (x86)\Windows Kits\10\UnionMetadata
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*latest version*>
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*latest version*>
-
-![Additional using directories](images/desktop-to-uwp/additional-using.png)
 
 Open the **Additional Include Directories** dialog box, and add this directory: C:\Program Files (x86)\Windows Kits\10\Include\<*latest version*>\um
 
