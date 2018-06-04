@@ -265,5 +265,5 @@ In the lamba capture clause, a temporary variable is created, representing a wea
 
 ## Related topics
 * [Author events in C++/WinRT](author-events.md)
+* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
 * [Weak references in C++/WinRT](weak-references.md)
-
