@@ -152,6 +152,7 @@ Here's a ListView with the SwipeControl applied in its item DataTemplate. The Le
     <ListView.ItemContainerStyle>
         <Style TargetType="ListViewItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         </Style>
     </ListView.ItemContainerStyle>
     <ListView.ItemTemplate>
@@ -160,7 +161,7 @@ Here's a ListView with the SwipeControl applied in its item DataTemplate. The Le
                           LeftItems="{StaticResource RevealOptions}"
                           RightItems="{StaticResource ExecuteDelete}"
                           Height="60">
-                <StackPanel Orientation="Vertical" Margin="5">
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="{x:Bind}" FontSize="18"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." FontSize="12"/>
