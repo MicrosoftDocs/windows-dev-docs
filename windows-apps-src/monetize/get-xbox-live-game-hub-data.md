@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get Xbox Live Game Hub data.
 title: Get Xbox Live game hub data
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 Use this method in the Microsoft Store analytics API to get Game Hub data for your [Xbox Live-enabled game](../xbox-live/index.md). This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in the Windows Dev Center dashboard.
 
 > [!IMPORTANT]
-> This method currently only supports Xbox Live-enabled games that are published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) or that are submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). It does not return data for games that were submitted via the [Xbox Live Creators Program](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
+> This method only supports games for Xbox or games that use Xbox Live services. These games must go through the [concept approval process](../gaming/concept-approval.md), which includes games published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) and games submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). This method does not currently support games published via the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## Prerequisites
 
@@ -83,6 +83,7 @@ Elements in the *Value* array contain the following values.
 | gameHubLikeCount     | number |   The number of likes added to the Game Hub page on the specified date.   |
 | gameHubCommentCount          | number |  The number of comments added to the Game Hub page for your app on the specified date.  |
 | gameHubShareCount           | number | The number of times the Game Hub page for your app was shared by customers on the specified date.   |
+| gameHubFollowerCount          | number | The number of all-time followers for the Game Hub page for your app.   |
 
 
 ### Response example
@@ -97,14 +98,16 @@ The following example demonstrates an example JSON response body for this reques
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 10,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15924
     },
     {
       "date": "2018-01-05",
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 12,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15931
     }
   ],
   "@nextLink": null,

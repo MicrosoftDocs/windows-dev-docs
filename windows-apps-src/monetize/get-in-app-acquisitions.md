@@ -127,7 +127,7 @@ Elements in the *Value* array contain the following values.
 | gender              | string  | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
 | ageGroup            | string  | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
 | acquisitionType     | string  | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| acquisitionQuantity | inumber | The number of acquisitions that occurred.                        |
+| acquisitionQuantity | integer | The number of acquisitions that occurred.                        |
 
 
 ### Response example

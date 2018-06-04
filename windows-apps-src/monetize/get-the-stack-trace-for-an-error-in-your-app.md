@@ -4,7 +4,7 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app.
 title: Get the stack trace for an error in your app
 ms.author: mcleans
-ms.date: 06/16/2017
+ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,7 +70,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------------------------|
 | Value      | array   | An array of objects that each contain one frame of stack trace data. For more information about the data in each object, see the [stack trace values](#stack-trace-values) section below. |
 | @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.          |
+| TotalCount | integer | The total number of rows in the data result for the query.          |
 
 
 ### Stack trace values
