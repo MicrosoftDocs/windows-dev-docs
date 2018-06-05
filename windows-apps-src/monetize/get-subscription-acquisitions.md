@@ -92,21 +92,21 @@ Elements in the *Value* array contain the following values.
 | deviceType          | string  |  One of the following strings that specifies the type of device that completed the acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>       |
 | market           | string  | The ISO 3166 country code of the market where the acquisition occurred.     |
 | currencyCode         | string  | The currency code in ISO 4217 format for gross sales before taxes.       |
-| grossSalesBeforeTax           | inumber  | The gross sales in the local currency specified by the *currencyCode* value.     |
-| totalActiveCount             | inumber  | The number of total active subscriptions during the specified time period. This is equivalent to the sum of the *goodStandingActiveCount*, *pendingGraceActiveCount*, *graceActiveCount*, and *lockedActiveCount* values.  |
-| totalChurnCount              | inumber  | The total count of subscriptions that were deactivated during the specified time period. This is equivalent to the sum of the *billingChurnCount*, *nonRenewalChurnCount*, *refundChurnCount*, *chargebackChurnCount*, *earlyChurnCount*, and *otherChurnCount* values.   |
-| newCount            | inumber  | The number of new subscription acquisitions during the specified time period, including trials.    |
-| renewCount     | inumber  | The number of subscription renewals during the specified time period, including user-initiated renewals and automatic renewals.        |
-| goodStandingActiveCount | inumber | The number of subscriptions that were active during the specified time period and where the expiration date is >= the *endDate* value for the query.    |
-| pendingGraceActiveCount | inumber | The number of subscriptions that were active during the specified time period but had a billing failure, and where the subscription expiration date is >= the *endDate* value for the query.     |
-| graceActiveCount | inumber | The number of subscriptions that were active during the specified time period but had a billing failure, and where:<ul><li>The subscription expiration date is < the *endDate* value for the query.</li><li>The end of the grace period is >= the *endDate* value.</li></ul>        |
-| lockedActiveCount | inumber | The number of subscriptions that were in *dunning* (that is, the subscription is nearing expiration and Microsoft is trying to acquire funds to automatically renew the subscription) during the specified time period, and where:<ul><li>The subscription expiration date is < the *endDate* value for the query.</li><li>The end of the grace period is <= the *endDate* value.</li></ul>        |
-| billingChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period because of a failure to process a billing charge and where the subscriptions were previously in dunning.        |
-| nonRenewalChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period because they were not renewed.        |
-| refundChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period because they were refunded.        |
-| chargebackChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period because of a chargeback.        |
-| earlyChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period while they were in good standing.        |
-| otherChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period for other reasons.        |
+| grossSalesBeforeTax           | integer  | The gross sales in the local currency specified by the *currencyCode* value.     |
+| totalActiveCount             | integer  | The number of total active subscriptions during the specified time period. This is equivalent to the sum of the *goodStandingActiveCount*, *pendingGraceActiveCount*, *graceActiveCount*, and *lockedActiveCount* values.  |
+| totalChurnCount              | integer  | The total count of subscriptions that were deactivated during the specified time period. This is equivalent to the sum of the *billingChurnCount*, *nonRenewalChurnCount*, *refundChurnCount*, *chargebackChurnCount*, *earlyChurnCount*, and *otherChurnCount* values.   |
+| newCount            | integer  | The number of new subscription acquisitions during the specified time period, including trials.    |
+| renewCount     | integer  | The number of subscription renewals during the specified time period, including user-initiated renewals and automatic renewals.        |
+| goodStandingActiveCount | integer | The number of subscriptions that were active during the specified time period and where the expiration date is >= the *endDate* value for the query.    |
+| pendingGraceActiveCount | integer | The number of subscriptions that were active during the specified time period but had a billing failure, and where the subscription expiration date is >= the *endDate* value for the query.     |
+| graceActiveCount | integer | The number of subscriptions that were active during the specified time period but had a billing failure, and where:<ul><li>The subscription expiration date is < the *endDate* value for the query.</li><li>The end of the grace period is >= the *endDate* value.</li></ul>        |
+| lockedActiveCount | integer | The number of subscriptions that were in *dunning* (that is, the subscription is nearing expiration and Microsoft is trying to acquire funds to automatically renew the subscription) during the specified time period, and where:<ul><li>The subscription expiration date is < the *endDate* value for the query.</li><li>The end of the grace period is <= the *endDate* value.</li></ul>        |
+| billingChurnCount | integer | The number of subscriptions that were deactivated during the specified time period because of a failure to process a billing charge and where the subscriptions were previously in dunning.        |
+| nonRenewalChurnCount | integer | The number of subscriptions that were deactivated during the specified time period because they were not renewed.        |
+| refundChurnCount | integer | The number of subscriptions that were deactivated during the specified time period because they were refunded.        |
+| chargebackChurnCount | integer | The number of subscriptions that were deactivated during the specified time period because of a chargeback.        |
+| earlyChurnCount | integer | The number of subscriptions that were deactivated during the specified time period while they were in good standing.        |
+| otherChurnCount | integer | The number of subscriptions that were deactivated during the specified time period for other reasons.        |
 
 
 ### Response example

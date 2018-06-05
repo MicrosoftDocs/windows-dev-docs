@@ -4,7 +4,7 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Microsoft Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
 title: Access analytics data using Store services
 ms.author: mcleans
-ms.date: 03/23/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -36,11 +36,11 @@ Before you start writing code to call the Microsoft Store analytics API, make su
 
 To associate an Azure AD application with your Dev Center account and retrieve the required values:
 
-1.  In Dev Center, go to your **Account settings**, click **Manage users**, and [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).
+1.  In Dev Center, [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access analytics data for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add Azure AD applications to your Dev Center account](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).
+2.  Next, from the **Users** page in the **Account settings** section of Dev Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account) that represents the app or service that you will use to access analytics data for your Dev Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Dev Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account).
 
-3.  Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
+3.  Return to the **Users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
@@ -93,16 +93,6 @@ The following analytics methods are available for use by developer accounts that
 | Installs |  <ul><li>[Get desktop application installs](get-desktop-app-installs.md)</li></ul> |
 | Application errors |  <ul><li>[Get error reporting data for your desktop application](get-desktop-application-error-reporting-data.md)</li><li>[Get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Get the stack trace for an error in your desktop application](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Download the CAB file for an error in your desktop application](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
-### Methods for hardware and drivers
-
-The following analytics methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
-
-| Scenario       | Methods      |
-|---------------|--------------------|
-| Errors in Windows 10 drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md)</li><li>[Download the CAB file for a Windows 10 driver error](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Errors in Windows 7/Windows 8.x drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 7 and Windows 8.x drivers](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Get details for a Windows 7 or Windows 8.x driver error](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Download the CAB file for a Windows 7 or Windows 8.x driver error](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| Hardware errors (for OEMs) |  <ul><li>[Get OEM hardware error reporting data](get-oem-hardware-error-reporting-data.md)</li><li>[Get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md)</li><li>[Download the CAB file for an OEM hardware error](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
-
 ### Methods for Xbox Live services
 
 The following additional methods are available for use by developer accounts with games that use [Xbox Live services](../xbox-live/developer-program-overview.md).
@@ -120,6 +110,16 @@ The following additional methods are available for use by developer accounts wit
 | Scenario       | Methods      |
 |---------------|--------------------|
 | Acquisitions |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li></ul> |
+
+### Methods for hardware and drivers
+
+The following analytics methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
+
+| Scenario       | Methods      |
+|---------------|--------------------|
+| Errors in Windows 10 drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md)</li><li>[Download the CAB file for a Windows 10 driver error](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Errors in Windows 7/Windows 8.x drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 7 and Windows 8.x drivers](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Get details for a Windows 7 or Windows 8.x driver error](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Download the CAB file for a Windows 7 or Windows 8.x driver error](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| Hardware errors (for OEMs) |  <ul><li>[Get OEM hardware error reporting data](get-oem-hardware-error-reporting-data.md)</li><li>[Get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md)</li><li>[Download the CAB file for an OEM hardware error](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## Code example
 

@@ -78,7 +78,7 @@ If your camera is built in to the chassis of your computer, the name may differe
 Use [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) to obtain exclusive use of the camera barcode scanner.
 
 ## Step 7: System provided preview
-A camera preview is needed for the user to successfully aim the camera at barcodes.  Windows provides a simple camera preview that will launch a dialog that enables basic control of the camera barcode scanner.  Simply call [ClaimedBarcodeScanner.ShowideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it when finished.
+A camera preview is needed for the user to successfully aim the camera at barcodes.  Windows provides a simple camera preview that will launch a dialog that enables basic control of the camera barcode scanner.  Simply call [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it when finished.
 
 > [!TIP]
 > See [Hosting Preview](pos-camerabarcode-hosting-preview.md) to host the preview for camera barcode scanner in your application.

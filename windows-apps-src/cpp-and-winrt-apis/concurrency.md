@@ -322,4 +322,5 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 * [SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
 
 ## Related topics
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
+* [Handle events by using delegates in C++/WinRT](handle-events.md)
+* [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)

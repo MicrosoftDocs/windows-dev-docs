@@ -67,7 +67,8 @@ Also, make sure to review this guide before you begin creating a package for you
 
 **Video**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## Next steps
 
