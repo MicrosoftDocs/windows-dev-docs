@@ -58,7 +58,7 @@ using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml::Navigation;
 ...
-IAsyncAction OnNavigatedTo(NavigationEventArgs const& /* e */)
+IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 {
     Windows::Networking::Sockets::MessageWebSocket webSocket;
     co_await webSocket.ConnectAsync(Uri{ L"wss://www.contoso.com/mywebservice" });
@@ -150,7 +150,7 @@ private:
     winrt::event_token m_closedEventToken;
 
 public:
-    IAsyncAction OnNavigatedTo(NavigationEventArgs const& /* e */)
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
     {
         // In this example, we send/receive a string, so we need to set the MessageType to Utf8.
         m_messageWebSocket.Control().MessageType(Windows::Networking::Sockets::SocketMessageType::Utf8);
@@ -171,7 +171,7 @@ public:
     }
 
 private:
-    IAsyncAction SendMessageUsingMessageWebSocketAsync(std::wstring const& message)
+    IAsyncAction SendMessageUsingMessageWebSocketAsync(std::wstring message)
     {
         DataWriter dataWriter{ m_messageWebSocket.OutputStream() };
         dataWriter.WriteString(message);
@@ -183,7 +183,7 @@ private:
         ::OutputDebugString(wstringstream.str().c_str());
     }
 
-    void OnWebSocketMessageReceived(Windows::Networking::Sockets::MessageWebSocket const&, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs const& args)
+    void OnWebSocketMessageReceived(Windows::Networking::Sockets::MessageWebSocket const& /* sender */, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs const& args)
     {
         try
         {
@@ -203,7 +203,7 @@ private:
         }
     }
 
-    void OnWebSocketClosed(Windows::Networking::Sockets::IWebSocket const&, Windows::Networking::Sockets::WebSocketClosedEventArgs const& args)
+    void OnWebSocketClosed(Windows::Networking::Sockets::IWebSocket const& /* sender */, Windows::Networking::Sockets::WebSocketClosedEventArgs const& args)
     {
         std::wstringstream wstringstream;
         wstringstream << L"WebSocket_Closed; Code: " << args.Code() << ", Reason: \"" << args.Reason().c_str() << "\"" << std::endl;
@@ -396,7 +396,7 @@ private:
     winrt::event_token m_closedEventToken;
 
 public:
-    IAsyncAction OnNavigatedTo(NavigationEventArgs const& /* e */)
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
     {
         m_closedEventToken = m_streamWebSocket.Closed({ this, &StreamWebSocketPage::OnWebSocketClosed });
 
@@ -414,7 +414,7 @@ public:
     }
 
 private:
-    IAsyncAction SendMessageUsingStreamWebSocket(std::vector< byte > const& message)
+    IAsyncAction SendMessageUsingStreamWebSocket(std::vector< byte > message)
     {
         try
         {
@@ -684,7 +684,7 @@ private:
     }
 
 public:
-    IAsyncAction OnNavigatedTo(NavigationEventArgs const& /* e */)
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
     {
         try
         {
