@@ -4,7 +4,7 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -79,7 +79,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Value      | array   | An array of objects that contain aggregate error reporting data. For more information about the data in each object, see the [error values](#error-values) section below.     |
 | @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.     |
+| TotalCount | integer | The total number of rows in the data result for the query.     |
 
 
 ### Error values
@@ -101,8 +101,8 @@ Elements in the *Value* array contain the following values.
 | deviceType      | string  | One of the following strings that indicates the type of device on which the error occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | string  | The unique name of the app package that is associated with this error.      |
 | packageVersion  | string  | The version of the app package that is associated with this error.   |
-| deviceCount     | inumber | The number of unique devices that correspond to this error for the specified aggregation level.  |
-| eventCount      | inumber | The number of events that are attributed to this error for the specified aggregation level.      |
+| deviceCount     | integer | The number of unique devices that correspond to this error for the specified aggregation level.  |
+| eventCount      | integer | The number of events that are attributed to this error for the specified aggregation level.      |
 
 
 ### Response example

@@ -4,7 +4,7 @@ ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: Use this method in the Microsoft Store analytics API to get aggregate install data for an application during a given date range and other optional filters.
 title: Get app installs
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Get app installs
 
 
-Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Installs report](../publish/installs-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 

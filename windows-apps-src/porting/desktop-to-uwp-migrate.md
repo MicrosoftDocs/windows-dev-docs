@@ -20,8 +20,8 @@ You can move your code into .NET Standard libraries, and then create a Universal
 Place as much code as you can into .NET Standard 2.0 class libraries.  As long as your code uses APIs that are defined in the standard, you can reuse it in a UWP app. It's easier than it's ever been to share code in a .NET Standard library because so many more APIs are included in the .NET Standard 2.0.
 
 Here's a great video that tells you more about it.
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### Add .NET Standard libraries
 
@@ -50,10 +50,10 @@ We'll start with Nuget Packages and other dll files that you obtained from a thi
 If your application uses any of them, determine if they are compatible with the .NET Standard 2.0. You can use a Visual Studio extension or a command-line utility to do that.
 
 Use these same tools to analyze your code. Download the tools here ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) and then watch this video to learn how to use them.
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
+If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
 
 ![dot net option](images/desktop-to-uwp/dot-net-option.png)
 

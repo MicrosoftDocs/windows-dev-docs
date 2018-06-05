@@ -21,12 +21,9 @@ Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/d
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or higher to pin secondary tiles from Desktop Bridge apps.
+> **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.
 
 Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.
-
-> [!IMPORTANT]
-> Tile notifications are currently not supported on secondary tiles created through the Desktop Bridge. We're working to enable this feature. 
 
 
 ## Package your app with Desktop Bridge
@@ -91,7 +88,10 @@ bool isPinned = await tile.RequestCreateAsync();
 
 ## Send tile notifications
 
-Tile notifications sent to secondary tiles are currently not supported by Desktop Bridge apps. If you attempt to send a tile notification to a secondary tile, you will receive an *Element not found* exception with HResult 0x80070490. We're working to enable this feature.
+> [!IMPORTANT]
+> **Requires April 2018 version 17134.81 or later**: You must be running build 17134.81 or later to send tile or badge notifications to secondary tiles from Desktop Bridge apps. Before this .81 servicing update, a 0x80070490 *Element not found* exception would occur when sending tile or badge notifications to secondary tiles from Desktop Bridge apps.
+
+Sending tile or badge notifications is the same as UWP apps. See [Send a local tile notification](sending-a-local-tile-notification.md) to get started.
 
 
 ## Resources

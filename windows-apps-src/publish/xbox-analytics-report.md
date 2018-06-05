@@ -3,7 +3,7 @@ author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
 ms.author: wdg-dev-content
-ms.date: 02/06/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,9 @@ ms.localizationpriority: high
 # Xbox analytics report
 
 The **Xbox analytics** report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your game. It also provides service health info to help you address client errors.
- 
+
 > [!IMPORTANT]
-> You’ll only see this report if you’re publishing a game for Xbox or a game that uses Xbox Live services. To do so, you must enable the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) or go through the [concept approval process](../gaming/concept-approval.md). 
+> You’ll only see this report if you’re publishing a game for Xbox or a game that uses Xbox Live services. To do so, you must go through the [concept approval process](../gaming/concept-approval.md), which includes games published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) and games submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). Games published via the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) are not currently visible in this report.
 
 You can view the **Xbox analytics** report from the left navigation menu for your game by expanding **Analytics** and selecting **Xbox analytics**.  You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
@@ -73,7 +73,7 @@ This data does not mean that these customers who installed your product on exter
 ### Connection type
 
 This chart shows the percentages of your product’s customers who use **Wired** internet connections versus **Wireless** (on Xbox).
- 
+
 
 ## Xbox Live service health tab
 
@@ -95,7 +95,7 @@ You can also expand **Filters** to filter all of the data on this page by packag
 The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
 
 
-### Client errors by service 
+### Client errors by service
 
 The **Client errors by service** chart shows the number of daily client (4xx) errors across each Xbox Live service over the selected period of time.
 
@@ -104,7 +104,7 @@ You can also view only rate limiting errors by selecting **Rate limiting**. This
 > [!NOTE]
 > A 429E status code was actually successfully returned as a 200 status code, but would have been rate-limited if the service was experiencing high volume at the time, so we recommend you treat it exactly the same as if it were enforced (429).
 
-By default, this chart displays the top six services by error count. You can select the filter icon in the top right corner of this section to choose different services. You can view errors for up to six services at once. 
+By default, this chart displays the top six services by error count. You can select the filter icon in the top right corner of this section to choose different services. You can view errors for up to six services at once.
 
 > [!NOTE]
 > The legend only displays the distinguishing prefix for each service (for example, **presence** instead of **presence.xboxlive.com**). You can find the full service address in the **Client errors by endpoint** table lower in the **Xbox Live service health** tab.
@@ -114,13 +114,13 @@ By default, this chart displays the top six services by error count. You can sel
 
 The **Service availability** chart shows the daily availability across each Xbox Live service over the selected period of time. This is calculated as *1-(total server (5xx) errors/total responses)*, and is specific to your product, not Xbox Live as a whole.
 
-By default, this chart displays the six services which have experienced the lowest availability. You can select the filter icon in the top right corner of this section to choose different services. You can view availability for up to six services at once. 
+By default, this chart displays the six services which have experienced the lowest availability. You can select the filter icon in the top right corner of this section to choose different services. You can view availability for up to six services at once.
 
 > [!NOTE]
 > The legend only displays the distinguishing prefix for each service (for example, **presence** instead of **presence.xboxlive.com**). You can find the full service address in the **Client errors by endpoint** table lower in the **Xbox Live service health** tab.
 
 
-### Client errors by endpoint 
+### Client errors by endpoint
 
 The **Client errors by endpoint** table shows the number of daily client (4xx) errors broken down by each Xbox Live service, endpoint, and status code over the selected period of time. By default, the table is sorted by the total number of service responses in descending order, but you can change the sorting order by clicking any of the column headers.
 
