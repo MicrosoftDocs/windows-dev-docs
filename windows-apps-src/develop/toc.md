@@ -170,6 +170,7 @@
 #### [Capability declaration](../devices-sensors/pos-basics-capability.md)
 #### [Enumerating devices](../devices-sensors/pos-basics-enumerating.md)
 #### [Creating a device object](../devices-sensors/pos-basics-deviceobject.md)
+#### [Claiming a device for exclusive use](../devices-sensors/pos-basics-claim.md)
 #### [Getting started](../devices-sensors/pos-get-started.md)
 ### [Hardware support](../devices-sensors/pos-device-support.md)
 ### [Barcode scanner](../devices-sensors/pos-barcodescanner.md)
