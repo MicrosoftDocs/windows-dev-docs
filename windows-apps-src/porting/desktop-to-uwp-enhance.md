@@ -49,7 +49,7 @@ Open the property pages of your project.
 
 In the **General** settings of the **C/C++** settings group, set the **Consume Windows Runtime Extension** field to **Yes(/ZW)**.
 
-   ![Consume Windows Runtime Extension](images/desktop-to-uwp/enable-winrt-objects.png)
+   ![Consume Windows Runtime Extension](images/desktop-to-uwp/consume-runtime-extensions.png)
 
 Open the **Additional #using Directories** dialog box, and add these directories.
 

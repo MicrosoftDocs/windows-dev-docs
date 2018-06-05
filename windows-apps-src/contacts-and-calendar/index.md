@@ -4,7 +4,7 @@ description: How to use contacts and calendar info in your UWP app.
 title: Contacts and calendar
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,7 +28,8 @@ To see a few different ways in which your app can access contacts and appointmen
 | [Connect your app to actions on a contact card](integrating-with-contacts.md) | Shows how to make your app appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message. |
 | [Adding My People support to an application](my-people-support.md) | Shows how to add My People support to an application and how to pin and unpin contacts on the taskbar. |
 | [My People sharing](my-people-sharing.md) | Shows how to add support for My People sharing, which lets users share content with their pinned contacts by dragging files from the File Explorer to a My People pin. |
-| [My People notifications](my-people-notifications.md) | Shows how to create and use My People notifications, a new kind of toast notifcation that's sent from a pinned contact. |
+| [My People notifications](my-people-notifications.md) | Shows how to create and use My People notifications, a new kind of toast notification that's sent from a pinned contact. |
+
  
 
 ## Related topics

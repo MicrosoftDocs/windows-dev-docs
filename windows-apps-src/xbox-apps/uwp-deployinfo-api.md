@@ -27,12 +27,13 @@ A JSON array in the following format:
 
 * DeployInfo
   * PackageFullName - Name of the package that we are requesting information about.
+  * OverlayFolder - Optional path to an overlay folder path if using this feature.
 
 ###Response
 
 **Response body**
 
-A JSON array in the following format:
+A JSON array in the following format (some fields are optional):
 
 * DeployInfo
   * PackageFullName - Name of the package that we are receiving information about.
@@ -40,6 +41,7 @@ A JSON array in the following format:
   * DeployPathOrSpecifiers - A deploy path for loose deployments or installed specifiers for packaged deployments.
   * DeployDrive - The drive the package is deployed to for applicable deployment types.
   * DeploySizeInBytes - The size in bytes of the package for applicable deployment types.
+  * OverlayFolder - The overlay folder for deployments which support this feature.
 
 **Status code**
 

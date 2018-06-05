@@ -1,27 +1,27 @@
----
+﻿---
 author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
 ms.author: wdg-dev-content
-ms.date: 08/17/2017
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: high
 ---
 
 # Account types, locations, and fees
 
-We offer two types of developer accounts: individual accounts, and company accounts. Developer accounts are offered in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft developer programs.
+We offer individual accounts and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft developer programs.
 
 > [!NOTE]
 > When signing up for an account, make sure to sign in with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
 When you [begin the signup process](http://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
 
-Company accounts are intended for organizations and businesses, and they allow access to some additional app capabilities. For company accounts, we require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
+Company accounts are intended for organizations and businesses. For company accounts, we require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
 > [!IMPORTANT]
 > You can't change the account type once you make your selection, so be sure to choose the right type.
@@ -30,21 +30,9 @@ Here are the essential differences between the two account types.
 
 | Individual account | Company account |
 |--------------------|-----------------|
-| <ul><li>Restricted from using certain app capabilities</li><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> | <ul><li>Requires greater account verification</li><li>Greater access to app capabilities</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> |
+| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
 
-Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. Company accounts also allow you to submit apps that declare additional [App capability declarations](../packaging/app-capability-declarations.md).
-
-Specifically, you must have a company account in order to publish apps that use the following three capabilities:
-
--   **enterpriseAuthentication**—Uses Windows credentials for access to a corporate intranet. This is typically used in line-of-business apps that connect to servers within an enterprise. (You don't need this capability for generic communication across the internet.)
--   **sharedUserCertificates**—Enables an app to access software and hardware certificates, such as certificates stored on a smart card. This is typically used for financial or enterprise apps that require a smart card for authentication.
--   **documentsLibrary**—Allows programmatic access to the user's Documents, filtered to the file type associations declared in the package manifest. (You don't need to declare this capability in order to access a user's Documents with the [file picker](../files/quickstart-using-file-and-folder-pickers.md)). Note that apps targeting Windows Phone 8.1 or earlier cannot use the documentsLibrary capability.
-
-> [!NOTE]
-> In addition, you must contact support and get approval before you can submit apps that declare the **documentsLibrary** capability.
-
-Having a company account does not guarantee that apps using these capabilities will pass certification. These capabilities are intended for very specific scenarios, and most apps shouldn't declare them. For more information, see [App capability declarations](../packaging/app-capability-declarations.md).
-
+Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. Per the [Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), a company account is required to publish apps with certain functionality, such as apps that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider).
 
 ## Account verification
 

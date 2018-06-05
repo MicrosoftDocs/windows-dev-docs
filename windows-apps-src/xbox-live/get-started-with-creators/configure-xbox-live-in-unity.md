@@ -1,9 +1,9 @@
 ---
 title: Configure Xbox Live in Unity
-author: StaceyHaffner
+author: aablackm
 description: Learn how to use the Xbox Live Unity plugin to configure Xbox Live in your Unity game.
 ms.assetid: 55147c41-cc49-47f3-829b-fa7e1a46b2dd
-ms.author: kevinasg
+ms.author: aablackm
 ms.date: 1/25/2018
 ms.topic: article
 ms.prod: windows
@@ -32,7 +32,7 @@ You will need the following before you can use Xbox Live in Unity:
 4. **[Visual Studio 2015](https://www.visualstudio.com/)** or **[Visual Studio 2017 15.3.3](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
 5. **[Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)**.
 
-	
+
 > [!NOTE]
 > If you want to use the IL2CPP scripting backend with Xbox Live, you will need Unity 2017.2.0p2 or newer and the Xbox Live Unity plugin version "1802 Preview Release" or higher.
 
@@ -56,7 +56,7 @@ There are three settings that can be configured in Unity to define how your code
 
 1. The **scripting backend** is the compiler that is used. Unity supports two different scripting backends for Universal Windows Platform: .NET and IL2CPP.
 2. The **Scripting Runtime Version** is the version of the scripting runtime that runs the Unity Editor.
-3. The **API Compatibility Level** is the API surface you'll build your game against. 
+3. The **API Compatibility Level** is the API surface you'll build your game against.
 
 The following table shows the current scripting support matrix for the Xbox Live Unity Plugin:
 
@@ -142,6 +142,16 @@ If you enabled **script debugging** when you built the UWP solution from Unity, 
 
 > [!NOTE]
 > Before using your Visual Studio build to test your game with real data, follow [this checklist](test-visual-studio-build.md) to help ensure your title will be able to access the Xbox Live service.
+
+> [!IMPORTANT]
+> As of May 2018 it is now required that you make an update to the package.appxmanifest.xml file in order to test your UWP title properly in Visual Studio. To do this:
+>
+> 1. Search the Solution Explorer for the package.appxmanifest.xml file
+> 2. Right click the file and choose View Code
+> 3. Under the `<Properties><\/Properties>` section, add the following line: `<uap:SupportedUsers>multiple<\/uap:SupportedUsers>.
+> 4. Deploy the game to your Xbox by starting a remote debugging build from Visual Studio. You can find instruction to set up your title on an Xbox in the [Set up your UWP on Xbox development environment](../../xbox-apps/development-environment-setup.md) article.
+>
+> The piece of configuration changed may look like it is enabling multi-player but it is still necessary to run your game in single player scenarios.
 
 ## Try out the examples
 

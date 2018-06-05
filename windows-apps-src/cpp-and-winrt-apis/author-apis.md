@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Author APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows how to author C++/WinRT APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
 
 - You're *not* authoring a Windows Runtime class (runtime class); you just want to implement one or more Windows Runtime interfaces for local consumption within your app. You derive directly from **winrt::implements** in this case, and implement functions.
@@ -29,7 +26,7 @@ In both cases, the type that implements your C++/WinRT APIs is called the *imple
 The simplest scenario is where you're implementing a Windows Runtime interface for local consumption. You don't need a runtime class; just an ordinary C++ class. For example, you might be writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 In Visual Studio, the **Visual C++ Core App (C++/WinRT)** project template illustrates the **CoreApplication** pattern. The pattern begins with passing an implementation of [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) to [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -122,19 +119,24 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## If you're authoring a runtime class in a Windows Runtime Component
-If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class. We recommend that you declare each runtime class in its own Interface Definition Language (IDL) (`.idl`) file. Here's an example.
+If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class.
+
+> [!TIP]
+> We recommend that you declare each runtime class in its own Interface Definition Language (IDL) (.idl) file, in order to optimize build performance when you edit an IDL file, and for logical correspondence of an IDL file to its generated source code files. Visual Studio merges all of the resulting `.winmd` files into a single file with the same name as the root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
+
+Here's an example.
 
 ```idl
 // MyRuntimeClass.idl
 namespace MyProject
 {
-	runtimeclass MyRuntimeClass
-	{
-		// Declaring a constructor (or constructors) in the IDL causes the runtime class to be
-		// activatable from outside the compilation unit.
-		MyRuntimeClass();
-		String Name;
-	}
+    runtimeclass MyRuntimeClass
+    {
+        // Declaring a constructor (or constructors) in the IDL causes the runtime class to be
+        // activatable from outside the compilation unit.
+        MyRuntimeClass();
+        String Name;
+    }
 }
 ```
 
@@ -147,13 +149,13 @@ The implementation type looks like this.
 ...
 namespace winrt::MyProject::implementation
 {
-	struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
-	{
-		MyRuntimeClass() = default;
+    struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
+    {
+        MyRuntimeClass() = default;
 
-		hstring Name();
-		void Name(hstring const& value);
-	};
+        hstring Name();
+        void Name(hstring const& value);
+    };
 }
 
 // winrt::MyProject::factory_implementation::MyRuntimeClass is here, too.
@@ -175,9 +177,11 @@ If your type is referenced by your XAML UI, then it needs to be a runtime class,
 
 In this scenario, you're both authoring *and* consuming the APIs. The procedure for implementing your runtime class is essentially the same as that for a Windows Runtime Component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime Component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). The only detail that differs is that, from the IDL, the C++/WinRT toolchain generates not only an implementation type but also a projected type. It's important to appreciate that saying only "**MyRuntimeClass**" in this scenario may be ambiguous; there are several entities with that name, of different kinds.
 
-- **MyRuntimeClass** is the name of a runtime class; declared in IDL, and implemented in some programming language.
+- **MyRuntimeClass** is the name of a runtime class. But this is really an abstraction: declared in IDL, and implemented in some programming language.
 - **MyRuntimeClass** is the name of the C++ struct **winrt::MyProject::implementation::MyRuntimeClass**, which is the C++/WinRT implementation of the runtime class. As we've seen, if there are separate implementing and consuming projects, then this struct exists only in the implementing project. This is *the implementation type*, or *the implementation*. This type is generated (by the `cppwinrt.exe` tool) in the files `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` and `MyRuntimeClass.cpp`.
 - **MyRuntimeClass** is the name of the projected type in the form of the C++ struct **winrt::MyProject::MyRuntimeClass**. If there are separate implementing and consuming projects, then this struct exists only in the consuming project. This is *the projected type*, or *the projection*. This type is generated (by `cppwinrt.exe`) in the file `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h`.
+
+![Projected type and implementation type](images/myruntimeclass.png)
 
 Here are the parts of the projected type that are relevant to this topic.
 
@@ -186,11 +190,11 @@ Here are the parts of the projected type that are relevant to this topic.
 ...
 namespace winrt::MyProject
 {
-	struct MyRuntimeClass : MyProject::IMyRuntimeClass
-	{
-		MyRuntimeClass(std::nullptr_t) noexcept {}
-		MyRuntimeClass();
-	};
+    struct MyRuntimeClass : MyProject::IMyRuntimeClass
+    {
+        MyRuntimeClass(std::nullptr_t) noexcept {}
+        MyRuntimeClass();
+    };
 }
 ```
 
@@ -202,7 +206,7 @@ The procedure for consuming your runtime class in this scenario is described in 
 Here are some points to take away from the listings we've seen above.
 
 - Each constructor you declare in your IDL causes a constructor to be generated on both your implementation type and on your projected type. IDL-declared constructors are used to consume the runtime class from *a different* compilation unit.
-- Whether you have IDL-declared constructor(s) or not, a constructor overload that takes `nullptr` is generated on your projected type. Calling the `nullptr` constructor is *the first of two steps* in consuming the runtime class from *the same* compilation unit. For more details, and a code example, see [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- Whether you have IDL-declared constructor(s) or not, a constructor overload that takes `nullptr_t` is generated on your projected type. Calling the `nullptr_t` constructor is *the first of two steps* in consuming the runtime class from *the same* compilation unit. For more details, and a code example, see [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 - If you're consuming the runtime class from *the same* compilation unit, then you can also implement non-default constructors directly on the implementation type (which, remember, is in `MyRuntimeClass.h`).
 
 > [!NOTE]
@@ -225,8 +229,8 @@ using namespace Windows::Foundation;
 
 struct MyType : implements<MyType, IStringable, IClosable>
 {
-	winrt::hstring ToString(){ ... }
-	void Close(){}
+    winrt::hstring ToString(){ ... }
+    void Close(){}
 };
 ```
 
@@ -236,10 +240,10 @@ Or you can generate it from IDL (it's a runtime class).
 // MyType.idl
 namespace MyProject
 {
-	runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
-	{
-		MyType();
-	}	
+    runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
+    {
+        MyType();
+    }    
 }
 ```
 
@@ -277,9 +281,9 @@ In the case where you have an interface object, and you happen to know that it's
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-	MyType* myimpl = winrt::from_abi<MyType>(from);
-	myimpl->ToString();
-	myimpl->Close();
+    MyType* myimpl = winrt::from_abi<MyType>(from);
+    myimpl->ToString();
+    myimpl->Close();
 }
 ```
 
@@ -300,6 +304,8 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
+If you have an instance of your implementation type, and you need to pass it to a function that expects the corresponding projected type, then you can do so. A conversion operator exists on your implementation type (provided that the implementation type was generated by the `cppwinrt.exe` tool) that makes this possiblle.
+
 ## Deriving from a type that has a non-trivial constructor
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) is an example of a non-trivial constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
 
@@ -307,11 +313,11 @@ IClosable ic1 = myimpl.as<IClosable>(); // error
 // MySpecializedToggleButton.idl
 namespace MyNamespace
 {
-	runtimeclass MySpecializedToggleButton :
-		Windows.UI.Xaml.Controls.Primitives.ToggleButton
-	{
-		...
-	};
+    runtimeclass MySpecializedToggleButton :
+        Windows.UI.Xaml.Controls.Primitives.ToggleButton
+    {
+        ...
+    };
 }
 ```
 
@@ -319,11 +325,11 @@ namespace MyNamespace
 // MySpecializedToggleButtonAutomationPeer.idl
 namespace MyNamespace
 {
-	runtimeclass MySpecializedToggleButtonAutomationPeer :
-		Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
-	{
-		MySpecializedToggleButtonAutomationPeer(MySpecializedToggleButton owner);
-	};
+    runtimeclass MySpecializedToggleButtonAutomationPeer :
+        Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+    {
+        MySpecializedToggleButtonAutomationPeer(MySpecializedToggleButton owner);
+    };
 }
 ```
 
@@ -333,9 +339,9 @@ The generated constructor for your implementation type looks like this.
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
-	(MyNamespace::MySpecializedToggleButton const& owner)
+    (MyNamespace::MySpecializedToggleButton const& owner)
 {
-	...
+    ...
 }
 ...
 ```
@@ -346,10 +352,10 @@ The only piece missing is that you need to pass that constructor parameter on to
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
-	(MyNamespace::MySpecializedToggleButton const& owner) : 
-	MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
+    (MyNamespace::MySpecializedToggleButton const& owner) : 
+    MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
 {
-	...
+    ...
 }
 ...
 ```

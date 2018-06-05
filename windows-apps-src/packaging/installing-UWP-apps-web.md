@@ -26,8 +26,11 @@ The direct app install is only available in the Windows 10 Fall Creators Update 
 In this mechanism, App Installer registers with the operating system for a protocol activation scheme. When user clicks on a web link, the browser checks with the OS for apps that are registered to that web link. If the scheme matches the protocol activation scheme specified by App Installer, then App Installer is invoked. It's important to note that this mechanism is browser independent. This is beneficial to site administrators, for example, who don't need to consider web browser differences while incorporating this into a webpage. 
 
 ### Requirements for protocol activation scheme
-   - Web servers that support byte range requests (HTTP/1.1)
-   - App Packages need to be hosted on servers that support HTTP/1.1 protocol   
+
+1. Web servers need to have support for byte range requests (HTTP/1.1)
+    - Servers that support HTTP/1.1 protocol should have support for byte range requests 
+2. Web servers will need to know about the Windows 10 app package content types
+    - Here's how to declare the new content types as part of [web config file](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### How to enable this on a webpage 
 App developers who want to host app packages on their web sites need to follow this step:

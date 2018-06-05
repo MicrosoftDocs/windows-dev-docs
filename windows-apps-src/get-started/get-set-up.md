@@ -1,10 +1,10 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Get set up
 description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
-ms.author: jken
-ms.date: 03/06/2017
+ms.author: quradic
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -51,20 +51,22 @@ You can start developing apps now, but before you can submit them to the store, 
 
 ## What's next?
 
-After you've installed the tools and enabled your device for development, use our tutorials to create your first app:
+After you've installed the tools and enabled your device for development, check out our guidance on how to start creating Windows 10 apps.
 
--   [Create your first app](your-first-app.md) tutorials
+-   [Start coding](create-uwp-apps.md)
+
+## Windows development setup scripts
+
+If you want to customize your device and install other features or packages, check out this project for system setup scripts.
+
+- [Developer setup scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## Want more tools and downloads?
 
 For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).
 
-
 ## See Also
 
-* [Create UWP apps](create-uwp-apps.md)
-* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
-* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a UWP app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

@@ -7,7 +7,7 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 05/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,13 +17,7 @@ ms.localizationpriority: medium
 
 #  Command design basics for UWP apps
 
-In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form. 
-
-This article describes common command elements, the interactions they support, and the command surfaces for hosting them.
-
-![command elements in Maps app](images/maps.png)
-
-Above, see examples of command elements in the Maps app.
+In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes common command elements, the interactions they support, and the command surfaces for hosting them.
 
 ## Provide the right type of interactions
 
@@ -41,106 +35,94 @@ Some interactions you might want to provide your app include:
 
 Using the right elements to enable command interactions can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. The Universal Windows Platform (UWP) provides a large set of command elements that you can use in your app. Here's a list of some of the most common controls and a summary of the interactions they can enable.
 
-<div class="mx-responsive-img">
-<table>
-<thead>
-<tr class="header">
-<th align="left">Category</th>
-<th align="left">Elements</th>
-<th align="left">Interaction</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><b>Buttons</b><br/><br/>
-	<img src="../controls-and-patterns/images/controls/button.png" alt="button" /></td>
-<td align="left"><a href="../controls-and-patterns/buttons.md">Button</a></td>
-<td align="left">Triggers an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.</td>
-</tr>
-<tr class="even">
-<td align="left">Lists<br/><br/>
-	<img src="../controls-and-patterns/images/controls/combo-box-open.png" alt="drop down list" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">drop-down list, list box, list view and grid view</a></td>
-<td align="left">Presents items in a interactive list or a grid. Usually used for many options or display items.</td>
-</tr>
-<tr class="odd">
-<td align="left">Selection controls<br/><br/>
-	<img src="../controls-and-patterns/images/controls/radio-button.png" alt="radio button" /></td>
-<td align="left"><a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, <a href="../controls-and-patterns/toggles.md">toggle switch</a></td>
-<td align="left">Lets users choose from a few options, such as when completing a survey or configuring app settings.</td>
-</tr>
-<tr class="even">
-<td align="left">Date and time pickers<br/><br/>
-	<img src="../controls-and-patterns/images/controls/calendar-date-picker-open.png" alt="date picker" /></td>
-<td align="left"><a href="../controls-and-patterns/date-and-time.md">calendar date picker, calendar view, date picker, time picker</a></td>
-<td align="left">Enables users to view and modify date and time info, such as when creating an event or setting an alarm.</td>
-</tr>
-<tr class="odd">
-<td align="left">Predictive text entry<br/><br/>
-	<img src="../controls-and-patterns/images/controls/auto-suggest-box.png" alt="autosuggest box" /></td>
-<td align="left"><a href="../controls-and-patterns/auto-suggest-box.md">Auto-suggest box</a></td>
-<td align="left">Provides suggestions as users type, such as when entering data or performing queries.</td>
-</tr>
-</tbody>
-</table>
-</div>
+:::row:::
+    :::column:::
+        ![button image](images/commanding/thumbnail-button.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Buttons</b>
 
-For a complete list, see [Controls and UI elements](https://dev.windows.com/design/controls-patterns)
+        <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![list image](images/commanding/thumbnail-list.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Lists</b>
+
+        <a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![selection control image](images/commanding/thumbnail-selection.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Selection controls</b>
+
+        Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![Calendar  image](images/commanding/thumbnail-calendar.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Calendar, date and time pickers</b>
+
+        <a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![Predictive text entry image](images/commanding/thumbnail-autosuggest.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Predictive text entry</b>
+
+        Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+:::row-end:::
+
+For a complete list, see [Controls and UI elements](../controls-and-patterns/index.md)
 
 ##  Place commands on the right surface
 You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as command bars, menus, dialogs, and flyouts.
 
 Note that, whenever possible, you should allow users to manipulate content directly rather than use commands that act on the content. For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.
-  
-Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app:
 
-<div class="mx-responsive-img">
-<table class="uwpd-top-aligned-table">
+Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app. Here's a list of some of the most common command surfaces.
 
-<tr class="header">
-<th align="left">Surface</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
-</tr>
+:::row:::
+    :::column:::
+        ![app canvas image](images/commanding/thumbnail-canvas.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>App canvas (content area)</b>
 
-<tr class="odd">
-<td align="left" style="vertical-align: top">App canvas (content area)
-<p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
+        If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.
+:::row-end:::
 
-<td align="left" style="vertical-align: top;">If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use.
-<p>However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.</p> 
-</td><td>
-An autosuggest box on the Maps app canvas.
-<br></br>
-  <img src="images/maps-canvas.png" alt="autosuggest box on Maps app canvas"/>
-</td>
-</tr>
+:::row:::
+    :::column:::
+        ![commandbar image](images/commanding/thumbnail-commandbar.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Command bars</b>
 
-<tr class="even">
-<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/app-bars.md">Command bar</a>
-<p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p></td>
-<td align="left" style="vertical-align: top;"> Command bars help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen. 
-</td>
-<td>
-A command bar at the top of the Maps app.
-<br></br>
-<img src="images/maps-commandbar.png" alt="command bar in Maps app"/>
-</td>
-</tr>
+        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen.
+:::row-end:::
 
-<tr class="odd">
-<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/menus.md">Menus and context menus</a>
-<p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
-<td align="left" style="vertical-align: top;">Sometimes it is more efficient to group multiple commands into a command menu to save space. Menus and context menus display a list of commands or options when the user requests them.
-<p>Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands. Context menus are usually prompted by a user right-clicking.</p>
-</td><td>
-A context menu appears when users right-click in the Maps app.
-<br></br>
-  <img src="images/maps-contextmenu.png" alt="context menu in Maps app"/>
-</td>
-</tr>
-</table>
-</div>
+:::row:::
+    :::column:::
+        ![context menu image](images/commanding/thumbnail-contextmenu.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Menus and context menus</b>
+
+        Sometimes it is more efficient to group multiple commands into a command menu to save space. <a href="../controls-and-patterns/menus.md">Menus and context menus</a> display a list of commands or options when the user requests them. Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands. Context menus are usually prompted by a user right-clicking.
+:::row-end:::
 
 ## Provide feedback for interactions
 
@@ -148,48 +130,36 @@ Feedback communicates the results of commands and allows users to understand wha
 
 Here are some ways to provide feedback in your app.
 
-<div class="mx-responsive-img">
-<table class="uwpd-top-aligned-table">
+:::row:::
+    :::column:::
+        ![commandbar content area image](images/commanding/thumbnail-commandbar2.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Command bar</b>
 
-<tr class="header">
-<th align="left">Surface</th>
-<th align="left">Description</th>
-</tr>
+        The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+:::row-end:::
 
-<tr class="odd">
-<td align="left" style="vertical-align: top;"> <a href="../controls-and-patterns/app-bars.md">Command bar</a>
-<p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p>
-</td>
-<td align="left" style="vertical-align: top;"> The content area of the command bar is an intuative place to communicate status to users if they'd like to see feedback.
-<p>
-  <img src="images/commandbar_anatomy.png" alt="Command bar content area for feedback"/>
-  </p>
-</td>
-</tr>
+:::row:::
+    :::column:::
+        ![Flyout image](images/commanding/thumbnail-flyout.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Flyouts</b>
 
-<tr class="even">
-<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/dialogs.md">Flyout</a>
-<p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
-<td align="left" style="vertical-align: top;">
-A lightweight contextual popup that can be dismissed by tapping or clicking somewhere outside the flyout.
-<p>
-  <img src="../controls-and-patterns/images/controls/flyout.png" alt="Flyout above button"/>
-  </p>
-</td>
-</tr>
+       <a href="../controls-and-patterns/dialogs.md">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.
+:::row-end:::
 
-<tr class="odd">
-<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/dialogs.md">Dialog controls</a>
-<p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
-<td align="left" style="vertical-align: top;">Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.
-<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.</p>
-<p>
-  <img src="../controls-and-patterns/images/dialogs/dialog_RS2_delete_file.png" alt="dialog delete file"/></p>
-</td>
-</tr>
+:::row:::
+    :::column:::
+        ![Dialog image](images/commanding/thumbnail-dialog.svg)
+    :::column-end:::
+	:::column span="2":::
+        <b>Dialog controls</b>
 
-</table>
-</div>
+        <a href="../controls-and-patterns/dialogs.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+    :::column-end:::
+:::row-end:::
 
 > [!TIP]
 > Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.
@@ -198,18 +168,28 @@ A lightweight contextual popup that can be dismissed by tapping or clicking some
 
 No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't. Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.
 
--   For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
-    -   Overwriting a file
-    -   Not saving a file before closing
-    -   Confirming permanent deletion of a file or data
-    -   Making a purchase (unless the user opts out of requiring a confirmation)
-    -   Submitting a form, such as signing up for something
--   For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
-    -   Deleting a file
-    -   Deleting an email (not permanently)
-    -   Modifying content or editing text
-    -   Renaming a file
+:::row:::
+    :::column:::
+        ![do image](images/do.svg)
+
+        For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
+        -   Overwriting a file
+        -   Not saving a file before closing
+        -   Confirming permanent deletion of a file or data
+        -   Making a purchase (unless the user opts out of requiring a confirmation)
+        -   Submitting a form, such as signing up for something
+    :::column-end:::
+	:::column:::
+        ![do image](images/do.svg)
+
+        For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
+        -   Deleting a file
+        -   Deleting an email (not permanently)
+        -   Modifying content or editing text
+        -   Renaming a file
+:::row-end:::
 
 ##  Optimize for specific input types
 
 See the [Interaction primer](../input/index.md) for more detail on optimizing user experiences around a specific input type or device.
+

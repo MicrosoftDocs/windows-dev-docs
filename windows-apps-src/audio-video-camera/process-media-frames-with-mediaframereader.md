@@ -24,6 +24,10 @@ If you are interested in simply capturing video or photos, such as a typical pho
 > [!NOTE] 
 > There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230).
 
+> [!NOTE] 
+> A new set of APIs for using **MediaFrameReader** with audio data were introduced in Windows 10, version 1803. For more information, see [Process audio frames with MediaFrameReader](process-audio-frames-with-mediaframereader.md).
+
+
 ## Setting up your project
 As with any app that uses **MediaCapture**, you must declare that your app uses the *webcam* capability before attempting to access any camera device. If your app will capture from an audio device, you should also declare the *microphone* device capability. 
 
@@ -62,6 +66,10 @@ Now you can use the fields of the selected object to get references to the selec
 The following example uses a similar technique as described above to select a source group that contains color, depth, and infrared cameras.
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
+
+> [!NOTE]
+> Starting with Windows 10, version 1803, you can use the [**MediaCaptureVideoProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfile) class to select a media frame source with a set of desired capabilities. For more information, see the section **Use video profiles to select a frame source** later in this article.
+
 
 ## Initialize the MediaCapture object to use the selected frame source group
 The next step is to initialize the **MediaCapture** object to use the frame source group you selected in the previous step.
@@ -153,6 +161,8 @@ The **FrameRenderer** helper class implements the following methods.
 > [!NOTE] 
 > In order to do pixel manipulation on **SoftwareBitmap** images, you must access a native memory buffer. To do this, you must use the IMemoryBufferByteAccess COM interface included in the code listing below and you must update your project properties to allow compilation of unsafe code. For more information, see [Create, edit, and save bitmap images](imaging.md).
 
+[!code-cs[IMemoryBufferByteAccess](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetIMemoryBufferByteAccess)]
+
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
 ## Use MultiSourceMediaFrameReader to get time-corellated frames from multiple sources
@@ -227,6 +237,17 @@ Initialize the **MediaCapture** object to use the selected **MediaFrameSourceGro
 Finally, call **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create a **MediaSource** for each frame source by using the **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** property of the associated **MediaFrameSourceInfo** object to select one of the frame sources in the **MediaCapture** object's **[FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** collection. Initialize a new **MediaPlayer** object and assign it to a **MediaPlayerElement** by calling **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)**. Then set the **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** property to the newly created **MediaSource** object.
 
 [!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
+
+## Use video profiles to select a frame source
+
+A camera profile, represented by a [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) object, represents a set of capabilities that a particular capture device provides, such as frame rates, resolutions, or advanced features like HDR capture. A capture device may support multiple profiles, allowing you to select the one that is optimized for your capture scenario. Starting with Windows 10, version 1803, you can use **MediaCaptureVideoProfile** to select a media frame source with particular capabilities before initializing the **MediaCapture** object. The following example method looks for a video profile that supports HDR with Wide Color Gamut (WCG) and returns a **MediaCaptureInitializationSettings** object that can be used to initialize the **MediaCapture** to use the selected device and profile.
+
+First, call [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) to get a list of all media frame source groups available on the current device. Loop through each source group and call [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) to get a list of all of the video profiles for the current source group that support the specified profile, in this case HDR with WCG photo. If a profile that meets the criteria is found, create a new **MediaCaptureInitializationSettings** object and set the **VideoProfile** to the select profile and the **VideoDeviceId** to the **Id** property of the current media frame source group.
+
+[!code-cs[GetSettingsWithProfile](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetSettingsWithProfile)]
+
+For more information on using camera profiles, see [Camera profiles](camera-profiles.md).
+
 ## Related topics
 
 * [Camera](camera.md)

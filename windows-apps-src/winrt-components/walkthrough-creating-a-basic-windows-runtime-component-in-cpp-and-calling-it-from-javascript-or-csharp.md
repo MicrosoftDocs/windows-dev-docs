@@ -1,10 +1,10 @@
 ---
 author: msatranjr
-title: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
+title: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#
 description: This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.author: misatran
-ms.date: 02/08/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,20 +12,18 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-<h1>Walkthrough: Creating a Windows Runtime component in C++ and calling it from JavaScript or C#</h1>
-
-
+# Walkthrough: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#
+> [!NOTE]
+> This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic. Before you begin this walkthrough, make sure that you understand concepts such as the Abstract Binary Interface (ABI), ref classes, and the Visual C++ Component Extensions that make working with ref classes easier. For more information, see [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
 ## Creating the C++ component DLL
-
 In this example, we create the component project first, but you could create the JavaScript project first. The order doesn’t matter.
 
 Notice that the main class of the component contains examples of property and method definitions, and an event declaration. These are provided just to show you how it's done. They are not required, and in this example, we'll replace all of the generated code with our own code.
 
 ## **To create the C++ component project**
-
 On the Visual Studio menu bar, choose **File, New, Project**.
 
 In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
@@ -35,7 +33,6 @@ In the center pane, select **Windows Runtime Component** and then name the proje
 Choose the **OK** button.
 
 ## **To add an activatable class to the component**
-
 An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++). In your component, you declare it as **public ref class sealed**. In fact, the Class1.h and .cpp files already have a ref class. You can change the name, but in this example we’ll use the default name—Class1. You can define additional ref classes or regular classes in your component if they are required. For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
 Add these \#include directives to Class1.h:
@@ -50,7 +47,6 @@ Add these \#include directives to Class1.h:
 collection.h is the header file for C++ concrete classes such as the Platform::Collections::Vector class and the Platform::Collections::Map class, which implement language-neutral interfaces that are defined by the Windows Runtime. The amp headers are used to run computations on the GPU. They have no Windows Runtime equivalents, and that’s fine because they are private. In general, for performance reasons you should use ISO C++ code and standard libraries internally within the component; it’s just the Windows Runtime interface that must be expressed in Windows Runtime types.
 
 ## To add a delegate at namespace scope
-
 A delegate is a construct that defines the parameters and return type for methods. An event is an instance of a particular delegate type, and any event handler method that subscribes to the event must have the signature that's specified in the delegate. The following code defines a delegate type that takes an int and returns void. Next the code declares a public event of this type; this enables client code to provide methods that are invoked when the event is fired.
 
 Add the following delegate declaration at namespace scope in Class1.h, just before the Class1 declaration.
@@ -62,7 +58,6 @@ public delegate void PrimeFoundHandler(int result);
 If the code isn’t lining up correctly when you paste it into Visual Studio, just press Ctrl+K+D to fix the indentation for the entire file.
 
 ## To add the public members
-
 The class exposes three public methods and one public event. The first method is synchronous because it always executes very fast. Because the other two methods might take some time, they are asynchronous so that they don’t block the UI thread. These methods return IAsyncOperationWithProgress and IAsyncActionWithProgress. The former defines an async method that returns a result, and the latter defines an async method that returns void. These interfaces also enable client code to receive updates on the progress of the operation.
 
 ```cpp
@@ -81,7 +76,6 @@ public:
 
 ```
 ## To add the private members
-
 The class contains three private members: two helper methods for the numeric computations and a CoreDispatcher object that’s used to marshal the event invocations from worker threads back to the UI thread.
 
 ```cpp
@@ -91,7 +85,6 @@ private:
 ```
 
 ## To add the header and namespace directives
-
 In Class1.cpp, add these #include directives:
 
 ```cpp
@@ -110,7 +103,6 @@ using namespace Windows::UI::Core;
 ```
 
 ## To add the implementation for ComputeResult
-
 In Class1.cpp, add the following method implementation. This method executes synchronously on the calling thread, but it is very fast because it uses C++ AMP to parallelize the computation on the GPU. For more information, see C++ AMP Overview. The results are appended to a Platform::Collections::Vector<T> concrete type, which is implicitly converted to a Windows::Foundation::Collections::IVector<T> when it is returned.
 
 ```cpp
@@ -144,7 +136,6 @@ IVector<double>^ Class1::ComputeResult(double input)
 }
 ```
 ## To add the implementation for GetPrimesOrdered and its helper method
-
 In Class1.cpp, add the implementations for GetPrimesOrdered and the is_prime helper method. GetPrimesOrdered uses a concurrent_vector class and a parallel_for function loop to divide up the work and use the maximum resources of the computer on which the program is running to produce results. After the results are computed, stored, and sorted, they are added to a Platform::Collections::Vector<T> and returned as Windows::Foundation::Collections::IVector<T> to client code.
 
 Notice the code for the progress reporter, which enables the client to hook up a progress bar or other UI to show the user how much longer the operation is going to take. Progress reporting has a cost. An event must be fired on the component side and handled on the UI thread, and the progress value must be stored on each iteration. One way to minimize the cost is by limiting the frequency at which a progress event is fired. If the cost is still prohibitive, or if you can't estimate the length of the operation, then consider using a progress ring, which shows that an operation is in progress but doesn't show time remaining until completion.
@@ -214,7 +205,6 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 ```
 
 ## To add the implementation for GetPrimesUnordered
-
 The last step to create the C++ component is to add the implementation for the GetPrimesUnordered in Class1.cpp. This method returns each result as it is found, without waiting until all results are found. Each result is returned in the event handler and displayed on the UI in real time. Again, notice that a progress reporter is used. This method also uses the is_prime helper method.
 
 ```cpp
@@ -276,11 +266,9 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 ```
 
 ## Creating a JavaScript client app
-
 If you just want to create a C# client, you can skip this section.
 
 ## To create a JavaScript project
-
 In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.
 
 Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.
@@ -298,7 +286,6 @@ In the left pane of the References Manager dialog box, select **Projects** and t
 In the center pane, select WinRT_CPP and then choose the **OK** button
 
 ## To add the HTML that invokes the JavaScript event handlers
-
 Paste this HTML into the <body> node of the default.html page:
 
 ```HTML
@@ -336,7 +323,6 @@ Paste this HTML into the <body> node of the default.html page:
 ```
 
 ## To add styles
-
 In default.css, remove the body style and then add these styles:
 
 ```css
@@ -371,7 +357,6 @@ font-size:smaller;
 ```
 
 ## To add the JavaScript event handlers that call into the component DLL
-
 Add the following functions at the end of the default.js file. These functions are called when the buttons on the main page are chosen. Notice how JavaScript activates the C++ class, and then calls its methods and uses the return values to populate the HTML labels.
 
 ```JavaScript
@@ -455,7 +440,6 @@ Press F5 to run the app.
 ## Creating a C# client app
 
 ## To create a C# project
-
 In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.
 
 Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.
@@ -473,7 +457,6 @@ In the left pane of the **References Manager** dialog box, select **Projects** a
 In the center pane, select WinRT_CPP and then choose the **OK** button.
 
 ## To add the XAML that defines the user interface
-
 Copy the following code into the Grid element in MainPage.xaml.
 
 ```xaml
@@ -495,7 +478,6 @@ Copy the following code into the Grid element in MainPage.xaml.
 ```
 
 ## To add the event handlers for the buttons
-
 In Solution Explorer, open MainPage.xaml.cs. (The file might be nested under MainPage.xaml.) Add a using directive for System.Text, and then add the event handler for the Logarithm calculation in the MainPage class.
 
 ```csharp
@@ -596,25 +578,20 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## Running the app
-
 Select either the C# project or JavaScript project as the startup project by opening the shortcut menu for the project node in Solution Explorer and choosing **Set As Startup Project**. Then press F5 to run with debugging, or Ctrl+F5 to run without debugging.
 
 ## Inspecting your component in Object Browser (optional)
-
 In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files. This includes the types in the Platform namespace and the default namespace. However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.
 
 ## **To inspect a component**
-
 On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
 
 In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
 
 ## Debugging tips
-
 For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:
 
 ## **To download debugging symbols**
-
 On the menu bar, choose **Tools, Options**.
 
 In the **Options** dialog box, expand **Debugging** and select **Symbols**.
@@ -632,5 +609,4 @@ If your JavaScript code doesn't recognize the public properties or methods in th
 If you remove a C++ Windows Runtime Component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
 
 ## Related topics
-
-* [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
+* [Creating Windows Runtime Components in C++/CX](creating-windows-runtime-components-in-cpp.md)

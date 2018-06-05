@@ -118,7 +118,7 @@ Here's the GridView control for the zoomed-in view. The zoomed-in view should di
 The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` resource. The look of the items is defined in the `ZoomedInTemplate` resource. 
 
 ```xaml
-<DataTemplate x:Key="" x:DataType="data:ControlInfoDataGroup">
+<DataTemplate x:Key="ZoomedInGroupHeaderTemplate" x:DataType="data:ControlInfoDataGroup">
     <TextBlock Text="{x:Bind Title}" 
                Foreground="{ThemeResource ApplicationForegroundThemeBrush}" 
                Style="{StaticResource SubtitleTextBlockStyle}"/>

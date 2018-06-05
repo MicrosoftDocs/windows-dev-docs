@@ -4,7 +4,7 @@ Description: The Pricing and availability page of the app submission process let
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -39,11 +39,6 @@ By default (unless you have selected one of the **Make this app available but no
 For more info, see [Configure precise release scheduling](configure-precise-release-scheduling.md).
 
 
-## Display release date
-
-By default, the release date for your app will be the date when it appears in the Store. If you'd like to override this and provide a custom release date, you can check the box in this section, and then enter the release date. Note that the release date is not always displayed in Store listings.
-
-
 ## Pricing
 
 You are required to select a base price for your app (unless you have selected the **Stop acquisition** option under **Make this app available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
@@ -74,10 +69,7 @@ By default, your trial will be available as soon as your app is published, and i
 >[!NOTE]
 > These dates only apply for customers on Windows 10 (including Xbox). If your app is available to customers on earlier OS versions, the trial will be offered to those customers for as long as your product is available. 
 
-To set dates for when your trial should be offered to customers on Windows 10, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) 
-
->[!NOTE]
-> Unlike the [Schedule](configure-precise-release-scheduling.md) section, the dates you select for your **Free trial** cannot be customized for specific markets. 
+To set dates for when your trial should be offered to customers on Windows 10, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) You can select **Customize for specific markets** if you want to set different dates for any market(s).
 
 
 ## Sale pricing

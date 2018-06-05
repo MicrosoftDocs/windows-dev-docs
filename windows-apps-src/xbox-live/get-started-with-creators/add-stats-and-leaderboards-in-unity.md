@@ -61,10 +61,14 @@ For example, as a simple test, you can add a UI button to your scene, and in the
 
 If you have the stat also bound to a **StatPanel** object, you can see the stat value update every time you click the button.
 
-Every time you update your stats (increment, decrement, etc.), the values get updated locally. The data gets flushed automatically every 5 minutes by the `StatManagerComponent` script.  If your game ends before the 5 minutes, you need to make sure to flush the data manually first to make sure you don't lose that progress. To do that, you'll need to call the `statManagerComponent.RequestFlushToService()` method, making sure to call it for the **XboxLiveUser** the stat is being written for.
+Every time you update your stats (increment, decrement, etc.), the values get updated locally. To have these stat updates reflected in Xbox Live two things must happen. First, you need to set the stats value with the one of the StatisticManager.SetStatistic functions. There are three `StatisticManager` functions to set statistics, `StatisticManager.SetStatisticIntegerData(XboxLiveUser user, String statName, Int64 value)`, `StatisticManager.SetStatisticNumberData(XboxLiveUser user, String statName, Double value)`, and `StatisticManager.SetStatisticStringData(XboxLiveUser user, String statName, String value)`. Each one of these functions is used to set the appropriate value for the data type of your stat. The second thing you must do to update your stats on the server, is to *flush* the local data. The data gets flushed automatically every 5 minutes by the `StatManagerComponent` script.  If your game ends before the 5 minutes, you need to make sure to flush the data manually first to make sure you don't lose that progress. To do that, you'll need to call the `statManagerComponent.RequestFlushToService()` method, making sure to call it for the **XboxLiveUser** the stat is being written for.
 
 > [!TIP]
 > It is considered best practice to always flush the data before your game ends to make sure you do not lose the progress.
+
+### Checking and Verifying Stats
+
+The `StatisticManager` class has two functions which are useful for checking on the statistics configured for an `XboxLiveUser`, `StatisticManager.GetStatisticNames(XboxLiveUser user)` and `StatisticManager.GetStatistic(XboxLiveUser user, String statName)`. `GetStatisticNames()` will provide a `list<string>` populated by the names of the stats for the XboxLiveUser provided. Those names can be used to call for the current value of a statistic by calling the `GetStatistic()` function. It is important to note that while you can read statistics from the Xbox Live stats service it is not recommended that you use it for game logic, but rather to check on the state of the statistic after it has been pushed. The service is only meant to help run other services like Leaderboards and is not meant to be a source of truth for statistics in your game. It is important that your title handle all stats logic as no checks are made on your statistic by the Xbox service and it simply accepts whatever value given to it as the current stat.
 
 ## Leaderboards
 
@@ -72,7 +76,7 @@ A leaderboard represents an ordered, numbered list of the players who have achie
 
 Leaderboards are based on the player stats that are sent to the Xbox Live service by the game. Therefore, leaderboard data is read only, as you cannot modify them directly.
 
-The Xbox Live Unity plugin provides a sample Leaderboard prefab that you can use to understand how to implement leaderboards in your game.
+The Xbox Live Unity plugin provides a sample leaderboard prefab that you can use to understand how to implement leaderboards in your game.
 
 For more information about leaderboards, see [Leaderboards](../leaderboards-and-stats-2017/leaderboards.md).
 
@@ -85,9 +89,12 @@ The Xbox Live Unity plugin contains two prefabs for leaderboards:
 
 You can drag a **Leaderboard** prefab onto the scene. In the Unity Inspector, you can set the following attributes:
 
-* Stat: The stat gameobject that this leaderboard is associated with. 
-* Leaderboard Type: The scope of the results that should be returned for the leaderboard entries. 
+* Stat: The stat gameobject that this leaderboard is associated with.
+* Leaderboard Type: The scope of the results that should be returned for the leaderboard entries.
 * Entry Count: The number of rows of data to display per page.
+
+> [!NOTE]
+> The Stat portion of the leaderboard prefab is initially blank. Try dragging one of the stat prefabs mentioned above into the gameobject slot for testing.
 
 In the Unity editor, the **Leaderboard** prefab will always display the same mock data regardless of the inspector settings. You must build and export your project to Visual Studio and sign in with an authorized user to see real data values. For more information, see [Configure Xbox Live in Unity](configure-xbox-live-in-unity.md).
 
@@ -95,3 +102,5 @@ In the Unity editor, the **Leaderboard** prefab will always display the same moc
 
 * [Sign into Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
 * [Configure Xbox Live in Unity](configure-xbox-live-in-unity.md)
+* [The Leaderboard Example Scene](setup-leaderboard-example-scene.md)
+* [Get Leaderboard Data](unity-leaderboard-from-scratch.md)

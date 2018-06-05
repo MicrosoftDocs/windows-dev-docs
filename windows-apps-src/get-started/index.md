@@ -70,7 +70,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                         <h3>Start coding</h3>
                         <p>Whether you’re an experienced dev or just building your first app, get hands-on experience with the Windows 10 platform and docs.</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Create apps for Windows</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Start coding</a></li>
                         </ul>
                     </div>
                 </div>
@@ -214,7 +214,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                 <div class="card">
                     <div class="cardText">
                         <h3>Developer tools</h3>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP Community Toolkit</a></p>
+                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>

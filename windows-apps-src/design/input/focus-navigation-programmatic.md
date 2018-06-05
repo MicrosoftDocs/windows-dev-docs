@@ -18,6 +18,8 @@ ms.localizationpriority: medium
 
 # Programmatic focus navigation
 
+![Keyboard, remote, and D-pad](images/dpad-remote/dpad-remote-keyboard.png)
+
 To move focus programmatically in your UWP application, you can use either the [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) method or the [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) method.
 
 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) attempts to change focus from the element with focus to the next focusable element in the specified direction, while [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) retrieves the element (as a [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)) that will receive focus based on the specified navigation direction (directional navigation only, cannot be used to emulate tab navigation).
@@ -246,11 +248,11 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
             FocusState.Keyboard && 
             args.NewFocusedElement != selectedContainer)
         {
-            args.NewFocusedElement = 
-                MyListView.ContainerFromItem(MyListView.SelectedItem);
+            args.TryRedirect(
+                MyListView.ContainerFromItem(MyListView.SelectedItem));
             args.Handled = true;
         }
-    }        
+    }
 }
 ```
 
@@ -276,8 +278,10 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     if (MyCommandBar.IsOpen == true && 
         IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
     {
-        args.Cancel = true;
-        args.Handled = true;
+        if (args.TryCancel())
+        {
+            args.Handled = true;
+        }
     }
 }
 ```
@@ -326,9 +330,9 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     }
 }
 ```
+
 ## Related articles
 
 - [Focus navigation for keyboard, gamepad, remote control, and accessibility tools](focus-navigation.md)
 - [Keyboard interactions](keyboard-interactions.md)
-- [Keyboard accessibility](../accessibility/keyboard-accessibility.md) 
-
+- [Keyboard accessibility](../accessibility/keyboard-accessibility.md)

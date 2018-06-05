@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,14 +11,11 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, han
 ms.localizationpriority: medium
 ---
 
-# Handle events by using delegates in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
+# Handle events by using delegates in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 This topic shows how to register and revoke event-handling delegates using C++/WinRT. You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## Register a delegate to handle an event
 A simple example is handling a button's click event. It's typical to use XAML markup to register a member function to handle the event, like this.
@@ -32,7 +29,7 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
-	Button().Content(box_value(L"Clicked"));
+    Button().Content(box_value(L"Clicked"));
 }
 ```
 
@@ -42,9 +39,9 @@ Instead of doing it declaratively in markup, you can imperatively register a mem
 // MainPage.cpp
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	Button().Click({ this, &MainPage::ClickHandler });
+    Button().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -53,12 +50,12 @@ There are other ways to construct a **RoutedEventHandler**. Below is the syntax 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 {
-	RoutedEventHandler(std::nullptr_t = nullptr) noexcept;
-	template <typename L> RoutedEventHandler(L lambda);
-	template <typename F> RoutedEventHandler(F* function);
-	template <typename O, typename M> RoutedEventHandler(O* object, M method);
-	void operator()(winrt::Windows::Foundation::IInspectable const& sender,
-		winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
+    RoutedEventHandler(std::nullptr_t = nullptr) noexcept;
+    template <typename L> RoutedEventHandler(L lambda);
+    template <typename F> RoutedEventHandler(F* function);
+    template <typename O, typename M> RoutedEventHandler(O* object, M method);
+    void operator()(winrt::Windows::Foundation::IInspectable const& sender,
+        winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
 };
 ```
 
@@ -69,12 +66,12 @@ If you're not doing much work in your event handler, then you can use a lambda f
 ```cppwinrt
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	Button().Click([this](IInspectable const&, RoutedEventArgs const&)
-	{
-		Button().Content(box_value(L"Clicked"));
-	});
+    Button().Click([this](IInspectable const&, RoutedEventArgs const&)
+    {
+        Button().Content(box_value(L"Clicked"));
+    });
 }
 ```
 
@@ -83,14 +80,14 @@ You can choose to be a little more explicit when you construct your delegate. Fo
 ```cppwinrt
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	auto click_handler = [](IInspectable const& sender, RoutedEventArgs const&)
-	{
-		sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
-	};
-	Button().Click(click_handler);
-	AnotherButton().Click(click_handler);
+    auto click_handler = [](IInspectable const& sender, RoutedEventArgs const&)
+    {
+        sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
+    };
+    Button().Click(click_handler);
+    AnotherButton().Click(click_handler);
 }
 ```
 
@@ -100,39 +97,41 @@ When you register a delegate, typically a token is returned to you. You can subs
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-	Example(winrt::Windows::UI::Xaml::Controls::Button const& button) : m_button(button)
-	{
-		m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
-		{
-			...
-		});
-	}
-	~Example()
-	{
-		m_button.Click(m_token);
-	}
+    Example(winrt::Windows::UI::Xaml::Controls::Button const& button) : m_button(button)
+    {
+        m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
+        {
+            ...
+        });
+    }
+    ~Example()
+    {
+        m_button.Click(m_token);
+    }
 
 private:
-	winrt::Windows::UI::Xaml::Controls::Button m_button;
-	winrt::event_token m_token;
+    winrt::Windows::UI::Xaml::Controls::Button m_button;
+    winrt::event_token m_token;
 };
 ```
 
-Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** (which is a value of type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) to request an event revoker. When that revoker goes out of scope, it automatically revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
+Instead of a strong reference, as in the example above, you can store a weak reference to the button (see [Weak references in C++/WinRT](weak-references.md)).
+
+Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** (which is a value of type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) to request an event revoker (of type **winrt::event_revoker**). The event revoker holds a weak reference to the event source (the object raising the event) for you. You can manually revoke by calling the **event_revoker::revoke** member function; but the event revoker calls that function itself automatically when it goes out of scope. The **revoke** function checks whether the event source still exists and, if so, revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-	Example(winrt::Windows::UI::Xaml::Controls::Button button)
-	{
-		m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const&, RoutedEventArgs const&)
-		{
-			...
-		});
-	}
+    Example(winrt::Windows::UI::Xaml::Controls::Button button)
+    {
+        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const&, RoutedEventArgs const&)
+        {
+            ...
+        });
+    }
 
 private:
-	winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
+    winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
 };
 ```
 
@@ -146,8 +145,8 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
-	winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+    winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
 A similar pattern applies to all C++/WinRT events.
@@ -164,31 +163,41 @@ using namespace Windows::Web::Syndication;
 
 void ProcessFeedAsync()
 {
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
 
-	auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
-	async_op_with_progress.Progress(
-		[](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const&, RetrievalProgress const& args)
-	{
-		uint32_t bytes_retrieved = args.BytesRetrieved;
-		// use bytes_retrieved;
-	});
+    async_op_with_progress.Progress(
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const&, RetrievalProgress const& args)
+    {
+        uint32_t bytes_retrieved = args.BytesRetrieved;
+        // use bytes_retrieved;
+    });
 
-	async_op_with_progress.Completed(
-		[](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const)
-	{
-		SyndicationFeed syndicationFeed = sender.GetResults();
-		// use syndicationFeed;
-	});
-	
-	// or (but this function must then return IAsyncAction)
-	// SyndicationFeed syndicationFeed = co_await async_op_with_progress;
+    async_op_with_progress.Completed(
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const)
+    {
+        SyndicationFeed syndicationFeed = sender.GetResults();
+        // use syndicationFeed;
+    });
+    
+    // or (but this function must then be a coroutine and return IAsyncAction)
+    // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
 }
 ```
 
-As the comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+
+But if you do stick with delegates, you can opt for a simpler syntax.
+
+```cppwinrt
+async_op_with_progress.Completed(
+    [](auto&& /*sender*/, AsyncStatus const)
+{
+	....
+});
+```
 
 ## Delegate types that return a value
 Some delegate types must themselves return a value. An example is [**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler), which returns a string. Here's an example of authoring a delegate of that type (note that the lambda function returns a value).
@@ -198,10 +207,10 @@ using namespace winrt::Windows::UI::Xaml::Controls;
 
 winrt::hstring f(ListView listview)
 {
-	return ListViewPersistenceHelper::GetRelativeScrollPosition(listview, [](IInspectable const& item)
-	{
-		return L"key for item goes here";
-	});
+    return ListViewPersistenceHelper::GetRelativeScrollPosition(listview, [](IInspectable const& item)
+    {
+        return L"key for item goes here";
+    });
 }
 ```
 
@@ -229,21 +238,21 @@ winrt::event_token m_compositionScaleChangedEventToken;
 
 void RegisterEventHandler()
 {
-	m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
-		(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-		Windows::Foundation::IInspectable const& object)
-	{
-		if (auto strongReferenceToThis = weakReferenceToThis.get())
-		{
-			strongReferenceToThis->OnCompositionScaleChanged(sender, object);
-		}
-	});
+    m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
+        (Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+        Windows::Foundation::IInspectable const& object)
+    {
+        if (auto strongReferenceToThis = weakReferenceToThis.get())
+        {
+            strongReferenceToThis->OnCompositionScaleChanged(sender, object);
+        }
+    });
 }
 
 void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-	Windows::Foundation::IInspectable const& object)
+    Windows::Foundation::IInspectable const& object)
 {
-	// Here, we know that the "this" object is valid.
+    // Here, we know that the "this" object is valid.
 }
 ```
 

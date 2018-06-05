@@ -50,10 +50,9 @@ The sample demonstrates the game concepts:
 
 ![the game sample in action](images/simple-dx-game-overview.png)
 
-
 | Topic | Description |
-|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Set up the game project](tutorial--setting-up-the-games-infrastructure.md) | The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We walk you through the setup and configuration of a simple game project. |
+|-------|-------------|
+|[Set up the game project](tutorial--setting-up-the-games-infrastructure.md) | The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We walk you through the setup and configuration of a simple game project. |
 | [Define the game's UWP app framework](tutorial--building-the-games-uwp-app-framework.md) | Build a framework that lets the UWP DirectX game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping.  |
 | [Game flow management](tutorial-game-flow-management.md) | Define the high-level state machine to enable player and system interaction. Learn how UI interacts with the overall game's state machine and how to create event handlers for UWP games. |
 | [Define the main game object](tutorial--defining-the-main-game-loop.md) | Define how the game is played by creating rules. |
@@ -63,12 +62,3 @@ The sample demonstrates the game concepts:
 | [Add controls](tutorial--adding-controls.md) | Add move-look controls into the game &mdash; basic touch, mouse, and game controller controls. |
 | [Add sound](tutorial--adding-sound.md) | Learn how to create sounds for the game using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. |
 | [Extend the game sample](tutorial-resources.md) | Resources to further your knowledge of DirectX game development, includes using XAML to create overlays. |
- 
-
- 
-
- 
-
-
-
-

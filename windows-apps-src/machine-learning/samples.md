@@ -10,7 +10,6 @@ ms.technology: uwp
 keywords: windows 10, uwp, windows machine learning
 ms.localizationpriority: medium
 ---
-
 # Windows ML samples
 
 The following sample UWP apps demonstrate how to use Windows ML and are available to download from the [Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) repo on GitHub.
@@ -25,4 +24,4 @@ The following sample UWP apps demonstrate how to use Windows ML and are availabl
 
 ## Windows Machine Learning Explorer
 
-[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer) is a data driven and generic application that bootstraps ML models that can detect defects in circuit boards from pictures or a real-time camera feed. You can learn more in the blog post [How three lines of code and Windows Machine Learning empower .NET developers to run AI locally on Windows 10 devices](https://aka.ms/winmlfordevsblog). 
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer) is a data driven and generic application that bootstraps ML models that can detect defects in circuit boards from pictures or a real-time camera feed. You can learn more in the blog post [How three lines of code and Windows Machine Learning empower .NET developers to run AI locally on Windows 10 devices](https://aka.ms/winmlfordevsblog).

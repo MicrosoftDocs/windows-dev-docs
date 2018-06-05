@@ -1,6 +1,6 @@
 ---
 description: Learn about Fluent Design and how to incorporate it into your apps.
-title: Fluent Design System for UWP apps
+title: Fluent Design System for Windows
 author: mijacobs
 keywords: uwp app layout, universal windows platform, app design, interface, fluent design system
 ms.author: mijacobs
@@ -10,103 +10,192 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
 ---
-# The Fluent Design System for UWP apps
+# The Fluent Design System for Windows app creators
+
+![Fluent Design header](images/fluentdesign-app-header.jpg)
 
 ## Introduction
 
-<img src="images/fluentdesign-app-header.jpg" alt=" " />
+The Fluent Design System is our system for creating adaptive, empathetic, and beautiful user interfaces.
 
-The user interface is evolving. It's expanding to include new dimensions and interfaces, from 2D to 3D and beyond, from keyboard and mouse to gaze, pen, and touch.  
-
-The Fluent Design System is a set of innovative UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices.
-
-It's our system for creating adaptive, empathetic, and beautiful user interfaces. 
+## Principles
 
 **Adaptive: Fluent experiences feel natural on each device**
 
-Fluent experiences adapt to the environment. A Fluent experience feels comfortable on a tablet, a desktop PC, and an Xbox&mdash;it even works great on a Mixed Reality headset. And when you add more hardware, like an additional monitor for your PC, a Fluent experience takes advantage of it. 
+Fluent experiences adapt to the environment. A Fluent experience feels comfortable on a tablet, a desktop PC, and an Xbox—it even works great on a Mixed Reality headset. And when you add more hardware, like an additional monitor for your PC, a Fluent experience takes advantage of it.
 
 **Empathetic: Fluent experiences are intuitive and powerful**
 
-Fluent experiences adjust to behavior and intent&mdash;they understand and anticipate what’s needed. They unite people and ideas, whether they’re on opposite sides of the globe or standing right next to each other. 
+Fluent experiences adjust to behavior and intent&mdash;they understand and anticipate what’s needed. They unite people and ideas, whether they’re on opposite sides of the globe or standing right next to each other.
 
-Demonstrating empathy is about doing the right thing at the right time. 
+**Beautiful: Fluent experiences are engaging and immersive**
 
-Fluent experiences use controls and patterns consistently, so they behave in ways the user has learned to expect. Fluent experiences are accessible to people with a wide range of physical abilities, and incorporate globalization features so people around the world can use them. 
+By incorporating elements of the physical world, a Fluent experience taps into something fundamental. It uses light, shadow, motion, depth, and texture to organize information in a way that feels intuitive and instinctual.
 
-**Beautiful: Fluent experiences are engaging and immersive** 
 
-By incorporating elements of the physical world, a Fluent experience taps into something fundamental. It uses light, shadow, motion, depth, and texture to organize information in a way that feels intuitive and instinctual. 
+## Applying Fluent Design to your app with UWP
 
-Fluent Design isn't about flashy effects. It incorporates physical effects that truly enhance the user experience, because they emulate experiences that our brains are programmed to process efficiently. 
+![Fluent design logo](images/fluentdesign_header.png)
 
-## Applying Fluent Design to your app
+Our design guidelines explain how to apply Fluent Design principles to apps. What type of apps? While many of our guidelines can be applied to any platform, we created UWP (the Universal Windows Platform) to support Fluent Design.
 
-Fluent Design features are built into UWP. Some of these features&mdash;such as effective pixels and the universal input system&mdash;are automatic. You don't have to write any extra code to take advantage of them. Other features, like acrylic, are optional; you add them to your app by writing code to include them. 
+Fluent Design features are built into UWP. Some of these features&mdash;such as effective pixels and the universal input system&mdash;are automatic. You don't have to write any extra code to take advantage of them. Other features, like acrylic, are optional; you add them to your app by writing code to include them.
 
-> To learn more about the basic features that are automatically included in every UWP app, see the [Intro to UWP app design article](../basics/design-and-ui-intro.md). If you're completely new to UWP development, you might want to check out our [Get started with UWP page](https://developer.microsoft.com/windows/apps/getstarted) first. 
+> We're bringing UWP controls to the desktop so that you can enhance the look, feel, and functionality of your existing WPF or Windows applications with Fluent Design features. To learn more, see [Host UWP controls in WPF and Windows Forms applications](/windows/uwp/xaml-platform/xaml-host-controls).
 
-To learn more about the new features that help you incorporate Fluent Design into your app, keep reading.
+<!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
+
+In addition to design guidance, our Fluent Design articles also show you how to write the code that makes your designs happen. UWP uses XAML, a markup-based language that makes it easier to create user interfaces. Here's an example:
+
+```xaml
+<Grid BorderBrush="Blue" BorderThickness="4">
+    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+</Grid>
+```
+
+![](images/xaml-example.png)
+
+
+> If you're new to UWP development, check out our [Get started with UWP page](https://developer.microsoft.com/windows/apps/getstarted).
 
 ## Find a natural fit
 
-How do you make an app feel natural on a variety of devices? By making it feel as though it were designed with each specific device in mind. A UI layout that adapts to different screen sizes&mdash;so there's no wasted space (but no crowding either)&mdash;makes an experience feel natural, as though it were designed for that device. 
+How do you make an app feel natural on a variety of devices? By making it feel as though it were designed with each specific device in mind. A UI layout that adapts to different screen sizes&mdash;so there's no wasted space (but no crowding either)&mdash;makes an experience feel natural, as though it were designed for that device.
 
-*  **Design for the right breakpoints**
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-size-classes.jpg)
+    :::column-end:::
+	:::column span="2":::
+        **Design for the right breakpoints**
 
-	Instead of designing for every individual screen size, focusing on a few key widths (also called "breakpoints") can greatly simplify your designs and code while still making your app look great on small to large screens.
+        Instead of designing for every individual screen size, focusing on a few key widths (also called "breakpoints") can greatly simplify your designs and code while still making your app look great on small to large screens.
 
-	[Learn about screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+		[Learn about screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+    :::column-end:::
+:::row-end:::
 
-*  **Create a responsive layout**
+:::row:::
+    :::column:::
+        ![fpo image](images/rspd-resize.gif)
+    :::column-end:::
+	:::column span="2":::
+        **Create a responsive layout**
 
-	For an app to feel natural, it needs to fill the available display space without seeming too crowded. UWP provides panels that arrange content in grids, stacks, and flows, and you can nest them inside each other.
+        For an app to feel natural, it should adapt its layout to different screen sizes and devices. You can use automatic sizing, layout panels, visual states, and even separate UI definitions in XAML to create a responsive UI.
 
-	[Learn about UWP's layout panels](/windows/uwp/design/layout/layout-panels)
+		[Learn about responsive design](/windows/uwp/design/layout/responsive-design)
+    :::column-end:::
+:::row-end:::
 
-* **Design for a spectrum of devices**
+:::row:::
+    :::column:::
+        ![fpo image](images/devices.jpg)
+    :::column-end:::
+	:::column span="2":::
+        **Design for a spectrum of devices**
 
-	UWP apps can run on a wide variety of Windows-powered devices. It's helpful to understand which devices are available, what they're made for, and how users interact with them.
+        UWP apps can run on a wide variety of Windows-powered devices. It's helpful to understand which devices are available, what they're made for, and how users interact with them.
 
-	[Learn about UWP devices](/windows/uwp/design/devices/)
+		[Learn about UWP devices](/windows/uwp/design/devices/)
+:::row-end:::
 
-* **Optimize for the right input**
+:::row:::
+    :::column:::
+        ![fpo image](images/keyboard-shortcuts.jpg)
+    :::column-end:::
+	:::column span="2":::
+        **Optimize for the right input**
 
-	UWP apps automatically support common mouse, keyboard, pen, and touch interactions&mdash;there's nothing extra you have to do. But you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
+        UWP apps automatically support common mouse, keyboard, pen, and touch interactions&mdash;there's nothing extra you have to do. But you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
 
-	[Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
+		[Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
+:::row-end:::
 
+## Make it intuitive
 
-## Make it intuitive and powerful
+An experience feels intuitive when it behaves the way the user expects it to. By using established controls and patterns and taking advantage of platform support for accessibility and globalization, you create an effortless experience that helps users be more productive.
 
-An experience feels intuitive when it behaves that way the user expects it to. By using established controls and patterns and taking advantage of platform support for accessibility and globalization, you create an effortless experience that helps users be more productive. 
+Demonstrating empathy is about doing the right thing at the right time.
 
-* **Use the right control for the job**
+Fluent experiences use controls and patterns consistently, so they behave in ways the user has learned to expect. Fluent experiences are accessible to people with a wide range of physical abilities, and incorporate globalization features so people around the world can use them.
 
-	Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls, ranging from simple buttons to powerful data controls. 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-navview.png)
+    :::column-end:::
+	:::column span="2":::
+        **Provide the right navigation**
 
-	[Learn about UWP controls](/windows/uwp/design/controls-and-patterns/)
+        Create an effortless experience by using the right app structure and navigation components.
 
-* **Be inclusive** 
+		[Learn about navigation](/windows/uwp/design/navigation-basics/)
+:::row-end:::
 
-	A well-design app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-commanding.png)
+    :::column-end:::
+	:::column span="2":::
+        **Be interactive**
 
-	[Learn about Usability](/windows/uwp/design/usability/)
+        Buttons, command bars, keyboard shortcuts, and context menus enable users to interact with your app; they're the tools that change a static experience into something dynamic.
 
+		[Learn about commanding](/windows/uwp/design/basics/commanding-basics/)
+:::row-end:::
 
-## Be engaging and immersive 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-controls-2.jpg)
+    :::column-end:::
+	:::column span="2":::
+        **Use the right control for the job**
 
-Make your app engaging by incorporating physical elements, like light and motion. 
+        Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls,ranging from simple buttons to powerful data controls.
+
+		[Learn about UWP controls](/windows/uwp/design/controls-and-patterns/)
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![inclusive image](images/thumbnail-inclusive.png)
+    :::column-end:::
+	:::column span="2":::
+        **Be inclusive**
+        A well-design app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
+
+		[Learn about Usability](/windows/uwp/design/usability/)
+:::row-end:::
+
+## Be engaging and immersive
+
+Fluent Design isn't about flashy effects. It incorporates physical effects that truly enhance the user experience, because they emulate experiences that our brains are programmed to process efficiently.
 
 ## Use light
 
 Light has a way of drawing our attention. It creates atmosphere and a sense of place, and it’s a practical tool to illuminate information.
-		
-Add light to your UWP app:
-		
-* [Reveal highlight](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the elements the user can interact with, revealing hidden borders. Reveal is automatically enabled on some controls, such as list view and grid view. You can enable it on other controls by applying our predefined Reveal highlight styles. 
 
-* [Reveal focus](../style/reveal-focus.md) uses light to call attention to the element that currently has input focus.  
+Add light to your UWP app:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/Nav_Reveal_Animation.gif)
+    :::column-end:::
+	:::column span="2":::
+        **Reveal highlight**
+
+        [Reveal highlight](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the elements the user can interact with, revealing hidden borders. Reveal is automatically enabled on some controls, such as list view and grid view. You can enable it on other controls by applying our predefined Reveal highlight styles.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/traveling-focus-fullscreen-light-rf.gif)
+    :::column-end:::
+	:::column span="2":::
+        **Reveal focus**
+
+        [Reveal focus](../style/reveal-focus.md) uses light to call attention to the element that currently has input focus.
+:::row-end:::
 
 ## Create a sense of depth
 
@@ -114,9 +203,15 @@ We live in a three-dimensional world. By purposefully incorporating depth into t
 
 Add depth to your UWP app:
 
-* [Acrylic](../style/acrylic.md) is a translucent material that lets the user see layers of content, establishing a hierarchy of UI elements.
+:::row:::
+    :::column:::
+        ![fpo image](../motion/images/_parallax_v2.gif)
+    :::column-end:::
+	:::column span="2":::
+        **Parallax**
 
-* [Parallax](../motion/parallax.md) creates the illusion of depth by making items in the foreground appear to move more quickly than items in the background.
+        [Parallax](../motion/parallax.md) creates the illusion of depth by making items in the foreground appear to move more quickly than items in the background.
+:::row-end:::
 
 ## Incorporate motion
 
@@ -124,23 +219,46 @@ Think of motion design like a movie. Seamless transitions keep you focused on th
 
 Add motion to your UWP app:
 
-* [Connected animations](../motion/connected-animation.md) help the user maintain context by creating a seamless transition between scenes. 
+:::row:::
+    :::column:::
+        ![continuity gif](images/continuityXbox.gif)
+    :::column-end:::
+	:::column span="2":::
+        **Connected animations**
+
+        [Connected animations](../motion/connected-animation.md) help the user maintain context by creating a seamless transition between scenes.
+:::row-end:::
 
 ## Build it with the right material
 
 The things that surround us in the real world are sensory and invigorating. They bend, stretch, bounce, shatter, and glide. Those material qualities translate to digital environments, making people want to reach out and touch our designs.
 
-Add material to your UWP app: 
-		
-* [Acrylic](../style/acrylic.md)  is a translucent material that lets the user see layers of content, establishing a hierarchy of UI elements. 
+Add material to your UWP app:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/acrylic_lighttheme_base.png)
+    :::column-end:::
+	:::column span="2":::
+        **Acrylic**
+
+        [Acrylic](../style/acrylic.md) is a translucent material that lets the user see layers of content, establishing a hierarchy of UI elements.
+:::row-end:::
 
 ## Design toolkits and code samples
 
 Want to get started creating your own apps with Fluent Design? Our toolkits for Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer, and Sketch will help jumpstart your designs, and our samples will help get you coding faster.
 
-* Check out our [Design toolkits and samples page](/windows/uwp/design/downloads/)
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-toolkits.jpg)
+    :::column-end:::
+	:::column span="2":::
+        **Design toolkits and samples page**
 
-<img src="images/fluentdesign_header.png" alt=" " />
+        Check out our [Design toolkits and samples page](/windows/uwp/design/downloads/)
+:::row-end:::
+
 
 
 

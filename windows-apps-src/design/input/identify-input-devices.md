@@ -86,8 +86,6 @@ The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/
 
 **Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
 
- 
-
 The following code uses a table to display the properties and values for each pointer device.
 
 ```CSharp

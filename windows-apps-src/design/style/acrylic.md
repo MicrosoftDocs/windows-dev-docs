@@ -15,41 +15,47 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
 ---
-
 # Acrylic material
+
+![hero image](images/header-acrylic.svg)
 
 Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a partially transparent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, Acrylic keeps users in touch with the OS personalization they've chosen. -->
 
 > **Important APIs**: [AcrylicBrush class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
-
-![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
-
-![Acrylic in dark theme](images/Acrylic_LightTheme_Base.png)
-
-## Examples
-
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Acrylic">open the app and see Acrylic in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
-## Video summary
-
-> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev002/player]
+:::row:::
+    :::column:::
+        Acrylic in light theme
+        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
+    :::column-end:::
+    :::column:::
+        Acrylic in dark theme
+        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
+    :::column-end:::
+:::row-end:::
 
 ## Acrylic and the Fluent Design System
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
+
+ ## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev002/player]
+
+## Examples
+
+:::row:::
+    :::column span:::
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
+    :::column-end:::
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see Acrylic in action.
+
+        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
+        <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
+    :::column-end:::
+:::row-end:::
 
 ## When to use acrylic
 
@@ -332,7 +338,7 @@ In addition, you'll need to draw your app's title, which normally appears automa
 
 We fine-tuned acrylic’s key components to arrive at its unique appearance and properties. We started with transparency, blur and noise to add visual depth and dimension to flat surfaces. We added an exclusion blend mode layer to ensure contrast and legibility of UI placed on an acrylic background. Finally, we added color tint for personalization opportunities. In concert these layers add up to a fresh, usable material.
 
-![Acrylic recipe](images/AcrylicRecipe_Diagram.png)
+![Acrylic recipe](images/AcrylicRecipe_Diagram.jpg)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
 <!--

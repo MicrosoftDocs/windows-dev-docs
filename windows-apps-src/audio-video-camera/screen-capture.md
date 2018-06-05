@@ -4,7 +4,7 @@ title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.author: elcowle
-ms.date: 3/1/2018
+ms.date: 5/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,6 +17,9 @@ ms.localizationpriority: medium
 Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 
 With screen capture, developers invoke secure system UI for end users to pick the display or application window to be captured, and a yellow notification border is drawn by the system around the actively captured item. In the case of multiple simultaneous capture sessions, a yellow border is drawn around each item being captured.
+
+> [!NOTE]
+> The screen capture APIs require you to be running Windows 10 Pro or Enterprise.
 
 ## Add the screen capture capability
 
@@ -156,23 +159,24 @@ When **Recreate** is called, all existing frames are discarded. This is to preve
 The following code snippet is an end-to-end example of how to implement screen capture in a UWP application:
 
 ```cs
-using Microsoft.Graphics.Canvas; 
-using System; 
-using System.Threading.Tasks; 
-using Windows.Graphics.Capture; 
-using Windows.Graphics.DirectX; 
-using Windows.UI.Composition; 
- 
+using Microsoft.Graphics.Canvas;
+using System;
+using System.Threading.Tasks;
+using Windows.Graphics;
+using Windows.Graphics.Capture;
+using Windows.Graphics.DirectX;
+using Windows.UI.Composition;
+
 namespace CaptureSamples 
-{ 
+{
     class Sample
     {
         // Capture API objects.
-        private Vector2 _lastSize; 
+        private SizeInt32 _lastSize; 
         private GraphicsCaptureItem _item; 
         private Direct3D11CaptureFramePool _framePool; 
         private GraphicsCaptureSession _session; 
- 
+
         // Non-API related members.
         private CanvasDevice _canvasDevice; 
         private CompositionDrawingSurface _surface; 
@@ -250,7 +254,8 @@ namespace CaptureSamples
             bool needsReset = false; 
             bool recreateDevice = false; 
  
-            if (frame.ContentSize != _lastSize) 
+            if ((frame.ContentSize.Width != _lastSize.Width) || 
+                (frame.ContentSize.Height != _lastSize.Height)) 
             { 
                 needsReset = true; 
                 _lastSize = frame.ContentSize; 

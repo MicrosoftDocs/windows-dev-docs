@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
-title: Reveal highlight
+title: Reveal Highlight
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -15,14 +15,16 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
 ---
-# Reveal highlight
+# Reveal Highlight
 
-Reveal highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them. 
+![hero image](images/header-reveal-highlight.svg)
+
+Reveal Highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them. 
 
 > **Important APIs**: [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## How it works
-Reveal highlight calls attention to interactive elements by revealing the element's container when the pointer is nearby, as shown in this illustration:
+Reveal Highlight calls attention to interactive elements by revealing the element's container when the pointer is nearby, as shown in this illustration:
 
 ![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
@@ -50,7 +52,7 @@ By exposing the hidden borders around objects, Reveal gives users a better under
 
 ## How to use it
 
-Reveal automatically works for some controls. For other controls, you can enable reveal by assigning a special style to the control, as described in the [Enabling Reveal on other controls](#enabling-reveal-on-other-controls) and [Enabling Reveal on custom controls](#enabling-reveal-on-custom-controls) sections of this article.
+Reveal automatically works for some controls. For other controls, you can enable Reveal by assigning a special style to the control, as described in the [Enabling Reveal on other controls](#enabling-reveal-on-other-controls) and [Enabling Reveal on custom controls](#enabling-reveal-on-custom-controls) sections of this article.
 
 ## Controls that automatically use Reveal
 
@@ -61,7 +63,7 @@ Reveal automatically works for some controls. For other controls, you can enable
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-These illustrations show the reveal effect on several different controls:
+These illustrations show Reveal Highlight on several different controls:
 
 ![Reveal Examples](images/RevealExamples_Collage.png)
 
@@ -126,8 +128,8 @@ You can add Reveal to custom controls. Before you do, it's helpful to know a lit
 
 
 These effects are defined by two brushes: 
-* Border reveal is defined by  **RevealBorderBrush**
-* Hover reveal is defined by **RevealBackgroundBrush**
+* Border Reveal is defined by  **RevealBorderBrush**
+* Hover Reveal is defined by **RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -251,7 +253,7 @@ Here's an entire template for what a Reveal Button would look like:
 
 ### Fine-tuning the Reveal effect on a custom control 
 
-When you enable reveal on a custom or re-templated control or a custom commanding surface, these tips can help you optimize the effect:
+When you enable Reveal on a custom or re-templated control or a custom commanding surface, these tips can help you optimize the effect:
  
 * On adjacent items with sizes that do not align either in height or width (particularly in lists): 
 Remove the border approach behavior and keep the borders shown on hover only.
@@ -260,10 +262,13 @@ Place the border approach brush on the elements' backplates as well as their bor
 * For adjacent commanding elements that are so close they touch: Add a 1px margin between the two elements. 
 
 ## Do's and don'ts
+### Do:
 - Do use Reveal on elements where the user can take many actions (CommandBars, Navigation menus)
 - Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, ribbons)
 - Do use Reveal in areas with a high density of interactive elements (commanding scenarios)
 - Do put 1px margin spaces between Reveal items
+
+### Don't
 - Don’t use Reveal on static content (backgrounds, text)
 - Don't use Reveal on popups, flyouts or dropdowns
 - Don’t use Reveal in one-off, isolated situations

@@ -38,7 +38,7 @@ To ensure that your Universal Windows app continues to run properly after you re
 This method takes in the task entry point, task name, a pre-constructed background task trigger, and (optionally) a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) for the background task. This method returns a [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) object.
 
 > [!Important]
-> `taskEntryPoint` - for background tasks that run in out of process, this must be constructed as the namespace name, '.', and the name of the class containing your background class. The string is case-sensitive.  For example, if you had a namespace "MyBackgroundTasks" and a class "BackgroundTask1" that contained your background class code, the string for `taskEntryPoint` would be "MyBackgroundTasks.BackgruondTask1".
+> `taskEntryPoint` - for background tasks that run in out of process, this must be constructed as the namespace name, '.', and the name of the class containing your background class. The string is case-sensitive.  For example, if you had a namespace "MyBackgroundTasks" and a class "BackgroundTask1" that contained your background class code, the string for `taskEntryPoint` would be "MyBackgroundTasks.BackgroundTask1".
 > If your background task runs in the same process as your app (i.e. a in-process background task) `taskEntryPoint` should not be set.
 
 > [!div class="tabbedCodeSnippets"]
@@ -175,7 +175,7 @@ The following example either returns the existing task, or adds code that regist
 >             return (BackgroundTaskRegistration)(cur.Value);
 >         }
 >     }
->     
+>
 >     //
 >     // Register the background task.
 >     //
@@ -212,26 +212,26 @@ The following example either returns the existing task, or adds code that regist
 >     //
 >     // Check for existing registrations of this background task.
 >     //
->     
+>
 >     auto iter   = BackgroundTaskRegistration::AllTasks->First();
 >     auto hascur = iter->HasCurrent;
->     
+>
 >     while (hascur)
 >     {
 >         auto cur = iter->Current->Value;
->         
+>
 >         if(cur->Name == name)
 >         {
 >             //
 >             // The task is registered.
 >             //
->             
+>
 >             return (BackgroundTaskRegistration ^)(cur);
 >         }
->         
+>
 >         hascur = iter->MoveNext();
 >     }
->     
+>
 >     //
 >     // Register the background task.
 >     //
@@ -254,7 +254,6 @@ The following example either returns the existing task, or adds code that regist
 > ```
 
 ## Complete background task registration utility function
-
 
 This example shows the completed background task registration function. This function can be used to register most background tasks, with the exception of networking background tasks.
 
@@ -290,7 +289,7 @@ This example shows the completed background task registration function. This fun
 >             return (BackgroundTaskRegistration)(cur.Value);
 >         }
 >     }
->     
+>
 >     //
 >     // Register the background task.
 >     //
@@ -331,23 +330,23 @@ This example shows the completed background task registration function. This fun
 >     //
 >     // Check for existing registrations of this background task.
 >     //
->     
+>
 >     auto iter   = BackgroundTaskRegistration::AllTasks->First();
 >     auto hascur = iter->HasCurrent;
->     
+>
 >     while (hascur)
 >     {
 >         auto cur = iter->Current->Value;
->         
+>
 >         if(cur->Name == name)
 >         {
 >             //
 >             // The task is registered.
 >             //
->             
+>
 >             return (BackgroundTaskRegistration ^)(cur);
 >         }
->         
+>
 >         hascur = iter->MoveNext();
 >     }
 >
@@ -363,7 +362,7 @@ This example shows the completed background task registration function. This fun
 >     builder->SetTrigger(trigger);
 >
 >     if (condition != nullptr) {
->         
+>
 >         builder->AddCondition(condition);
 >     }
 >
@@ -373,10 +372,7 @@ This example shows the completed background task registration function. This fun
 > }
 > ```
 
-
 ## Related topics
-
-****
 
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
@@ -391,7 +387,3 @@ This example shows the completed background task registration function. This fun
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
 * [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
- 
-
- 

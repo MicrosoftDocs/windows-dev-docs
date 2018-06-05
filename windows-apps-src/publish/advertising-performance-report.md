@@ -4,7 +4,7 @@ Description: To view performance data for the ad units in your apps, use the adv
 title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 01/02/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -57,6 +57,7 @@ The **Advertising performance** report includes data for the following performan
 | Fill rate  | The percentage of ad requests sent from your app in which an ad was shown.  |
 | Clicks  |  The number of times someone clicked on an ad in your app. |
 | CTR  |  Click-through rate, meaning the number of times an ad was clicked, divided by the number of impressions. |
+| Viewability | The percentage of ad impressions that are viewable in your app. For more details about how this value is calculated, see [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md). |
 | Credits earned  | If you are running a [community ad](https://docs.microsoft.com/windows/uwp/publish/about-community-ads) campaign, this indicates the number of credits you have earned for promotional ad space by showing community ads in your app.  |
 | Credits spent  | If you are running a [community ad](https://docs.microsoft.com/windows/uwp/publish/about-community-ads) campaign, this indicates the number of credits you have spent on ads for your app.  |
 
@@ -64,6 +65,7 @@ The **Advertising performance** report includes data for the following performan
 
 * [In-app ads](in-app-ads.md)
 * [Display ads in your app with the Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
+* [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md)
 
 
  

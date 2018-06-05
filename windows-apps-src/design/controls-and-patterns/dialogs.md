@@ -255,8 +255,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 <ul>
     <li>
         <p>In general, the affirmation button should be on the left (the primary button) and the cancel button (the secondary button) should be on the right.</p>
-         ![An OK/cancel dialog](images/dialogs/dialog_RS2_delete_file.png)
-
+        <img alt="An OK/cancel dialog" src="images/dialogs/dialog_RS2_delete_file.png" />
     </li>
     <li>As noted in the general recommendations section, use buttons with text that identifies specific responses to the main instruction or content.
     </li>

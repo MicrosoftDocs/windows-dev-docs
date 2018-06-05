@@ -11,10 +11,9 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ---
-
 # Color
 
-![header image](images/color/header-color.svg)
+![hero image](images/header-color.svg)
 
 Color provides an intuitive way of communicating information to users in your app: it can be used to indicate interactivity, give feedback to user actions, and give your interface a sense of visual continuity. 
 

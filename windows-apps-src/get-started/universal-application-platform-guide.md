@@ -4,7 +4,7 @@ title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.author: twhitney
-ms.date: 4/11/2018
+ms.date: 5/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -41,9 +41,9 @@ A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are
 
 If you target the universal APIs, your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs, you can.
 
-Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices.
+Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks).
 
-You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing Code** section in [Device families overview](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code).<br>
+You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing Code** section in [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
 The following video provides a brief overview of device families and adaptive coding:
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
@@ -66,7 +66,7 @@ Some aspects of your app's UI will automatically adapt across devices. Your app'
 
 A unified app store makes your app available on Windows 10 devices such as PC, tablet, Xbox, HoloLens, Surface Hub, and Internet of Things (IoT) devices. You can submit your app to the store and make it available to all types of devices, or only those you choose. You submit and manage all your apps for Windows devices in one place. Have a C++ desktop app that you want to modernize with UWP features and sell in the Microsoft store? That's okay, too.
 
-UWP apps integrate with [Application Insights](http://azure.microsoft.com/en-us/services/application-insights/) for detailed telemetry and analytics—a crucial tool for understanding your users and improving your apps.
+UWP apps integrate with [Application Insights](http://azure.microsoft.com/services/application-insights/) for detailed telemetry and analytics—a crucial tool for understanding your users and improving your apps.
 
 ### Monetize your app
 
@@ -125,7 +125,7 @@ In addition to interaction on different devices, [plan your app](https://msdn.mi
 
 - Use [cloud services](http://go.microsoft.com/fwlink/?LinkId=526377) to sync across devices.
 - Learn how to [connect to web services](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504) to support your app experience.
-- Learn how to [Add Cortana to your app](https://mva.microsoft.com/en-us/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) so that your app can respond to voice commands.
+- Learn how to [Add Cortana to your app](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) so that your app can respond to voice commands.
 - Include [Push notifications](https://msdn.microsoft.com/library/windows/apps/mt187203) and [in-app purchases](https://msdn.microsoft.com/library/windows/apps/mt219684) in your planning. These features should work across devices.
 
 ### Submit your app to the store
@@ -144,4 +144,4 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 - See [Universal Windows apps in .NET](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net) for an overview of writing .NET UWP apps.
 - For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](https://msdn.microsoft.com/library/mt185501.aspx)
 - [.NET Native - What it means for Universal Windows Platform (UWP) developers](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
-- Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop).
+- Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).

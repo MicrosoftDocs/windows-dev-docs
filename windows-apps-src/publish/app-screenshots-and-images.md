@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 4/30/2018
+ms.date: 5/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -80,11 +80,13 @@ This image may appear in various Store pages for Windows 10 (including Xbox), an
 
 This image is required for proper display on Windows Phone 8.1 and earlier. If your app supports Windows Phone 8.1 or earlier and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.) If your submission *only* includes UWP packages, you don’t need to provide this image. (Note that if your submission includes both Windows Phone 8.x packages and UWP packages, and you do provide this image, it may be used on Windows 10 in certain Store layouts. If you want to prevent this, you can create [platform-specific listings](create-platform-specific-store-listings.md) for the Windows Phone versions that your app supports and only include the app tile icon there.)
 
-You also have the option to prevent the Store from using logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on Windows 10 (including Xbox).
+### Display only uploaded logo images in the Store
 
-To use only uploaded images for display in the Store on Windows 10 (including Xbox), check the box that says **For Windows 10 customers, display uploaded logo images instead of the images from my packages**. (If you don't check this box, images from your app's packages will be used.)
+You have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on Windows 10 (including Xbox). (If your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.)
 
-When you check this box, a new section called **Uploaded Store logos** appears. Here, you can upload 3 images, including the 300 x 300 “app tile icon” size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
+To have the Store use only the images you upload (for customers on Windows 10, including Xbox), and not use any images from your packages, check the box that says **For Windows 10 customers, display uploaded logo images instead of the images from my packages**.
+
+When you check this box, a new section called **Store display images** appears. Here, you can upload 3 images, including the **1:1 app tile icon (300 x 300 pixels) size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
 
 
 <span id="promotional-images" />

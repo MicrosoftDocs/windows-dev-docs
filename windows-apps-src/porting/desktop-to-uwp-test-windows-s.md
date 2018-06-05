@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Test your app for Windows 10 S without having to install Windows 10 S.
+Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: Test your Windows app for Windows 10 S
 ms.author: normesta
@@ -11,9 +11,9 @@ ms.technology: uwp
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
 ---
-# Test your Windows app for Windows 10 S
+# Test your Windows app for Windows 10 in S mode
 
-You can test your Windows app to ensure that it will operate correctly on devices that run Windows 10 S. In fact, if you plan to publish your app to the Microsoft Store, you must do this because it is a store requirement. To test your app, you can apply a Device Guard Code Integrity policy on a device that is running Windows 10 Pro.
+You can test your Windows app to ensure that it will operate correctly on devices that run Windows 10 in S mode. In fact, if you plan to publish your app to the Microsoft Store, you must do this because it is a store requirement. To test your app, you can apply a Device Guard Code Integrity policy on a device that is running Windows 10 Pro.
 
 > [!NOTE]
 > The device on which you apply the Device Guard Code Integrity policy must be running Windows 10 Creators Edition (10.0; Build 15063) or later.
@@ -74,7 +74,7 @@ We recommend that you apply these policies to a virtual machine because these po
 
 If you want to apply these policies to your local machine, it's best to start with the Audit mode policy. With this policy, you can review the Code Integrity Event Logs to ensure that nothing critical would be blocked in an enforced policy.
 
-When you're ready to apply a policy, find the .P7B file for the policy that you chose, rename it to **SIPolicy.P7B**, and then save that file to this location on your system: **C:\Windows\System32\CodeIntegrity\**.
+When you're ready to apply a policy, find the .P7B file for the policy that you chose, rename it to **SIPolicy.P7B**, and then save that file to this location on your system: **C:\Windows\System32\CodeIntegrity\\**.
 
 Then, restart your system.
 
@@ -95,6 +95,6 @@ See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-plat
 
 See [Porting and testing your classic desktop applications on Windows 10 S with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
 
-**Learn about tools that make it easier to test for Windows S**
+**Learn about tools that make it easier to test for Windows in S Mode**
 
 See [Unpackage, modify, repackage, sign an APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).

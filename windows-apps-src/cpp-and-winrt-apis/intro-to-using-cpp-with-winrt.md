@@ -3,21 +3,22 @@ author: stevewhims
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
 ms.author: stwhi
-ms.date: 03/27/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
 ---
 
 # Introduction to C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/nOFNc2uTmGs]
 
-Introduced in version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT.
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler. The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).
 
-C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
+> [!IMPORTANT]
+> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, and the VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
@@ -26,20 +27,22 @@ The Windows Runtime is based on Component Object Model (COM) APIs, and it's desi
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## SDK support for C++/WinRT
-As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains the C++/WinRT projection Windows namespace headers and tools. One important tool is `cppwinrt.exe` which, from a `.winmd`, generates source code files that project the metadata into C++/WinRT. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. From Windows Runtime metadata, `cppwinrt.exe` generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface; whether they're Windows APIs, or third-party Windows Runtime Component APIs. `Cppwinrt.exe` plays an important role in your development workflow for both consuming first- and third-party APIs and also for authoring your own APIs in components.
+As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains a header-file-based standard C++ library for consuming first-party Windows APIs (Windows Runtime APIs in Windows namespaces). C++/WinRT also comes with the `cppwinrt.exe` tool, which you can point at a Windows Runtime metadata (`.winmd`) file to generate a header-file-based standard C++ library that *projects* the APIs described in the metadata for consumption from C++/WinRT code. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. By pointing `cppwinrt.exe` at metadata, you can generate a library for use with any runtime class implemented in a second- or third-party Windows Runtime component, or implemented in your own application. For more info, see [Consume APIs with C++/WinRT](consume-apis.md).
 
-## Visual Studio support for C++/WinRT
+With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
+
+## Visual Studio support for C++/WinRT, and the VSIX
+For C++/WinRT project templates in Visual Studio, as well as C++/WinRT MSBuild properties and targets, download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+
+You'll need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7), and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTProject>true</CppWinRTProject>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+
 Because C++/WinRT uses features from the C++17 standard, it needs project property **C/C++** > **Language** > **ISO C++17 Standard (/std:c++17)**. You might also want to set **Conformance mode: Yes (/permissive-)**, which further constrains your code to be standards-compliant.
 
-Another project property to be aware of is **C/C++** > **General** > **Treat Warnings As Errors**. Set this to **Yes(/WX)** or **No (/WX-)** to taste. Source files generated by the `cppwinrt.exe` tool can generate warnings until you add your implementation to them.
+Another project property to be aware of is **C/C++** > **General** > **Treat Warnings As Errors**. Set this to **Yes(/WX)** or **No (/WX-)** to taste. Sometimes, source files generated by the `cppwinrt.exe` tool generate warnings until you add your implementation to them.
 
-> [!NOTE]
-> 
-> **The C++/WinRT Visual Studio Extension (VSIX) is not yet released.**
-> 
-> For C++/WinRT project templates, as well as C++/WinRT MSBuild properties and targets, download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/). You'll need Visual Studio 2017 Version 15.6, or later, and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTProject>true</CppWinRTProject>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+The VSIX also gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. You can opt into it release builds by defining the symbol WINRT_NATVIS.
 
-These are the Visual Studio project templates for C++/WinRT.
+Here are the Visual Studio project templates provided by the VSIX.
 
 ### Windows Console Application (C++/WinRT)
 A project template for a C++/WinRT client application for Windows Desktop, with a console user-interface.
@@ -52,7 +55,7 @@ Visual Studio provides XAML compiler support to generate implementation and head
 ### Core App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.
 
-Instead, it uses the C++/WinRT projection Windows namespace header for the Windows.ApplicationModel.Core namespace. After building and running, click on an empty space to add a colored square; then click on a colored square to drag it.
+Instead, it uses the C++/WinRT Windows namespace header for the Windows.ApplicationModel.Core namespace. After building and running, click on an empty space to add a colored square; then click on a colored square to drag it.
 
 ### Windows Runtime Component (C++/WinRT)
 A project template for a component; typically for consumption from a Universal Windows Platform (UWP).
@@ -63,63 +66,22 @@ In an IDL file, define the runtime classes in your component, their default inte
 
 Bundle the built Windows Runtime Component binary and its `.winmd` with the UWP app consuming them.
 
-## A C++/WinRT quick-start
-Create a new **Windows Console Application (C++/WinRT)** project. Edit `main.cpp` to look like this.
-
-```cppwinrt
-// main.cpp
-
-#include "pch.h"
-#include <iostream>
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Web.Syndication.h>
-
-using namespace winrt;
-using namespace Windows::Foundation;
-using namespace Windows::Web::Syndication;
-
-int main()
-{
-	winrt::init_apartment();
-
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
-	SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
-	for (const SyndicationItem syndicationItem : syndicationFeed.Items())
-	{
-		hstring titleAsHstring = syndicationItem.Title().Text();
-		std::wcout << titleAsHstring.c_str() << std::endl;
-	}
-}
-```
-
-The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. Whenever you want to use types from the Windows namespaces, include the corresponding C++/WinRT projection Windows namespace headers like this. The `using namespace` directives are optional, but convenient.
-
-All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
-
-[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an example of an asynchronous Windows Runtime function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
-
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
-
-The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
-
-As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner programming style from traditional COM programming. You don't need to explicitly initialize COM (**winrt::init_apartment** does that for you), work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions for a natural and modern programming style.
-
 ## Custom types in the C++/WinRT projection
-You can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick start above.
+In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
 
-There are also types that you might see if you closely study the C++/WinRT projection Windows namespace headers. An example is **winrt::param::hstring**. These exist only for efficiency reasons, and you should not use them in your code.
+> [!WARNING]
+> There are also types that you might see if you closely study the C++/WinRT Windows namespace headers. An example is **winrt::param::hstring**, but there are collection examples too. These exist solely to optimize the binding of input parameters, and they yield big performance improvements and make most calling patterns "just work" for related standard C++ types and containers. These types are only ever used by the projection in cases where they add most value. They're highly optimized and they're not for general use; don't be tempted to use them yourself. Nor should you use anything from the `winrt::impl` namespace, since those are implementation types, and therefore subject to change. You should continue to use standard types, or types from the [winrt namespace](/uwp/cpp-ref-for-winrt/winrt).
 
 ## Important APIs
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
+* [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [Get started with C++/WinRT](get-started.md)
+* [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)
 * [String handling in C++/WinRT](strings.md)
-* [Visual Studio Marketplace](https://marketplace.visualstudio.com/)
 * [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)

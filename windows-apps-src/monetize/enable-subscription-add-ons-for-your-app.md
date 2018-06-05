@@ -34,23 +34,24 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 
 1. [Create an add-on submission](../publish/add-on-submissions.md) for your subscription in the Dev Center dashboard and publish the submission. As you follow the add-on submission process, pay close attention to the following properties:
 
-  * [Product type](../publish/set-your-add-on-product-id.md#product-type): Make sure you select **Subscription**.
+    * [Product type](../publish/set-your-add-on-product-id.md#product-type): Make sure you select **Subscription**.
 
-  * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
+    * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
 
-    Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app. For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
+        Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app. For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
 
-  * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
+    * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
 
-    To acquire a free trial of your subscription, a user must purchase your subscription through the standard in-app purchase process, including a valid form of payment. They are not charged any money during the trial period. At the end of the trial period, the subscription automatically converts to the full subscription and the user's payment instrument will be charged for the first period of the paid subscription. If the user chooses to cancel their subscription during the trial period, the subscription remains active until the end of the trial period. Some trial periods are not available for all subscription periods.
+        To acquire a free trial of your subscription, a user must purchase your subscription through the standard in-app purchase process, including a valid form of payment. They are not charged any money during the trial period. At the end of the trial period, the subscription automatically converts to the full subscription and the user's payment instrument will be charged for the first period of the paid subscription. If the user chooses to cancel their subscription during the trial period, the subscription remains active until the end of the trial period. Some trial periods are not available for all subscription periods.
+
         > [!NOTE]
         > Each customer can acquire a free trial for a subscription add-on only one time. After a customer acquires a free trial for a subscription, the Store prevents the same customer from ever acquiring the same free trial subscription again.
 
-  * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): If you are creating a test add-on that you will only use to test the in-app purchase experience for your subscription, we recommend that you select one of the **Hidden in the Store** options. Otherwise, you can select the best visibility option for your scenario.
+    * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): If you are creating a test add-on that you will only use to test the in-app purchase experience for your subscription, we recommend that you select one of the **Hidden in the Store** options. Otherwise, you can select the best visibility option for your scenario.
 
-  * [Pricing](../publish/set-add-on-pricing-and-availability.md?#pricing): Choose the price of your subscription in this section. You cannot raise the price of the subscription after you publish the add-on. However, you can lower the price later.
-      > [!IMPORTANT]
-      > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission, be sure to choose the price of your subscription here.
+    * [Pricing](../publish/set-add-on-pricing-and-availability.md?#pricing): Choose the price of your subscription in this section. You cannot raise the price of the subscription after you publish the add-on. However, you can lower the price later.
+        > [!IMPORTANT]
+        > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission, be sure to choose the price of your subscription here.
 
 2. In your app, use APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to determine whether the current user has already acquired your subscription add-on and then offer it for sale to the user as an in-app purchase. See the [code examples](#code-examples) in this article for more details.
 

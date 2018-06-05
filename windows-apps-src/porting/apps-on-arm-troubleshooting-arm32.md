@@ -3,7 +3,7 @@ title: Troubleshooting ARM32 UWP apps
 author: msatranjr
 description: Common issues with ARM32 apps when running on ARM, and how to fix them. 
 ms.author: misatran
-ms.date: 01/18/2018
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 ---
 
 # Troubleshooting ARM32 UWP apps
+>[!IMPORTANT]
+> The ARM64 SDK is now available as part of Visual Studio 15.8 Preview 1. We recommend that you recompile your app to ARM64 so that your app runs at full native speed. For more info, see the [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/) blog post.
+
 If your ARM32 UWP app isn't working correctly on ARM, here's some guidance that may help. 
 
 ## Common issues

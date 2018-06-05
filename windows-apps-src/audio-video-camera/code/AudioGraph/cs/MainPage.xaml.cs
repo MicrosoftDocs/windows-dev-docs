@@ -23,6 +23,9 @@ using Windows.Media.MediaProperties;
 using Windows.Media;
 using System.Runtime.InteropServices;
 using Windows.Media.Effects;
+using Windows.Media.Core;
+using Windows.Media.Streaming.Adaptive;
+using System.Diagnostics;
 
 // <SnippetUsingAudioEffectComponent>
 using AudioEffectComponent;
@@ -64,6 +67,10 @@ namespace AudioGraphSnippets
         // <SnippetDeclareFileOutputNode>
         AudioFileOutputNode fileOutputNode;
         // </SnippetDeclareFileOutputNode>
+
+        // <SnippetDeclareMediaSourceInputNode>
+        MediaSourceAudioInputNode mediaSourceInputNode;
+        // </SnippetDeclareMediaSourceInputNode>
 
         // <SnippetDeclareDeviceInputNode>
         AudioDeviceInputNode deviceInputNode;
@@ -229,6 +236,78 @@ namespace AudioGraphSnippets
             fileOutputNode = result.FileOutputNode;
         }
         // </SnippetCreateFileOutputNode>
+
+
+
+        // <SnippetCreateMediaSourceInputNode>
+        private async Task CreateMediaSourceInputNode(System.Uri contentUri)
+        {
+            if (audioGraph == null)
+                return;
+
+            var adaptiveMediaSourceResult = await AdaptiveMediaSource.CreateFromUriAsync(contentUri);
+            if(adaptiveMediaSourceResult.Status != AdaptiveMediaSourceCreationStatus.Success)
+            {
+                Debug.WriteLine("Failed to create AdaptiveMediaSource");
+                return;
+            }
+
+            var mediaSource = MediaSource.CreateFromAdaptiveMediaSource(adaptiveMediaSourceResult.MediaSource);
+            CreateMediaSourceAudioInputNodeResult mediaSourceAudioInputNodeResult =
+                await audioGraph.CreateMediaSourceAudioInputNodeAsync(mediaSource);
+
+            if (mediaSourceAudioInputNodeResult.Status != MediaSourceAudioInputNodeCreationStatus.Success)
+            {
+                switch (mediaSourceAudioInputNodeResult.Status)
+                {
+                    case MediaSourceAudioInputNodeCreationStatus.FormatNotSupported:
+                        Debug.WriteLine("The MediaSource uses an unsupported format");
+                        break;
+                    case MediaSourceAudioInputNodeCreationStatus.NetworkError:
+                        Debug.WriteLine("The MediaSource requires a network connection and a network-related error occurred");
+                        break;
+                    case MediaSourceAudioInputNodeCreationStatus.UnknownFailure:
+                    default:
+                        Debug.WriteLine("An unknown error occurred while opening the MediaSource");
+                        break;
+                }
+                return;
+            }
+
+            mediaSourceInputNode = mediaSourceAudioInputNodeResult.Node;
+        }
+        // </SnippetCreateMediaSourceInputNode>
+
+        private void RegisterMediaSourceCompleted()
+        {
+            // <SnippetRegisterMediaSourceCompleted>
+            mediaSourceInputNode.MediaSourceCompleted += MediaSourceInputNode_MediaSourceCompleted;
+            // </SnippetRegisterMediaSourceCompleted>
+        }
+        // <SnippetMediaSourceCompleted>
+        private void MediaSourceInputNode_MediaSourceCompleted(MediaSourceAudioInputNode sender, object args)
+        {
+            audioGraph.Stop();
+        }
+        // </SnippetMediaSourceCompleted>
+        private void RegisterUnrecoverableError()
+        {
+            // <SnippetRegisterUnrecoverableError>
+            audioGraph.UnrecoverableErrorOccurred += AudioGraph_UnrecoverableErrorOccurred;
+            // </SnippetRegisterUnrecoverableError>
+        }
+        // <SnippetUnrecoverableError>
+        private void AudioGraph_UnrecoverableErrorOccurred(AudioGraph sender, AudioGraphUnrecoverableErrorOccurredEventArgs args)
+        {
+            if (sender == audioGraph && args.Error != AudioGraphUnrecoverableError.None)
+            {
+                Debug.WriteLine("The audio graph encountered and unrecoverable error.");
+                audioGraph.Stop();
+                audioGraph.Dispose();
+                InitAudioGraph();
+            }
+        }
+        // </SnippetUnrecoverableError>
 
         // <SnippetCreateDeviceInputNode>
         private async Task CreateDeviceInputNode()

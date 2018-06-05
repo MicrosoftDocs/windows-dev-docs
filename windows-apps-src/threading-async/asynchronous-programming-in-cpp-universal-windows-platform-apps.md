@@ -4,7 +4,7 @@ ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the task class defined in the concurrency namespace in ppltasks.h.
 title: Asynchronous programming in C++
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,13 @@ keywords: windows 10, uwp, threads, asynchronous, C++
 ms.localizationpriority: medium
 ---
 
-# Asynchronous programming in C++
-
+# Asynchronous programming in C++/CX
+> [!NOTE]
+> This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
 
 ## Universal Windows Platform (UWP) asynchronous types
-
 The Universal Windows Platform (UWP) features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the UWP asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
 
 Although you can consume the asynchronous UWP APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the UWP asynchronous types so that it's easier to:
@@ -32,14 +32,13 @@ Although you can consume the asynchronous UWP APIs directly in C++, the preferre
 -   ensure that individual tasks run in the appropriate thread context or apartment
 
 This article provides basic guidance about how to use the **task** class with the UWP asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. 
-## Consuming an async operation by using a task
 
+## Consuming an async operation by using a task
 The following example shows how to use the task class to consume an **async** method that returns an [**IAsyncOperation**][IAsyncOperation] interface and whose operation produces a value. Here are the basic steps:
 
 1.  Call the `create_task` method and pass it the **IAsyncOperation^** object.
 
 2.  Call the member function [**task::then**][taskThen] on the task and supply a lambda that will be invoked when the asynchronous operation completes.
-
 
 ``` cpp
 #include <ppltasks.h>
@@ -80,7 +79,6 @@ The [**task::then**][taskThen] method returns immediately, and its delegate does
 Although you declare the task variable on the local stack, it manages its lifetime so that it is not deleted until all of its operations complete and all references to it go out of scope, even if the method returns before the operations complete.
 
 ## Creating a chain of tasks
-
 In asynchronous programming, it's common to define a sequence of operations, also known as *task chains*, in which each continuation executes only when the previous one completes. In some cases, the previous (or *antecedent*) task produces a value that the continuation accepts as input. By using the [**task::then**][taskThen] method, you can create task chains in an intuitive and straightforward manner; the method returns a **task<T>** where **T** is the return type of the lambda function. You can compose multiple continuations into a task chain: `myTask.then(…).then(…).then(…);`
 
 Task chains are especially useful when a continuation creates a new asynchronous operation; such a task is known as an asynchronous task. The following example illustrates a task chain that has two continuations. The initial task acquires the handle to an existing file, and when that operation completes, the first continuation starts up a new asynchronous operation to delete the file. When that operation completes, the second continuation runs, and outputs a confirmation message.
@@ -116,7 +114,6 @@ The previous example illustrates four important points:
 **Note**  Creating a task chain is just one of the ways to use the **task** class to compose asynchronous operations. You can also compose operations by using join and choice operators **&&** and **||**. For more information, see [Task Parallelism (Concurrency Runtime)][taskParallelism].
 
 ## Lambda function return types and task return types
-
 In a task continuation, the return type of the lambda function is wrapped in a **task** object. If the lambda returns a **double**, then the type of the continuation task is **task<double>**. However, the task object is designed so that it doesn't produce needlessly nested return types. If a lambda returns an **IAsyncOperation<SyndicationFeed^>^**, the continuation returns a **task<SyndicationFeed^>**, not a **task<task<SyndicationFeed^>>** or **task<IAsyncOperation<SyndicationFeed^>^>^**. This process is known as *asynchronous unwrapping* and it also ensures that the asynchronous operation inside the continuation completes before the next continuation is invoked.
 
 In the previous example, notice that the task returns a **task<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
@@ -133,7 +130,6 @@ In the previous example, notice that the task returns a **task<void>** even thou
 
 
 ## Canceling tasks
-
 It is often a good idea to give the user the option to cancel an asynchronous operation. And in some cases you might have to cancel an operation programmatically from outside the task chain. Although each \***Async** return type has a [**Cancel**][IAsyncInfoCancel] method that it inherits from [**IAsyncInfo**][IAsyncInfo], it's awkward to expose it to outside methods. The preferred way to support cancellation in a task chain is to use a [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) to create a [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), and then pass the token to the constructor of the initial task. If an asynchronous task is created with a cancellation token, and [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) is called, the task automatically calls **Cancel** on the **IAsync\*** operation and passes the cancellation request down its continuation chain. The following pseudocode demonstrates the basic approach.
 
 ``` cpp
@@ -156,7 +152,6 @@ Cancellation is cooperative. If your continuation does some long-running work be
 For more information, see [Cancellation in the PPL](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
 ## Handling errors in a task chain
-
 If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task<TResult>** or **task<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
 
 To handle errors and cancellation in a task chain, you don't have to make every continuation task-based or enclose every operation that might throw within a `try…catch` block. Instead, you can add a task-based continuation at the end of the chain and handle all errors there. Any exception—this includes a [**task\_canceled**][taskCanceled] exception—will propagate down the task chain and bypass any value-based continuations, so that you can handle it in the error-handling task-based continuation. We can rewrite the previous example to use an error-handling task-based continuation:
@@ -200,7 +195,6 @@ In a task-based continuation, we call the member function [**task::get**][taskGe
 Only catch the exceptions that you can handle. If your app encounters an error that you can't recover from, it's better to let the app crash than to let it continue to run in an unknown state. Also, in general, don't attempt to catch the **unobserved\_task\_exception** itself. This exception is mainly intended for diagnostic purposes. When **unobserved\_task\_exception** is thrown, it usually indicates a bug in the code. Often the cause is either an exception that should be handled, or an unrecoverable exception that's caused by some other error in the code.
 
 ## Managing the thread context
-
 The UI of a UWP app runs in a single-threaded apartment (STA). A task whose lambda returns either an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation] is apartment-aware. If the task is created in the STA, then all of its continuations will run also run in it by default, unless you specify otherwise. In other words, the entire task chain inherits apartment-awareness from the parent task. This behavior helps simplify interactions with UI controls, which can only be accessed from the STA.
 
 For example, in a UWP app, in the member function of any class that represents a XAML page, you can populate a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) control from within a [**task::then**][taskThen] method without having to use the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) object.
@@ -290,17 +284,15 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 Nested tasks, which are new tasks that are created inside a continuation, don't inherit apartment-awareness of the initial task.
 
 ## Handing progress updates
-
 Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) or [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) property. A typical use of the delegate is to update a progress bar in the UI.
 
 ## Related topics
-
-* [Creating Asynchronous Operations in C++ for UWP apps][createAsyncCpp]
+* [Creating Asynchronous Operations in C++/CX for UWP apps](https://msdn.microsoft.com/library/hh750082)
 * [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Asynchronous Programming][AsyncProgramming]
 * [Task Parallelism (Concurrency Runtime)][taskParallelism]
-* [task class][task-class]
- 
+* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
+
 <!-- LINKS -->
 [AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"
 [concurrencyNamespace]: <https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace> "Concurrency Namespace"

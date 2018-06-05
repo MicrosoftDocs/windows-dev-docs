@@ -4,7 +4,7 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop Bridge
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -183,6 +183,30 @@ To review all application packaging capabilities, see [PACE Suite features](http
 
 See [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
+#### RayPack Studio
+
+Raynet's packaging solution, [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio), supports the Desktop Bridge as one of several possible outcomes of efficient and easy-to-configure conversion and repackaging framework.
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+Existing virtual environments (VMware Workstation, Hyper-V) can be used to perform automated/bulk conversion without a lengthy environment setup. A component of the studio ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)) is able to make pre-conversion screening and compatibility tests to verify software that is eligible for conversion. Additionally, users can now perform comprehensive collision and compatibility checks with various Windows 10 editions including Anniversary and Creators updates.
+
+Next to the creation of software packages for Windows 10 APPX/UWP format, RayPack Studio can also be used to create classic Windows Installer packages (MSI), patches (MSP), transforms (MST), and App-V packages. Furthermore, this solution comes with a set of software products and components for professional enterprise software packaging. In addition to software packaging and virtualization, RayPack Studio considers all packaging-related tasks: conflict and compatibility checks of software applications and packages ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)), software evaluation ([RayEval](https://raynet.de/Raynet-Products/RayEval)), and quality assurance ([RayQC](https://raynet.de/Raynet-Products/RayQC)).
+
+Combined with [RayFlow](https://raynet.de/Raynet-Products/RayFlow), Raynet´s Enterprise Workflow System, users can efficiently work on the software through the whole enterprise application lifecycle, from package ordering, through evaluation, analysis, packaging, quality assurance, user acceptance tests and deployment. All packages and formats can be stored and deployed directly into SCCM or other solutions. The entire application lifecycle process is tracked and managed by RayFlow. In addition, any order systems such as ServiceNow can be integrated. Raynet builds software packaging factories worldwide with its tools for service providers.
+
+Convince yourself and get the [free trial license](https://raynet.de/contact?init=license) of Raynet's RayPack Studio and RayFlow. For more information, please visit [www.raynet.de](https://raynet.de/home).
+
+**Related links**:
+
+* Raynet: [https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio: [https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow: [https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval: [https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC: [https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced: [https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* Free Trial License: [https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
 ### Manual packaging
 
 As a final option, you can convert your app without using any of these tools. If you want that granular control over your conversion, you can create a manifest file, and then run the **MakeAppx.exe** tool to create your Windows app package.
@@ -223,7 +247,7 @@ See [Share code between a desktop app and a UWP app](desktop-to-uwp-migrate.md)
 To test your app in a realistic setting as you prepare for distribution, it's best to sign your app and then install it. See [Test your app](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).
 
 >[!IMPORTANT]
-> If you plan to publish your app to the Microsoft Store, make sure that your app operates correctly on devices that run Windows 10 S. This is a store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
+> If you plan to publish your app to the Microsoft Store, make sure that your app operates correctly on devices that run Windows 10 in S mode. This is a store requirement. See [Test your Windows app for Windows 10 in S mode](desktop-to-uwp-test-windows-s.md).
 
 ## Validate
 

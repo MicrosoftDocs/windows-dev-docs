@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Learn how to add native ads to your UWP app.
 title: Native ads
 ms.author: mcleans
-ms.date: 03/22/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,6 @@ ms.localizationpriority: medium
 A native ad is a component-based ad format where each piece of the ad creative (such as the title, image, description, and call-to-action text) is delivered to your app as an individual element. You can integrate these elements into your app using your own fonts, colors, animations, and other UI components to stitch together an unobtrusive user experience that fits the look and feel of your app while also earning high yield from the ads.
 
 For advertisers, native ads provide high-performing placements, because the ad experience is tightly integrated into the app and users therefore tend to interact more with these types of ads.
-
-> [!NOTE]
-> To serve native ads to the public version of your app in the Store, you must create a **Native** ad unit from the **Monetize** &gt; **In-app ads** page in the Dev Center dashboard. The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make  this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
 
 > [!NOTE]
 > Native ads are currently supported only for XAML-based UWP apps for Windows 10. Support for UWP apps written using HTML and JavaScript is planned for a future release of the Microsoft Advertising SDK.
@@ -47,21 +44,21 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the set-up-ad-units-in-your-app.md#live-ad-units for native ads.
+5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a **NativeAdsManagerV2** object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for native ads.
     > [!NOTE]
-    > Every **NativeAdsManager** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
+    > Every **NativeAdsManagerV2** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManager** object and wire up event handlers for the [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.adready.aspx) and [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.erroroccurred.aspx) events of the object.
+6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManagerV2** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
-7.  When you're ready to show a native ad, call the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.requestad.aspx) method to fetch an ad.
+7.  When you're ready to show a native ad, call the **RequestAd** method to fetch an ad.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-8.  When a native ad is ready for your app, your **AdReady** event handler is called, and a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) object that represents the native ad is passed to the *e* parameter. Use the **NativeAd** properties to get each element of the native ad and display these elements on your page. Be sure to also call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
+8.  When a native ad is ready for your app, your **AdReady** event handler is called, and a **NativeAdV2** object that represents the native ad is passed to the *e* parameter. Use the **NativeAdV2** properties to get each element of the native ad and display these elements on your page. Be sure to also call the **RegisterAdContainer** method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
     > [!NOTE]
     > Some elements of the native ad are required and must always be shown in your app. For more information, see our [guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
@@ -117,7 +114,7 @@ After you confirm that your native ad implementation successfully shows a test a
 
 3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
-4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor) with the live values you generated in Dev Center.
+4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the **NativeAdsManagerV2** constructor) with the live values you generated in Dev Center.
 
 5.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 

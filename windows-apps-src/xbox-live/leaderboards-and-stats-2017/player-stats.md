@@ -1,6 +1,6 @@
 ---
 title: Player Stats
-author: StaceyHaffner
+author: KevinAsgari
 description: Learn how to set up player stats in Xbox Live.
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
 ms.author: kevinasg
@@ -48,5 +48,3 @@ In the case of Data Platform 2013 which is used on XDK and older UWP titles, sta
 ## Next Steps
 
 Now that you have some Player Stats and Featured Stats configured. You are ready to create a leaderboard. Please see [Leaderboards](leaderboards.md) to get started.
-
-

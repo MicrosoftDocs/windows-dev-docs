@@ -43,11 +43,11 @@ Here you'll learn how to:
 
 1.  Launch Visual Studio 2017.
 
-2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
+2.  From the **File** menu, select **New > Project** to open the *New Project* dialog.
 
-3.  From the list of templates on the left, open **Installed > Templates > Visual C# > Windows**, and then choose **Universal** to see the list of UWP project templates.
+3.  From the list of templates on the left, choose **Installed > Visual C# > Windows Universal** to see the list of UWP project templates.
 
-    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](get-set-up.md)
+    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](get-set-up.md).)
 
     ![How to repeat the installation process](images/win10-cs-install.png)
 

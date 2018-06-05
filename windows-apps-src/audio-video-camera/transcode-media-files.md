@@ -79,6 +79,10 @@ You can register events to respond when the progress of the asynchronous [**Tran
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
 
+
+## Encode a metadata stream
+
+
  
 
  

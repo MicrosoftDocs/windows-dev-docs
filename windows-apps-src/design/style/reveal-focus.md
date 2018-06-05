@@ -1,7 +1,7 @@
 ---
 author: cphilippona
-description: Reveal focus is a lighting effect that animates the border of focusable elements when the user moves gamepad or keyboard focus to them.
-title: Reveal focus
+description: Reveal Focus is a lighting effect that animates the border of focusable elements when the user moves gamepad or keyboard focus to them.
+title: Reveal Focus
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 03/1/2018
@@ -14,22 +14,23 @@ design-contact:
 dev-contact: stevenki
 ms.localizationpriority: high
 ---
+# Reveal Focus
 
-# Reveal focus
+![hero image](images/header-reveal-focus.svg)
 
-Reveal focus is a lighting effect for [10 foot experiences](/windows/uwp/design/devices/designing-for-tv), such as Xbox One and television screens. It  animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
+Reveal Focus is a lighting effect for [10-foot experiences](/windows/uwp/design/devices/designing-for-tv), such as Xbox One and television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
 
-(For the Reveal highlight effect, a lighting affect that highlights interactive elements, see the [Reveal highlight article](/windows/uwp/design/style/reveal).)
+(For the Reveal Highlight effect, a lighting affect that highlights interactive elements, see the [Reveal Highlight article](/windows/uwp/design/style/reveal).)
 
 
 > **Important APIs**: [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## How it works
-Reveal focus calls attention to focused elements by adding an animated glow around the element's border:
+Reveal Focus calls attention to focused elements by adding an animated glow around the element's border:
 
 ![Reveal Visual](images/traveling-focus-fullscreen-light-rf.gif)
 
-This is especially helpful in 10 foot scenarios where the user might not be paying full attention to the entire TV screen. 
+This is especially helpful in 10-foot scenarios where the user might not be paying full attention to the entire TV screen. 
 
 ## Examples
 
@@ -38,7 +39,7 @@ This is especially helpful in 10 foot scenarios where the user might not be payi
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RevealFocus">open the app and see Reveal focus in action</a>.</p>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RevealFocus">open the app and see Reveal Focus in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
@@ -49,7 +50,7 @@ This is especially helpful in 10 foot scenarios where the user might not be payi
 
 ## How to use it
 
-Reveal focus is off by default. To enable it:
+Reveal Focus is off by default. To enable it:
 1. In your app's constructor, call the [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo.DeviceFamily) property and check whether the current device family is `Windows.Xbox`.
 2. If the device family is `Windows.Xbox`, set the [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) property to `FocusVisualKind.Reveal`. 
 
@@ -60,22 +61,22 @@ Reveal focus is off by default. To enable it:
     }
 ```
 
-After you set the **FocusVisualKind** property, the system automatically applies the reveal focus effect to all controls whose [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) property is set to **True** (the default value for most controls). 
+After you set the **FocusVisualKind** property, the system automatically applies the Reveal Focus effect to all controls whose [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) property is set to **True** (the default value for most controls). 
 
-## Why isn't Reveal focus on by default? 
-As you can see, it's fairly easy to turn on Reveal focus when the app detects it's running on an Xbox. So, why doesn't the system just turn it on for you? Because Reveal focus increases the size of the focus visual, which might cause issues with your UI layout. In some cases, you'll want to customize the Reveal focus effect to optimize it for your app.
+## Why isn't Reveal Focus on by default? 
+As you can see, it's fairly easy to turn on Reveal Focus when the app detects it's running on an Xbox. So, why doesn't the system just turn it on for you? Because Reveal Focus increases the size of the focus visual, which might cause issues with your UI layout. In some cases, you'll want to customize the Reveal Focus effect to optimize it for your app.
 
-## Customizing Reveal focus
+## Customizing Reveal Focus
 
-You can customize the Reveal focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
+You can customize the Reveal Focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
 
-But before you start customzing it, it's helpful to know a little more about about the components that make up Reveal focus.
+But before you start customzing it, it's helpful to know a little more about about the components that make up Reveal Focus.
 
-There are three parts to the default Reveal focus visuals: the primary border, the secondary border and the Reveal glow. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border. The Reveal focus glow has a thickness proportional to the thickness of the primary border and runs around the *outside* of the primary border.
+There are three parts to the default Reveal Focus visuals: the primary border, the secondary border and the Reveal glow. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border. The Reveal Focus glow has a thickness proportional to the thickness of the primary border and runs around the *outside* of the primary border.
 
-In addition to the static elements, Reveal focus visuals feature an animated light that pulsates when at rests and moves in the direction of focus when moving focus.
+In addition to the static elements, Reveal Focus visuals feature an animated light that pulsates when at rests and moves in the direction of focus when moving focus.
 
-![Reveal focus layers](images/reveal-breakdown.svg)
+![Reveal Focus layers](images/reveal-breakdown.svg)
 
 ## Customize the border thickness
 
@@ -105,7 +106,7 @@ A negative margin pushes the border away from the center of the control, and a p
 
 ## Customize the color
 
-To change color of the reveal focus visual, use the [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) and [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) properties.
+To change color of the Reveal Focus visual, use the [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) and [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) properties.
 
 | Property | Default resource | Default resource value |
 | ---- | ---- | --- | 
@@ -136,7 +137,7 @@ To change the color of all focus visuals in your entire app, override the **Syst
 <!-- App.xaml -->
 <Application.Resources>
 
-    <!-- Override Reveal focus default resources. -->
+    <!-- Override Reveal Focus default resources. -->
     <SolidColorBrush x:Key="SystemControlRevealFocusVisualBrush" Color="{ThemeResource SystemBaseHighColor}"/>
     <SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="{ThemeResource SystemAccentColor}"/>
 </Application.Resources>
@@ -160,16 +161,16 @@ If you'd like to use only the glow without the primary or secondary focus visual
 
 ## Use your own focus visuals
 
-Another way to customize reveal focus is to opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see the [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895).
+Another way to customize Reveal Focus is to opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see the [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
-## Reveal focus and the Fluent Design System
+## Reveal Focus and the Fluent Design System
 
-Reveal focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
+Reveal Focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
 
 ## Related articles
 
-- [Reveal highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
+- [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Designing for Xbox and TV](/windows/uwp/design/devices/designing-for-tv)
 - [Gamepad and remote control interactions](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
