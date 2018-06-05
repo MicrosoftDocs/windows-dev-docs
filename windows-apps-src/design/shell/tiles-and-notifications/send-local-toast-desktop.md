@@ -258,7 +258,7 @@ public class MyNotificationActivator : NotificationActivator
         Application.Current.Dispatcher.Invoke(delegate
         {
             // Tapping on the top-level header launches with empty args
-            if (arguments.Length = 0)
+            if (arguments.Length == 0)
             {
                 // Perform a normal launch
                 OpenWindowIfNeeded();
@@ -406,3 +406,4 @@ If you've installed both your Desktop Bridge and classic Win32 app, note that th
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
 * [Toast notifications from desktop apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)
+
