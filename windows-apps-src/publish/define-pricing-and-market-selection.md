@@ -4,7 +4,7 @@ Description: The Microsoft Store reaches customers in over 200 countries and reg
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 12/12/2017
+ms.date: 06/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -49,369 +49,370 @@ You can choose to list your app (or add-on) in one or more of the following mark
 
 
 <table>
+  
   <tr>
     <td>Afghanistan</td>
+    <td>Åland Islands</td>
     <td>Albania</td>
     <td>Algeria</td>
-    <td>American Samoa</td>
   </tr>
   <tr>
+    <td>American Samoa</td>
     <td>Andorra</td>
     <td>Angola</td>
     <td>Anguilla</td>
-    <td>Antarctica</td>
   </tr>
   <tr>
+    <td>Antarctica</td>
     <td>Antigua and Barbuda</td>
     <td>Argentina</td>
     <td>Armenia</td>
-    <td>Aruba</td>
   </tr>
   <tr>
+    <td>Aruba</td>
     <td>Australia</td>
     <td>Austria</td>
     <td>Azerbaijan</td>
-    <td>Bahamas</td>
   </tr>
   <tr>
+    <td>Bahamas</td>
     <td>Bahrain</td>
     <td>Bangladesh</td>
     <td>Barbados</td>
-    <td>Belarus</td>
   </tr>
   <tr>
+    <td>Belarus</td>
     <td>Belgium</td>
     <td>Belize</td>
     <td>Benin</td>
-    <td>Bermuda</td>
   </tr>
   <tr>
+    <td>Bermuda</td>
     <td>Bhutan</td>
     <td>Bolivia</td>
     <td>Bonaire</td>
-    <td>Bosnia and Herzegovina</td>
   </tr>
   <tr>
+    <td>Bosnia and Herzegovina</td>
     <td>Botswana</td>
     <td>Bouvet Island</td>
     <td>Brazil</td>
-    <td>British Indian Ocean Territory</td>
   </tr>
   <tr>
+    <td>British Indian Ocean Territory</td>
     <td>British Virgin Islands</td>
     <td>Brunei</td>
     <td>Bulgaria</td>
-    <td>Burkina Faso</td>
   </tr>
   <tr>
+    <td>Burkina Faso</td>
     <td>Burundi</td>
     <td>Cabo Verde</td>
     <td>Cambodia</td>
-    <td>Cameroon</td>
   </tr>
   <tr>
+    <td>Cameroon</td>
     <td>Canada</td>
     <td>Cayman Islands</td>
     <td>Central African Republic</td>
-    <td>Chad</td>
   </tr>
   <tr>
+    <td>Chad</td>
     <td>Chile</td>
     <td>China</td>
     <td>Christmas Island</td>
-    <td>Cocos (Keeling) Islands</td>
   </tr>
   <tr>
+    <td>Cocos (Keeling) Islands</td>
     <td>Colombia *</td>
     <td>Comoros</td>
     <td>Congo</td>
-    <td>Congo (DRC)</td>
   </tr>
   <tr>
+    <td>Congo (DRC)</td>
     <td>Cook Islands</td>
     <td>Costa Rica</td>
+    <td>Côte d’Ivoire</td>
+  </tr>
+  <tr>
     <td>Croatia</td>
     <td>Curaçao</td>
-  </tr>
-  <tr>
     <td>Cyprus</td>
     <td>Czech Republic *</td>
-    <td>Côte d’Ivoire</td>
-    <td>Denmark *</td>
   </tr>
   <tr>
+    <td>Denmark *</td>
     <td>Djibouti</td>
     <td>Dominica</td>
     <td>Dominican Republic</td>
-    <td>Ecuador</td>
   </tr>
   <tr>
+    <td>Ecuador</td>
     <td>Egypt</td>
     <td>El Salvador</td>
     <td>Equatorial Guinea</td>
-    <td>Eritrea</td>
   </tr>
   <tr>
+    <td>Eritrea</td>
     <td>Estonia</td>
     <td>Ethiopia</td>
     <td>Falkland Islands</td>
-    <td>Faroe Islands</td>
   </tr>
   <tr>
+    <td>Faroe Islands</td>
     <td>Fiji</td>
     <td>Finland *</td>
     <td>France *</td>
-    <td>French Guiana</td>
   </tr>
   <tr>
+    <td>French Guiana</td>
     <td>French Polynesia</td>
     <td>French Southern and Antarctic Lands</td>
     <td>Gabon</td>
-    <td>Gambia</td>
   </tr>
   <tr>
+    <td>Gambia</td>
     <td>Georgia</td>
     <td>Germany *</td>
     <td>Ghana</td>
-    <td>Gibraltar</td>
   </tr>
   <tr>
+    <td>Gibraltar</td>
     <td>Greece *</td>
     <td>Greenland</td>
     <td>Grenada</td>
-    <td>Guadeloupe</td>
   </tr>
   <tr>
+    <td>Guadeloupe</td>
     <td>Guam</td>
     <td>Guatemala</td>
     <td>Guernsey</td>
-    <td>Guinea</td>
   </tr>
   <tr>
+    <td>Guinea</td>
     <td>Guinea-Bissau</td>
     <td>Guyana</td>
     <td>Haiti</td>
-    <td>Heard Island and McDonald Islands</td>
   </tr>
   <tr>
+    <td>Heard Island and McDonald Islands</td>
     <td>Honduras</td>
     <td>Hong Kong SAR *</td>
     <td>Hungary *</td>
-    <td>Iceland</td>
   </tr>
   <tr>
+    <td>Iceland</td>
     <td>India *</td>
     <td>Indonesia</td>
     <td>Iraq</td>
-    <td>Ireland *</td>
   </tr>
   <tr>
+    <td>Ireland *</td>
     <td>Isle of Man</td>
     <td>Israel *</td>
     <td>Italy *</td>
-    <td>Jamaica</td>
   </tr>
   <tr>
+    <td>Jamaica</td>
     <td>Japan *</td>
     <td>Jersey</td>
     <td>Jordan</td>
-    <td>Kazakhstan</td>
   </tr>
   <tr>
+    <td>Kazakhstan</td>
     <td>Kenya</td>
     <td>Kiribati</td>
     <td>Korea *</td>
-    <td>Kyrgyzstan</td>
   </tr>
   <tr>
     <td>Kuwait</td>
+    <td>Kyrgyzstan</td>
     <td>Laos</td>
     <td>Latvia</td>
-    <td>Lebanon</td>
   </tr>
   <tr>
+    <td>Lebanon</td>
     <td>Lesotho</td>
     <td>Liberia</td>
     <td>Libya</td>
-    <td>Liechtenstein</td>
   </tr>
   <tr>
+    <td>Liechtenstein</td>
     <td>Lithuania</td>
     <td>Luxembourg</td>
     <td>Macao SAR</td>
-    <td>Macedonia, FYRO</td>
   </tr>
   <tr>
+    <td>Macedonia, FYRO</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
-    <td>Maldives</td>
   </tr>
   <tr>
+    <td>Maldives</td>
     <td>Mali</td>
     <td>Malta</td>
     <td>Marshall Islands</td>
-    <td>Martinique</td>
   </tr>
   <tr>
+    <td>Martinique</td>
     <td>Mauritania</td>
     <td>Mauritius</td>
     <td>Mayotte</td>
-    <td>Mexico *</td>
   </tr>
   <tr>
+    <td>Mexico *</td>
     <td>Micronesia</td>
     <td>Moldova</td>
     <td>Monaco</td>
-    <td>Mongolia</td>
   </tr>
   <tr>
+    <td>Mongolia</td>
     <td>Montenegro</td>
     <td>Montserrat</td>
     <td>Morocco</td>
-    <td>Mozambique</td>
   </tr>
   <tr>
+    <td>Mozambique</td>
     <td>Myanmar</td>
     <td>Namibia</td>
     <td>Nauru</td>
-    <td>Nepal</td>
   </tr>
   <tr>
+    <td>Nepal</td>
     <td>Netherlands *</td>
     <td>New Caledonia</td>
     <td>New Zealand *</td>
-    <td>Nicaragua</td>
   </tr>
   <tr>
+    <td>Nicaragua</td>
     <td>Niger</td>
     <td>Nigeria</td>
     <td>Niue</td>
-    <td>Norfolk Island</td>
   </tr>
   <tr>
+    <td>Norfolk Island</td>
     <td>Northern Mariana Islands</td>
     <td>Norway *</td>
     <td>Oman</td>
-    <td>Pakistan</td>
   </tr>
   <tr>
+    <td>Pakistan</td>
     <td>Palau</td>
     <td>Palestinian Authority</td>
     <td>Panama</td>
-    <td>Papua New Guinea</td>
   </tr>
   <tr>
+    <td>Papua New Guinea</td>
     <td>Paraguay</td>
     <td>Peru</td>
     <td>Philippines</td>
-    <td>Pitcairn Islands</td>
   </tr>
   <tr>
+    <td>Pitcairn Islands</td>
     <td>Poland *</td>
     <td>Portugal *</td>
     <td>Qatar</td>
-    <td>Romania</td>
   </tr>
   <tr>
+    <td>Réunion</td>
+    <td>Romania</td>
     <td>Russia *</td>
     <td>Rwanda</td>
-    <td>Réunion</td>
-    <td>Saint Barthélemy</td>
   </tr>
   <tr>
+    <td>Saint Barthélemy</td>
     <td>Saint Helena, Ascension and Tristan da Cunha</td>
     <td>Saint Kitts and Nevis</td>
     <td>Saint Lucia</td>
-    <td>Saint Martin (French Part)</td>
   </tr>
   <tr>
+    <td>Saint Martin (French Part)</td>
     <td>Saint Pierre and Miquelon</td>
     <td>Saint Vincent and the Grenadines</td>
     <td>Samoa</td>
-    <td>San Marino</td>
   </tr>
   <tr>
+    <td>San Marino</td>
+    <td>São Tomé and Príncipe</td>
     <td>Saudi Arabia *</td>
     <td>Senegal</td>
+  </tr>
+  <tr>
     <td>Serbia</td>
     <td>Seychelles</td>
-  </tr>
-  <tr>
     <td>Sierra Leone</td>
     <td>Singapore *</td>
+  </tr>
+  <tr>
     <td>Sint Maarten (Dutch Part)</td>
     <td>Slovakia *</td>
-  </tr>
-  <tr>
     <td>Slovenia</td>
     <td>Solomon Islands</td>
+  </tr>
+  <tr>
     <td>Somalia</td>
     <td>South Africa *</td>
-  </tr>
-  <tr>
     <td>South Georgia and the South Sandwich Islands</td>
     <td>Spain *</td>
+  </tr>
+  <tr>
     <td>Sri Lanka</td>
     <td>Suriname</td>
-  </tr>
-  <tr>
     <td>Svalbard and Jan Mayen</td>
     <td>Swaziland</td>
+  </tr>
+  <tr>
     <td>Sweden *</td>
     <td>Switzerland *</td>
-  </tr>
-  <tr>
-    <td>São Tomé and Príncipe</td>
     <td>Taiwan *</td>
     <td>Tajikistan</td>
-    <td>Tanzania</td>
   </tr>
   <tr>
+    <td>Tanzania</td>
     <td>Thailand</td>
     <td>Timor-Leste</td>
     <td>Togo</td>
-    <td>Tokelau</td>
   </tr>
   <tr>
+    <td>Tokelau</td>
     <td>Tonga</td>
     <td>Trinidad and Tobago</td>
     <td>Tunisia</td>
-    <td>Turkey *</td>
   </tr>
   <tr>
+    <td>Turkey *</td>
     <td>Turkmenistan</td>
     <td>Turks and Caicos Islands</td>
     <td>Tuvalu</td>
-    <td>U.S. Minor Outlying Islands</td>
   </tr>
   <tr>
+    <td>U.S. Minor Outlying Islands</td>
     <td>U.S. Virgin Islands</td>
     <td>Uganda</td>
     <td>Ukraine</td>
-    <td>United Arab Emirates *</td>
   </tr>
   <tr>
+    <td>United Arab Emirates *</td>
     <td>United Kingdom *</td>
     <td>United States *</td>
     <td>Uruguay</td>
-    <td>Uzbekistan</td>
   </tr>
   <tr>
+    <td>Uzbekistan</td>
     <td>Vanuatu</td>
     <td>Vatican City</td>
     <td>Venezuela</td>
-    <td>Vietnam</td>
   </tr>
   <tr>
+    <td>Vietnam</td>
     <td>Wallis and Futuna</td>
     <td>Western Sahara (Disputed)</td>
     <td>Yemen</td>
-    <td>Zambia</td>
   </tr>
   <tr>
+    <td>Zambia</td>
     <td>Zimbabwe</td>
-    <td>Åland Islands</td>
     <td></td>
     <td></td>
   </tr>
