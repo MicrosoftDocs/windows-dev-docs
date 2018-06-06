@@ -1048,6 +1048,69 @@ private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.S
 }
 ```
 
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Security.Cryptography.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <sstream>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
+    Windows::Networking::Sockets::StreamSocket m_streamSocket;
+
+public:
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
+    {
+        m_streamSocketListener.ConnectionReceived({ this, &BatchedSendsPage::OnConnectionReceived });
+        co_await m_streamSocketListener.BindServiceNameAsync(L"1337");
+
+        co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337");
+        SendMultipleBuffersInefficientlyAsync(L"Hello, World!");
+        //BatchedSendsAnyUWPLanguageAsync(L"Hello, World!");
+    }
+
+private:
+    IAsyncAction OnConnectionReceived(Windows::Networking::Sockets::StreamSocketListener const& /* sender */, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs const& args)
+    {
+        DataReader dataReader{ args.Socket().InputStream() };
+        dataReader.InputStreamOptions(Windows::Storage::Streams::InputStreamOptions::Partial);
+
+        while (true)
+        {
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(256);
+            if (bytesLoaded == 0) break;
+            winrt::hstring message{ dataReader.ReadString(bytesLoaded) };
+            ::OutputDebugString(message.c_str());
+        }
+    }
+
+    // This implementation incurs kernel transition overhead for each packet written.
+    IAsyncAction SendMultipleBuffersInefficientlyAsync(winrt::hstring message)
+    {
+        co_await winrt::resume_background();
+
+        std::vector< IBuffer > packetsToSend;
+        for (unsigned int count = 0; count < 5; ++count)
+        {
+            packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+        }
+
+        for (auto const& element : packetsToSend)
+        {
+            m_streamSocket.OutputStream().WriteAsync(element).get();
+        }
+    }
+```
+
 ```cpp
 #include <ppltasks.h>
 #include <sstream>
@@ -1115,7 +1178,7 @@ private:
     }
 ```
 
-This first example of a more efficient technique is only appropriate if you're using C#. Change `OnNavigatedTo` to call `BatchedSendsCSharpOnly` instead of `SendMultipleBuffersInefficiently`.
+This first example of a more efficient technique is only appropriate if you're using C#. Change `OnNavigatedTo` to call `BatchedSendsCSharpOnly` instead of `SendMultipleBuffersInefficiently` or `SendMultipleBuffersInefficientlyAsync`.
 
 ```csharp
 // A C#-only technique for batched sends.
@@ -1138,7 +1201,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-This next example is appropriate for any UWP language, not just for C# (but demonstrated here in C#). It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) that batches sends together. The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.
+This next example is appropriate for any UWP language, not just for C#. It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) that batches sends together. The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1158,6 +1221,29 @@ private async void BatchedSendsAnyUWPLanguage(Windows.Networking.Sockets.StreamS
 
     // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
     await streamSocket.OutputStream.FlushAsync();
+}
+```
+
+```cppwinrt
+// An implementation of batched sends suitable for any UWP language.
+IAsyncAction BatchedSendsAnyUWPLanguageAsync(winrt::hstring message)
+{
+    std::vector< IBuffer > packetsToSend{};
+    std::vector< IAsyncOperationWithProgress< unsigned int, unsigned int > > pendingWrites{};
+    for (unsigned int count = 0; count < 5; ++count)
+    {
+        packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+    }
+
+    for (auto const& element : packetsToSend)
+    {
+        // track all pending writes as tasks, but don't wait on one before beginning the next.
+        pendingWrites.push_back(m_streamSocket.OutputStream().WriteAsync(element));
+        // Don't modify any buffer's contents until the pending writes are complete.
+    }
+
+    // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
+    co_await m_streamSocket.OutputStream().FlushAsync();
 }
 ```
 
@@ -1200,6 +1286,9 @@ You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.Dat
 
 Use an override of [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) that takes a [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel), as shown in this minimal code example.
 
+> [!IMPORTANT]
+> As indicated by the comment in the code examples below, your project needs to declare the sharedUserCertificates app capability for this code to work.
+
 ```csharp
 // For this code to work, you need at least one certificate to be present in the user MY certificate store.
 // Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
@@ -1211,6 +1300,22 @@ if (certificates.Count > 0)
 {
     streamSocket.Control.ClientCertificate = certificates[0];
     await streamSocket.ConnectAsync(hostName, "1337", Windows.Networking.Sockets.SocketProtectionLevel.Tls12);
+}
+```
+
+```cppwinrt
+// For this code to work, you need at least one certificate to be present in the user MY certificate store.
+// Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
+// Also, your project needs to declare the sharedUserCertificates app capability.
+Windows::Security::Cryptography::Certificates::CertificateQuery certificateQuery;
+certificateQuery.StoreName(L"MY");
+IVectorView< Windows::Security::Cryptography::Certificates::Certificate > certificates = co_await Windows::Security::Cryptography::Certificates::CertificateStores::FindAllAsync(certificateQuery);
+
+if (certificates.Size() > 0)
+{
+    m_streamSocket.Control().ClientCertificate(certificates.GetAt(0));
+    co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337", Windows::Networking::Sockets::SocketProtectionLevel::Tls12);
+    ...
 }
 ```
 
