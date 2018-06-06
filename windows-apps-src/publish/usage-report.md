@@ -4,7 +4,7 @@ Description: The Usage report in the Windows Dev Center dashboard lets you see h
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 3/8/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,6 +44,11 @@ This chart has four separate tabs that you can view, showing usage by day or wee
 - **Devices**: Shows the number of daily devices used to interact with your app by all users.
 - **Duration**: Shows the total engagement hours (hours where a user is actively using your app).
 - **Retention**: Shows the total number of **DAU/MAU** (Daily Active Users/Monthly Active Users) over the selected period of time.
+
+When the **30D** time period is selected, you may see circle markers when viewing the **Users**, **Devices**, or **Duration** tabs. These represent a significant increase or decrease in a given value that we think you'll want to know about. The date on which the circle appears represents the end of the week in which we detected a significant increase or decrease compared to the week before that. To see more details about what's changed, hover over the circle.  
+
+> [!TIP]
+> You can view more insights related to significant changes over the last 30 days in the [Insights report](insights-report.md).
 
 
 ## User sessions
