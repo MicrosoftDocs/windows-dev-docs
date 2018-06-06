@@ -14,7 +14,7 @@ ms.localizationpriority: low
 
 An **asynchronous API** is an API that returns quickly but starts an **asynchronous task** and the result is returned after the task is finished.
 
-Traditionally games have little control over which thread executes the **asynchronous task** and which thread returns the results when using a **completion callback**.  Some games are designed so that a section of the heap is only touched by a single thread to avoid any need for thread synchronization. If the **completion callback** isn't a thread the game controls that means updating some shared state with the result of an **asynchronous task** requires thread synchronization.
+Traditionally games have little control over which thread executes the **asynchronous task** and which thread returns the results when using a **completion callback**.  Some games are designed so that a section of the heap is only touched by a single thread to avoid any need for thread synchronization. If the **completion callback** isn't called from a thread the game controls, updating shared state with the result of an **asynchronous task** will require thread synchronization.
 
 The XSAPI C API exposes a new asynchronous C API that gives developers direct thread control when
 making an **asynchronous API** call, such as **XblSocialGetSocialRelationshipsAsync()**, **XblProfileGetUserProfileAsync()** and **XblAchievementsGetAchievementsForTitleIdAsync()**.

@@ -209,9 +209,9 @@ For the complete list of icon names, see the [Symbol enumeration](https://docs.m
 
 There are other ways to provide icons for a button in a command bar:
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon.md) - the icon is based on a glyph from the specified font family.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon.md) - the icon is based on a bitmap image file with the specified **Uri**.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.md) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
 
 To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md). 
 

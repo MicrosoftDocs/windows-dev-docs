@@ -503,7 +503,7 @@ We recommend localizing all keyboard accelerators. You can do this with the stan
 <Button x:Uid="myButton" Click="OnSave">
   <Button.KeyboardAccelerators>
     <KeyboardAccelerator x:Uid="myKeyAccelerator" Modifiers="Control"/>
-  </Button.KeyAccelerators>
+  </Button.KeyboardAccelerators>
 </Button>
 ```
 

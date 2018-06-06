@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 05/16/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,9 +25,7 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
-|**Insights report**: When we detect a significant change in your acquisitions, health, or usage data, we’ll show details in this report.  | In the left navigation menu, expand **Analyze** and then select **Insights**. | March 2018 |
 |**Churn prediction chart on Usage report**: See how many users we predict are likely to stop using your app soon, based on their recent usage. | In the **Usage** report, view the **Churn prediction** chart to see a prediction of how many users will stop using the app (or use it for less than 10 minutes) in the next 15 days. After each cycle, the chart shows how many users stopped using the app, along with the number we predicted. This info is updated twice per month.  | January 2018 |
-|**Details on significant data changes**: Get a quick look at significant changes in your acquisitions, usage, and health data. | On the **Acquisitions**, **Usage**, and **Health** reports, we’ll display a circle marker at the end of a week if we detect significant increases or decreases in any area compared to the week before that. Hover over the circle to see details about what’s changed. | January 2018 |
 |**View more details from your overview page**: Get more details on highlighted apps without leaving your overview page. | On the overview page, look for the boxes highlighting key statistics for your apps. Click any of the boxes to see more details about that app. | September 2017 |
 |**Cohort active usage analytics**: Track week-by-week usage for cohorts (groups of active users who started using your app in the same week) for insights into usage trends.  | In the **Usage** report, view the **Cohorts by active usage** chart.  |July 2017|
 |**Churn prediction option for customer segments**: Create a segment of your customers based on whether we detect that they’re likely to stop using your app soon.  | In the **Engage** section, select **Customer groups** to create a new segment. In the inclusion conditions section, select **Churn prediction** in the first drop-down, then choose **true** or **false** to define your segment. |May 2017|

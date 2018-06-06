@@ -57,7 +57,7 @@ It will also define the "#if ENABLE_WINMD_SUPPORT" define for you so IntelliSens
 
 **9) Add the following Xbox Live code to the XboxLiveTest.cs source file**
 
-```cpp
+```csharp
 
 using System.Collections;
 using System.Collections.Generic;

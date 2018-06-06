@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 
 
 Complete code for a class and method that loads a DDS texture from memory.
+See [Load resources in your DirectX game](load-a-game-asset.md) for a discussion about textures and using this example.
 
 This topic contains these sections:
 
