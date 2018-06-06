@@ -93,7 +93,7 @@ To create an adaptive layout, define different [**VisualStates**](https://docs.m
 The following samples implement the master/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
 - [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [Master/Details plus Selection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio Master/Detail sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Windows Template Studio Master/Detail sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
