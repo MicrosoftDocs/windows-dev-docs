@@ -4,7 +4,7 @@ ms.assetid: 2FBA0B73-17C6-4F25-A79D-63F2F262491A
 description: Use this method in the Microsoft Store analytics API to get detailed data for a Windows 7 or Windows 8.x driver error. This method is intended only for IHVs.
 title: Get details for a Windows 7 or Windows 8.x driver error
 ms.author: mcleans
-ms.date: 04/06/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

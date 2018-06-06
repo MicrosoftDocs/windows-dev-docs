@@ -3,7 +3,7 @@ author: mcleanbyron
 description: The Microsoft ad mediation service enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 title: Microsoft ad mediation service
 ms.author: mcleans
-ms.date: 05/02/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
