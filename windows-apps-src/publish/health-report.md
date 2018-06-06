@@ -4,7 +4,7 @@ Description: The Health report in the Windows Dev Center dashboard lets you get 
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 05/03/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -41,6 +41,10 @@ The info in all of the charts listed below will reflect the date range and any f
 
 The **Failure hits** chart shows the number of daily crashes and events that customers experienced when using your app during the selected period of time. Each type of event that your app experienced is tracked separately: crashes, hangs, JavaScript exceptions, and memory failures.
 
+When the **30D** time period is selected, you may see circle markers. These represent a significant increase or decrease in a given value that we think you'll want to know about. The date on which the circle appears represents the end of the week in which we detected a significant increase or decrease compared to the week before that. To see more details about what's changed, hover over the circle.  
+
+> [!TIP]
+> You can view more insights related to significant changes over the last 30 days in the [Insights report](insights-report.md).
 
 ## Failure hits by market
 

@@ -59,12 +59,12 @@ Furthermore, some devices do not have a display. With these devices, the default
 
 Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
 
-| Display orientation | Reference axis for compass heading | API compass heading when facing north | Compass heading compensation | 
-|---------------------|------------------------------------|---------------------------------------|------------------------------|
-| Landscape           | -Z | 0   | Heading               |
-| Portrait            |  Y | 90  | (Heading + 270) % 360 | 
-| LandscapeFlipped    |  Z | 180 | (Heading + 180) % 360 |
-| PortraitFlipped     |  Y | 270 | (Heading + 90) % 360  |
+| Display orientation | Reference axis for compass heading | API compass heading when facing north (landscape-first) | API compass heading when facing north (portrait-first) |Compass heading compensation (landscape-first) | Compass heading compensation (portrait-first) |
+|---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
+| Landscape           | -Z | 0   | 270 | Heading               | (Heading + 90) % 360  |
+| Portrait            |  Y | 90  | 0   | (Heading + 270) % 360 |  Heading              |
+| LandscapeFlipped    |  Z | 180 | 90  | (Heading + 180) % 360 | (Heading + 270) % 360 |
+| PortraitFlipped     |  Y | 270 | 180 | (Heading + 90) % 360  | (Heading + 180) % 360 |
 
 Modify the compass heading as shown in the table in order to correctly display the heading. The following code snippet demonstrates how to do this.
 

@@ -68,7 +68,7 @@ Follow the doc page called [Adding Xbox Live to a new or existing UWP project](g
 
 Copy/paste this example Xbox Live code into script you attached to the game object. This script will appear in the "Assembly-CSharp" project. You can change the code as desired.
 
-```cpp
+```csharp
 #if NETFX_CORE
 
 using UnityEngine;

@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.localizationpriority: high
 # Acquisitions report
 
 
-The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details, and shows info about how customers on Windows 10 (including Xbox) have arrived at your app's listing. You can also view near real-time acquisition data for the last hour or seventy-two hour period.
+The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details, and shows info about how customers on Windows 10 (including Xbox) have arrived at your app's listing. You can also view near real-time acquisition data for the last hour or seventy-two hour period. 
 
 You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -49,6 +49,11 @@ You can optionally filter the results by whether the acquisition originated from
 
 > [!NOTE]
 > You can also programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+
+In the **App daily** view, when the **30D** time period is selected, you may see circle markers. These represent a significant increase or decrease in a given value that we think you'll want to know about. The date on which the circle appears represents the end of the week in which we detected a significant increase or decrease compared to the week before that. To see more details about what's changed, hover over the circle.  
+
+> [!TIP]
+> You can view more insights related to significant changes over the last 30 days in the [Insights report](insights-report.md).
 
 ## Installs
 

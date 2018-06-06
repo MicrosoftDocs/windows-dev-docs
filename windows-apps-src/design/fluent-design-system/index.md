@@ -129,7 +129,7 @@ Fluent experiences use controls and patterns consistently, so they behave in way
 
         Create an effortless experience by using the right app structure and navigation components.
 
-		[Learn about navigation](/windows/uwp/design/navigation-basics/)
+		[Learn about navigation](/windows/uwp/design/basics/navigation-basics/)
 :::row-end:::
 
 :::row:::

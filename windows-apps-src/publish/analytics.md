@@ -4,7 +4,7 @@ Description: Get detailed analytics for your Windows apps, in the dashboard or v
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 10/13/2017
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,9 +32,11 @@ In this section you'll find details about the info presented in each of the foll
 -   [Health report](health-report.md)
 -   [Reviews report](reviews-report.md)
 -   [Feedback report](feedback-report.md)
+-   [Xbox analytics report](xbox-analytics-report.md)
+-   [Insights report](insights-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
 -   [Ad campaign report](promote-your-app-report.md)
--   [Xbox analytics report](xbox-analytics-report.md)
+
 
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.
