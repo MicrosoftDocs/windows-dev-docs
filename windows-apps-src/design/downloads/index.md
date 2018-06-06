@@ -14,15 +14,15 @@ ms.localizationpriority: high
 # Design toolkits and samples for UWP apps
  
 
-This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
+Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
 
 
 ## Design toolkits
 
 These toolkits provide controls and layout templates for designing UWP apps.
 
-* <a href="https://aka.ms/adobexdtoolkit">Adobe XD toolkit (v1803, March 2018)</a>
-* <a href="https://aka.ms/adobeillustratortoolkit">Adobe Illustrator toolkit (v1805, May 2018)</a>
+* <a href="https://aka.ms/adobexdtoolkit">Adobe XD toolkit (v1806, June 2018)</a>
+* <a href="https://aka.ms/adobeillustratortoolkit">Adobe Illustrator toolkit (v1806, June 2018)</a>
 * <a href="https://aka.ms/sketchtoolkit">Sketch toolkit (v1803, March 2018)</a>
 * <a href="https://aka.ms/adobephotoshoptoolkit">Adobe Photoshop toolkit (v1705, May 2017)</a>
 * <a href="https://aka.ms/framertoolkit">Framer toolkit (on GitHub) (v1710, August 2017)</a>
