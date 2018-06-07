@@ -62,7 +62,7 @@ With that advice in mind, you should start adding your controls of choice into y
 ```xaml
 <RelativePanel>
     <StackPanel x:Name="Customer" Margin="20">
-        <TextBox x:Name="CustomerName *" Header= "Customer Name" Margin="0,24,0,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="CustomerName" Header= "Customer Name" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
 	        <RelativePanel>
@@ -78,7 +78,7 @@ With that advice in mind, you should start adding your controls of choice into y
 	    <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
     <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Customer">
-        <Button Content="Save" Margin="0,24" />
+        <Button Content="Save" Margin="24" />
         <Button Content="Cancel" Margin="24" />
     </StackPanel>
 </RelativePanel>
@@ -97,23 +97,23 @@ The basic form outline that we've put together is already a **fluid layout**, as
 More important to responsive layouts are **visual states.** A visual state defines property values that are applied to a given element when a given condition is true. [Read up on how to do this in xaml](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup), and then implement them into your form. Here's what a *very* basic one might look like in our previous sample:
 
 ```xaml
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState>
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="640" />
+            </VisualState.StateTriggers>
+
+            <VisualState.Setters>
+                <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
+                <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
+                <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
+
 <RelativePanel>
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState>
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="640" />
-                </VisualState.StateTriggers>
-
-                <VisualState.Setters>
-                    <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
-                    <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
-                    <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-
     <!--Previous 3 stack panels-->
 </RelativePanel>
 ```
