@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 05/11/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -106,7 +106,7 @@ The following table lists the paid networks we currently support for each ad typ
 
 |  Ad network  |  Description  |  Supported ad types  |
 |--------------|---------------|---------------------|
-| AOL and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, AOL and AppNexus.<p/>**Note**: AOL and AppNexus is always ranked first in the **Paid ad networks** list for Banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
+| Oath and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, Oath and AppNexus.<p/>**Note**: Oath and AppNexus is always ranked first in the **Paid ad networks** list for Banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
 | AppNexus (direct) | Select this option to serve video interstitial ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
 | Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md).  |  Banner, Banner interstitial, Native  |
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |

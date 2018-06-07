@@ -24,9 +24,9 @@ Publish your packaged desktop app to a Windows store or sideload it onto one or 
 
 The [Microsoft Store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app.
 
-Publish your app to that store to reach the broadest audience. Also, Also, organizational customers can acquire your app to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
+Publish your app to that store to reach the broadest audience. Also, organizational customers can acquire your app to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
 
-If you plan to publish to the Microsoft Store, and you haven't reached out to us yet, please fill out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
+If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named **runFullTrust**, and we need to approve your application's use of that capability. You can read more about this requirement here: [Restricted capabilities](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html).
 
 You don't have to sign your app before you submit it to the store.
 
