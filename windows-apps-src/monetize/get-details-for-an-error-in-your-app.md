@@ -4,7 +4,7 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
 ms.author: mcleans
-ms.date: 04/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -101,7 +101,7 @@ Elements in the *Value* array contain the following values.
 | packageVersion  | string  | The version of the app package that is associated with this error.    |
 | deviceModel           | string  | A string that specifies the model of the device on which the app was running when the error occurred.   |
 | osVersion       | string  | One of the following strings that indicates the OS version on which the error occurred:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>    |
-| osRelease       | string  |  One of the following strings that specifies the OS release or flighting ring (as a subpopulation within OS version) on which the desktop application is installed.<p/><p>For Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p/><p>For Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>For Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>For Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>For Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>If the OS release or flighting ring is unknown, this field has the value <strong>Unknown</strong>.</p>    |
+| osRelease       | string  |  One of the following strings that specifies the OS release or flighting ring (as a subpopulation within OS version) on which the error occurred.<p/><p>For Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p/><p>For Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>For Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>For Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>For Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>If the OS release or flighting ring is unknown, this field has the value <strong>Unknown</strong>.</p>    |
 | deviceType      | string  | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>     |
 | cabDownloadable           | Boolean  | Indicates whether the CAB file is downloadable for this user.   |
 

@@ -49,9 +49,7 @@ To view a more complete list of benefits, see [Desktop Bridge](https://developer
 
 ## Prepare
 
-Do you plan to publish your app to the [Windows app store](https://www.microsoft.com/store/apps). If so, start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to create Windows app package.
-
-Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are some situations that might require you to tweak your app before you create a package for it.
+First, prepare your application by reviewing the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md), and then addressing any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are some situations that might require you to tweak your app before you create a package for it.
 
 <a id="convert" />
 

@@ -138,15 +138,16 @@ namespace ImagingWin10
                 }
                 catch (Exception err)
                 {
+                    const int WINCODEC_ERR_UNSUPPORTEDOPERATION = unchecked((int)0x88982F81);
                     switch (err.HResult)
                     {
-                        case unchecked((int)0x88982F81): //WINCODEC_ERR_UNSUPPORTEDOPERATION
-                                                         // If the encoder does not support writing a thumbnail, then try again
-                                                         // but disable thumbnail generation.
+                        case WINCODEC_ERR_UNSUPPORTEDOPERATION: 
+                            // If the encoder does not support writing a thumbnail, then try again
+                            // but disable thumbnail generation.
                             encoder.IsThumbnailGenerated = false;
                             break;
                         default:
-                            throw err;
+                            throw;
                     }
                 }
 

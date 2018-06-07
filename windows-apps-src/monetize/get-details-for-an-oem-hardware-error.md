@@ -4,7 +4,7 @@ ms.assetid: 8425F704-8A03-493F-A3D2-8442E85FD835
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific hardware error. This method is intended only for OEMs.
 title: Get details for an OEM hardware error
 ms.author: mcleans
-ms.date: 04/06/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
