@@ -3,7 +3,7 @@ author: laurenhughes
 title: Install UWP apps with App Installer
 description: This section contains or links to articles about App Installer and how to use the features of App Installer.
 ms.author: lahugh
-ms.date: 10/10/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,6 +28,11 @@ App Installer allows for UWP apps to be installed by double clicking the app pac
 
 ## Tutorials 
 
-[Install a UWP app from an IIS server](web-install-IIS.md) demonstrates how to set up an IIS server, verify that your web app can host app packages, and invoke and use App Installer effectively. This is useful for enterprises that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.
+Follow these tutorials and learn how to host and install a UWP app from various distribution platforms. These tutorials are useful for enterprises and developers that don't want or need to publish their apps to the Store, but still want to take advantage of the Windows 10 packaging and deployment platform.
 
-[Hosting UWP app packages on AWS for web install](web-install-aws.md) explains how to set up Amazon Simple Storage Service to host your UWP app package from a web site. This is useful for developers that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.
+| Tutorial | Description |
+|----------|-------------|
+| [Install a UWP app from an Azure Web App](web-install-azure.md) | Create an Azure Web App and use it to host and distribute your UWP app package. |
+| [Install a UWP app from an IIS server](web-install-IIS.md) | Set up an IIS server, verify that your web app can host app packages, and use App Installer effectively. |
+| [Hosting UWP app packages on AWS for web install](web-install-aws.md) | Learn how to set up Amazon Simple Storage Service to host your UWP app package from a web site. |
+
