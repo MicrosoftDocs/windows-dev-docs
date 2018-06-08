@@ -151,7 +151,7 @@ using namespace winrt;
         clientSocket = nullptr;
     }
     // Add code to send and receive data using the clientSocket,
-    // then set the clientSocket to nullptr when done.
+    // then set the clientSocket to nullptr when done to close it.
 ```
 
 ```cpp
@@ -241,7 +241,7 @@ using Windows.Storage.Streams;
 
     // Now try to send some data
     DataWriter writer = new DataWriter(clientSocket.OutputStream);
-    string hello = "Hello World ☺ ";
+    string hello = "Hello, World! ☺ ";
     Int32 len = (int) writer.MeasureString(hello); // Gets the UTF-8 string length.
     writer.WriteInt32(len);
     writer.WriteString(hello);
@@ -289,6 +289,82 @@ using Windows.Storage.Streams;
     }
 ```
 
+```cppwinrt
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+
+using namespace winrt;
+using namespace Windows::Storage::Streams;
+...
+    // Define some variables, and set values.
+    Windows::Networking::Sockets::StreamSocket clientSocket;
+
+    Windows::Networking::HostName serverHost{ L"www.contoso.com" };
+    winrt::hstring serverServiceName{ L"https" };
+
+    // For simplicity, the sample omits implementation of the
+    // NotifyUser method used to display status and error messages. 
+
+    // Try to connect to the server using HTTP (port 80).
+    try
+    {
+        co_await clientSocket.ConnectAsync(serverHost, serverServiceName, Windows::Networking::Sockets::SocketProtectionLevel::PlainSocket);
+        NotifyUser(L"Connected");
+    }
+    catch (winrt::hresult_error const& exception)
+    {
+        NotifyUser(L"Connect failed with error: " + exception.message());
+        clientSocket = nullptr;
+    }
+
+    // Now, try to send some data.
+    DataWriter writer{ clientSocket.OutputStream() };
+    winrt::hstring hello{ L"Hello, World! ☺ " };
+    uint32_t len{ writer.MeasureString(hello) }; // Gets the size of the string, in bytes.
+    writer.WriteInt32(len);
+    writer.WriteString(hello);
+    NotifyUser(L"Client: sending hello");
+
+    try
+    {
+        co_await writer.StoreAsync();
+        NotifyUser(L"Client: sent hello");
+
+        writer.DetachStream(); // Detach the stream when you want to continue using it; otherwise, the DataWriter destructor closes it.
+    }
+    catch (winrt::hresult_error const& exception)
+    {
+        NotifyUser(L"Store failed with error: " + exception.message());
+        // We could retry the store operation. But, for this simple example, just close the socket by setting it to nullptr.
+        clientSocket = nullptr;
+        co_return;
+    }
+
+    // Now, upgrade the client to use SSL.
+    try
+    {
+        co_await clientSocket.UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel::Tls12, serverHost);
+        NotifyUser(L"Client: upgrade to SSL completed");
+
+        // Add code to send and receive data using the clientSocket,
+        // then set the clientSocket to nullptr when done to close it.
+    }
+    catch (winrt::hresult_error const& exception)
+    {
+        // If this is an unknown status, then the error is fatal and retry will likely fail.
+        Windows::Networking::Sockets::SocketErrorStatus socketErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(exception.to_abi()) };
+        if (socketErrorStatus == Windows::Networking::Sockets::SocketErrorStatus::Unknown)
+        {
+            throw;
+        }
+
+        NotifyUser(L"Upgrade to SSL failed with error: " + exception.message());
+        // We could retry the store operation. But for this simple example, just close the socket by setting it to nullptr.
+        clientSocket = nullptr;
+        co_return;
+    }
+```
+
 ```cpp
 using Windows::Networking;
 using Windows::Networking::Sockets;
@@ -310,7 +386,6 @@ using Windows::Storage::Streams;
             // Try getting all exceptions from the continuation chain above this point.
             previousTask.Get();
             NotifyUser("Connected");
-
         }
         catch (Exception^ exception)
         {
@@ -323,7 +398,7 @@ using Windows::Storage::Streams;
        
     // Now try to send some data
     DataWriter^ writer = new ref DataWriter(clientSocket.OutputStream);
-    String hello = "Hello World ☺ ";
+    String hello = "Hello, World! ☺ ";
     Int32 len = (int) writer->MeasureString(hello); // Gets the UTF-8 string length.
     writer->writeInt32(len);
     writer->writeString(hello);
