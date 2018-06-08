@@ -125,6 +125,35 @@ using Windows.Networking.Sockets;
     // and then close the clientSocket
 ```
 
+```cppwinrt
+#include <winrt/Windows.Networking.Sockets.h>
+
+using namespace winrt;
+...
+    // Define some variables, and set values.
+    Windows::Networking::Sockets::StreamSocket clientSocket;
+
+    Windows::Networking::HostName serverHost{ L"www.contoso.com" };
+    winrt::hstring serverServiceName{ L"https" };
+
+    // For simplicity, the sample omits implementation of the
+    // NotifyUser method used to display status and error messages.
+
+    // Try to connect to the server using HTTPS and SSL (port 443).
+    try
+    {
+        co_await clientSocket.ConnectAsync(serverHost, serverServiceName, Windows::Networking::Sockets::SocketProtectionLevel::Tls12);
+        NotifyUser(L"Connected");
+    }
+    catch (winrt::hresult_error const& exception)
+    {
+        NotifyUser(L"Connect failed with error: " + exception.message());
+        clientSocket = nullptr;
+    }
+    // Add code to send and receive data using the clientSocket,
+    // then set the clientSocket to nullptr when done.
+```
+
 ```cpp
 using Windows::Networking;
 using Windows::Networking::Sockets;
@@ -210,7 +239,7 @@ using Windows.Storage.Streams;
         return;
     }
 
-    // Now try to sent some data
+    // Now try to send some data
     DataWriter writer = new DataWriter(clientSocket.OutputStream);
     string hello = "Hello World ☺ ";
     Int32 len = (int) writer.MeasureString(hello); // Gets the UTF-8 string length.
@@ -292,7 +321,7 @@ using Windows::Storage::Streams;
         }
     });
        
-    // Now try to sent some data
+    // Now try to send some data
     DataWriter^ writer = new ref DataWriter(clientSocket.OutputStream);
     String hello = "Hello World ☺ ";
     Int32 len = (int) writer->MeasureString(hello); // Gets the UTF-8 string length.
