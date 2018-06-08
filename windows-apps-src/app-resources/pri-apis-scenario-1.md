@@ -23,7 +23,7 @@ Choose *x64* from the **Solution Platforms** drop-down.
 ## Headers, static library, and dll
 The PRI APIs are declared in the MrmResourceIndexer.h header file (which is installed to `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\um\`). Open the file `CBSConsoleApp.cpp` and include the header along with some other headers that you'll need.
 
-```cpp
+```cppwinrt
 #include <string>
 #include <windows.h>
 #include <MrmResourceIndexer.h>
@@ -35,7 +35,7 @@ Build the Solution, and then copy `MrmSupport.dll` from `C:\Program Files (x86)\
 
 Add the following helper function to `CBSConsoleApp.cpp`, since we'll be needing it.
 
-```cpp
+```cppwinrt
 inline void ThrowIfFailed(HRESULT hr)
 {
 	if (FAILED(hr))
@@ -48,7 +48,7 @@ inline void ThrowIfFailed(HRESULT hr)
 
 In the `main()` function, add calls to initialize and uninitialize COM.
 
-```cpp
+```cppwinrt
 int main()
 {
 	::ThrowIfFailed(::CoInitializeEx(nullptr, COINIT_MULTITHREADED));
@@ -109,7 +109,7 @@ This file can contain any PNG image.
 ## Index the resources, and create a PRI file
 In the `main()` function, before the call to initialize COM, declare some strings that we'll need, and also create the output folder in which we'll be generating our PRI file.
 
-```cpp
+```cppwinrt
 std::wstring projectRootFolderUWPApp{ L"UWPAppProjectRootFolder" };
 std::wstring generatedPRIsFolder{ projectRootFolderUWPApp + L"\\Generated PRIs" };
 std::wstring filePathPRI{ generatedPRIsFolder + L"\\resources.pri" };
@@ -120,7 +120,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 
 Immediately after the call to Initialize COM, declare a resource indexer handle and then call [**MrmCreateResourceIndexer**]() to create a resource indexer.
 
-```cpp
+```cppwinrt
 MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmCreateResourceIndexer(
 	L"OurUWPApp",
@@ -140,7 +140,7 @@ Here's an explanation of the arguments being passed to **MrmCreateResourceIndexe
 
 The next step is to add our resources to the resource indexer that we just created. `resources.resw` is a Resources File (.resw) that contains the neutral strings for our target UWP app. Scroll up (in this topic) if you want to see its contents. `de-DE\resources.resw` contains our German strings, and `en-US\resources.resw` our English strings. To add the string resources inside a Resources File to a resource indexer, you call [**MrmIndexResourceContainerAutoQualifiers**](). Thirdly, we call the [**MrmIndexFile**]() function to a file containing a neutral image resource to the resource indexer.
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"de-DE\\resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"en-US\\resources.resw"));
@@ -151,19 +151,19 @@ In the call to **MrmIndexFile**, the value L"ms-resource:///Files/sample-image.p
 
 Having briefed the resource indexer about our resource files, it's time to have it generate us a PRI file on disk by calling the [**MrmCreateResourceFile**]() function.
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
 At this point, a PRI file named `resources.pri` has been created inside a folder named `Generated PRIs`. Now that we're done with the resource indexer, we call [**MrmDestroyIndexerAndMessages**]() to destroy its handle and release any machine resources that it allocated.
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
 Since a PRI file is binary, it's going to be easier to view what we've just generated if we dump the binary PRI file to its XML equivalent. A call to [**MrmDumpPriFile**]()does just that.
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
 ```
 

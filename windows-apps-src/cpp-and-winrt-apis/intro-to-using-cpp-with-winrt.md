@@ -34,7 +34,7 @@ With C++/WinRT, you can also implement your own runtime classes using standard C
 ## Visual Studio support for C++/WinRT, and the VSIX
 For C++/WinRT project templates in Visual Studio, as well as C++/WinRT MSBuild properties and targets, download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-You'll need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7), and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTProject>true</CppWinRTProject>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+You'll need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7), and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTEnabled>true</CppWinRTEnabled>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
 
 Because C++/WinRT uses features from the C++17 standard, it needs project property **C/C++** > **Language** > **ISO C++17 Standard (/std:c++17)**. You might also want to set **Conformance mode: Yes (/permissive-)**, which further constrains your code to be standards-compliant.
 
