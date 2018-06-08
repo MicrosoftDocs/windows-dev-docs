@@ -37,6 +37,14 @@ New and changed APIs for UWP are available in every successive version of Window
 
 For reference topics that enumerate all device families and their versions, and all API contracts and their versions, see [Device families](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) and [API contracts](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 
+## .NET API availability in UWP versions
+
+UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+
+If you wish to create reusable cross-platform libraries, .NET Standard is supported on UWP. The [.NET Standard documentation](https://docs.microsoft.com/dotnet/standard/net-standard) provides information on which .NET Standard is supported in which UWP versions.
+
+If you are developing a Desktop app, see instead [.NET Framework versions and dependencies](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) for detailed information on .NET framework availability.
+
 ## Choose which version to use for your app
 
 In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**. Additionally, you can change the **Target Version** and **Minimum Version** of your UWP app in the *application* section of the app's **Properties**.
