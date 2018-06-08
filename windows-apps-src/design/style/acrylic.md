@@ -70,14 +70,12 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 
 ## When to use acrylic
 
-* Use in-app acrylic for supporting UI, such as in-app navigation or in-line commanding elements. 
+* Use in-app acrylic for supporting UI, such as NavigationView or in-line commanding elements. 
 * Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dimsissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
 
-Surfaces behind primary app content should use opaque backgrounds.
+If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow on your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
 
-Consider extending content to scroll under non-transient panes that are acrylic to help improve the flow on your app. However, to avoid creating a striping effect, don't stack or place strips of acrylic next to each other. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
-
-Consider the following usage patterns to decide how best to incorporate acrylic into your app.
+Consider the following usage patterns to decide how best to incorporate acrylic into your app:
 
 ### Horizontal navigation or commanding
 
@@ -89,13 +87,15 @@ In addition, having your content extend or scroll under the acrylic at the top w
 
 ### Vertical Panes
 
-For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background. If your vertical panes open on top of content, like in NavigationView's **Collapsed** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
+For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Collapsed** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
 
 ### Transient surfaces
 
 For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic.
 
 ![Maill app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
+
+Many of our controls will use acrylic by default. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dimiss popups will all use the transient acrylic when they are invoked.
 
 > [!Note]
 > Rendering acrylic surfaces is GPU intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose.
@@ -191,7 +191,6 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
  - **TintOpacity**: the opacity of the tint layer. We recommend 80% opacity as a starting point, although different colors may look more compelling at other transparencies.
  - **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
  - **FallbackColor**: the solid color that replaces acrylic in low-battery mode. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
-
 
 ![Light theme acrylic swatches](images/CustomAcrylic_Swatches_LightTheme.png)
 
@@ -311,6 +310,7 @@ In addition, you'll need to draw your app's title, which normally appears automa
 ## Do's and don'ts
 * Do use acrylic as the background material of non-primary app surfaces like navigation panes.
 * Do extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app’s surroundings.
+* Don't put desktop arylic on large background surfaces of your app - this breaks the mental model of acrylic being used primarily for transient surfaces.
 * Don’t place in-app and background acrylics directly adjacent to avoid visual tension at the seams.
 * Don't place multiple acrylic panes with the same tint and opacity next to each other because this results in an undesirable visible seam.
 * Don’t place accent-colored text over acrylic surfaces.
