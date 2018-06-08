@@ -93,7 +93,7 @@ For vertical panes or surfaces that help section off content of your app, we rec
 
 For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic.
 
-![Maill app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
+![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
 Many of our controls will use acrylic by default. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dimiss popups will all use the transient acrylic when they are invoked.
 
