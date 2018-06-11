@@ -3,7 +3,7 @@ author: TerryWarwick
 title: Enumerating PointOfService devices
 description: Learn how to enumerate PointOfService devices
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/8/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,10 @@ In this section you will learn how to [**define a device selector**](https://doc
 
 **Method 1:** [**Get first available device**](#Method-1:-get-first-available-device)<br />In this section you will learn how to use **GetDefaultAsync** to access the first available device in a specific PointOfService device class.
 
-**Method 2:** [**Snapshot of devices**](#Method-2:-Snapshot-of-devices)<br />In this section you will learn how to enumerate a snapshot of PointOfService devices that are present on the system at a given point in time. This can be useful if you want to build your own UI or need to enumerate devices without displaying a UI to the user. FindAllAsync will hold back results until the entire enumeration is completed.
+**Method 2:** [**Snapshot of devices**](#Method-2:-Snapshot-of-devices)<br />In this section you will learn how to enumerate a snapshot of PointOfService devices that are present on the system at a given point in time. This is useful when you want to build your own UI or need to enumerate devices without displaying a UI to the user. FindAllAsync will hold back results until the entire enumeration is completed.
 
-**Method 3:** [**Enumerate and watch**](#Method-3:-Enumerate-and-watch)<br />In this section you will learn about a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.
+**Method 3:** [**Enumerate and watch**](#Method-3:-Enumerate-and-watch)<br />In this section you will learn about a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.  This is useful when you want to maintain a current list of devices in the background for displaying in your UI rather than waiting for a snapshot to occur.
+ 
 
 ---
 ## Define a device selector
@@ -33,7 +34,7 @@ string selector = POSPrinter.GetDeviceSelector();
 
 ```
 
-Using the [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector_Windows_Devices_PointOfService_PosConnectionTypes_) overload that takes [**PosConnectionTypes**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes) as a parameter, you can restrict your selector to enumerate local, network or Bluetooth attached POSPrinters reducing the time it takes for the query to complete.  The sample below shows the use of this method to define a selctor that support only locally attached POSPrinters.
+Using the [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector_Windows_Devices_PointOfService_PosConnectionTypes_) method that takes [**PosConnectionTypes**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes) as a parameter, you can restrict your selector to enumerate local, network or Bluetooth attached POSPrinters reducing the time it takes for the query to complete.  The sample below shows the use of this method to define a selctor that support only locally attached POSPrinters.
 
  ```Csharp
 using Windows.Devices.PointOfService;
@@ -78,7 +79,7 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 In some scenarios you may want to build your own UI or need to enumerate devices without displaying a UI to the user.  In these situations, you could enumerate a snapshot of devices that are currently connected or paired with the system using [**DeviceInformation.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).  This method will hold back any results until the entire enumeration is completed.
 
 > [!TIP]
-> It is recommended to use the overload for GetDeviceSelector that takes PosConnectionTypes when using FindAllAsync to limit your query to the connection type desired.  Network and Bluetooth connections can delay the results as their enumerations must complete before FindAllAsync results are returned.
+> It is recommended to use GetDeviceSelector method with the PosConnectionTypes parameter when using FindAllAsync to limit your query to the connection type desired.  Network and Bluetooth connections can delay the results as their enumerations must complete before FindAllAsync results are returned.
 
 >[!CAUTION] 
 >FindAllAsync returns an array of devices.  The order of this array can change from session to session, therefore it is not recommended to rely on a specific order by using a hardcoded index into the array.  Use DeviceInformation properties to filter your results or provide an UI for the user to choose from.

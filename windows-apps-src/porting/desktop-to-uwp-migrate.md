@@ -95,7 +95,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-The [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) shows us an alternative though. We can use the ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes because those classes are available in the .NET Standard 2.0.  
+We can use the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
 
 This revised version uses those classes to get a list of customers, but to create a ``DbConnection`` class, we'll need to pass in a factory object that we create in the client application.
 
@@ -152,9 +152,9 @@ public partial class Customers : Form
 ## Reach all Windows devices
 
 Now you're ready to add a UWP app to your solution.
-<div style="float: left; padding: 10px">
-    ![desktop to UWP bridge image](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![desktop to UWP bridge image](images/desktop-to-uwp/adaptive-ui.png)
+
 You'll still have to design UI pages in XAML and write any device or platform-specific code, but when you are done, you'll be able to reach the full breadth of Windows 10 devices and your app pages will have a modern feel that adapts well to different screen sizes and resolutions.
 
 Your app will respond to input mechanisms other than just a keyboard and mouse, and features and settings will be intuitive across devices. This means that users learn how to do things one time, and then it works in a very familiar way no matter the device.
@@ -205,9 +205,8 @@ To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windo
 ## Reach iOS and Android devices
 
 You can reach Android and iOS devices by adding Xamarin projects.  
-<div style="float: left; padding: 10px">
-    ![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
 
 These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
 

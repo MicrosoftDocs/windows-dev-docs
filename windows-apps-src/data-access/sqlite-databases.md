@@ -3,7 +3,7 @@ author: normesta
 title: Use a SQLite database in a UWP app
 description: Use a SQLite database in a UWP app.
 ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -139,7 +139,7 @@ From your UWP project, add a reference to the **DataAccessLibrary** project in y
 
 ![Data access class library](images/ref-class-library.png)
 
-Add the following ``using`` statement to the **App.xaml.cs** and **MainPage.xaml** files in your UWP project.
+Add the following ``using`` statement to the **App.xaml.cs** and **MainPage.xaml.cs** files in your UWP project.
 
 ```csharp
 using DataAccessLibrary;
@@ -182,7 +182,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);
