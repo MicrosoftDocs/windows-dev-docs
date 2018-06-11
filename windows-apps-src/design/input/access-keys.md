@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -73,12 +73,10 @@ For example, Microsoft Word provides two access key scopes: a primary scope for 
 The following images demonstrate the two access key scopes in Word. The first shows the primary access keys that let a user select a tab and other top level commands, and the second shows the secondary access keys for the Home tab.
 
 ![Primary access keys in Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-
 _Primary access keys in Microsoft Word_
 
 ![Secondary access keys in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-
-Secondary access keys in Microsoft Word
+_Secondary access keys in Microsoft Word_
 
 Access keys can be duplicated for elements in different scopes. In the preceding example, “2” is the access key for Undo in the primary scope, and also “Italics” in the secondary scope.
 
@@ -118,10 +116,11 @@ _CommandBar primary scope and supported access keys_
 
 _CommandBar secondary scope and supported access keys_
 
-> [!NOTE]
-> Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn’t support built-in access key scopes. In this case, you must implement access key scopes as shown in the following example.   
->
-> Here, we demonstrate how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).
+### Windows 10 Creators Update and older
+
+Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn’t support built-in access key scopes.
+
+The following example shows how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -174,11 +173,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

@@ -197,7 +197,50 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-This is the [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) equivalent of the previous C&#35; code using the same XAML structure.
+The following two listings show the [C++/WinRT](https://aka.ms/cppwinrt) and [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
+
+```cppwinrt
+#include <winrt/Windows.UI.Composition.h>
+#include <winrt/Windows.UI.Xaml.h>
+#include <winrt/Windows.UI.Xaml.Hosting.h>
+#include <winrt/Windows.UI.Xaml.Shapes.h>
+...
+MainPage()
+{
+    InitializeComponent();
+    InitializeDropShadow(ShadowHost(), CircleImage());
+}
+
+int32_t MyProperty();
+void MyProperty(int32_t value);
+
+void InitializeDropShadow(Windows::UI::Xaml::UIElement const& shadowHost, Windows::UI::Xaml::Shapes::Shape const& shadowTarget)
+{
+    auto hostVisual{ Windows::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost) };
+    auto compositor{ hostVisual.Compositor() };
+
+    // Create a drop shadow
+    auto dropShadow{ compositor.CreateDropShadow() };
+    dropShadow.Color(Windows::UI::ColorHelper::FromArgb(255, 75, 75, 80));
+    dropShadow.BlurRadius(15.0f);
+    dropShadow.Offset(Windows::Foundation::Numerics::float3{ 2.5f, 2.5f, 0.0f });
+    // Associate the shape of the shadow with the shape of the target element
+    dropShadow.Mask(shadowTarget.GetAlphaMask());
+
+    // Create a Visual to hold the shadow
+    auto shadowVisual = compositor.CreateSpriteVisual();
+    shadowVisual.Shadow(dropShadow);
+
+    // Add the shadow as a child of the host in the visual tree
+    Windows::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
+
+    // Make sure size of shadow host and shadow visual always stay in sync
+    auto bindSizeAnimation{ compositor.CreateExpressionAnimation(L"hostVisual.Size") };
+    bindSizeAnimation.SetReferenceParameter(L"hostVisual", hostVisual);
+
+    shadowVisual.StartAnimation(L"Size", bindSizeAnimation);
+}
+```
 
 ```cpp
 #include "WindowsNumerics.h"

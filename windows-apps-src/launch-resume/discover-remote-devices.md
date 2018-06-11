@@ -64,9 +64,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 
 ## Cross-user discovery
 
-> [!WARNING]
-> The features in this section are not currently available to developers.
-
 Developers can specify the discovery of _all_ devices in proximity to the client device, not just devices registered to the same user. This is implemented through a special **IRemoteSystemFilter**, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). It is implemented like the other filter types:
 
 ```csharp
