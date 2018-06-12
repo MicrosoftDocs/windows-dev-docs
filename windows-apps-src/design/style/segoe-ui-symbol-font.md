@@ -42,7 +42,7 @@ All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent 
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
 ## Using the icons
-If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Seogoe MDL2 Assets with the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Segoe MDL2 Assets with the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,7 +55,7 @@ If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not
 ```
 
 ## How do I get this font?
-* On Windows 10: There's nothing you need to to, the font comes with Windows.
+* On Windows 10: There's nothing you need to do, the font comes with Windows.
 * On a Mac, you need to download and install the font: <a href="https://aka.ms/SegoeFonts">Get the Segoe UI and MDL2 icon fonts</a>
 
 ## Icon list
