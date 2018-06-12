@@ -19,7 +19,7 @@ In addition to launching an app on a remote device using a URI, you can run and 
 ## Set up the app service on the host device
 In order to run an app service on a remote device, you must already have a provider of that app service installed on that device. This guide will use CSharp version of the [Random Number Generator app service sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices), which is available on the [Windows universal samples repo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices). For instructions on how to write your own app service, see [Create and consume an app service](how-to-create-and-consume-an-app-service.md).
 
-Whether you are using an already-made app service or writing your own, you will need to make a few edits in order to make the service compatible with remote systems. In Visual Studio, go to the app service provider's project (called "AppServicesProvider" in the sample) and select its _Package.appxmanifest_ file. Right-click and select **View Code** to view the full contents of the file. Find the **Extension** element that defines the project as an app service and names its parent project.
+Whether you are using an already-made app service or writing your own, you will need to make a few edits in order to make the service compatible with remote systems. In Visual Studio, go to the app service provider's project (called "AppServicesProvider" in the sample) and select its _Package.appxmanifest_ file. Right-click and select **View Code** to view the full contents of the file. Create an **Extensions** element inside of the main **Application** element (or find it if it already exists). Then create an **Extension** to define the project as an app service and reference its parent project.
 
 ``` xml
 ...
@@ -31,7 +31,7 @@ Whether you are using an already-made app service or writing your own, you will 
 ...
 ```
 
-Add the **SupportsRemoteSystems** attribute if it is not already present:
+Next to the **AppService** element, add the **SupportsRemoteSystems** attribute:
 
 ``` xml
 ...
@@ -39,7 +39,20 @@ Add the **SupportsRemoteSystems** attribute if it is not already present:
 ...
 ```
 
-Build your app service provider project and deploy it to the host device(s).
+In order to use elements in this **uap3** namespace, you must add the namespace definition at the top of the manifest file if it isn't already there.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3">
+  ...
+</Package>
+```
+
+Then build your app service provider project and deploy it to the host device(s).
 
 ## Target the app service from the client device
 The device from which the remote app service is to be called needs an app with Remote Systems functionality. This can be added into the same app that provides the app service on the host device (in which case you would install the same app on both devices), or implemented in a completely different app.

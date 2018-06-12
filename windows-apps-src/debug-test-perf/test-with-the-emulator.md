@@ -24,9 +24,9 @@ You can test your universal app using a unique Windows 10 Mobile emulator image 
 
 Your computer must meet the following requirements:
 
-BIOS
+CPU (these settings, if available, can be enabled in the BIOS)
 
--   Hardware-assisted virtualization.
+-   Hardware-assisted virtualization ([check compatibility](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Second Level Address Translation (SLAT).
 -   Hardware-based Data Execution Prevention (DEP).
 

@@ -2966,7 +2966,7 @@ You can delete a profile associated with a network on a specific interface by us
  
 | Method      | Request URI |
 | :------     | :----- |
-| DELETE | /api/wifi/network |
+| DELETE | /api/wifi/profile |
 
 
 **URI parameters**
