@@ -2,6 +2,7 @@
 # [Developer program overview](developer-program-overview.md)
 # [Developer resources](xbox-live-resources.md)
 # [Introduction to APIs](introduction-to-xbox-live-apis.md)
+## [Xbox Live C API](xsapi-flat-c.md)
 # [XBL Sandboxes Intro](xbox-live-sandboxes.md)
 # [Configure Xbox Live](xbox-live-service-configuration.md)
 ## Windows Dev Center
