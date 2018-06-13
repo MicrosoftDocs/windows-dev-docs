@@ -11,7 +11,10 @@ keywords: windows 10, uwp, windows machine learning
 ms.localizationpriority: medium
 ---
 
-# Windows ML overview
+# Windows ML (Preview) overview
+
+> [!NOTE]
+> Windows ML is a preview feature which may be substantially modified before it’s officially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 ![Windows machine learning graphic](images/brain.png)
 

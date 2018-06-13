@@ -39,6 +39,25 @@ winrt::com_ptr<IDXGIAdapter1> previousDefaultAdapter;
 winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put()));
 ```
 
+> [!IMPORTANT]
+> If you have a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) that's already seated (its internal raw pointer already has a target) and you want to re-seat it to point to a different object, then you first need to assign `nullptr` to it&mdash;as shown in the code example below. If you don't, then an already-seated **com_ptr** will draw the issue to your attention (when you call **put** or **put_void**) by asserting that its internal pointer is not null.
+
+```cppwinrt
+winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
+...
+// We execute the code below each time the window size changes.
+m_pDXGISwapChain1 = nullptr; // Important because we're about to re-seat 
+winrt::check_hresult(
+    m_pDxgiFactory->CreateSwapChainForHwnd(
+        m_pCommandQueue.get(), // For Direct3D 12, this is a pointer to a direct command queue, and not to the device.
+        m_hWnd,
+        &swapChainDesc,
+        nullptr,
+        nullptr,
+        m_pDXGISwapChain1.put())
+);
+```
+
 In this next example (in the *after* version), the [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) member function retrieves the underlying raw pointer as a pointer to a pointer to void.
 
 ```cpp

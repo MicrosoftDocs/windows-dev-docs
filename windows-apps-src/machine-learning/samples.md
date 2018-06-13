@@ -10,7 +10,10 @@ ms.technology: uwp
 keywords: windows 10, uwp, windows machine learning
 ms.localizationpriority: medium
 ---
-# Windows ML samples
+# Windows ML (Preview) samples
+
+> [!NOTE]
+> Windows ML is a preview feature which may be substantially modified before it’s officially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 The following sample UWP apps demonstrate how to use Windows ML and are available to download from the [Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) repo on GitHub.
 

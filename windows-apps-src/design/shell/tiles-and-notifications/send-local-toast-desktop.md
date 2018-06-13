@@ -65,7 +65,7 @@ Copy the [DesktopNotificationManagerCompat.cs file from GitHub](https://raw.gith
 
 ## Step 4: Implement the activator
 
-You must impelment a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
+You must implement a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
 
 Extend the **NotificationActivator** class and then add the three attributes listed below, and create a unique GUID CLSID for your app using one of the many online GUID generators. This CLSID (class identifier) is how Action Center knows what class to COM activate.
 
