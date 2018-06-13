@@ -11,7 +11,10 @@ keywords: windows 10, uwp, windows machine learning, winml, windows ML
 ms.localizationpriority: medium
 ---
 
-# Get started with Windows ML
+# Get started with Windows ML (Preview)
+
+> [!NOTE]
+> Windows ML is a preview feature which may be substantially modified before it’s officially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows ML in your app.
 
