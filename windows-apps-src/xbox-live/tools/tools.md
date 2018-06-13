@@ -16,7 +16,7 @@ ms.localizationpriority: low
 
 This section covers various tools that you can use to help you develop for Xbox Live. Many of the tools are available on the [Xbox Live Developer Tools GitHub](https://github.com/Microsoft/xbox-live-developer-tools) repo. You can also use the [Dev Tools library](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools) to create your own custom tooling. All standalone developer tools can be downloaded at [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools).
 
->[!NOTE]
+> [!NOTE]
 > The MatchSim and XboxLiveCompute tools included in the download can only be used by managed partners, or partners enrolled in the [ID@Xbox](http://www.xbox.com/Developers/id) program. To learn more about the available developer programs, please refer to the [developer program overview](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview). 
 
 ## Global Storage
