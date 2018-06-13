@@ -11,7 +11,10 @@ keywords: windows 10, uwp, winml, windows machine learning
 ms.localizationpriority: medium
 ---
 
-# Windows ML
+# Windows ML (Preview)
+
+> [!NOTE]
+> Windows ML is a preview feature which may be substantially modified before it’s officially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 Windows Machine Learning (ML) allows you to use trained machine learning models in your applications. The platform evaluates trained models locally on Windows 10 devices, providing hardware-accelerated performance by leveraging the device's CPU or GPU, and computes evaluations for both classical ML algorithms and Deep Learning.
 
