@@ -43,3 +43,6 @@ Set the desired value of [**IsDisabledOnDataReceived**](https://docs.microsoft.c
 
 > [!Important]
 > Confirm that your barcode scanner supports the use of software trigger by first checking the property [**IsSoftwareTriggerSupported**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported).
+
+
+[!INCLUDE [feedback](./includes/pos-feedback.md)]

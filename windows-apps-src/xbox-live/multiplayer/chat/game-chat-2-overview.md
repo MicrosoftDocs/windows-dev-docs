@@ -13,32 +13,32 @@ ms.localizationpriority: low
 
 # Game Chat 2 Overview
 
-Game Chat 2 (GC2) allows you to easily add voice and text chat communication to your app while respecting your players' privacy settings and fulfilling the Xbox Requirements for Xbox One Games and Hub Apps relating to voice and text chat. For players that have enabled speech-to-text or text-to-speech conversion via the Ease of Access - Game Chat Transcription settings, GC2 will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
+Game Chat 2 allows you to easily add voice and text chat communication to your app while respecting your players' privacy settings and fulfilling the Xbox Requirements for Xbox One Games and Hub Apps relating to voice and text chat. For players that have enabled speech-to-text or text-to-speech conversion via the Ease of Access - Game Chat Transcription settings, Game Chat 2 will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
 
-- **Communication Relationships** - GC2 gives you fine-grained control over how your players can communicate with each others. Rather than specifying teams or channels, GC2 requires that explicit relationships between each pair of users be defined. GC2 communication relationships support uni and bi-directional communication between any pair of players. Voice and text communication relationships can be set independently of each other.
+- **Communication Relationships** - Game Chat 2 gives you fine-grained control over how your players can communicate with each others. Rather than specifying teams or channels, Game Chat 2 requires that explicit relationships between each pair of users be defined. Game Chat 2 communication relationships support uni and bi-directional communication between any pair of players. Voice and text communication relationships can be set independently of each other.
 
-- **Accessibility** - GC2 supports speech-to-text and text-to-speech. When enabled, GC2 will respect the "Game Chat Transcription" preference of your players and will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
+- **Accessibility** - Game Chat 2 supports speech-to-text and text-to-speech. When enabled, Game Chat 2 will respect the "Game Chat Transcription" preference of your players and will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
 
-- **Xbox Live Integration** - GC2 uses Xbox Live services to ensures that each player's preferences and privileges are respected.
+- **Xbox Live Integration** - Game Chat 2 uses Xbox Live services to ensures that each player's preferences and privileges are respected.
 
-- **Voice Activity Detection** - GC2 performs Voice Activity Detection to determine when audio data includes voice activity.
+- **Voice Activity Detection** - Game Chat 2 performs Voice Activity Detection to determine when audio data includes voice activity.
 
-- **Automatic Gain Control** - GC2 performs Automatic Gain Control to minimize variation in a user's microphone output.
+- **Automatic Gain Control** - Game Chat 2 performs Automatic Gain Control to minimize variation in a user's microphone output.
 
-- **Codecs** - GC2 encodes audio data that must be delivered to remote instances of the app. On Xbox One, this encoding (and decoding on the receiving end) is hardware accelerated.
+- **Codecs** - Game Chat 2 encodes audio data that must be delivered to remote instances of the app. On Xbox One, this encoding (and decoding on the receiving end) is hardware accelerated.
 
 - `chat_manager::start/finish_processing_state_changes` - The pair of methods called by the app every UI frame to perform asynchronous operations, to retrieve results to be handled in the form of `game_chat_state_change` structures, and then to free the associated resources when finished.
 
-- `chat_manager::start/finish_processing_data_frames` - The pair of methods used to plug GC2 into the app's transport layer. These methods are called by the app every network frame to retrieve and distribute `game_chat_data_frame` objects to instances of the app on remote devices, and then to free the associated resources when finished.
+- `chat_manager::start/finish_processing_data_frames` - The pair of methods used to plug Game Chat 2 into the app's transport layer. These methods are called by the app every network frame to retrieve and distribute `game_chat_data_frame` objects to instances of the app on remote devices, and then to free the associated resources when finished.
 
-- `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer from a remote instance of GC2.
+- `chat_manager::process_incoming_data` - The method used to give data to Game Chat 2 that has been delivered over the app's transport layer from a remote instance of Game Chat 2.
 
-- **Real-time Audio Manipulation** - GC2 allows the app to insert itself in the chat audio pipeline, so that it may inspect or manipulate chat audio data. See [Real-time audio manipulation](real-time-audio-manipulation.md) for more information.
+- **Real-time Audio Manipulation** - Game Chat 2 allows the app to insert itself in the chat audio pipeline, so that it may inspect or manipulate chat audio data. See [Real-time audio manipulation](real-time-audio-manipulation.md) for more information.
 
 The app informs the library of users on the local device and users on remote devices that are expected to chat together. The app then configures the relationships between each user.
 
-Once configured, GC2 polls audio from the local users' microphone(s), performs automatic gain control and voice activity detection, encodes the data, then exposes the audio data to be delivered to remote instances of GC2 via `chat_manager::start/finish_processing_data_frames`. The app must deliver the data contained in the `game_chat_state_change` object to the remote instances of GC2 specified in the same object. Upon receiving the data, remote instances of the app must submit the data to their own instance of GC2 via `chat_manager::process_incoming_data`. GC2 decodes the incoming data and then renders it to the local user's audio device.
+Once configured, Game Chat 2 polls audio from the local users' microphone(s), performs automatic gain control and voice activity detection, encodes the data, then exposes the audio data to be delivered to remote instances of Game Chat 2 via `chat_manager::start/finish_processing_data_frames`. The app must deliver the data contained in the `game_chat_state_change` object to the remote instances of Game Chat 2 specified in the same object. Upon receiving the data, remote instances of the app must submit the data to their own instance of Game Chat 2 via `chat_manager::process_incoming_data`. Game Chat 2 decodes the incoming data and then renders it to the local user's audio device.
 
-GC2 enforces Xbox Live privilege and privacy requirements. Audio data will not be generated by users that don't have communications privileges, and audio data will not be rendered from users that are blocked via privacy settings.
+Game Chat 2 enforces Xbox Live privilege and privacy requirements. Audio data will not be generated by users that don't have communications privileges, and audio data will not be rendered from users that are blocked via privacy settings.
 
 To get started, see [Using Game Chat 2](using-game-chat-2.md). If you are using C#, see [Using Game Chat 2 WinRT Projections](using-game-chat-2-winrt.md). If you already have a Game Chat implementation, use the [Game Chat 2 Migration Guide](game-chat-2-migration.md) to map Game Chat concepts and calling patterns to Game Chat 2 analogues.
