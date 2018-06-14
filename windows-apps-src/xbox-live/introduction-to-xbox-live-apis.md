@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the various API models that you can use to interact with the Xbox Live service.
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -38,14 +38,15 @@ Your games and apps are not limited to using just one of these methods. You can 
 
 ## Xbox Live Services API Overview ##
 
-The Xbox Live Services API (**XSAPI**) exposes two sets of client side APIs that support a wide range of customer scenarios:
+The Xbox Live Services API (**XSAPI**) exposes three sets of client side APIs that support a wide range of customer scenarios:
 
-- XSAPI WinRT API
-- XSAPI C++11 based API
+- [XSAPI WinRT API](#xsapi-winrt-based-api)
+- [XSAPI C++11 based API](#xsapi-c++11-based-api)
+- [XSAPI C based API](#xsapi-c-based-api) (**New as of June 2018**)
 
-Comparing the two APIs:
+Comparing the APIs:
 
-**XSAPI WinRT based API**
+### XSAPI WinRT based API
 
 - Supports applications written with C++/CX, C#, and JavaScript.
     - C++/CX is a Microsoft C++ extension to make WinRT programming easy for example using ^ as WinRT pointers.
@@ -71,11 +72,11 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 ```
 
 
-**XSAPI C++11 based API**
+### XSAPI C++11 based API
 
 - Uses cross platform ISO standard C++11
 - Supports applications written with C++
-- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP) x86, x64 and ARM architectures. 
+- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP) x86, x64 and ARM architectures.
 - Errors are handled via std::error_code.
 - The C++11 based API is the recommended API to use for C++ game engines for better performance, and better debugging.
 - If you are in the Xbox Live Creators Program, before including the XSAPI header define XBOX_LIVE_CREATORS_SDK. This limits the API surface area to only those that are usable by developers in the Xbox Live Creators Program and changes the sign-in method to work for titles in the Creators program.  For example:
@@ -100,3 +101,11 @@ Here's an example of calling the XSAPI C++ API using C++/WinRT:
 winrt::Windows::Xbox::System::User cppWinrtUser = winrt::Windows::Xbox::System::User::Users().GetAt(0);
 std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_shared<xbox::services::xbox_live_context>(cppWinrtUser);
 ```
+
+### XSAPI C based API
+
+- Allows titles to control the memory allocations when calling XSAPI.
+- Allows titles to gain full control of thread handling when calling XSAPI.
+- Uses a new HTTP library, libHttpClient, designed for game developers.
+
+For more information, see [Introduction to the Xbox Live C APIs](xsapi-flat-c.md).

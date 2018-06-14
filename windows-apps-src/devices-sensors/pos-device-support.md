@@ -3,7 +3,7 @@ author: TerryWarwick
 title: Point of Service Hardware Support
 description: This article contains information about hardware support for each of the Point of Service device classes
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,18 +22,75 @@ ms.localizationpriority: medium
 |
 
 
-### Compatible Barcode Scanners
-| Category | Connectivity | Manufacturer / Model |
-|--------------|-----------|-----------|
-| **1D Handheld Scanners** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg (Upgradable)|
-| **1D Handheld Scanners** | **Bluetooth** |Socket Mobile CHS 7Ci<br/> Socket Mobile CHS 7Di<br/> Socket Mobile CHS 7Mi<br/> Socket Mobile CHS 7Pi<br/>Socket Mobile DuraScan D700<br/> Socket Mobile DuraScan D730<br/>Socket Mobile SocketScan S800 (formerly CHS 8Ci) <br/>|
-|**2D Handheld Scanners** | **USB** |Code Reader™ 950<br/>Code Reader™ 1021<br/>Code Reader™ 1421<br/> Honeywell Granit 198Xi<br/>Honeywell Granit 191Xi<br/>Honeywell Xenon 1900g<br/>Honeywell Xenon 1902g<br/>Honeywell Xenon 1902g-bf<br/>Honeywell Xenon 1900h<br/>Honeywell Xenon 1902h<br/>Honeywell Voyager 145Xg (Upgradable)<br/>Honeywell Voyager 1602g<br/>Intermec SG20<br/>Zebra DS2278<br/>Zebra DS8108 ¹<hr><small>¹ Minimum firmware 016 (2018.01.18) required. Upgradable using [123Scan](http://www.zebra.com/123Scan)</small>|
-|**2D Handheld Scanners** | **Bluetooth** |Socket Mobile SocketScan S850 (formerly CHS 8Qi)|
-| **Presentation Scanners** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
-| **In-Counter Scanners** | **USB** |Honeywell Stratos 2700|
-| **Scan Engines** | **USB** | Honeywell N5680<br/>Honeywell N3680|
-| **Windows Mobile Devices**| **Built-in** |Bluebird EF400<br/>Bluebird EF500<br/>Bluebird EF500R<br/>Honeywell CT50<br/>Honeywell D75e<br/>Janam XT2<br/>Panasonic FZ-E1<br/>Panasonic FZ-F1<br/>PointMobile PM80<br/>Zebra TC700j|
-| **Windows Mobile Devices**| **Custom** | HP Elite X3 with Barcode Scanner Jacket |
+| Manufacturer  | Model           | Capability | Connecion    | Type         | Mode                      |
+|---------------|-----------------|------------|--------------|--------------|---------------------------|
+| Code          | Reader™ 950     | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Code          | Reader™ 1021    | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Code          | Reader™ 1421    | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Code          | Reader™ 5000    | 2D         | USB          | Presentation | HID POS Scanner           |
+| Honeywell     | Genesis 7580g   | 2D         | USB          | Presentation | HID POS Scanner           |
+| Honeywell     | Granit 198Xi    | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Granit 191Xi    | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | N5680           | 2D         | Internal     | Component    | HID POS Scanner           |
+| Honeywell     | N3680           | 2D         | Internal     | Component    | HID POS Scanner           |
+| Honeywell     | Orbit 7190g     | 2D         | USB          | Presentation | HID POS Scanner           |
+| Honeywell     | Stratos 2700    | 2D         | USB          | In Counter   | HID POS Scanner           |
+| Honeywell     | Voyager 1200g   | 1D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 1202g   | 1D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 1202-bf | 1D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 145Xg   | 1D / 2D¹   | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 1602g   | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Xenon 1900g     | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Xenon 1902g     | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Xenon 1902g-bf  | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Xenon 1900h     | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Xenon 1902h     | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Intermec      | SG20            | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Socket Mobile | CHS 7Ci         | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | CHS 7Di         | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | CHS 7Mi         | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | CHS 7Pi         | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | CHS 8Ci         | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | DuraScan D700   | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | DuraScan D730   | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | DuraScan D740   | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | SocketScan S700 | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | SocketScan S730 | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | SocketScan S740 | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | SocketScan S800 | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Socket Mobile | SocketScan S850 | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
+| Zebra         | DS2278          | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS8108²         | 2D         | USB          | Handheld     | HID POS Scanner           |
+|
+
+
+¹ Upgradable to support 2D barcodes through Honeywell <br/>
+² Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123Scan). 
+
+
+<hr>
+
+### Windows devices with built-in barcode scanner
+| Manufacturer   | Model | Operating System |
+|----------------|-------|------------------|
+| Innowi         | ChecOut-M | Windows 10   |
+
+### Windows Mobile devices with built-in barcode scanner
+| Manufacturer   | Model | Operating System |
+|----------------|-------|------------------|
+| Bluebird       | EF400 | Windows Mobile   |
+| Bluebird       | EF500 | Windows Mobile   |
+| Bluebird       | EF500R | Windows Mobile   |
+| Honeywell      | CT50   | Windows Mobile   |
+| Honeywell      | D75e | Windows Mobile   |
+| Janam          | XT2      | Windows Mobile   |
+| Panasonic      | FZ-E1 | Windows Mobile   |
+| Panasonic      | FZ-F1 |Windows Mobile   |
+| PointMobile    | PM80 | Windows Mobile   |
+| Zebra          | TC700j | Windows Mobile   |
+| HP             | Elite X3 Jacket | Windows Mobile   |
+
+
 
 
 ## Cash Drawer

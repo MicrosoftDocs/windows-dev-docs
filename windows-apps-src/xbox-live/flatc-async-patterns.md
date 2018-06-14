@@ -23,8 +23,8 @@ Here is a basic example calling the **XblProfileGetUserProfileAsync** API.
 
 ```cpp
 AsyncBlock* asyncBlock = new AsyncBlock {};
-asyncBlock->queue = queue;
-asyncBlock->context = this;
+asyncBlock->queue = asyncQueue;
+asyncBlock->context = customDataForCallback;
 asyncBlock->callback = [](AsyncBlock* asyncBlock)
 {
     XblUserProfile profile;
@@ -52,7 +52,6 @@ typedef struct AsyncBlock
 {
     AsyncCompletionRoutine* callback;
     void* context;
-    HANDLE waitEvent;
     async_queue_handle_t queue;
 } AsyncBlock;
 ```
@@ -61,8 +60,9 @@ The **AsyncBlock** contains:
 
 * *callback* - an optional callback function that will be called after the asynchronous work has been done.  If you don't specify a callback, you can wait for the **AsyncBlock** to complete with **GetAsyncStatus** and then get the results.
 * *context* - allows you to pass data to the callback function.
-* *waitEvent* - a HANDLE which designates an optional event to wait on. This will be signaled when the async operation is complete and after any completion callback has run.
 * *queue* - an async_queue_handle_t which is a handle designating an **AsyncQueue**. If this is not set, a default queue will be used.
+
+You should create a new AsyncBlock on the heap for each async API you call.  The AsyncBlock must live until the AsyncBlock's completion callback is called and then it can be deleted.
 
 > [!IMPORTANT]
 > An **AsyncBlock** must remain in memory until the **asynchronous task** completes. If it is dynamically allocated, it can be deleted inside the AsyncBlock's **completion callback**.
@@ -145,7 +145,7 @@ STDAPI CreateSharedAsyncQueue(
 > If there is already a queue with this ID and dispatch  modes, it will be referenced.  Otherwise a new queue will be created.
 
 Once you have created your **AsyncQueue** simply add it to the **AsyncBlock** to control threading on your work and completion functions.
-When you are finished with the queue be sure to close it with **CloseAsyncQueue**:
+When you are finished using the **AsyncQueue**, typically when the game is ending, you can close it with **CloseAsyncQueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -228,64 +228,63 @@ void CALLBACK HandleAsyncQueueCallback(
     switch (type)
     {
     case AsyncQueueCallbackType::AsyncQueueCallbackType_Work:
-        SetEvent(g_workReadyHandle);
-        break;
-
-    case AsyncQueueCallbackType::AsyncQueueCallbackType_Completion:
-        SetEvent(g_completionReadyHandle);
+        ReleaseSemaphore(g_workReadyHandle, 1, nullptr);
         break;
     }
 }
 ```
 
-If you have one thread dispatch both sides, then your function may look like:
+Then in a background thread you can listen for this semaphore to wake up and call **DispatchAsyncQueue**.
 
 ```cpp
-DWORD WINAPI background_thread_proc(LPVOID lpParam)
+DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 {
-    HANDLE hEvents[3] =
+    HANDLE hEvents[2] =
     {
         g_workReadyHandle.get(),
-        g_completionReadyHandle.get(),
         g_stopRequestedHandle.get()
     };
+
+    async_queue_handle_t queue = static_cast<async_queue_handle_t>(lpParam);
 
     bool stop = false;
     while (!stop)
     {
-        DWORD dwResult = WaitForMultipleObjectsEx(3, hEvents, false, INFINITE, false);
+        DWORD dwResult = WaitForMultipleObjectsEx(2, hEvents, false, INFINITE, false);
         switch (dwResult)
         {
-        case WAIT_OBJECT_0:
-            // AsyncQueueCallbackType_Work is ready
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Work, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Work))
-            {
-                // If there's more pending work, then set the event to process them
-                SetEvent(g_workReadyHandle.get());
-            }
+        case WAIT_OBJECT_0: 
+            // Background work is ready to be dispatched
+            DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);
             break;
 
         case WAIT_OBJECT_0 + 1:
-            // AsyncQueueCallbackType_Completion is ready
-            // Note: Typically completions should be dispatched on the game thread, but
-            // for this simple example, we're doing it here
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Completion, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Completion))
-            {
-                // If there's more pending completions, then set the event to process them
-                SetEvent(g_completionReadyHandle.get());
-            }
-            break;
-
         default:
             stop = true;
             break;
         }
     }
 
+    CloseAsyncQueue(queue);
     return 0;
 }
 ```
+
+It is best practice to use implement with Win32 Semaphore object.  If instead you implement using a Win32 Event object, then you'll need to ensure don't miss any events with code such as:
+
+```cpp
+    case WAIT_OBJECT_0: 
+        // Background work is ready to be dispatched
+        DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);        
+        
+        if (!IsAsyncQueueEmpty(queue, AsyncQueueCallbackType_Work))
+        {
+            // If there's more pending work, then set the event to process them
+            SetEvent(g_workReadyHandle.get());
+        }
+        break;
+```
+
+
+You can view an example of the best practices for async integration at [Social C Sample AsyncIntegration.cpp](https://github.com/Microsoft/xbox-live-api/blob/master/InProgressSamples/Social/Xbox/C/AsyncIntegration.cpp)
+
