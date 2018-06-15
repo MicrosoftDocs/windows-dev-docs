@@ -254,4 +254,29 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
             </div>
         </div>
     </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_support.svg" alt=" " />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Community and support</h3>
+                        <p>
+                            <a href="https://twitter.com/WindowsDocs">@WindowsDocs on Twitter</a>
+                        </p>
+                        <p>
+                            <a href="http://aka.ms/OneDevMinute">OneDevMinute on YouTube</a>
+                        </p>
+                        <p>
+                            <a href="https://developer.microsoft.com/windows/support">Windows developer support</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>    
 </ul>
