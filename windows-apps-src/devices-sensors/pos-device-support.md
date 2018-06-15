@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 |
 
 
-| Manufacturer  | Model           | Capability | Connecion    | Type         | Mode                      |
+| Manufacturer  | Model           | Capability | Connection    | Type         | Mode                      |
 |---------------|-----------------|------------|--------------|--------------|---------------------------|
 | Code          | Reader™ 950     | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Code          | Reader™ 1021    | 2D         | USB          | Handheld     | HID POS Scanner           |
