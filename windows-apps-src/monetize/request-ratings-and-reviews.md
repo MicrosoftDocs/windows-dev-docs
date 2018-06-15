@@ -3,7 +3,7 @@ author: mcleanbyron
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
 ms.author: mcleans
-ms.date: 03/22/2018
+ms.date: 06/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,6 +18,9 @@ You can add code to your Universal Windows Platform (UWP) app to programmaticall
 * You can programmatically open the rating and review page for your app in the Microsoft Store.
 
 When you are ready to analyze your ratings and reviews data, you can view the data in the Windows Dev Center dashboard or use the Microsoft Store analytics API to retrieve this data programmatically.
+
+> [!IMPORTANT]
+> When adding a rating function within your app, all reviews must send the user to the Store’s rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## Show a rating and review dialog in your app
 
