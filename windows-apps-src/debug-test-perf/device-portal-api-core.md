@@ -386,11 +386,12 @@ This API has the following expected status codes.
 
 **Request**
 
-You can get a list of the Bluetooth radios that are installed on the machine by using the following request format.
+You can get a list of the Bluetooth radios that are installed on the machine by using the following request format. This can be upgraded to a WebSocket connection as well, with the same JSON data.
  
-| Method | Request URI |
-| :---   | :--- |
-| GET    | /api/bt/getdevices |
+| Method        | Request URI |
+| :---          | :--- |
+| GET           | /api/bt/getradios |
+| GET/WebSocket | /api/bt/getradios |
 
 
 **URI parameters**
@@ -455,7 +456,7 @@ You can specify the following additional parameters on the request URI:
 | URI parameter | Description |
 | :---          | :--- |
 | ID            | (**required**) The device ID for the Bluetooth radio and must be base 64 encoded. |
-| State         | (**required**) This can be `"On"` or `"Off"` and must be base 64 encoded. |
+| State         | (**required**) This can be `"On"` or `"Off"`. |
 
 **Request headers**
 
