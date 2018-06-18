@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 05/22/2018
+ms.date: 06/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,12 +37,22 @@ In the **Additional Store listing languages** section, you can click **Manage ad
 
 When you have finished making your selections, click **Save** to return to the submission overview page.
 
-> [!NOTE]
-> When creating a Store listing in a language that isn't supported by your packages, you'll need to indicate which of your reserved app names should be displayed in that Store listing, since there isn't an associated package in that language from which to pull the name. The name you choose here only applies to the Store listing for this language and does not impact the name displayed when a customer installs the app.
+## Add and edit Store listing info
 
-To edit a Store listing, click the language name from the submission overview page.
+To edit a Store listing, select the language name from the submission overview page.
 
 At the top of the **Store listing** page are the fields associated with your default Store listing for the selected language. These fields will be shown to all of your customers, unless you have packages targeting earlier OS versions (Windows 8.x or earlier; Windows Phone 8.x or earlier) and create platform-specific Store listings to include different screenshots or info to display to customers on specified OS versions. For more info, see [Create platform-specific Store listings](create-platform-specific-store-listings.md).
+
+## Product name
+
+This drop-down box lets you specify which name should be used in the Store listing (if you have reserved more than one name for the app).
+
+If you have uploaded package(s) in the same language as the Store listing you're working on, the name used in those packages will be selected. If you need to [rename the app](manage-app-names.md#rename-an-app-that-has-already-been-published) after it's already been published, you can select a different reserved name here when you create a new submission with packages that use the new name.
+
+If you haven't uploaded packages for the language you're working on, and you've reserved more than one name, you'll need to select one of your reserved app names, since there isn't an associated package in that language from which to pull the name.
+
+> [!NOTE]
+> The **Product name** you select only applies to the Store listing in the language you're working in. It does not impact the name displayed when a customer installs the app; that name comes from the manifest of the package that gets installed. To avoid confusion, we recommend that each language's package(s) and Store listing use the same name.
 
 ## Description
 

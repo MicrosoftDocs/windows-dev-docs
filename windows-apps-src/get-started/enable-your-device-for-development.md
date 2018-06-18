@@ -51,7 +51,7 @@ Here's the settings page on the mobile device family:
 
  You can enable a device for development, or just for sideloading.
 
--   *UWP apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
+-   *Microsoft Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
 -   *Sideloading* is installing and then running or testing an app that has not been certified by the Microsoft Store. For example, an app that is internal to your company only.
 -   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
 
