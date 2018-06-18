@@ -17,13 +17,13 @@ ms.localizationpriority: low
 > [!IMPORTANT]
 > The Xbox Live Unity plugin does not support achievements or online multiplayer and is only recommended for [Xbox Live Creators Program](../developer-program-overview.md) members.
 
-Once you have added [Xbox Live sign in](sign-in-to-xbox-live-in-unity.md) to your Unity project, the next step is to add player stats and leaderboards based on those player stats.
+Once you have added [Xbox Live sign in](unity-prefabs-and-sign-in.md) to your Unity project, the next step is to add player stats and leaderboards based on those player stats.
 
 With the [Xbox Live Unity plugin](https://github.com/Microsoft/xbox-live-unity-plugin), you can easily add player stats and leaderboards in your Unity project. Similar to the sign in steps, you can choose to use the included prefabs or attach the included scripts to your own custom game objects.
 
 ## Prerequisites
 1. [Configure Xbox Live in Unity](configure-xbox-live-in-unity.md)
-2. [Sign in to Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
+2. [Sign in to Xbox Live in Unity](unity-prefabs-and-sign-in.md)
 
 ## Player stats
 
@@ -100,7 +100,7 @@ In the Unity editor, the **Leaderboard** prefab will always display the same moc
 
 ## See also
 
-* [Sign into Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
+* [Sign into Xbox Live in Unity](unity-prefabs-and-sign-in.md)
 * [Configure Xbox Live in Unity](configure-xbox-live-in-unity.md)
 * [The Leaderboard Example Scene](setup-leaderboard-example-scene.md)
 * [Get Leaderboard Data](unity-leaderboard-from-scratch.md)

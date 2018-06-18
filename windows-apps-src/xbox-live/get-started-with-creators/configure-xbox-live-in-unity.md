@@ -120,7 +120,7 @@ See [Xbox Live sandboxes](../xbox-live-sandboxes.md) for information about sandb
 
 ## Build and test the project
 
-When running your title in the editor, you will see fake data when you try to use Xbox Live functionality. For example, if you [add sign in capabilities](sign-in-to-xbox-live-in-unity.md) to your scene and try to sign in, you will see **Fake User** appear as your profile name, with a placeholder icon. To sign in with a real profile and test out Xbox Live functionality in your title, you'll need to build a UWP solution and run it in Visual Studio.  You can build the UWP project in Unity by following these steps:
+When running your title in the editor, you will see fake data when you try to use Xbox Live functionality. For example, if you [add sign in capabilities](unity-prefabs-and-sign-in.md) to your scene and try to sign in, you will see **Fake User** appear as your profile name, with a placeholder icon. To sign in with a real profile and test out Xbox Live functionality in your title, you'll need to build a UWP solution and run it in Visual Studio.  You can build the UWP project in Unity by following these steps:
 
 1. Open the **Build Settings** window by selecting **File** > **Build Settings**.
 2. Add all of the scenes that you want to include in your build under the **Scenes In Build** section.
@@ -161,5 +161,5 @@ Try the **SignInAndProfile** scene for signing into your Microsoft Account, the 
 
 ## See also
 
-* [Sign in to Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
+* [Sign in to Xbox Live in Unity](unity-prefabs-and-sign-in.md)
 * [Authorize Xbox Live accounts](authorize-xbox-live-accounts.md)
