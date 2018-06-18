@@ -35,14 +35,9 @@ The following example initializes the [**MediaCaptureInitializationSettings**](h
  private void InitCaptureSettings()
 {
     _captureInitSettings = new MediaCaptureInitializationSettings();
-    _captureInitSettings.VideoDeviceId = ClaimedBarcodeScanner.VideoDeviceId;
+    _captureInitSettings.VideoDeviceId = BarcodeScanner.VideoDeviceId;
     _captureInitSettings.StreamingCaptureMode = StreamingCaptureMode.Video;
     _captureInitSettings.PhotoCaptureSource = PhotoCaptureSource.VideoPreview;
-    
-    if (_deviceList.Count > 0)
-    {
-        _captureInitSettings.VideoDeviceId = _deviceList[0].Id;
-    }
 }
 ```
 ## Step 5: Associate your MediaCapture object with the camera barcode scanner
