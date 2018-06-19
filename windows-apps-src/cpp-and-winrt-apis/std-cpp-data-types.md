@@ -59,7 +59,7 @@ You can call that API with an initializer list like this.
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" });
+    auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
 ```
 
@@ -92,7 +92,7 @@ C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, y
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
 {
-	auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH));
+	auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH)) };
 }
 ```
 
@@ -101,7 +101,7 @@ But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)); // error! Can't convert from vector of wstring to async_iterable of hstring.
+    auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
 ```
 

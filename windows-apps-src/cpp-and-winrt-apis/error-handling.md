@@ -40,14 +40,14 @@ using namespace Windows::UI::Xaml::Media::Imaging;
 
 IAsyncAction MakeThumbnailsAsync()
 {
-    auto imageFiles = co_await KnownFolders::PicturesLibrary().GetFilesAsync();
+    auto imageFiles{ co_await KnownFolders::PicturesLibrary().GetFilesAsync() };
 
     for (StorageFile const& imageFile : imageFiles)
     {
         BitmapImage bitmapImage;
         try
         {
-            auto thumbnail = co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView);
+            auto thumbnail{ co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView) };
             if (thumbnail) bitmapImage.SetSource(thumbnail);
         }
         catch (winrt::hresult_error const& ex)
