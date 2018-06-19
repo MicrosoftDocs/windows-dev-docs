@@ -24,7 +24,7 @@ This section covers how to integrate Xbox Live into games developed with the Uni
 
 [Authorize Xbox Live Accounts](authorize-xbox-live-accounts.md)
 
-[Sign-in to Xbox Live In Unity](sign-in-to-xbox-live-in-unity.md) Pre 1804 Unity Plugin Release
+[Sign-in to Xbox Live In Unity](unity-prefabs-and-sign-in.md) Pre 1804 Unity Plugin Release
 
 [Sign in with the PlayerAuthentication prefab](playerauthentication-prefab-sign-in.md)  Post 1804 Unity Plugin Release
 

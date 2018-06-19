@@ -23,6 +23,7 @@ This section contains topics that are common across all Point of Service device 
 | [Enumerating devices](pos-basics-enumerating.md)        | Learn how to define a device selector that is used to query devices available to the system and use this selector to enumerate Point of Service devices.  |
 | [Creating a device object](pos-basics-deviceobject.md)  | Learn how to create a PointOfService device object that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use. |
 | [Claiming a device for exclusive use ](pos-basics-claim.md)  | Learn how to reserve a PointOfService peripheral for exclusive use with the PointOfService claim model while allowing other applications on the same computer access to the PointOfService peripheral when they need exclusive use.  |
+| [Sharing peripherals with others](pos-basics-sharing.md) | Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
 | [PointOfService end-to-end](pos-get-started.md)  | This is an end to end example of how to interact with PointOfService peripherals utilizing the examples above. |
 |
 
