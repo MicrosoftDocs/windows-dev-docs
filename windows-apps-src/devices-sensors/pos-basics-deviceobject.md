@@ -3,7 +3,7 @@ author: TerryWarwick
 title: PointOfService device objects
 description: Learn about the creation of PointOfService device objects
 ms.author: jken
-ms.date: 06/4/2018
+ms.date: 06/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,16 +19,18 @@ Once you have identified the PointOfService device that you want to use, either 
 This sample attempts to create a new BarcodeScanner object with FromIdAsync using a DeviceID. If there is a failure creating the object a debug message is written.
 
 ```Csharp
-using windows.devices.enumeration;
 
-try
-{
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
-}
-catch (Exception ex)
-{
-    Debug.WriteLine("Failure: - " + ex.Message);
-}
+
+    if(barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use and enable it to exchange data
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+    
 ```
 
 Once you have a device object, you can then access the device's methods, properties and events.  

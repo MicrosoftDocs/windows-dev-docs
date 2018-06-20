@@ -4,7 +4,7 @@ description: To continue network communication while it's not in the background,
 title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.author: stwhi
-ms.date: 3/23/2018
+ms.date: 06/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,17 +13,19 @@ ms.localizationpriority: medium
 ---
 
 # Network communications in the background
-To continue network communication while it's not in the background, an app can use background tasks and either socket broker or control channel triggers. Apps that use sockets for long-term connections can delegate ownership of a socket to a system socket broker when they leave the foreground. The broker then activates the app when traffic arrives on the socket, transfers ownership back to the app, and the app processes the arriving traffic.
+To continue network communication while it's not in the foreground, your app can use background tasks and one of these two options.
+- Socket broker. If your app uses sockets for long-term connections then, when it leaves the foreground, it can delegate ownership of a socket to a system socket broker. The broker then: activates your app when traffic arrives on the socket; transfers ownership back to your app; and your app then processes the arriving traffic.
+- Control channel triggers. 
 
 ## Performing network operations in background tasks
-- Use a [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) to activate the background task when a packet is received and you need to perform a short-lived task. After performing the task, the background task should terminate to save power.
-Use a [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) to activate the background task when a packet is received and you need to perform a long-lived task.
+- Use a [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) to activate the background task when a packet is received and you need to perform a short-lived task. After performing the task, the background task should terminate in order to save power.
+- Use a [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) to activate the background task when a packet is received and you need to perform a long-lived task.
 
-**Network related conditions and flags**
+**Network-related conditions and flags**
 
 - Add the **InternetAvailable** condition to your background task [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to delay triggering the background task until the network stack is running. This condition saves power because the background task won't execute until the network is up. This condition does not provide real-time activation.
 
-Regardless of the trigger you use, set [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) on your background task to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not use **IsNetworkRequested**, then your background task will not be able to access the network when in Connected Standby mode (for example, when a phone's screen is turned off.)
+Regardless of the trigger you use, set [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) on your background task to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not use **IsNetworkRequested**, then your background task will not be able to access the network when in Connected Standby mode (for example, when a phone's screen is turned off).
 
 ## Socket broker and the SocketActivityTrigger
 If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, then you should use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and the socket broker to be notified when traffic arrives for your app while it's not in the foreground.
@@ -152,9 +154,9 @@ For a complete sample demonstrating the use of the [**SocketActivityTrigger**](h
 You will probably notice that the sample calls **TransferOwnership** as soon as it creates a new socket or acquires an existing socket, rather than using the **OnSuspending** even handler to do so as described in this topic. This is because the sample focuses on demonstrating the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), and doesn't use the socket for any other activity while it is running. Your app will probably be more complex, and should use **OnSuspending** to determine when to call **TransferOwnership**.
 
 ## Control channel triggers
-First, ensure that you're using control channel triggers (CCTs) appropriately. If you're using [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, we recommend you use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). You can use CCTs for **StreamSocket**, but they use more resources and might not work in Connected Standby mode.
+First, ensure that you're using control channel triggers (CCTs) appropriately. If you're using [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, then we recommend that you use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). You can use CCTs for **StreamSocket**, but they use more resources and might not work in Connected Standby mode.
 
-If you are using WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or **Windows.Web.Http.HttpClient**, you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+If you are using WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639), or [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), then you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ## ControlChannelTrigger with WebSockets
 Some special considerations apply when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **MessageWebSocket** or **StreamWebSocket** with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the **StreamWebSocket** are handled. Requests to receive packets on the **MessageWebSocket** are not affected.

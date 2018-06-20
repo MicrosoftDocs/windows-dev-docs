@@ -87,7 +87,7 @@ IAsyncAction ProcessFeedAsync()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
     SyndicationClient syndicationClient;
-    SyndicationFeed syndicationFeed = co_await syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    SyndicationFeed syndicationFeed{ co_await syndicationClient.RetrieveFeedAsync(rssFeedUri) };
     PrintFeed(syndicationFeed);
 }
 
