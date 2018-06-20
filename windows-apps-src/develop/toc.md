@@ -170,7 +170,7 @@
 #### [Capability declaration](../devices-sensors/pos-basics-capability.md)
 #### [Enumerating devices](../devices-sensors/pos-basics-enumerating.md)
 #### [Creating a device object](../devices-sensors/pos-basics-deviceobject.md)
-#### [Claiming a device for exclusive use](../devices-sensors/pos-basics-claim.md)
+#### [Claiming and enable](../devices-sensors/pos-basics-claim.md)
 #### [Sharing peripherals with others](../devices-sensors/pos-basics-sharing.md) 
 #### [Getting started](../devices-sensors/pos-get-started.md)
 ### [Hardware support](../devices-sensors/pos-device-support.md)
