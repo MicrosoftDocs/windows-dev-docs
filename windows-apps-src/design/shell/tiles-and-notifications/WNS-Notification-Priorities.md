@@ -60,13 +60,15 @@ More specific recommended behaviors for each priority are listed below. This is 
 | Device State    | PRIORITY: High    |    PRIORITY: Medium        | PRIORITY: Low    |    PRIORITY: Very Low    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
 |    Screen On OR plugged in    |    Deliver    |    Deliver    |    Deliver    |    Deliver    |
-|    Screen Off AND on battery    |    Deliver    |    Batch     |    Cache *    |    Cache    |
+|    Screen Off AND on battery    |    Deliver    |    If user exempted: deliver        Else: batch     |    If user exempted: deliver        Else: cache *    |    Cache    |
 |    Battery Saver enabled    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache     |
-|    On battery + battery saver enabled + screen off    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache    |    Cache    |
+|    On battery + battery saver enabled + screen off    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache    |
 
-Note that low priority notifications will be delivered by default for screen off and battery only for Windows Phone based devices. This is to maintian compatibility with preexisting MPNS policy. 
+Note that low priority notifications will be delivered by default for screen off and battery only for Windows Phone based devices. This is to maintian compatibility with preexisting MPNS policy. Also note that the fourth and fifth rows are the same, just calling out different scenarios.
 
-To exempt an app in battery saver, users must go to the "Battery Usage by App" in Settings and select "Allow the app to run background tasks." This user selection exempts the app from battery saver for high, medium, and low priority notifications. 
+To exempt an app in battery saver, users must go to the "Battery Usage by App" in Settings and select "Allow the app to run background tasks." This user selection exempts the app from battery saver for high, medium, and low priority notifications. You can also call [BackgroundExecutionManager API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) to programatically ask for the user's permission.  
 
 ## Related topics
 - [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
+- [Requesting permission to run in the background](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
+- 
