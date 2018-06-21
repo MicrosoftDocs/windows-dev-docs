@@ -4,7 +4,7 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: Known Issues (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -124,6 +124,41 @@ Run **certutil** from the the command line on the PFX file and copy the *Subject
 certutil -dump <cert_file.pfx>
 ```
 
+<a id="bad-pe-cert" />
+
+### Bad PE certificate (0x800700C1)
+
+This can happen when your package contains a binary that has a corrupted certificate. Here's some of the reasons why this can happen:
+
+* The start of the certificate is not at the end of an image.  
+
+* The size of the certificate isn't positive.
+
+* The certificate start isn't after the `IMAGE_NT_HEADERS32` structure for a 32-bit executable or after the `IMAGE_NT_HEADERS64` structure for a 64-bit executable.
+
+* The certificate pointer isn't properly aligned for a WIN_CERTIFICATE structure.
+
+To find files that contain a bad PE cert, open a **Command Prompt**, and set the environment variable named `APPXSIP_LOG` to a value of 1.
+
+```
+set APPXSIP_LOG=1
+```
+
+Then, from the **Command Prompt**, sign your application again. For example:
+
+```
+signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
+```
+
+Information about files that contain a bad PE cert will appear in the **Console Window**. For example:
+
+```
+...
+
+ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.exe
+
+...   
+```
 ## Next Steps
 
 **Find answers to your questions**
