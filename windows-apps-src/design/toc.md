@@ -144,6 +144,7 @@
 
 ## Notifications
 ### Toast notifications
+#### [UX Guidance](shell/tiles-and-notifications/toast-ux-guidance.md)
 #### [Toast content](shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 #### [Toast content schema](shell/tiles-and-notifications/toast-schema.md)
 #### [Send local toast](shell/tiles-and-notifications/send-local-toast.md)
