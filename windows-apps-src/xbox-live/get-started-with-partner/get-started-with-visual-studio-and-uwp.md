@@ -18,7 +18,7 @@ ms.localizationpriority: low
 
 1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
 2. **[Windows 10](https://microsoft.com/windows)**.
-3. **[Visual Studio 2015](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
+3. **[Visual Studio](https://www.visualstudio.com/)** with the **Universal Windows App Development Tools**. The minimum required version for UWP apps is Visual Studio 2015 Update 3. We recommend that you use the latest release of Visual Studio for developer and security updates. 
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.
 
 > [!IMPORTANT]

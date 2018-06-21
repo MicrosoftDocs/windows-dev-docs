@@ -36,7 +36,7 @@ Real-time games requiring high performance should make use of the DirectX APIs. 
 ## Development Environment
 
 
-To create games for UWP, you'll need to set up your development environment by installing Visual Studio 2015 and later. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
+To create games for UWP, you'll need to set up your development environment by installing Visual Studio 2015 or later. We recommend that you install the latest version of Visual Studio, giving you access to the latest development and security updates. Visual Studio allows you to create UWP apps and provides tools for game development:
 
 -   Visual Studio tools for DX game programming - Visual Studio provides tools for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code. For more information, see [Use Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md).
 -   Visual Studio graphics diagnostics features - Graphics diagnostic tools are now available from within Windows as an optional feature. The diagnostic tools allow you to do graphics debugging, graphics frame analysis, and monitor GPU usage in real time. For more information, see [Use the DirectX runtime and Visual Studio graphics diagnostic features](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).

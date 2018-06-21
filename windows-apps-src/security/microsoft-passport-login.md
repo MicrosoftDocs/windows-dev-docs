@@ -28,9 +28,9 @@ Before you begin, you should read the [Windows Hello](microsoft-passport.md) ove
 ## Get started
 
 
-In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater), or a later release of Visual Studio, on a Windows 10 machine. While Visual Studio 2015 is the minimum required version, we recommend that you use the latest version of Visual Studio for the latest developer and security updates.
 
--   Open Visual Studio 2015 and select File > New > Project.
+-   Open Visual Studio and select File > New > Project.
 -   This will open a “New Project” window. Navigation to Templates > Visual C#.
 -   Choose Blank App (Universal Windows) and name your application "PassportLogin".
 -   Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.

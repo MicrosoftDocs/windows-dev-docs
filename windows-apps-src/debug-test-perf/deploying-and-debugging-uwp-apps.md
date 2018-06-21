@@ -44,7 +44,7 @@ Selecting **Do not launch, but debug my code when it starts** will cause the Vis
 UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://www.visualstudio.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.   
 
 ## Package layout
-With Visual Studio 2015 Update 3, we have added the option for developers to specify the layout path for their UWP apps. This determines where the package layout is copied to on disk when you build your app. By default, this property is set relative to the project’s root directory. If you do not modify this property, the behavior will remain the same as it has for previous versions of Visual Studio.
+As of Visual Studio 2015 Update 3, we have added the option for developers to specify the layout path for their UWP apps. This determines where the package layout is copied to on disk when you build your app. By default, this property is set relative to the project’s root directory. If you do not modify this property, the behavior will remain the same as it has for previous versions of Visual Studio.
 
 This property can be modified in the project's **Debug** properties.
 
@@ -122,7 +122,7 @@ There are three authentication modes for remote machine deployment:
 - **None**: This authentication mode is only intended to be used for a remote PC (desktop or laptop) running the Visual Studio Remote Tools. Use this authentication mode when you have a test machine set up in an environment that has a test account signed in and you cannot enter the credentials. Ensure that the remote debugger settings are set to accept no authentication.
 
 ## Advanced remote deployment options
-With the release of Visual Studio 2015 Update 3, and the Windows 10 Anniversary Update, there are new advanced remote deployment options for certain Windows 10 devices. The advanced remote deployment options can be found on the **Debug** menu for project properties.
+As of the release of Visual Studio 2015 Update 3, and the Windows 10 Anniversary Update, there are new advanced remote deployment options for certain Windows 10 devices. The advanced remote deployment options can be found on the **Debug** menu for project properties.
 
 The new properties include:
 * Deployment type
@@ -131,7 +131,7 @@ The new properties include:
 
 ### Requirements
 To utilize the advanced remote deployment options, you must satisfy the following requirements:
-* Have Visual Studio 2015 Update 3 installed with Windows 10 Tools 1.4.1 (which includes the Windows 10 Anniversary Update SDK)
+* Have Visual Studio 2015 Update 3 or some later Visual Studio release installed with Windows 10 Tools 1.4.1 or later(which includes the Windows 10 Anniversary Update SDK) We recommend that you use the latest version of Visual Studio with updates to ensure you get all the newest development and security features.
 * Target a Windows 10 Anniversary Update Xbox remote device or Windows 10 Creators Update PC 
 * Use Universal Authentication mode
 
