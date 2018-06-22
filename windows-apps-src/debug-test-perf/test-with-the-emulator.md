@@ -44,7 +44,7 @@ To check the BIOS requirements, see [How to enable Hyper-V for the emulator for 
 
 To check requirements for RAM and operating system, in Control Panel, select **System and Security**, and then select **System**.
 
-Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
+Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015 or later; it is not backward compatible with earlier versions of Visual Studio.
 
 Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
 

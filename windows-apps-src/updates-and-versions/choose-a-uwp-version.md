@@ -16,7 +16,8 @@ ms.localizationpriority: high
 
 Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
 
-Please note that any UWP projects created in current versions of Visual Studio 2017 cannot be opened in Visual Studio 2015.
+> [!WARNING]
+> UWP projects created in current versions of Visual Studio cannot be opened in Visual Studio 2015.
 
 The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](http://go.microsoft.com/fwlink/?LinkId=821431) in order to target that version. 
 

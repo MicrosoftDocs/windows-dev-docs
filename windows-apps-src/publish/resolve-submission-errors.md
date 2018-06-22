@@ -22,6 +22,10 @@ If you are submitting a UWP app, you may see an error during preprocessing if yo
 
 If a compilation error is displayed, make sure that you are able to build your application in Release mode successfully. For more info, see [.NET Native Internal Compiler Errors](http://go.microsoft.com/fwlink/p/?LinkID=613098).
 
+## Desktop application
+
+If you plan to submit a package that contains both Win32 and UWP binaries, make sure that you create that package by using the Windows Packaging Project that is available in Visual Studio 2017 Update 4. If you create the package by using a UWP project template, you might not be able to submit that package to the Store or sideload it onto other PCs. Even if the package publishes successfully, it might behave in unexpected ways on the user's PC. For more info, see [Package an app by using Visual Studio (Desktop Bridge)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+
 ## Windows Phone apps
 
 You may see **error 2001** when problems with Windows Phone packages are detected during preprocessing. In most cases, you will need to rebuild your app's package to correct the error. Once you've done that, replace the old package with the new one on the [Packages](upload-app-packages.md) page of the submission before you click **Submit to the Store** again.

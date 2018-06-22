@@ -54,7 +54,7 @@ Also, for some programmatic considerations, see the later section [Supporting mu
 
 2.  [Install the **Xbox Live Platform Extensions SDK**](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) if you need the Secure Sockets API and/or the Game Save API (aka Connected Storage) for UWP.
 
-3.  Add Xbox Live support to your Universal Windows app project in Visual Studio. You can add either the full source or reference the binaries by installing the NuGet package into your Visual Studio 2015 project. Packages are available for both C++ and WinRT. For more detail see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
+3.  Add Xbox Live support to your Universal Windows app project in Visual Studio. You can add either the full source or reference the binaries by installing the NuGet package into your Visual Studio project. Packages are available for both C++ and WinRT. For more detail see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
 
 4.  Configure your development computer to use your sandbox. There's a command-line script in the Tools directory of the Xbox Live SDK that you can use from an administrator command prompt (for example: SwitchSandbox.cmd XDKS.1).
 
