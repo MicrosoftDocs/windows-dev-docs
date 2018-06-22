@@ -127,6 +127,7 @@
 #### [Shut down after multiplayer game](multiplayer/multiplayer-manager/mpm-flowcharts/mpm-shut-down.md)
 ## [Xbox Arena](multiplayer/arena/xbox-arena.md)
 ### [Arena title integration](multiplayer/arena/arena-title-integration.md)
+### [Arena Operations Portal](multiplayer/arena/operations-portal.md)
 ### [UX - discover tournaments](multiplayer/arena/discovering-xbox-tournaments.md)
 ### [UX - join a tournament](multiplayer/arena/arena-ux-join-tournament.md)
 ### [UX - match engagement](multiplayer/arena/arena-ux-match-engagement.md)
