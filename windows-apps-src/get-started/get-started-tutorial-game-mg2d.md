@@ -651,6 +651,7 @@ Add this code to the **KeyboardHandler** method, to allow the user to reset them
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))
+{
   StartGame();
   gameOver = false;
 }
