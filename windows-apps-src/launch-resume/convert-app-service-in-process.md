@@ -42,6 +42,7 @@ Remove the `EntryPoint` attribute from the `<Application>` element because now [
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
 Now your application can directly run your App Service. For example, in App.xaml.cs:
+NOTE: The code below is not the same as that example 1 (out-of-process service). The code below is just a sample.  For consistency, use the app service code from Example 1 instead of the code below.
 
 ``` cs
 using Windows.ApplicationModel.AppService;
