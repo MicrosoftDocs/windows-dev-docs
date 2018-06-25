@@ -98,7 +98,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/desktop">
+                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

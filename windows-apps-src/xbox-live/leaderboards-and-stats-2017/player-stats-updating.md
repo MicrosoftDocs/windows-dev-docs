@@ -83,8 +83,6 @@ When you call these, the stat updates are cached locally on the device.  Periodi
 
 You have the option of manually flushing stats via the `stats_manager::request_flush_to_service` API.  Please note that if you call this function too often, you will be rate limited.  This does not mean that the stat will never get updated.  It merely means that the update will happen when the timeout expires.
 
-Please note that for stats of type *SUM*, you can send incremental updates.  Eg: If you have a stat for *Lifetime Kills*, and the value on the server is 100.  If you call `set_stat_integer` with an argument of 5.  The new value on the server is 105.
-
 ```cpp
 statsManager->set_stat_integer(user, L"numHeadshots", 20);
 statsManager->request_flush_to_service(user); // requests flush to service, performs a do_work

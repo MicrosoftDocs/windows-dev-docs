@@ -73,6 +73,12 @@ Article | description
 --- | ---
 [Arena title integration](arena-title-integration.md) | Learn how to integrate support for Xbox Arena into your title.
 
+## Operations guidance
+
+Article | description
+--- | ---
+[Xbox Arena Operations Portal](operations-portal.md) | Describes the operations portal that you can use to create and manage official tournaments for a title that is integrated with Xbox Arena.
+
 ## User experience guidance
 
 Article | description
