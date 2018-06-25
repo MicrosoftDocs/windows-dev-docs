@@ -268,14 +268,13 @@ We also demonstrate localization of nav item content strings with `x:Uid`. For m
 ```
 
 ```csharp
-// List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
+// List of ValueTuple holding the Navigation Tag and the relative Navigation Page
 private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
     ("home", typeof(HomePage)),
     ("apps", typeof(AppsPage)),
     ("games", typeof(GamesPage)),
-    ("music", typeof(MusicPage)),
-    ("settings", typeof(SettingsPage))
+    ("music", typeof(MusicPage))
 };
 
 private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -300,26 +299,31 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
     goBack.Invoked += BackInvoked;
     this.KeyboardAccelerators.Add(goBack);
 
-    var altLeft = new KeyboardAccelerator { Key = VirtualKey.Left };
+    // ALT routes here
+    var altLeft = new KeyboardAccelerator
+    {
+        Key = VirtualKey.Left,
+        Modifiers = VirtualKeyModifiers.Menu
+    };
     altLeft.Invoked += BackInvoked;
     this.KeyboardAccelerators.Add(altLeft);
-
-    // ALT routes here
-    altLeft.Modifiers = VirtualKeyModifiers.Menu;
 }
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-    string navItemTag;
     if (args.IsSettingsInvoked)
-        navItemTag = "settings";
+    {
+        ContentFrame.Navigate(typeof(SettingsPage));
+    }
     else
-        navItemTag = NavView.MenuItems
+    {
+        // Getting the Tag from Content (args.InvokedItem is the content of NavigationViewItem)
+        var navItemTag = NavView.MenuItems
             .OfType<NavigationViewItem>()
             .First(i => args.InvokedItem.Equals(i.Content))
             .Tag.ToString();
-
-    NavView_Navigate(navItemTag);
+        NavView_Navigate(navItemTag);
+    }
 }
 
 private void NavView_Navigate(string navItemTag)
