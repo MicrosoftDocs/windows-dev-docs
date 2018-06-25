@@ -353,7 +353,7 @@ Here, you use red text for the light theme and blue text for the dark theme.
 
 </ResourceDictionary>
 
-<!—Dictionary2.xaml -->
+<!-- Dictionary2.xaml -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

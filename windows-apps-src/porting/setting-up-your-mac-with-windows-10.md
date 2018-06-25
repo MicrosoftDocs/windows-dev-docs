@@ -23,7 +23,7 @@ Are you ready to start developing Universal Windows apps, but you don't have a P
 
 **Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Microsoft Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
 
-Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](https://developer.microsoft.com/en-us/windows/downloads) and start writing apps!
+Once you have Windows running, you can then install the latest release of Visual Studio from [Developer downloads for Windows 10](https://developer.microsoft.com/en-us/windows/downloads) and start writing apps!
 
 **Note**  If you plan to use the Visual Studio device emulators, you **must** install a 64-bit (x64) version of Windows 10 Pro or better. Unfortunately, some older Macs cannot run 64-bit Windows. Please check with Apple if your hardware is compatible on this[Apple support page](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 

@@ -32,7 +32,7 @@ ms.localizationpriority: medium
 ### Prerequisites
 
 -   Basic knowledge of linear algebra and 3-D coordinate systems
--   A Visual Studio 2015 Direct3D template
+-   A Visual Studio 2015 or later Direct3D template
 
 ## Instructions
 

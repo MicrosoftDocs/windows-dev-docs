@@ -4,7 +4,7 @@ Description: The Universal Windows Platform (UWP) provides a consistent back nav
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 ms.author: sezhen
-ms.date: 11/22/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,7 @@ The user expects the back button to navigate to the previous location in the app
 
 ## Back button
 
-To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI.
+To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
 
 ![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
 
@@ -50,6 +50,7 @@ In order to minimize UI elements moving around in your app, show a disabled back
 The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button visibility in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 ```xaml
+<!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
 <Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
@@ -60,6 +61,7 @@ The following code example demonstrates how to implement backwards navigation be
 Code-behind:
 
 ```csharp
+// MainPage.xaml.cs
 public MainPage()
 {
     KeyboardAccelerator GoBack = new KeyboardAccelerator();
@@ -102,11 +104,73 @@ private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvoked
 }
 ```
 
+```cppwinrt
+// MainPage.cpp
+#include "pch.h"
+#include "MainPage.h"
+
+#include "winrt/Windows.System.h"
+#include "winrt/Windows.UI.Xaml.Controls.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::UI::Xaml;
+
+namespace winrt::PageNavTest::implementation
+{
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+
+        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
+        goBack.Key(Windows::System::VirtualKey::GoBack);
+        goBack.Invoked({ this, &MainPage::BackInvoked });
+        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
+        altLeft.Key(Windows::System::VirtualKey::Left);
+        altLeft.Invoked({ this, &MainPage::BackInvoked });
+        KeyboardAccelerators().Append(goBack);
+        KeyboardAccelerators().Append(altLeft);
+        // ALT routes here.
+        altLeft.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
+    }
+
+    void MainPage::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+    {
+        BackButton().IsEnabled(Frame().CanGoBack());
+    }
+
+    void MainPage::Back_Click(IInspectable const&, RoutedEventArgs const&)
+    {
+        On_BackRequested();
+    }
+
+    // Handles system-level BackRequested events and page-level back button Click events.
+    bool MainPage::On_BackRequested()
+    {
+        if (Frame().CanGoBack())
+        {
+            Frame().GoBack();
+            return true;
+        }
+        return false;
+    }
+
+    void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
+	    Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    {
+        args.Handled(On_BackRequested());
+    }
+}
+```
+
 Here, we register a global listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event in the `App.xaml` code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
 
 App.xaml code-behind:
 
 ```csharp
+// App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
 rootFrame.PointerPressed += On_PointerPressed;
@@ -118,12 +182,63 @@ private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEvent
 
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+    bool isXButton1Pressed =
+	    e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
 
     if (isXButton1Pressed)
     {
         e.Handled = On_BackRequested();
     }
+}
+```
+
+```cppwinrt
+// App.cpp
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+
+#include "App.h"
+#include "MainPage.h"
+
+using namespace winrt;
+...
+
+    Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &App::App_BackRequested });
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+    rootFrame.PointerPressed({ this, &App::On_PointerPressed });
+...
+
+void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& e)
+{
+    e.Handled(On_BackRequested());
+}
+
+void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
+{
+    bool isXButton1Pressed =
+	    e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.Handled(On_BackRequested());
+    }
+}
+
+// Handles system-level BackRequested events.
+bool App::On_BackRequested()
+{
+    if (Frame().CanGoBack())
+    {
+        Frame().GoBack();
+        return true;
+    }
+    return false;
 }
 ```
 

@@ -17,7 +17,7 @@ ms.localizationpriority: low
 ## Requirements
 
 2. **[Windows 10](https://microsoft.com/windows)**.
-3. **[Visual Studio 2015](https://www.visualstudio.com/)**.
+3. **[Visual Studio](https://www.visualstudio.com/)**. UWP apps can be built with Visual Studio 2015 Update 3 or later. We recommend that you use the latest release of Visual Studio for developer and security updates.
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.
 
 ## Add the binary package via NuGet

@@ -92,7 +92,7 @@ By default, Surface Hub only installs apps from the Microsoft Store. To install 
 For more information on the deployment process in general, see [Deploying and debugging UWP apps](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
-   > This feature requires Visual Studio 2015 Update 1 or a later version.
+   > This feature requires Visual Studio 2015 Update 1 or later, however we recommend that you use the latest most up to date version of Visual Studio. An up to date Visual Studio instance will gibe you all the latest development and security updates.
 
 1. Navigate to the debug target dropdown next to the **Start Debugging** button and select **Remote Machine**.
 
