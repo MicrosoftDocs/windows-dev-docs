@@ -358,7 +358,7 @@ If you want, you can review the VFS folder and delete any files that your instal
 During the conversion process, the DesktopAppConverter automatically runs the PEHeaderCertFixTool to fixup any corrupted PE headers. However, you can also run the PEHeaderCertFixTool on a UWP Windows app package, loose files, or a specific binary. Here's an example.
 
 ```CMD
-PEHeaderCertFixTool.exe <binary file>|<.appx package>|&lt;folder> [/c] [/v]
+PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
  /c   -- check for corrupted certificate but do not fix (optional)
  /v   -- verbose (optional)
 example1: PEHeaderCertFixTool app.exe
