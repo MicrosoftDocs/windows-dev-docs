@@ -66,7 +66,7 @@ With that advice in mind, you should start adding your controls of choice into y
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
 	        <RelativePanel>
-	            <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0"HorizontalAlignment="Left" />
+	            <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
 	            <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
 	                <!--List of valid states-->
 	            </ComboBox>
