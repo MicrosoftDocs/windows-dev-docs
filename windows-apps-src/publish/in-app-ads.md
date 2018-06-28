@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 06/05/2018
+ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -106,15 +106,17 @@ The following table lists the paid networks we currently support for each ad typ
 
 |  Ad network  |  Description  |  Supported ad types  |
 |--------------|---------------|---------------------|
-| Oath and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, Oath and AppNexus.<p/>**Note**: Oath and AppNexus is always ranked first in the **Paid ad networks** list for Banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
-| AppNexus (direct) | Select this option to serve video interstitial ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
+| Oath and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, Oath and AppNexus.<p/>**Note**: Oath and AppNexus is always ranked first in the **Paid ad networks** list for banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
+| AppNexus (direct) | Select this option to serve ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
 | Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md).  |  Banner, Banner interstitial, Native  |
+| MSN Content Recommendations |  Select this option to serve ads from MSN Content Recommendations. |  Banner, Banner interstitial  |
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |
 | Revcontent |  Select this option to serve ads from [Revcontent](http://www.revcontent.com/). |  Banner, Native  |
 | Smaato |  Select this option to serve ads from [Smaato](https://www.smaato.com/). |  Banner  |
 | smartclip |  Select this option to serve ads from [smartclip](http://www.smartclip.com/). |  Video interstitial  |
 | SpotX |  Select this option to serve ads from [SpotX](https://www.spotx.tv/). |  Video interstitial  |
 | Taboola |  Select this option to serve ads from [Taboola](https://www.taboola.com/). |  Banner  |
+| Undertone | Select this option to serve ads from [Undertone](https://www.undertone.com/). | Banner interstitial |
 
 
 <span id="other-networks" />
@@ -140,6 +142,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 | Revcontent | Brazil, Canada, France, Germany, Italy, Japan, Spain, United Kingdom, United States  |
 | Smaato | Brazil, Canada, France, Germany, Italy, Japan, Spain, United Kingdom, United States |
 | smartclip | Austria, Belgium, Denmark, Finland, Germany, Italy, Netherlands, Norway, Sweden, Switzerland  |
+| Undertone | United States |
 
 <span id="coppa" />
 
