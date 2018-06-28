@@ -19,7 +19,7 @@ You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows
 
 ## Applying lights to XAML UIElements
 
-[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or other XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
+[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
 
 * If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.
 * If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.
@@ -31,30 +31,32 @@ You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows
 Here is an example of a custom XamlLight that uses an attached property to target specific elements:
 
 ```csharp
-public sealed class FancyOrangeSpotLight : XamlLight
+public sealed class OrangeSpotLight : XamlLight
 {
-    // Register an attached proeprty that enables apps to set a UIElement or Brush as a target for this light type in markup.
+    // Register an attached property that lets you set a UIElement
+    // or Brush as a target for this light type in markup.
     public static readonly DependencyProperty IsTargetProperty =
         DependencyProperty.RegisterAttached(
         "IsTarget",
-        typeof(Boolean),
-        typeof(FancyOrangeSpotLight),
+        typeof(bool),
+        typeof(OrangeSpotLight),
         new PropertyMetadata(null, OnIsTargetChanged)
     );
-    public static void SetIsTarget(DependencyObject target, Boolean value)
+
+    public static void SetIsTarget(DependencyObject target, bool value)
     {
         target.SetValue(IsTargetProperty, value);
     }
+
     public static Boolean GetIsTarget(DependencyObject target)
     {
-        return (Boolean) target.GetValue(IsTargetProperty);
+        return (bool)target.GetValue(IsTargetProperty);
     }
 
     // Handle attached property changed to automatically target and untarget UIElements and Brushes.
-    private static void OnIsTargetChanged(DependencyObject obj,
-                                            DependencyPropertyChangedEventArgs e)
+    private static void OnIsTargetChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
     {
-        var isAdding = (Boolean)e.NewValue;
+        var isAdding = (bool)e.NewValue;
 
         if (isAdding)
         {
@@ -82,20 +84,30 @@ public sealed class FancyOrangeSpotLight : XamlLight
 
     protected override void OnConnected(UIElement newElement)
     {
-        // OnConnected is called when the first target UIElement is shown on the screen. This enables delaying composition object creation until it's actually necessary.
-        var spotLight = Window.Current.Compositor.CreateSpotLight();
-        spotLight.InnerConeColor = Colors.Orange;
-        spotLight.OuterConeColor = Colors.Yellow;
-        spotLight.InnerConeAngleInDegrees = 30;
-        spotLight.OuterConeAngleInDegrees = 45;
-        CompositionLight = spotLight;
+        if (CompositionLight == null)
+        {
+            // OnConnected is called when the first target UIElement is shown on the screen.
+            // This delays creation of the composition object until it's actually needed.
+            var spotLight = Window.Current.Compositor.CreateSpotLight();
+            spotLight.InnerConeColor = Colors.Orange;
+            spotLight.OuterConeColor = Colors.Yellow;
+            spotLight.InnerConeAngleInDegrees = 30;
+            spotLight.OuterConeAngleInDegrees = 45;
+            spotLight.Offset = new System.Numerics.Vector3(30, 30, 200);
+            CompositionLight = spotLight;
+        }
     }
 
     protected override void OnDisconnected(UIElement oldElement)
     {
-        // OnDisconnected is called when there are no more target UIElements on the screen. The CompositionLight should be disposed when no longer required.
-        CompositionLight.Dispose();
-        CompositionLight = null;
+        // OnDisconnected is called when there are no more target UIElements on the screen.
+        // The CompositionLight should be disposed when no longer required.
+        // For SDK 15063, see Remarks in the XamlLight class documentation.
+        if (CompositionLight != null)
+        {
+            CompositionLight.Dispose();
+            CompositionLight = null;
+        }
     }
 
     protected override string GetId()
@@ -105,47 +117,45 @@ public sealed class FancyOrangeSpotLight : XamlLight
 
     private static string GetIdStatic()
     {
-        // This specifies the unique name of the light. In most cases you should use the type's FullName.
-        return typeof(FancyPointerTrackerLight).FullName;
+        // This specifies the unique name of the light.
+        // In most cases you should use the type's FullName.
+        return typeof(OrangeSpotLight).FullName;
     }
 }
 ```
 
-And here is an example showing different possible uses of the custom light defined above:
+This example shows different possible uses of the custom light defined above:
 
-```xml
-<Page>
-    <Page.Lights>
-        <local:SimpleOrangeSpotLight />
-    </Page.Lights>
+```xaml
+<StackPanel Width="100">
+    <StackPanel.Lights>
+        <local:OrangeSpotLight/>
+    </StackPanel.Lights>
 
-    <StackPanel>
-        <!-- this border will be lit by a FancyOrangeSpotLight, but not its children -->
-        <Border BorderThickness="1">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Orange" local:FancyOrangeSpotLight.IsTarget="true" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
+    <!-- This border is lit by the OrangeSpotLight, but its content is not. -->
+    <Border BorderThickness="4" Margin="2">
+        <Border.BorderBrush>
+            <SolidColorBrush Color="White" local:OrangeSpotLight.IsTarget="True"/>
+        </Border.BorderBrush>
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
 
-        <!-- this border and its children will be lit by FancyOrangeSpotLight -->
-        <Border BorderThickness="2" local:FancyOrangeSpotLight.IsTarget="true">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Purple" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
+    <!-- This border and its content are lit by the OrangeSpotLight. -->
+    <Border BorderThickness="4" BorderBrush="PaleGreen" Margin="2"
+            local:OrangeSpotLight.IsTarget="True">
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
 
-        <!-- this border will not be lit -->
-        <Border BorderThickness="2">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Green" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
-    </StackPanel>
-<Page>
+    <!-- This border and its content are not lit by the OrangeSpotLight. -->
+    <Border BorderThickness="4" BorderBrush="PaleGreen" Margin="2">
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
+</StackPanel>
 ```
+
+The results of this XAML look like this.
+
+![Examples of elements lit by a xaml light](images/orange-spot-light.png)
 
 > [!Important]
 > Setting UIElement.Lights in markup as shown in the above example is only supported for apps with a Minimum Version equal to the Windows 10 Creators Update or later. For apps that target earlier versions, lights must be created in code-behind.

@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Page transitions navigate users between pages in an app, providing feedback as the relationship between pages. Page transitions help users understand if they are at the top of a navigation hierarchy, moving between sibling pages, or navigating deeper into the page hierarchy.
 
-Two different animations are provided for navigation between pages in an app, *Page refresh* and *Drill*, and are represented by subclasses of [**NavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Two different animations are provided for navigation between pages in an app, *Page refresh* and *Drill*, and are represented by subclasses of [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
 
 ## Page refresh
 
@@ -27,7 +27,7 @@ The desired feeling is that the user has started over.
 
 ![page refresh animation](images/page-refresh.gif)
 
-The page refresh animation is represented by the [**EntranceNavigationTransitionInfoClass**](/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo).
+The page refresh animation is represented by the [**EntranceNavigationTransitionInfoClass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo).
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -45,7 +45,7 @@ The desired feeling is that the user has gone deeper into the app.
 
 ![drill animation](images/drill.gif)
 
-The drill animation is represented by the [**DrillInNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) class.
+The drill animation is represented by the [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) class.
 
 ```csharp
 // Play the drill in animation
@@ -54,7 +54,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## Suppress
 
-To avoid playing any animation during navigation, use [**SuppressNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) in the place of other **NavigationTransitionInfo** subtypes.
+To avoid playing any animation during navigation, use [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) in the place of other **NavigationTransitionInfo** subtypes.
 
 ```csharp
 // Suppress the default animation
