@@ -93,11 +93,13 @@ Here, the [Style](https://msdn.microsoft.com/library/windows/apps/br208849) has 
 
     <Page.Resources>
         <Style TargetType="Button">
-              <Setter Property="Background" Value="red"/>
+            <Setter Property="Background" Value="Red"/>
         </Style>
-    </Page.Resources> 
+    </Page.Resources>
+    <Grid>
        <!-- This button will have a red background. -->
        <Button Content="Button" Height="100" VerticalAlignment="Center" Width="100"/>
+    </Grid>
 </Page>
 ```
 
@@ -107,7 +109,8 @@ For more info about implicit styles and how they work, see [Styling controls](xa
 
 You access members of the resource dictionary like any other dictionary.
 
-> **Caution**&nbsp;&nbsp;When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren’t found in the first dictionary.
+> [!WARNING]
+> When you perform a resource lookup in code, only the resources in the `Page.Resources` dictionary are looked at. Unlike the [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md), the code doesn't fall back to the `Application.Resources` dictionary if the resources aren’t found in the first dictionary.
 
  
 
@@ -197,29 +200,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) is a base class that controls inherit from, and it has a [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) property. So, you can add a local resource dictionary to any **FrameworkElement**.
 
-Here, a resource dictionary is added to a page element.
-
-```XAML
-<Page
-    x:Class="MSDNSample.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Page.Resources>
-        <x:String x:Key="greeting">Hello world</x:String>
-    </Page.Resources>
-
-    <Border>
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-        <TextBlock Text="{StaticResource greeting}" Foreground="Gray" VerticalAlignment="Center"/>
-    </Border>
-</Page>
-
-```
-
-Here, both the [Page](https://msdn.microsoft.com/library/windows/apps/br227503) and the [Border](https://msdn.microsoft.com/library/windows/apps/br209250) have resource dictionaries, and they both have a resource called "greeting". The [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) is inside the **Border**, so its resource lookup looks first to the **Border**’s resources, then the **Page**’s resources, and then the [Application](https://msdn.microsoft.com/library/windows/apps/br242324) resources. The **TextBlock** will read "Hola mundo".
+Here, both the [Page](https://msdn.microsoft.com/library/windows/apps/br227503) and the [Border](https://msdn.microsoft.com/library/windows/apps/br209250) have resource dictionaries, and they both have a resource called "greeting". The [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) named 'textBlock2' is inside the **Border**, so its resource lookup looks first to the **Border**’s resources, then the **Page**’s resources, and then the [Application](https://msdn.microsoft.com/library/windows/apps/br242324) resources. The **TextBlock** will read "Hola mundo".
 
 To access that element’s resources from code, use that element’s [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) property. Accessing a [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706)’s resources in code, rather than XAML, will look only in that dictionary, not in parent element’s dictionaries.
 
@@ -228,16 +209,25 @@ To access that element’s resources from code, use that element’s [Resources]
     x:Class="MSDNSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Page.Resources>
         <x:String x:Key="greeting">Hello world</x:String>
     </Page.Resources>
+    
+    <StackPanel>
+        <!-- Displays "Hello world" -->
+        <TextBlock x:Name="textBlock1" Text="{StaticResource greeting}"/>
 
-    <Border x:Name="border">
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-    </Border>
+        <Border x:Name="border">
+            <Border.Resources>
+                <x:String x:Key="greeting">Hola mundo</x:String>
+            </Border.Resources>
+            <!-- Displays "Hola mundo" -->
+            <TextBlock x:Name="textBlock2" Text="{StaticResource greeting}"/>
+        </Border>
+
+        <!-- Displays "Hola mundo", set in code. -->
+        <TextBlock x:Name="textBlock3"/>
+    </StackPanel>
 </Page>
 
 ```
@@ -248,7 +238,7 @@ To access that element’s resources from code, use that element’s [Resources]
         public MainPage()
         {
             this.InitializeComponent();
-            string str = (string)border.Resources["greeting"];
+            textBlock3.Text = (string)border.Resources["greeting"];
         }
     }
 ```
