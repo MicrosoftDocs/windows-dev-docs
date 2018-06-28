@@ -10,10 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - vb
+  - cpp
 ---
 
 # Attached properties overview
-
 
 An *attached property* is a XAML concept. Attached properties enable additional property/value pairs to be set on an object, but the properties are not part of the original object definition. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.
 
@@ -25,13 +28,14 @@ We assume that you understand the basic concept of dependency properties, and ha
 
 In XAML, you set attached properties by using the syntax _AttachedPropertyProvider.PropertyName_. Here is an example of how you can set [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML.
 
-```XML
+```xaml
 <Canvas>
   <Button Canvas.Left="50">Hello</Button>
 </Canvas>
 ```
 
-**Note**  We're just using [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) handles its layout children, see the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) reference topic or [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+> [!NOTE]
+> We're just using [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) handles its layout children, see the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) reference topic or [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
 ## Why use attached properties?
 
@@ -45,9 +49,9 @@ To implement the attached property, the [**Canvas**](https://msdn.microsoft.com/
 
 Although attached properties can be set on any XAML element (or any underlying [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)), that doesn't automatically mean that setting the property produces a tangible result, or that the value is ever accessed. The type that defines the attached property typically follows one of these scenarios:
 
--   The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
--   The type that defines the attached property is used as the child element for a variety of possible parent elements and content models, but the info isn't necessarily layout info.
--   The attached property reports info to a service, not to another UI element.
+- The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
+- The type that defines the attached property is used as the child element for a variety of possible parent elements and content models, but the info isn't necessarily layout info.
+- The attached property reports info to a service, not to another UI element.
 
 For more info on these scenarios and owning types, see the "More about Canvas.Left" section of [Custom attached properties](custom-attached-properties.md).
 
@@ -71,7 +75,6 @@ A XAML processor must be able to set attached property values when XAML is parse
 
 The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
     Canvas myC = new Canvas();
     CheckBox myCheckBox = new CheckBox();
@@ -80,6 +83,7 @@ The next example shows how you can set an attached property in code via the XAML
     myCheckBox.SetValue(Canvas.TopProperty,75);
     //Canvas.SetTop(myCheckBox, 75);
 ```
+
 ```vb
     Dim myC As Canvas = New Canvas()
     Dim myCheckBox As CheckBox= New CheckBox()
@@ -88,6 +92,7 @@ The next example shows how you can set an attached property in code via the XAML
     myCheckBox.SetValue(Canvas.TopProperty,75)
     ' Canvas.SetTop(myCheckBox, 75)
 ```
+
 ```cpp
     Canvas^ myC = ref new Canvas();
     CheckBox^ myCheckBox = ref new CheckBox();
@@ -103,20 +108,20 @@ For code examples of how to define custom attached properties, and more info abo
 
 ## Special syntax for attached property references
 
-The dot in an attached property name is a key part of the identification pattern. Sometimes there are ambiguities when a syntax or situation treats the dot as having some other meaning. For example, a dot is treated as an object-model traversal for a binding path. In most cases involving such ambiguity, there is a special syntax for an attached property that enables the inner dot still to be parsed as the *owner***.***property* separator of an attached property.
+The dot in an attached property name is a key part of the identification pattern. Sometimes there are ambiguities when a syntax or situation treats the dot as having some other meaning. For example, a dot is treated as an object-model traversal for a binding path. In most cases involving such ambiguity, there is a special syntax for an attached property that enables the inner dot still to be parsed as the _owner_**.**_property_ separator of an attached property.
 
 - To specify an attached property as part of a target path for an animation, enclose the attached property name in parentheses ("()")—for example, "(Canvas.Left)". For more info, see [Property-path syntax](property-path-syntax.md).
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
- 
-- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element '<TextBlock x:Uid="Title" />', the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+> [!WARNING]
+> An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+
+- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element `<TextBlock x:Uid="Title" />`, the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
 ## Related topics
 
-* [Custom attached properties](custom-attached-properties.md)
-* [Dependency properties overview](dependency-properties-overview.md)
-* [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
-* [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/hh943060)
-* [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-* [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
-
+- [Custom attached properties](custom-attached-properties.md)
+- [Dependency properties overview](dependency-properties-overview.md)
+- [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
+- [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/hh943060)
+- [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
+- [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
