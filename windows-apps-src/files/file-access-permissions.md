@@ -4,7 +4,7 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 ms.author: lahugh
-ms.date: 6/28/2018
+ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,9 +20,9 @@ Universal Windows Apps (apps) can access certain file system locations by defaul
 When you create a new app, you can access the following file system locations by default:
 
 ### Application install directory
-The folder where your app is installed on the user’s system.
+The folder where your app is installed on the user's system.
 
-There are two primary ways to access files and folders in your app’s install directory:
+There are two primary ways to access files and folders in your app's install directory:
 
 1. You can retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's install directory, like this:
 
@@ -35,6 +35,8 @@ var installDirectory = Windows.ApplicationModel.Package.current.installedLocatio
 ```
 
 ```cppwinrt
+#include <winrt/Windows.Storage.h>
+...
 Windows::Storage::StorageFolder installedLocation{ Windows::ApplicationModel::Package::Current().InstalledLocation() };
 ```
 
@@ -59,6 +61,16 @@ Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt"
 );
 ```
 
+```cppwinrt
+Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
+{
+	Windows::Storage::StorageFile file{
+		co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///file.txt"})
+	};
+	// Process file
+}
+```
+
 ```cpp
 auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appx:///file.txt")));
 getFileTask.then([](StorageFile^ file) 
@@ -73,12 +85,12 @@ The "ms-appx:///" prefix in the URI refers to the app's install directory. You c
 
 In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some [C/C++ Standard Library functions from Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
 
-The app's install directory is a read-only location. You can’t gain access to the install directory through the file picker.
+The app's install directory is a read-only location. You can't gain access to the install directory through the file picker.
 
 ### Application data locations
 The folders where your app can store data. These folders (local, roaming and temporary) are created when your app is installed.
 
-There are two primary ways to access files and folders from your app’s data locations:
+There are two primary ways to access files and folders from your app's data locations:
 
 1.  Use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) properties to retrieve an app data folder.
 
@@ -91,6 +103,12 @@ StorageFolder localFolder = ApplicationData.Current.LocalFolder;
 
 ```javascript
 var localFolder = Windows.Storage.ApplicationData.current.localFolder;
+```
+
+```cppwinrt
+Windows::Storage::StorageFolder storageFolder{
+	Windows::Storage::ApplicationData::Current().LocalFolder()
+};
 ```
 
 ```cpp
@@ -108,12 +126,20 @@ After you retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/wind
 using Windows.Storage;
 StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
 ```
+
 ```javascript
 Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
     function(file) {
         // Process file
     }
 );
+```
+
+```cppwinrt
+Windows::Storage::StorageFile file{
+	co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{ L"ms-appdata:///local/file.txt" })
+};
+// Process file
 ```
 
 ```cpp
@@ -131,7 +157,7 @@ The "ms-appdata:///local/" prefix in the URI refers to the app's local folder. T
 
 In addition, and unlike other locations, you can also access files in your app data locations by using some [Win32 and COM for UWP apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some C/C++ Standard Library functions from Visual Studio.
 
-You can’t access the local, roaming, or temporary folders through the file picker.
+You can't access the local, roaming, or temporary folders through the file picker.
 
 ### Removable devices
 Additionally, your app can access some of the files on connected devices by default. This is an option if your app uses the [AutoPlay extension](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) to launch automatically when users connect a device, like a camera or USB thumb drive, to their system. The files your app can access are limited to specific file types that are specified via File Type Association declarations in your app manifest.
@@ -163,10 +189,17 @@ Windows.Storage.DownloadsFolder.createFileAsync("file.txt").done(
 );
 ```
 
+```cppwinrt
+Windows::Storage::StorageFile newFile{
+	co_await Windows::Storage::DownloadsFolder::CreateFileAsync(L"file.txt")
+};
+// Process file
+```
+
 ```cpp
 using Windows::Storage;
 auto createFileTask = create_task(DownloadsFolder::CreateFileAsync(L"file.txt"));
-reateFileTask.then([](StorageFile^ newFile)
+createFileTask.then([](StorageFile^ newFile)
 {
     // Process file
 });
@@ -187,6 +220,13 @@ Windows.Storage.DownloadsFolder.createFolderAsync("New Folder").done(
         // Process folder
     }
 );
+```
+
+```cppwinrt
+Windows::Storage::StorageFolder newFolder{
+	co_await Windows::Storage::DownloadsFolder::CreateFolderAsync(L"New Folder")
+};
+// Process folder
 ```
 
 ```cpp
@@ -213,7 +253,7 @@ The following table lists additional locations that you can access by declaring 
 | Location | Capability | Windows.Storage API |
 |----------|------------|---------------------|
 | All files that the user has access to. For example: documents, pictures, photos, downloads, desktop, OneDrive, etc. | broadFileSystemAccess<br><br>This is a restricted capability. On first use, the system will prompt the user to allow access. Access is configurable in Settings > Privacy > File system. If you submit an app to the Store that declares this capability, you will need to supply additional descriptions of why your app needs this capability, and how it intends to use it.<br>This capability works for APIs in the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) namespace | n/a |
-| Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user’s OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user's OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Music     | MusicLibrary <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Pictures  | PicturesLibrary<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | Videos    | VideosLibrary<br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
@@ -226,7 +266,7 @@ The following table lists additional locations that you can access by declaring 
 
 This example adds the restricted `broadFileSystemAccess` capability. In addition to specifying the capability, the `rescap` namespace must be added, and is also added to `IgnorableNamespaces`:
 
-``` xaml
+```xaml
 <Package
   ...
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
