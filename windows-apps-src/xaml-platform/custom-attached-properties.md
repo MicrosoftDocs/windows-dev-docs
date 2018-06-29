@@ -10,10 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - vb
+  - cpp
 ---
 
 # Custom attached properties
-
 
 An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
 
@@ -25,7 +28,8 @@ We assume that you understand dependency properties from the perspective of a co
 
 You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), such as [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561).
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
+> [!WARNING]
+> An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
 
 ## Registering a custom attached property
 
@@ -35,7 +39,8 @@ Define your attached property as a dependency property by declaring a **public**
 
 The main area where defining a custom attached property differs from a custom dependency property is in how you define the accessors or wrappers. Instead of the using the wrapper technique described in [Custom dependency properties](custom-dependency-properties.md), you must also provide static **Get***PropertyName* and **Set***PropertyName* methods as accessors for the attached property. The accessors are used mostly by the XAML parser, although any other caller can also use them to set values in non-XAML scenarios.
 
-**Important**  If you don't define the accessors correctly, the XAML processor can't access your attached property and anyone who tries to use it will probably get a XAML parser error. Also, design and coding tools often rely on the "\*Property" conventions for naming identifiers when they encounter a custom dependency property in a referenced assembly.
+> [!IMPORTANT]
+> If you don't define the accessors correctly, the XAML processor can't access your attached property and anyone who tries to use it will probably get a XAML parser error. Also, design and coding tools often rely on the "\*Property" conventions for naming identifiers when they encounter a custom dependency property in a referenced assembly.
 
 ## Accessors
 
@@ -45,13 +50,13 @@ The signature for the **Get**_PropertyName_ accessor must be this.
 
 For Microsoft Visual Basic, it is this.
 
-` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
+`Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
 The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *valueType* return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
 
 The signature for the **Set***PropertyName* accessor must be this.
 
-`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
+`public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
 For Visual Basic, it is this.
 
@@ -59,32 +64,32 @@ For Visual Basic, it is this.
 
 The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *value* object and its *valueType* can be of a more specific type in your implementation. Remember that the value for this method is the input that comes from the XAML processor when it encounters your attached property in markup. There must be type conversion or existing markup extension support for the type you use, so that the appropriate type can be created from an attribute value (which is ultimately just a string). The basic **Object** type is acceptable, but often you'll want further type safety. To accomplish that, put type enforcement in the accessors.
 
-**Note**  It's also possible to define an attached property where the intended usage is through property element syntax. In that case you don't need type conversion for the values, but you do need to assure that the values you intend can be constructed in XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) is an example of an existing attached property that only supports property element usage.
+> [!NOTE]
+> It's also possible to define an attached property where the intended usage is through property element syntax. In that case you don't need type conversion for the values, but you do need to assure that the values you intend can be constructed in XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) is an example of an existing attached property that only supports property element usage.
 
 ## Code example
 
 This example shows the dependency property registration (using the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method), as well as the **Get** and **Set** accessors, for a custom attached property. In the example, the attached property name is `IsMovable`. Therefore, the accessors must be named `GetIsMovable` and `SetIsMovable`. The owner of the attached property is a service class named `GameService` that doesn't have a UI of its own; its purpose is only to provide the attached property services when the **GameService.IsMovable** attached property is used.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-    public class GameService : DependencyObject
+public class GameService : DependencyObject
+{
+    public static readonly DependencyProperty IsMovableProperty = 
+    DependencyProperty.RegisterAttached(
+      "IsMovable",
+      typeof(Boolean),
+      typeof(GameService),
+      new PropertyMetadata(false)
+    );
+    public static void SetIsMovable(UIElement element, Boolean value)
     {
-        public static readonly DependencyProperty IsMovableProperty = 
-        DependencyProperty.RegisterAttached(
-          "IsMovable",
-          typeof(Boolean),
-          typeof(GameService),
-          new PropertyMetadata(false)
-        );
-        public static void SetIsMovable(UIElement element, Boolean value)
-        {
-            element.SetValue(IsMovableProperty, value);
-        }
-        public static Boolean GetIsMovable(UIElement element)
-        {
-            return (Boolean)element.GetValue(IsMovableProperty);
-        }
+        element.SetValue(IsMovableProperty, value);
     }
+    public static Boolean GetIsMovable(UIElement element)
+    {
+        return (Boolean)element.GetValue(IsMovableProperty);
+    }
+}
 ```
 
 ```vb
@@ -182,7 +187,7 @@ After you have defined your attached property and included its support members a
 
 An XML namespace mapping for XAML is typically placed in the root element of a XAML page. For example, for the class named `GameService` in the namespace `UserAndCustomControls` that contains the attached property definitions shown in preceding snippets, the mapping might look like this.
 
-```XML
+```xaml
 <UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:uc="using:UserAndCustomControls"
@@ -192,17 +197,18 @@ An XML namespace mapping for XAML is typically placed in the root element of a X
 
 Using the mapping, you can set your `GameService.IsMovable` attached property on any element that matches your target definition, including an existing type that Windows Runtime defines.
 
-```XML
-<Image uc:GameService.IsMovable="true" .../>
+```xaml
+<Image uc:GameService.IsMovable="True" .../>
 ```
 
 If you are setting the property on an element that is also within the same mapped XML namespace, you still must include the prefix on the attached property name. This is because the prefix qualifies the owner type. The attached property's attribute cannot be assumed to be within the same XML namespace as the element where the attribute is included, even though, by normal XML rules, attributes can inherit namespace from elements. For example, if you are setting `GameService.IsMovable` on a custom type of `ImageWithLabelControl` (definition not shown), and even if both were defined in the same code namespace mapped to same prefix, the XAML would still be this.
 
-```XML
-<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
+```xaml
+<uc:ImageWithLabelControl uc:GameService.IsMovable="True" .../>
 ```
 
-**Note**  If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
+> [!NOTE]
+> If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
 
 ## Value type of a custom attached property
 
@@ -237,7 +243,8 @@ The code looks something like this pseudocode:
     }
 ```
 
-**Note**  For more info on how panels work, see [XAML custom panels overview](https://msdn.microsoft.com/library/windows/apps/mt228351).
+> [!NOTE]
+> For more info on how panels work, see [XAML custom panels overview](https://msdn.microsoft.com/library/windows/apps/mt228351).
 
 ## Related topics
 
