@@ -14,7 +14,6 @@ ms.localizationpriority: medium
 
 # Dependency properties overview
 
-
 This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.
 
 ## What is a dependency property?
@@ -25,19 +24,19 @@ In order to support a dependency property, the object that defines the property 
 
 The purpose of dependency properties is to provide a systemic way to compute the value of a property based on other inputs (other properties, events and states that occur within your app while it runs). These other inputs might include:
 
--   External input such as user preference
--   Just-in-time property determination mechanisms such as data binding, animations and storyboards
--   Multiple-use templating patterns such as resources and styles
--   Values known through parent-child relationships with other elements in the object tree
+- External input such as user preference
+- Just-in-time property determination mechanisms such as data binding, animations and storyboards
+- Multiple-use templating patterns such as resources and styles
+- Values known through parent-child relationships with other elements in the object tree
 
 A dependency property represents or supports a specific feature of the programming model for defining a Windows Runtime app with XAML for UI and C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) for code. These features include:
 
--   Data binding
--   Styles
--   Storyboarded animations
--   "PropertyChanged" behavior; a dependency property can be implemented to provide callbacks that can propagate changes to other dependency properties
--   Using a default value that comes from property metadata
--   General property system utility such as [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) and metadata lookup
+- Data binding
+- Styles
+- Storyboarded animations
+- "PropertyChanged" behavior; a dependency property can be implemented to provide callbacks that can propagate changes to other dependency properties
+- Using a default value that comes from property metadata
+- General property system utility such as [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) and metadata lookup
 
 ## Dependency properties and Windows Runtime properties
 
@@ -51,7 +50,7 @@ Here is a summation of the terminology that we use in the documentation when dis
 |------|-------------|
 | Dependency property | A property that exists on a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier (see below). Usually this identifier is available as a static member of the defining **DependencyObject** derived class. |
 | Dependency property identifier | A constant value to identify the property, it is typically public and read-only. |
-| Property wrapper | The callable **get** and **set** implementations for a Windows Runtime property. Or, the language-specific projection of the original definition. A **get** property wrapper implementation calls [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx), passing the relevant dependency property identifier. | 
+| Property wrapper | The callable **get** and **set** implementations for a Windows Runtime property. Or, the language-specific projection of the original definition. A **get** property wrapper implementation calls [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx), passing the relevant dependency property identifier. |
 
 The property wrapper is not just convenience for callers, it also exposes the dependency property to any process, tool or projection that uses Windows Runtime definitions for properties.
 
@@ -60,7 +59,7 @@ The following example defines a custom "IsSpinning" dependency property as defin
 ```csharp
 // IsSpinningProperty is the dependency property identifier
 // no need for info in the last PropertyMetadata parameter, so we pass null
-public static readonly DependencyProperty IsSpinningProperty = 
+public static readonly DependencyProperty IsSpinningProperty =
     DependencyProperty.Register(
         "IsSpinning", typeof(Boolean),
         typeof(ExampleClass), null
@@ -73,7 +72,8 @@ public bool IsSpinning
 }
 ```
 
-**Note**  The preceding example is not intended as the complete example for how to create a custom dependency property. It is intended to show dependency property concepts for anyone that prefers learning concepts through code. For a more complete example, see [Custom dependency properties](custom-dependency-properties.md).
+> [!NOTE]
+> The preceding example is not intended as the complete example for how to create a custom dependency property. It is intended to show dependency property concepts for anyone that prefers learning concepts through code. For a more complete example, see [Custom dependency properties](custom-dependency-properties.md).
 
 ## Dependency property value precedence
 
@@ -85,11 +85,11 @@ For example, styles and templates are intended to be a shared starting point for
 
 The following is the definitive order that the property system uses when assigning the run-time value for a dependency property. Highest precedence is listed first. You'll find more detailed explanations just past this list.
 
-1.  **Animated values:** Active animations, visual state animations, or animations with a [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior. To have any practical effect, an animation applied to a property must have precedence over the base (unanimated) value, even if that value was set locally.
-2.  **Local value:** A local value might be set through the convenience of the property wrapper, which also equates to setting as an attribute or property element in XAML, or by a call to the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method using a property of a specific instance. If you set a local value by using a binding or a static resource, these each act in the precedence as if a local value was set, and bindings or resource references are erased if a new local value is set.
-3.  **Templated properties:** An element has these if it was created as part of a template (from a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
-4.  **Style setters:** Values from a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) within styles from page or application resources.
-5.  **Default value:** A dependency property can have a default value as part of its metadata.
+1. **Animated values:** Active animations, visual state animations, or animations with a [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior. To have any practical effect, an animation applied to a property must have precedence over the base (unanimated) value, even if that value was set locally.
+1. **Local value:** A local value might be set through the convenience of the property wrapper, which also equates to setting as an attribute or property element in XAML, or by a call to the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method using a property of a specific instance. If you set a local value by using a binding or a static resource, these each act in the precedence as if a local value was set, and bindings or resource references are erased if a new local value is set.
+1. **Templated properties:** An element has these if it was created as part of a template (from a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
+1. **Style setters:** Values from a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) within styles from page or application resources.
+1. **Default value:** A dependency property can have a default value as part of its metadata.
 
 ### Templated properties
 
@@ -97,10 +97,10 @@ Templated properties as a precedence item do not apply to any property of an ele
 
 All the properties that are set from a control template have values of some kind. These values are almost like an extended set of default values for the control and are often associated with values you can reset later by setting the property values directly. Thus the template-set values must be distinguishable from a true local value, so that any new local value can overwrite it.
 
-**Note**  
-In some cases the template might override even local values, if the template failed to expose [{TemplateBinding} markup extension](templatebinding-markup-extension.md) references for properties that should have been settable on instances. This is usually done only if the property is really not intended to be set on instances, for example if it's only relevant to visuals and template behavior and not to the intended function or runtime logic of the control that uses the template.
+> [!NOTE]
+> In some cases the template might override even local values, if the template failed to expose [{TemplateBinding} markup extension](templatebinding-markup-extension.md) references for properties that should have been settable on instances. This is usually done only if the property is really not intended to be set on instances, for example if it's only relevant to visuals and template behavior and not to the intended function or runtime logic of the control that uses the template.
 
-###  Bindings and precedence
+### Bindings and precedence
 
 Binding operations have the appropriate precedence for whatever scope they're used for. For example, a [{Binding}](binding-markup-extension.md) applied to a local value acts as local value, and a [{TemplateBinding} markup extension](templatebinding-markup-extension.md) for a property setter applies as a style setter does. Because bindings must wait until run-time to obtain values from data sources, the process of determining the property value precedence for any property extends into run-time as well.
 
@@ -124,12 +124,12 @@ Establishing the default value for a dependency property with a [**PropertyMetad
 
 Dependency properties still have default values even if those default values weren't explicitly defined in that property's metadata. Unless they have been changed by metadata, default values for the Windows Runtime dependency properties are generally one of the following:
 
--   A property that uses a run-time object or the basic **Object** type (a *reference type*) has a default value of **null**. For example, [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null** until it's deliberately set or is inherited.
--   A property that uses a basic value such as numbers or a Boolean value (a *value type*) uses an expected default for that value. For example, 0 for integers and floating-point numbers, **false** for a Boolean.
--   A property that uses a Windows Runtime structure has a default value that's obtained by calling that structure's implicit default constructor. This constructor uses the defaults for each of the basic value fields of the structure. For example, a default for a [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) value is initialized with its **X** and **Y** values as 0.
--   A property that uses an enumeration has a default value of the first defined member in that enumeration. Check the reference for specific enumerations to see what the default value is.
--   A property that uses a string ([**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) for .NET, [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) for C++/CX) has a default value of an empty string (**""**).
--   Collection properties aren't typically implemented as dependency properties, for reasons discussed further on in this topic. But if you implement a custom collection property and you want it to be a dependency property, make sure to avoid an *unintentional singleton* as described near the end of [Custom dependency properties](custom-dependency-properties.md).
+- A property that uses a run-time object or the basic **Object** type (a *reference type*) has a default value of **null**. For example, [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null** until it's deliberately set or is inherited.
+- A property that uses a basic value such as numbers or a Boolean value (a *value type*) uses an expected default for that value. For example, 0 for integers and floating-point numbers, **false** for a Boolean.
+- A property that uses a Windows Runtime structure has a default value that's obtained by calling that structure's implicit default constructor. This constructor uses the defaults for each of the basic value fields of the structure. For example, a default for a [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) value is initialized with its **X** and **Y** values as 0.
+- A property that uses an enumeration has a default value of the first defined member in that enumeration. Check the reference for specific enumerations to see what the default value is.
+- A property that uses a string ([**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) for .NET, [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) for C++/CX) has a default value of an empty string (**""**).
+- Collection properties aren't typically implemented as dependency properties, for reasons discussed further on in this topic. But if you implement a custom collection property and you want it to be a dependency property, make sure to avoid an *unintentional singleton* as described near the end of [Custom dependency properties](custom-dependency-properties.md).
 
 ## Property functionality provided by a dependency property
 
@@ -139,7 +139,7 @@ A dependency property can have its value set through applying a data binding. Da
 
 The following example sets the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) value for a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element, using a binding in XAML. The binding uses an inherited data context and an object data source. (Neither of these is shown in the shortened example; for a more complete sample that shows context and source, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).)
 
-```XML
+```xaml
 <Canvas>
   <TextBlock Text="{Binding Team.TeamName}"/>
 </Canvas>
@@ -147,7 +147,8 @@ The following example sets the [**Text**](https://msdn.microsoft.com/library/win
 
 You can also establish bindings using code rather than XAML. See [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
 
-**Note**  Bindings like this are treated as a local value for purposes of dependency property value precedence. If you set another local value for a property that originally held a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) value, you will overwrite the binding entirely, not just the binding's run-time value. {x:Bind} Bindings are implemented using generated code that will set a local value for the property. If you set a local value for a property that is using {x:Bind}, then that value will be replaced the next time the binding is evaluated, such as when it observes a property change on its source object.
+> [!NOTE]
+> Bindings like this are treated as a local value for purposes of dependency property value precedence. If you set another local value for a property that originally held a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) value, you will overwrite the binding entirely, not just the binding's run-time value. {x:Bind} Bindings are implemented using generated code that will set a local value for the property. If you set a local value for a property that is using {x:Bind}, then that value will be replaced the next time the binding is evaluated, such as when it observes a property change on its source object.
 
 ### Binding sources, binding targets, the role of FrameworkElement
 
@@ -159,7 +160,8 @@ For either code or XAML, remember that [**DataContext**](https://msdn.microsoft.
 
 Wiring the binding is not the only thing that's needed for most data binding scenarios. For a one-way or two-way binding to be effective, the source property must support change notifications that propagate to the binding system and thus the target. For custom binding sources, this means that the property must be a dependency property, or the object must support [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Collections should support [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Certain classes support these interfaces in their implementations so that they are useful as base classes for data binding scenarios; an example of such a class is [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx). For more information on data binding and how data binding relates to the property system, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-**Note**  The types listed here support Microsoft .NET data sources. C++/CX data sources use different interfaces for change notification or observable behavior, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> [!NOTE]
+> The types listed here support Microsoft .NET data sources. C++/CX data sources use different interfaces for change notification or observable behavior, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### Styles and templates
 
@@ -197,14 +199,17 @@ The threading aspects of [**DependencyObject**](https://msdn.microsoft.com/libra
 
 ## Related topics
 
-**Conceptual material**
-* [Custom dependency properties](custom-dependency-properties.md)
-* [Attached properties overview](attached-properties-overview.md)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**APIs related to dependency properties**
-* [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
-* [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
+### Conceptual material
+
+- [Custom dependency properties](custom-dependency-properties.md)
+- [Attached properties overview](attached-properties-overview.md)
+- [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
+- [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+- [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
+
+## APIs related to dependency properties
+
+- [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
+- [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 

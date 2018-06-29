@@ -289,7 +289,7 @@ namespace CaptureSamples
             }
         } 
  
-        private void ResetFramePool(Vector2 size, bool recreateDevice) 
+        private void ResetFramePool(SizeInt32 size, bool recreateDevice) 
         { 
             do 
             { 
