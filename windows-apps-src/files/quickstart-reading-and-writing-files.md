@@ -10,17 +10,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
+  - cpp
+  - vb
 ---
 
 # Create, write, and read a file
 
 **Important APIs**
 
--   [**StorageFolder class**](https://msdn.microsoft.com/library/windows/apps/br227230)
--   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/br227171)
--   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/hh701440)
+-   [**StorageFolder class**](/uwp/api/windows.storage.storagefolder)
+-   [**StorageFile class**](/uwp/api/windows.storage.storagefile)
+-   [**FileIO class**](/uwp/api/windows.storage.fileio)
 
-Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storagefile) object.
 
 > [!NOTE]
 > Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
@@ -29,7 +34,7 @@ Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/libra
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Know how to get the file that you want to read from, write to, or both**
 
@@ -74,9 +79,9 @@ Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt"
 
 ## Writing to a file
 
-Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+Here's how to write to a writable file on disk using the [**StorageFile**](/uwp/api/windows.storage.storagefile) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).
 
-```csharp  
+```csharp
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 Windows.Storage.StorageFile sampleFile =
@@ -95,7 +100,7 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```cpp  
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
 {
@@ -103,16 +108,16 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 });
 ```
 
-```vb  
+```vb
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
 **Writing text to a file**
 
-Write text to your file by calling the [**FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) method.
+Write text to your file by calling the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.
 
-```csharp  
+```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 ```
 
@@ -129,7 +134,7 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```cpp 
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
 {
@@ -138,15 +143,15 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 });
 ```
 
-```vb  
+```vb
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
 **Writing bytes to a file by using a buffer (2 steps)**
 
-1.  First, call [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) to get a buffer of the bytes (based on an arbitrary string) that you want to write to your file.
+1.  First, call [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) to get a buffer of the bytes (based on a string) that you want to write to your file.
 
-```csharp  
+```csharp
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
     "What fools these mortals be", Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
 ```
@@ -165,10 +170,11 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 	Windows::Storage::Streams::IBuffer buffer{
 		Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
 			L"What fools these mortals be", Windows::Security::Cryptography::BinaryStringEncoding::Utf8)};
+	// The code in step 2 goes here.
 }
 ```
 
-```cpp  
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
 {
@@ -184,7 +190,7 @@ Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
     Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
 ```
 
-2.  Then write the bytes from your buffer to your file by calling the [**FileIO.WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) method.
+2.  Then write the bytes from your buffer to your file by calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.
 
 ```csharp
 await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -206,15 +212,15 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 });
 ```
 
-```vb  
+```vb
 Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
 ```
 
 **Writing text to a file by using a stream (4 steps)**
 
-1.  First, open the file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the open operation completes.
+1.  First, open the file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the open operation completes.
 
-```cs  
+```csharp
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
 
@@ -228,11 +234,11 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
 	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
 	Windows::Storage::Streams::IRandomAccessStream stream{ co_await sampleFile.OpenAsync(Windows::Storage::FileAccessMode::ReadWrite) };
-	// Process stream.
+	// The code in step 2 goes here.
 }
 ```
 
-```cpp  
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
 {
@@ -243,13 +249,13 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 });
 ```
 
-```vb  
+```vb
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Next, get an output stream by calling the [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) method from the `stream`. Put this in a **using** statement to manage the output stream's lifetime.
+2.  Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
 
-```cs  
+```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))
 {
     // We'll add more code here in the next step.
@@ -257,204 +263,288 @@ using (var outputStream = stream.GetOutputStreamAt(0))
 stream.Dispose(); // Or use the stream variable (see previous code snippet) with a using statement as well.
 ```
 
-```cpp 
+```cppwinrt
+Windows::Storage::Streams::IOutputStream outputStream{ stream.GetOutputStreamAt(0) };
+// The code in step 3 goes here.
+```
+
+```cpp
 // Add to "Process stream" in part 1
 IOutputStream^ outputStream = stream->GetOutputStreamAt(0);
 ```
 
-```vb 
+```vb
 Using outputStream = stream.GetOutputStreamAt(0)
 ' We'll add more code here in the next step.
 End Using
 ```
 
-3.  Now add this code within the existing **using** statement to write to the output stream by creating a new [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) object and calling the [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) method.
+3.  Now add this code (if you're using C#, within the existing **using** statement) to write to the output stream by creating a new [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) object and calling the [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) method.
 
-    ```cs  
-    using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
-    {
-        dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
-    }
-    ```
-    ```cpp  
-    // Added after code from part 2
-    DataWriter^ dataWriter = ref new DataWriter(outputStream);
-    dataWriter->WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
-    ```
-    ```vb  
-    Dim dataWriter As New DataWriter(outputStream)
-    dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
-    ```
+```csharp
+using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
+{
+    dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+}
+```
 
-4.  Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
+```cppwinrt
+Windows::Storage::Streams::DataWriter dataWriter;
+dataWriter.WriteString(L"DataWriter has methods to write to various types, such as DataTimeOffset.");
+// The code in step 4 goes here.
+```
 
-    ```cs  
-    await dataWriter.StoreAsync();
-        await outputStream.FlushAsync();
-    ```
-    ```cpp   
-    // Added after code from part 3
-    dataWriter->StoreAsync();
-    outputStream->FlushAsync();
-    ```
-    ```vb  
-    Await dataWriter.StoreAsync()
-        Await outputStream.FlushAsync()
-    ```
+```cpp
+// Added after code from part 2
+DataWriter^ dataWriter = ref new DataWriter(outputStream);
+dataWriter->WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+```
+
+```vb
+Dim dataWriter As New DataWriter(outputStream)
+dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
+```
+
+4.  Lastly, add this code (if you're using C#, within the inner **using** statement) to save the text to your file with [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
+
+```csharp
+await dataWriter.StoreAsync();
+await outputStream.FlushAsync();
+```
+
+```cppwinrt
+dataWriter.StoreAsync();
+outputStream.FlushAsync();
+```
+
+```cpp
+// Added after code from part 3
+dataWriter->StoreAsync();
+outputStream->FlushAsync();
+```
+
+```vb
+Await dataWriter.StoreAsync()
+Await outputStream.FlushAsync()
+```
 
 ## Reading from a file
 
-Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+Here's how to read from a file on disk using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).
 
-```cs  
+```csharp
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 Windows.Storage.StorageFile sampleFile =
     await storageFolder.GetFileAsync("sample.txt");
 ```
-```cpp  
+
+```cppwinrt
+Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+// Process file
+```
+
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
 {
     // Process file
 });
 ```
-```vb  
+
+```vb
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
 **Reading text from a file**
 
-Read text from your file by calling the [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+Read text from your file by calling the [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) method.
 
-```cs  
+```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 ```
-```cpp  
+
+```cppwinrt
+Windows::Foundation::IAsyncOperation<winrt::hstring> ExampleCoroutineAsync()
+{
+	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+	co_return co_await Windows::Storage::FileIO::ReadTextAsync(sampleFile);
+}
+```
+
+```cpp
 StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
 {
     return FileIO::ReadTextAsync(sampleFile);
 });
 ```
-```vb  
+
+```vb
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
 **Reading text from a file by using a buffer (2 steps)**
 
-1.  First, call the [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+1.  First, call the [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) method.
 
-    ```cs  
-    var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
-    ```
+```csharp
+var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
+```
 
-    ```cpp  
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        return FileIO::ReadBufferAsync(sampleFile);
+```cppwinrt
+Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+Windows::Storage::Streams::IBuffer buffer{ co_await Windows::Storage::FileIO::ReadBufferAsync(sampleFile) };
+// The code in step 2 goes here.
+```
 
-    }).then([](Streams::IBuffer^ buffer)
-    {
-        // Process buffer
-    });
-    ```
+```cpp
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+{
+    return FileIO::ReadBufferAsync(sampleFile);
 
-    ```vb  
-    Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
-    ```
+}).then([](Streams::IBuffer^ buffer)
+{
+    // Process buffer
+});
+```
 
-2.  Then use a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object to read first the length of the buffer and then its contents.
+```vb
+Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
+```
 
-    ```cs  
-    using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
-    {
-        string text = dataReader.ReadString(buffer.Length);
-    }
-    ```
-    ```cpp  
-    // Add to "Process buffer" section from part 1
-    auto dataReader = DataReader::FromBuffer(buffer);
-    String^ bufferText = dataReader->ReadString(buffer->Length);
-    ```
-    ```vb  
-    Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
-    Dim text As String = dataReader.ReadString(buffer.Length)
-    ```
+2.  Then use a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object to read first the length of the buffer and then its contents.
+
+```csharp
+using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
+{
+    string text = dataReader.ReadString(buffer.Length);
+}
+```
+
+```cppwinrt
+auto dataReader{ Windows::Storage::Streams::DataReader::FromBuffer(buffer) };
+winrt::hstring bufferText{ dataReader.ReadString(buffer.Length()) };
+```
+
+```cpp
+// Add to "Process buffer" section from part 1
+auto dataReader = DataReader::FromBuffer(buffer);
+String^ bufferText = dataReader->ReadString(buffer->Length);
+```
+
+```vb
+Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
+Dim text As String = dataReader.ReadString(buffer.Length)
+```
 
 **Reading text from a file by using a stream (4 steps)**
 
-1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the operation completes.
+1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the operation completes.
 
-    ```cs  
-    var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
-    ```
-    ```cpp  
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+```csharp
+var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
+```
+
+```cppwinrt
+Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+Windows::Storage::Streams::IRandomAccessStream stream{ co_await sampleFile.OpenAsync(Windows::Storage::FileAccessMode::Read) };
+// The code in step 2 goes here.
+```
+
+```cpp
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+{
+    create_task(sampleFile->OpenAsync(FileAccessMode::Read)).then([sampleFile](IRandomAccessStream^ stream)
     {
-        create_task(sampleFile->OpenAsync(FileAccessMode::Read)).then([sampleFile](IRandomAccessStream^ stream)
-        {
-            // Process stream
-        });
+        // Process stream
     });
-    ```
-    ```vb  
-    Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read)
-    ```
+});
+```
+
+```vb
+Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read)
+```
 
 2.  Get the size of the stream to use later.
 
-    ```cs  
-    ulong size = stream.Size;
-    ```
-    ```cpp  
-    // Add to "Process stream" from part 1
-    UINT64 size = stream->Size;
-    ```
-    ```vb  
-    Dim size = stream.Size
-    ```
+```csharp
+ulong size = stream.Size;
+```
 
-3.  Get an input stream by calling the [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
+```cppwinrt
+uint64_t size{ stream.Size() };
+// The code in step 3 goes here.
+```
 
-    ```cs  
-    using (var inputStream = stream.GetInputStreamAt(0))
-    {
-        // We'll add more code here in the next step.
-    }
-    ```
-    ```cpp  
-    // Add after code from part 2
-    IInputStream^ inputStream = stream->GetInputStreamAt(0);
-    auto dataReader = ref new DataReader(inputStream);
-    ```
-    ```vb  
-    Using inputStream = stream.GetInputStreamAt(0)
-        ' We'll add more code here in the next step.
-    End Using
-    ```
+```cpp
+// Add to "Process stream" from part 1
+UINT64 size = stream->Size;
+```
 
-4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object on the stream then read the text by calling [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) and [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).
+```vb
+Dim size = stream.Size
+```
 
-    ```cs  
-    using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
-    {
-        uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
-        string text = dataReader.ReadString(numBytesLoaded);
-    }
-    ```
-    ```cpp 
-    // Add after code from part 3
-    create_task(dataReader->LoadAsync(size)).then([sampleFile, dataReader](unsigned int numBytesLoaded)
-    {
-        String^ streamText = dataReader->ReadString(numBytesLoaded);
-    });
-    ```
-    ```vb  
-    Dim dataReader As New DataReader(inputStream)
-    Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
-    Dim text As String = dataReader.ReadString(numBytesLoaded)
-    ```
+3.  Get an input stream by calling the [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
+
+```csharp
+using (var inputStream = stream.GetInputStreamAt(0))
+{
+    // We'll add more code here in the next step.
+}
+```
+
+```cppwinrt
+Windows::Storage::Streams::IInputStream inputStream{ stream.GetInputStreamAt(0) };
+Windows::Storage::Streams::DataReader dataReader{ inputStream };
+// The code in step 4 goes here.
+```
+
+```cpp
+// Add after code from part 2
+IInputStream^ inputStream = stream->GetInputStreamAt(0);
+auto dataReader = ref new DataReader(inputStream);
+```
+
+```vb
+Using inputStream = stream.GetInputStreamAt(0)
+' We'll add more code here in the next step.
+End Using
+```
+
+4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object on the stream then read the text by calling [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) and [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring).
+
+```csharp
+using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
+{
+    uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
+    string text = dataReader.ReadString(numBytesLoaded);
+}
+```
+
+```cppwinrt
+unsigned int cBytesLoaded{ co_await dataReader.LoadAsync(size) };
+winrt::hstring streamText{ dataReader.ReadString(cBytesLoaded) };
+```
+
+```cpp
+// Add after code from part 3
+create_task(dataReader->LoadAsync(size)).then([sampleFile, dataReader](unsigned int numBytesLoaded)
+{
+    String^ streamText = dataReader->ReadString(numBytesLoaded);
+});
+```
+
+```vb
+Dim dataReader As New DataReader(inputStream)
+Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
+Dim text As String = dataReader.ReadString(numBytesLoaded)
+```
