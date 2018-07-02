@@ -55,7 +55,7 @@ A **RemoteSystem** object is retrieved if a valid **HostName** object is provide
 
 ## Querying a capability on a remote system
 
-Although separate from discovery filtering, querying device capabilities can be an important part of the discovery process. Using the [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) method, you can query discovered remote systems for support of certain capabilities such as remote session connectivity or spatial entity (holographic) sharing. See the [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) class for the list of queryable capabilities.
+Although separate from discovery filtering, querying device capabilities can be an important part of the discovery process. Using the [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) method, you can query discovered remote systems for support of certain capabilities such as remote session connectivity or spatial entity (holographic) sharing. See the [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) class for the list of queryable capabilities.
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests
