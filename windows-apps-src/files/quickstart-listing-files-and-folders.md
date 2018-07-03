@@ -10,7 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - cppwinrt
+  - cpp
+  - vb
 ---
+
 # Enumerate and query files and folders
 
 Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
@@ -24,7 +30,7 @@ For guidance on how to store your Universal Windows Platform app's data, see the
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Access permissions to the location**
 
@@ -66,26 +72,26 @@ foreach (StorageFolder folder in folderList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	std::wstringstream outputString;
-	outputString << L"Files:" << std::endl;
+    std::wstringstream outputString;
+    outputString << L"Files:" << std::endl;
 
-	for (auto const& file : co_await picturesFolder.GetFilesAsync())
-	{
-		outputString << file.Name().c_str() << std::endl;
-	}
+    for (auto const& file : co_await picturesFolder.GetFilesAsync())
+    {
+        outputString << file.Name().c_str() << std::endl;
+    }
 
-	outputString << L"Folders:" << std::endl;
-	for (auto const& folder : co_await picturesFolder.GetFoldersAsync())
-	{
-		outputString << folder.Name().c_str() << std::endl;
-	}
+    outputString << L"Folders:" << std::endl;
+    for (auto const& folder : co_await picturesFolder.GetFoldersAsync())
+    {
+        outputString << folder.Name().c_str() << std::endl;
+    }
 
-	OutputTextBlock().Text(outputString.str().c_str());
+    OutputTextBlock().Text(outputString.str().c_str());
 }
 ```
 
@@ -167,8 +173,8 @@ For Each folder As StorageFolder In folderList
 Next folder
 ```
 
-[!NOTE]
-In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> [!NOTE]
+> In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
 
 Alternatively, you can use the [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
 
@@ -200,28 +206,28 @@ foreach (var item in itemsList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	std::wstringstream outputString;
+    std::wstringstream outputString;
 
-	for (Windows::Storage::IStorageItem const& item : co_await picturesFolder.GetItemsAsync())
-	{
-		outputString << item.Name().c_str();
+    for (Windows::Storage::IStorageItem const& item : co_await picturesFolder.GetItemsAsync())
+    {
+        outputString << item.Name().c_str();
 
-		if (item.IsOfType(Windows::Storage::StorageItemTypes::Folder))
-		{
-			outputString << L" folder" << std::endl;
-		}
-		else
-		{
-			outputString << std::endl;
-		}
+        if (item.IsOfType(Windows::Storage::StorageItemTypes::Folder))
+        {
+            outputString << L" folder" << std::endl;
+        }
+        else
+        {
+            outputString << std::endl;
+        }
 
-		OutputTextBlock().Text(outputString.str().c_str());
-	}
+        OutputTextBlock().Text(outputString.str().c_str());
+    }
 }
 ```
 
@@ -312,29 +318,29 @@ foreach (StorageFolder folder in folderList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	Windows::Storage::Search::StorageFolderQueryResult queryResult{
-		picturesFolder.CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery::GroupByMonth)
-	};
+    Windows::Storage::Search::StorageFolderQueryResult queryResult{
+        picturesFolder.CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery::GroupByMonth)
+    };
 
-	std::wstringstream outputString;
+    std::wstringstream outputString;
 
-	for (Windows::Storage::StorageFolder const& folder : co_await queryResult.GetFoldersAsync())
-	{
-		auto files{ co_await folder.GetFilesAsync() };
-		outputString << folder.Name().c_str() << L" (" << files.Size() << L")" << std::endl;
+    for (Windows::Storage::StorageFolder const& folder : co_await queryResult.GetFoldersAsync())
+    {
+        auto files{ co_await folder.GetFilesAsync() };
+        outputString << folder.Name().c_str() << L" (" << files.Size() << L")" << std::endl;
 
-		for (Windows::Storage::StorageFile const& file : files)
-		{
-			outputString << L"    " << file.Name().c_str() << std::endl;
-		}
-	}
+        for (Windows::Storage::StorageFile const& file : files)
+        {
+            outputString << L"    " << file.Name().c_str() << std::endl;
+        }
+    }
 
-	OutputTextBlock().Text(outputString.str().c_str());
+    OutputTextBlock().Text(outputString.str().c_str());
 }
 ```
 
@@ -412,7 +418,7 @@ Next folder
 
 The output of the example looks similar to the following.
 
-``` syntax
+```syntax
 July ‎2015 (2)
    MyImage3.png
    MyImage4.png

@@ -119,7 +119,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
+To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.
