@@ -64,10 +64,10 @@ Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt"
 ```cppwinrt
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFile file{
-		co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///file.txt"})
-	};
-	// Process file
+    Windows::Storage::StorageFile file{
+        co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///file.txt"})
+    };
+    // Process file
 }
 ```
 
@@ -107,7 +107,7 @@ var localFolder = Windows.Storage.ApplicationData.current.localFolder;
 
 ```cppwinrt
 Windows::Storage::StorageFolder storageFolder{
-	Windows::Storage::ApplicationData::Current().LocalFolder()
+    Windows::Storage::ApplicationData::Current().LocalFolder()
 };
 ```
 
@@ -137,7 +137,7 @@ Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/
 
 ```cppwinrt
 Windows::Storage::StorageFile file{
-	co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{ L"ms-appdata:///local/file.txt" })
+    co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{ L"ms-appdata:///local/file.txt" })
 };
 // Process file
 ```
@@ -191,7 +191,7 @@ Windows.Storage.DownloadsFolder.createFileAsync("file.txt").done(
 
 ```cppwinrt
 Windows::Storage::StorageFile newFile{
-	co_await Windows::Storage::DownloadsFolder::CreateFileAsync(L"file.txt")
+    co_await Windows::Storage::DownloadsFolder::CreateFileAsync(L"file.txt")
 };
 // Process file
 ```
@@ -224,7 +224,7 @@ Windows.Storage.DownloadsFolder.createFolderAsync("New Folder").done(
 
 ```cppwinrt
 Windows::Storage::StorageFolder newFolder{
-	co_await Windows::Storage::DownloadsFolder::CreateFolderAsync(L"New Folder")
+    co_await Windows::Storage::DownloadsFolder::CreateFolderAsync(L"New Folder")
 };
 // Process folder
 ```
