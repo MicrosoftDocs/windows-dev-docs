@@ -4,7 +4,7 @@ title: Create a Universal Windows Platform console app
 description: This topic describes how to write a UWP app that runs in a console window.
 keywords: console uwp
 ms.author: twhitney
-ms.date: 03/30/2018
+ms.date: 07/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,24 +13,25 @@ ms.localizationpriority: medium
 
 # Create a Universal Windows Platform console app
 
-This topic describes how to create a C++ /WinRT or /CX Universal Windows Platform (UWP) console app.
+This topic describes how to create a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) or C++/CX Universal Windows Platform (UWP) console app.
 
-Starting with Windows 10, version 1803, you can write C++ /WinRT or /CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output and can use Win32 APIs available to UWP apps such as **printf** or **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you typically will launch them from the command-line.
+Starting with Windows 10, version 1803, you can write C++/WinRT or C++/CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output, and can use [Universal C Runtime](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) functions such as **printf** and **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you will typically launch them from the command-line.
 
-To see it in action, watch this video about Creating a UWP Console App:
+To see one in action, here's a video about Creating a UWP Console App.
+
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## Use a UWP Console app template 
 
-To create a UWP console app, first install the **Console App (Universal) Project Templates**, available from the [Visual Studio Marketplace](https://aka.ms/E2nzbv). The installed templates will then be available under **New Project** > **Installed** > **Other Languages** > **Visual C++** > **Windows Universal** as **Console App C++/CX (Universal Windows)** and **Console App C++/WinRT (Universal Windows)**.
+To create a UWP console app, first install the **Console App (Universal) Project Templates**, available from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). The installed templates are then available under **New Project** > **Installed** > **Other Languages** > **Visual C++** > **Windows Universal** as **Console App C++/WinRT (Universal Windows)** and **Console App C++/CX (Universal Windows)**.
 
 ## Add your code to main()
 
 The templates add **Program.cpp**, which contains the `main()` function. This is where execution begins in a UWP console app. Access the command-line arguments with the `__argc` and `__argv` parameters. The UWP console app exits when control returns from `main()`.
 
-The following example of **Program.cpp** is added by the **Console App C++ /WinRT** template:
+The following example of **Program.cpp** is added by the **Console App C++/WinRT** template:
 
-```cpp
+```cppwinrt
 #include "pch.h"
 
 using namespace winrt;
@@ -97,7 +98,7 @@ The template also adds the `Subsystem="console"` capability to the Package.appxm
 
 ## Additional considerations for UWP console apps
 
-- Only C++ /WinRT and C++ /CX UWP apps may be console apps.
+- Only C++/WinRT and C++/CX UWP apps may be console apps.
 - UWP Console apps must target the Desktop, or IoT project type.
 - UWP console apps may not create windows. They cannot use MessageBox(), for example, because it creates a window.
 - UWP console apps may not consume background tasks nor serve as a background task.

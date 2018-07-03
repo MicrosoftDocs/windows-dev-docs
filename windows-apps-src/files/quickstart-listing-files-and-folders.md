@@ -72,26 +72,26 @@ foreach (StorageFolder folder in folderList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	std::wstringstream outputString;
-	outputString << L"Files:" << std::endl;
+    std::wstringstream outputString;
+    outputString << L"Files:" << std::endl;
 
-	for (auto const& file : co_await picturesFolder.GetFilesAsync())
-	{
-		outputString << file.Name().c_str() << std::endl;
-	}
+    for (auto const& file : co_await picturesFolder.GetFilesAsync())
+    {
+        outputString << file.Name().c_str() << std::endl;
+    }
 
-	outputString << L"Folders:" << std::endl;
-	for (auto const& folder : co_await picturesFolder.GetFoldersAsync())
-	{
-		outputString << folder.Name().c_str() << std::endl;
-	}
+    outputString << L"Folders:" << std::endl;
+    for (auto const& folder : co_await picturesFolder.GetFoldersAsync())
+    {
+        outputString << folder.Name().c_str() << std::endl;
+    }
 
-	OutputTextBlock().Text(outputString.str().c_str());
+    OutputTextBlock().Text(outputString.str().c_str());
 }
 ```
 
@@ -206,28 +206,28 @@ foreach (var item in itemsList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	std::wstringstream outputString;
+    std::wstringstream outputString;
 
-	for (Windows::Storage::IStorageItem const& item : co_await picturesFolder.GetItemsAsync())
-	{
-		outputString << item.Name().c_str();
+    for (Windows::Storage::IStorageItem const& item : co_await picturesFolder.GetItemsAsync())
+    {
+        outputString << item.Name().c_str();
 
-		if (item.IsOfType(Windows::Storage::StorageItemTypes::Folder))
-		{
-			outputString << L" folder" << std::endl;
-		}
-		else
-		{
-			outputString << std::endl;
-		}
+        if (item.IsOfType(Windows::Storage::StorageItemTypes::Folder))
+        {
+            outputString << L" folder" << std::endl;
+        }
+        else
+        {
+            outputString << std::endl;
+        }
 
-		OutputTextBlock().Text(outputString.str().c_str());
-	}
+        OutputTextBlock().Text(outputString.str().c_str());
+    }
 }
 ```
 
@@ -318,29 +318,29 @@ foreach (StorageFolder folder in folderList)
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
-	Windows::Storage::StorageFolder picturesFolder{
-		Windows::Storage::KnownFolders::PicturesLibrary()
-	};
+    // Be sure to specify the Pictures Folder capability in your Package.appxmanifest.
+    Windows::Storage::StorageFolder picturesFolder{
+        Windows::Storage::KnownFolders::PicturesLibrary()
+    };
 
-	Windows::Storage::Search::StorageFolderQueryResult queryResult{
-		picturesFolder.CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery::GroupByMonth)
-	};
+    Windows::Storage::Search::StorageFolderQueryResult queryResult{
+        picturesFolder.CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery::GroupByMonth)
+    };
 
-	std::wstringstream outputString;
+    std::wstringstream outputString;
 
-	for (Windows::Storage::StorageFolder const& folder : co_await queryResult.GetFoldersAsync())
-	{
-		auto files{ co_await folder.GetFilesAsync() };
-		outputString << folder.Name().c_str() << L" (" << files.Size() << L")" << std::endl;
+    for (Windows::Storage::StorageFolder const& folder : co_await queryResult.GetFoldersAsync())
+    {
+        auto files{ co_await folder.GetFilesAsync() };
+        outputString << folder.Name().c_str() << L" (" << files.Size() << L")" << std::endl;
 
-		for (Windows::Storage::StorageFile const& file : files)
-		{
-			outputString << L"    " << file.Name().c_str() << std::endl;
-		}
-	}
+        for (Windows::Storage::StorageFile const& file : files)
+        {
+            outputString << L"    " << file.Name().c_str() << std::endl;
+        }
+    }
 
-	OutputTextBlock().Text(outputString.str().c_str());
+    OutputTextBlock().Text(outputString.str().c_str());
 }
 ```
 

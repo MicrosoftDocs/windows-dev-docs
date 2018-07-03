@@ -59,9 +59,9 @@ Windows.Storage.StorageFile sampleFile =
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	// Create a sample file; replace if exists.
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	co_await storageFolder.CreateFileAsync(L"sample.txt", Windows::Storage::CreationCollisionOption::ReplaceExisting);
+    // Create a sample file; replace if exists.
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    co_await storageFolder.CreateFileAsync(L"sample.txt", Windows::Storage::CreationCollisionOption::ReplaceExisting);
 }
 ```
 
@@ -94,9 +94,9 @@ Windows.Storage.StorageFile sampleFile =
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	auto sampleFile{ co_await storageFolder.CreateFileAsync(L"sample.txt", Windows::Storage::CreationCollisionOption::ReplaceExisting) };
-	// Process sampleFile
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    auto sampleFile{ co_await storageFolder.CreateFileAsync(L"sample.txt", Windows::Storage::CreationCollisionOption::ReplaceExisting) };
+    // Process sampleFile
 }
 ```
 
@@ -127,10 +127,10 @@ await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
-	// Write text to the file.
-	co_await Windows::Storage::FileIO::WriteTextAsync(sampleFile, L"Swift as a shadow");
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+    // Write text to the file.
+    co_await Windows::Storage::FileIO::WriteTextAsync(sampleFile, L"Swift as a shadow");
 }
 ```
 
@@ -164,13 +164,13 @@ var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
-	// Create the buffer.
-	Windows::Storage::Streams::IBuffer buffer{
-		Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
-			L"What fools these mortals be", Windows::Security::Cryptography::BinaryStringEncoding::Utf8)};
-	// The code in step 2 goes here.
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+    // Create the buffer.
+    Windows::Storage::Streams::IBuffer buffer{
+        Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+            L"What fools these mortals be", Windows::Security::Cryptography::BinaryStringEncoding::Utf8)};
+    // The code in step 2 goes here.
 }
 ```
 
@@ -231,10 +231,10 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 ...
 Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
-	Windows::Storage::Streams::IRandomAccessStream stream{ co_await sampleFile.OpenAsync(Windows::Storage::FileAccessMode::ReadWrite) };
-	// The code in step 2 goes here.
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+    Windows::Storage::Streams::IRandomAccessStream stream{ co_await sampleFile.OpenAsync(Windows::Storage::FileAccessMode::ReadWrite) };
+    // The code in step 2 goes here.
 }
 ```
 
@@ -369,9 +369,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 ```cppwinrt
 Windows::Foundation::IAsyncOperation<winrt::hstring> ExampleCoroutineAsync()
 {
-	Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
-	auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
-	co_return co_await Windows::Storage::FileIO::ReadTextAsync(sampleFile);
+    Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
+    auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
+    co_return co_await Windows::Storage::FileIO::ReadTextAsync(sampleFile);
 }
 ```
 
