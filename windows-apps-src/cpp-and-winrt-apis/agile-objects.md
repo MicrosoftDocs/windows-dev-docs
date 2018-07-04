@@ -30,7 +30,7 @@ using namespace Windows::Foundation;
 
 struct MyType : implements<MyType, IStringable>
 {
-	winrt::hstring ToString(){ ... }
+	winrt::hstring ToString(){ .. }
 };
 ```
 
