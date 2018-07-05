@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: Control that provides top-level app navigation with an automatically adapting, collapsible left navigation menu
+Description: NavigationView is a XAML control that provides app navigation with an automatically adapting, collapsible left navigation menu.
 title: Navigation view
 ms.assetid: 
 label: Navigation view
@@ -407,8 +407,7 @@ To do so, add the following code to your App.xaml.cs.
 
 ```csharp
 //draw into the title bar
-var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-coreTitleBar.ExtendViewIntoTitleBar = true;
+CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 
 //remove the solid-colored backgrounds behind the caption controls and system back button
 var viewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -427,7 +426,6 @@ Drawing into the title bar has the side-effect of hiding your app's title. To he
         Style="{StaticResource CaptionTextBlockStyle}"
         IsHitTestVisible="False"
         Canvas.ZIndex="1"/>
-    
 
     <NavigationView Canvas.ZIndex="0" ... />
 
@@ -437,10 +435,6 @@ Drawing into the title bar has the side-effect of hiding your app's title. To he
 You'll also need to adjust AppTitle's margins depending on back button's visibility. And, when the app is in FullScreenMode, you'll need to remove the spacing for the back arrow, even if the TitleBar reserves space for it.
 
 ```csharp
-var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-Window.Current.SetTitleBar(AppTitle);
-coreTitleBar.ExtendViewIntoTitleBar = true;
-
 void UpdateAppTitle()
 {
     var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
@@ -461,4 +455,3 @@ For more information about customizing title bars, see [title bar customization]
 - [Pivot control](tabs-pivot.md)
 - [Navigation basics](../basics/navigation-basics.md)
 - [Fluent Design for UWP overview](../fluent-design-system/index.md)
-
