@@ -4,7 +4,7 @@ title: Handle URI activation
 description: Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ms.author: twhitney
-ms.date: 10/12/2017
+ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,7 +25,8 @@ We recommend that you only register for a URI scheme name if you expect to handl
 
 These steps show how to register for a custom URI scheme name, `alsdk://`, and how to activate your app when the user launches a `alsdk://` URI.
 
-> **Note**  In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your UWP apps because they are either reserved or forbidden.
+> [!NOTE]
+> In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your UWP apps because they are either reserved or forbidden.
 
 ## Step 1: Specify the extension point in the package manifest
 
@@ -55,7 +56,7 @@ The app receives activation events only for the URI scheme names listed in the p
 
     This adds an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.protocol** category indicates that the app handles the `alsdk` URI scheme name.
 
-    ```xml
+```xml
     <Applications>
         <Application Id= ... >
             <Extensions>
@@ -69,7 +70,7 @@ The app receives activation events only for the URI scheme names listed in the p
           ...
         </Application>
    <Applications>
-    ```
+```
 
 ## Step 2: Add the proper icons
 
@@ -79,50 +80,64 @@ Apps that become the default for a URI scheme name have their icons displayed in
 
 The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event handler receives all activation events. The **Kind** property indicates the type of activation event. This example is set up to handle [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) activation events.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
-> public partial class App
-> {
->    protected override void OnActivated(IActivatedEventArgs args)
->   {
->       if (args.Kind == ActivationKind.Protocol)
->       {
->          ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
->          // TODO: Handle URI activation
->          // The received URI is eventArgs.Uri.AbsoluteUri
->       }
->    }
-> }
-> ```
-> ```vb
-> Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
->    If args.Kind = ActivationKind.Protocol Then
->       ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
->       
->       ' TODO: Handle URI activation
->       ' The received URI is eventArgs.Uri.AbsoluteUri
->  End If
-> End Sub
-> ```
-> ```cpp
-> void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
-> {
->    if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
->    {
->       Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
->           dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
->       
->       // TODO: Handle URI activation  
->       // The received URI is eventArgs->Uri->RawUri
->    }
-> }
-> ```
+```csharp
+public partial class App
+{
+   protected override void OnActivated(IActivatedEventArgs args)
+  {
+      if (args.Kind == ActivationKind.Protocol)
+      {
+         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+         // TODO: Handle URI activation
+         // The received URI is eventArgs.Uri.AbsoluteUri
+      }
+   }
+}
+```
 
-> **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+```vb
+Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
+   If args.Kind = ActivationKind.Protocol Then
+      ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
+      
+      ' TODO: Handle URI activation
+      ' The received URI is eventArgs.Uri.AbsoluteUri
+ End If
+End Sub
+```
+
+```cppwinrt
+void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs const& args)
+{
+    if (args.Kind() == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+    {
+        auto protocolActivatedEventArgs{ args.as<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs>() };
+        // TODO: Handle URI activation  
+        auto receivedURI{ protocolActivatedEventArgs.Uri().RawUri() };
+    }
+}
+```
+
+```cpp
+void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
+{
+   if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+   {
+      Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
+          dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
+      
+      // TODO: Handle URI activation  
+      // The received URI is eventArgs->Uri->RawUri
+   }
+}
+```
+
+> [!NOTE]
+> When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
 The following code programmatically launches the app via its URI:
 
-```cs
+```csharp
    // Launch the URI
    var uri = new Uri("alsdk:");
    var success = await Windows.System.Launcher.LaunchUriAsync(uri)
@@ -138,8 +153,11 @@ When launched via Protocol activation, apps should consider including UI that al
 
 Any app or website can use your URI scheme name, including malicious ones. So any data that you get in the URI could come from an untrusted source. We recommend that you never perform a permanent action based on the parameters that you receive in the URI. For example, URI parameters could be used to launch the app to a user's account page, but we recommend that you never use them to directly modify the user's account.
 
-> **Note**  If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
-> **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+> [!NOTE]
+> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
+
+> [!NOTE]
+> When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
 We recommend that apps create a new XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
 
@@ -147,25 +165,25 @@ If you decide that you want your apps to use a single XAML [**Frame**](https://m
 
 ## Related topics
 
-**Complete example**
+### Complete sample app
 
 - [Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
-**Concepts**
+### Concepts
 
 - [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
 - [File Type and URI Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Tasks**
+### Tasks
 
 - [Launch the default app for a URI](launch-default-app.md)
 - [Handle file activation](handle-file-activation.md)
 
-**Guidelines**
+### Guidelines
 
 - [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Reference**
+### Reference
 
 - [AppX Package Manifest](https://msdn.microsoft.com/library/windows/apps/dn934791)
 - [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)

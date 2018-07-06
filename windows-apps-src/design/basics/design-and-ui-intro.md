@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: An overview of the universal design features that are included in every UWP app to help you build apps that scale beautifully across a range of devices.
+Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Introduction to Universal Windows Platform (UWP) app design (Windows apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.author: sezhen
@@ -44,9 +44,9 @@ You can ignore the pixel density and the actual screen resolution when designing
 
 :::row:::
     :::column span:::
-        When the system scales your app's UI, it does so by multiples of 4.
+        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
 
-        As a result, the sizes, margins, and positions of **UI elements should always be in multiples of 4 epx**. This results in the best rendering by aligning with whole pixels. It also ensures that UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
     :::column:::
         ![grid](images/4epx.svg)

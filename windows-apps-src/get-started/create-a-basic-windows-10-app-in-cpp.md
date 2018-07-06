@@ -1,8 +1,8 @@
 ---
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a Hello World app in C++ (Windows 10)
-description: With Microsoft Visual Studio 2017, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
+title: Create a Hello World app in C++/CX (Windows 10)
+description: With Microsoft Visual Studio 2017, you can use C++/CX to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.author: jken
 ms.date: 06/11/2018
 ms.topic: article
@@ -12,22 +12,21 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Create a "Hello world" app in C++
+# Create a "Hello world" app in C++/CX
 
-With Microsoft Visual Studio 2017, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
+> [!IMPORTANT]
+> This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
+
+With Microsoft Visual Studio 2017, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
 > [!NOTE]
-> This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
+> This tutorial uses Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-
-## Before you start...
+## Before you start
 
 -   To complete this tutorial, you must use Visual Studio Community 2017, or one of the non-Community versions of Visual Studio 2017, on a computer that's running Windows 10. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   We assume you have a basic understanding of standard C++, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
-
-> [!NOTE]
-> This tutorial uses Visual C++. Microsoft has recently released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
 
 ## Comparing C++ desktop apps to Windows apps
 
@@ -35,7 +34,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 ### What's the same?
 
--   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code does not attempt to call Windows functions that are not accessible from the Windows Runtime environment.
+-   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code only calls Windows functions that are accessible from the Windows Runtime environment.
 
 -   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
 
@@ -43,7 +42,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 -   You're still using the Visual Studio debugger, profiler, and other development tools.
 
--   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. UWP apps in C++ don't execute in a managed runtime environment.
+-   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. UWP apps in C++/CX don't execute in a managed runtime environment.
 
 ### What's new?
 
@@ -59,7 +58,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 -   In the Microsoft Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
 
-## Hello World Store app in C++
+## Hello World Store app in C++/CX
 
 Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, VR devices and so on.
 
@@ -86,7 +85,7 @@ We'll start with the basics:
 
 4.  Enter a name for the project. We'll name it HelloWorld.
 
- ![C++ project templates in the New Project dialog box ](images/vs2017-uwp-01.png)
+ ![C++/CX project templates in the New Project dialog box ](images/vs2017-uwp-01.png)
 
 5.  Choose the **OK** button.
 
@@ -101,7 +100,7 @@ Before we go on, let’s look at what's in the solution.
 
 ### About the project files
 
-Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.cpp file in the same folder and a .g file and a .g.hpp file in the Generated Files folder, which is on disk but not part of the project. You modify the XAML files to create UI elements and connect them to data sources (DataBinding). You modify the .h and .cpp files to add custom logic for event handlers. The auto-generated files represent the transformation of the XAML markup into C++. Don't modify these files, but you can study them to better understand how the code-behind works. Basically, the generated file contains a partial class definition for a XAML root element; this class is the same class that you modify in the \*.xaml.h and .cpp files. The generated files declare the XAML UI child elements as class members so that you can reference them in the code you write. At build time, the generated code and your code are merged into a complete class definition and then compiled.
+Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.cpp file in the same folder and a .g file and a .g.hpp file in the Generated Files folder, which is on disk but not part of the project. You modify the XAML files to create UI elements and connect them to data sources (DataBinding). You modify the .h and .cpp files to add custom logic for event handlers. The auto-generated files represent the transformation of the XAML markup into C++/CX. Don't modify these files, but you can study them to better understand how the code-behind works. Basically, the generated file contains a partial class definition for a XAML root element; this class is the same class that you modify in the \*.xaml.h and .cpp files. The generated files declare the XAML UI child elements as class members so that you can reference them in the code you write. At build time, the generated code and your code are merged into a complete class definition and then compiled.
 
 Let's look first at the project files.
 
@@ -117,7 +116,7 @@ If you examine the code in App.xaml.h, App.xaml.cpp in the shared project, you'l
 
 **Ref classes**
 
-Almost all Windows Runtime classes, which includes all the types in the Windows API--XAML controls, the pages in your app, the App class itself, all device and network objects, all container types--are declared as a **ref class**. (A few Windows types are **value class** or **value struct**). A ref class is consumable from any language. In C++, the lifetime of these types is governed by automatic reference counting (not garbage collection) so that you never explicitly delete these objects. You can create your own ref classes as well.
+Almost all Windows Runtime classes, which includes all the types in the Windows API--XAML controls, the pages in your app, the App class itself, all device and network objects, all container types--are declared as a **ref class**. (A few Windows types are **value class** or **value struct**). A ref class is consumable from any language. In C++/CX, the lifetime of these types is governed by automatic reference counting (not garbage collection) so that you never explicitly delete these objects. You can create your own ref classes as well.
 
 ```cpp
 namespace HelloWorld
