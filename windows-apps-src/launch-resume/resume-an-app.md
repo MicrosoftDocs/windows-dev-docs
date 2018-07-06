@@ -4,20 +4,24 @@ title: Handle app resume
 description: Learn how to refresh displayed content when the system resumes your app.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+- csharp
+- vb
+- cppwinrt
+- cpp
 ---
 
 # Handle app resume
 
-
 **Important APIs**
 
--   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
+- [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
 Learn where to refresh your UI when the system resumes your app. The example in this topic registers an event handler for the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
 
@@ -25,35 +29,44 @@ Learn where to refresh your UI when the system resumes your app. The example in 
 
 Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, which indicates that the user switched away from your app and then back to it.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
-> partial class MainPage
-> {
->    public MainPage()
->    {
->       InitializeComponent();
->       Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
->    }
-> }
-> ```
-> ```vb
-> Public NonInheritable Class MainPage
->
->    Public Sub New()
->       InitializeComponent()
->       AddHandler Application.Current.Resuming, AddressOf App_Resuming
->    End Sub
->
-> End Class
-> ```
-> ```cpp
-> MainPage::MainPage()
-> {
->     InitializeComponent();
->     Application::Current->Resuming +=
->         ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
-> }
-> ```
+```csharp
+partial class MainPage
+{
+   public MainPage()
+   {
+      InitializeComponent();
+      Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
+   }
+}
+```
+
+```vb
+Public NonInheritable Class MainPage
+
+   Public Sub New()
+      InitializeComponent()
+      AddHandler Application.Current.Resuming, AddressOf App_Resuming
+   End Sub
+
+End Class
+```
+
+```cppwinrt
+MainPage::MainPage()
+{
+    InitializeComponent();
+    Windows::UI::Xaml::Application::Current().Resuming({ this, &MainPage::App_Resuming });
+}
+```
+
+```cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+    Application::Current->Resuming +=
+        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
+}
+```
 
 ## Refresh displayed content and reacquire resources
 
@@ -63,35 +76,46 @@ When your app handles the [**Resuming**](https://msdn.microsoft.com/library/wind
 
 This is also a good time to restore any exclusive resources that you released when your app was suspended such as file handles, cameras, I/O devices, external devices, and network resources.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
-> partial class MainPage
-> {
->     private void App_Resuming(Object sender, Object e)
->     {
->         // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
->     }
-> }
-> ```
-> ```vb
-> Public NonInheritable Class MainPage
->
->     Private Sub App_Resuming(sender As Object, e As Object)
->  
->         ' TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
->
->     End Sub
->
-> End Class
-> ```
-> ```cpp
-> void MainPage::App_Resuming(Object^ sender, Object^ e)
-> {
->     // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
-> }
-> ```
+```csharp
+partial class MainPage
+{
+    private void App_Resuming(Object sender, Object e)
+    {
+        // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+    }
+}
+```
 
-> **Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used in your handler to dispatch any calls to your UI.
+```vb
+Public NonInheritable Class MainPage
+
+    Private Sub App_Resuming(sender As Object, e As Object)
+ 
+        ' TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+
+    End Sub
+>
+End Class
+```
+
+```cppwinrt
+void MainPage::App_Resuming(
+    Windows::Foundation::IInspectable const& /* sender */,
+    Windows::Foundation::IInspectable const& /* e */)
+{
+    // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+}
+```
+
+```cpp
+void MainPage::App_Resuming(Object^ sender, Object^ e)
+{
+    // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+}
+```
+
+> [!NOTE]
+> Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used in your handler to dispatch any calls to your UI.
 
 ## Remarks
 
