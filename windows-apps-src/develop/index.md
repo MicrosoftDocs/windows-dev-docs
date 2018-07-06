@@ -139,7 +139,7 @@ ms.localizationpriority: high
             <div style="display:block"  class="cardPadding">
                 <div style="display:block"  class="card">
                     <div style="display:block"  class="cardText">
-                        <h3>Data</h3>
+                        <h3>Data and files</h3>
                         <p style="display:block"><a href="/windows/uwp/audio-video-camera/">Audio, video, and camera</a></p>
                         <p><a href="/windows/uwp/data-access/" style="display:block" >Data access</a></p>
                         <p><a href="/windows/uwp/data-binding/"style="display:block" >Data binding</a></p>
@@ -172,7 +172,9 @@ ms.localizationpriority: high
                     <div style="display:block" class="cardText">
                         <h3>Platform</h3>
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a></p>
                         <p style="display:block"><a href="/windows/uwp/security/">Security</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">Threading and async programming</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">Visual layer</a></p>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows as a service</a></p>
                         <p style="display:block"><a href="/windows/uwp/winrt-components/">Windows Runtime components</a></p>                 
@@ -195,7 +197,47 @@ ms.localizationpriority: high
             </div>
         </div>        
     </li>      
-    <li>              
+     <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Peripherals, sensors, and power</h3>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Overview</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">Enable device capabilities</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">Pair devices</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">Point of Service</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">Sensors</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">Printing</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3-D printing</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/nfc">NFC</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">Battery info</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li> 
+     <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Porting</h3>
+                        <p style="display:block"><a href="/windows/uwp/porting/">Overview</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight to UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x to UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">Desktop Bridge</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">Share code between desktop and UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">Concept mapping for Android and iOS developers</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a></p>
+                        <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">Convert your web app to a PWA</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">Windows 10 on ARM</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>           
+    <!-- <li>              
         <div style="display:block" class="cardSize">
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
@@ -207,19 +249,7 @@ ms.localizationpriority: high
                 </div>
             </div>
         </div>        
-    </li>                 
-     <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Sensors</h3>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/">Devices, sensors, and power</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>         
+    </li>                         -->
 </ul>
 
 

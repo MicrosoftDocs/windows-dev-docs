@@ -4,25 +4,27 @@ title: Handle file activation
 description: An app can register to become the default handler for a certain file type.
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - vb
+  - cppwinrt
+  - cpp
 ---
 
 # Handle file activation
-
-
-
 
 **Important APIs**
 
 -   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 -   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
-An app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.
+Your app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.
 
 We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
 
@@ -31,7 +33,6 @@ These steps show how to register for a custom file type, .alsdk, and how to acti
 > **Note**  In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. For more information, see [Reserved file and URI scheme names](reserved-uri-scheme-names.md).
 
 ## Step 1: Specify the extension point in the package manifest
-
 
 The app receives activation events only for the file extensions listed in the package manifest. Here's how you indicate that your app handles the files with the `.alsdk` extension.
 
@@ -70,7 +71,6 @@ The steps above add an [**Extension**](https://msdn.microsoft.com/library/window
 
 ## Step 2: Add the proper icons
 
-
 Apps that become the default for a file type have their icons displayed in various places throughout the system. For example, these icons are shown in:
 
 -   Windows Explorer Items View, context menus, and the Ribbon
@@ -78,30 +78,13 @@ Apps that become the default for a file type have their icons displayed in vario
 -   File picker
 -   Search results on the Start screen
 
-Include a 44x44 icon with your project so that your logo can appear in those locations. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See [Guidelines for tile and icon assets](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets) for more details about icons.
+Include a 44x44 icon with your project so that your logo can appear in those locations. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See [Guidelines for tile and icon assets](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/app-assets) for more details about icons.
 
 ## Step 3: Handle the activated event
 
-
 The [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) event handler receives all file activation events.
 
-> [!div class="tabbedCodeSnippets"]
-```vb
-Protected Overrides Sub OnFileActivated(ByVal args As Windows.ApplicationModel.Activation.FileActivatedEventArgs)
-      ' TODO: Handle file activation
-      ' The number of files received is args.Files.Size
-      ' The name of the first file is args.Files(0).Name
-End Sub
-```
-```cpp
-void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs^ args)
-{
-       // TODO: Handle file activation
-       // The number of files received is args->Files->Size
-       // The first file is args->Files->GetAt(0)->Name
-}
-```
-```cs
+```csharp
 protected override void OnFileActivated(FileActivatedEventArgs args)
 {
        // TODO: Handle file activation
@@ -110,44 +93,63 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-    > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+```vb
+Protected Overrides Sub OnFileActivated(ByVal args As Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+      ' TODO: Handle file activation
+      ' The number of files received is args.Files.Size
+      ' The name of the first file is args.Files(0).Name
+End Sub
+```
 
-It is recommended that apps create a new XAML Frame for each activation event that opens a new page. This way, the navigation backstack for the new XAML Frame will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML Frame for Launch and File Contracts should clear the pages on the Frame's navigation journal before navigating to a new page.
+```cppwinrt
+void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs const& args)
+{
+    // TODO: Handle file activation.
+    auto numberOfFilesReceived{ args.Files().Size() };
+    auto nameOfTheFirstFile{ args.Files().GetAt(0).Name() };
+}
+```
 
-When launched via File activation, apps should consider including UI that allows the user to go back to the top page of the app.
+```cpp
+void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs^ args)
+{
+    // TODO: Handle file activation
+    // The number of files received is args->Files->Size
+    // The name of the first file is args->Files->GetAt(0)->Name
+}
+```
+
+> [!NOTE]
+> When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+
+We recommend that you create a new XAML **Frame** for each activation event that opens a new page. That way, the navigation backstack for the new XAML Frame doesn't contain any previous content that the app might have on the current window when suspended. If you decide to use a single XAML **Frame** for Launch and for File Contracts, then you should clear the pages in the **Frame**'s navigation journal before navigating to a new page.
+
+When your app is launched via File activation, you should consider including UI that allows the user to go back to the top page of the app.
 
 ## Remarks
 
-
 The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](http://go.microsoft.com/fwlink/p/?LinkID=142053)
-
-
- 
 
 ## Related topics
 
-**Complete example**
+### Complete example
 
 * [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**Concepts**
+### Concepts
 
 * [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
 * [File Type and Protocol Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Tasks**
+### Tasks
 
 * [Launch the default app for a file](launch-the-default-app-for-a-file.md)
 * [Handle URI activation](handle-uri-activation.md)
 
-**Guidelines**
+### Guidelines
 
 * [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Reference**
-* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
-
- 
-
- 
+### Reference
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224716)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://msdn.microsoft.com/library/windows/apps/br242331)

@@ -10,3 +10,5 @@
 
 # [Publish](publish/toc.md)
 
+# [API reference](/uwp/)
+
