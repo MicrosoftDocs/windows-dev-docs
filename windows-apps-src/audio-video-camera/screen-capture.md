@@ -4,7 +4,7 @@ title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.author: elcowle
-ms.date: 7/2/2018
+ms.date: 7/9/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,18 +23,13 @@ With screen capture, developers invoke secure system UI for end users to pick th
 
 ## Add the screen capture capability
 
-The APIs found in the **Windows.Graphics.Capture** namespace require a general capability to be declared in your application's manifest. You must add this directly to the file:
+The APIs found in the **Windows.Graphics.Capture** namespace require a general capability to be declared in your application's manifest:
     
-1. Right-click **Package.appxmanifest** in the **Solution Explorer**. 
-2. Select **Open With...** 
-3. Choose **XML (Text) Editor**. 
-4. Select **OK**.
-5. In the **Package** node, add the following attribute:
-    `xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"`
-6. Also in the **Package** node, add the following to the **IgnorableNamespaces** attribute:
-    `uap6`
-7. In the **Capabilities** node, add the following element:
-    `<uap6:Capability Name="graphicsCapture"/>`
+1. Open **Package.appxmanifest** in the **Solution Explorer**.
+2. Select the **Capabilities** tab.
+3. Check **Graphics Capture**.
+
+![Graphics Capture](images/screen-capture-1.png)
 
 ## Launch the system UI to start screen capture
 
@@ -70,6 +65,17 @@ public async Task StartCaptureAsync()
         StartCaptureInternal(item); 
     } 
 }
+```
+
+Because this is UI code, it needs to be called on the UI thread. If you're calling it from the code-behind for a page of your application (like **MainPage.xaml.cs**) this is done for you automatically, but if not, you can force it to run on the UI thread with the following code:
+
+```cs
+CoreWindow window = CoreApplication.MainView.CoreWindow;
+           
+await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+{
+    await StartCaptureAsync();
+});
 ```
 
 ## Create a capture frame pool and capture session
