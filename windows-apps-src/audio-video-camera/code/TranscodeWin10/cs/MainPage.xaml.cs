@@ -208,8 +208,6 @@ namespace TranscodeWin10
             {
                 Subtype = "{67706D64-BF10-48B4-BC18-593DC1DB950F}"
             };
-            // The FormatUserData is set to information that describes the format found in the 'gpmd' file.
-            // If the 'gpmd' box is empty, there is no need to specify FormatUserData.
             byte[] streamDescriptionData = GetStreamDescriptionDataForGpmdEncodingSubtype();
             encodingProperties.SetFormatUserData(streamDescriptionData);
 
