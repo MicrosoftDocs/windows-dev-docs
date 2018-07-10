@@ -52,7 +52,7 @@ Let's start with the basic principles of good navigation design:
 
 ### Consistency
 
-Navigation should be consistent with user expectations. Using [standard controls](#use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuative for users.
+Navigation should be consistent with user expectations. Using [standard controls](#use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuitive for users.
 
 ![page components image](images/nav/page-components.svg)
 
