@@ -81,8 +81,15 @@ You can register events to respond when the progress of the asynchronous [**Tran
 
 
 ## Encode a metadata stream
+Starting with Windows 10, version 1803, you can include timed metadata when transcoding media files. Unlike the video transcoding examples above, which use the built-in media encoding profile creation methods, like [**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), you must manually create the metadata encoding profile to support the type of metadata you are encoding.
 
+This first step in creating a metadata incoding profile is to create a [**TimedMetadataEncodingProperties**] object that describes the encoding of the metadata to be transcoded. The Subtype property is a GUID that specifies the type of the metadata. The encoding details for each metadata type is proprietary and is not provided by Windows. In this example, the GUID for GoPro metadata (gprs) is used. Next, [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) is called to set a binary blob of data describing the stream format that is specific to the metadata format. Next, a **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) is created from the encoding properites, and a track label and name are to allow an application reading the endcoded stream to identify the metadata stream and optionally display the stream name in the UI. 
+ 
+[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
+After creating the **TimedMetadataStreamDescriptor**, you can create a **MediaEncodingProfile** that describes the video, audio, and metadata to be encoded in the file. The **TimedMetadataStreamDescriptor** created in the last example is passed into this example helper function and is added to the **MediaEncodingProfile** by calling [**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks).
+
+[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
  
 
  
