@@ -4,11 +4,11 @@ Description: Add users to your Dev Center account and assign them roles with spe
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 02/22/2018
+ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, account users, manage users, azure ad, multi-user
+keywords: windows 10, uwp, account users, manage users, azure ad, multi-user, multiple users
 ms.localizationpriority: high
 ---
 
