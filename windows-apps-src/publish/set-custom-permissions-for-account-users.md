@@ -4,7 +4,7 @@ Description: Set roles or custom permissions for account users.
 title: Set roles or custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 05/16/2018
+ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

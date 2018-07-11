@@ -32,7 +32,7 @@ After the certification process is complete, you'll get a certification report t
 
 ## Release
 
-When your app passes certification, it's ready to move to the to the **Publishing** process.
+When your app passes certification, it's ready to move to the **Publishing** process.
 
 - If you've indicated that your submission should be published as soon as possible (the default option), the publishing process will begin right away.
 - If this is the first time you've published the app, and you specified a **Release date** in the [Schedule](configure-precise-release-scheduling.md#release) section, the app will become available according to your **Release date** selections.

@@ -4,7 +4,7 @@ ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
 ms.author: mcleans
-ms.date: 03/16/2018
+ms.date: 07/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -113,6 +113,7 @@ Each object in the *items* array contains the following values.
 | autoRenew | Boolean |  Indicates whether the subscription is configured to automatically renew at the end of the current subscription period.   |
 | beneficiary | string |  The ID of the beneficiary of the entitlement that is associated with this subscription.   |
 | expirationTime | string | The date and time the subscription will expire, in ISO 8601 format. This field is only available when the subscription is in certain states. The expiration time usually indicates when the current state expires. For example, for an active subscription, the expiration date indicates when the next automatic renewal will occur.    |
+| expirationTimeWithGrace | string | The date and time the subscription will expire including the grace period, in ISO 8601 format. This value indicates when the user will lose access to the subscription after the subscription has failed to automatically renew.    |
 | id | string |  The ID of the subscription. Use this value to indicate which subscription you want to modify when you call the [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md) method.    |
 | isTrial | Boolean |  Indicates whether the subscription is a trial.     |
 | lastModified | string |  The date and time the subscription was last modified, in ISO 8601 format.      |
