@@ -114,7 +114,7 @@ namespace MIDIWin10
             deviceWatcher.Added -= DeviceWatcher_Added;
             deviceWatcher.Removed -= DeviceWatcher_Removed;
             deviceWatcher.Updated -= DeviceWatcher_Updated;
-
+            deviceWatcher.EnumerationCompleted -= DeviceWatcher_EnumerationCompleted;
             deviceWatcher = null;
         }
         // </SnippetWatcherDestructor>
