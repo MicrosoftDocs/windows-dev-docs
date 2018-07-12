@@ -61,7 +61,7 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="date-and-time.md">Date and time controls</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">Dialogs and flyouts</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Dialogs and flyouts</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">Flip view</a></li>
 
