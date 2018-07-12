@@ -577,7 +577,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-docs-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-docs-may-2018",
+      "redirect_url": "/windows/uwp/whats-new/windows-docs-july-2018",
       "redirect_document_id": false
     },
     {
@@ -1710,6 +1710,11 @@
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/dialogs.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index",
+      "redirect_document_id": true
     }
   ]
 }
