@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > [!NOTE]
-> If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the WinJS library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately. 
 
 <span id="install-msi" />
 
