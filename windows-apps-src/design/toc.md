@@ -46,7 +46,10 @@
 ### [Calendar view](controls-and-patterns/calendar-view.md)
 ### [Date picker](controls-and-patterns/date-picker.md)
 ### [Time picker](controls-and-patterns/time-picker.md)
-## [Dialogs and flyouts](controls-and-patterns/dialogs.md)
+## Dialogs and flyouts
+### [Overview](controls-and-patterns/dialogs-and-flyouts/index.md)
+### [Dialogs](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
+### [Flyouts](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
 ## [Flip view](controls-and-patterns/flipview.md)
 ## [Forms](controls-and-patterns/forms.md)
 ## [Hub](controls-and-patterns/hub.md)

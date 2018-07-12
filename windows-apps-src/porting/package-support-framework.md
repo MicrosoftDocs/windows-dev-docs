@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 The Package Support Framework is an open source kit that helps you apply fixes to your existing win32 application when you don't have access to the source code, so that it can run in an MSIX container. The Package Support Framework helps your application follow the best practices of the modern runtime environment.
 
-To create the Package Support Framework, we leveraged the [Detours](https://www.microsoft.com/research/publication/detours-binary-interception-of-win32-functions/?from=http%3A%2F%2Fresearch.microsoft.com%2Fapps%2Fpubs%2Fdefault.aspx%3Fid%3D68568) technology which is an open source framework developed by Microsoft Research (MSR) and helps with API redirection and hooking.
+To create the Package Support Framework, we leveraged the [Detours](https://www.microsoft.com/en-us/research/project/detours) technology which is an open source framework developed by Microsoft Research (MSR) and helps with API redirection and hooking.
 
 This framework is open source, lightweight, and you can use it to address application issues quickly. It also gives you the opportunity to consult with the community around the globe, and to build on top of the investments of others.
 
@@ -313,7 +313,7 @@ In **Solution Explorer**, right-click the packaging project, select **Edit**, an
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
 <ItemGroup>
   <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
-  <SourceProject Condition="'%(_FilteredNonWapProjProjectOutput.SourceProject)'=='PSF'" />
+  <SourceProject Condition="'%(_FilteredNonWapProjProjectOutput.SourceProject)'=='<your runtime fix project name goes here>'" />
   </FilteredNonWapProjProjectOutput>
   <_FilteredNonWapProjProjectOutput Remove="@(_FilteredNonWapProjProjectOutput)" />
   <_FilteredNonWapProjProjectOutput Include="@(FilteredNonWapProjProjectOutput)" />

@@ -251,7 +251,7 @@ Displays a message that requires user interaction. (Unlike a dialog, a flyout do
 
 Reference: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs.md) 
+Design and how-to: [Flyouts](dialogs-and-flyouts/flyouts.md) 
 
 ### Menu flyout
 Temporarily displays a list of commands or options related to what the user is currently doing.
@@ -271,7 +271,7 @@ Temporarily displays a list of commands or options related to what the user is c
 
 Reference: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs.md) 
+Design and how-to: [Menus and context menus](menus.md) 
 
 Sample code: [XAML Context Menu sample](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -280,7 +280,7 @@ A custom menu that presents commands that you specify.
 
 Reference: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs.md) 
+Design and how-to: [Dialogs](dialogs-and-flyouts/dialogs.md) 
 
 ### Tooltip
 A pop-up window that displays information for an element. 
