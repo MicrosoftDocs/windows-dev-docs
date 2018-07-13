@@ -27,7 +27,7 @@ When an app uses Background Transfer to initiate a transfer, the request is conf
 > [!NOTE]
 > Due to per-app resource constraints, an app should not have more than 200 transfers (DownloadOperations + UploadOperations) at any given time. Exceeding that limit may leave the app’s transfer queue in an unrecoverable state.
 
-When an application is launched, it must call [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) on all existing [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) and [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) objects. Not doing this will cause the leak of already-completed transfers and will eventually render the Background Transfer feature useless.
+When an application is launched, it must call [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) on all existing [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) and [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) objects. Not doing this will cause the leak of already-completed transfers and will eventually render your use of the Background Transfer feature useless.
 
 ### Performing authenticated file requests with Background Transfer
 Background Transfer provides methods that support basic server and proxy credentials, cookies, and the use of custom HTTP headers (via [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) for each transfer operation.
