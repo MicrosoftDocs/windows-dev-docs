@@ -44,7 +44,7 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a **NativeAdsManagerV2** object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for native ads.
+5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for native ads.
     > [!NOTE]
     > Every **NativeAdsManagerV2** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
 
@@ -58,7 +58,7 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-8.  When a native ad is ready for your app, your **AdReady** event handler is called, and a **NativeAdV2** object that represents the native ad is passed to the *e* parameter. Use the **NativeAdV2** properties to get each element of the native ad and display these elements on your page. Be sure to also call the **RegisterAdContainer** method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
+8.  When a native ad is ready for your app, your [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) event handler is called, and a [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) object that represents the native ad is passed to the *e* parameter. Use the **NativeAdV2** properties to get each element of the native ad and display these elements on your page. Be sure to also call the **RegisterAdContainer** method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
     > [!NOTE]
     > Some elements of the native ad are required and must always be shown in your app. For more information, see our [guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
@@ -114,7 +114,7 @@ After you confirm that your native ad implementation successfully shows a test a
 
 3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
-4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the **NativeAdsManagerV2** constructor) with the live values you generated in Dev Center.
+4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructor) with the live values you generated in Dev Center.
 
 5.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 

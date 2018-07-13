@@ -20,9 +20,9 @@ The articles in this section show you how to add banner ads, interstitial ads, a
 
 |  Topic    | Description |               
 |----------|-------|
-| [Banner ads](banner-ads.md)     | Provides instructions for adding a banner ad to your UWP app by using the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class in the Microsoft Advertising SDK.        |
-| [Interstitial Ads](interstitial-ads.md)    | Provides instructions for adding an interstitial ad to your UWP app by using the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class in the Microsoft Advertising SDK.       |
-| [Native ads](native-ads.md)       | Provides instructions for adding a native ad to your UWP app by using the **NativeAdsManagerV2** and **NativeAdV2** classes in the Microsoft Advertising SDK.  |
+| [Banner ads](banner-ads.md)     | Provides instructions for adding a banner ad to your UWP app by using the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class in the Microsoft Advertising SDK.        |
+| [Interstitial Ads](interstitial-ads.md)    | Provides instructions for adding an interstitial ad to your UWP app by using the [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) class in the Microsoft Advertising SDK.       |
+| [Native ads](native-ads.md)       | Provides instructions for adding a native ad to your UWP app by using the [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) and [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) classes in the Microsoft Advertising SDK.  |
 | [Show ads in video content](add-advertisements-to-video-content.md)     |  Provides instructions for showing ads during video content in your UWP app (this feature is currently supported only for apps that are written using JavaScript with HTML). |
 
 
