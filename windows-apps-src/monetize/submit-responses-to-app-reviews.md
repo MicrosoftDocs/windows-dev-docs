@@ -68,7 +68,7 @@ Each object in the *Responses* array contains the following values.
 | ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).   |  Yes  |
 | ResponseText | string | The response you want to submit. Your response must follow [these guidelines](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
-| IsPublic | Boolean |  The value **true** indicates that your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. The value **false** indicates that your response will be sent to the customer via email, and will not be visible to other customers in your app's Store listing.     |  Yes  |
+| IsPublic | Boolean |  If you specify **true**, your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. If you specify **false** and the user hasn't opted out of receiving email responses, your response will be sent to the customer via email, and it will not be visible to other customers in your app's Store listing. If you specify **false** and the user has opted out of receiving email responses, an error will be returned.   |  Yes  |
 
 
 ### Request example

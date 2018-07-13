@@ -4,7 +4,7 @@ description: Explains how to define and implement custom dependency properties f
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,6 +13,7 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - vb
+  - cppwinrt
   - cpp
 ---
 
@@ -72,6 +73,11 @@ For your property to be a dependency property, you must register the property in
 
 For Microsoft .NET languages (C# and Microsoft Visual Basic) you call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) within the body of your class (inside the class, but outside any member definitions). The identifier is provided by the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method call, as the return value. The [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is typically made as a static constructor or as part of the initialization of a **public static readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) as part of your class. This property exposes the identifier for your dependency property. Here are examples of the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call.
 
+> [!NOTE]
+> Registering the dependency property as part of the identifier property definition is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
+
+For C++/CX, you have options for how you split the implementation between the header and the code file. The typical split is to declare the identifier itself as **public static** property in the header, with a **get** implementation but no **set**. The **get** implementation refers to a private field, which is an uninitialized [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. You can also declare the wrappers and the **get** and **set** implementations of the wrapper. In this case the header includes some minimal implementation. If the wrapper needs Windows Runtime attribution, attribute in the header too. Put the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call in the code file, within a helper function that only gets run when the app initializes the first time. Use the return value of **Register** to fill the static but uninitialized identifiers that you declared in the header, which you initially set to **nullptr** at the root scope of the implementation file.
+
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -89,12 +95,29 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-> [!NOTE]
-> Registering the dependency property as part of the identifier property definition is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
+```cppwinrt
+// ImageWithLabelControl.idl
+namespace ImageWithLabelControlApp
+{
+    runtimeclass ImageWithLabelControl : Windows.UI.Xaml.Controls.Control
+    {
+        ImageWithLabelControl();
+        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        String Label;
+    }
+}
 
-For C++, you have options for how you split the implementation between the header and the code file. The typical split is to declare the identifier itself as **public static** property in the header, with a **get** implementation but no **set**. The **get** implementation refers to a private field, which is an uninitialized [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. You can also declare the wrappers and the **get** and **set** implementations of the wrapper. In this case the header includes some minimal implementation. If the wrapper needs Windows Runtime attribution, attribute in the header too. Put the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call in the code file, within a helper function that only gets run when the app initializes the first time. Use the return value of **Register** to fill the static but uninitialized identifiers that you declared in the header, which you initially set to **nullptr** at the root scope of the implementation file.
-
-.h file
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr }
+);
+...
+```
 
 ```cpp
 //.h file
@@ -104,23 +127,19 @@ For C++, you have options for how you split the implementation between the heade
 //using namespace Platform;
 
 public ref class ImageWithLabelControl sealed : public Control
-{  
+{
 private:
     static DependencyProperty^ _LabelProperty;
 ...
 public:
-    static void RegisterDependencyProperties(); 
+    static void RegisterDependencyProperties();
     static property DependencyProperty^ LabelProperty
     {
         DependencyProperty^ get() {return _LabelProperty;}
     }
 ...
 };
-```
 
-.cpp file
-
-```cpp
 //.cpp file
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml.Interop;
@@ -140,7 +159,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> For the C++ code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. If you keep the identifier private, people can't use these utility APIs. Examples of such API and scenarios include [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) by choice, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257), and [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). You can't use a public field for this, because Windows Runtime metadata rules don't allow for public fields.
+> For the C++/CX code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. If you keep the identifier private, people can't use these utility APIs. Examples of such API and scenarios include [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) by choice, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257), and [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). You can't use a public field for this, because Windows Runtime metadata rules don't allow for public fields.
 
 ## Dependency property name conventions
 
@@ -175,6 +194,21 @@ Public Property Label() As String
         SetValue(LabelProperty, value)
     End Set
 End Property
+```
+
+```cppwinrt
+// ImageWithLabelControl.h
+...
+winrt::hstring Label()
+{
+    return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
+}
+
+void Label(winrt::hstring const& value)
+{
+    SetValue(m_labelProperty, winrt::box_value(value));
+}
+...
 ```
 
 ```cpp
@@ -228,6 +262,19 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
         Nothing, new PropertyChangedCallback(AddressOf OnLabelChanged)))
 ```
 
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr, Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
+
 ```cpp
 DependencyProperty^ ImageWithLabelControl::_LabelProperty =
     DependencyProperty::Register("Label",
@@ -243,6 +290,19 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 You can specify a default value for a dependency property such that the property always returns a particular default value when it is unset. This value can be different than the inherent default value for the type of that property.
 
 If a default value is not specified, the default value for a dependency property is null for a reference type, or the default of the type for a value type or language primitive (for example, 0 for an integer or an empty string for a string). The main reason for establishing a default value is that this value is restored when you call [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) on the property. Establishing a default value on a per-property basis might be more convenient than establishing default values in constructors, particularly for value types. However, for reference types, make sure that establishing a default value does not create an unintentional singleton pattern. For more info, see [Best practices](#best-practices) later in this topic
+
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
 
 > [!NOTE]
 > Do not register with a default value of [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). If you do, it will confuse property consumers and will have unintended consequences within the property system.
@@ -286,6 +346,15 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     End Sub
 ```
 
+```cppwinrt
+void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto iwlc{ d.as<ImageWithLabelControlApp::ImageWithLabelControl>() };
+    auto s{ winrt::unbox_value<winrt::hstring>(e.NewValue()) };
+    iwlc.HasLabelValue(s.size() != 0);
+}
+```
+
 ```cpp
 static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
@@ -317,6 +386,20 @@ Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As Dependen
     End If
     '  else this was invoked because of boxing, do nothing
 End Sub
+```
+
+```cppwinrt
+static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto oldVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.OldValue()) };
+    auto newVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.NewValue()) };
+
+    if (newVisibility != oldVisibility)
+    {
+        // The value really changed; invoke your property-changed logic here.
+    }
+    // Otherwise, OnVisibilityValueChanged was invoked because of boxing; do nothing.
+}
 ```
 
 ```cpp

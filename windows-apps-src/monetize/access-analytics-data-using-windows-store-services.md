@@ -91,6 +91,7 @@ The following analytics methods are available for use by developer accounts that
 | Scenario       | Methods      |
 |---------------|--------------------|
 | Installs |  <ul><li>[Get desktop application installs](get-desktop-app-installs.md)</li></ul> |
+| Blocks |  <ul><li>[Get upgrade blocks for your desktop application](get-desktop-block-data.md)</li><li>[Get upgrade block details for your desktop application](get-desktop-block-data-details.md)</li></ul> |
 | Application errors |  <ul><li>[Get error reporting data for your desktop application](get-desktop-application-error-reporting-data.md)</li><li>[Get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Get the stack trace for an error in your desktop application](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Download the CAB file for an error in your desktop application](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
 ### Methods for Xbox Live services
