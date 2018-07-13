@@ -260,6 +260,8 @@
 ###### [Get ad campaign performance data](../monetize/get-ad-campaign-performance-data.md)
 ##### Desktop apps
 ###### [Get desktop application installs](../monetize/get-desktop-app-installs.md)
+###### [Get upgrade blocks for your desktop application](../monetize/get-desktop-block-data.md)
+###### [Get upgrade block details for your desktop application](../monetize/get-desktop-block-data-details.md)
 ###### [Get error reporting data for your desktop application](../monetize/get-desktop-application-error-reporting-data.md)
 ####### [Get details for an error in your desktop application](../monetize/get-details-for-an-error-in-your-desktop-application.md)
 ####### [Get the stack trace for an error in your desktop application](../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md)
@@ -547,7 +549,7 @@
 #### [Enumerating devices](../devices-sensors/pos-basics-enumerating.md)
 #### [Creating a device object](../devices-sensors/pos-basics-deviceobject.md)
 #### [Claiming and enable](../devices-sensors/pos-basics-claim.md)
-#### [Sharing peripherals with others](../devices-sensors/pos-basics-sharing.md) 
+#### [Sharing peripherals with others](../devices-sensors/pos-basics-sharing.md)
 #### [Getting started](../devices-sensors/pos-get-started.md)
 ### [Hardware support](../devices-sensors/pos-device-support.md)
 ### [Barcode scanner](../devices-sensors/pos-barcodescanner.md)
@@ -722,8 +724,6 @@
 ### [Submit a work item to the thread pool](../threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [Use a timer to submit a work item](../threading-async/use-a-timer-to-submit-a-work-item.md)
 ### [Using Windows Runtime objects in a multithreaded environment](../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
-
-
 
 
 
