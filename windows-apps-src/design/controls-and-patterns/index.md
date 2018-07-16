@@ -87,9 +87,11 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="menus.md">Menus and context menus</a></li>
 
-<li style="list-style-type: none;"><a href="navigationview.md">Nav view</a></li>
+<li style="list-style-type: none;"><a href="navigationview.md">Navigation view</a></li>
 
 <li style="list-style-type: none;"><a href="person-picture.md">Person picture</a></li>
+
+<li style="list-style-type: none;"><a href="pivot.md">Pivot</a></li>
 
 <li style="list-style-type: none;"><a href="progress-controls.md">Progress controls</a></li>
 
@@ -108,8 +110,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 <li style="list-style-type: none;"><a href="slider.md">Slider</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">Split view</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">Tabs and pivots</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">Text controls</a></li>
 

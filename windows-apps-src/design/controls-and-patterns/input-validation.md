@@ -1,9 +1,9 @@
 ---
-author: chphilip
+author: Jwmsft
 Description: Input validation guidelines
 title: Input validation for forms
 template: detail.hbs
-ms.author: chphilip
+ms.author: jimwalk
 ms.date: 04/03/2018
 ms.topic: article
 ms.prod: windows

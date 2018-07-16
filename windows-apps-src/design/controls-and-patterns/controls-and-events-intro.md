@@ -15,20 +15,18 @@ ms.localizationpriority: medium
 ---
 # Intro to controls and patterns
 
- 
-
 In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
 
 > **Important APIs**: [Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [Nav pane](navigationview.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [Pivot](tabs-pivot.md) control to implement the tab pattern.
+A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [master/details](master-details.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [NavigationView](navigationview.md) control to implement the tab pattern.
 
 In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](xaml-styles.md) and [control templates](control-templates.md) to modify a control.
 
-In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app: 
+In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app:
 
-- Add a control to your app UI. 
-- Set properties on the control, such as width, height, or foreground color. 
+- Add a control to your app UI.
+- Set properties on the control, such as width, height, or foreground color.
 - Add code to the control's event handlers so that it does something. 
 
 ## Add a control
@@ -48,9 +46,9 @@ The Visual Studio Toolbox displays many of the controls that you can use in your
 
 You can also drag the control from the Toolbox to the XAML designer.
 
-## Set the name of a control 
+## Set the name of a control
 
-To work with a control in code, you set its [x:Name](../../xaml-platform/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window. 
+To work with a control in code, you set its [x:Name](../../xaml-platform/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.
 
 To name a control
 1. Select the element to name.
