@@ -4,11 +4,11 @@ Description: Get detailed analytics for your Windows apps, in the dashboard or v
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, analytics, reports, dashboard, apps
+keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
 ms.localizationpriority: high
 ---
 
@@ -30,6 +30,7 @@ In this section you'll find details about the info presented in each of the foll
 -   [Add-on acquisitions report](add-on-acquisitions-report.md)
 -   [Usage report](usage-report.md)
 -   [Health report](health-report.md)
+-   [Ratings report](ratings-report.md)
 -   [Reviews report](reviews-report.md)
 -   [Feedback report](feedback-report.md)
 -   [Xbox analytics report](xbox-analytics-report.md)

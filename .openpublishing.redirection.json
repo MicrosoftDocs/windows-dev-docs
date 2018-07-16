@@ -476,11 +476,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/publish/ratings-report.md",
-      "redirect_url": "https://msdn.microsoft.com/windows/uwp/publish/reviews-report",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/publish/set-iap-pricing-and-availability.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability",
       "redirect_document_id": false
