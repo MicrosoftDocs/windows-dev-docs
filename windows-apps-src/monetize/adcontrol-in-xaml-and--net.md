@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # AdControl in XAML and .NET
 
 
-This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class to display banner ads in a Universal Windows Platform (UWP) XAML app for Windows 10 that is implemented using C#.
+This walkthrough shows how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class to display banner ads in a Universal Windows Platform (UWP) XAML app for Windows 10 that is implemented using C#.
 
 > [!NOTE]
 > The Microsoft Advertising SDK also supports XAML apps that are implemented using C++. For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).
@@ -74,7 +74,7 @@ This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/lib
     </Page>
     ```
 
-5. In the **Grid** tag, add the code for the **AdControl**. Assign the  [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) and [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) properties to the [test ad unit values](set-up-ad-units-in-your-app.md#test-ad-units). Also adjust the **Height** and **Width** of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+5. In the **Grid** tag, add the code for the **AdControl**. Assign the  [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) and [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) properties to the [test ad unit values](set-up-ad-units-in-your-app.md#test-ad-units). Also adjust the **Height** and **Width** of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
     > [!NOTE]
     > Every **AdControl** has a corresponding *ad unit* that is used by our services to serve ads to the control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.

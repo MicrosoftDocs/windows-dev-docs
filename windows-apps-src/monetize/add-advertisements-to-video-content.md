@@ -161,7 +161,7 @@ This event is raised when the main content reaches the end and any scheduled pos
 
 ### onErrorOccurred  
 
-This event is raised when the **AdScheduler** encounters an error. For more information about the error code values, see [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx).
+This event is raised when the **AdScheduler** encounters an error. For more information about the error code values, see [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
 
 ### onPodCountdown
 

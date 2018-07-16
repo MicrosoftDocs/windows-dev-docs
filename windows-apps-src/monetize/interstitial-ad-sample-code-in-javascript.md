@@ -25,7 +25,7 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
 Replace the values of the ```applicationId``` and ```adUnitId``` variables with live values from Windows Dev Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
-> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
+> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
 
 ### index.html
 
