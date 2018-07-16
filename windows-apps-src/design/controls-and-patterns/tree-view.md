@@ -207,9 +207,9 @@ A user can invoke an action (treating the item like a button) instead of selecti
 
 **[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) class**
 
-The ItemInvoked event args give you acces to the invoked item. The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.
+The ItemInvoked event args give you access to the invoked item. The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.
 
-Here's an example of an ItemInvoked event handler. The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collpases the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
+Here's an example of an ItemInvoked event handler. The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
@@ -248,7 +248,9 @@ End Sub
 
 The TreeView control supports both single-selection and multi-selection. By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes. The [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.
 
-When selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
+#### Multiple selection
+
+When multiple selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
 
 Selected nodes are added to the tree view's [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) collection. You can call the [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.
 
