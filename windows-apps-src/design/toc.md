@@ -5,7 +5,7 @@
 ## Navigation basics
 ### [Overview](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
-### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
+### [Navigation history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
 ## [Command basics](basics/commanding-basics.md)
 ## [Content basics](basics/content-basics.md)
 ## Tutorials
@@ -68,8 +68,9 @@
 ## [Media playback](controls-and-patterns/media-playback.md)
 ### [Custom transport controls](controls-and-patterns/custom-transport-controls.md)
 ## [Menus and context menus](controls-and-patterns/menus.md)
-## [Nav view](controls-and-patterns/navigationview.md)
+## [Navigation view](controls-and-patterns/navigationview.md)
 ## [Person picture](controls-and-patterns/person-picture.md)
+## [Pivot](controls-and-patterns/pivot.md)
 ## [Progress](controls-and-patterns/progress-controls.md)
 ## [Radio button](controls-and-patterns/radio-button.md)
 ## [Rating control](controls-and-patterns/rating.md)
@@ -80,7 +81,6 @@
 ## [Slider](controls-and-patterns/slider.md)
 ## [Split view](controls-and-patterns/split-view.md)
 ## [Swipe](controls-and-patterns/swipe.md)
-## [Tabs and pivot](controls-and-patterns/tabs-pivot.md)
 ## [Text](controls-and-patterns/text-controls.md)
 ### [Content links](controls-and-patterns/content-links.md)
 ### [Labels](controls-and-patterns/labels.md)

@@ -15,13 +15,26 @@ ms.localizationpriority: medium
 ---
 # Controls by function
 
- 
-
 The XAML UI framework for Windows provides an extensive library of controls that support UI development. Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media. 
 
-You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
-Here's a list by function of the common XAML controls you can use in your app. 
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a> </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+Here's a list by function of the common XAML controls you can use in your app.
 
 ## Appbars and commands
 
@@ -534,58 +547,16 @@ See Media element.
 
 ## Navigation
 
-### Hub
-A container control that lets the user view and navigate to different sections of content.
+### NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+An adaptable container and flexible navigation model that implements the left navigation pane, top navigation and tabs pattern.
 
-Reference: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+Reference: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Design and how-to: [Hub control guide](hub.md) 
-
-Sample code:[XAML Hub control sample](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### Pivot
-A full-screen container and navigation model that also provides a quick way to move between different pivots (views or filters), typically in the same set of data.
-
-The Pivot control can be styled to have a "tab" layout.
-
-Reference: [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-Design and how-to: [Tabs and pivot control guide](tabs-pivot.md) 
-
-Sample code: [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### Semantic zoom
-A container control that lets the user zoom between two views of a collection of items.
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-Design and how-to: [Semantic zoom control guide](semantic-zoom.md) 
-
-Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Design and how-to: [NavigationView control guide](navigationview.md)
 
 ### SplitView
+
 A container control with two views; one view for the main content and another view that is typically used for a navigation menu.
 
 ![Split view control](images/controls/split-view.png) 
@@ -606,6 +577,7 @@ Reference: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 Design and how-to: [Split view control guide](split-view.md)
 
 ### Web view
+
 A container control that hosts web content.
 
 ```xaml
@@ -618,6 +590,27 @@ Reference: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/window
 Design and how-to: Guidelines for Web views 
 
 Sample code: [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### Semantic zoom
+
+A container control that lets the user zoom between two views of a collection of items.
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+Design and how-to: [Semantic zoom control guide](semantic-zoom.md)
+
+Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## Progress controls
 
