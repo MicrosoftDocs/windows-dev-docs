@@ -23,14 +23,14 @@ The Microsoft Store Services SDK provides features that help you engage with cus
 
 ## Scenarios supported by the Microsoft Store Services SDK
 
-The Microsoft Store Services SDK currently supports the following scenarios for UWP apps. For API reference documentation, see [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).
+The Microsoft Store Services SDK currently supports the following scenarios for UWP apps. For API reference documentation, see [Microsoft Store Services SDK API reference](https://docs.microsoft.com/uwp/api/overview/engagement).
 
 |  Scenario  |  Description   |
 |------------|----------------|
-|  [Run experiments in your UWP app with A/B testing](run-app-experiments-with-a-b-testing.md)    |  Run A/B tests in your Universal Windows Platform (UWP) app to measure the effectiveness of features on some customers before you release the features to everyone. After you define an experiment in your Dev Center dashboard, use the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) class to get variations for your experiment in your app, use this data to modify the behavior of the feature you are testing, and then use the [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) method to send view event and conversion events to Dev Center. Finally, use your dashboard to view the results and manage the experiment.  |
-|  [Launch Feedback Hub from your UWP app](launch-feedback-hub-from-your-app.md)    |  Use the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class in your UWP app to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard. |
-|  [Configure your UWP app to receive Dev Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)    |  Use the [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) class in your UWP app to register your app to receive targeted push notifications that you send to your customers using the Windows Dev Center dashboard.  |
-|   [Log custom events in your UWP app for the Usage report in Dev Center](log-custom-events-for-dev-center.md)   |  Use the [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) class in your UWP app to log custom events that are associated with your app in Dev Center. Then, review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.  |
+|  [Run experiments in your UWP app with A/B testing](run-app-experiments-with-a-b-testing.md)    |  Run A/B tests in your Universal Windows Platform (UWP) app to measure the effectiveness of features on some customers before you release the features to everyone. After you define an experiment in your Dev Center dashboard, use the [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) class to get variations for your experiment in your app, use this data to modify the behavior of the feature you are testing, and then use the [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) method to send view event and conversion events to Dev Center. Finally, use your dashboard to view the results and manage the experiment.  |
+|  [Launch Feedback Hub from your UWP app](launch-feedback-hub-from-your-app.md)    |  Use the [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) class in your UWP app to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard. |
+|  [Configure your UWP app to receive Dev Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)    |  Use the [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) class in your UWP app to register your app to receive targeted push notifications that you send to your customers using the Windows Dev Center dashboard.  |
+|   [Log custom events in your UWP app for the Usage report in Dev Center](log-custom-events-for-dev-center.md)   |  Use the [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) class in your UWP app to log custom events that are associated with your app in Dev Center. Then, review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.  |
 
 <span id="prerequisites" />
 
@@ -118,7 +118,7 @@ After you install the Microsoft Store Services SDK via the MSI installer or NuGe
 
 2. In **Solution Explorer**, right click **References** and select **Add Reference…**
 
-3. In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Engagement Framework**. This enables you to use the APIs in the [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) namespace.
+3. In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Engagement Framework**. This enables you to use the APIs in the [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) namespace.
 
 3. Click **OK**.
 
@@ -129,7 +129,7 @@ After you install the Microsoft Store Services SDK via the MSI installer or NuGe
 
 ## Understanding framework packages in the SDK
 
-The Microsoft.Services.Store.Engagement.dll library in the Microsoft Store Services SDK is configured as a *framework package*. This library contains the APIs in the [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) namespace.
+The Microsoft.Services.Store.Engagement.dll library in the Microsoft Store Services SDK is configured as a *framework package*. This library contains the APIs in the [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) namespace.
 
 Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 
@@ -137,7 +137,7 @@ If we release a new version of the SDK that introduces new APIs or features in t
 
 ## Related topics
 
-* [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
+* [Microsoft Store Services SDK API reference](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
 * [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)
 * [Configure your app to receive Dev Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)

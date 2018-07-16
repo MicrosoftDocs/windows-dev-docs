@@ -69,7 +69,7 @@ In addition, we've made some updates to existing pages:
 
 ## Videos
 
-### Get Started for Devs: Create a customize a form on Windows 10
+### Get Started for Devs: Create and customize a form on Windows 10
 
 Our [Get Started docs](../get-started/index.md) for Windows developers now provide hands-on experience with basic app development task. This video walks you through one of those topics, and covers the basics of creating a form UI in your app. [Watch the video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) to see the code in action, then [check out the topic yourself.](http://aka.ms/CreateForms)
 

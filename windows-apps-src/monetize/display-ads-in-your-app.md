@@ -116,7 +116,7 @@ For additional help using the Microsoft Advertising SDK, use the following resou
 
 ## Windows 8.1 and Windows Phone 8.x apps
 
-For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](https://msdn.microsoft.com/library/windows/apps/xaml/dn792120.aspx).
+For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
 ## Related topics
 
