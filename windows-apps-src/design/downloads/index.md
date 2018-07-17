@@ -59,7 +59,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column-end:::
 :::row-end:::
 
-# Developer toolkits and libraries
+## Developer toolkits and libraries
 
 :::row:::
     :::column:::
