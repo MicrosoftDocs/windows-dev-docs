@@ -59,6 +59,23 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column-end:::
 :::row-end:::
 
+# Developer toolkits and libraries
+
+:::row:::
+    :::column:::
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps. 
+        <a href="/uwp/toolkits/winui/">Windows UI Library documentation and installation instructions</a><br/>
+    :::column-end:::
+    :::column:::
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/">Windows Community Toolkit documentationa and installation instructions</a>
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
+
 ## Fonts
 
 * <a href="https://aka.ms/SegoeFonts">Segoe UI and MDL2 icon fonts (Mac only)</a>
