@@ -1,35 +1,38 @@
 ---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store.
+Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 09/27/2017
+ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, review, comment, reviewer
 ms.localizationpriority: high
 ---
 
 # Reviews report
 
 
-The **Reviews** report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Reviews** report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
+
+You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 You can also respond to customer reviews [directly from this page](respond-to-customer-reviews.md), programmatically [via the Microsoft Store reviews API](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 
 
+
 ## Apply filters
 
-Near the top of the page, you can select the time period for which you want to show reviews. The default selection is **Lifetime**, but you can choose to show reviews for 30 days, 3 months, 6 months, or 12 months, or for a custom data range that you specify. Note that the **Ratings breakdown** and **Average rating over time** charts will always show data for the past 12 months; these time period options will not affect those charts.
+Near the top of the page, you can select the time period for which you want to show reviews. The default selection is **Lifetime**, but you can choose to show reviews for 30 days, 3 months, 6 months, or 12 months, or for a custom data range that you specify.
 
 You can expand **Filters** to filter the reviews shown on this page by the following options. These filters will not apply to the **Ratings breakdown** and **Average rating over time** charts.
 
 -   **Rating**: By default reviews with all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
--   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
+- **Review content**: The default setting is **All**, which means all ratings will be included in the **Rating breakdown** chart, even those which don't have any associated review text. You can select **Ratings with review content** to only show ratings that include written review content in this chart.
 -   **OS version**: The default setting is **All**. You can choose a specific OS version if you want this page to only show reviews left by customers on that OS version.
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here to only show reviews left by customers who had that package when they reviewed your app.
 -   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
@@ -38,14 +41,13 @@ You can expand **Filters** to filter the reviews shown on this page by the follo
 -   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
 -   **Category name**: The default filter is **All**. You can choose a specific [review insight category](#review-insight-categories) to only show reviews that we’ve associated with that category. 
 
-
 > [!TIP]
 > If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
 
 
-## Ratings breakdown
+## Rating breakdown
 
-The **Ratings breakdown** chart shows: 
+The **Rating breakdown** chart appears at the top of this report so that you can get a quick look at the following: 
 - The average rating star rating for the app.
 - The total number of ratings of your app over the past 12 months.
 - The total number of ratings for each star rating.
@@ -56,17 +58,24 @@ The **Ratings breakdown** chart shows:
 > [!TIP]
 > The average rating that a customer sees in the Store takes into account the customer’s market and device type, so it may differ from what you see in this report.
 
+This chart can also be seen in the [Ratings report](ratings-report.md), along with more details about your app's ratings.
 
-## Average rating over time
 
-The **Average rating over time** chart shows how the app's average rating has changed over the past 12 months.
+<span id = "review-insight-categories />
 
-Rather than calculating the average of all ratings left during the past 12 months (as in the **Ratings breakdown** chart), the **Average rating over time** chart shows you how customers rated the app on a given week. This can help you identify trends or determine if ratings were affected by updates or other factors.
+## Insight categories
+
+The **Insight categories** chart groups your reviews according to categories that we've determined may be associated with the review.
+
+> [!NOTE]
+> Reviews less than 24 hours old and/or in a language other than English are not included when viewing reviews by categories.
+
+Near the top of the page you will see colored blocks representing reviews by category. Select one of these categories to view only reviews that we've associated with that category. You can also use the [page filters](#apply-filters) to filter by category.
+
+To see a breakdown of the number of reviews per category, select **Show details**. 
 
 
 ## Reviews
-
-Reviews left by your customers are shown on this page.  
 
 Each customer review contains:
 
@@ -92,18 +101,6 @@ You can sort the reviews on the page by date and/or by rating, in ascending or d
 By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
 
 Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
-
-
-## Review insight categories
-
-You can view **Review insight categories** to view your reviews grouped according to categories that we've determined may be associated with the review.
-
-> [!NOTE]
-> Reviews less than 24 hours old and/or in a language other than English are not included when viewing reviews by categories.
-
-Near the top of the page you will see colored blocks representing reviews by category. Select one of these categories to view only reviews that we've associated with that category. You can also use the [page filters](#apply-filters) to filter by category.
-
-To see a breakdown of the number of reviews per category, select **Show details**. 
 
 
 ## Responding to customer reviews
