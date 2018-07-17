@@ -35,8 +35,6 @@ General instructions and code examples for adding and styling controls in XAML a
       <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
       You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
     :::column-end:::
-    :::column:::
-    :::column-end:::
 :::row-end:::
 
 ## Get the Windows UI Library
