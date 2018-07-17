@@ -77,6 +77,7 @@
 ## [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
 ## [Usage report](../publish/usage-report.md)
 ## [Health report](../publish/health-report.md)
+## [Ratings report](../publish/ratings-report.md)
 ## [Reviews report](../publish/reviews-report.md)
 ## [Feedback report](../publish/feedback-report.md)
 ## [Xbox analytics report](../publish/xbox-analytics-report.md)
