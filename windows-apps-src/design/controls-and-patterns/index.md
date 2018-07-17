@@ -38,7 +38,7 @@ General instructions and code examples for adding and styling controls in XAML a
 :::row-end:::
 
 ## Get the Windows UI Library
-Some controls are only available in the Windows UI Library. To get it, see the [Windows UI Libary overview and installation instructions](/uwp/toolkits/winui/).
+Some controls are only available in the Windows UI Library. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).
 
 ## Alphabetical index 
 
