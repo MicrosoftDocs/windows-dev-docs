@@ -64,13 +64,13 @@ These toolkits provide controls and layout templates for designing UWP apps.
 :::row:::
     :::column:::
         <b>Windows UI Library</b><br>
-        Controls and other UI elements for UWP apps. 
-        <a href="/uwp/toolkits/winui/">Windows UI Library overview and installation instructions</a><br/>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
         <b>Windows Community Toolkit</b><br>
         Helper functions, custom controls, and app services.<br />
-        <a href="/windows/uwpcommunitytoolkit/">Windows Community Toolkit overview and installation instructions</a>
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
