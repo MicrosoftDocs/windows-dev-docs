@@ -26,20 +26,21 @@ The articles in this section provide design guidance and coding instructions for
 
 General instructions and code examples for adding and styling controls in XAML and C#.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">Add controls and handle events</a></b> <br/>
-   There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
-   You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
-  </div>
-</div>
-</div>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">Add controls and handle events</a></b> <br/>
+      There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
+      You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
+
+## Get the Windows UI Library
+Some controls are only available in the Windows UI Library. To get it, see the [Windows UI Libary overview and installation instructions](/uwp/toolkits/winui/).
 
 ## Alphabetical index 
 
