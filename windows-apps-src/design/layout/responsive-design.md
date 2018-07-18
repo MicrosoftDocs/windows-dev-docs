@@ -79,6 +79,8 @@ This technique lets you switch the user interface for a specific breakpoints. In
 
 ![Replacing design elements](images/rsp-design/rspd-replace.gif)
 
+The [NavigationView](../controls-and-patterns/navigationview.md) control supports this responsive technique, by letting users set the pane position to either top or left.
+
 ## Re-architect
 
 You can collapse or fork the architecture of your app to better target specific devices. In this example, expanding the window shows the entire master/details pattern.
