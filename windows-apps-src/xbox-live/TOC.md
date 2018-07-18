@@ -176,7 +176,6 @@
 ### [Read a binary blob](storage-platform/xbox-live-title-storage/reading-binary-blobs.md)
 ### [Store a JSON blob](storage-platform/xbox-live-title-storage/storing-jsonblobs.md)
 ### [Read a JSON blob](storage-platform/xbox-live-title-storage/reading-jsonblobs.md)
-# [Xbox One Web Server QuickStart Guide](web-server/xbox-one-web-server-quickstart-guide.md)
 # [Contextual Search](contextual-search/introduction-to-contextual-search.md)
 ## [Configure Contextual Search](contextual-search/configuring-contextual-search.md)
 # [Real-Time Activity (RTA) Service](real-time-activity-service/real-time-activity-service.md)
