@@ -47,13 +47,13 @@ When the screen size is smaller than 640 px, the nav pane is fully collapsed.
 ![nav pane minimal](images/navview-minimal.svg)
 
 ### Top nav
-Top nav, or the [tabs and pivot](../controls-and-patterns/tabs-pivot.md) pattern, can also act as top-level navigation. While left nav is collapsible, top nav is always visible. We recommend top nav when there are 2-5 navigation items.
 
-The [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) control implements the tabs and pivot pattern for UWP.
+Top nav can also act as top-level navigation. While left nav is collapsible, top nav is always visible. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs pattern for UWP.
 
-![pivot control](images/pivot-large.svg)
+![top navigation](images/pivot-large.svg)
 
 ## Command bar
+
 Next, you might want to provide users with easy access to your app's most common tasks. A [command bar](../controls-and-patterns/app-bars.md) can provide access to app-level or page-level commands, and it can be used with any navigation pattern.
 
 ![command bar placement at top ](images/app-bar-desktop.svg)

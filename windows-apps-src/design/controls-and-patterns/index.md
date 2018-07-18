@@ -26,20 +26,19 @@ The articles in this section provide design guidance and coding instructions for
 
 General instructions and code examples for adding and styling controls in XAML and C#.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">Add controls and handle events</a></b> <br/>
-   There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
-   You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
-  </div>
-</div>
-</div>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">Add controls and handle events</a></b> <br/>
+      There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">Styling controls</a></b> <br/>
+      You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+    :::column-end:::
+:::row-end:::
+
+## Get the Windows UI Library
+Some controls are only available in the Windows UI Library. To get it, see the [Windows UI Library overview and installation instructions](/uwp/toolkits/winui/).
 
 ## Alphabetical index 
 
@@ -85,9 +84,11 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="menus.md">Menus and context menus</a></li>
 
-<li style="list-style-type: none;"><a href="navigationview.md">Nav view</a></li>
+<li style="list-style-type: none;"><a href="navigationview.md">Navigation view</a></li>
 
 <li style="list-style-type: none;"><a href="person-picture.md">Person picture</a></li>
+
+<li style="list-style-type: none;"><a href="pivot.md">Pivot</a></li>
 
 <li style="list-style-type: none;"><a href="progress-controls.md">Progress controls</a></li>
 
@@ -106,8 +107,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 <li style="list-style-type: none;"><a href="slider.md">Slider</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">Split view</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">Tabs and pivots</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">Text controls</a></li>
 

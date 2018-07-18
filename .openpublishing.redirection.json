@@ -1707,9 +1707,15 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/design/controls-and-patterns/tabs-pivot.md",
+      "redirect_url": "windows-apps-src/design/controls-and-patterns/pivot.md",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/design/controls-and-patterns/dialogs.md",
       "redirect_url": "/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index",
       "redirect_document_id": true
     }
+
   ]
 }

@@ -1,12 +1,10 @@
 ---
 author: serenaz
-Description: NavigationView is a XAML control that provides app navigation with an automatically adapting, collapsible left navigation menu.
+Description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: Navigation view
-ms.assetid: 
-label: Navigation view
 template: detail.hbs
 ms.author: sezhen
-ms.date: 05/19/2017
+ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,179 +17,469 @@ ms.localizationpriority: medium
 ---
 # Navigation view
 
-The navigation view control provides a collapsible navigation menu for top-level navigation in your app. This control implements the nav pane, or hamburger menu, pattern and automatically adapts the pane's display mode to different window sizes.
+NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 
 > **Important APIs**: [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [NavigationViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), [NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
 
-![Example of NavigationView](images/navview_wireframe.png)
+NavigationView supports:
 
-## Video summary
+**Left navigation pane or menu**
 
-> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev010/player]
+![nav pane expanded](images/displaymode-left.png)
+
+**Top navigation pane or menu**
+
+![top navigation](images/displaymode-top.png)
 
 ## Is this the right control?
 
-NavigationView works well for:
+NavigationView is an adaptive navigation control that works well for:
 
--  Many top-level navigation items of a similar type. (For example, a sports app with categories like Football, Baseball, Basketball, Soccer, and so on.)
--  A medium-to-high number (5-10) of top-level navigational categories.
--  Providing a consistent navigational experience. The pane should include only navigational elements, not actions.
--  Preserving screen real estate of smaller windows.
+- Providing a consistent navigational experience throughout your app.
+- Preserving screen real estate on smaller windows.
+- Organizing access to many navigation categories.
 
-NavigationView is just one of several navigation elements you can use. To learn more about other navigation patterns and elements, see [Navigation design basics](../basics/navigation-basics.md).
+For other navigation controls, see [Navigation design basics](../basics/navigation-basics.md).
 
-The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation requires more complex behavior that is not supported by NavigationView, then you might want to consider the [Master/details](master-details.md) pattern instead.
+If your navigation requires more complex behavior that is not supported by NavigationView, then you might want to consider the [Master/details](master-details.md) pattern instead.
 
-## Examples
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+:::row:::
+    :::column:::
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
+    :::column-end:::
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/NavigationView">here</a> to open the app and see NavigationView in action.
 
-## NavigationView sections
+        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
+        <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
+    :::column-end:::
+:::row-end:::
 
-![NavigationView sections](images/navview_sections.png)
+## Display modes
 
-### Pane
+NavigationView can be set to different display modes, via the [PaneDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneDisplayMode) property:
 
-The built-in navigation ("hamburger") button lets users open and close the pane. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property. The text label adjacent to the hamburger is the [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) property.
+:::row:::
+    :::column:::
+    ### Left
+    Displays an expanded left positioned pane.
+    :::column-end:::
+    :::column span="2":::
+    ![left nav pane expanded](images/displaymode-left.png)
+    :::column-end:::
+:::row-end:::
 
-The built-in back button appears in the top left-hand corner in the pane. The NavigationView control does not automatically add content to the back stack, but to enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
+We recommend left navigation when:
 
-The NavigationView pane also can contain:
+- You have a medium-to-high number (5-10) of equally important top-level navigation categories.
+- You desire very prominent navigation categories with less space for other app content.
 
-- Navigation items, in the form of [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), for navigating to specific pages
-- Separators, in the form of [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), for grouping navigation items
-- Headers, in the form of [NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader), for labeling groups of items
-- An optional [AutoSuggestBox](auto-suggest-box.md) to allow for app-level search
-- An optional entry point for [app settings](../app-settings/app-settings-and-data.md). To hide the settings item, use the [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property
-- Free-form content in the pane’s footer, when added to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property
+:::row:::
+    :::column:::
+    ### Top
+    Displays a top positioned pane.
+    :::column-end:::
+    :::column span="2":::
+    ![top navigation](images/displaymode-top.png)
+    :::column-end:::
+:::row-end:::
 
-#### Visual style
+We recommend top navigation when:
 
-NavigationView items have support for selected, disabled, pointer over, pressed, and focused visual states.
+- You have 5 or less equally important top-level navigation categories, such that any additional top-level navigation categories that end up in the dropdown overflow menu are considered less important.
+- You need to show all navigation options on screen.
+- You desire more space for your app content.
+- Icons cannot clearly describe your app's navigation categories.
 
-![NavigationView items states: disabled, pointer over, pressed, focused](images/navview_item-states.png)
+:::row:::
+    :::column:::
+    ### LeftCompact
+    Displays a thin sliver with icons on the left.
+    :::column-end:::
+    :::column span="2":::
+    ![nav pane compact](images/displaymode-leftcompact.png)
+    :::column-end:::
+:::row-end:::
 
-When hardware and software requirements are met, NavigationView automatically uses the new [Acrylic material](../style/acrylic.md) and [Reveal highlight](../style/reveal.md) in its pane.
+:::row:::
+    :::column:::
+    ### LeftMinimal
+    Displays only the menu button.
+    :::column-end:::
+    :::column span="2":::
+    ![nav pane minimal](images/displaymode-leftminimal.png)
+    :::column-end:::
+:::row-end:::
 
-### Header
+### Auto
 
-The header area is vertically aligned with the navigation button and has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
+![gif leftnav default adaptive behavior](images/displaymode-auto.png)
 
-The header must be visible when NavigationView is in Minimal mode. You may choose to hide the header in other modes, which are used on larger window widths. To do so, set the [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.
+Adapts between LeftMinimal on small screens, LeftCompact on medium screens, and Left on large screens. See the [adaptive behavior](#adaptive-behavior) section for more information.
 
-### Content
+## Anatomy
 
-The content area is where most of the information for the selected nav category is displayed. 
+<b>Left nav</b><br>
+
+![left NavigationView sections](images/leftnav-anatomy.png)
+
+<b>Top nav</b><br>
+
+![top NavigationView sections](images/topnav-anatomy.png)
+
+## Pane
+
+The pane can be positioned either on top or on left, via the [PanePosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property.
+
+Here is the detailed pane anatomy for the left and top pane positions:
+
+<b>Left nav</b><br>
+
+![NavigationView anatomy](images/navview-pane-anatomy-vertical.png)
+1.Navigation items, 2.Separators, 3.Headers, 4.AutoSuggestBox (optional), 5.App settings (optional), 6.Menu button
+
+<b>Top nav</b><br>
+
+![NavigationView anatomy](images/navview-pane-anatomy-horizontal.png)
+1.Navigation items, 2.Separators, 3.Headers, 4.AutoSuggestBox (optional), 5.App settings (optional)
+
+The back button appears in the top left-hand corner of the pane, but NavigationView does not automatically add content to the back stack. To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
+
+The NavigationView pane can also contain:
+
+1. Navigation items, in the form of [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), for navigating to specific pages.
+2. Separators, in the form of [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), for grouping navigation items. Set the [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) property to 0 to render the separator as space.
+3. Headers, in the form of [NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader), for labeling groups of items.
+4. An optional [AutoSuggestBox](auto-suggest-box.md) to allow for app-level search.
+5. An optional entry point for [app settings](../app-settings/app-settings-and-data.md). To hide the settings item, use the [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property.
+
+The left pane contains:
+
+6. Menu button to toggle the pane open and close. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.
+
+### Pane footer
+
+Free-form content in the pane’s footer, when added to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property
+
+:::row:::
+    :::column:::
+    <b>Left nav</b><br>
+    ![Pane Footer left nav](images/navview-freeform-footer-left.png)<br>
+    :::column-end:::
+    :::column:::
+     <b>Top nav</b><br>
+    ![Pane header top nav](images/navview-freeform-footer-top.png)<br>
+    :::column-end:::
+:::row-end:::
+
+### Pane header
+
+Free-form content in the pane's header, when added to the [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) property
+
+:::row:::
+    :::column:::
+    <b>Left nav</b><br>
+    ![Pane header left nav](images/navview-freeform-header-left.png)<br>
+    :::column-end:::
+    :::column:::
+     <b>Top nav</b><br>
+    ![Pane header top nav](images/navview-freeform-header-top.png)<br>
+    :::column-end:::
+:::row-end:::
+
+### Pane content
+
+Free-form content in the pane, when added to the [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) property
+
+:::row:::
+    :::column:::
+    <b>Left nav</b><br>
+    ![Pane custom contentleft nav](images/navview-freeform-pane-left.png)<br>
+    :::column-end:::
+    :::column:::
+     <b>Top nav</b><br>
+    ![Pane custom content top nav](images/navview-freeform-pane-top.png)<br>
+    :::column-end:::
+:::row-end:::
+
+### Visual style
+
+When hardware and software requirements are met, NavigationView automatically uses the [Acrylic material](../style/acrylic.md) in its pane, and [Reveal highlight](../style/reveal.md) only in its left pane.
+
+## Header
+
+![navview generic image of header area](images/nav-header.png)
+
+The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position. It has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
+
+The header must be visible when NavigationView is in Minimal display mode. You may choose to hide the header in other modes, which are used on larger window widths. To do so, set the [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.
+
+## Content
+
+![navview generic image of content area](images/nav-content.png)
+
+The content area is where most of the information for the selected nav category is displayed.
 
 We recommend 12px margins for your content area when NavigationView is in Minimal mode and 24px margins otherwise.
 
-## NavigationView display modes
-The NavigationView pane can be open or closed, and has three display mode options:
--  **Minimal**
-   Only the hamburger button remains fixed while the pane shows and hides as needed.
--  **Compact**
-   The pane always shows as a narrow sliver which can be opened to full width.
--  **Expanded**
-   The pane is open alongside the content. When closed by activating the hamburger button, the pane's width becomes a narrow sliver.
+## Adaptive behavior
 
-By default, the system automatically selects the optimal display mode based on the amount of screen space available to the control. (You can [override](#overriding-the-default-adaptive-behavior) this setting.)
+NavigationView automatically changes its display mode based on the amount of screen space available to it. However, you might want to customize the adaptive display mode behavior.
+
+### Default
+
+The default adaptive behavior of NavigationView is to show an expanded left pane on large window widths, a left icon-only nav pane on medium window widths, and a hamburger menu button on small window widths. For more information about window sizes for adaptive behavior, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+
+![gif leftnav default adaptive behavior](images/displaymode-auto.png)
+
+```xaml
+<NavigationView />
+```
 
 ### Minimal
 
-![NavigationView in Minimal mode, showing closed and open pane](images/navview_minimal.png)
+A second common adaptive pattern is to use an expanded left pane on large window widths, and a hamburger menu on both medium and small window widths.
 
--  When closed, the pane is hidden by default, with only the nav button visible.
--  Provides on-demand navigation that conserves screen real estate. Ideal for apps on phones and phablets.
--  Pressing the nav button opens and closes the pane, which draws as an overlay above the header and content. Content does not reflow.
--  When open, the pane is transient and can be closed with a light dismiss gesture such as making a selection, pressing the back button, or tapping outside the pane.
--  The selected item becomes visible when the pane’s overlay opens.
--  When requirements are met, the open pane’s background is [in-app acrylic](../style/acrylic.md#acrylic-blend-types).
--  By default, NavigationView is in Minimal mode when its overall width is less than or equal to 640px.
+![gif leftnav adaptive behavior 2](images/adaptive-behavior-minimal.png)
+
+```xaml
+<NavigationView CompactModeThresholdWidth="1008" ExpandedModeThresholdWidth="1007" />
+```
+
+We recommend this when:
+
+- You desire more space for app content on smaller window widths.
+- Your navigation categories cannot be clearly represented with icons.
 
 ### Compact
 
-![NavigationView in Compact mode, showing closed and open pane](images/navview_compact.png)
+A third common adaptive pattern is to use an expanded left pane on large window widths, and a left icon-only nav pane on both medium and small window widths. A good example of this is the Mail app.
 
--  When closed, a vertical sliver of the pane showing only icons and the nav button is visible.
--  Provides some indication of the selected location while using a small amount of screen real estate.
--  This mode is better suited for medium screens like tablets and [10-foot experiences](../devices/designing-for-tv.md).
--  Pressing the nav button opens and closes the pane, which draws as an overlay above the header and content. Content does not reflow.
--  The Header is not required and can be hidden to give Content more vertical space.
--  The selected item shows a visual indicator to highlight where the user is in the navigation tree.
--  When requirements are met, the pane’s background is [in-app acrylic](../style/acrylic.md#acrylic-blend-types).
--  By default, NavigationView is in Compact mode when its overall width is between 641px and 1007px.
+![gif leftnav adaptive behavior 3](images/adaptive-behavior-compact.png)
 
-### Expanded
-
-![NavigationView in Expanded mode, showing open pane](images/navview_expanded.png)
-
--  By default, the pane remains open. This mode is better suited for larger screens.
--  The pane draws side-by-side with the header and content, which reflows within its available space.
--  When the pane is closed using the nav button, the pane shows as a narrow sliver side-by-side with the header and content.
--  The Header is not required and can be hidden to give Content more vertical space.
--  The selected item shows a visual indicator to highlight where the user is in the navigation tree.
--  When requirements are met, the pane’s background is painted using [background acrylic](../style/acrylic.md#acrylic-blend-types).
--  By default, NavigationView is in Expanded mode when its overall width is greater than 1007px.
-
-### Overriding the default adaptive behavior
-
-NavigationView automatically changes its display mode based on the amount of screen space available to it.
-
-> [!NOTE]
-> NavigationView should serve as the root container of your app, as this control is designed to span the full width and height of the app window.
-You can override the widths at which the navigation view changes display modes by using the [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) and [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth) properties.
-
-Consider the following scenarios that illustrate when you might want to customize the display mode behavior.
-
-- **Frequent navigation** If you expect users to navigate between app areas somewhat frequently, consider keeping the pane in view at narrower window widths. A music app with Songs / Albums / Artists navigation areas may opt for a 280px pane width and remain in Expanded mode while the app window is wider than 560px.
 ```xaml
-<NavigationView OpenPaneLength="280" CompactModeThresholdWidth="560" ExpandedModeThresholdWidth="560"/>
+<NavigationView CompactModeThresholdWidth="0" ExpandedModeThresholdWidth="1007" />
 ```
 
-- **Rare navigation** If you expect users to navigate between app areas very infrequently, consider keeping the pane hidden at wider window widths. A calculator app with multiple layouts may opt to remain in Minimal mode even when the app is maximized on a 1080p display.
+We recommend this when:
+
+- It is important to always show all navigation options on screen.
+- your navigation categories can be clearly represented with icons.
+
+### No adaptive behavior
+
+Sometimes you may not desire any adaptive behavior at all. You can set the pane to be always expanded, always compact, or always minimal.
+
+![gif leftnav adaptive behavior 4](images/adaptive-behavior-none.png)
+
 ```xaml
-<NavigationView CompactModeThresholdWidth="1920" ExpandedModeThresholdWidth="1920"/>
+<NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-- **Icon disambiguation** If your app’s navigation areas don’t lend themselves to meaningful icons, avoid using Compact mode. An image viewing app with Collections / Albums / Folders navigation areas may opt for showing NavigationView in Minimal mode at narrow and medium widths, and in Expanded mode at wide width.
+### Top to left navigation
+
+We recommend using top navigation on large window sizes and left navigation on small window sizes when:
+
+- You have a set of equally important top-level navigation categories to be displayed together, such that if one category in this set doesn't fit on screen, you collapse to left navigation to give them equal importance.
+- You wish to preserve as much content space as possible in small window sizes.
+
+Here is an example:
+
+![gif top or left nav adaptive behavior 1](images/navigation-top-to-left.png)
+
 ```xaml
-<NavigationView CompactModeThresholdWidth="1008"/>
+<Grid >
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="{x:Bind NavigationViewControl.CompactModeThresholdWidth}" />
+                </VisualState.StateTriggers>
+
+                <VisualState.Setters>
+                    <Setter Target="NavigationViewControl.PaneDisplayMode" Value="Top"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <NavigationView x:Name="NavigationViewControl" >
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="A" x:Name="A" />
+            <NavigationViewItem Content="B" x:Name="B" />
+            <NavigationViewItem Content="C" x:Name="C" />
+        </NavigationView.MenuItems>
+    </NavigationView>
+</Grid>
+
+```
+
+Sometimes apps need to bind different data to the top pane and left pane. Often the left pane includes more navigation elements.
+
+Here is an example:
+
+![gif top or left nav adaptive behavior 2](images/navigation-top-to-left2.png)
+
+```xaml
+<Page >
+    <Page.Resources>
+        <DataTemplate x:name="navItem_top_temp" x:DataType="models:Item">
+            <NavigationViewItem Background= Icon={x:Bind TopIcon}, Content={x:Bind TopContent}, Visibility={x:Bind TopVisibility} />
+        </DataTemplate>
+
+        <DataTemplate x:name="navItem_temp" x:DataType="models:Item">
+            <NavigationViewItem Icon={x:Bind Icon}, Content={x:Bind Content}, Visibility={x:Bind Visibility} />
+        </DataTemplate>
+        
+        <services:NavViewDataTemplateSelector x:Key="navview_selector" 
+              NavItemTemplate="{StaticResource navItem_temp}" 
+              NavItemTopTemplate="{StaticResource navItem_top_temp}" 
+              NavPaneDisplayMode="{x:Bind NavigationViewControl.PaneDisplayMode}">
+        </services:NavViewDataTemplateSelector>
+    </Page.Resources>
+
+    <Grid >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{x:Bind NavigationViewControl.CompactModeThresholdWidth}" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="NavigationViewControl.PaneDisplayMode" Value="Top"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <NavView x:Name='NavigationViewControl' MenuItemsSource={x:Bind items}   
+                 PanePosition = "Top" MenuItemTemplateSelector="navview_selector" />
+    </Grid>
+</Page>
+
+```
+
+```csharp
+ObservableCollection<Item> items = new ObservableCollection<Item>();
+items.Add(new Item() {
+    Content = "Aa",
+    TopContent ="A",
+    Icon = new BitmapIcon() { UriSource = new Uri("ms-appx:///testimage.jpg") },
+    TopIcon = new BitmapIcon(),
+    ItemVisibility = Visibility.Visible,
+    TopItemVisiblity = Visibility.Visible 
+});
+items.Add(new Item() {
+    Content = "Bb",
+    TopContent = "B",
+    Icon = new BitmapIcon() { UriSource = new Uri("ms-appx:///testimage.jpg") },
+    TopIcon = new BitmapIcon(),
+    ItemVisibility = Visibility.Visible,
+    TopItemVisiblity = Visibility.Visible 
+});
+items.Add(new Item() {
+    Content = "Cc",
+    TopContent = "C",
+    Icon = new BitmapIcon() { UriSource = new Uri("ms-appx:///testimage.jpg") },
+    TopIcon = new BitmapIcon(),
+    ItemVisibility = Visibility.Visible,
+    TopItemVisiblity = Visibility.Visible 
+});
+
+public class NavViewDataTemplateSelector : DataTemplateSelector
+    {
+        public DataTemplate NavItemTemplate { get; set; }
+
+        public DataTemplate NavItemTopTemplate { get; set; }	
+
+	 public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
+
+        protected override DataTemplate SelectTemplateCore(object item)
+        {
+            Item currItem = item as Item;
+            if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
+                return NavItemTopTemplate;
+            else 
+                return NavItemTemplate;
+        }	
+
+    }
+
 ```
 
 ## Interaction
 
-When users tap on a navigation item in the Pane, NavigationView will show that item as selected and will raise an [ItemInvoked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, NavigationView will also raise a [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event. 
+When users tap on a navigation item in the Pane, NavigationView will show that item as selected and will raise an [ItemInvoked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, NavigationView will also raise a [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event.
 
-Your app is responsible for updating the Header and Content with appropriate information in response to this user interaction. In addition, we recommend programmatically moving [focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.FocusState) from the navigation item to the content. By setting initial focus on load, you streamline the user flow and minimize the expected number of keyboard focus moves.
+Your app is responsible for updating the Header and Content with appropriate information in response to this user interaction. In addition, we recommend programmatically moving [focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.FocusState) from the navigation item to the content. By setting initial focus on load, you streamline the user flow and minimize the expected number of keyboard focus moves.
+
+### Tabs
+
+In the tabs model, selection and focus are tied. An action that normally shifts focus would also shift selection. In the below example, right arrowing would move the selection indicator from Display to Magnifier. You can achieve this by setting the [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus) property to Enabled.
+
+![screenshot of text-only top navview](images/nav-tabs.png)
+
+Here is the example XAML for that:
+
+```xaml
+<NavigationView PanePosition="Top" SelectionFollowsFocus="Enabled" >
+   <NavigationView.MenuItems>
+        <NavigationViewItem Content="Display" />
+        <NavigationViewItem Content="Magnifier"  />
+        <NavigationViewItem Content="Keyboard" />
+    </NavigationView.MenuItems>
+</NavigationView>
+
+```
+
+To swap out content when changing tab selection, you can use Frame's [NavigateWithOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.NavigateToType) method with FrameNavigationOptions.IsNavigationStackEnabled set to False, and NavigateOptions.TransitionInfoOverride set to the appropriate side-to-side slide animation. For an example, see the [code example](#code-example) below.
+
+If you wish to change the default Style, you can override NavigationView's [MenuItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemcontainerstyle) property. You can also set the [MenuItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemtemplate) property to specify a different data template.
 
 ## Backwards navigation
+
 NavigationView has a built-in back button, which can be enabled with the following properties:
+
 - [**IsBackButtonVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible) is a NavigationViewBackButtonVisible enum and "Auto" by default. It is used to show/hide the back button. When the button is not visible, the space for drawing the back button will be collapsed.
 - [**IsBackEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled) is false by default and can be used to toggle the back button states.
 - [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) is fired when a user clicks on the back button.
     - In Minimal/Compact mode, when the NavigationView.Pane is open as a flyout, clicking the back button will close the Pane and fire **PaneClosing** event instead.
     - Not fired if IsBackEnabled is false.
 
-![NavigationView back button](../basics/images/back-nav/NavView.png)
+:::row:::
+    :::column:::
+    <b>Left nav</b><br>
+    ![NavigationView back button on left nav](images/leftnav-back.png)
+    :::column-end:::
+    :::column:::
+     <b>Top nav</b><br>
+    ![NavigationView back button on top nav](images/topnav-back.png)
+    :::column-end:::
+:::row-end:::
 
 ## Code example
 
-The following is a simple example of how you can incorporate NavigationView into your app. 
+> [!NOTE]
+> NavigationView should serve as the root container of your app, as this control is designed to span the full width and height of the app window.
+You can override the widths at which the navigation view changes display modes by using the [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) and [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth) properties.
 
-We demonstrate how to implement backwards navigation with NavigationView's back button. Note that to use NavigationView's back navigation properties, you'll need the [Windows 10 Insider Preview (introduced v10.0.17110.0)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
+The following is an end-to-end example of how you can incorporate NavigationView with both a top navigation pane on large window sizes and a left navigation pane on small window sizes.
 
-We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
+In this sample, we expect end users to frequently select new navigation categories, and so we:
+
+- Set the [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) property to Enabled
+- Use Frame navigations that do not add to the navigation stack.
+- Keep the default value on the [ShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) property, which is used to indicate if left/right bumpers on a gamepad navigate the top-level navigation categories of your app. The default is "WhenSelectionFollowsFocus". The other possible values are "Always" and "Never".
+
+We also demonstrate how to implement backwards navigation with NavigationView's back button.
+
+Here's a recording of what the sample demonstrates:
+
+![NavigationView End-To-End Sample](images/nav-code-example.gif)
+
+Here's the sample code:
 
 ```xaml
 <Page
@@ -203,22 +491,39 @@ We also demonstrate localization of nav item content strings with `x:Uid`. For m
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <NavigationView x:Name="NavView"
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{x:Bind NavView.CompactModeThresholdWidth}" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="NavView.PaneDisplayMode" Value="Top"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+
+      <NavigationView x:Name="NavView"
+                    SelectionFollowsFocus="Enabled"
                     ItemInvoked="NavView_ItemInvoked"
+                    IsSettingsVisible="True"
                     Loaded="NavView_Loaded"
                     BackRequested="NavView_BackRequested">
 
         <NavigationView.MenuItems>
-            <NavigationViewItem x:Uid="HomeNavItem" Content="Home" Tag="home">
+            <NavigationViewItem Content="Home" x:Name="home">
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xE10F;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItemSeparator/>
             <NavigationViewItemHeader Content="Main pages"/>
-            <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Apps" Tag="apps"/>
-            <NavigationViewItem x:Uid="GamesNavItem" Icon="Video" Content="Games" Tag="games"/>
-            <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="Music" Tag="music"/>
+            <NavigationViewItem Icon="AllApps" Content="Apps" x:Name="apps"/>
+            <NavigationViewItem Icon="Video" Content="Games" x:Name="games"/>
+            <NavigationViewItem Icon="Audio" Content="Music" x:Name="music"/>
         </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
@@ -248,35 +553,14 @@ We also demonstrate localization of nav item content strings with `x:Uid`. For m
             </DataTemplate>
         </NavigationView.HeaderTemplate>
 
-        <NavigationView.PaneFooter>
-            <HyperlinkButton x:Name="MoreInfoBtn"
-                             Content="More info"
-                             Click="More_Click"
-                             Margin="12,0"/>
-        </NavigationView.PaneFooter>
+        <Frame x:Name="ContentFrame" Margin="24"/>
 
-        <Frame x:Name="ContentFrame" Margin="24">
-            <Frame.ContentTransitions>
-                <TransitionCollection>
-                    <NavigationThemeTransition/>
-                </TransitionCollection>
-            </Frame.ContentTransitions>
-        </Frame>
-
-    </NavigationView>
+      </NavigationView>
+    </Grid>
 </Page>
 ```
 
 ```csharp
-// List of ValueTuple holding the Navigation Tag and the relative Navigation Page
-private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
-{
-    ("home", typeof(HomePage)),
-    ("apps", typeof(AppsPage)),
-    ("games", typeof(GamesPage)),
-    ("music", typeof(MusicPage))
-};
-
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
     // You can also add items in code behind
@@ -287,12 +571,18 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
         Icon = new SymbolIcon(Symbol.Folder),
         Tag = "content"
     });
-    _pages.Add(("content", typeof(TabbedPage)));
+
+    // set the initial SelectedItem
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
+    {
+        if (item is NavigationViewItem && item.Tag.ToString() == "home")
+        {
+            NavView.SelectedItem = item;
+            break;
+        }
+    }
 
     ContentFrame.Navigated += On_Navigated;
-
-    // NavView doesn't load any page by default: you need to specify it
-    NavView_Navigate("home");
 
     // Add keyboard accelerators for backwards navigation
     var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
@@ -310,26 +600,47 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 }
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-{
+{  
+    NavigationTransitionInfo navAnimation = args.RecommendedNavigationTransitionInfo;
+
     if (args.IsSettingsInvoked)
     {
-        ContentFrame.Navigate(typeof(SettingsPage));
+        ContentFrame.NavigateToType(typeof(SettingsPage), null, navAnimation );
     }
     else
     {
-        // Getting the Tag from Content (args.InvokedItem is the content of NavigationViewItem)
-        var navItemTag = NavView.MenuItems
-            .OfType<NavigationViewItem>()
-            .First(i => args.InvokedItem.Equals(i.Content))
-            .Tag.ToString();
-        NavView_Navigate(navItemTag);
+        NavView_Navigate(args.InvokedItemContainer, navAnimation, sender.PanePosition);
     }
 }
 
-private void NavView_Navigate(string navItemTag)
+private void NavView_Navigate(NavigationViewItemBase item, NavigationTransitionInfo navAnimation, NavigationViewPanePosition position)
 {
-    var item = _pages.First(p => p.Tag.Equals(navItemTag));
-    ContentFrame.Navigate(item.Page);
+    NavigateOptions navOptions = new NavigateOptions();
+    navOptions.TransitionInfoOverride = navAnimation;
+    navOptions.IsNavigationStackEnabled = False;
+
+    switch (item.Name)
+    {
+        case "home":
+            ContentFrame.NavigateToType(typeof(HomePage), null, navOptions);
+            break;
+
+        case "apps":
+            ContentFrame.NavigateToType(typeof(AppsPage), null, navOptions);
+            break;
+
+        case "games":
+            ContentFrame.NavigateToType(typeof(GamesPage), null, navOptions);
+            break;
+
+        case "music":
+            ContentFrame.NavigateToType(typeof(MusicPage), null, navOptions);
+            break;
+
+        case "content":
+            ContentFrame.NavigateToType(typeof(MyContentPage), null, navOptions);
+            break;
+    }
 }
 
 private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
@@ -369,29 +680,44 @@ private void On_Navigated(object sender, NavigationEventArgs e)
     }
     else
     {
-        var item = _pages.First(p => p.Page == e.SourcePageType);
-        NavView.SelectedItem = NavView.MenuItems
-            .OfType<NavigationViewItem>()
-            .First(n => n.Tag.Equals(item.Tag));
+        Dictionary<Type, string> lookup = new Dictionary<Type, string>()
+        {
+            {typeof(HomePage), "home"},
+            {typeof(AppsPage), "apps"},
+            {typeof(GamesPage), "games"},
+            {typeof(MusicPage), "music"},
+            {typeof(MyContentPage), "content"}
+        };
+
+        String stringTag = lookup[ContentFrame.SourcePageType];
+
+        // set the new SelectedItem  
+        foreach (NavigationViewItemBase item in NavView.MenuItems)
+        {
+            if (item is NavigationViewItem && item.Tag.Equals(stringTag))
+            {
+                item.IsSelected = true;
+                break;
+            }
+        }
     }
 }
 
-private void More_Click(object sender, RoutedEventArgs e)
-{
-    // TODO: Implement
-}
+
 ```
 
 ## Customizing backgrounds
 
 To change the background of NavigationView's main area, set its `Background` property to your preferred brush.
 
-The Pane's background shows in-app acrylic when NavigationView is in Minimal or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
+The Pane's background shows in-app acrylic when NavigationView is in Top, Minimal, or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
 
 ```xaml
 <Application.Resources>
     <ResourceDictionary>
         <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+        BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
+        <AcrylicBrush x:Key="NavigationViewTopPaneBackground"
         BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
         <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
         BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
@@ -447,6 +773,24 @@ coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
 ```
 
 For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).
+
+## Scroll content under top pane
+
+For a seamless look+feel, if your app has pages that use a ScrollViewer and your navigation pane is top positioned, we recommend having the content scroll underneath the top nav pane.
+
+This can be achieved by setting the [CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds) property on the relevant ScrollViewer to true.
+
+![navview scroll navpane](images/nav-scroll-content.png)
+
+If your app has very long scrolling content, you may want to consider incorporating sticky headers that attach to the top nav pane and form a smooth surface. 
+
+![navview scroll sticky header](images/nav-scroll-stickyheader.png)
+
+You can achieve this by setting the [ContentOverlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) property on NavigationView. 
+
+Sometimes, if the user is scrolling down, you may want to hide the nav pane, achieved by setting the [IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) property on NavigationView to false.
+
+![navview scroll hide nav](images/nav-scroll-hidepane.png)
 
 ## Related topics
 
