@@ -4,7 +4,7 @@ description: We describe the programming concept of events in a Windows Runtime 
 title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,6 @@ ms.localizationpriority: medium
 ---
 
 # Events and routed events overview
-
 
 **Important APIs**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -37,7 +36,7 @@ You define the UI for your Windows Runtime app by generating XAML. This XAML is 
 
 To wire the events in XAML, you specify the string-form name of the handler method that you've already defined or will define later in your code-behind. For example, this XAML defines a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) object with other properties ([x:Name attribute](x-name-attribute.md), [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) assigned as attributes, and wires a handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event by referencing a method named `ShowUpdatesButton_Click`:
 
-```XML
+```xaml
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
   Click="ShowUpdatesButton_Click"/>
@@ -47,7 +46,6 @@ To wire the events in XAML, you specify the string-form name of the handler meth
 
 You write the actual handler in the programming language that you're using for all your app's code and code-behind. With the attribute `Click="ShowUpdatesButton_Click"`, you have created a contract that when the XAML is markup-compiled and parsed, both the XAML markup compile step in your IDE's build action and the eventual XAML parse when the app loads can find a method named `ShowUpdatesButton_Click` as part of the app's code. `ShowUpdatesButton_Click` must be a method that implements a compatible method signature (based on a delegate) for any handler of the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event. For example, this code defines the `ShowUpdatesButton_Click` handler.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e) 
 {
@@ -55,12 +53,22 @@ private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e)
     //more logic to do here...
 }
 ```
+
 ```vb
 Private Sub ShowUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
     Dim b As Button = CType(sender, Button)
     '  more logic to do here...
 End Sub
 ```
+
+```cppwinrt
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+{
+    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    // More logic to do here.
+}
+```
+
 ```cpp
 void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
 {
@@ -101,7 +109,7 @@ In C#, the syntax is to use the `+=` operator. You register the handler by refer
 
 If you use code to add event handlers to objects that appear in the run-time UI, a common practice is to add such handlers in response to an object lifetime event or callback, such as [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) or [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737), so that the event handlers on the relevant object are ready for user-initiated events at run time. This example shows a XAML outline of the page structure and then provides the C# language syntax for adding an event handler to an object.
 
-```xml
+```xaml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -140,15 +148,19 @@ End Sub
 
 **Note**  Visual Studio and its XAML design surface generally promote the instance-handling technique instead of the **Handles** keyword. This is because establishing the event handler wiring in XAML is part of typical designer-developer workflow, and the **Handles** keyword technique is incompatible with wiring the event handlers in XAML.
 
-In C++, you also use the **+=** syntax, but there are differences from the basic C# form:
+In C++/CX, you also use the **+=** syntax, but there are differences from the basic C# form:
 
 -   No delegate inference exists, so you must use **ref new** for the delegate instance.
 -   The delegate constructor has two parameters, and requires the target object as the first parameter. Typically you specify **this**.
 -   The delegate constructor requires the method address as the second parameter, so the **&** reference operator precedes the method name.
 
+```cppwinrt
+textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
+```
+
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
+ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 ```
 
 ### Removing event handlers in code
@@ -167,10 +179,10 @@ There are some rare cases where you do want to remove event handlers explicitly.
 
 For example, you can remove an event handler named **textBlock1\_PointerEntered** from the target object **textBlock1** using this code.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
 ```
+
 ```vb
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
@@ -291,4 +303,3 @@ Defining a custom event is usually done as part of the exercise of defining a cu
 * [.NET events and delegates](http://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
- 

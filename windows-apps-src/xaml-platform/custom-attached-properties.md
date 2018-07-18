@@ -115,11 +115,7 @@ End Class
 Defining the attached property in C++ is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++ you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
 
 ```cpp
-//
 // GameService.h
-// Declaration of the GameService class.
-//
-
 #pragma once
 
 #include "pch.h"
@@ -146,14 +142,8 @@ namespace UserAndCustomControls {
         }
     };
 }
-```
 
-```cpp
-//
 // GameService.cpp
-// Implementation of the GameService class.
-//
-
 #include "pch.h"
 #include "GameService.h"
 
@@ -170,10 +160,7 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Interop;
 using namespace Windows::UI::Xaml::Media;
 
-GameService::GameService() {
-
-};
-
+GameService::GameService() {};
 
 GameService::RegisterDependencyProperties() {
     DependencyProperty^ GameService::_IsMovableProperty = DependencyProperty::RegisterAttached(
@@ -191,8 +178,7 @@ An XML namespace mapping for XAML is typically placed in the root element of a X
 <UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:uc="using:UserAndCustomControls"
-...
->
+  ... >
 ```
 
 Using the mapping, you can set your `GameService.IsMovable` attached property on any element that matches your target definition, including an existing type that Windows Runtime defines.
@@ -227,9 +213,9 @@ The main function of a [**Canvas**](https://msdn.microsoft.com/library/windows/a
 
 In order to be a practical panel, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) has behavior that overrides the framework-level [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) and [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) methods. This is where **Canvas** actually checks for attached property values on its children. Part of both the **Measure** and **Arrange** patterns is a loop that iterates over any content, and a panel has the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property that makes it explicit what's supposed to be considered the child of a panel. So the **Canvas** layout behavior iterates through these children, and makes static [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) and [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) calls on each child to see whether those attached properties contain a non-default value (default is 0). These values are then used to absolutely position each child in the **Canvas** available layout space according to the specific values provided by each child, and committed using **Arrange**.
 
-The code looks something like this pseudocode:
+The code looks something like this pseudocode.
 
-``` syntax
+```syntax
     protected override Size ArrangeOverride(Size finalSize)
     {
         foreach (UIElement child in Children)
@@ -252,4 +238,3 @@ The code looks something like this pseudocode:
 * [Attached properties overview](attached-properties-overview.md)
 * [Custom dependency properties](custom-dependency-properties.md)
 * [XAML overview](xaml-overview.md)
-
