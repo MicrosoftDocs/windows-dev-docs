@@ -4,7 +4,7 @@ Description: Manage and view details related to each of your apps in the Windows
 title: App management and services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
-ms.date: 09/27/2017
+ms.date: 07/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -48,6 +48,12 @@ For more info, see [Use map services](use-map-services.md).
 To use the Microsoft Store collection API and the Microsoft Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
 
 For more info, see [Manage product entitlements from a service](../monetize/view-and-grant-products-from-a-service.md).
+
+## Administrator consent
+
+f your product integrates with Azure AD and calls APIs that request either [application permissions or delegated permissions](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) that require administrator consent, enter your Azure AD Client ID here. This lets administrators who acquire the app for their organization grant consent for your product to act on behalf of all users in the tenant.
+
+For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
 ## App management
 
