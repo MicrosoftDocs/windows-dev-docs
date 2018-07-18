@@ -17,7 +17,13 @@ This topic contains links to useful resources for developing Xbox Live games.
 
 ## API reference
 
-You can download the API reference documentation at:
+The WinRT SDK API reference can be found online here:
+
+* [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
+
+The C++ SDK is currently only available in offline format.
+
+You can download the full API reference documentation (which includes C++ as well as WinRT) at:
 
 * [Xbox Live API reference](https://aka.ms/xboxliveuwpdocs)
 
