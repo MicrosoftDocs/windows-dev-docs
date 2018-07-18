@@ -185,4 +185,5 @@
 # [Tools](tools/tools.md)
 ## [XBL Trace Analyzer](tools/analyze-service-calls.md)
 ## [XBL Account Tool](tools/xbox-live-account-tool.md)
+# [Xbox Live WinRT SDK API](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 # [Xbox Live RESTful reference](xbox-live-rest/TOC.md)
