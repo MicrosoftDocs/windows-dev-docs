@@ -30,7 +30,7 @@ A single Azure AD tenant can be associated with multiple Dev Center accounts. Yo
 
 If your organization already uses Azure AD, follow these steps to link your Dev Center account.
 
-1.  Select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
+1.  From the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Associate Azure AD with your Dev Center account**.
 3.  Enter your Azure AD credentials for the tenant that you want to associate.
 4.  Review the organization and domain name for your Azure AD tenant. To complete the association, select **Confirm**.
@@ -44,7 +44,7 @@ If your organization already uses Azure AD, follow these steps to link your Dev 
 
 If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
 
-1.  Select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
+1.  From the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Create new Azure AD**.
 3.  Enter the directory information for your new Azure AD:
     - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.

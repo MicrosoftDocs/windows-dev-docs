@@ -7,7 +7,7 @@ label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,7 +70,6 @@ Here are a few basic recommendations for custom text input controls.
 
 ## Handling the Showing and Hiding events
 
-
 Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
 
 ```csharp
@@ -118,6 +117,46 @@ namespace SDKTemplate
             LastInputPaneEventRun.Text = "Hiding";
         }
     }
+}
+```
+
+```cppwinrt
+...
+#include <winrt/Windows.UI.ViewManagement.h>
+...
+private:
+    winrt::event_token m_showingEventToken;
+    winrt::event_token m_hidingEventToken;
+...
+Scenario2_ShowHideEvents::Scenario2_ShowHideEvents()
+{
+    InitializeComponent();
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto inputPane{ Windows::UI::ViewManagement::InputPane::GetForCurrentView() };
+    // Subscribe to Showing/Hiding events
+    m_showingEventToken = inputPane.Showing({ this, &Scenario2_ShowHideEvents::OnShowing });
+    m_hidingEventToken = inputPane.Hiding({ this, &Scenario2_ShowHideEvents::OnHiding });
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto inputPane{ Windows::UI::ViewManagement::InputPane::GetForCurrentView() };
+    // Unsubscribe from Showing/Hiding events
+    inputPane.Showing(m_showingEventToken);
+    inputPane.Hiding(m_hidingEventToken);
+}
+
+void Scenario2_ShowHideEvents::OnShowing(Windows::UI::ViewManagement::InputPane const& /*sender*/, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs const& /*args*/)
+{
+    LastInputPaneEventRun().Text(L"Showing");
+}
+
+void Scenario2_ShowHideEvents::OnHiding(Windows::UI::ViewManagement::InputPane const& /*sender*/, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs const& /*args*/)
+{
+    LastInputPaneEventRun().Text(L"Hiding");
 }
 ```
 
@@ -181,4 +220,3 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 * [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
-

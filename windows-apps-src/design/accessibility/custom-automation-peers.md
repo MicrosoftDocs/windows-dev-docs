@@ -6,7 +6,7 @@ title: Custom automation peers
 label: Custom automation peers
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 09/25/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -117,7 +117,6 @@ If you're writing a custom control class and intend to also supply a new automat
 
 For example, the following code declares that the custom control `NumericUpDown` should use the peer `NumericUpDownPeer` for UI Automation purposes.
 
-C#
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
 ...
@@ -133,7 +132,6 @@ public class NumericUpDown : RangeBase {
 }
 ```
 
-Visual Basic
 ```vb
 Public Class NumericUpDown
     Inherits RangeBase
@@ -146,7 +144,29 @@ Public Class NumericUpDown
 End Class
 ```
 
-C++
+```cppwinrt
+// NumericUpDown.idl
+namespace MyNamespace
+{
+    runtimeclass NumericUpDown : Windows.UI.Xaml.Controls.Primitives.RangeBase
+    {
+        NumericUpDown();
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDown.h
+...
+struct NumericUpDown : NumericUpDownT<NumericUpDown>
+{
+	...
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return winrt::make<MyNamespace::implementation::NumericUpDownAutomationPeer>(*this);
+    }
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives::RangeBase
@@ -155,7 +175,7 @@ public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives:
 protected:
     virtual AutomationPeer^ OnCreateAutomationPeer() override
     {
-         return ref new NumericUpDown(this);
+         return ref new NumericUpDownAutomationPeer(this);
     }
 };
 ```
@@ -188,20 +208,38 @@ If you derive from [**ContentControl**](https://msdn.microsoft.com/library/windo
 ## Initialization of a custom peer class  
 The automation peer should define a type-safe constructor that uses an instance of the owner control for base initialization. In the next example, the implementation passes the *owner* value on to the [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) base, and ultimately it is the [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) that actually uses *owner* to set [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner).
 
-C#
 ```csharp
 public NumericUpDownAutomationPeer(NumericUpDown owner): base(owner)
 {}
 ```
 
-Visual Basic
 ```vb
 Public Sub New(owner As NumericUpDown)
     MyBase.New(owner)
 End Sub
 ```
 
-C++
+```cppwinrt
+// NumericUpDownAutomationPeer.idl
+import "NumericUpDown.idl";
+namespace MyNamespace
+{
+    runtimeclass NumericUpDownAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+    {
+        NumericUpDownAutomationPeer(NumericUpDown owner);
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDownAutomationPeer.h
+...
+struct NumericUpDownAutomationPeer : NumericUpDownAutomationPeerT<NumericUpDownAutomationPeer>
+{
+    ...
+    NumericUpDownAutomationPeer(MyNamespace::NumericUpDown const& owner);
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDownAutomationPeer sealed :  Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer
@@ -220,7 +258,6 @@ When implementing a peer for a custom control, override any of the "Core" method
 
 At a minimum, whenever you define a new peer class, implement the [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclassnamecore) method, as shown in the next example.
 
-C#
 ```csharp
 protected override string GetClassNameCore()
 {
@@ -239,7 +276,6 @@ Some assistive technologies use the [**GetAutomationControlType**](https://msdn.
 
 Your implementation of [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) describes your control by returning an [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) value. Although you can return **AutomationControlType.Custom**, you should return one of the more specific control types if it accurately describes your control's main scenarios. Here's an example.
 
-C#
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
 {
@@ -263,7 +299,7 @@ If a peer class inherits from another peer, and all necessary support and patter
 
 Although it is not the literal code, this example approximates the implementation of [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) already present in [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -283,7 +319,7 @@ A peer can report that it supports more than one pattern. If so, the override sh
 
 Here's an example of a [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) and [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This code came from the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -306,7 +342,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 ### Forwarding patterns from sub-elements  
 A [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) method implementation can also specify a sub-element or part as a pattern provider for its host. This example mimics how [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) transfers scroll-pattern handling to the peer of its internal [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) control. To specify a sub-element for pattern handling, this code gets the sub-element object, creates a peer for the sub-element by using the [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) method, and returns the new peer.
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -398,7 +434,7 @@ It's helpful to plan ahead for accessibility in the API design of the class itse
 
 A typical implementation is that the provider APIs first call [**Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) for access to the control instance at run time. Then the necessary behavior methods can be called on that object.
 
-C#
+
 ```csharp
 public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCollapseProvider {
     private IndexCard ownerIndexCard;
@@ -442,7 +478,7 @@ UI Automation clients can subscribe to automation events. In the automation peer
 
 The next code example shows how to get the peer object from within the control definition code and call a method to fire an event from that peer. As an optimization, the code determines whether there are any listeners for this event type. Firing the event and creating the peer object only when there are listeners avoids unnecessary overhead and helps the control remain responsive.
 
-C#
+
 ```csharp
 if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 {
