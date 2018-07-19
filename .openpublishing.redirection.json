@@ -1702,6 +1702,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/manage-add-ons-in-bulk.md",
+      "redirect_url": "/windows/uwp/publish/add-on-submissions",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false

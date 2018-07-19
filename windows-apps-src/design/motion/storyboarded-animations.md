@@ -4,7 +4,7 @@ ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Storyboarded animations
 description: Storyboarded animations are not just animations in the visual sense.
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,8 +12,6 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Storyboarded animations
-
-
 
 Storyboarded animations are not just animations in the visual sense. A storyboarded animation is a way to change the value of a dependency property as a function of time. One of the main reasons you might need a storyboarded animation that's not from the animation library is to define the visual state for a control, as part of a control template or page definition.
 
@@ -285,6 +283,10 @@ The event handler start the [**Storyboard**](https://msdn.microsoft.com/library/
 
 ```csharp
 myStoryboard.Begin();
+```
+
+```cppwinrt
+myStoryboard().Begin();
 ```
 
 ```cpp

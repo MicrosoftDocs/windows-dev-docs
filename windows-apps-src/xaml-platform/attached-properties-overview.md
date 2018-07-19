@@ -93,13 +93,22 @@ The next example shows how you can set an attached property in code via the XAML
     ' Canvas.SetTop(myCheckBox, 75)
 ```
 
+```cppwinrt
+Canvas myC;
+CheckBox myCheckBox;
+myCheckBox.Content(winrt::box_value(L"Hello"));
+myC.Children().Append(myCheckBox);
+myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
+// Canvas::SetTop(myCheckBox, 75);
+```
+
 ```cpp
     Canvas^ myC = ref new Canvas();
     CheckBox^ myCheckBox = ref new CheckBox();
     myCheckBox->Content="Hello";
     myC->Children->Append(myCheckBox);
     myCheckBox->SetValue(Canvas::TopProperty,75);
-    //Canvas::SetTop(myCheckBox, 75);
+    // Canvas::SetTop(myCheckBox, 75);
 ```
 
 ## Custom attached properties
