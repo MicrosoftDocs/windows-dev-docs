@@ -15,11 +15,22 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Navigation view
+# Navigation view (Preview version)
 
-NavigationView is an adaptive control that implements top-level navigation patterns for your app.
+> **This is a preview version**: This article describes a new version of the NavigationView control that's stil in development. To use it now, you need the [latest Windows Insider build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-> **Important APIs**: [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [NavigationViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), [NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
+The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes supports multiple navigation styles.
+
+> **Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview), [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview), [Microsoft.UI.Xaml.Controls.NavigationViewItem class](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem), [Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode enumeration](/uwp/api/microsoft.ui.xaml.controls.navigationviewdisplaymode)
+
+> **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [Windows.UI.Xaml.Controls.NavigationViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), [Windows.UI.Xaml.Controls.NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
+
+## Get the Windows UI Library
+
+This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the  [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). 
+
+
+## Navigation styles
 
 NavigationView supports:
 
