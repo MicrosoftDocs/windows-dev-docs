@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 ---
 # Navigation view (Preview version)
 
-> **This is a preview version**: This article describes a new version of the NavigationView control that's stil in development. To use it now, you need the [latest Windows Insider build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **This is a preview version**: This article describes a new version of the NavigationView control that's still in development. To use it now, you need the [latest Windows Insider build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes supports multiple navigation styles.
 
