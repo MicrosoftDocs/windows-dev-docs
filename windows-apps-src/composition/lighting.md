@@ -10,6 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - vb
+  - cpp
+  - cppwinrt
+
 ---
 # Lighting
 
@@ -198,9 +204,8 @@ Public NotInheritable Class OrangeSpotLight
 End Class
 ```
 
-For the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) code example below, you'll need to add a **Midl File (.idl)** file to your project.
-
-```idl
+```cppwinrt
+// For the C++/WinRT code example, you'll need to add a Midl File (.idl) file to your project.
 // OrangeSpotLight.idl
 namespace MyApp
 {
@@ -213,9 +218,7 @@ namespace MyApp
         static void SetIsTarget(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
-```
 
-```cppwinrt
 // OrangeSpotLight.h
 struct OrangeSpotLight : OrangeSpotLightT<OrangeSpotLight>
 {
