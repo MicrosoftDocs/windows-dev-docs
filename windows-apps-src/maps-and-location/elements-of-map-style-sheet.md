@@ -1,3 +1,4 @@
+
 ---
 author: normesta
 description: The entries and properties of a map style sheet
@@ -14,7 +15,7 @@ ms.localizationpriority: medium
 ---
 # Map style sheet reference
 
-You can create map style sheets by using JavaScript Object Notation (JSON).
+Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](mapcontrol.md) through the [MapStyleSheet.ParseFromJson](mapstylesheet_parsefromjson_1626148147.md) method.
 
 For example, you'd use the following JSON to make water areas appear in red, water labels appear in green, and land areas appear in blue:
 
