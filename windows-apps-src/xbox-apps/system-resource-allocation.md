@@ -58,3 +58,5 @@ For more information about system resources for UWP apps on Xbox One, see the fi
 ## See also
 - [UWP on Xbox One](index.md)
 - [Get started with the Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [DirectX and UWP on Xbox One](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+
