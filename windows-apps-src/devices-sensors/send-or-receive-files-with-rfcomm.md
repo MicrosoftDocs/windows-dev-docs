@@ -4,15 +4,19 @@ ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
 ms.author: misatran
-ms.date: 02/08/2017
+ms.date: 07/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
 ---
-# Bluetooth RFCOMM
 
+# Bluetooth RFCOMM
 
 **Important APIs**
 
@@ -30,6 +34,7 @@ The RFCOMM APIs use the concept of service identifiers. Although a service ident
 Apps can perform multi-step device operations in a background task so that they can run to completion even if the app is moved to the background and suspended. This allows for reliable device servicing such as changes to persistent settings or firmware, and content synchronization, without requiring the user to sit and watch a progress bar. Use the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) for device servicing and the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) for content synchronization. Note that these background tasks constrain the amount of time the app can run in the background, and are not intended to allow indefinite operation or infinite synchronization.
 
 For a complete code sample that details RFCOMM operation, see the [**Bluetooth Rfcomm Chat Sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) on Github.  
+
 ## Send a file as a client
 
 When sending a file, the most basic scenario is to connect to a paired device based on a desired service. This involves the following steps:
@@ -40,7 +45,7 @@ When sending a file, the most basic scenario is to connect to a paired device ba
 -   Follow established data stream patterns to read chunks of data from the file and send it on the socket's [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) to the device.
 
 ```csharp
-Windows.Devices.Bluetooth.RfcommDeviceService _service;
+Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService _service;
 Windows.Networking.Sockets.StreamSocket _socket;
 
 async void Initialize()
@@ -80,16 +85,16 @@ async void Initialize()
 }
 
 // This App requires a connection that is encrypted but does not care about
-// whether its authenticated.
+// whether it's authenticated.
 bool SupportsProtection(RfcommDeviceService service)
 {
     switch (service.ProtectionLevel)
     {
     case SocketProtectionLevel.PlainSocket:
-        if ((service.MaximumProtectionLevel == SocketProtectionLevel
+        if ((service.MaxProtectionLevel == SocketProtectionLevel
                 .BluetoothEncryptionWithAuthentication)
-            || (service.MaximumProtectionLevel == SocketProtectionLevel
-                .BluetoothEncryptionAllowNullAuthentication)
+            || (service.MaxProtectionLevel == SocketProtectionLevel
+                .BluetoothEncryptionAllowNullAuthentication))
         {
             // The connection can be upgraded when opening the socket so the
             // App may offer UI here to notify the user that Windows may
@@ -121,19 +126,121 @@ bool IsCompatibleVersion(RfcommDeviceService service)
     var attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
     var reader = DataReader.FromBuffer(attribute);
 
-    // The first byte contains the attribute' s type
+    // The first byte contains the attribute's type
     byte attributeType = reader.ReadByte();
     if (attributeType == SERVICE_VERSION_ATTRIBUTE_TYPE)
     {
         // The remainder is the data
-        uint version = reader.Uint32();
+        uint version = reader.ReadUInt32();
         return version >= MINIMUM_SERVICE_VERSION;
     }
 }
 ```
 
+```cppwinrt
+...
+#include <winrt/Windows.Devices.Bluetooth.Rfcomm.h>
+#include <winrt/Windows.Devices.Enumeration.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+...
+Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService m_service{ nullptr };
+Windows::Networking::Sockets::StreamSocket m_socket;
+
+Windows::Foundation::IAsyncAction Initialize()
+{
+    // Enumerate devices with the object push service.
+    Windows::Devices::Enumeration::DeviceInformationCollection services{
+        co_await Windows::Devices::Enumeration::DeviceInformation::FindAllAsync(
+            Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService::GetDeviceSelector(
+                Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId::ObexObjectPush())) };
+
+    if (services.Size() > 0)
+    {
+        // Initialize the target Bluetooth BR device.
+        Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService service{
+            co_await Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService::FromIdAsync(services.GetAt(0).Id()) };
+
+        // Check that the service meets this App's minimum
+        // requirement
+        if (SupportsProtection(service)
+            && co_await IsCompatibleVersion(service))
+        {
+            m_service = service;
+
+            // Create a socket and connect to the target
+            co_await m_socket.ConnectAsync(
+                m_service.ConnectionHostName(),
+                m_service.ConnectionServiceName(),
+                Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication);
+
+            // The socket is connected. At this point the App can
+            // wait for the user to take some action, e.g. click
+            // a button to send a file to the device, which could
+            // invoke the Picker and then send the picked file.
+            // The transfer itself would use the Sockets API and
+            // not the Rfcomm API, and so is omitted here for
+            //brevity.
+        }
+    }
+}
+
+// This App requires a connection that is encrypted but does not care about
+// whether it's authenticated.
+bool SupportsProtection(Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService const& service)
+{
+    switch (service.ProtectionLevel())
+    {
+    case Windows::Networking::Sockets::SocketProtectionLevel::PlainSocket:
+        if ((service.MaxProtectionLevel() == Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionWithAuthentication)
+            || (service.MaxProtectionLevel() == Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication))
+        {
+            // The connection can be upgraded when opening the socket so the
+            // App may offer UI here to notify the user that Windows may
+            // prompt for a PIN exchange.
+            return true;
+        }
+        else
+        {
+            // The connection cannot be upgraded so an App may offer UI here
+            // to explain why a connection won't be made.
+            return false;
+        }
+    case Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionWithAuthentication:
+        return true;
+    case Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication:
+        return true;
+    }
+    return false;
+}
+
+// This application relies on CRC32 checking available in version 2.0 of the service.
+const uint32_t SERVICE_VERSION_ATTRIBUTE_ID{ 0x0300 };
+const byte SERVICE_VERSION_ATTRIBUTE_TYPE{ 0x0A }; // UINT32.
+const uint32_t MINIMUM_SERVICE_VERSION{ 200 };
+
+Windows::Foundation::IAsyncOperation<bool> IsCompatibleVersion(Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService const& service)
+{
+    auto attributes{
+        co_await service.GetSdpRawAttributesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode::Uncached) };
+
+    auto attribute{ attributes.Lookup(SERVICE_VERSION_ATTRIBUTE_ID) };
+    auto reader{ Windows::Storage::Streams::DataReader::FromBuffer(attribute) };
+
+    // The first byte contains the attribute's type.
+    byte attributeType{ reader.ReadByte() };
+    if (attributeType == SERVICE_VERSION_ATTRIBUTE_TYPE)
+    {
+        // The remainder is the data
+        uint32_t version{ reader.ReadUInt32() };
+        co_return (version >= MINIMUM_SERVICE_VERSION);
+    }
+}
+...
+```
+
 ```cpp
-Windows::Devices::Bluetooth::RfcommDeviceService^ _service;
+Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService^ _service;
 Windows::Networking::Sockets::StreamSocket^ _socket;
 
 void Initialize()
@@ -182,16 +289,16 @@ void Initialize()
 }
 
 // This App requires a connection that is encrypted but does not care about
-// whether its authenticated.
+// whether it's authenticated.
 bool SupportsProtection(RfcommDeviceService^ service)
 {
     switch (service->ProtectionLevel)
     {
     case SocketProtectionLevel->PlainSocket:
-        if ((service->MaximumProtectionLevel == SocketProtectionLevel
+        if ((service->MaxProtectionLevel == SocketProtectionLevel
                 ::BluetoothEncryptionWithAuthentication)
-            || (service->MaximumProtectionLevel == SocketProtectionLevel
-                ::BluetoothEncryptionAllowNullAuthentication)
+            || (service->MaxProtectionLevel == SocketProtectionLevel
+                ::BluetoothEncryptionAllowNullAuthentication))
         {
             // The connection can be upgraded when opening the socket so the
             // App may offer UI here to notify the user that Windows may
@@ -223,12 +330,12 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
     auto attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
     auto reader = DataReader.FromBuffer(attribute);
 
-    // The first byte contains the attribute' s type
+    // The first byte contains the attribute's type
     byte attributeType = reader->ReadByte();
     if (attributeType == SERVICE_VERSION_ATTRIBUTE_TYPE)
     {
         // The remainder is the data
-        uint version = reader->Uint32();
+        uint version = reader->ReadUInt32();
         return version >= MINIMUM_SERVICE_VERSION;
     }
 }
@@ -247,7 +354,7 @@ Another common RFCOMM App scenario is to host a service on the PC and expose it 
 In order to persist an RFCOMM service in the background, use the [**RfcommConnectionTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.rfcommconnectiontrigger.aspx). The background task is triggered on connection to the service. The developer receives a handle to the socket in the background task. The background task is long running and persists for as long as the socket is in use.    
 
 ```csharp
-Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
+Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider _provider;
 
 async void Initialize()
 {
@@ -265,7 +372,7 @@ async void Initialize()
 
     // Set the SDP attributes and start advertising
     InitializeServiceSdpAttributes(_provider);
-    _provider.StartAdvertising();
+    _provider.StartAdvertising(listener);
 }
 
 const uint SERVICE_VERSION_ATTRIBUTE_ID = 0x0300;
@@ -276,9 +383,9 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider provider)
     auto writer = new Windows.Storage.Streams.DataWriter();
 
     // First write the attribute type
-    writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
+    writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE);
     // Then write the data
-    writer.WriteUint32(SERVICE_VERSION);
+    writer.WriteUInt32(SERVICE_VERSION);
 
     auto data = writer.DetachBuffer();
     provider.SdpRawAttributes.Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
@@ -302,8 +409,74 @@ void OnConnectionReceived(
 }
 ```
 
+```cppwinrt
+...
+#include <winrt/Windows.Devices.Bluetooth.Rfcomm.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+...
+Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider m_provider{ nullptr };
+Windows::Networking::Sockets::StreamSocket m_socket;
+
+Windows::Foundation::IAsyncAction Initialize()
+{
+    // Initialize the provider for the hosted RFCOMM service.
+    auto provider{ co_await Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider::CreateAsync(
+        Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId::ObexObjectPush()) };
+
+    m_provider = provider;
+
+    // Create a listener for this service and start listening.
+    Windows::Networking::Sockets::StreamSocketListener listener;
+    listener.ConnectionReceived({ this, &MainPage::OnConnectionReceived });
+
+    co_await listener.BindServiceNameAsync(m_provider.ServiceId().AsString(),
+        Windows::Networking::Sockets::SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication);
+
+    // Set the SDP attributes and start advertising
+    InitializeServiceSdpAttributes();
+    m_provider.StartAdvertising(listener);
+}
+
+const uint32_t SERVICE_VERSION_ATTRIBUTE_ID{ 0x0300 };
+const byte SERVICE_VERSION_ATTRIBUTE_TYPE{ 0x0A };   // UINT32.
+const uint32_t SERVICE_VERSION{ 200 };
+
+void InitializeServiceSdpAttributes()
+{
+    Windows::Storage::Streams::DataWriter writer;
+
+    // First write the attribute type
+    writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE);
+    // Then write the data
+    writer.WriteUInt32(SERVICE_VERSION);
+
+    auto data{ writer.DetachBuffer() };
+    m_provider.SdpRawAttributes().Insert(SERVICE_VERSION_ATTRIBUTE_ID, data);
+}
+
+void OnConnectionReceived(
+    Windows::Networking::Sockets::StreamSocketListener const& listener,
+    Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs const& args)
+{
+    // Stop advertising/listening so that we're only serving one client
+    m_provider.StopAdvertising();
+    listener.Close();
+    m_socket = args.Socket();
+
+    // The client socket is connected. At this point the application can wait for
+    // the user to take some action, e.g. click a button to receive a
+    // file from the device, which could invoke the Picker and then save
+    // the received file to the picked location. The transfer itself
+    // would use the Sockets API and not the Rfcomm API, and so is
+    // omitted here for brevity.
+}
+...
+```
+
 ```cpp
-Windows::Devices::Bluetooth::RfcommServiceProvider^ _provider;
+Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider^ _provider;
+Windows::Networking::Sockets::StreamSocket^ _socket;
 
 void Initialize()
 {
@@ -327,7 +500,7 @@ void Initialize()
     }).then([listener](void) {
         // Set the SDP attributes and start advertising
         InitializeServiceSdpAttributes(_provider);
-        _provider->StartAdvertising();
+        _provider->StartAdvertising(listener);
     });
 }
 
@@ -339,9 +512,9 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider^ provider)
     auto writer = ref new Windows::Storage::Streams::DataWriter();
 
     // First write the attribute type
-    writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
+    writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE);
     // Then write the data
-    writer->WriteUint32(SERVICE_VERSION);
+    writer->WriteUInt32(SERVICE_VERSION);
 
     auto data = writer->DetachBuffer();
     provider->SdpRawAttributes->Add(SERVICE_VERSION_ATTRIBUTE_ID, data);

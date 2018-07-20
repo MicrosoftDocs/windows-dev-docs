@@ -4,7 +4,7 @@ description: Explains how to implement a XAML attached property as a dependency 
 title: Custom attached properties
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,6 +13,7 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - vb
+  - cppwinrt
   - cpp
 ---
 
@@ -71,6 +72,8 @@ The *target* object can be of a more specific type in your implementation, but m
 
 This example shows the dependency property registration (using the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method), as well as the **Get** and **Set** accessors, for a custom attached property. In the example, the attached property name is `IsMovable`. Therefore, the accessors must be named `GetIsMovable` and `SetIsMovable`. The owner of the attached property is a service class named `GameService` that doesn't have a UI of its own; its purpose is only to provide the attached property services when the **GameService.IsMovable** attached property is used.
 
+Defining the attached property in C++/CX is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++/CX you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
+
 ```csharp
 public class GameService : DependencyObject
 {
@@ -112,7 +115,39 @@ Public Class GameService
 End Class
 ```
 
-Defining the attached property in C++ is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++ you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
+```cppwinrt
+// GameService.idl
+namespace UserAndCustomControls
+{
+    runtimeclass GameService : Windows.UI.Xaml.DependencyObject
+    {
+        GameService();
+        static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
+        Boolean IsMovable;
+    }
+}
+
+// GameService.h
+...
+    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
+    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
+    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+
+private:
+    static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
+...
+
+// GameService.cpp
+...
+Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
+    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+        L"IsMovable",
+        winrt::xaml_typename<bool>(),
+        winrt::xaml_typename<UserAndCustomControls::GameService>(),
+        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
+);
+...
+```
 
 ```cpp
 // GameService.h
@@ -216,17 +251,17 @@ In order to be a practical panel, [**Canvas**](https://msdn.microsoft.com/librar
 The code looks something like this pseudocode.
 
 ```syntax
-    protected override Size ArrangeOverride(Size finalSize)
+protected override Size ArrangeOverride(Size finalSize)
+{
+    foreach (UIElement child in Children)
     {
-        foreach (UIElement child in Children)
-        {
-            double x = (double) Canvas.GetLeft(child);
-            double y = (double) Canvas.GetTop(child);
-            child.Arrange(new Rect(new Point(x, y), child.DesiredSize));
-        }
-        return base.ArrangeOverride(finalSize); 
-        // real Canvas has more sophisticated sizing
+        double x = (double) Canvas.GetLeft(child);
+        double y = (double) Canvas.GetTop(child);
+        child.Arrange(new Rect(new Point(x, y), child.DesiredSize));
     }
+    return base.ArrangeOverride(finalSize); 
+    // real Canvas has more sophisticated sizing
+}
 ```
 
 > [!NOTE]
