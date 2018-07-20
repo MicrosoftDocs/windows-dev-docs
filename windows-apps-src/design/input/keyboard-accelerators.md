@@ -350,13 +350,18 @@ Notice that some of the combinations are not valid for localized versions of Win
 
 As keyboard accelerators are not typically described directly in the UI of your UWP application, you can improve discoverability through [tooltips](../controls-and-patterns/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
 
-Starting with Windows 10, version 1803, when KeyboardAccelerators are declared, controls present the corresponding key combinations in a tooltip by default (unless they are associated with [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) objects, see the [Labels]()). If a control has more than one accelerator defined, only the first is presented in the tooltip.
+**Windows 10, Version 1803 (April 2018 Update) and newer**
+
+By default, When keyboard accelerators are declared, all controls (except [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) present the corresponding key combinations in a tooltip.
+
+> [!NOTE] 
+> If a control has more than one accelerator defined, only the first is presented.
 
 ![Accelerator key tooltip](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Accelerator key combo in tooltip*
 
-For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the label.
+For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is automatically appended to the Label string.
 
 ```xaml
 <AppBarButton Label="Save" Icon="Save">
@@ -373,12 +378,10 @@ For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.a
 Control the presentation behavior by using the [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) property, which accepts two values: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) or [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
-<Button Content="Save" Click="OnSave">
-  <Button.KeyboardAccelerators> 
-    <KeyboardAccelerator 
-      Key="S" Modifiers="Control" 
-      KeyboardAcceleratorPlacementMode="Hidden" /> 
-  </Button.KeyboardAccelerators>  
+<Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
+    <Button.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control" />
+    </Button.KeyboardAccelerators>
 </Button>
 ```
 
@@ -388,10 +391,12 @@ Here, we show how to use the KeyboardAcceleratorPlacementTarget property to disp
 
 ```xaml
 <Grid x:Name="Container" Padding="30">
-  <Button Content="Save" Click="OnSave">
+  <Button Content="Save"
+    Click="OnSave"
+    KeyboardAcceleratorPlacementMode="Auto"
+    KeyboardAcceleratorPlacementTarget="{x:Bind Container}">
     <Button.KeyboardAccelerators>
-      <KeyboardAccelerator  Key="S" Modifiers="Control" 
-        KeyboardAcceleratorPlacementTarget="{x:Bind Container}"/>
+      <KeyboardAccelerator  Key="S" Modifiers="Control" />
     </Button.KeyboardAccelerators>
   </Button>
 </Grid>
