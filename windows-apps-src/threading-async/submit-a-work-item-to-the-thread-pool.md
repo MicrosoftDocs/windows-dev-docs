@@ -113,6 +113,79 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
+```cppwinrt
+// The nth prime number to find.
+const unsigned int n{ 9999 };
+
+unsigned long nthPrime{ 0 };
+
+// Simulates work by searching for the nth prime number. Uses a
+// naive algorithm and counts 2 as the first prime number.
+
+// A reference to the work item is cached so that we can trigger a
+// cancellation when the user presses the Cancel button.
+m_workItem = Windows::System::Threading::ThreadPool::RunAsync([&](Windows::Foundation::IAsyncAction const& workItem)
+{
+    unsigned int progress = 0; // For progress reporting.
+    unsigned int primes = 0;   // Number of primes found so far.
+    unsigned long int i = 2;   // Number iterator.
+
+    if ((n >= 0) && (n <= 2))
+    {
+        nthPrime = n;
+        return;
+    }
+
+    while (primes < (n - 1))
+    {
+        if (workItem.Status() == Windows::Foundation::AsyncStatus::Canceled)
+        {
+            break;
+        }
+
+        // Go to the next number.
+        i++;
+
+        // Check for prime.
+        bool prime = true;
+        for (unsigned int j = 2; j < i; ++j)
+        {
+            if ((i % j) == 0)
+            {
+                prime = false;
+                break;
+            }
+        };
+
+        if (prime)
+        {
+            // Found another prime number.
+            primes++;
+
+            // Report progress at every 10 percent.
+            unsigned int temp = progress;
+            progress = static_cast<unsigned int>(10.f*primes / n);
+
+            if (progress != temp)
+            {
+                std::wstringstream updateString;
+                updateString << L"Progress to " << n << L"th prime: " << (10 * progress) << std::endl;
+
+                // Update the UI thread with the CoreDispatcher.
+                Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
+                    Windows::UI::Core::CoreDispatcherPriority::High,
+                    Windows::UI::Core::DispatchedHandler([&]()
+                {
+                    UpdateUI(updateString.str());
+                }));
+            }
+        }
+    }
+    // Return the nth prime number.
+    nthPrime = i;
+});
+```
+
 ```cpp
 // The nth prime number to find.
 const unsigned int n = 9999;
@@ -204,8 +277,7 @@ Provide a completion handler by setting the [**IAsyncAction.Completed**](https:/
 
 The following example updates the UI with the result of the work item submitted in step 1:
 
-
- ```csharp
+```csharp
 asyncAction->Completed = ref new AsyncActionCompletedHandler(
     \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
 {
@@ -227,6 +299,28 @@ asyncAction->Completed = ref new AsyncActionCompletedHandler(
     }));
 });
 ```
+
+```cppwinrt
+m_workItem.Completed([&](Windows::Foundation::IAsyncAction const& asyncInfo, Windows::Foundation::AsyncStatus const& asyncStatus)
+{
+    if (asyncStatus == Windows::Foundation::AsyncStatus::Canceled)
+    {
+        return;
+    }
+
+    std::wstringstream updateString;
+    updateString << std::endl << L"The " << n << L"th prime number is " << nthPrime << std::endl;
+
+    // Update the UI thread with the CoreDispatcher.
+    Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
+        Windows::UI::Core::CoreDispatcherPriority::High,
+        Windows::UI::Core::DispatchedHandler([&]()
+    {
+        UpdateUI(updateString.str());
+    }));
+});
+```
+
 ```cpp
 asyncAction.Completed = new AsyncActionCompletedHandler(
     (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =>
