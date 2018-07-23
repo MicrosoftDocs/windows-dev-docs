@@ -191,7 +191,7 @@ You can set the [IsTextSearchEnabled](/uwp/api/windows.ui.xaml.controls.combobox
 ## Make a combo box editable
 
 > [!IMPORTANT]
-> This feature requires that your app's Target version be RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) or greater. You can target a Minimum version lower than RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/debug-test-perf/version-adaptive-apps).
+> This feature requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/).
 
 By default, a combo box lets the user select from a pre-defined list of options. However, there are cases where the list contains only a subset of valid values, and the user should be able to enter other values that aren't listed. To support this, you can make the combo box editable.
 
