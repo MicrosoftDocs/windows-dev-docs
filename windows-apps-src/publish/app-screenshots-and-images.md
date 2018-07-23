@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 5/23/2018
+ms.date: 7/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -86,7 +86,7 @@ You have the option to prevent the Store from using the logo images in your app'
 
 To have the Store use only the images you upload (for customers on Windows 10, including Xbox), and not use any images from your packages, check the box that says **For Windows 10 customers, display uploaded logo images instead of the images from my packages**.
 
-When you check this box, a new section called **Store display images** appears. Here, you can upload 3 images, including the **1:1 app tile icon (300 x 300 pixels) size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
+When you check this box, a new section called **Store display images** appears. Here, you can upload 3 images, including the **1:1 app tile icon (300 x 300 pixels)** size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
 
 
 <span id="promotional-images" />

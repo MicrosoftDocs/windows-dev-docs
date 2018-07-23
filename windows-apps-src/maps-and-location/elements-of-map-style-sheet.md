@@ -54,33 +54,33 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | settings                     | [Settings](#settings)     | The settings that apply to the whole style sheet. |
 | mapElement                   | [MapElement](#mapelement) | The parent entry to all map entries. |
 | > baseMapElement             | [MapElement](#mapelement) | The parent entry to all non-user entries. |
-| >> area                      | [MapElement](#mapelement) | Areas of land use (not to be confused with the structure entry). |
-| >>> airport                  | [MapElement](#mapelement) | Areas that encompass an airports. |
+| >> area                      | [MapElement](#mapelement) | Areas describing land use.  These should not to be confused with the physical buildings which are under the structure entry. |
+| >>> airport                  | [MapElement](#mapelement) | Areas that encompass airports. |
 | >>> areaOfInterest           | [MapElement](#mapelement) | Areas in which there are a high concentration of businesses or interesting points. |
-| >>> cemetery                 | [MapElement](#mapelement) | Areas of cemeteries. |
-| >>> continent                | [MapElement](#mapelement) | Areas of entire continents. |
-| >>> education                | [MapElement](#mapelement) |  |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  |
-| >>> industrial               | [MapElement](#mapelement) | Areas of land that are used for industrial purposes. |
-| >>> island                   | [MapElement](#mapelement) | Labels in island areas. |
-| >>> medical                  | [MapElement](#mapelement) | Areas of land that are used for medical purposes (For example: a hospital campus). |
-| >>> military                 | [MapElement](#mapelement) | Areas of military bases. |
-| >>> nautical                 | [MapElement](#mapelement) | Areas of land that are used for nautical purposes. |
-| >>> neighborhood             | [MapElement](#mapelement) | Labels in areas defined as neighborhoods. |
-| >>> runway                   | [MapElement](#mapelement) | Land areas that are covered by a runway. |
+| >>> cemetery                 | [MapElement](#mapelement) | Areas that encompass cemeteries. |
+| >>> continent                | [MapElement](#mapelement) | Continent area labels. |
+| >>> education                | [MapElement](#mapelement) | Areas that encompass schools and other educational facilities. |
+| >>> indigenousPeoplesReserve | [MapElement](#mapelement) | Areas that encompass indigenous peoples reserves. |
+| >>> industrial               | [MapElement](#mapelement) | Areas that are used for industrial purposes. |
+| >>> island                   | [MapElement](#mapelement) | Island area labels. |
+| >>> medical                  | [MapElement](#mapelement) | Areas that are used for medical purposes (For example: a hospital campus). |
+| >>> military                 | [MapElement](#mapelement) | Areas that encompass military bases or have military uses. |
+| >>> nautical                 | [MapElement](#mapelement) | Areas that are used for nautical related purposes. |
+| >>> neighborhood             | [MapElement](#mapelement) | Neighborhood area labels. |
+| >>> runway                   | [MapElement](#mapelement) | Areas that is used as an airplane runway. |
 | >>> sand                     | [MapElement](#mapelement) | Sandy areas like beaches. |
 | >>> shoppingCenter           | [MapElement](#mapelement) | Areas of ground allocated for malls or other shopping centers. |
-| >>> stadium                  | [MapElement](#mapelement) | Area of a stadium. |
+| >>> stadium                  | [MapElement](#mapelement) | Areas that encompass stadiums. |
 | >>> underground              | [MapElement](#mapelement) | Underground areas (For example: a metro station footprint). |
 | >>> vegetation               | [MapElement](#mapelement) | Forests, grassy areas, etc. |
 | >>>> forest                  | [MapElement](#mapelement) | Areas of forest land. |
-| >>>> golfCourse              | [MapElement](#mapelement) |  |
-| >>>> park                    | [MapElement](#mapelement) | Park areas. |
+| >>>> golfCourse              | [MapElement](#mapelement) | Areas that encompass golf courses. |
+| >>>> park                    | [MapElement](#mapelement) | Areas that encompass parks. |
 | >>>> playingField            | [MapElement](#mapelement) | Extracted pitches such as a baseball field or tennis court. |
-| >>>> reserve                 | [MapElement](#mapelement) | Areas of nature reserves. |
-| >> point                     | [PointStyle](#pointstyle) | All point features that are rendered with an icon of some sort. |
-| >>> address                  | [PointStyle](#pointstyle) | Address numbers. |
-| >>> naturalPoint             | [PointStyle](#pointstyle) |  |
+| >>>> reserve                 | [MapElement](#mapelement) | Areas that encompass nature reserves. |
+| >> point                     | [PointStyle](#pointstyle) | All point features that are drawn with an icon of some sort. |
+| >>> address                  | [PointStyle](#pointstyle) | Address numbers labels. |
+| >>> naturalPoint             | [PointStyle](#pointstyle) | Icons that represent natural features. |
 | >>>> peak                    | [PointStyle](#pointstyle) | Icons that represent mountain peaks. |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) | Icons that represent volcano peaks. |
 | >>>> waterPoint              | [PointStyle](#pointstyle) | Icons that represent water feature locations such as a waterfall. |
@@ -99,32 +99,32 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) | Admin1, states, provinces, etc. |
 | >>> district                 | [BorderedMapElement](#borderedmapelement) | Admin2, counties, etc. |
 | >> structure                 | [MapElement](#mapelement) | Buildings and other building-like structures. |
-| >>> building                 | [MapElement](#mapelement) |  |
-| >>>> educationBuilding       | [MapElement](#mapelement) |  |
-| >>>> medicalBuilding         | [MapElement](#mapelement) |  |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  |
+| >>> building                 | [MapElement](#mapelement) | Buildings. |
+| >>>> educationBuilding       | [MapElement](#mapelement) | Buildings used for education. |
+| >>>> medicalBuilding         | [MapElement](#mapelement) | Buildings used for medical purposes such as hospitals. |
+| >>>> transitBuilding         | [MapElement](#mapelement) | Buildings used for transit such as airports. |
 | >> transportation            | [MapElement](#mapelement) | Lines that are part of the transportation network (For example: roads, trains, and ferries). |
 | >>> road                     | [MapElement](#mapelement) | Lines that represent all roads. |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) | Lines that represent ramps. These ramps typically appear alongside of controlled access highways. |
-| >>>> highway                 | [MapElement](#mapelement) |  |
-| >>>> majorRoad               | [MapElement](#mapelement) |  |
-| >>>> arterialRoad            | [MapElement](#mapelement) |  |
-| >>>> street                  | [MapElement](#mapelement) |  |
-| >>>>> ramp                   | [MapElement](#mapelement) | Lines that represent the entrance and exit of a highway. |
-| >>>>> unpavedStreet          | [MapElement](#mapelement) |  |
-| >>>> tollRoad                | [MapElement](#mapelement) | Roads that cost money to use. |
+| >>>> controlledAccessHighway | [MapElement](#mapelement) | Lines that represent large, controlled access highways. |
+| >>>>> highSpeedRamp          | [MapElement](#mapelement) | Lines that represent high speed ramps that typically connect to controlled access highways. |
+| >>>> highway                 | [MapElement](#mapelement) | Lines that represent highways. |
+| >>>> majorRoad               | [MapElement](#mapelement) | Lines that represent major roads. |
+| >>>> arterialRoad            | [MapElement](#mapelement) | Lines that represent arterial roads. |
+| >>>> street                  | [MapElement](#mapelement) | Lines that represent streets. |
+| >>>>> ramp                   | [MapElement](#mapelement) | Lines that represent ramps that typically connect to highways. |
+| >>>>> unpavedStreet          | [MapElement](#mapelement) | Lines that represent unpaved streets. |
+| >>>> tollRoad                | [MapElement](#mapelement) | Lines that represent roads that cost money to use. |
 | >>> railway                  | [MapElement](#mapelement) | Railway lines. |
 | >>> trail                    | [MapElement](#mapelement) | Walking trails through parks or hiking trails. |
 | >>> waterRoute               | [MapElement](#mapelement) | Ferry route lines. |
 | >> water                     | [MapElement](#mapelement) | Anything that looks like water. This includes oceans and streams. |
 | >>> river                    | [MapElement](#mapelement) | Rivers, streams, or other water passages.  Note that this may be a line or polygon and might connect to non-river water bodies. |
-| > routeMapElement            | [MapElement](#mapelement) | All routing entries are under this entry. |
-| >> routeLine                 | [MapElement](#mapelement) | The styling for all route lines. |
-| >>> drivingRoute             | [MapElement](#mapelement) |  |
-| >>> scenicRoute              | [MapElement](#mapelement) |  |
-| >>> walkingRoute             | [MapElement](#mapelement) |  |
-| > userMapElement             | [MapElement](#mapelement) | All user entries are under this entry. |
+| > routeMapElement            | [MapElement](#mapelement) | All routing related entries. |
+| >> routeLine                 | [MapElement](#mapelement) | Route line related entries. |
+| >>> drivingRoute             | [MapElement](#mapelement) | Lines that represent driving routes. |
+| >>> scenicRoute              | [MapElement](#mapelement) | Lines that represent scenic driving routes. |
+| >>> walkingRoute             | [MapElement](#mapelement) | Lines that represent walking routes. |
+| > userMapElement             | [MapElement](#mapelement) | All user entries. |
 | >> userBillboard             | [MapElement](#mapelement) | The styling for default [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) instances. |
 | >> userLine                  | [MapElement](#mapelement) | The styling for default [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) instances. |
 | >> userModel3D               | [MapElement3D](#mapelement3d) | The styling for default [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) instances.  This is primarily for setting renderAsSurface. |
