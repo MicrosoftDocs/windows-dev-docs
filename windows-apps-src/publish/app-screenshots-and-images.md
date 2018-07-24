@@ -41,7 +41,7 @@ The size requirements vary depending on the device family:
 - Xbox: 3480 x 2160 pixels or smaller. Supports 4K images (3840 x 2160).
 - Holographic: 1268 x 720 pixels or larger. Supports 4K images (3840 x 2160).
 
-For the best display, keep the following guidelines in mind when creating your screenshots:
+For the best display, keep the following guidelines in mind when creating your [screenshots](https://www.scuttlenet.com/how-to-take-screenshots-in-windows-10/):
 - Keep critical visuals and text in the top 3/4 of the image. Text overlays may appear on the bottom 1/4. 
 - Don’t add additional logos, icons, or marketing messages to your screenshots.
 - Don’t use extremely light or dark colors or highly-contrasting stripes that may interfere with readability of text overlays.
