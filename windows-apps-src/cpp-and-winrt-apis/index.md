@@ -48,6 +48,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Concurrency and asynchronous operations](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
 | [XAML controls; bind to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
+| [Consume DirectX and other COM APIs with C++/WinRT](consume-com.md) | This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. |
 | [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. |
 | [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md) | This topic shows how to port C++/CX code to its equivalent in C++/WinRT. |
 | [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
