@@ -1,4 +1,3 @@
-
 ---
 author: normesta
 description: The entries and properties of a map style sheet
@@ -13,6 +12,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, maps, map style sheet
 ms.localizationpriority: medium
 ---
+
 # Map style sheet reference
 
 Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](mapcontrol.md) through the [MapStyleSheet.ParseFromJson](mapstylesheet_parsefromjson_1626148147.md) method.
