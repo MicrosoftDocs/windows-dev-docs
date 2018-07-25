@@ -43,9 +43,9 @@ Read [this documentation on layout panels](../design/layout/layout-panels.md). B
 
 ## What goes in a form?
 
-You'll need to fill your form with an assortment of [XAML Controls](../design/controls-and-patterns/controls-and-events-intro.md). You're probably familiar with those, but feel free to read up if you need a refresher. In particular, you'll want controls that allow your user to input text or choose from a list of values. This is a basic list of options you could add – you don't to read everything about them, just enough so you understand what they look like and how they work.
+You'll need to fill your form with an assortment of [XAML Controls](../design/controls-and-patterns/controls-and-events-intro.md). You're probably familiar with those, but feel free to read up if you need a refresher. In particular, you'll want controls that allow your user to input text or choose from a list of values. This is a basic list of options you could add – you don't need to read everything about them, just enough so you understand what they look like and how they work.
 
-* [TextBox](../design/controls-and-patterns/text-box.md) lets a user imput text into your app.
+* [TextBox](../design/controls-and-patterns/text-box.md) lets a user input text into your app.
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) lets a user choose between two options.
 * [DatePicker](../design/controls-and-patterns/date-picker.md) lets a user select a date value.
 * [TimePicker](../design/controls-and-patterns/time-picker.md) lets a user select a time value.
@@ -131,7 +131,7 @@ When you're creating more complex layouts with more visual elements, you'll want
 
 ## Going further
 
-Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back throug the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout feautes, see our [adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md)
+Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back through the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout features, see our [adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md)
 
 Forms also don't have to exist in a vacuum - you could go one step forward and embed yours within a [master/details pattern](../design/controls-and-patterns/master-details.md) or a [pivot control](../design/controls-and-patterns/tabs-pivot.md). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
 
