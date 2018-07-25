@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, iap, in-app purchase, in-app product, iap submission
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Add-on submissions

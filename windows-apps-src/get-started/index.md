@@ -9,7 +9,7 @@ ms.prod: windows
 ms.topic: article
 keywords: get started, windows 10, uwp, xaml, c#
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Get started with Windows 10 apps 

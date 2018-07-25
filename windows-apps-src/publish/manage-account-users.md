@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, account users, manage users, azure ad, multi-user, multiple users
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Manage account users

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ad, campaign, promote
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create an ad campaign for your app

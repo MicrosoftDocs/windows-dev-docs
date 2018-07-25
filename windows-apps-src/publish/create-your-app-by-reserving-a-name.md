@@ -9,7 +9,7 @@ ms.date: 5/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create your app by reserving a name

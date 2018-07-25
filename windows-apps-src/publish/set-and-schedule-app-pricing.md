@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, pricing, app pricing, app price, sell apps, price change, custom price, price, prices, cost, override base price, free-form price, freeform
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Set and schedule app pricing

@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 

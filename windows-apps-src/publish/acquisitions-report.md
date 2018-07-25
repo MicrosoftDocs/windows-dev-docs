@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, acquisitions, app sales, app downloads, installs, funnel, acquisition, conversions, channel, app page views
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Acquisitions report

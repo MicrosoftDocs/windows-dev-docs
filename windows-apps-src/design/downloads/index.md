@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Design toolkits and samples for UWP apps
  

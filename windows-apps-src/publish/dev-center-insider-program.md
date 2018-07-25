@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, insiders, dev center insider, preview features
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Dev Center Insider Program

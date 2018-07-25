@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Analyze app performance

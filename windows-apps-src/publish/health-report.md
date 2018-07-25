@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, health, crashes, unresponsive events, app health, health data, stack trace, cab file, failure, failures, pdb, symbols
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Health report

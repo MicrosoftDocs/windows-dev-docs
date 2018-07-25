@@ -8,7 +8,7 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # What's New in Windows 10 for developers, build 16299

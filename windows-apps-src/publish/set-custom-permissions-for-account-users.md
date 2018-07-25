@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Set roles or custom permissions for account users
