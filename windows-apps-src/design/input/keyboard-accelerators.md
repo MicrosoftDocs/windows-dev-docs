@@ -361,7 +361,7 @@ By default, When keyboard accelerators are declared, all controls (except [MenuF
 
 *Accelerator key combo in tooltip*
 
-For [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the control's default tooltip. For [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) objects, the keyboard accelerator is displayed with the flyout text.
+For [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the control's default tooltip. For [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) and [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) objects, the keyboard accelerator is displayed with the flyout text.
 
 > [!NOTE]
 > Specifying a tooltip (see Button1 in the following example) overrides this behavior.
@@ -421,6 +421,11 @@ For [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
             <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
             <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
             <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            <ToggleMenuFlyoutItem AccessKey="E" Icon="Globe" Text="ToggleMe">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Q" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </ToggleMenuFlyoutItem>
         </MenuFlyout>
     </AppBarButton.Flyout>
 </AppBarButton>
