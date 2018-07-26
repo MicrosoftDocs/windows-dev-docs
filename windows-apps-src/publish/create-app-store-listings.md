@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, listing, description, store page, release notes, title
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create app Store listings

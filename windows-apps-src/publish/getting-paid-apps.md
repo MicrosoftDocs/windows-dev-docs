@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, payments, app sales, app proceeds, payout, store fee, payout hold, percentage
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Getting paid

@@ -9,7 +9,7 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 <div> 

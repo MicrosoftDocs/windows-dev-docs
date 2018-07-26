@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, taxation, irs, internal revenue service, tax, income tax, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Understand IRS tax forms issued by Microsoft

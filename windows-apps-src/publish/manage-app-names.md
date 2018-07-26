@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, app names, change app name, update app name, game name, product name
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Manage app names

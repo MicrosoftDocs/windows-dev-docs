@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, promote, app, campaign, report, installs
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Ad campaign report

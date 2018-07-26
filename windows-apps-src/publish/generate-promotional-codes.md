@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Generate promotional codes

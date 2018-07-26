@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, customize, listing, description, earlier
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create platform-specific Store listings

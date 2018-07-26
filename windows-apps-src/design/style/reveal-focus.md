@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: 
 dev-contact: stevenki
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Reveal Focus
 

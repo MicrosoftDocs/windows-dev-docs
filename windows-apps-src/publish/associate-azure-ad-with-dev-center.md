@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure tenant, aad tenant, azure ad tenant, tenant management, tenants
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Associate Azure Active Directory with your Dev Center account

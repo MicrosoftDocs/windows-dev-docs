@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Opening a developer account
 

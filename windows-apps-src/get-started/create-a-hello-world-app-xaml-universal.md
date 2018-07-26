@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, first app, hello world
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create a "Hello, world" app (XAML)

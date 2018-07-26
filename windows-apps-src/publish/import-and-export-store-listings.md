@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, import store listings, export store listings, import export, store listing csv
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Import and export Store listings

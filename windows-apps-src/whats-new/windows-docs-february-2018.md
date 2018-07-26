@@ -8,7 +8,7 @@ ms.date: 2/5/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # What's New in the Windows Developer Docs in February 2018

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, promotional, promotion, featured, showcase, store
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Make your app easier to promote

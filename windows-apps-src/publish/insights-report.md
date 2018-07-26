@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, insight, trend, anomalies, anomaly, data changes
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Insights report

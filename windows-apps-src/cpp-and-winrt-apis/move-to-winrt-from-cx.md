@@ -221,52 +221,25 @@ C++/CX provides several data types in the **Platform** namespace. These types ar
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
-| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### Port **Platform::Object\^** to **winrt::Windows::Foundation::IInspectable**
-Like all C++/WinRT types, **winrt::Windows::Foundation::IInspectable** is a value type. Here's how you initialize a variable of that type to null.
+### Port **Platform::Agile\^** to **winrt::agile_ref**
+The **Platform::Agile\^** type in C++/CX represents a Windows Runtime class that can be accessed from any thread. The C++/WinRT equivalent is [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
-```cppwinrt
-winrt::Windows::Foundation::IInspectable var{ nullptr };
-```
-
-### Port **Platform::String\^** to **winrt::hstring**
-**Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
-
-With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
-
-```C++
-auto var = titleRecord->TitleName->Data();
-```
-
-To do the same with C++/WinRT, you can use the [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) function to get a null-terminated C-style string version, just as you can from **std::wstring**.
-
-```C++
-auto var = titleRecord.TitleName().c_str();
-```
-
-When it comes to implementing APIs that take or return strings, you typically change any C++/CX code that uses **Platform::String\^** to use **winrt::hstring** instead.
-
-Here's an example of a C++/CX API that takes a string.
+In C++/CX.
 
 ```cpp
-void LogWrapLine(Platform::String^ str);
+Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
-For C++/WinRT you could declare that API in [MIDL 3.0](/uwp/midl-3) like this.
-
-```idl
-// LogType.idl
-void LogWrapLine(String str);
-```
-
-The C++/WinRT toolchain will then generate source code for you that looks like this.
+In C++/WinRT.
 
 ```cppwinrt
-void LogWrapLine(winrt::hstring const& str);
+winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
@@ -316,6 +289,49 @@ And the equivalent in C++/WinRT.
 
 ```cppwinrt
 throw winrt::hresult_invalid_argument{ L"A valid User is required" };
+```
+
+### Port **Platform::Object\^** to **winrt::Windows::Foundation::IInspectable**
+Like all C++/WinRT types, **winrt::Windows::Foundation::IInspectable** is a value type. Here's how you initialize a variable of that type to null.
+
+```cppwinrt
+winrt::Windows::Foundation::IInspectable var{ nullptr };
+```
+
+### Port **Platform::String\^** to **winrt::hstring**
+**Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
+
+With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
+
+```C++
+auto var = titleRecord->TitleName->Data();
+```
+
+To do the same with C++/WinRT, you can use the [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) function to get a null-terminated C-style string version, just as you can from **std::wstring**.
+
+```C++
+auto var = titleRecord.TitleName().c_str();
+```
+
+When it comes to implementing APIs that take or return strings, you typically change any C++/CX code that uses **Platform::String\^** to use **winrt::hstring** instead.
+
+Here's an example of a C++/CX API that takes a string.
+
+```cpp
+void LogWrapLine(Platform::String^ str);
+```
+
+For C++/WinRT you could declare that API in [MIDL 3.0](/uwp/midl-3) like this.
+
+```idl
+// LogType.idl
+void LogWrapLine(String str);
+```
+
+The C++/WinRT toolchain will then generate source code for you that looks like this.
+
+```cppwinrt
+void LogWrapLine(winrt::hstring const& str);
 ```
 
 ## Important APIs

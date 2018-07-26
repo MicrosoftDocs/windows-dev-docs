@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, targeted offers, offers, notifications
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Use targeted offers to maximize engagement and conversions

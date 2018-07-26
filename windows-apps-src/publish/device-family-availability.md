@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, packages, upload, device family availability
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Device family availability

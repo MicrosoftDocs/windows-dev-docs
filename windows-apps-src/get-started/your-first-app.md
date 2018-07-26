@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, first app, c#, c++, JavaScript
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create your first app

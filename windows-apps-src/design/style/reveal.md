@@ -13,7 +13,7 @@ pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Reveal Highlight
 

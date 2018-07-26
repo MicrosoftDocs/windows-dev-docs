@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, dev center, account settings, profile, account profile, developer account, developer account settings
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Manage account settings and profile info
 
