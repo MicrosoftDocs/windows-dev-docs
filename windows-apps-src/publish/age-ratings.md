@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, age rating, game rating, iarc, rating, questionnaire, ratings board, content rating
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Age ratings

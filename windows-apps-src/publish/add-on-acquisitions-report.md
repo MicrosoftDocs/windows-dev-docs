@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, add-on sales, add-on acquisitions, iap sales, in-app products, iaps, add-ons
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Add-on acquisitions report

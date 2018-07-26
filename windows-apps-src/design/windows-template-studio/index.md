@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: clint.rutkas
 doc-status: Published
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Windows Template Studio
 

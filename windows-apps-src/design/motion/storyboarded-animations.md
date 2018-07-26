@@ -41,17 +41,23 @@ Most of the time, you define a storyboarded animation by writing XAML. If you us
 Let's look at a simple example. In this XAML example, the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) property is animated on a particular [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 ```xaml
-<!-- Animates the rectangle's opacity. -->
-<Storyboard x:Name="myStoryboard">
-  <DoubleAnimation
-    Storyboard.TargetName="MyAnimatedRectangle"
-    Storyboard.TargetProperty="Opacity"
-    From="1.0" To="0.0" Duration="0:0:1"/>
-</Storyboard>
+<Page ...>
+  <Page.Resources>
+    <!-- Storyboard resource: Animates a rectangle's opacity. -->
+    <Storyboard x:Name="myStoryboard">
+      <DoubleAnimation
+        Storyboard.TargetName="MyAnimatedRectangle"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0" To="0.0" Duration="0:0:1"/>
+    </Storyboard>
+  </Page.Resources>
 
-<!-- A different area of the XAML. -->
-<Rectangle x:Name="MyAnimatedRectangle"
-  Width="300" Height="200" Fill="Blue"/>
+  <!--Page root element, UI definition-->
+  <Grid>
+    <Rectangle x:Name="MyAnimatedRectangle"
+      Width="300" Height="200" Fill="Blue"/>
+  </Grid>
+</Page>
 ```
 
 ### Identifying the object to animate
@@ -205,10 +211,10 @@ This next example shows how the previous example [**Storyboard**](https://msdn.m
     </Storyboard>
   </Page.Resources>
   <!--Page root element, UI definition-->
-  <StackPanel>
+  <Grid>
     <Rectangle x:Name="MyAnimatedRectangle"
       Width="300" Height="200" Fill="Blue"/>
-  </StackPanel>
+  </Grid>
 </Page>
 ```
 

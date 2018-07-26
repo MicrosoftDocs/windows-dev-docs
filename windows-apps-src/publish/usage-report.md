@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, usage, custom event, report, telemetry, user sessions
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Usage report

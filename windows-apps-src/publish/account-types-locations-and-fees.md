@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, developer account, individual, company, business
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Account types, locations, and fees

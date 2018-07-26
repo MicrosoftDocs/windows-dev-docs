@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Beta testing and targeted distribution

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, add-on, properties, subscription period, product lifetime, content type, iap, in-app purchase, in-app product
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Enter add-on properties

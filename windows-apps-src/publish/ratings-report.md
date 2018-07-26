@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, rating, rate, star, stars, rated
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Ratings report

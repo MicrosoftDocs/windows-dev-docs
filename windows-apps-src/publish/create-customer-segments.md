@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, segment, segments, targeted group, customers
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Create customer segments

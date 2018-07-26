@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, azure ad application, aad, user, group, multiple users, multi-user
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Add users, groups, and Azure AD applications to your Dev Center account

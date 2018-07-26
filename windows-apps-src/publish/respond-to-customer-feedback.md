@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Respond to customer feedback

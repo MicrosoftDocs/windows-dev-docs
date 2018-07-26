@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, mobile operators, mobile billing, mobile operator billing
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Mobile operator billing

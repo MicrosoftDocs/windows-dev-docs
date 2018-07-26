@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, targeted notifications, push notifications, toast, tile
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Send notifications to your app's customers

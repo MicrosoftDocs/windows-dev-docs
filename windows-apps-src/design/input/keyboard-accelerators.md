@@ -361,19 +361,74 @@ By default, When keyboard accelerators are declared, all controls (except [MenuF
 
 *Accelerator key combo in tooltip*
 
-For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is automatically appended to the Label string.
+For [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the control's default tooltip. For [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) objects, the keyboard accelerator is displayed with the flyout text.
+
+> [!NOTE]
+> Specifying a tooltip (see Button1 in the following example) overrides this behavior.
 
 ```xaml
-<AppBarButton Label="Save" Icon="Save">
-  <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
-  </Button.KeyboardAccelerators>
+<StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
+    <Button Content="Button1" Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto" 
+            ToolTipService.ToolTip="Tooltip">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="A" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button2"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="B" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button3"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="C" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+</StackPanel>
+```
+
+![Accelerator key tooltip](images/accelerators/accelerators-button-small.png)
+
+*Accelerator key combo appended to Button's default tooltip*
+
+```xaml
+<AppBarButton Icon="Save" Label="Save">
+    <AppBarButton.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control"/>
+    </AppBarButton.KeyboardAccelerators>
 </AppBarButton>
 ```
 
 ![Accelerator key tooltip](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Accelerator key combo appended to control label*
+*Accelerator key combo appended to AppBarButton's default tooltip*
+
+```xaml
+<AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+    <AppBarButton.Flyout>
+        <MenuFlyout>
+            <MenuFlyoutItem AccessKey="A" Icon="Refresh" Text="Refresh A">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="R" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+            <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+            <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+        </MenuFlyout>
+    </AppBarButton.Flyout>
+</AppBarButton>
+```
+
+![Accelerator key tooltip](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+
+*Accelerator key combo appended to MenuFlyoutItem's text*
 
 Control the presentation behavior by using the [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) property, which accepts two values: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) or [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
@@ -557,3 +612,15 @@ public class MyListView : ListView
   …
 }
 ```
+
+## Related articles
+
+* [Keyboard interactions](keyboard-interactions.md)
+* [Access keys](access-keys.md)
+
+**Samples**
+* [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+
+ 
+

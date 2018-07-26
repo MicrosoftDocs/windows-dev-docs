@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, price, available, discoverable, free trial, trials, trial, apps, release date
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Set app pricing and availability

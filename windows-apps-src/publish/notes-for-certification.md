@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, notes to testers
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Notes for certification

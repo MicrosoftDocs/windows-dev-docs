@@ -15,7 +15,7 @@ pm-contact: abarlow
 design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 

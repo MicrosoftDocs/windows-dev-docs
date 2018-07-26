@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Package an app by using Visual Studio (Desktop Bridge)

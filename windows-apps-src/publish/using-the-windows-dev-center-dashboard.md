@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, dashboard, devcenter, development center
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Using the Windows Dev Center dashboard

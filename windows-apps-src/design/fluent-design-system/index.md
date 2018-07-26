@@ -8,7 +8,7 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # The Fluent Design System for Windows app creators
 
