@@ -50,7 +50,7 @@ To use this method, you need to first do the following:
 |---------------|--------|---------------|------|
 | applicationId | string | The Store ID of the app for which you want to retrieve detailed error data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | failureHash | string | The unique ID of the error for which you want to get detailed info. To get this value for the error you are interested in, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method. |  Yes  |
-| startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date. |  No  |
+| startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date.<p/><p/>**Note:**&nbsp;&nbsp;This method can only retrieve details for errors that occurred in the last 30 days. |  No  |
 | endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
 | skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on. |  No  |
