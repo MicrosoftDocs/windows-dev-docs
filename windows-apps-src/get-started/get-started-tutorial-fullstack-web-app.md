@@ -293,7 +293,7 @@ Here are some useful resources for going further:
 
  - [Azure DocumentDB docs](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## Part II: Build a single-page web appl
+## Part II: Build a single-page web application
 
 Now that you've built (or [downloaded](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) the [REST API backend](#part-i-build-a-rest-api-backend) from Part I,  you're ready to create the single-page memory game front-end with [Node](https://nodejs.org/en/), [Express](http://expressjs.com/), and [Bootstrap](http://getbootstrap.com/).
 
