@@ -53,7 +53,7 @@ Based on the AppxManifest.xml file from the previous example, you should use the
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the commmand will also produce the certificate's thumbprint.  
+After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the command will also produce the certificate's thumbprint.  
 
 **Note**  
 You can view your certificate in a PowerShell window by using the following commands:
