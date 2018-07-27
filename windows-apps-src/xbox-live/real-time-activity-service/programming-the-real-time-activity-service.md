@@ -54,7 +54,10 @@ For information on how to create a stat on XDP, please see the [XDP Documentatio
 
 #### UWP developers
 
-If you are developing a UWP on Windows 10 that is not a cross-play title, you define your stats on Dev Center.  We will have documentation on how to do this shortly.  In the meantime, if you have any questions, please reach out to your DAM.
+If you are developing a UWP on Windows 10 that is not a cross-play title, you define your stats on [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). Read the [Dev Center stats configuration article](../leaderboards-and-stats-2017/player-stats-configure-2017.md) to learn how to configure stats on Dev Center.
+
+> [!NOTE]
+> Stats 2013 developer will need to contact their DAM for information concerning Stats 2013 configuration on Dev Center.
 
 ### Disconnecting from the Real-Time Activity service
 
@@ -71,7 +74,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## Subscribing to a statistic from the Real-Time Activity
 
-Applications subscribe to a Real-Time Activity (RTA) to get updates when the statistics configured in Xbox Developer Portal (XDP) change.
+Applications subscribe to a Real-Time Activity (RTA) to get updates when the statistics configured in Xbox Developer Portal (XDP) or Windows Dev Center change.
 
 ### Subscribing to a statistic from the Real-Time Activity service
 
@@ -90,7 +93,7 @@ void Example_RealTimeActivity_SubscribeToStatisticChangeAsync()
     // Call to subscribe to an individual statistic.  Once the subscription is complete, the handler will be called with the initial value of the statistic.
     auto statisticResults = xboxLiveContext->user_statistics_service().subscribe_to_statistic_change(
         User::Users->GetAt(0)->XboxUserId->Data(),
-        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP
+        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Dev Center
          L"YourStat"
         );
 

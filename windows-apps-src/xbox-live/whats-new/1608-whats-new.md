@@ -80,7 +80,7 @@ We have included documentation for the Xbox Integrated Multiplayer (XIM) API.  T
 
 XIM is a self-contained interface for easily adding multiplayer real-time networking and chat communication to your game through the power of Xbox Live services.
 
-This preview of the API’s documentation is shared here to encourage customer feedback and inquiry. We talked about this API earlier at Xfest 2016, and you can see archived [presentation material on the Xbox Developer Portal](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx) from the “Turn-Key Multiplayer Networking and Chat” talk. Note that this preview documentation is only for the C++ API. WinRT equivalents for C# and other languages will be released later in the year.
+This preview of the API’s documentation is shared here to encourage customer feedback and inquiry. We talked about this API earlier at Xfest 2016, and you can see archived [presentation material on the managed partner developer site](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx) from the “Turn-Key Multiplayer Networking and Chat” talk. Note that this preview documentation is only for the C++ API. WinRT equivalents for C# and other languages will be released later in the year.
 
 If you are interested in XIM’s capabilities, have feedback or other questions about this project, please feel free to post on the [Xbox Developer Forum](https://forums.xboxlive.com/) or reach out through your developer account manager.
 

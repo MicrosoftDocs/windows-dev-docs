@@ -210,7 +210,7 @@ Use of wrapper code for the underlying REST functionality allows for a more trad
 
 ### Using the Multiplayer REST API to Interact with MPSD
 
-The title, or its service, can use standard HTTP calls to the multiplayer REST API and the matchmaking REST API. When using REST functionality directly, the caller issues DELETE, PUT, POST, and GET calls against the session directory URIs for most actions. On a PUT request, the request body is merged into the existing session. If there is no existing session, the request body is used to create a new session, along with the session template stored in [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com). All fields are optional, and only deltas must be specified. Therefore, {} is a valid PUT request with zero deltas.
+The title, or its service, can use standard HTTP calls to the multiplayer REST API and the matchmaking REST API. When using REST functionality directly, the caller issues DELETE, PUT, POST, and GET calls against the session directory URIs for most actions. On a PUT request, the request body is merged into the existing session. If there is no existing session, the request body is used to create a new session, along with the session template stored on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). All fields are optional, and only deltas must be specified. Therefore, {} is a valid PUT request with zero deltas.
 
 To perform a hypothetical PUT request that returns the result of the merge without affecting the server's official copy of the session, you can append the query-string "?nocommit=true" to the PUT request.
 
@@ -274,7 +274,7 @@ To access Multiplayer Session Explorer, open Internet Explorer on your Xbox One,
 #### Display Available Sessions and Templates
 
 1.  Click on an SCID in the tool to display a list of sessions in that SCID of which the signed-in user is a member.
-2.  On this same page, you can click on the SCID and display the session templates and localization strings in the service configuration for the SCID. These items are ingested through [XDP](https://xdp.xboxlive.com).
+2.  On this same page, you can click on the SCID and display the session templates and localization strings in the service configuration for the SCID. These items are ingested through [XDP](https://xdp.xboxlive.com) or the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
 
 
 #### Display the Full Contents of a Session

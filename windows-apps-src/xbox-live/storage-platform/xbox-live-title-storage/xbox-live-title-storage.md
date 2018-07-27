@@ -40,7 +40,7 @@ For managed partners and ID@Xbox members:
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
 | Trusted Platform   | 256 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. More secure, but with platform restrictions. | Any platform may read, but only Xbox One, Xbox 360, or Windows Phone may write.  | Configurable to public or owner only.       |
 | Universal Platform | 64 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. | Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read. | Configurable to public or owner only.       |
-| Global             | 256 MB | 256 MB            | Data that everyone can read, such as rosters, maps, challenges, or art resources. | Only writeable via the Xbox Developer Portal, any platform may read.                                | All users may read.
+| Global             | 256 MB | 256 MB            | Data that everyone can read, such as rosters, maps, challenges, or art resources. | Only writeable via the Xbox Developer Portal or Windows Dev Center, any platform may read.                                | All users may read.
 
 ### Deprecated storage Types
 
