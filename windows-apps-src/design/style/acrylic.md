@@ -319,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         // Ensure the current window is active
         Window.Current.Activate();
 
-        // Extend Acrylic
+        // Extend acrylic
         ExtendAcrylicIntoTitleBar();
     }
 }
@@ -341,15 +341,6 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 ![Acrylic recipe](images/AcrylicRecipe_Diagram.jpg)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
-<!--
-<div class="microsoft-internal-note">
-When designing your app, please utilize these [design resources](http://uni/DesignDepot.FrontEnd/#/Search?t=Resources%7CNeon%7CToolkit&f=Acrylic%20Material) to show Acrylic in comps. The linked templates are the most accurate way to represent Acrylic material in Photoshop and Illustrator. The ordering, as noted in the recipe diagram above, should start from the top: <br/>
- - Noise asset (tiled) at 2% opacity <br/>
- - Base color/tint/alpha layer <br/>
- - Exclusion blend (white @ 10% opacity) <br/>
- - Gaussian blur (30px radius) <br/>
-</div>
--->
 
 ## Get the sample code
 
