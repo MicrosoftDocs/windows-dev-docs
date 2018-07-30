@@ -14,9 +14,9 @@ ms.localizationpriority: low
 
 # Troubleshooting Xbox Live setup on Windows PC
 
-On Windows 10 PC, you can ensure you machine is setup correct with these steps:
+On Windows 10 PC, you can ensure your machine is setup correctly with these steps:
 
-1. Change to your machine to point to the XDKS.1 sandbox where samples are designed to run.  Do this by running this script:
+1. Change your machine to point to the XDKS.1 sandbox where samples are designed to run.  Do this by running this script:
 
         {*SDK source root*}\Tools\SwitchSandbox.cmd XDKS.1
 
@@ -28,6 +28,6 @@ On Windows 10 PC, you can ensure you machine is setup correct with these steps:
 1. Change the build target platform to either "Win32" or "x64".
 1. Right click the solution and re-build everything.
 1. Launch the app in the debugger.
-1. Sign-in with the development account that you created in at https://xdp.xboxlive.com
+1. Sign-in with the development account that you created on the [Xbox Developer Portal](https://xdp.xboxlive.com), or with a retail developer account authorized on the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
 1. Grant the app permission to access your Xbox Live information.
 1. Verify that the app can retrieve your information and you can see your gamertag.

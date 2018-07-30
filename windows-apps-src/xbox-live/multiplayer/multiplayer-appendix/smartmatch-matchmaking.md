@@ -102,7 +102,7 @@ The title submits attributes at the match ticket level in the ticketAttributesJs
 
 The title specifies per-member attributes on each member within the match ticket session. These are set by calling the MultiplayerSession.SetCurrentUserMemberCustomPropertyJson method, using a property name of "matchAttrs". This call places the attributes in the /members/{index}/properties/custom/matchAttrs field on each player within the ticket session.
 
-The matchmaking process "flattens" each per-member into a single ticket-level attribute, based on the flatten method specified for that attribute in the XDP configuration UI for the hopper.
+The matchmaking process "flattens" each per-member into a single ticket-level attribute, based on the flatten method specified for that attribute in the Xbox Live configuration UI for the hopper. This can be configured on [XDP](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
 
 
 ### Making the Match
@@ -172,12 +172,12 @@ The following example demonstrates the high level matchmaking using Live Compute
 
 ### Configuration of SmartMatch Matchmaking Runtime Operations
 
-All configuration of SmartMatch matchmaking occurs through the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com). Configuration uses the ServiceConfiguration-&gt;Multiplayer & Matchmaking section for a title.
+All configuration of SmartMatch matchmaking occurs through the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). Configuration uses the ServiceConfiguration-&gt;Multiplayer & Matchmaking section for a title.
 
 
 #### Matchmaking Session Template Configuration
 
-As discussed in [SmartMatch Matchmaking](), there are two types of session related to matchmaking, the match ticket session and the match target session. Basically, a ticket session is the input to the matchmaking service, while the target session is the output. When configuring session templates in XDP, you should create a template for each session type.
+As discussed in [SmartMatch Matchmaking](), there are two types of session related to matchmaking, the match ticket session and the match target session. Basically, a ticket session is the input to the matchmaking service, while the target session is the output. When configuring session templates, you should create a template for each session type.
 
 For a ticket session, you might use a dedicated template. Alternatively, you can reuse a template for a lobby session or other session not intended to be used for game play.
 
@@ -187,7 +187,7 @@ For a ticket session, you might use a dedicated template. Alternatively, you can
 
 For a target session, you must use a template that is intended for matchmade game play. It should have settings that enable QoS checks between peers prior to the start of game play, and must be marked with the "gameplay" capability.
 
-In the XDP UI, you can map each session to one or more hoppers, each containing rules that determine how sessions are matched together in that hopper. For more information, see Basic Hopper Configuration for Matchmaking.
+With the config UI for XDP or Dev Center, you can map each session to one or more hoppers, each containing rules that determine how sessions are matched together in that hopper. For more information, see Basic Hopper Configuration for Matchmaking.
 
 
 #### Basic Hopper Configuration for Matchmaking
@@ -254,7 +254,7 @@ The data type of the attribute of the matchmaking rule. Possible values are:   N
 
 ###### Data Type-specific Rule Fields
 
-This section defines fields used to define rules that apply to some data types, but not to others. The XDP UI should be able to clarify which data types apply to particular rules.
+This section defines fields used to define rules that apply to some data types, but not to others. The UI should be able to clarify which data types apply to particular rules.
 
 **Allow Wildcards**
 
@@ -423,7 +423,7 @@ The title prefers avoiding a game with the player most recently played.
 
 ### Configuring Team Rules
 
-To set up the Team Rule, begin by creating one in XDP. Fill out the team sizes your game expects to create from the tickets matched in this hopper. For instance, if your game expects 4v4, you should create two entries, expecting a maximum size of 4 each, and a different name. There is a minimum team size as well--use this if a game can be played with fewer players on a team. Otherwise, the minimum and maximum should be the same value.
+To set up the Team Rule, begin by creating one in on your chosen configuration platform (XDP or Dev Center). Fill out the team sizes your game expects to create from the tickets matched in this hopper. For instance, if your game expects 4v4, you should create two entries, expecting a maximum size of 4 each, and a different name. There is a minimum team size as well--use this if a game can be played with fewer players on a team. Otherwise, the minimum and maximum should be the same value.
 
 
 #### Using Team Rules

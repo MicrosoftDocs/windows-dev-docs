@@ -20,7 +20,7 @@ Please see the [What's New - November 2016](1611-whats-new.md) article for what 
 
 ### GameChat
 
-* New [accessibility features](../multiplayer/chat/chat-accessibility-overview.md) have been added to [GameChat](../multiplayer/chat/gamechat-overview.md) to support text-to-speech and speech-to-text scenarios.
+* New accessibility features have been added to GameChat to support text-to-speech and speech-to-text scenarios.
 
 ### Multiplayer
 
@@ -28,4 +28,7 @@ Please see the [What's New - November 2016](1611-whats-new.md) article for what 
 
 ## Documentation
 * There is updated documentation for [XIM](../multiplayer/xbox-integrated-multiplayer.md).
-* Documentation has been added for [GameChat](../multiplayer/chat/gamechat-overview.md)
+* Documentation has been added for GameChat
+
+> [!IMPORTANT]
+> GameChat has been replaced with GameChat 2! Please refer to the [GameChat 2 Documentation](../multiplayer/chat/game-chat-2-overview.md) as GameChat 1 is no longer supported.
