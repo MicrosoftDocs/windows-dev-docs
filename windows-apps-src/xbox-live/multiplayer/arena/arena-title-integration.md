@@ -338,6 +338,10 @@ Here, you’ll have several options:
 * **Arena Platforms** – Lets you select the platforms on which tournaments can be played for your title.
 * **Tournament Assets** – (Formerly in the ‘Multiplayer and Matchmaking’ section.) These are the tournament images for your title.
 
+Arena can also be enabled on the Windows Dev Center in the **Tournament** menu under the Xbox Live service.
+
+![Arena Menu on Windows Dev Center](../../images/arena/Arena_On_WDC.JPG)
+
 You must publish the service configuration for your changes to take effect. Self-service Arena configuration is currently not supported through UDC. If you’re using UDC for service configuration, work with your Development Account Manager to onboard with Arena.
 
 ### Setting up game modes

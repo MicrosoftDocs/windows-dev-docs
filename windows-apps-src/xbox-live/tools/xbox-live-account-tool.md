@@ -20,7 +20,7 @@ The Xbox Live Account Tool is a tool designed to help title developers set up ex
 ## What can I do with Xbox Live Account Tool?
 You can:
   1. View a user's profile settings, XUID, and active privileges
-  2. Add a list of followers to a user's social graph, either from a text file or an XDP csv
+  2. Add a list of followers to a user's social graph, either from a text file or an Xbox Developer Platform csv
   3. Manage a user's friends list: favorite, unfavorite, block, and unblock users you follow, and see if they follow you back
   4. Change your dev user's reputation (and see the raw reputation stat values immediately)
   5. Change a user's gamertag

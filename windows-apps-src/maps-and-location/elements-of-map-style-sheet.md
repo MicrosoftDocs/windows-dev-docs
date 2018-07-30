@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 # Map style sheet reference
 
-Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](mapcontrol.md) through the [MapStyleSheet.ParseFromJson](mapstylesheet_parsefromjson_1626148147.md) method.
+Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) through the [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) method.
 
 For example, you'd use the following JSON to make water areas appear in red, water labels appear in green, and land areas appear in blue:
 

@@ -10,7 +10,7 @@ ms.technology: uwp
 ms.localizationpriority: low
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, privileges, Windows Dev Center
 ---
-# Configure Privileges on Windows Development Center
+# Configure Privileges on Windows Dev Center
 
 The Privileges configuration page dictates whether or not gamers will be restricted from streaming your title to streaming services like [Mixer](https://mixer.com/). By default your game will not restrict broadcasting on any streaming platform, changes to this page are only required if you would like to restrict broadcasting. You can restrict broadcasting in two ways. You may either disable broadcasting everywhere by checking the box in the **Default** section, or you can restrict broadcasting by Sandbox by adding a sandbox in the **Sandbox overrides** section.
 

@@ -26,7 +26,7 @@ Other topics to be covered in this article include preparing your Windows develo
 
 ## Setting up and configuring your project in Dev Center and XDP
 
-A UWP title that uses Xbox Live services needs to be configured in the [Windows Dev Center](https://dev.windows.com/en-us) and the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/). For the latest information, see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) in the Xbox Live Programming Guide included with the [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx).
+A UWP title that uses Xbox Live services needs to be configured in the [Windows Dev Center](https://dev.windows.com/en-us) or the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/). For the latest information, see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) in the Xbox Live Programming Guide included with the [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx).
 
 Topics on that page include these steps for using Xbox Live services in your title:
 
