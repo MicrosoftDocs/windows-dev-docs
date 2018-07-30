@@ -269,7 +269,7 @@ else
 To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) properties to [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent). 
 
 ```csharp
-/// Extend Acrylic into the title bar. 
+/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -283,7 +283,7 @@ This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uw
 
 
 ```csharp
-// Call your extend Acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after 
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
