@@ -250,6 +250,7 @@
 ####### [Get add-on acquisitions](../monetize/get-in-app-acquisitions.md)
 ####### [Get subscription add-on acquisitions](../monetize/get-subscription-acquisitions.md)
 ####### [Get add-on conversions by channel](../monetize/get-add-on-conversions-by-channel.md)
+###### [Get insights data for your app](../monetize/get-insights-data-for-your-app.md)
 ###### [Get app ratings](../monetize/get-app-ratings.md)
 ###### [Get app reviews](../monetize/get-app-reviews.md)
 ###### [Get error reporting data](../monetize/get-error-reporting-data.md)
@@ -260,6 +261,7 @@
 ###### [Get ad campaign performance data](../monetize/get-ad-campaign-performance-data.md)
 ##### Desktop apps
 ###### [Get desktop application installs](../monetize/get-desktop-app-installs.md)
+###### [Get insights data for your desktop application](../monetize/get-insights-data-for-your-desktop-app.md)
 ###### [Get upgrade blocks for your desktop application](../monetize/get-desktop-block-data.md)
 ###### [Get upgrade block details for your desktop application](../monetize/get-desktop-block-data-details.md)
 ###### [Get error reporting data for your desktop application](../monetize/get-desktop-application-error-reporting-data.md)
@@ -725,62 +727,3 @@
 ### [Submit a work item to the thread pool](../threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [Use a timer to submit a work item](../threading-async/use-a-timer-to-submit-a-work-item.md)
 ### [Using Windows Runtime objects in a multithreaded environment](../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
