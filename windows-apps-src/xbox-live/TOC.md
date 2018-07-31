@@ -5,7 +5,7 @@
 ## [Xbox Live C API](xsapi-flat-c.md)
 # [XBL Sandboxes Intro](xbox-live-sandboxes.md)
 # [Configure Xbox Live](xbox-live-service-configuration.md)
-## Windows Dev Center
+## [Windows Dev Center](configure-xbl/windows-dev-center.md)
 ### [Xbox Live Setup](configure-xbl/dev-center/xbox-live-setup.md)
 ### [Achievements 2017](configure-xbl/dev-center/achievements-in-udc.md)
 ### [Featured Stats and Leaderboards](configure-xbl/dev-center/featured-stats-and-leaderboards.md)
@@ -18,8 +18,6 @@
 ### [Localized strings](configure-xbl/dev-center/localized-strings.md)
 ### [Single sign-on](configure-xbl/dev-center/single-sign-on.md)
 ### [XboxServices.config](xboxservices-config.md)
-## XDP
-### [Achievements 2017](configure-xbl/xdp/achievements-in-xdp.md)
 # [Test accounts](xbox-live-test-accounts.md)
 # [API Samples](samples.md)
 # [What's new for Xbox Live](whats-new/whats-new.md)
