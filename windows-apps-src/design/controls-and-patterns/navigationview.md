@@ -21,9 +21,9 @@ ms.localizationpriority: medium
 
 The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes supports multiple navigation styles.
 
-> **Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview), [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview), [Microsoft.UI.Xaml.Controls.NavigationViewItem class](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem), [Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode enumeration](/uwp/api/microsoft.ui.xaml.controls.navigationviewdisplaymode)
+> **Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 
-> **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [Windows.UI.Xaml.Controls.NavigationViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), [Windows.UI.Xaml.Controls.NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
+> **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
 ## Get the Windows UI Library
 
