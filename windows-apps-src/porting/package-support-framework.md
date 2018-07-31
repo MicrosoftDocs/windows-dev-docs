@@ -327,6 +327,12 @@ Add a C++ **Dynamic-Link Library (DLL)** project to the solution.
 
 ![Runtime fix library](images/desktop-to-uwp/runtime-fix-library.png)
 
+Right-click the that project, and then choose **Properties**.
+
+In the property pages, find the **C++ Language Standard** field, and then in the drop-down list next to that field, select the **ISO C++17 Standard (/std:c++17)** option.
+
+![ISO 17 Option](images/desktop-to-uwp/iso-option.png)
+
 Right-click that project, and then in the context menu, choose the **Manage Nuget Packages** option. Ensure that the **Package source** option is set to **All** or **nuget.org**.
 
 Click the settings icon next that field.
