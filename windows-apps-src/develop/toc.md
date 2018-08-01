@@ -397,6 +397,7 @@
 ### [Concurrency and asynchronous operations](../cpp-and-winrt-apis/concurrency.md)
 ### [XAML controls; bind to a C++/WinRT property](../cpp-and-winrt-apis/binding-property.md)
 ### [XAML items controls; bind to a C++/WinRT collection](../cpp-and-winrt-apis/binding-collection.md)
+### [XAML custom (templated) controls with C++/WinRT](../cpp-and-winrt-apis/xaml-cust-ctrl.md)
 ### [Consume DirectX and other COM APIs with C++/WinRT](../cpp-and-winrt-apis/consume-com.md)
 ### [Interop between C++/WinRT and C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [Move to C++/WinRT from C++/CX](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
