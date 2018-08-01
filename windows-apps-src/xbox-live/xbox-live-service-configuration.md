@@ -34,10 +34,12 @@ As mentioned above, there are two different portals that can be used to configur
 
 Windows Dev Center is recommended for all titles going forward, but for certain features, you may still want to use XDP. This section will help advise you where to configure your title.
 
-If you already have a title configured, you can scroll down to [Get your IDs](#get_ids) to learn how to get the various identifiers required to setup your title.
+You can find information about specific service configuration pages depending on your chosen portal:
 
-### Xbox One XDK only
-If you are developing a game using the Xbox One XDK, then you must use XDP to ingest, configure, and publish your game. Support for configuring XDK titles on Windows Dev Center will be coming soon.
+* [Windows Dev Center configuration](configure-xbl/windows-dev-center.md)
+* [Xbox Development Portal configuration](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration) - To access this link, you must have a Microsoft Account (MSA) that has been enabled for full Xbox Live access.
+
+If you already have a title configured, you can scroll down to [Get your IDs](#get_ids) to learn how to get the various identifiers required to setup your title.
 
 ### PC/Mobile UWP game only
 Windows Dev Center is recommended for configuring and managing UWP games that run only on Windows 10 PCs and/or Windows 10 mobile devices.

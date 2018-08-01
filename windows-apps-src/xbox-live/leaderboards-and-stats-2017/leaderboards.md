@@ -18,7 +18,7 @@ ms.localizationpriority: low
 
 As described in [Data Platform Overview](../data-platform/data-platform.md), Leaderboards are a great way to encourage competition between your players, and keep players engaged in trying to beat their previous best score as well as that of their friends.
 
-Leaderboards for [Featured Stats](player-stats.md#what-needs-to-be-configured) are visible in Game Hub.  Whereas you can Leaderboards for both Featured Stats as well as regular stats, right from in your title.
+Leaderboards for [Featured Stats](stats2017.md#configured-stats-and-featured-leaderboards) are always displayed in a title's Game Hub and sometimes displayed as a part of the UI for a title when it is pinned to the homepage. You can also use your configured Featured Stats to create Leaderboards inside of your title.
 
 ## Choosing Good Leaderboards
 
