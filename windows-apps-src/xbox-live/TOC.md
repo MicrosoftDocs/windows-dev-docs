@@ -92,6 +92,7 @@
 # [Data Platform - Stats, Leaderboards, Achievements](data-platform/data-platform.md)
 ## [Design XBL Experiences](data-platform/designing-xbox-live-experiences.md)
 ## [Player Stats](leaderboards-and-stats-2017/player-stats.md)
+### [Stats 2017](leaderboards-and-stats-2017/stats2017.md)
 ### [Update Stats 2017](leaderboards-and-stats-2017/player-stats-updating.md)
 ## [Leaderboards](leaderboards-and-stats-2017/leaderboards.md)
 ## [Achievements](achievements-2017/achievements.md)
