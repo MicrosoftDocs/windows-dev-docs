@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-You can optimize your .NET Framework application by pre-compiling your binaries. You can use this technology on applications that you package and distribute through the Windows Store. In some cases, we've observed a 20% performance improvement. You can learn more about this technology in the [technical overview](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
+You can improve the startup time of your .NET Framework application by pre-compiling your binaries. You can use this technology on large applications that you package and distribute through the Windows Store. In some cases, we've observed a 20% performance improvement. You can learn more about this technology in the [technical overview](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
 We've released a preview version of the native image compiler as a [NuGet package](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). You can apply this package to any .NET Framework application that targets the .NET Framework version 4.6.2 or later. This package adds a post build step that includes a native payload to all the binaries used by your application. This optimized payload will be loaded when the application runs in .NET 4.7.2 and above while previous versions will still load the MSIL code.
 
@@ -72,7 +72,7 @@ Repeat this step for `Release/x64` if you want produce x64 binaries.
 The native image compiler is provided as a NuGet package that you need to add to the Visual Studio project that produces the executable file. This is typically your Windows Forms or WPF project. Use this PowerShell command to do that.
 
 ```PS
-PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -PRE
+PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 0.0.1-prerelease-00002  -PRE
 ```
 
 > [!NOTE]
