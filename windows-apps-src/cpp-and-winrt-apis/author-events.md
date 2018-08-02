@@ -61,6 +61,8 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
+As you can see above, the event is implemented in terms of the [**winrt::event**](/uwp/cpp-ref-for-winrt/event) struct template, parameterized by a particular delegate type.
+
 In `BankAccount.cpp`, implement the functions as shown in the code example below. In C++/WinRT, an IDL-declared event is implemented as a set of overloaded functions (similar to the way a property is implemented as a pair of overloaded get and set functions). One overload takes a delegate to be registered, and returns a token. The other takes a token, and revokes the registration of the associated delegate.
 
 ```cppwinrt
@@ -68,12 +70,12 @@ In `BankAccount.cpp`, implement the functions as shown in the code example below
 ...
 namespace winrt::BankAccountWRC::implementation
 {
-    event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
+    winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
     {
         return m_accountIsInDebitEvent.add(handler);
     }
 
-    void BankAccount::AccountIsInDebit(event_token const& token)
+    void BankAccount::AccountIsInDebit(winrt::event_token const& token)
     {
         m_accountIsInDebitEvent.remove(token);
     }
@@ -112,7 +114,7 @@ Also in `App.cpp`, add the following code to instantiate a BankAccount (using th
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
     BankAccountWRC::BankAccount m_bankAccount;
-    event_token m_eventToken;
+    winrt::event_token m_eventToken;
     ...
     
     void Initialize(CoreApplicationView const &)
@@ -141,7 +143,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression that's handling the **AccountIsInDebit** event, run the app, and click inside the window.
 
-## A simple signal across an ABI
+## Parameterized delegates, and simple signals, across an ABI
 
 If your event must be accessible across an application binary interface (ABI)&mdash;such as between a component and its consuming application&mdash;then your event must use a Windows Runtime delegate type. The example above uses the [**Windows::Foundation::EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler) Windows Runtime delegate type. [**TypedEventHandler\<TSender, TResult\>**](/uwp/api/windows.foundation.eventhandler) is another example of a Windows Runtime delegate type.
 
@@ -173,8 +175,8 @@ namespace winrt::BankAccountWRC::implementation
     {
         ...
 
-        event_token SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler);
-        void SignalAccountIsInDebit(event_token const& token);
+        winrt::event_token SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler);
+        void SignalAccountIsInDebit(winrt::event_token const& token);
         void AdjustBalance(float value);
 
     private:
@@ -189,12 +191,12 @@ namespace winrt::BankAccountWRC::implementation
 ...
 namespace winrt::BankAccountWRC::implementation
 {
-    event_token BankAccount::SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler)
+    winrt::event_token BankAccount::SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler)
     {
         return m_signal.add(handler);
     }
 
-    void BankAccount::SignalAccountIsInDebit(event_token const& token)
+    void BankAccount::SignalAccountIsInDebit(winrt::event_token const& token)
     {
         m_signal.remove(token);
     }
@@ -215,7 +217,7 @@ namespace winrt::BankAccountWRC::implementation
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
     BankAccountWRC::BankAccount m_bankAccount;
-    event_token m_eventToken;
+    winrt::event_token m_eventToken;
     ...
     
     void Initialize(CoreApplicationView const &)
@@ -239,9 +241,45 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-## winrt::delegate&lt;... T&gt;
+## Parameterized delegates, simple signals, and callbacks within a project
 
-If you want to raise an event from a C++ type (authored and consumed within the same project), then you can use C++/WinRT's [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) for your event's delegate type. In that case, the delegate's type parameters needn't be Windows Runtime types. If you're porting from a C++/CX codebase where events and delegates are used internally (not across binaries), then **winrt::delegate** will help you to replicate that pattern in C++/WinRT.
+If your event is used only internally within your C++/WinRT project (not across binaries), then you still use the [**winrt::event**](/uwp/cpp-ref-for-winrt/event) struct template, but you parameterize it with C++/WinRT's non-Windows-Runtime [**winrt::delegate&lt;... T&gt;**](/uwp/cpp-ref-for-winrt/delegate) struct template, which is an efficient, reference-counted delegate. It supports any number of parameters, and they are not limited to Windows Runtime types.
+
+The example below first shows a delegate signature that doesn't take any parameters (essentially a simple signal), and then one that takes a string.
+
+```cppwinrt
+winrt::event<winrt::delegate<>> signal;
+signal.add([] { std::wcout << L"Hello, "; });
+signal.add([] { std::wcout << L"World!" << std::endl; });
+signal();
+
+winrt::event<winrt::delegate<std::wstring>> log;
+log.add([](std::wstring const& message) { std::wcout << message.c_str() << std::endl; });
+log.add([](std::wstring const& message) { Persist(message); });
+log(L"Hello, World!");
+```
+
+Notice how you can add to the event as many subscribing delegates as you wish. However, there is some overhead associated with an event. If all you need is a simple callback with only a single subscribing delegate, then you can use [**winrt::delegate&lt;... T&gt;**](/uwp/cpp-ref-for-winrt/delegate) on its own.
+
+```cppwinrt
+winrt::delegate<> signalCallback;
+signalCallback = [] { std::wcout << L"Hello, World!" << std::endl; };
+signalCallback();
+
+winrt::delegate<std::wstring> logCallback;
+logCallback = [](std::wstring const& message) { std::wcout << message.c_str() << std::endl; }f;
+logCallback(L"Hello, World!");
+```
+
+If you're porting from a C++/CX codebase where events and delegates are used internally within a project, then **winrt::delegate** will help you to replicate that pattern in C++/WinRT.
+
+## Design guidelines
+
+We recommend that you pass events, and not delegates, as function parameters. The **add** function of [**winrt::event**](/uwp/cpp-ref-for-winrt/event) is the one exception, because you must pass a delegate in that case. The reason for this guideline is because delegates can take different forms across different Windows Runtime languages (in terms of whether they support one client registration, or multiple). Events, with their multiple subscriber model, constitute a much more predictable and consistent option.
+
+The signature for an event handler delegate should consist of two parameters: *sender* (**IInspectable**), and *args* (some event argument type, for example [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)).
+
+Note that these guidelines don't necessarily apply if you're designing an internal API. Although, internal APIs often become public over time.
 
 ## Related topics
 * [Author APIs with C++/WinRT](author-apis.md)

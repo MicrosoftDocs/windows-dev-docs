@@ -18,7 +18,7 @@ For a game to interact with the stats service, a stat needs to be defined in the
 ![Screenshot of the achievements page on the Game Hub](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)
 The picture above shows how Featured Stats will look in your title's GameHub. The Featured Stats are shown withing the red box.
 
-With Data Platform 2017, you only need to configure a stat which is used for a global leaderboard that is featured on a player's GameHub page.
+With Data Platform 2017, you only need to configure a stat which is used for a social leaderboard that is featured on a player's GameHub page.
 
 You can use Windows Dev Center to configure a featured stat and leaderboard that is associated with your game. Add configuration by doing the following:
 

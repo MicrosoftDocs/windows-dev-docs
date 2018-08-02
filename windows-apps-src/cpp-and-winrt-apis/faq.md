@@ -80,5 +80,64 @@ Because C++/WinRT uses features from the C++17 standard, you'll need to use what
 
 Visual Studio is the development tool that we support and recommend for C++/WinRT. See [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
+## Why doesn't the generated implementation function for a read-only property have the `const` qualifier?
+
+When you declare a read-only property in [MIDL 3.0](/uwp/midl-3/), you might expect the `cppwinrt.exe` tool to generate an implementation function for you that is `const`-qualified (a const function treats the *this* pointer as const).
+
+We certainly recommend using const wherever possible, but the `cppwinrt.exe` tool itself doesn't attempt to reason about which implementation functions might conceivably be const, and which might not. You can choose to make any of your implementation functions const, as in this example.
+
+```cppwinrt
+struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
+{
+    winrt::hstring ToString() const
+    {
+        return L"MyStringable";
+    }
+};
+```
+
+You can remove that `const` qualifier on **ToString** should you decide that you need to alter some object state in its implementation. But make each of your member functions either const or non-const, not both. In other words, don't overload an implementation function on `const`.
+
+Aside from your implementation functions, another other place where const comes into the picture is in Windows Runtime function projections. Consider this code.
+
+```cppwinrt
+int main()
+{
+    winrt::Windows::Foundation::IStringable s{ winrt::make<MyStringable>() };
+    auto result{ s.ToString() };
+}
+```
+
+For the call to **ToString** above, the **Go To Declaration** command in Visual Studio shows that the projection of the Windows Runtime **IStringable::ToString** into C++/WinRT looks like this.
+
+```
+winrt::hstring ToString() const;
+```
+
+Functions on the projection are const no matter how you choose to qualify your implementation of them. Behind the scenes, the projection calls the application binary interface (ABI), which amounts to a call through a COM interface pointer. The only state that the projected **ToString** interacts with is that COM interface pointer; and it certainly has no need to modify that pointer, so the function is const. This gives you the assurance that it won't change anything about the **IStringable** reference that you're calling through, and it ensures that you can call **ToString** even with a const reference to an **IStringable**.
+
+Understand that these examples of `const` are implementation details of C++/WinRT projections and implementations; they constitute code hygiene for your benefit. There's no such thing as `const` on the COM nor Windows Runtime ABI (for member functions).
+
+## Do you have any recommendations for decreasing the code size for C++/WinRT binaries?
+
+When working with Windows Runtime objects, you should avoid the coding pattern shown below because it can have a negative impact on your application by causing more binary code than necessary to be generated.
+
+```cppwinrt
+anobject.b().c().d();
+anobject.b().c().e();
+anobject.b().c().f();
+```
+
+In the Windows Runtime world, the compiler is unable to cache either the value of `c()` or the interfaces for each method that's called through an indirection ('.'). Unless you intervene, that results in more virtual calls and reference counting overhead. The pattern above could easily generate twice as much code as strictly needed. Instead, prefer the pattern shown below wherever you can. It generates a lot less code, and it can also dramatically improve your run time performance.
+
+```cppwinrt
+auto a{ anobject.b().c() };
+a.d();
+a.e();
+a.f();
+```
+
+The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
+
 > [!NOTE]
 > If this topic didn't answer your question, you might find help by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

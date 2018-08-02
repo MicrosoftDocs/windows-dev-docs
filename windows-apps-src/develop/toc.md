@@ -250,6 +250,7 @@
 ####### [Get add-on acquisitions](../monetize/get-in-app-acquisitions.md)
 ####### [Get subscription add-on acquisitions](../monetize/get-subscription-acquisitions.md)
 ####### [Get add-on conversions by channel](../monetize/get-add-on-conversions-by-channel.md)
+###### [Get insights data for your app](../monetize/get-insights-data-for-your-app.md)
 ###### [Get app ratings](../monetize/get-app-ratings.md)
 ###### [Get app reviews](../monetize/get-app-reviews.md)
 ###### [Get error reporting data](../monetize/get-error-reporting-data.md)
@@ -260,6 +261,7 @@
 ###### [Get ad campaign performance data](../monetize/get-ad-campaign-performance-data.md)
 ##### Desktop apps
 ###### [Get desktop application installs](../monetize/get-desktop-app-installs.md)
+###### [Get insights data for your desktop application](../monetize/get-insights-data-for-your-desktop-app.md)
 ###### [Get upgrade blocks for your desktop application](../monetize/get-desktop-block-data.md)
 ###### [Get upgrade block details for your desktop application](../monetize/get-desktop-block-data-details.md)
 ###### [Get error reporting data for your desktop application](../monetize/get-desktop-application-error-reporting-data.md)
@@ -275,16 +277,6 @@
 ####### [Get Xbox Live club data](../monetize/get-xbox-live-club-data.md)
 ####### [Get Xbox Live multiplayer data](../monetize/get-xbox-live-multiplayer-data.md)
 ####### [Get Xbox Live concurrent usage data](../monetize/get-xbox-live-concurrent-usage-data.md)
-##### Drivers and hardware
-###### [Get error reporting data for Windows 10 drivers](../monetize/get-error-reporting-data-for-windows-10-drivers.md)
-####### [Get details for a Windows 10 driver error](../monetize/get-details-for-a-windows-10-driver-error.md)
-####### [Download the CAB file for a Windows 10 driver error](../monetize/download-the-cab-file-for-a-windows-10-driver-error.md)
-###### [Get error reporting data for Windows 7 and Windows 8.x drivers](../monetize/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)
-####### [Get details for a Windows 7 or Windows 8.x driver error](../monetize/get-details-for-a-windows-7-or-windows-8.x-driver-error.md)
-####### [Download the CAB file for a Windows 7 or Windows 8.x driver error](../monetize/download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)
-###### [Get OEM hardware error reporting data](../monetize/get-oem-hardware-error-reporting-data.md)
-####### [Get details for an OEM hardware error](../monetize/get-details-for-an-oem-hardware-error.md)
-####### [Download the CAB file for an OEM hardware error](../monetize/download-the-cab-file-for-an-oem-hardware-error.md)
 #### [Respond to reviews](../monetize/respond-to-reviews-using-windows-store-services.md)
 ##### [Get response info for reviews](../monetize/get-response-info-for-app-reviews.md)
 ##### [Submit responses to reviews](../monetize/submit-responses-to-app-reviews.md)
@@ -405,6 +397,7 @@
 ### [Concurrency and asynchronous operations](../cpp-and-winrt-apis/concurrency.md)
 ### [XAML controls; bind to a C++/WinRT property](../cpp-and-winrt-apis/binding-property.md)
 ### [XAML items controls; bind to a C++/WinRT collection](../cpp-and-winrt-apis/binding-collection.md)
+### [XAML custom (templated) controls with C++/WinRT](../cpp-and-winrt-apis/xaml-cust-ctrl.md)
 ### [Consume DirectX and other COM APIs with C++/WinRT](../cpp-and-winrt-apis/consume-com.md)
 ### [Interop between C++/WinRT and C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [Move to C++/WinRT from C++/CX](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
@@ -725,62 +718,3 @@
 ### [Submit a work item to the thread pool](../threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [Use a timer to submit a work item](../threading-async/use-a-timer-to-submit-a-work-item.md)
 ### [Using Windows Runtime objects in a multithreaded environment](../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

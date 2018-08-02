@@ -34,7 +34,7 @@ A XAML items control can bind to, and handle, these events by retrieving the upd
 It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Below is a listing of a class called **single_threaded_observable_vector\<T\>**.
 
 > [!NOTE]
-> If you've installed the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later, then you can just directly use the **winrt::single_threaded_observable_vector\<T\>** type instead of the code listing below. If you're not already on that version of the SDK, then it will be easy to switch over from using the code listing version to the **winrt** type when you are.
+> If you've installed the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later, then you can just directly use the **winrt::single_threaded_observable_vector\<T\>** factory function instead of the code listing below. If you're not already on that version of the SDK, then it will be easy to switch over from using the code listing version to the **winrt** function when you are. Just remember that instead of calling [**winrt::make**]() with the type listed below, you instead call the **winrt::single_threaded_observable_vector\<T\>** function.
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -305,6 +305,8 @@ Save and build. Copy the accessor stubs from `BookstoreViewModel.h` and `Booksto
 
 ```cppwinrt
 // BookstoreViewModel.h
+...
+#include "single_threaded_observable_vector.h"
 ...
     struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {

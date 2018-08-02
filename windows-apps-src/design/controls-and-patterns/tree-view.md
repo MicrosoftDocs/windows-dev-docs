@@ -384,6 +384,10 @@ Selecting or de-selecting a parent node will select or de-select all children un
 
 ![Multiple selection in a tree view](images/treeview-selection.png)
 
+Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
+
+![Multiple selection in a tree view](images/treeview-selection.png)
+
 Selected nodes are added to the tree view's [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) collection. You can call the [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.
 
 > [!NOTE]

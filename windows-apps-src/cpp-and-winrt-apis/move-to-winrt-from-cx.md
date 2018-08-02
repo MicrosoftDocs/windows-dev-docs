@@ -199,7 +199,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 Instead of a lambda function, you can choose to implement your delegate as a free function, or as a pointer-to-member-function. For more info, see [Handle events by using delegates in C++/WinRT](handle-events.md).
 
-If you're porting from a C++/CX codebase where events and delegates are used internally (not across binaries), then [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) will help you to replicate that pattern in C++/WinRT. Also see [winrt::delegate&lt;... T&gt;](author-events.md#winrtdelegate-t).
+If you're porting from a C++/CX codebase where events and delegates are used internally (not across binaries), then [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) will help you to replicate that pattern in C++/WinRT. Also see [Parameterized delegates, simple signals, and callbacks within a project](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
 
 ## Revoking a delegate
 In C++/CX you use the `-=` operator to revoke a prior event registration.
