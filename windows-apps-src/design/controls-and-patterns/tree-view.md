@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: Use the tree view example code to create an expandable tree.
+description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
 title: Tree view
 label: Tree view
 template: detail.hbs
@@ -16,15 +16,27 @@ dev_langs:
 ---
 # TreeView
 
-The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
+> [!IMPORTANT]
+> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here. Preview features require the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-> **Important APIs**: [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode)
+The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
 The TreeView APIs support the following features:
 
 - N-level nesting
-- Expanding/collapsing of nodes
 - Selection of single or multiple nodes
+- (Preview) Data binding to the ItemsSource property on TreeView and TreeViewItem
+- (Preview) TreeViewItem as the root of the TreeView item template
+- (Preview) Arbitrary types of content in a TreeViewItem
+- (Preview) Drag and drop between tree views
+
+| **Get the Windows UI Library** |
+| - |
+| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+| **Platform APIs** | **Windows UI Library APIs** |
+| - | - |
+| [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [TreeView class](/uwp/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
 ## Is this the right control?
 
@@ -32,19 +44,42 @@ The TreeView APIs support the following features:
 
 - Avoid using TreeView if highlighting the nested relationship of an item is not a priority. For most drill-in scenarios, a regular list view is appropriate
 
+## Examples
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## TreeView UI
 
 The tree view uses a combination of indentation and icons to represent the nested relationship between folder/parent nodes and non-folder/child nodes. Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.
 
-![The chevron icon in TreeView](images/treeview_chevron.png)
+![The chevron icon in TreeView](images/treeview-simple.png)
 
 You can include an icon in the tree view item data template to represent nodes. If you do this, you should use a folder icon only for nodes that represent literal folders, such as the folder structure on a disk.
 
-![The chevron and folder icons together in a TreeView](images/treeview_chevron_folder.png)
+![The chevron and folder icons together in a TreeView](images/treeview-icons.png)
 
 ## Create a tree view
 
-To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the TreeView control’s RootNodes collection. Each TreeViewNode can then have more nodes added to its Children collection. You can nest tree view nodes to whatever depth you require.
+You can create a tree view by binding the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
+
+To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the TreeView control’s [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each TreeViewNode can then have more nodes added to its Children collection. You can nest tree view nodes to whatever depth you require.
+
+Starting in the Windows Insider Preview, you can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with ListView's ItemsSource. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a DataTemplate that renders the item.
+
+> [!IMPORTANT]
+> ItemsSource is an alternative mechanism to TreeView.RootNodes for putting content into the TreeView control. You cannot set both ItemsSource and RootNodes at the same time. When you use ItemsSource, nodes created for you, and you can access them from TreeView.RootNodes property.
 
 Here's an example of a simple tree view declared in XAML. You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.
 
@@ -62,7 +97,40 @@ Here's an example of a simple tree view declared in XAML. You typically add the 
 </TreeView>
 ```
 
-In most cases, your tree view displays data from a data source, so you typically declare the root TreeView control in XAML, but add the TreeViewNode objects in code.
+In most cases, your tree view displays data from a data source, so you typically declare the root TreeView control in XAML, but add the TreeViewNode objects in code or using data binding.
+
+### Bind to a hierarchical data source
+
+To create a tree view using data binding, set a hierarchical collection to the TreeView.ItemsSource property. Then in the ItemTemplate, set the child items collection to the TreeViewItem.ItemsSource property.
+
+```xaml
+<TreeView ItemsSource="{x:Bind DataSource}">
+    <TreeView.ItemTemplate>
+        <DataTemplate x:DataType="local:Item">
+            <TreeViewItem ItemsSource="{x:Bind Children}"
+                          Content="{x:Bind Name}"/>
+        </DataTemplate>
+    </TreeView.ItemTemplate>
+</TreeView>
+```
+
+See _Tree view using data binding_ the Examples section for the full code.
+
+#### Items and item containers
+
+If you use TreeView.ItemsSource, these APIs are available to get the node or data item from the container, and vice versa.
+
+| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
+| - | - |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Gets the data item for the specified TreeViewItem container. |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Gets the TreeViewItem container for the specified data item. |
+
+| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
+| - | - |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Gets the TreeViewNode for the specified TreeViewItem container. |
+| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Gets the TreeViewItem container for the specified TreeViewNode. |
+
+### Manage tree view nodes
 
 This tree view is the same as the one created previously in XAML, but the nodes are created in code instead.
 
@@ -131,7 +199,67 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
 > [!NOTE]
-> In Windows 10, version 1803, you have to retemplate the TreeView control and specify a custom ItemTemplate if your content is not a string. For more info, see the full example at the end of this article.
+> In Windows 10, version 1803, you have to retemplate the TreeView control and specify a custom ItemTemplate if your content is not a string. For more info, see the full example at the end of this article. In later versions, set the [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) property.
+
+### Item container style
+
+Whether you use ItemsSource or RootNodes, the actual elements used to display each node – called the "container" – is a [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) object. You can style the container using the TreeView's ItemContainerStyle or ItemContainerStyleSelector properties.
+
+### Item template selectors
+
+You can choose to set a different DataTemplate for the tree view items based on the type of item. For example, in a file explorer app, you could use one data template for folders, and another for files.
+
+![Folders and files using different data templates](images/treeview-icons.png)
+
+Here is an example of how to create and use an item template selector.
+
+```xaml
+<Page.Resources>
+    <DataTemplate x:Key="FolderTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem ItemsSource="{x:Bind Children}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/folder.png"/>
+                <TextBlock Text="{x:Bind Name}" />
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FileTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/file.png"/>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <local:ExplorerItemTemplateSelector
+            x:Key="ExplorerItemTemplateSelector"
+            FolderTemplate="{StaticResource FolderTemplate}"
+            FileTemplate="{StaticResource FileTemplate}" />
+</Page.Resources>
+
+<Grid>
+    <TreeView ItemsSource="{x:Bind DataSource}"
+              ItemTemplateSelector="{StaticResource ExplorerItemTemplateSelector}"/>
+</Grid>
+```
+
+```csharp
+public class ExplorerItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate FolderTemplate { get; set; }
+    public DataTemplate FileTemplate { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
+    {
+        var explorerItem = (ExplorerItem)item;
+        if (explorerItem.Type == ExplorerItem.ExplorerItemType.Folder) return FolderTemplate;
+
+        return FileTemplate;
+    }
+}
+```
 
 ## Interacting with a tree view
 
@@ -250,6 +378,10 @@ The TreeView control supports both single-selection and multi-selection. By defa
 
 When selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
 
+Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
+
+![Multiple selection in a tree view](images/treeview-selection.png)
+
 Selected nodes are added to the tree view's [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) collection. You can call the [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.
 
 > [!NOTE]
@@ -265,7 +397,7 @@ If your tree view has unrealized nodes, they are not taken into account for sele
 
 ## Code examples
 
-### Tree view with selection enabled
+### Tree view using XAML
 
 This example shows how to create a simple tree view structure in XAML. The tree view shows ice cream flavors and toppings that the user can choose from, arranged in categories. Multi-selection is enabled, and when the user clicks a button, the SelectedItems are displayed in the main app UI.
 
@@ -372,6 +504,122 @@ Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
         DessertTree.SelectAll()
     End If
 End Sub
+```
+
+### Tree view using data binding
+
+This example shows how to create the same tree view as the previous example. However, instead of creating the data hierarchy in XAML, the data is created in code and bound to the tree view's ItemsSource property. (The button event handlers shown in the previous example apply to this example also.)
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
+    <SplitView IsPaneOpen="True"
+               DisplayMode="Inline"
+               OpenPaneLength="296">
+        <SplitView.Pane>
+            <TreeView Name="DessertTree"
+                      SelectionMode="Multiple"
+                      ItemsSource="{x:Bind DataSource}">
+                <TreeView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Item">
+                        <TreeViewItem ItemsSource="{x:Bind Children}"
+                                      Content="{x:Bind Name}"/>
+                    </DataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </SplitView.Pane>
+
+        <StackPanel Grid.Column="1" Margin="12,0">
+            <Button Content="Select all" Click="SelectAllButton_Click"/>
+            <Button Content="Create order" Click="OrderButton_Click" Margin="0,12"/>
+            <TextBlock Text="Your flavor selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="FlavorList" Margin="0,0,0,12"/>
+            <TextBlock Text="Your topping selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="ToppingList"/>
+        </StackPanel>
+    </SplitView>
+</Grid>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    private ObservableCollection<Item> DataSource = new ObservableCollection<Item>();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+        DataSource = GetDessertData();
+    }
+
+    private ObservableCollection<Item> GetDessertData()
+    {
+        var list = new ObservableCollection<Item>();
+        Item flavorsCategory = new Item()
+        {
+            Name = "Flavors",
+            Children =
+            {
+                new Item() { Name = "Vanilla" },
+                new Item() { Name = "Strawberry" },
+                new Item() { Name = "Chocolate" }
+            }
+        };
+        Item toppingsCategory = new Item()
+        {
+            Name = "Toppings",
+            Children =
+            {
+                new Item()
+                {
+                    Name = "Candy",
+                    Children =
+                    {
+                        new Item() { Name = "Chocolate" },
+                        new Item() { Name = "Mint" },
+                        new Item() { Name = "Sprinkles" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Fruits",
+                    Children =
+                    {
+                        new Item() { Name = "Mango" },
+                        new Item() { Name = "Peach" },
+                        new Item() { Name = "Kiwi" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Berries",
+                    Children =
+                    {
+                        new Item() { Name = "Strawberry" },
+                        new Item() { Name = "Blueberry" },
+                        new Item() { Name = "Blackberry" }
+                    }
+                }
+            }
+        };
+
+        list.Add(flavorsCategory);
+        list.Add(toppingsCategory);
+        return list;
+    }
+
+    // Button event handlers...
+}
+
+public class Item
+{
+    public string Name { get; set; }
+    public ObservableCollection<Item> Children { get; set; } = new ObservableCollection<Item>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
+}
 ```
 
 ### Pictures and Music Library tree view

@@ -116,13 +116,7 @@ The following additional methods are available for use by developer accounts wit
 
 ### Methods for hardware and drivers
 
-The following analytics methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
-
-| Scenario       | Methods      |
-|---------------|--------------------|
-| Errors in Windows 10 drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md)</li><li>[Download the CAB file for a Windows 10 driver error](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Errors in Windows 7/Windows 8.x drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 7 and Windows 8.x drivers](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Get details for a Windows 7 or Windows 8.x driver error](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Download the CAB file for a Windows 7 or Windows 8.x driver error](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| Hardware errors (for OEMs) |  <ul><li>[Get OEM hardware error reporting data](get-oem-hardware-error-reporting-data.md)</li><li>[Get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md)</li><li>[Download the CAB file for an OEM hardware error](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+Developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## Code example
 

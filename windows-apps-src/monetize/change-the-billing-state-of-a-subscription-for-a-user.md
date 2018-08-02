@@ -4,7 +4,7 @@ ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: Use this method in the Microsoft Store purchase API to change the billing state of a subscription for a user.
 title: Change the billing state of a subscription for a user
 ms.author: mcleans
-ms.date: 07/10/2018
+ms.date: 08/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -52,7 +52,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 
 | Name         | Type  | Description   |  Required  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | string | The ID of the subscription you want to change. To get this ID, call the [get subscriptions for a user](get-subscriptions-for-a-user.md) method, identify the response body entry that represents the subscription add-on you want to change, and use the value of the **Id** field for the entry.     | Yes      |
+| recurrenceId | string | The ID of the subscription you want to change. To get this ID, call the [get subscriptions for a user](get-subscriptions-for-a-user.md) method, identify the response body entry that represents the subscription add-on you want to change, and use the value of the **id** field for the entry.     | Yes      |
 
 
 ### Request body
@@ -69,7 +69,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 The following example demonstrates how to use this method to extend the subscription period by 5 days. Replace the *b2bKey* value with the [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscription you want to change.
 
 ```json
-POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
+POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/mdr:0:bc0cb6960acd4515a0e1d638192d77b7:77d5ebee-0310-4d23-b204-83e8613baaac/change HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
 Host: https://purchase.mp.microsoft.com
