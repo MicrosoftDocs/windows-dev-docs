@@ -4,7 +4,7 @@ title: Create a Universal Windows Platform console app
 description: This topic describes how to write a UWP app that runs in a console window.
 keywords: console uwp
 ms.author: twhitney
-ms.date: 07/02/2018
+ms.date: 08/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -100,7 +100,7 @@ The template also adds the `Subsystem="console"` capability to the Package.appxm
 
 - Only C++/WinRT and C++/CX UWP apps may be console apps.
 - UWP Console apps must target the Desktop, or IoT project type.
-- UWP console apps may not create windows. They cannot use MessageBox(), for example, because it creates a window.
+- UWP console apps may not create a window. They cannot use MessageBox(), or Location(), or any other API that may create a window for any reason, such as user consent prompts.
 - UWP console apps may not consume background tasks nor serve as a background task.
 - With the exception of [Command-Line activation](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97), UWP console apps do not support activation contracts, including file association, protocol association, etc.
 - Although UWP console apps support multi-instancing, they do not support [Multi-instancing redirection](multi-instance-uwp.md)

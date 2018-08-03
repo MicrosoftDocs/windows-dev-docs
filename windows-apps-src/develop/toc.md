@@ -614,7 +614,7 @@
 ### [Integrate with Windows 10](../porting/desktop-to-uwp-extensions.md)
 ### [Enhance for Windows 10](../porting/desktop-to-uwp-enhance.md)
 #### [Available UWP APIs](../porting/desktop-to-uwp-supported-api.md)
-#### [Optimize app binaries with Native Images](../porting/desktop-to-uwp-r2r.md)
+#### [Optimize app binaries with native images](../porting/desktop-to-uwp-r2r.md)
 ### [Extend with UWP](../porting/desktop-to-uwp-extend.md)
 ### [Run, debug, and test](../porting/desktop-to-uwp-debug.md)
 #### [Test for Windows 10 in S mode](../porting/desktop-to-uwp-test-windows-s.md)
