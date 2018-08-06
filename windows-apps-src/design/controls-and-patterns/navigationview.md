@@ -4,14 +4,14 @@ Description: NavigationView is an adaptive control that implements top-level nav
 title: Navigation view
 template: detail.hbs
 ms.author: sezhen
-ms.date: 06/25/2018
+ms.date: 08/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-pm-contact: vasriram
+pm-contact: yulikl
 design-contact: kimsea
-dev-contact: mitra
+dev-contact: 
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,6 @@ The NavigationView control provides top-level navigation for your app. It adapts
 ## Get the Windows UI Library
 
 This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the  [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). 
-
 
 ## Navigation styles
 
@@ -69,7 +68,7 @@ If your navigation requires more complex behavior that is not supported by Navig
 
 ## Display modes
 
-NavigationView can be set to different display modes, via the [PaneDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneDisplayMode) property:
+NavigationView can be set to different display modes, via the `PaneDisplayMode` property:
 
 :::row:::
     :::column:::
@@ -141,19 +140,30 @@ Adapts between LeftMinimal on small screens, LeftCompact on medium screens, and 
 
 ## Pane
 
-The pane can be positioned either on top or on left, via the [PanePosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property.
+The pane can be positioned either on top or on left, via the `PanePosition` property.
 
 Here is the detailed pane anatomy for the left and top pane positions:
 
 <b>Left nav</b><br>
 
 ![NavigationView anatomy](images/navview-pane-anatomy-vertical.png)
-1.Navigation items, 2.Separators, 3.Headers, 4.AutoSuggestBox (optional), 5.App settings (optional), 6.Menu button
+
+1. Menu button
+1. Navigation items
+1. Separators
+1. Headers
+1. AutoSuggestBox (optional)
+1. Settings button (optional)
 
 <b>Top nav</b><br>
 
 ![NavigationView anatomy](images/navview-pane-anatomy-horizontal.png)
-1.Navigation items, 2.Separators, 3.Headers, 4.AutoSuggestBox (optional), 5.App settings (optional)
+
+1. Headers
+1. Navigation items
+1. Separators
+1. AutoSuggestBox (optional)
+1. Settings button (optional)
 
 The back button appears in the top left-hand corner of the pane, but NavigationView does not automatically add content to the back stack. To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
 
@@ -492,6 +502,9 @@ Here's a recording of what the sample demonstrates:
 
 Here's the sample code:
 
+> [!NOTE]
+> If you're using the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/), then you'll need to add a reference to the toolkit: `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`.
+
 ```xaml
 <Page
     x:Class="NavigationViewSample.MainPage"
@@ -503,7 +516,7 @@ Here's the sample code:
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-      <VisualStateManager.VisualStateGroups>
+        <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
                     <VisualState.StateTriggers>
@@ -515,63 +528,76 @@ Here's the sample code:
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
-      </VisualStateManager.VisualStateGroups>
+        </VisualStateManager.VisualStateGroups>
 
-      <NavigationView x:Name="NavView"
+        <NavigationView x:Name="NavView"
                     SelectionFollowsFocus="Enabled"
                     ItemInvoked="NavView_ItemInvoked"
                     IsSettingsVisible="True"
                     Loaded="NavView_Loaded"
-                    BackRequested="NavView_BackRequested">
+                    BackRequested="NavView_BackRequested"
+                    Header="Welcome">
 
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Home" x:Name="home">
-                <NavigationViewItem.Icon>
-                    <FontIcon Glyph="&#xE10F;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItemSeparator/>
-            <NavigationViewItemHeader Content="Main pages"/>
-            <NavigationViewItem Icon="AllApps" Content="Apps" x:Name="apps"/>
-            <NavigationViewItem Icon="Video" Content="Games" x:Name="games"/>
-            <NavigationViewItem Icon="Audio" Content="Music" x:Name="music"/>
-        </NavigationView.MenuItems>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" x:Name="home" Tag="home">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE10F;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Main pages"/>
+                <NavigationViewItem Icon="AllApps" Content="Apps" x:Name="apps" Tag="apps"/>
+                <NavigationViewItem Icon="Video" Content="Games" x:Name="games" Tag="games"/>
+                <NavigationViewItem Icon="Audio" Content="Music" x:Name="music" Tag="music"/>
+            </NavigationView.MenuItems>
 
-        <NavigationView.AutoSuggestBox>
-            <AutoSuggestBox x:Name="ASB" QueryIcon="Find"/>
-        </NavigationView.AutoSuggestBox>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="ASB" QueryIcon="Find"/>
+            </NavigationView.AutoSuggestBox>
 
-        <NavigationView.HeaderTemplate>
-            <DataTemplate>
-                <Grid Margin="24,10,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="24,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
                            FontSize="28"
                            VerticalAlignment="Center"
                            Text="Welcome"/>
-                    <CommandBar Grid.Column="1"
+                        <CommandBar Grid.Column="1"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             DefaultLabelPosition="Right"
                             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
-                        <AppBarButton Label="Refresh" Icon="Refresh"/>
-                        <AppBarButton Label="Import" Icon="Import"/>
-                    </CommandBar>
-                </Grid>
-            </DataTemplate>
-        </NavigationView.HeaderTemplate>
+                            <AppBarButton Label="Refresh" Icon="Refresh"/>
+                            <AppBarButton Label="Import" Icon="Import"/>
+                        </CommandBar>
+                    </Grid>
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
 
-        <Frame x:Name="ContentFrame" Margin="24"/>
+            <Frame x:Name="ContentFrame" Margin="24"/>
 
-      </NavigationView>
+        </NavigationView>
     </Grid>
 </Page>
 ```
 
+> [!NOTE]
+> If you're using the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/), then you'll need to add a reference to the toolkit: `using MUXC = Microsoft.UI.Xaml.Controls;`.
+
 ```csharp
+// List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
+private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
+{
+    ("home", typeof(HomePage)),
+    ("apps", typeof(AppsPage)),
+    ("games", typeof(GamesPage)),
+    ("music", typeof(MusicPage)),
+};
+
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
     // You can also add items in code behind
@@ -582,18 +608,12 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
         Icon = new SymbolIcon(Symbol.Folder),
         Tag = "content"
     });
-
-    // set the initial SelectedItem
-    foreach (NavigationViewItemBase item in NavView.MenuItems)
-    {
-        if (item is NavigationViewItem && item.Tag.ToString() == "home")
-        {
-            NavView.SelectedItem = item;
-            break;
-        }
-    }
+    _pages.Add(("content", typeof(MyContentPage)));
 
     ContentFrame.Navigated += On_Navigated;
+
+    // NavView doesn't load any page by default: you need to specify it
+    NavView_Navigate("home");
 
     // Add keyboard accelerators for backwards navigation
     var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
@@ -611,47 +631,26 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 }
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-{  
-    NavigationTransitionInfo navAnimation = args.RecommendedNavigationTransitionInfo;
+{
 
     if (args.IsSettingsInvoked)
-    {
-        ContentFrame.NavigateToType(typeof(SettingsPage), null, navAnimation );
-    }
+        ContentFrame.Navigate(typeof(SettingsPage));
     else
     {
-        NavView_Navigate(args.InvokedItemContainer, navAnimation, sender.PanePosition);
+        // Getting the Tag from Content (args.InvokedItem is the content of NavigationViewItem)
+        var navItemTag = NavView.MenuItems
+            .OfType<NavigationViewItem>()
+            .First(i => args.InvokedItem.Equals(i.Content))
+            .Tag.ToString();
+
+        NavView_Navigate(navItemTag);
     }
 }
 
-private void NavView_Navigate(NavigationViewItemBase item, NavigationTransitionInfo navAnimation, NavigationViewPanePosition position)
+private void NavView_Navigate(string navItemTag)
 {
-    NavigateOptions navOptions = new NavigateOptions();
-    navOptions.TransitionInfoOverride = navAnimation;
-    navOptions.IsNavigationStackEnabled = False;
-
-    switch (item.Name)
-    {
-        case "home":
-            ContentFrame.NavigateToType(typeof(HomePage), null, navOptions);
-            break;
-
-        case "apps":
-            ContentFrame.NavigateToType(typeof(AppsPage), null, navOptions);
-            break;
-
-        case "games":
-            ContentFrame.NavigateToType(typeof(GamesPage), null, navOptions);
-            break;
-
-        case "music":
-            ContentFrame.NavigateToType(typeof(MusicPage), null, navOptions);
-            break;
-
-        case "content":
-            ContentFrame.NavigateToType(typeof(MyContentPage), null, navOptions);
-            break;
-    }
+    var item = _pages.First(p => p.Tag.Equals(navItemTag));
+    ContentFrame.Navigate(item.Page);
 }
 
 private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
@@ -691,37 +690,20 @@ private void On_Navigated(object sender, NavigationEventArgs e)
     }
     else
     {
-        Dictionary<Type, string> lookup = new Dictionary<Type, string>()
-        {
-            {typeof(HomePage), "home"},
-            {typeof(AppsPage), "apps"},
-            {typeof(GamesPage), "games"},
-            {typeof(MusicPage), "music"},
-            {typeof(MyContentPage), "content"}
-        };
+        var item = _pages.First(p => p.Page == e.SourcePageType);
 
-        String stringTag = lookup[ContentFrame.SourcePageType];
-
-        // set the new SelectedItem  
-        foreach (NavigationViewItemBase item in NavView.MenuItems)
-        {
-            if (item is NavigationViewItem && item.Tag.Equals(stringTag))
-            {
-                item.IsSelected = true;
-                break;
-            }
-        }
+        NavView.SelectedItem = NavView.MenuItems
+            .OfType<NavigationViewItem>()
+            .First(n => n.Tag.Equals(item.Tag));
     }
 }
-
-
 ```
 
 ## Customizing backgrounds
 
 To change the background of NavigationView's main area, set its `Background` property to your preferred brush.
 
-The Pane's background shows in-app acrylic when NavigationView is in Top, Minimal, or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
+The Pane's background shows in-app acrylic when NavigationView is in Top, Minimal, or Compact mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
 
 ```xaml
 <Application.Resources>
@@ -735,55 +717,6 @@ The Pane's background shows in-app acrylic when NavigationView is in Top, Minima
     </ResourceDictionary>
 </Application.Resources>
 ```
-
-## Extending your app into the title bar
-
-For a seamless, flowing look within your app's window, we recommend extending NavigationView and its acrylic pane up into your app's title bar area. This avoids the visually unattractive shape created by the title bar, the solid-colored NavigationView Content, and the acrylic of NavigationView's pane.
-
-To do so, add the following code to your App.xaml.cs.
-
-```csharp
-//draw into the title bar
-CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
-
-//remove the solid-colored backgrounds behind the caption controls and system back button
-var viewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
-viewTitleBar.ButtonBackgroundColor = Colors.Transparent;
-viewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
-```
-
-Drawing into the title bar has the side-effect of hiding your app's title. To help users, restore the title by adding your own TextBlock. Add the following markup to the root page containing your NavigationView.
-
-```xaml
-<Grid>
-    <TextBlock x:Name="AppTitle"
-        xmlns:appmodel="using:Windows.ApplicationModel"
-        Text="{x:Bind appmodel:Package.Current.DisplayName}"
-        Style="{StaticResource CaptionTextBlockStyle}"
-        IsHitTestVisible="False"
-        Canvas.ZIndex="1"/>
-
-    <NavigationView Canvas.ZIndex="0" ... />
-
-</Grid>
-```
-
-You'll also need to adjust AppTitle's margins depending on back button's visibility. And, when the app is in FullScreenMode, you'll need to remove the spacing for the back arrow, even if the TitleBar reserves space for it.
-
-```csharp
-void UpdateAppTitle()
-{
-    var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
-    var left = 12 + (full ? 0 : CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset);
-    AppTitle.Margin = new Thickness(left, 8, 0, 0);
-}
-
-Window.Current.CoreWindow.SizeChanged += (s, e) => UpdateAppTitle();
-coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
-```
-
-For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).
 
 ## Scroll content under top pane
 
