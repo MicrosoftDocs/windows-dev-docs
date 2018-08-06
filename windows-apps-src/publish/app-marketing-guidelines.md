@@ -44,7 +44,7 @@ To promote your app, you may want to show how it looks when running on a Windows
 
 -   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) section of the App Developer Agreement.
+-   If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) section of the App Developer Agreement.
 
 -   If you are not registered with Windows Dev Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Microsoft Store Badge Guidelines. Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted. Microsoft reserves all rights not expressly granted herein.
 

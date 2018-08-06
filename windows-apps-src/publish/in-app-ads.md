@@ -54,8 +54,8 @@ After you create the new ad unit, it appears in the table of available ad units 
 
 After you create ad units for one or more apps in your account, these ad units appear in a table at the bottom of the **Monetize** &gt; **In-app ads** page. This table displays the **Application ID** and **Ad unit ID** for each ad unit, along with other information. To show ads in your app, you'll need to use these values in your code. For more information, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
 
-* If your app shows [banner ads](../monetize/banner-ads.md), assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
-* If your app shows [interstitial ads](../monetize/interstitial-ads.md), pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+* If your app shows [banner ads](../monetize/banner-ads.md), assign these values to the [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) properties of your [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) object.
+* If your app shows [interstitial ads](../monetize/interstitial-ads.md), pass these values to the [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method of your [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) object.
 * If your app shows [native ads](../monetize/native-ads.md), pass these values to the **NativeAdsManagerV2** constructor.
   > [!IMPORTANT]
   > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.

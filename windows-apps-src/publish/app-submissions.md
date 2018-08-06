@@ -5,7 +5,7 @@ title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,10 +17,10 @@ ms.localizationpriority: medium
 
 Once you've [created your app by reserving a name](create-your-app-by-reserving-a-name.md), you can start working on getting it published. The first step is to create a **submission**.
 
-You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. The submission will be saved in your [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard), so you can work on it whenever you're ready.
+You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
 > [!NOTE]
-> You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard).
+> You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access [Windows Dev Center](https://partner.microsoft.com/dashboard) and submit apps to the Microsoft Store.
 
 After your app is published, you can publish an updated version by creating another submission in your dashboard. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on the App overview page. You can also [remove an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) if you need to do so (and then make it available again later, if you'd like).
 

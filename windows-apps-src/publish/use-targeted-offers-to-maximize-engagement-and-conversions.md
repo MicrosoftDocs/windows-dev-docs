@@ -50,6 +50,6 @@ If you decide not to use an offer (or if you no longer want to keep using it, cl
 > [!IMPORTANT]
 > Be sure you have published the code to retrieve the available offers for a given user, and to create the in-app experience. For more info, see [Manage targeted offers using Store services](../monetize/manage-targeted-offers-using-windows-store-services.md).
 >
-> When considering the content of your targeted offers, keep in mind that, as with all app content, the content in your offers must comply with the Store [Content Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies).
+> When considering the content of your targeted offers, keep in mind that, as with all app content, the content in your offers must comply with the Store [Content Policies](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies).
 >
 > Also be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) gives their device to someone else to use, the other person may see offers that were targeted at the original customer.
