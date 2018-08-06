@@ -22,7 +22,7 @@ For example, you'd use the following JSON to make water areas appear in red, wat
 ```json
     {"version":"1.*",
         "settings":{"landColor":"#0000FF"},
-        "elements":{"water":{"fillColor":"#FF0000", "labelColor":"#00FF00"}}
+        "elements":{"water":{"fillColor":"#FF0000","labelColor":"#00FF00"}}
     }
 ```
 You could also use JSON to remove all labels and points from a map.
@@ -207,7 +207,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 | borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The secondary or casing line color of the border of a filled polygon. |
 | borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The primary line color of the border of a filled polygon. |
 | borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | The amount by which the stroke of borders are scaled. For example, use *1* for default and *2* for twice as large. |
 
 <a id="pointstyle" />
 
@@ -217,7 +217,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 | Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
 |------------------------------|---------|------|------|------|------|-------------|
-| shape-Background             | Float   |      |      |      |  ✔   | Amount by which the anchor point of an icon stem should be scaled.  For example, use *1* for default and *2* for twice as large. |
+| shape-Background             | Float   |      |      |      |  ✔   | Shape to use as the background of the icon--replacing any shape that exists there. |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | Amount by which the anchor point of an icon stem should be scaled.  For example, use *1* for default and *2* for twice as large. |
 | stemColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The color of the stem coming out of the bottom of the icon in 3D mode. |
 | stemHeightScale              | Float   |      |      |  ✔   |  ✔   | Amount by which the length of the stem of an icon should be scaled.  For example, use *1* for default and *2* for twice as long. |
