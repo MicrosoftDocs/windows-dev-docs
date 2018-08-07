@@ -5,7 +5,7 @@ title: Create your app by reserving a name
 keywords: windows 10, uwp, name reservation, app name, app names, names, product name, naming, reserved name, title, names, titles
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 5/24/2018
+ms.date: 8/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Create your app by reserving a name
 
-The first step in creating a new app in your [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
+The first step in creating a new app in your [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
 
 You can reserve a name for your app even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name. Note that you will need to submit the app within three months in order to keep that name reserved for your use.
 

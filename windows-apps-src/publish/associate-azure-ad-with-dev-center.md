@@ -3,7 +3,7 @@ author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
 title: Associate Azure Active Directory with your Dev Center account
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ In order to [add and manage account users](add-users-groups-and-azure-ad-applica
 Windows Dev Center leverages Azure AD for multi-user account access and management. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can create a new Azure AD tenant from within Dev Center at no additional charge.
 
 > [!TIP]
-> This topic is specific to the Windows apps developer program, but associating a tenant and managing users works similarly for accounts in the Windows Desktop Application Program (see [Windows Desktop Application Program](https://msdn.microsoft.com/library/windows/desktop/mt826504#users) for more info) and in the Windows Hardware Developer Program (where references to the **Manager** role would also apply to Hardware accounts with the **Administrator** role; see [Dashboard Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) for more info).
+> This topic is specific to the Windows apps developer program, but associating a tenant and managing users works similarly for accounts in the Windows Desktop Application Program (see [Windows Desktop Application Program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) for more info) and in the Windows Hardware Developer Program (where references to the **Manager** role would also apply to Hardware accounts with the **Administrator** role; see [Dashboard Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) for more info).
 
 A single Azure AD tenant can be associated with multiple Dev Center accounts. You only need to have one Azure AD tenant associated with your Dev Center account in order to add multiple account users, but you also have the option to add multiple Azure AD tenants to a single Dev Center account. Any user with the **Manager** role in the Dev Center account will have the option to add and remove Azure AD tenants.
 
@@ -30,7 +30,7 @@ A single Azure AD tenant can be associated with multiple Dev Center accounts. Yo
 
 If your organization already uses Azure AD, follow these steps to link your Dev Center account.
 
-1.  From the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
+1.  From the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Associate Azure AD with your Dev Center account**.
 3.  Enter your Azure AD credentials for the tenant that you want to associate.
 4.  Review the organization and domain name for your Azure AD tenant. To complete the association, select **Confirm**.
@@ -44,7 +44,7 @@ If your organization already uses Azure AD, follow these steps to link your Dev 
 
 If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
 
-1.  From the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
+1.  From the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Create new Azure AD**.
 3.  Enter the directory information for your new Azure AD:
     - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.

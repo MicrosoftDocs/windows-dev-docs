@@ -4,7 +4,7 @@ Description: The Reviews report in the Windows Dev Center dashboard lets you see
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 07/17/2018
+ms.date: 08/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -45,9 +45,9 @@ You can expand **Filters** to filter the reviews shown on this page by the follo
 > If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
 
 
-## Rating breakdown
+## Ratings breakdown
 
-The **Rating breakdown** chart appears at the top of this report so that you can get a quick look at the following: 
+The **Ratings breakdown** chart appears at the top of this report so that you can get a quick look at the following: 
 - The average rating star rating for the app.
 - The total number of ratings of your app over the past 12 months.
 - The total number of ratings for each star rating.
@@ -90,7 +90,9 @@ Each customer review contains:
 
 Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings.
 
-You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. 
+You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by **Date** and/or **Rating**.
+
+You can also use the search box to search for specific words or phrases in your app's reviews. Note that only the original review text written by the customer is searched, even if the review was written in a different language. Translated review text is not searched.
 
 > [!NOTE]
 > You may occasionally notice that reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
@@ -101,6 +103,8 @@ You can sort the reviews on the page by date and/or by rating, in ascending or d
 By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
 
 Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
+
+As noted above, when searching your reviews, only the original text left by the customer is searched (and not any translated text), even if you have the **Translate reviews** box checked.
 
 
 ## Responding to customer reviews

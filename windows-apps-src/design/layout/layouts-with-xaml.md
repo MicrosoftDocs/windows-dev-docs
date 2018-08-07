@@ -92,7 +92,8 @@ You can reveal or hide an element by setting its [**Visibility**](https://msdn.m
 
 You can change an element's Visibility property in code or in a visual state. When the Visibility of an element is changed, all of its child elements are also changed. You can replace sections of your UI by revealing one panel while collapsing another.
 
-> **Tip**&nbsp;&nbsp;When you have elements in your UI that are **Collapsed** by default, the objects are still created at startup, even though they aren't visible. You can defer loading these elements until they are shown by setting the **x:DeferLoadStrategy attribute** to "Lazy". This can improve startup performance. For more info, see [x:DeferLoadStrategy attribute](../../xaml-platform/x-deferloadstrategy-attribute.md).
+> [!Tip]
+> When you have elements in your UI that are **Collapsed** by default, the objects are still created at startup, even though they aren't visible. You can defer loading these elements until they are shown by setting the **x:DeferLoadStrategy attribute** to "Lazy". This can improve startup performance. For more info, see [x:DeferLoadStrategy attribute](../../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### Style resources
 
@@ -132,7 +133,7 @@ To apply a visual state from code, you call the [**VisualStateManager.GoToState*
 Here, a [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) contains two VisualState definitions. The first, `DefaultState`, is empty. When it's applied, the values defined in the XAML page are applied. The second, `WideState`, changes the [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) property of the [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) to **Inline** and opens the pane. This state is applied in the SizeChanged event handler if the window width is greater than 640 effective pixels.
 
 > [!NOTE]
-Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](screen-sizes-and-breakpoints-for-responsive-design.md).
+> Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](screen-sizes-and-breakpoints-for-responsive-design.md).
 
 
 ```xaml
@@ -228,7 +229,8 @@ This example does the same thing as the previous example, but uses the simplifie
 </Page>
 ```
 
-> **Important**&nbsp;&nbsp;In the previous example, the VisualStateManager.VisualStateGroups attached property is set on the **Grid** element. When you use StateTriggers, always ensure that VisualStateGroups is attached to the first child of the root in order for the triggers to take effect automatically. (Here, **Grid** is the first child of the root **Page** element.)
+> [!Important]
+> In the previous example, the VisualStateManager.VisualStateGroups attached property is set on the **Grid** element. When you use StateTriggers, always ensure that VisualStateGroups is attached to the first child of the root in order for the triggers to take effect automatically. (Here, **Grid** is the first child of the root **Page** element.)
 
 ### Attached property syntax
 
