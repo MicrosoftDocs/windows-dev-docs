@@ -3,7 +3,7 @@ author: JnHs
 Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 05/07/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,7 @@ Windows Dev Center provides a data-driven customer engagement platform you can u
 > These notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
-- The content in your notifications must comply with the Store [Content Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies).
+- The content in your notifications must comply with the Store [Content Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#content_policies).
 - Your notification content should not include confidential or potentially sensitive info.
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
@@ -44,9 +44,9 @@ At a high-level, you need to do three things to use notifications to engage with
 Follow these steps to create a notification in the dashboard and send it to a particular customer segment.
 
 > [!NOTE]
-> Before an app can receive notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Before an app can receive notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
-1. In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), expand the **Engage** section, and then select **Notifications**.
+1. In the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard/), expand the **Engage** section, and then select **Notifications**.
 2. On the **Notifications** page, select **New notification**.
 3. In the **Select a template** section, choose the [type of notification](#notification-template-types) you want to send and then click **OK**.
 4. On the next page, use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. You can only select apps that have been [configured to receive notifications using the Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
@@ -108,7 +108,7 @@ You can measure how well you’re engaging with your customers through each noti
 ### To measure notification performance
 
 1.	When you create a notification, in the **Notification content** section, select the **Track app launch rate** checkbox.
-2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method to notify Dev Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) method to notify Dev Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 
 ### To view notification performance
@@ -153,4 +153,4 @@ Things to keep in mind about translation:
 - [Tiles for UWP apps](../design/shell/tiles-and-notifications/creating-tiles.md)
 - [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Notifications Visualizer app](https://www.microsoft.com/store/apps/9nblggh5xsl1)
-- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
+- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

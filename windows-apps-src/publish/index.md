@@ -4,7 +4,7 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Publish Windows apps
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 # Publish Windows apps and games  
  
-You can use the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. <a href="//developer.microsoft.com/store/register">Sign up today!</a>
+You can use the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. <a href="//developer.microsoft.com/store/register">Sign up today!</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>

@@ -75,7 +75,7 @@ Fewer navigation items simplify decision making for users. Providing easy access
 
 		![navview bad](images/nav/navview-bad.svg)
 
-		Constantly provide many navigation options to overwhelm the user.
+		Overwhelm users with many navigation options.
 	:::column-end:::
 :::row-end:::
 
@@ -108,13 +108,13 @@ Now that you're familiar with general navigation principles, how should you stru
 	:::column span="2":::
         ### Flat/lateral
 
-		In a flat/lateral structure, pages exist side-by-side. You can go from on page to another in any order.
+		In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
 
 		We recommend using a flat structure when:
 
         - The pages can be viewed in any order.
 		- The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
-		- There are fewer than 8 pages in the group. <br>
+		- There are less than 8 pages in the group. <br>
 		(When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
 
     :::column-end:::

@@ -4,7 +4,7 @@ Description: View the names that you've reserved for your app, reserve additiona
 title: Manage app names
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 6/18/2018
+ms.date: 8/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Manage app names
 
-The **Manage app names** lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in the [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
+The **Manage app names** lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
 
 
 ## Reserve additional names for your app

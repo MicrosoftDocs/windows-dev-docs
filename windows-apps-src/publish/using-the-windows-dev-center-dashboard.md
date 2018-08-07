@@ -4,7 +4,7 @@ Description: The Windows Dev Center dashboard lets you manage and submit all of 
 title: Using the Windows Dev Center dashboard
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Using the Windows Dev Center dashboard
 
 
-The [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place.
+The [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place.
 
 > [!NOTE]
 > You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard.
@@ -32,9 +32,9 @@ When you [create a submission for your app](app-submissions.md) (for the first t
 
 [Add-ons (in-app products)](add-on-submissions.md) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently.
 
-The [Windows Dev Center dashboard](http://developer.microsoft.com/dashboard) also offers capabilities for [adding multiple users](manage-account-users.md)[app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promoting your apps](attract-customers-and-promote-your-apps.md), [engaging with your customers](engage-with-your-customers.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
+Windows Dev Center also offers capabilities for [adding multiple users](manage-account-users.md)[app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promoting your apps](attract-customers-and-promote-your-apps.md), [engaging with your customers](engage-with-your-customers.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
 
-Your feedback helps us build the best capabilities and experiences possible. As you work in the dashboard, please use the **Feedback** link in the upper right corner of the new dashboard (under the question mark icon) to share your thoughts and suggestions.
+Your feedback helps us build the best capabilities and experiences possible. As you work in the dashboard, please use the **Feedback** link in the upper right corner of the dashboard to share your thoughts and suggestions.
 
 
  

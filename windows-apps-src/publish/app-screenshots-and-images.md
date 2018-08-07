@@ -206,7 +206,7 @@ When providing your trailers, be sure to follow these requirements:
 - The title can’t exceed 255 characters. 
 - Do not include age ratings in your trailers.
 
-Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
+Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 There are additional requirements depending on the type of file.
 

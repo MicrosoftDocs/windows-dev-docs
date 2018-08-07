@@ -4,7 +4,7 @@ Description: The App properties page of the app submission process lets you defi
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 04/02/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
