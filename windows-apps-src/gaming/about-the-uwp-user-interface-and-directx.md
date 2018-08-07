@@ -18,6 +18,8 @@ ms.localizationpriority: medium
 
 Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects. Rather, because they run at a lower level in the Windows Runtime stack, they must interoperate with the user interface framework in a more fundamental way: by accessing and interoperating with the app object directly. Learn when and how this interoperation occurs, and how you, as a DirectX developer, can effectively use this model in the development of your UWP app.
 
+See the [Direct3D graphics glossary](../graphics-concepts/index.md) for information about unfamiliar graphics terms or concepts you encounter while reading.
+
 ## The important core user interface namespaces
 
 
