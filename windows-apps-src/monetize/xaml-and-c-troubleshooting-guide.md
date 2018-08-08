@@ -65,17 +65,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-6.  Check the **IsEnabled** property. The optional `IsEnabled` property must be set to `True`.
-
-    > [!div class="tabbedCodeSnippets"]
-    ``` xml
-    <UI:AdControl AdUnitId="{AdUnitID}"
-                  ApplicationId="{ApplicationID}"
-                  IsEnabled="True"
-                  Width="728" Height="90" />
-    ```
-
-7.  Check the parent of the **AdControl**. If the **AdControl** element resides in a parent element, the parent must be active and visible.
+6.  Check the parent of the **AdControl**. If the **AdControl** element resides in a parent element, the parent must be active and visible.
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -86,9 +76,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     </StackPanel>
     ```
 
-8.  Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
+7.  Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
 
-9.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
+8.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -223,21 +213,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Visibility = System.Windows.Visibility.Visible;
     ```
 
-8.  Check the **IsEnabled** property. The optional **IsEnabled** property must be set to **True**.
+8.  Check the parent of the **AdControl**. The parent must be active and visible.
 
-    > [!div class="tabbedCodeSnippets"]
-    ``` cs
-    adControl = new AdControl();
-    adControl.ApplicationId = "{ApplicationID}";
-    adControl.AdUnitId = "{AdUnitID}";
-    adControl.Height = 90;
-    adControl.Width = 728;
-    adControl.IsEnabled = True;
-    ```
-
-9.  Check the parent of the **AdControl**. The parent must be active and visible.
-
-10. Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
+9. Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="csharp-blackboxblinksdisappears"/>
 
