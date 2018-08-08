@@ -668,6 +668,7 @@
 #### [Launch the Microsoft Store app](../launch-resume/launch-store-app.md)
 #### [Launch the Windows Maps app](../launch-resume/launch-maps-app.md)
 #### [Launch the People app](../launch-resume/launch-people-apps.md)
+#### [Launch screen snipping](../launch-resume/launch-screen-snipping.md)
 #### [Support web-to-app linking with app URI handlers](../launch-resume/web-to-app-linking.md)
 ### [Launch an app through file activation](../launch-resume/launch-app-from-file.md)
 #### [Launch the default app for a file](../launch-resume/launch-the-default-app-for-a-file.md)
