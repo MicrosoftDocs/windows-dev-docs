@@ -1,4 +1,4 @@
----
+﻿---
 author: normesta
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
@@ -48,7 +48,13 @@ This topic shows the JSON entries and [properties](#properties) that you can use
 ## Entries
 This table uses ">" characters to represent levels in the entry hierarchy.  It also shows which versions of Windows support each entry and which ignore it.
 
-| Name                         | Property Group            | 1703 | 1709 | 1803 | Next | Description    |
+| Build | Windows Release Name |
+|-------|----------------------|
+| 1506  | Creators Update      |
+| 1629  | Fall Creators Update |
+| 1713  | April 2018 Update    |
+
+| Name                         | Property Group            | 1506 | 1629 | 1713 | Next | Description    |
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | The style sheet version that you want to use. |
 | settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | The settings that apply to the whole style sheet. |
@@ -157,7 +163,7 @@ This section describes the properties that you can use for each entry.
 
 ### Settings properties
 
-| Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
+| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether the atmosphere appears in the 3D control. |
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   | A flag that indicates whether or not to show textures on symbolic 3D buildings that have textures. |
@@ -179,7 +185,7 @@ This section describes the properties that you can use for each entry.
 
 ### MapElement properties
 
-| Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
+| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | backgroundScale              | Float   |  ✔   |  ✔   |  ✔   |  ✔   | Amount by which the background element of an icon should be scaled.  For example, use *1* for default and *2* for twice as large. |
 | fillColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The color that is used for filling polygons, the background of point icons, and for the center of lines if they have split. |
@@ -202,7 +208,7 @@ This section describes the properties that you can use for each entry.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
+| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The secondary or casing line color of the border of a filled polygon. |
 | borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The primary line color of the border of a filled polygon. |
@@ -215,7 +221,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
+| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | shape-Background             | Float   |      |      |      |  ✔   | Shape to use as the background of the icon--replacing any shape that exists there. |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | Amount by which the anchor point of an icon stem should be scaled.  For example, use *1* for default and *2* for twice as large. |
@@ -230,6 +236,6 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1703 | 1709 | 1803 | Next | Description |
+| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
 |------------------------------|---------|------|------|------|------|------------|
 | renderAsSurface              | Bool    |      |      |  ✔   |  ✔   | A flag that indicates that a 3D model should be rendered like a building--without depth fading against the ground. |
