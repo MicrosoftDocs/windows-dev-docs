@@ -137,13 +137,7 @@
 ### [File access permissions](../files/file-access-permissions.md)
 ### [Fast access to file properties in UWP](../files/fast-file-properties.md)
 
-## [Machine Learning](../machine-learning/index.md)
-### [Overview](../machine-learning/overview.md)
-### [Get started](../machine-learning/get-started.md)
-### [Train a model](../machine-learning/train-ai-model.md)
-### [Convert a model](../machine-learning/conversion-samples.md)
-### [Integrate a model](../machine-learning/integrate-model.md)
-### [Sample apps](../machine-learning/samples.md)
+## [Machine Learning](https://docs.microsoft.com/windows/ai/)
 
 # Deployment
 

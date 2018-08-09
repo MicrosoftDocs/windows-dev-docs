@@ -1765,6 +1765,33 @@
       "source_path": "windows-apps-src/monetize/get-oem-hardware-error-reporting-data.md",
       "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-oem-hardware-error-reporting-data",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/index.md",
+      "source_path": "windows-apps-src/machine-learning/get-started.md",
+      "source_path": "windows-apps-src/machine-learning/overview.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/conversion-samples.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/convert-model-winmltools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/integrate-model.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/integrate-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/samples.md",
+      "redirect_url": "https://github.com/Microsoft/Windows-Machine-Learning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/train-ai-model.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/get-onnx-model",
+      "redirect_document_id": false
     }
 
   ]
