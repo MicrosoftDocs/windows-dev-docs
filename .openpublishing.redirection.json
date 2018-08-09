@@ -1768,7 +1768,15 @@
     },
     {
       "source_path": "windows-apps-src/machine-learning/index.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/machine-learning/get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/machine-learning/overview.md",
       "redirect_url": "https://docs.microsoft.com/windows/ai",
       "redirect_document_id": false
