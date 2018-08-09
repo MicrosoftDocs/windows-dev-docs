@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, player stats, stats 2017
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Updating Stats 2017

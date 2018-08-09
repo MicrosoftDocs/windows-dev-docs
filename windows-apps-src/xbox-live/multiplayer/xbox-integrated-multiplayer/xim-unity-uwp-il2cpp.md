@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, Xbox Integrated Multiplayer
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Use XIM (Unity with IL2CPP)

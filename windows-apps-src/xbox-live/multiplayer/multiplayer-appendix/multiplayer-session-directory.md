@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, mpsd, multiplayer session directory.
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Multiplayer Session Directory (MPSD)

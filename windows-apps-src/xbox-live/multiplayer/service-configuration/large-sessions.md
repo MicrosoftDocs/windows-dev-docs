@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, large session, recent players
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 # Large sessions
 

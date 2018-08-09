@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service calls, testing, trace analyzer
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Xbox Live Trace Analyzer
