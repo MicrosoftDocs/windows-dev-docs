@@ -30,7 +30,7 @@ This overview of how to register for a developer account for the Microsoft Store
 5.  Enter the **publisher display name** that you wish to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. For company accounts, be sure to use your organization's registered business name or trade name. Note that if you enter a name that someone else has already selected, or if it appears that someone else has the rights to use that name, we will not allow you to use that name. 
 
   > [!NOTE]
-  > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+  > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
   6.  Enter the contact info you want to use for your developer account.
 
@@ -86,5 +86,3 @@ When you close your account, it's important to understand what happens to any ap
 -   Even though the app is still available to customers who have previously acquired it, your app listing will be removed from the Store. No new customers will be able to acquire your app.
 -   Your app's name will be released for potential use by another developer.
 -   If you have a balance due from previous app sales, you can request payment for that balance even if the amount due does not meet the usual payment threshold.
-
-
