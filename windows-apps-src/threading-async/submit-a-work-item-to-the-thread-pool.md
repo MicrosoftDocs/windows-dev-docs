@@ -277,7 +277,7 @@ Provide a completion handler by setting the [**IAsyncAction.Completed**](https:/
 
 The following example updates the UI with the result of the work item submitted in step 1:
 
-```csharp
+```cpp
 asyncAction->Completed = ref new AsyncActionCompletedHandler(
     \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
 {
@@ -321,7 +321,7 @@ m_workItem.Completed([&](Windows::Foundation::IAsyncAction const& asyncInfo, Win
 });
 ```
 
-```cpp
+```c#
 asyncAction.Completed = new AsyncActionCompletedHandler(
     (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =>
 {
