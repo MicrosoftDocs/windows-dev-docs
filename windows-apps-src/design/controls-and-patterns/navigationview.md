@@ -589,6 +589,8 @@ Here's the sample code:
 > If you're using the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/), then you'll need to add a reference to the toolkit: `using MUXC = Microsoft.UI.Xaml.Controls;`.
 
 ```csharp
+private Type currentPage;
+
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
 private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
@@ -632,7 +634,6 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
     else
@@ -650,7 +651,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 private void NavView_Navigate(string navItemTag)
 {
     var item = _pages.First(p => p.Tag.Equals(navItemTag));
+    if (currentPage == item.Page)
+         return;
     ContentFrame.Navigate(item.Page);
+
+    currentPage = item.Page;
 }
 
 private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
