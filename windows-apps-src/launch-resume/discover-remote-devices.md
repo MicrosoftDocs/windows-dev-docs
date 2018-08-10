@@ -8,7 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
 
