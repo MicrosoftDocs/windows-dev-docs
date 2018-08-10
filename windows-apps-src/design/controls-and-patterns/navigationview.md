@@ -632,7 +632,8 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-
+    if (args.InvokedItem == null)
+        return;
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
     else
