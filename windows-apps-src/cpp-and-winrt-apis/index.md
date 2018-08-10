@@ -30,6 +30,8 @@ You use standard C++ data types, algorithms, and keywords when you use C++/WinRT
 
 C++/WinRT performs better and produces smaller binaries than any other language option for the Windows Runtime. It even outperforms handwritten code using the ABI interfaces directly. That's because the abstractions use modern C++ idioms that the Visual C++ compiler is designed to optimize. This includes magic statics, empty base classes, **strlen** elision, as well as many newer optimizations in the latest version of Visual C++ targeted specifically at improving the performance of C++/WinRT.
 
+### Topics about C++/WinRT
+
 | Topic | Description |
 | - | - |
 | [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
@@ -55,6 +57,12 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md) | This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in C++/WinRT. |
 | [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609). |
 | [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
+
+### Topics about the C++ language
+
+| Topic | Description |
+| - | - |
+| [Value categories](cpp-value-categories.md) | This topic describes the various categories of values that exist in C++. You will doubtless have heard of lvalues and rvalues, but there are other kinds, too. |
 
 ## Important APIs
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
