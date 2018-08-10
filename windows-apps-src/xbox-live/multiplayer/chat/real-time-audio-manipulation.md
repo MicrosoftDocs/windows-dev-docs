@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication, buffer manipulation, audio manipulation
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Real-time audio manipulation

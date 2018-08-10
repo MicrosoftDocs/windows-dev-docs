@@ -7,7 +7,7 @@ ms.date: 04/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, privileges, Windows Dev Center
 ---
 # Configure Privileges on Windows Dev Center

@@ -3,7 +3,7 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: Choose visibility options
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,7 +70,7 @@ The selections in the **Discoverability** section indicate how customers can dis
 
 ### Make this product available and discoverable in the Store
 
-This is the default option. Leave this option selected if you want your app will be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists. 
+This is the default option. Leave this option selected if you want your app to be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists. 
 
 ### Make this product available but not discoverable in the Store
 

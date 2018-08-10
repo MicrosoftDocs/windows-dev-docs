@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, mpm, multiplayer, quality of service, qos, multiplayer manager, flowchart
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Flowchart - Use matchmaking and manage Quality of Service
