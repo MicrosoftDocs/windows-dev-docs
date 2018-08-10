@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, c, xsapi
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Introduction to the Xbox Live C APIs

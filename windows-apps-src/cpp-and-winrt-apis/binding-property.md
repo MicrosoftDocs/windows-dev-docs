@@ -44,7 +44,7 @@ namespace Bookstore
 ```
 
 > [!IMPORTANT]
-> For an application to pass [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests, and to be successfully ingested into the Microsoft Store, the ultimate base class of each runtime class *declared in the application* must be a type originating in a Windows.* namespace.
+> For an application to pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by the Microsoft Store to validate submissions, and therefore to be successfully ingested into the Microsoft Store, the ultimate base class of each runtime class *declared in the application* must be a type originating in a Windows.* namespace.
 
 To fulfil that requirement, derive your view model classes from [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Alternatively, declare a bindable base class derived from **DependencyObject**, and derive your view models from that. You can declare your data models as C++ structs; they don't need to be declared in MIDL (as long as you're consuming them only from your view models and not binding XAML directly to them; in which case they'd arguably be view models by definition, anyway).
 

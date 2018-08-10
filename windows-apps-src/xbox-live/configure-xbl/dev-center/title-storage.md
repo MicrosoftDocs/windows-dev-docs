@@ -7,7 +7,7 @@ ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Title Storage, Windows Dev Center
 ---
 # Configure storage for you title on Windows Dev Center

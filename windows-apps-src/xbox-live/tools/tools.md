@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, tools, player reset, live trace analyzer, LTA, xbox live account tool, 
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Development tools for Xbox Live

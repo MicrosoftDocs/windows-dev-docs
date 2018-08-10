@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, fiddler, service calls, troubleshoot
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Troubleshooting Xbox Live using Fiddler
