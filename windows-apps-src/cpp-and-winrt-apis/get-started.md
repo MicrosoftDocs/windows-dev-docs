@@ -46,7 +46,7 @@ int main()
     SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
     for (const SyndicationItem syndicationItem : syndicationFeed.Items())
     {
-        hstring titleAsHstring = syndicationItem.Title().Text();
+        winrt::hstring titleAsHstring = syndicationItem.Title().Text();
         std::wcout << titleAsHstring.c_str() << std::endl;
     }
 }
@@ -98,7 +98,7 @@ for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 [**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
 
 ```cppwinrt
-hstring titleAsHstring = syndicationItem.Title().Text();
+winrt::hstring titleAsHstring = syndicationItem.Title().Text();
 std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 
