@@ -8,7 +8,7 @@ ms.date: 10/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, education
 ms.localizationpriority: medium
 ---
 

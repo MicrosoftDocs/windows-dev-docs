@@ -400,7 +400,7 @@
 ### [Weak references](../cpp-and-winrt-apis/weak-references.md)
 ### [Agile objects](../cpp-and-winrt-apis/agile-objects.md)
 ### C++ language
-#### [Value categories](../cpp-and-winrt-apis/cpp-value-categories.md)
+#### [Value categories, and references](../cpp-and-winrt-apis/cpp-value-categories.md)
 
 ## [Security](../security/index.md)
 ### [Intro to secure Windows app development](../security/intro-to-secure-windows-app-development.md)
