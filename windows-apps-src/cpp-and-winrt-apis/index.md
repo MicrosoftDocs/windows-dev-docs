@@ -63,7 +63,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 
 | Topic | Description |
 | - | - |
-| [Value categories](cpp-value-categories.md) | This topic describes the various categories of values that exist in C++. You will doubtless have heard of lvalues and rvalues, but there are other kinds, too. |
+| [Value categories, and references to them](cpp-value-categories.md) | This topic describes the various categories of values that exist in C++. You will doubtless have heard of lvalues and rvalues, but there are other kinds, too. |
 
 ## Important APIs
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
