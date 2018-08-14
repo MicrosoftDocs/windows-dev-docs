@@ -1,17 +1,17 @@
 ---
 author: QuinnRadich
-title: What's New in Windows Docs in August 2018 - Develop UWP apps
+title: What's new in Windows Docs in August 2018 - Develop UWP apps
 description: New features, videos, samples, and developer guidance have been added to the Windows 10 developer documentation for August 2018.
 keywords: what's new, update, features, developer guidance, Windows 10, august
 ms.author: quradic
-ms.date: 8/9/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# What's New in the Windows Developer Docs in August 2018
+# What's new in the Windows Developer Documentation in August 2018
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of August.
 
@@ -25,17 +25,17 @@ The following features have been added to the Windows Insider Preview builds, av
 
 * The [Windows UI Library](https://aka.ms/winui-docs) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
-* [DropDownButton, SplitButton, and ToggleSplitButton](../design/controls-and-patterns/buttons.md) provide button controls with specialized features to enhance your app's user experience.
-
-* NavigationView now supports [Top navigation,](../design/controls-and-patterns/navigationview.md) for cases in which your app has a smaller number of navigation options and require more space for your app's content.
-
-* TreeView has been enhanced to support [data binding, item templates, and dragon and drop.](../design/controls-and-patterns/tree-view.md)
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface (UI).
 
 ![A split button for selecting foreground color](../design/controls-and-patterns/images/split-button-rtb.png)
 
+* NavigationView now supports [Top navigation](../design/controls-and-patterns/navigationview.md), for cases in which your app has a smaller number of navigation options and require more space for your app's content.
+
+* TreeView has been enhanced to support [data binding, item templates, and drag and drop.](../design/controls-and-patterns/tree-view.md)
+
 ### Package Support Framework
 
-The package support framework is an open source kit that helps you apply fixes to your win32 application when you don’t have access to the source code, so that it can run in an MSIX container.  
+The package support framework is an open-source kit that helps you apply fixes to your win32 application when you don’t have access to the source code, so that it can run in an MSIX container.
 
 To learn more, see [Apply runtime fixes to an MSIX package by using the Package Support Framework](../porting/package-support-framework.md).
 
@@ -47,7 +47,7 @@ A list of [legacy Microsoft API extensions](https://developer.mozilla.org/docs/W
 
 ### C++/WinRT Code examples
 
-We've added 250 [C++/WinRT](../cpp-and-winrt-apis/index.md) code snippets to topics in our docs, accompanying existing C++/CX code examples.
+We've added 250 [C++/WinRT](../cpp-and-winrt-apis/index.md) code listings to topics in our docs, accompanying existing C++/CX code examples.
 
 ### Project Rome
 
