@@ -33,7 +33,7 @@ Check out our PWA guides to:
 
 ### Notepad
 
-Available in Windows 10 Insider Preview Buil 17713, [Notepad has been updated with many new features](http://aka.ms/ant-man). Zooming, wrap-around find/replace, and support for Unix/Linux (LF) and Mac (CR) line endings are now available to [Windows Insiders](https://insider.windows.com/). 
+Available in Windows 10 Insider Preview Build 17713, [Notepad has been updated with many new features](http://aka.ms/ant-man). Zooming, wrap-around find/replace, and support for Unix/Linux (LF) and Mac (CR) line endings are now available to [Windows Insiders](https://insider.windows.com/). 
 
 ## Developer Guidance
 
