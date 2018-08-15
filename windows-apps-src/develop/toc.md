@@ -442,6 +442,7 @@
 ###### [Snap points](../composition/inertia-modifiers.md)
 ###### [Pull-to-refresh](../composition/source-modifiers.md)
 ### [Composition effects](../composition/composition-effects.md)
+#### [Composition shadows](../composition/composition-shadows.md)
 ### [Composition brushes](../composition/composition-brushes.md)
 ### [Composition native interoperation](../composition/composition-native-interop.md)
 ### [Composition lighting](../composition/lighting.md)
