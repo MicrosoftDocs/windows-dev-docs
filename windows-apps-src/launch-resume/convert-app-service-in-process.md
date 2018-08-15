@@ -37,7 +37,7 @@ Turning an out-of-process model App Service into an in-process model requires tw
 >   </Applications>
 > ```
 
-Remove the `EntryPoint` attribute from the `<Application>` element because now [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) is the entry point that will be used when the app service is invoked.
+Remove the `EntryPoint` attribute from the `<Extension>` element because now [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) is the entry point that will be used when the app service is invoked.
 
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
