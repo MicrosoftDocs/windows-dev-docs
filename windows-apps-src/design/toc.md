@@ -218,6 +218,7 @@
 ## [Input injection](input/input-injection.md)
 ## [Identify input devices](input/identify-input-devices.md)
 ## [Custom text input](input/custom-text-input.md)
+## [Text scaling](input/text-scaling.md)
 ## [Drag and drop](input/drag-and-drop.md)
 ## [Optical zoom and resizing](input/guidelines-for-optical-zoom.md)
 ## [Panning](input/guidelines-for-panning.md)
