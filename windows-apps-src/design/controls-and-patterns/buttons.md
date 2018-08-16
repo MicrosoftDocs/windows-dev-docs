@@ -214,7 +214,7 @@ A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button
 The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked.
 
 > [!TIP]
-> For more info about flyouts, see [Menus and context menus](menus.md) and [Command bar flyout](command-bar-flyout.md).
+> For more info about flyouts, see [Menus and context menus](menus.md).
 
 ### Example - Drop down button
 
