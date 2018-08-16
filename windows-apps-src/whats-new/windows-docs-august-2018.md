@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: What's new in Windows Docs in August 2018 - Develop UWP apps
+title: What's New in Windows Docs in August 2018 - Develop UWP apps
 description: New features, videos, samples, and developer guidance have been added to the Windows 10 developer documentation for August 2018.
 keywords: what's new, update, features, developer guidance, Windows 10, august
 ms.author: quradic
@@ -11,7 +11,7 @@ ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# What's new in the Windows Developer Documentation in August 2018
+# What's New in the Windows Developer Docs in August 2018
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of August.
 
@@ -25,7 +25,7 @@ The following features have been added to the Windows Insider Preview builds, av
 
 * The [Windows UI Library](https://aka.ms/winui-docs) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
-* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface (UI).
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface.
 
 ![A split button for selecting foreground color](../design/controls-and-patterns/images/split-button-rtb.png)
 

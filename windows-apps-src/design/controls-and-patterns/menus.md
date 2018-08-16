@@ -72,7 +72,7 @@ If you want to add commands (such as cut, copy, and paste) to a text element, us
 <ul>
 <li>Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.</li>
 <li>Are usually attached to a button or a parent menu item.</li>
-<li>Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).</li><li>Are associated with an element via its [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) or [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) properties.</li>
+<li>Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).</li><li>Are associated with an element via its <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> or <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a> properties.</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -80,7 +80,7 @@ If you want to add commands (such as cut, copy, and paste) to a text element, us
 
 <ul>
 <li>Are attached to a single element and display secondary commands.</li>
-<li>Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).</li><li>Are associated with an element via its [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property.</li>
+<li>Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).</li><li>Are associated with an element via its <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a> property.</li>
 </ul>
   </div>
 </div>
