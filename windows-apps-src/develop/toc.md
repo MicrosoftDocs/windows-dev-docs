@@ -443,11 +443,12 @@
 ###### [Pull-to-refresh](../composition/source-modifiers.md)
 ### [Composition effects](../composition/composition-effects.md)
 #### [Composition shadows](../composition/composition-shadows.md)
+#### [Composition lighting](../composition/composition-lighting.md)
 ### [Composition brushes](../composition/composition-brushes.md)
 ### [Composition native interoperation](../composition/composition-native-interop.md)
-### [Composition lighting](../composition/lighting.md)
 ### [Tailoring your UI](../composition/composition-tailoring.md)
 ### [Using XAML](../composition/using-the-visual-layer-with-xaml.md)
+#### [XAML lighting](../composition/xaml-lighting.md)
 
 ## [Windows as a service](../updates-and-versions/application-development-for-windows-as-a-service.md)
 
