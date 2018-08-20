@@ -239,9 +239,9 @@ The difference is that while WSDAs are automatically activated for the user (the
 
 ### Set the workflow app's policy
 The workflow app policy is set by Powershell commands on the device that is to run the workflow app. The Set-Printer, Add-Printer (existing port) and Add-Printer (new WSD port) commands will be modified to allow Workflow policies to be set. 
-* `Off`: Workflow apps will not be activated.
-* `Optional`: Workflow apps will be activated if the Workflow DCA is installed in the system. If the app is not installed, printing will still proceed. 
-* `On`: Workflow contract will be activated if the Workflow DCA is installed in the system. If the app is not installed, printing will fail. 
+* `Disabled`: Workflow apps will not be activated.
+* `Uninitialized`: Workflow apps will be activated if the Workflow DCA is installed in the system. If the app is not installed, printing will still proceed. 
+* `Enabled`: Workflow contract will be activated if the Workflow DCA is installed in the system. If the app is not installed, printing will fail. 
 
 The following command makes the workflow app required on the specified printer.
 ```Powershell

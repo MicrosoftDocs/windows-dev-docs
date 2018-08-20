@@ -49,11 +49,11 @@ But there are values that are not glvalues. Consequently, there are values that 
 
 The "r" in "rvalue" is an abbreviation of "right" (as in, the right-hand-side of an assignment). But you can use rvalues, and references to rvalues, outside of assignments. The "r" in "rvalues", then, is not the thing to focus on. You need only to understand that what we call an rvalue is a value that is movable.
 
-An lvalue, conversely, isn't movable, as shown in this illustration. You can't move an lvalue because, if you could, then it'd be unsafe (or even disastrous) to continue to access it afterward. Remember, you have its identity.
+An lvalue, conversely, isn't movable, as shown in this illustration. An lvalue that moved would defy the definition of *lvalue*, and it would be an unexpected problem for code that very reasonably expected to be able to continue to access the lvalue.
 
 ![An rvalue is movable; an lvalue is not](images/is-movable.png)
 
-You can't move an lvalue. But there *is* a kind of glvalue (the set of things with identity) that you can move&mdash;if you know what you're doing&mdash;and that's the xvalue. We'll revisit this idea one more time below, when we look at the complete picture of value categories.
+You can't move an lvalue. But there *is* a kind of glvalue (the set of things with identity) that you can move&mdash;if you know what you're doing (including being careful not to access it after the move)&mdash;and that's the xvalue. We'll revisit this idea one more time below, when we look at the complete picture of value categories.
 
 ## Rvalue references, and reference-binding rules
 This section introduces the syntax for a reference to an rvalue. We'll have to wait for another topic to go into a substantial treatment of moving and forwarding, but those are problems that are solved by rvalue references. Before we look at rvalue references, though, we first need to be clearer about `T&`&mdash;the thing we've formerly been calling just "a reference". It's really "an lvalue (non-const) reference", which refers to an value to which the user of the reference can write.
