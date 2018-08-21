@@ -46,7 +46,7 @@ This topic describes performance guidelines for apps that require access to a us
 
     Release the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object if the user turns off access to location info through Settings. The app will then receive **ACCESS\_DENIED** results for any location API calls. If your app saves or caches location data, clear any cached data when the user revokes access to location info. Provide an alternate way to manually enter location info when location data is not available via location services.
 
--   Provide UI for reenabling location services. For example, provie a refresh button that reinstantiates the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object and tries to get location info again.
+-   Provide UI for reenabling location services. For example, provide a refresh button that reinstantiates the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object and tries to get location info again.
 
     Have your app provide UI for reenabling location services—
 
@@ -86,7 +86,7 @@ This topic describes performance guidelines for apps that require access to a us
         For example:
 
         -   If your app is obtaining location for ads tuning, weather, news, etc, an accuracy of 5000 meter is generally enough.
-        -   If you app is displaying nearby deals in the neighborhood, an accuracy of 300 meter is generally good to provide results.
+        -   If your app is displaying nearby deals in the neighborhood, an accuracy of 300 meter is generally good to provide results.
         -   If the user is looking for recommendations to nearby restaurants, we likely want to get a position within a block, so an accuracy of 100 meters is sufficient.
         -   If the user is trying to share his position, the app should request an accuracy of about 10 meters.
     -   Use the [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) property if your app has specific accuracy requirements. For example, navigation apps should use the **Geocoordinate.accuracy** property to determine whether the available location data meets the app's requirements.
