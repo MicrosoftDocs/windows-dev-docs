@@ -24,7 +24,7 @@ The C++ programming language is used both in the enterprise *and* independent so
 
 From a language point of view, C++ has always been about authoring and consuming abstractions that are both type-rich and lightweight. But the language has changed radically since the raw pointers, raw loops, and painstaking memory allocation and releasing of C++98. Modern C++ (from C++11 onward) is about clear expression of ideas, simplicity, readability, and a much lower likelihood of introducing bugs.
 
-For authoring and consuming Windows Runtime APIs using C++, there is C++/WinRT. This is Microsoft's recommended replacement for the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live).
+For authoring and consuming Windows Runtime APIs using C++, there is C++/WinRT. This is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live).
 
 You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have. C++/WinRT makes it extremely easy to call Windows Runtime APIs in any C++ application, from Win32 to UWP.
 
