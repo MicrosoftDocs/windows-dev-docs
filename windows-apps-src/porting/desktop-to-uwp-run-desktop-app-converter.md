@@ -4,7 +4,7 @@ Description: Run the Desktop Converter App to package a Windows desktop applicat
 Search.Product: eADQiWindows 10XVcnh
 title: Package an app using the Desktop App Converter (Desktop Bridge)
 ms.author: normesta
-ms.date: 09/18/2017
+ms.date: 08/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -265,6 +265,8 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-Installer &lt;String&gt; |Required |The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your app files. |
 |-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path &lt;log_folder&gt; if you want the converter to capture it and put it in the final log folder.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Optional |A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
+|-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to package the output as an MSIX Package. |
 |<a id="identity-params" /><strong>Package identity parameters</strong>||
 |-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-Publisher &lt;String&gt; |Required |The publisher of your Universal Windows App package |
@@ -286,7 +288,6 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-PackageArch &lt;String&gt; |Required |Generates a package with the specified architecture. Valid options are 'x86' or 'x64'; for example, -PackageArch x86. This parameter is optional. If unspecified, the DesktopAppConverter will try to auto-detect package architecture. If auto-detection fails, it will default to x64 package. |
 |<a id="other-params" /><strong>Miscellaneous parameters</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |Optional |Full path to an already expanded base image.|
-|-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
 | -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
 |&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
