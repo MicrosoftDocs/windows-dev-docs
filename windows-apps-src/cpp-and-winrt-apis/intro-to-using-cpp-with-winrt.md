@@ -17,6 +17,8 @@ ms.localizationpriority: medium
 
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler. The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).
 
+C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](index.md#topics-about-cwinrt) includes info about both interoperating with, and porting from, C++/CX and WRL.
+
 > [!IMPORTANT]
 > Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, and the VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
 
