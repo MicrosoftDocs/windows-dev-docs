@@ -108,7 +108,7 @@ You'll need all the required info for at least one of the languages that your ap
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Publishing hold options**     | Default: Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)      | [Publishing hold options](manage-submission-options.md#publishing-hold-options)    
 | **Notes for certification**     | Recommended          | [Notes for certification](notes-for-certification.md)             |
-| **Restricted capabilities**     | Required if your product declares any [restricted capabilities](../packaging/app-capability-declarations.md#restricted-capabilities    | [Restricted capabilities](manage-submission-options.md#publishing-hold-options)       
+| **Restricted capabilities**     | Required if your product declares any [restricted capabilities](../packaging/app-capability-declarations.md#restricted-capabilities)    | [Restricted capabilities](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

@@ -4,7 +4,7 @@ title: Gamepad and vibration
 description: Use the Windows.Gaming.Input gamepad APIs to detect, read, and send vibration and impulse commands to gamepads.
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 8/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -322,7 +322,7 @@ Unlike the others, the two vibration motors inside the triggers are identical so
 
 ## Run the gamepad vibration sample
 
-The [GamepadVibrationUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/GamepadVibrationUWP) demonstrates how the gamepad vibration motors and impulse triggers are used to produce a variety of effects.
+The [GamepadVibrationUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) demonstrates how the gamepad vibration motors and impulse triggers are used to produce a variety of effects.
 
 ## See also
 

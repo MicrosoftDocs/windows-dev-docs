@@ -35,3 +35,5 @@ For more information on Project Rome in general, including resources for cross-p
 | [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
 | [Connect devices through remote sessions](remote-sessions.md) | Create shared experiences across multiple devices by joining them in a remote session. |
+| [Continue user activity, even across devices](useractivities.md)| Help users resume what they were doing in your app, even across multiple devices.|
+| [User Activities best practices](useractivities-best-practices.md)| Learn the recommended practices for creating and updating User Activities.|
