@@ -46,6 +46,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Error handling with C++/WinRT](error-handling.md) | This topic discusses strategies for handling errors when programming with C++/WinRT. |
 | [Handle events by using delegates](handle-events.md) | This topic shows how to register and revoke event-handling delegates using C++/WinRT. |
 | [Author events](author-events.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
+| [Collections with C++/WinRT](collections.md) | C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections. |
 | [Concurrency and asynchronous operations](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
 | [XAML controls; bind to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
