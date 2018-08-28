@@ -39,7 +39,7 @@ This topic describes the following URI schemes built into Windows:
 |[ms-settings:](#settings-app-uri-scheme) | Settings app |
 |[ms-store:](#store-app-uri-scheme)  | Store app |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
-|[ms-yellowpage:](#f) | Nearby Numbers app |
+|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
 |[msnweather:](#weather-app-uri-scheme) | Weather app |
 
 <br>
