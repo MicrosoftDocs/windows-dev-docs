@@ -135,7 +135,7 @@ Add a XAML UI to your UWP project. Here's the XAML for a basic map.
 
 ### Add a protocol extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution, and add this extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the Packaging project in your solution, and add this extension.
 
 ```xml
 <Extensions>
@@ -306,9 +306,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### Add an app service extension to the UWP project
+### Add an app service extension to the Packaging project
 
-Open the **package.appxmanifest** file of the UWP project, and add an app service extension to the ``<Application>`` element.
+Open the **package.appxmanifest** file of the Packaging project, and add an app service extension to the ``<Application>`` element.
 
 ```xml
 <Extensions>
@@ -393,7 +393,7 @@ To make your application a share target, do these things:
 
 ### Add a share target extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution and add the extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the Packaging project in your solution and add the extension.
 
 ```xml
 <Extensions>
@@ -507,7 +507,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### Configure the background task
 
-In the manifest designer, open the **package.appxmanifest** file of the UWP project in your solution.
+In the manifest designer, open the **package.appxmanifest** file of the Packaging project in your solution.
 
 In the **Declarations** tab, add a **Background Tasks** declaration.
 
