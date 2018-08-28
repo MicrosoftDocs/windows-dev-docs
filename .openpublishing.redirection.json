@@ -1800,6 +1800,11 @@
       "source_path": "windows-apps-src/machine-learning/train-ai-model.md",
       "redirect_url": "https://docs.microsoft.com/windows/ai/get-onnx-model",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/composition/lighting.md",
+      "redirect_url": "/windows/uwp/composition/xaml-lighting",
+      "redirect_document_id": true
     }
 
   ]

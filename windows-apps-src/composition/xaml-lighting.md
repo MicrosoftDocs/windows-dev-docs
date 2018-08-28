@@ -1,7 +1,6 @@
 ---
-author: jebishop
-ms.assetid: fb8ae71d-5c88-4c85-9257-a9607d5179b1
-title: lighting
+author: daneuber
+title: XAML lighting
 description: Light objects are used in conjunction with SceneLightingEffect to simulate dynamic lighting and reflectivity.
 ms.author: jimwalk
 ms.date: 06/28/2018
@@ -15,24 +14,23 @@ dev_langs:
   - vb
   - cpp
   - cppwinrt
-
 ---
-# Lighting
+# XAML lighting
 
-[**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
+[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
 
-You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement).
+You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## Applying lights to XAML UIElements
 
-[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
 
-* If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.
-* If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.
+- If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.
+- If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.
 
 ## Creating and using a XamlLight
 
-[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.
 
 This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes.
 
@@ -205,7 +203,8 @@ End Class
 ```
 
 ```cppwinrt
-// For the C++/WinRT code example, you'll need to add a Midl File (.idl) file to your project.
+// For the C++/WinRT code example below, you'll need to add a Midl File (.idl) file to your project.
+
 // OrangeSpotLight.idl
 namespace MyApp
 {
