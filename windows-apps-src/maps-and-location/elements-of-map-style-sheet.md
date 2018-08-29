@@ -15,9 +15,11 @@ ms.localizationpriority: medium
 
 # Map style sheet reference
 
-Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) through the [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) method.
+Microsoft mapping technologies use _map style sheets_ to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) through the [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) method.
 
-For example, you'd use the following JSON to make water areas appear in red, water labels appear in green, and land areas appear in blue:
+Style sheets can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
+
+The following JSON can be used to make water areas appear in red, water labels appear in green, and land areas appear in blue:
 
 ```json
     {"version":"1.*",
@@ -25,7 +27,8 @@ For example, you'd use the following JSON to make water areas appear in red, wat
         "elements":{"water":{"fillColor":"#FF0000","labelColor":"#00FF00"}}
     }
 ```
-You could also use JSON to remove all labels and points from a map.
+
+This JSON can be used to remove all labels and points from a map.
 
 ```json
 
