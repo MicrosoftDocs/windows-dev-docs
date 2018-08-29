@@ -1805,7 +1805,11 @@
       "source_path": "windows-apps-src/composition/lighting.md",
       "redirect_url": "/windows/uwp/composition/xaml-lighting",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/devices-sensors/pos-barcodescanner-get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
+      "redirect_document_id": true
     }
-
   ]
 }
