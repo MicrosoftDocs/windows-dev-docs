@@ -37,7 +37,7 @@ The BatchRequest object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
   users:
   [

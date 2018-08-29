@@ -35,7 +35,7 @@ The GameClipThumbnail object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
          "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,

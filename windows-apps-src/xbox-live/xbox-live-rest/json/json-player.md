@@ -37,7 +37,7 @@ The Player object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "xuid": 2533274790412952,
     "gamertag":"MyTestUser",

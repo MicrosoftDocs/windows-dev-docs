@@ -32,7 +32,7 @@ Contains paging information for results that are returned in pages of data.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "continuationToken":"16354135464161213-0708c1ba-147f-48cc-9ad9-546gaadg648"
    "totalItems":5,

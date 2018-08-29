@@ -35,7 +35,7 @@ The ResetReputation object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "fairplayReputation": 75,
     "commsReputation": 75,

@@ -34,7 +34,7 @@ The ActivityRequest object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     richPresence:
     {

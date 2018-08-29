@@ -34,7 +34,7 @@ The PermissionCheckResult object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "reason": "MissingPrivilege",
     "restrictedSetting": "VideoCommunications"

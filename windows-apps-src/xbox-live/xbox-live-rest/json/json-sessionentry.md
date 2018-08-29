@@ -39,7 +39,7 @@ The SessionEntry object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "titleId" : "1234567",
    "timestamp" : "2011-11-18T08:08:46Z",

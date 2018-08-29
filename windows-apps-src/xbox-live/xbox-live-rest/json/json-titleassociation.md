@@ -35,7 +35,7 @@ The TitleAssociation object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
   "name":"Microsoft Achievements Sample",
   "id":3051199919,

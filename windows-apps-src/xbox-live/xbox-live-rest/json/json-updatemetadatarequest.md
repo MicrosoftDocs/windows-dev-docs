@@ -37,7 +37,7 @@ The UpdateMetadataRequest object has the following specification.
 Changing User Clip Name and Visibility:
  
 
-```cpp
+```json
 {
   "userCaption": "I've changed this 100 Times!",
   "visibility": "Owner"
@@ -49,7 +49,7 @@ Changing User Clip Name and Visibility:
 Changing just title properties (this is just an example, since the schema of this field is up to the caller):
  
 
-```cpp
+```json
 {
   "titleData": "{ 'Id': '123456', 'Location': 'C:\\videos\\123456.mp4' }"
 }

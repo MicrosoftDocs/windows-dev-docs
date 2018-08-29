@@ -34,7 +34,7 @@ The VerifyStringResult object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
     "verifyStringResult":
     [

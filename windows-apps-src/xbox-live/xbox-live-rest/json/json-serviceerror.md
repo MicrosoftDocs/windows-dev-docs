@@ -49,7 +49,7 @@ The ServiceError object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "code": 4000,
     "source": "ReputationFD",

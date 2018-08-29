@@ -34,7 +34,7 @@ The PermissionCheckBatchRequest object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "users":
     [

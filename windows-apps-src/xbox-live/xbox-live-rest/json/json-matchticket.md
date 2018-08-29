@@ -38,7 +38,7 @@ The MatchTicket JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
         "serviceConfig": "07617C5B-3423-4505-B6C6-10A16E1E5DDB",
         "hopperName": "TestHopper",
