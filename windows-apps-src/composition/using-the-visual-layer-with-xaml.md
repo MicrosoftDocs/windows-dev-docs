@@ -37,7 +37,7 @@ For code examples, see the reference page for [**XamlCompositionBrushBase**](htt
 
 **XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
 
-See the [**Lighting**](lighting.md) section for more info on using lights, including lighting XAML UI elements.
+See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
 For code examples, see the reference page for [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
 
