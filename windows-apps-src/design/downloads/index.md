@@ -23,19 +23,19 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
-        ![hero image](images/adobe-xd.jpg)
+        ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/adobe-illustrator.jpg)
+        ![hero image](images/adobe-illustrator.png)
         <b>Adobe Illustrator toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/sketch.jpg)
+        ![hero image](images/sketch.png)
         <b>Sketch</b><br>
         v1803, March 2018<br>
         <a href="https://aka.ms/sketchtoolkit">Download</a>
@@ -44,13 +44,13 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
-        ![hero image](images/adobe-photoshop.jpg)
+        ![hero image](images/adobe-photoshop.png)
         <b>Adobe Photoshop toolkit</b><br>
         v1705, May 2017<br>
         <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/framer.jpg)
+        ![hero image](images/framer.png)
         <b>Framer toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
@@ -63,11 +63,13 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
+        ![WinUI library thumbnail](images/WinUI-library.png)
         <b>Windows UI Library</b><br>
         Controls and other UI elements for UWP apps.<br/>
         <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
         <b>Windows Community Toolkit</b><br>
         Helper functions, custom controls, and app services.<br />
         <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
