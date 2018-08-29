@@ -1,5 +1,5 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: Navigation history and backwards navigation (Windows apps)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
@@ -7,7 +7,7 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
@@ -301,7 +301,7 @@ If your app continues to use [AppViewBackButtonVisibility](https://docs.microsof
 > [!NOTE]
 > "System back bar" is only a description, not an official name.
 
-The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
+The system back bar is a ï¿½bandï¿½ that is inserted between the tab band and the appï¿½s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
 
 The system back bar is displayed dynamically, based on back button visibility. When the back button is visible, the system back bar is inserted, shifting app content down by 32 pixels below the tab band. When the back button is hidden, the system back bar is dynamically removed, shifting app content up by 32 pixels to meet the tab band. To avoid having your app's UI shift up or down, we recommend drawing an [in-app back button](#back-button).
 
