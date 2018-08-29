@@ -118,6 +118,7 @@
 ## [Data binding](../data-binding/index.md)
 ### [Data binding overview](../data-binding/data-binding-quickstart.md)
 ### [Data binding in depth](../data-binding/data-binding-in-depth.md)
+### [Functions in x:Bind ](../data-binding/function-bindings.md)
 ### [Tutorial: Create data bindings](../data-binding/xaml-basics-data-binding.md)
 ### [Sample data on the design surface, and for prototyping](../data-binding/displaying-data-in-the-designer.md)
 ### [Bind hierarchical data and create a master/details view](../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)

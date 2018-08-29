@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
+-   [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Binding class**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
@@ -58,7 +59,8 @@ In the following sections, we'll take a closer look at the binding source, the b
 
 Here's a very rudimentary implementation of a class that we could use as a binding source.
 
-**Note**  If you're using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) with Visual C++ component extensions (C++/CX) then you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to your binding source class. If you're using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) then you don't need that attribute. See [Adding a details view](data-binding-quickstart.md#adding-a-details-view) for a code snippet.
+> [!Note]
+> If you're using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) with Visual C++ component extensions (C++/CX) then you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to your binding source class. If you're using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) then you don't need that attribute. See [Adding a details view](data-binding-quickstart.md#adding-a-details-view) for a code snippet.
 
 ```csharp
 public class HostViewModel
@@ -78,7 +80,8 @@ One way of doing that is to derive the class that represents your binding source
 
 A more lightweight way of making a class observable—and a necessary one for classes that already have a base class—is to implement [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). This really just involves implementing a single event named **PropertyChanged**. An example using **HostViewModel** is below.
 
-**Note**  For C++/CX, you implement [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), and the binding source class must either have the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+> [!Note]
+> For C++/CX, you implement [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), and the binding source class must either have the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -152,12 +155,11 @@ You can bind list controls to arbitrarily large data sources, and still achieve 
 
 In the two examples below, the **Button.Content** property is the binding target, and its value is set to a markup extension which declares the binding object. First [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) is shown, and then [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Declaring bindings in markup is the common case (it's convenient, readable, and toolable). But you can avoid markup and imperatively (programmatically) create an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class instead if you need to.
 
-<!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-```xml
+```xaml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-```xml
+```xaml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -183,7 +185,7 @@ namespace QuizGame.View
 
 That done, we can now take a closer look at the markup that declares the binding object. The example below uses the same **Button.Content** binding target we used in the "Binding target" section earlier, and shows it being bound to the **HostViewModel.NextButtonText** property.
 
-```xml
+```xaml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -193,13 +195,14 @@ Notice the value that we specify for **Path**. This value is interpreted in the 
 
 The [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). For other settings, see [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-**Note**  Changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus, and not after every user keystroke.
+> [!Note]
+> Changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus, and not after every user keystroke.
 
 **DataTemplate and x:DataType**
 
 Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) (whether used as an item template, a content template, or a header template), the value of **Path** is not interpreted in the context of the page, but in the context of the data object being templated. When using {x:Bind} in a data template, so that its bindings can be validated (and efficient code generated for them) at compile-time, the **DataTemplate** needs to declare the type of its data object using **x:DataType**. The example given below could be used as the **ItemTemplate** of an items control bound to a collection of **SampleDataGroup** objects.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -216,15 +219,14 @@ Consider for example that you have a type named SampleDataGroup, which implement
 
 Code to support **{x:Bind}** is generated at compile-time in the partial classes for your pages. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`. The generated code includes a handler for your page's [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) event, and that handler calls the **Initialize** method on a generated class that represent's your page's bindings. **Initialize** in turn calls **Update** to begin moving data between the binding source and the target. **Loading** is raised just before the first measure pass of the page or user control. So if your data is loaded asynchronously it may not be ready by the time **Initialize** is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling `this.Bindings.Update();`. If you only need one-time bindings for asynchronously-loaded data then it’s much cheaper to initialize them this way than it is to have one-way bindings and to listen for changes. If your data does not undergo fine-grained changes, and if it's likely to be updated as part of a specific action, then you can make your bindings one-time, and force a manual update at any time with a call to **Update**.
 
-**Limitations**
-
-**{x:Bind}** is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing which is a weak form of typing based on lexical matches on property names ("if it walks, swims, and quacks like a duck then it's a duck"). With duck typing, a binding to the Age property would be equally satisfied with a Person or a Wine object. For these scenarios, use **{Binding}**.
+> [!Note]
+> **{x:Bind}** is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing which is a weak form of typing based on lexical matches on property names ("if it walks, swims, and quacks like a duck then it's a duck"). With duck typing, a binding to the Age property would be equally satisfied with a Person or a Wine object. For these scenarios, use **{Binding}**.
 
 ### Binding object declared using {Binding}
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) assumes, by default, that you're binding to the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) of your markup page. So we'll set the **DataContext** of our page to be an instance of our binding source class (of type **HostViewModel** in this case). The example below shows the markup that declares the binding object. We use the same **Button.Content** binding target we used in the "Binding target" section earlier, and we bind to the **HostViewModel.NextButtonText** property.
 
-```xml
+```xaml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -242,7 +244,7 @@ A binding object has a **Source** property, which defaults to the [**DataContext
 
 Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) is set to the data object being templated. The example given below could be used as the **ItemTemplate** of an items control bound to a collection of any type that has string properties named **Title** and **Description**.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -251,7 +253,8 @@ Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR24
   </DataTemplate>
 ```
 
-**Note**  By default, changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus. To cause changes to be sent after every user keystroke, set **UpdateSourceTrigger** to **PropertyChanged** on the binding in markup. You can also completely take control of when changes are sent to the source by setting **UpdateSourceTrigger** to **Explicit**. You then handle events on the text box (typically [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), call [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) on the target to get a [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) object, and finally call [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) to programmatically update the data source.
+> [!Note]
+> By default, changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus. To cause changes to be sent after every user keystroke, set **UpdateSourceTrigger** to **PropertyChanged** on the binding in markup. You can also completely take control of when changes are sent to the source by setting **UpdateSourceTrigger** to **Explicit**. You then handle events on the text box (typically [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), call [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) on the target to get a [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) object, and finally call [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) to programmatically update the data source.
 
 The [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). The [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) property is useful for element-to-element binding. The [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) property has several uses, one of which is as a more powerful alternative to template binding inside a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). For other settings, see [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) and the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class.
 
@@ -345,7 +348,7 @@ End Class
 
 And here's how you consume that value converter in your binding object markup.
 
-```xml
+```xaml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -363,7 +366,8 @@ The binding engine calls the [**Convert**](https://msdn.microsoft.com/library/wi
 
 The converter also has optional parameters: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), which allows specifying the language to be used in the conversion, and [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), which allows passing a parameter for the conversion logic. For an example that uses a converter parameter, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Note**  If there is an error in the conversion, do not throw an exception. Instead, return [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), which will stop the data transfer.
+> [!Note]
+> If there is an error in the conversion, do not throw an exception. Instead, return [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), which will stop the data transfer.
 
 To display a default value to use whenever the binding source cannot be resolved, set the **FallbackValue** property on the binding object in markup. This is useful to handle conversion and formatting errors. It is also useful to bind to source properties that might not exist on all objects in a bound collection of heterogeneous types.
 
@@ -374,7 +378,7 @@ If you bind a text control to a value that is not a string, the data binding eng
 
 ## Function binding in {x:Bind}
 
-{x:Bind} enables the final step in a binding path to be a function. This can be used to perform conversions, and to perform bindings that depend on more than one property. See [**{x:Bind} Markup Extension**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
+{x:Bind} enables the final step in a binding path to be a function. This can be used to perform conversions, and to perform bindings that depend on more than one property. See [**Functions in x:Bind**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -384,7 +388,7 @@ The [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/
 
 TemplatesResourceDictionary.xaml
 
-```xml
+```xaml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -417,7 +421,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-```xml
+```xaml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -447,7 +451,7 @@ MainPage.xaml
 
 You can then bind a button's **Click** event to a method on the **Frame** object returned by the **RootFrame** property like this. Note that we also bind the button's **IsEnabled** property to another member of the same **Frame**.
 
-```xml
+```xaml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -512,15 +516,13 @@ The example below illustrates the "has-a-group" pattern. The page class has a pr
     ...
 
     <GridView
-    ItemsSource="{Binding Source={StaticResource AuthorHasACollectionOfBookSku}}" ...>
+    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
         <GridView.GroupStyle>
             <GroupStyle
                 HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
         </GridView.GroupStyle>
     </GridView>
 ```
-
-Note that the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) must use [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (and not [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) because it needs to set the **Source** property to a resource. To see the above example in the context of the complete app, download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) sample app. Unlike the markup shown above, [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) uses {Binding} exclusively.
 
 You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from **List&lt;T&gt;** (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. The second way is to use a [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) expression to dynamically create group objects (and a group class) from like property values of the **BookSku** items. This approach—maintaining only a flat list of items and grouping them together on the fly—is typical of an app that accesses data from a cloud service. You get the flexibility to group books by author or by genre (for example) without needing special group classes such as **Author** and **Genre**.
 
@@ -550,13 +552,13 @@ The example below illustrates the "is-a-group" pattern using [LINQ](http://msdn.
 
 Remember that when using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) with data templates we need to indicate the type being bound to by setting an **x:DataType** value. If the type is generic then we can't express that in markup so we need to use [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) instead in the group style header template.
 
-```xml
+```xaml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{Binding Genres}"
+        Source="{x:Bind Genres}"
         IsSourceGrouped="true"/>
     </Grid.Resources>
-    <GridView ItemsSource="{Binding Source={StaticResource GenreIsACollectionOfBookSku}}">
+    <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
                 <TextBlock Text="{x:Bind Title}"/>
@@ -598,7 +600,7 @@ You can also connect UI elements to data using procedural code instead of XAML. 
 
 The following example shows how to implement a binding in code.
 
-```xml
+```xaml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -649,8 +651,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Used when any part of the path for the binding (except for the leaf) is null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | With {x:Bind} you're binding to a field; Path is rooted at the Page by default, so any named element can be accessed via its field. | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | With {x:Bind}, name the element and use its name in Path. | 
-| RelativeSource: TemplatedParent | Not supported | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Regular template binding can be used in control templates for most uses. But use TemplatedParent where you need to use a converter, or a two-way binding.< | 
-| Source | Not supported | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
+| RelativeSource: TemplatedParent | Not needed | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | With {x:Bind} TargetType on ControlTemplate indicates binding to template parent. For {Binding} Regular template binding can be used in control templates for most uses. But use TemplatedParent where you need to use a converter, or a two-way binding.< | 
+| Source | Not needed | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} you can directly use the named element, use a property or a static path. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode can be OneTime, OneWay, or TwoWay. {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger can be Default, LostFocus, or PropertyChanged. {x:Bind} does not support UpdateSourceTrigger=Explicit. {x:Bind} uses PropertyChanged behavior for all cases except TextBox.Text, where it uses LostFocus behavior. | 
 
