@@ -1,10 +1,10 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
 label: Buttons
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

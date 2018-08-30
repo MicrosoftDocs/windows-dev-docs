@@ -34,7 +34,7 @@ The DeviceRecord object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 [{
     type:"D",
     titles:

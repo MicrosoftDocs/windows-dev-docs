@@ -34,7 +34,7 @@ The HopperStatsResults JSON object has the following specification.
 ## Sample JSON syntax 
  
 
-```cpp
+```json
 {
       "hopperName":"contosoawesome2",
       "waitTime":30,

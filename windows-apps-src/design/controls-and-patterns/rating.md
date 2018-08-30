@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: Enables users to view and set ratings that reflect satisfaction with content and services. 
 title: Rating Control
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows

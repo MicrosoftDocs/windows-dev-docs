@@ -36,7 +36,7 @@ The AggregateSessionsResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "totalSessions" : 300,
    "totalDurationInSeconds" : 1240,

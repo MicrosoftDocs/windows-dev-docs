@@ -36,7 +36,7 @@ The MultiplayerSession JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
       "properties": {
         "system": {
@@ -93,7 +93,7 @@ For the request structure associated with this JSON specification, see [Multipla
 ## Response Structure
  
 
-```cpp
+```json
 {
   // The contract version of this rendering of the session. A function of the contract version of the request and constants/system/version.
   "contractVersion": 107,

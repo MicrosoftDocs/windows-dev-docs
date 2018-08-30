@@ -49,7 +49,7 @@ The InitialUploadRequest object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "greatestMomentId": "123abc",
    "userCaption": "OMG Look at this!",

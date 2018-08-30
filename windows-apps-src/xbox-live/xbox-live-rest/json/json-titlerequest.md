@@ -36,7 +36,7 @@ The TitleRequest object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
   id:"12341234",
   placement:"snapped",

@@ -36,7 +36,7 @@ The MultiplayerSessionRequest JSON object has the following specification.
 ## Request Structure
  
 
-```cpp
+```json
 {
   "constants": { /* Property Bag */ },
   "properties": { /* Property Bag */ },

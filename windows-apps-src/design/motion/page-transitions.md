@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to use page transitions in your UWP apps.
 title: Page transitions in UWP apps
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 04/08/2018
 ms.topic: article
 ms.prod: windows

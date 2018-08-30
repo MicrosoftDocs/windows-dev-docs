@@ -34,7 +34,7 @@ The PeopleList object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "people": [
         {

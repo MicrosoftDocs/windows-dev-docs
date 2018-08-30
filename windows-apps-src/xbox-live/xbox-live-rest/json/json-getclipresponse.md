@@ -33,7 +33,7 @@ The GetClipResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
  "gameClip": {
    "xuid": "2716903703773872",

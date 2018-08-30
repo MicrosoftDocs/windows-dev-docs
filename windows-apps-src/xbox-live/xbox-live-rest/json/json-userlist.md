@@ -33,7 +33,7 @@ The UserList object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "users":
     [

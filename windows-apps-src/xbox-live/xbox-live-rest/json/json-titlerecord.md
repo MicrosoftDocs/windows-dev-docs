@@ -40,7 +40,7 @@ The TitleRecord object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
       id:"12341234",
       name:"Contoso 5",

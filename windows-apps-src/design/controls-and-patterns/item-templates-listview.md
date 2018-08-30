@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Item templates for list view
 title: Item templates for list view
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows

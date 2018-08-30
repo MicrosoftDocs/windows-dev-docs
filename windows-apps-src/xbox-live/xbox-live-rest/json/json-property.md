@@ -35,7 +35,7 @@ The Property object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
     "id":"1",
     "value":"20",
