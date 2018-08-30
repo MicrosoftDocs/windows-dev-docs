@@ -38,7 +38,7 @@ The TitleBlob object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "fileName":"foo\bar\blob.txt,binary",
     "clientFileTime":"2012-01-01T01:02:03.1234567Z",

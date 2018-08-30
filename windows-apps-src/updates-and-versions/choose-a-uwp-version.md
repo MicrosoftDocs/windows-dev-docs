@@ -30,7 +30,7 @@ The following table describes the available versions of Windows 10. Please note 
 | Build 10586 (November Update, version 1511) | This version of Windows 10 was released in November 2015. Highlighted features include the introduction of ORTC (object real-time communications) APIs for video communication in Microsoft Edge and Providers APIs to enable apps to use Windows Hello face authentication. [More information on features introduced in this build.](../whats-new/windows-10-build-10586.md) |
 | Build 10240 (Windows 10, version 1507) | This is the initial release version of Windows 10, from July 2015. [More information on features introduced in this build.](../whats-new/windows-10-build-10240.md) |
 
-We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (16299). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
+We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (17134). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
 
 ## What's different in each UWP version?
 

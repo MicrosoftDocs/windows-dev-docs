@@ -36,7 +36,7 @@ The PresenceRecord object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
   xuid:"0123456789",
   state:"online",

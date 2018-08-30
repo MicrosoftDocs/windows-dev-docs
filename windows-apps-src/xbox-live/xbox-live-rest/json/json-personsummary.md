@@ -41,7 +41,7 @@ The PersonSummary object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "targetFollowingCount": 87,
     "targetFollowerCount": 19,

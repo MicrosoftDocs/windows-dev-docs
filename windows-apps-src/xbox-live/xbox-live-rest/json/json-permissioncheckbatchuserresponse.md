@@ -34,7 +34,7 @@ The PermissionCheckBatchUserResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "User": {"Xuid": "12345"},
     "Permissions":

@@ -34,7 +34,7 @@ The ServiceErrorResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "errorCode": 8377,
    "errorMessage": "XUID specified in the claim does not match URI XUID."

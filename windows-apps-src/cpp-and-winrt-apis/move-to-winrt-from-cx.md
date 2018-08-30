@@ -62,7 +62,7 @@ if (userList != nullptr)
     ...
 ```
 
-When converting to the equivalent C++/WinRT code, you basically remove the hats and change the arrow operator (-&gt;) to the dot operator (.), because C++/WinRT projected types are values, and not pointers.
+When porting to the equivalent C++/WinRT code, you basically remove the hats and change the arrow operator (-&gt;) to the dot operator (.), because C++/WinRT projected types are values, and not pointers.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -176,6 +176,43 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+```
+
+## Converting from a base runtime class to a derived one
+It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+The equivalent C++/WinRT code replaces the `dynamic_cast` with a call to the [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) function, which encapsulates **QueryInterface**. You also have the option to call [**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), instead, which throws an exception if querying for the required interface (the default interface of the type you're requesting) is not returned. Here's a C++/WinRT code example.
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
 ```
 
 ## Event-handling with a delegate

@@ -1,8 +1,8 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: Learn how to use accent colors and themes in your UWP apps.
 title: Color in UWP apps
-ms.author: sezhen
+ms.author: quradic
 ms.date: 4/7/2018
 ms.topic: article
 ms.prod: windows

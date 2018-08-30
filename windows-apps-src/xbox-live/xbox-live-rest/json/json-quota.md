@@ -38,7 +38,7 @@ For global storage
 The following example shows the response for global storage:
  
 
-```cpp
+```json
 {
     "quotaInfo":
     {

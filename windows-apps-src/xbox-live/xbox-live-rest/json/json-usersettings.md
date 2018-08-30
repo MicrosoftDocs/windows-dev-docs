@@ -36,7 +36,7 @@ The UserSettings object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "id":268697600,
    "source":1,

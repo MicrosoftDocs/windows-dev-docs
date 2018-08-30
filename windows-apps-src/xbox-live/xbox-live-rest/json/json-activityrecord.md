@@ -34,7 +34,7 @@ The ActivityRecord object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
         richPresence:"Team Deathmatch on Nirvana"
       }

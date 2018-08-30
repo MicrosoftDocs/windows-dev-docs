@@ -80,7 +80,7 @@ The "Sent by" column indicates who can submit the feedback.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
 "sessionRef": {
   "scid": "372D829B-FA8E-471F-B696-07B61F09EC20",

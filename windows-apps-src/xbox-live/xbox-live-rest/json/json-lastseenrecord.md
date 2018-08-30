@@ -36,7 +36,7 @@ The LastSeenRecord object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
   deviceType:W8,	
   titleId:"23452345",
