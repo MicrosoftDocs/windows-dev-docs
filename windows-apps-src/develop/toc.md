@@ -247,6 +247,8 @@
 ###### [Get insights data for your app](../monetize/get-insights-data-for-your-app.md)
 ###### [Get app ratings](../monetize/get-app-ratings.md)
 ###### [Get app reviews](../monetize/get-app-reviews.md)
+###### [Get daily app usage](../monetize/get-app-usage-daily.md)
+###### [Get monthly app usage](../monetize/get-app-usage-monthly.md)
 ###### [Get error reporting data](../monetize/get-error-reporting-data.md)
 ####### [Get details for an error in your app](../monetize/get-details-for-an-error-in-your-app.md)
 ####### [Get the stack trace for an error in your app](../monetize/get-the-stack-trace-for-an-error-in-your-app.md)
