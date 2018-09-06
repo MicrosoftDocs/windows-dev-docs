@@ -4,7 +4,7 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -101,8 +101,8 @@ Elements in the *Value* array contain the following values.
 | deviceType      | string  | One of the following strings that indicates the type of device on which the error occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | string  | The unique name of the app package that is associated with this error.      |
 | packageVersion  | string  | The version of the app package that is associated with this error.   |
-| deviceCount     | integer | The number of unique devices that correspond to this error for the specified aggregation level.  |
-| eventCount      | integer | The number of events that are attributed to this error for the specified aggregation level.      |
+| deviceCount     | number | The number of unique devices that correspond to this error for the specified aggregation level.  |
+| eventCount      | number | The number of events that are attributed to this error for the specified aggregation level.      |
 
 
 ### Response example
