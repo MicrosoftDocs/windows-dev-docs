@@ -259,7 +259,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 In the lamba capture clause, a temporary variable is created, representing a weak reference to *this*. In the body of the lambda, if a strong reference to *this* can be obtained, then the **OnCompositionScaleChanged** function is called. That way, inside **OnCompositionScaleChanged**, *this* can safely be used.
 
 ## Important APIs
-* [winrt::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 

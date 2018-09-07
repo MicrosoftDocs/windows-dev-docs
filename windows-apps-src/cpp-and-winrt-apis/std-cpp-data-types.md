@@ -151,7 +151,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) when calling asynchronous Windows Runtime APIs. However, in many cases, C++ coroutines provide an efficient and more easily-coded idiom for interacting with asynchronous objects. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
 ## Important APIs
-* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
+* [IVector&lt;T&gt; interface](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
 ## Related topics

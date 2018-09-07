@@ -375,13 +375,13 @@ Until you make the edit described above (to pass that constructor parameter on t
 
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [winrt::from_abi function template](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)

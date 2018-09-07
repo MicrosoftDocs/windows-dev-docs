@@ -115,10 +115,10 @@ As you can see, C++/WinRT encourages modern, and class-like, C++ expressions suc
 Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions such as [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) for a natural and modern programming style. For more info about error-handling, and code examples, see [Error handling with C++/WinRT](error-handling.md).
 
 ## Important APIs
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed.Items property](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresult-error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::hresult-error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

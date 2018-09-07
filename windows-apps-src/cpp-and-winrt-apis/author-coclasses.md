@@ -17,8 +17,6 @@ C++/WinRT can help you to author classic Component Object Model (COM) components
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
-
 #include "pch.h"
 
 using namespace winrt;
@@ -41,6 +39,8 @@ int main()
     winrt::check_hresult(mycoclass_instance->GetClassID(&id));
 }
 ```
+
+Also see [Consume COM components with C++/WinRT](consume-com.md).
 
 ## A more realistic and interesting example
 
@@ -75,7 +75,7 @@ using namespace Windows::UI::Notifications;
 
 ## Implement the coclass and class factory
 
-In C++/WinRT, you implement coclasses, and class factories, by deriving directly from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct. Immediately after the three using-directives shown above (and before `main`), paste this code to implement your toast activator COM component.
+In C++/WinRT, you implement coclasses, and class factories, by deriving from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct. Immediately after the three using-directives shown above (and before `main`), paste this code to implement your toast notification COM activator component.
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -132,7 +132,7 @@ The coclass that we just implemented is known as the *COM activator* for notific
 
 ## Best practices for implementing COM methods
 
-Techniques for error handling and for resource management can go hand-in-hand. It's more convenient and practical to use exceptions than error codes. And if you employ the Resource acquisition is initialization (RAII) idiom, then you can avoid: explicitly checking for error codes; and then explicitly releasing resources. Doing so makes your code more convoluted than necessary, and it gives bugs plenty of places to hide. Instead, use RAII and catch exceptions. That way, your resource allocations are exception-safe, and your code is simple.
+Techniques for error handling and for resource management can go hand-in-hand. It's more convenient and practical to use exceptions than error codes. And if you employ the resource-acquisition-is-initialization (RAII) idiom, then you can avoid explicitly checking for error codes and then explicitly releasing resources. Such explicit checks make your code more convoluted than necessary, and it gives bugs plenty of places to hide. Instead, use RAII, and throw/catch exceptions. That way, your resource allocations are exception-safe, and your code is simple.
 
 However, you mustn't allow exceptions to escape your COM method implementations. You can ensure that by using the `noexcept` specifier on your COM methods. It's ok for exceptions to be thrown anywhere in the call graph of your method, as long as you handle them before your method exits.
 
@@ -371,3 +371,13 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## How to test the example application
 
 Build the application, and then run it at least once as Administrator to cause the registration, and other setup, code to run. Whether or not you're running it as Administrator, then press 'T' to cause a toast to be displayed. You can then click the **Call back ToastAndCallback** button either directly from the toast notification that pops up, or from the Action Center, and your application will be launched, the coclass instantiated, and the **INotificationActivationCallback::Activate** method executed.
+
+## Important APIs
+* [IInspectable interface](https://msdn.microsoft.com/library/br205821)
+* [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
+
+## Related topics
+* [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Consume COM components with C++/WinRT](consume-com.md)
+* [Send a local toast notification](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
