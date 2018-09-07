@@ -23,7 +23,7 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 
 ## Create a Windows Runtime Component (BankAccountWRC)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
+Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Universal** > **Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
 
 The newly-created project contains a file named `Class.idl`. Rename that file `BankAccount.idl` (renaming the `.idl` file automatically renames the dependent `.h` and `.cpp` files, too). Replace the contents of `BankAccount.idl` with the listing below.
 
@@ -96,7 +96,7 @@ If any warnings prevent you from building, then either resolve them or set the p
 
 ## Create a Core App (BankAccountCoreApp) to test the Windows Runtime Component
 
-Now create a new project (either in your `BankAccountWRC` solution, or in a new one). Create a **Visual C++ Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
+Now create a new project (either in your `BankAccountWRC` solution, or in a new one). Create a **Visual C++** > **Windows Universal** > **Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
 
 Add a reference, and browse to `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (or add a project-to-project reference, if the two projects are in the same solution). Click **Add**, and then **OK**. Now build BankAccountCoreApp. In the unlikely event that you see an error that the payload file `readme.txt` doesn't exist, exclude that file from the Windows Runtime Component project, rebuild it, then rebuild BankAccountCoreApp.
 
