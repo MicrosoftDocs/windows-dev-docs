@@ -1810,6 +1810,11 @@
       "source_path": "windows-apps-src/devices-sensors/pos-barcodescanner-get-started.md",
       "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
       "redirect_document_id": true
+    },
+	{
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos",
+      "redirect_document_id": true
     }
   ]
 }

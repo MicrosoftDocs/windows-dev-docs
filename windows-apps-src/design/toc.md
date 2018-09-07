@@ -103,6 +103,7 @@
 ## [Typography](style/typography.md)
 ## Icons
 ### [Overview](style/icons.md)
+### [App icons and logos](style/app-icons-and-logos.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
 ## [Acrylic](style/acrylic.md)
 ## [Reveal highlight](style/reveal.md)
@@ -129,7 +130,6 @@
 
 # Shell
 ## [Tiles](shell/tiles-and-notifications/creating-tiles.md)
-### [Tile and icon asset guidelines](shell/tiles-and-notifications/app-assets.md)
 ### [Secondary tiles](shell/tiles-and-notifications/secondary-tiles.md)
 #### [Guidance](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [Pin secondary tiles](shell/tiles-and-notifications/secondary-tiles-pinning.md)
