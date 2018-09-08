@@ -55,8 +55,6 @@ Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C+
 Open `main.cpp`, and remove the using-directives that the project template generates. In their place, paste the following code (which gives us the libs, headers, and type names that we need).
 
 ```cppwinrt
-#pragma comment(lib, "onecore")
-#pragma comment(lib, "propsys")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -87,17 +85,24 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
-    HRESULT __stdcall Activate(
-        [[maybe_unused]] LPCWSTR app,
-        [[maybe_unused]] LPCWSTR args,
-        [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
-        [[maybe_unused]] ULONG count) noexcept final
-    {
-        std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-        std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-        std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
-        return S_OK;
-    }
+	HRESULT __stdcall Activate(
+		LPCWSTR app,
+		LPCWSTR args,
+		[[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
+		[[maybe_unused]] ULONG count) noexcept final
+	{
+		try
+		{
+			std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+			std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+			std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+            return S_OK;
+        }
+		catch (...)
+		{
+            return winrt::to_hresult();
+		}
+	}
 };
 
 struct callback_factory : implements<callback_factory, IClassFactory>
@@ -134,7 +139,7 @@ The coclass that we just implemented is known as the *COM activator* for notific
 
 Techniques for error handling and for resource management can go hand-in-hand. It's more convenient and practical to use exceptions than error codes. And if you employ the resource-acquisition-is-initialization (RAII) idiom, then you can avoid explicitly checking for error codes and then explicitly releasing resources. Such explicit checks make your code more convoluted than necessary, and it gives bugs plenty of places to hide. Instead, use RAII, and throw/catch exceptions. That way, your resource allocations are exception-safe, and your code is simple.
 
-However, you mustn't allow exceptions to escape your COM method implementations. You can ensure that by using the `noexcept` specifier on your COM methods. It's ok for exceptions to be thrown anywhere in the call graph of your method, as long as you handle them before your method exits.
+However, you mustn't allow exceptions to escape your COM method implementations. You can ensure that by using the `noexcept` specifier on your COM methods. It's ok for exceptions to be thrown anywhere in the call graph of your method, as long as you handle them before your method exits. If you use `noexcept`, but you then allow an exception to escape your method, then your application will terminate.
 
 ## Add helper types and functions
 
