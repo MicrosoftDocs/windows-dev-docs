@@ -69,7 +69,7 @@ The Desktop App Converter translates the actions of your installer to the virtua
 
 :heavy_check_mark: Registers your public COM servers.
 
-:heavy_check_mark: Generates a certificate to that you can use to run your app.
+:heavy_check_mark: Generates a certificate that you can use to run your app.
 
 :heavy_check_mark: Validates your app against Desktop Bridge and Microsoft Store requirements.
 
