@@ -187,10 +187,10 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 *Overridable* functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as protected virtual functions. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.
 
 ## Important APIs
-* [Control](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement](/uwp/api/windows.ui.xaml.uielement)
+* [Control class](/uwp/api/windows.ui.xaml.controls.control)
+* [DependencyProperty class](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement class](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement class](/uwp/api/windows.ui.xaml.uielement)
 
 ## Related topics
 * [Control templates](/windows/uwp/design/controls-and-patterns/control-templates)
