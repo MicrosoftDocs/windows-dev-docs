@@ -320,19 +320,19 @@ private:
 ```
 
 ## Important APIs
-* [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
-* [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-* [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-* [winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
-* [winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
-* [winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
-* [winrt::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
-* [winrt::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
-* [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
-* [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
-* [winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [ItemsControl.ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
+* [IObservableVector interface](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+* [IVector interface](/uwp/api/windows.foundation.collections.ivector_t_)
+* [winrt::map_base struct template](/uwp/cpp-ref-for-winrt/map-base)
+* [winrt::map_view_base struct template](/uwp/cpp-ref-for-winrt/map-view-base)
+* [winrt::observable_map_base struct template](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [winrt::observable_vector_base struct template](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [winrt::single_threaded_observable_map function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [winrt::single_threaded_map function template](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [winrt::single_threaded_observable_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [winrt::single_threaded_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [winrt::vector_base struct template](/uwp/cpp-ref-for-winrt/vector-base)
+* [winrt::vector_view_base struct template](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## Related topics
 * [Value categories, and references to them](cpp-value-categories.md)

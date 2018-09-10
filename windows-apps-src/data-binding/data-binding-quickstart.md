@@ -239,10 +239,12 @@ RecordingViewModel ViewModel{ get; };
 ...
 
 // MainPage.h
-// Add this field:
+// Add this property and this field:
 ...
 #include "RecordingViewModel.h"
 ...
+    Quickstart::RecordingViewModel ViewModel();
+
 private:
     Quickstart::RecordingViewModel m_viewModel{ nullptr };
 ...
@@ -294,6 +296,8 @@ The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.On
     </Grid>
 </Page>
 ```
+
+If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you'll need to remove the **MainPage::ClickHandler** function in order for the project to build.
 
 Here's the result.
 
