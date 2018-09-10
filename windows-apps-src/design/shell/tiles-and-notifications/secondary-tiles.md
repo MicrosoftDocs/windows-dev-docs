@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
 title: Secondary tiles
 label: Secondary tiles

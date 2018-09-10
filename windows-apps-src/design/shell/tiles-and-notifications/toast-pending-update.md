@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to create multi-step interactions in your notifications.
 title: Toast with pending update activation
 label: Toast with pending update activation

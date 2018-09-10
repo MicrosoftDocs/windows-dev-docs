@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to send a local toast notification and handle the user clicking the toast.
 title: Send a local toast notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
