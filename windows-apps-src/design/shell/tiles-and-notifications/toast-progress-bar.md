@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use a progress bar within your toast notification.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
