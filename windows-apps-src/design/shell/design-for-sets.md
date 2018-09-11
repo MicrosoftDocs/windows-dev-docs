@@ -113,7 +113,7 @@ If you've placed content or functionality in your custom title bar UI, consider 
 
 To make sure your app icon looks its best in a Set, you should provide an alternate, unplated icon for your app. (The app icon used in your app's tab is the same icon used in the taskbar.) The purpose of the alternate icon is to look good against any background color. The alternate icon will be used if available.
 
-In you app manifest, specify an alternate-form unplated icon in addition to your regular icon. For more information, see [Tile and icon asset guidelines](./tiles-and-notifications/app-assets.md). The icon to specify is documented as "Target-size list assets without plate" in the [Asset types](./tiles-and-notifications/app-assets.md#asset-types) section of the article.
+In you app manifest, specify an alternate-form unplated icon in addition to your regular icon. For more information, see [App icons and logos](/windows/uwp/design/style/app-icons-and-logos). The icon to specify is documented as "Target-size list assets without plate" in the [More about app icon assets](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets) section of the article.
 
 If you don't specify an alternate icon in the app manifest, the system will re-plate your the tile icon with the tab color and use that.
 

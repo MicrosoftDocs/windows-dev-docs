@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Tile and toast notification support for language, scale, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md) and [Asset size tables](app-assets.md#asset-size-tables).
+Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md) and [App icons and logos](/windows/uwp/design/style/app-icons-and-logos).
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](../../globalizing/globalizing-portal.md).
 

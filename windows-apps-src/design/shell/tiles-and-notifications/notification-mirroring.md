@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use notification mirroring on your toast notifications.
 title: Notification mirroring
 label: Notification mirroring
