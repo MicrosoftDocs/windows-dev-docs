@@ -78,7 +78,7 @@ For every media playback, you need to set **MediaProtectionManager** to:
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
+The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalCache\\PlayReady\\\*
 
 -   If there is an mspr.hds file, you are in software DRM.
 -   If you have another \*.hds file, you are in hardware DRM.
