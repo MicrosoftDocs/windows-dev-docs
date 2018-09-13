@@ -130,7 +130,7 @@ To launch the Manifest Designer:
 :::row-end:::
 :::row:::
     :::column:::
-        2. In the **Solution Explorer**, double-click the package.appmanifest file.
+        2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
     :::column-end:::
     :::column:::
         ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
