@@ -379,8 +379,6 @@ This API has the following expected status codes.
 ---
 ## Bluetooth
 ---
-> [!WARNING]
-> The APIs in this section are part of a flighted build and are only available through the [Windows Insider Program](https://insider.windows.com/).
 
 ### Get the Bluetooth radios on the machine
 
