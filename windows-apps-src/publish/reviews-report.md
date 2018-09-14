@@ -63,7 +63,7 @@ Note that this chart always includes all of your reviews, even if you selected *
 This chart can also be seen in the [Ratings report](ratings-report.md), along with more details about your app's ratings.
 
 
-<span id = "review-insight-categories />
+<span id = "review-insight-categories" />
 
 ## Insight categories
 
