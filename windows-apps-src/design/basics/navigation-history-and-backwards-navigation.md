@@ -330,14 +330,14 @@ If you choose to provide your own back stack navigation, the experience should b
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
-<p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as [NavigationView](../controls-and-patterns/navigationview.md)) that provides direct navigation to both pages.</p></td>
+<p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) that provides direct navigation to both pages.</p></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
 <p>In the following illustration, the user navigates between two pages in the same peer group, and the navigation should be added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
-<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
+<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
 <td style="vertical-align:top;"><strong>It depends</strong>
 <p>Yes, add to the navigation history, with two notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational hierarchy, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
