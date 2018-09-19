@@ -1,9 +1,9 @@
 ---
 author: TylerMSFT
-title: Convert an out-of-process background task to an in-process background task
-description: Convert an out-of-process background task into an in-process background task that runs inside your foreground app process.
+title: Port an out-of-process background task to an in-process background task
+description: Port an out-of-process background task to an in-process background task that runs inside your foreground app process.
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
