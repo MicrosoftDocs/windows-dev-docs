@@ -39,6 +39,7 @@
 ## [Buttons](controls-and-patterns/buttons.md)
 ## [Check box](controls-and-patterns/checkbox.md)
 ## [Color picker](controls-and-patterns/color-picker.md)
+## [Command bar flyout](controls-and-patterns/command-bar-flyout.md)
 ## [Contact card](controls-and-patterns/contact-card.md)
 ## [Date and time](controls-and-patterns/date-and-time.md)
 ### [Calendar date picker](controls-and-patterns/calendar-date-picker.md)
@@ -100,6 +101,7 @@
 ## [Typography](style/typography.md)
 ## Icons
 ### [Overview](style/icons.md)
+### [App icons and logos](style/app-icons-and-logos.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
 ## [Acrylic](style/acrylic.md)
 ## [Reveal highlight](style/reveal.md)
@@ -126,7 +128,6 @@
 
 # Shell
 ## [Tiles](shell/tiles-and-notifications/creating-tiles.md)
-### [Tile and icon asset guidelines](shell/tiles-and-notifications/app-assets.md)
 ### [Secondary tiles](shell/tiles-and-notifications/secondary-tiles.md)
 #### [Guidance](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [Pin secondary tiles](shell/tiles-and-notifications/secondary-tiles-pinning.md)

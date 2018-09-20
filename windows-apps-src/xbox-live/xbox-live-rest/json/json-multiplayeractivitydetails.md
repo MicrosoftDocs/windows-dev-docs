@@ -45,7 +45,7 @@ The MultiplayerActivityDetails JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
   "results": [{
     "id": "11111111-ebe0-42da-885f-033860a818f6",

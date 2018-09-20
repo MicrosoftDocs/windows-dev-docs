@@ -33,6 +33,9 @@ When users start your application, the PSF launcher is the first executable that
 ![Package Support Framework  DLL Injection](images/desktop-to-uwp/package-support-framework-2.png)
 
 The runtime manager applies the fix when it's needed by the application to run inside of an MSIX container.
+=======
+To learn more, see [Package Support Framework](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
+
 
 This guide will help you to identify application compatibility issues, and to find, apply, and extend runtime fixes that address them.
 

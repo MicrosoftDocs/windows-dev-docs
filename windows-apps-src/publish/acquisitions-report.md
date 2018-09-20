@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/15/2018
+ms.date: 09/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,6 +44,8 @@ The info in all of the charts listed below will reflect the date range and any f
 The **Acquisitions** chart shows the number of daily or weekly acquisitions (a new customer obtaining a license for your app) over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart. 
 
 By default, we show the **App daily** view, which includes near real time data. You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+
+**Gross sales** for your app (from October 2016 - present) are also available in this chart, showing the total amount earned from app sales (in USD). Note that this amount does not account for any refunds,  reversals, chargeback, etc.
 
 You can optionally filter the results by whether the acquisition originated from the client or web-based Store and/or by OS version.
 

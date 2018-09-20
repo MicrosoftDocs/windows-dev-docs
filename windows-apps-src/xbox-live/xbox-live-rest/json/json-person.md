@@ -36,7 +36,7 @@ The Person object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "xuid": "2603643534573581",
     "isFavorite": false,

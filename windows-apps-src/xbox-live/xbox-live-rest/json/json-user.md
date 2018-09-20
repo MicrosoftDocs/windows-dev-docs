@@ -36,7 +36,7 @@ The User object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 { 
    "gamertag":"TrueBlue402",
    "rank":2,

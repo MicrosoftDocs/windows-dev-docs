@@ -36,7 +36,7 @@ The InitialUploadResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "gameClipId": "6b364924-5650-480f-86a7-fc002a1ee752"  ,  
    "uploadUri": "https://gameclips.xbox.live/upload/xuid(2716903703773872)/6b364924-5650-480f-86a7-fc002a1ee752/container",

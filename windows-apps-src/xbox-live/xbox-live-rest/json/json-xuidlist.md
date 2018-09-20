@@ -33,7 +33,7 @@ The XuidList object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "xuids": [
         "2533274790395904", 

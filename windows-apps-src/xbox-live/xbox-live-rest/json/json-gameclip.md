@@ -51,7 +51,7 @@ The GameClip object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
      "id": "7ce5c1a7-1255-46d3-a90e-34a0e2dfab06",
      "xuid": "2716903703773872",

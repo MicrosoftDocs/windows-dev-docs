@@ -35,7 +35,7 @@ The RichPresenceRequest object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
       id:"playingMapWeapon",
       scid:"abba0123-08ba-48ca-9f1a-21627b189b0f",

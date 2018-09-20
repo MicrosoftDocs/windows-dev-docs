@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 title: Toast content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01

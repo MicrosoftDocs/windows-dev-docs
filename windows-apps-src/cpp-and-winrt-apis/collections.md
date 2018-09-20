@@ -53,7 +53,7 @@ int main()
 }
 ```
 
-As you can see in the code example above, after creating the collection you can append elements, iterate over them, and generally treat the object as you would any Windows Runtime collection object that you might have received from an API. If you need an immutable view over the collection, then you can call [IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview), as shown. The pattern shown above&mdash;of creating and consuming a collection&mdash;is appropriate for simple scenarios where you want to pass data into, or get data out of, an API.
+As you can see in the code example above, after creating the collection you can append elements, iterate over them, and generally treat the object as you would any Windows Runtime collection object that you might have received from an API. If you need an immutable view over the collection, then you can call [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), as shown. The pattern shown above&mdash;of creating and consuming a collection&mdash;is appropriate for simple scenarios where you want to pass data into, or get data out of, an API. You can pass an **IVector**, or an **IVectorView**, anywhere an [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_) is expected.
 
 ### General-purpose collection, primed from data
 
@@ -80,7 +80,14 @@ auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>(
 bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-The collection above *can* be bound to a XAML items control; but the collection isn't observable.
+You can create a Windows Runtime collection from data, and get a view on it ready to pass to an API, all without copying anything.
+
+```cppwinrt
+std::vector<float> values{ 0.1f, 0.2f, 0.3f };
+IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+```
+
+In the examples above, the collection we create *can* be bound to a XAML items control; but the collection isn't observable.
 
 ### Observable collection
 
@@ -313,19 +320,19 @@ private:
 ```
 
 ## Important APIs
-* [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
-* [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-* [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-* [winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
-* [winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
-* [winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
-* [winrt::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
-* [winrt::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
-* [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
-* [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
-* [winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [ItemsControl.ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
+* [IObservableVector interface](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+* [IVector interface](/uwp/api/windows.foundation.collections.ivector_t_)
+* [winrt::map_base struct template](/uwp/cpp-ref-for-winrt/map-base)
+* [winrt::map_view_base struct template](/uwp/cpp-ref-for-winrt/map-view-base)
+* [winrt::observable_map_base struct template](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [winrt::observable_vector_base struct template](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [winrt::single_threaded_observable_map function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [winrt::single_threaded_map function template](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [winrt::single_threaded_observable_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [winrt::single_threaded_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [winrt::vector_base struct template](/uwp/cpp-ref-for-winrt/vector-base)
+* [winrt::vector_view_base struct template](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## Related topics
 * [Value categories, and references to them](cpp-value-categories.md)

@@ -36,7 +36,7 @@ The GameResult JSON object has the following members.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "xuid": 2533274790412952,
    "outcome": "Win",

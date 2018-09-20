@@ -106,7 +106,7 @@ MainPage::MainPage()
 
 ## Important APIs
 * [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [QueryInterface function](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 

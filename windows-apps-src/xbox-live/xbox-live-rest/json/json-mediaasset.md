@@ -35,7 +35,7 @@ The MediaAsset object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
   "name":"Icon Name",
   "type":"Icon",

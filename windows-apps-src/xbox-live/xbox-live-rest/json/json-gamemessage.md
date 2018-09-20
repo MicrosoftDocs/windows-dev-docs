@@ -36,7 +36,7 @@ The GameMessage JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "queueIndex": 0,
     "sequenceNumber": 5,

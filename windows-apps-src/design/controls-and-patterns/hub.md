@@ -1,11 +1,11 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The hub control uses a hierarchical navigation pattern to support apps with a relational information architecture.
 title: Hub controls
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use custom timestamps on your toast notifications.
 title: Custom timestamps on toasts
 label: Custom timestamps on toasts

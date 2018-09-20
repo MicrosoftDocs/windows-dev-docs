@@ -221,6 +221,8 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 You can also use JSON to define custom styles and then use that JSON to create a [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) object.
 
+Style sheet JSON can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
+
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
     {

@@ -171,5 +171,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## Important APIs
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)
-* [winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_hstring function](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_string function](/uwp/cpp-ref-for-winrt/to-string)
