@@ -69,9 +69,9 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
- <tr><td><img src="images/segoe-mdl/E700.png" width="32" height="32" alt="GlobalNavButton" /></td>
+ <tr><td><img src="images/segoe-mdl/E700.png" width="32" height="32" alt="GlobalNavigationButton" /></td>
   <td>E700</td>
-  <td>GlobalNavButton</td>
+  <td>GlobalNavigationButton</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E701.png" width="32" height="32" alt="Wifi" /></td>
   <td>E701</td>
