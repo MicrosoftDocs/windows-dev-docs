@@ -68,13 +68,13 @@ The second issue appears in the following image.
 
 ![ProcMon Logfile](images/desktop-to-uwp/procmon_logfile.png)
 
-In this issue, the application is failing to write a .log file to its package path. This would suggest that a file redirection shim might help.
+In this issue, the application is failing to write a .log file to its package path. This would suggest that a file redirection fixup might help.
 
 <a id="find" />
 
 ## Find a runtime fix
 
-The PSF contains runtime fixes that you can use right now, such as the file redirection shim.
+The PSF contains runtime fixes that you can use right now, such as the file redirection fixup.
 
 ### File Redirection Fixup
 
@@ -163,7 +163,7 @@ Open your package manifest in a text editor, and then set the `Executable` attri
 
 ### Create a configuration file
 
-Create a file name ``config.json``, and save that file to the root folder of your package. Modify the declared app ID of the config.json file to point to the executable that you just replaced. Using the knowledge that you gained from using Process Monitor, you can also set the working directory as well as use the file redirection shim to redirect reads/writes to .log files under the package-relative "PSFSampleApp" directory.
+Create a file name ``config.json``, and save that file to the root folder of your package. Modify the declared app ID of the config.json file to point to the executable that you just replaced. Using the knowledge that you gained from using Process Monitor, you can also set the working directory as well as use the file redirection fixup to redirect reads/writes to .log files under the package-relative "PSFSampleApp" directory.
 
 ```json
 {
@@ -207,9 +207,9 @@ Following is a guide for the config.json schema:
 | applications | workingDirectory | (Optional) A package-relative path to use as the working directory of the application that starts. If you don't set this value, the operating system uses the `System32` directory as the application's working directory. |
 | processes | executable | In most cases, this will be the name of the `executable` configured above with the path and file extension removed. |
 | fixups | dll | Package-relative path to the fixup, .msix/.appx  to load. |
-| fixups | config | (Optional) Controls how the fixup dl behaves. The exact format of this value varies on a fixup-by-fixup basis as each shim can interpret this "blob" as it wants. |
+| fixups | config | (Optional) Controls how the fixup dl behaves. The exact format of this value varies on a fixup-by-fixup basis as each fixup can interpret this "blob" as it wants. |
 
-The `applications`, `processes`, and `shims` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and shim DLL.
+The `applications`, `processes`, and `fixups` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and fixup DLL.
 
 
 ### Package and Test the App
@@ -242,7 +242,7 @@ Run the application and observe the behavior with runtime fix applied.  Repeat t
 
 ### Use the Trace Fixup
 
-An alternative technique to diagnosing packaged application compatibility issues is to use the Trace Fixup. This DLL is included with the PSF and provides a detailed diagnostic view of the app's behavior, similar to Process Monitor.  It is specially designed to reveal application compatibility issues.  To use the Trace Shim, add the DLL to the package, add the following fragment to your config.json, and then package and install your application.
+An alternative technique to diagnosing packaged application compatibility issues is to use the Trace Fixup. This DLL is included with the PSF and provides a detailed diagnostic view of the app's behavior, similar to Process Monitor.  It is specially designed to reveal application compatibility issues.  To use the Trace Fixup, add the DLL to the package, add the following fragment to your config.json, and then package and install your application.
 
 ```json
 {
@@ -377,14 +377,14 @@ In the packaging project, right-click the **Applications** folder, and then choo
 
 ![Add Project Reference](images/desktop-to-uwp/add-reference-packaging-project.png)
 
-Choose the shim launcher project and your desktop application project, and then choose the **OK** button.
+Choose the PSF launcher project and your desktop application project, and then choose the **OK** button.
 
 ![Desktop project](images/desktop-to-uwp/package-project-references.png)
 
 >[!NOTE]
-> If you don't have the source code to your application, just choose the shim launcher project. We'll show you how to reference your executable when you create a configuration file.
+> If you don't have the source code to your application, just choose the PSF launcher project. We'll show you how to reference your executable when you create a configuration file.
 
-In the **Applications** node, right-click the shim launcher application, and then choose **Set as Entry Point**.
+In the **Applications** node, right-click the PSF launcher application, and then choose **Set as Entry Point**.
 
 ![Set entry point](images/desktop-to-uwp/set-startup-project.png)
 
@@ -450,7 +450,7 @@ When you're done, your ``config.json`` file will look something like this.
 
 ### Debug a runtime fix
 
-In Visual Studio, press F5 to start the debugger.  The first thing that starts is the shim launcher application, which in turn, starts your target desktop application.  To debug the target desktop application, you'll have to manually attach to the desktop application process by choosing **Debug**->**Attach to Process**, and then selecting the application process. To permit the debugging of a .NET application with a native runtime fix DLL, select managed and native code types (mixed mode debugging).  
+In Visual Studio, press F5 to start the debugger.  The first thing that starts is the PSF launcher application, which in turn, starts your target desktop application.  To debug the target desktop application, you'll have to manually attach to the desktop application process by choosing **Debug**->**Attach to Process**, and then selecting the application process. To permit the debugging of a .NET application with a native runtime fix DLL, select managed and native code types (mixed mode debugging).  
 
 Once you've set this up, you can set break points next to lines of code in the desktop application code and the runtime fix project. If you don't have the source code to your application, you'll be able to set break points only next to lines of code in your runtime fix project.
 
