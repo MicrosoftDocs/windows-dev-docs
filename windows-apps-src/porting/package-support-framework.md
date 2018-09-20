@@ -16,26 +16,7 @@ ms.localizationpriority: medium
 
 The Package Support Framework is an open source kit that helps you apply fixes to your existing win32 application when you don't have access to the source code, so that it can run in an MSIX container. The Package Support Framework helps your application follow the best practices of the modern runtime environment.
 
-To create the Package Support Framework, we leveraged the [Detours](https://www.microsoft.com/en-us/research/project/detours) technology which is an open source framework developed by Microsoft Research (MSR) and helps with API redirection and hooking.
-
-This framework is open source, lightweight, and you can use it to address application issues quickly. It also gives you the opportunity to consult with the community around the globe, and to build on top of the investments of others.
-
-## A quick look inside of the Package Support Framework
-
-The Package Support Framework contains an executable, a runtime manager  DLL, and a set of runtime fixes.
-
-![Package Support Framework](images/desktop-to-uwp/package-support-framework.png)
-
-Here's how it works. You'll create a configuration file that specifies the fix(s) that you want to apply to your application. Then, you'll modify your package to point to the PSF launcher executable file.
-
-When users start your application, the PSF launcher is the first executable that runs. It reads your configuration file, and injects the runtime fix(es) and the runtime manager  DLL into the application process.
-
-![Package Support Framework  DLL Injection](images/desktop-to-uwp/package-support-framework-2.png)
-
-The runtime manager applies the fix when it's needed by the application to run inside of an MSIX container.
-=======
 To learn more, see [Package Support Framework](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
-
 
 This guide will help you to identify application compatibility issues, and to find, apply, and extend runtime fixes that address them.
 
