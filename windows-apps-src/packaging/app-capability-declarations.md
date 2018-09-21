@@ -4,7 +4,7 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.author: misatran
-ms.date: 7/17/2018
+ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,13 +19,12 @@ You request access to specific resources or API by declaring capabilities in you
 
 Some capabilities provide apps with access to a *sensitive resource*. These resources are considered sensitive because they can access the user's personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/Hh768223). Capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) next to the capability scenario.
 
-There are three types of capabilities, which are described below:
+There are several types of capabilities.
 
--   General-use capabilities that apply to most common app scenarios.
-
--   Device capabilities that allow your app to access peripheral and internal devices.
-
--   Restricted capabilities that require approval for Store submission and/or are generally only available to Microsoft and certain partners.
+- [General-use capabilities](#general-use-capabilities), which apply to most common app scenarios.
+- [Device capabilities](#device-capabilities), which allow your app to access peripheral and internal devices.
+- [Restricted capabilities](#restricted-capabilities), which require approval for Microsoft Store submission and/or are generally only available to Microsoft and certain partners.
+- [Custom capabilities](#custom-capabilities).
 
 ## General-use capabilities
 
@@ -90,23 +89,19 @@ If your app declares any restricted capabilities, you must provide info during t
 
 Be sure not to declare these restricted capabilities unless your app truly needs them. There are cases where such capabilities are necessary and appropriate, such as banking with two-factor authentication, where users provide a smart card with a digital certificate that confirms their identity. Other apps may be designed primarily for enterprise customers and may need access to corporate resources that cannot be accessed without the user’s domain credentials.
 
-All restricted capabilities must include the **rescap** namespace when you declare them in your app's package manifest. For example, here's how to declare the **appCaptureSettings** capability.
+To declare a restricted capability, modify your [app package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) source file (`Package.appxmanifest`). Add the **xmlns:rescap** XML namespace declaration, and use the **rescap** prefix when you declare your restricted capability. For example, here's how to declare the **appCaptureSettings** capability.
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="... rescap">
+...
 <Capabilities>
     <rescap:Capability Name="appCaptureSettings"/>
 </Capabilities>
-```
-
-You must also add the **xmlns:rescap** namespace declaration in the top of the Package.appxmanifest file as shown below.
-
-```xml
-<Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    IgnorableNamespaces="uap mp wincap rescap">
+</Package>
 ```
 
 ### Restricted capability approval process
@@ -117,7 +112,7 @@ When you upload packages for your submission, we will detect whether any restric
 
 During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
-If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
+If we don't approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
 > [!NOTE]
 > If your submission uses a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
@@ -213,8 +208,25 @@ The following table lists the restricted capabilities. You may request approval 
 | **Windows Team Device Credentials** | The **teamEditionDeviceCredentials** restricted capability allows apps to access APIs that request device account credentials on a Surface Hub device running Windows 10, version 1703 or later.<br/><br/>We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 | **Windows Team Application View** | The **teamEditionView** restricted capability allows apps to access APIs for hosting an application view on a Surface Hub device running Windows 10, version 1703 or later.<br/><br/>We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 
+## Custom capabilities
 
+The [restricted capabilities](#restricted-capabilities) section above describes the same capability approval process that you can use to request approval to use a custom capability. The [embedded SIM](/uwp/api/windows.networking.networkoperators.esim) APIs are examples of APIs that require a custom capability. If you only want to run your application locally in developer mode, then you don't need the custom capability. But you need it to publish your app to the Microsoft Store, or to run it outside of developer mode.
 
+If you have a Windows Technical Account Manager (TAM), then you can work with your TAM to request access. You can find more details at [Contact your Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam).
+
+To declare a custom capability, modify your [app package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) source file (`Package.appxmanifest`). Add the **xmlns:uap4** XML namespace declaration, and use the **uap4** prefix when you declare your custom capability. Here's an example.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4">
+...
+<Capabilities>
+    <uap4:CustomCapability Name="CompanyName.customCapabilityName_PublisherID"/>
+</Capabilities>
+</Package>
+```
 
 ## Related topics
 
