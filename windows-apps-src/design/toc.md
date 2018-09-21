@@ -57,6 +57,7 @@
 ## [Images and image brushes](controls-and-patterns/images-imagebrushes.md)
 ## [Inking controls](controls-and-patterns/inking-controls.md)
 ## [Lists](controls-and-patterns/lists.md)
+### [Combo box](controls-and-patterns/combo-box.md)
 ### [List view and grid view](controls-and-patterns/listview-and-gridview.md)
 ### [Item containers and templates](controls-and-patterns/item-containers-templates.md)
 ### [Item templates for list view](controls-and-patterns/item-templates-listview.md)
