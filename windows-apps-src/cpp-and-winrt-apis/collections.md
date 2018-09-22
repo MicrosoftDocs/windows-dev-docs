@@ -3,7 +3,7 @@ author: stevewhims
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
 ms.author: stwhi
-ms.date: 08/24/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,6 +27,8 @@ Internally, a Windows Runtime collection has a lot of complicated moving parts. 
 
 ### General-purpose collection, empty
 
+This section covers the scenario where you wish to create a collection that's initially empty; and then populate it *after* creation.
+
 To retrieve a new object of a type that implements a general-purpose collection, you can call the [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector) function template. The object is returned as an [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_), and that's the interface via which you call the returned object's functions and properties.
 
 ```cppwinrt
@@ -37,7 +39,7 @@ using namespace winrt;
 ...
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
     Windows::Foundation::Collections::IVector<int> coll{ winrt::single_threaded_vector<int>() };
     coll.Append(1);
@@ -55,9 +57,13 @@ int main()
 
 As you can see in the code example above, after creating the collection you can append elements, iterate over them, and generally treat the object as you would any Windows Runtime collection object that you might have received from an API. If you need an immutable view over the collection, then you can call [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), as shown. The pattern shown above&mdash;of creating and consuming a collection&mdash;is appropriate for simple scenarios where you want to pass data into, or get data out of, an API. You can pass an **IVector**, or an **IVectorView**, anywhere an [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_) is expected.
 
+In the code example above, the call to **winrt::init_apartment** initializes COM; by default, in a multithreaded apartment.
+
 ### General-purpose collection, primed from data
 
-You can also avoid the overhead of the calls to **Append** that you can see in the code example above. You may already have the source data, or you may prefer to populate it in advance of creating the Windows Runtime collection object. Here's how to do that.
+This section covers the scenario where you wish to create a collection and populate it at the same time.
+
+You can avoid the overhead of the calls to **Append** in the previous code example. You may already have the source data, or you may prefer to populate the source data in advance of creating the Windows Runtime collection object. Here's how to do that.
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
