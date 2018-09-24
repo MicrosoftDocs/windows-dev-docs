@@ -1,9 +1,9 @@
 ---
 author: normesta
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
-title: Host UWP controls in WPF and Windows Forms applications
+title: UWP controls in desktop applications
 ms.author: normesta
-ms.date: 05/03/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp, windows forms, wpf
@@ -11,24 +11,57 @@ keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ---
 
-# Host UWP controls in WPF and Windows Forms applications
+# UWP controls in desktop applications
 
 > [!NOTE]
-> Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+> The APIs and controls discussed in this article are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These APIs and controls will continue to mature and stabilize in future Windows releases. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-We're bringing UWP controls to the desktop so that you can enhance the look, feel, and functionality of your existing WPF or Windows applications with Fluent Design features. There's two ways to do this.
+In the next release of Windows 10 we're bringing UWP controls to non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP control. This means that you can use UWP features such as [Fluent Design System](../design/fluent-design-system/index.md) and [Windows Ink](../design/input/pen-and-stylus-interactions.md) in your existing WPF, Windows Forms, and C/C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
 
-First, you can add controls directly to the design surface of your WPF or Windows Forms project, and then use them like any other control in your designer.  Try this out today with the new **WebView** control. This control uses the Microsoft Edge rendering engine, and until now, this control was available only to UWP applications. You can find the **WebView** in the latest release of the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/).
+We will provide several ways to use XAML islands in your desktop applications, depending on the technology or framework you are using.
 
-Soon, you'll have access to even more Fluent Design features: we'll be providing a control that lets you host a variety of UWP controls. Look for this control and many other controls in future releases of the Windows Community Toolkit.
+## Wrapped controls
+
+We will provide a selection of wrapped UWP controls for WPF and Windows Forms applications in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). You can add these controls directly to the design surface of your WPF or Windows Forms project and then use like any other WPF or Windows Forms control in your designer. We refer to these controls as *wrapped controls* because they wrap the interface and functionality of a specific UWP control.
+
+Try this out today with the [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/webview) control in the Windows Community Toolkit. This control uses the Microsoft Edge rendering engine to show web content in a WPF or Windows Forms application.  
+
+We are also planning additional wrapped UWP controls for WPF and Windows Forms applications in future releases of the Windows Community Toolkit, including:
+
+* **WebViewCompatible**. This control is a version of **WebView** that is compatible with Windows 10 and previous versions of Windows. This control uses the Microsoft Edge rendering engine to show web content on Windows 10, and the Internet Explorer rendering engine to show web content on earlier versions.
+* **InkCanvas** and **InkToolbar**. These controls provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application.
+* **MediaPlayerElement**. This control embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application.
+
+More UWP wrapped controls for WPF and Windows Forms applications are planned for future releases of the Windows Community Toolkit.
+
+> [!NOTE]
+> Wrapped controls are not available for C/C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
+
+## Host controls
+
+For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/docs/controls/WindowsXAMLHost.md) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls.
+
+> [!NOTE]
+> Host controls are not available for C/C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
+
+## UWP XAML hosting API
+
+If you have a C/C++ WinRT application, you can use the *UWP XAML hosting API* to host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) in any UI element in your application that has an associated window handle (HWND). For more information about using this API, see [Using the XAML hosting API in a desktop application](using-the-xaml-hosting-api.md).
+
+> [!NOTE]
+> C/C++ Win32 desktop applications must use the UWP XAML hosting API to host UWP controls. Wrapped controls and host controls are not available for these types of applications. For WPF and Windows Forms applications, we recommend that you use the wrapped controls and host controls in the Windows Community Toolkit instead of the UWP XAML hosting API. These controls use the UWP XAML hosting API internally and provide a simpler development experience. However, you can use the UWP XAML hosting API directly in WPF and Windows Forms applications if you choose.
+
+## Architecture overview
 
 Here's a quick look at how these controls are organized architecturally. The names used in this diagram are subject to change.  
 
 ![Host control Architecture](images/host-controls.png)
 
-The APIs that appear at the bottom of this diagram ship with the Windows SDK.  The controls that you'll add to your designer ship as Nuget packages in the Windows Community Toolkit.
+The APIs that appear at the bottom of this diagram ship with the Windows SDK. The controls that you'll add to your designer ship as Nuget packages in the Windows Community Toolkit.
 
 These new controls have limitations so before you use them, please take a moment to review what's not yet supported, and what's functional only with workarounds.
+
+## Limitations
 
 ### What's supported
 
