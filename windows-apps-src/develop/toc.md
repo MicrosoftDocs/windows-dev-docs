@@ -501,7 +501,8 @@
 ### [Attached properties overview](../xaml-platform/attached-properties-overview.md)
 ### [Custom attached properties](../xaml-platform/custom-attached-properties.md)
 ### [Events and routed events overview](../xaml-platform/events-and-routed-events-overview.md)
-### [UWP controls in WPF and Windows Forms applications](../xaml-platform/xaml-host-controls.md)
+### [UWP controls in desktop applications](../xaml-platform/xaml-host-controls.md)
+#### [Using the UWP XAML hosting API](../xaml-platform/using-the-xaml-hosting-api.md)
 
 
 

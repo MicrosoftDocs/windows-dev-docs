@@ -182,14 +182,17 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then be a coroutine and return IAsyncAction)
+    // or (but this function must then be a coroutine, and return IAsyncAction)
     // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 
 As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
-But if you do stick with delegates, you can opt for a simpler syntax.
+> [!NOTE]
+> It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail.
+
+If you stick with delegates instead of a coroutine, then you can opt for a simpler syntax.
 
 ```cppwinrt
 async_op_with_progress.Completed(

@@ -315,6 +315,83 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
+## Reporting progress
+
+If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the **winrt::get_progress_token** function and use it to report progress back to a progress handler. Here's a code example.
+
+```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+#include <iostream>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
+{
+    auto progress{ co_await winrt::get_progress_token() };
+
+    co_await 1s;
+    double pi_so_far{ 3.1 };
+    progress(0.2);
+
+    co_await 1s;
+    pi_so_far += 4.e-2;
+    progress(0.4);
+
+    co_await 1s;
+    pi_so_far += 1.e-3;
+    progress(0.6);
+
+    co_await 1s;
+    pi_so_far += 5.e-4;
+    progress(0.8);
+
+    co_await 1s;
+    pi_so_far += 9.e-5;
+    progress(1.0);
+    co_return pi_so_far;
+}
+
+IAsyncAction DoMath()
+{
+    auto async_op_with_progress{ CalcPiTo5DPs() };
+    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    {
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+    });
+    double pi{ co_await async_op_with_progress };
+    std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
+    std::wcout << L"Pi is approx.: " << pi << std::endl;
+}
+
+int main()
+{
+    init_apartment();
+    DoMath().get();
+}
+```
+
+> [!NOTE]
+> It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail. Either one of the following two kinds of completion handlers is appropriate; not both for the same async object.
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+async_op_with_progress.Completed([](auto const& sender, AsyncStatus /* status */)
+{
+    double pi{ sender.GetResults() };
+});
+```
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+double pi{ co_await async_op_with_progress };
+```
+
+For more info about completion handlers, see [Delegate types for asynchronous actions and operations](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
+
 ## Important APIs
 * [concurrency::task class](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)
