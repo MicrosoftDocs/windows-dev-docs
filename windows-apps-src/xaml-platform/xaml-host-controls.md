@@ -16,39 +16,42 @@ ms.localizationpriority: medium
 > [!NOTE]
 > The APIs and controls discussed in this article are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These APIs and controls will continue to mature and stabilize in future Windows releases. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-In the next release of Windows 10 we're bringing UWP controls to non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Fluent Design System](../design/fluent-design-system/index.md) and [Windows Ink](../design/input/pen-and-stylus-interactions.md) in your existing WPF, Windows Forms, and C/C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
+Windows 10 now enables you to use UWP controls in non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Fluent Design System](../design/fluent-design-system/index.md) and [Windows Ink](../design/input/pen-and-stylus-interactions.md) in your existing WPF, Windows Forms, and C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
 
-We will provide several ways to use XAML islands in your desktop applications, depending on the technology or framework you are using.
+We provide several ways to use XAML islands in your desktop applications, depending on the technology or framework you are using.
 
 ## Wrapped controls
 
-We will provide a selection of wrapped UWP controls for WPF and Windows Forms applications in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). You can add these controls directly to the design surface of your WPF or Windows Forms project and then use like any other WPF or Windows Forms control in your designer. We refer to these controls as *wrapped controls* because they wrap the interface and functionality of a specific UWP control.
+WPF and Windows Forms applications can use a selection of wrapped UWP controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). You can add these controls directly to the design surface of your WPF or Windows Forms project and then use like any other WPF or Windows Forms control in your designer. We refer to these controls as *wrapped controls* because they wrap the interface and functionality of a specific UWP control.
 
-Try this out today with the following wrapped UWP controls for WPF and Windows Forms applications in the latest release of the Windows Community Toolkit.
+The following wrapped controls support Windows 10, version 1803, and later.
 
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview). This control uses the Microsoft Edge rendering engine to show web content in a WPF or Windows Forms application.  
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible). This control is a version of **WebView** that is compatible with Windows 10 and previous versions of Windows. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 and the Internet Explorer rendering engine to show web content on earlier versions.
+* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview). This control uses the Microsoft Edge rendering engine to show web content in a WPF or Windows Forms application.
+* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible). This control is a version of **WebView** that is compatible with Windows 10 and previous versions of Windows. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 (version 1803 and later) and the Internet Explorer rendering engine to show web content on Windows 7 and Windows 8.x.
+
+The following wrapped controls support Windows 10 Insider Preview SDK build 17709 and later releases.
+
 * [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar). These controls provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application.
 * [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement). This control embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application.
 
 More UWP wrapped controls for WPF and Windows Forms applications are planned for future releases of the Windows Community Toolkit.
 
 > [!NOTE]
-> Wrapped controls are not available for C/C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
+> Wrapped controls are not available for C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
 
 ## Host controls
 
-For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls.
+For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls. This control supports Windows 10 Insider Preview SDK build 17709 and later releases.
 
 > [!NOTE]
-> Host controls are not available for C/C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
+> Host controls are not available for C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
 
 ## UWP XAML hosting API
 
-If you have a C/C++ WinRT application, you can use the *UWP XAML hosting API* to host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) in any UI element in your application that has an associated window handle (HWND). For more information about using this API, see [Using the XAML hosting API in a desktop application](using-the-xaml-hosting-api.md).
+If you have a C++ Win32 application, you can use the *UWP XAML hosting API* to host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) in any UI element in your application that has an associated window handle (HWND). This API was introduced in Windows 10 Insider Preview SDK build 17709. For more information about using this API, see [Using the XAML hosting API in a desktop application](using-the-xaml-hosting-api.md).
 
 > [!NOTE]
-> C/C++ Win32 desktop applications must use the UWP XAML hosting API to host UWP controls. Wrapped controls and host controls are not available for these types of applications. For WPF and Windows Forms applications, we recommend that you use the wrapped controls and host controls in the Windows Community Toolkit instead of the UWP XAML hosting API. These controls use the UWP XAML hosting API internally and provide a simpler development experience. However, you can use the UWP XAML hosting API directly in WPF and Windows Forms applications if you choose.
+> C++ Win32 desktop applications must use the UWP XAML hosting API to host UWP controls. Wrapped controls and host controls are not available for these types of applications. For WPF and Windows Forms applications, we recommend that you use the wrapped controls and host controls in the Windows Community Toolkit instead of the UWP XAML hosting API. These controls use the UWP XAML hosting API internally and provide a simpler development experience. However, you can use the UWP XAML hosting API directly in WPF and Windows Forms applications if you choose.
 
 ## Architecture overview
 
