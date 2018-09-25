@@ -377,6 +377,127 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 Build the application, and then run it at least once as Administrator to cause the registration, and other setup, code to run. Whether or not you're running it as Administrator, then press 'T' to cause a toast to be displayed. You can then click the **Call back ToastAndCallback** button either directly from the toast notification that pops up, or from the Action Center, and your application will be launched, the coclass instantiated, and the **INotificationActivationCallback::Activate** method executed.
 
+## In-process COM server
+
+The *ToastAndCallback* example app above functions as a local (or out-of-process) COM server. This is indicated by the [LocalServer32](/windows/desktop/com/localserver32) Windows Registry key that you use to register it. A local COM server hosts its coclass(es) inside an executable binary (an `.exe`).
+
+Alternatively (and arguably more likely), you can choose to host your coclass(es) inside a dynamic-link library (a `.dll`). A COM server in the form of a DLL is known as an in-process COM server, and it's indicated by being registered by using the [InprocServer32](/windows/desktop/com/inprocserver32) Windows Registry key.
+
+### Create a Dynamic-Link Library (DLL) project
+
+You can begin the task of creating an in-process COM server by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Dynamic-Link Library (DLL)** project.
+
+### Set project properties
+
+Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Set **Windows SDK Version** to *10.0.17134.0 (Windows 10, version 1803)*, or later.
+
+To add Visual Studio support for C++/WinRT to your project, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`.
+
+Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
+
+### The precompiled header
+
+Rename your `stdafx.h` and `stdafx.cpp` to `pch.h` and `pch.cpp`, respectively. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
+
+Find and replace all `#include "stdafx.h"` with `#include "pch.h"`.
+
+In `pch.h`, include `winrt/base.h`.
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/base.h>
+```
+
+Confirm that you're not affected by [Why won't my new project compile?](/windows/uwp/cpp-and-winrt-apis/faq).
+
+### Implement the coclass, class factory, and in-proc server exports
+
+Open `dllmain.cpp`, and add to it the code listing shown below.
+
+If you already have a DLL that implements C++/WinRT Windows Runtime classes, then you'll already have the **DllCanUnloadNow** function shown below. If you want to add coclasses to that DLL, then you can add the **DllGetClassObject** function.
+
+If don't have existing [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code that you want to stay compatible with, then you can remove the WRL parts from the code shown.
+
+```cppwinrt
+// dllmain.cpp
+
+struct MyCoclass : winrt::implements<MyCoclass, IPersist>
+{
+    HRESULT STDMETHODCALLTYPE GetClassID(CLSID* id) noexcept override
+    {
+        *id = IID_IPersist; // Doesn't matter what we return, for this example.
+        return S_OK;
+    }
+};
+
+struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
+    MyCoclassFactory : winrt::implements<MyCoclassFactory, IClassFactory>
+{
+    HRESULT STDMETHODCALLTYPE CreateInstance(IUnknown *pUnkOuter, REFIID riid, void **ppvObject) noexcept override
+    {
+        try
+        {
+            *ppvObject = winrt::make<MyCoclass>().get();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
+    }
+
+    HRESULT STDMETHODCALLTYPE LockServer(BOOL fLock) noexcept override
+    {
+        // ...
+        return S_OK;
+    }
+
+    // ...
+};
+
+HRESULT __stdcall DllCanUnloadNow()
+{
+#ifdef _WRL_MODULE_H_
+    if (!::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().Terminate())
+    {
+        return S_FALSE;
+    }
+#endif
+
+    if (winrt::get_module_lock())
+    {
+        return S_FALSE;
+    }
+
+    winrt::clear_factory_cache();
+    return S_OK;
+}
+
+HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** result)
+{
+    try
+    {
+        *result = nullptr;
+
+        if (clsid == __uuidof(MyCoclassFactory))
+        {
+            return winrt::make<MyCoclassFactory>()->QueryInterface(iid, result);
+        }
+
+#ifdef _WRL_MODULE_H_
+        return ::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().GetClassObject(clsid, iid, result);
+#else
+        return winrt::hresult_class_not_available().to_abi();
+#endif
+    }
+    catch (...)
+    {
+        return winrt::to_hresult();
+    }
+}
+```
+
 ## Important APIs
 * [IInspectable interface](https://msdn.microsoft.com/library/br205821)
 * [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
