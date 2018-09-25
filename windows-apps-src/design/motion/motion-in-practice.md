@@ -5,7 +5,7 @@ title: Motion in practice - animation in UWP apps
 label: Motion in practice
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,7 +42,7 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
     :::column-end:::
 :::row-end:::
 
-### **Transition example**
+**Transition example**
 
 ![functional animation](images/pageRefresh.gif)
 
@@ -57,16 +57,16 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
     :::column:::
          <b>Direction Backward Out:</b><br>
         Slide down 150px: 150ms; Easing: Default Accelerate
-      
+
         <b>Direction Backward In:</b><br>
         Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
 :::row-end:::
 
- ### **Object example**
+**Object example**
 
  ![300ms motion](images/control.gif)
- 
+
 :::row:::
     :::column:::
         <b>Direction Expand:</b><br>
@@ -77,6 +77,54 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
         Grow: 150ms; Easing: Default Accelerate
     :::column-end:::
 :::row-end:::
+
+## Implicit Animations
+
+> **Preview**: Implicit animation requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/).
+
+Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
+
+You can implicitly animate changes to the following properties:
+
+- [UIElement](/uwp/api/windows.ui.xaml.uielement)
+  - **Opacity**
+  - **Rotation**
+  - **Scale**
+  - **Translation**
+
+- [Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), or [Panel](/uwp/api/windows.ui.xaml.controls.panel)
+  - **Background**
+
+Each property that can have changes implicitly animated has a corresponding _transition_ property. To animate the property, you assign a transition type to the corresponding _transition_ property. This table shows the _transition_ properties and the transition type to use for each one.
+
+| Animated property | Transition property | Implicit transition type |
+| -- | -- | -- |
+| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.scale) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+
+This example shows how to use the Opacity property and transition to make a button fade in when the control is enabled and fade out when it's disabled.
+
+```xaml
+<Button x:Name="SubmitButton"
+        Content="Submit"
+        Opacity="{x:Bind OpaqueIfEnabled(SubmitButton.IsEnabled), Mode=OneWay}">
+    <Button.OpacityTransition>
+        <ScalarTransition />
+    </Button.OpacityTransition>
+</Button>
+```
+
+```csharp
+public double OpaqueIfEnabled(bool IsEnabled)
+{
+    return IsEnabled ? 1.0 : 0.2;
+}
+```
 
 ## Related articles
 
