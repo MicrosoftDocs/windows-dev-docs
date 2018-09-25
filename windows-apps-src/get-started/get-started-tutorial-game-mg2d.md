@@ -39,7 +39,7 @@ Open the project in Visual Studio 2017, and press **F5** to run the sample. The 
 
 If you’ve done this, skip the next section about setting up MonoGame to see a step-by-step walkthrough of the code.
 
-**Note:** The game created in this sample is not meant to be complete (or any fun at all). It’s only purpose is to demonstrate all the core concepts of 2D development in MonoGame. Feel free to use this code and make something much better—or just start from scratch after you’ve mastered the basics!
+**Note:** The game created in this sample is not meant to be complete (or any fun at all). Its only purpose is to demonstrate all the core concepts of 2D development in MonoGame. Feel free to use this code and make something much better—or just start from scratch after you’ve mastered the basics!
 
 ## Set up MonoGame project
 1. Install **MonoGame 3.6** for Visual Studio from [MonoGame.net](http://www.monogame.net/)
