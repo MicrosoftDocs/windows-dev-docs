@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Enhance your desktop app for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
 ms.author: normesta
@@ -73,11 +73,11 @@ Now you're ready to add modern experiences that light up when users run your app
 
 :white_check_mark: **First, decide what experiences you want to add**
 
-There's lots to choose from. For example, you can simplify your purchase order flow by using monetization APIs, or direct attention to your app when you have something interesting to share, such as a new picture that another user has posted.
+There's lots to choose from. For example, you can simplify your purchase order flow by using monetization APIs, or direct attention to your application when you have something interesting to share, such as a new picture that another user has posted.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your app and has the added bonus of making your app appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
+Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your application and has the added bonus of making your application appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
 
 Visit our [developer center](https://developer.microsoft.com/windows) for ideas.
 
@@ -168,7 +168,7 @@ To learn more about notifications, see [Adaptive and Interactive toast notificat
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
-You can modernize your app for Windows 10 without having to create a new branch and maintain separate code bases.
+You can modernize your application for Windows 10 without having to create a new branch and maintain separate code bases.
 
 If you want to build separate binaries for Windows 10 users, use conditional compilation. If you'd prefer to build one set of binaries that you deploy to all Windows users, use runtime checks.
 
@@ -219,7 +219,7 @@ The compiler builds that code only if that constant is defined in your active bu
 
 ### Runtime checks
 
-You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your app calls UWP APIs only if the user is runs your app as a packaged app on Windows 10.
+You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls UWP APIs only if the user is runs your application as a packaged application on Windows 10.
 
 The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all UWP code. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
@@ -232,7 +232,7 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 * [Hello World Sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
 * [Secondary Tile](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Store API Sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
-* [WinForms app that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
+* [WinForms application that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 

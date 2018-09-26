@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Package an app by using Visual Studio (Desktop Bridge)
+title: Package a desktop application by using Visual Studio
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -13,18 +13,18 @@ ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ---
 
-# Package an app by using Visual Studio (Desktop Bridge)
+# Package a desktop application by using Visual Studio
 
 You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Windows store or sideload it onto one or more PCs.
 
 The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
 
 >[!IMPORTANT]
->The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 ## First, prepare your application
 
-Review this guide before you begin creating a package for your application: [Prepare to package an app (Desktop Bridge)](desktop-to-uwp-prepare.md).
+Review this guide before you begin creating a package for your application: [Prepare to package a desktop application](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -78,18 +78,18 @@ Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Run, debug or test your app**
+**Run, debug or test your desktop application**
 
-See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
+See [Run, debug, and test a packaged desktop application](desktop-to-uwp-debug.md)
 
-**Enhance your desktop app by adding UWP APIs**
+**Enhance your desktop application by adding UWP APIs**
 
 See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)
 
-**Extend your desktop app by adding UWP projects and Windows Runtime Components**
+**Extend your desktop application by adding UWP projects and Windows Runtime Components**
 
 See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).
 
 **Distribute your app**
 
-See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
+See [Distribute a packaged desktop application](desktop-to-uwp-distribute.md)

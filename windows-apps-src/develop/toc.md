@@ -613,7 +613,7 @@
 ### [Case study: Bookstore1](../porting/w8x-to-uwp-case-study-bookstore1.md)
 ### [Case study: Bookstore2](../porting/w8x-to-uwp-case-study-bookstore2.md)
 ### [Case study: QuizGame](../porting/w8x-to-uwp-case-study-quizgame.md)
-## [Desktop Bridge](../porting/desktop-to-uwp-root.md)
+## [Package desktop applications](../porting/desktop-to-uwp-root.md)
 ### [Prepare to package](../porting/desktop-to-uwp-prepare.md)
 ### [Package using the Desktop App Converter](../porting/desktop-to-uwp-run-desktop-app-converter.md)
 ### [Package using Visual Studio](../porting/desktop-to-uwp-packaging-dot-net.md)
