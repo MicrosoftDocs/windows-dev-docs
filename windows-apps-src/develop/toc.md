@@ -1,4 +1,4 @@
-# [Overview](index.md)
+﻿# [Overview](index.md)
 
 # App types
 
@@ -122,6 +122,7 @@
 ### [Tutorial: Create data bindings](../data-binding/xaml-basics-data-binding.md)
 ### [Sample data on the design surface, and for prototyping](../data-binding/displaying-data-in-the-designer.md)
 ### [Bind hierarchical data and create a master/details view](../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)
+### [Data binding and MVVM](../data-binding/data-binding-and-mvvm.md)
 
 ## [Files, folders, and libraries](../files/index.md)
 ### [Enumerate and query files and folders](../files/quickstart-listing-files-and-folders.md)
