@@ -4,7 +4,7 @@ Description: Learn how your app's packages are made available to your customers,
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -105,30 +105,11 @@ Be aware that even if you remove all of the packages that support a certain devi
 
 ## Adding packages for Windows 10 to a previously-published app
 
-If you have an app in the Store that targets Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, customers who already had your app and are now on Windows 10 will get your UWP package as an update from the Store. The UWP package will also be available for new acquisitions by customers on Windows 10.
+If you have an app in the Store that only included packages for Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .msixupload or .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, the UWP package will also be available for new acquisitions by customers on Windows 10.
 
 > [!NOTE]
 > Once a customer on Windows 10 gets your UWP package, you can't roll that customer back to using a package for any previous OS version. 
 
-Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you include (or packages for those OS versions that you have previously published). For more info, see [Package version numbering](package-version-numbering.md).
+Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you have used. For more info, see [Package version numbering](package-version-numbering.md).
 
 For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).
-
-> [!IMPORTANT]
-> Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
-> 
-> This happens even if you have excluded a specific device family in the [Device family availability](device-family-availability.md) step of your submission, since that section only applies to new acquisitions. If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your appx manifest to include only the particular device family you wish to support.
-> 
-> For example, say you want your Windows 8 and Windows 8.1 customers who have upgraded to a Windows 10 desktop device to get your new UWP app, but you want any Windows Phone customers who are now on Windows 10 Mobile devices to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
-
-
-## Maintaining package compatibility for Windows Phone 8.1
-
-Certain requirements for package types apply when updating apps that were previously published for Windows Phone 8.1:
-
--   After an app has a published Windows Phone 8.1 package, all subsequent updates must also contain a Windows Phone 8.1 package.
--   After an app has a published Windows Phone 8.1 XAP, subsequent updates must either have a Windows Phone 8.1 XAP, Windows Phone 8.1 appx, or Windows Phone 8.1 appxbundle.
--   When an app has a published Windows Phone 8.1 .appx, subsequent updates must either have a Windows Phone 8.1 .appx or Windows Phone 8.1 .appxbundle. In other words, a Windows Phone 8.1 XAP is not allowed. This applies to an .appxupload that contains a Windows Phone 8.1 .appx as well.
--   After an app has a published Windows Phone 8.1 .appxbundle, subsequent updates must have a Windows Phone 8.1 .appxbundle. In other words, a Windows Phone 8.1 XAP or Windows Phone 8.1 .appx is not allowed. This applies to an .appxupload that contains a Windows Phone 8.1 .appxbundle as well.
-
-Failure to follow these rules may result in package upload errors that will prevent you from completing your submission.
