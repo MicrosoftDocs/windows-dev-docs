@@ -127,6 +127,7 @@
 ## [Connected animation](motion/connected-animation.md)
 ## [Parallax](motion/parallax.md)
 ## [Animations in XAML](motion/xaml-animation.md)
+### [Property animations](motion/xaml-property-animations.md)
 ### [Storyboarded animations](motion/storyboarded-animations.md)
 ### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
 
