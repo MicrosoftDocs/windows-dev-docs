@@ -84,7 +84,7 @@ On the Xbox Live configuration page, click the **Test** button to publish the cu
 
 Only authorized devices and users can access the Xbox Live configuration for the game in your development sandbox.
 
-By default, all the Xbox One development consoles you have added to your Dev Center account have access to your development sandbox.  To add an Xbox One console, go to [Manage Xbox One consoles](https://developer.microsoft.com/XboxDevices). If you’re already in your Dev Center account, you can go to **Account Settings** > **Account Settings** > **Dev devices** > **Xbox One development consoles**.
+By default, all the Xbox One development consoles you have added to your Dev Center account have access to your development sandbox.  To add an Xbox One console, go to [Manage Xbox One consoles](https://partner.microsoft.com/XboxDevices). If you’re already in your Dev Center account, you can go to **Account Settings** > **Account Settings** > **Dev devices** > **Xbox One development consoles**.
 
 You can also authorize normal Xbox Live accounts to have access to your development sandbox.  To authorize Xbox Live accounts access to your development sandbox, go to
 [Manage Accounts](https://developer.microsoft.com/xboxtestaccounts/configurecreators).

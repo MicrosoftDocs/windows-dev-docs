@@ -37,7 +37,7 @@ Developer Mode can be enabled on any retail Xbox One console. After Developer Mo
 
     ![Activation Step 5](images/activation-step-5.png)  
     
-5.	Go to [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
+5.	Go to [partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate).
 
 6.	Sign in to Dev Center with your Dev Center account.
 

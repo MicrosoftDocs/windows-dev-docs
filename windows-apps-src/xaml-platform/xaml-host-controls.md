@@ -16,28 +16,25 @@ ms.localizationpriority: medium
 > [!NOTE]
 > The APIs and controls discussed in this article are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These APIs and controls will continue to mature and stabilize in future Windows releases. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-Windows 10 now enables you to use UWP controls in non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Fluent Design System](../design/fluent-design-system/index.md) and [Windows Ink](../design/input/pen-and-stylus-interactions.md) in your existing WPF, Windows Forms, and C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
+Windows 10 now enables you to use UWP controls in non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Windows Ink](../design/input/pen-and-stylus-interactions.md) and controls that support the [Fluent Design System](../design/fluent-design-system/index.md) in your existing WPF, Windows Forms, and C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
 
-We provide several ways to use XAML islands in your desktop applications, depending on the technology or framework you are using.
+We provide several ways to use XAML islands in your WPF, Windows Forms, and C++ Win32 applications, depending on the technology or framework you are using.
 
 ## Wrapped controls
 
-WPF and Windows Forms applications can use a selection of wrapped UWP controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). You can add these controls directly to the design surface of your WPF or Windows Forms project and then use like any other WPF or Windows Forms control in your designer. We refer to these controls as *wrapped controls* because they wrap the interface and functionality of a specific UWP control.
-
-The following wrapped controls support Windows 10, version 1803, and later.
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview). This control uses the Microsoft Edge rendering engine to show web content in a WPF or Windows Forms application.
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible). This control is a version of **WebView** that is compatible with Windows 10 and previous versions of Windows. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 (version 1803 and later) and the Internet Explorer rendering engine to show web content on Windows 7 and Windows 8.x.
-
-The following wrapped controls support Windows 10 Insider Preview SDK build 17709 and later releases.
-
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar). These controls provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application.
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement). This control embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application.
-
-More UWP wrapped controls for WPF and Windows Forms applications are planned for future releases of the Windows Community Toolkit.
+WPF and Windows Forms applications can use a selection of wrapped UWP controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). We refer to these controls as *wrapped controls* because they wrap the interface and functionality of a specific UWP control. You can add these controls directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in your designer.
 
 > [!NOTE]
 > Wrapped controls are not available for C++ Win32 desktop applications. These types of applications must use the [UWP XAML hosting API](#uwp-xaml-hosting-api).
+
+The following wrapped UWP controls are currently available for WPF and Windows Forms applications. More UWP wrapped controls are planned for future releases of the Windows Community Toolkit.
+
+| Control | Minimum supported OS | Description |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, version 1803 | Uses the Microsoft Edge rendering engine to show web content. |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Provides a version of **WebView** that is compatible with more OS versions. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 version 1803 and later, and the Internet Explorer rendering engine to show web content on earlier versions of Windows 10, Windows 8.x, and Windows 7. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK build 17709 | Provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK build 17709 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
 
 ## Host controls
 
