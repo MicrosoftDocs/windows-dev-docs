@@ -7,7 +7,7 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 05/04/2018
+ms.date: 10/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -124,7 +124,7 @@ Otherwise, if users can't manipulate content directly, then place command elemen
 
         <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
 
-        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benfits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
 
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
