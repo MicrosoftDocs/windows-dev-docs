@@ -57,7 +57,6 @@
 ## [Hyperlinks](controls-and-patterns/hyperlinks.md)
 ## [Images and image brushes](controls-and-patterns/images-imagebrushes.md)
 ## [Inking controls](controls-and-patterns/inking-controls.md)
-## [Input validation](controls-and-patterns/input-validation.md)
 ## [Lists](controls-and-patterns/lists.md)
 ### [Combo box](controls-and-patterns/combo-box.md)
 ### [List view and grid view](controls-and-patterns/listview-and-gridview.md)
