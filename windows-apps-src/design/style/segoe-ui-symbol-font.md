@@ -51,7 +51,7 @@ If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs
 If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not included in the Symbol enum, then use a [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
 
 ```xaml
-<FontIcon FontFamily="{StaticResource Segoe MDL2 Assets}" Glyph="&#xE700;"/>
+<FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
 You can also use the static resource `SymbolThemeFontFamily` to access **Segoe MDL2 Assets**, instead of specifying the font by name.
