@@ -5,7 +5,7 @@ title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 07/19/2018
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,9 +17,6 @@ doc-status: Draft
 ms.localizationpriority: medium
 ---
 # Command bar flyout
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here. Preview features require the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.
 

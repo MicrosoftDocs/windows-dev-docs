@@ -5,7 +5,7 @@ title: Motion in practice - animation in UWP apps
 label: Motion in practice
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 09/19/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,6 @@ doc-status: Draft
 ms.localizationpriority: medium
 ---
 # Bringing it together
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 Timing, easing, directionality, and gravity work together to form the foundation of Fluent motion. Each has to be considered in the context of the others, and applied appropriately in the context of your app.
 
