@@ -103,12 +103,14 @@ Open the **Web.config** file from the solution explorer and add the following li
 
 ```xml
 <system.webServer>
-   <!--This is to allow the web server to serve resources with the appx/appxbundle/appinstaller extension-->
-   <staticContent>
-      <mimeMap fileExtension=".appx" mimeType="application/appx"/>
-      <mimeMap fileExtension=".appxbundle" mimeType="application/appxbundle"/>
+    <!--This is to allow the web server to serve resources with the appropriate file extension-->
+    <staticContent>
+      <mimeMap fileExtension=".appx" mimeType="application/appx" />
+      <mimeMap fileExtension=".msix" mimeType="application/msix" />
+      <mimeMap fileExtension=".appxbundle" mimeType="application/appxbundle" />
+      <mimeMap fileExtension=".msixbundle" mimeType="application/msixbundle" />
       <mimeMap fileExtension=".appinstaller" mimeType="application/appinstaller" />
-   </staticContent>
+    </staticContent>
 </system.webServer>
 ```
 

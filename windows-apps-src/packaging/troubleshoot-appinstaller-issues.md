@@ -69,9 +69,9 @@ When installing from an HTTP endpoint, it is important to verify that all files 
 
 If the App Installer app cannot install the app, these steps will help identify the installation issue.
 
-### Verify .appx/.appxbundle file installation
+### Verify app package file installation
 
-- Download the `.appx`/`.appxbundle` file to a local folder and try to install it using the [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell command.
+- Download the app package file to a local folder and try to install it using the [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell command.
 
 - Download the `.appinstaller` file to a local folder and try to install it using the `Add-AppxPackage -Appinstaller` PowerShell command.
 
