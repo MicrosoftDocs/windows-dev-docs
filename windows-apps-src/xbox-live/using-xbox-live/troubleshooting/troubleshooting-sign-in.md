@@ -97,7 +97,7 @@ You may need to remove your old account from Windows 10, you can do that by goin
 
 ### 0x87DD0005 Unexpected or unknown title
 
-Double-check the Application ID Setup and Dev Center Binding in XDP. You can view the instructions in [Adding Xbox Live Support to a new or existing Visual Studio UWP](../../images/troubleshooting/dev_center_binding.png)
+Double-check the Application ID Setup and Dev Center Binding in XDP. You can view the instructions in [Adding Xbox Live Support to a new or existing Visual Studio UWP](https://docs.microsoft.com/en-us/windows-hardware/drivers/devapps/step-1--create-a-uwp-device-app#span-idassociateyourappwiththewindowsstorespanspan-idassociateyourappwiththewindowsstorespanspan-idassociateyourappwiththewindowsstorespanassociate-your-app-with-the-microsoft-store)
 
 ### 0x87DD000E Title not authorized
 
