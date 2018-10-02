@@ -11,8 +11,8 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, 
 ms.localizationpriority: medium
 ---
 
-# Get started with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
+# Get started with C++/WinRT
+To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), this topic walks through a simple code example.
 
 ## A C++/WinRT quick-start
 > [!NOTE]

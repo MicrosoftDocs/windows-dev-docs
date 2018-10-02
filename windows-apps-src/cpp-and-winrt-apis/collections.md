@@ -11,12 +11,12 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
 ---
 
-# Collections with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# Collections with C++/WinRT
 
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
-Internally, a Windows Runtime collection has a lot of complicated moving parts. But when you want to pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types, there are functions and base classes in C++/WinRT to support you. These features take the complexity out of your hands, and save you a lot of overhead in time and effort.
+Internally, a Windows Runtime collection has a lot of complicated moving parts. But when you want to pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types, there are functions and base classes in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) to support you. These features take the complexity out of your hands, and save you a lot of overhead in time and effort.
 
 > [!IMPORTANT]
 > The features described in this topic are available if you've installed the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later.
