@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: Share code between a desktop app and a UWP app
+title: Share code between a desktop application and a UWP app
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Share code between a desktop app and a UWP app
+# Share code between a desktop application and a UWP app
 
 You can move your code into .NET Standard libraries, and then create a Universal Windows Platform (UWP) app to reach all Windows 10 devices. While there's no tool that can convert a desktop application to a UWP app, you can reuse a lot of your existing code and that lowers the cost of building one. This guide shows you how to do that.
 
@@ -61,7 +61,7 @@ Some of your code will be platform-specific and will need to remain in your desk
 
 ### Example: Migrating data access code to a .NET Standard 2.0 library
 
-Let's assume that we have a very basic Windows Forms app that shows customers from our Northwind sample database.
+Let's assume that we have a very basic Windows Forms application that shows customers from our Northwind sample database.
 
 ![Windows Forms App](images/desktop-to-uwp/win-forms-app.png)
 

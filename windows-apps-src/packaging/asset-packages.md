@@ -3,7 +3,7 @@ author: laurenhughes
 title: Introduction to asset packages
 description: Asset packages are a type of package that act as a centralized location for an application’s common files – effectively eliminating the necessity for duplicated files throughout its architecture packages.
 ms.author: lahugh
-ms.date: 04/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,7 +25,7 @@ Because asset packages contain all the architecture, language, and scale agnosti
 ### How do asset packages affect publishing?
 The most obvious benefit of asset packages is the reduced size of packaged apps. Smaller app packages speed up the app’s publishing process by letting the Store process less files; however this is not the most important benefit of asset packages.
 
-When an asset package is created, you can specify whether the package should be allowed to execute. Since asset packages should contain only architecture agnostic files, they generally don't contain any .dll or .exe files, so for asset packages typically don't need to execute. The importance of this distinction is that during the publishing process, all executable packages must be scanned to ensure that they do not contain malware, and this scanning process takes longer for larger packages. However, if a package is designated as non-executable, the installation of the app will ensure that files contained in this package cannot be executed. This guarantee eliminates the need for a complete package scan and will greatly reduce the malware scan time during the publication of the app (and for updates too) - thus making publishing significantly faster for apps that use asset packages. Note that [flat bundle app packages](flat-bundles.md) must also be used to get this publishing benefit since this is what allows the Store to process each .appx package file in parallel. 
+When an asset package is created, you can specify whether the package should be allowed to execute. Since asset packages should contain only architecture agnostic files, they generally don't contain any .dll or .exe files, so for asset packages typically don't need to execute. The importance of this distinction is that during the publishing process, all executable packages must be scanned to ensure that they do not contain malware, and this scanning process takes longer for larger packages. However, if a package is designated as non-executable, the installation of the app will ensure that files contained in this package cannot be executed. This guarantee eliminates the need for a complete package scan and will greatly reduce the malware scan time during the publication of the app (and for updates too) - thus making publishing significantly faster for apps that use asset packages. Note that [flat bundle app packages](flat-bundles.md) must also be used to get this publishing benefit since this is what allows the Store to process each .appx or .msix package file in parallel. 
 
 
 ### Should I use asset packages?
@@ -49,6 +49,11 @@ Use this command to create the asset package using MakeAppx.exe:
 
 ```syntax 
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
+
+...
+
+MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
+
 ```
 It should be noted here that all of the files referenced in the AppxManifest (the logo files) cannot be moved into asset packages – these files must be duplicated across architecture packages. 
 Asset packages should also not contain a resources.pri; MRT cannot be used to access asset package files. To learn more about how to access asset package files and why asset packages require your app to be installed to an NTFS drive, see [Developing with asset packages and package folding](Package-Folding.md).

@@ -5,6 +5,7 @@ title: Tree view
 label: Tree view
 template: detail.hbs
 ms.author: jimwalk
+ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
@@ -15,9 +16,6 @@ dev_langs:
   - vb
 ---
 # TreeView
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here. Preview features require the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
@@ -335,9 +333,9 @@ A user can invoke an action (treating the item like a button) instead of selecti
 
 **[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) class**
 
-The ItemInvoked event args give you acces to the invoked item. The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.
+The ItemInvoked event args give you access to the invoked item. The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.
 
-Here's an example of an ItemInvoked event handler. The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collpases the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
+Here's an example of an ItemInvoked event handler. The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
@@ -376,7 +374,13 @@ End Sub
 
 The TreeView control supports both single-selection and multi-selection. By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes. The [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.
 
-When selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
+#### Multiple selection
+
+When multiple selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
+
+Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
+
+![Multiple selection in a tree view](images/treeview-selection.png)
 
 Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
 

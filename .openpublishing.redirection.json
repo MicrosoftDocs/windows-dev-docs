@@ -507,7 +507,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763-api-diff",
       "redirect_document_id": false
     },
     {
@@ -557,7 +557,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763",
       "redirect_document_id": false
     },
     {

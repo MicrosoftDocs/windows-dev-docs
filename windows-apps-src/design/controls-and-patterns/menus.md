@@ -5,7 +5,7 @@ title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 07/19/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,9 +18,6 @@ doc-status: Published
 ms.localizationpriority: medium
 ---
 # Menus and context menus
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here. Preview features require the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Menus and context menus display a list of commands or options when the user requests them. Use a menu flyout to show a single, inline menu. Use a menu bar to show a set of menus in a horizontal row, typically at the top of an app window. Each menu can have menu items and sub-menus.
 
@@ -48,7 +45,7 @@ To show a set of multiple top-level menus in a horizontal row, use a menu bar. Y
 
 ### MenuBar vs. CommandBar
 
-MenuBar and CommandBar both represent surfaces that you can use to expose commands to your users. The MenuBar provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping then a CommandBar allows.
+MenuBar and CommandBar both represent surfaces that you can use to expose commands to your users. The MenuBar provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a CommandBar allows.
 
 You can also use a MenuBar in conjunction with a CommandBar. Use the MenuBar to provide the bulk of the commands, and the CommandBar to highlight the most used commands.
 

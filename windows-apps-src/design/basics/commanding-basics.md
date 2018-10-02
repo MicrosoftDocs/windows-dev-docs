@@ -7,7 +7,7 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 05/04/2018
+ms.date: 10/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -87,10 +87,11 @@ Using the right elements to enable command interactions can make the difference 
 
 For a complete list, see [Controls and UI elements](../controls-and-patterns/index.md)
 
-##  Place commands on the right surface
-You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as command bars, menus, dialogs, and flyouts.
+## Place commands on the right surface
 
-Note that, whenever possible, you should allow users to manipulate content directly rather than use commands that act on the content. For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.
+You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, and dialog.
+
+Note that, whenever possible, you should let users manipulate content directly rather than use commands that act on the content. For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.
 
 Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app. Here's a list of some of the most common command surfaces.
 
@@ -109,9 +110,9 @@ Otherwise, if users can't manipulate content directly, then place command elemen
         ![commandbar image](images/commanding/thumbnail-commandbar.svg)
     :::column-end:::
 	:::column span="2":::
-        <b>Command bars</b>
+        <b>Command bars and menu bars</b>
 
-        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen.
+        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
 :::row-end:::
 
 :::row:::
@@ -121,7 +122,11 @@ Otherwise, if users can't manipulate content directly, then place command elemen
 	:::column span="2":::
         <b>Menus and context menus</b>
 
-        Sometimes it is more efficient to group multiple commands into a command menu to save space. <a href="../controls-and-patterns/menus.md">Menus and context menus</a> display a list of commands or options when the user requests them. Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands. Context menus are usually prompted by a user right-clicking.
+        <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
+
+        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+
+        <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
 ## Provide feedback for interactions

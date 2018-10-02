@@ -26,6 +26,7 @@ This section describes how to use a Uniform Resource Identifier (URI) to launch 
 | [Launch the UWP app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
 | [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
 | [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
+| [Launch screen snipping](launch-screen-snipping.md) | Learn how to use URI schemes to open a new snip, or to open the Snip & Sketch app. |
 | [Enable apps for websites using app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by supporting the Apps for Websites feature. |
 
 ## Related Topics

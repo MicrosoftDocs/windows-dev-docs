@@ -54,6 +54,24 @@ A **TemplateBinding** is always a one-way binding. Both properties involved must
 
 **Note**  In the Windows Runtime XAML processor implementation, there is no backing class representation for **TemplateBinding**. **TemplateBinding** is exclusively for use in XAML markup. There isn't a straightforward way to reproduce the behavior in code.
 
+### x:Bind in ControlTemplate
+
+Starting with the next major update to Windows 10, you can use **x:Bind** markup extension anywhere you used **TemplateBinding** in [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+
+The [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) property will be required (not optional) on [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) when using **x:Bind**.
+
+With **x:Bind** support, you can now use both [Function bindings](../data-binding/function-bindings.md) as well as two-way bindings in [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+
+In the following example, the TextBlock.Text evaluates to Button.Content.ToString(). The TargetType on the ControlTemplate acts as the data source and accomplishes the same result as a TemplateBinding to parent.
+
+```xaml
+<ControlTemplate TargetType="Button">
+    <Grid>
+        <TextBlock Text="{x:Bind Content}" />
+    </Grid>
+</ControlTemplate>
+```
+
 ## Related topics
 
 * [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: The xBind markup extension is an alternative to Binding. xBind lacks some of the features of Binding, but it runs in less time and less memory than Binding and supports better debugging.
+description: The xBind markup extension is a high performance alternative to Binding. xBind - new for Windows 10 - runs in less time and less memory than Binding and supports better debugging.
 title: xBind markup extension
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 **Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** lacks some of the features of **{Binding}**, but it runs in less time and less memory than **{Binding}** and supports better debugging.
+The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** runs in less time and less memory than **{Binding}** and supports better debugging.
 
 At XAML compile time, **{x:Bind}** is converted into code that will get a value from a property on a data source, and set it on the property specified in markup. The binding object can optionally be configured to observe changes in the value of the data source property and refresh itself based on those changes (`Mode="OneWay"`). It can also optionally be configured to push changes in its own value back to the source property (`Mode="TwoWay"`).
 
@@ -41,6 +41,8 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 <object property="{x:Bind bindingProperties}" .../>
 -or-
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
+-or-
+<object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
 | Term | Description |
@@ -50,6 +52,25 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 | _propName_=_value_\[, _propName_=_value_\]* | One or more binding properties that are specified using a name/value pair syntax. |
 | _propName_ | The string name of the property to set on the binding object. For example, "Converter". |
 | _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-you-can-set) section below. |
+
+## Examples
+
+```XAML
+<Page x:Class="QuizGame.View.HostView" ... >
+    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
+</Page>
+```
+
+This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. Note the declaration of an **x:DataType** value.
+
+```XAML
+  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
+    <StackPanel Orientation="Vertical" Height="50">
+      <TextBlock Text="{x:Bind Title}"/>
+      <TextBlock Text="{x:Bind Description}"/>
+    </StackPanel>
+  </DataTemplate>
+```
 
 ## Property path
 
@@ -63,7 +84,8 @@ For example: in a page, **Text="{x:Bind Employee.FirstName}"** will look for an 
 
 For C++/CX, **{x:Bind}** cannot bind to private fields and properties in the page or data model – you will need to have a public property for it to be bindable. The surface area for binding needs to be exposed as CX classes/interfaces so that we can get the relevant metadata. The **\[Bindable\]** attribute should not be needed.
 
-With **x:Bind**, you do not need to use **ElementName=xxx** as part of the binding expression. With **x:Bind**, you can use the name of the element as the first part of the path for the binding because named elements become fields within the page or user control that represents the root binding source
+With **x:Bind**, you do not need to use **ElementName=xxx** as part of the binding expression. Instead, you can use the name of the element as the first part of the path for the binding because named elements become fields within the page or user control that represents the root binding source. 
+
 
 ### Collections
 
@@ -88,78 +110,7 @@ _Note: The C#-style cast syntax is more flexible than the attached property synt
 
 ## Functions in binding paths
 
-Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables
-
-- A simpler way to achieve value conversion
-- A way for bindings to depend on more than one parameter
-
-> [!NOTE]
-> To use functions with **{x:Bind}**, your app's minimum target SDK version must be 14393 or later. You can't use functions when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
-
-In the following example, the background and foreground of the item are bound to functions to do conversion based on the color parameter
-
-```xaml
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-
-```csharp
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-
-### Function Syntax
-
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### Path to the function
-
-The path to the function is specified like other property paths and can include dots (.), indexers or casts to locate the function.
-
-Static functions can be specified using XMLNamespace:ClassName.MethodName syntax. For example **&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** will map to the DateTime.Parse function, assuming that **xmlns:sys="using:System"** is specified on the top of the page.
-
-If the mode is OneWay/TwoWay, then the function path will have change detection performed on it, and the binding will be re-evaluated if there are changes to those objects.
-
-The function being bound to needs to:
-
-- Be accessible to the code and metadata – so internal / private work in C#, but C++/CX will need methods to be public WinRT methods
-- Overloading is based on the number of arguments, not type, and it will try to match to the first overload with that many arguments
-- The argument types need to match the data being passed in – we don’t do narrowing conversions
-- The return type of the function needs to match the type of the property that is using the binding
-
-### Function arguments
-
-Multiple function arguments can be specified, separated by comma's (,)
-
-- Binding Path – Same syntax as if you were binding directly to that object.
-  - If the mode is OneWay/TwoWay then change detection will be performed and the binding re-evaluated upon object changes
-- Constant string enclosed in quotes – quotes are needed to designate it as a string. Hat (^) can be used to escape quotes in strings
-- Constant Number - for example -123.456
-- Boolean – specified as "x:True" or "x:False"
-
-### Two way function bindings
-
-In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the **BindBack** binding property, for example **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**. The function should take one argument which is the value that needs to be pushed back to the model.
+Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This is a powerful feature for databinding that enables several scenarios in markup. See [function bindings](../data-binding/function-bindings.md) for details.
 
 ## Event Binding
 
@@ -221,21 +172,3 @@ Pages and user controls that include Compiled bindings will have a "Bindings" pr
 
 **{x:Bind}** is a markup extension only, with no way to create or manipulate such bindings programmatically. For more info about markup extensions, see [XAML overview](xaml-overview.md).
 
-## Examples
-
-```XML
-<Page x:Class="QuizGame.View.HostView" ... >
-    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
-</Page>
-```
-
-This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. Note the declaration of an **x:DataType** value.
-
-```XML
-  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
-    <StackPanel Orientation="Vertical" Height="50">
-      <TextBlock Text="{x:Bind Title}"/>
-      <TextBlock Text="{x:Bind Description}"/>
-    </StackPanel>
-  </DataTemplate>
-```

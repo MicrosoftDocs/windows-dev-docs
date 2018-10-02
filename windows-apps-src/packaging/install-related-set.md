@@ -86,7 +86,7 @@ The basic template includes the App Installer file information.
 ```
 
 ### Step 3: Add the main package information 
-If the main app package is an .appxbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
+If the main app package is an .appxbundle or .msixbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx or .msix file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

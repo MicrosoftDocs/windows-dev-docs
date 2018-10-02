@@ -52,6 +52,20 @@ The drill animation is represented by the [**DrillInNavigationTransitionInfo**](
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
+## Horizontal slide
+
+Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls-and-patterns/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizonal slide with SlideNavigationTransitionInfo.
+
+The desired feeling is that the user is navigating between pages that are next to each other. 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
+```
+
 ## Suppress
 
 To avoid playing any animation during navigation, use [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) in the place of other **NavigationTransitionInfo** subtypes.

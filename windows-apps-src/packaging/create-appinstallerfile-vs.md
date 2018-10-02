@@ -29,7 +29,7 @@ You can either configure the `TargetPlatformMinVersion` property when you create
 
 ### Create Packages
 
-To distribute an app via sideloading, you must create an app package (.appx) or app bundle (.appxbundle) and publish it in a shared location.
+To distribute an app via sideloading, you must create an app package (.appx/.msix) or app bundle (.appxbundle/.msixbundle) and publish it in a shared location.
 
 To do that, use the **Create App Packages** wizard in Visual Studio with the following steps.
 

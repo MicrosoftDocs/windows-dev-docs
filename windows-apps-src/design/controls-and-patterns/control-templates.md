@@ -55,6 +55,9 @@ This XAML creates a [**ControlTemplate**](https://msdn.microsoft.com/library/win
 
 A [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See [TemplateBinding markup extension](../../xaml-platform/templatebinding-markup-extension.md) for more info.
 
+> [!NOTE]
+> Starting with the next major update to Windows 10, you can use [**x:Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) markup extensions in places you use [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). See [TemplateBinding markup extension](../../xaml-platform/templatebinding-markup-extension.md) for more info.
+
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
     <Border BorderBrush="{TemplateBinding BorderBrush}" 

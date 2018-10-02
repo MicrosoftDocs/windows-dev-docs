@@ -1,4 +1,4 @@
-# [Overview](index.md)
+﻿# [Overview](index.md)
 
 # App types
 
@@ -118,9 +118,11 @@
 ## [Data binding](../data-binding/index.md)
 ### [Data binding overview](../data-binding/data-binding-quickstart.md)
 ### [Data binding in depth](../data-binding/data-binding-in-depth.md)
+### [Functions in x:Bind ](../data-binding/function-bindings.md)
 ### [Tutorial: Create data bindings](../data-binding/xaml-basics-data-binding.md)
 ### [Sample data on the design surface, and for prototyping](../data-binding/displaying-data-in-the-designer.md)
 ### [Bind hierarchical data and create a master/details view](../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)
+### [Data binding and MVVM](../data-binding/data-binding-and-mvvm.md)
 
 ## [Files, folders, and libraries](../files/index.md)
 ### [Enumerate and query files and folders](../files/quickstart-listing-files-and-folders.md)
@@ -612,7 +614,7 @@
 ### [Case study: Bookstore1](../porting/w8x-to-uwp-case-study-bookstore1.md)
 ### [Case study: Bookstore2](../porting/w8x-to-uwp-case-study-bookstore2.md)
 ### [Case study: QuizGame](../porting/w8x-to-uwp-case-study-quizgame.md)
-## [Desktop Bridge](../porting/desktop-to-uwp-root.md)
+## [Package desktop applications](../porting/desktop-to-uwp-root.md)
 ### [Prepare to package](../porting/desktop-to-uwp-prepare.md)
 ### [Package using the Desktop App Converter](../porting/desktop-to-uwp-run-desktop-app-converter.md)
 ### [Package using Visual Studio](../porting/desktop-to-uwp-packaging-dot-net.md)
@@ -674,6 +676,7 @@
 #### [Launch the Microsoft Store app](../launch-resume/launch-store-app.md)
 #### [Launch the Windows Maps app](../launch-resume/launch-maps-app.md)
 #### [Launch the People app](../launch-resume/launch-people-apps.md)
+#### [Launch screen snipping](../launch-resume/launch-screen-snipping.md)
 #### [Support web-to-app linking with app URI handlers](../launch-resume/web-to-app-linking.md)
 ### [Launch an app through file activation](../launch-resume/launch-app-from-file.md)
 #### [Launch the default app for a file](../launch-resume/launch-the-default-app-for-a-file.md)

@@ -98,9 +98,14 @@ These toolkits provide controls and layout templates for designing UWP apps.
     
 ## Samples
 
+![VanArsdel image](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+The Van Arsdel, Ltd. end-to-end UWP sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI Library</a> as well as powerful underlying features of the ux framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Download the VanArsdel sample</a> <br><a href="https://github.com/microsoft/vanarsdel">Check out the VanArsdel sample on GitHub</a>
+
 ![build cast image](images/buildcast.png)
 **BuildCast**<br>
-BuildCast is an end-to-end sample built to showcase the Fluent Design System as well as other capabilities of the Universal Windows Platform. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Build Amazing Apps with Fluent Design</a> talk. <br>
+BuildCast is an end-to-end sample built to showcase the Fluent Design System and UWP. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Build Amazing Apps with Fluent Design</a> talk. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Download the BuildCast sample</a> <br><a href="https://github.com/Microsoft/BuildCast">Check out the BuildCast sample on GitHub</a>
 
 ![Lunch Scheduler](images/lunchscheduler.png)
