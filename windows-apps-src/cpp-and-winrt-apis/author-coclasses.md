@@ -410,9 +410,9 @@ Build the application, and then run it at least once as Administrator to cause t
 
 ## In-process COM server
 
-The *ToastAndCallback* example app above functions as a local (or out-of-process) COM server. This is indicated by the [LocalServer32](/windows/desktop/com/localserver32) Windows Registry key that you use to register it. A local COM server hosts its coclass(es) inside an executable binary (an `.exe`).
+The *ToastAndCallback* example app above functions as a local (or out-of-process) COM server. This is indicated by the [LocalServer32](/windows/desktop/com/localserver32) Windows Registry key that you use to register the CLSID of its coclass. A local COM server hosts its coclass(es) inside an executable binary (an `.exe`).
 
-Alternatively (and arguably more likely), you can choose to host your coclass(es) inside a dynamic-link library (a `.dll`). A COM server in the form of a DLL is known as an in-process COM server, and it's indicated by being registered by using the [InprocServer32](/windows/desktop/com/inprocserver32) Windows Registry key.
+Alternatively (and arguably more likely), you can choose to host your coclass(es) inside a dynamic-link library (a `.dll`). A COM server in the form of a DLL is known as an in-process COM server, and it's indicated by CLSIDs being registered by using the [InprocServer32](/windows/desktop/com/inprocserver32) Windows Registry key.
 
 ### Create a Dynamic-Link Library (DLL) project
 
