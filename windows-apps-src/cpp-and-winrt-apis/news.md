@@ -19,8 +19,8 @@ The table below contains news and changes to [C++/WinRT](/windows/uwp/cpp-and-wi
 
 | New or changed feature | More info |
 | - | - |
-| The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
 | **Breaking change**. For it to compile, C++/WinRT doesn't depend on headers from the Windows SDK. | See [Isolation from Windows SDK header files](#isolation-from-windows-sdk-header-files), below. |
+| The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
 | There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](collections.md). |
 | You can use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). |
 | Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asychronous operation, and cancellation callbacks](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
@@ -29,17 +29,31 @@ The table below contains news and changes to [C++/WinRT](/windows/uwp/cpp-and-wi
 
 Other changes.
 
-- **Breaking change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/api/get-abi) now returns `void*` instead of `HSTRING`. You can use `static_cast<HSTRING>(get_abi(my_hstring));` to get an HSTRING.
-- **Breaking change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/api/put-abi) now returns `void**` instead of `HSTRING*`. You can use `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` to get an HSTRING*.
+- **Breaking change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) now returns `void*` instead of `HSTRING`. You can use `static_cast<HSTRING>(get_abi(my_hstring));` to get an HSTRING.
+- **Breaking change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) now returns `void**` instead of `HSTRING*`. You can use `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` to get an HSTRING*.
 - **Breaking change**. HRESULT is now projected as **winrt::hresult**. If you need an HRESULT (to do type checking, or to support type traits), then you can `static_cast` a **winrt::hresult**. Otherwise, **winrt::hresult** converts to HRESULT, as long as you include `unknwn.h` before you include any C++/WinRT headers.
 - **Breaking change**. GUID is now projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, **winrt::hresult** converts to GUID, as long as you include `unknwn.h` before you include any C++/WinRT headers.
-- **Breaking change**. The [**winrt::handle_type constructor**](/uwp/api/handle-type#handletypehandletype-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/api/handle-type#handletypeattach-function) instead.
+- **Breaking change**. The [**winrt::handle_type constructor**](/uwp/cpp-ref-for-winrt/handle-type#handletypehandletype-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/cpp-ref-for-winrt/handle-type#handletypeattach-function) instead.
 - **Breaking change**. The signatures of **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** have changed. You mustn't declare these functions at all. Instead, include `winrt/base.h` (which is automatically included if you include any C++/WinRT Windows namespace header files) to include the declarations of these functions.
-- For the [**winrt::clock struct**](/uwp/api/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
+- For the [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
 - APIs that expect **IBuffer** parameters are simplified. Although most APIs prefer collections or arrays, enough APIs rely on **IBuffer** that it needed to be easier to use such APIs from C++. This update provides direct access to the data behind an **IBuffer** implementation, using the same data naming convention used by the C++ Standard Library containers. This also avoids colliding with metadata names that conventionally begin with an uppercase letter.
 - Improved code generation: various improvements to reduce code size, improve inlining, and optimize factory caching.
 - Removed unnecessary recursion. When the command-line refers to a folder, rather than to a specific `.winmd`, the `cppwinrt.exe` tool no longer searches recursively for `.winmd` files. The `cppwinrt.exe` tool also now handles duplicates more intelligently, making it more resilient to user error, and to poorly-formed `.winmd` files.
-- Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/api/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.
+- Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.
+
+## Isolation from Windows SDK header files
+
+This is potentially a breaking change for your code.
+
+For it to compile, C++/WinRT no longer depends on header files from the Windows SDK. Header files in the C run-time library (CRT) and the C++ Standard Template Library (STL) also don't include any Windows SDK headers. And that improves standards compliance, avoids inadvertent dependencies, and greatly reduces the number of macros that you have to guard against.
+
+This independence means that C++/WinRT is now more portable and standards compliant, and it furthers the possibility of it becoming a cross-compiler and cross-platform library. It also means that the C++/WinRT headers aren't adversely affected macros.
+
+If you previously left it to C++/WinRT to include any Windows headers in your project, then you'll now need to include them yourself. It is, in any case, always best practice to explicitly include the headers that you depend on, and not leave it to another library to include them for you.
+
+Currently, the only exceptions to Windows SDK header file isolation are for intrinsics, and numerics. There are no known issues with these last remaining dependencies.
+
+In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
 
 ## How to retarget your C++/WinRT project to a later version of the Windows SDK
 
@@ -57,17 +71,3 @@ If the C++ compiler produces "*error C2039: 'IUnknown': is not a member of '\`gl
 You may also need to add `#include <hstring.h>` after that.
 
 If the C++ linker produces "*error LNK2019: unresolved external symbol _WINRT_CanUnloadNow@0 referenced in function _VSDesignerCanUnloadNow@0*", then you can resolve that by adding `#define _VSDESIGNER_DONT_LOAD_AS_DLL` to your `pch.h` file.
-
-## Isolation from Windows SDK header files
-
-This is potentially a breaking change for your code.
-
-For it to compile, C++/WinRT no longer depends on header files from the Windows SDK. Header files in the C run-time library (CRT) and the C++ Standard Template Library (STL) also don't include any Windows SDK headers. And that improves standards compliance, avoids inadvertent dependencies, and greatly reduces the number of macros that you have to guard against.
-
-This independence means that C++/WinRT is now more portable and standards compliant, and it furthers the possibility of it becoming a cross-compiler and cross-platform library. It also means that the C++/WinRT headers aren't adversely affected macros.
-
-If you previously left it to C++/WinRT to include any Windows headers in your project, then you'll now need to include them yourself. It is, in any case, always best practice to explicitly include the headers that you depend on, and not leave it to another library to include them for you.
-
-Currently, the only exceptions to Windows SDK header file isolation are for intrinsics, and numerics. There are no known issues with these last remaining dependencies.
-
-In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
