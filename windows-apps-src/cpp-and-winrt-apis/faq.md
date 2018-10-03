@@ -11,29 +11,15 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, as
 ms.localizationpriority: medium
 ---
 
-# Frequently-asked questions about [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
+# Frequently-asked questions about C++/WinRT
+Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 > [!NOTE]
 > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
 
 ## How do I retarget my C++/WinRT project to a later version of the Windows SDK?
 
-The latest generally-available version of the Windows SDK is 10.0.17763.0 (Windows 10, version 1809). The method for retargeting your project that's likely to result in the fewest compiler and linker issue is also the most labor-intensive. That method involves creating a new project (targeting the Windows SDK version of your choice), and then copying files over to your new project from your old. There will be sections of your old `.vcxproj` and `.vcxproj.filters` files that you can just copy over to save you adding files in Visual Studio.
-
-However, there are two other ways to retarget your project in Visual Studio.
-
-- Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Set **Windows SDK Version** to the version that you want to target.
-- In **Solution Explorer**, right-click the project node, click **Retarget Projects**, choose the version(s) you wish to target, and then click **OK**.
-
-If you encounter any compiler or linker errors after using either of these two methods, then you can try cleaning the solution (**Build** > **Clean Solution** and/or manually delete all temporary folders and files) before trying to build again.
-
-If the C++ compiler produces "*error C2039: 'IUnknown': is not a member of '\`global namespace''*", then add `#include <unknwn.h>` to the top of your `pch.h` file.
-
-You may also need to add `#include <hstring.h>` after that.
-
-If the C++ linker produces "*error LNK2019: unresolved external symbol _WINRT_CanUnloadNow@0 referenced in function _VSDesignerCanUnloadNow@0*", then you can resolve that by adding `#define _VSDESIGNER_DONT_LOAD_AS_DLL` to your `pch.h` file.
-
+See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134
 
@@ -79,7 +65,7 @@ C:\ExperimentWithLLVMClang>type main.cpp
 #pragma comment(lib, "windowsapp")
 #pragma comment(lib, "ole32")
 
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <stdio.h>
 #include <iostream>
 
@@ -162,4 +148,4 @@ a.f();
 The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
 
 > [!NOTE]
-> If this topic didn't answer your question, you might find help by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

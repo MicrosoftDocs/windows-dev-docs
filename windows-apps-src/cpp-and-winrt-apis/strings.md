@@ -3,7 +3,7 @@ author: stevewhims
 description: With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the winrt::hstring type.
 title: String handling in C++/WinRT
 ms.author: stwhi
-ms.date: 05/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,12 +11,13 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, string
 ms.localizationpriority: medium
 ---
 
-# String handling in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-With C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring** (note: not with narrow string types such as **std::string**). C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (defined in the C++/WinRT base library, which is `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). And that's the string type that Windows Runtime constructors, functions, and properties actually take and return. But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your client code. If you're *authoring* APIs, then you're more likely to need to know about **hstring**.
+# String handling in C++/WinRT
+
+With [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring** (note: not with narrow string types such as **std::string**). C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (defined in the C++/WinRT base library, which is `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). And that's the string type that Windows Runtime constructors, functions, and properties actually take and return. But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your client code. If you're *authoring* APIs, then you're more likely to need to know about **hstring**.
 
 There are many string types in C++. Variants exist in many libraries in addition to **std::basic_string** from the C++ Standard Library. C++17 has string conversion utilities, and **std::basic_string_view**, to bridge the gaps between all of the string types.  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) provides convertibility with **std::wstring_view** to provide the interoperability that **std::basic_string_view** was designed for.
 
-## Using **std::wstring** (and optionally [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) with [**Uri**](/uwp/api/windows.foundation.uri)
+## Using **std::wstring** (and optionally **winrt::hstring**) with **Uri**
 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is constructed from a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ```cppwinrt

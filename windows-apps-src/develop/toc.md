@@ -381,6 +381,7 @@
 ## [C++/WinRT](../cpp-and-winrt-apis/index.md)
 ### [Introduction to C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 ### [Get started with C++/WinRT](../cpp-and-winrt-apis/get-started.md)
+### [What's new in C++/WinRT](../cpp-and-winrt-apis/news.md)
 ### [Frequently-asked questions](../cpp-and-winrt-apis/faq.md)
 ### [Troubleshooting](../cpp-and-winrt-apis/troubleshooting.md)
 ### [Photo Editor C++/WinRT sample application](../cpp-and-winrt-apis/photo-editor-sample.md)
@@ -403,7 +404,7 @@
 ### [Move to C++/WinRT from C++/CX](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
 ### [Interop between C++/WinRT and the ABI](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ### [Move to C++/WinRT from WRL](../cpp-and-winrt-apis/move-to-winrt-from-wrl.md)
-### [Weak references](../cpp-and-winrt-apis/weak-references.md)
+### [Strong and weak references in C++/WinRT](../cpp-and-winrt-apis/weak-references.md)
 ### [Agile objects](../cpp-and-winrt-apis/agile-objects.md)
 ### C++ language
 #### [Value categories, and references](../cpp-and-winrt-apis/cpp-value-categories.md)

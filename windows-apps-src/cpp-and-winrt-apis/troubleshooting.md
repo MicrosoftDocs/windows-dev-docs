@@ -11,9 +11,10 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshootin
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) issues
+# Troubleshooting C++/WinRT issues
+
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 This topic is up front so that you're aware of it right away; even if you don't need it yet. The table of troubleshooting symptoms and remedies below may be helpful to you whether you're cutting new code or porting an existing app. If you're porting, and you're eager to forge ahead and get to the stage where your project builds and runs, then you can make temporary progress by commenting or stubbing out any non-essential code that's causing issues, and then returning to pay off that debt later.
 
@@ -40,15 +41,14 @@ If your app terminates and all you know is that an unhandled exception was throw
 | The C++ compiler produces a "*must be WinRT type*" error for an EventHandler or TypedEventHandler delegate specialization.|Consider using **winrt::delegate&lt;...T&gt;** instead. See [Author events in C++/WinRT](author-events.md).|
 | The C++ compiler produces a "*must be WinRT type*" error for a Windows Runtime asynchronous operation specialization.|Consider returning a Parallel Patterns Library (PPL) [**task**](https://msdn.microsoft.com/library/hh750113) instead. See [Concurrency and asynchronous operations](concurrency.md).|
 | The C++ compiler produces "*error C2220: warning treated as error - no 'object' file generated*".|Either correct the warning, or set **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**.|
-| Your app crashes because an event handler in your C++/WinRT object is called after the object has been destroyed.|See [Using the *this* object in an event handler](handle-events.md#using-the-this-object-in-an-event-handler).|
-| The C++ compiler produces "*error C2338: This is only for weak ref support*".|You're requesting a weak reference for a type that passed the **winrt::no_weak_ref** marker struct as a template argument to its base class. See [Opting out of weak reference support](weak-references.md#opting-out-of-weak-reference-support)|
-| The C++ linker produces "*error LNK2019: Unresolved external symbol*"|See [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
+| Your app crashes because an event handler in your C++/WinRT object is called after the object has been destroyed.|See [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
+| The C++ compiler produces "*error C2338: This is only for weak ref support*".|You're requesting a weak reference for a type that passed the **winrt::no_weak_ref** marker struct as a template argument to its base class. See [Opting out of weak reference support](weak-references.md#opting-out-of-weak-reference-support).|
+| The C++ linker produces "*error LNK2019: Unresolved external symbol*"|See [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
 | The LLVM and Clang toolchain produces errors when used with C++/WinRT.|We don't support the LLVM and Clang toolchain for C++/WinRT, but if you wanted to emulate how we use it internally, then you could try an experiment such as the one described in [Can I use LLVM/Clang to compile with C++/WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
 | The C++ compiler produces "*no appropriate default constructor available*" for a projected type. | If you're trying to delay the initialization of a runtime class object, or to consume and implement a runtime class in the same project, then you'll need to call the `nullptr_t` constructor. For more info, see [Consume APIs with C++/WinRT](consume-apis.md). |
 | The C++ compiler produces "*error C3861: 'from_abi': identifier not found*", and other errors originating in *base.h*. You may see this error if you are using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803). | Either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Language** > **Command Line** under **Additional Options**, then delete it). |
-| The C++ compiler produces "*error C2039: 'IUnknown': is not a member of '\`global namespace''*". | See [How do I retarget my C++/WinRT project to a later version of the Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
-| The C++ linker produces "*error LNK2019: unresolved external symbol _WINRT_CanUnloadNow@0 referenced in function _VSDesignerCanUnloadNow@0*" | See [How do I retarget my C++/WinRT project to a later version of the Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
-
+| The C++ compiler produces "*error C2039: 'IUnknown': is not a member of '\`global namespace''*". | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+| The C++ linker produces "*error LNK2019: unresolved external symbol _WINRT_CanUnloadNow@0 referenced in function _VSDesignerCanUnloadNow@0*" | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 
 > [!NOTE]
-> If this topic didn't answer your question, you might find help by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

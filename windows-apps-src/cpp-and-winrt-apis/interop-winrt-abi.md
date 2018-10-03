@@ -11,8 +11,9 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate,
 ms.localizationpriority: medium
 ---
 
-# Interop between [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) and the ABI
-This topic shows how to convert between SDK application binary interface (ABI) and C++/WinRT objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
+# Interop between C++/WinRT and the ABI
+
+This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
 ## What is the Windows Runtime ABI, and what are ABI types?
 A Windows Runtime class (runtime class) is really an abstraction. This abstraction defines a binary interface (the Application Binary Interface, or ABI) that allows various programming languages to interact with an object. Regardless of programming language, client code interaction with a Windows Runtime object happens at the lowest level, with client language constructs translated into calls into the object's ABI.

@@ -157,9 +157,9 @@ To launch the Manifest Designer:
 
 The first menu item in the **Visual Assets** tab, **All Visual Assets**, does exactly what its name suggests: generates every visual asset your app needs with the press of a button.
 
-![Generate all visual assets in Visaul Studio](images/app-icons/all-visual-assets.png)
+![Generate all visual assets in Visual Studio](images/app-icons/all-visual-assets.png)
 
-All you need to do is supply a single image, and Visaul Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.
+All you need to do is supply a single image, and Visual Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.
 
 To generate all assets at once:
 1. Click the **...** next to the **Source** field and select the image you want to use. If you're using a bitmap image, make sure it's at least 400 by 400 pixels so that you get sharp results. Vector-based images work best; Visual Studio lets you use AI (Adobe Illustrator) and PDF files. 

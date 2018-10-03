@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,11 +11,9 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, a
 ms.localizationpriority: medium
 ---
 
-# Concurrency and asynchronous operations with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+# Concurrency and asynchronous operations with C++/WinRT
 
-This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
+This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## Asynchronous operations and Windows Runtime "Async" functions
 Any Windows Runtime API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function (with a name ending in "Async"). The implementation of an asynchronous function initiates the work on another thread and returns immediately with an object that represents the asynchronous operation. When the asynchronous operation completes, that returned object contains any value that resulted from the work. The **Windows::Foundation** Windows Runtime namespace contains four types of asynchronous operation object.
@@ -25,7 +23,7 @@ Any Windows Runtime API that has the potential to take more than 50 milliseconds
 - [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_), and
 - [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
 
-Each of these asynchronous operation types is projected into a corresponding type in the **winrt::Windows::Foundation** C++/WinRT namespace. C++/WinRT also contains an internal await adapter struct. You don't use it directly but, thanks to that struct, you can write a ``co_await` statement to cooperatively await the result of any function that returns one of these asychronous operation types. And you can author your own coroutines that return these types.
+Each of these asynchronous operation types is projected into a corresponding type in the **winrt::Windows::Foundation** C++/WinRT namespace. C++/WinRT also contains an internal await adapter struct. You don't use it directly but, thanks to that struct, you can write a `co_await` statement to cooperatively await the result of any function that returns one of these asychronous operation types. And you can author your own coroutines that return these types.
 
 An example of an asynchronous Windows function is [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), which returns an asynchronous operation object of type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Let's look at some ways&mdash;blocking and non-blocking&mdash;of using C++/WinRT to call an API such as that.
 
@@ -298,10 +296,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 As long as the coroutine above is called from the UI thread that created the **TextBlock**, then this technique works. There will be many cases in your app where you're certain of that.
 
-> [!NOTE]
-> **The following code example relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can install the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later. Then, you can `co-await` the **winrt::resume_foreground** function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
+For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can `co-await` the **winrt::resume_foreground** function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -315,16 +310,142 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-## Reporting progress
+## Canceling an asychronous operation, and cancellation callbacks
 
-If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the **winrt::get_progress_token** function and use it to report progress back to a progress handler. Here's a code example.
+The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Let's begin with a simple example.
 
 ```cppwinrt
-// main.cpp : Defines the entry point for the console application.
-//
-
-#include "pch.h"
+// pch.h
+#pragma once
 #include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncAction ImplicitCancellationAsync()
+{
+    while (true)
+    {
+        std::cout << "ImplicitCancellationAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto implicit_cancellation{ ImplicitCancellationAsync() };
+    co_await 3s;
+    implicit_cancellation.Cancel();
+}
+
+int main()
+{
+    winrt::init_apartment();
+    MainCoroutineAsync().get();
+}
+```
+
+If you run the example above, then you'll see **ImplicitCancellationAsync** print one message per second for three seconds, after which time it automatically terminates as a result of being canceled. This works because, on encountering a `co_await` expression, a coroutine checks whether it has been cancelled. If it has, then it short-circuits out; and if it hasn't, then it suspends as normal.
+
+Cancellation can, of course, happen while the coroutine is suspended. Only when the coroutine resumes, or hits another `co_await`, will it check for cancellation. The issue is one of potentially too-coarse-grained latency in responding to cancellation.
+
+So, another option is to explicitly poll for cancellation from within your coroutine. Update the example above with the code in the listing below. In this new example, **ExplicitCancellationAsync** retrieves the object returned by the [**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token) function, and uses it to periodically check whether the coroutine has been canceled. As long as it's not canceled, the coroutine loops indefinitely; once it is canceled, the loop and the function exit normally. The outcome is the same as the previous example, but here exiting happens explicitly, and under control.
+
+```cppwinrt
+...
+IAsyncAction ExplicitCancellationAsync()
+{
+    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+
+    while (!cancellation_token())
+    {
+        std::cout << "ExplicitCancellationAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto explicit_cancellation{ ExplicitCancellationAsync() };
+    co_await 3s;
+    explicit_cancellation.Cancel();
+}
+...
+```
+
+Waiting on **winrt::get_cancellation_token** retrieves a cancellation token with knowledge of the **IAsyncAction** that the coroutine is producing on your behalf. You can use the function call operator on that token to query the cancellation state&mdash;essentially polling for cancellation. If you're performing some compute-bound operation, or iterating through a large collection, then this is a reasonable technique.
+
+### Register a cancellation callback
+The Windows Runtime's cancellation doesn't automatically flow to other asynchronous objects. But&mdash;introduced in version 10.0.17763.0 (Windows 10, version 1809) of the Windows SDK&mdash;you can register a cancellation callback. This is a pre-emptive hook by which cancellation can be propagated, and makes it possible to integrate with existing concurrency libraries.
+
+In this next code example, **NestedCoroutineAsync** does the work, but it has no special cancellation logic in it. **CancellationPropagatorAsync** is essentially a wrapper on the nested coroutine; the wrapper forwards cancellation pre-emptively.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncAction NestedCoroutineAsync()
+{
+    while (true)
+    {
+        std::cout << "NestedCoroutineAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction CancellationPropagatorAsync()
+{
+    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+    auto nested_coroutine{ NestedCoroutineAsync() };
+
+    cancellation_token.callback([&]
+    {
+        nested_coroutine.Cancel();
+    });
+
+    co_await nested_coroutine;
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto cancellation_propagator{ CancellationPropagatorAsync() };
+    co_await 3s;
+    cancellation_propagator.Cancel();
+}
+
+int main()
+{
+    winrt::init_apartment();
+    MainCoroutineAsync().get();
+}
+```
+
+**CancellationPropagatorAsync** registers a lambda function for its own cancellation callback, and then it awaits (it suspends) until the nested work completes. When or if **CancellationPropagatorAsync** is canceled, it propagates the cancellation to the nested coroutine. There's no need to poll for cancellation; nor is cancellation blocked indefinitely. This mechanism is flexible enough for you to use it to interop with a coroutine or concurrency library that knows nothing of C++/WinRT.
+
+## Reporting progress
+
+If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -369,7 +490,7 @@ IAsyncAction DoMath()
 
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
     DoMath().get();
 }
 ```
@@ -392,6 +513,33 @@ double pi{ co_await async_op_with_progress };
 
 For more info about completion handlers, see [Delegate types for asynchronous actions and operations](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
+## Fire and forget
+
+Sometimes, you have a task that can be done concurrently with other work, and you don't need to wait for that task to complete (no other work depends on it), nor do you need it to return a value. In that case, you can fire off the task and forget it. You can do that by writing a coroutine whose return type is [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) (instead of one of the Windows Runtime asynchronous operation types, or **concurrency::task**).
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace std::chrono_literals;
+
+winrt::fire_and_forget CompleteInFiveSeconds()
+{
+    co_await 5s;
+}
+
+int main()
+{
+    winrt::init_apartment();
+    CompleteInFiveSeconds();
+    // Do other work here.
+}
+```
+
 ## Important APIs
 * [concurrency::task class](/cpp/parallel/concrt/reference/task-class)
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)
@@ -400,6 +548,9 @@ For more info about completion handlers, see [Delegate types for asynchronous ac
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed class](/uwp/api/windows.web.syndication.syndicationfeed)
+* [winrt::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)
+* [winrt::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
+* [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 
 ## Related topics
 * [Handle events by using delegates in C++/WinRT](handle-events.md)

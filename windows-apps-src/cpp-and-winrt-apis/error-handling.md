@@ -11,8 +11,9 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handlin
 ms.localizationpriority: medium
 ---
 
-# Error handling with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-This topic discusses strategies for handling errors when programming with C++/WinRT. For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
+# Error handling with C++/WinRT
+
+This topic discusses strategies for handling errors when programming with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
 ## Avoid catching and throwing exceptions
 We recommend that you continue to write [exception-safe code](/cpp/cpp/how-to-design-for-exception-safety), but that you prefer to avoid catching and throwing exceptions whenever possible. If there's no handler for an exception, then Windows automatically generates an error report (including a minidump of the crash), which will help you track down where the problem is.
