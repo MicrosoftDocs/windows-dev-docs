@@ -345,7 +345,7 @@
 ##### [Renew a Microsoft Store ID key](../monetize/renew-a-windows-store-id-key.md)
 #### [App metadata API for advertising networks](../monetize/app-metadata-api-for-advertising-networks.md)
 ### [Send requests to the Store](../monetize/send-requests-to-the-store.md)
-### [Create a Retail Demo Experience (RDX) app](../monetize/retail-demo-experience.md)
+### [Add retail demo (RDX) features](../monetize/retail-demo-experience.md)
 ### [Simplify payments with the Payment Request API](../monetize/payment-request.md)
 
 ## [Packaging apps](../packaging/index.md)

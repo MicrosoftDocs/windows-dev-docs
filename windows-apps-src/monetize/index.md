@@ -31,7 +31,7 @@ For details about the fees charged by the Microsoft Store and how you get paid f
 | [Log custom events for Dev Center](log-custom-events-for-dev-center.md)  | Log custom events from your UWP app and review the events in the [Usage report](../publish/usage-report.md) in the Dev Center dashboard. This feature requires the Microsoft Store Services SDK. |
 | [Request ratings and reviews](request-ratings-and-reviews.md) |  Encourage your customers to rate or review your app by programmatically showing a rating and review UI.  |
 | [Microsoft Store services](using-windows-store-services.md)    |  Learn how to use RESTful APIs to automate submissions to the Store, access analytics data for your apps, and automate other tasks related to the Store.    |
-| [Create a Retail Demo Experience (RDX) app](retail-demo-experience.md)        |  Learn how to create a retail demo experience app that can be installed on PCs and mobile demo devices at a retail store.  |
+| [Add retail demo (RDX) features to your app](retail-demo-experience.md)        |  Include a retail demo mode in your Windows app so customers who try out PCs and devices on the sales floor can jump right in.  |
 
 ## Related topics
 
