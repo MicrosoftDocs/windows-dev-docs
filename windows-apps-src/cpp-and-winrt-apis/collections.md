@@ -3,7 +3,7 @@ author: stevewhims
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,15 +13,14 @@ ms.localizationpriority: medium
 
 # Collections with C++/WinRT
 
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 Internally, a Windows Runtime collection has a lot of complicated moving parts. But when you want to pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types, there are functions and base classes in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) to support you. These features take the complexity out of your hands, and save you a lot of overhead in time and effort.
 
-> [!IMPORTANT]
-> The features described in this topic are available if you've installed the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later.
-
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) is the Windows Runtime interface implemented by any random-access collection of elements. If you were to implement **IVector** yourself, you'd also need to implement [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_), and [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Even if you *need* a custom collection type, that's a lot of work. But if you have data in a **std::vector** (or a **std::map**, or a **std::unordered_map**) and all you want to do is pass that to a Windows Runtime API, then you'd want to avoid doing that level of work, if possible. And avoiding it *is* possible, because C++/WinRT helps you to create collections efficiently and with little effort.
+
+Also see [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
+
+> [!NOTE]
+> If you haven't installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later, then you won't have access to the functions and base classes that are documented in this topic. Instead, see [If you have an older version of the Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) for a listing of an observable vector template that you can use instead.
 
 ## Helper functions for collections
 

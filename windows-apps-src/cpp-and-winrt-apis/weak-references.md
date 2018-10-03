@@ -3,7 +3,7 @@ author: stevewhims
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
 title: Weak references in C++/WinRT
 ms.author: stwhi
-ms.date: 09/30/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -342,7 +342,7 @@ Above, we saw weak references being used. In general, they're good for breaking 
 
 For any given type that you declare, it's not immediately obvious to C++/WinRT whether or when weak references are needed. So, C++/WinRT provides weak reference support automatically on the struct template [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), from which your own C++/WinRT types directly or indirectly derive. It's pay-for-play, in that it doesn't cost you anything unless your object is actually queried for [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource). And you can choose explicitly to [opt out of that support](#opting-out-of-weak-reference-support).
 
-## Code examples
+### Code examples
 The [**winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref) struct template is one option for getting a weak reference to a class instance.
 
 ```cppwinrt
@@ -368,7 +368,7 @@ if (Class strong = weak.get())
 
 Provided that some other strong reference still exists, the [**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weakrefget-function) call increments the reference count and returns the strong reference to the caller.
 
-## Opting out of weak reference support
+### Opting out of weak reference support
 Weak reference support is automatic. But you can choose explicitly to opt out of that support by passing the [**winrt::no_weak_ref**](/uwp/cpp-ref-for-winrt/no-weak-ref) marker struct as a template argument to your base class.
 
 If you derive directly from **winrt::implements**.

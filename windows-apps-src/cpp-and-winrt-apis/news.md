@@ -3,7 +3,7 @@ author: stevewhims
 description: News and changes to C++/WinRT.
 title: What's new in C++/WinRT
 ms.author: stwhi
-ms.date: 09/28/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,6 +14,8 @@ ms.localizationpriority: medium
 # What's new in C++/WinRT
 
 The table below contains news and changes to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) in the latest generally-available version of the Windows SDK, which is 10.0.17763.0 (Windows 10, version 1809). These changes may also be present in later SDK Insider Preview versions.
+
+## News, and changes, in Windows SDK version 10.0.17763.0 (Windows 10, version 1809)
 
 | New or changed feature | More info |
 | - | - |
