@@ -36,6 +36,11 @@ With C++/WinRT, you can also implement your own runtime classes using standard C
 ## Visual Studio support for C++/WinRT, and the VSIX
 For C++/WinRT project templates in Visual Studio, as well as C++/WinRT MSBuild properties and targets, download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
+> [!NOTE]
+> With version 1.0.181002.2 (or later) of the VSIX installed, creating a new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) for that project. The Microsoft.Windows.CppWinRT NuGet package provides improved C++/WinRT project build support, making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX, is installed).
+>
+> For an existing project&mdash;after you've installed version 1.0.181002.2 (or later) of the VSIX&mdash;we recommend that you open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project.
+
 You'll need Visual Studio 2017 (you'll need at least version 15.6, but we recommend at least 15.7), and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option  rather than the **Sideload apps** option.
 
 You'll then be able to create and build, or open, a C++/WinRT project in Visual Studio, and deploy it. Alternatively, you can convert an existing project by adding the `<CppWinRTEnabled>true</CppWinRTEnabled>` property to its `.vcxproj` file.
