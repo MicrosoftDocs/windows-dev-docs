@@ -211,7 +211,7 @@ Sometimes you might want to determine when a button transitions from pressed to 
 
 ## Run the UI navigation controller sample
 
-The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how the different input devices behave as UI navigation controllers.
+The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) demonstrates how the different input devices behave as UI navigation controllers.
 
 ## See also
 [Windows.Gaming.Input.Gamepad][]
