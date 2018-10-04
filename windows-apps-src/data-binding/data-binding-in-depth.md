@@ -4,7 +4,7 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Data binding in depth
 description: Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data.
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,8 +12,6 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Data binding in depth
-
-
 
 **Important APIs**
 
@@ -25,16 +23,15 @@ ms.localizationpriority: medium
 > [!Note]
 > This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-quickstart.md).
 
-
 Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 
-You can use data binding to simply display values from a data source when the UI is first shown, but not to respond to changes in those values. This is called one-time binding, and it works well for data whose values don't change during run-time. Additionally, you can choose to "observe" the values and to update the UI when they change. This is called one-way binding, and it works well for read-only data. Ultimately, you can choose to both observe and update, so that changes that the user makes to values in the UI are automatically pushed back into the data source. This is called two-way binding, and it works well for read-write data. Here are some examples.
+You can use data binding to simply display values from a data source when the UI is first shown, but not to respond to changes in those values. This is a mode of binding called *one-time*, and it works well for a value that doesn't change during run-time. Alternatively, you can choose to "observe" the values and to update the UI when they change. This mroe is called *one-way*, and it works well for read-only data. Ultimately, you can choose to both observe and update, so that changes that the user makes to values in the UI are automatically pushed back into the data source. This mode is called *two-way*, and it works well for read-write data. Here are some examples.
 
--   You could use one-time binding to bind an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) to the current user's photo.
--   You could use one-way binding to bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of real-time news articles grouped by newspaper section.
--   You could use two-way binding to bind a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) to a customer's name in a form.
+-   You could use the one-time mode to bind an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) to the current user's photo.
+-   You could use the one-way mode to bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of real-time news articles grouped by newspaper section.
+-   You could use the two-way mode to bind a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) to a customer's name in a form.
 
-There are two kinds of binding, and they're both typically declared in UI markup. You can choose to use either the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) or the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782). And you can even use a mixture of the two in the same app—even on the same UI element. {x:Bind} is new for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
+Independent of mode, there are two kinds of binding, and they're both typically declared in UI markup. You can choose to use either the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) or the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782). And you can even use a mixture of the two in the same app—even on the same UI element. {x:Bind} is new for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
 **Sample apps that demonstrate {x:Bind}**
 
