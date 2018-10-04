@@ -44,7 +44,7 @@ Sometimes the value of a property is transformed to produce the final result.  F
     }
 ```
 
-This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.
+This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.  These properties can also be applied to user map elements through the [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry) property.
 
 <a id="entries" />
 
