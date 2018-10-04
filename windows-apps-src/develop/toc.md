@@ -564,6 +564,8 @@
 ##### [Hosting a camera preview](../devices-sensors/pos-camerabarcode-hosting-preview.md)
 ##### [Enable/disable camera barcode scanner](../devices-sensors/pos-camerabarcode-enable-disable.md)
 ##### [Supported symbologies](../devices-sensors/pos-camerabarcode-symbologies.md)
+### [Magnetic stripe reader](../devices-sensors/pos-magnetic-stripe-reader.md)
+#### [Obtain and understand magnetic stripe data](../devices-sensors/pos-magnetic-stripe-reader-data.md)
 ### [POSPrinter](../devices-sensors/pos-printer.md)
 #### [Epson ESC/POS with formatting](../devices-sensors/epson-esc-pos-with-formatting.md)
 
