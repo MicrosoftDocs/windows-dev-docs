@@ -1,10 +1,10 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: Data binding overview
 description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a Universal Windows Platform (UWP) app.
-ms.author: markl
-ms.date: 07/06/2018
+ms.author: stwhi
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - cppwinrt
-  - cpp
+  - cppcx
 ---
 
 # Data binding overview
@@ -71,7 +71,7 @@ namespace Quickstart
 // Recording.idl
 namespace Quickstart
 {
-    runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+    runtimeclass Recording
     {
         Recording(String artistName, String compositionName, Windows.Globalization.Calendar releaseDateTime);
         String ArtistName{ get; };
@@ -86,7 +86,7 @@ import "Recording.idl";
 
 namespace Quickstart
 {
-    runtimeclass RecordingViewModel : Windows.UI.Xaml.DependencyObject
+    runtimeclass RecordingViewModel
     {
         RecordingViewModel();
         Quickstart.Recording DefaultRecording{ get; };
@@ -152,7 +152,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 #include <sstream>
 namespace Quickstart
@@ -273,7 +273,7 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ...
 ```
 
-```cpp
+```cppcx
 // MainPage.h
 ...
 #include "Recording.h"
@@ -390,7 +390,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 ...
 public ref class RecordingViewModel sealed
@@ -496,10 +496,10 @@ There are two ways to go about this. You can bind the details view to the [**Sel
 > [!NOTE]
 > So far in this topic we've only used the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
-> [!IMPORTANT]
-> If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute (mentioned below) is available if you've installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension.
+If you're using C++/WinRT or Visual C++ component extensions (C++/CX) then, to use the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension, you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to any runtime class that you want to bind to. To use [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), you don't need that attribute.
 
-If you're using C++/WinRT or Visual C++ component extensions (C++/CX) then, because we'll be using the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension, you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to the **Recording** class.
+> [!IMPORTANT]
+> If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute is available if you've installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension.
 
 First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) technique.
 
@@ -512,11 +512,11 @@ First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/
 // Add this attribute:
 ...
 [Windows.UI.Xaml.Data.Bindable]
-runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+runtimeclass Recording
 ...
 ```
 
-```cpp
+```cppcx
 [Windows::UI::Xaml::Data::Bindable]
 public ref class Recording sealed
 {
@@ -673,7 +673,7 @@ namespace winrt::Quickstart::implementation
 }
 ```
 
-```cpp
+```cppcx
 ...
 public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
 {
