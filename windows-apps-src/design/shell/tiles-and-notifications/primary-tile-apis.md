@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
 title: Primary tile API's
 label: Primary tile API's

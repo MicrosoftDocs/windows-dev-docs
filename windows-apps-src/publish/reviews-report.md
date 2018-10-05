@@ -4,7 +4,7 @@ Description: The Reviews report in the Windows Dev Center dashboard lets you see
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 08/06/2018
+ms.date: 08/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,7 +32,7 @@ Near the top of the page, you can select the time period for which you want to s
 You can expand **Filters** to filter the reviews shown on this page by the following options. These filters will not apply to the **Ratings breakdown** and **Average rating over time** charts.
 
 -   **Rating**: By default reviews with all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
-- **Review content**: The default setting is **All**, which means all ratings will be included in the **Rating breakdown** chart, even those which don't have any associated review text. You can select **Ratings with review content** to only show ratings that include written review content in this chart.
+- **Review content**: The default setting is **Ratings with review content**, which means that only ratings with review content will be shown. You can select **All** to show all ratings, even those that don't include any written review text. Note that the **Ratings breakdown** chart will always show all reviews, regardless of your selection.
 -   **OS version**: The default setting is **All**. You can choose a specific OS version if you want this page to only show reviews left by customers on that OS version.
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here to only show reviews left by customers who had that package when they reviewed your app.
 -   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
@@ -58,10 +58,12 @@ The **Ratings breakdown** chart appears at the top of this report so that you ca
 > [!TIP]
 > The average rating that a customer sees in the Store takes into account the customer’s market and device type, so it may differ from what you see in this report.
 
+Note that this chart always includes all of your reviews, even if you selected **Ratings with review content** in the **Review content** page filter.
+
 This chart can also be seen in the [Ratings report](ratings-report.md), along with more details about your app's ratings.
 
 
-<span id = "review-insight-categories />
+<span id = "review-insight-categories" />
 
 ## Insight categories
 

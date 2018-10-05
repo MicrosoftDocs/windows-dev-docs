@@ -11,8 +11,8 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate,
 ms.localizationpriority: medium
 ---
 
-# Interop between [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) and C++/CX
-This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. You can use them to interop between code that uses the two language projections, or you can use the functions as you gradually move your code from C++/CX to C++/WinRT (see [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)).
+# Interop between C++/WinRT and C++/CX
+This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use them to interop between code that uses the two language projections, or you can use the functions as you gradually move your code from C++/CX to C++/WinRT (see [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)).
 
 ## from_cx and to_cx functions
 The helper function below converts a C++/CX object to an equivalent C++/WinRT object. The function casts a C++/CX object to its underlying [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) interface pointer. It then calls [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) on that pointer to query for the default interface of the C++/WinRT object. **QueryInterface** is the Windows Runtime application binary interface (ABI) equivalent of the C++/CX safe_cast extension. And, the [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) function retrieves the address of a C++/WinRT object's underlying **IUnknown** interface pointer so that it can be set to another value.
@@ -106,7 +106,7 @@ MainPage::MainPage()
 
 ## Important APIs
 * [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [QueryInterface function](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 

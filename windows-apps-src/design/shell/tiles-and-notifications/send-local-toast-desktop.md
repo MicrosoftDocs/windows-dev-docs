@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
 title: Send a local toast notification from desktop C# apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638

@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -38,7 +39,7 @@ The DeviceEndpoint object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
   "systemId": "e9af05b4-70de-4920-880f-026c6fb67d1b",
   "userId" : 1234567890

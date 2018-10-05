@@ -8,7 +8,7 @@ ms.date: 03/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 
@@ -379,8 +379,6 @@ This API has the following expected status codes.
 ---
 ## Bluetooth
 ---
-> [!WARNING]
-> The APIs in this section are part of a flighted build and are only available through the [Windows Insider Program](https://insider.windows.com/).
 
 ### Get the Bluetooth radios on the machine
 
@@ -2776,7 +2774,57 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
---
+---
+### Set a static IP address (IPV4 configuration)
+
+**Request**
+
+Sets the IPV4 configuration with static IP and DNS. If a static IP is not specified, then it enables DHCP. If a static IP is specified, then DNS must be specified also.
+ 
+| Method      | Request URI |
+| :------     | :----- |
+| PUT | /api/networking/ipv4config |
+
+
+**URI parameters**
+
+| URI parameter | Description |
+| :---          | :--- |
+| AdapterName | (**required**) The network interface GUID. |
+| IPAddress | The static IP address to set. |
+| SubnetMask | (**required** if *IPAddress* is not null) The static subnet mask. |
+| DefaultGateway | (**required** if *IPAddress* is not null) The static default gateway. |
+| PrimaryDNS | (**required** if *IPAddress* is not null) The static primary DNS to set. |
+| SecondayDNS | (**required** if *PrimaryDNS* is not null) The static secondary DNS to set. |
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+| HTTP status code      | Description |
+| :------     | :----- |
+| 200 | OK |
+| 4XX | Error codes |
+| 5XX | Error codes |
+
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+---
 ### Enumerate wireless network interfaces
 
 **Request**

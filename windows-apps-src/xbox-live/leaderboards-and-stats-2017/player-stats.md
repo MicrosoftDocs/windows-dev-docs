@@ -1,15 +1,15 @@
 ---
 title: Player Stats
-author: KevinAsgari
+author: aablackm
 description: Learn how to set up player stats in Xbox Live.
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
-ms.author: kevinasg
-ms.date: 11/10/2017
+ms.author: aablackm
+ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, player stats, leaderboards
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 # Player stats
 

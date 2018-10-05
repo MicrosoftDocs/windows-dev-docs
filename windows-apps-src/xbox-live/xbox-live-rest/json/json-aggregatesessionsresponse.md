@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -35,7 +36,7 @@ The AggregateSessionsResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "totalSessions" : 300,
    "totalDurationInSeconds" : 1240,

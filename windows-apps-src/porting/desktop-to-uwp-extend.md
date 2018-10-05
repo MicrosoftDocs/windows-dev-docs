@@ -19,7 +19,7 @@ Some Windows 10 experiences (For example: a touch-enabled UI page) must run insi
 In many cases you can call UWP APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
->This guide assumes that you've created a Windows app package for your desktop application by using the Desktop Bridge. If you haven't yet done this, see [Desktop Bridge](desktop-to-uwp-root.md).
+>This guide assumes that you've created a Windows app package for your desktop application. If you haven't yet done this, see [Package desktop applications](desktop-to-uwp-root.md).
 
 If you're ready, let's start.
 
@@ -35,7 +35,7 @@ This image shows an example solution.
 
 ![Extend start project](images/desktop-to-uwp/extend-start-project.png)
 
-If your solution doesn't contain a packaging project, see [Package your app by using Visual Studio](desktop-to-uwp-packaging-dot-net.md).
+If your solution doesn't contain a packaging project, see [Package your desktop application by using Visual Studio](desktop-to-uwp-packaging-dot-net.md).
 
 ### Add a UWP project
 
@@ -78,6 +78,9 @@ For example, with a small amount of XAML markup, you can give users with powerfu
 This image shows a Windows Forms application that opens a XAML-based modern UI that contains a map control.
 
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
+
+>[!NOTE]
+>This example shows a XAML UI by adding a UWP project to the solution. That is the stable supported approach to showing XAML UIs in a desktop application. The alternative to this approach is to add UWP XAML controls directly to your desktop application by using a XAML Island. XAML Islands are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These APIs and controls will continue to mature and stabilize in future Windows releases. To learn more about XAML Islands, see [UWP controls in desktop applications](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### The design pattern
 
@@ -135,7 +138,7 @@ Add a XAML UI to your UWP project. Here's the XAML for a basic map.
 
 ### Add a protocol extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution, and add this extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the Packaging project in your solution, and add this extension.
 
 ```xml
 <Extensions>
@@ -240,7 +243,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## Provide services to other apps
 
-You add a service that other apps can consume. For example, you can add a service that gives other apps controlled access to the database behind your app. By implementing a background task, apps can reach the service even if your desktop app is not running.
+You add a service that other apps can consume. For example, you can add a service that gives other apps controlled access to the database behind your app. By implementing a background task, apps can reach the service even if your desktop application is not running.
 
 Here's a sample that does this.
 
@@ -306,9 +309,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### Add an app service extension to the UWP project
+### Add an app service extension to the Packaging project
 
-Open the **package.appxmanifest** file of the UWP project, and add an app service extension to the ``<Application>`` element.
+Open the **package.appxmanifest** file of the Packaging project, and add an app service extension to the ``<Application>`` element.
 
 ```xml
 <Extensions>
@@ -325,7 +328,7 @@ Give the app service a name and provide the name of the entry point class. This 
 
 ### Test the app service
 
-Test your service by calling it from another app. This code can be a desktop application such as a Windows forms app or another UWP app.
+Test your service by calling it from another app. This code can be a desktop application such as a Windows forms application or another UWP app.
 
 > [!NOTE]
 > This code only works if you properly set the ``PackageFamilyName`` property of the ``AppServiceConnection`` class. You can get that name by calling ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` in the context of the UWP project. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
@@ -371,7 +374,7 @@ Learn more about app services here: [Create and consume an app service](https://
 
 You can make your desktop application a share target so that users can easily share data such as pictures from other apps that support sharing.
 
-For example, users could choose your app to share pictures from Microsoft Edge, the Photos app. Here's a WPF sample app that has that capability.
+For example, users could choose your application to share pictures from Microsoft Edge, the Photos app. Here's a WPF sample application that has that capability.
 
 ![share target](images/desktop-to-uwp/share-target.png)
 
@@ -393,7 +396,7 @@ To make your application a share target, do these things:
 
 ### Add a share target extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution and add the extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the Packaging project in your solution and add the extension.
 
 ```xml
 <Extensions>
@@ -442,7 +445,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 You add a background task to run code even when the app is suspended. Background tasks are great for small tasks that don't require the user interaction. For example, your task can download mail, show a toast notification about an incoming chat message, or react to a change in a system condition.
 
-Here's a WPF sample app that registers a background task.
+Here's a WPF sample application that registers a background task.
 
 ![background task](images/desktop-to-uwp/sample-background-task.png)
 
@@ -507,7 +510,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### Configure the background task
 
-In the manifest designer, open the **package.appxmanifest** file of the UWP project in your solution.
+In the manifest designer, open the **package.appxmanifest** file of the Packaging project in your solution.
 
 In the **Declarations** tab, add a **Background Tasks** declaration.
 

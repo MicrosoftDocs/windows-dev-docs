@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration, xboxservices.config
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # XboxServices.config file description

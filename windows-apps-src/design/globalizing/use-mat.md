@@ -130,7 +130,7 @@ These third party providers offer localization services, and may be able to assi
 
 - [Elanex](https://www.elanex.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
-- [Lionbridge](https://intlapps.lionbridge.com/windows)
+- [Lionbridge](https://www.lionbridge.com)
 - [Moravia](https://www.moravia.com/)
 - [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
 - [Welocalize](https://www.welocalize.com/)

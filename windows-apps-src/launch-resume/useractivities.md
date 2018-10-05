@@ -162,14 +162,13 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 
 ## Key APIs
 
-* [UserActivity namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## Related topics
 
-* [Adaptive cards](https://docs.microsoft.com/en-us/adaptive-cards/)
+* [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
 * [Adaptive cards visualizer, samples](http://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
-* [Project Rome on Github](https://github.com/microsoft/project-rome)
-* [Project Rome on Windows Dev Center](https://aka.ms/projectrome)

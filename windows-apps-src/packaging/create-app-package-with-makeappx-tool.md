@@ -22,8 +22,7 @@ ms.localizationpriority: medium
 
 Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .msix or .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) in the Windows Dev Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
 
-> [!NOTE]
-> This page has been updated to include support for the creation of .msix packages, pre-released in the [Windows 10 Insider Preview Build 17682](https://blogs.windows.com/windowsexperience/2018/05/31/announcing-windows-10-insider-preview-build-17682/#UPs6rko5Z56SJsQ6.97). Updates to this tool do not affect .appx package usage. You can continue using this tool with .appx packages as you have before, or use the tool with pre-release support for .msix packages as described below.
+ Updates to this tool in the most recent version of Windows 10 do not affect .appx package usage. You can continue using this tool with .appx packages, or use the tool with support for .msix packages as described below.
 
 To manually create an .appxupload file:
 - Place the .msix and the .appxsym in a folder

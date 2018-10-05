@@ -1,13 +1,10 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: Navigation history and backwards navigation (Windows apps)
-ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
-label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
@@ -45,7 +42,7 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below).
+In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don’t need to display the back button at all.
 
 ![Back button states](images/back-nav/BackDisabled.png)
 
@@ -284,9 +281,9 @@ The code examples provided above demonstrate how to handle all of these inputs.
 
 ## System back behavior for backward compatibilities
 
-Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported for backward compatibility, but we no longer recommend relying on the title bar back button. Instead, your app should draw its own in-app back button.
+Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
 
-If your app continues to use [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the back button will be rendered inside the title bar as usual.
+If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button:
 
 - If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
 
@@ -301,9 +298,26 @@ If your app continues to use [AppViewBackButtonVisibility](https://docs.microsof
 > [!NOTE]
 > "System back bar" is only a description, not an official name.
 
-The system back bar is a �band� that is inserted between the tab band and the app�s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
+The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
+
+- If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
+
+    ![Title bar back button](images/nav-back-pc.png)
+
+- If an app is **tabbed**, then the back button is rendered inside a new system back bar.
+
+    ![System drawn back button bar](images/back-nav/tabs.png)
+
+### System back bar
+
+> [!NOTE]
+> "System back bar" is only a description, not an official name.
+
+The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
 
 The system back bar is displayed dynamically, based on back button visibility. When the back button is visible, the system back bar is inserted, shifting app content down by 32 pixels below the tab band. When the back button is hidden, the system back bar is dynamically removed, shifting app content up by 32 pixels to meet the tab band. To avoid having your app's UI shift up or down, we recommend drawing an [in-app back button](#back-button).
+
+[Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.
 
 [Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.
 
@@ -330,14 +344,14 @@ If you choose to provide your own back stack navigation, the experience should b
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
-<p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as [NavigationView](../controls-and-patterns/navigationview.md)) that provides direct navigation to both pages.</p></td>
+<p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) that provides direct navigation to both pages.</p></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
 <p>In the following illustration, the user navigates between two pages in the same peer group, and the navigation should be added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
-<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
+<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
 <td style="vertical-align:top;"><strong>It depends</strong>
 <p>Yes, add to the navigation history, with two notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational hierarchy, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

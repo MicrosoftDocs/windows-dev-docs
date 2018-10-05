@@ -147,8 +147,9 @@ If you enabled **script debugging** when you built the UWP solution from Unity, 
 > As of May 2018 it is now required that you make an update to the package.appxmanifest.xml file in order to test your UWP title properly in Visual Studio. To do this:
 >
 > 1. Search the Solution Explorer for the package.appxmanifest.xml file
-> 2. Right click the file and choose View Code
-> 3. Under the `<Properties><\/Properties>` section, add the following line: `<uap:SupportedUsers>multiple<\/uap:SupportedUsers>.
+> 2. Right click the file and choose View Code.  
+    If the View Code option is not available or the package.appxmanifest file does not have an extension. You will need to open the file as an xml and continue with the remaining steps.
+> 3. Under the `<Properties></Properties>` section, add the following line: `<uap:SupportedUsers>multiple</uap:SupportedUsers>`.
 > 4. Deploy the game to your Xbox by starting a remote debugging build from Visual Studio. You can find instruction to set up your title on an Xbox in the [Set up your UWP on Xbox development environment](../../xbox-apps/development-environment-setup.md) article.
 >
 > The piece of configuration changed may look like it is enabling multi-player but it is still necessary to run your game in single player scenarios.

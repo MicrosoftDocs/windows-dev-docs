@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -35,7 +36,7 @@ The GameResult JSON object has the following members.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "xuid": 2533274790412952,
    "outcome": "Win",

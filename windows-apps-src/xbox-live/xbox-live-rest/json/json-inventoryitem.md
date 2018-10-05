@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -41,7 +42,7 @@ The inventoryItem object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 inventoryItem {
   "url": string,
   "itemType": "Music" | "Video" | "Game" | "AvatarItem" | "Subscription" | "DLC" | "Consumable" | ...,
@@ -70,7 +71,7 @@ The consumable entity presents the minimal set of properties for a consumable it
 | quantity| 32-bit signed integer| The current quantity of this inventory item.|
 
 
-```cpp
+```json
 consumableInventoryItem {
   "url": string,
   "quantity": int

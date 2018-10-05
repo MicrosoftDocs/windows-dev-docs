@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -35,7 +36,7 @@ The GameMessage JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "queueIndex": 0,
     "sequenceNumber": 5,

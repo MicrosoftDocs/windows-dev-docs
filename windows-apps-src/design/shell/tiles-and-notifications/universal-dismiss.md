@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Universal Dismiss on your toast notifications.
 title: Universal Dismiss
 label: Universal Dismiss

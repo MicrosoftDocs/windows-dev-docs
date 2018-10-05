@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 09/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ In this report, an **acquisition** means a new customer has obtained a license t
 
 ## Apply filters
 
-Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify. You can also select **1H** or **72H** to show acquisition data in near real time for either one hour or seventy-two hours; these time periods only apply to the **App daily** tab of the **Acquisitions** chart and to the **Acquisitions** tab of the **Markets** chart. 
+Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify. Near real time data will be shown for all options (except in **App cumulative** data). The **1H** and **72H** time periods only apply to the **App daily** tab of the **Acquisitions** chart and to the **Acquisitions** tab of the **Markets** chart. 
 
 You can also expand **Filters** to filter all of the data on this page by market and/or by device type.
 
@@ -41,9 +41,11 @@ The info in all of the charts listed below will reflect the date range and any f
 
 ## Acquisitions
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions (a new customer obtaining a license for your app) over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
+The **Acquisitions** chart shows the number of daily or weekly acquisitions (a new customer obtaining a license for your app) over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart. 
 
-You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+By default, we show the **App daily** view, which includes near real time data. You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+
+**Gross sales** for your app (from October 2016 - present) are also available in this chart, showing the total amount earned from app sales (in USD). Note that this amount does not account for any refunds,  reversals, chargeback, etc.
 
 You can optionally filter the results by whether the acquisition originated from the client or web-based Store and/or by OS version.
 

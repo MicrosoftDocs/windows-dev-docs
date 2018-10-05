@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -33,7 +34,7 @@ The MultiplayerSessionReference JSON object has the following specification.
 ## Sample JSON syntax 
  
 
-```cpp
+```json
 {
   "scid": "8d050174-412b-4d51-a29b-d55a34edfdb7",
   "templateName": "integration",

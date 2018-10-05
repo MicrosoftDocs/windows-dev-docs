@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -37,7 +38,7 @@ For global storage
 The following example shows the response for global storage:
  
 
-```cpp
+```json
 {
     "quotaInfo":
     {

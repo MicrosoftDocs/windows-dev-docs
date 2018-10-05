@@ -245,6 +245,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 }
 ```
 
+## Override default keyboard behavior
+
+In some cases, you might need to override the default behavior of specific keys such as the Backspace key or the Enter key. For example, 
+
 ## Disable a keyboard accelerator 
 
 If a control is disabled, the associated accelerator is also disabled. In the following example, because the IsEnabled property of the ListView is set to false, the associated Control+A accelerator can't be invoked.

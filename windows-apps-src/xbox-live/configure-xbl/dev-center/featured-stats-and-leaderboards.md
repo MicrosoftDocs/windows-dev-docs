@@ -8,7 +8,7 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Featured Stats and leaderboards, leaderboards, stats 2017, Windows Dev Center
 ---
 # Configuring Featured Stats and Leaderboards 2017 on Windows Dev Center

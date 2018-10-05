@@ -19,6 +19,7 @@
 ### [Single sign-on](configure-xbl/dev-center/single-sign-on.md)
 ### [XboxServices.config](xboxservices-config.md)
 # [Test accounts](xbox-live-test-accounts.md)
+# [Test on Xbox One console](testing-on-console.md)
 # [API Samples](samples.md)
 # [What's new for Xbox Live](whats-new/whats-new.md)
 # [The Creators Program](get-started-with-creators/get-started-with-xbox-live-creators.md)

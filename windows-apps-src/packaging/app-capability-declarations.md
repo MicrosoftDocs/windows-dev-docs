@@ -4,7 +4,7 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.author: misatran
-ms.date: 7/17/2018
+ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,13 +19,12 @@ You request access to specific resources or API by declaring capabilities in you
 
 Some capabilities provide apps with access to a *sensitive resource*. These resources are considered sensitive because they can access the user's personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/Hh768223). Capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) next to the capability scenario.
 
-There are three types of capabilities, which are described below:
+There are several types of capabilities.
 
--   General-use capabilities that apply to most common app scenarios.
-
--   Device capabilities that allow your app to access peripheral and internal devices.
-
--   Restricted capabilities that require approval for Store submission and/or are generally only available to Microsoft and certain partners.
+- [General-use capabilities](#general-use-capabilities), which apply to most common app scenarios.
+- [Device capabilities](#device-capabilities), which allow your app to access peripheral and internal devices.
+- [Restricted capabilities](#restricted-capabilities), which require approval for Microsoft Store submission and/or are generally only available to Microsoft and certain partners.
+- [Custom capabilities](#custom-capabilities).
 
 ## General-use capabilities
 
@@ -86,38 +85,34 @@ Device capabilities allow your app to access peripheral and internal devices. De
 If your app declares any restricted capabilities, you must provide info during the [app submission process](../publish/app-submissions.md) in order to be approved to publish the app to the Microsoft Store. You provide this info on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
 
 > [!IMPORTANT]
-> Restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Note that you can sideload apps that declare restricted capabilities without needing to receive any approval. Approval is only required when submitting these apps to the Store. 
+> Restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Note that you can sideload apps that declare restricted capabilities without needing to receive any approval. Approval is only required when submitting these apps to the Store.
 
 Be sure not to declare these restricted capabilities unless your app truly needs them. There are cases where such capabilities are necessary and appropriate, such as banking with two-factor authentication, where users provide a smart card with a digital certificate that confirms their identity. Other apps may be designed primarily for enterprise customers and may need access to corporate resources that cannot be accessed without the user’s domain credentials.
 
-All restricted capabilities must include the **rescap** namespace when you declare them in your app's package manifest. For example, here's how to declare the **appCaptureSettings** capability.
+To declare a restricted capability, modify your [app package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) source file (`Package.appxmanifest`). Add the **xmlns:rescap** XML namespace declaration, and use the **rescap** prefix when you declare your restricted capability. For example, here's how to declare the **appCaptureSettings** capability.
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="... rescap">
+...
 <Capabilities>
     <rescap:Capability Name="appCaptureSettings"/>
 </Capabilities>
-```
-
-You must also add the **xmlns:rescap** namespace declaration in the top of the Package.appxmanifest file as shown below.
-
-```xml
-<Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    IgnorableNamespaces="uap mp wincap rescap">
+</Package>
 ```
 
 ### Restricted capability approval process
 
 Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in your Dev Center dashboard as part of the [submission process](../publish/app-submissions.md).
 
-When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process. 
+When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
 
-During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities). 
+During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
-If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
+If we don't approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
 > [!NOTE]
 > If your submission uses a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
@@ -128,14 +123,14 @@ If we don’t approve your use of the capability, your submission will fail cert
 
 ### Restricted capability list
 
-The following table lists the restricted capabilities. You may request approval for these capabilities in apps that you submit to the Store by following the process described above. 
+The following table lists the restricted capabilities. You may request approval for these capabilities in apps that you submit to the Store by following the process described above.
 
 > [!IMPORTANT]
-> Some of these restricted capabilities are almost never approved for apps submitted to the Store, except in very specific and limited circumstances. These capabilities are called out in the table below. We recommend not declaring these capabilities in your app if you plan to distribute it through the Store. 
+> Some of these restricted capabilities are almost never approved for apps submitted to the Store, except in very specific and limited circumstances. These capabilities are called out in the table below. We recommend not declaring these capabilities in your app if you plan to distribute it through the Store.
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|
-| **Enterprise** | Windows domain credentials enable a user to log into remote resources using their credentials, and act as if a user provided their user name and password. The **enterpriseAuthentication** capability is typically used in line-of-business apps that connect to servers within an enterprise. <br /><br />You don't need this capability for generic communication across the Internet.<br /><br />The **enterpriseAuthentication** capability is intended to support common line-of-business apps. Don't declare it in apps that don't need to access corporate resources. The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that enables users to open files on a network share for use with an app. Declare the **enterpriseAuthentication** capability only when the scenarios for your app require programmatic access, and you cannot realize them by using the **file picker**.<br /><br />The **enterpriseAuthentication** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />The **enterpriseDataPolicy** capability allows apps to define and use enterprise-specific policies for the device. This capability is required to use all members of the following classes.<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
+| **Enterprise** | Windows domain credentials enable a user to log into remote resources using their credentials, and act as if a user provided their user name and password. The **enterpriseAuthentication** capability is typically used in line-of-business apps that connect to servers within an enterprise. <br /><br />You don't need this capability for generic communication across the Internet.<br /><br />The **enterpriseAuthentication** capability is intended to support common line-of-business apps. Don't declare it in apps that don't need to access corporate resources. The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that enables users to open files on a network share for use with an app. Declare the **enterpriseAuthentication** capability only when the scenarios for your app require programmatic access, and you cannot realize them by using the **file picker**.<br /><br />The **enterpriseAuthentication** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />The **enterpriseDataPolicy** capability allows apps to handle enterprise data separately and safely when the app is managed with Windows Information Protection policy (For example: Mobile Device Management and Mobile Application Management systems).  Declare this restricted capability as shown below. <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />This capability is required to use all members of the following classes.<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
 | **Shared user certificates** | The **sharedUserCertificates** capability enables an app to add and access software and hardware-based certificates in the Shared User store, such as certificates stored on a smart card. This capability is typically used for financial or enterprise apps that require a smart card for authentication.<br /><br />The **sharedUserCertificates** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**Documents**\* | The **documentsLibrary** capability provides programmatic access to the user's Documents, filtered to the file type associations declared in the package manifest, to support offline access to OneDrive. For example, if a DOC reader app declared a .doc file type association, it can open .doc files in Documents, but not other types of files. <br /><br />Apps that declare the **documentsLibrary** capability can't access Documents on Home Group computers. The [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) provides a robust UI mechanism that enables users to open files for use with an app. Declare the **documentsLibrary** capability only when you cannot use the file picker.<br /><br />To use the **documentsLibrary** capability, an app must:<ul><li>Facilitate cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs</li><li>Save open files to the user’s OneDrive automatically while offline</li></ul>Apps that use the **documentsLibrary** capability for these two purposes may also optionally use the capability to open embedded content within another document. Only the above uses of the **documentsLibrary** capability are accepted.<ul><li>Your app can't access the Documents library in the phone's internal storage. If another app creates a Documents folder on the optional SD card, however, your app can see that folder.</li></ul>The **documentsLibrary** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **Game DVR Settings** | The **appCaptureSettings** restricted capability allows apps to control the user settings for the Game DVR.<br /><br />This capability is required to use some APIs in the [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) namespace. <br /><br />We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved.  |
@@ -208,13 +203,30 @@ The following table lists the restricted capabilities. You may request approval 
 | **Development Mode Network** | The **developmentModeNetwork** capability allows apps to access network paths using the credentials from the signed-in user when calling the OpenFile Win32 API in a C++/CX UWP app or C++ Windows Runtime Component. <br /><br />We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 | **Broad Filesystem Access** | The **broadFileSystemAccess** capability allows apps to get the same access to the file system as the user who is currently running the app without any additional file-picker style prompts during runtime.<br/><br/>This capability works for the [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) APIs. It is important to note that the first use of any **Windows.Storage** APIs with this capability declared in your app package manifest will trigger a user-consent prompt where the user can grant or deny the permission. Users can also grant or deny the permission at any point by toggling Settings. It is also important that you do not declare any special folder capabilities such as **Documents**, **Pictures**, or **Videos** with this capability. |
 | **System Firmware and BIOS** | The **smbios** capability allows apps to access bios data and system firmware data. |
-| **Full Trust Permission Level** | The **runFullTrust** restricted capability allows apps to run at the full trust permission level on the user’s machine. This capability is required to use the [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API.<br /><br />This capability is also required for any desktop application that is delivered as an appx package (as with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)), and it will automatically appear in your manifest when packaging these apps using the Desktop App Converter (DAC) or Visual Studio. |
+| **Full Trust Permission Level** | The **runFullTrust** restricted capability allows apps to run at the full trust permission level on the user’s machine. This capability is required to use the [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API.<br /><br />This capability is also required for any desktop application that is delivered as an appx or msix package (as with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)), and it will automatically appear in your manifest when packaging these apps using the Desktop App Converter (DAC) or Visual Studio. |
 | **Elevation** | The **allowElevation** restricted capability allows apps that are created by Microsoft partners and enterprises to preserve existing desktop functionality that requires auto-elevation on launch or during an app‘s lifetime.<br/><br/>We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. It will only be approved for line-of-business apps deployed by enterprises to their private store via the Microsoft Store for Business.  |
 | **Windows Team Device Credentials** | The **teamEditionDeviceCredentials** restricted capability allows apps to access APIs that request device account credentials on a Surface Hub device running Windows 10, version 1703 or later.<br/><br/>We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 | **Windows Team Application View** | The **teamEditionView** restricted capability allows apps to access APIs for hosting an application view on a Surface Hub device running Windows 10, version 1703 or later.<br/><br/>We do not recommend declaring this capability in apps submitted to the Store. For most developers, use of this capability will not be approved. |
 
+## Custom capabilities
 
+The [restricted capabilities](#restricted-capabilities) section above describes the same capability approval process that you can use to request approval to use a custom capability. The [embedded SIM](/uwp/api/windows.networking.networkoperators.esim) APIs are examples of APIs that require a custom capability. If you only want to run your application locally in developer mode, then you don't need the custom capability. But you need it to publish your app to the Microsoft Store, or to run it outside of developer mode.
 
+If you have a Windows Technical Account Manager (TAM), then you can work with your TAM to request access. You can find more details at [Contact your Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam).
+
+To declare a custom capability, modify your [app package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) source file (`Package.appxmanifest`). Add the **xmlns:uap4** XML namespace declaration, and use the **uap4** prefix when you declare your custom capability. Here's an example.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4">
+...
+<Capabilities>
+    <uap4:CustomCapability Name="CompanyName.customCapabilityName_PublisherID"/>
+</Capabilities>
+</Package>
+```
 
 ## Related topics
 

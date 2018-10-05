@@ -8,7 +8,7 @@ ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 # Device Portal for HoloLens
@@ -17,8 +17,6 @@ ms.localizationpriority: medium
 ## Set up device portal on HoloLens
 
 ### Enable Device Portal
-
-**To enable Device Portal**
 
 1. Power on your HoloLens and put on the device.
 2. Perform the [bloom](https://dev.windows.com/holographic/Gestures.html#Bloom) gesture to launch the main menu.
@@ -31,7 +29,7 @@ ms.localizationpriority: medium
 
 ### Pair your device
 
-### Connect over Wi-Fi 
+#### Connect over Wi-Fi 
 
 1. Connect your HoloLens to Wi-Fi.
 2. Look up your device's IP address.- Find the IP address on the device under Settings > Network & Internet > Wi-Fi > Advanced Options.
@@ -40,18 +38,21 @@ ms.localizationpriority: medium
 3. From a web browser on your PC, go to `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - The browser will display the following message: "There's a problem with this website's security certificate". This happens because the certificate which is issued to the Device Portal is a test certificate. You can ignore this certificate error for now and proceed.
 
-### Connect over USB 
+#### Connect over USB 
 
 1. Install the tools to make sure you have Visual Studio Update 1 with the Windows 10 developer tools installed on your PC. This enables USB connectivity.
 2. Connect your HoloLens to your PC with a micro-USB cable.
 3. From a web browser on your PC, go to `http://127.0.0.1:10080`.
 
-### Connect to an emulator 
+> [!IMPORTANT]
+> If your PC is unable to find the device, try using the real network IP address of the HoloLens device, rather than `http://127.0.0.1:10080`.
+
+#### Connect to an emulator 
 
 You can also use the Device Portal with your emulator. To connect to the Device Portal, use the toolbar. Click on this icon:
 - Open Device Portal: Open the Windows Device Portal for the HoloLens OS in the emulator.
 
-### Create a Username and Password 
+#### Create a Username and Password 
 
 The first time you connect to the Device Portal on your HoloLens, you will need to create a username and password.
 1. In a web browser on your PC, enter the IP address of the HoloLens. The Set up access page opens.
@@ -63,7 +64,7 @@ The first time you connect to the Device Portal on your HoloLens, you will need 
 
 If you wish to change this username or password at any time, you can repeat this process by visiting the device security page by either clicking the Security link along the top right, or navigating to: `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.
 
-### Security certificate 
+#### Security certificate 
 
 If you are see a "certificate error" in your browser, you can fix it by creating a trust relationship with the device.
 

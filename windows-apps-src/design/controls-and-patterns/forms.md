@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Layout guidelines for forms in UWP apps.
 title: Forms
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 11/07/2017
 ms.topic: article
 ms.prod: windows
@@ -29,7 +29,7 @@ A form is a dedicated page for collecting data inputs that are clearly related t
 
 ## Types of forms
 
-When thinking about how user input is submittted and displayed, there are two types of forms:
+When thinking about how user input is submitted and displayed, there are two types of forms:
 
 ### 1. Instantly updating
 ![settings page](images/control-examples/toggle-switch-news.png)

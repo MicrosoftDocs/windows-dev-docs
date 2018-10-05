@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -50,7 +51,7 @@ The Achievement object has the following specification. All members are required
 ## Sample JSON syntax
 
 
-```cpp
+```json
 {
         "id":"3",
         "serviceConfigId":"b5dd9daf-0000-0000-0000-000000000000",

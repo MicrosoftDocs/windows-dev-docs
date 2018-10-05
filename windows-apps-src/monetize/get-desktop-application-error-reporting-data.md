@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a desktop application for a given date range and other optional filters.
 title: Get error reporting data for your desktop application
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -99,7 +99,7 @@ Elements in the *Value* array contain the following values.
 | market          | string  | The ISO 3166 country code of the device market.   |
 | deviceType      | string  | One of the following strings that specifies the type of device on which the error occurred:<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul>    |
 | applicationVersion     | string  |   The version of the application executable in which the error occurred.    |
-| eventCount      | integer | The number of events that are attributed to this error for the specified aggregation level.      |
+| eventCount      | number | The number of events that are attributed to this error for the specified aggregation level.      |
 
 
 ### Response example

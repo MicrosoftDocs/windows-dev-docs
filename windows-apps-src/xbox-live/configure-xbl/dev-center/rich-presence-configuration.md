@@ -7,7 +7,7 @@ ms.date: 02/27/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Rich Presence strings, Windows Dev Center
 ---
 

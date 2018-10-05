@@ -507,7 +507,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763-api-diff",
       "redirect_document_id": false
     },
     {
@@ -557,7 +557,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763",
       "redirect_document_id": false
     },
     {
@@ -572,7 +572,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-docs-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-docs-july-2018",
+      "redirect_url": "/windows/uwp/whats-new/windows-docs-september-2018",
       "redirect_document_id": false
     },
     {
@@ -1768,7 +1768,15 @@
     },
     {
       "source_path": "windows-apps-src/machine-learning/index.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/machine-learning/get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/machine-learning/overview.md",
       "redirect_url": "https://docs.microsoft.com/windows/ai",
       "redirect_document_id": false
@@ -1792,7 +1800,21 @@
       "source_path": "windows-apps-src/machine-learning/train-ai-model.md",
       "redirect_url": "https://docs.microsoft.com/windows/ai/get-onnx-model",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/composition/lighting.md",
+      "redirect_url": "/windows/uwp/composition/xaml-lighting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/devices-sensors/pos-barcodescanner-get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
+      "redirect_document_id": true
+    },
+	{
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos",
+      "redirect_document_id": true
     }
-
   ]
 }

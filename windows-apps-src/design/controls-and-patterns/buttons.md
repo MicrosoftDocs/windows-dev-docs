@@ -1,11 +1,11 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
 label: Buttons
 template: detail.hbs
-ms.author: sezhen
-ms.date: 05/19/2017
+ms.author: quradic
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,9 +18,6 @@ doc-status: Published
 ms.localizationpriority: medium
 ---
 # Buttons
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here. Preview features require the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A button gives the user a way to trigger an immediate action. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
 
@@ -214,7 +211,7 @@ A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button
 The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked.
 
 > [!TIP]
-> For more info about flyouts, see [Menus and context menus](menus.md) and [Command bar flyout](command-bar-flyout.md).
+> For more info about flyouts, see [Menus and context menus](menus.md).
 
 ### Example - Drop down button
 

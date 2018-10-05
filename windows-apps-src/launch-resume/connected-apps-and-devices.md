@@ -7,7 +7,7 @@ ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ---
@@ -35,3 +35,5 @@ For more information on Project Rome in general, including resources for cross-p
 | [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
 | [Connect devices through remote sessions](remote-sessions.md) | Create shared experiences across multiple devices by joining them in a remote session. |
+| [Continue user activity, even across devices](useractivities.md)| Help users resume what they were doing in your app, even across multiple devices.|
+| [User Activities best practices](useractivities-best-practices.md)| Learn the recommended practices for creating and updating User Activities.|

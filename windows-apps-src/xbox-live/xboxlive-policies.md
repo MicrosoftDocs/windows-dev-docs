@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 layout: LandingPage
 keywords: windows 10, uwp, games, xbox, xbox live, policies
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 ## Xbox Live policies

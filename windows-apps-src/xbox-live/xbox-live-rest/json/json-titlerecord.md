@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -39,7 +40,7 @@ The TitleRecord object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
       id:"12341234",
       name:"Contoso 5",

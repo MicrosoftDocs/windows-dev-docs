@@ -3,7 +3,7 @@ author: laurenhughes
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or Store packages.
 ms.author: lahugh
-ms.date: 03/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -78,7 +78,7 @@ This task restores the NuGet Packages that are defined in your project. Some pac
 
 #### Configure the Build solution build task
 
-This task compiles any solution that’s in the working folder to binaries and produces the output AppX file. 
+This task compiles any solution that’s in the working folder to binaries and produces the output app package file. 
 This task uses MSbuild arguments.  You’ll have to specify the value of those arguments. Use the following table as a guide. 
 
 |**MSBuild Argument**|**Value**|**Description**|
@@ -110,7 +110,7 @@ VSTS uses the `$(Build.ArtifactStagingDirectory)\AppxPackages` folder that we pr
 
 ![artifacts](images/building-screen6.png)
 
-Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that recommended for submission to the Store (.appxupload). Note that you can also submit a regular app pacakge (.appx) or an app bundle (.appxbundle) to the Store. For the purposes of this article, we'll use the .appxupload file.
+Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that recommended for submission to the Store (.appxupload). Note that you can also submit a regular app pacakge (.appx/.msix) or an app bundle (.appxbundle/.msixbundle) to the Store. For the purposes of this article, we'll use the .appxupload file.
 
 
 >[!NOTE]
@@ -216,7 +216,7 @@ To resolve this issue, open each project file and add the following properties a
 Then, remove the `AppxBundle` msbuild argument from the build step.
 
 ## Set up a continuous deployment build for sideloading
-When this type of build completes, users can download the .appxbundle file from the artifacts section of the build results page. 
+When this type of build completes, users can download the app bundle file from the artifacts section of the build results page. 
 If you want to beta test the app by creating a more complete distribution, you can use the HockeyApp service. This service offers advanced capabilities for beta testing, user analytics and crash diagnostics.
 
 ### Applying version numbers to your builds
@@ -259,9 +259,9 @@ First, install the [HockeyApp](https://marketplace.visualstudio.com/items?itemNa
 Next, configure the HockeyApp connection by using this guide: [How to use HockeyApp with Visual Studio Team Services (VSTS) or Team Foundation Server (TFS).](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs) 
 You can use your Microsoft account, social media account or just an email address to set up your HockeyApp account. The free plan comes with two apps, one owner, and no data restrictions.
 
-Then, you can create a HockeyApp app manually, or by uploading an existing appx package file. To learn more, see [How to create a new app](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app).  
+Then, you can create a HockeyApp app manually, or by uploading an existing app package file. To learn more, see [How to create a new app](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app).  
 
-To use an existing appx package file, add a build step, and set the Binary File Path parameter of the build step. 
+To use an existing app package file, add a build step, and set the Binary File Path parameter of the build step. 
 
 ![configure hockey app](images/building-screen15.png) 
 
@@ -271,7 +271,7 @@ To set this parameter, combine the app name, the AppxVersion variable and the su
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-Although the HockeyApp task allows you to specify the path to the symbols file, it’s a best practice to include the symbols (appxsym files) with the bundle.
+Although the HockeyApp task allows you to specify the path to the symbols file, it’s a best practice to include the symbols with the bundle.
 
 ## Set up a continuous deployment build that submits a package to the Store 
 
@@ -289,7 +289,7 @@ Then you need to verify that the build step includes the following parameter:
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-This will generate an .appxupload file that can be submitted to the Store.
+This will generate an upload file that can be submitted to the Store.
 
 
 #### Configure automatic Store submission
@@ -298,7 +298,7 @@ Use the Visual Studio Team Services extension for the Microsoft Store to integra
 
 You need to connect your Dev Center account with Azure Active Directory (AD), and then create an app in your AD to authenticate the requests. You can follow the guidance in the extension page to accomplish that. 
 
-Once you’ve configured the extension, you can add the build task, and configure it with your app ID and the location of the .appxupload file.
+Once you’ve configured the extension, you can add the build task, and configure it with your app ID and the location of the upload file.
 
 ![configure dev center](images/building-screen17.png) 
 
@@ -319,17 +319,17 @@ You have to manually activate this build. You can use it to update existing apps
 
 If you want to distribute your app without publishing it to the Store, you can sideload your app directly to devices as long as those devices trust the certificate that was used to sign the app package. 
 
-Use the `Add-AppDevPackage.ps1` PowerShell script to install apps. This script will add the certificate to the Trusted Root Certification section for the local machine, and will then install or update the appx file.
+Use the `Add-AppDevPackage.ps1` PowerShell script to install apps. This script will add the certificate to the Trusted Root Certification section for the local machine, and will then install or update the app package file.
 
 #### Sideloading your app with the Windows 10 Anniversary Update
-In the Windows 10 Anniversary Update, you can double-click the appxbundle file and install your app by choosing the Install button in a dialog box. 
+In the Windows 10 Anniversary Update, you can double-click the app package file and install your app by choosing the Install button in a dialog box. 
 
 ![sideload in rs1](images/building-screen18.png) 
 
 >[!NOTE]
 > This method doesn’t install the certificate or the associated dependencies.
 
-If you want to distribute your appx packages from a website such as VSTS or HockeyApp, you’ll need to add that site to the list of trusted sites in your browser. Otherwise, Windows marks the file as locked. 
+If you want to distribute your Windows app packages from a website such as VSTS or HockeyApp, you’ll need to add that site to the list of trusted sites in your browser. Otherwise, Windows marks the file as locked. 
 
 <span id="certificates-best-practices"/>
 

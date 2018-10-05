@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to use page transitions in your UWP apps.
 title: Page transitions in UWP apps
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 04/08/2018
 ms.topic: article
 ms.prod: windows
@@ -50,6 +50,20 @@ The drill animation is represented by the [**DrillInNavigationTransitionInfo**](
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+```
+
+## Horizontal slide
+
+Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls-and-patterns/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizonal slide with SlideNavigationTransitionInfo.
+
+The desired feeling is that the user is navigating between pages that are next to each other. 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## Suppress

@@ -7,7 +7,7 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, app service
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ---
@@ -37,11 +37,13 @@ Turning an out-of-process model App Service into an in-process model requires tw
 >   </Applications>
 > ```
 
-Remove the `EntryPoint` attribute from the `<Application>` element because now [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) is the entry point that will be used when the app service is invoked.
+Remove the `EntryPoint` attribute from the `<Extension>` element because now [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) is the entry point that will be used when the app service is invoked.
 
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
 Now your application can directly run your App Service. For example, in App.xaml.cs:
+
+[!NOTE] The code below is different than the one provided for example 1 (out-of-process service). The code below is provided for illustration purposes only and should not be used as part of example 2 (in-process service).  To continue the article’s transition from example 1 (out-of-process service) into example 2 (in-process service) continue to use the code provided  for example 1 instead of the illustrative code below.
 
 ``` cs
 using Windows.ApplicationModel.AppService;

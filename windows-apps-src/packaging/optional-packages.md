@@ -4,7 +4,7 @@ ms.assetid: 3a59ff5e-f491-491c-81b1-6aff15886aad
 title: Optional packages and related set authoring
 description: Optional packages contain content that can be integrated with a main package. These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content for separate from your original app.
 ms.author: lahugh
-ms.date: 04/05/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -55,7 +55,7 @@ Now, every time you enter F5 or build an optional package project, Visual Studio
 
 ## Related sets<a name="related_sets"></a>
 
-If you want to load code from an optional package into the main package, you will need to build a related set. To build a related set, your main package and optional package must be tightly coupled. The metadata for related sets is specified in the `.appxbundle` file of the main package. Visual Studio helps you get the correct metadata in your files. To configure your app's solution for related sets, use the following steps:
+If you want to load code from an optional package into the main package, you will need to build a related set. To build a related set, your main package and optional package must be tightly coupled. The metadata for related sets is specified in the .appxbundle or .msixbundle file of the main package. Visual Studio helps you get the correct metadata in your files. To configure your app's solution for related sets, use the following steps:
 
 1. Right click the main package project, select **Add > New Item...**
 2. From the window, search the Installed Templates for ".txt" and add a new text file.

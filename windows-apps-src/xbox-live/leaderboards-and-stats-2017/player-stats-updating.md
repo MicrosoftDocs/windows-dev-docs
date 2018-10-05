@@ -4,12 +4,12 @@ author: KevinAsgari
 description: Learn how to update Xbox Live player stats by using Stats 2017.
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 08/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, player stats, stats 2017
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Updating Stats 2017
@@ -18,7 +18,8 @@ You update stats by sending the latest value for the Xbox Live Serivce using the
 
 It is up to your title to keep track of player stats, and you call `StatsManager` to update these as appropriate.  `StatsManager` will buffer any changes and flush these to the service periodically.  Your title can also manually flush.
 
-> **Note** Do not flush stats too often.  Otherwise your title will be rate limited.  A best practice is to flush at most once every 5 minutes.
+> [!NOTE]
+> Do not flush stats too often.  Otherwise your title will be rate limited.  A best practice is to flush at most once every 5 minutes.
 
 ### Multiple Devices
 
@@ -71,6 +72,12 @@ statsManager->add_local_user(user);
 statsManager->do_work();  // returns stat_event_type::local_user_added
 ```
 
+```csharp
+Microsoft.Xbox.Services.Statistics.Manager.StatisticManager statManager = StatisticManager.SingletonInstance;
+statManager.AddLocalUser(user);
+statEvent = statManager.DoWork();
+```
+
 ### Writing Stats
 
 You write stats using the `stats_manager::set_stat` family of functions.  There are three variants of this function for each data type:
@@ -87,6 +94,12 @@ You have the option of manually flushing stats via the `stats_manager::request_f
 statsManager->set_stat_integer(user, L"numHeadshots", 20);
 statsManager->request_flush_to_service(user); // requests flush to service, performs a do_work
 statsManager->do_work();  // applies the stat changes, returns stat_update_complete after flush to service
+```
+
+```csharp
+statManager.SetStatisticIntegerData(user, statName, (long)statValue);
+statManager.RequestFlushToService(user);
+statManager.DoWork();
 ```
 
 #### Example
@@ -123,4 +136,9 @@ When the title closes, remove the user from stats manager. This will flush the l
 ```cpp
 statsManager->remove_local_user(user);
 statsManager->do_work();  // applies the stat changes, returns local_user_removed after flush to service
+```
+
+```csharp
+statManager.RemoveLocalUser(user);
+statManager.DoWork();
 ```

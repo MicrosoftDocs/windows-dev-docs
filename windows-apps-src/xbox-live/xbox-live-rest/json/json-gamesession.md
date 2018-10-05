@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -43,7 +44,7 @@ The GameSession JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "sessionId": "702e5aaf-e7bd-4a7c-abea-9dd4be10edec",
     "titleId": 1297287259,

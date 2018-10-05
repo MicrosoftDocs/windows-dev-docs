@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.
-title: Consume DirectX and other COM APIs with C++/WinRT
+title: Consume COM components with C++/WinRT
 ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
@@ -11,9 +11,9 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, int
 ms.localizationpriority: medium
 ---
 
-# Consume DirectX and other COM APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# Consume COM components with C++/WinRT
 
-You can use the facilities of the C++/WinRT library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
+You can use the facilities of the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
 
 At the end of this topic, you'll find a full source code listing of a minimal Direct2D application. We'll lift excerpts from that code and use them to illustrate how to consume COM components using C++/WinRT using various facilities of the C++/WinRT library.
 
@@ -29,7 +29,7 @@ winrt::com_ptr<ID2D1Factory1> factory;
 
 The code above shows how to declare an uninitialized smart pointer to a [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM interface. The smart pointer is uninitialized, so it's not yet pointing to a **ID2D1Factory1** interface belonging to any actual object (it's not pointing to an interface at all). But it has the potential to do so; and (being a smart pointer) it has the ability via COM reference counting to manage the lifetime of the owning object of the interface that it points to, and to be the medium by which you call functions on that interface.
 
-## COM functions that return an interface pointer as **void\*\***
+## COM functions that return an interface pointer as **void**
 
 You can call the [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) function to write to an uninitialized smart pointer's underlying raw pointer.
 
@@ -66,9 +66,9 @@ D2D1CreateFactory(
     factory.put());
 ```
 
-## COM functions that return an interface pointer as **IUnknown\*\***
+## COM functions that return an interface pointer as **IUnknown**
 
-The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has **IUnknown\*\*** type. For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), but reinterpret cast that to **IUnknown\*\***.
+The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) type. For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), but reinterpret cast that to **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,6 +169,10 @@ If you want to build and run this source code example then first, in Visual Stud
 
 ```cppwinrt
 #include "pch.h"
+#include <d2d1_1.h>
+#include <d3d11.h>
+#include <dxgi1_2.h>
+#include <winrt/Windows.Graphics.Display.h>
 
 using namespace winrt;
 
@@ -471,7 +475,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
+## Working with COM types, such as BSTR and VARIANT
+
+As you can see, C++/WinRT provides support for both implementing and calling COM interfaces. For using COM types, such as BSTR and VARIANT, there is always the option to use those in their raw form (together with the appropriate APIs). Alternatively, you can use wrappers provided by a framework such as the [Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts), or by the Visual C++ compiler's [COM Support](/cpp/cpp/compiler-com-support), or even by your own wrappers.
+
 ## Important APIs
-* [winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

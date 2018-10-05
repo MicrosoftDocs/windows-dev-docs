@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -48,7 +49,7 @@ The ServiceError object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "code": 4000,
     "source": "ReputationFD",

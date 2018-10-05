@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, social manager, example
-ms.localizationpriority: low
+ms.localizationpriority: medium
 ---
 
 # Programming Social Services

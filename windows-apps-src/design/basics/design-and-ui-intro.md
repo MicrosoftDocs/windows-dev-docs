@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: mijacobs
 Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Introduction to Universal Windows Platform (UWP) app design (Windows apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 ms.prod: windows
@@ -23,11 +23,11 @@ This introduction provides an overview of the universal design features that are
 
 ## Effective pixels and scaling
 
-First of all, UWP apps run on all [Windows 10 devices](../devices/index.md), from your TV to your tablet or PC. How does that affect your app's UI?
+UWP apps run on all [Windows 10 devices](../devices/index.md), from your TV to your tablet or PC. So how do you design a UI that looks good on a wide variety of devices and screen sizes?
 
 ![same app on various devices](images/universal-image-1.jpg)
 
-Well, fortunately for you, UWP apps automatically adjust the size UI elements so that they are legible and easy to interact with on all devices and screen sizes!
+UWP helps by automatically adjusting UI elements so that they're legible and easy to interact with on all devices and screen sizes.
 
 When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5" phone that's a few inches away.
 

@@ -225,7 +225,6 @@ A small ellipse is used to show where the gaze point is within the application v
                 // Stop listening for device events on navigation from eye-tracking page.
                 StopGazeDeviceWatcher();
             }
-            ...
         }
     }
     ```
@@ -565,7 +564,7 @@ A small ellipse is used to show where the gaze point is within the application v
     {
         // Ensure the gaze timer restarts on new progress bar location.
         timerGaze.Stop();
-        timersStarted = false;
+        timerStarted = false;
 
         // Get the bounding rectangle of the app window.
         Rect appBounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;

@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.localizationpriority: medium
 ---
 
 
@@ -40,7 +41,7 @@ The PersonSummary object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "targetFollowingCount": 87,
     "targetFollowerCount": 19,
