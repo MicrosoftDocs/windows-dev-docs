@@ -95,7 +95,8 @@ Use the following URIs to open various pages of the Settings app.
 | Cortana across my devices | ms-settings:cortana-notifications |
 | Talk to Cortana | ms-settings:cortana-language |
 
-> Note this Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
+> [!NOTE] 
+> This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
 
 ## Devices
 
