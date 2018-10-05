@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - vb
-  - cpp
+  - cppcx
   - cppwinrt
 ---
 # XAML lighting
@@ -338,7 +338,7 @@ struct MainPage : MainPageT<MainPage>
 };
 ```
 
-```cpp
+```cppcx
 // OrangeSpotLight.h:
 public ref class OrangeSpotLight sealed :
     public Windows::UI::Xaml::Media::XamlLight
