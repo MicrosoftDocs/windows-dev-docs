@@ -23,8 +23,6 @@ ms.localizationpriority: medium
 
 -   For a more complete implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
 Learn how to use the compass to determine the current heading.
 
 An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.

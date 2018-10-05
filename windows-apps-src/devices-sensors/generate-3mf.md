@@ -17,14 +17,9 @@ ms.localizationpriority: medium
 
 # Generate a 3MF package
 
-
-
-
 **Important APIs**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
 This guide describes the structure of the 3D Manufacturing Format document and how it can be created and manipulated with the [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API.
 

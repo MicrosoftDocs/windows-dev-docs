@@ -23,8 +23,6 @@ ms.localizationpriority: medium
 
 -   For a more complete implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
 Learn how to use the accelerometer to respond to user movement.
 
 A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
