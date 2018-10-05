@@ -634,6 +634,9 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
+    if (args.InvokedItem == null)
+        return;
+
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
     else
@@ -652,7 +655,7 @@ private void NavView_Navigate(string navItemTag)
 {
     var item = _pages.First(p => p.Tag.Equals(navItemTag));
     if (currentPage == item.Page)
-         return;
+          return;
     ContentFrame.Navigate(item.Page);
 
     currentPage = item.Page;
