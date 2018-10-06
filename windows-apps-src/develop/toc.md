@@ -32,7 +32,7 @@
 ### [Capture a photo sequence with VariablePhotoSequence](../audio-video-camera/variable-photo-sequence.md)
 ### [Process media frames with MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md)
 #### [Process audio frames with MediaFrameReader](../audio-video-camera/use-opencv-with-mediaframereader.md)
-#### [Use OpenCV with MediaFrameReader](../audio-video-camera/process-audio-frames-with-mediaframereader.md)
+#### [Use OpenCV with MediaFrameReader](../audio-video-camera/use-opencv-with-mediaframereader.md)
 ### [Capture from multiple sources using MediaFrameSourceGroup](../audio-video-camera/capture-from-multiple-sources-simultaneously.md)
 ### [Get a preview frame](../audio-video-camera/get-a-preview-frame.md)
 ## [Media playback](../audio-video-camera/media-playback.md)
