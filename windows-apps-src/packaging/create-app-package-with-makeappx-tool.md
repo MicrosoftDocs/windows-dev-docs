@@ -12,7 +12,7 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ---
 
-# Create an app package with the MakeAppx.exe tool
+# Create or edit app packages and bundles with MakeAppx.exe
 
 
 **MakeAppx.exe** creates both app packages and app package bundles. **MakeAppx.exe** also extracts files from an app package or bundle and encrypts or decrypts app packages and bundles. This tool is included in the Windows 10 SDK and can be used from a command prompt or a script file.
@@ -29,15 +29,13 @@ To manually create an .appxupload file:
 - Zip the folder
 - Change the zipped folder extension name from .zip to .appxupload
 
-## Using MakeAppx.exe
-
 Based on your installation path of the SDK, this is where **MakeAppx.exe** is on your Windows 10 PC:
 - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
 - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
 There is no ARM version of this tool.
 
-### MakeAppx.exe syntax and options
+## General MakeAppx.exe syntax and options
 
 General **MakeAppx.exe** syntax:
 
@@ -92,7 +90,7 @@ The following list contains possible arguments:
 | &lt;algorithm ID&gt;                  | Algorithms used when creating a block map. Valid algorithms include: SHA256 (default), SHA384, SHA512. |
 
 
-### Create an app package
+## Creating an app package
 
 An app package is a complete set of the app's files packaged in to a .msix or .appx package file. To create an app package using the **pack** command, you must provide either a content directory or a mapping file for the location of the package. You can also encrypt a package while creating it. If you want to encrypt the package, you must use /ep and specify if you are using a key file (/kf) or the global test key (/kt). For more information on creating an encrypted package, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
 
@@ -129,7 +127,7 @@ MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.tx
 MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
-### Create an app bundle
+## Creating an app bundle
 
 An app bundle is similar to an app package, but a bundle can reduce the size of the app that users download. App bundles are helpful for language-specific assets, varying image-scale assets, or resources that apply to specific versions of Microsoft DirectX, for example. Similar to creating an encrypted app package, you can also encrypt the app bundle while bundling it. To encrypt the app bundle, use the /ep option and specify if you are using a key file (/kf) or the global test key (/kt). For more information on creating an encrypted bundle, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
 
@@ -159,7 +157,7 @@ MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /
 MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
-### Extract files from a package or bundle
+## Extracting files from a package or bundle
 
 In addition to packaging and bundling apps, **MakeAppx.exe** can also unpack or unbundle existing packages. You must provide the content directory as a destination for the extracted files. If you are trying to extract files from an encrypted package or bundle, you can decrypt and extract the files at the same time using the /ep option and specifying whether it should be decrypted using a key file (/kf) or the global test key (/kt). For more information on decrypting a package or bundle, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
 
@@ -194,7 +192,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
 MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
-### Encrypt or decrypt a package or bundle
+### Encrypting or decrypting a package or bundle
 
 The **MakeAppx.exe** tool can also encrypt or decrypt an existing package or bundle. You must simply provide the package name, the output package name, and whether encryption or decryption should use a key file (/kf) or the global test key (/kt).
 
