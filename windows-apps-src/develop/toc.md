@@ -150,6 +150,7 @@
 ### [Testing and debugging tools for PLM](../debug-test-perf/testing-debugging-plm.md)
 ### [Test with the Microsoft Emulator for Windows 10](../debug-test-perf/test-with-the-emulator.md)
 ### [Test Surface Hub apps using Visual Studio](../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)
+### [Deploy an app through loose file registration](../debug-test-perf/loose-file-registration.md)
 ### [Beta testing](../debug-test-perf/beta-testing.md)
 ### [Windows Device Portal](../debug-test-perf/device-portal.md)
 #### [Device Portal for Desktop](../debug-test-perf/device-portal-desktop.md)
