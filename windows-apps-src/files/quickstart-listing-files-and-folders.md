@@ -47,7 +47,7 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](/uwp/api/wind
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 StringBuilder outputText = new StringBuilder();
 
-IReadOnlyList<StorageFilefileList = await picturesFolder.GetFilesAsync();
+IReadOnlyList<StorageFile> fileList = await picturesFolder.GetFilesAsync();
 
 outputText.AppendLine("Files:");
 foreach (StorageFile file in fileList)
@@ -55,7 +55,7 @@ foreach (StorageFile file in fileList)
     outputText.Append(file.Name + "\n");
 }
 
-IReadOnlyList<StorageFolderfolderList = await picturesFolder.GetFoldersAsync();
+IReadOnlyList<StorageFolder> folderList = await picturesFolder.GetFoldersAsync();
            
 outputText.AppendLine("Folders:");
 foreach (StorageFolder folder in folderList)
@@ -182,7 +182,7 @@ Alternatively, you can use the [**StorageFolder.GetItemsAsync**](/uwp/api/window
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 StringBuilder outputText = new StringBuilder();
 
-IReadOnlyList<IStorageItemitemsList = await picturesFolder.GetItemsAsync();
+IReadOnlyList<IStorageItem> itemsList = await picturesFolder.GetItemsAsync();
 
 foreach (var item in itemsList)
 {
@@ -289,14 +289,14 @@ StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 StorageFolderQueryResult queryResult =
     picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth);
         
-IReadOnlyList<StorageFolderfolderList =
+IReadOnlyList<StorageFolder> folderList =
     await queryResult.GetFoldersAsync();
 
 StringBuilder outputText = new StringBuilder();
 
 foreach (StorageFolder folder in folderList)
 {
-    IReadOnlyList<StorageFilefileList = await folder.GetFilesAsync();
+    IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
 
     // Print the month and number of files in this group.
     outputText.AppendLine(folder.Name + " (" + fileList.Count + ")");

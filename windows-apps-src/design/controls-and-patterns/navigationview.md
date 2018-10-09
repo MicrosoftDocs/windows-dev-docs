@@ -410,23 +410,23 @@ items.Add(new Item() {
 });
 
 public class NavViewDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate NavItemTemplate { get; set; }
+
+    public DataTemplate NavItemTopTemplate { get; set; }	
+
+    public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
     {
-        public DataTemplate NavItemTemplate { get; set; }
+        Item currItem = item as Item;
+        if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
+            return NavItemTopTemplate;
+        else 
+            return NavItemTemplate;
+    }	
 
-        public DataTemplate NavItemTopTemplate { get; set; }	
-
-	 public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
-
-        protected override DataTemplate SelectTemplateCore(object item)
-        {
-            Item currItem = item as Item;
-            if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
-                return NavItemTopTemplate;
-            else 
-                return NavItemTemplate;
-        }	
-
-    }
+}
 
 ```
 
@@ -589,6 +589,8 @@ Here's the sample code:
 > If you're using the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/), then you'll need to add a reference to the toolkit: `using MUXC = Microsoft.UI.Xaml.Controls;`.
 
 ```csharp
+private Type currentPage;
+
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
 private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
@@ -632,6 +634,8 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
+    if (args.InvokedItem == null)
+        return;
 
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
@@ -650,13 +654,14 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 private void NavView_Navigate(string navItemTag)
 {
     var item = _pages.First(p => p.Tag.Equals(navItemTag));
+    if (currentPage == item.Page)
+          return;
     ContentFrame.Navigate(item.Page);
+
+    currentPage = item.Page;
 }
 
-private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
-{
-    On_BackRequested();
-}
+private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) => On_BackRequested();
 
 private void BackInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
@@ -720,7 +725,7 @@ The Pane's background shows in-app acrylic when NavigationView is in Top, Minima
 
 ## Scroll content under top pane
 
-For a seamless look+feel, if your app has pages that use a ScrollViewer and your navigation pane is top positioned, we recommend having the content scroll underneath the top nav pane.
+For a seamless look+feel, if your app has pages that use a ScrollViewer and your navigation pane is top positioned, we recommend having the content scroll underneath the top nav pane. This gives a Sticky Header kind of behaviour to the app.
 
 This can be achieved by setting the [CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds) property on the relevant ScrollViewer to true.
 

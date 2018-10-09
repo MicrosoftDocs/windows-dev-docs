@@ -3,7 +3,7 @@ author: TerryWarwick
 title: Enumerating PointOfService devices
 description: Learn how to enumerate PointOfService devices
 ms.author: jken
-ms.date: 08/30/2018
+ms.date: 10/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -55,9 +55,6 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > See [Build a device selector](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) for building more advanced selector strings.
 
 ## Method 1: Use a device picker
-
-> [!NOTE]
-> This method requires the latest [Windows SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
 
 The [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker) class allows you to display a picker flyout that contains a list of devices for the user to choose from. You can use the [Filter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter) property to choose which types of devices to show in the picker. This property is of type [DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter). You can add device types to the filter using the [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses) or [SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors) property.
 
