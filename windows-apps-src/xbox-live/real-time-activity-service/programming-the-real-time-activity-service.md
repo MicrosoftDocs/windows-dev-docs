@@ -57,7 +57,7 @@ For information on how to create a stat on XDP, please see the [XDP Documentatio
 If you are developing a UWP on Windows 10 that is not a cross-play title, you define your stats on [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). Read the [Dev Center stats configuration article](../leaderboards-and-stats-2017/player-stats-configure-2017.md) to learn how to configure stats on Dev Center.
 
 > [!NOTE]
-> Stats 2013 developer will need to contact their DAM for information concerning Stats 2013 configuration on Dev Center.
+> Stats 2013 developer will need to contact their DAM for information concerning [Stats 2013 configuration](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013) on [Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
 
 ### Disconnecting from the Real-Time Activity service
 
