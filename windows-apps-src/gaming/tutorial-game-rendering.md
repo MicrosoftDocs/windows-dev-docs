@@ -580,7 +580,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## CreateWindowSizeDependentResource method
 
-CreateWindowSizeDependentResources methods are called every time the window size, orientation, stereo-enabled rendering, or resolution changes. In the sample game, it updates the the projection matrix in __ConstantBufferChangeOnResize__.
+CreateWindowSizeDependentResources methods are called every time the window size, orientation, stereo-enabled rendering, or resolution changes. In the sample game, it updates the projection matrix in __ConstantBufferChangeOnResize__.
 
 Window size resources are updated in this manner: 
 * The App framework gets one of several possible events indicating a change in the window state. 

@@ -171,7 +171,7 @@ A click in the game now creates a prompt like the following, or displays the gam
 
 ![immersive prompt](images/immersiveview.png)
 
-We can also add a piece of code that will display the the `UniversalCamera` view before we switch to our `WebVRFreeCamera`, allowing the user to look at the game instead of a blue window. 
+We can also add a piece of code that will display the `UniversalCamera` view before we switch to our `WebVRFreeCamera`, allowing the user to look at the game instead of a blue window. 
 
 Add the following after `engine.runRenderLoop(function () {`.
 ```javascript

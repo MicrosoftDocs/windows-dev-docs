@@ -109,7 +109,7 @@ If you are configuring your title on Dev Center, you get your Sandbox ID on the 
 
 **XDP**
 
-If you are configuring your title on XDP, you get your Sandbox ID on the the overview page for your product as shown below:
+If you are configuring your title on XDP, you get your Sandbox ID on the overview page for your product as shown below:
 
 ![](images/getting_started/xdp_sandbox_id.png)
 

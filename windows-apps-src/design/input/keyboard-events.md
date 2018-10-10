@@ -324,7 +324,7 @@ A general limitation of this technique is that the **AddHandler** API takes a pa
 
 You can override key events for specific controls (such as [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) to provide consistent focus navigation for various input devices, including keyboard and gamepad.
 
-In the following example, we subclass the control and override the KeyDown behavior to move focus to the the GridView content when any arrow key is pressed.
+In the following example, we subclass the control and override the KeyDown behavior to move focus to the GridView content when any arrow key is pressed.
 
 ```csharp
 public class CustomGridView : GridView

@@ -126,7 +126,7 @@ Instead of a number, a badge can display one of a non-extensible set of status g
 
 ## Create a badge
 
-These examples show you how to to create a badge update.
+These examples show you how to create a badge update.
 
 ### Create a numeric badge
 
