@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+author: Jwmsft
 Description: Layout guidelines for forms in UWP apps.
 title: Forms
 template: detail.hbs
-ms.author: quradic
+ms.author: jimwalk
 ms.date: 11/07/2017
 ms.topic: article
 ms.prod: windows
