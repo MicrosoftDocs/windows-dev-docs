@@ -29,16 +29,16 @@ These toolkits provide controls and layout templates for designing UWP apps.
         <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
+        ![hero image](images/sketch.png)
+        <b>Sketch toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
+    :::column-end:::    
+    :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
-    :::column-end:::
-    :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
