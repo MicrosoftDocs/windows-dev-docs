@@ -4,7 +4,7 @@ keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: Design toolkits and samples for UWP apps
 author: mijacobs
 ms.author: mijacobs
-ms.date: 10/12/2017
+ms.date: 10/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,26 +23,32 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
+        ![hero image](images/figma.png)
+        <b>Figma toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/figmatoolkit">Download</a>
+    :::column-end:::
+    :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/adobe-illustrator.png)
-        <b>Adobe Illustrator toolkit</b><br>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
-    :::column-end:::
-    :::column:::
         ![hero image](images/sketch.png)
         <b>Sketch</b><br>
-        v1803, March 2018<br>
+        v1810, October 2018<br>
         <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
+    :::column:::
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
+    :::column-end:::
     :::column:::
         ![hero image](images/adobe-photoshop.png)
         <b>Adobe Photoshop toolkit</b><br>
@@ -54,8 +60,6 @@ These toolkits provide controls and layout templates for designing UWP apps.
         <b>Framer toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
-    :::column-end:::
-    :::column:::
     :::column-end:::
 :::row-end:::
 
