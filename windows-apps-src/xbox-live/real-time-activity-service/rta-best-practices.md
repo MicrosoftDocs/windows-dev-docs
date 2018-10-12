@@ -29,8 +29,12 @@ When your title doesn't require real-time updates on a statistic, it should term
 
 Titles should be aware that when the authentication token for the user expires, their session will be terminated by the service. The title needs to be capable of detecting when such event happens, reconnect and re-subscribe to all the statistics it was previously subscribed to.
 
+RTA connections are closed after two hours by design, which will force the client to reconnect. This is done because the auth token for the connection is cached to save on message bandwidth. Eventually that token will expire. By closing the connection and forcing the client to reconnect the client is forced to refresh the auth token.
+
 A client could also get disconnected due to a user's ISP having issues or when the process for the title is suspended. When this happens, a WebSocket event is raised to let the client know. In general, it is best practice to be able to handle disconnects from the service.
 
+> [!WARNING]
+> If a client uses RTA for multiplayer sessions, and is disconnected for thirty seconds, the [Multiplayer Session Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md) detects that the RTA session is closed, and kicks the user out of the session. It's up to the RTA client to detect when the connection is closed and initiate a reconnect and resubscribe before the MPSD ends the session.
 
 ## Managing Subscriptions
 
