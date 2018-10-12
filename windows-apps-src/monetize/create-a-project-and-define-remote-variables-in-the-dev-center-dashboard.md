@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in the Dev Center dashboard.
 title: Create an experiment project in the dashboard
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

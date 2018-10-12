@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Learn about best practices for ads in apps, including UX guidelines and error handling.
 title: Best practices for ads in apps
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: Use this method in the Microsoft Store submission API to get the status of an app submission.
 title: Get the status of an app submission
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows

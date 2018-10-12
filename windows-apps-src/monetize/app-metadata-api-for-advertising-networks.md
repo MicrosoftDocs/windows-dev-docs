@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Learn how to use the app metadata REST API to access certain types metadata for apps. This API is intended to be used by advertising networks to retrieve information about apps in the Microsoft Store so they can improve how they sell ad space to advertisers.
 title: App metadata API for advertising networks
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

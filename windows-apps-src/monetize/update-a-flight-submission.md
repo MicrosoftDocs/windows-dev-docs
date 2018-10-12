@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: Use this method in the Microsoft Store submission API to update an existing package flight submission.
 title: Update a package flight submission
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows

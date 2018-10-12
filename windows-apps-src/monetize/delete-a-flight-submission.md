@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: Use this method in the Microsoft Store submission API to delete an existing package flight submission.
 title: Delete a package flight submission
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows

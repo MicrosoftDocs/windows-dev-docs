@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Learn about ways to improve the viewability of your ad units.
 title: Optimize the viewability of your ad units
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows

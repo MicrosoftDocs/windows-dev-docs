@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: Use this method in the Microsoft Store submission API to create an add-on for an app that is registered to your Windows Dev Center account.
 title: Create an add-on
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

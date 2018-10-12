@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
 title: Get a package flight
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows

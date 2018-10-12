@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Use this method in the Microsoft Store submission API to get data for an existing add-on submission.
 title: Get an add-on submission
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows

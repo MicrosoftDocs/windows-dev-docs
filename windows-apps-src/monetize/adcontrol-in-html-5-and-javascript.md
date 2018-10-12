@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP).
 title: AdControl in HTML 5 and JavaScript
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows

@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: The Windows premium ads publishers program consists of a curated collection of ad-enabled apps that partner ad networks can target with premium, high-yield ads. Apps in this program are best in class in terms of usage, engagement and experience.
 title: Windows Premium Ads Publishers Program
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: Learn how to launch an interstitial ad using C#.
 title: Interstitial ad sample code in C#
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows

@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Use the Java code examples in this section to learn more about submitting game options and trailers using the Microsoft Store submission API.
 title: Java sample - app submission with game options and trailers
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows

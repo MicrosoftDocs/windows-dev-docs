@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Use this method in the Microsoft Store analytics API to get Xbox Live multiplayer data.
 title: Get Xbox Live multiplayer data
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows

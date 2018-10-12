@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Use this method in the Microsoft Store analytics API to get aggregate ratings data for a given date range and other optional filters.
 title: Get app ratings
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows

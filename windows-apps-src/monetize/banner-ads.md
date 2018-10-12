@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Learn how to use banner ads in your UWP app.
 title: Banner ads
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: Use these methods in the Microsoft Store submission API to manage package flights for apps that are registered to your Windows Dev Center account.
 title: Manage package flights
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
