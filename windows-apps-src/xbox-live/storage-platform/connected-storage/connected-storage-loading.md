@@ -148,7 +148,7 @@ string[] blobsToRead = new string[] { c_saveBlobName };
 
 // GetAsync allocates a new Dictionary to hold the retrieved data. You can also use ReadAsync
 // to provide your own preallocated Dictionary.
-GameSaveBlobGetResult result = await container.GetAsync(blobsToRead);
+GameSaveBlobGetResult result = await gameSaveContainer.GetAsync(blobsToRead);
 
 int loadedData = 0;
 
