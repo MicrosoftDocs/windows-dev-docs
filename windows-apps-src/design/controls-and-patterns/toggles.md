@@ -65,7 +65,7 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 - Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
 - Use check boxes when the user can select multiple items that are related to a single setting or feature.
 
-## Toggle switches in the the Windows UI
+## Toggle switches in the Windows UI
 
 These images show how the Windows UI uses toggle switches. Here's how the Smart Storage Settings screen uses toggle switches:
 

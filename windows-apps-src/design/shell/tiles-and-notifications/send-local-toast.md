@@ -82,7 +82,7 @@ In Windows 10, your toast notification content is described using an adaptive la
 
 Let's start by constructing the visual part of the content, which includes the text and images you want the user to see.
 
-Thanks to the the Notifications library, generating the XML content is straightforward. If you don't install the Notifications library from NuGet, you have to construct the XML manually, which leaves room for errors.
+Thanks to the Notifications library, generating the XML content is straightforward. If you don't install the Notifications library from NuGet, you have to construct the XML manually, which leaves room for errors.
 
 > [!NOTE]
 > Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.

@@ -75,7 +75,7 @@ You can tell an **asynchronous task** is complete a number of different ways:
 * Call **GetAsyncStatus** with true to wait until it completes.
 * Set a waitEvent in the **AsyncBlock** and wait for the event to be signaled
 
-With **GetAsyncStatus** and waitEvent, the **asynchronous task** is considered complete after the the AsyncBlock's **completion callback** executes however the AsyncBlock's **completion callback** is optional.
+With **GetAsyncStatus** and waitEvent, the **asynchronous task** is considered complete after the AsyncBlock's **completion callback** executes however the AsyncBlock's **completion callback** is optional.
 
 Once the **asynchronous task** is complete, you can get the results.
 

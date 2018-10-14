@@ -118,7 +118,7 @@ Double-click the certificate in File Explorer, select the *Details* tab, and the
 
 **Option 3: CertUtil**
 
-Run **certutil** from the the command line on the PFX file and copy the *Subject* field from the output.
+Run **certutil** from the command line on the PFX file and copy the *Subject* field from the output.
 
 ```cmd
 certutil -dump <cert_file.pfx>

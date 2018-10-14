@@ -106,8 +106,8 @@ The ParallaxView automatically adjusts the size of the image so it works for the
 
 The VerticalShift and HorizontalShift properties let you control degree of the parallax effect.
 
-* The VerticalShift property specifies how far we want the background to vertically shift during the entire parallax operation. A value of 0 means the the background doesn't move at all.
-* The HorizontalShift property specifies how far we want the background to horizontally shift during the entire parallax operation. A value of 0 means the the background doesn't move at all.
+* The VerticalShift property specifies how far we want the background to vertically shift during the entire parallax operation. A value of 0 means the background doesn't move at all.
+* The HorizontalShift property specifies how far we want the background to horizontally shift during the entire parallax operation. A value of 0 means the background doesn't move at all.
 
 Larger values create a more dramatic effect. 
 
