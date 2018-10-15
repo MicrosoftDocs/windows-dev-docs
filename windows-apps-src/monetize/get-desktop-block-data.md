@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Use this REST URI to get block data for a desktop application during a given date range and other optional filters.
 title: Get upgrade blocks for your desktop application
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows

@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/15/2018
 ms.topic: article
 ms.prod: windows

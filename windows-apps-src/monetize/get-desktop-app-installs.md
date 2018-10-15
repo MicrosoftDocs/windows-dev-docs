@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Use this REST URI to get aggregate install data for a desktop application during a given date range and other optional filters.
 title: Get desktop application installs
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows

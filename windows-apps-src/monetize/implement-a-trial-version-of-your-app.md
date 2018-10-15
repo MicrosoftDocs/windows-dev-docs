@@ -1,10 +1,10 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: Learn how to use the Windows.Services.Store namespace to implement a trial version of your app.
 title: Implement a trial version of your app
 keywords: windows 10, uwp, trial, in-app purchases, Windows.Services.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows

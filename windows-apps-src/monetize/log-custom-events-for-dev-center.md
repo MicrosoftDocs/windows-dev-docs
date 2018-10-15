@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
 title: Log custom events for Dev Center
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows

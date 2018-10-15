@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows

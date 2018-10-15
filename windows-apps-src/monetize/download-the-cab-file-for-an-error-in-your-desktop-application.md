@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your desktop application.
 title: Download the CAB file for an error in your desktop application
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows

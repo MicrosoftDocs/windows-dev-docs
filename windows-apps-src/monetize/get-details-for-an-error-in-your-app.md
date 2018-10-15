@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows

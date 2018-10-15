@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
 ms.prod: windows

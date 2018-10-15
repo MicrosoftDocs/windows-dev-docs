@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
 title: Engage customers with the Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows

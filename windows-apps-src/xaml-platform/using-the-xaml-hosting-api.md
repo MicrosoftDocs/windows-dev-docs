@@ -1,5 +1,5 @@
 ---
-author: mcleans
+author: mcleanbyron
 description: This article describes how to host UWP XAML UI in your desktop application.
 title: Using the UWP XAML hosting API in a desktop application
 ms.author: mcleans

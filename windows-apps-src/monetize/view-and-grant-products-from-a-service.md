@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 ms.prod: windows

@@ -1,10 +1,10 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 title: Enable in-app product purchases
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, add-ons, in-app purchases, IAPs, Windows.ApplicationModel.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows

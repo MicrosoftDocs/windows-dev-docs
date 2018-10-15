@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Learn how to register your UWP app to receive push notifications that you send from Windows Dev Center.
 title: Configure your app for targeted push notifications
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

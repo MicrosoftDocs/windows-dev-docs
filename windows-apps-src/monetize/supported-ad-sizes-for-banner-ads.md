@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: Learn about the supported banner ad sizes.
 title: Supported banner ad sizes
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows

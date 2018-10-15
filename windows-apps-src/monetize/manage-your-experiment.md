@@ -1,9 +1,9 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: After you define your experiment in the Dev Center dashboard and code your experiment in your app, you are ready to active your experiment and use the Dev Center dashboard to review the results of your experiment.
 title: Manage your experiment in the dashboard
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
