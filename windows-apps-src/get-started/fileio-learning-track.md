@@ -58,7 +58,7 @@ The **FileIO** class provides a convenient way to write text to the file. `FileI
 
 ## Read text from a file
 
-As with writing a file, reading a file starts with specifying where the file is located. We'll use the same location as in the example above. Then we'll use the the **FileIO** class to read its contents.
+As with writing a file, reading a file starts with specifying where the file is located. We'll use the same location as in the example above. Then we'll use the **FileIO** class to read its contents.
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
