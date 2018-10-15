@@ -101,20 +101,20 @@ Authorization: Bearer <your access token>
 
 Elements in the *Value* array contain the following values.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Value           | Type    | Description       |
+|-----------------|---------|-------------------|
 | date            | string  | The first date in the date range for the ratings data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId   | string  | The Store ID of the app for which you are retrieving ratings data.                                                                                                                                                                 |
-| applicationName | string  | The display name of the app.                                                                                                                                                                                                         |
-| market          | string  | The ISO 3166 country code of the market where the rating was submitted.                                                                                                                                                              |
-| osVersion       | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                               |
-| deviceType      | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                           |
-| isRevised       | Boolean | The value **true** indicates that the rating was revised; otherwise **false**.                                                                                                                                                       |
-| oneStar         | number  | The number of one-star ratings.                                                                                                                                                                                                      |
-| twoStars        | number  | The number of two-star ratings.                                                                                                                                                                                                      |
-| threeStars      | number  | The number of three-star ratings.                                                                                                                                                                                                    |
-| fourStars       | number  | The number of four-star ratings.                                                                                                                                                                                                     |
-| fiveStars       | number  | The number of five-star ratings.            |
+| applicationId   | string  | The Store ID of the app for which you are retrieving ratings data.         |
+| applicationName | string  | The display name of the app.    |
+| market          | string  | The ISO 3166 country code of the market where the rating was submitted.        |
+| osVersion       | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.            |
+| deviceType      | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.            |
+| isRevised       | Boolean | The value **true** indicates that the rating was revised; otherwise **false**.   |
+| oneStar         | number  | The number of one-star ratings.        |
+| twoStars        | number  | The number of two-star ratings.    |
+| threeStars      | number  | The number of three-star ratings.   |
+| fourStars       | number  | The number of four-star ratings.    |
+| fiveStars       | number  | The number of five-star ratings.    |
 
 
 ### Response example
