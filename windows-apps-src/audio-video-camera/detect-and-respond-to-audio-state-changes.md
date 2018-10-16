@@ -21,7 +21,7 @@ The pattern for handling audio state changes is the same for all supported audio
 
 [!code-cs[SoundLevelDeviceIdCategory](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSoundLevelDeviceIdCategory)]
 
-In the **SoundLevelChanged** event handler, check the the [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) property of the **AudioStateMonitor** sender passed into the handler to determine what the new audio level for the stream is. In this example, the app stops capturing audio when the sound level is muted and resumes capturing when the audio level returns to full volume.
+In the **SoundLevelChanged** event handler, check the [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) property of the **AudioStateMonitor** sender passed into the handler to determine what the new audio level for the stream is. In this example, the app stops capturing audio when the sound level is muted and resumes capturing when the audio level returns to full volume.
 
 [!code-cs[GameChatSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetGameChatSoundLevelChanged)]
 

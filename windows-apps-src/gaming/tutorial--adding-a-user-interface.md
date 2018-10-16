@@ -314,7 +314,7 @@ The [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.co
 - **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the approperiate rectangle using the corresponding **ID2D1SolidColorBrush**.
 - [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw) is called to stop all drawing operations on `m_levelBitmap`.
 - Another Bitmap is created using **CreateBitmap** named `m_tooSmallBitmap` to use as a fallback, showing only if the display configuration is too small for the game.
-- Repeat process for drawing on `m_levelBitmap` for `m_tooSmallBitmap`, this time only drawing the the string `Paused` in the body.
+- Repeat process for drawing on `m_levelBitmap` for `m_tooSmallBitmap`, this time only drawing the string `Paused` in the body.
 
 
 

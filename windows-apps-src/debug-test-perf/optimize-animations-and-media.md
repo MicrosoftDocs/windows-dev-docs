@@ -217,7 +217,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+Example 2 code-behind (bad)—setting the BitmapImage's UriSource before connecting it to the tree.
 
 ```csharp
 var bitmapImage = new BitmapImage();

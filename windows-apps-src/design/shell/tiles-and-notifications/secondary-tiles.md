@@ -65,7 +65,7 @@ However, secondary tiles differ from primary tiles in some noticeable ways:
 * Users can delete their secondary tiles at any time without deleting the parent app.
 * Secondary tiles can be created at run time. App tiles can be created only during installation.
 * A flyout prompts the user for confirmation before adding a secondary tile.
-* They cannot be programmatically selected for the lock screen through a request to the user. The user must manually add the the secondary tile through the Personalize page in PC Settings.
+* They cannot be programmatically selected for the lock screen through a request to the user. The user must manually add the secondary tile through the Personalize page in PC Settings.
 
 For sending notifications, specific methods are provided for tile and badge updaters and push notification channels used with secondary tiles. These parallel the versions used with primary tiles. For instance, CreateBadgeUpdaterForApplication vs. CreateBadgeUpdaterForSecondaryTile.
 

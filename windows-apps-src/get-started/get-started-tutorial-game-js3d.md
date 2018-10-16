@@ -350,7 +350,7 @@ function createGround() {
 
     var ground = new THREE.Mesh(groundGeo, groundMat);
     ground.position.set(0, 1, 0);
-    // Rotate the place to to ground level
+    // Rotate the place to ground level
     ground.rotation.x = degreesToRadians(90);
     scene.add(ground);
 }

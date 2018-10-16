@@ -72,7 +72,7 @@ The example method below shows how to use **MediaFrameSourceGroup** objects to f
 > [!NOTE] 
 > The APIs described in this section are deprecated starting with Windows 10, version 1803. See the previous section, **Use media frame source groups to get profiles**.
 
-Selecting a profile that supports HDR begins like the other scenarios. Create a a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
+Selecting a profile that supports HDR begins like the other scenarios. Create a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
