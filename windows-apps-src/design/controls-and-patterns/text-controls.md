@@ -120,7 +120,7 @@ See these articles for font guidelines:
 
 Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
 
-![Text box expands when tapped with pen](images/pen-input-expand.gif)
+![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
 For more info, see [Text input with the handwriting view](text-handwriting-view.md).
 
