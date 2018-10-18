@@ -157,7 +157,7 @@ To exclude or limit features in a trial version of your app using the **Windows.
 
 If your app uses APIs in the **Windows.Services.Store** namespace to implement in-app purchase or trial functionality, you must publish your app to the Store and download the app to your development device to use its license for testing. Follow this process to test your code:
 
-1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard, and make sure your app passes the certification process. You can [configure your app so it is not discoverable in the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) while you test it.
+1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard, and make sure your app passes the certification process. You can [configure your app so it is not discoverable in the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) while you test it. Please note the proper configuration of [package flights](../publish/package-flights.md). Incorrectly configured package flights may be not be able to be downloaded.
 
 2. Next, make sure you have completed the following:
 

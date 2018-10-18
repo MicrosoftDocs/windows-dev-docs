@@ -3,7 +3,7 @@ author: jnHs
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Payment thresholds, methods, and timeframes
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -1044,8 +1044,8 @@ To see the countries/regions in which these payment methods are used for each ma
   </tr>
   <tr>
     <td>United Arab Emirates</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
@@ -2107,7 +2107,7 @@ To see the countries/regions in which these payment methods are used for each ma
   <tr>
     <td>United Arab Emirates</td>
     <td>50 USD</td>
-    <td>ACH/SEPA</td>
+    <td>Wire transfer</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
@@ -3154,8 +3154,8 @@ To see the countries/regions in which these payment methods are used for each ma
   </tr>
   <tr>
     <td>United Arab Emirates</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
@@ -4117,8 +4117,8 @@ To see the countries/regions in which these payment methods are used for each ma
   </tr>
   <tr>
     <td>United Arab Emirates</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
