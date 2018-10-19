@@ -269,6 +269,7 @@
 ####### [Download the CAB file for an error in your desktop application](../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md)
 ##### Xbox One games and Xbox Live
 ###### [Get Xbox One game acquisitions](../monetize/get-xbox-one-game-acquisitions.md)
+###### [Get Xbox One add-on acquisitions](../monetize/get-xbox-one-add-on-acquisitions.md)
 ###### [Get Xbox Live analytics data](../monetize/get-xbox-live-analytics.md)
 ####### [Get Xbox Live achievements data](../monetize/get-xbox-live-achievements-data.md)
 ####### [Get Xbox Live health data](../monetize/get-xbox-live-health-data.md)
