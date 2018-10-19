@@ -27,6 +27,8 @@ The following topics describe how to configure Xbox Live by using the Windows De
 
 ## In this section
 
+* [Summary](dev-center/summary.md)
+
 * [Xbox Live Setup](dev-center/xbox-live-setup.md)
 
 * [Achievements 2017](dev-center/achievements-in-udc.md)
@@ -43,9 +45,7 @@ The following topics describe how to configure Xbox Live by using the Windows De
 
 * [Title Storage](dev-center/title-storage.md)
 
-* [Data sharing](dev-center/data-sharing-udc.md)
-
-* [Localized strings](dev-center/localized-strings.md)
+* [Access Policies](dev-center/access-policies-udc.md)
 
 * [Single sign-on](dev-center/single-sign-on.md)
 

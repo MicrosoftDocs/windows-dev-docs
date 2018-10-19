@@ -22,7 +22,7 @@ You can use [Microsoft Dev Center](https://developer.microsoft.com/dashboard) to
 1. Navigate to the Achievements section for your title, located under **Services** > **Xbox Live** > **Achievements**.
 2. Click the **New Achievement** button and fill out the form.  Once completed, click **Save**.
 
-![Screenshot to create a new achievement in Microsoft Dev Center](../../images/dev-center/achievements-1.png)
+![Screenshot to create a new achievement in Microsoft Dev Center](../../images/dev-center/achievement-table.png)
 
 ## Description
 The description section is where you can enter the basics of your achievement, such as the name and locked/unlocked descriptions. You can add localization support to achievements by accessing the **Localized strings** service configuration section in [Microsoft Dev Center](https://developer.microsoft.com/dashboard).
@@ -58,7 +58,7 @@ In some cases, you might want to offer an in-game reward or artwork when a playe
 
 To create a new reward, click the **Add Reward** button in the **Additional Rewards** section and fill out the form.
 
-![Screenshot of adding rewards to an achievement in Microsoft Dev Center](../../images/dev-center/achievements-4.png)
+![Screenshot of adding rewards to an achievement in Microsoft Dev Center](../../images/dev-center/achievement-reward.png)
 
 ### Reward Details
 Fill out the Reward Details to associate a new reward. Once completed, click **Add**.

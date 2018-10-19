@@ -1,7 +1,7 @@
 ---
-title: Configure data sharing in Dev Center
+title: Configure access policies in Dev Center
 author: KevinAsgari
-description: Describes how you can configure data sharing in Dev Center to allow other apps, games, and services to access the Xbox Live settings.
+description: Describes how you can configure access policies in Dev Center to allow other apps, games, and services to access the Xbox Live settings.
 ms.assetid:
 ms.author: kevinasg
 ms.date: 02/21/2018
@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center
 ---
 
-# Configure data sharing on Dev Center
+# Configure access policies on Dev Center
 
 You can use [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview) to allow other services, games, and apps to access your title's Xbox Live settings and data. For example, you may want a web service to display leaderboards on your website, or you may have a companion app that can access the game's title storage to view or modify saved game data.
 
-By default, only the title itself can access the settings and data stored on the Xbox Live service. You can change this by configuring data sharing on the Dev Center.
+By default, only the title itself can access the settings and data stored on the Xbox Live service. You can change this by configuring access policies on the Dev Center.
 
 > [!NOTE]
 > This topic does not apply to titles in the Xbox Live Creators Program.
@@ -25,7 +25,7 @@ Add configuration by doing the following:
 
 1. After selecting your title in [Dev Center](https://developer.microsoft.com/dashboard/windows/overview), navigate to **Services** > **Xbox Live**.
 
-2. Click on the link to **Data sharing**.
+2. Click on the link to **access policies**.
 
 3. Click on the setting you want to grant access to, and click the Add app/service button. This will add a new row to the bottom of the list of apps/services configured to access that setting.
 
@@ -37,4 +37,4 @@ Add configuration by doing the following:
 
 7. When you are finished, click the **Save** button to save your changes.
 
-![Data sharing add app or service screen](../../images/dev-center/data-sharing-2.png)
+![Access Policies add app or service screen](../../images/dev-center/data-sharing-2.png)
