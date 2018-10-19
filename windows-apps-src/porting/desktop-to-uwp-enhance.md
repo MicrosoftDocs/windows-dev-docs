@@ -53,10 +53,10 @@ In the **General** settings of the **C/C++** settings group, set the **Consume W
 
 Open the **Additional #using Directories** dialog box, and add these directories.
 
-* %VSInstallDir%\Common7\IDE\VC\vcpackages
-* C:\Program Files (x86)\Windows Kits\10\UnionMetadata
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*latest version*>
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*latest version*>
+* $(VSInstallDir)Common7\IDE\VC\vcpackages
+* C:\Program Files (x86)\Windows Kits\10\UnionMetadata\<*SDK Version*>\Facade
+* C:\Program Files (x86)\Windows Kits\10\References\<*SDK Version*>\Windows.Foundation.UniversalApiContract\<*latest version*>
+* C:\Program Files (x86)\Windows Kits\10\References\<*SDK Version*>\Windows.Foundation.FoundationContract\<*latest version*>
 
 Open the **Additional Include Directories** dialog box, and add this directory: C:\Program Files (x86)\Windows Kits\10\Include\<*latest version*>\um
 
