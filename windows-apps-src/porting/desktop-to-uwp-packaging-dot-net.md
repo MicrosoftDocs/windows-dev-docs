@@ -57,7 +57,9 @@ Review this guide before you begin creating a package for your application: [Pre
 
    ![Set entry point](images/desktop-to-uwp/entry-point-set.png)
 
-6. Build the packaging project to ensure that no errors appear.
+6. Build the packaging project to ensure that no errors appear.  If you receive errors, open **Configuration Manager** and ensure that your projects target the same platform.
+
+   ![Config manager](images/desktop-to-uwp/config-manager.png)
 
 7. Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.
 

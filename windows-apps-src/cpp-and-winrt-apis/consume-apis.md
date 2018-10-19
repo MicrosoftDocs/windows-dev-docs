@@ -167,7 +167,7 @@ struct MainPage : MainPageT<MainPage>
 
 MainPage::MainPage()
 {
-    m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+    m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();
     ...
 }
 ```
@@ -175,7 +175,7 @@ MainPage::MainPage()
 For more details, code, and a walkthrough of consuming a runtime class implemented in the consuming project, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## Instantiating and returning projected types and interfaces
-Here's an example of what projected types and interfaces might look like in your consuming project.
+Here's an example of what projected types and interfaces might look like in your consuming project. Remember that a projected type (such as the one in this example), is tool-generated, and is not something that you'd author yourself.
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
