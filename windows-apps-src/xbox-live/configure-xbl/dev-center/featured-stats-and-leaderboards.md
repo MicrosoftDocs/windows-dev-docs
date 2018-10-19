@@ -25,7 +25,7 @@ You can use Windows Dev Center to configure a featured stat and leaderboard that
 1. Navigate to the **Featured Stats and Leaderboards** section for your title, located under **Services** > **Xbox Live** > **Featured Stats and Leaderboards**.
 2. Click the **New** button which will open a modal form. Once filled out, click **Save**.
 
-![Image of the new featured stat/leaderboard dialog](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-1.png)
+![Image of the new featured stat/leaderboard dialog](../../images/dev-center/featured-stats-and-leaderboards/featured-stats.png)
 
 The **Display name** field is what users will see in the GameHub. This string can be localized in the **Localize strings** of the Xbox Live service configuration.
 
