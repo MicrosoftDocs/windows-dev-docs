@@ -401,10 +401,10 @@
 ### [XAML custom (templated) controls](../cpp-and-winrt-apis/xaml-cust-ctrl.md)
 ### [Consume COM components](../cpp-and-winrt-apis/consume-com.md)
 ### [Author COM components](../cpp-and-winrt-apis/author-coclasses.md)
-### [Interop with C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [Move to C++/WinRT from C++/CX](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
-### [Interop with the ABI](../cpp-and-winrt-apis/interop-winrt-abi.md)
+### [Interop with C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [Move to C++/WinRT from WRL](../cpp-and-winrt-apis/move-to-winrt-from-wrl.md)
+### [Interop with the ABI](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ### [Strong and weak references](../cpp-and-winrt-apis/weak-references.md)
 ### [Agile objects](../cpp-and-winrt-apis/agile-objects.md)
 ### C++ language
