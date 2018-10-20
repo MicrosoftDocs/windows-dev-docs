@@ -418,29 +418,7 @@ Alternatively (and arguably more likely), you can choose to host your coclass(es
 
 You can begin the task of creating an in-process COM server by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Dynamic-Link Library (DLL)** project.
 
-### Set project properties
-
-Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Set **Windows SDK Version** to *10.0.17134.0 (Windows 10, version 1803)*, or later.
-
-To add Visual Studio support for C++/WinRT to your project, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`.
-
-Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
-
-### The precompiled header
-
-Rename your `stdafx.h` and `stdafx.cpp` to `pch.h` and `pch.cpp`, respectively. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
-
-Find and replace all `#include "stdafx.h"` with `#include "pch.h"`.
-
-In `pch.h`, include `winrt/base.h`.
-
-```cppwinrt
-// pch.h
-...
-#include <winrt/base.h>
-```
-
-Confirm that you're not affected by [Why won't my new project compile?](/windows/uwp/cpp-and-winrt-apis/faq).
+To add C++/WinRT support to the new project, follow the steps described in [Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ### Implement the coclass, class factory, and in-proc server exports
 
