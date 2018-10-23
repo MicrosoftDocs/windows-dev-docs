@@ -102,6 +102,11 @@ These toolkits provide controls and layout templates for designing UWP apps.
     
 ## Samples
 
+![Fluent XAML Theme Editor image](images/XamlThemeEditor_screenshot.png)
+**Fluent XAML Theme Editor**<br>
+The Fluent XAML Theme Editor is a tool that helps demonstrate the flexibility of the Fluent Design System as well as supports the app development process by generating XAML markup for our ResourceDictionary framework used in Universal Windows Platform applications (UWPs).
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">Download the tool sample</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">Check out the tool on GitHub</a>
+
 ![VanArsdel image](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
 The Van Arsdel, Ltd. end-to-end UWP sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI Library</a> as well as powerful underlying features of the ux framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
