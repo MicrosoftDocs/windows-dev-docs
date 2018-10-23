@@ -122,6 +122,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
+| Color filters | ms-settings:easeofaccess-colorfilter |
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
