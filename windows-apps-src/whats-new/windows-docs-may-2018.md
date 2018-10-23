@@ -94,7 +94,7 @@ The Project Rome team has overhauled their iOS and Android SDKs, adding new feat
 
 ### Sets
 
-The Sets feature is available in Windows Insider preview builds. When using the Sets feature, you app is drawn into a window that might be shared with other apps, with each app having its own tab in the title bar. [Designing for sets](../design/shell/design-for-sets.md) has guidance on how to optimize your app to provide the best experience in the Sets UI.
+The Sets feature is available in Windows Insider preview builds. When using the Sets feature, you app is drawn into a window that might be shared with other apps, with each app having its own tab in the title bar. 
 
 ## Developer Guidance
 
