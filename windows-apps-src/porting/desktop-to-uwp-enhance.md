@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Enhance your desktop application for Windows 10
 
-You can use UWP APIs to add modern experiences that light up for Windows 10 users.
+You can use Windows Runtime APIs to add modern experiences that light up for Windows 10 users.
 
 First, set up your project. Then, add Windows 10 experiences. You can build separately for Windows 10 users or distribute the same exact binaries to all users regardless of which version of Windows they run.
 
@@ -22,7 +22,7 @@ First, set up your project. Then, add Windows 10 experiences. You can build sepa
 
 You'll have to make a few changes to your project to use UWP APIs.
 
-### Modify a .NET project to use UWP APIs
+### Modify a .NET project to use Windows Runtime APIs
 
 Open the **Reference Manager** dialog box, choose the **Browse** button, and then select  **All Files**.
 
@@ -43,29 +43,11 @@ In the **Properties** window, set the **Copy Local** field of each *.winmd* file
 
 ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
-### Modify a C++ project to use UWP APIs
+### Modify a C++ project to use Windows Runtime APIs
 
-Open the property pages of your project.
+Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
-In the **General** settings of the **C/C++** settings group, set the **Consume Windows Runtime Extension** field to **Yes(/ZW)**.
-
-   ![Consume Windows Runtime Extension](images/desktop-to-uwp/consume-runtime-extensions.png)
-
-Open the **Additional #using Directories** dialog box, and add these directories.
-
-* $(VSInstallDir)Common7\IDE\VC\vcpackages
-* C:\Program Files (x86)\Windows Kits\10\UnionMetadata\<*SDK Version*>\Facade
-* C:\Program Files (x86)\Windows Kits\10\References\<*SDK Version*>\Windows.Foundation.UniversalApiContract\<*latest version*>
-* C:\Program Files (x86)\Windows Kits\10\References\<*SDK Version*>\Windows.Foundation.FoundationContract\<*latest version*>
-
-Open the **Additional Include Directories** dialog box, and add this directory: C:\Program Files (x86)\Windows Kits\10\Include\<*latest version*>\um
-
-![Additional include directories](images/desktop-to-uwp/additional-include.png)
-
-In the **Code Generation** settings of the **C/C++** settings group, set the **Enable Minimal Rebuild** setting to **No(/GM-)**.
-
-![Enable Minimal Rebuild](images/desktop-to-uwp/disable-min-build.png)
-
+To configure your project for C++/WinRT, See [Modify a Windows Desktop application project to add C++/WinRT support](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ## Add Windows 10 experiences
 
@@ -85,7 +67,7 @@ Visit our [developer center](https://developer.microsoft.com/windows) for ideas.
 
 You'll often hear us use the terms "enhance" and "extend" so we'll take a moment to explain exactly what each of these terms mean.
 
-We use the term "enhance" to describe UWP APIs that you can call directly from your desktop application. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in this [list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop application. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that show modern UIs such as a UWP map control or a Windows Hello security prompt.
+We use the term "enhance" to describe Windows Runtime APIs that you can call directly from your desktop application. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in this [list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop application. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that show modern UIs such as a UWP map control or a Windows Hello security prompt.
 
 That said, if you want to include those experiences in your application, just "extend" the application by adding a UWP project to your solution. The desktop project is still the entry point of your application, but the UWP project gives you access to all of the APIs that do not appear in this [list](desktop-to-uwp-supported-api.md). The desktop application can communicate with the UWP process by using a an app service and we have lots of guidance on how to set that up. If you want to add an experience that requires a UWP project, see [Extend with UWP](desktop-to-uwp-extend.md).
 
@@ -182,7 +164,7 @@ First, add a new build configuration to your project.
 
 ![Build Configuration](images/desktop-to-uwp/build-config.png)
 
-For that build configuration, create a constant that to identify code that calls UWP APIs.  
+For that build configuration, create a constant that to identify code that calls Windows Runtime APIs.  
 
 For .NET-based projects, the constant is called a **Conditional Compilation Constant**.
 
@@ -219,9 +201,9 @@ The compiler builds that code only if that constant is defined in your active bu
 
 ### Runtime checks
 
-You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls UWP APIs only if the user is runs your application as a packaged application on Windows 10.
+You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all UWP code. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
 ## Related Video
 
