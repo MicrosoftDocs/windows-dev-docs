@@ -4,7 +4,7 @@ Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 10/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,9 @@ To learn more about configuring languages in your apps, see [Globalization and l
 ## Supported languages
 
 
-These are the languages that the Microsoft Store supports. Your app must support at least one of these languages, and it must not specify any language codes that are not included here.
+These are the languages that the Microsoft Store supports. Your app must support at least one of these languages. 
+
+Language codes that are not included here are not supported by the Store. We recommend that you don't include packages targeting language codes other than those listed below; such packages will not be distributed to customers, and may cause delays or failures in certification.
 
 | Language name         | Supported language codes                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
