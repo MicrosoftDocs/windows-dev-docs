@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime Components.
 
-In many cases you can call UWP APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
+In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
 >This guide assumes that you've created a Windows app package for your desktop application. If you haven't yet done this, see [Package desktop applications](desktop-to-uwp-root.md).

@@ -2,8 +2,8 @@
 title: What's new for the Xbox Live
 author: PhillipLucas
 description: What's new for the Xbox Live SDK
-ms.author: sthaff
-ms.date: 10/04/2017
+ms.author: aablackm
+ms.date: 10/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # What's new for Xbox Live
 You can also check the [Xbox Live API GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.
 
-#### In this article
+## In this article
 
 * [June 2018](#june-2018)
 * [August 2017](#august-2017)
@@ -47,18 +47,15 @@ Xbox live members can access in-game clubs outside of your game across any Xbox 
 
 APIs are available to create & manage in-game clubs directly from within your game. These APIs exist in the xbox::services::clubs namespace.
 
-
 ## July 2017
 
 ### Xbox Live features
-#### Multiplayer updates
-
-Querying activity handles and search handles now includes the custom session properties in the response.
 
 #### Tournaments
 
 New APIs have been added to support tournaments. You can now use the xbox::services::tournaments::tournament_service class to access the tournaments service from your title.
 These new tournament APIs enable the following scenarios:
+
 * Query the service to find all existing tournaments for the current title.
 * Retrieve details about a tournament from the service.
 * Query the service to retrieve a list of teams for a tournament.
@@ -89,7 +86,7 @@ An updated and improved version of Game Chat is now available. For more informat
 
 #### Multiplayer
 
-* Querying activity handles and search handles now includes the custom session properties in the response.
+* Querying search handles now includes the custom session properties in the response.
 
 #### Bug fixes
 
