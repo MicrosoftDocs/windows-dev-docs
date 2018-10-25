@@ -413,6 +413,19 @@ For `resourcepack` and `versioned`, instead of providing a PRI file as the input
 
 **FILEPATH** is a token that that specifies the location of the input PRI file or PRI schema file.
 
+## &#47;IndexOptions(io) option
+
+You use the index options option (/io) with `new`, `resourcepack`, and `versioned` to specify options that provide detailed control over the behavior of resource indexers. Index options are disabled by default.
+
+```
+/IndexOptions(io) <OPTIONS>
+```
+
+**OPTIONS** is a a comma-separated list comprised of the following options.
+
+- +/-HiddenFiles(hf). Index (+) or ignore (-) hidden files and folders.
+- +/-LinkedFiles(lf). Index (+) or ignore (-) linked files and folders.
+
 ## &#47;MappingFile(mf) option
 
 You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file. [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) uses the mapping file to generate app packages.
