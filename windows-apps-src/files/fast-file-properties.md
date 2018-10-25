@@ -5,8 +5,8 @@ description: Efficiently gather a list of files and their properties from a libr
 ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, file, properties
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, 3dprinting, 3d printing
 ms.localizationpriority: medium
 ---

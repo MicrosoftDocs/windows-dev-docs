@@ -6,8 +6,8 @@ keywords: app extension, app service, background
 ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

@@ -6,8 +6,8 @@ ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---

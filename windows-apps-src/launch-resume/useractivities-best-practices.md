@@ -6,8 +6,8 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.author: pafarley
 ms.date: 08/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

@@ -6,8 +6,8 @@ ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, rendering
 ms.localizationpriority: medium
 ---

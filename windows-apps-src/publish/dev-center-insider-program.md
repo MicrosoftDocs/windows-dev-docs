@@ -5,8 +5,8 @@ author: JnHs
 ms.author: wdg-dev-content
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, insiders, dev center insider, preview features
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium

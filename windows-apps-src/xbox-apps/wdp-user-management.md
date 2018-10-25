@@ -5,8 +5,8 @@ description: Learn how to access the User Management APIs programmatically.
 ms.author: jaswill
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
 ---  

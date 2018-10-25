@@ -6,8 +6,8 @@ ms.assetid: 2540145e-b8e2-4ab5-9390-65e2c9b19792
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, social manager, people
 ms.localizationpriority: medium
 ---

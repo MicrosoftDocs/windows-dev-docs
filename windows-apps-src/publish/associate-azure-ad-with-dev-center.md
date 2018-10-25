@@ -5,8 +5,8 @@ title: Associate Azure Active Directory with your Dev Center account
 ms.author: wdg-dev-content
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, azure ad, azure tenant, aad tenant, azure ad tenant, tenant management, tenants
 ms.localizationpriority: medium
 ---

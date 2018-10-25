@@ -6,8 +6,8 @@ keywords: enterprise, tutorial, customer, data, create read update delete, REST,
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: med
 ---
 

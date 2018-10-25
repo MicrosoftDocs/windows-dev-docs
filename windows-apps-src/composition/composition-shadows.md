@@ -5,8 +5,8 @@ description: The shadow APIs let you add dynamic customizable shadows to UI cont
 ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ title: Agile objects with C++/WinRT
 ms.author: stwhi
 ms.date: 10/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, agile, object, agility, IAgileObject
 ms.localizationpriority: medium
 ---

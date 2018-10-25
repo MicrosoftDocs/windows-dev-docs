@@ -6,8 +6,8 @@ ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, game, directx, xaml, screen rotation, input
 ms.localizationpriority: medium
 ---

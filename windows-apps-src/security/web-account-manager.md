@@ -5,8 +5,8 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium

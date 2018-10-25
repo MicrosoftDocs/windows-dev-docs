@@ -6,8 +6,8 @@ ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, ddstextureloader
 ms.localizationpriority: medium
 ---

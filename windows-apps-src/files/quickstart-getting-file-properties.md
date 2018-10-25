@@ -6,8 +6,8 @@ description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a f
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ description: The Visual Studio simulator provides an environment to design, deve
 ms.author: pafarley
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

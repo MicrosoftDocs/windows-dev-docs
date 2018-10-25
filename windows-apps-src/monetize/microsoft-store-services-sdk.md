@@ -6,8 +6,8 @@ ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.author: mhopkins
 ms.date: 08/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ---

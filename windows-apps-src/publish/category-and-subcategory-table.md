@@ -6,8 +6,8 @@ ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, category, subcategory, genre, categories, genres
 ms.localizationpriority: medium
 ---

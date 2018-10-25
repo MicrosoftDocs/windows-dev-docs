@@ -6,8 +6,8 @@ title: System-supported timed metadata cues
 ms.author: drewbat
 ms.date: 04/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, metadata, cue, speech, chapter
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ keywords: contacts, selecting select single contact select multiple contacts con
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

@@ -6,8 +6,8 @@ ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.author: wdg-dev-content
 ms.date: 09/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, gamepad, vibration
 ms.localizationpriority: medium
 ---

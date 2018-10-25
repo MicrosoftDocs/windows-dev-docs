@@ -5,8 +5,8 @@ description: Learn how to configure privileges on Windows Dev Center
 ms.author: aablackm
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, privileges, Windows Dev Center
 ---

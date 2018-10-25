@@ -9,8 +9,8 @@ keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, inp
 ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm

@@ -5,8 +5,8 @@ description: Guidance for adjusting compatibility settings if your app isn't wor
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, compatibility troubleshooter, windows on ARM
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, controls, input
 ms.localizationpriority: medium
 ---

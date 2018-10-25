@@ -6,8 +6,8 @@ ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
 ms.author: wdg-dev-content
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, input, raw game controller
 ms.localizationpriority: medium
 ---

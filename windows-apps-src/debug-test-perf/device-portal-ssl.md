@@ -6,8 +6,8 @@ description: TBD
 ms.author: pafarley
 ms.date: 07/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

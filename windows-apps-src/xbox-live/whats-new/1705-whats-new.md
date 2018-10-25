@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: kevinasg
 ms.date: 04/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, what's new, may 2017
 ms.localizationpriority: medium
 ---

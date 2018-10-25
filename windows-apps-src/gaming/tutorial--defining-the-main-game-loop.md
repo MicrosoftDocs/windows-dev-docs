@@ -6,8 +6,8 @@ ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, main object
 ms.localizationpriority: medium
 ---

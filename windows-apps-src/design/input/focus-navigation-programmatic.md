@@ -7,8 +7,8 @@ keywords: keyboard, game controller, remote control, navigation, navigation stra
 ms.author: kbridge
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm

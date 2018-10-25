@@ -5,8 +5,8 @@ title: Payment thresholds, methods, and timeframes
 ms.author: wdg-dev-content
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium

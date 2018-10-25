@@ -5,8 +5,8 @@ description: Learn how to use Xbox Live services to connect your game to the Xbo
 ms.author: kevinasg
 ms.date: 05/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, xbox, xbox live
 ms.localizationpriority: medium
 ---

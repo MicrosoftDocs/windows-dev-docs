@@ -6,8 +6,8 @@ ms.assetid: 9772b8f1-81db-4c57-a54d-4e9ca9142111
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts
 ms.localizationpriority: medium
 ---

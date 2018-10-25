@@ -5,8 +5,8 @@ title: Functions in x:Bind
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ---

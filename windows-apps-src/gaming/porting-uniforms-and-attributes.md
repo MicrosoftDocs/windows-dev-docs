@@ -6,8 +6,8 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes
 ms.localizationpriority: medium
 ---

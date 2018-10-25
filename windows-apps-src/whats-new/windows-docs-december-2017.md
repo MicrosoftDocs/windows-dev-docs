@@ -6,8 +6,8 @@ keywords: what's new, update, features, developer guidance, Windows 10, december
 ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

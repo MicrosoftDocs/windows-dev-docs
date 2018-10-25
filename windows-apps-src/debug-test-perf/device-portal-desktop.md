@@ -6,8 +6,8 @@ description: Learn how the Windows Device Portal opens up diagnostics and automa
 ms.author: pafarley
 ms.date: 03/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

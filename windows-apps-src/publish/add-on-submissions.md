@@ -6,8 +6,8 @@ ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, iap, in-app purchase, in-app product, iap submission
 ms.localizationpriority: medium
 ---

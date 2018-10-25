@@ -9,8 +9,8 @@ ms.date: 03/02/2018
 ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
-ms.prod: windows
-ms.technology: uwp
+
+
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published

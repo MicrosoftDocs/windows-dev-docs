@@ -7,8 +7,8 @@ description: ' /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}'
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---

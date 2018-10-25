@@ -7,8 +7,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, toast, pending update, pendingupdate, multi-step interactivity, multi-step interactions
 ms.localizationpriority: medium
 ---

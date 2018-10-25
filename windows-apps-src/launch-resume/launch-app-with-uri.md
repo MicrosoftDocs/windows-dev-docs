@@ -6,8 +6,8 @@ ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

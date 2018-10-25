@@ -6,8 +6,8 @@ title: Enhance your desktop application for Windows 10
 ms.author: normesta
 ms.date: 10/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

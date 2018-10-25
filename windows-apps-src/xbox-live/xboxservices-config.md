@@ -5,8 +5,8 @@ description: Describes the XboxServices.config file for associating your UWP gam
 ms.author: kevinasg
 ms.date: 03/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration, xboxservices.config
 ms.localizationpriority: medium
 ---

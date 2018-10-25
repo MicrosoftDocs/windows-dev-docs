@@ -6,8 +6,8 @@ ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, rendering framework, converting, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ---

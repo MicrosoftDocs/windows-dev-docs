@@ -6,8 +6,8 @@ description: Learn how to mark packages as mandatory in the Dev Center dashboard
 ms.author: mcleans
 ms.date: 04/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

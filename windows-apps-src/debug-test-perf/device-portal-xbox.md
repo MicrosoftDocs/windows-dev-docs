@@ -6,8 +6,8 @@ description: Learn how to enable the Device Portal for Xbox One.
 ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

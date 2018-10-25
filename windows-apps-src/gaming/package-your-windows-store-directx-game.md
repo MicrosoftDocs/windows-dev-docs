@@ -6,8 +6,8 @@ ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx, package
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, toast, custom timestamp, timestamp, notification, Action Center
 ms.localizationpriority: medium
 ---

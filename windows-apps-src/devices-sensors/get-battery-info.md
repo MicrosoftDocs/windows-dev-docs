@@ -6,8 +6,8 @@ description: Learn how to get detailed battery information using APIs in the Win
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

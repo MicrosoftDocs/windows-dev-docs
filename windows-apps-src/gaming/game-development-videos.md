@@ -6,8 +6,8 @@ ms.assetid: 75643d92-293a-4d97-bc5f-2cb4217cb385
 ms.author: joanlee
 ms.date: 06/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, videos, GDC, build
 ms.localizationpriority: medium
 ---

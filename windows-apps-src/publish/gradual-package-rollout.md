@@ -5,8 +5,8 @@ title: Gradual package rollout
 ms.author: wdg-dev-content
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium

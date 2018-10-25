@@ -6,8 +6,8 @@ ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, game, directx, optimize, multisampling, swap chains
 ms.localizationpriority: medium
 ---

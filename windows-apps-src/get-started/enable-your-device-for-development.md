@@ -7,8 +7,8 @@ keywords: Get started Developer license Visual Studio, developer license enable 
 ms.author: quradic
 ms.date: 05/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

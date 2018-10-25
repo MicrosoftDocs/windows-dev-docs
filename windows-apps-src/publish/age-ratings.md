@@ -6,8 +6,8 @@ ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, age rating, game rating, iarc, rating, questionnaire, ratings board, content rating
 ms.localizationpriority: medium
 ---

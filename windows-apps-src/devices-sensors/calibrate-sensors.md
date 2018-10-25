@@ -6,8 +6,8 @@ description: Sensors in a device based on the magnetometer – the compass, incl
 ms.author: jken
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

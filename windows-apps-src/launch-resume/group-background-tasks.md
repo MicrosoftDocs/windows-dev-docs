@@ -5,8 +5,8 @@ description: Register/unregister background tasks as part of a group to isolate 
 ms.author: twhitney
 ms.date: 04/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, background task
 ---
 

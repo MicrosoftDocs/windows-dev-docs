@@ -7,8 +7,8 @@ keywords: app to app communication, interprocess communication, IPC, Background 
 ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 # Create and consume an app service

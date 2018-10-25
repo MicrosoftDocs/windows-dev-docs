@@ -6,8 +6,8 @@ ms.assetid: 6952dac0-66ff-4717-b3c7-8b3792e834e3
 ms.author: aablackm
 ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox live creators, visual studio
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ description: Capabilities must be declared in your Universal Windows Platform (U
 ms.author: misatran
 ms.date: 09/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

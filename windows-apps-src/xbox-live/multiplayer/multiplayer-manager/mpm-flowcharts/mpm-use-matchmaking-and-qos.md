@@ -6,8 +6,8 @@ ms.assetid: 48f32957-1e15-4178-84dc-69af3ea0edb4
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, mpm, multiplayer, quality of service, qos, multiplayer manager, flowchart
 ms.localizationpriority: medium
 ---

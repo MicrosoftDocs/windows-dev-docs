@@ -6,8 +6,8 @@ title: Get all apps
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, apps
 ms.localizationpriority: medium
 ---

@@ -8,8 +8,8 @@ keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make te
 ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

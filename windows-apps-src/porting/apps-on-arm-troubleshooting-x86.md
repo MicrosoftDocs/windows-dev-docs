@@ -4,8 +4,8 @@ description: Common issues with x86 apps when running on ARM, and how to fix the
 ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting
 ms.localizationpriority: medium
 ---

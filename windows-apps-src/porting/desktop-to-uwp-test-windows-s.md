@@ -6,8 +6,8 @@ title: Test your Windows app for Windows 10 S
 ms.author: normesta
 ms.date: 05/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
 ---

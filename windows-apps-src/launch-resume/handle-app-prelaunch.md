@@ -6,8 +6,8 @@ ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

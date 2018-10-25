@@ -8,8 +8,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, notification listener, usernotificationlistener, documentation, access notifications
 ms.localizationpriority: medium
 ---

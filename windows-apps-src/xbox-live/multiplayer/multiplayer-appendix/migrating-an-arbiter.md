@@ -6,8 +6,8 @@ ms.assetid: 9fb5d2c0-d548-4a22-b64e-6b215f78d22e
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arbiter, multiplayer 2015
 ms.localizationpriority: medium
 ---

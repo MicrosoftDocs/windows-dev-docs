@@ -6,8 +6,8 @@ ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
 ms.date: 02/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, payments, app sales, app proceeds, payout, store fee, payout hold, percentage
 ms.localizationpriority: medium
 ---

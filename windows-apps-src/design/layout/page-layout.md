@@ -5,8 +5,8 @@ description: When designing your app, the first thing to consider is the layout 
 ms.author: quradic
 ms.date: 3/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 localizationpriority: medium
 ---

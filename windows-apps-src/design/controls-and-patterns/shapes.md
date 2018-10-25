@@ -6,8 +6,8 @@ description: Learn how to draw shapes, such as ellipses, rectangles, polygons, a
 ms.author: jimwalk
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

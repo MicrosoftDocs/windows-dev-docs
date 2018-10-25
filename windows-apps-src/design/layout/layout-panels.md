@@ -5,8 +5,8 @@ title: Layout panels for Universal Windows Platform (UWP) apps
 ms.author: quradic
 ms.date: 04/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

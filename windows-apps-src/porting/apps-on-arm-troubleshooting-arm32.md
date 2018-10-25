@@ -5,8 +5,8 @@ description: Common issues with ARM32 apps when running on ARM, and how to fix t
 ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, ARM32 apps on ARM, windows 10 on ARM, troubleshooting
 ms.localizationpriority: medium
 ---

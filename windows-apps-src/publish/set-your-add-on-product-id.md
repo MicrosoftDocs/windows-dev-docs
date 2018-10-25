@@ -6,8 +6,8 @@ ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, add-ons, iap, durable, consumable, subscription, product type, product id, in-app purchase, in-app product
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ title: Show ads in video content
 ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
 ms.localizationpriority: medium
 ---

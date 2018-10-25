@@ -6,8 +6,8 @@ keywords: windows 10, uwp, subscriptions, add-ons, in-app purchases, IAPs, Windo
 ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

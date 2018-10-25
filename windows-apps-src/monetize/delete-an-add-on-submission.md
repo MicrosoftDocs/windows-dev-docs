@@ -6,8 +6,8 @@ title: Delete an add-on submission
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, delete, in-app product, IAP
 ms.localizationpriority: medium
 ---

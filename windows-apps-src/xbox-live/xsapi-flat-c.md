@@ -5,8 +5,8 @@ description: Learn about the flat C API model that you can use to interact with 
 ms.author: kevinasg
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, c, xsapi
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ description: Animating XAML elements with composition animations.
 ms.author: jimwalk
 ms.date: 09/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn

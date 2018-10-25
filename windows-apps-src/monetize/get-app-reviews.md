@@ -6,8 +6,8 @@ title: Get app reviews
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, reviews
 ms.localizationpriority: medium
 ---

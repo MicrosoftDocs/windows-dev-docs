@@ -6,8 +6,8 @@ ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, mesh, directx
 ms.localizationpriority: medium
 ---

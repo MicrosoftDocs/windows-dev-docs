@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: heba
 ms.date: 07/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity, controller support
 ms.localizationpriority: medium
 ---

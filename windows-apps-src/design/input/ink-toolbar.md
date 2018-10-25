@@ -8,8 +8,8 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkTo
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ---

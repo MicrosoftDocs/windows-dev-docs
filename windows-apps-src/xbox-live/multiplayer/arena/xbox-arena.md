@@ -5,8 +5,8 @@ description: Learn how to use Xbox Arena to run tournaments for your game.
 ms.author: kevinasg
 ms.date: 09-20-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---

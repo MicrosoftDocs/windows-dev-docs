@@ -5,8 +5,8 @@ description: Describes how to trigger a background task from within an applicati
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: background task trigger, background task
 ms.localizationpriority: medium
 ---

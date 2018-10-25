@@ -5,8 +5,8 @@ author: adwilso
 ms.author: sezhen
 ms.date: 1/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
 ---

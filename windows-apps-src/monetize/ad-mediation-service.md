@@ -5,8 +5,8 @@ title: Microsoft ad mediation service
 ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, ad mediation
 ms.localizationpriority: medium
 ---

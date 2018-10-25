@@ -6,8 +6,8 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, directx, app object
 ms.localizationpriority: medium
 ---

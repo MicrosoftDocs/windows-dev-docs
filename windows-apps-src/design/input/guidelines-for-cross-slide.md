@@ -6,8 +6,8 @@ ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

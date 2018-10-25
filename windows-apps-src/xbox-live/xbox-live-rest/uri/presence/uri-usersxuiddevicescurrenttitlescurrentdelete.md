@@ -7,8 +7,8 @@ description: ' DELETE (/users/xuid({xuid})/devices/current/titles/current)'
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---

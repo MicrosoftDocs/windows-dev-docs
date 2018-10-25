@@ -6,8 +6,8 @@ title: Share code between a desktop application and a UWP app
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

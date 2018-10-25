@@ -6,8 +6,8 @@ title: Manage product entitlements from a service
 ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products
 ms.localizationpriority: medium
 ---

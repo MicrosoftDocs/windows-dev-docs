@@ -6,8 +6,8 @@ keywords: what's new, update, features, developer guidance, Windows 10, septembe
 ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

@@ -6,8 +6,8 @@ ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, listing, description, store page, release notes, title
 ms.localizationpriority: medium
 ---

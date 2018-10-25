@@ -6,8 +6,8 @@ description: Learn how the Windows Device Portal lets you configure and manage y
 ms.author: pafarley
 ms.date: 12/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

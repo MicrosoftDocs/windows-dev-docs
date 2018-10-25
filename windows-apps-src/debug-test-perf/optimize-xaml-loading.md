@@ -6,8 +6,8 @@ description: Parsing XAML markup to construct objects in memory is time-consumin
 ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

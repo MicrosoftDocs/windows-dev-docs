@@ -6,8 +6,8 @@ description: You can store and access non-essential data on an optional microSD 
 ms.author: lahugh
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, sd card, storage
 ms.localizationpriority: medium
 ---

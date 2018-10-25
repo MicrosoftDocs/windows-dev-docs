@@ -10,8 +10,8 @@ keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
 ms.author: jken
 ms.date: 2/5/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: 

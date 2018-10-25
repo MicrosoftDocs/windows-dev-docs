@@ -6,8 +6,8 @@ ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.author: pafarley
 ms.date: 05/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, map, location, geovisit, geovisits
 ms.localizationpriority: medium
 ---

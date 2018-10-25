@@ -6,8 +6,8 @@ title: Get an app
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, app
 ms.localizationpriority: medium
 ---

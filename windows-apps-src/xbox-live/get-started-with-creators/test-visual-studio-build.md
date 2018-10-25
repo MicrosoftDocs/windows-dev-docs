@@ -5,8 +5,8 @@ description: Checklist for successful testing of Unity builds in Visual Studio.
 ms.author: aablackm
 ms.date: 3/12/2018
 ms.topic: get-started-article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
 # Test your Unity game build in Visual Studio

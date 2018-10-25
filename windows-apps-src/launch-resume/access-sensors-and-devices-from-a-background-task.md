@@ -6,8 +6,8 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---

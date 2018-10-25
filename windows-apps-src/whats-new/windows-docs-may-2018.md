@@ -6,8 +6,6 @@ keywords: what's new, update, features, developer guidance, Windows 10, may, bui
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 ---
 

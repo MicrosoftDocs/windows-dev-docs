@@ -6,8 +6,8 @@ ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
 ms.author: joanlee
 ms.date: 06/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, directx
 ms.localizationpriority: medium
 ---

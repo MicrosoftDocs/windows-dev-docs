@@ -5,8 +5,8 @@ title: Download the CAB file for an error in your desktop application
 ms.author: mhopkins
 ms.date: 03/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB, desktop application
 ms.localizationpriority: medium
 ---

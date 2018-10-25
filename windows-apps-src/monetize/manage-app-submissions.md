@@ -6,8 +6,8 @@ title: Manage app submissions
 ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, app submissions
 ms.localizationpriority: medium
 ---

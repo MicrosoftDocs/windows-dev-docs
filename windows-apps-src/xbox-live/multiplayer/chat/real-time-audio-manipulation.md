@@ -5,8 +5,8 @@ description: Learn how to manipulate and process the chat audio captured by Game
 ms.author: kevinasg
 ms.date: 05/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication, buffer manipulation, audio manipulation
 ms.localizationpriority: medium
 ---

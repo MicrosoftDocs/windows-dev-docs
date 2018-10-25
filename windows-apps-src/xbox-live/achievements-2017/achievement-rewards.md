@@ -6,8 +6,8 @@ ms.assetid: b6fc5bdb-ba7b-4687-985e-894182f066da
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, achievement, rewards
 ms.localizationpriority: medium
 ---

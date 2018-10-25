@@ -6,8 +6,8 @@ ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ms.author: wdg-dev-content
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, dashboard, devcenter, development center
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ keywords: what's new, whats new, updates, Windows 10, 1703, creators, 15063
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 ms.localizationpriority: medium
 ---

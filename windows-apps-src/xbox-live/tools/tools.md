@@ -6,8 +6,8 @@ ms.assetid: 380a29bf-41a7-4817-9c57-f48f2b824b52
 ms.author: kevinasg
 ms.date: 6/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, tools, player reset, live trace analyzer, LTA, xbox live account tool, 
 ms.localizationpriority: medium
 ---

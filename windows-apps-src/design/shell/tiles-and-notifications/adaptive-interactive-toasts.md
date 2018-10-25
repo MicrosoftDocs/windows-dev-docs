@@ -8,8 +8,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload
 ms.localizationpriority: medium
 ---

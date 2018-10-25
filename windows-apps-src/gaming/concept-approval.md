@@ -6,8 +6,8 @@ ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
 ms.date: 06/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, concept approval
 ms.localizationpriority: medium
 ---

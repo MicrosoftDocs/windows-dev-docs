@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: aablackm
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts, parental controls, user privileges, enforcement bans, upsell
 ---
 # Check user privilege settings in Unity

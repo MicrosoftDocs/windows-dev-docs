@@ -5,8 +5,8 @@ title: Java sample - app submission with game options and trailers
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, game options, trailers, advanced listings, java
 ms.localizationpriority: medium
 ---

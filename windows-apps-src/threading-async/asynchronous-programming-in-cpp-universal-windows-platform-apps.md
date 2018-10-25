@@ -6,8 +6,8 @@ title: Asynchronous programming in C++
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, threads, asynchronous, C++
 ms.localizationpriority: medium
 ---

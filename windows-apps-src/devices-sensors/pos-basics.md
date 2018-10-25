@@ -5,8 +5,8 @@ description: This article contains information about getting started with the Po
 ms.author: jken
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

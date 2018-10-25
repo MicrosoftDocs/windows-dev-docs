@@ -6,8 +6,8 @@ ms.assetid: 543b78e3-d06b-4969-95db-2cb996a8bbd3
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, real time activity
 ms.localizationpriority: medium
 ---

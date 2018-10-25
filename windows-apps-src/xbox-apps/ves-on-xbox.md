@@ -5,8 +5,8 @@ description: Learn how to add voice control support to your UWP apps on Xbox.
 ms.author: mstahl
 ms.date: 10/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, xbox, speech, voice enabled shell
 ---
 

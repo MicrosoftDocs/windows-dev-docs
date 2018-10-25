@@ -6,8 +6,8 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:

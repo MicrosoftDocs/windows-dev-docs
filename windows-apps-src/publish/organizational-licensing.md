@@ -6,8 +6,8 @@ ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing, enterprise, education store, business store, volume purchase, bulk
 localizationpriority: high
 

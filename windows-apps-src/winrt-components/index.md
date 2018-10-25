@@ -6,8 +6,8 @@ ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

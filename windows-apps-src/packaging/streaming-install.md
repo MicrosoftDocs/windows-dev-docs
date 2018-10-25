@@ -6,8 +6,8 @@ description: Universal Windows Platform (UWP) App Streaming Install enables you 
 ms.author: lahugh
 ms.date: 04/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, streaming install, uwp app streaming install
 ms.localizationpriority: medium
 ---

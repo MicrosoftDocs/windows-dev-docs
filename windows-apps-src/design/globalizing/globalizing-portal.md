@@ -9,8 +9,8 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---

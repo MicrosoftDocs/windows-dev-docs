@@ -5,8 +5,8 @@ description: Describes how to create a flat bundle to bundle your app’s .appx 
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, packaging, package configuration, flat bundle
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ description: Learn how to add voice communication to your game by using Xbox Liv
 ms.author: tomco
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat, game chat 2, voice communication
 ms.localizationpriority: medium
 ---

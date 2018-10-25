@@ -5,8 +5,8 @@ description: Learn the asynchronous C API calling patterns for the XSAPI C API
 ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program,
 ms.localizationpriority: medium
 ---

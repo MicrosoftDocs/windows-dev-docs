@@ -6,8 +6,8 @@ ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, user interface, directx
 ms.localizationpriority: medium
 ---

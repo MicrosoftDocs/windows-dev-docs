@@ -6,8 +6,8 @@ description: This section describes how to customize the print options and setti
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, printing
 ms.localizationpriority: medium
 ---

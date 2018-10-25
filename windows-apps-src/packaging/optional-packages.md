@@ -6,8 +6,8 @@ description: Optional packages contain content that can be integrated with a mai
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, optional packages, related set, package extension, visual studio
 ms.localizationpriority: medium
 ---

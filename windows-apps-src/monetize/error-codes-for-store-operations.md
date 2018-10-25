@@ -5,8 +5,8 @@ title: Error codes for Store operations
 ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, error codes
 ms.localizationpriority: medium
 ---

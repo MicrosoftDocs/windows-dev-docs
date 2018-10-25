@@ -6,8 +6,8 @@ ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d
 ms.localizationpriority: medium
 ---

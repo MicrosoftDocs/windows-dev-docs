@@ -6,8 +6,8 @@ title: Install the Microsoft Advertising SDK
 ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, install, SDK, advertising library
 ms.localizationpriority: medium
 ---

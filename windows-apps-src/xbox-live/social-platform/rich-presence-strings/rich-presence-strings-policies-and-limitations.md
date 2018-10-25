@@ -6,8 +6,8 @@ ms.assetid: 0ad21a75-0524-45a8-8d8a-0dec0f7d6d6f
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, rich presence, policies
 ms.localizationpriority: medium
 ---

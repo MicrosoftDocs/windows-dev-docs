@@ -6,8 +6,8 @@ ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.author: wdg-dev-content
 ms.date: 3/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, customize, listing, description, earlier
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, reputation, social platform
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ keywords: checklist, windows, uwp, submission, submit, game, app, submitting
 ms.author: wdg-dev-content
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

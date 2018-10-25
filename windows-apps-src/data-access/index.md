@@ -6,8 +6,8 @@ description: This section discusses storing data on the device in a private data
 ms.author: normesta
 ms.date: 11/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, data, database, relational, tables, sqlite
 ms.localizationpriority: medium
 ---

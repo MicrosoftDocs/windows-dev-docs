@@ -6,8 +6,8 @@ title: Manage game broadcasting
 ms.author: drewbat
 ms.date: 09/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, game, broadcasting
 ms.localizationpriority: medium
 ---

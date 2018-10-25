@@ -6,8 +6,8 @@ ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx 9, directx 11, port
 ms.localizationpriority: medium
 ---
