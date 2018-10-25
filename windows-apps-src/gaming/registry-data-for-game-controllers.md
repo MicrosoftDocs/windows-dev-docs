@@ -6,8 +6,8 @@ ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.author: wdg-dev-content
 ms.date: 06/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, input, registry, custom
 ms.localizationpriority: medium
 ---

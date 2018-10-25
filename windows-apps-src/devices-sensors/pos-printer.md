@@ -5,8 +5,8 @@ description: This article lists the POSPrinter features that are available for U
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

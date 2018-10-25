@@ -5,8 +5,8 @@ description: Find out where to download important resources for Xbox Live develo
 ms.author: kevinasg
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, xbox, xbox live, resources, API, reference
 ms.localizationpriority: medium
 ---

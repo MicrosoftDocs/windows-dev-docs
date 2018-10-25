@@ -6,8 +6,8 @@ title: In-app purchases and trials using the Windows.ApplicationModel.Store name
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: uwp, in-app purchases, IAPs, add-ons, trials, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ---

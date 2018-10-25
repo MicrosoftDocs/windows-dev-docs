@@ -6,8 +6,8 @@ ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
 ms.date: 09/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, acquisitions, app sales, app downloads, installs, funnel, acquisition, conversions, channel, app page views
 ms.localizationpriority: medium
 ---

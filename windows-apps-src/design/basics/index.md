@@ -6,8 +6,6 @@ keywords: uwp app layout, universal windows platform, app design, interface
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 ---
 # Design basics for UWP apps
@@ -15,8 +13,6 @@ ms.localizationpriority: medium
 ![hero image](images/header-design-basics.svg)
 
 The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving Fluent Design System as well as the needs of our app-building community. 
-
-<!-- This introduction provides an overview of the Fluent Design System, UWP app design basics, and the XAML platform, helping you build user interfaces (UI) that scale beautifully across a range of devices. -->
 
 ## Overview
 

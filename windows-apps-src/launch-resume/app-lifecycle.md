@@ -7,8 +7,8 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

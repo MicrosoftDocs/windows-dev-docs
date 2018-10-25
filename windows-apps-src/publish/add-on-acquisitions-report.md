@@ -6,8 +6,8 @@ ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
 ms.date: 05/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, add-on sales, add-on acquisitions, iap sales, in-app products, iaps, add-ons
 ms.localizationpriority: medium
 ---

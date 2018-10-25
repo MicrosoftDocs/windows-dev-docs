@@ -6,8 +6,8 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ms.author: elcowle
 ms.date: 08/22/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, sample, directx, fundamentals
 ms.localizationpriority: medium
 ---

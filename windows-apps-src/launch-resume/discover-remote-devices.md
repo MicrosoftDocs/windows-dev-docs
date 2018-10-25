@@ -6,8 +6,8 @@ ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---

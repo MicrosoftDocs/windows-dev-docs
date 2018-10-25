@@ -9,8 +9,8 @@ keywords: keyboard, text, core text, custom text, Text Services Framework, input
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

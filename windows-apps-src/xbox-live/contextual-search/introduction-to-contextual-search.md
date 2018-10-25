@@ -6,8 +6,8 @@ ms.assetid: 0c2afbfa-f32a-4ddd-9e9e-c8ac7eedae18
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, contextual search, broadcast, game clip
 ms.localizationpriority: medium
 ---

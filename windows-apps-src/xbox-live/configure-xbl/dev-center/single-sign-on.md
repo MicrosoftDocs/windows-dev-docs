@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center, single sign-on
 ---

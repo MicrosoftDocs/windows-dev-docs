@@ -5,8 +5,8 @@ title: C++/WinRT
 ms.author: stwhi
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ---

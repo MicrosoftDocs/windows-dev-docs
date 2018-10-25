@@ -6,8 +6,8 @@ keywords: what's new, whats new, update, updates, features, new, Windows 10, 160
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.author: twhitney
 ms.date: 10/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, background task, app service, connected devices, remote systems
 ms.localizationpriority: medium
 ---

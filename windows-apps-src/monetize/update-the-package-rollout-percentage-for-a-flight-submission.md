@@ -5,8 +5,8 @@ title: Update the rollout percentage for a flight submission
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, package rollout, flight submission, update, percentage
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium

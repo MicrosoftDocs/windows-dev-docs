@@ -5,8 +5,8 @@ title: Use targeted offers to maximize engagement and conversions
 ms.author: wdg-dev-content
 ms.date: 11/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, targeted offers, offers, notifications
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: 6eefee0e-6c0d-473a-97e7-f3e45f574712
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, multiplayer manager, flowchart
 ms.localizationpriority: medium
 ---

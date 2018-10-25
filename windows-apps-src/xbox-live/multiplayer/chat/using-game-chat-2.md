@@ -5,8 +5,8 @@ description: Learn how to use Xbox Live Game Chat 2 to add voice communication t
 ms.author: kevinasg
 ms.date: 3/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
 ms.localizationpriority: medium
 ---

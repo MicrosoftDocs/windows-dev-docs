@@ -6,8 +6,8 @@ ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
 ---

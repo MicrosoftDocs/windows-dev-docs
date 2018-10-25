@@ -6,8 +6,8 @@ ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
 ---

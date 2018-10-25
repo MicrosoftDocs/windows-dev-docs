@@ -5,8 +5,8 @@ description: This article provides an overview of how experiences and apps will 
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, ARM, ARM64, x86 emulation
 ms.localizationpriority: medium
 ---

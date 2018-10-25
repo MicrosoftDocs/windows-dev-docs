@@ -6,8 +6,8 @@ ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, sample, directx, graphics
 ms.localizationpriority: medium
 ---

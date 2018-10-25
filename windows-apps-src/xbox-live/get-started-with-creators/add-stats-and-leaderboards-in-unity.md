@@ -6,8 +6,8 @@ ms.assetid: 756b3c31-a459-4ad2-97af-119adcd522b5
 ms.author: kevinasg
 ms.date: 10/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, creators
 ms.localizationpriority: medium
 ---

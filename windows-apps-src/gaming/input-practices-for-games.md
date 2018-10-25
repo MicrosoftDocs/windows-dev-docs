@@ -6,8 +6,8 @@ ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.author: elcowle
 ms.date: 11/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, input
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, shaders, primitives, directx
 ms.localizationpriority: medium
 ---

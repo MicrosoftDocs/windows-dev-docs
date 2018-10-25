@@ -6,8 +6,8 @@ keywords: what's new, update, features, developer guidance, Windows 10, february
 ms.author: quradic
 ms.date: 2/5/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

@@ -6,8 +6,8 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
 ms.date: 01/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

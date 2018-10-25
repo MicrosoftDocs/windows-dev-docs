@@ -6,8 +6,8 @@ ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx, activation
 ms.localizationpriority: medium
 ---

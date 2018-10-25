@@ -7,8 +7,8 @@ title: Map style sheet reference
 ms.author: normesta
 ms.date: 03/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, maps, map style sheet
 ms.localizationpriority: medium
 ---

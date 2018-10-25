@@ -5,8 +5,8 @@ description: Asset packages are a type of package that act as a centralized loca
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, packaging, package layout, asset package
 ms.localizationpriority: medium
 ---

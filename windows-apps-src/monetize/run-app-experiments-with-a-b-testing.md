@@ -6,8 +6,8 @@ ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---

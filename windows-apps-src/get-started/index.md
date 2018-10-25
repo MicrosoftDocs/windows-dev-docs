@@ -5,10 +5,10 @@ title: Get started with the Universal Windows Platform (UWP)
 author: QuinnRadich
 ms.author: quradic
 ms.date: 03/23/2018
-ms.prod: windows
+
 ms.topic: article
 keywords: get started, windows 10, uwp, xaml, c#
-ms.technology: uwp
+
 ms.localizationpriority: medium
 ---
 

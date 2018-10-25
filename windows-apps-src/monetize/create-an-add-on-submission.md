@@ -6,8 +6,8 @@ title: Create an add-on submission
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store submission API, create add-on submission, in-app product, IAP
 ms.localizationpriority: medium
 ---

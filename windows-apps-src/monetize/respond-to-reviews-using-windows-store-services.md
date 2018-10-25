@@ -6,8 +6,8 @@ title: Respond to reviews using Store services
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews
 ms.localizationpriority: medium
 ---

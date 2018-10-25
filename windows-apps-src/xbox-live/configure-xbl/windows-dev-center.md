@@ -5,8 +5,8 @@ description: Links to topics that detail how to configure Xbox Live services on 
 ms.author: kevinasg
 ms.date: 7/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center
 ---

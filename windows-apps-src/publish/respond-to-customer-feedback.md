@@ -5,8 +5,8 @@ author: JnHs
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium

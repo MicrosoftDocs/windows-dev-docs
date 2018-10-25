@@ -7,8 +7,8 @@ keywords: windows 10, uwp, consumable, add-ons, in-app purchases, IAPs, Windows.
 ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

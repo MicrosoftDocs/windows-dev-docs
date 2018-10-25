@@ -6,8 +6,8 @@ ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, depth, effects, primitives, directx
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
 ms.author: wdg-dev-content
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, input, flight stick
 ms.localizationpriority: medium
 ---

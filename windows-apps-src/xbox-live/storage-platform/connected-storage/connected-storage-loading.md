@@ -6,8 +6,8 @@ ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---

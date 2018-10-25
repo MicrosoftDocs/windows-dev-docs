@@ -5,8 +5,8 @@ title: Optimize the viewability of your ad units
 ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, shaders
 ms.localizationpriority: medium
 ---

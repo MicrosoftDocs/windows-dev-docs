@@ -6,8 +6,8 @@ title: Implement ads in your app
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ms.localizationpriority: medium
 ---

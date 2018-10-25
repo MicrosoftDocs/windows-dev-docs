@@ -6,8 +6,8 @@ ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows
 ms.localizationpriority: medium
 ---

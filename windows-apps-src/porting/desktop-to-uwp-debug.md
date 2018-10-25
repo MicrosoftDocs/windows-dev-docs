@@ -6,8 +6,8 @@ title: Run, debug, and test a packaged desktop app (Desktop Bridge)
 ms.author: normesta
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium

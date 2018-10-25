@@ -5,8 +5,8 @@ title: Standard C++ data types and C++/WinRT
 ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---

@@ -15,6 +15,7 @@
     ],
     "globalMetadata": {
         "ROBOTS": "INDEX, FOLLOW",
+		"ms.prod": "uwp",
         "Search.Product": "eADQiWindows 10XVcnh",
         "uhfHeaderId": "MSDocsHeader-WinUWP",
         "titleSuffix": "UWP app developer",
@@ -26,6 +27,44 @@
 		    "htmlDangerZone":  true,
         "searchScope": ["UWP"]
     },
+	"fileMetadata": {
+	   "ms.technology":
+	   {
+		 "app-resources/**.md": "develop",
+		 "app-to-app/**.md": "develop",
+		 "audio-video-camera/**.md": "develop",
+		 "composition/**.md": "develop",
+		 "contacts-and-calendar/**.md": "develop",
+		 "cpp-and-winrt-apis/**.md": "develop",
+		 "data-access/**.md": "develop",
+		 "data-binding/**.md": "develop",
+		 "debug-test-perf/**.md": "develop",
+		 "develop/**.md": "develop",
+		 "devices-sensors/**.md": "develop",
+		 "enterprise/**.md": "develop",
+		 "files/**.md": "develop",
+		 "gaming/**.md": "gaming",
+		 "graphics-concepts/**.md": "develop",
+		 "launch-resume/**.md": "develop",
+		 "maps-and-location/**.md": "develop",
+		 "monetize/**.md": "publish",
+		 "networking/**.md": "develop",
+		 "packaging/**.md": "develop",
+		 "porting/**.md": "develop",
+		 "publish/**.md": "publish",
+		 "security/**.md": "develop",
+		 "threading-async/**.md": "develop",
+		 "updates-and-versions/**.md": "develop",
+		 "app-resources/**.md": "develop",
+		 "whats-new/**.md": "whats-new",
+		 "winrt-components/**.md": "develop",
+		 "xaml-platform/**.md": "develop",
+		 "xbox-apps/**.md": "gaming",
+		 "xbox-live/**.md": "gaming", 
+		 "get-started/**.md": "get-started",
+		 "design/**.md": "design"
+	   }
+	},
     "externalReference": [
     ],
     "template": "op.html",

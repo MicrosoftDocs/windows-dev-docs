@@ -6,8 +6,8 @@ ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
 ms.author: kevinasg
 ms.date: 01/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox integrated multiplayer, xim, chat
 ms.localizationpriority: medium
 ---

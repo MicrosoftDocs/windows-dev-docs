@@ -6,8 +6,8 @@ ms.assetid: bd8a2c51-2434-4cfe-8601-76b08321a658
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, xbox one, xdk, managed partner, sandbox, content isolation
 ms.localizationpriority: medium
 ---

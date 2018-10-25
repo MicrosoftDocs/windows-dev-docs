@@ -6,8 +6,8 @@ title: Prepare to package a desktop application (Desktop Bridge)
 ms.author: normesta
 ms.date: 05/18/20188
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium

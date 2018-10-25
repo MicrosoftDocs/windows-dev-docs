@@ -6,8 +6,8 @@ description: Data binding is at the core of the Model-View-ViewModel (MVVM) UI a
 ms.author: karler
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 10/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 pm-contact: kisai

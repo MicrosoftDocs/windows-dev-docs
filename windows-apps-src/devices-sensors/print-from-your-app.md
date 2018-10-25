@@ -6,8 +6,8 @@ description: Learn how to print documents from a Universal Windows app. This top
 ms.author: pafarley
 ms.date: 01/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, printing
 ms.localizationpriority: medium
 ---

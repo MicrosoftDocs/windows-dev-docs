@@ -6,8 +6,8 @@ description: This section contains or links to articles about packaging for Univ
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ title: Engage with your customers
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 ms.author: joanlee
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, accessibility, games
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ description: Covers the social prefabs and script examples for social services o
 ms.author: aablackm
 ms.date: 1/24/2018
 ms.topic: get-started-article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
 # Unity Prefabs and Scripted Sign-In

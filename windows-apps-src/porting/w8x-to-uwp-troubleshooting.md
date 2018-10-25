@@ -6,8 +6,8 @@ ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

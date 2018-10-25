@@ -6,8 +6,8 @@ description: You can view and update your developer account settings and profile
 ms.author: wdg-dev-content
 ms.date: 03/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, dev center, account settings, profile, account profile, developer account, developer account settings
 ms.localizationpriority: medium
 ---

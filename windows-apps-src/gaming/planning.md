@@ -6,8 +6,8 @@ ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, game, planning, accessibility, cloud, monetize, package, technology, concept, approval
 ms.localizationpriority: medium
 ---

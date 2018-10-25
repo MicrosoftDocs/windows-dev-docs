@@ -6,8 +6,8 @@ title: Manage a large catalog of in-app products
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, catalog, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ---

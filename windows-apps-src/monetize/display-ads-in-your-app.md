@@ -6,8 +6,8 @@ title: Display ads in your app with the Microsoft Advertising SDK
 ms.author: mhopkins
 ms.date: 06/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ads, advertising, banner, ad control, interstitial
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ keywords: what's new, whats new, update, updates, Windows 10, 1607, 14393, anniv
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ---

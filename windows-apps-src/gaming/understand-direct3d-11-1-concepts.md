@@ -6,8 +6,8 @@ ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx, direct3d 9, direct3d 11, changes
 ms.localizationpriority: medium
 ---

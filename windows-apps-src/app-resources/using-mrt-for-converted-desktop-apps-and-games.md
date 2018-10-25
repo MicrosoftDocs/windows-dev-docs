@@ -5,8 +5,8 @@ description: By packaging your .NET or Win32 app or game as an AppX package, you
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ms.localizationpriority: medium
 ---

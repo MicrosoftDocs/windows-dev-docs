@@ -5,8 +5,8 @@ description: This article lists the camera barcode scanner features that are ava
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

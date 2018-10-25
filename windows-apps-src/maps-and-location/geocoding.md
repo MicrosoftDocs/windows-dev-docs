@@ -6,8 +6,8 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.author: pafarley
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, geocoding, map, location
 ms.localizationpriority: medium
 ---

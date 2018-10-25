@@ -6,8 +6,8 @@ ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.author: pafarley
 ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, map, location, location capability
 ms.localizationpriority: medium
 ---

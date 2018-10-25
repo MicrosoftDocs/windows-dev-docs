@@ -7,8 +7,8 @@ keywords: windows 10, uwp, trial, in-app purchase, IAP, Windows.ApplicationModel
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

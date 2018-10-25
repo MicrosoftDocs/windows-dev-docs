@@ -5,8 +5,8 @@ description: An overview of emulation of x86 apps on ARM.
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, x86 emulation on ARM
 ms.localizationpriority: medium
 ---

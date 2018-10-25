@@ -6,8 +6,8 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, setup, directx
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ description: The Universal Windows Platform (UWP) includes many asynchronous API
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, C#, Visual Basic, asynchronous
 ms.localizationpriority: medium
 ---

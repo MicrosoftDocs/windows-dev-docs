@@ -6,8 +6,8 @@ ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
 ms.date: 8/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
 ms.localizationpriority: medium
 ---

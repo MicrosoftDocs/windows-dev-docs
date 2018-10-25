@@ -6,8 +6,8 @@ keywords: multi-instance uwp
 ms.author: twhitney
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 # Create a multi-instance Universal Windows App

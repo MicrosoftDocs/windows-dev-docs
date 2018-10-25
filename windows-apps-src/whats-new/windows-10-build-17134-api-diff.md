@@ -6,8 +6,8 @@ keywords: what's new, whats new, updates, Windows 10, newest, apis, 17134
 ms.author: quradic
 ms.date: 4/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

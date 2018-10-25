@@ -5,8 +5,8 @@ description: Learn how to configure a barcode scanner for the intended applicati
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

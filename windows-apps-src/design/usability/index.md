@@ -8,8 +8,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 10/18/2017
 ms.topic: landing-page
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ---

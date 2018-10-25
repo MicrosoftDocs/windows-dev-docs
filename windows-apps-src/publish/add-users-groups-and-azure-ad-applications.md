@@ -5,8 +5,8 @@ title: Add users, groups, and Azure AD applications to your Dev Center account
 ms.author: wdg-dev-content
 ms.date: 07/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, azure ad application, aad, user, group, multiple users, multi-user
 ms.localizationpriority: medium
 ---

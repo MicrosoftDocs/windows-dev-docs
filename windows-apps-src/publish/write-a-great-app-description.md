@@ -6,8 +6,8 @@ ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ms.author: wdg-dev-content
 ms.date: 05/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, description, describe, Store listing, marketing
 ms.localizationpriority: medium
 ---

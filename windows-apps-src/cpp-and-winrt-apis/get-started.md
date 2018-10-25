@@ -5,8 +5,8 @@ title: Get started with C++/WinRT
 ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ---

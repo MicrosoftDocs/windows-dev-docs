@@ -6,8 +6,8 @@ keywords: uwp app layout, universal windows platform, app design, interface, flu
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 # The Fluent Design System for Windows app creators

@@ -6,8 +6,8 @@ ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
 ms.author: wdg-dev-content
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, racing wheel, force feedback
 ms.localizationpriority: medium
 ---

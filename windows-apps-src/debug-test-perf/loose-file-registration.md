@@ -5,8 +5,8 @@ description: This guide shows how to use the loose file layout to validate and s
 ms.author: cdon
 ms.date: 6/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal, apps manager, deployment, sdk
 ms.localizationpriority: medium
 ---

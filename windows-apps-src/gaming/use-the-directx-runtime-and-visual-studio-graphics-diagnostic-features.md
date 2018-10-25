@@ -6,8 +6,8 @@ ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, graphics, diagnostics, tools, directx
 ms.localizationpriority: medium
 ---

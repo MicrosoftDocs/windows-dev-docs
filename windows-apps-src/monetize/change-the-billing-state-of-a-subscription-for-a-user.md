@@ -6,8 +6,8 @@ title: Change the billing state of a subscription for a user
 ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
 ---

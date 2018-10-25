@@ -5,8 +5,8 @@ description: Learn how to use Visual Studio to create an optional package with e
 ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---

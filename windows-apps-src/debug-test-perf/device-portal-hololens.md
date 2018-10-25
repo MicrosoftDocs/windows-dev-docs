@@ -6,8 +6,8 @@ description: Learn how the Windows Device Portal for HoloLens lets you remotely 
 ms.author: pafarley
 ms.date: 09/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ ms.assetid: b4490fae-d554-403d-bbbc-601af38af0ef
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service calls, testing, trace analyzer
 ms.localizationpriority: medium
 ---

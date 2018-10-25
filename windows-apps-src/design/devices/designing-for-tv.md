@@ -10,8 +10,8 @@ keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interact
 ms.author: elcowle
 ms.date: 12/5/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm

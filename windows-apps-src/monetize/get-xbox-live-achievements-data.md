@@ -5,8 +5,8 @@ title: Get Xbox Live achievements data
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox Live analytics, achievements
 ms.localizationpriority: medium
 ---

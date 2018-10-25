@@ -6,8 +6,8 @@ ms.assetid: 87b70b4c-c9c1-48ba-bdea-b922b0236da4
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, sign-in, troubleshoot
 ms.localizationpriority: medium
 ---

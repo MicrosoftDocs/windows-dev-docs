@@ -5,8 +5,8 @@ title: Get Xbox One add-on acquisitions
 ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox One add-on acquisitions
 ms.localizationpriority: medium
 ---

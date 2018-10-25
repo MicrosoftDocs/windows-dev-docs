@@ -6,8 +6,8 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, globalization, localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ description: Rather than optimizing your UI the many devices across the Windows 
 ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

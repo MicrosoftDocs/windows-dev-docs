@@ -6,8 +6,8 @@ title: Get license info for your app and add-ons
 ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, licenses, apps, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.localizationpriority: medium
 ---

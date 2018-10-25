@@ -5,8 +5,8 @@ description: Learn how to retrieve the Windows System User in a Universal Window
 ms.author: kevinasg
 ms.date: 06/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, system user
 ms.localizationpriority: medium
 ---

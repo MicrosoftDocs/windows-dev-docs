@@ -6,8 +6,8 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, publishing, preprocessing, certification, release, pending, submit, publish, status, time
 ms.localizationpriority: medium
 ---

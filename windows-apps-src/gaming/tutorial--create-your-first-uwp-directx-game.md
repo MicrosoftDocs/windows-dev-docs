@@ -7,8 +7,8 @@ keywords: DirectX game sample, game sample, Universal Windows Platform (UWP), Di
 ms.author: joanlee
 ms.date: 12/01/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

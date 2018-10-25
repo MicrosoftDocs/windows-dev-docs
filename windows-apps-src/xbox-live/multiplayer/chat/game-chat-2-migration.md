@@ -5,8 +5,8 @@ description: Learn how to migrate existing Game Chat code to use Game Chat 2.
 ms.author: kevinasg
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
 ms.localizationpriority: medium
 ---

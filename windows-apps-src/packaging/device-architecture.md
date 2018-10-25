@@ -5,8 +5,8 @@ description: Learn more about which processor architecture(s) you should use whe
 ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, packaging, architecture, package configuration
 ms.localizationpriority: medium
 ---

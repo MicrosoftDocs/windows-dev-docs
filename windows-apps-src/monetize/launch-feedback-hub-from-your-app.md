@@ -6,8 +6,8 @@ ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Feedback Hub, launch
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ keywords: uwp app development threading async platform overview portal develop d
 ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

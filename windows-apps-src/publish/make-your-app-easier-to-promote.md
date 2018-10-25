@@ -6,8 +6,8 @@ ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
 ms.date: 3/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, promotional, promotion, featured, showcase, store
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ title: Get add-on acquisitions
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, add-on acquisitions
 ms.localizationpriority: medium
 ---

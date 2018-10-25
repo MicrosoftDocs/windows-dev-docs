@@ -5,8 +5,8 @@ title: Data schemas for Store products
 ms.author: mhopkins
 ms.date: 09/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ExtendedJsonData, Store products, schema
 ms.localizationpriority: medium
 ---

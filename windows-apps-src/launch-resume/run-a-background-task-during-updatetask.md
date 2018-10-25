@@ -5,8 +5,8 @@ description: Learn how to create a background task that runs when your Universal
 ms.author: twhitney
 ms.date: 04/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, update, background task, updatetask, background task
 ms.localizationpriority: medium
 ---

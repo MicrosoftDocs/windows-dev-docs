@@ -6,8 +6,8 @@ title: Package an app using the Desktop App Converter (Desktop Bridge)
 ms.author: normesta
 ms.date: 08/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium

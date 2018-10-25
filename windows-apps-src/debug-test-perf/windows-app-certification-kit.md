@@ -6,8 +6,8 @@ description: To give your app the best chance of being published on the Microsof
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
 ---

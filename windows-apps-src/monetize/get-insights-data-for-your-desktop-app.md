@@ -5,8 +5,8 @@ title: Get insights data for your desktop application
 ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, insights
 ms.localizationpriority: medium
 ---

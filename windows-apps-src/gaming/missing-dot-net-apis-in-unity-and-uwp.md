@@ -6,8 +6,8 @@ ms.assetid: 28A8B061-5AE8-4CDA-B4AB-2EF0151E57C1
 ms.author: elcowle
 ms.date: 2/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, .net, unity
 ms.localizationpriority: medium
 ---

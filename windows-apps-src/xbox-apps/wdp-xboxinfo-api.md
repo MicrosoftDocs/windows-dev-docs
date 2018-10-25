@@ -5,8 +5,8 @@ description: Learn how to access Xbox device information.
 ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, xbox, device portal
 ms.localizationpriority: medium
 ---

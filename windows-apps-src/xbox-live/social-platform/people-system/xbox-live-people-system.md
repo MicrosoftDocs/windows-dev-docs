@@ -6,8 +6,8 @@ ms.assetid: f1881a52-8e65-4364-9937-d2b8b8476cbf
 ms.author: aablackm
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, social, people system, friends
 ms.localizationpriority: medium
 ---

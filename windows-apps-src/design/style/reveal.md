@@ -6,8 +6,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: conrwi

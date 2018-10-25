@@ -6,8 +6,8 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, porting, game loop, direct3d 9, directx 11
 ms.localizationpriority: medium
 ---

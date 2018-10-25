@@ -6,8 +6,8 @@ keywords: what's new, whats new, updates, Windows 10, 1709, fall, creators, apis
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

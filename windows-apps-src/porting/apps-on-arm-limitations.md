@@ -5,8 +5,8 @@ description: Troubleshooting steps for apps that aren't working correctly on ARM
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10 s, always connected, limitations, windows 10 on ARM
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86

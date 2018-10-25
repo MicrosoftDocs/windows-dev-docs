@@ -5,8 +5,8 @@ description: Convert app service code that ran in a separate background process 
 ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, app service
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium

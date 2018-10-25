@@ -6,8 +6,8 @@ ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
 ms.date: 08/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: medium
 ---

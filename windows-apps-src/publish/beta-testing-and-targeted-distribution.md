@@ -6,8 +6,8 @@ ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
 ms.date: 05/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
 ms.localizationpriority: medium
 ---

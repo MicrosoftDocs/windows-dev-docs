@@ -6,8 +6,8 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, opengl, direct3d 11, port
 ms.localizationpriority: medium
 ---

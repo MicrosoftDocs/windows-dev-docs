@@ -6,8 +6,8 @@ description: Learn how to write a UWP app that uses the Windows Device Portal to
 ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

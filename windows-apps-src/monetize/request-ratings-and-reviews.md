@@ -5,8 +5,8 @@ title: Request ratings and reviews for your app
 ms.author: mhopkins
 ms.date: 06/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
 ---

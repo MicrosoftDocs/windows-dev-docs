@@ -6,8 +6,8 @@ ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, app names, change app name, update app name, game name, product name
 ms.localizationpriority: medium
 ---

@@ -7,8 +7,8 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---

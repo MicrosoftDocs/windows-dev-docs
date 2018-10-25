@@ -6,8 +6,8 @@ description: We offer individual developer accounts and company developer accoun
 ms.author: wdg-dev-content
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ---

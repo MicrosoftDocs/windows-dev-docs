@@ -6,8 +6,8 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx, launching, resuming
 ms.localizationpriority: medium
 ---

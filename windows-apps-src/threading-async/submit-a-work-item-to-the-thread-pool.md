@@ -6,8 +6,8 @@ description: Learn how to do work in a separate thread by submitting a work item
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, threads, thread pool
 ms.localizationpriority: medium
 ---

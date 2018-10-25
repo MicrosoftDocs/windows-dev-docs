@@ -5,8 +5,8 @@ description: Learn how to take advantage of new APIs while maintaining compatibi
 ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

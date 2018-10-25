@@ -6,8 +6,8 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, asynchronous programming, directx
 ms.localizationpriority: medium
 ---

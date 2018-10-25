@@ -6,8 +6,8 @@ ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
 ms.author: wdg-dev-content
 ms.date: 01/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, getting started
 localizationpriority: medium
 ---

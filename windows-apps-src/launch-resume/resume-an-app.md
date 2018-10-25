@@ -6,8 +6,8 @@ ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

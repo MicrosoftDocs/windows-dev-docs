@@ -6,8 +6,8 @@ keywords: console uwp
 ms.author: twhitney
 ms.date: 08/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

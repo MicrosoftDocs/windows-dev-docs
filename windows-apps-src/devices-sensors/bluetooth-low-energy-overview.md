@@ -5,8 +5,8 @@ description: This topic provides a quick overview of Bluetooth LE in UWP apps.
 ms.author: misatran
 ms.date: 03/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, central, peripheral, client, server, watcher, publisher
 ms.localizationpriority: medium
 ---

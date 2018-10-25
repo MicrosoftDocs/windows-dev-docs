@@ -6,8 +6,8 @@ ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 11/17/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Localized strings, Windows Dev Center
 ---

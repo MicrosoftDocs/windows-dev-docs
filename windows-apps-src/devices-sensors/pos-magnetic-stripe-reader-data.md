@@ -5,8 +5,8 @@ description: Learn how to obtain and interpret the data from a magnetic stripe.
 ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
 ms.localizationpriority: medium
 ---

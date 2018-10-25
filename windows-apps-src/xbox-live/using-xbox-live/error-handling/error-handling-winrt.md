@@ -6,8 +6,8 @@ ms.assetid: b4f04798-df91-430e-90f0-83b5a48b9ab2
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, error handling
 ms.localizationpriority: medium
 ---

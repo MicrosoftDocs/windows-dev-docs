@@ -6,8 +6,8 @@ ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

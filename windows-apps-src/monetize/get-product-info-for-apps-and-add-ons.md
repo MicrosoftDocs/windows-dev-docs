@@ -6,8 +6,8 @@ title: Get product info for apps and add-ons
 ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, Windows.Services.Store
 ms.localizationpriority: medium
 ---

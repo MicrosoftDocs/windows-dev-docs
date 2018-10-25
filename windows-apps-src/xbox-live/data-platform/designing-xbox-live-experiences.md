@@ -6,8 +6,8 @@ ms.assetid: d2a85621-7d02-4b11-a7fa-9ebaee0092d5
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, stats, achievements, leaderboards, design
 ms.localizationpriority: medium
 ---

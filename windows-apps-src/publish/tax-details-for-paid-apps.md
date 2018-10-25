@@ -6,8 +6,8 @@ ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
 ms.date: 6/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, taxes, app taxes, tax requirements, commerce expansion, tax rate
 ms.localizationpriority: medium
 ---

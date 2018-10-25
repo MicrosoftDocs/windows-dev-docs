@@ -9,8 +9,8 @@ keywords: keyboard, accessibility, navigation, focus, text, input, user interact
 ms.author: kbridge
 ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ---
 
 # Respond to the presence of the touch keyboard

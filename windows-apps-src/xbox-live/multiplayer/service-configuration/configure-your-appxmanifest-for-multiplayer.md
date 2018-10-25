@@ -6,8 +6,8 @@ ms.assetid: 72f179e7-4705-4161-9b8a-4d6a1a05b8f7
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, protocol activation, multiplayer
 ms.localizationpriority: medium
 ---

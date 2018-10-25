@@ -6,8 +6,8 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, direct3d 11, initialization, porting, direct3d 9
 ms.localizationpriority: medium
 ---

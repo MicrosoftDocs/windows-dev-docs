@@ -6,8 +6,8 @@ ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, throttling, rate limiting
 ms.localizationpriority: medium
 ---

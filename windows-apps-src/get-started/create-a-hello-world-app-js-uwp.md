@@ -6,8 +6,8 @@ description: This tutorial teaches you how to use JavaScript and HTML to create 
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

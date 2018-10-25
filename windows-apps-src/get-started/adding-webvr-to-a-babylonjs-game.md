@@ -5,8 +5,8 @@ author: abbycar
 ms.author: abigailc
 ms.date: 11/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
 ---

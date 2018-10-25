@@ -6,8 +6,8 @@ description: Learn about the Windows Device Portal core REST APIs that you can u
 ms.author: pafarley
 ms.date: 03/22/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

@@ -6,8 +6,8 @@ title: Fix issues that prevent your desktop application from running in an MSIX 
 ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

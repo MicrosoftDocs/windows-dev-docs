@@ -8,8 +8,8 @@ template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 
 doc-status: Draft

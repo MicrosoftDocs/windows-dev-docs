@@ -6,8 +6,8 @@ description: This topic describes asynchronous programming in the Universal Wind
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, asynchronous
 ms.localizationpriority: medium
 ---

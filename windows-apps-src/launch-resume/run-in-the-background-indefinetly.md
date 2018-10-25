@@ -7,8 +7,8 @@ keywords: background task, extended execution, resources, limits, background tas
 ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 

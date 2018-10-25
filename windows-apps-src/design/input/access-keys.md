@@ -8,8 +8,8 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 06/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm

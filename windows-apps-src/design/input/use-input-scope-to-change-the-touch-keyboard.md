@@ -11,8 +11,8 @@ keywords: keyboard, accessibility, navigation, focus, text, input, user interact
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ---
 
 # Use input scope to change the touch keyboard

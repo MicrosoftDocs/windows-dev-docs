@@ -6,8 +6,8 @@ ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
 ms.date: 02/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, payout summary, statement, payments, earnings, payouts, payment, proceeds
 ms.localizationpriority: medium
 ---

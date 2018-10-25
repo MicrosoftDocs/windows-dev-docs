@@ -6,8 +6,8 @@ description: Learn here how to scan content from your app by using a flatbed, fe
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

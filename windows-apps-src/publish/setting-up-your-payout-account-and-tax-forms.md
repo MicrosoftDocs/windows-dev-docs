@@ -6,8 +6,8 @@ ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

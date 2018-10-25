@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: kevinasg
 ms.date: 10/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, xbox live summary, summary, publish, xbox live history, command bar, history tab, summary table
 ---

@@ -6,8 +6,8 @@ ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, resuming, directx
 ms.localizationpriority: medium
 ---

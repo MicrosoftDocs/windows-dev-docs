@@ -5,8 +5,8 @@ description: In this section, we will review the steps you need to take to allow
 ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---

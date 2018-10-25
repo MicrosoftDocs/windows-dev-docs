@@ -5,8 +5,8 @@ description: When writing a UWP app in Microsoft Visual Studio, you can choose w
 ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, version, build, versions, windows, choose, update, updates
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium

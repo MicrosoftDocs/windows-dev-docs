@@ -6,8 +6,8 @@ ms.assetid:
 ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, Windows Dev Center, Xbox Live Setup
 ---

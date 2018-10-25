@@ -6,8 +6,8 @@ description: This topic describes best practices for working with the thread poo
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, thread, thread pool
 ms.localizationpriority: medium
 ---

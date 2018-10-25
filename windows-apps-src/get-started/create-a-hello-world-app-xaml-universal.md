@@ -6,8 +6,8 @@ description: Use Extensible Application Markup Language (XAML) with C# to create
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, first app, hello world
 ms.localizationpriority: medium
 ---

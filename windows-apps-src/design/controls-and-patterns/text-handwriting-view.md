@@ -7,8 +7,8 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 10/13/18
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim

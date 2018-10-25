@@ -6,8 +6,8 @@ description: The Ad campaign report in the Windows Dev Center dashboard lets you
 ms.author: wdg-dev-content
 ms.date: 11/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, promote, app, campaign, report, installs
 ms.localizationpriority: medium
 ---

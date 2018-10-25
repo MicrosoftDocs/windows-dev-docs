@@ -5,8 +5,8 @@ description: This topic describes the ms-screenclip and ms-screensketch URI sche
 ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, uri, snip, sketch
 ms.localizationpriority: medium
 ---

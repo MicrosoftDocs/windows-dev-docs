@@ -5,8 +5,8 @@ title: Choosing the right push notification channel type
 ms.author: mijacobs
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

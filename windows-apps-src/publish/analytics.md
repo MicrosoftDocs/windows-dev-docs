@@ -6,8 +6,8 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
 ms.localizationpriority: medium
 ---

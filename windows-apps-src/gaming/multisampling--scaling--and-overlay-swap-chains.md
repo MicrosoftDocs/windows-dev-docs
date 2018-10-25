@@ -6,8 +6,8 @@ ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, swap chain scaling, overlays, directx
 ms.localizationpriority: medium
 ---

@@ -5,8 +5,8 @@ description: This article contains information about barcode scanner symbologies
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

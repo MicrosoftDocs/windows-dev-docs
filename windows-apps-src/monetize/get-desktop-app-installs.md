@@ -5,8 +5,8 @@ title: Get desktop application installs
 ms.author: mhopkins
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, desktop app installs, Windows Desktop Application Program
 localizationpriority: medium
 ---

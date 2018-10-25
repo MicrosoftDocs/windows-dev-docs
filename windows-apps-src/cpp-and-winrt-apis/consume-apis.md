@@ -5,8 +5,8 @@ title: Consume APIs with C++/WinRT
 ms.author: stwhi
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
 ms.localizationpriority: medium
 ---

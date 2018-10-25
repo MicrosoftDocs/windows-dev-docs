@@ -6,8 +6,8 @@ ms.assetid: 75823f10-b342-4e20-b885-e5ad4392bc3d
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
 ms.localizationpriority: medium
 ---
