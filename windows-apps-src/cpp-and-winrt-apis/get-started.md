@@ -141,7 +141,7 @@ In `pch.h`, include `winrt/base.h`.
 #include <winrt/base.h>
 ```
 
-## Linking
+### Linking
 
 The C++/WinRT language projection depends on certain Windows Runtime free (non-member) functions, and entry points, that require linking to the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library. This section describes three ways of satisfying the linker.
 
