@@ -77,7 +77,8 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 
 ## Implicit Animations
 
-> **Preview**: Implicit animation requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/).
+> Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
+
 
 Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
 

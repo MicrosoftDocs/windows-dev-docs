@@ -39,7 +39,7 @@ This table shows the properties you can use to modify the rendering of a UIEleme
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | The transform matrix to apply to the element |
 | [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Scale the element, centered on the CenterPoint |
 | [Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | Float | Rotate the element around the RotationAxis and CenterPoint |
-| [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | THe axis of rotation |
+| [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | The axis of rotation |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | The center point of scale and rotation |
 
 The TransformMatrix property value is combined with the Scale, Rotation, and Translation properties in the following order:  TransformMatrix, Scale, Rotation, Translation.
