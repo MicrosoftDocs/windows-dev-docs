@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 # Create and consume an app service
 
-App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. 
+App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.
 
 Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating and consuming an app service that runs in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about running an app service in the same process as the provider.
 
@@ -234,6 +234,7 @@ Another way to get the package family name is to deploy the solution (**Build &g
            if (status != AppServiceConnectionStatus.Success)
            {
                textBox.Text= "Failed to connect";
+               this.inventoryService = null;
                return;
            }
        }
