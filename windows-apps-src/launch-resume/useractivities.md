@@ -98,7 +98,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on on the secondary page when the app comes up.
+What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on the secondary page when the app comes up.
 
 ## Use Adaptive Cards to improve the Timeline experience
 
