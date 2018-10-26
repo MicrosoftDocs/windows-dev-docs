@@ -61,7 +61,7 @@ The request body has the following parameters.
 | flightPackages           | array  | Contains objects that provide details about each package in the submission. For more details about the values in the response body, see [Flight package resource](manage-flight-submissions.md#flight-package-object). When calling this method to update an app submission, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of these objects are required in the request body. The other values are populated by Dev Center. |
 | packageDeliveryOptions    | object  | Contains gradual package rollout and mandatory update settings for the submission. For more information, see [Package delivery options object](manage-flight-submissions.md#package-delivery-options-object).  |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | The publish date for the submission in in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
+| targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
 | notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 

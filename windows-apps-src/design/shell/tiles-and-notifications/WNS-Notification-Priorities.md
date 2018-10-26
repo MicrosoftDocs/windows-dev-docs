@@ -49,7 +49,7 @@ Setting the priority on the notification request is done through an additional h
 | Low | 3 | Raw |
 | Very Low | 4 |  |
 
-To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in in the chart above and match the behavior of existing versions of Windows. 
+To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in the chart above and match the behavior of existing versions of Windows. 
 
 ## Detailed listing of desktop behavior 
 

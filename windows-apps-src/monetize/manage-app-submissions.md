@@ -589,7 +589,7 @@ This resource provides access to the certification report data for a submission.
 
 | Value           | Type    | Description             |
 |-----------------|---------|------|
-|     date            |    string     |  The date and time the report was generated, in in ISO 8601 format.    |
+|     date            |    string     |  The date and time the report was generated, in ISO 8601 format.    |
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
 
 
