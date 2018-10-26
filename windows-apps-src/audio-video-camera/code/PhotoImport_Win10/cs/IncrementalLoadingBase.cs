@@ -23,7 +23,7 @@ namespace PhotoImport_Win10
 {
     // This class can used as a jumpstart for implementing ISupportIncrementalLoading. 
     // Implementing the ISupportIncrementalLoading interfaces allows you to create a list that loads
-    //  more data automatically when the user scrolls to the end of of a GridView or ListView.
+    //  more data automatically when the user scrolls to the end of a GridView or ListView.
     public abstract class IncrementalLoadingBase : IList, ISupportIncrementalLoading, INotifyCollectionChanged
     {
         #region IList
