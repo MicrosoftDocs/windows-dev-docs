@@ -3,7 +3,7 @@ title: Arena participant user scenarios
 author: KevinAsgari
 description: Describes user scenarios for Xbox Arena participants.
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

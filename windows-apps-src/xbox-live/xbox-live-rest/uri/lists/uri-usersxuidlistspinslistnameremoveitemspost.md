@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameremoveitemspos
 author: KevinAsgari
 description: ' POST /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

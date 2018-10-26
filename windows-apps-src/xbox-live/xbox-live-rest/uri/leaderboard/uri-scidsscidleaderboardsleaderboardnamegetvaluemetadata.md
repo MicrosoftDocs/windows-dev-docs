@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardnamegetv
 author: KevinAsgari
 description: ' GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valuemetadata)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

@@ -3,7 +3,7 @@ title: Xbox Arena Operations Portal
 author: KevinAsgari
 description: Learn how to use the operations portal to manage your Xbox tournaments.
 ms.author: kevinasg
-ms.date: 06-18-2018
+ms.date: 10/12/2017
 ms.topic: article
 
 

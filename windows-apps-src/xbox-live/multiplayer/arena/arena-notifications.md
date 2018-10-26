@@ -3,7 +3,7 @@ title: Arena notifications
 author: KevinAsgari
 description: Describes the Xbox Arena notifications that are sent to players to progress them through the tournament stages.
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-usersowneridclipsget.html
 author: KevinAsgari
 description: ' GET (/users/{ownerId}/clips)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

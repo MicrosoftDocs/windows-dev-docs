@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
 author: KevinAsgari
 description: ' /media/{marketplaceId}/singleMediaGroupSearch'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

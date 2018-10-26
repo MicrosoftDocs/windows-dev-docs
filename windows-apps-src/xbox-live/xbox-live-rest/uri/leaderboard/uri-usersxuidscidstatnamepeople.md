@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
 author: KevinAsgari
 description: ' /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

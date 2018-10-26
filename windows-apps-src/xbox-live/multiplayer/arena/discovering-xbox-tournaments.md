@@ -3,7 +3,7 @@ title: Discovering Xbox tournaments
 author: KevinAsgari
 description: Learn how to create UI for your game's tournament discovery.
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

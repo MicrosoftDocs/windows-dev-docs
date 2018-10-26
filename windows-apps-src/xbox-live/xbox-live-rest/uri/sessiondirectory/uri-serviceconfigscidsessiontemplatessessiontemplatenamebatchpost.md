@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessession
 author: KevinAsgari
 description: ' POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

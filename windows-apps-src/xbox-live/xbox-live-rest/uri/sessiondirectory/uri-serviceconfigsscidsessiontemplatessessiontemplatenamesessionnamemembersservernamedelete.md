@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessio
 author: KevinAsgari
 description: ' DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 
