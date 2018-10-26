@@ -378,7 +378,7 @@ public void StartGame()
 ```
 
 ### 7. Handle keyboard input
-Next we need a new method to handle user input via the keyboard. Add this this method to **Game1.cs**:
+Next we need a new method to handle user input via the keyboard. Add this method to **Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
