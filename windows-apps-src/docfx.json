@@ -43,7 +43,7 @@
 		 "devices-sensors/**.md": "develop",
 		 "enterprise/**.md": "develop",
 		 "files/**.md": "develop",
-		 "gaming/**.md": "gaming",
+		 "gaming/**.md": "games",
 		 "graphics-concepts/**.md": "develop",
 		 "launch-resume/**.md": "develop",
 		 "maps-and-location/**.md": "develop",
@@ -59,8 +59,8 @@
 		 "whats-new/**.md": "whats-new",
 		 "winrt-components/**.md": "develop",
 		 "xaml-platform/**.md": "develop",
-		 "xbox-apps/**.md": "gaming",
-		 "xbox-live/**.md": "gaming", 
+		 "xbox-apps/**.md": "games",
+		 "xbox-live/**.md": "games", 
 		 "get-started/**.md": "get-started",
 		 "design/**.md": "design"
 	   }
