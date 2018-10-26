@@ -56,7 +56,7 @@ To see it in action, watch this video about Creating multi-instance UWP apps.
 
 The **Multi-Instance Redirection UWP app** template adds `SupportsMultipleInstances` to the package.appxmanifest file as shown above, and also adds a **Program.cs** (or **Program.cpp**, if you are using the C++ version of the template) to your project that contains a `Main()` function. The logic for redirecting activation goes in the `Main` function. The template for **Program.cs** is shown below.
 
-The [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) property represents the shell-provided preferred instance for this activation request, if there is one (or `null` if there isn't one). If the shell provides a preference, then you can can redirect activation to that instance, or you can ignore it if you choose.
+The [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) property represents the shell-provided preferred instance for this activation request, if there is one (or `null` if there isn't one). If the shell provides a preference, then you can redirect activation to that instance, or you can ignore it if you choose.
 
 ``` csharp
 public static class Program
