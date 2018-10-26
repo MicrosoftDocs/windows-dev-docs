@@ -155,7 +155,7 @@ Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxp
 
 ## (Optional) Add Target-based unplated assets
 
-Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets).
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
 1. Obtain the correct 44x44 images and then copy them into the folder that contains your images (i.e., Assets).
 
