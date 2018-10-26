@@ -42,7 +42,7 @@ Calls to PUT should include a JSON array with the following structure:
   * SignedIn (optional) : bool specifying whether the provided account should be signed in or out.
   * UserId (optional - must be provided if EmailAddress is not provided unless signing in a sponsored user) : UserId specifying the user to modify/add/delete.
   * SponsoredUser (optional) : bool specifying whether to add a sponsored user.
-  * Delete (optional) : bool specifying specifying to delete this user from the console
+  * Delete (optional) : bool specifying to delete this user from the console
 
 ###Response###
 
