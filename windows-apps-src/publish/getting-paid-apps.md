@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 Here’s some important info you’ll need to ensure that you receive payment for your apps, add-ons, and advertising earnings.
 
 > [!IMPORTANT]
-> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
 ## Store fee
 
