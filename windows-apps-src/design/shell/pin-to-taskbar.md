@@ -36,7 +36,7 @@ The [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.t
 
 ## 1. Check whether the required APIs exist
 
-If your app supports older versions of Windows 10, you need to check whether the TaskbarManager class is available. You can use the  [ApiInformation.IsTypePresent method](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) to perform this check. If the TaskbarManager class isn't available, avoid executing any calls to the APIs.
+If your app supports older versions of Windows 10, you need to check whether the TaskbarManager class is available. You can use the  [ApiInformation.IsTypePresent method](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) to perform this check. If the TaskbarManager class isn't available, avoid executing any calls to the APIs.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))

@@ -50,7 +50,7 @@ For more info, see [Manage product entitlements from a service](../monetize/view
 
 f your product integrates with Azure AD and calls APIs that request either [application permissions or delegated permissions](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) that require administrator consent, enter your Azure AD Client ID here. This lets administrators who acquire the app for their organization grant consent for your product to act on behalf of all users in the tenant.
 
-For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
+For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
 ## App management
 

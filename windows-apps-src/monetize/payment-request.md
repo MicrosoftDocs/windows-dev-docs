@@ -23,7 +23,7 @@ As part of the payment-request process, Microsoft requests payment tokens on you
 The Payment Request API can be used only by US-based businesses to process transactions in the United States.
 
 ## Using the Payment Request API in your app: step by step
-This section demonstrates how to use the [UWP Payment Request API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments) in your app. We use the API here in its simplest form for the sake of clarity. For an example of more advanced use of these APIs, see the [UWP Shopping app sample on GitHub](https://github.com/Microsoft/Windows-appsample-shopping).
+This section demonstrates how to use the [UWP Payment Request API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) in your app. We use the API here in its simplest form for the sake of clarity. For an example of more advanced use of these APIs, see the [UWP Shopping app sample on GitHub](https://github.com/Microsoft/Windows-appsample-shopping).
 
 ### 1. Create a set of all the payment options that you accept.
 > [!Note]
@@ -76,8 +76,8 @@ After payment is complete, the user is presented with an **Order confirmed** scr
 ![Order confirmed](./images/44.png "Order confirmed ")
 
 ## See also
-- [Windows.ApplicationModel.Payments reference documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)
+- [Windows.ApplicationModel.Payments reference documentation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments)
 - [UWP shopping app sample on GitHub](https://github.com/Microsoft/Windows-appsample-shopping)
 - [W3C Payment Request API specification](http://www.w3.org/TR/payment-request/)
-- [Payment Request API ](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api)
+- [Payment Request API ](https://docs.microsoft.com/microsoft-edge/dev-guide/device/payment-request-api)
 

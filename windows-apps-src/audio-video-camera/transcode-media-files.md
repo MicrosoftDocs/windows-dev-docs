@@ -87,7 +87,7 @@ This first step in creating a metadata incoding profile is to create a [**TimedM
  
 [!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
-After creating the **TimedMetadataStreamDescriptor**, you can create a **MediaEncodingProfile** that describes the video, audio, and metadata to be encoded in the file. The **TimedMetadataStreamDescriptor** created in the last example is passed into this example helper function and is added to the **MediaEncodingProfile** by calling [**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks).
+After creating the **TimedMetadataStreamDescriptor**, you can create a **MediaEncodingProfile** that describes the video, audio, and metadata to be encoded in the file. The **TimedMetadataStreamDescriptor** created in the last example is passed into this example helper function and is added to the **MediaEncodingProfile** by calling [**SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks).
 
 [!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
  

@@ -300,7 +300,7 @@ You should now be able to build the `.pri` file and deploy the application to ve
 If you're building in Visual Studio, simply press `Ctrl+Shift+B` to build the project and then right-click on the project and choose `Deploy` from the context menu. 
 
 If you're building manually, follow these steps to create a configuration file for `MakePRI` tool and to generate the `.pri` file itself (more information can be found in 
-[the **Manual app packaging** topic on MSDN](https://docs.microsoft.com/en-us/windows/uwp/packaging/manual-packaging-root)):
+[the **Manual app packaging** topic on MSDN](https://docs.microsoft.com/windows/uwp/packaging/manual-packaging-root)):
 
 0. Open a developer command prompt from the `Visual Studio 2015` folder in the Start menu
 0. Switch to the project root directory (the one that contains the `AppxManifest.xml` file and the `Strings` folder)
@@ -631,14 +631,14 @@ handle resources once they have been located).
 
 Switching your code to use MRT for locating resources is not difficult. It requires using a handful of WinRT types and a few lines of code. The main types that you will use are as follows:
 
-* [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), which encapsulates the currently active set of qualifier values 
+* [ResourceContext](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), which encapsulates the currently active set of qualifier values 
 (language, scale factor, etc.)
-* [ResourceManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (the WinRT version, not the .NET version), which enables access to 
+* [ResourceManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (the WinRT version, not the .NET version), which enables access to 
 all the resources from the PRI file
-* [ResourceMap](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemap), which represents a specific subset of the resources in the PRI file (in 
+* [ResourceMap](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap), which represents a specific subset of the resources in the PRI file (in 
 this example, the file-based resources vs. the string resources)
-* [NamedResource](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), which represents a logical resource and all its possible candidates
-* [ResourceCandidate](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), which represents a single concrete candidate resource 
+* [NamedResource](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), which represents a logical resource and all its possible candidates
+* [ResourceCandidate](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), which represents a single concrete candidate resource 
 
 In pseudo-code, the way you would resolve a given resource file name (like `UICommands\ui.txt` in the sample above) is as follows:
 

@@ -27,7 +27,7 @@ The different types of brushes are:
 -   [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 
 -   [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)
 -   [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)
--   [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
+-   [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 
 ## Solid color brushes
 
@@ -146,19 +146,19 @@ Even when you use a solid color, make sure that the text color you choose has en
 
 ## WebViewBrush
 
-A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
+A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
 
 ## XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
+[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
 
 This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer). 
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 
-For example, this can be used to apply [**effects**](/windows/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
+For example, this can be used to apply [**effects**](/windows/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
 
-For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## Brushes as XAML resources
 
@@ -191,7 +191,7 @@ For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)
 -   [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) requires a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (not a URI) when you define an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) using code. If your source is a stream , use the [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) constructor that takes a URI. You might also consider handling the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available.
 -   For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) you might need to call [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) if you've recently reset the [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) property or if the content of the [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) is also being changed with code.
 
-For code examples, see reference pages for [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703),  [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), and [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+For code examples, see reference pages for [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703),  [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), and [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
  
 
  

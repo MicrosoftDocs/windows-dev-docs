@@ -24,7 +24,7 @@ These warnings help protect you from creating dependencies on experimental APIs 
 
 By default, these APIs are disabled at runtime and calling them will result in a runtime exception. This is another safeguard to help prevent inadvertent dependencies and broad distribution of apps that consume experimental APIs.
 
-To enable these APIs for experimentation, use the [Windows Device Portal (WDP)](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal) Features plug-in on the target device to enable the feature corresponding to the API you want to call.
+To enable these APIs for experimentation, use the [Windows Device Portal (WDP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal) Features plug-in on the target device to enable the feature corresponding to the API you want to call.
 
 Documentation for a particular experimental API is at the discretion of the team that owns it.
 

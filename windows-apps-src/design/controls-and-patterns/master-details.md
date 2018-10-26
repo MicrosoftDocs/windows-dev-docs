@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 
 The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
 
-> **Important APIs**: [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
 
@@ -86,7 +86,7 @@ To implement a master/details pattern for any screen size, create a responsive U
 ![adaptive master detail layout](images/patterns_masterdetail.png)
 
 ### Create an adaptive master/details pattern
-To create an adaptive layout, define different [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+To create an adaptive layout, define different [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## Get the sample code
 
@@ -102,5 +102,5 @@ The following samples implement the master/details pattern with adaptive layouts
 - [Lists](lists.md)
 - [Search](search.md)
 - [App and command bars](app-bars.md)
-- [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)

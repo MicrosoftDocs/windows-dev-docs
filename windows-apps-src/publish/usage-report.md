@@ -73,7 +73,7 @@ As with the **User sessions** chart, a user session represents one distinct peri
 
 The **Custom events** chart shows the total occurrences for custom events that you have defined for your app. This may include multiple occurrences for the same customer. You can use the filters to select the specific custom events for which you want to see this data.
 
-Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/en-us/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 For more info, see [Log custom events for Dev Center](../monetize/log-custom-events-for-dev-center.md).
 

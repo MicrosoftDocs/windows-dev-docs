@@ -81,4 +81,4 @@ To delete a configured Rich Presence string click the **delete** link on the Ric
 
 ## Further Reading
 
-To get more in-depth conceptual information about Rich Presence string features and how to implement them, read the [Rich Presence documentation](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-overview).
+To get more in-depth conceptual information about Rich Presence string features and how to implement them, read the [Rich Presence documentation](https://docs.microsoft.com/windows/uwp/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-overview).

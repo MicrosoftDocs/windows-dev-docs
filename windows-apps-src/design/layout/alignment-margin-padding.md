@@ -42,7 +42,7 @@ Alignment makes your UI look neat, organized, and balanced and can also be used 
 
 - Alignment can affect clipping within a layout panel. For example, with `HorizontalAlignment="Left"`, the right side of the element gets clipped if the content is larger than the ActualWidth.
 
-- Text elements use the [**TextAlignment**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../style/typography.md).
+- Text elements use the [**TextAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../style/typography.md).
 
 ## Margin and padding
 Margin and padding properties keep UI from looking too cluttered or too sparse, and they can also make it easier to use certain inputs like pen and touch. Here's an illustration displaying margins and padding for a container and its content.

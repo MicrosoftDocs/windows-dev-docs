@@ -28,7 +28,7 @@ The Windows Developer Documentation is constantly being updated with information
 Check out our PWA guides to:
 
 * [Build a simple web app as a PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [Enhance your PWA with the Windows Runtime](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
+* [Enhance your PWA with the Windows Runtime](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 * [Publish your PWA to the Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### Notepad

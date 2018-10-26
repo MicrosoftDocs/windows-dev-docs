@@ -216,13 +216,13 @@ For more information about styling controls, see [XAML styles](../controls-and-p
 
 ## Color API
 
-There are several APIs that can be used to add color to your application. First, the [**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the **Colors** class.
+There are several APIs that can be used to add color to your application. First, the [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the **Colors** class.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-You can create your own colors from RGB or hex values using the [**Color**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color) struct in XAML.
+You can create your own colors from RGB or hex values using the [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) struct in XAML.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -237,9 +237,9 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 The letters "Argb" stands for Alpha (opacity), Red, Green, and Blue, which are the four components of a color. Each argument can range from 0 to 255. You can choose to omit the first value, which will give you a default opacity of 255, or 100% opaque.
 
 > [!Note]
-> If you're using C++, you must create colors by using the [**ColorHelper**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colorhelper) class.
+> If you're using C++, you must create colors by using the [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper) class.
 
-The most common use for a **Color** is as an argument for a [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush), which can be used to paint UI elements a single solid color. These brushes are generally defined in a [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary), so they can be reused for multiple elements.
+The most common use for a **Color** is as an argument for a [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush), which can be used to paint UI elements a single solid color. These brushes are generally defined in a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary), so they can be reused for multiple elements.
 
 ```xaml
 <ResourceDictionary>

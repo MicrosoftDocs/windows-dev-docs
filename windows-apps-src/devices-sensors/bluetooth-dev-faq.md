@@ -20,7 +20,7 @@ There are various discussions online around this general topic so let's keep thi
 
 ### Bluetooth LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
-Use the GATT APIs when you are communicating with a device that supports Bluetooth Low Energy. If you're use case is infrequent, low bandwidth or requires low power, Bluetooth Low Energy is the answer. The main namespace that includes this functionality is [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
+Use the GATT APIs when you are communicating with a device that supports Bluetooth Low Energy. If you're use case is infrequent, low bandwidth or requires low power, Bluetooth Low Energy is the answer. The main namespace that includes this functionality is [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
 
 **When not to use Bluetooth LE**
 - High bandwidth, high frequency scenarios. If you need to constantly keep sync with large amounts of data, consider using Bluetooth classic or maybe even WiFi. 
@@ -31,7 +31,7 @@ The RFCOMM APIs give developers a socket to perform bi-direction serial port sty
 
 **When not to use Bluetooth Rfcomm** 
 - Notifications. The Bluetooth GATT protocol has a specific command for this and will result in significantly less power draw and faster response times. 
-- Checking for proximity or presence detection. Better to use the [Advertisement APIs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement) and connect over Bluetooth LE. 
+- Checking for proximity or presence detection. Better to use the [Advertisement APIs](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) and connect over Bluetooth LE. 
 
 
 ## Why does my Bluetooth LE Device stop responding after a disconnect?

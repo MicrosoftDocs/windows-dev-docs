@@ -99,7 +99,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                            <a href="https://docs.microsoft.com/windows/desktop">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -377,7 +377,7 @@ localizationpriority: medium
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
+                            <a href="https://docs.microsoft.com/windows-server/windows-server-2016">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -396,7 +396,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/windows-10/">
+                            <a href="https://docs.microsoft.com/windows/windows-10/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -415,7 +415,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/education/windows">
+                            <a href="https://docs.microsoft.com/education/windows">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -434,7 +434,7 @@ localizationpriority: medium
                             </a>
                         </li>  
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/microsoft-store/">
+                            <a href="https://docs.microsoft.com/microsoft-store/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -453,7 +453,7 @@ localizationpriority: medium
                             </a>
                         </li>  
                          <li>
-                            <a href="https://docs.microsoft.com/en-us/microsoft-store/index?toc=/microsoft-store/education/toc.json">
+                            <a href="https://docs.microsoft.com/microsoft-store/index?toc=/microsoft-store/education/toc.json">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -472,7 +472,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                            <a href="https://docs.microsoft.com/windows/privacy">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -491,7 +491,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/microsoft-edge/deploy/">
+                            <a href="https://docs.microsoft.com/microsoft-edge/deploy/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -510,7 +510,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/surface/">
+                            <a href="https://docs.microsoft.com/surface/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -529,7 +529,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/surface-hub/">
+                            <a href="https://docs.microsoft.com/surface-hub/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -548,7 +548,7 @@ localizationpriority: medium
                             </a>
                         </li>
                          <li>
-                            <a href="https://docs.microsoft.com/en-us/hololens/">
+                            <a href="https://docs.microsoft.com/hololens/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

@@ -345,7 +345,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### Port **Platform::String\^** to **winrt::hstring**
 **Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
 
-With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
+With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
 
 ```C++
 auto var = titleRecord->TitleName->Data();

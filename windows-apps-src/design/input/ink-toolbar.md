@@ -171,7 +171,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 
     1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
         >[!NOTE] 
-        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
+        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
 
         ```csharp
         public bool LeftHandedLayout
@@ -213,7 +213,7 @@ You can also use binding to look after UI updates based on changes to user prefe
     1. Add two new classes to the Converters folder (for this example, we call them **HorizontalAlignmentFromHandednessConverter.cs** and **VerticalAlignmentFromAppViewConverter.cs**).
     1. Add `using Windows.UI.Xaml` and `using Windows.UI.Xaml.Data` namespaces to each file.
     1. Change each class to `public` and specify that it implements the [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter) interface.
-    1. Add the [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) and [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) methods to each file, as shown here (we leave the ConvertBack method unimplemented).
+    1. Add the [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) and [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) methods to each file, as shown here (we leave the ConvertBack method unimplemented).
         - HorizontalAlignmentFromHandednessConverter positions the ink toolbar to the right side of the app for right-handed users and to the left side of the app for left-handed users.
         ```csharp
         using System;

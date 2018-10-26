@@ -40,4 +40,4 @@ If you're running into issues, be sure to use the latest versions of Microsoft V
 You can use existing tools for developing ARM32 apps for the ARM platform. Here are some helpful resources.
 
 - Visual Studio 15.5 Preview 1 and later supports running ARM32 apps by using Universal Authentication mode. This automatically bootstraps the necessary remote debugging tools.
-- See [Debugging on ARM64](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
+- See [Debugging on ARM64](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.

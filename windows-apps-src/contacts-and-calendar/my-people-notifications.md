@@ -19,8 +19,8 @@ My People notifications provide a new way for users to connect with the people t
 
 ## Requirements
 
-+ Windows 10 and Microsoft Visual Studio 2017. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 and Microsoft Visual Studio 2017. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## How it works
 
@@ -74,7 +74,7 @@ In addition, the top-level toast node must include the **hint-people** parameter
     + E.g. remoteid:1234
 
 > [!NOTE]
-> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account, and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account, and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
 > If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the [RemoteIdHelper class](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass) in order to add a unique tag to all of your remote IDs before you add them to the system. Alternatively, you can choose to not use the RemoteId property at all, and instead create a custom extended property in which to store remote IDs for your contacts.
 
 In addition to the second binding and payload, you must include another payload in the first binding for the fallback toast. The notification will use this if it is forced to revert to a regular toast (explained further at the [end of this article](https://review.docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
@@ -92,7 +92,7 @@ Here's an example of how to create a My People notification with a static image 
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -112,8 +112,8 @@ Here's an example of how to create a notification with an animated spritesheet p
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
-                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
@@ -153,4 +153,4 @@ If a My People notification falls back to toast, the second My-People-specific b
 + [My People Notifications Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Adding My People support](my-people-support.md)
 + [Adaptive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification Class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [ToastNotification Class](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)

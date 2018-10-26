@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 ![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
-Customize the built-in handwriting view for ink to text input supported by UWP text controls such as the [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), and controls derived from these such as the [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Customize the built-in handwriting view for ink to text input supported by UWP text controls such as the [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), and controls derived from these such as the [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## Overview
 
@@ -48,7 +48,7 @@ The built-in handwriting view is enabled by default.
 
 You might want to disable the handwriting view if you already provide equivalent ink-to-text functionality in your application, or your text input experience relies on some kind of formatting or special character (such as a tab) not available through handwriting.
 
-In this example, we disable the handwriting view by setting the [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) ​property of the [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) control to false. All text controls that support the handwriting view support a similar property.
+In this example, we disable the handwriting view by setting the [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) ​property of the [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) control to false. All text controls that support the handwriting view support a similar property.
 ​
 ```xaml
 <TextBox Name="SampleTextBox"​
@@ -65,7 +65,7 @@ The handwriting view is located above the underlying text control and sized to a
 
 The application UI does not reflow to accommodate the larger control, so the system might cause the view to occlude important UI.
 
-Here, we show how to use the [PlacementAlignment​](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) property of a [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) to specify which anchor on the underlying text control is used to align the handwriting view.
+Here, we show how to use the [PlacementAlignment​](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) property of a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) to specify which anchor on the underlying text control is used to align the handwriting view.
 ​
 ```xaml
 <TextBox Name="SampleTextBox"​
@@ -105,7 +105,7 @@ A user can choose from a pre-defined collection of handwriting-based fonts to us
 
 Your app can access this setting and use the selected font for the recognized text in the text control.
 
-In this example, we ​listen for the [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) event of a [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) and apply the user's selected font if the text change originated from the HandwritingView (or a default font, if not).
+In this example, we ​listen for the [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) event of a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) and apply the user's selected font if the text change originated from the HandwritingView (or a default font, if not).
 ​
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)​
@@ -119,7 +119,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)​
 
 ## Access the HandwritingView in composite controls
 
-Composite controls that use the [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) or [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) controls, such as [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) also support a [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
+Composite controls that use the [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) or [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) controls, such as [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) also support a [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
 
 To access the [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) in a composite control, use the [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper) API.
 

@@ -415,7 +415,7 @@ If you get numerous `unresolved external symbol` compilation errors, you likely 
 
 If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows 10 before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
 
-Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
+Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
 
 | OS | ToastGeneric | COM activator | Legacy toast templates |
 | -- | ------------ | ------------- | ---------------------- |

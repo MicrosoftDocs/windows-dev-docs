@@ -19,9 +19,9 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-acrylic.svg)
 
-Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic is a type of [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **Important APIs**: [AcrylicBrush class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Important APIs**: [AcrylicBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::

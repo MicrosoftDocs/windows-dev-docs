@@ -183,5 +183,5 @@ GameSaveOperationResult gameSaveOperationResult = await gameSaveContainer.Submit
 //string displayName
 ```
 
-Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage).
+Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://docs.microsoft.com/uwp/api/windows.gaming.xboxlive.storage).
 To see another sample that uses Connected Storage check out the [Xbox Live API Samples Game Save project](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave).

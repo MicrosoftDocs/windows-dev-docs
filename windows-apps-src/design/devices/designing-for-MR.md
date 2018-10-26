@@ -165,6 +165,6 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Building 2D apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Building UWP 2D Apps for Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Conditional XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
 
 

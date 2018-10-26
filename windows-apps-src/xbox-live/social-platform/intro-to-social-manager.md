@@ -64,7 +64,7 @@ You will most frequently use the following key classes:
 ### Social Manager
 
 * C++ API class name: social_manager
-* WinRT(C#) API class name: [SocialManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT(C#) API class name: [SocialManager](https://docs.microsoft.com/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
 
 This is a singleton class that can be used to get **Xbox social user groups** which are the views described above.
 
@@ -73,12 +73,12 @@ The Social Manager will keep xbox social user groups up to date, and can filter 
 ### Xbox social user group
 
 * C++ API class name: xbox_social_user_group
-* WinRT(C#) API class name: [XboxSocialUserGroup](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT(C#) API class name: [XboxSocialUserGroup](https://docs.microsoft.com/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
 
 A group of users that meet certain criteria, as described above. Xbox social user groups expose what type of a group they are, which users are being tracked or what the filter set is on them, and the local user which the group belongs to.
 
 You can find a complete description of the Social Manager APIs in the [Xbox Live API reference](https://aka.ms/xboxliveuwpdocs).
-You can also find the WinRT APIs in the [Microsoft.Xbox.Services.Social.Manager.Namespace documentation](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager?view=xboxlive-dotnet-2017.11.20171204.01)
+You can also find the WinRT APIs in the [Microsoft.Xbox.Services.Social.Manager.Namespace documentation](https://docs.microsoft.com/dotnet/api/microsoft.xbox.services.social.manager?view=xboxlive-dotnet-2017.11.20171204.01)
 
 ## Usage
 

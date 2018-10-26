@@ -13,12 +13,12 @@ keywords: windows 10, uwp, fluent
 
 # Item templates for list view
 
-This section contains item templates that you can use with a [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types. 
+This section contains item templates that you can use with a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types. 
 
 To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-Currently, when a **DataTemplate** contains multiple controls (e.g. more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibililty overview](../accessibility/accessibility-overview.md).
+Currently, when a **DataTemplate** contains multiple controls (e.g. more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibililty overview](../accessibility/accessibility-overview.md).
 
 ## Single line list item
 Use this template to display a list of items with an image and a single line of text.
@@ -128,7 +128,7 @@ Use this template to display a list of items with text in defined columns.
 ```
 
 ## Related articles
-- [ListView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [Data binding overview](../../data-binding/data-binding-quickstart.md)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
 - [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

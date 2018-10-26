@@ -121,7 +121,7 @@ When you tap a Button with a finger or stylus, or press a left mouse button whil
 
 You generally can't handle low-level [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
 
-You can change how a button raises the Click event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default ClickMode value is **Release**, but you also can set a button's ClickMode to **Hover** or **Press**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
+You can change how a button raises the Click event by changing the [ClickMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.clickmode) property. The default ClickMode value is **Release**, but you also can set a button's ClickMode to **Hover** or **Press**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
 
 
 ### Button content

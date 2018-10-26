@@ -71,7 +71,7 @@ You can retrieve the [**AudioDeviceController**](https://docs.microsoft.com/uwp/
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-You can use an [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) object to pass audio data captured by a media frame source into an [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Pass the frame into the [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) method of an [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). For more information on using audio graphs to capture, process, and mix audio signals, see [Audio graphs](audio-graphs.md).
+You can use an [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) object to pass audio data captured by a media frame source into an [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Pass the frame into the [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) method of an [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode). For more information on using audio graphs to capture, process, and mix audio signals, see [Audio graphs](audio-graphs.md).
 
 ## Related topics
 

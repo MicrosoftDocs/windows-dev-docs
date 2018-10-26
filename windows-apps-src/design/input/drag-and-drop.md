@@ -96,7 +96,7 @@ The system will automatically show the appropriate animations for dropping into 
 
 ## Implementing custom drag and drop
 
-The [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs in the [Windows.ApplicationModel.DataTransfer.DragDrop.Core namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+The [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs in the [Windows.ApplicationModel.DataTransfer.DragDrop.Core namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
 | Functionality | WinRT API |
 | --- | --- |

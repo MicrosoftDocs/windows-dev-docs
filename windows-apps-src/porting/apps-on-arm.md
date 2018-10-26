@@ -41,5 +41,5 @@ In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps (e.g
 ## Related topics
 |Topic | Description |
 |-----|-----|
-|[Building ARM64 Drivers with the WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions for building an ARM64 driver. |
-| [Debugging x86 apps on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM. |
+|[Building ARM64 Drivers with the WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions for building an ARM64 driver. |
+| [Debugging x86 apps on ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM. |

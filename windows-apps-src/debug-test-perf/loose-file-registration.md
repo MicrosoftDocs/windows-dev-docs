@@ -33,7 +33,7 @@ Loose file layout is simply the act of placing app contents in a folder instead 
 Windows provides multiple developer tools to register loose file layouts on local and remote devices. You can choose from `WinDeployAppCmd` (Windows SDK Tool), Windows Device Portal, PowerShell, and [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network). Below we will go over how to register loose files using these tools. But first, ensure that you have following setup:
 
 - Your devices must be on the Windows 10 Creators Update (Build 14965) or later.
-- You will need to enable [developer mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) and [device discovery](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery) on all devices.
+- You will need to enable [developer mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) and [device discovery](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) on all devices.
 
 > [!IMPORTANT]
 > Loose file registration is only available on devices that support the Network Share (SMB) Protocol: Desktop and Xbox. 

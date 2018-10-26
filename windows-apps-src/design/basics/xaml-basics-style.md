@@ -57,12 +57,12 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 3. Use a Polygon element to create a background shape for the exposure slider.
 
-    The [Windows.XAML.Ui.Shapes namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) provides seven shapes to choose from. There's an ellipse, a rectangle, and a thing called a Path, which can make any sort of shape--yes, even a unicorn! 
+    The [Windows.XAML.Ui.Shapes namespace](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) provides seven shapes to choose from. There's an ellipse, a rectangle, and a thing called a Path, which can make any sort of shape--yes, even a unicorn! 
     
     <!-- TODO reduce size -->
     ![A unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article tells you everything you need to know about XAML shapes. 
+    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) article tells you everything you need to know about XAML shapes. 
     
     We want to create a triangle-looking widget--something like the shape you'd see on a stereo's volume control.
     
@@ -179,7 +179,7 @@ Congratulations, you've completed part 1! If you got stuck or want to see the fi
 
 One of the advantages of XAML styles is that it can dramatically cut down the amount of code you have to write, and it can make it much, much easier to update the look of your app.
 
-To define a style, you add a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
+To define a style, you add a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) element to the [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
 
 You can create named styles and general styles. A named style must be explicitly applied to specific controls; a general style is applied to any control that matches the specified **TargetType**. 
 

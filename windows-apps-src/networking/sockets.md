@@ -1276,7 +1276,7 @@ There are some important limitations imposed by using batched sends in your code
 -   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
 -   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
 -   The **FlushAsync** pattern only works in Windows 10 and onward.
--   In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.
+-   In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.
 
 ## Port sharing for DatagramSocket
 You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) to coexist with other Win32 or UWP multicast sockets bound to the same address/port. You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) to `true` before binding or connecting the socket. You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) property.

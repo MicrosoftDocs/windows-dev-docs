@@ -103,11 +103,11 @@ public MainPage()
     }
 ```
 5.  For this example, we perform the ink analysis in the click event handler of the "Recognize" button.
-    - First, call [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) on the [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) of the [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) to get the collection of all current ink strokes.
-    - If ink strokes are present, pass them in a call to [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) of the InkAnalyzer.
-    - We're trying to recognize both drawings and text, but you can use the [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) method to specify whether you're interested only in text (including document structure and bullet lists) or only in drawings (including shape recognition).
-    - Call [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
-    - If [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) for both [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) and [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
+    - First, call [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) on the [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) of the [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) to get the collection of all current ink strokes.
+    - If ink strokes are present, pass them in a call to [**AddDataForStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) of the InkAnalyzer.
+    - We're trying to recognize both drawings and text, but you can use the [**SetStrokeDataKind**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) method to specify whether you're interested only in text (including document structure and bullet lists) or only in drawings (including shape recognition).
+    - Call [**AnalyzeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
+    - If [**Status**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) for both [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) and [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Iterate through both sets of node types and draw the respective text or shape on the recognition canvas (below the ink canvas).
     - Finally, delete the recognized nodes from the InkAnalyzer and the corresponding ink strokes from the ink canvas.
 ```csharp
@@ -274,7 +274,7 @@ Here's this sample in action:
 
 ## Constrained handwriting recognition
 
-In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.
+In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.
 
 In this section, we demonstrate how to use the Windows Ink handwriting recognition engine (not ink analysis) to convert a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) to text (based on the installed default language pack).
 
@@ -753,12 +753,12 @@ For this example, we'll use the same UI and stroke settings as the previous inte
     }
 ```
 
-3.  We then define the handlers for the InkPresenter events we declared in the first step (we also override the [**OnNavigatingFrom**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) page event to manage our timer).
+3.  We then define the handlers for the InkPresenter events we declared in the first step (we also override the [**OnNavigatingFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) page event to manage our timer).
 
     - [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
-    Add ink strokes ([**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) to the InkAnalyzer and start the recognition timer when the user stops inking (by lifting their pen or finger, or releasing the mouse button). After one second of no ink input, recognition is initiated.  
+    Add ink strokes ([**AddDataForStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) to the InkAnalyzer and start the recognition timer when the user stops inking (by lifting their pen or finger, or releasing the mouse button). After one second of no ink input, recognition is initiated.  
 
-        Use the [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) method to specify whether you're interested only in text (including document structure amd bullet lists) or only in drawings (inlcuding shape recognition).
+        Use the [**SetStrokeDataKind**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) method to specify whether you're interested only in text (including document structure amd bullet lists) or only in drawings (inlcuding shape recognition).
 
     - [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     If a new stroke starts before the next timer tick event, stop the timer as the new stroke is likely the continuation of a single handwriting entry.
@@ -801,8 +801,8 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 ```
 
 4.  Finally, we perform the handwriting recognition. For this example, we use the [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) event handler of a [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) to initiate the handwriting recognition.
-    - Call [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
-    - If [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) for node types of  [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
+    - Call [**AnalyzeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
+    - If [**Status**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) for node types of  [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Iterate through the nodes and display the recognized text.
     - Finally, delete the recognized nodes from the InkAnalyzer and the corresponding ink strokes from the ink canvas.
 ```csharp

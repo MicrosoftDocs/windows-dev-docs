@@ -61,7 +61,7 @@ Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScrip
 Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore Virtual reality on the web with WebVR
 
 * [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
-* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
 

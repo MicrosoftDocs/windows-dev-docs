@@ -25,7 +25,7 @@ Refer to the following table to find the appropriate tool to manage your locally
 
 - *Xbstorage* is a command line tool, run from the XDK command prompt, for managing locally cached Connected Storage on the Xbox One Console. The *xbstorage* tool can be found in the Xbox One XDK under the file path: **/Program Files (x86)/Microsoft Durango XDK/bin/xbstorage.exe**
 - *Gamesaveutil* is a command line tool for managing UWP locally cached Connected Storage on PC. The *gamesaveutil* tool comes packaged with the [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) for Fall Creators Update and later( build 10.0.16299.15 and later). Once you've installed the appropriate version of the Windows 10 SDK, *gamesaveutil* can be found under the folder: **ProgramFiles(x86)/Windows Kits/10/bin/[SDK Version]/x64/gamesaveutil.exe**.
-- *Xbox Device Portal(XDP)* is an online portal that allows you to manage the locally cached Connected Storage UWP data on your Xbox One Console. This article does not cover XDP usage. To learn to use XDP read [Device Portal for Xbox](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox).
+- *Xbox Device Portal(XDP)* is an online portal that allows you to manage the locally cached Connected Storage UWP data on your Xbox One Console. This article does not cover XDP usage. To learn to use XDP read [Device Portal for Xbox](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox).
 
 ## Xbstorage
 

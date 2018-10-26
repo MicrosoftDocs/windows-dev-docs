@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them. These contracts are identified with the **System.Devices.AepService.ServiceClassId** property. This topic lists several well-known AEP service class IDs. The AEP service class ID is also applicable to protocols with custom class IDs.
 

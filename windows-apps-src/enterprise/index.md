@@ -52,7 +52,7 @@ See [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNam
 
 We've released new UWP XAML controls that fill the gap between a traditional desktop application UI and a UWP UI.
 
-For example, the new [MenuBar](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button), and [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) controls give you more flexible ways to expose commands, and the [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
+For example, the new [MenuBar](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button), and [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) controls give you more flexible ways to expose commands, and the [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
 
 ![MenuBar](images/menu-bar.png)
 
@@ -60,7 +60,7 @@ For example, the new [MenuBar](https://review.docs.microsoft.com/en-us/windows/u
 
 ### Controls to support Enterprise scenarios
 
-The [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
+The [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
 
 The [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
@@ -73,7 +73,7 @@ The Windows UI Library is a set of NuGet packages that provide controls and othe
 
 ![Windows UI Library](images/win-ui.png)
 
-See [Windows UI Library (Preview version)](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
+See [Windows UI Library (Preview version)](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 <a id="xaml-islands" />
 
@@ -99,7 +99,7 @@ See [Share code between a desktop app and a UWP app](https://docs.microsoft.com/
 
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2) namespace.
 
-See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
+See [Use a SQL Server database in a UWP app](https://docs.microsoft.com/windows/uwp/data-access/sql-server-databases).
 
 <a id="MSIX" />
 

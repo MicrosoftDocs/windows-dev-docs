@@ -321,8 +321,8 @@ Now that you've completed this lab, you have enough adaptive layout knowledge to
 
 If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](../layout/layouts-with-xaml.md).
 
-+ [Visual states and state triggers](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Tailored layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [Visual states and state triggers](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [Tailored layouts](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
 Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
 

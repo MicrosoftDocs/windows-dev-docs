@@ -78,7 +78,7 @@ The `ms-appx-web` scheme accesses the same files as `ms-appx`, but in the web co
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-For any of the scenarios shown in these examples, use the [Uri constructor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) overload that infers the [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.
+For any of the scenarios shown in these examples, use the [Uri constructor](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) overload that infers the [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind). Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.
 
 Notice how in these example URIs the scheme ("`ms-appx`" or "`ms-appx-web`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
 

@@ -69,7 +69,7 @@ Advertising for video content differs based upon whether the program is under te
     > [!NOTE]
     > This line must be placed in the `<head>` section after the include of main.js; otherwise, you will encounter an error when   you build your project.
 
-6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh440975).
+6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975).
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 

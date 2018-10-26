@@ -281,15 +281,15 @@ If you've made it this far and Azure is now serving up your swagger UI, there's 
 
 ### Going further
 
-To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](http://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://docs.microsoft.com/en-us/azure/documentdb/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) for your API.
+To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](http://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://docs.microsoft.com/azure/documentdb/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) for your API.
 
 Here are some useful resources for going further:
 
  - [Advanced Node.js debugging with Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + Mobile docs](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Web + Mobile docs](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB docs](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB docs](https://docs.microsoft.com/azure/documentdb/index)
 
 ## Part II: Build a single-page web application
 
@@ -572,7 +572,7 @@ The grid system allows up to 12 columns. Since we only want 4 columns in our gam
 ### 5. Add a card-flip animation with CSS Transforms
 Replace the style.css file in memory\public\stylesheets with the style.css file from the Start folder.
 
-Adding a flip motion using [CSS Transforms](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) gives the cards a realistic, 3D flipping motion. The cards in the game are created by using the following HTML structure and programmatically added to the game board (in the `drawGameBoard()` function shown previously).
+Adding a flip motion using [CSS Transforms](https://docs.microsoft.com/microsoft-edge/dev-guide/css/transforms) gives the cards a realistic, 3D flipping motion. The cards in the game are created by using the following HTML structure and programmatically added to the game board (in the `drawGameBoard()` function shown previously).
 
 ``` html
 <div class="flipContainer">
@@ -632,13 +632,13 @@ You can now deploy your app to Azure (or any other cloud hosting service) for te
 The basic steps for publishing to the Microsoft Store are:
 
  1. Create a [Windows Developer](https://developer.microsoft.com/en-us/store/register) account
- 2. Use the app submission [checklist](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
+ 2. Use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
  3. Submit your app for [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Here are some useful resources for going further:
 
  - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/windows/uwp/porting/hwa-create-windows)
 
  - [Publish Windows apps](https://developer.microsoft.com/en-us/store/publish-apps)

@@ -60,7 +60,7 @@ For this tutorial, we'll use `joystick 1 button 0` for the **UserProfile** that 
 3. Under the `<Properties></Properties>` section, add the following which enables multi-user input for the app:
   `<uap:SupportedUsers>multiple</uap:SupportedUsers>`
 
-4. To test on Xbox, follow the documentation at the [Set up your UWP on Xbox development environment](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/development-environment-setup) tutorial.
+4. To test on Xbox, follow the documentation at the [Set up your UWP on Xbox development environment](https://docs.microsoft.com/windows/uwp/xbox-apps/development-environment-setup) tutorial.
 
 ## Using the other Xbox Live Prefabs with multiple Users
 

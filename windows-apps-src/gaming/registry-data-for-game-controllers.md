@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This topic is meant for manufacturers of Windows 10-compatible game controllers, and doesn't apply to the majority of developers.
 
-The [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
+The [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
 
 ## Mapping scheme
 
@@ -1117,7 +1117,7 @@ The labels should appear in this order under the **Buttons** key:
 
 ### Axis labels
 
-The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
+The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
 
 ### Switch labels
 

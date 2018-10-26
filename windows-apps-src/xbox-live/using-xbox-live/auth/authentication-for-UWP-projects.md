@@ -54,7 +54,7 @@ XboxLiveUser xboxUser = new XboxLiveUser(Windows.System.User windowsSystemUser);
 
 * **windowsSystemUser**
   The windows system user object to be used to associate with xbox live user. Could be nullptr if the app is a single user application(SUA).
-  * For more information about Single User Application(SUA) and Multi User Application(MUA), please check [Introduction to multi-user applications](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)
+  * For more information about Single User Application(SUA) and Multi User Application(MUA), please check [Introduction to multi-user applications](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)
   * For more information about how to get Windows::System::User^ from Windows, please check [retrieving windows system user on UWP](retrieving-windows-system-user-on-UWP.md)
 
 ### Sign-in silently to Xbox Live at startup ###

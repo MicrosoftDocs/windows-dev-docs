@@ -486,7 +486,7 @@ The mouse is treated a little differently from the touch controls even though it
 
 This is handled in the [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313) method of the **MoveLookController**.
 
-In this method we check to see what type of pointer device is being used with the [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType) enum. 
+In this method we check to see what type of pointer device is being used with the [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType) enum. 
 If the game is **Active** and the **PointerDeviceType** isn't **Touch**, we assume it's mouse input.
 
 ```cpp

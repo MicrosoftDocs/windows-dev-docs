@@ -240,7 +240,7 @@ See [Share code between a desktop app and a UWP app](desktop-to-uwp-migrate.md)
 
 ## Test
 
-To test your application in a realistic setting as you prepare for distribution, it's best to sign your application and then install it. See [Test your app](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).
+To test your application in a realistic setting as you prepare for distribution, it's best to sign your application and then install it. See [Test your app](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).
 
 >[!IMPORTANT]
 > If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 in S mode. This is a store requirement. See [Test your Windows app for Windows 10 in S mode](desktop-to-uwp-test-windows-s.md).

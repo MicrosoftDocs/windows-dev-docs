@@ -38,7 +38,7 @@ To undo this, do:
 
 ## For Xbox One UWP based projects
 
-Follow the steps here [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
+Follow the steps here [https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## For Xbox One XDK based projects
 

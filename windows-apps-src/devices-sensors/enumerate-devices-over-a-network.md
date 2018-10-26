@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 In addition to discovering locally connected devices, you can use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs to enumerate devices over wireless and networked protocols.
 

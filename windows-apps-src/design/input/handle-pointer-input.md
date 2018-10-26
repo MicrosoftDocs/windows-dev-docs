@@ -134,9 +134,9 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 
 ### Create the UI
 
-For this example, we use a [Rectangle](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
+For this example, we use a [Rectangle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
 
-Details for each pointer are displayed in a floating [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
+Details for each pointer are displayed in a floating [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
 
 This is the Extensible Application Markup Language (XAML) for the UI in this example. 
 
@@ -700,7 +700,7 @@ This particular app uses both color and animation to highlight the primary point
 
 ### Visual feedback
 
-We define a **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
+We define a **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
 
 **Here's the XAML:**
 

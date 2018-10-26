@@ -43,7 +43,7 @@ A [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.C
 |Class                                   |Details                                         |Introduced In|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
 |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Paints an area with a solid color                        |Windows 10 November Update (SDK 10586)|
-|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Paints an area with the contents of an [ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface)|Windows 10 November Update (SDK 10586)|
+|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Paints an area with the contents of an [ICompositionSurface](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ICompositionSurface)|Windows 10 November Update (SDK 10586)|
 |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |Paints an area with the contents of a composition effect |Windows 10 November Update (SDK 10586)|
 |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Paints a visual with a CompositionBrush with an opacity mask |Windows 10 Anniversary Update (SDK 14393)
 |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Paints an area with a CompositionBrush using a NineGrid stretch |Windows 10 Anniversary Update SDK (14393)
@@ -175,7 +175,7 @@ _drawingVisual.Size = new Vector2(156, 156);
 Similarly, the CompositionSurfaceBrush can also be used to paint a SpriteVisual with a SwapChain using Win2D interop. [This sample](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample) provides an example of how to use Win2D to paint a SpriteVisual with a swapchain.
 
 ### Paint with a video
-A [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) can also be used to paint an area with pixels from an ICompositionSurface rendered using a video loaded through the [MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) class.
+A [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) can also be used to paint an area with pixels from an ICompositionSurface rendered using a video loaded through the [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) class.
 
 The following code shows a SpriteVisual painted with a video loaded onto an ICompositionSurface.
 
@@ -237,7 +237,7 @@ _effectVisual.Brush = _effectBrush;
 _effectVisual.Size = new Vector2(156, 156);
 ```
 
-For more information on creating an Effect using CompositionBrushes see [Effects in Visual layer](https://docs.microsoft.com/en-us/windows/uwp/composition/composition-effects)
+For more information on creating an Effect using CompositionBrushes see [Effects in Visual layer](https://docs.microsoft.com/windows/uwp/composition/composition-effects)
 
 ### Paint with a CompositionBrush with opacity mask applied
 

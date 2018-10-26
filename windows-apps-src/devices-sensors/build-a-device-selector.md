@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Building a device selector will enable you to limit the devices you are searching through when enumerating devices. This will enable you to only get relevant results and will also improve the performance of the system. In most scenarios you get a device selector from a device stack. For example, you might use [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) for devices discovered over USB. These device selectors return an Advanced Query Syntax (AQS) string. If you are not familiar with the AQS format, you can read more at [Using Advanced Query Syntax Programmatically](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
 

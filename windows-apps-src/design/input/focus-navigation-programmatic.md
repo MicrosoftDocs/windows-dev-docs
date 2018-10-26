@@ -122,7 +122,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-Use [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.findnextelementoptions) to further customize how focus candidates are identified. This object provides the following properties:
+Use [FindNextElementOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions) to further customize how focus candidates are identified. This object provides the following properties:
 
 - [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - Scope the search for focus navigation candidates to the children of this DependencyObject. Null indicates to start the search from the root of the visual tree.
 
@@ -148,13 +148,13 @@ When element B has focus, FindNextElement identifies I as the focus candidate wh
 
 ### NoFocusCandidateFound event
 
-The [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) event is fired when the tab or arrow keys are pressed and there is no focus candidate in the specified direction. This event is not fired for [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
+The [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) event is fired when the tab or arrow keys are pressed and there is no focus candidate in the specified direction. This event is not fired for [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
 Because this is a routed event, it bubbles from the focused element up through successive parent objects to the root of the object tree. This lets you handle the event wherever appropriate.
 
 <a name="split-view-code-sample"></a>
 
-Here, we show how a Grid opens a [SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview) when the user attempts to move focus to the left of the left-most focusable control (see [Designing for Xbox and TV](../devices/designing-for-tv.md#navigation-pane)).
+Here, we show how a Grid opens a [SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview) when the user attempts to move focus to the left of the left-most focusable control (see [Designing for Xbox and TV](../devices/designing-for-tv.md#navigation-pane)).
 
 ```xaml
 <Grid NoFocusCandidateFound="OnNoFocusCandidateFound">
@@ -179,39 +179,39 @@ private void OnNoFocusCandidateFound (
 ```
 
 ### GotFocus and LostFocus events
-The [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
-and [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events are fired when an element gets focus or loses focus, respectively. This event is not fired for [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
+The [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+and [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events are fired when an element gets focus or loses focus, respectively. This event is not fired for [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
 Because these are routed events, they bubble from the focused element up through successive parent objects to the root of the object tree. This lets you handle the event wherever appropriate.
 
 ### GettingFocus and LosingFocus events
 
-The [UIElement.GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [UIElement.LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) events fire before the respective [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
-and [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events. 
+The [UIElement.GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [UIElement.LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) events fire before the respective [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+and [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events. 
 
 Because these are routed events, they bubble from the focused element up through successive parent objects to the root of the object tree. As this happens before a focus change takes place, you can redirect or cancel the focus change.
 
-[GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) are synchronous events so focus won’t be
-moved while these events are bubbling. However, [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
-and [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) are asynchronous events, which means there is no guarantee that focus won’t
+[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) are synchronous events so focus won’t be
+moved while these events are bubbling. However, [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+and [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) are asynchronous events, which means there is no guarantee that focus won’t
 move again before the handler is executed.
 
-If focus moves through a call to [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_), [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) is raised during the call, while [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) is raised after the call.
+If focus moves through a call to [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_), [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) is raised during the call, while [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) is raised after the call.
 
-The focus navigation target can be changed during the [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) events (before focus moves) through the [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) property. Even if the target is changed, the event still bubbles and the target can be changed again.
+The focus navigation target can be changed during the [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) events (before focus moves) through the [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) property. Even if the target is changed, the event still bubbles and the target can be changed again.
 
-To avoid reentrancy issues, an exception is thrown if you try to move focus (using [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) or [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)) while these events are bubbling.
+To avoid reentrancy issues, an exception is thrown if you try to move focus (using [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) or [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)) while these events are bubbling.
 
 These events are fired regardless of the reason for the focus moving (including tab navigation, directional navigation, and programmatic navigation).
 
 Here is the order of execution for the focus events:
 
-1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus)
+1.  [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus)
     If focus is reset back to the losing focus element or [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) is successful, no further events are fired.
-2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus)
+2.  [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus)
     If focus is reset back to the losing focus element or [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) is successful, no further events are fired.
-3.  [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+3.  [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
+4.  [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 The following image shows how, when moving to the right from A, the XYFocus chooses B4 as a candidate. B4 then fires the GettingFocus event where the ListView has the opportunity to reassign focus to B3.
 
@@ -219,7 +219,7 @@ The following image shows how, when moving to the right from A, the XYFocus choo
 
 *Changing focus navigation target on GettingFocus event*
 
-Here, we show how to handle the [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) event and redirect focus.
+Here, we show how to handle the [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) event and redirect focus.
 
 ```XAML
 <StackPanel Orientation="Horizontal">
@@ -256,7 +256,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-Here, we show how to handle the [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) event for a [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) and set focus when the menu is closed.
+Here, we show how to handle the [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) event for a [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) and set focus when the menu is closed.
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -288,7 +288,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## Find the first and last focusable element
 
-The [FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) and [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) methods move focus to the first or last focusable element within the scope of an object (the element tree of a [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) or the text tree of a [TextElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.documents.textelement)). The scope is specified in the call (if the argument is null, the scope is the current window).
+The [FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) and [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) methods move focus to the first or last focusable element within the scope of an object (the element tree of a [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) or the text tree of a [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement)). The scope is specified in the call (if the argument is null, the scope is the current window).
 
 If no focus candidates can be identified in the scope, null is returned.
 
