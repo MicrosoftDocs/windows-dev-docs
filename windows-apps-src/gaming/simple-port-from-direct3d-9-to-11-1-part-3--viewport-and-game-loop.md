@@ -130,7 +130,7 @@ Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
 
 The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
 
-Visit the following in-depth Microsoft Store game game development articles:
+Visit the following in-depth Microsoft Store game development articles:
 
 -   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Audio for games](working-with-audio-in-your-directx-game.md)
