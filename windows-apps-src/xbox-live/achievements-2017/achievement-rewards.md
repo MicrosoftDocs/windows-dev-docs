@@ -63,7 +63,7 @@ An in-app reward takes effect when the user redeems the reward within the game. 
 
 1. Query the Achievements service upon title launch or title resume from suspension to see which unlocked achievements have in-app rewards and to get the reward code for each. This should always be done to make sure you catch any achievements that may have been unlocked while the title wasn’t running or on another console.  
 
-    To query, you can use the RESTful Achievements URIs URIs or the APIs in the Microsoft.Xbox.Services.Achievements Namespace.
+    To query, you can use the RESTful Achievements URIs or the APIs in the Microsoft.Xbox.Services.Achievements Namespace.
 
 2. Register to receive a notification when one of your achievements is unlocked. This is optional, though probably desirable to most titles. Note that titles will only receive this notification if the title is actually running when the unlock happens. This is another reason why the previous step is important.
 
