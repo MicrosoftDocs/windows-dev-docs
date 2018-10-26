@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstatsget.html
 author: KevinAsgari
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

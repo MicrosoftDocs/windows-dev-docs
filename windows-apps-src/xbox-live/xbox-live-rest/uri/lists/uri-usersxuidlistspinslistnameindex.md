@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindex.html
 author: KevinAsgari
 description: ' /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

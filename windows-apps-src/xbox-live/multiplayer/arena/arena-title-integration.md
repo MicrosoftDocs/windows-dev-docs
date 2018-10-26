@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how a title can build in support for the Xbox Live Arena platform.
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
 ms.author: kevinasg
-ms.date: 09-14-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

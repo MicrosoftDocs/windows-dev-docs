@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
 author: KevinAsgari
 description: ' Enumerations Used In JavaScript Object Notation (JSON) Objects'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

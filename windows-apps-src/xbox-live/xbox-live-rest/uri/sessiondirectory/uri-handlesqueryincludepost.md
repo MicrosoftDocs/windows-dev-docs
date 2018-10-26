@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-handlesqueryincludepost.html
 author: KevinAsgari
 description: ' POST (/handles/query?include=relatedInfo)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

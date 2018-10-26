@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilena
 author: KevinAsgari
 description: ' /json/users/batch/scids/{scid}/data/{pathAndFileName},json'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

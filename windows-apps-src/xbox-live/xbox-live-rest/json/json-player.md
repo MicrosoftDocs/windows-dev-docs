@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/json-player.html
 author: KevinAsgari
 description: ' Player (JSON)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

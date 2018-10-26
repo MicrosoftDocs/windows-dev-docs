@@ -5,10 +5,8 @@ permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-additional.html
 author: KevinAsgari
 description: ' Additional Reference'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---

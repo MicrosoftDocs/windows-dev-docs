@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid-get.html
 author: KevinAsgari
 description: ' GET (/global/scids/{scid})'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

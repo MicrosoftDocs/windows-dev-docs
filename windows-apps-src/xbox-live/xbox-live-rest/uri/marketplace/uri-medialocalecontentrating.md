@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentrating.html
 author: KevinAsgari
 description: ' /media/{marketplaceId}/contentRating'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

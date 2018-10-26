@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsv2.html
 author: KevinAsgari
 description: ' /users/xuid({xuid})/achievements'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

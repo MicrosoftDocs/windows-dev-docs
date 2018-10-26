@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
 author: KevinAsgari
 description: ' System Strings Validatation URIs'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

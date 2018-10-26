@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
 author: KevinAsgari
 description: ' UpdateMetadataRequest (JSON)'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

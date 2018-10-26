@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfil
 author: KevinAsgari
 description: ' PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

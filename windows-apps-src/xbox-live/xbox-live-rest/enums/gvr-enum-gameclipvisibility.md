@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipvisibility.html
 author: KevinAsgari
 description: ' GameClipVisibility Enumeration'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 

@@ -5,7 +5,7 @@ permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapat
 author: KevinAsgari
 description: ' /trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}'
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 
 
