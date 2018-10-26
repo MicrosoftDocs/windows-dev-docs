@@ -61,7 +61,7 @@ _Package.appxmanifest in the MathExtensionHost project_
         <Extensions>
             <uap3:Extension Category="windows.appExtensionHost">
                 <uap3:AppExtensionHost>
-                  <uap3:Name>microsoft.com.MathExt</uap3:Name>
+                  <uap3:Name>com.microsoft.mathext</uap3:Name>
                 </uap3:AppExtensionHost>
           </uap3:Extension>
         </Extensions>
@@ -96,7 +96,7 @@ _Package.appxmanifest in the MathExtension project:_
         <Extensions>
           ...
           <uap3:Extension Category="windows.appExtension">
-            <uap3:AppExtension Name="Microsoft.com.MathExt"
+            <uap3:AppExtension Name="com.microsoft.mathext"
                                Id="power"
                                DisplayName="x^y"
                                Description="Exponent"
