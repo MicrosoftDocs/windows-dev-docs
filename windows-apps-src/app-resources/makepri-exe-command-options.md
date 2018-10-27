@@ -421,7 +421,7 @@ You use the index options option (/io) with `new`, `resourcepack`, and `versione
 /IndexOptions(io) <OPTIONS>
 ```
 
-**OPTIONS** is a a comma-separated list comprised of the following options.
+**OPTIONS** is a comma-separated list comprised of the following options.
 
 - +/-HiddenFiles(hf). Index (+) or ignore (-) hidden files and folders.
 - +/-LinkedFiles(lf). Index (+) or ignore (-) linked files and folders.
