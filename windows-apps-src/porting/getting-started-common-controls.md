@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 ## Common controls list
 
-In the previous section, you worked with only two controls: buttons and textblocks. There are, of course, many many more controls that are available to you. Here are some common controls you'll be using in your apps, and their iOS equivalents. The iOS controls are listed in alphabetical order, next to the most similar Universal Windows Platform (UWP) controls.
+In the previous section, you worked with only two controls: buttons and textblocks. There are, of course, many more controls that are available to you. Here are some common controls you'll be using in your apps, and their iOS equivalents. The iOS controls are listed in alphabetical order, next to the most similar Universal Windows Platform (UWP) controls.
 
 The rather clever thing about UWP controls is that they can sense the type of device they are running on, and change their appearance and functionality accordingly. For example, if your project uses the [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) control, it is smart enough to optimize itself to look and behave differently on a desktop computer compared to, say, a phone. You don't need to do anything: the controls adjust themselves at run-time.
 
