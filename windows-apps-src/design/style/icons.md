@@ -134,7 +134,7 @@ There are many ways to create an icon. You can use a symbol font like Segoe MDL2
 
 ## Make the icon do something
 
-Once you you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to do this is to add the icon to a button or a command bar. 
+Once you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to do this is to add the icon to a button or a command bar. 
 
 ![Command bar image](images/icons/app-bar-desktop.svg)
 
