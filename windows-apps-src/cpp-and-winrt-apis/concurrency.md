@@ -3,10 +3,8 @@ author: stevewhims
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
 ms.author: stwhi
-ms.date: 10/21/2018
+ms.date: 10/27/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ---
@@ -457,7 +455,57 @@ Then, instead of looking for the three **await_xxx** functions that match **IAsy
 
 ## Canceling an asychronous operation, and cancellation callbacks
 
-The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Let's begin with a simple example.
+The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Here's an example that calls [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve a potentially large collection of files, and it stores the resulting asynchronous operation object in a data member. The user has the option to cancel the operation.
+
+```cppwinrt
+// MainPage.xaml
+...
+<Button x:Name="workButton" Click="OnWork">Work</Button>
+<Button x:Name="cancelButton" Click="OnCancel">Cancel</Button>
+...
+
+// MainPage.h
+...
+#include <winrt/Windows.Storage.Search.h>
+...
+struct MainPage : MainPageT<MainPage>
+{
+    MainPage()
+    {
+        InitializeComponent();
+    }
+
+    IAsyncAction OnWork(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        workButton().Content(winrt::box_value(L"Working..."));
+
+        // Enable the Pictures Library capability in the app manifest file.
+        StorageFolder picturesLibrary{ KnownFolders::PicturesLibrary() };
+
+        m_async = picturesLibrary.GetFilesAsync(CommonFileQuery::OrderByDate, 0, 1000);
+
+        IVectorView<StorageFile> filesInFolder{ co_await m_async };
+
+        workButton().Content(box_value(L"Done!"));
+
+        // Process the files in some way.
+    }
+
+    void OnCancel(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        if (m_async.Status() != AsyncStatus::Completed)
+        {
+            m_async.Cancel();
+            workButton().Content(winrt::box_value(L"Canceled"));
+        }
+    }
+
+private:
+    IAsyncOperation<::IVectorView<StorageFile>> m_async;
+};
+```
+
+For the implementation side of cancellation, let's begin with a simple example.
 
 ```cppwinrt
 // pch.h

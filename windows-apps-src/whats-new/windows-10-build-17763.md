@@ -91,7 +91,7 @@ The following videos have been published since the Fall Creator's Update, highli
 
 ### C++/WinRT
 
-C++/WinRT is a new way of authoring and consuming Windows Runtime APIs. It's implemented sole in header files, and designed to provide you with first-class access to modern app features. [Watch the video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) to learn how it works, then [read the developer docs](../cpp-and-winrt-apis/index.md) for more info.
+C++/WinRT is a new way of authoring and consuming Windows Runtime APIs. It's implemented solely in header files, and designed to provide you with first-class access to modern app features. [Watch the video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) to learn how it works, then [read the developer docs](../cpp-and-winrt-apis/index.md) for more info.
 
 ### Get Started for Devs: Create and customize a form on Windows 10
 

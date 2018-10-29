@@ -3,10 +3,8 @@ author: stevewhims
 description: Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 title: Frequently-asked questions about C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
 ---
@@ -48,7 +46,7 @@ If the unresolved symbol is a Windows Runtime free function, such as [RoInitiali
 #pragma comment(lib, "windowsapp")
 ```
 
-We do recommend that you resolve any linker errors that you can by linking **WindowsApp.lib**. But, if you don't need your application to pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store), then you can link an alternative static-link library instead. For example, if your linker error refers to **CoIncrementMTAUsage** (or **WINRT_CoIncrementMTAUsage**), then you can resolve that by linking Ole32.lib if absolutely necessary (for example, if your version of **WindowsApp.lib** doesn't export the function).
+It's important that you resolve any linker errors that you can by linking **WindowsApp.lib** instead of an alternative static-link library, otherwise your application won't pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store).
 
 ## Should I implement [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) and, if so, how?
 If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
