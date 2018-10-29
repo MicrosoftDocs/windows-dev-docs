@@ -56,7 +56,10 @@ A **TemplateBinding** is always a one-way binding. Both properties involved must
 
 ### x:Bind in ControlTemplate
 
-Starting with the next major update to Windows 10, you can use **x:Bind** markup extension anywhere you used **TemplateBinding** in [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+> [!NOTE]
+> Using x:Bind in a ControlTemplate requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+
+Starting with Windows 10, version 1809, you can use **x:Bind** markup extension anywhere you used **TemplateBinding** in [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
 The [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) property will be required (not optional) on [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) when using **x:Bind**.
 
