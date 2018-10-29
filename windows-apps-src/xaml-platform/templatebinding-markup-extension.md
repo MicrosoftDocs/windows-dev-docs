@@ -4,16 +4,13 @@ description: Links the value of a property in a control template to the value of
 title: TemplateBinding markup extension
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 10/29/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
 # {TemplateBinding} markup extension
-
 
 Links the value of a property in a control template to the value of some other exposed property on the templated control. **TemplateBinding** can only be used within a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML.
 
@@ -59,18 +56,18 @@ A **TemplateBinding** is always a one-way binding. Both properties involved must
 > [!NOTE]
 > Using x:Bind in a ControlTemplate requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-Starting with Windows 10, version 1809, you can use **x:Bind** markup extension anywhere you used **TemplateBinding** in [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+Starting with Windows 10, version 1809, you can use the **x:Bind** markup extension anywhere you use **TemplateBinding** in a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-The [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) property will be required (not optional) on [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) when using **x:Bind**.
+The [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) property is required (not optional) on [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) when using **x:Bind**.
 
-With **x:Bind** support, you can now use both [Function bindings](../data-binding/function-bindings.md) as well as two-way bindings in [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+With **x:Bind** support, you can use both [Function bindings](../data-binding/function-bindings.md) as well as two-way bindings in a [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
-In the following example, the TextBlock.Text evaluates to Button.Content.ToString(). The TargetType on the ControlTemplate acts as the data source and accomplishes the same result as a TemplateBinding to parent.
+In this example, the **TextBlock.Text** property evaluates to **Button.Content.ToString**. The TargetType on the ControlTemplate acts as the data source and accomplishes the same result as a TemplateBinding to parent.
 
 ```xaml
 <ControlTemplate TargetType="Button">
     <Grid>
-        <TextBlock Text="{x:Bind Content}" />
+        <TextBlock Text="{x:Bind Content, Mode=OneWay}"/>
     </Grid>
 </ControlTemplate>
 ```
