@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: App screenshots, images, and trailers
@@ -191,7 +191,7 @@ You must also follow the requirements listed below.
 > [!TIP]
 > If you have created Store listings in multiple languages, you can select **Choose from existing trailers** to reuse the trailers you've already uploaded. You don't have to upload them individually for each language.
 
-To remove a trailer from a listing, click the **X** next to its file name. You can choose whether to remove it from only the current Store listing in which you are working, or to remove it from from all of your product's Store listings (in every language).
+To remove a trailer from a listing, click the **X** next to its file name. You can choose whether to remove it from only the current Store listing in which you are working, or to remove it from all of your product's Store listings (in every language).
 
 
 ### Trailer requirements
