@@ -110,8 +110,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="text-controls.md">Text controls</a></li>
 
-<li style="list-style-type: none;"><a href="index.md">Tiles, badges, and notifications</a></li>
-
 
 <li style="list-style-type: none;"><a href="toggles.md">Toggle</a></li>
 <li style="list-style-type: none;"><a href="tooltips.md">Tooltips</a></li>
