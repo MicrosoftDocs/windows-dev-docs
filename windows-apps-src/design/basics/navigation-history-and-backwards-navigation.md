@@ -300,21 +300,6 @@ If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft
 
 The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
 
-- If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
-
-    ![Title bar back button](images/nav-back-pc.png)
-
-- If an app is **tabbed**, then the back button is rendered inside a new system back bar.
-
-    ![System drawn back button bar](images/back-nav/tabs.png)
-
-### System back bar
-
-> [!NOTE]
-> "System back bar" is only a description, not an official name.
-
-The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
-
 The system back bar is displayed dynamically, based on back button visibility. When the back button is visible, the system back bar is inserted, shifting app content down by 32 pixels below the tab band. When the back button is hidden, the system back bar is dynamically removed, shifting app content up by 32 pixels to meet the tab band. To avoid having your app's UI shift up or down, we recommend drawing an [in-app back button](#back-button).
 
 [Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.

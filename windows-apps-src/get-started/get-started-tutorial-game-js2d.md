@@ -60,7 +60,7 @@ Once the solution has been loaded into Visual Studio, you'll see several files, 
 
 Now you can run the game!
 
-Press **F5** to start the app running. You should see a window open, and our familar dinosaur standing in an idyllic (if sparse) landscape. We will now examine the app, explain some important parts, and unlock the rest of the features as we go.
+Press **F5** to start the app running. You should see a window open, and our familiar dinosaur standing in an idyllic (if sparse) landscape. We will now examine the app, explain some important parts, and unlock the rest of the features as we go.
 
 ![Just an every day dinosaur with a cat ninja on its back](images/JS2D_3.png)
 
