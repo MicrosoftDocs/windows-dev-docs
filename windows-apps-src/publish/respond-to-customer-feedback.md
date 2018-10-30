@@ -3,7 +3,7 @@ title: Respond to customer feedback
 description: You can respond directly to feedback that your customers leave in Feedback Hub.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -21,7 +21,7 @@ You can use the [Feedback report](feedback-report.md) to review the feedback tha
 
 To provide a response to any piece of feedback, click the **Respond to feedback** link that appears by the piece of feedback in your **Feedback report**.
 
-Windows Dev Center supports three options for responding to customers who provide feedback about your app. Regardless of which option you choose, keep in mind that there is a 1000-character limit for each response.
+[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. Regardless of which option you choose, keep in mind that there is a 1000-character limit for each response.
 
 ## Public comments in Feedback Hub
 

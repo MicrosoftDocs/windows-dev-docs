@@ -4,7 +4,7 @@ Description: The Microsoft Store reaches customers in over 200 countries and reg
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 06/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -33,12 +33,12 @@ By default, all markets are selected. You can unselect individual markets to exc
 Note that your selections here apply only to new acquisitions; if someone already has your app in a certain market, and you later remove that market, the people who already have the app in that market can continue to use it, but they won’t get the updates you submit, and no new customers in that market can get your app.
 
 > [!IMPORTANT]
-> It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in the Windows Dev Center dashboard.
+> It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in Partner Center.
 
 Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](age-ratings.md) for more info.
 
 > [!NOTE]
-> For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x).
+> For previously-published apps that include packages targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
 You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
  
@@ -475,12 +475,11 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 
 ## "Rest of World" markets for Windows 8.x
 
-If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Store dashboard, where there was one "Rest of World" market option to group all of these markets).
+If your previously-published app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are shown as individual markets in Partner Center.
 
-If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
+If you leave the default market selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in *any* of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
 
 The markets that are included in "Rest of World" for Windows 8.x are the following:
-
 
 <table>
   <tr>

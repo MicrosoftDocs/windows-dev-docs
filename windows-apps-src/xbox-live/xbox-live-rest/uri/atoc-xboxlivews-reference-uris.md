@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 # Universal Resource Identifier (URI) Reference
 
-This section provides detail about the Uniform Resource Identifiers (URIs) and and Hypertext Transport Protocol (HTTP) methods used with Xbox Live Services.
+This section provides detail about the Uniform Resource Identifiers (URIs) and Hypertext Transport Protocol (HTTP) methods used with Xbox Live Services.
 
 <a id="ID4EAB"></a>
 

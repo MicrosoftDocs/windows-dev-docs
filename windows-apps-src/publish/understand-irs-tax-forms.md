@@ -3,7 +3,7 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -22,8 +22,8 @@ Below, we'll explain more about these forms, including who will receive them and
 
 | IRS tax form | Description | Availability |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
-|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
+|1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in [Partner Center](https://partner.microsoft.com/dashboard) (in **Account settings > Tax profile**) at the same time |
+|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Partner Center (in **Account settings > Tax profile**) at the same time |
 
 > [!NOTE]
 > The address we use on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.
@@ -103,7 +103,7 @@ I received at least $600 in payments not related to app sales from Microsoft in 
     <td valign="top"><b>Why was tax withheld on my payments when I completed a W8 form?</b></td>
     <td valign="top">Taxes will be withheld if either:<br>
      1. You did not complete the tax treaty section of the W8 correctly, or<br>
-     2. You are resident in a country that does not have a tax treaty with the United States.<br><br>You can visit Dev Center at any time to submit an updated W8 form.<br><br><b>Note</b>: Not all income is subject to tax withholding.</td>
+     2. You are resident in a country that does not have a tax treaty with the United States.<br><br>You can visit Partner Center at any time to submit an updated W8 form.<br><br><b>Note</b>: Not all income is subject to tax withholding.</td>
   </tr>
   <tr>
     <td valign="top"><b>I submitted an updated W8 form with valid treaty information. Can Microsoft refund me the tax that was withheld?</b></td>

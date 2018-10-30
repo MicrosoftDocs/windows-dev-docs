@@ -4,7 +4,7 @@ Description: You can use package flights to distribute packages that are only gi
 title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 6/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -18,7 +18,7 @@ You can use package flights to distribute specific packages to a limited group o
 
 With package flights, only the packages are different; the Store listing details will be the same for all of your customers. Anyone in your flight group will receive the packages that you include in the package flight, while customers who aren't in the flight group continue to receive your regular (non-flighted) packages.  If you later decide that you want to make packages from a package flight available to all your customers, you can easily use those same packages in a non-flighted submission. Note that package flights must pass the [certification process](the-app-certification-process.md), just the same as any submission.
 
-When you set up package flights, you can specify the people who should get specific packages by adding them to a **known user group** (sometimes referred to as flight group). Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. (Your package flights can include packages targeting any OS version, including Windows 8.1/Windows Phone 8.1 or earlier.) Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
+When you set up package flights, you can specify the people who should get specific packages by adding them to a **known user group** (sometimes referred to as flight group). Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. (Your package flights can include packages targeting any OS version, including Windows 8.1/Windows Phone 8.1 or earlier if your previously-published app already supports them.) Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
 
 > [!IMPORTANT] 
 > On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your known user group).
@@ -48,7 +48,7 @@ On the package flight creation page, you'll need to enter a name for your flight
 
 ## Specify packages to include in your package flight
 
-After you've saved your package flight details, you'll see its overview page. Click **Packages** to specify the packages you'd like to include in the flight. You can include packages targeting any OS version, including Windows 10, Windows 8.x, and Windows Phone 8.x or earlier.
+After you've saved your package flight details, you'll see its overview page. Click **Packages** to specify the packages you'd like to include in the flight. You can include packages targeting any OS version that your app supports.
 
 You have the option to select packages that were associated with a previous published submission (either a non-flighted submission, or one of your other package flights, if you have more than one). If you need to upload new packages to use for this package flight, you can upload them here (using the [same process as when you upload app packages to a regular non-flighted submission](upload-app-packages.md)). Click **Save** when you have finished specifying the packages to be included in this package flight.
 

@@ -111,7 +111,7 @@ Or change the TargetTheme on the RevealBorderBrush to Dark. Remember! If the Tar
 
 ## Enabling Reveal on custom controls
 
-You can add Reveal to custom controls. Before you do, it's helpful to know a little more about about how the Reveal effect works. Reveal is made up of two separate effects: **Reveal border** and **Reveal hover**.
+You can add Reveal to custom controls. Before you do, it's helpful to know a little more about how the Reveal effect works. Reveal is made up of two separate effects: **Reveal border** and **Reveal hover**.
 
 - **Border** shows the borders of interactive elements when a pointer is nearby by. This effect shows you that those nearby objects can take actions similar to the one currently focused.
 - **Hover**  applies a gentle halo shape around the hovered or focused item and plays a press animation on click. 

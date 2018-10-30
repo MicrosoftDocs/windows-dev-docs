@@ -4,7 +4,7 @@ Description: The Payout summary shows you details about the money you’ve earne
 title: Payout summary
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -26,7 +26,7 @@ If you sell products in the Azure Marketplace, you’ll also see info on success
 >
 > Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
 
-To view your **Payout summary**, click the **Payout** icon that appears near the upper right hand corner in Dev Center, then select **Payout summary**.
+To view your **Payout summary**, click the **Payout** icon that appears near the upper right hand corner in Partner Center, then select **Payout summary**.
 
 ## Current proceeds and payments
 

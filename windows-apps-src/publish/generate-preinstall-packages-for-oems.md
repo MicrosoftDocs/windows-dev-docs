@@ -4,7 +4,7 @@ Description: If your developer account has been granted the appropriate permissi
 title: Generate preinstall packages for OEMs
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -19,7 +19,7 @@ If your developer account has been granted the appropriate permissions, you can 
 
 ## Important preinstall policy & limitations
 
-Preinstall apps must be certified through Windows Dev Center to have the latest Store license so that they are able to connect to the Store and receive app updates.
+Preinstall apps must be certified through [Partner Center](https://partner.microsoft.com/dashboard) to have the latest Store license so that they are able to connect to the Store and receive app updates.
 
 Any app that is preinstalled must be and remain free in all markets.
 
@@ -28,7 +28,7 @@ Any app that is preinstalled must be and remain free in all markets.
 
 Once an account has been enabled with preinstall permissions, complete the following steps:
 
-1.  In your dashboard, navigate to the app that is to be preinstalled.
+1.  In Partner Center, navigate to the app that is to be preinstalled.
 2.  In the left navigation menu, expand **App management** and select **Current packages**.
 3.  In the **Request packages for OS preinstallation** section, select **Enable downloadable packages**.
 4.  In the confirmation dialog will, select **Enable**.

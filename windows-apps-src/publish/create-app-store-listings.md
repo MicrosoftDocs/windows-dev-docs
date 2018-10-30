@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 06/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -17,12 +17,12 @@ ms.localizationpriority: medium
 
 The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
-Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots). For some submissions, the [Privacy policy](#privacy-policy) and [Support contact info](#support-contact-info) fields are also required. 
+Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in the dashboard. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once. 
+> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once. 
 
-By default, we'll use the same Store listing (per language) for all of your targeted operating systems. If you'd like to use a customized Store listing for a specific operating system that your submission supports, you can [create platform-specific Store listings](create-platform-specific-store-listings.md). Your default listing will always be shown to customers on Windows 10.
+If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](create-platform-specific-store-listings.md) to show to those customers. 
 
 ## Store listing languages
 
@@ -35,19 +35,19 @@ To add or remove languages for your Store listings, click **Add/remove languages
 
 In the **Additional Store listing languages** section, you can click **Manage additional languages** to add or remove languages that are *not* included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional Store listing languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
 
-When you have finished making your selections, click **Save** to return to the submission overview page.
+When you have finished making your selections, click **Save** to return to the submission overview page. 
 
 ## Add and edit Store listing info
 
-To edit a Store listing, select the language name from the submission overview page.
+To edit a Store listing, select the language name from the submission overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](import-and-export-store-listings.md).
 
-At the top of the **Store listing** page are the fields associated with your default Store listing for the selected language. These fields will be shown to all of your customers, unless you have packages targeting earlier OS versions (Windows 8.x or earlier; Windows Phone 8.x or earlier) and create platform-specific Store listings to include different screenshots or info to display to customers on specified OS versions. For more info, see [Create platform-specific Store listings](create-platform-specific-store-listings.md).
+The available fields are described below.
 
 ## Product name
 
 This drop-down box lets you specify which name should be used in the Store listing (if you have reserved more than one name for the app).
 
-If you have uploaded package(s) in the same language as the Store listing you're working on, the name used in those packages will be selected. If you need to [rename the app](manage-app-names.md#rename-an-app-that-has-already-been-published) after it's already been published, you can select a different reserved name here when you create a new submission with packages that use the new name.
+If you have uploaded packages in the same language as the Store listing you're working on, the name used in those packages will be selected. If you need to [rename the app](manage-app-names.md#rename-an-app-that-has-already-been-published) after it's already been published, you can select a different reserved name here when you create a new submission, after you've uploaded packages that use the new name.
 
 If you haven't uploaded packages for the language you're working on, and you've reserved more than one name, you'll need to select one of your reserved app names, since there isn't an associated package in that language from which to pull the name.
 
@@ -64,14 +64,14 @@ For some tips on making your description stand out, see [Write a great app descr
 
 ## What's new in this version
 
-If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
+If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customers know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
 
-## App features
+## Product features
 
 These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in the **Features** section of your app's Store listing, in addition to the **Description**. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
 
 > [!NOTE]
-> Your app features will appear bulleted in your Store listing, so don't add your own bullets.
+> These features will appear bulleted in your Store listing, so don't add your own bullets.
 
 ## Screenshots
 
@@ -90,11 +90,11 @@ Store logos are optional images that you can upload to enhance the way your app 
 For more info, see [Store logos](app-screenshots-and-images.md#store-logos).
 
 
-## Additional art assets
+## Trailers and additional assets
 
-You can submit additional assets for your product, including trailers and promotional images. These are all optional, but we recommend that you consider uploading as many of them as possible. These images can help give customers a better idea of what your product is and make a more enticing listing.
+You can submit additional assets for your product, including video trailers and promotional images. These are all optional, but we recommend that you consider uploading as many of them as possible. These images can help give customers a better idea of what your product is and make a more enticing listing.
 
-For more info, see [Additional art assets](app-screenshots-and-images.md#additional-art-assets).
+For more info, see [Trailers and additional assets](app-screenshots-and-images.md#trailers-and-additional-assets).
 
 <a id="supplemental-information" />
 
@@ -146,7 +146,7 @@ You can enter up to 11 items for both **Minimum hardware** and **Recommended har
 
 ## Additional information
 
-The items described below help customers discover and understand your product. The info you enter here will apply to all of your Store listings in a given language, regardless of operating system, even if you [create platform-specific Store listings](create-platform-specific-store-listings.md). (This section was formerly called **Shared fields**).
+The items described below help customers discover and understand your product. (This section was formerly called **Shared fields**).
 
 ### Search terms
 

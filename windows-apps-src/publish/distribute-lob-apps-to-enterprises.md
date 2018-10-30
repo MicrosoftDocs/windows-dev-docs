@@ -4,7 +4,7 @@ Description: You can publish line-of-business (LOB) apps directly to enterprises
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -21,7 +21,7 @@ You can publish line-of-business (LOB) apps directly to enterprises for volume a
 > At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business or Microsoft Store for Education. If you submit a paid app as LOB, it will not be available to the enterprise. 
 
 > [!IMPORTANT]
-> You cannot use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to publish LOB apps directly to enterprises. All submissions for LOB apps must be made by using the Windows Dev Center dashboard.
+> You cannot use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to publish LOB apps directly to enterprises. All submissions for LOB apps must be published through Partner Center.
 
 
 ## Set up the enterprise association
@@ -91,7 +91,7 @@ After the submission goes through the certification process, the app will no lon
 
 Making apps available to an enterprise through Microsoft Store for Business or Microsoft Store for Education ensures that the app has been signed by the Store and complies with the standard Store Policies.
 
-In some cases, companies may not want their LOB apps to be submitted through the Windows Dev Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
+In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
 
 For more info, see [Sideload LOB apps in Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 

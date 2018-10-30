@@ -3,7 +3,7 @@ author: jnHs
 Description: Attract customers and promote your apps
 title: Attract customers and promote your apps
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Attract customers and promote your apps
 
-Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible. We offer many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.
+Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible. [Partner Center](https://partner.microsoft.com/dashboard) offers many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.
 
 -   [Generate promotional codes](generate-promotional-codes.md)
 -   [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)

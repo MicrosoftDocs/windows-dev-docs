@@ -4,7 +4,7 @@ Description: You can indicate whether and how your app can be offered for volume
 title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -26,7 +26,7 @@ You will also need to allow organizational licensing for any [line-of-business (
 > Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
 
 > [!IMPORTANT]
-> Submissions that use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) won't be made available to Microsoft Store for Business and Microsoft Store for Education. To make your app available for volume purchases by organizations, you must use the Windows Dev Center dashboard to create and submit your submissions.
+> Submissions that use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) won't be made available to Microsoft Store for Business and Microsoft Store for Education. To make your app available for volume purchases by organizations, you must create and submit your submissions in Partner Center.
 
 
 ## Allowing your app to be offered to organizations
@@ -51,7 +51,7 @@ Note that this box is **unchecked** by default. You must check the box to allow 
 Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.
 
 > [!IMPORTANT]
-> Offline licensing is not supported for .xap packages.  
+> Offline licensing is not supported for .xap packages.
 
  
 ## Paid app support

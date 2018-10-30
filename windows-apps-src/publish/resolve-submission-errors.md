@@ -4,7 +4,7 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: Resolve submission errors
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -28,6 +28,9 @@ If you plan to submit a package that contains both Win32 and UWP binaries, make 
 
 ## Windows Phone 8.x and earlier
 
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+
 You may see **error 2001** when problems with Windows Phone packages are detected during preprocessing. In most cases, you will need to rebuild your app's package to correct the error. Once you've done that, replace the old package with the new one on the [Packages](upload-app-packages.md) page of the submission before you click **Submit to the Store** again.
 
 There are a number of issues that may cause this error. Review the list below to determine which might apply to your packages.
@@ -42,7 +45,7 @@ Another error that you might see after submitting your app is **error 1300**. Th
 
 ## Name/identity errors
 
-If you see an error that says **The name found in the package is not one of your reserved app names. Please reserve the app name and/or update your package with the correct app name for this language**, it may be because you’ve entered an incorrect name in your package. This error can also occur if you are using an app name that you haven’t reserved in Dev Center. You can usually resolve this error by following these steps:
+If you see an error that says **The name found in the package is not one of your reserved app names. Please reserve the app name and/or update your package with the correct app name for this language**, it may be because you’ve entered an incorrect name in your package. This error can also occur if you are using an app name that you haven’t reserved in Partner Center. You can usually resolve this error by following these steps:
 
 - Go to the [App identity](view-app-identity-details.md) page for your app (under **App management**) to confirm whether your app has an assigned Identity. If it doesn’t, you’ll see an option to create one. You’ll need to reserve a name for your app in order to create the Identity. Make sure this is the name you’ve used in your package.
 - If your app already has an identity, you might still need to reserve the name that you want to use in your package. Under **App management**, click [Manage app names](manage-app-names.md). Enter the name you’d like to use, and click **Reserve app name**.

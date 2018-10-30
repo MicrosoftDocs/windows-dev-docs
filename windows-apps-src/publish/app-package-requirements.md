@@ -4,7 +4,7 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -71,6 +71,8 @@ Your app’s packages must comply with these requirements.
 | Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle <br>.msix or .appx packages targeting Windows 10: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
 | Block map hashes     | SHA2-256 algorithm                                                   |
 
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## Supported versions
 

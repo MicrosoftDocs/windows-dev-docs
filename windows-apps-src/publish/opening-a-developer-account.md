@@ -2,9 +2,9 @@
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
-description: This overview of how to register for a developer account for the Microsoft Store and other Microsoft programs will help you understand the process of setting up your account.
+description: Here's an overview of how to register for a Winodws developer account for the Microsoft Store and other Microsoft programs in Partner Center.
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 # Opening a developer account
 
-This overview of how to register for a developer account for the Microsoft Store and other Microsoft programs will help you understand the process of setting up your account.
+Here's an overview of how to register for a Windows developer account in [Partner Center](https://partner.microsoft.com/dashboard).
 
 > [!NOTE]
 > When you sign up for a developer account, we'll use the email address you provide in your contact info to send email communications related to your account. At times, these may include informational emails about our programs. If you choose not to receive these informational emails by [opting out](http://go.microsoft.com/fwlink/p/?LinkId=533280), be aware that we will still send you transactional emails (for example, to let you know that your app has passed certification or that a payment is on the way). These emails are a necessary part of your account, and unless you close your account, you will continue to receive these transactional emails.
@@ -53,11 +53,11 @@ After you've signed up, your account will go through the verification process. F
 ## Additional guidelines for company accounts
 
 > [!IMPORTANT]
-> To allow multiple users to access your Dev Center account, we recommend using Azure Active Directory to assign roles to individual users (rather than sharing access to the Microsoft account). Each user can then access the Dev Center account by signing in with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
+> To allow multiple users to access your developer account, we recommend using Azure Active Directory to assign roles to individual users (rather than sharing access to the Microsoft account). Each user can then access the developer account by signing in to Partner Center with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
 
-When creating a company account, these guidelines may help if more than one person will need to access the account by signing in with the Microsoft account that opened the account (rather than as individual users added to the Dev Center account).
+If you will need to have multiple people access the company account by signing in with the Microsoft account that opened it (rather than as individual users added to the account), the following guidelines may be helpful:
 
--   Create your Microsoft account using an email address that doesn't already belong to you or another individual, such as MyCompany_DevCenter@outlook.com. Don't use an email address at your company's domain, especially if your company already uses Azure AD. (As noted above, you can add additional users from your company's Azure AD later.)
+-   Create the Microsoft account using an email address that doesn't already belong to you or another individual, such as MyCompany_PartnerCenter@outlook.com. Don't use an email address at your company's domain, especially if your company already uses Azure AD. (As noted above, you can add additional users from your company's Azure AD later.)
 -   Limit access to this Microsoft account to the smallest possible number of users.
 -   Set up a corporate email distribution list that includes everyone who needs to access the developer account, and add this email address to the [security info associated with the Microsoft account[(https://account.microsoft.com/security). This allows all of the employees on the list to receive security codes sent to this alias. If setting up a distribution list is not feasible, you can add an individual's email address to your security info, but the owner of that email address will be the only one who can access and share the security code when prompted (such as when new security info is added to the account, or when it is accessed from a new device).
 -   Add a company phone number to the Microsoft account's security info. Try to use a number that does not require an extension and is accessible to key team members.
@@ -72,7 +72,7 @@ We use security info that you provide to raise the security level of your Micros
 
 You must have at least two email addresses and/or phone numbers on your Microsoft account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date. You can manage your security info by going to https://account.microsoft.com/security and signing in with your Microsoft account. See [Security info & security codes](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) for more info.
 
-When you sign in to your Windows Dev Center dashboard using your Microsoft account, the system may request that you verify your identity by sending a security code that you must supply to complete the sign-in process. We recommend designating PCs that you use frequently as *trusted devices*. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted in specific situations or if you haven’t signed in on that device in a long time. See [Add a trusted device to your Microsoft account](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) for more info.
+When you sign in to Partner Center using your Microsoft account, the system may request that you verify your identity by sending a security code that you must supply to complete the sign-in process. We recommend designating PCs that you use frequently as *trusted devices*. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted in specific situations or if you haven’t signed in on that device in a long time. See [Add a trusted device to your Microsoft account](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) for more info.
 
 
 ## Closing your account

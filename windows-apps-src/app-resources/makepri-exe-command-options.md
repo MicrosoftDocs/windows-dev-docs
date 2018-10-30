@@ -19,9 +19,11 @@ ms.localizationpriority: medium
 > [!NOTE]
 > MakePri.exe is installed when you check the **Windows SDK for UWP Managed Apps** option while installing the Windows Software Development Kit. It is installed to the path `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (as well as in folders named for the other architectures). For example, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-## MakePri commands
+## Getting help from the command-line
 
-Run `MakePri.exe help` to see the commands that you can use with MakePri.exe.
+You can run `MakePri.exe help` or `MakePri.exe /?` to see the commands that you can use with MakePri.exe. You can also issue `MakePri.exe <command> /?` to see specifics about a command and, in very rare cases, even `MakePri.exe <command> <option>` to see specifics about an option.
+
+## MakePri commands
 
 ```
 C:\>makepri help
@@ -421,7 +423,7 @@ You use the index options option (/io) with `new`, `resourcepack`, and `versione
 /IndexOptions(io) <OPTIONS>
 ```
 
-**OPTIONS** is a a comma-separated list comprised of the following options.
+**OPTIONS** is a comma-separated list comprised of the following options.
 
 - +/-HiddenFiles(hf). Index (+) or ignore (-) hidden files and folders.
 - +/-LinkedFiles(lf). Index (+) or ignore (-) linked files and folders.
