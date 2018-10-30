@@ -3,7 +3,7 @@ author: jnHs
 Description: Manage submission options such as publishing hold options, notes for certification, and more.
 title: Manage submission options
 ms.author: wdg-dev-content
-ms.date: 05/09/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 

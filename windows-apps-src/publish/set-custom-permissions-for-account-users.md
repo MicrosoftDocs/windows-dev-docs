@@ -4,7 +4,7 @@ Description: Set roles or custom permissions for account users.
 title: Set roles or custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -14,25 +14,25 @@ ms.localizationpriority: medium
 
 # Set roles or custom permissions for account users
 
-When you [add users to your Dev Center account](add-users-groups-and-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](#roles) which applies to the entire account, or you can [customize their permissions](#custom) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
+When you [add users to your Partner Center account](add-users-groups-and-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](#roles) which applies to the entire account, or you can [customize their permissions](#custom) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
 
 > [!NOTE] 
 > The same roles and permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
 
 When determining what role or permissions to apply, keep in mind: 
--   Users (including groups and Azure AD applications) will be able to access the entire Dev Center account with the permissions associated with their assigned role, unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
+-   Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
 -   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
 > [!TIP]
-> This topic is specific to the Windows apps developer program. For info about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
+> This topic is specific to the Windows apps developer program in [Partner Center](https://partner.microsoft.com/dashboard). For info about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
 
 
 <span id="roles" />
 
 ## Assign roles to account users
 
-By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Dev Center account. Each role has a specific set of permissions in order to perform certain functions within the account. 
+By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Partner Center account. Each role has a specific set of permissions in order to perform certain functions within the account. 
 
 Unless you opt to define [custom permissions](#custom) by selecting **Customize permissions**, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles. 
 
@@ -42,7 +42,7 @@ Unless you opt to define [custom permissions](#custom) by selecting **Customize 
 
 | Role                 | Description              |
 |----------------------|--------------------------|
-| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users in the Azure AD tenant is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have global administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Dev Center role). <p> Note that if the Dev Center account is associated with more than one Azure AD tenant, a Manager can’t see complete details for a user (including first name, last name, password recovery email, and whether they are an Azure AD global administrator) unless they are signed in to the same tenant as that user with an account that has global administrator permissions for that tenant. However, they can add and remove users in any tenant that is associated with the Dev Center account. |
+| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Partner Center, but note that the ability to create and delete users in the Azure AD tenant is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have global administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Partner Center role). <p> Note that if the Partner Center account is associated with more than one Azure AD tenant, a Manager can’t see complete details for a user (including first name, last name, password recovery email, and whether they are an Azure AD global administrator) unless they are signed in to the same tenant as that user with an account that has global administrator permissions for that tenant. However, they can add and remove users in any tenant that is associated with the Partner Center account. |
 | Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can access [Cross-Device Experiences](https://go.microsoft.com/fwlink/?linkid=874042) functionality. Can’t view financial info or account settings.   |
 | Business Contributor | Can view [Health](health-report.md) and [Usage](usage-report.md) reports. Can't create or submit products, change account settings, or view financial info.   |
 | Finance Contributor  | Can view [payout reports](payout-summary.md), financial info, and acquisition reports. Can’t make any changes to apps, add-ons, or account settings.    |
@@ -170,7 +170,6 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    <b>Health</b> </td><td>    Can view the <a href="health-report.md">Health report</a> for the product.    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Customer feedback</b>    </td><td>    Can view the <a href="reviews-report.md">Reviews</a> and <a href="feedback-report.md">Feedback</a> reports for the product.       </td><td>    N/A (to respond to feedback or reviews, the <b>Contact customer</b> permission must be granted)   </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Xbox analytics</b> </td><td>    Can view the [Xbox analytics report](xbox-analytics-report.md) for the product.    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
-    <tr><td align="left">    <b>Real time</b>   </td><td>    Can view the Real time report for the product. (Note: This report is currently only available via the <a href="dev-center-insider-program.md">Dev Center Insider Program</a>.)      </td><td>    N/A   </td><td>    N/A     </td><td>    N/A                 </td></tr>
     </tbody>
     </table>
 

@@ -1,10 +1,10 @@
 ﻿---
 author: jnHs
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+Description: The Usage report in Partner Center lets you see how customers are using your app.
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 10/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Usage report
 
 
-The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 (including Xbox) are using your app, and shows info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+The **Usage** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how customers on Windows 10 (including Xbox) are using your app, and shows info about custom events that you've defined. You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline.
 
 
 ## Apply filters

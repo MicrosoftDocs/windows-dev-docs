@@ -4,7 +4,7 @@ Description: When you finish creating your app's submission and click Submit to 
 title: The app certification process
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 07/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 

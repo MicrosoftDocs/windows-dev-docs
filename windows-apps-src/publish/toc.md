@@ -1,7 +1,6 @@
 # [Overview](../publish/index.md)
-# [Using the Windows Dev Center dashboard](../publish/using-the-windows-dev-center-dashboard.md)
+# [Opening a developer account](../publish/opening-a-developer-account.md)
 ## [Account types, locations, and fees](../publish/account-types-locations-and-fees.md)
-## [Opening a developer account](../publish/opening-a-developer-account.md)
 ## [Manage account settings and profile info](../publish/managing-your-profile.md)
 ## [Trademark and copyright protection](../publish/trademark-and-copyright-protection.md)
 ## [Dev Center Insider Program](../publish/dev-center-insider-program.md)

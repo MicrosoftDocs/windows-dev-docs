@@ -2,9 +2,9 @@
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: Manage account settings and profile info
-description: You can view and update your developer account settings and profile info in the Account settings section of the unified Windows Dev Center dashboard.
+description: You can view and update your developer account settings and profile info in the Account settings section of Partner Center.
 ms.author: wdg-dev-content
-ms.date: 03/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 ---
 # Manage account settings and profile info
 
-You can view and update your developer account settings and profile info in the **Account settings** section of the [Windows Dev Center dashboard](using-the-windows-dev-center-dashboard.md). 
+You can view and update your developer account settings and profile info in the **Account settings** section of the [Partner Center](https://partner.microsoft.com/dashboard). 
 
 > [!NOTE]
-> Notification preferences (such as which type of notifications to receive and how to receive them) can be managed in **Message Center** (which you can access by selecting the message icon near the top of your dashboard).
+> Notification preferences (such as which type of notifications to receive and how to receive them) can be managed in **Message Center** (which you can access by selecting the message icon near the top of Partner Center).
 
 ## Account settings
 
-To view your account settings, click the gear icon in the upper right hand corner of your dashboard and then select **Developer settings**. Here you'll find details about your account and links to other pages where you can view info and perform various account-related tasks.
+To view your account settings, click the gear icon in the upper right hand corner of Partner Center and then select **Developer settings**. Here you'll find details about your account and links to other pages where you can view info and perform various account-related tasks.
 
 In the **Account details** section, you can see the status and type of your account. You can also see your Seller ID and other publisher ID info here. These values are assigned by Microsoft to uniquely identify your developer account and can't be edited.
 
@@ -46,8 +46,8 @@ Below are some of the other items you'll find in the **Account settings** sectio
 - **Dev Center Insider Program**: You can opt in or out of the [Dev Center Insider Program](dev-center-insider-program.md) from the main **Account settings** page.
 - **Payout account** and **Tax profile**: Here's where you [set up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md). You'll need to do this before you can charge money for apps or add-ons.
 - **Enterprise associations**: Accept invitations from enterprises who'd like you to publish apps for their exclusive use. For more info, see [Distribute line-of-business apps to enterprises](distribute-lob-apps-to-enterprises.md).
-- **Users**: Add users to your Dev Center account and assign them roles and permissions. For more info, see [Manage account users](manage-account-users.md).
-- **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Dev Center account](associate-azure-ad-with-dev-center.md).
+- **Users**: Add users to your account and assign them roles and permissions. For more info, see [Manage account users](manage-account-users.md).
+- **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Partner Center account](associate-azure-ad-with-dev-center.md).
 - **Programs**: View details about the programs in which you are participating, and learn about other programs that may be of interest.
 - **Agreements**: View the agreements that your account has accepted.
 - **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](http://go.microsoft.com/fwlink/p/?LinkId=533897) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md). 

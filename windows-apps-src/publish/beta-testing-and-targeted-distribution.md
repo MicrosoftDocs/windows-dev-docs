@@ -1,10 +1,10 @@
 ﻿---
 author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
+Description: Partner Center gives you several options to let testers try out your app before you offer it to the public. 
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 
 
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. Your testers may discover issues that you’ve overlooked, such as misspellings, confusing app flow, or errors that could cause the app to crash. You’ll then have a chance to fix those problems before you release the submission to the public, resulting in a more polished final product. 
 
-The Windows Dev Center dashboard gives you several options to make an app submission available only to specified people so that you can have testers try it out before you offer it to the public. 
+Partner Center gives you several options to let testers try out your app before you offer it to the public.
 
 Whichever method you choose, here are some things to keep in mind as you beta test your app.
 
@@ -68,6 +68,8 @@ To use this option:
 - After your product has been published, distribute the link (the **URL** on the [App identity page](view-app-identity-details.md)) to your testers so they can try it out.
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## Targeted distribution to Windows Phone customers with specified email addresses
 
