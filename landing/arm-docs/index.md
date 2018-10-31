@@ -5,7 +5,7 @@ title: Windows 10 on ARM
 author: msatranjr
 ms.author: misatran
 ms.date: 05/08/2018
-
+ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 on ARM, ARM, building win32 ARM64 apps, building ARM64 drivers
 ---
@@ -209,7 +209,7 @@ We are continuously improving our product by leveraging feedback from you and ou
         </a>
     </li>
     <li>
-        <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp" data-linktype="absolute-path">
+        <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp/tree/docs/landing/arm-docs" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Give doc feedback</h3>
