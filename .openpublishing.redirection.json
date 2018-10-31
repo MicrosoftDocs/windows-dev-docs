@@ -486,6 +486,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/using-the-windows-dev-center-dashboard.md",
+      "redirect_url": "/windows/uwp/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/use-map-services.md",
+      "redirect_url": "/windows/uwp/publish/app-management-and-services",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/whats-new/windows-10-build-15021-api-diff.md",
       "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
       "redirect_document_id": false

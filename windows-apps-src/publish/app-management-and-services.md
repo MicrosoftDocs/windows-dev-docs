@@ -36,12 +36,9 @@ For more info, see [Run app experiments with A/B testing](../monetize/run-app-ex
 
 ## Maps
 
-To use map services in previously-published apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token on the **Maps** page in the **Services** section.
+To use map services in apps targeting Windows 10 or Windows 8.x, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). For info about how to request a maps authentication key from the Bing Maps Developer Center and add it to your app, see [Request a maps authentication key](../maps-and-location/authentication-key.md) for more info. 
 
-> [!NOTE]
-> To use map services in apps targeting Windows 10 or Windows 8.x, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key) for more info.
-
-For more info, see [Use map services](use-map-services.md).
+Use the **Maps** page only for previously-published apps for Windows Phone 8.1 and earlier. To use map services in these apps, you'll need to request a map service application ID and a token to include in your app's code. When you click **Get token**, we'll generate a Map service Application ID (**ApplicationID**) and Map service Authentication Token (**AuthenticationToken**) for your app. Be sure to add these values to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
 ## Product collections and purchases
 

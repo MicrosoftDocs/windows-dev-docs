@@ -40,7 +40,7 @@ Things to keep in mind about customer segments:
 4.	In the **Include customers from this app** list, select one of your apps to target.
 5.	In the **Define inclusion conditions** section, specify the filter criteria for the segment.
 
-    You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Usage**, **Demographic**, **Rating**, **Churn prediction**, **Store purchases**, **Store acquisitions**, and **Store spend**.
+    You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Demographic**, **Rating**, **Churn prediction**, **Store purchases**, **Store acquisitions**, and **Store spend**.
 
     For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
 
