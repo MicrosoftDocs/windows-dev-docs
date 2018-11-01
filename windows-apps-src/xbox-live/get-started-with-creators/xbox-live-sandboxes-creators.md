@@ -104,3 +104,7 @@ You can use [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home
 
 1. Click **Change Sandbox**, located under **Quick Actions**.
 2. Enter the sandbox ID and then click **Save and restart**.
+
+### Sign-In with the Xbox App
+
+Once you've switched your development PC to use the proper sandbox for your title you'll want to verify that you're signed in to Xbox Live with an eligible test account. This can be done by signing into the [Xbox Live App](https://www.xbox.com/en-US/xbox-app). Once your development environment starts using the desired sandbox the Xbox App will sign-in users using the same constraints as any other Xbox Live service running on the sandbox. This makes it useful to verify that you are using a valid account for the sandbox.

@@ -47,7 +47,6 @@
 ## [Create add-on Store listings](../publish/create-add-on-store-listings.md)
 # [In-app ads](../publish/in-app-ads.md)
 # [App management and services](../publish/app-management-and-services.md)
-## [Use map services](../publish/use-map-services.md)
 ## [View app identity details](../publish/view-app-identity-details.md)
 ## [Manage app names](../publish/manage-app-names.md)
 ## [Generate preinstall packages for OEMs](../publish/generate-preinstall-packages-for-oems.md)
