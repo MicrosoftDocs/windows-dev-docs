@@ -2797,6 +2797,13 @@ Sets the IPV4 configuration with static IP and DNS. If a static IP is not specif
 | PrimaryDNS | (**required** if *IPAddress* is not null) The static primary DNS to set. |
 | SecondayDNS | (**required** if *PrimaryDNS* is not null) The static secondary DNS to set. |
 
+For clarity, to set an interface to DHCP serialize just the `AdapterName` on the wire:
+```
+{
+    "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
+}
+```
+
 **Request headers**
 
 - None
