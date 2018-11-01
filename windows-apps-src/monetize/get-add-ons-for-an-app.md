@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
-description: Use this method in the Microsoft Store submission API to retrieve information about the in-app purchases for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about the in-app purchases for an app that is registered to your Partner Center.
 title: Get add-ons for an app
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Get add-ons for an app
 
-Use this method in the Microsoft Store submission API to list the add-ons for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to list the add-ons for an app that is registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -108,7 +108,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No add-ons were found. |
-| 409  | The add-ons use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The add-ons use Partner Center features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

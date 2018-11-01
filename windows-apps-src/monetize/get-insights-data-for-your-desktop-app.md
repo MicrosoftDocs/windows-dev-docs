@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Get insights data for your desktop application
 
-Use this method in the Microsoft Store analytics API to get insights data related to health metrics for a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This data is also available in the [Health report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) for desktop applications in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get insights data related to health metrics for a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This data is also available in the [Health report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) for desktop applications in Partner Center.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to get insights data. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. If you do not specify this parameter, the response body will contain insights data for all apps registered to your account.  |  No  |
+| applicationId | string | The product ID of the desktop application for which you want to get insights data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. If you do not specify this parameter, the response body will contain insights data for all apps registered to your account.  |  No  |
 | startDate | date | The start date in the date range of insights data to retrieve. The default is 30 days before the current date. |  No  |
 | endDate | date | The end date in the date range of insights data to retrieve. The default is the current date. |  No  |
 | filter | string  | One or more statements that filter the rows in the response. Each statement contains a field name from the response body and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. String values must be surrounded by single quotes in the *filter* parameter. For example, *filter=dataType eq 'acquisition'*. <p/><p/>Currently this method only supports the filter **health**.  | No   |

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Partner Center account.
 title: Get an app
 ms.author: mhopkins
 ms.date: 02/28/2018
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Get an app
 
-Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -90,7 +90,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | The specified app could not be found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

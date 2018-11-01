@@ -26,7 +26,7 @@ Before this SDK was released, we previously provided the **AdControl** class in 
 
 * When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
 
-* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your Dev Center account. If you update your app to use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
+* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your DePartnerv Center account. If you update your app to use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
 
 * Banner ads will also no longer be served for any ad unit that is used in more than one app. Make sure that your ad units are each used in only one app.
 
@@ -85,4 +85,4 @@ Remove all existing references to the Microsoft advertising libraries from the p
 
 Test your app to make sure it displays banner ads as expected.
 
-If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in the Dev Center dashboard to republish your app.
+If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in Partner Center to republish your app.

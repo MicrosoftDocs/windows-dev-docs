@@ -32,7 +32,7 @@ Subscription add-ons for UWP apps support the following features:
 
 To enable the purchase of subscription add-ons in your app, follow these steps.
 
-1. [Create an add-on submission](../publish/add-on-submissions.md) for your subscription in the Dev Center dashboard and publish the submission. As you follow the add-on submission process, pay close attention to the following properties:
+1. [Create an add-on submission](../publish/add-on-submissions.md) for your subscription in Partner Center and publish the submission. As you follow the add-on submission process, pay close attention to the following properties:
 
     * [Product type](../publish/set-your-add-on-product-id.md#product-type): Make sure you select **Subscription**.
 
@@ -67,8 +67,8 @@ The code examples in this section demonstrate how to use the APIs in the [**Wind
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
-* You have [created a subscription add-on for the app](../publish/add-on-submissions.md) in the Dev Center dashboard.
+* You have [created an app submission](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created a subscription add-on for the app](../publish/add-on-submissions.md) in Partner Center.
 
 The code in these examples assumes:
 * The code file has **using** statements for the **Windows.Services.Store** and **System.Threading.Tasks** namespaces.

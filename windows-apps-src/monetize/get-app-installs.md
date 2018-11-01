@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Get app installs
 
 
-Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in Partner Center.
 
 ## Prerequisites
 

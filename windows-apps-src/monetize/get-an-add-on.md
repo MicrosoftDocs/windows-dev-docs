@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: Use this method in the Microsoft Store submission API to retrieve information about an add-on for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about an add-on for an app that is registered to your Partner Center account.
 title: Get an add-on
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Get an add-on
 
-Use this method in the Microsoft Store submission API to retrieve information about an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve information about an add-on (also known as in-app product or IAP) for an app that is registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | string | Required. The Store ID of the add-on to retrieve. The Store ID is available on the Dev Center dashboard.  |
+| id | string | Required. The Store ID of the add-on to retrieve. The Store ID is available in Partner Center.  |
 
 
 ### Request body
@@ -96,7 +96,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | The specified add-on could not be found. |
-| 409  | The add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

@@ -70,7 +70,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 * Bypassing the built-in minimum refresh timer for banner ads by any means, including (but not limited to) swapping [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) objects or forcing a page refresh without user interaction.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 
@@ -154,7 +154,7 @@ This section provides examples of interstitial ad scenarios that violate [policy
 
 * Requesting an interstitial ad merely to have a backup ad for a waterfall sequence of ads. If you request an interstitial ad and then receive the [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) event, the next interstitial ad shown in your app must be the ad that is ready to be shown via the [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) method.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 

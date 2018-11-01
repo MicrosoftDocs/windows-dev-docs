@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: Learn how to add application ID and ad unit ID values from the Windows Dev Center dashboard to your app before you submit your app to the Store.
+description: Learn how to add application ID and ad unit ID values from Partner Center to your app before you submit your app to the Store.
 title: Set up ad units in your app
 ms.author: mhopkins
 ms.date: 05/11/2018
@@ -18,7 +18,7 @@ Every ad control in your Universal Windows Platform (UWP) app has a correspondin
 
 We provide [test ad unit values](#test-ad-units) that you can use during testing to confirm that your app shows test ads. These test values can only be used in a test version of your app. If you try to use test values in your app after you publish it, your live app not receive ads.
 
-After you finish testing your UWP app and you are ready to submit it to Windows Dev Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](../publish/in-app-ads.md) page in the Windows Dev Center dashboard and update your app code to use the application ID and ad unit ID values for this ad unit.
+After you finish testing your UWP app and you are ready to submit it to Partner Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](../publish/in-app-ads.md) page in Partner Center and update your app code to use the application ID and ad unit ID values for this ad unit.
 
 For more information about assigning the application ID and ad unit ID values in your app's code, see the following articles:
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
@@ -49,15 +49,15 @@ While you are developing your app, use the test application ID and ad unit ID va
 
 ## Live ad units
 
-To get a live ad unit from the Dev Center dashboard and use it in your app:
+To get a live ad unit from Partner Center and use it in your app:
 
-1.  [Create an ad unit](../publish/in-app-ads.md#create-ad-unit) on the **In-app ads** page in the dashboard. Be sure to specify the correct type of ad unit for the ad control you are using in your app.
+1.  [Create an ad unit](../publish/in-app-ads.md#create-ad-unit) on the **In-app ads** page in Partner Center. Be sure to specify the correct type of ad unit for the ad control you are using in your app.
     > [!NOTE]
     > You can optionally enable ad mediation for your ad unit by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and ads for Microsoft app promotion campaigns. By default, we automatically choose the ad mediation settings for your app using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports, but you can optionally manually configure your mediation settings.
 
 2.  After you create the new ad unit, retrieve the **Application ID** and **Ad unit ID** for the ad unit in the table of available ad units in the **Monetize** &gt; **In-app ads** page.
     > [!NOTE]
-    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
+    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 3.  Assign the application ID and ad unit ID values in your app's code. For more information, see the following articles:
     * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)

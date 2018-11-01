@@ -20,7 +20,7 @@ This topic provides the complete sample code for a basic C# and XAML Universal W
 
 This section shows the contents of the MainPage.xaml and MainPage.xaml.cs files in a basic app that shows an interstitial ad. To use these examples, copy the code into a Visual C# **Blank App (Universal Windows)** project in Visual Studio.
 
-This sample app uses two buttons to request and then launch an interstitial ad. Replace the values of the ```myAppId``` and ```myAdUnitId``` fields with live values from Windows Dev Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+This sample app uses two buttons to request and then launch an interstitial ad. Replace the values of the ```myAppId``` and ```myAdUnitId``` fields with live values from Partner Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **AdType.Display** to the first parameter of the [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method instead of **AdType.Video**. For more information, see [Interstitial ads](interstitial-ads.md).

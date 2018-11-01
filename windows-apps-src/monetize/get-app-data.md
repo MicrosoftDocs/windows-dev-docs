@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Use these methods in the Microsoft Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to retrieve data for apps that are registered to your Partner Center account.
 title: Get app data
 ms.author: mhopkins
 ms.date: 02/28/2018
@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 # Get app data
 
-Use the following methods in the Microsoft Store submission API to get data for existing apps in your Dev Center account. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
+Use the following methods in the Microsoft Store submission API to get data for existing apps in your Partner Center account. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
-Before you can use these methods, the app must already exist in your Dev Center account. To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).
+Before you can use these methods, the app must already exist in your Partner Center account. To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).
 
 <table>
 <colgroup>
@@ -99,7 +99,7 @@ This resource has the following values.
 | primaryName   | string  | The primary name of the app.      |
 | packageFamilyName | string  | The package family name of the app.      |
 | packageIdentityName          | string  | The package identity name of the app.                       |
-| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.       |
+| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in Partner Center.       |
 | firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.   |
 | lastPublishedApplicationSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the app.    |
 | pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
@@ -154,7 +154,7 @@ This resource has the following values.
 
 | Value           | Type    | Description           |
 |-----------------|---------|------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
+| flightId            | string  | The ID for the package flight. This value is supplied by Partner Center.  |
 | friendlyName           | string  | The name of the package flight, as specified by the developer.   |
 | lastPublishedFlightSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the package flight.   |
 | pendingFlightSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the package flight.  |    
