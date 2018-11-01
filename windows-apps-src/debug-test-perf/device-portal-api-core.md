@@ -1181,7 +1181,7 @@ You can specify the following additional parameters on the request URI:
 | URI parameter | Description |
 | :---          | :--- |
 | autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks. |
-| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration] (https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
+| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
 | maxdumpcount   | (**optional**) The maximum number of dumps to save. |
 | overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached. |
 

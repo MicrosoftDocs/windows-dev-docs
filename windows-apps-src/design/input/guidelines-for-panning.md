@@ -81,7 +81,7 @@ Panning with touch, by using a swipe or slide gesture with one or more fingers, 
 > <strong>Windows 10 Fall Creators Update - Behavior change</strong>
 > </div>
 > By default, instead of text selection, an active pen now scrolls/pans in UWP apps (like touch, touchpad, and passive pen).  
-> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
+> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
 
 Depending on the input device, the user pans within a pannable region by using one of these:
 
