@@ -15,25 +15,33 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-#  Command design basics for UWP apps
+# Command design basics for UWP apps
 
-In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes common command elements, the interactions they support, and the command surfaces for hosting them.
+In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. *Command interfaces* are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.
 
-## Provide the right type of interactions
+## Provide the best command experience
 
-When designing a command interface, the most important decision is choosing what users should be able to do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
+The most important aspect of a command interface is what your trying to let a user accomplish. As you plan the functionality of your app, consider the steps required to accomplish those tasks and the user experiences you want to enable. Once you've completed an initial draft of these experiences, then you can make decisions on the tools and interactions to implement them.
 
-Some interactions you might want to provide your app include:
+Here are some common application experiences:
 
-- Sending or submiting information 
+- Sending or submiting information
 - Selecting settings and choices
 - Searching and filtering content
 - Opening, saving, and deleting files
 - Editing or creating content
 
-## Use the right command element for the interaction
+Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible.
 
-Using the right elements to enable command interactions can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. The Universal Windows Platform (UWP) provides a large set of command elements that you can use in your app. Here's a list of some of the most common controls and a summary of the interactions they can enable.
+
+
+<!--
+When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
+-->
+
+## Choose the right command elements
+
+Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Universal Windows Platform (UWP). Here's a list of some of the most common UWP command elements.
 
 :::row:::
     :::column:::
@@ -89,11 +97,13 @@ For a complete list, see [Controls and UI elements](../controls-and-patterns/ind
 
 ## Place commands on the right surface
 
-You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, and dialog.
+You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, or dialog.
 
-Note that, whenever possible, you should let users manipulate content directly rather than use commands that act on the content. For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.
+Always try to let users manipulate content directly rather than through commands that act on the content, such as dragging and dropping to rearrange list items rather than up and down command buttons. 
 
-Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app. Here's a list of some of the most common command surfaces.
+However, this might not be possible with certain input devices, or when accommodating specific user abilities and preferences. In these cases, provide as many commanding affordances as possible, and place these command elements on a command surface in your app.
+
+Here's a list of some of the most common command surfaces.
 
 :::row:::
     :::column:::
@@ -129,9 +139,12 @@ Otherwise, if users can't manipulate content directly, then place command elemen
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
-## Provide feedback for interactions
+## Provide command feedback 
 
-Feedback communicates the results of commands and allows users to understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary. 
+Command feedback communicates to users that an interaction or command was detected, how it was interpreted and handled, and whether it was successful or not. This helps users understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.
+
+> [!NOTE]
+> Don't provide feedback unless it is absolutely necessary and the feedback is not available elsewhere. Keep your application UI clean and uncluttered unless you are adding value.
 
 Here are some ways to provide feedback in your app.
 
@@ -171,7 +184,7 @@ Here are some ways to provide feedback in your app.
 
 ### When to confirm or undo actions
 
-No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't. Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.
+No matter how well-designed your application's UI is, all users perform an action they wish they hadn't. Your app can help in these situations by requiring confirmation of an action, or by providing a way to undo recent actions.
 
 :::row:::
     :::column:::
