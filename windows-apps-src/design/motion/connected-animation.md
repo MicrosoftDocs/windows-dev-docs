@@ -4,10 +4,8 @@ description: Connected animations let you create a dynamic and compelling naviga
 title: Connected animation
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 10/25/2017
+ms.date: 10/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
@@ -51,9 +49,9 @@ Connected animations are generally used when changing pages, though they can be 
 ## Configure connected animation
 
 > [!IMPORTANT]
-> This feature requires that your app's Target version be RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) or greater. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/debug-test-perf/version-adaptive-apps).
+> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/debug-test-perf/version-adaptive-apps).
 
-Starting in RS5, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.
+Starting in Windows 10, version 1809, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.
 
 You specify an animation configuration by setting the Configuration property on the ConnectedAnimation. (We’ll show examples of this in the next section.)
 
@@ -70,7 +68,7 @@ As the user navigates forward in the app (A to B), the connected element appears
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| This is the default (and only) animation used in SDK versions prior to RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM). |
+| This is the default (and only) animation used in versions prior to Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
 
 ### ConnectedAnimationService configuration
 

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: Use this method in the Microsoft Store submission API to create an add-on for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to create an add-on for an app that is registered to your PartnerCenter account.
 title: Create an add-on
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Create an add-on
 
-Use this method in the Microsoft Store submission API to create an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to create an add-on (also known as in-app product or IAP) for an app that is registered to your Partner Center account.
 
 > [!NOTE]
 > This method creates an add-on without any submissions. To create a submission for an add-on, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
@@ -96,7 +96,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description                                                                                                                                                                           |
 |--------|------------------|
 | 400  | The request is invalid. |
-| 409  | The add-on could not be created because of its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The add-on could not be created because of its current state, or the add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## Related topics

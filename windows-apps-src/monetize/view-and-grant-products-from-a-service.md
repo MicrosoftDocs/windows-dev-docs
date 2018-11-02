@@ -29,7 +29,7 @@ These APIs consist of REST methods that are designed to be used by developers wi
 The following steps describe the end-to-end process for using the Microsoft Store collection API and purchase API:
 
 1.  [Configure an application in Azure AD](#step-1).
-2.  [Associate your Azure AD application ID with your app in the Windows Dev Center dashboard](#step-2).
+2.  [Associate your Azure AD application ID with your app in Partner Center](#step-2).
 3.  In your service, [create Azure AD access tokens](#step-3) that represent your publisher identity.
 4.  In your client Windows app, [create a Microsoft Store ID key](#step-4) that represents the identity of the current user, and pass this key back to your service.
 5.  After you have the required Azure AD access token and Microsoft Store ID key, [call the Microsoft Store collection API or purchase API from your service](#step-5).
@@ -69,14 +69,14 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 
 <span id="step-2"/>
 
-## Step 2: Associate your Azure AD application ID with your client app in Windows Dev Center
+## Step 2: Associate your Azure AD application ID with your client app in Partner Center
 
-Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Azure AD application ID with the app (or the app that contains the add-on) in the Dev Center dashboard.
+Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Azure AD application ID with the app (or the app that contains the add-on) in Partner Center.
 
 > [!NOTE]
 > You only need to perform this task one time.
 
-1.  Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and select your app.
+1.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and select your app.
 2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD application ID into one of the available **Client ID** fields.
 
 <span id="step-3"/>

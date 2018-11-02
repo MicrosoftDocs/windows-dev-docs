@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Get monthly app usage
 
-Use this method in the Microsoft Store analytics API to get aggregate usage data (not including Xbox multiplayer) in JSON format for an application during a given date range (last 90 days only) and other optional filters. This information is also available in the [Usage report](../publish/usage-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate usage data (not including Xbox multiplayer) in JSON format for an application during a given date range (last 90 days only) and other optional filters. This information is also available in the [Usage report](../publish/usage-report.md) in Partner Center.
 
 ## Prerequisites
 

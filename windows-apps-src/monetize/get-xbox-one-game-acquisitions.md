@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Get Xbox One game acquisitions
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics dashboard.
 
 ## Prerequisites
 

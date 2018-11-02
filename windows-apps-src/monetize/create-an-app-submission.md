@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account.
 title: Create an app submission
 ms.author: mhopkins
 ms.date: 07/10/2017
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Create an app submission
 
-Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Windows Dev Center account. After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.
+Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account. After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.
 
 For more information about how this method fits into the process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
 
@@ -185,7 +185,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 400  | The submission could not be created because the request is invalid. |
-| 409  | The submission could not be created because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The submission could not be created because of the current state of the app, or the app uses a Partner Center  feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## Related topics

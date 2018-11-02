@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Use these methods in the Microsoft Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage add-ons for apps that are registered to your Partner Center account.
 title: Manage add-ons
 ms.author: mhopkins
 ms.date: 02/08/2017

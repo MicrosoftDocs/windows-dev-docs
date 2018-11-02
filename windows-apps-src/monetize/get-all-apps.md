@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: Use this method in the Microsoft Store submission API to retrieve information about all apps that are registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about all apps that are registered to your Partner Center account.
 title: Get all apps
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 # Get all apps
 
 
-Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -124,7 +124,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No apps were found. |
-| 409  | The apps use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The apps use Partner Center features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

@@ -13,7 +13,7 @@ localizationpriority: medium
 
 # Get upgrade blocks for your desktop application
 
-Use this REST URI to get info about Windows 10 devices on which your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in the Windows Dev Center dashboard.
+Use this REST URI to get info about Windows 10 devices on which your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in Partner Center.
 
 To get details about device blocks for a specific executable in your desktop application, see [Get upgrade block details for your desktop application](get-desktop-block-data-details.md).
 
@@ -45,7 +45,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
 | startDate | date | The start date in the date range of block data to retrieve. The default is 90 days prior to the current date. |  No  |
 | endDate | date | The end date in the date range of block data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |

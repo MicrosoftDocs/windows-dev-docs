@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Partner Center account.
 title: Manage add-on submissions
 ms.author: mhopkins
 ms.date: 04/17/2018
@@ -17,13 +17,13 @@ ms.localizationpriority: medium
 The Microsoft Store submission API provides methods you can use to manage add-on (also known as in-app product or IAP) submissions for your apps. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Microsoft Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than making changes in Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-add-on-submissions" />
 
 ## Methods for managing add-on submissions
 
-Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Dev Center account. You can create an add-on in the dashboard by [defining its product type and product ID](../publish/set-your-add-on-product-id.md) or by using the Microsoft Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
+Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Partner Center account. You can create an add-on in Partner Center by [defining its product type and product ID](../publish/set-your-add-on-product-id.md) or by using the Microsoft Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ Use the following methods to get, create, update, commit, or delete an add-on su
 
 To create a submission for an add-on, follow this process.
 
-1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
+1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Partner Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
 
 2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -118,7 +118,7 @@ To create a submission for an add-on, follow this process.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. Commit the submission by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit an add-on submission](commit-an-add-on-submission.md).
+5. Commit the submission by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit an add-on submission](commit-an-add-on-submission.md).
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -132,7 +132,7 @@ To create a submission for an add-on, follow this process.
 
     To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
 
-7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
+7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting Partner Center.
 
 <span/>
 
@@ -229,7 +229,7 @@ This resource has the following values.
 
 | Value      | Type   | Description        |
 |------------|--------|----------------------|
-| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md), [get all add-ons](get-all-add-ons.md), and [get an add-on](get-an-add-on.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
+| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md), [get all add-ons](get-all-add-ons.md), and [get an add-on](get-an-add-on.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 | contentType           | string  |  The [type of content](../publish/enter-add-on-properties.md#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | An array of strings that contain up to 10 [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
 | lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
@@ -242,7 +242,7 @@ This resource has the following values.
 | status  | string  |  The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  A [status details resource](#status-details-object) that contains additional details about the status of the submission, including information about any errors. |
 | fileUploadUrl           | string  | The shared access signature (SAS) URI for uploading any packages for the submission. If you are adding new packages for the submission, upload the ZIP archive that contains the packages to this URI. For more information, see [Create an add-on submission](#create-an-add-on-submission).  |
-| friendlyName  | string  |  The friendly name of the submission, as shown in the Dev Center dashboard. This value is generated for you when you create the submission.  |
+| friendlyName  | string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.  |
 
 <span id="listing-object" />
 
@@ -289,8 +289,8 @@ This resources contains sale info for an add-on.
 
 > [!IMPORTANT]
 > The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an add-on submission using the Microsoft Store submission API. In the future, we will update the Microsoft Store submission API to introduce a new way to programmatically access sales information for add-on submissions.
->    * After calling the [GET method to get an add-on submission](get-an-add-on-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your add-on submission.
->    * When calling the [PUT method to update an add-on submission](update-an-add-on-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your add-on submission.
+>    * After calling the [GET method to get an add-on submission](get-an-add-on-submission.md), the *sales* value will be empty. You can continue to use Partner Center to get the sale data for your add-on submission.
+>    * When calling the [PUT method to update an add-on submission](update-an-add-on-submission.md), the information in the *sales* value is ignored. You can continue to use Partner Center to change the sale data for your add-on submission.
 
 This resource has the following values.
 
@@ -351,7 +351,7 @@ The following values represent available price tiers in the [pricing resource](#
 |  Base               |   The price tier is not set; use the base price for the add-on.      |     
 |  NotAvailable              |   The add-on is not available in the specified region.    |     
 |  Free              |   The add-on is free.    |    
-|  Tier*xxxx*               |   A string that specifies the price tier for the add-on, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in the Dev Center dashboard and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).     |
+|  Tier*xxxx*               |   A string that specifies the price tier for the add-on, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in Partner Center and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).     |
 
 <span id="submission-status-code" />
 
@@ -382,4 +382,4 @@ The following values represent the status code of a submission.
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Manage add-ons using the Microsoft Store submission API](manage-add-ons.md)
-* [Add-on submissions in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [Add-on submissions in Partner Center](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)

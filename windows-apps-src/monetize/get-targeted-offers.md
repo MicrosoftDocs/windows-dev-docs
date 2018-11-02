@@ -54,7 +54,7 @@ This method returns a JSON-formatted response body that contains an array of obj
 
 | Field      | Type   | Description         |
 |------------|--------|------------------|
-| offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in the Windows Dev Center dashboard.            |
+| offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in Partner Center.            |
 | trackingId  | string | A GUID that you can optionally use to keep track of the targeted offer in your own code or services. |
 
 

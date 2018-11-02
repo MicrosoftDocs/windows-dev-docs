@@ -76,7 +76,7 @@ This request retrieves the remote variables for the highest-ranked flight group 
 |  *requestKind*                   |  Specify 7 to return the highest-ranked flight group for the device, or specify 8 to return the highest-ranked flight group for the current user and device. We recommend using the value 8 for the *requestKind* parameter, because this value will return the highest-ranked flight group across the membership for both the current user and device.  |
 |  *parametersAsJson*                   |  Pass a JSON-formatted string that contains the data shown in the example below.  |
 
-The following example shows the format of the JSON data to pass to *parametersAsJson*. The *type* field must be assigned to the string *GetRemoteVariables*. Assign the *projectId* field to the ID of the project in which you defined the remote variables in the Windows Dev Center dashboard.
+The following example shows the format of the JSON data to pass to *parametersAsJson*. The *type* field must be assigned to the string *GetRemoteVariables*. Assign the *projectId* field to the ID of the project in which you defined the remote variables in Partner Center.
 
 ```json
 { 

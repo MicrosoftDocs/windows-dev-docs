@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Partner Center account.
 title: Create a package flight
 ms.author: mhopkins
 ms.date: 04/16/2018
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Create a package flight
 
-Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Partner Center account.
 
 > [!NOTE]
 > This method creates a package flight without any submissions. To create a submission for package flight, see the methods in [Manage package flight submissions](manage-flight-submissions.md).
@@ -97,7 +97,7 @@ The following example demonstrates the JSON response body for a successful call 
 
 | Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
+| flightId            | string  | The ID for the package flight. This value is supplied by Partner Center.  |
 | friendlyName           | string  | The name of the package flight, as specified in the request.   |  
 | groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight, as specified in the request. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight, as specified in the request. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
@@ -110,7 +110,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 400  | The request is invalid. |
-| 409  | The package flight could not be created because of its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The package flight could not be created because of its current state, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## Related topics

@@ -39,7 +39,7 @@ If you have created an ad recently (less than a day), it might not be available 
 
 There are many reasons you may see no ads, including network errors. Other reasons might include:
 
-* Selecting an ad unit in Windows Dev Center with a size that is greater or less than the size of the **AdControl** in your app's code.
+* Selecting an ad unit in Partner Center with a size that is greater or less than the size of the **AdControl** in your app's code.
 
 * Ads will not appear if you're using a [test mode value](set-up-ad-units-in-your-app.md#test-ad-units) for your ad unit ID when running a live app.
 
@@ -57,7 +57,7 @@ Test ads can be shown, even when you are expecting live ads. This can happen in 
 
 * Side-loaded apps or apps that are running in the emulator will not show live ads.
 
-When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Windows Dev Center. This does not currently apply to phone apps.
+When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Partner Center. This does not currently apply to phone apps.
 
 
 <span id="reference_errors"/>

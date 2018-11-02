@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Use this method in the Microsoft Store analytics API to get aggregate ad performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
-This method returns the same data that is provided by the [Advertising performance report](../publish/advertising-performance-report.md) on the Windows Dev Center dashboard.
+This method returns the same data that is provided by the [Advertising performance report](../publish/advertising-performance-report.md) in Partner Center.
 
 ## Prerequisites
 
@@ -115,12 +115,12 @@ Elements in the *Value* array contain the following values.
 | applicationId       | string | The Store ID of the app for which you are retrieving ad performance data.     |
 | applicationName     | string | The display name of the app.                         |
 | adUnitId           | string | The ID of the ad unit.        |
-| adUnitName           | string | The name of the ad unit, as specified by the developer in the Dev Center dashboard.              |
+| adUnitName           | string | The name of the ad unit, as specified by the developer in Partner Center.              |
 | adProvider           |  string  |  The name of the ad provider   |
 | deviceType          | string | The type of device on which the ads were served. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                              |
 | market              | string | The ISO 3166 country code of the market where the ads were served.             |
 | accountCurrencyCode     | string | The currency code for the account.        |
-| pubCenterAppName       |  string  |   The name of the pubCenter app that is associated with the app in Dev Center.   |
+| pubCenterAppName       |  string  |   The name of the pubCenter app that is associated with the app in Partner Center.   |
 | adProviderRequests        | int | The number of ad requests for the specified ad provider.                 |
 | impressions           | int | The number of ad impressions.        |
 | clicks            | int | The number of ad clicks.       |
