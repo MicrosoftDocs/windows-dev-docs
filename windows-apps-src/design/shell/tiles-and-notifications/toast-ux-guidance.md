@@ -1,6 +1,6 @@
 ---
 author: manoskow
-Description: Learn how to create effective and user-focused notifications that make your users prductive and happy.
+Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Toast UX Guidance
 label: Toast UX Guidance
 template: detail.hbs
@@ -54,7 +54,7 @@ As mentioned previously, the content in Action center does persist for three day
 Both of these gorup notifications in a way so relevant content stays together (i.e. think separating out different sports leagues in a sports app, or sorting messages by group chat). Collections are a more obvious way to group notificaitons, whereas headers are more subtle, but both allow users to triage and pick out notifications more quickly. 
 
 ## Other resources
-These four points above are guidance that we have found efffective through our own analysis of telemetry, and through first and third party experiments. Keep in mind, however, that these guidelines are just that: guidelines.  We are confident these rules will help increase engagement and productivity of your notifications, but nothing can substitute user-centric thinking, and learning from your own data.  
+These four points above are guidance that we have found effective through our own analysis of telemetry, and through first and third party experiments. Keep in mind, however, that these guidelines are just that: guidelines.  We are confident these rules will help increase engagement and productivity of your notifications, but nothing can substitute user-centric thinking, and learning from your own data.  
 
 If you send notifications to your UWP app today, you can view analytics on what happened to your notifications in [Dev Center](https://developer.microsoft.com/en-us/windows)! This data comes free when using the [Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) or the [WNS APIs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). These metrics will give you more insight into what happens to your notifications on the windows platform, as well as how users are interacting with notifications. Access this dashboard by going to the menu on the left hand side Engage > Notifications, then clicking on the "Analyze" tab within the Notifications page.  This is located in the same place you would go to send notifications from the Dev Center portal.
 
