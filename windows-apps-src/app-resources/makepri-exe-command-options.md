@@ -6,8 +6,6 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
@@ -25,7 +23,7 @@ You can run `MakePri.exe help` or `MakePri.exe /?` to see the commands that you 
 
 ## MakePri commands
 
-```
+```console
 C:\>makepri help
 
 Usage:
@@ -64,7 +62,7 @@ Help:
 
 The `createconfig` command creates a new, initialized PRI config file defining the qualifier defaults that you specify. Run `MakePri.exe createconfig /?` to see detailed help for this command.
 
-```
+```console
 C:\>makepri createconfig /?
 
 Usage:
@@ -116,7 +114,7 @@ The `dump` command outputs a dumped xml file containing a list of all resources 
 > [!NOTE]
 > A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file. To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`. If you don't specify the main file then you'll see the error message "*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*".
 
-```
+```console
 C:\>makepri dump /?
 
 Usage:
@@ -165,7 +163,7 @@ Help:
 
 The `new` command creates a new PRI file by indexing the files in your project as directed by your configuration file. Run `MakePri.exe new /?` to see detailed help for this command.
 
-```
+```console
 C:\>makepri new /?
 
 Usage:
@@ -237,7 +235,7 @@ Help:
 
 The `resourcepack` command creates a new PRI file by indexing the files in your project as directed by your configuration file. A resource pack PRI file contains only additional variants of resources already specified in an existing PRI file. Run `MakePri.exe resourcepack /?` to see detailed help for this command.
 
-```
+```console
 C:\>makepri resourcepack /?
 
 Usage:
@@ -304,7 +302,7 @@ Help:
 
 The `versioned` command creates a versioned PRI file by indexing the files in your project as directed by your configuration file. Run `MakePri.exe versioned /?` to see detailed help for this command.
 
-```
+```console
 C:\>makepri versioned /?
 
 Usage:
@@ -409,7 +407,7 @@ You use the index file option (/if) with `dump`, `resourcepack`, and `versioned`
 
 For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.
 
-```
+```console
 /IndexFile(if) <FILEPATH>
 ```
 
@@ -419,7 +417,7 @@ For `resourcepack` and `versioned`, instead of providing a PRI file as the input
 
 You use the index options option (/io) with `new`, `resourcepack`, and `versioned` to specify options that provide detailed control over the behavior of resource indexers. Index options are disabled by default.
 
-```
+```console
 /IndexOptions(io) <OPTIONS>
 ```
 
@@ -432,25 +430,25 @@ You use the index options option (/io) with `new`, `resourcepack`, and `versione
 
 You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file. [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) uses the mapping file to generate app packages.
 
-```
+```console
 /MappingFile(mf) <MAPPINGFILETYPE>
 ```
 
 **MAPPINGFILETYPE** is a token that specifies the format of the mapping file. The only valid supported format is `appx`.
 
-```
+```console
 /mf appx
 ```
 
 This is an example contents of a main mapping file.
 
-```
+```console
 "ResourceDimensions"                   "language-de-de"
 ```
 
 And this is an example contents of a resource pack mapping file.
 
-```
+```console
 "ResourceId"                           "Resources184.la5decaf08"
 "ResourceDimensions"                   "language-de-de"
 ```
@@ -459,7 +457,7 @@ And this is an example contents of a resource pack mapping file.
 
 If resource packs are created, the output summary from MakePRI.exe is of more verbose form. Here's an example.
 
-```
+```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
 Language Qualifiers: fr-FR, de-DE
 
@@ -486,7 +484,7 @@ Successfully Completed
 
 If the over-write option (/o) is not provided, and the specified output file(s) already exist(s), then MakePri.exe requires a confirmation before overwriting.
 
-```
+```console
 Following file(s) already exist at output location:
 <file(s)>
 Overwrite these file(s)? [Y]es (any other key to cancel):
@@ -512,7 +510,7 @@ You use the schema file option (/sf) with `new`, `resourcepack`, and `versioned`
 
 For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.
 
-```
+```console
 /SchemaFile(sf) <FILEPATH>
 ```
 
@@ -542,7 +540,7 @@ This is an example of a schema file.
 
 The major version (/vma) option (for the `new` command) is deprecated, and using it results in this warning message.
 
-```
+```console
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 
