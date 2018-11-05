@@ -95,14 +95,14 @@ Respond to mouse input in your apps by handling the same basic pointer events th
 
 Use [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events to implement basic input functionality without having to write code for each pointer input device. However, you can still take advantage of the special capabilities of each device (such as mouse wheel events) using the pointer, gesture, and manipulation events of this object.
 
-**Samples:  **See this functionality in action in our [app samples](http://go.microsoft.com/fwlink/p/?LinkID=264996).
+**Samples:  **See this functionality in action in our [app samples](https://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
-- [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
 
-- [Input sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+- [Input sample](https://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [Input: Gestures and manipulations with GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## Guidelines for visual feedback
 
@@ -138,16 +138,16 @@ If you need to customize the mouse cursor:
 * [Identify input devices](identify-input-devices.md)
 
 **Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
