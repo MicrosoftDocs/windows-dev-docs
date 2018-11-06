@@ -277,7 +277,7 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 This scenario expands on the previous one. You offload some work onto the thread pool, but then you want to display progress in the user interface (UI).
 
 ```cppwinrt
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
     // Do compute-bound work here.
@@ -289,7 +289,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 The code above throws a [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) exception, because a **TextBlock** must be updated from the thread that created it, which is the UI thread. One solution is to capture the thread context within which our coroutine was originally called. To do that, instantiate a [**winrt::apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context) object, do background work, and then `co_await` the **apartment_context** to switch back to the calling context.
 
 ```cppwinrt
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     winrt::apartment_context ui_thread; // Capture calling context.
 
@@ -308,7 +308,7 @@ For a more general solution to updating UI, which covers cases where you're unce
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
     // Do compute-bound work here.
@@ -356,7 +356,7 @@ To keep context switches down to a minimum, you can use some of the techniques t
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
 
@@ -382,7 +382,7 @@ For this scenario, there's a little bit of ineffiency around the call to **Stora
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
 
@@ -475,7 +475,7 @@ struct MainPage : MainPageT<MainPage>
         InitializeComponent();
     }
 
-    IAsyncAction OnWork(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    IAsyncAction OnWork(IInspectable /* sender */, RoutedEventArgs /* args */)
     {
         workButton().Content(winrt::box_value(L"Working..."));
 
