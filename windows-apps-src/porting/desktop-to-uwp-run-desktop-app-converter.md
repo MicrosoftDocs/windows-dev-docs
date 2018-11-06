@@ -6,8 +6,6 @@ title: Package an app using the Desktop App Converter (Desktop Bridge)
 ms.author: normesta
 ms.date: 08/21/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
@@ -17,7 +15,7 @@ ms.localizationpriority: medium
 
 [Get the Desktop App Converter](https://aka.ms/converter)
 
-You can use the Desktop App Converter (DAC) to bring your desktop apps to the Universal Windows Platform (UWP). This includes Win32 apps and apps that you've created by using .NET 4.6.1.
+The Desktop App Converter (DAC) creates packages for desktop applications to integrate with the latest Windows features, including distribution and servicing via the Microsoft Store. This includes Win32 apps and apps that you've created by using .NET 4.6.1.
 
 ![DAC Icon](images/desktop-to-uwp/dac.png)
 
@@ -28,7 +26,7 @@ You can install that package by using the Add-AppxPackage PowerShell cmdlet on y
 The converter runs the desktop installer in an isolated Windows environment by using a clean base image provided as part of the converter download. It captures any registry and file system I/O made by the desktop installer and packages it as part of the output.
 
 >[!IMPORTANT]
->The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 > [!NOTE]
 > Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
