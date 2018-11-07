@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![Build your app](images/build-your-app.png)
 
-Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you in the right information you need to start coding the Windows 10 apps you want to create.
+Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you at the right information you need to start coding the Windows 10 apps you want to create.
 
 Before you begin development, you should be sure to [get set up.](get-set-up.md)
 
