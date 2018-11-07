@@ -40,7 +40,7 @@ Whereas a title ID was formerly unique in Xbox Live, now a title ID plus a sandb
 
 ## Initial setup for a title
 
-A title is born in the Xbox Developer Portal (XDP) or Windows Dev Center. It is assigned a title ID and a product ID and a service configuration ID (SCID).
+A title is born in the Xbox Developer Portal (XDP) or Partner Center. It is assigned a title ID and a product ID and a service configuration ID (SCID).
 
 In this new world, a title or product on its own doesn’t mean anything to Xbox Live. Because we must support simultaneous retail and development use of a single title, we must support *instancing* of titles in order to make and maintain the necessary distinctions. An instance of a title resides in a sandbox and this is where sandboxes come in.
 
@@ -116,11 +116,11 @@ Figure 4. An unauthorized user's credentials fail to gain access to the sandbox,
 
 Dev accounts in Xbox One are just standard Microsoft accounts (MSA) with special rules applied to them. They are used in Xbox Live for development. A dev account:
 
--   Must be created from XDP or Windows Dev Center.
+-   Must be created from XDP or Partner Center.
 
 -   Is assigned the external developer role when created by publishers.
 
--   Is tied to the XDP account or Windows Dev Center account that created the dev account.
+-   Is tied to the XDP account or Partner Center account that created the dev account.
 
 -   Can only log in to dev kits. Login is denied to a dev account on retail devices.
 

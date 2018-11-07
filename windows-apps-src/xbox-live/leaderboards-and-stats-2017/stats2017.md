@@ -18,7 +18,7 @@ Stats 2017 operates by accepting stat values as key value pairs from your title 
 
 ## Configured stats and featured leaderboards
 
-Stats are configured on the [Windows Development Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview). In order to configure stats you must already have a title configured. If you do not have a title configured you can learn how to do so by reading [Create and test a new Creator's title](../get-started-with-creators/create-and-test-a-new-creators-title.md).  The Stats you configure on Windows Dev Center will appear in your title's GameHub as pictured:
+Stats are configured on the [Windows Development Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview). In order to configure stats you must already have a title configured. If you do not have a title configured you can learn how to do so by reading [Create and test a new Creator's title](../get-started-with-creators/create-and-test-a-new-creators-title.md).  The Stats you configure in Partner Center will appear in your title's GameHub as pictured:
 
 The *Feature Stats* are highlighted in yellow in the image below.
 ![Official Club Page Social Leaderboard](../images/omega/gamehub_featuredstats.png)

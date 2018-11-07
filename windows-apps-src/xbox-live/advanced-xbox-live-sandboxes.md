@@ -41,7 +41,7 @@ Whereas a title ID was formerly unique in Xbox Live, now a title ID plus a sandb
 
 ## Initial setup for a title
 
-A title is born in the Xbox Developer Portal (XDP) or Windows Dev Center. This document covers titles born in XDP. Titles are assigned a title ID, product ID and a service configuration ID (SCID).
+A title is born in the Xbox Developer Portal (XDP) or Partner Center. This document covers titles born in XDP. Titles are assigned a title ID, product ID and a service configuration ID (SCID).
 
 In this new world, a title or product on its own doesn’t mean anything to Xbox Live. Because we must support simultaneous retail and development use of a single title, we must support *instancing* of titles in order to make and maintain the necessary distinctions. An instance of a title resides in a sandbox and this is where sandboxes come in.
 
@@ -118,11 +118,11 @@ Figure 4. An unauthorized user's credentials fail to gain access to the sandbox,
 
 Dev accounts in Xbox One are just standard Microsoft accounts (MSA) with special rules applied to them. They are used in Xbox Live for development. A dev account:
 
--   Must be created from XDP or Windows Dev Center.
+-   Must be created from XDP or Partner Center.
 
 -   Is assigned the external developer role when created by publishers.
 
--   Is tied to the XDP account or Windows Dev Center account that created the dev account.
+-   Is tied to the XDP account or Partner Center account that created the dev account.
 
 -   Can only log in to dev kits. Login is denied to a dev account on retail devices.
 
@@ -205,7 +205,7 @@ CERT sandbox
 
 When a title is ready for general availability, it needs to go through certification first. The CERT sandbox is a Microsoft-controlled sandbox that only individuals in certification have access to. Publishers can see what content they own is going through certification.
 
-Any product instances that fail while in certification can be brought back to a development sandbox to be debugged and fixed by the publishers using XDP or Windows Dev Center.
+Any product instances that fail while in certification can be brought back to a development sandbox to be debugged and fixed by the publishers using XDP or Partner Center.
 
 RETAIL sandbox
 --------------

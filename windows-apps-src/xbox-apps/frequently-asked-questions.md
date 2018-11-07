@@ -67,17 +67,17 @@ See the [Xbox One Developer Mode Deactivation](devkit-deactivation.md) topic for
 
 ### I sold my Xbox One and left it in Developer Mode. How do I deactivate Developer Mode?
 
-If you no longer have access to your Xbox One, you can deactivate it in Windows Dev Center. 
-For details, see the **Deactivate your console using Windows Dev Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center) topic. 
+If you no longer have access to your Xbox One, you can deactivate it in Windows Partner Center. 
+For details, see the **Deactivate your console using Partner Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-partner-center) topic. 
 
-### I left the Developer Program using Windows Dev Center but I'm in still Developer Mode. What do I do?
+### I left the Developer Program using Partner Center but I'm in still Developer Mode. What do I do?
 
 Start Dev Home and select the **Leave developer mode** button. 
 This will restart your console in Retail Mode. 
 
 ### Can I publish my app?
 
-You can [publish apps](../publish/index.md) through Dev Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
+You can [publish apps](../publish/index.md) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
 
 ### Can I publish my game?
 

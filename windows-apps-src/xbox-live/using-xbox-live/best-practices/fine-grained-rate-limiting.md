@@ -90,7 +90,7 @@ When the associated user and title count is at or above either the burst or sust
 
 ## Implemented limits
 
-The following services have implemented FGRL limits, with enforcement of these limits in place since **May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that was published via Xbox Developer Platform or Dev Center and shipped prior to May 2016 will be considered Legacy and therefore exempted.**
+The following services have implemented FGRL limits, with enforcement of these limits in place since **May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that was published via Xbox Developer Platform or Partner Center and shipped prior to May 2016 will be considered Legacy and therefore exempted.**
 
 | **Name** | **Burst Limit** (15 seconds per user per title) | **Sustain Limit** (300 seconds per user per title) | **Certification Limit** (10x Sustained, 300 seconds per user per title) |
 |----------------------------|---------------------------|----------------------------|----------------------------|

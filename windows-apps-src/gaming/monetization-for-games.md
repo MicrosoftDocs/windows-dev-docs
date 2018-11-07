@@ -25,7 +25,7 @@ You can promote and monetize a UWP game in one or more of these ways:
 
 ## Worldwide distribution channel
 
-The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Markets and custom prices](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
+The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ## Set a price for your game
 
@@ -35,9 +35,9 @@ Here are some important concepts regarding the pricing of your game in the Store
 
 ### Base price
 
-The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use the [Dev Center dashboard](https://developer.microsoft.com/windows) to configure the base price based on country and region.
+The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
 The process of determining the price may include your [tax responsibilities when selling to different countries](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)
-and [cost considerations for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). You can also [set custom prices for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). For more info, see [Define pricing and market selection](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
+and [cost considerations for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). You can also [set custom prices for specific markets](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
 
 ### Sale price
 
@@ -46,7 +46,7 @@ You can schedule sale campaigns in advance by setting both the starting date and
 
 ## In-game purchases
 
-In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) through the Windows Dev Center dashboard. You'll also need to enable the add-ons in your game's code.
+In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) through Partner Center. You'll also need to enable the add-ons in your game's code.
 
 ### Types of add-ons
 
@@ -57,7 +57,7 @@ When creating consumables, decide how you want to keep track of them &mdash; tha
 ### Create in-game purchases
 
 The latest in-app purchases and license info APIs are part of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace in the Windows SDK (starting in Windows 10, version 1607). If you're developing a new game that targets 1607 or later release, we recommend that you use the __Windows.Services.Store__ namespace because it supports the latest add-on types and has better performance.
-It's also designed to be compatible with future types of products and features supported by the Windows Dev Center and the Store. When developing for previous versions of Windows 10, use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead.
+It's also designed to be compatible with future types of products and features supported by the Partner Center and the Store. When developing for previous versions of Windows 10, use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead.
 
 For more info, go to [In-app purchases and trials](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials).
 
@@ -91,14 +91,14 @@ To create a package that can be uploaded to the Store:
 1. Open your game solution in Visual Studio.
 2. Within Visual Studio, go to __Project__ > __Store__ > __Create App Packages ...__
 3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
-4. Sign in to your Dev Center developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
+4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
 5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.
 7. Fix any errors to create a game package.
 
 #### Publish the game as hidden
 
-1. Go to [Dev Center](https://developer.microsoft.com/store) and sign in.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to work with. If you have not yet created an app submission, click on __Create a new app__ and reserve a name.
 3. On the __App Overview__ page, click __Start your submission__.
 4. Configure this new submission. On the submission page:
@@ -118,7 +118,7 @@ After your game is submitted to the Store, it enters the [app certification proc
 With your game solution opened in Visual Studio:
 
 1. Go to __Project__ > __Store__ > __Associate App with the Store ...__
-2. Sign in to your Dev Center developer account and select the app name to associate this solution with.
+2. Sign in to your Partner Center developer account and select the app name to associate this solution with.
 3. Double-click on the __Package.appxmanifest.xml file__ and go to the __Packaging__ tab to check that the game is associated correctly.
 
 If you have associated the solution to a published game that is live and listed in the Store, your solution will have an active license and you are one step closer in creating add-ons for your game. For more info, see [Packaging apps](https://msdn.microsoft.com/windows/uwp/packaging/index).
@@ -127,7 +127,7 @@ If you have associated the solution to a published game that is live and listed 
 
 As you create add-ons, make sure you're associating them with the right game submission. For details about how to configure all the various info associated with an add-on, see [Add-on submissions](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
 
-1. Go to the [Dev Center](https://developer.microsoft.com/store) and sign in.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to create the add-on for.
 3. On the __App Overview__ page, in the __Add-ons__ section, select __Create a new add-on__.
 4. Select the product type for the add-on: __developer-managed consumable__, __store-managed consumable__, or __durable__.

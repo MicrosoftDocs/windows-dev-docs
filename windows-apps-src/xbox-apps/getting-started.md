@@ -47,7 +47,7 @@ Now that your development PC is ready, you can watch this video or continue read
 
 ## Setting up your Xbox One console
 
-1.	Activate Developer Mode on your Xbox One. Download the app, get the activation code, and then enter it into the [Manage Xbox One consoles](https://partner.microsoft.com/xboxactivate) page in your Dev Center account. For more information, see [Xbox One Developer Mode activation](devkit-activation.md). 
+1.	Activate Developer Mode on your Xbox One. Download the app, get the activation code, and then enter it into the [Manage Xbox One consoles](https://partner.microsoft.com/xboxactivate) page in your Partner Center account. For more information, see [Xbox One Developer Mode activation](devkit-activation.md). 
 
 2.	Open the **Dev Mode Activation** app and select **Switch and restart**. Congratulations, you now have an Xbox One in Developer Mode!
   

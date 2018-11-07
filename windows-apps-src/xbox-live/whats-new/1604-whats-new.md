@@ -26,7 +26,7 @@ The Xbox Live SDK supports Windows 10 RTM [Version 10.0.10240] and Visual Studio
 
 ## Documentation
 - [Sign-in Troubleshooting Guide](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md) lists some general strategies to debug sign-in failures, as well as steps to follow based on error code.
-- The [Marketplace](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content) docs for Xbox One developers only can now be found in the Programming Guide.  UWP developers should continue to consult Windows Dev Center for documentation on the store.
+- The [Marketplace](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content) docs for Xbox One developers only can now be found in the Programming Guide.  UWP developers should continue to consult Partner Center for documentation on the store.
 - There is an [XDK to UWP porting guide](../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md) you can refer to if you are interested in bringing an Xbox One title to the Universal Windows Platform.
 - Please see the [Fine-Grained Rate Limiting](../using-xbox-live/best-practices/fine-grained-rate-limiting.md) article for a description of how these are enforced for various Xbox Live Service endpoints and scenarios, as well as information about what the limits are.
 

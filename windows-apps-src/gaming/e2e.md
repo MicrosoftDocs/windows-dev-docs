@@ -101,26 +101,16 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>        
 </table>
 
-### Windows Dev Center
+### Partner Center
 
-Registering a developer account on the Windows Dev Center is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
+[Registering a developer account in Partner Center](https://developer.microsoft.com/store/register) is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
 
-Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing if any are right for you before registering for a Dev Center account. For more info, go to [Developer programs](#developer-programs)
+Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing if any are right for you before registering for a Partner Center account. For more info, go to [Developer programs](#developer-programs)
 
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Register a developer account</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/bg124287">Ready to sign up?</a></td>
-    </tr> 
-</table>
 
 ### Developer programs
 
-Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Microsoft Store, you'll also need to create a developer account on Windows Dev Center.
+Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Microsoft Store, you'll also need to create a developer account in [Partner Center](https://partner.microsoft.com/dashboard) .
 
 #### Xbox Live Creators Program
 
@@ -143,7 +133,7 @@ If you want access to even more Xbox Live capabilities, dedicated marketing and 
 
 #### ID@Xbox
 
-The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. We recommend that you apply to ID@Xbox first before registering for a developer account on Windows Dev Center.
+The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. We recommend that you apply to ID@Xbox first before registering for a developer account in Partner Center.
 
 <table>
     <colgroup>
@@ -1365,9 +1355,9 @@ A tile is your game's representation on the Start Menu. Tiles and notifications 
 </table>
  
 
-### Enable in-app product (IAP) purchases
+### Enable in-app product (add-on) purchases
 
-An IAP (in-app product) is a supplementary item that players can purchase in-game. IAPs can be new add-ons, game levels, items, or anything else that your players might enjoy. Used appropriately, IAPs can provide revenue while improving the game experience. You define and publish your game's IAPs through the Windows Dev Center dashboard, and enable in-app purchases in your game's code.
+An add-on (in-app product) is a supplementary item that players can purchase in-game. Add-ons can be game levels, items, or anything else that your players might enjoy. Used appropriately, add-ons can provide revenue while improving the game experience. You define and publish your game's add-ons through Partner Center, and enable in-app purchases in your game's code.
 
 <table>
     <colgroup>
@@ -1375,20 +1365,20 @@ An IAP (in-app product) is a supplementary item that players can purchase in-gam
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Durable in-app products</td>
+        <td>Durable add-ons</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219684">Enable in-app product purchases</a></td>
     </tr>
     <tr>
-        <td>Consumable in-app products</td>
+        <td>Consumable add-ons</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219683">Enable consumable in-app product purchases</a></td>
     </tr>
     <tr>
-        <td>In-app product details and submission</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">IAP submissions</a></td>
+        <td>Add-on details and submission</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Add-on submissions</a></td>
     </tr>
     <tr>
-        <td>Monitor IAP sales and demographics for your game</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">IAP acquisitions report</a></td>
+        <td>Monitor add-on sales and demographics for your game</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">Add-on acquisitions report</a></td>
     </tr>
 </table>
  
@@ -1545,7 +1535,7 @@ The following guides and information help make the publishing and submission pro
 
 ### Publishing
 
-You'll use the new unified Windows Dev Center dashboard to publish and manage your game packages.
+You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish and manage your game packages.
 
 <table>
     <colgroup>
@@ -1553,15 +1543,15 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows Dev Center app publishing</td>
+        <td>Partner Center app publishing</td>
         <td><a href="https://dev.windows.com/publish">Publish Windows apps</a></td>
     </tr>
     <tr>
-        <td>Windows Dev Center advanced publishing (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Windows Dev Center Dashboard advanced publishing guide</a></td>
+        <td>Partner Center advanced publishing (GDN)</td>
+        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Partner Center advanced publishing guide</a></td>
     </tr>
     <tr>
-        <td>Use Azure Active Directory (AAD) to add users to your Dev Center account</td>
+        <td>Use Azure Active Directory (AAD) to add users to your Partner Center account</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">Manage account users</a></td>
     </tr>   
     <tr>
@@ -1661,7 +1651,7 @@ The store manifest (StoreManifest.xml) is an optional configuration file that ca
 
 After you've finished development and shipped your game, it's not "game over". You may be done with development on version one, but your game's journey in the marketplace has only just begun. You'll want to monitor usage and error reporting, respond to user feedback, and publish updates to your game.
 
-### Windows Dev Center analytics and promotion
+### Partner Center analytics and promotion
 
 <table>
     <colgroup>
@@ -1670,10 +1660,10 @@ After you've finished development and shipped your game, it's not "game over". Y
     </colgroup>
     <tr>
         <td>Dev Center App</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">Dev Center Windows 10 app to view performance of your published apps</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">Get the app to view performance of your published apps</a></td>
     </tr>  
     <tr>
-        <td>Windows Dev Center analytics</td>
+        <td>Partner Center analytics</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">Analyze app performance</a></td>
     </tr>
     <tr>

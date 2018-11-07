@@ -23,7 +23,7 @@ The domain for these URIs is `userstats.xboxlive.com`.
  
 ## Remarks
  
-Title developers can mark statistics as open or restricted with XDP or Dev Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Dev Center.
+Title developers can mark statistics as open or restricted with XDP or Partner Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Partner Center.
   
   * [Remarks](#ID4ET)
   * [Remarks](#ID4EFB)
@@ -51,7 +51,7 @@ You may find it more useful to review the simple, single-statistic [GET](uri-use
 There is authorization logic implemented for content-isolation and access-control scenarios.
  
    * Both leaderboards and user statistics can be read from clients on any platform, provided that the caller submits a valid XSTS token with the request. Writes are obviously limited to clients supported by the .
-   * Title developers can mark statistics as open or restricted with XDP or Dev Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Dev Center.
+   * Title developers can mark statistics as open or restricted with XDP or Partner Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Partner Center.
   
 The following example is pseudo-code for the check:
  

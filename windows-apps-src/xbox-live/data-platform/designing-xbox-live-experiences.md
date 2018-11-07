@@ -75,6 +75,6 @@ Leaderboards provide a way for gamers to rate themselves against other gamers fo
 * Most cars collected
 
 ## Next Steps
-Now that you know how to effectively design Stats, Leaderboards and Achievements, you can now begin to start implementing these in your title.  The next few sections will describe the end-to-end process starting with configuration on Dev Center.
+Now that you know how to effectively design Stats, Leaderboards and Achievements, you can now begin to start implementing these in your title.  The next few sections will describe the end-to-end process starting with configuration in Partner Center.
 
 See [Player Stats](../leaderboards-and-stats-2017/player-stats.md)

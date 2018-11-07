@@ -37,4 +37,4 @@ Verify your sandbox has been correctly reset. Type xbconfig sandboxid at the com
 
 ## Sign in with a development account
 
-You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Windows Dev Center](https://developer.microsoft.com/en-us/windows)
+You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Partner Center](https://partner.microsoft.com/dashboard)
