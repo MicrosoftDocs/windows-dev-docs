@@ -11,7 +11,7 @@ ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
-dev-contact: 
+dev-contact:
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -469,7 +469,7 @@ private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventA
     throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
 }
 
-// List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
+// List of ValueTuple holding the Navigation Tag and the relative Navigation Page
 private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
     ("home", typeof(HomePage)),
@@ -619,6 +619,73 @@ private void On_Navigated(object sender, NavigationEventArgs e)
             ((muxc.NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
     }
 }
+```
+
+## Navigation view customization
+
+### Pane Backgrounds
+
+By default, the NavigationView pane uses a different background depending on the display mode:
+
+- the pane is a solid grey color when expanded on the left, side-by-side with the content (in Left mode).
+- the pane uses in-app acrylic when open as an overlay on top of content (in Top, Minimal, or Compact mode).
+
+To modify the pane background, you can override the XAML theme resources used to render the background in each mode. (This technique is used rather than a single PaneBackground property in order to support different backgrounds for different display modes.)
+
+This table shows which theme resource is used in each display mode.
+
+| Display mode | Theme resource |
+| ------------ | -------------- |
+| Left | NavigationViewExpandedPaneBackground |
+| LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
+| Top | NavigationViewTopPaneBackground |
+
+This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
+
+> [!IMPORTANT]
+> This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
+
+```xaml
+<Application
+    <!-- ... -->
+    xmlns:muxm="using:Microsoft.UI.Xaml.Media">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Default">
+                            <!-- The "Default" theme dictionary is used unless a specific
+                                 light, dark, or high contrast dictionary is provided. These
+                                 resources should be tested with both the light and dark themes,
+                                 and specific light or dark resources provided as needed. -->
+                            <muxm:AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+                                   BackgroundSource="Backdrop"
+                                   TintColor="LightSlateGray"
+                                   TintOpacity=".6"/>
+                            <muxm:AcrylicBrush x:Key="NavigationViewTopPaneBackground"
+                                   BackgroundSource="Backdrop"
+                                   TintColor="{ThemeResource SystemAccentColor}"
+                                   TintOpacity=".6"/>
+                            <LinearGradientBrush x:Key="NavigationViewExpandedPaneBackground"
+                                     StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="LightSlateGray" Offset="0.0" />
+                                <GradientStop Color="White" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="HighContrast">
+                            <!-- Always include a "HighContrast" dictionary when you override
+                                 theme resources. This empty dictionary ensures that the 
+                                 default high contrast resources are used when the user
+                                 turns on high contrast mode. -->
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
 ```
 
 ## Related topics
