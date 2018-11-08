@@ -102,7 +102,7 @@ To declare a restricted capability, modify your [app package manifest](https://m
 
 ### Restricted capability approval process
 
-Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in your Dev Center dashboard as part of the [submission process](../publish/app-submissions.md).
+Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard/) as part of the [submission process](../publish/app-submissions.md).
 
 When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
 
@@ -111,7 +111,7 @@ During the certification process, our testers will review the info you provide t
 If we don't approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.
 
 > [!NOTE]
-> If your submission uses a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
+> If your submission uses a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live), you must request approval in advance rather than providing info on the **Submission options** page. To do so, visit the [Windows Developer support page](https://developer.microsoft.com/windows/support). Select Developer support topic **Dashboard issue**, Issue Type **App submissions**, and Subcategory **Other**. Then describe how you are using the capability and why it is necessary for your product. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information. Note that this process typically takes 5 business days or longer, so please submit your request well in advance.
 >
 > You may also use this method of requesting approval (rather than providing this info during your submission), whether or not you're using a development sandbox, if you prefer to confirm that you are approved to use a restricted capability before you start your submission.
 
