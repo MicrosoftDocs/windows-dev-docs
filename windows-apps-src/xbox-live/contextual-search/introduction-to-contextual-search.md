@@ -24,4 +24,4 @@ Contextual Search flexes your game's data and the power of Xbox Live to unlock a
 * Surface new DLC in action
 * Contextually deliver creator commentary
 
-Simply by configuring in XDP or the Window Dev Center, Contextual Search for your title will automatically light up in broadcasting applications immediately, and the Xbox Shell and Cortana at a later date.  Additionally, titles can leverage the search APIs directly in game, enabling differentiated experiences for users without leaving the game.  Regardless of the level of integration, you'll generate a tremendous amount of value and exposure for your title.
+Simply by configuring in XDP or Partner Center, Contextual Search for your title will automatically light up in broadcasting applications immediately, and the Xbox Shell and Cortana at a later date.  Additionally, titles can leverage the search APIs directly in game, enabling differentiated experiences for users without leaving the game.  Regardless of the level of integration, you'll generate a tremendous amount of value and exposure for your title.

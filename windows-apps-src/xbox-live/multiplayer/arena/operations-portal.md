@@ -30,7 +30,7 @@ The Xbox Arena portal offers features beyond those of player-created tournaments
 
 * Create invitation-only tournaments
 * Specify which countries and regions can participate in the tournament
-* Select customized art assets published via Dev Center
+* Select customized art assets published via Partner Center
 * Set a prizing flag (an icon that indicates to players that the tournament rewards a prize for winning) and the terms of use for prize tournaments
 * Create customized game modes to be interpreted by the title or associated title services for setting up a match
 * Create tournaments in developer sandboxes

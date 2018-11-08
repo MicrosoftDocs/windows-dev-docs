@@ -365,7 +365,7 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title on its [Windows Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview), which is case-sensitive.
+> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title in [Partner Center](https://partner.microsoft.com/dashboard), which is case-sensitive.
 
 ### 4. Read the Leaderboard data
 
@@ -535,7 +535,7 @@ statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title on its [Windows Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview), which is case-sensitive.
+> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title in [Partner Center](https://partner.microsoft.com/dashboard), which is case-sensitive.
 
 ### 4. Read Leaderboard data
 

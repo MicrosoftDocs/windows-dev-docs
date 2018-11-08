@@ -75,7 +75,7 @@ The API signature is as follows:
     /// <param name="xboxUserId">The Xbox User ID of the player.</param>
     /// <param name="titleId">The title ID.</param>
     /// <param name="serviceConfigurationId">The service configuration ID (SCID) for the title.</param>
-    /// <param name="achievementId">The achievement ID as defined by XDP or Dev Center.</param>
+    /// <param name="achievementId">The achievement ID as defined by XDP or Partner Center.</param>
     /// <param name="percentComplete">The completion percentage of the achievement to indicate progress.
     /// Valid values are from 1 to 100. Set to 100 to unlock the achievement.  
     /// Progress will be set by the server to the highest value sent</param>

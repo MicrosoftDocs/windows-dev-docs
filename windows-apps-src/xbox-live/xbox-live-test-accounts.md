@@ -38,8 +38,8 @@ If you do not have an existing Xbox Live Account or require additional MSAs, you
 
 If you are an ID@Xbox developer, then you may also create test accounts exclusively for use in your development sandboxes.  You can also create multiple test accounts at once.
 
-To go to the Test Account management page on Dev Center.
-1. Go to the Dev Center dashboard
+To go to the Test Account management page in Partner Center.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard)
 2. Click on the gear icon at the top right to go to account Settings
 3. Click on "Test Accounts".
 

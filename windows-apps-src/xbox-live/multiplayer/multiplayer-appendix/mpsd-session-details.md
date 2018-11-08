@@ -28,7 +28,7 @@ This article contains the following sections:
 
 ## Session Overview
 
-A Multiplayer Session Directory (MPSD) session has a session name and is identified as an instance of a session template, which is a JSON document that provides default settings for the session. The template is part of a service configuration with a service configuration identifier (SCID), which is a GUID. This template can be found on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) and the [Windows Dev Center](https://partner.microsoft.com/dashboard/windows/overview) Service configurations are the developer-facing resources used for ingestion, management, and security policy. When a session is accessed through MPSD, principal authorization is performed against the service configuration according to the access policies set by the developer through XDP or Windows Dev Center. Secondary access checks, such as session membership validation, are performed at the session level when the session is loaded after access to the service configuration is authorized.
+A Multiplayer Session Directory (MPSD) session has a session name and is identified as an instance of a session template, which is a JSON document that provides default settings for the session. The template is part of a service configuration with a service configuration identifier (SCID), which is a GUID. This template can be found on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) and [Partner Center](https://partner.microsoft.com/dashboard). Service configurations are the developer-facing resources used for ingestion, management, and security policy. When a session is accessed through MPSD, principal authorization is performed against the service configuration according to the access policies set by the developer through XDP or Partner Center. Secondary access checks, such as session membership validation, are performed at the session level when the session is loaded after access to the service configuration is authorized.
 
 This topic assumes that your template uses contract version 107, which is the version used by the current MPSD for Xbox One. If you have defined templates based on contract version 105 (identical to 104), you must change these to support version 107. For instructions, see [Common Multiplayer 2015 migration issues](common-issues-when-adapting-multiplayer.md).
 
@@ -172,7 +172,7 @@ Servers are non-users that have joined or been invited into a session. The assoc
 
 There are two ways to control the configuration of sessions:
 
--   Use session templates ingested through XDP or Windows Dev Center.
+-   Use session templates ingested through XDP or Partner Center.
 -   Use calls to the multiplayer and matchmaking WinRT APIs or REST APIs. You must still use a template but the template does not have to contain the values you want to configure. Note that your title cannot override the constants already set in the template.
 
 A separate JSON document is provided to define the session itself. In addition, the developer must implement any WinRT wrapper functionality required for a particular title. The contents of the JSON documents and any WinRT wrapper code must reflect each other precisely, and must reflect the latest template contract version.
@@ -190,7 +190,7 @@ Each session template is a JSON document, part of the service configuration, tha
 
 ## Session Capabilities
 
-Capabilities are constants in the MPSD session that configure behavior that the MPSD should apply to that session. You most commonly use XDP and Windows Dev Center to set capabilities in the session template. They are set in the /constants/system/capabilities object. If no capabilities are needed, use an empty capabilities object.
+Capabilities are constants in the MPSD session that configure behavior that the MPSD should apply to that session. You most commonly use XDP and Partner Center to set capabilities in the session template. They are set in the /constants/system/capabilities object. If no capabilities are needed, use an empty capabilities object.
 
 | Note                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------|

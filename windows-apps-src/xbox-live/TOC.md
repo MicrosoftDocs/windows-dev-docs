@@ -5,7 +5,7 @@
 ## [Xbox Live C API](xsapi-flat-c.md)
 # [XBL Sandboxes Intro](xbox-live-sandboxes.md)
 # [Configure Xbox Live](xbox-live-service-configuration.md)
-## [Windows Dev Center](configure-xbl/windows-dev-center.md)
+## [Partner Center](configure-xbl/windows-dev-center.md)
 ### [Summary](configure-xbl/dev-center/summary.md)
 ### [Xbox Live Setup](configure-xbl/dev-center/xbox-live-setup.md)
 ### [Achievements 2017](configure-xbl/dev-center/achievements-in-udc.md)

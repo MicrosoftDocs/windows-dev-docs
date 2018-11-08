@@ -118,7 +118,7 @@ These new tournament APIs enable the following scenarios:
 
 #### Data Platform 2017
 
-We have introduced a simplified Stats API.  Traditionally you had to send events corresponding to stat rules defined on XDP or Dev Center and these would update the stat values in the cloud.  We refer to this model as Stats 2013.
+We have introduced a simplified Stats API.  Traditionally you had to send events corresponding to stat rules defined on XDP or Partner Center and these would update the stat values in the cloud.  We refer to this model as Stats 2013.
 
 With Stats 2017, your title is now in control of your stat values.  You simply call an API with the most recent stat value, and that gets sent to the service directly without the need for events.  This uses the new `StatsManager` API and you can read more in [Player Stats](../leaderboards-and-stats-2017/player-stats.md)
 
@@ -141,7 +141,7 @@ There are the following new articles:
 |[Xbox Live Service Configuration](../xbox-live-service-configuration.md) | Updated information on doing service configuration for your Xbox Live Title
 | [Configure Xbox Live in Unity](../get-started-with-creators/configure-xbox-live-in-unity.md) | New information on Unity setup for Xbox Live Creators Program developers |
 | [Xbox Live Sandboxes](../xbox-live-sandboxes.md) | A simplified guide to Xbox Live sandboxes and content isolation |
-| [Xbox Live Test Accounts](../xbox-live-test-accounts.md) | Information about how test accounts work, and how to create them on Windows Dev Center |
+| [Xbox Live Test Accounts](../xbox-live-test-accounts.md) | Information about how test accounts work, and how to create them on Partner Center |
 
 ## Archived
 

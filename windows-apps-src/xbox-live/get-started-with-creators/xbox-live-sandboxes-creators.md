@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Xbox Live sandboxes introduction
 
-In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Windows Dev Center](http://dev.windows.com). This information includes things like the stats, leaderboards, localization, and more. Changes to your Xbox Live service configuration need to be published from Dev Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.
+In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Partner Center](https://partner.microsoft.com/dashboard). This information includes things like the stats, leaderboards, localization, and more. Changes to your Xbox Live service configuration need to be published from Partner Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.
 
 A development sandbox allows you to work on changes to your title in an isolated environment. Sandboxes offer several benefits:
 
@@ -26,7 +26,7 @@ By default, Xbox One consoles and Windows 10 PCs are in the RETAIL sandbox. You 
 
 ## Finding out about your sandbox
 
-A sandbox is created for you when you create a title. You can find your Sandbox ID by opening your product in **Windows Dev Center** and navigating to **Services** > **Xbox Live**. The **Sandbox ID** will be listed at the top of the page.
+A sandbox is created for you when you create a title. You can find your Sandbox ID by opening your product in **Partner Center** and navigating to **Services** > **Xbox Live**. The **Sandbox ID** will be listed at the top of the page.
 
 ![](../images/getting_started/devcenter_sandbox_id.png)
 

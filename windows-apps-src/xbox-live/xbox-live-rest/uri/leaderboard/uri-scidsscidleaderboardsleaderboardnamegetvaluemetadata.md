@@ -75,7 +75,7 @@ GET operations won't modify any resources so this will produce the same results 
 There is authorization logic implemented for content-isolation and access-control scenarios.
  
    * Both leaderboards and user stats can be read from clients on any platform, provided that the caller submits a valid XSTS token with the request. Writes are obviously limited to clients supported by the Data Platform.
-   * Title developers can mark statistics as open or restricted with XDP or Dev Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Dev Center.
+   * Title developers can mark statistics as open or restricted with XDP or Partner Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Partner Center.
   
 Pseudo-code for the check looks like this:
  

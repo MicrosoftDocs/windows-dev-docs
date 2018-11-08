@@ -28,6 +28,6 @@ On Windows 10 PC, you can ensure your machine is setup correctly with these step
 1. Change the build target platform to either "Win32" or "x64".
 1. Right click the solution and re-build everything.
 1. Launch the app in the debugger.
-1. Sign-in with the development account that you created on the [Xbox Developer Portal](https://xdp.xboxlive.com), or with a retail developer account authorized on the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
+1. Sign-in with the development account that you created on the [Xbox Developer Portal](https://xdp.xboxlive.com), or with a retail developer account authorized in [Partner Center](https://partner.microsoft.com/dashboard).
 1. Grant the app permission to access your Xbox Live information.
 1. Verify that the app can retrieve your information and you can see your gamertag.
