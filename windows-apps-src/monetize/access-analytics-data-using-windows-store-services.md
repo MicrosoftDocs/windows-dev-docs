@@ -112,7 +112,7 @@ The following additional methods are available for use by developer accounts wit
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| Acquisitions |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li></ul> |
+| Acquisitions |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li><li>[Get Xbox One add-on acquisitions](get-xbox-one-add-on-acquisitions.md)</li></ul> |
 
 ### Methods for hardware and drivers
 
