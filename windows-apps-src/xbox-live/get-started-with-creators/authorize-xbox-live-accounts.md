@@ -23,13 +23,13 @@ You will need the following to authorize an Xbox Live test account:
 * An [Xbox Live account](https://support.xbox.com/browse/my-account/manage-account/Create%20account)
 
 ## Navigate to the Xbox Test Account page
+
 This is located in the Account Settings section of Partner Center
 
 You can arrive at this section in one of two ways
 
-1. In Partner Center, click the settings gear ⚙️ which will take you to the account view. In the left navigation of the account view click the **Xbox test accounts** link
+1. In [Partner Center](https://partner.microsoft.com/dashboard/windows/overview), click the settings gear ⚙️ in the upper right of the dashboard and select **Developer Settings** from the dropdown. This will open a navigation menu on the left side of the screen where you will select the Xbox Live dropdown and then the **Xbox test accounts** link.
 2. From your Xbox Live Creators configuration page locate the test section and click the link entitled **Authorize Xbox Live accounts for your test environment**
-
 
 ## Authorize an Xbox Live Account for your test environment
 
