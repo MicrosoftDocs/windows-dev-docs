@@ -23,7 +23,7 @@ Optional packages with executable code are useful for dividing a large or comple
 To get the latest development tools, see [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads). 
 
 > [!NOTE]
-> To submit an app that uses optional packages and/or related sets to the Store, you will need permission. Optional packages and related sets can be used for Line of Business (LOB) or enterprise apps without Dev Center permission if they are not submitted to the Store. See [Windows developer support](https://developer.microsoft.com/windows/support) to get permission to submit an app that uses optional packages and related sets.
+> To submit an app that uses optional packages and/or related sets to the Store, you will need permission. Optional packages and related sets can be used for Line of Business (LOB) or enterprise apps without Partner Center permission if they are not submitted to the Store. See [Windows developer support](https://developer.microsoft.com/windows/support) to get permission to submit an app that uses optional packages and related sets.
 
 ## C++ Optional packages with executable code
 

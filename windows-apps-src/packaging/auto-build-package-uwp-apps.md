@@ -288,7 +288,7 @@ To generate Store submission packages, associate your app with the Store by usin
 
 The Store Association Wizard generates a file named Package.StoreAssociation.xml that contains the Store association information. If you store your source code in a public repository such as GitHub, this file will contain all the app reserved names for that account. You can exclude or delete this file before making it public.
 
-If you don’t have access to the Dev Center account that was used to publish the app, you can follow the instructions in this document: [Building an app for a 3rd party? How to package their Store app](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
+If you don’t have access to the Partner Center account that was used to publish the app, you can follow the instructions in this document: [Building an app for a 3rd party? How to package their Store app](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
 
 Then you need to verify that the build step includes the following parameter:
 
@@ -302,11 +302,11 @@ This will generate an upload file that can be submitted to the Store.
 
 Use the Visual Studio Team Services extension for the Microsoft Store to integrate with the Store API, and send your app package to the Store.
 
-You need to connect your Dev Center account with Azure Active Directory (AD), and then create an app in your AD to authenticate the requests. You can follow the guidance in the extension page to accomplish that.
+You need to connect your Partner Center account with Azure Active Directory (AD), and then create an app in your AD to authenticate the requests. You can follow the guidance in the extension page to accomplish that.
 
 Once you’ve configured the extension, you can add the build task, and configure it with your app ID and the location of the upload file.
 
-![configure dev center](images/building-screen17.png)
+![configure partner center](images/building-screen17.png)
 
 Where the value of the `Package File` parameter will be:
 
