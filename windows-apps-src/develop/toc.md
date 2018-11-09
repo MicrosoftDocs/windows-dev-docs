@@ -270,6 +270,10 @@
 ##### Xbox One games and Xbox Live
 ###### [Get Xbox One game acquisitions](../monetize/get-xbox-one-game-acquisitions.md)
 ###### [Get Xbox One add-on acquisitions](../monetize/get-xbox-one-add-on-acquisitions.md)
+###### [Get error reporting data for your Xbox One game](../monetize/get-error-reporting-data-for-your-xbox-one-game.md)
+####### [Get details for an error in your Xbox One game](../monetize/get-details-for-an-error-in-your-xbox-one-game.md)
+####### [Get the stack trace for an error in your Xbox One game](../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+####### [Download the CAB file for an error in your Xbox One game](../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 ###### [Get Xbox Live analytics data](../monetize/get-xbox-live-analytics.md)
 ####### [Get Xbox Live achievements data](../monetize/get-xbox-live-achievements-data.md)
 ####### [Get Xbox Live health data](../monetize/get-xbox-live-health-data.md)

@@ -57,7 +57,7 @@ To use this method, you need to first do the following:
 
 ### Request example
 
-The following example demonstrates several requests for getting Xbox One game acquisition data. Replace the *applicationId* value with the Store ID for your game.
+The following example demonstrates several requests for getting Xbox One game acquisition data. Replace the *applicationId* value with the product ID for your game.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0 HTTP/1.1
