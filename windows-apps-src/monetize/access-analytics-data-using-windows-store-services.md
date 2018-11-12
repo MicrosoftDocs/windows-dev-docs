@@ -113,6 +113,7 @@ The following additional methods are available for use by developer accounts wit
 | Scenario       | Methods      |
 |---------------|--------------------|
 | Acquisitions |  <ul><li>[Get Xbox One game acquisitions](get-xbox-one-game-acquisitions.md)</li><li>[Get Xbox One add-on acquisitions](get-xbox-one-add-on-acquisitions.md)</li></ul> |
+| Errors |  <ul><li>[Get error reporting data for your Xbox One game](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Get the stack trace for an error in your Xbox One game](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Download the CAB file for an error in your Xbox One game](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### Methods for hardware and drivers
 
