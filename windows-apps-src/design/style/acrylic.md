@@ -81,7 +81,6 @@ Consider the following usage patterns to decide how best to incorporate acrylic 
 
 If your app is not able to leverage NavigationView and you plan on adding acrylic on your own, we recommend using relatively translucent acrylic with 60% tint opacity.
  - When the pane opens as an overlay above other app content, this should be [60% in-app acrylic](#acrylic-theme-resources)
- - When the pane opens side-by-side with main app content, this should be [60% background acrylic](#acrylic-theme-resources)
 
 ![Maps app using in-app horizontal commanding](images/Maps_In_App_Acrylic_1.png)
 
@@ -89,7 +88,7 @@ In addition, having your content extend or scroll under the acrylic at the top w
 
 ### Vertical Panes
 
-For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Collapsed** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
+For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Compact** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
 
 ### Transient surfaces
 
