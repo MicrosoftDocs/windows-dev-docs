@@ -218,7 +218,7 @@ The TextSubmitted event does not occur if the user enters text and then navigate
 
 ### Sample - Validate input and use locally
 
-In this examle, a font size chooser contains a set of values corresponding to the font size ramp, but the user may enter font sizes that are not in the list.
+In this example, a font size chooser contains a set of values corresponding to the font size ramp, but the user may enter font sizes that are not in the list.
 
 When the user adds a value that's not in the list, the font size updates, but the value is not added to the list of font sizes.
 
