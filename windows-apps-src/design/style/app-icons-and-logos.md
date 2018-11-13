@@ -49,7 +49,7 @@ By default, Visual Studio stores your icon assets in an assets subdirectory. Her
 | App icon | App list in start menu, task bar, task manager | Square44x44Logo.png |
 | Splash screen | The app's splash screen | SplashScreen.png  |
 | Badge logo | Your app's tiles | BadgeLogo.png  |
-| Package logo/Store logo | App installer, Dev Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
+| Package logo/Store logo | App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
 
 \* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 

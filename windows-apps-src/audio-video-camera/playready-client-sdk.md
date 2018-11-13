@@ -510,10 +510,10 @@ For a sample implementation of secure stop, see the securestop.cs file in the Pl
 
 ## Use PlayReady DRM on Xbox One
 
-To use PlayReady DRM in a UWP app on Xbox One, you will first need to register your Dev Center account that you're using to publish the app for authorization to use PlayReady. You can do this in one of two ways:
+To use PlayReady DRM in a UWP app on Xbox One, you will first need to register your [Partner Center](https://partner.microsoft.com/dashboard) account that you're using to publish the app for authorization to use PlayReady. You can do this in one of two ways:
 
 * Have your contact at Microsoft request permission.
-* Apply for authorization by sending your Dev Center account and company name to [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
+* Apply for authorization by sending your Partner Center account and company name to [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
 
 Once you receive authorization, you'll need to add an additional `<DeviceCapability>` to the app manifest. You'll have to add this manually because there is currently no setting available in the App Manifest Designer. Follow these steps to configure it:
 

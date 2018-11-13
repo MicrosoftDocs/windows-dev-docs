@@ -201,7 +201,7 @@ An "event handler" sounds complicated, but it's just another name for the code t
 
 3.  Edit the event handler code in *MainPage.xaml.cs*, the code-behind page. This is where things get interesting. The default event handler looks like this:
 
-```C#
+```cs
 private void Button_Click(object sender, RoutedEventArgs e)
 {
 
@@ -210,18 +210,18 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
   Let's change it, so it looks like this:
 
-```C#
+```cs
 private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MediaElement mediaElement = new MediaElement();
-            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
-            mediaElement.SetSource(stream, stream.ContentType);
-            mediaElement.Play();
-        }
+{
+    MediaElement mediaElement = new MediaElement();
+    var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+    Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
+    mediaElement.SetSource(stream, stream.ContentType);
+    mediaElement.Play();
+}
 ```
 
-Make sure you include the **async** keyword as well, or you'll get an error when you try to run the app.
+Make sure the method signature now includes the **async** keyword, or you'll get an error when you try to run the app.
 
 ### What did we just do?
 

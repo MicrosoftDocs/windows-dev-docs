@@ -82,11 +82,11 @@ Here's an example **Identity** element with placeholder text for the attributes.
 			    ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> If you've reserved your application name in the Windows store, you can obtain the Name and Publisher by using the Windows Dev Center dashboard. If you plan to sideload your application onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
+> If you've reserved your application name in the Microsoft Store, you can obtain the Name and Publisher by using [Partner Center](https://partner.microsoft.com/dashboard). If you plan to sideload your application onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### Properties
 
-The [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) element has 3 required child elements. Here is an example **Properties** node with placeholder text for the elements. The **DisplayName** is the name of your application that you reserve in the store, for apps which are uploaded to the store.
+The [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) element has 3 required child elements. Here is an example **Properties** node with placeholder text for the elements. The **DisplayName** is the name of your application that you reserve in the Store, for apps which are uploaded to the Store.
 
 ```XML
 <Properties>

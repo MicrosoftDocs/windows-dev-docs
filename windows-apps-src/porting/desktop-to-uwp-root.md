@@ -87,7 +87,7 @@ Visual Studio makes it abundantly easy to create a package. You'll add a packagi
 
 :heavy_check_mark: Generate your package by using a wizard.
 
-:heavy_check_mark: Easily assign an identity to your application from a name that you've already reserved in the Windows Dev Center dashboard.
+:heavy_check_mark: Easily assign an identity to your application from a name that you've already reserved in [Partner Center](https://partner.microsoft.com/dashboard).
 
 See [Package a desktop application by using Visual Studio](desktop-to-uwp-packaging-dot-net.md)
 

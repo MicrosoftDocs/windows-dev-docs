@@ -45,7 +45,7 @@ On devices that support touch interactions, add keyboard functionality with the 
 
 The Microsoft Collaborate portal provides tools and services to streamline engineering collaboration within the Microsoft ecosystem by enabling the sharing of engineering system work items (bugs, feature requests, etc.) and the distribution of content (builds, documents, specs). [Learn more](https://docs.microsoft.com/en-us/collaborate).
 
-![Microsoft Collaborate in Dev Center Dashboard](images/microsoft_collaborate_screenshot.PNG)
+![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
 ### Package desktop applications with UWP projects
 
