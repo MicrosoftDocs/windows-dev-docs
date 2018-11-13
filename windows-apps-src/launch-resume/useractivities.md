@@ -154,7 +154,7 @@ Once your application or service is authenticated with a Microsoft Account, it j
 ## Summary
 
 You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API to make your app appear in Timeline and Cortana.
-* Learn more about the **UserActivity** API on the [Windows Dev Center](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
 * See [more sophisticated Adaptive Cards](http://adaptivecards.io/).
 * Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).

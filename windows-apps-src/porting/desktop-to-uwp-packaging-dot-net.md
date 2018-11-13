@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 # Package a desktop application by using Visual Studio
 
-You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Windows store or sideload it onto one or more PCs.
+You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Microsoft Store or sideload it onto one or more PCs.
 
 The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
 
@@ -63,7 +63,7 @@ Review this guide before you begin creating a package for your application: [Pre
 
 7. Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.
 
-   You can upload that file directly to the store.
+   You can upload that file directly to the Store.
 
 **Video**
 

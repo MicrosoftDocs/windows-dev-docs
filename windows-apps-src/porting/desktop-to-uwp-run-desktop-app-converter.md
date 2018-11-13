@@ -117,7 +117,7 @@ To Package your app, run the ``DesktopAppConverter.exe`` command in the console 
 You'll specify the package name, publisher and version number of the application by using parameters.
 
 > [!NOTE]
-> If you've reserved your app name in the Windows store, you can obtain the package and publisher names by using the Windows Dev Center dashboard. If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
+> If you've reserved your app name in the Microsoft Store, you can obtain the package and publisher names by using [Partner Center](https://partner.microsoft.com/dashboard). If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### A quick look at command parameters
 
@@ -140,7 +140,7 @@ Here's a few common ways to package your app.
 * [Package an application that has an installer (.msi) file](#installer-conversion)
 * [Package an application that has a setup executable file](#setup-conversion)
 * [Package an application that doesn't have an installer](#no-installer-conversion)
-* [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
+* [Package an app, sign the app, and prepare it for Store submission](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -153,7 +153,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> There are two important things to keep in mind here. First, make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment. <br> Secondly, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
+> There are two important things to keep in mind here. First, make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment. <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
 
 **Video**
 
@@ -171,7 +171,7 @@ Point to the setup executable by using the ``Installer`` parameter.
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 The ``InstallerArguments`` parameter is an optional parameter. However, because the Desktop App Converter needs your installer to run in unattended mode, you might have to use it if your application needs silent flags to run silently. The ``/S`` flag is a very common silent flag, but the flag that you use might be different depending on which installer technology you used to create the setup file.
 
@@ -192,7 +192,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 **Video**
 
@@ -208,7 +208,7 @@ This example is similar to first one except it shows how you can sign your appli
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 The ``Sign`` parameter generates a certificate and then signs your application with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the packaged app](#run-app) section of this guide.
 
@@ -266,13 +266,13 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to package the output as an MSIX Package. |
 |<a id="identity-params" /><strong>Package identity parameters</strong>||
-|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
+|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-Publisher &lt;String&gt; |Required |The publisher of your Universal Windows App package |
 |-Version &lt;Version&gt; |Required |The version number for your Universal Windows App package |
 |<a id="manifest-params" /><strong>Package manifest parameters</strong>||
 |-AppExecutable &lt;String&gt; |Optional |The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
 |-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with. Example usage: -AppFileTypes "'.md', '.markdown'".|
-|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
+|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-AppDisplayName &lt;String&gt;  |Optional |Specifies a value to set Application Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-AppDescription &lt;String&gt; |Optional |Specifies a value to set Application Description to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |-PackageDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
