@@ -83,7 +83,7 @@ Several novel input methods have been designed especially for use with Mixed Rea
 * [Clicker device](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens only)
 * [Motion Controllers](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (Mixed Reality devices only, shown above.)
 
-These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input reponse you would expect, again, with no coding on your part.
+These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input response you would expect, again, with no coding on your part.
 
 At other times, you will want to add code to take advantage of the extra information and inputs that are made available. For example, the Motion Controllers can be used to manipulate objects with a fine level of control, if you write code that takes their position and button presses into account.
 
