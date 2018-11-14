@@ -408,7 +408,7 @@ Both Game Chat and Game Chat 2 enforce Xbox Live privilege and privacy restricti
 
 ### Game Chat
 
-Game Chat exposed privilege and privacy information throught the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
+Game Chat exposed privilege and privacy information through the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
 
 ### Game Chat 2
 
