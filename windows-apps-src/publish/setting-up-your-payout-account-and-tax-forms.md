@@ -41,8 +41,8 @@ A payout account is the bank account to which we send the proceeds from your sal
  
 **To set up your payout account**
 
-1.  In [Partner Center](https://partner.microsoft.com/dashboard), go to **Account settings** by selecting the icon in the top right corner.
-2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
+1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
+2.  In the left navigation menu, select **Payout account**.
 
    > [!NOTE]
    > Because this is sensitive info, you may be prompted to sign in again.
@@ -133,8 +133,8 @@ You can complete and submit your tax forms electronically in Partner Center; in 
  
 **To complete your tax profile**
 
-1.  In [Partner Center](https://partner.microsoft.com/dashboard), click the **Account settings** icon in the top right corner.
-2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
+1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
+2.  In the left navigation menu, select **Tax profile**.
 
    > [!NOTE]
    > Because this is sensitive info, you may be prompted to sign in again.
