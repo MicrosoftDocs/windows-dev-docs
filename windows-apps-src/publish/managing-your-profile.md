@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 # Manage account settings and profile info
 
-You can view and update your developer account settings and profile info in the **Account settings** section of the [Partner Center](https://partner.microsoft.com/dashboard). 
+You can view and update your developer account settings and profile info in the **Account settings** section of [Partner Center](https://partner.microsoft.com/dashboard). 
 
 > [!NOTE]
 > Notification preferences (such as which type of notifications to receive and how to receive them) can be managed in **Message Center** (which you can access by selecting the message icon near the top of Partner Center).

@@ -44,7 +44,7 @@ If your organization already uses Azure AD, follow these steps to link your Part
 
 If you need to set up a new Azure AD to link with your Partner Center account, follow these steps.
 
-1.  From the [Partner Center](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Developer settings**. In the **Settings** menu, select **Tenants**.
+1.  From [Partner Center](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Developer settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Create new Azure AD**.
 3.  Enter the directory information for your new Azure AD:
     - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
