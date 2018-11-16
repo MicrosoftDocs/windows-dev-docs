@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Download the CAB file for an error in your Xbox One game
 
-Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Dev Center dashboard. This method can only download the CAB file for an error that occurred in the last 30 days.
+Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard. This method can only download the CAB file for an error that occurred in the last 30 days.
 
 Before you can use this method, you must first use the [get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md) method to retrieve the ID of the CAB file you want to download.
 
@@ -47,7 +47,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the Xbox One game for which you are downloading the CAB file. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Dev Center analytics report, the product ID is included in the .tsv file. |  Yes  |
+| applicationId | string | The product ID of the Xbox One game for which you are downloading the CAB file. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Partner Center analytics report, the product ID is included in the .tsv file. |  Yes  |
 | cabId | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
 
  
