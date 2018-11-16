@@ -244,8 +244,8 @@ Developer forums are a great place to ask and answer game development questions 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows apps developer forums</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Windows store and apps forums</a></td>
+        <td>Publishing apps and games developer forums</td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Publishing and ads-in-apps</a></td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
@@ -1658,10 +1658,6 @@ After you've finished development and shipped your game, it's not "game over". Y
     <col width="50%" />
     <col width="50%" />
     </colgroup>
-    <tr>
-        <td>Dev Center App</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">Get the app to view performance of your published apps</a></td>
-    </tr>  
     <tr>
         <td>Partner Center analytics</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">Analyze app performance</a></td>
