@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Get error reporting data for your Xbox One game
 
-Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard.
 
 You can retrieve additional error information by using the [get details for an error in your Xbox One game](get-details-for-an-error-in-your-xbox-one-game.md), [get the stack trace for an error in your Xbox One game](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md), and [download the CAB file for an error in your Xbox One game](download-the-cab-file-for-an-error-in-your-xbox-one-game.md) methods.
 
@@ -46,7 +46,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the Xbox One game for which you are retrieving error reporting data. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Dev Center analytics report, the product ID is included in the .tsv file. |  Yes  |
+| applicationId | string | The product ID of the Xbox One game for which you are retrieving error reporting data. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Partner Center analytics report, the product ID is included in the .tsv file. |  Yes  |
 | startDate | date | The start date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```.  |  No  |
 | endDate | date | The end date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |

@@ -5,10 +5,9 @@ description: Learn how to obtain and interpret the barcode data that you scan.
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Obtain and understand barcode data

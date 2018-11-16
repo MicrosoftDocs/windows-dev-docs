@@ -5,10 +5,9 @@ title: Value categories, and references to them
 ms.author: stwhi
 ms.date: 08/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, moving, forwarding, value categories, move semantics, perfect forwarding, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Value categories, and references to them

@@ -5,10 +5,9 @@ description: Learn what you need to do to display a collection of Customer objec
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
-
-
 keywords: get started, uwp, windows 10, learning track, data binding, list
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Display customers in a list

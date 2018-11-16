@@ -7,13 +7,12 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 10/13/18
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Text input with the handwriting view

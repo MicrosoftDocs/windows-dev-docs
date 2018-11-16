@@ -5,10 +5,9 @@ description: Learn what you need to do to create a robust form in your app.
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
-
-
 keywords: get started, uwp, windows 10, learning track, layout, form
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Create and customize a form

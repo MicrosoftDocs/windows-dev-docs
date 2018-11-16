@@ -6,14 +6,13 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact:
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Navigation view
 

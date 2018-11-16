@@ -8,12 +8,11 @@ template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
 ms.date: 05/01/2018
 ms.topic: article
-
-
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Gaze interactions and eye tracking in UWP apps

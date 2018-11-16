@@ -9,10 +9,9 @@ op-migration-status: ready
 ms.author: jimwalk
 ms.date: 7/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Navigation design basics for UWP apps
 
