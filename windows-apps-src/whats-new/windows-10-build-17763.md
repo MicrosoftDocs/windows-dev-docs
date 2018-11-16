@@ -6,9 +6,8 @@ keywords: what's new, whats new, update, updates, features, new, Windows 10, new
 ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
-
-
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # What's New in Windows 10 for developers, build 17763

@@ -8,12 +8,11 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Icons for UWP apps

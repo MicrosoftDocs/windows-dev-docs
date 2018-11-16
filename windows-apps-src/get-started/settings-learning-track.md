@@ -5,10 +5,9 @@ description: Learn how to save and load app settings in Universal Windows Platfo
 ms.author: twhitney
 ms.date: 05/07/2018
 ms.topic: article
-
-
 keywords: get started, uwp, windows 10, learning track, settings, save settings, load settings
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Save and load settings in a UWP app
 

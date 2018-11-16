@@ -6,11 +6,10 @@ title: Package desktop applications
 ms.author: normesta
 ms.date: 09/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Package desktop applications (Desktop Bridge)

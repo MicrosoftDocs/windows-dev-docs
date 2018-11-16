@@ -5,10 +5,9 @@ title: Collections with C++/WinRT
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Collections with C++/WinRT

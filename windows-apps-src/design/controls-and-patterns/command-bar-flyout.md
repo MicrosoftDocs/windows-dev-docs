@@ -7,14 +7,13 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 10/2/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Command bar flyout
 

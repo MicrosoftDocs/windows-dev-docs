@@ -6,11 +6,10 @@ title: Package an application manually (Desktop Bridge)
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Package a desktop application manually

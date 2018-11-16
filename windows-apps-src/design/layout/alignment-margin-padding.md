@@ -5,10 +5,9 @@ title: Alignment, margin, and padding for layout
 ms.author: quradic
 ms.date: 03/19/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Alignment, margin, padding
 
