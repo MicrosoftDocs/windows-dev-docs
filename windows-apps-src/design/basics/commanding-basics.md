@@ -9,10 +9,9 @@ op-migration-status: ready
 ms.author: mijacobs
 ms.date: 10/01/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Command design basics for UWP apps

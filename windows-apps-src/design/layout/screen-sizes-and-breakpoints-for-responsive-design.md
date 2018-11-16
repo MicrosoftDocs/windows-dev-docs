@@ -5,10 +5,9 @@ description: Rather than optimizing your UI the many devices across the Windows 
 ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 #  Screen sizes and breakpoints

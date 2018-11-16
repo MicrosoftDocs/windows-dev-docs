@@ -6,10 +6,9 @@ title: Access analytics data using Store services
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Access analytics data using Store services

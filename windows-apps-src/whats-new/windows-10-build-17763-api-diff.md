@@ -6,9 +6,8 @@ keywords: what's new, whats new, updates, Windows 10, newest, apis, 17763, octob
 ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
-
-
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # New APIs in Windows 10 build 17763

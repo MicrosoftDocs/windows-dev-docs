@@ -12,6 +12,7 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Bringing it together
 

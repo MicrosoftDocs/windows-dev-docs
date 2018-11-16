@@ -5,10 +5,9 @@ title: Author COM components with C++/WinRT
 ms.author: stwhi
 ms.date: 09/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Author COM components with C++/WinRT

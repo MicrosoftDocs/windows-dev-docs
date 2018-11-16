@@ -5,10 +5,9 @@ description: Learn how to work with files in the Universal Windows Platform.
 ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
-
-
 keywords: get started, uwp, windows 10, learning track, files, file io, read file, write file, create file, write text, read text
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Work with files
 

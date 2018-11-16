@@ -7,10 +7,9 @@ op-migration-status: ready
 ms.author: mijacobs
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 localizationpriority: medium
+ms.custom: RS5
 ---
 # Responsive design techniques
 

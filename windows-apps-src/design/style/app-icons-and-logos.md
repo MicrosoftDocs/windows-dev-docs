@@ -6,12 +6,11 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 
 # App icons and logos 

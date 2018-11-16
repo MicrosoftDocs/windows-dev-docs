@@ -5,10 +5,9 @@ title: Get upgrade blocks for your desktop application
 ms.author: mhopkins
 ms.date: 07/11/2018
 ms.topic: article
-
-
 keywords: windows 10, desktop app blocks, Windows Desktop Application Program
 localizationpriority: medium
+ms.custom: RS5
 ---
 
 # Get upgrade blocks for your desktop application
