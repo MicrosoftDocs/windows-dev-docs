@@ -85,7 +85,7 @@ To add vertical scrolling to your page, wrap the page content in a scroll viewer
 </Page>
 ```
 
-This XAML shows how to place an image in a scroll viewer and enable zooming.
+This XAML shows how to enable horizontal scrolling, place an image in a scroll viewer and enable zooming.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
