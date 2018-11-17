@@ -256,7 +256,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
