@@ -389,7 +389,7 @@ Let's hook up the events now, and initialize all the controller state fields.
 void MoveLookController::Initialize( _In_ CoreWindow^ window )
 {
 
-    // Opt in to recieve touch/mouse events.
+    // Opt in to receive touch/mouse events.
     window->PointerPressed += 
     ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &MoveLookController::OnPointerPressed);
 

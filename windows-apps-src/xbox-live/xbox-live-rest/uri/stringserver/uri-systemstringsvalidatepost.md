@@ -31,7 +31,7 @@ The domain for these URIs is `client-strings.xboxlive.com`.
  
 Each result indicates whether the corresponding string is acceptable on Xbox LIVE, and contains the offending string if applicable.
  
-Identical strings will always give identical results. If you recieve a non-successful result, analyze the result and modify the string accordingly.
+Identical strings will always give identical results. If you receive a non-successful result, analyze the result and modify the string accordingly.
  
  
 
