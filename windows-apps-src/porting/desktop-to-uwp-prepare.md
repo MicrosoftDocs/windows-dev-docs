@@ -70,7 +70,7 @@ This article lists the things you need to know before you package your desktop a
 	<tr><td>2015 and 2017 (VC 14)</td><td>Supported</td><td>Supported</td>
 	</table>
 
-	Note: In all cases, you must link to the latest publically available CRT.
+	Note: In all cases, you must link to the latest publicly available CRT.
 
 + __Your application installs and loads assemblies from the Windows side-by-side folder__. For example, your application uses C runtime libraries VC8 or VC9 and is dynamically linking them from Windows side-by-side folder, meaning your code is using the common DLL files from a shared folder. This is not supported. You will need to statically link them by linking to the redistributable library files directly into your code.
 
