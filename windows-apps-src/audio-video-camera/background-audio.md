@@ -92,7 +92,7 @@ If you need to make network calls that occur in the background when media is not
 ## Related topics
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
 * [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
