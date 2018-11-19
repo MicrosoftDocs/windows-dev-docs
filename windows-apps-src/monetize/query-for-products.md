@@ -58,7 +58,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 | modifiedAfter     | datetime     | If specified, the service only returns products that have been modified after this date.        | No       |
 | parentProductId   | string       | If specified, the service only returns add-ons that correspond to the specified app.      | No       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | If specified, the service only returns products applicable to the provided product/SKU pairs. For more information, see the table below.      | No       |
-| productTypes      | string       | If specified, the service only returns products that match the specified product types. Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.     | No       |
+| productTypes      | list&lt;string&gt;       | Specifies which products types to return in the query results. Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.     | Yes       |
 | validityType      | string       | When set to **All**, all products for a user will be returned, including expired items. When set to **Valid**, only products that are valid at this point in time are returned (that is, they have an active status, start date &lt; now, and end date is &gt; now). | No       |
 
 
