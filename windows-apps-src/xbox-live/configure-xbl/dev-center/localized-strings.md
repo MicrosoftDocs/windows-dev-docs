@@ -22,7 +22,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to configu
 
 ![Screenshot of the localized strings configuration page in Partner Center](../../images/dev-center/localized-strings/localized-strings-1.png)
 
-3. You can add the localized strings by duplicating the <Value locale="en-US">Mazes Played</Value> tag and changing the value of the locale to the language of your choice and the value of the localized string. You must have atleast one value tag within the developer display locale to avoid errors.
+3. You can add the localized strings by duplicating the <Value locale="en-US">Mazes Played</Value> tag and changing the value of the locale to the language of your choice and the value of the localized string. You must have at least one value tag within the developer display locale to avoid errors.
 
 ![edit localized strings](../../images/dev-center/localized-strings/localized-strings.gif)
 

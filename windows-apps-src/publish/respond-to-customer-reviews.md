@@ -20,7 +20,7 @@ You can respond to reviews of your app to let customers know you’re listening 
 To view your app's reviews and provide responses, find the app in [Partner Center](https://partner.microsoft.com/dashboard). In the left navigation menu, expand *Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md). Select **Respond to review** to provide your response.
 
 > [!TIP]
-> In addition to using Partner Center to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+> In addition to using Partner Center to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md).
 
 By default, your response will be posted in the Store, directly below the original customer review. These responses will be visible to any customer viewing the Store on a Windows 10 device. If the customer who left the review is using a device running Windows 10, version 1803 or higher, and they haven't opted out of receiving email responses, a copy of your response will also be sent to that customer by email.  You'll need to provide a valid email address in order to submit your response, which we will include in the email to the customer. They can then use this email address to contact you directly.
 

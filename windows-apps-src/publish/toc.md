@@ -5,7 +5,7 @@
 ## [Trademark and copyright protection](../publish/trademark-and-copyright-protection.md)
 ## [Dev Center Insider Program](../publish/dev-center-insider-program.md)
 # [Manage account users](../publish/manage-account-users.md)
-## [Associate Azure AD with your Dev Center account](../publish/associate-azure-ad-with-dev-center.md)
+## [Associate Azure AD with your Partner Center account](../publish/associate-azure-ad-with-dev-center.md)
 ## [Add users, groups, and Azure AD applications](../publish/add-users-groups-and-azure-ad-applications.md)
 ## [Set roles and custom permissions](../publish/set-custom-permissions-for-account-users.md)
 # [Create your app by reserving a name](../publish/create-your-app-by-reserving-a-name.md)
