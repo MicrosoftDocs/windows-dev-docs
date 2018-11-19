@@ -13,7 +13,7 @@ ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
 ---
 
-#Windows apps concept mapping for Android and iOS developers
+# Windows apps concept mapping for Android and iOS developers
 
 If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
 
