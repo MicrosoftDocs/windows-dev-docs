@@ -293,4 +293,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## How to fix delays in the background task
 
-When testing your app, you might notice that the background task is sometimes delayed, and doesn't trigger for several minutes. To fix this, you'll want to prompt the user to go to the system settings -> System -> Battery -> Battery usage by app, find your app in the list, select it, and change it to be "Always allowed in background". After this, the background task should always be triggered within around a second of the notification being received.
+When testing your app, you might notice that the background task is sometimes delayed and doesn't trigger for several minutes. To fix the delay, prompt the user to go to the system settings -> System -> Battery -> Battery usage by app, find your app in the list, select it, and set it to be "Always allowed in background." After this, the background task should always be triggered within around a second of the notification being received.
