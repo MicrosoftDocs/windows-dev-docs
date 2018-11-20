@@ -85,12 +85,12 @@ Let's go through each task.
 
 ### Create the package layout folder
 
-If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using makemsix tool, based on your installation path of the SDK, this is where you will find the makemsix.exe tool on your Windows 10 PC:
-x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makemsix.exe
-x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makemsix.exe
+If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using makemsix tool, based on your installation path of the SDK, this is where you will find the makeappx.exe tool on your Windows 10 PC:
+x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
+x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
-makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
+makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
@@ -221,7 +221,7 @@ Using PowerShell, install the package.
 > Remember to uninstall the package first.
 
 ```ps
-powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
+powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 Run the application and observe the behavior with runtime fix applied.  Repeat the diagnostic and packaging steps as necessary.
