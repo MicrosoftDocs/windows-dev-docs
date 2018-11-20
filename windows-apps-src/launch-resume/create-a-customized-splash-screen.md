@@ -1,21 +1,16 @@
 ---
-author: TylerMSFT
+author: mcleanbyron
 title: Display a splash screen for more time
 description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.author: twhitney
-ms.date: 02/08/2017
+ms.author: mcleans
+ms.date: 11/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
 # Display a splash screen for more time
-
-
-
 
 **Important APIs**
 
@@ -25,9 +20,8 @@ ms.localizationpriority: medium
 
 Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized. Whether you want to show real-time loading information or simply give your app extra time to prepare its initial UI, an extended splash screen lets you define the launch experience.
 
-> **Note**  The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class.
-
- 
+> [!NOTE]
+> The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class.
 
 Make sure your extended splash screen accurately imitates the default splash screen by following these recommendations:
 
@@ -43,7 +37,7 @@ Use the following steps to create an extended splash screen that effectively imi
 
 This topic assumes you want to add an extended splash screen to an existing Universal Windows Platform (UWP) app project using C#, Visual Basic, or C++.
 
--   Open your app in Visual Studio 2015.
+-   Open your app in Visual Studio.
 -   Press or open **Project** from the menu bar and click **Add New Item**. An **Add New Item** dialog box will appear.
 -   From this dialog box, add a new **Blank Page** to your app. This topic names the extended splash screen page "ExtendedSplash".
 
@@ -61,9 +55,9 @@ In your ExtendedSplash.xaml file:
 -   Add an [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) element to the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
 -   (Optional) Add a progress control to show users that your app is loading. This topic adds a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), instead of a determinate or indeterminate [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529).
 
-Add the following code to define [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) and [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) elements, as well as a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control, in ExtendedSplash.xaml:
+The following example demonstrates a [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) with these additions and changes.
 
-```xml
+```xaml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -72,9 +66,8 @@ Add the following code to define [**Canvas**](https://msdn.microsoft.com/library
     </Grid>
 ```
 
-**Note**  This code sets the width of the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
-
- 
+> [!NOTE]
+> This example sets the width of the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
 
 ## Essential code for an extended splash screen class
 
@@ -216,16 +209,17 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    **Note**  Before you try to get the image location make sure the class variable (`splash`) contains a valid [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, as shown in the example.
+    > [!NOTE]
+    > Before you try to get the image location make sure the class variable (`splash`) contains a valid [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, as shown in the example.
 
      
 
 8.  **(Optional) Add a class method to restore a saved session state**
 
-    The code you added to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding an asynchronous method to your ExtendedSplash.xaml.cs file to restore the app's state.
+    The code you added to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding a method to your ExtendedSplash.xaml.cs file to restore the app's state.
 
     ```cs
-    async void RestoreStateAsync(bool loadState)
+    void RestoreState(bool loadState)
     {
         if (loadState)
         {
@@ -234,7 +228,7 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) of your app was **Terminated**. If so, the `RestoreStateAsync` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
+    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) of your app was **Terminated**. If so, the `RestoreState` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
 
 ## Modify the launch activation handler
 
@@ -261,12 +255,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## Complete code
 
-
-> **Note**  The following code slightly differs from the snippets shown in the previous steps.
+The following code slightly differs from the snippets shown in the previous steps.
 -   ExtendedSplash.xaml includes a `DismissSplash` button. When this button is clicked, an event handler, `DismissSplashButton_Click`, calls the `DismissExtendedSplash` method. In your app, call `DismissExtendedSplash` when your app is done loading resources or initializing its UI.
 -   This app also uses a UWP app project template, which uses [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation. As a result, in App.xaml.cs, the launch activation handler ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) defines a `rootFrame` and uses it to set the content of the app window.
 
-ExtendedSplash.xaml: This example includes a `DismissSplash` button because it doesn't have app resources to load. In your app, dismiss the extended splash screen automatically when your app is done loading resources or preparing its initial UI.
+### ExtendedSplash.xaml
+
+This example includes a `DismissSplash` button because it doesn't have app resources to load. In your app, dismiss the extended splash screen automatically when your app is done loading resources or preparing its initial UI.
 
 ```xml
 <Page
@@ -290,7 +285,9 @@ ExtendedSplash.xaml: This example includes a `DismissSplash` button because it d
 </Page>
 ```
 
-ExtendedSplash.xaml.cs: Note that the `DismissExtendedSplash` method is called from the click event handler for the `DismissSplash` button. In your app, you won't need a `DismissSplash` button. Instead, call `DismissExtendedSplash` when your app is done loading resources and you want to navigate to its main page.
+### ExtendedSplash.xaml.cs
+
+Note that the `DismissExtendedSplash` method is called from the click event handler for the `DismissSplash` button. In your app, you won't need a `DismissSplash` button. Instead, call `DismissExtendedSplash` when your app is done loading resources and you want to navigate to its main page.
 
 ```cs
 using System;
@@ -353,10 +350,10 @@ namespace SplashScreenExample
             rootFrame = new Frame();
 
             // Restore the saved session state if necessary
-            await RestoreStateAsync(loadState);
+            RestoreState(loadState);
         }
 
-        async void RestoreStateAsync(bool loadState)
+        void RestoreState(bool loadState)
         {
             if (loadState)
             {
@@ -416,7 +413,9 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs: This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio 2015. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
+### App.xaml.cs
+
+This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
 
 If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) for an example of a modified `OnLaunched` that doesn't use [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation.
 
