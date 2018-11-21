@@ -4,16 +4,11 @@ assetID: 613ba53f-03cb-5ed3-a5ba-be59e5a146d1
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus-get.html
 
 description: ' GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 Returns the allocation status of the sessionhost identified by its sessionId. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

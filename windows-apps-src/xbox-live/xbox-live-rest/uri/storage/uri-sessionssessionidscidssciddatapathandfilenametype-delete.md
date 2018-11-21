@@ -4,16 +4,11 @@ assetID: b4ddc3d2-890d-f677-0109-45d318c3128d
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfilenametype-delete.html
 
 description: ' DELETE (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 Deletes a file. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

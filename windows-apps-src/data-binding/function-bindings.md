@@ -1,16 +1,11 @@
 ---
-
 description: The xBind markup extension allows functions to be used in markup.
 title: Functions in x:Bind
-
 ms.date: 04/26/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ---
-
 # Functions in x:Bind
 
 **Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).

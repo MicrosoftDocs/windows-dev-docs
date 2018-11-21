@@ -1,17 +1,12 @@
 ﻿---
-
 Description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
 title: The app certification process
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, publishing, preprocessing, certification, release, pending, submit, publish, status, time
 ms.localizationpriority: medium
 ---
-
 # The app certification process
 
 When you finish creating your app's submission and click **Submit to the Store**, the submission enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 24 hours for customers to see the app’s listing for a new submission, or for an updated submission with changes to packages. If your update only changes Store listing details, the publishing process will be completed in less than an hour.  You'll be notified when your submission is published, and the app's status in the dashboard will be **In the Store**.

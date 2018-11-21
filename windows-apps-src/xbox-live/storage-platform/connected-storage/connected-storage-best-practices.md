@@ -2,11 +2,8 @@
 title: Connected Storage Best Practices
 
 description: Recommendations on how to get the best performance and experience from Connected Storage
-
 ms.date: 02/27/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Connected Storage
 ms.localizationpriority: medium
 ---

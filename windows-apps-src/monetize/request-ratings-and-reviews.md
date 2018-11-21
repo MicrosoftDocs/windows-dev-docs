@@ -1,16 +1,11 @@
 ---
-
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
-
 ms.date: 06/15/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
 ---
-
 # Request ratings and reviews for your app
 
 You can add code to your Universal Windows Platform (UWP) app to programmatically prompt your customers to rate or review your app. There are several ways you can do this:

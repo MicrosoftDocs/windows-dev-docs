@@ -2,7 +2,6 @@
 title: Title Storage configuration in Partner Center
 
 description: Learn how to configure Title Storage in Partner Center
-
 ms.date: 04/24/2018
 ms.topic: article
 

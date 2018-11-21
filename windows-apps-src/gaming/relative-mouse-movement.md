@@ -1,17 +1,12 @@
 ---
-
 title: Relative mouse movement
 description: Use relative mouse controls, which don't use the system cursor and don't return absolute screen coordinates, to track the pixel delta between mouse movements in games.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, mouse, input
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ---
-
 # Relative mouse movement and CoreWindow
 
 In games, the mouse is a common control option that is familiar to many players, and is likewise essential to many genres of games, including first- and third-person shooters, and real-time strategy games. Here we discuss the implementation of relative mouse controls, which don't use the system cursor and don't return absolute screen coordinates; instead, they track the pixel delta between mouse movements.

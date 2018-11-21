@@ -4,15 +4,12 @@ description: Rasterizer ordered views enable some of the limitations of a depth 
 ms.assetid: BCB1EE0D-4C1D-4E17-BDB7-173F448E0A7B
 keywords:
 - Rasterizer ordered view (ROV)
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Rasterizer ordered view (ROV)
 
 

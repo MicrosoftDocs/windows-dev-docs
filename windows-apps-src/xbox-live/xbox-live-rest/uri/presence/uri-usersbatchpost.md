@@ -4,16 +4,11 @@ assetID: bd0b18fe-8a6d-d591-5b13-bcd9643e945a
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchpost.html
 
 description: ' POST (/users/batch)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/batch)
 Get presence for a batch of users.
 The domain for these URIs is `userpresence.xboxlive.com`.

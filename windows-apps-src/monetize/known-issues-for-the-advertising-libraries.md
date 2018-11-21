@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Learn about known issues for the current release of the Microsoft Advertising SDK.
 title: Known issues and troubleshooting for ads in apps
-
 ms.date: 04/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, known issues, troubleshooting
 ms.localizationpriority: medium
 ---
-
 # Known issues and troubleshooting for ads in apps
 
 This topic lists the known issues with the current release of the Microsoft Advertising SDK. For additional troubleshooting guidance, see the following topics.

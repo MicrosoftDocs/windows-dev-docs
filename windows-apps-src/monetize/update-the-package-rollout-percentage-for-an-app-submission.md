@@ -1,17 +1,12 @@
 ---
-
 description: Use this method in the Microsoft Store submission API to update the package rollout percentage for an app submission.
 title: Update the rollout percentage for an app submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, package rollout, app submission, update, percentage
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
 ---
-
 # Update the rollout percentage for an app submission
 
 

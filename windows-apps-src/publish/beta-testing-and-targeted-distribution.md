@@ -1,17 +1,12 @@
 ﻿---
-
 Description: Partner Center gives you several options to let testers try out your app before you offer it to the public. 
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
 ms.localizationpriority: medium
 ---
-
 # Beta testing and targeted distribution
 
 No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. Your testers may discover issues that you’ve overlooked, such as misspellings, confusing app flow, or errors that could cause the app to crash. You’ll then have a chance to fix those problems before you release the submission to the public, resulting in a more polished final product. 

@@ -4,16 +4,11 @@ assetID: 21f3e289-0b0e-2731-befb-bd4c0d71973e
 permalink: en-us/docs/xboxlive/rest/uri-handlespost.html
 
 description: ' POST (/handles)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/handles)
 Sets the multiplayer session for the user's current activity, and invites session members if required.
 

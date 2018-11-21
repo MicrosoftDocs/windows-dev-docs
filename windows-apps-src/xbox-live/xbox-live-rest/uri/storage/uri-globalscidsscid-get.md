@@ -4,16 +4,11 @@ assetID: 7c8cd028-e94a-45e1-fe34-c9deae2d6042
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid-get.html
 
 description: ' GET (/global/scids/{scid})'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/global/scids/{scid})
 Retrieves quota information for this storage type. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

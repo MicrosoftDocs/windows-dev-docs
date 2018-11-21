@@ -4,16 +4,11 @@ assetID: 03c097e8-7f29-1026-7a77-5c785b8511e9
 permalink: en-us/docs/xboxlive/rest/json-gameclipuri.html
 
 description: ' GameClipUri (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipUri (JSON)
  
 <a id="ID4EO"></a>

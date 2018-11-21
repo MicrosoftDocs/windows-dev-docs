@@ -1,17 +1,12 @@
 ---
-
 title: Set up DirectX resources and display an image
 description: Here, we show you how to create a Direct3D device, swap chain, and render-target view, and how to present the rendered image to the display.
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, resources, images
 ms.localizationpriority: medium
 ---
-
 # Set up DirectX resources and display an image
 
 

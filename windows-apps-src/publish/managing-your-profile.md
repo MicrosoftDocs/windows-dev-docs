@@ -1,13 +1,9 @@
 ﻿---
-
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: Manage account settings and profile info
 description: You can view and update your developer account settings and profile info in the Account settings section of Partner Center.
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, dev center, account settings, profile, account profile, developer account, developer account settings
 ms.localizationpriority: medium
 ---

@@ -4,16 +4,11 @@ assetID: 645e575d-3e8e-d954-90e6-e51dd83da93b
 permalink: en-us/docs/xboxlive/rest/json-paginginfo.html
 
 description: ' PagingInfo (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PagingInfo (JSON)
 Contains paging information for results that are returned in pages of data. 
 <a id="ID4EN"></a>

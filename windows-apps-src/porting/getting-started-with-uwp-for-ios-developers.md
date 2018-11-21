@@ -1,17 +1,12 @@
 ---
-
 description: Getting started with UWP for iOS developers
 title: Getting started with UWP for iOS developers
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Getting started with UWP for iOS developers
 
 

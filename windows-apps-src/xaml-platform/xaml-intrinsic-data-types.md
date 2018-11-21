@@ -1,17 +1,12 @@
 ---
-
 description: Lists language-level support in XAML for the Windows Runtime for certain data types in the common language runtime (CLR) and in other programming languages such as C++.
 title: XAML intrinsic data types
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # XAML intrinsic data types
 
 

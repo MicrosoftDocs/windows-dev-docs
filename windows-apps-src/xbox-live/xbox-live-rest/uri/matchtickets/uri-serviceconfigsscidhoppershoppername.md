@@ -4,16 +4,11 @@ assetID: ba1e129d-b4c4-6535-46ce-fd184465c85f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppername.html
 
 description: ' /serviceconfigs/{scid}/hoppers/{hoppername}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/hoppers/{hoppername}
 
 Supports a POST operation to create match tickets.

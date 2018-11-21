@@ -4,16 +4,11 @@ assetID: 46faeb85-4256-b892-674b-e0d523b3926c
 permalink: en-us/docs/xboxlive/rest/atoc-reference-users.html
 
 description: ' Users URIs'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Users URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *users*.

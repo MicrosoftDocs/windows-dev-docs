@@ -1,12 +1,8 @@
 ---
-
 title: Custom manipulations with InteractionTracker
 description: Use the InteractionTracker APIs to create custom manipulation experiences.
-
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

@@ -1,17 +1,12 @@
 ﻿---
 title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
-
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, insiders, dev center insider, preview features
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ---
-
 # Dev Center Insider Program
 
 As a [registered developer](http://go.microsoft.com/fwlink/?LinkID=615100), you can help influence the functionality we make available by joining the Dev Center Insider Program. This program allows you to try out new features before they become available to all developers. We encourage you to give us your feedback on these features by using the Feedback link under the question mark icon in the upper right corner of your dashboard. All of the feedback we receive from Dev Center Insiders will be read closely and given priority consideration.

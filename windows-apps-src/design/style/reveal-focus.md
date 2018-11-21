@@ -1,13 +1,9 @@
 ---
-
 description: Reveal Focus is a lighting effect that animates the border of focusable elements when the user moves gamepad or keyboard focus to them.
 title: Reveal Focus
 template: detail.hbs
-
 ms.date: 03/1/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: 

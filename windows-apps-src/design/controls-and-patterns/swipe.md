@@ -1,5 +1,4 @@
 ---
-
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
@@ -8,11 +7,8 @@ Description: Swipe commanding is a touch accelerator for context menus.
 title: Swipe
 label: Swipe
 template: detail.hbs
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

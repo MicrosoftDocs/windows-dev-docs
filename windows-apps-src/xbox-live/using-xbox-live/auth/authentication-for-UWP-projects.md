@@ -3,11 +3,8 @@ title: Authentication for UWP projects
 
 description: Learn how to sign in Xbox Live users in a Universal Windows Platform (UWP) title.
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
-
 ms.date: 03/14/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, authentication, sign-in
 ms.localizationpriority: medium
 ---

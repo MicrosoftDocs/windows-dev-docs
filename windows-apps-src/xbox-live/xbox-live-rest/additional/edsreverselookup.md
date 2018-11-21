@@ -4,16 +4,11 @@ assetID: 773f7a8e-7571-3aec-96d6-478437696ea6
 permalink: en-us/docs/xboxlive/rest/edsreverselookup.html
 
 description: ' EDS Reverse Lookup for Video'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Reverse Lookup for Video
  
   * [Reverse Lookup steps](#ID4EQ)

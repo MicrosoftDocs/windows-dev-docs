@@ -1,17 +1,12 @@
 ---
-
 title: Communicate with a remote app service
 description: Exchange messages with an app service running on a remote device using Project Rome.
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome, background task, app service
 ms.localizationpriority: medium
 ---
-
 # Communicate with a remote app service
 
 In addition to launching an app on a remote device using a URI, you can run and communicate with *app services* on remote devices as well. Any Windows-based device can be used as either the client or host device. This gives you an almost limitless number of ways to interact with connected devices without needing to bring an app to the foreground.

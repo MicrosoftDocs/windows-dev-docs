@@ -1,8 +1,6 @@
 ---
-
 title: XAML property animations
 description: Animating XAML elements with composition animations.
-
 ms.date: 09/13/2018
 ms.topic: article
 keywords: windows 10, uwp

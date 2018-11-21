@@ -4,16 +4,11 @@ assetID: 22fedb5f-5602-98d8-04a6-786fe3905921
 permalink: en-us/docs/xboxlive/rest/json-personsummary.html
 
 description: ' PersonSummary (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PersonSummary (JSON)
 Collection of [Person (JSON)](json-person.md) objects. 
 <a id="ID4ER"></a>

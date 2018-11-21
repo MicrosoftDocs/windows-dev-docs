@@ -1,17 +1,12 @@
 ﻿---
-
 Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, acquisitions, app sales, app downloads, installs, funnel, acquisition, conversions, channel, app page views
 ms.localizationpriority: medium
 ---
-
 # Acquisitions report
 
 

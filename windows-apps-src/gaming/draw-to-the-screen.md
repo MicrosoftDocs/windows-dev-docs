@@ -1,17 +1,12 @@
 ---
-
 title: Draw to the screen
 description: Finally, we port the code that draws the spinning cube to the screen.
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, graphics
 ms.localizationpriority: medium
 ---
-
 # Draw to the screen
 
 

@@ -1,17 +1,12 @@
 ---
-
 title: The app object and DirectX
 description: Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects.
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, directx, app object
 ms.localizationpriority: medium
 ---
-
 # The app object and DirectX
 
 

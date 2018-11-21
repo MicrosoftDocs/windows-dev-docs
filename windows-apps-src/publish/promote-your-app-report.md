@@ -1,17 +1,12 @@
 ---
-
 title: Ad campaign report
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: The Ad campaign report in Partner Center lets you see how your app promotion ad campaigns are performing.
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, promote, app, campaign, report, installs
 ms.localizationpriority: medium
 ---
-
 # Ad campaign report
 
 The **Ad campaign** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how your app promotion [ad campaigns](create-an-ad-campaign-for-your-app.md) are performing. To see the report, expand **Attract** in the left navigation menu and select **Ad campaigns**.

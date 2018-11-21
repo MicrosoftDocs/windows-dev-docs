@@ -4,16 +4,11 @@ assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
 
 description: ' GET (/users/{ownerId}/people/avoid)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{ownerId}/people/avoid)
 Gets the Avoid list for a user.
 

@@ -4,16 +4,11 @@ assetID: 8e1bd699-e408-67c8-31da-2d968adfbc21
 permalink: en-us/docs/xboxlive/rest/json-titlerecord.html
 
 description: ' TitleRecord (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # TitleRecord (JSON)
 Information about a title, including its name and a last-modified timestamp. 
 <a id="ID4EN"></a>

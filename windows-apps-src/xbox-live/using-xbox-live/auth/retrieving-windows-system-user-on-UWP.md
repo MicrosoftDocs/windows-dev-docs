@@ -2,15 +2,11 @@
 title: Retrieving Windows System User on UWP
 
 description: Learn how to retrieve the Windows System User in a Universal Windows Platform (UWP) game.
-
 ms.date: 06/07/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, system user
 ms.localizationpriority: medium
 ---
-
 # Retrieving the Windows System User in a Universal Windows Platform (UWP) title
 
 ## Windows.System.User

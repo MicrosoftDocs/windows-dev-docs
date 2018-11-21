@@ -2,16 +2,12 @@
 title: What's new for the Xbox Live APIs - April 2017
 
 description: What's new for the Xbox Live APIs - April 2017
-ms.assetid: 
-
+ms.assetid:
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournaments
 ms.localizationpriority: medium
 ---
-
 # What's new for the Xbox Live APIs - April 2017
 
 Please see the [What's New - March 2017](1703-whats-new.md) article for what was added in the March 2017 release.

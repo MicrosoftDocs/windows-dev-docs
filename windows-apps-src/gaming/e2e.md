@@ -1,17 +1,12 @@
 ---
-
 title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-
 ms.date: 04/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, game development
 ms.localizationpriority: medium
 ---
-
 # Windows 10 game development guide
 
 

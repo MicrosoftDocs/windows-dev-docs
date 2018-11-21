@@ -4,16 +4,11 @@ assetID: f94dcf19-a4e3-5bd0-5276-23e43bdcae52
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedbackpost.html
 
 description: ' POST (/users/batchfeedback)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/batchfeedback)
 Used by your title's service to send feedback in batch form outside of your title's interface. 
 The domain for these URIs is `reputation.xboxlive.com`.

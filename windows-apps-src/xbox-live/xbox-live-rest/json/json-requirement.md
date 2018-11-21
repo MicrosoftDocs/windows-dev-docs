@@ -4,16 +4,11 @@ assetID: 74faee8d-42e3-cfcf-22b3-9dcd9227de6b
 permalink: en-us/docs/xboxlive/rest/json-requirement.html
 
 description: ' Requirement (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Requirement (JSON)
 The unlock criteria for the Achievement and how far the user is toward meeting them. 
 <a id="ID4EN"></a>

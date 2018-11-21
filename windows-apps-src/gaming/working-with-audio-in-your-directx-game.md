@@ -1,17 +1,12 @@
 ---
-
 title: Audio for games
 description: Learn how to develop and incorporate music and sounds into your DirectX game, and how to process the audio signals to create dynamic and positional sounds.
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, audio, directx
 ms.localizationpriority: medium
 ---
-
 # Audio for games
 
 

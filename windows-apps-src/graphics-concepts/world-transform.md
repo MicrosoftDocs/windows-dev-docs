@@ -4,15 +4,12 @@ description: A world transform changes coordinates from model space, where verti
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
 keywords:
 - World transform
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # World transform
 
 

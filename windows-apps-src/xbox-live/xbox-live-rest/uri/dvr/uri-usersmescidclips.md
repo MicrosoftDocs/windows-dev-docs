@@ -4,16 +4,11 @@ assetID: ed8317f7-7898-47ad-d18d-cd5150daf293
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclips.html
 
 description: ' /users/me/scids/{scid}/clips'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/me/scids/{scid}/clips
 Access an initial upload request. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

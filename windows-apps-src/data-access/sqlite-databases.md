@@ -1,12 +1,8 @@
 ---
-
 title: Use a SQLite database in a UWP app
 description: Use a SQLite database in a UWP app.
-
 ms.date: 06/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, SQLite, database
 ms.localizationpriority: medium
 ---

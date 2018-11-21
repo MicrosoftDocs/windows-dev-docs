@@ -4,16 +4,11 @@ assetID: 27b6035f-84b9-67a8-6a12-85c450d18a58
 permalink: en-us/docs/xboxlive/rest/atoc-reference-marketplace.html
 
 description: ' Marketplace URIs'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Marketplace URIs
 
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *marketplace* services, also known as Entertainment Discovery Services (EDS).

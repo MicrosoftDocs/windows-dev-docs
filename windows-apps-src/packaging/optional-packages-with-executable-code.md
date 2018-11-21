@@ -1,16 +1,11 @@
 ---
-
 title: Optional packages with executable code
-description: Learn how to use Visual Studio to create an optional package with executable code. 
-
+description: Learn how to use Visual Studio to create an optional package with executable code.
 ms.date: 9/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---
-
 # Optional packages with executable code
  
 Optional packages with executable code are useful for dividing a large or complex app, or for adding on to an app that's already been published. With Visual Studio 2017, version 15.7 and .NET Native 2.1, you can load executable code from both C++ and C# optional packages.

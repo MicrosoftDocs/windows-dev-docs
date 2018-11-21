@@ -4,15 +4,12 @@ description: Formats that contain stencil aren't supported with streaming resour
 ms.assetid: 90A572A4-3C76-4795-BAE9-FCC72B5F07AD
 keywords:
 - Stencil formats not supported with streaming resources
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Stencil formats not supported with streaming resources
 
 

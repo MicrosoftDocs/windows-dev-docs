@@ -1,17 +1,12 @@
 ---
-
 title: Display points of interest (POI) on a map
 description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-
 ms.date: 08/11/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, map, location, pushpins
 ms.localizationpriority: medium
 ---
-
 # Display points of interest on a map
 
 Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.

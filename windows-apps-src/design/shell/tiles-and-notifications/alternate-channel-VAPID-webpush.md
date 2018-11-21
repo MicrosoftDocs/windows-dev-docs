@@ -1,16 +1,11 @@
 ---
 title: Alternate push channels using Webpush and VAPID in UWP
 description: Directions for using alternate push channels with the VAPID protocol from a UWP app
-
-
 ms.date: 1/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
 ---
-
 # Alternate push channels using Webpush and VAPID in UWP 
 Starting in the Fall Creators Update, UWP apps can use web push with VAPID authentication to send push notifications.  
 

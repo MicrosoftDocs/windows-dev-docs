@@ -4,16 +4,11 @@ assetID: 1a0a62ca-e120-e705-3c93-efd4697e2ccf
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.html
 
 description: ' POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)
 Creates a batch query on multiple Xbox user IDs.
 

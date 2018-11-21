@@ -1,19 +1,14 @@
 ---
-
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Notification listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
-
 ms.date: 06/13/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, notification listener, usernotificationlistener, documentation, access notifications
 ms.localizationpriority: medium
 ---
-
 # Notification listener: Access all notifications
 
 The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you recieve a call. 

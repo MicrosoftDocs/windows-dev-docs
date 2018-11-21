@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app.
 title: Get the stack trace for an error in your app
-
 ms.date: 06/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error
 ms.localizationpriority: medium
 ---
-
 # Get the stack trace for an error in your app
 
 Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app. This method can only download the stack trace for an app error that occurred in the last 30 days. Stack traces are also available in the **Failures** section of the [Health report](../publish/health-report.md) in Partner Center.

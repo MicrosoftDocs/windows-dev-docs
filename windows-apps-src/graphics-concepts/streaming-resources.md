@@ -6,15 +6,12 @@ keywords:
 - Streaming resources
 - resources, streaming
 - resources, tiled
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Streaming resources
 
 

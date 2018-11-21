@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: Use this method in the Microsoft Store promotions API to create, edit, and get promotional ad campaigns.
 title: Manage ad campaigns
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Manage ad campaigns
 
 Use these methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md) to create, edit and get promotional ad campaigns for your app. Each campaign you create using this method can be associated with only one app.

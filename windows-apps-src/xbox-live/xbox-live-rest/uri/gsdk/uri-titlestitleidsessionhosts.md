@@ -4,16 +4,11 @@ assetID: 92d9bdd2-5c8f-761b-3f9a-50f8db7b843c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts.html
 
 description: ' /titles/{titleId}/sessionhosts'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /titles/{titleId}/sessionhosts
 Requests a Xbox Live Compute sessionhost to be allocated for a given title id. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

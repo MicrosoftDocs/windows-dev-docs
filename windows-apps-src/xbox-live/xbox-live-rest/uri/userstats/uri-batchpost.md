@@ -4,16 +4,11 @@ assetID: f5997c8e-82c7-0fba-9991-ce1116db4830
 permalink: en-us/docs/xboxlive/rest/uri-batchpost.html
 
 description: ' POST (/batch)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/batch)
 POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles. 
 The domain for these URIs is `userstats.xboxlive.com`.

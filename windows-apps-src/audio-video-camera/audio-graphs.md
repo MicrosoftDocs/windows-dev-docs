@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
 description: This article shows how to use the APIs in the Windows.Media.Audio namespace to create audio graphs for audio routing, mixing, and processing scenarios.
 title: Audio graphs
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Audio graphs
 
 

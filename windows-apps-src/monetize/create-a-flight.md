@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Partner Center account.
 title: Create a package flight
-
 ms.date: 04/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, create flight
 ms.localizationpriority: medium
 ---
-
 # Create a package flight
 
 Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Partner Center account.

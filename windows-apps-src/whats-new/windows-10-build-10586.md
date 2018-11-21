@@ -1,9 +1,7 @@
 ---
-
 title: What's New in Windows 10 build 10586 - November 2015
 description: Windows 10 build 10586 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1511, November, 10586
-
 ms.date: 11/02/2017
 ms.topic: article
 
@@ -11,7 +9,6 @@ ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
 ---
-
 # What's new in Windows 10 for developers, build 10586
 
 Windows 10 build 10586 (also known as the November Update or version 1511), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).

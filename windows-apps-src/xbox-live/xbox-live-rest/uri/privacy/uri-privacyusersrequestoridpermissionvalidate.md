@@ -4,16 +4,11 @@ assetID: 400a9721-bf43-76df-4cd1-9f2ae6ca5035
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidate.html
 
 description: ' /users/{requestorId}/permission/validate'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{requestorId}/permission/validate
  
   * [URI parameters](#ID4EQ)

@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Partner Center account.
 title: Delete a package flight
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, delete flight
 ms.localizationpriority: medium
 ---
-
 # Delete a package flight
 
 Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Partner Center account.

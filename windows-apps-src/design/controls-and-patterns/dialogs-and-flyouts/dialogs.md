@@ -1,14 +1,10 @@
 ---
-
 Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
@@ -17,7 +13,6 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 ## Dialog controls
 
 Dialog controls are modal UI overlays that provide contextual app information. They block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.

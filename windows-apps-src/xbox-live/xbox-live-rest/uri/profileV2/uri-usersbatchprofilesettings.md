@@ -4,16 +4,11 @@ assetID: 2809adc7-5daa-1483-8a2e-48380430e6e1
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettings.html
 
 description: ' /users/batch/profile/settings'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/batch/profile/settings
 Access the profile for a user or users. 
 The domain for these URIs is `profile.xboxlive.com`.

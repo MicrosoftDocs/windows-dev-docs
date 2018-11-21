@@ -3,11 +3,8 @@ title: XIM Out-of-band Reservations
 
 description: Describes how to use Xbox Integrated Multiplayer (XIM) as a dedicated chat solution via out-of-band reservations.
 ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
-
 ms.date: 01/28/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox integrated multiplayer, xim, chat
 ms.localizationpriority: medium
 ---

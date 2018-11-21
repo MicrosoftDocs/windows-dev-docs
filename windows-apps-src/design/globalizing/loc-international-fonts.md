@@ -1,17 +1,12 @@
 ---
-
 Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
 title: International fonts
 template: detail.hbs
-
 ms.date: 11/02/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
-
 # International fonts
 
 This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.

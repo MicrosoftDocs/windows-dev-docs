@@ -3,15 +3,11 @@ title: Advanced Xbox Live sandboxes
 
 description: Learn how to use sandboxes to isolate content during development by managed partners.
 ms.assetid: bd8a2c51-2434-4cfe-8601-76b08321a658
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, xbox one, xdk, managed partner, sandbox, content isolation
 ms.localizationpriority: medium
 ---
-
 # Advanced Xbox Live sandboxes
 
 > [!NOTE]
@@ -53,7 +49,6 @@ Figure 2. The relationships between a product group, a product, a product instan
 
 Product instances
 -----------------
-
 A *product instance* is a projection of title, product, and configuration data in a specific sandbox. This data is described in the following three areas: service configuration, catalog metadata, and binaries.
 
 ### Service configuration
@@ -74,7 +69,6 @@ A *product instance* is a projection of title, product, and configuration data i
 
 Getting the access right
 ------------------------
-
 There are two distinct types of access to your content in Xbox One:
 
 *Design-time access*—access from a PC via the XDP tool—allows people working on your products to upload, organize, and work with content, configuration, and metadata, but does not allow them to run or play instances of your products.
@@ -149,24 +143,20 @@ A device group, the second kind of principal group, can also be given access to 
 
 What is a sandbox?
 ------------------
-
 Stated simply, *a sandbox is a way to partition data in production*.
 
 Why do we need sandboxes?
 -------------------------
-
 Just as users and devices access titles, titles access services. We introduce a concept of “title group” where sets of titles are granted access to service resources.
 
 Because there is a single production environment for Xbox One for all content (pre-release and retail), multiple instances (pre-release/retail) of a title must be prevented from operating on the same instances of resources.
 
 What is in a sandbox?
 ---------------------
-
 A sandbox contains a product instance for every title that gets added to the sandbox.
 
 What is a sandbox ID?
 ---------------------
-
 A sandbox ID is a partitioning unit of data for a title, product, or service config. Multiple titles can exist in the same sandbox, which is a prerequisite for them to share any service config data.
 
 A sandbox ID (case sensitive) is a string in the following format: &lt;PublisherMoniker&gt;.*n*. An example sandbox ID, XLDP.5, is explained below:
@@ -179,21 +169,18 @@ When the title data moves through services, Xbox services use the sandbox ID to 
 
 What data is sandboxed?
 -----------------------
-
 The diagram below shows what user and title data is sandboxed.
 
 ![](images/sandboxes/sandboxes_image5.png)
 
 Global override sandbox
 -----------------------
-
 A developer sets the sandbox ID on her dev kit and thus sets the sandbox that the dev kit runs in; this is also known as the global override sandbox. Thus, all requests made to Xbox Live services (for example, achievements, matchmaking, licensing, EDS, etc.) from the titles (shell apps and regular apps) in the dev kit are made in that sandbox.
 
 The global override sandbox also implies that only the content ingested in the global override sandbox is visible when being browsed.
 
 Types of sandboxes
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 There are two different categories of sandboxes. These categories are defined as follows:
 
 -   *Publisher sandboxes*. Publishers have access to their in-development sandboxes. These may look like XLDP.0, XLDP.1, XLDP.2, XLDP.3, etc. This is where publishers would put their title product instances. Access to these sandboxes is gated to the users/devices that the publishers grants access to
@@ -202,14 +189,12 @@ There are two different categories of sandboxes. These categories are defined as
 
 CERT sandbox
 ------------
-
 When a title is ready for general availability, it needs to go through certification first. The CERT sandbox is a Microsoft-controlled sandbox that only individuals in certification have access to. Publishers can see what content they own is going through certification.
 
 Any product instances that fail while in certification can be brought back to a development sandbox to be debugged and fixed by the publishers using XDP or Partner Center.
 
 RETAIL sandbox
 --------------
-
 The RETAIL sandbox is the final destination for all content that is created for Xbox One.
 
 After a title passes certification, it is added to the RETAIL sandbox. Only green signed content is permitted to run in the RETAIL sandbox. This has an important implication that publisher-driven betas are also done in the RETAIL sandbox. Data generated in the RETAIL sandbox represents real customer production data.
@@ -220,7 +205,6 @@ For example, publisher-driven betas are run in the RETAIL sandbox, where the pub
 
 Cross-sandbox data interaction
 ------------------------------
-
 By definition, a sandbox is a container that restricts data sharing. Thus, cross-sandbox data interaction is not possible.
 
 ## Organizing your sandboxes

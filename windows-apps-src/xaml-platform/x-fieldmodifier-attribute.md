@@ -1,17 +1,12 @@
 ---
-
 description: Modifies XAML compilation behavior, such that fields for named object references are defined with public access rather than the private default behavior.
 title: xFieldModifier attribute
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # x:FieldModifier attribute
 
 

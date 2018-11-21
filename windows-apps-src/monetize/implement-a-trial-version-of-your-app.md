@@ -1,17 +1,14 @@
 ---
-
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: Learn how to use the Windows.Services.Store namespace to implement a trial version of your app.
 title: Implement a trial version of your app
 keywords: windows 10, uwp, trial, in-app purchases, Windows.Services.Store
-
 ms.date: 08/25/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Implement a trial version of your app
 
 If you [configure your app as a free trial in Partner Center](../publish/set-app-pricing-and-availability.md#free-trial) so that customers can use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.

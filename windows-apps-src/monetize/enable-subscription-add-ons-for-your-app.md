@@ -1,16 +1,13 @@
 ---
-
 description: Learn how to use the Windows.Services.Store namespace to implement subscription add-ons.
 title: Enable subscription add-ons for your app
 keywords: windows 10, uwp, subscriptions, add-ons, in-app purchases, IAPs, Windows.Services.Store
-
 ms.date: 12/06/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Enable subscription add-ons for your app
 
 Your Universal Windows Platform (UWP) app can offer in-app purchases of *subscription* add-ons to your customers. You can use subscriptions to sell digital products in your app (such as app features or digital content) with automated recurring billing periods.

@@ -3,15 +3,11 @@ title: Authorize Xbox Live accounts in your test environment
 
 description: Learn how to authorize a public Xbox Live account for use in testing in your development environment.
 ms.assetid: 9772b8f1-81db-4c57-a54d-4e9ca9142111
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts
 ms.localizationpriority: medium
 ---
-
 # Authorize Xbox Live Accounts for Testing in your environment
 
 This topic will go through the process of setting up an Xbox Live account with your publishers test environment

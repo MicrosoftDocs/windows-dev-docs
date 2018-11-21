@@ -1,10 +1,8 @@
 ---
-
 title: Device Portal deploy info API reference
 description: Learn how to access the deploy info API programatically.
 ms.localizationpriority: medium
 ---
-
 # Requests deployment information for one or more installed packages.
 
 **Request**

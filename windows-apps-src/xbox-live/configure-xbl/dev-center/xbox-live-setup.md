@@ -3,7 +3,6 @@ title: Xbox Live Setup configuration
 
 description: Describes how you can configure Xbox Live Setup in Partner Center.
 ms.assetid:
-
 ms.date: 10/30/2017
 ms.topic: article
 
@@ -11,7 +10,6 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, Partner Center, Xbox Live Setup
 ---
-
 # Configure Xbox Live Setup in Partner Center
 
 You can use [Partner Center](https://developer.microsoft.com/dashboard) to configure the initial set of Xbox Live properties that are associated with your game. Add configuration by doing the following:

@@ -1,16 +1,11 @@
 ---
-
 description: This topic shows how to port WRL code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from WRL
-
 ms.date: 05/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, WRL
 ms.localizationpriority: medium
 ---
-
 # Move to C++/WinRT from WRL
 This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 

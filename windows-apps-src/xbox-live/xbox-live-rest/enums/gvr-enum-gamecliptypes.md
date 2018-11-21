@@ -4,16 +4,11 @@ assetID: 08fbae38-d96e-8a11-14ab-abb4f1fe99f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gamecliptypes.html
 
 description: ' GameClipType Enumeration'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipType Enumeration
 Details the GameClipTypes enumeration. 
 <a id="ID4ET"></a>

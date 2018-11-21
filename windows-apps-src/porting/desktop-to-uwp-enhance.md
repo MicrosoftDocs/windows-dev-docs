@@ -1,17 +1,12 @@
 ---
-
 Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
-
 ms.date: 10/15/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Enhance your desktop application for Windows 10
 
 You can use Windows Runtime APIs to add modern experiences that light up for Windows 10 users.

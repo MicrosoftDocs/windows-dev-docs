@@ -4,16 +4,11 @@ assetID: df61be42-c229-7408-5e4c-dbf4ae95b52b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindexpost.html
 
 description: ' POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 Moves an item in a list to a different position within the list. 
 The domain for these URIs is `eplists.xboxlive.com`.

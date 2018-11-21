@@ -4,16 +4,11 @@ assetID: 06938a52-e582-a15b-ec7f-4b053dfc28ad
 permalink: en-us/docs/xboxlive/rest/json-xuidlist.html
 
 description: ' XuidList (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # XuidList (JSON)
 List of XUIDs on which to perform an operation. 
 <a id="ID4EN"></a>

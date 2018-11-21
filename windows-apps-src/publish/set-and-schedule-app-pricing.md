@@ -1,16 +1,11 @@
 ﻿---
-
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, pricing, app pricing, app price, sell apps, price change, custom price, price, prices, cost, override base price, free-form price, freeform
 ms.localizationpriority: medium
 ---
-
 # Set and schedule app pricing
 
 The **Pricing** section of the [Pricing and availability](set-app-pricing-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.

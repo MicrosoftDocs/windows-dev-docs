@@ -4,16 +4,11 @@ assetID: 12617677-47f2-e517-af53-5ab9687eea2a
 permalink: en-us/docs/xboxlive/rest/json-matchticket.html
 
 description: ' MatchTicket (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MatchTicket (JSON)
 A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD). 
 <a id="ID4EN"></a>

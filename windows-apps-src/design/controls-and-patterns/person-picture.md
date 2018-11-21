@@ -1,14 +1,10 @@
 ---
-
 description: Displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph.
 title: Person picture control
 template: detail.hbs
 label: Parallax View
-
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: trestar
 design-contact: kimsea
@@ -16,8 +12,6 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
-
 # Person picture control
 
 The person picture control displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph. You can use the control to display a [Contact object](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact),  an object that manages a person's contact info, or you can manually provide contact information, such as a display name and profile picture.  

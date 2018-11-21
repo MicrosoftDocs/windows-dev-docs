@@ -1,17 +1,12 @@
 ---
-
 description: Template settings classes
 title: Template settings classes
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Template settings classes
 
 

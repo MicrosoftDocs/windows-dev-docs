@@ -1,18 +1,13 @@
 ---
-
 description: Shows how to add your app next to actions in a contact card
 MSHAttr: PreferredLib:/library/windows/apps
 title: Connect your app to actions on a contact card
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, contacts, contact card, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ---
-
 # Connect your app to actions on a contact card
 
 Your app can appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message.

@@ -1,16 +1,11 @@
 ---
-
 title: UWP App Installation from an Azure Web Server 
 description: This tutorial demonstrates how to set up an Azure web server, verify that your web app can host app packages, and invoke and use App Installer effectively.
-
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, Azure web server
 ms.localizationpriority: medium
 ---
-
 # Install a UWP app from an Azure Web App
 
 The App Installer app allows developers and IT Pros to distribute Windows 10 apps by hosting them on their own Content Delivery Network (CDN). This is useful for enterprises that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.

@@ -4,16 +4,11 @@ assetID: 2f8eb79a-42c2-0267-cbf2-8682bb28f270
 permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesv2.html
 
 description: ' /users/xuid({xuid})/history/titles'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/history/titles
  
 This Universal Resource Identifier (URI) provides access to a user's Achievement-related title history.

@@ -4,16 +4,11 @@ assetID: 6abb7d37-2c35-2cc3-d9e5-eff695235262
 permalink: en-us/docs/xboxlive/rest/json-initialuploadresponse.html
 
 description: ' InitialUploadResponse (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # InitialUploadResponse (JSON)
  
 <a id="ID4EO"></a>

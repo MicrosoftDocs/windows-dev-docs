@@ -1,9 +1,7 @@
 ---
-
 Description: Learn how to use page transitions in your UWP apps.
 title: Page transitions in UWP apps
 template: detail.hbs
-
 ms.date: 04/08/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,7 +9,6 @@ pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Page transitions
 
 Page transitions navigate users between pages in an app, providing feedback as the relationship between pages. Page transitions help users understand if they are at the top of a navigation hierarchy, moving between sibling pages, or navigating deeper into the page hierarchy.

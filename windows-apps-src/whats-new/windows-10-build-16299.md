@@ -1,16 +1,13 @@
 ---
-
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 build 16299 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1709, October, newest, developers, 16299, Fall Creators
-
 ms.date: 11/02/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # What's New in Windows 10 for developers, build 16299
 
 Windows 10 build 16299 (also known as the Fall Creators Update or version 1709), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).

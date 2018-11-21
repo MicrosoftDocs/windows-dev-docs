@@ -1,16 +1,13 @@
 ---
-
 title: Create a Universal Windows Platform console app
 description: This topic describes how to write a UWP app that runs in a console window.
 keywords: console uwp
-
 ms.date: 08/02/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Create a Universal Windows Platform console app
 
 This topic describes how to create a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) or C++/CX Universal Windows Platform (UWP) console app.

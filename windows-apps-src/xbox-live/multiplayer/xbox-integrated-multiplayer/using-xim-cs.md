@@ -2,11 +2,8 @@
 title: Using XIM (C#)
 
 description: Learn how to use Xbox Integrated Multiplayer (XIM) with C#.
-
 ms.date: 04/24/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox integrated multiplayer
 ms.localizationpriority: medium
 ---

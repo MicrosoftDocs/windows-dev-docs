@@ -1,13 +1,9 @@
 ---
-
 description: We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
 title: XAML overview
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
-
 ms.date: 07/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -16,7 +12,6 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
-
 # XAML overview
 
 We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.

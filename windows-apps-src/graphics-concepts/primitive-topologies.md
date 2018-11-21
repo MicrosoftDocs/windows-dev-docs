@@ -4,15 +4,12 @@ description: Direct3D supports several primitive topologies, which define how ve
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
 keywords:
 - Primitive topologies
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Primitive topologies
 
 

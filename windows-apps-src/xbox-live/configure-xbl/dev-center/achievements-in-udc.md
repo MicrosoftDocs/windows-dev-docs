@@ -3,7 +3,6 @@ title: Achievements 2017
 
 description: Describes how you can configure achievements in Partner Center to deliver rewards.
 ms.assetid:
-
 ms.date: 11/10/2017
 ms.topic: article
 
@@ -11,7 +10,6 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center
 ---
-
 # Configure Achievements 2017 in Partner Center
 
 > [!IMPORTANT]

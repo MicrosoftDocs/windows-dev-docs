@@ -4,16 +4,11 @@ assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
 
 description: ' Progression (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Progression (JSON)
 The user's progression toward unlocking the achievement. 
 <a id="ID4EN"></a>

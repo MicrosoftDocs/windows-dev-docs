@@ -4,16 +4,11 @@ assetID: 2ca34506-8801-efc5-7c83-3c9ec5572276
 permalink: en-us/docs/xboxlive/rest/json-batchrequest.html
 
 description: ' BatchRequest (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # BatchRequest (JSON)
 An array of properties with which to filter presence information, such as users, devices, and titles.
 <a id="ID4EN"></a>

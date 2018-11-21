@@ -3,15 +3,11 @@ title: Rich Presence appendix
 
 description: Learn about using the Xbox Live Data Platform to enhance Rich Presence strings.
 ms.assetid: 626c1661-3be9-49e4-a5ce-d3f5abd79a9b
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Rich Presence appendix
 
 ## Data Platform

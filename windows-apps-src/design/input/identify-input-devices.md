@@ -1,19 +1,16 @@
 ---
-
 Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
 title: Identify input devices
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: device, digitizer, input, interaction
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Identify input devices
 
 

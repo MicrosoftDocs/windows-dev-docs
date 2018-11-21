@@ -1,10 +1,8 @@
 ---
-
 title: Device Portal network credentials API reference
 description: Learn how to add, remove, or update network credentials programatically.
 ms.localizationpriority: medium
 ---
-
 # Network Credentials API reference
 You can add, remove, or update stored network credentials on your devkit using this REST API.
 

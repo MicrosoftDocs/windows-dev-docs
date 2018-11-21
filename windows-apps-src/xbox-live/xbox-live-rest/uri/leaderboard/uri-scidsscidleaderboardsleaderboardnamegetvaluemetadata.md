@@ -4,16 +4,11 @@ assetID: ee69a9e3-ea91-3cf5-a10a-811762cba892
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.html
 
 description: ' GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valuemetadata)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valuemetadata)
  
 Gets a predefined global leaderboard along with any metadata associated with the leaderboard values.

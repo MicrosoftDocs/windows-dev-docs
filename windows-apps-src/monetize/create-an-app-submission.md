@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account.
 title: Create an app submission
-
 ms.date: 07/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, create app submission
 ms.localizationpriority: medium
 ---
-
 # Create an app submission
 
 Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account. After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.

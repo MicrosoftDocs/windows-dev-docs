@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: This topic shows you how to get a single preview frame from the media capture preview stream.
 title: Get a preview frame
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Get a preview frame
 
 

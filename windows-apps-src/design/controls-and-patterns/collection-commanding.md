@@ -1,15 +1,11 @@
 ---
-
 description: How to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.
 title: Contextual commanding
 ms.assetid: 
 label: Contextual commanding in collections
 template: detail.hbs
-
 ms.date: 10/25/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: chigy
 design-contact: kimsea

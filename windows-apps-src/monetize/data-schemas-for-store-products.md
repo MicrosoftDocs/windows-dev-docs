@@ -1,16 +1,11 @@
 ---
-
 description: Describes the extended JSON data schema for Store products in the Windows.Services.Store namespace.
 title: Data schemas for Store products
-
 ms.date: 09/26/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, ExtendedJsonData, Store products, schema
 ms.localizationpriority: medium
 ---
-
 # Data schemas for Store products
 
 When you submit a product such as an app or add-on to the Store, the Store maintains a comprehensive set of data for the product and its licenses. In your app's code, you can programmatically access some of this data by using properties in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace. For example, you can retrieve the description and price of the current app or an add-on for the current app by using the [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) and [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) properties.

@@ -4,16 +4,11 @@ assetID: 5a519314-1df1-cbdc-cb04-3a8b663003de
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypequeryrefiners.html
 
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners
 Accesses the query refiners for the given media item type. 
 The domain for these URIs is `eds.xboxlive.com`.

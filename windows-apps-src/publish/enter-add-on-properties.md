@@ -1,17 +1,12 @@
 ﻿---
-
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, add-on, properties, subscription period, product lifetime, content type, iap, in-app purchase, in-app product
 ms.localizationpriority: medium
 ---
-
 # Enter add-on properties
 
 When submitting an add-on, the options on the **Properties** page help determine the behavior of your add-on when offered to customers.

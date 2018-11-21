@@ -1,17 +1,12 @@
 ---
-
 title: Game technologies for Universal Windows Platform (UWP) apps
 description: In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, technology, directx
 ms.localizationpriority: medium
 ---
-
 # Game technologies for UWP apps
 
 

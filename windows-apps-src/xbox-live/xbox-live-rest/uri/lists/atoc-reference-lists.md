@@ -4,16 +4,11 @@ assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
 
 description: ' Lists URIs'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Lists URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *Pins*.

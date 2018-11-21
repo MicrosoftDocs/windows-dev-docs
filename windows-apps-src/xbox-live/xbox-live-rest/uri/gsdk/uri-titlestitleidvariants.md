@@ -4,16 +4,11 @@ assetID: bca30c8f-1f09-729f-4955-38b7809404eb
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants.html
 
 description: ' /titles/{titleId}/variants'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /titles/{titleId}/variants
 URI called by a client to get the available variants for a title. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

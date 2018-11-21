@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: Scan from your app
 description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

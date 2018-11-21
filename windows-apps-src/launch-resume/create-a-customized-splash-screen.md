@@ -1,15 +1,12 @@
 ---
-
 title: Display a splash screen for more time
 description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-
 ms.date: 11/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Display a splash screen for more time
 
 **Important APIs**

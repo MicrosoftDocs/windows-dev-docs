@@ -4,16 +4,11 @@ assetID: d6353cd3-9127-98d4-bb99-5df690e07022
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath.html
 
 description: ' /global/scids/{scid}/data/{path}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /global/scids/{scid}/data/{path}
 Lists file information at a specified path. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

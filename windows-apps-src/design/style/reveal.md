@@ -1,13 +1,9 @@
 ---
-
 description: Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
 title: Reveal Highlight
 template: detail.hbs
-
 ms.date: 08/9/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: conrwi

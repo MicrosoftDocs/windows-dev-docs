@@ -1,17 +1,12 @@
 ---
-
 title: Device Portal folder upload API reference
 description: Learn how to access the folder upload APIs programatically.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ---
-
 # Upload a folder to the development directory
 
 **Request**

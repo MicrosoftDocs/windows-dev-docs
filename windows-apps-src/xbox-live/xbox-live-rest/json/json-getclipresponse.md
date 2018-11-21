@@ -4,16 +4,11 @@ assetID: ef128790-dc6a-6055-92d5-2ac08b708443
 permalink: en-us/docs/xboxlive/rest/json-getclipresponse.html
 
 description: ' GetClipResponse (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GetClipResponse (JSON)
 Wraps the game clip. 
 <a id="ID4EN"></a>

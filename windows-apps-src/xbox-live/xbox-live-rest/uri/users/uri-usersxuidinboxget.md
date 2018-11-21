@@ -4,16 +4,11 @@ assetID: c603910d-b430-f157-2634-ceddea89f2bd
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxget.html
 
 description: ' GET (/users/xuid({xuid})/inbox)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/inbox)
 Retrieves a specified number of user message summaries from the service.
 The domain for these URIs is `msg.xboxlive.com`.

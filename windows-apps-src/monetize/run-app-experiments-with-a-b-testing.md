@@ -1,17 +1,12 @@
 ---
-
 Description: You can use Partner Center to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
 title: Run app experiments with A/B testing
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---
-
 # Run app experiments with A/B testing
 
 You can use Partner Center to define remote variables that you can retrieve at run time from your Universal Windows Platform (UWP) apps, and you can test variations of these values with your users to identify the most effective values for driving desired user behavior. Your app can use remote variables to configure app experiences such as in-app purchases, sign-up flow, captions, and ad placements.

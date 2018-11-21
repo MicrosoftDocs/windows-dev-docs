@@ -1,16 +1,13 @@
 ---
-
 title: What's New in Windows Docs in August 2018 - Develop UWP apps
 description: New features, videos, samples, and developer guidance have been added to the Windows 10 developer documentation for August 2018.
 keywords: what's new, update, features, developer guidance, Windows 10, august
-
 ms.date: 08/14/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # What's New in the Windows Developer Docs in August 2018
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of August.

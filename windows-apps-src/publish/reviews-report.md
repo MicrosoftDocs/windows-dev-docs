@@ -1,17 +1,12 @@
 ---
-
 Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
-
 ms.date: 08/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, review, comment, reviewer
 ms.localizationpriority: medium
 ---
-
 # Reviews report
 
 

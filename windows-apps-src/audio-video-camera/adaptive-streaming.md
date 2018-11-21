@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
 title: Adaptive streaming
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Adaptive streaming
 
 

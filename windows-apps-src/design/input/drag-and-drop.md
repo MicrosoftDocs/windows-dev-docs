@@ -2,12 +2,8 @@
 description: This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app.
 title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

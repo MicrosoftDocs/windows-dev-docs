@@ -4,15 +4,12 @@ description: The Hull Shader (HS) stage is one of the tessellation stages, which
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
 keywords:
 - Hull Shader (HS) stage
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Hull Shader (HS) stage
 
 

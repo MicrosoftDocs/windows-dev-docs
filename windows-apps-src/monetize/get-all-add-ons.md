@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: Use this method in the Microsoft Store submission API to retrieve all add-on data for all the apps that are registered to your Partner Center account.
 title: Get all add-ons
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app products, IAPs
 ms.localizationpriority: medium
 ---
-
 # Get all add-ons
 
 Use this method in the Microsoft Store submission API to retrieve data for all add-ons for all the apps that are registered to your Partner Center account.

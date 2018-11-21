@@ -1,17 +1,12 @@
 ---
-
 title: Register a background task
 description: Learn how to create a function that can be re-used to safely register most background tasks.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---
-
 # Register a background task
 
 

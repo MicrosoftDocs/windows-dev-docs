@@ -4,16 +4,11 @@ assetID: 3bf75247-0a2a-0e4c-afcc-9e7654a89648
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddevicescurrenttitlescurrentdelete.html
 
 description: ' DELETE (/users/xuid({xuid})/devices/current/titles/current)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE (/users/xuid({xuid})/devices/current/titles/current)
 Remove the presence of a closing title, instead of waiting for the [PresenceRecord](../../json/json-presencerecord.md) to expire. 
 The domain for these URIs is `userpresence.xboxlive.com`.

@@ -1,5 +1,4 @@
 ---
-
 ms.localizationpriority: medium
 ---
 #XAML samples for media apps

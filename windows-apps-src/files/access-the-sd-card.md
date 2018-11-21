@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: Access the SD card
 description: You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
-
 ms.date: 03/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, sd card, storage
 ms.localizationpriority: medium
 ---

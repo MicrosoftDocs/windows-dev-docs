@@ -1,17 +1,12 @@
 ---
 title: App development for Windows as a service
 description: Decouple app release and support from specific Windows builds.
-
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
 ---
-
 # Application development for Windows as a service
 
 **Applies to**

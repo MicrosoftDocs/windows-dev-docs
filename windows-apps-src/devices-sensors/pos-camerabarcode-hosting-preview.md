@@ -1,16 +1,11 @@
 ---
-
 title: Hosting Preview for Camera Barcode Scanner
 description: Learn how to host a camera barcode scanner preview in your application
-
 ms.date: 05/1/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Hosting a camera barcode scanner preview in your application
 ## Step 1: Setup your camera preview
 The first step in adding a preview to your application for camera barcode scanner can be accomplished by following the instructions in the [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md) topic.  Once you have completed this step, return to this topic for camera barcode scanner specific modifications.

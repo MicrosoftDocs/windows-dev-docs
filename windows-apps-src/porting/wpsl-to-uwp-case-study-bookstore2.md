@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: This case study, which builds on the info given in Bookstore, begins with a Windows Phone Silverlight app that displays grouped data in a LongListSelector.
 title: Windows Phone Silverlight to UWP case study, Bookstore2
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Windows Phone Silverlight to UWP case study: Bookstore2
 
 

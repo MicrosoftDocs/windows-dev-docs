@@ -3,15 +3,11 @@ title: Multiplayer 2015 FAQ and troubleshooting
 
 description: Frequently asked questions about Xbox Live Multiplayer 2015 and troubleshooting.
 ms.assetid: 75823f10-b342-4e20-b885-e5ad4392bc3d
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
 ms.localizationpriority: medium
 ---
-
 # Multiplayer 2015 FAQ and troubleshooting
 
 -   I am developing a new title. Which multiplayer API elements should I use?

@@ -1,17 +1,14 @@
 ---
-
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
-
 ms.date: 10/31/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # App submissions
 
 

@@ -1,15 +1,10 @@
 ﻿---
-
 description: The Payment Request API provides an integrated solution for UWP apps to bypass the process of requiring a user to input payment information and select shipping methods.
 title: Simplify payments with the Payment Request API
-
 ms.date: 09/26/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, payment request
 ---
-
 # Simplify payments with the Payment Request API
 The Payment Request API  for UWP apps is based on the [W3C Payment Request API spec](https://w3c.github.io/browser-payment-api/). It gives you the ability to streamline the checkout process in your UWP apps. Users can speed through checkout by using payment options and shipping addresses already saved with their Microsoft account. You can increase your conversion rate and reduce your risk of data breaches because the payment information is tokenized. Starting with the Windows 10 Creators Update, users can use their saved payment options to pay easily across  experiences in UWP apps.
 

@@ -4,16 +4,11 @@ assetID: f7964d2e-a8c8-2caa-ca97-e0d76ef586f4
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameput.html
 
 description: ' PUT (/users/xuid(xuid)/lists/PINS/{listname})'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PUT (/users/xuid(xuid)/lists/PINS/{listname})
 Updates the items in a list according to the indexes specified for each item in the request body. 
 The domain for these URIs is `eplists.xboxlive.com`.

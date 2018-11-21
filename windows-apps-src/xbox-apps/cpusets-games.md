@@ -4,7 +4,6 @@ description: This article provides an overview of the CPUSets API new to the Uni
 
 ms.localizationpriority: medium
 ---
-
 # CPUSets for game development
 
 ## Introduction

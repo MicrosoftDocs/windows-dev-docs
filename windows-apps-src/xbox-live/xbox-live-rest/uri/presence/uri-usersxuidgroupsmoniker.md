@@ -4,16 +4,11 @@ assetID: 7c73236b-95ee-723b-e5e0-68252c953e14
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmoniker.html
 
 description: ' /users/xuid({xuid})/groups/{moniker}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/groups/{moniker}
 Accesses the PresenceRecord for a group. 
 The domain for these URIs is `userpresence.xboxlive.com`.

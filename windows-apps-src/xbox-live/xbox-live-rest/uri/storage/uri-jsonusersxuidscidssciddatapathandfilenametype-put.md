@@ -4,16 +4,11 @@ assetID: 02e43120-1f71-a3e7-c84e-96147b838b97
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype-put.html
 
 description: ' PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 Uploads a file. Multi-block upload is not supported for data of type json. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

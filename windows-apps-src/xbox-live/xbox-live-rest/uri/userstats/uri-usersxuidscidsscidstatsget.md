@@ -4,16 +4,11 @@ assetID: af117e87-6f1d-6448-9adf-7cf890d1380f
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstatsget.html
 
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/scids/{scid}/stats)
 Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.
 The domain for these URIs is `userstats.xboxlive.com`.

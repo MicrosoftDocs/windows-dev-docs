@@ -4,16 +4,11 @@ assetID: b17d420b-b210-0b57-6cb1-49191103a765
 permalink: en-us/docs/xboxlive/rest/atoc-reference-userstats.html
 
 description: ' User Statistics URIs'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # User Statistics URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *user statistics*.

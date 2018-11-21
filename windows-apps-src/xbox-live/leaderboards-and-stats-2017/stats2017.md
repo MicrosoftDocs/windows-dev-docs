@@ -2,11 +2,8 @@
 title: Player Stats
 
 description: Intro to Stats 2017
-
 ms.date: 07/02/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, player stats, leaderboards, stats 2017
 ms.localizationpriority: medium
 ---

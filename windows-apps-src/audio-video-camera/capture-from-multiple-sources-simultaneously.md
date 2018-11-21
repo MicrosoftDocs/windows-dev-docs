@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 
 description: This article shows you how to capture video from multiple sources simulataneously to a single file with multiple embedded video tracks.
 title: Capture from multiple sources using MediaFrameSourceGroup
-
 ms.date: 09/12/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, capture, video
 ms.localizationpriority: medium
 ---
-
 # Capture from multiple sources using MediaFrameSourceGroup
 
 This article shows you how to capture video from multiple sources simultaneously to a single file with multiple embedded video tracks. Starting with RS3, you can specify multiple **[VideoStreamDescriptor](https://docs.microsoft.com/uwp/api/windows.media.core.videostreamdescriptor)** objects for a single **[MediaEncodingProfile](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile)**. This enables you to encode multiple streams simultaneously to a single file. The video streams that are encoded in this operation must be included in a single **[MediaFrameSourceGroup](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup)** which specifies a set of cameras on the current device that can be used at the same time. 

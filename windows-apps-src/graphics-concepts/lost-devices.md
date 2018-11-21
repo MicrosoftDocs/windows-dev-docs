@@ -4,15 +4,12 @@ description: A Direct3D device can be in either an operational state or a lost s
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
 keywords:
 - Lost devices
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Lost devices
 
 

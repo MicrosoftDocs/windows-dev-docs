@@ -6,7 +6,6 @@ title: UWP Documentation - UWP app developer | Microsoft Docs
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-
 keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
 ms.localizationpriority: medium
 ---

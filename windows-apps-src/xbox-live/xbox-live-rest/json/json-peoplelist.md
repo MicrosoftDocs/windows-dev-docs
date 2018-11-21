@@ -4,16 +4,11 @@ assetID: ac538652-c10c-44e5-c1e3-5314ebe8ba83
 permalink: en-us/docs/xboxlive/rest/json-peoplelist.html
 
 description: ' PeopleList (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PeopleList (JSON)
 Collection of [Person](json-person.md) objects. 
 <a id="ID4ER"></a>

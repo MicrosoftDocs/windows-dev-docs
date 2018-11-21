@@ -6,15 +6,12 @@ keywords:
 - How a streaming resource's area is tiled
 - resource area, tiled
 - size tables, resources, tiled
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # How a streaming resource's area is tiled
 
 

@@ -4,16 +4,11 @@ assetID: 858c720a-1648-738b-bb43-f050e7cac19e
 permalink: en-us/docs/xboxlive/rest/json-mediaasset.html
 
 description: ' MediaAsset (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MediaAsset (JSON)
 The media assets associated with the achievement or its rewards.
 <a id="ID4EN"></a>

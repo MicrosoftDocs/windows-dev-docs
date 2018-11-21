@@ -4,15 +4,12 @@ description: A depth buffer, or z-buffer, stores depth information to control wh
 ms.assetid: BE83A1D7-D43D-4013-8817-EFD2B24DC58E
 keywords:
 - Depth buffers
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Depth buffers
 
 

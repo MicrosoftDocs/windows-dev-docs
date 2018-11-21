@@ -1,16 +1,13 @@
 ---
-
 title: Windows 10 Build 17134 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17134
 keywords: what's new, whats new, updates, Windows 10, newest, apis, 17134
-
 ms.date: 4/10/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # New APIs in Windows 10 build 17134
 
 New and updated API namespaces have been made available to developers in Windows 10 build 17134 (Also known as the April Update or version 1803). Below is a full list of documentation published for namespaces added or modified in this release.

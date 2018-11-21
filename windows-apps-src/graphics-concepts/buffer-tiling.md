@@ -4,15 +4,12 @@ description: A Buffer resource is divided into 64KB tiles, with some empty space
 ms.assetid: 577DC6B0-F373-4748-AD80-2784C597C366
 keywords:
 - Buffer tiling
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Buffer tiling
 
 

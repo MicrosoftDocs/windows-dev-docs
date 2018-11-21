@@ -1,17 +1,12 @@
 ﻿---
-
 Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
 title: Upload app packages
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-
 ms.date: 10/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, packages, upload, package upload
 ms.localizationpriority: medium
 ---
-
 # Upload app packages
 
 The **Packages** page is where you upload all of the package files (.msix, .msixupload, .msixbundle, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload all your packages for the same app on this page, and when a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device. After you upload your packages, you’ll see a table indicating [which packages will be offered to specific Windows 10 device families](#device-family-availability) (and earlier OS versions, if applicable) in ranked order.

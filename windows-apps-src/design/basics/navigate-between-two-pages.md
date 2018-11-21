@@ -1,16 +1,12 @@
 ---
-
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: Peer-to-peer navigation between two pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-
 ms.date: 07/13/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -18,7 +14,6 @@ dev_langs:
 - cppwinrt
 - cpp
 ---
-
 # Implement navigation between two pages
 
 Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app. 

@@ -1,17 +1,12 @@
 ---
-
 description: Use this method in the Microsoft Store submission API to finalize the package rollout for an app submission.
 title: Finalize the rollout for an app submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, package rollout, app submission, finalize
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
 ---
-
 # Finalize the rollout for an app submission
 
 

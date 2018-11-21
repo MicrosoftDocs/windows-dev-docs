@@ -1,14 +1,10 @@
 ---
-
 Description: A color picker lets a user browse through and select colors.
 title: Color Picker
 label: Color Picker
 template: detail.hbs
-
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv

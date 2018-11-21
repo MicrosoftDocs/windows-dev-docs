@@ -4,16 +4,11 @@ assetID: a88f4c31-082a-45d2-e5d7-b881e829e357
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypes.html
 
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/metadata/mediaItemTypes
 Accesses all supported mediaItemTypes for the given EDS version. 
 The domain for these URIs is `eds.xboxlive.com`.

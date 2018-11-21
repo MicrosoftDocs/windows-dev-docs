@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Enumerate and query files and folders
 description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
-
 ms.date: 06/28/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -16,7 +12,6 @@ dev_langs:
   - cpp
   - vb
 ---
-
 # Enumerate and query files and folders
 
 Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.

@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: Use this method in the Microsoft Store submission API to commit a new or updated app submission to Partner Center.
 title: Commit an app submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, commit app submission
 ms.localizationpriority: medium
 ---
-
 # Commit an app submission
 
 

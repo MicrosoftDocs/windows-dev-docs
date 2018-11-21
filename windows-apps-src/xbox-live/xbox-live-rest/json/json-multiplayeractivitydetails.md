@@ -4,16 +4,11 @@ assetID: f982aa5e-2694-4ef9-bc55-6c099a3cf9ec
 permalink: en-us/docs/xboxlive/rest/json-multiplayeractivitydetails.html
 
 description: ' MultiplayerActivityDetails (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MultiplayerActivityDetails (JSON)
 A JSON object representing the **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**. 
 

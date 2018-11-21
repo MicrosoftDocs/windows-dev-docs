@@ -4,15 +4,12 @@ description: In Direct3D, texture resources are accessed with a view, which is a
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
 keywords:
 - Texture views
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Texture views
 
 

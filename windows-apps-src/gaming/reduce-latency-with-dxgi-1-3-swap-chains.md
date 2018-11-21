@@ -1,17 +1,12 @@
 ---
-
 title: Reduce latency with DXGI 1.3 swap chains
 description: Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame.
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, latency, dxgi, swap chains, directx
 ms.localizationpriority: medium
 ---
-
 # Reduce latency with DXGI 1.3 swap chains
 
 

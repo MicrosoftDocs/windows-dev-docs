@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
 description: You can use the Windows.Media.Transcoding APIs to transcode video files from one format to another.
 title: Transcode media files
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Transcode media files
 
 

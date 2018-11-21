@@ -3,15 +3,11 @@ title: Create a new title
 
 description: Learn how to create a new title for Xbox Live by using Partner Center.
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Create a new title for Xbox Live
 
 ## Introduction

@@ -4,16 +4,11 @@ assetID: 1cf147fa-4ff1-3299-0822-0fc1726d1600
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckresult.html
 
 description: ' PermissionCheckResult (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionCheckResult (JSON)
 The results of a check from a single user for a single permission setting against a single target user. 
 <a id="ID4EP"></a>

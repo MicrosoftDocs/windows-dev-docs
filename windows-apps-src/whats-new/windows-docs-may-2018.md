@@ -1,14 +1,11 @@
 ---
-
 title: What's New in Windows Docs in May 2018 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for May 2018 and the Microsoft Build conference.
 keywords: what's new, update, features, developer guidance, Windows 10, may, build
-
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
-
 # What's New in the Windows Developer Docs in May 2018
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.

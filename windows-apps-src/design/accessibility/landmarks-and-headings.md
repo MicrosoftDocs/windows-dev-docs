@@ -1,19 +1,14 @@
 ---
-
 Description: Describes the landmarks and headings features of accessibility.
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-
 ms.date: 01/24/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Landmarks and Headings
 
 A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability. Landmarks and headings define sections of a user interface that aid in more efficient navigation for users of assistive technology (AT). Marking up the content into landmarks and headings provides a screen reader user the option to skim content similar to the way a sighted user would.

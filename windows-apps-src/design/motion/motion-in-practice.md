@@ -1,10 +1,8 @@
 ---
-
 Description: Learn how Fluent motion fundamentals come together in your app.
 title: Motion in practice - animation in UWP apps
 label: Motion in practice
 template: detail.hbs
-
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp

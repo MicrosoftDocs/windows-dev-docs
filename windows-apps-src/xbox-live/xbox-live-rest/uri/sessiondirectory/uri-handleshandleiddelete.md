@@ -4,16 +4,11 @@ assetID: 71cceff4-3a74-dc05-12db-cfe3f20a8aea
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleiddelete.html
 
 description: ' DELETE (/handles/{handleId})'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE (/handles/{handleId})
 Deletes handles specified by handle ID.
 

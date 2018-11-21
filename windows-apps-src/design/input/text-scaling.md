@@ -1,17 +1,14 @@
 ---
-
 Description: Build UWP apps and custom/templated controls that support platform text scaling.
 title: Text scaling
 label: Text scaling
 template: detail.hbs
 keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make text bigger", user interaction, input
-
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Text scaling
 
 ![Example of text scaling 100% to 225%](images/coretext/text-scaling-news-hero-small.png)  

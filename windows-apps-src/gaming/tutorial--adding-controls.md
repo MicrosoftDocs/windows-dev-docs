@@ -1,17 +1,12 @@
 ---
-
 title: Add controls
 description: Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
-
 ms.date: 10/24/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, controls, input
 ms.localizationpriority: medium
 ---
-
 # Add controls
 
 

@@ -1,17 +1,12 @@
 ---
-
 title: Project templates and tools for games
 description: Shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, templates, tools, directx
 ms.localizationpriority: medium
 ---
-
 # Project templates and tools for games
 
 

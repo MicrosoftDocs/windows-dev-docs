@@ -4,16 +4,11 @@ assetID: d8a3d473-1192-ec0c-3935-c301f4f61e03
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionput.html
 
 description: ' PUT (/handles/{handle-id}/session)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PUT (/handles/{handle-id}/session)
 Creates or updates a session by dereferencing a handle.
 

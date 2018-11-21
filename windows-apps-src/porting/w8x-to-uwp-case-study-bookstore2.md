@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: This case study builds on the info given in Bookstore1 that begins with a Universal 8.1 app that displays grouped data in a SemanticZoom control.
 title: Windows Runtime 8.x to UWP case study Bookstore2
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Windows Runtime 8.x to UWP case study: Bookstore2
 
 

@@ -4,16 +4,11 @@ assetID: adc65d0b-58dd-bfb9-54c8-9bc9d02e68ec
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessionsget.html
 
 description: ' GET (/serviceconfigs/{scid}/sessions)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/serviceconfigs/{scid}/sessions)
 Retrieves specified session information.
 

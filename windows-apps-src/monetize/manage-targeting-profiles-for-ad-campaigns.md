@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: Use this method in the Microsoft Store promotions API to manage targeting profiles for promotional ad campaigns.
 title: Manage targeting profiles
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Manage targeting profiles
 
 

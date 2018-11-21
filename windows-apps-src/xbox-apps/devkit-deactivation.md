@@ -1,17 +1,12 @@
 ---
-
 title: Xbox One Developer Mode deactivation
 description: How to deactivate Developer Mode.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ---
-
 # Xbox One Developer Mode deactivation
 
 If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.

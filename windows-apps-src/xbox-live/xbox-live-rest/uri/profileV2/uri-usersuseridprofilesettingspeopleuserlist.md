@@ -4,16 +4,11 @@ assetID: 0ba20eba-f0ab-28ab-61d3-b4f9e4c07bc5
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist.html
 
 description: ' /users/{userId}/profile/settings/people/{userList}?settings={settings}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{userId}/profile/settings/people/{userList}?settings={settings}
 Access the profile for a user or users, with People Moniker support. 
 The domain for these URIs is `profile.xboxlive.com`.

@@ -2,11 +2,8 @@
 title: Large sessions
 
 description: Learn about using large sessions with Xbox Live multiplayer platform.
-
 ms.date: 07/11/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, large session, recent players
 ms.localizationpriority: medium
 ---

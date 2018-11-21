@@ -1,9 +1,7 @@
 ---
-
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
 Search.Product: eADQiWindows 10XVcnh
 title: Package desktop applications
-
 ms.date: 09/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,7 +9,6 @@ ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Package desktop applications (Desktop Bridge)
 
 Take your existing desktop application and add modern experiences for Windows 10 users. Then, achieve greater reach across international markets by distributing it through the Microsoft Store. You can monetize your application in much simpler ways by leveraging features built right into the store. Of course, you don't have to use the store. Feel free to use your existing channels.

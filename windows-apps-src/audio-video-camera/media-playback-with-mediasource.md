@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: This article shows you how to use MediaSource, which provides a common way to reference and play back media from different sources such as local or remote files, and exposes a common model for accessing media data, regardless of the underlying media format.
 title: Media items, playlists, and tracks
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Media items, playlists, and tracks
 
 

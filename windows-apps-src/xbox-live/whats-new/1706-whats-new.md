@@ -2,16 +2,12 @@
 title: What's new in Xbox Live APIs - June 2017
 
 description: What's new in Xbox Live APIs - June 2017
-ms.assetid: 
-
+ms.assetid:
 ms.date: 06/13/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, what's new, june 2017
 ms.localizationpriority: medium
 ---
-
 # What's new for the Xbox Live APIs - June 2017
 
 Please see the [What's New - May 2017](1705-whats-new.md) article for what was added in the May 2017 release.

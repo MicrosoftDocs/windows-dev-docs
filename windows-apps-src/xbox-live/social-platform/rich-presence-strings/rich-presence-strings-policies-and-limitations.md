@@ -3,15 +3,11 @@ title: Rich Presence policies and limitations
 
 description: Learn about policies and limitations of the Xbox Live Rich Presence system.
 ms.assetid: 0ad21a75-0524-45a8-8d8a-0dec0f7d6d6f
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, rich presence, policies
 ms.localizationpriority: medium
 ---
-
 # Rich Presence policies and limitations
 
 When you implement Rich Presence for your title, you must adhere to the following policies and limits.

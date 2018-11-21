@@ -3,11 +3,8 @@ title: Troubleshooting the Xbox Live Services API
 
 description: Learn how to log extra error information while troubleshooting issues with the Xbox Live APIs.
 ms.assetid: 3827bba1-902f-4f2d-ad51-af09bd9354c4
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, troubleshooting, error, log
 ms.localizationpriority: medium
 ---

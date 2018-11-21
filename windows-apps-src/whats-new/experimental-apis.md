@@ -1,16 +1,11 @@
 ---
-
 title: Experimental APIs
 description: Understand experimental APIs
-
 ms.date: 11/13/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, experimental, api
 ms.localizationpriority: medium
 ---
-
 # Experimental APIs
 
 Experimental APIs are in the early stages of design and are likely to change as the owners incorporate feedback and add support for additional scenarios.

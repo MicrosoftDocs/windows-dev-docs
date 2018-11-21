@@ -4,15 +4,12 @@ description: The BC7 format is a texture compression format used for high-qualit
 ms.assetid: 788B6E8C-9A1F-45F9-BE49-742285E8D8A6
 keywords:
 - BC7 format
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # BC7 format
 
 

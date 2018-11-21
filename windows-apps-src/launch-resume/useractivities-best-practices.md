@@ -1,16 +1,13 @@
 ---
-
 title: User Activities best practices
 description: This guide outlines the recommended practices for creating and updating User Activities.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-
 ms.date: 08/23/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # User Activities best practices
 
 This guide outlines the recommended practices for creating and updating User Activities. For an overview of the User Activities feature on Windows, see [Continue user activity, even across devices](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities). Or, see the [User Activities section](https://docs.microsoft.com/windows/project-rome/user-activities/) of Project Rome for the implementations of Activities on other development platforms.

@@ -1,15 +1,12 @@
 ---
-
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
-
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Collections with C++/WinRT
 
 Internally, a Windows Runtime collection has a lot of complicated moving parts. But when you want to pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types, there are functions and base classes in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) to support you. These features take the complexity out of your hands, and save you a lot of overhead in time and effort.

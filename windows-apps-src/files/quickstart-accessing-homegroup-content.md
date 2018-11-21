@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: Accessing HomeGroup content
 description: Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
