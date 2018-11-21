@@ -1,17 +1,12 @@
 ﻿---
-
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Guidance for app package management
 
 Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.

@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: Use this method in the Microsoft Store submission API to get the status of an app submission.
 title: Get the status of an app submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, app submission, status
 ms.localizationpriority: medium
 ---
-
 # Get the status of an app submission
 
 Use this method in the Microsoft Store submission API to get the status of an app submission. For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).

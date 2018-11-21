@@ -4,16 +4,11 @@ assetID: 43aeb6f9-726d-9260-e2ba-f005ea688bf1
 permalink: en-us/docs/xboxlive/rest/json-titlerequest.html
 
 description: ' TitleRequest (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # TitleRequest (JSON)
 Request for information about a title. 
 <a id="ID4EN"></a>

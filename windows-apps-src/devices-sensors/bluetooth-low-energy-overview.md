@@ -1,16 +1,11 @@
 ---
-
 title: Bluetooth Low Energy
 description: This topic provides a quick overview of Bluetooth LE in UWP apps.
-
 ms.date: 03/15/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, central, peripheral, client, server, watcher, publisher
 ms.localizationpriority: medium
 ---
-
 # Bluetooth Low Energy
 Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices. Discovery of devices is done through the Generic Access Profile (GAP) protocol. After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol. This topic provides a quick overview of Bluetooth LE in UWP apps. To see more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification) version 4.0, where Bluetooth LE was introduced. 
 

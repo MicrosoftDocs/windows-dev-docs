@@ -4,16 +4,11 @@ assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
 
 description: ' /serviceconfigs/{scid}/batch'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/batch
 Supports a POST operation for a batch query at the service configuration identifier level.
 

@@ -5,7 +5,6 @@ title: Usability in UWP apps - Windows app development
 
 layout: LandingPage
 template: detail.hbs
-
 ms.date: 10/18/2017
 ms.topic: landing-page
 

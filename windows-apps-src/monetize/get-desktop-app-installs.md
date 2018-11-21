@@ -1,16 +1,11 @@
 ---
-
 description: Use this REST URI to get aggregate install data for a desktop application during a given date range and other optional filters.
 title: Get desktop application installs
-
 ms.date: 03/01/2018
 ms.topic: article
-
-
 keywords: windows 10, desktop app installs, Windows Desktop Application Program
 localizationpriority: medium
 ---
-
 # Get desktop application installs
 
 

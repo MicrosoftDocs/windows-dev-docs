@@ -4,16 +4,11 @@ assetID: c92d247a-5ea1-7a06-36db-7c67a1dc3151
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersbatchscidssciddatapathandfilenametype.html
 
 description: ' /trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 Downloads multiple files from multiple users with the same filename. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

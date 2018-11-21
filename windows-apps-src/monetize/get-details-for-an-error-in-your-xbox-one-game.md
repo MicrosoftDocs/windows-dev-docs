@@ -1,16 +1,11 @@
 ---
-
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your Xbox One game.
 title: Get details for an error in your Xbox One game
-
 ms.date: 11/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details
 ms.localizationpriority: medium
 ---
-
 # Get details for an error in your Xbox One game
 
 Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard. This method can only retrieve details for errors that occurred in the last 30 days.

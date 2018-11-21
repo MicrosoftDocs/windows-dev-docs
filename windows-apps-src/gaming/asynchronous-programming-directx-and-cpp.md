@@ -1,17 +1,12 @@
 ---
-
 title: Asynchronous programming (DirectX and C++)
 description: This topic covers various points to consider when you are using asynchronous programming and threading with DirectX.
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, asynchronous programming, directx
 ms.localizationpriority: medium
 ---
-
 # Asynchronous programming (DirectX and C++)
 
 

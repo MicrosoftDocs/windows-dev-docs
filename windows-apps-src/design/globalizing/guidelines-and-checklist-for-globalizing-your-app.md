@@ -1,19 +1,14 @@
 ---
-
 Description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
 Search.Refinement.TopicID: 180
 title: Guidelines for globalization
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 template: detail.hbs
-
 ms.date: 11/02/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
-
 # Guidelines for globalization
 
 Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations. Use [**Globalization**](/uwp/api/Windows.Globalization?branch=live) APIs to format data; and avoid assumptions in your code about language, region, character classification, writing system, date/time formatting, numbers, currencies, weights, and sorting rules.

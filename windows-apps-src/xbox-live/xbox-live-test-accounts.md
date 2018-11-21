@@ -3,15 +3,11 @@ title: Xbox Live test accounts
 
 description: Learn how to create test accounts for testing your Xbox Live enabled game during development.
 ms.assetid: e8076233-c93c-4961-86ac-27ec74917ebc
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, test account
 ms.localizationpriority: medium
 ---
-
 # Xbox Live test accounts
 
 When testing functionality in your title during development, it can be helpful to create additional Xbox Live accounts.  For example, you might want a fresh account with no achievements.  Or you might want to make several accounts and make them friends of each other for testing Social scenarios.

@@ -4,16 +4,11 @@ assetID: cc200b89-dc63-9ab5-b037-7a910f46dae9
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclips.html
 
 description: ' /users/{ownerId}/clips'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/clips
 Access list of user's clips. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

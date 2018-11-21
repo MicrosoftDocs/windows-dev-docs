@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: Print from your app
 description: Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages.
-
 ms.date: 01/29/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, printing
 ms.localizationpriority: medium
 ---

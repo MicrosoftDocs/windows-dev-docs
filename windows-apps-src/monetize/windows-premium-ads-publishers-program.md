@@ -1,16 +1,11 @@
 ---
-
 description: The Windows premium ads publishers program consists of a curated collection of ad-enabled apps that partner ad networks can target with premium, high-yield ads. Apps in this program are best in class in terms of usage, engagement and experience.
 title: Windows Premium Ads Publishers Program
-
 ms.date: 09/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising
 ms.localizationpriority: medium
 ---
-
 # Windows Premium Ads Publishers Program
 
 As part of our continuous efforts to help Windows developers monetize their apps through ads, we offer the [Windows Premium Ads Publishers Program](http://www.windowspremiumapps.com). This is a curated collection of ad-enabled apps and games that are best in class in terms of usage, engagement and experience. These apps and games are viewability certified and have a globally distributed audience of identifiable users that are highly engaged​.

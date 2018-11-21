@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
 title: Display the camera preview
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Display the camera preview
 
 

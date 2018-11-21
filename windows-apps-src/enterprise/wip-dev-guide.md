@@ -1,19 +1,14 @@
 ---
-
 Description: This guide helps you enlighten your app to handle enterprise data managed by Windows Information Protection (WIP) policy as well as personal data.
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP) developer guide
-
 ms.date: 06/21/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, wip, Windows Information Protection, enterprise data, enterprise data protection, edp, enlightened apps
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
 ---
-
 # Windows Information Protection (WIP) developer guide
 
 An *enlightened* app differentiates between corporate and personal data and knows which to protect based on Windows Information Protection (WIP) policies defined by the administrator.

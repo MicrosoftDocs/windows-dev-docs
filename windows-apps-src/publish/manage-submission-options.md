@@ -1,16 +1,11 @@
 ﻿---
-
 Description: Manage submission options such as publishing hold options, notes for certification, and more.
 title: Manage submission options
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
 ---
-
 # Manage submission options
 
 The **Submission options** page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.

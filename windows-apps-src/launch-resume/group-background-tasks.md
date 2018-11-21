@@ -1,15 +1,10 @@
 ---
-
 title: Group background task registration
 description: Register/unregister background tasks as part of a group to isolate those registrations.
-
 ms.date: 04/05/2017
 ms.topic: article
-
-
 keywords: windows 10, background task
 ---
-
 # Group background task registration
 
 **Important APIs**

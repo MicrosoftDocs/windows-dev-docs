@@ -1,17 +1,12 @@
 ﻿---
-
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Use this method in the Microsoft Store reviews API to determine whether you can respond to a particular review, or whether you can respond to any review for a given app.
 title: Get response info for reviews
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, response info
 ms.localizationpriority: medium
 ---
-
 # Get response info for reviews
 
 If you want to programmatically respond to a customer review of your app, you can use this method in the Microsoft Store reviews API to first determine whether you have permission to respond to the review. You cannot respond to reviews submitted by customers who have chosen not to receive review responses. After you confirm that you can respond to the review, you can then use the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to it.

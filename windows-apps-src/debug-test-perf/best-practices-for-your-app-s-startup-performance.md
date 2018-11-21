@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: Best practices for your app's startup performance
 description: Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

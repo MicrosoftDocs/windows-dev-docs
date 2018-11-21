@@ -4,16 +4,11 @@ assetID: 86ee6d1a-fb1f-b918-f605-a9b494c0e787
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamecontainsitemspost.html
 
 description: ' POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 Determines whether a list contains a set of items (specified by itemId) without retrieving the entire list. 
 The domain for these URIs is `eplists.xboxlive.com`.

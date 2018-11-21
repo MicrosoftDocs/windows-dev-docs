@@ -1,17 +1,12 @@
 ﻿---
-
 Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: Set your add-on product type and product ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, add-ons, iap, durable, consumable, subscription, product type, product id, in-app purchase, in-app product
 ms.localizationpriority: medium
 ---
-
 # Set your add-on product type and product ID
 
 An add-on must be associated with an app that you've created in [Partner Center](https://partner.microsoft.com/dashboard) (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on your app's **Overview** page or on its **Add-ons** page.

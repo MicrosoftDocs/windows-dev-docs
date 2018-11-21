@@ -4,14 +4,12 @@ title: Develop UWP apps
 
 layout: LandingPage
 keywords: uwp app development threading async platform overview portal develop developers
-
 ms.date: 3/29/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 <div> 
 <h1>Develop UWP apps</h1>
 <p>How-to articles and code for creating UWP apps for Windows 10. </p> 

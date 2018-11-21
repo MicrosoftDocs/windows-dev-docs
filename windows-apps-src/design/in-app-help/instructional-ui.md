@@ -1,19 +1,14 @@
 ---
-
 Description: Design an instructional user interface (UI) that teaches users how to work with your UWP app.
 title: Guidelines for designing instructional UI
 label: Instructional UI
 template: detail.hbs
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ---
-
 # Instructional UI guidelines
 
 

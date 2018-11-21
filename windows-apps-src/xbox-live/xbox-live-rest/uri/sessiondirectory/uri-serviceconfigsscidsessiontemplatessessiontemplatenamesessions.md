@@ -4,16 +4,11 @@ assetID: 8d55818f-99fd-146a-896b-0f100e78799f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessions.html
 
 description: ' /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions
 Supports a GET operation to retrieve a set of session templates with the specified template names. 
 <a id="ID4EO"></a>

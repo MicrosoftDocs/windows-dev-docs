@@ -4,16 +4,11 @@ assetID: 325af9ae-a9a9-5b36-8342-1aff5aff01d1
 permalink: en-us/docs/xboxlive/rest/json-gamesession.html
 
 description: ' GameSession (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameSession (JSON)
 A JSON object representing game data for a multiplayer session. 
 <a id="ID4ER"></a>

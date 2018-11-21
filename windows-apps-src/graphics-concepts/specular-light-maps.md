@@ -4,15 +4,12 @@ description: When illuminated by a light source, shiny objects that use highly r
 ms.assetid: 9B3AC5EC-DDAA-4671-BC81-0E3C79D87A81
 keywords:
 - Specular light maps
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Specular light maps
 
 

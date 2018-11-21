@@ -1,17 +1,12 @@
 ---
-
 description: We explain XAML syntax rules and the terminology that describes the restrictions or choices available for XAML syntax.
 title: XAML syntax guide
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # XAML syntax guide
 
 

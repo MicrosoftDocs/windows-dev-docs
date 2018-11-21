@@ -1,11 +1,9 @@
 ---
-
 title: Walkthrough sample ports from OpenGL ES 2.0
 description: This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ---
-
 # Walkthrough sample ports from OpenGL ES 2.0
 
 

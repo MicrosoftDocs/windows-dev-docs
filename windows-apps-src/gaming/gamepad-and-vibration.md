@@ -1,17 +1,12 @@
 ---
-
 title: Gamepad and vibration
 description: Use the Windows.Gaming.Input gamepad APIs to detect, read, and send vibration and impulse commands to gamepads.
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
-
 ms.date: 09/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, gamepad, vibration
 ms.localizationpriority: medium
 ---
-
 # Gamepad and vibration
 
 This page describes the basics of programming for Xbox One gamepads using [Windows.Gaming.Input.Gamepad][gamepad] and related APIs for the Universal Windows Platform (UWP).

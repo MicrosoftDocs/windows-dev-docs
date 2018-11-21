@@ -1,17 +1,12 @@
 ---
-
 title: How to use Fiddler with Xbox One when developing for UWP
 description: Describes how to use the freeware Fiddler tool to see network traffic on a UWP Xbox One dev kit.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
 ---
-
 # How to use Fiddler with Xbox One when developing for UWP
 
 Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between your Xbox One dev kit and the Internet. You will use it to log and inspect traffic to and from the Xbox services and relying party web services, to understand and debug web service calls. 

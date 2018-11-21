@@ -4,16 +4,11 @@ assetID: cb7c6fe2-0376-dab4-9115-e4e3ebcfbd39
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-uris.html
 
 description: ' Universal Resource Identifier (URI) Reference'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Universal Resource Identifier (URI) Reference
 
 This section provides detail about the Uniform Resource Identifiers (URIs) and Hypertext Transport Protocol (HTTP) methods used with Xbox Live Services.

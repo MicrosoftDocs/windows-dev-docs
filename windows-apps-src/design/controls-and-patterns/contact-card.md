@@ -1,12 +1,8 @@
 ---
-
 Description: A button gives the user a way to trigger an immediate action.
 title: Contact card
-
 ms.date: 03/07/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd

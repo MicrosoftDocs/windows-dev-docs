@@ -1,17 +1,12 @@
 ---
-
 description: Through the Windows.ApplicationModel.Appointments namespace, you can create and manage appointments in a user's calendar app.
 title: Manage appointments
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, appointments, calendar
 ms.localizationpriority: medium
 ---
-
 # Manage appointments
 
 

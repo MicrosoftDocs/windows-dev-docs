@@ -4,16 +4,11 @@ assetID: c11606e6-701f-5807-4aef-5608c98ad831
 permalink: en-us/docs/xboxlive/rest/json-gamemessage.html
 
 description: ' GameMessage (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameMessage (JSON)
 A JSON object defining data for a message in a game session's message queue. 
 <a id="ID4EN"></a>

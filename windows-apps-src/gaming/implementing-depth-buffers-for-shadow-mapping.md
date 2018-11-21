@@ -1,17 +1,12 @@
 ---
-
 title: Walkthrough-- Direct3D 11 shadow volume depth buffers
 description: This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, shadow volumes, depth buffers, directx 11
 ms.localizationpriority: medium
 ---
-
 # Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
 
 

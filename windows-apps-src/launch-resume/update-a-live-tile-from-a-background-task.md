@@ -1,18 +1,13 @@
 ﻿---
-
 title: Update a live tile from a background task
 description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
-
 ms.date: 01/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---
-
 # Update a live tile from a background task
 
 **Important APIs**

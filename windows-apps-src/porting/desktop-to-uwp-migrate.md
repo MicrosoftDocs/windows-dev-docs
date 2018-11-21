@@ -1,13 +1,9 @@
 ---
-
 Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
 title: Share code between a desktop application and a UWP app
-
 ms.date: 10/03/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

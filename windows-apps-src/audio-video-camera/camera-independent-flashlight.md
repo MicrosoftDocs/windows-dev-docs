@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: This article shows how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality.
 title: Camera-independent Flashlight
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Camera-independent Flashlight
 
 

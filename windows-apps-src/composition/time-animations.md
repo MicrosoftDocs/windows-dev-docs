@@ -1,12 +1,8 @@
 ---
-
 title: Time animations
 description: Use KeyFrameAnimation classes to change your UI over time.
-
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

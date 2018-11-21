@@ -4,16 +4,11 @@ assetID: c2527a08-411b-d4e4-422f-a8438804bfe6
 permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmonikerget.html
 
 description: ' GET (/users/me/groups/{moniker} )'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/me/groups/{moniker} )
 Gets the PresenceRecord for my group. 
 The domain for these URIs is `userpresence.xboxlive.com`.

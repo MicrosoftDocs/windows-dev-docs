@@ -4,16 +4,11 @@ assetID: f88d5ee0-2875-fcfb-3098-3cd6afce8748
 permalink: en-us/docs/xboxlive/rest/json-userclaims.html
 
 description: ' UserClaims (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # UserClaims (JSON)
 Returns information about the current authenticated user. 
 <a id="ID4EN"></a>

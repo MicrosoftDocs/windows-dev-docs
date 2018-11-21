@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: Threading and async programming
 description: Threading and async programming enables your app to accomplish work asynchronously in parallel threads.
-
 ms.date: 05/14/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, asynchronous, threads, threading
 ms.localizationpriority: medium
 ---

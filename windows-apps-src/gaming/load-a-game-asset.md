@@ -1,17 +1,12 @@
 ---
-
 title: Load resources in your DirectX game
 description: Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, loading resources
 ms.localizationpriority: medium
 ---
-
 # Load resources in your DirectX game
 
 

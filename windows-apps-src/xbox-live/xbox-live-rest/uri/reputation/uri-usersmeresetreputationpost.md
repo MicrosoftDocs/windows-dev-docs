@@ -4,16 +4,11 @@ assetID: 1a4fed45-f608-dac2-3384-2ee493112f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputationpost.html
 
 description: ' POST (/users/me/resetreputation)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/me/resetreputation)
 Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking. 
 The domain for these URIs is `reputation.xboxlive.com`.

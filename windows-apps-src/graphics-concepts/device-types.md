@@ -4,15 +4,12 @@ description: Direct3D device types include Hardware Abstraction Layer (hal) devi
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
 keywords:
 - Device types
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Device types
 
 

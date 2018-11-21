@@ -4,16 +4,11 @@ assetID: d004d715-d73c-693e-2a0b-ce64f482642b
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype.html
 
 description: ' /json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json
 Downloads, uploads, or deletes a file. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

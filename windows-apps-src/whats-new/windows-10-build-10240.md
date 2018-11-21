@@ -1,9 +1,7 @@
 ---
-
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
 title: What's new in Windows 10 build 10240 - July 2015
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1507, 10240
-
 ms.date: 11/02/2017
 ms.topic: article
 
@@ -11,7 +9,6 @@ ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
 ---
-
 # What's new in Windows 10 for developers, build 10240
 
 Windows 10 build 10240 and the updated SDK provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. After [installing the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).

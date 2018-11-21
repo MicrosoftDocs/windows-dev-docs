@@ -1,19 +1,16 @@
 ---
-
 Description: Learn how to define and use custom constraints for speech recognition.
 title: Define custom recognition constraints
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Define custom recognition constraints
 
 

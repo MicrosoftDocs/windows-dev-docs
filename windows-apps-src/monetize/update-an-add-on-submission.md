@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: Use this method in the Microsoft Store submission API to update an existing add-on submission.
 title: Update an add-on submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, update, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Update an add-on submission
 
 

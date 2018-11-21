@@ -1,16 +1,11 @@
 ---
-
 title: Create apps with the Universal Windows Platform
 description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
-
 ms.date: 5/7/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, get started
 ms.localizationpriority: medium
 ---
-
 # Start coding
 
 ![Build your app](images/build-your-app.png)

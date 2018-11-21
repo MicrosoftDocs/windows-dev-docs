@@ -4,15 +4,12 @@ description: The Direct3D Light Model covers ambient, diffuse, specular, and emi
 ms.assetid: D0521F56-050D-4EDF-9BD1-34748E94B873
 keywords:
 - Mathematics of lighting
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Mathematics of lighting
 
 

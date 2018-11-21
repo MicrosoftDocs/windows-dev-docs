@@ -4,15 +4,12 @@ description: Lights are used to illuminate objects in a scene. The color of each
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
 keywords:
 - Lighting
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Lighting
 
 

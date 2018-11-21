@@ -1,15 +1,11 @@
 ---
-
 Description: Radio buttons let users select one option from two or more choices.
 title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea

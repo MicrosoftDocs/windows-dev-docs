@@ -1,13 +1,9 @@
 ---
-
 description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
 title: Custom attached properties
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
-
 ms.date: 07/18/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -16,7 +12,6 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
-
 # Custom attached properties
 
 An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.

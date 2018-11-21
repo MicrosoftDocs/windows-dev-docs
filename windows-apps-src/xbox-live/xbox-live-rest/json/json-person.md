@@ -4,16 +4,11 @@ assetID: b49234b1-03cd-f16e-c293-c74174382167
 permalink: en-us/docs/xboxlive/rest/json-person.html
 
 description: ' Person (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Person (JSON)
 Metadata about a single Person in the People system. 
 <a id="ID4EN"></a>

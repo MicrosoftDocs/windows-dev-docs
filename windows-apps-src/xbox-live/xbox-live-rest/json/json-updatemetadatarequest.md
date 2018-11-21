@@ -4,16 +4,11 @@ assetID: 0bc210e3-c1dc-9267-e322-aadb9f0a074a
 permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
 
 description: ' UpdateMetadataRequest (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # UpdateMetadataRequest (JSON)
 The metadata that should be updated for a clip. 
 <a id="ID4EN"></a>

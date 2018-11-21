@@ -1,10 +1,8 @@
 ---
-
 Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
 label: Buttons
 template: detail.hbs
-
 ms.date: 10/2/2018
 ms.topic: article
 keywords: windows 10, uwp

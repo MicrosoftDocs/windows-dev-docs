@@ -4,16 +4,11 @@ assetID: f8d059fd-30e7-be60-0a46-c9a833c400c6
 permalink: en-us/docs/xboxlive/rest/pagingparameters.html
 
 description: ' Paging Parameters'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Paging Parameters
  
 Some Xbox Live Services URIs return collections of JavaScript Object Notation (JSON) objects. These collections can be paged through by specifying paging parameters as part of the query string attached to the URI. A complete list of the paging parameters follows. All URIs that allow paging parameters are linked to at the bottom of this page.

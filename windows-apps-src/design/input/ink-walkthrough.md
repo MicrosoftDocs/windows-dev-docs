@@ -1,17 +1,14 @@
 ---
-
 ms.assetid: 
 title: Support ink in your UWP app
 description: A step by step tutorial for adding ink support to your UWP app.
 keywords: ink, inking, tuorial
-
 ms.date: 01/25/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Tutorial: Support ink in your UWP app
 
 ![Surface Pen](images/ink/ink-hero-small.png)  

@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
 description: Use this method in the Microsoft Store submission API to delete an add-on for an app that is registered to your Partner Center account.
 title: Delete an add-on
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-on, delete, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Delete an add-on
 
 Use this method in the Microsoft Store submission API to delete an add-on (also known as in-app product or IAP) for an app that is registered to your Partner Center account.

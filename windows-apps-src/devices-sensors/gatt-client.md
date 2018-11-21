@@ -1,16 +1,11 @@
 ---
-
 title: Bluetooth GATT Client
 description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Client for Universal Windows Platform (UWP) apps, along with sample code for common use cases.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Bluetooth GATT Client
 
 

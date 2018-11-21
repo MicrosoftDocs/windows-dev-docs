@@ -1,15 +1,12 @@
 ---
-
 Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
 title: MakePri.exe command-line options
 template: detail.hbs
-
 ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
 # MakePri.exe command-line options
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use.

@@ -3,15 +3,11 @@ title: Porting Xbox Live code from XDK to UWP
 
 description: Learn how to port Xbox Live code from the Xbox Development Kit (XDK) platform to the Universal Windows Platform (UWP).
 ms.assetid: 69939f95-44ad-4ffd-851f-59b0745907c8
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk, porting
 ms.localizationpriority: medium
 ---
-
 # Porting Xbox Live code from the Xbox Developer Kit (XDK) to Universal Windows Platform (UWP)
 
 ## Introduction

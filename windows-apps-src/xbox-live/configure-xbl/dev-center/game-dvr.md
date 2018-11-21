@@ -3,7 +3,6 @@ title: Game DVR
 
 description: Learn how to configure Xbox Live Game DVR strings in Partner Center
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
-
 ms.date: 10/30/2017
 ms.topic: article
 
@@ -11,7 +10,6 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, Game DVR, Partner Center
 ---
-
 # Configuring Game DVR in Partner Center
 
 On Xbox One, one of the most popular features is Game DVR, which allows gamers easy access to recording, editing and sharing their most epic gaming moments. The Game DVR strings will appear as the title for any developer-created game DVR clips in your title. Configuring the string in the service will ensure that the correct localized version of that string shows up in any apps where that clip is featured. For example, if you wanted to create a clip when a user beats the final boss of your title, you would start by configuring a string called 'Boss Battle'. When making the call in your title code to create the clip, you would reference the ID.

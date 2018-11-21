@@ -1,18 +1,13 @@
 ---
-
 Description: Learn how to use Universal Dismiss on your toast notifications.
 title: Universal Dismiss
 label: Universal Dismiss
 template: detail.hbs
-
 ms.date: 12/15/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, toast, action center in the cloud, Universal Dismiss, notification, cross device, dismiss once dismiss everywhere
 ms.localizationpriority: medium
 ---
-
 # Universal Dismiss
 
 Universal Dismiss, powered by Action Center in the Cloud, means that when you dismiss a notification from one device, the same notification on your other devices is also dismissed.

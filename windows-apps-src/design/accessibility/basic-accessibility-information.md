@@ -1,19 +1,14 @@
 ---
-
 Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Expose basic accessibility information
 label: Expose basic accessibility information
 template: detail.hbs
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Expose basic accessibility information  
 
 

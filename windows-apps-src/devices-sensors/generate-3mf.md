@@ -1,20 +1,15 @@
 ---
-
 Description: Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API.
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Generate a 3MF package
 ms.assetid: 968d918e-ec02-42b5-b50f-7c175cc7921b
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Generate a 3MF package
 
 **Important APIs**

@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: Use this method in the Microsoft Store analytics API to get aggregate ad performance data for an application during a given date range and other optional filters.
 title: Get ad performance data
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ads, performance
 ms.localizationpriority: medium
 ---
-
 # Get ad performance data
 
 

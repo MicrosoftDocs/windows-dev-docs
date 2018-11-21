@@ -1,17 +1,12 @@
 ---
-
 Description: Common questions about ad campaigns
 title: Common questions about ad campaigns
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Common questions about ad campaigns
 
 ### How much does it cost to run an ad for my app?

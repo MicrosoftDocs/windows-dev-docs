@@ -1,16 +1,11 @@
 ---
-
 title: POSPrinter
 description: This article lists the POSPrinter features that are available for UWP apps and links to the how-to articles that show how to use them.
-
 ms.date: 05/1/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # POSPrinter
 
 This section provides guidance for creating Universal Windows Platform (UWP) apps that use a POSPrinter.

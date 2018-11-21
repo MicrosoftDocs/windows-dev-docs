@@ -4,16 +4,11 @@ assetID: efb929d8-79a7-83f0-c348-c92ced42bc05
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
 
 description: ' /users/{ownerId}/people/mute'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/people/mute
 Accesses the mute list for a user.
 

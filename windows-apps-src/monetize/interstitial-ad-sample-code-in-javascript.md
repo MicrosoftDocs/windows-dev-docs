@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: Learn how to launch an interstitial ad using JavaScript/HTML.
 title: Interstitial ad sample code in JavaScript
-
 ms.date: 03/22/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, interstitial, javascript, sample code
 ms.localizationpriority: medium
 ---
-
 # Interstitial ad sample code in JavaScript
 
 This topic provides the complete sample code for a basic JavaScript and HTML Universal Windows Platform (UWP) app that shows an interstitial ad. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).

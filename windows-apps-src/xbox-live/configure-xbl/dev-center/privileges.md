@@ -2,7 +2,6 @@
 title: Privileges Configuration in Partner Center
 
 description: Learn how to configure privileges in Partner Center
-
 ms.date: 04/09/2018
 ms.topic: article
 

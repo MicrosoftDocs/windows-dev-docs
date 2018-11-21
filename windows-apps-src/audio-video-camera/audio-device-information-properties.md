@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: This article lists the DeviceInformation properties related to audio devices
 title: Audio device information properties
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Audio device information properties
 
 This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. 

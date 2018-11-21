@@ -1,12 +1,10 @@
 ---
 description: Optimize your app for pen, Surface dial, and other types of input. 
 title: Input and interactions
-
 keywords: app inputs, customize UWP application
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
-
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,18 +1,13 @@
 ---
-
 Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Toast UX Guidance
 label: Toast UX Guidance
 template: detail.hbs
-
 ms.date: 05/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, notification, collection, group, ux, ux guidance, guidance, action, toast, action center, noninterruptive, effective notifications, nonintrusive notifications, actionable, manage, organize
 ms.localizationpriority: medium
 ---
-
 # Toast Notification UX Guidance
 Notifications are a necessary part of modern life; they help users be more productive and engaged with apps and websites, as well as stay current with any updates. However, notifications can quickly turn from useful to overbearing and intrusive if they are not designed in a user-centric way. Your notifications are one right-click away from being turned off, and it's unlikely once they are turned off, they will be turned on again.  So make sure your notifications are respectful of the user's screen space and time, so you can keep this engagement channel open.
 

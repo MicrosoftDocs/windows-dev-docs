@@ -1,16 +1,13 @@
 ---
-
 title: Create a user interface tutorial
 description: This article covers the basics of building user interfaces in XAML
 keywords: XAML, UWP, Getting Started
-
 ms.date: 08/30/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Tutorial: Create a user interface
 
 In this tutorial, you'll learn how to create a basic UI for an image editing program by: 

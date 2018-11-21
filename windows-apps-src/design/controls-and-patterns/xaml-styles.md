@@ -1,5 +1,4 @@
 ---
-
 description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps

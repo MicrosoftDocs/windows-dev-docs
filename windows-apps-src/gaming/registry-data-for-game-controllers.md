@@ -1,17 +1,12 @@
 ---
-
 title: Registry data for game controllers
 description: Learn about the data that you can add to the PC's registry to enable your controller to be used in UWP games.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-
 ms.date: 06/25/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, input, registry, custom
 ms.localizationpriority: medium
 ---
-
 # Registry data for game controllers
 
 > [!NOTE]

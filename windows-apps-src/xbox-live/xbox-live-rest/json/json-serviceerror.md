@@ -4,16 +4,11 @@ assetID: 81c43f6e-bfff-c4b5-d25c-eace22649f01
 permalink: en-us/docs/xboxlive/rest/json-serviceerror.html
 
 description: ' ServiceError (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # ServiceError (JSON)
 Contains information about an error returned when a call to the service failed. 
 <a id="ID4EN"></a>

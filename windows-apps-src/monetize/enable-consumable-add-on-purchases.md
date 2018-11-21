@@ -1,17 +1,14 @@
 ---
-
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Learn how to use the Windows.Services.Store namespace to work with consumable add-ons.
 title: Enable consumable add-on purchases
 keywords: windows 10, uwp, consumable, add-ons, in-app purchases, IAPs, Windows.Services.Store
-
 ms.date: 05/09/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Enable consumable add-on purchases
 
 This article demonstrates how to use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage the user's fulfillment of consumable add-ons in your UWP apps. Use consumable add-ons for items that can be purchased, used, and purchased again. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.

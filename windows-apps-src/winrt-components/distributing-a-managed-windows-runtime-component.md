@@ -1,18 +1,12 @@
 ---
-
 title: Distributing a managed Windows Runtime Component
 description: You can distribute your Windows Runtime Component by file copy.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
-
 # Distributing a managed Windows Runtime Component
 
 

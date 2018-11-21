@@ -4,16 +4,11 @@ assetID: 3e5767af-5704-8463-696b-42a7d2a1e231
 permalink: en-us/docs/xboxlive/rest/json-usertitlev2.html
 
 description: ' UserTitle (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # UserTitle (JSON)
 Contains user title data. 
 <a id="ID4EN"></a>

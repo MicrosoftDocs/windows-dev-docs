@@ -1,13 +1,9 @@
 ---
-
 Description: Run your packaged app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it.
 Search.Product: eADQiWindows 10XVcnh
 title: Run, debug, and test a packaged desktop app (Desktop Bridge)
-
 ms.date: 08/31/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium

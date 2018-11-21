@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: Use the light sensor
 description: Learn how to use the ambient light sensor to detect changes in lighting.
-
 ms.date: 06/06/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

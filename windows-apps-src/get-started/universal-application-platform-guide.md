@@ -1,13 +1,9 @@
 ---
-
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-
 ms.date: 5/7/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---

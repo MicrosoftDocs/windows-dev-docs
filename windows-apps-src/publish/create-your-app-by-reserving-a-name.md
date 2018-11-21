@@ -1,17 +1,14 @@
 ﻿---
-
 Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Create your app by reserving a name
 keywords: windows 10, uwp, name reservation, app name, app names, names, product name, naming, reserved name, title, names, titles
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
-
 ms.date: 10/31/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Create your app by reserving a name
 
 The first step in creating a new app in your [Partner Center](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.

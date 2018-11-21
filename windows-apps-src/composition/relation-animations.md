@@ -1,12 +1,8 @@
 ---
-
 title: Relation based animations
 description: Create motion based on a property on another object.
-
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

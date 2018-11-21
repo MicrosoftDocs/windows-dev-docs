@@ -3,15 +3,11 @@ title: Use Connected Storage to save data
 
 description: Learn how to use Connected Storage to save data.
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
-
 ms.date: 02/27/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Use Connected Storage to save data
 
 

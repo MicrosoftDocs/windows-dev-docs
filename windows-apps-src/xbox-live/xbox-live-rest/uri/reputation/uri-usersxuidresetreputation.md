@@ -4,16 +4,11 @@ assetID: 85c74beb-a12f-4015-e244-36942e366afc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputation.html
 
 description: ' /users/xuid({xuid})/resetreputation'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/resetreputation
 Enables the Enforcement team to access the specified user's Reputation scores. 
 The domain and port number for these URIs is `reputation.xboxlive.com:10433`.

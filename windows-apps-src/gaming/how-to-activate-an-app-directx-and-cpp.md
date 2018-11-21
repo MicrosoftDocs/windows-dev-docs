@@ -1,17 +1,12 @@
 ---
-
 title: How to activate an app (DirectX and C++)
 description: This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, activation
 ms.localizationpriority: medium
 ---
-
 # How to activate an app (DirectX and C++)
 
 

@@ -1,17 +1,12 @@
 ---
-
 Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
 title: Trademark and copyright protection
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
-
 ms.date: 06/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Trademark and copyright protection
 
 

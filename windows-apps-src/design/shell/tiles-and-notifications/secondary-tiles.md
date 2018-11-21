@@ -1,18 +1,13 @@
 ---
-
 Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
 title: Secondary tiles
 label: Secondary tiles
 template: detail.hbs
-
 ms.date: 05/25/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, secondary tiles
 ms.localizationpriority: medium
 ---
-
 # Secondary tiles
 
 

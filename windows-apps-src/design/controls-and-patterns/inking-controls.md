@@ -1,14 +1,10 @@
 ---
-
 Description: Ink tools described
 title: Inking Controls
 label: Inking Controls
 template: detail.hbs
-
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium

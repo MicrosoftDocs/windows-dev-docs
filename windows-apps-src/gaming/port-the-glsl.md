@@ -1,17 +1,12 @@
 ---
-
 title: Port the GLSL
 description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, glsl, port
 ms.localizationpriority: medium
 ---
-
 # Port the GLSL
 
 
@@ -57,7 +52,6 @@ Here, the constant buffer uses register b0 to hold the packed buffer. All regist
 
 Instructions
 ------------
-
 ### Step 1: Port the vertex shader
 
 In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
@@ -158,11 +152,9 @@ The color for the pixel at the position is written to the render target. Now, le
 [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
 Next step
 ---------
-
 [Draw to the screen](draw-to-the-screen.md)
 Remarks
 -------
-
 Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
 -   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.

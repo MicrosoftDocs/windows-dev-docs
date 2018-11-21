@@ -4,16 +4,11 @@ assetID: 381d49d1-7a4b-4a1e-1baf-cf674f7e0d54
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsgetv2.html
 
 description: ' GET (/users/xuid({xuid})/achievements)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/achievements)
 Gets the list of achievements defined on the title, those unlocked by the user, or those the user has in progress. 
 The domain for these URIs is `achievements.xboxlive.com`.

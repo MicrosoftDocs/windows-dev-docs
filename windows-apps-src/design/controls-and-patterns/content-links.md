@@ -1,14 +1,10 @@
 ---
-
 Description: Use content links to embed rich data in your text controls.
 title: Content links in text controls
 label: Content links
 template: detail.hbs
-
 ms.date: 03/07/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: 

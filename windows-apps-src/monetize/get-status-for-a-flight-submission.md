@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: Use this method in the Microsoft Store submission API to get the status of a package flight submission.
 title: Get the status of a package flight submission
-
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, flight submission, status
 ms.localizationpriority: medium
 ---
-
 # Get the status of a package flight submission
 
 Use this method in the Microsoft Store submission API to get the status of a package flight submission. For more information about the process of process of creating a package flight submission by using the Microsoft Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).

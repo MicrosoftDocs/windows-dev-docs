@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: Use this method in the Microsoft Store analytics API to get review data for a given date range and other optional filters.
 title: Get app reviews
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, reviews
 ms.localizationpriority: medium
 ---
-
 # Get app reviews
 
 

@@ -3,15 +3,11 @@ title: Xbox One Multiplayer Session Directory
 
 description: Learn about creating multiplayer sessions by using the Xbox Live Mutliplayer Session Directory (MPSD) service.
 ms.assetid: 70da1be3-5f39-4eed-b62d-9cdd47e413d2
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox One Multiplayer Session Directory
 
 This topic provides an overview of multiplayer session creation using the new Xbox One Multiplayer Session Directory (MPSD) service. The paper is directed primarily toward Xbox One title developers who submit their session templates directly to Xbox Development Portal (XDP). The MPSD service can be configured with Partner Center as well, but is not focused on in this article. It is intended to familiarize them with terms and concepts associated with MPSD configuration, usage, and troubleshooting of multiplayer sessions.

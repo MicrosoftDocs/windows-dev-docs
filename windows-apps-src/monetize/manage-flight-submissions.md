@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Partner Center account.
 title: Manage package flight submissions
-
 ms.date: 04/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, flight submissions
 ms.localizationpriority: medium
 ---
-
 # Manage package flight submissions
 
 The Microsoft Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).

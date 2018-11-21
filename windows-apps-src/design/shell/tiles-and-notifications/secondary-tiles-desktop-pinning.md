@@ -1,18 +1,13 @@
 ---
-
 Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Pin secondary tiles from desktop application
 label: Pin secondary tiles from desktop application
 template: detail.hbs
-
 ms.date: 05/25/2017
 ms.topic: article
-
-
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium
 ---
-
 # Pin secondary tiles from desktop application
 
 

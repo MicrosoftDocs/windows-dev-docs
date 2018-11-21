@@ -4,16 +4,11 @@ assetID: 8b8bce98-cb5f-bbaf-5564-9be2f58d749b
 permalink: en-us/docs/xboxlive/rest/json-initialuploadrequest.html
 
 description: ' InitialUploadRequest (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # InitialUploadRequest (JSON)
 The body of a POST GameClip upload request. 
 <a id="ID4EN"></a>

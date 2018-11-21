@@ -1,16 +1,11 @@
 ---
-
 title: Hosting UWP app packages on AWS for web install 
 description: Tutorial for setting up AWS web server to validate app install via App Installer App
-
 ms.date: 05/30/2018
 ms.topic: article
-
-
 keywords: windows 10, Windows 10, UWP, app installer, AppInstaller, sideload, related set, optional packages, AWS
 ms.localizationpriority: medium
 ---
-
 # Hosting UWP app packages on AWS for web install
 
 The App Installer app allows developers and IT Pros to distribute Windows 10 apps by hosting them on their own Content Delivery Network (CDN). This is useful for enterprises that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.

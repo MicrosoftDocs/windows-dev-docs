@@ -4,16 +4,11 @@ assetID: 6a59bc0b-8edd-87bf-efaf-f16efa3bedf7
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidatepost.html
 
 description: ' POST (/system/strings/validate)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/system/strings/validate)
 Accepts an array of strings for validation and returns an array of results of equal size. 
 The domain for these URIs is `client-strings.xboxlive.com`.

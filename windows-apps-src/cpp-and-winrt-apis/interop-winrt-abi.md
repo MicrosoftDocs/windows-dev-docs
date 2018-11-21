@@ -1,16 +1,11 @@
 ---
-
 description: This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects.
 title: Interop between C++/WinRT and the ABI
-
 ms.date: 05/21/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
 ms.localizationpriority: medium
 ---
-
 # Interop between C++/WinRT and the ABI
 
 This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.

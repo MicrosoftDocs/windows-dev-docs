@@ -4,16 +4,11 @@ assetID: 9475b427-53bc-697b-6d24-1787320260b7
 permalink: en-us/docs/xboxlive/rest/edsparameters.html
 
 description: ' EDS Parameters'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Parameters
 
 <a id="ID4EO"></a>

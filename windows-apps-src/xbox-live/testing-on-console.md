@@ -1,12 +1,8 @@
 ---
-
 title: Testing on Xbox One Console
 description: Learn how to test Xbox Live services on the Xbox Live Console
-
 ms.date: 08/15/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, xbox, xbox live, xbox one
 ms.localizationpriority: low
 ---

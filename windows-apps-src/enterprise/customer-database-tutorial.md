@@ -1,16 +1,13 @@
 ---
-
 title: Create a customer database application
 description: Create a customer database application, and learn how to implement basic enterprise app functions.
 keywords: enterprise, tutorial, customer, data, create read update delete, REST, authentication
-
 ms.date: 5/7/2018
 ms.topic: article
 
 
 ms.localizationpriority: med
 ---
-
 # Tutorial: Create a customer database application
 
 This tutorial creates a simple app for managing a list of customers. In doing so, it introduces a selection of basic concepts for enterprise apps in UWP. You'll learn how to:

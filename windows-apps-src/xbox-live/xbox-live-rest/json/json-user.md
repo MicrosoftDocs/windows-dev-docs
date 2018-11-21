@@ -4,16 +4,11 @@ assetID: dbc733e4-0348-0e3d-1f55-17b465e599d6
 permalink: en-us/docs/xboxlive/rest/json-user.html
 
 description: ' User (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # User (JSON)
 Contains user leaderboard data. 
 <a id="ID4EN"></a>

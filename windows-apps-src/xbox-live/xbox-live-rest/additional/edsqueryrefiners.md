@@ -4,16 +4,11 @@ assetID: ab5c066a-a48b-3042-351d-d0a15f663276
 permalink: en-us/docs/xboxlive/rest/edsqueryrefiners.html
 
 description: ' EDS Query Refiners'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Query Refiners
  
 <a id="ID4EO"></a>

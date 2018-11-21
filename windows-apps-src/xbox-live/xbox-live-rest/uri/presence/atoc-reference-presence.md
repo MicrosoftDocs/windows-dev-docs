@@ -4,16 +4,11 @@ assetID: 4ba44d9c-8615-cacc-2eee-7ff5e7c74383
 permalink: en-us/docs/xboxlive/rest/atoc-reference-presence.html
 
 description: ' Presence URIs'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Presence URIs
  
 This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *presence*.

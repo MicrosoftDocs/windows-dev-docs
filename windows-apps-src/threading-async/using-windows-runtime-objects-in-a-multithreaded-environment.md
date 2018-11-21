@@ -2,12 +2,8 @@
 title: Using Windows Runtime objects in a multithreaded environment | Microsoft Docs
 description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.
 ms.date: 01/14/2017
-
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
-
-
-
 keywords: windows 10, uwp, timer, threads
 ms.localizationpriority: medium
 ---

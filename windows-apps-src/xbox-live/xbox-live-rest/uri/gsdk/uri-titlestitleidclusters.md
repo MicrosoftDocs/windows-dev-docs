@@ -4,16 +4,11 @@ assetID: 5b1e242c-fd99-180b-e133-87946febd51c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters.html
 
 description: ' /titles/{titleId}/clusters'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /titles/{titleId}/clusters
 URI that allows a client to create an Xbox Live Compute server instance for a title. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

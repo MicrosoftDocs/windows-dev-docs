@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: This article shows you how to use the AdvancedPhotoCapture class to capture high dynamic range (HDR) and low-light photos.
 title: High dynamic range (HDR) and low-light photo capture
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # High dynamic range (HDR) and low-light photo capture
 
 

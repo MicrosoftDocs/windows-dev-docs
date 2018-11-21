@@ -4,16 +4,11 @@ assetID: 4dd89962-ab73-c25b-7a11-3ed35475492e
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsv2.html
 
 description: ' /users/xuid({xuid})/achievements'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/achievements
  
 This Universal Resource Identifier (URI) provides access to user achievements.

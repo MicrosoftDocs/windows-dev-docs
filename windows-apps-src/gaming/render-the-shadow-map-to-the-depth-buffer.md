@@ -1,17 +1,12 @@
 ---
-
 title: Render the shadow map to the depth buffer
 description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d
 ms.localizationpriority: medium
 ---
-
 # Render the shadow map to the depth buffer
 
 

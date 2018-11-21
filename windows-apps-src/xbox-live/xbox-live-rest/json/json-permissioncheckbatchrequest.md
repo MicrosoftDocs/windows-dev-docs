@@ -4,16 +4,11 @@ assetID: 3100b17c-1b60-fdf2-3af9-7e424f1903ee
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchrequest.html
 
 description: ' PermissionCheckBatchRequest (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionCheckBatchRequest (JSON)
 Collection of PermissionCheckBatchRequest objects. 
 <a id="ID4EP"></a>

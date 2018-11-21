@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
-
 ms.date: 07/10/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
 ---
-
 # Get subscriptions for a user
 
 Use this method in the Microsoft Store purchase API to get the subscription add-ons that a given user has entitlements to use.

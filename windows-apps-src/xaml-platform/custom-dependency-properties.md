@@ -1,13 +1,9 @@
 ---
-
 description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-
 ms.date: 07/12/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -16,7 +12,6 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
-
 # Custom dependency properties
 
 Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.

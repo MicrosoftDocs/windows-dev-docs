@@ -1,17 +1,12 @@
 ---
-
 title: Create a certificate for package signing
 description: Create and export a certificate for app package signing with PowerShell tools.
-
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ---
-
 # Create a certificate for package signing
 
 

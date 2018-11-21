@@ -4,16 +4,11 @@ assetID: f157ed8d-7483-1b34-bc3d-e3fcf6a7d055
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchresponse.html
 
 description: ' PermissionCheckBatchResponse (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionCheckBatchResponse (JSON)
 The results of a batch permission check for a list of permission values for multiple users. 
 <a id="ID4EN"></a>

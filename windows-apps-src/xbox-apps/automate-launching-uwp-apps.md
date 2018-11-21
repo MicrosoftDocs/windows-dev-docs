@@ -4,7 +4,6 @@ description: Developers can use protocol activation and launch activation to aut
 
 ms.localizationpriority: medium
 ---
-
 # Automate launching Windows 10 UWP apps
 
 ## Introduction

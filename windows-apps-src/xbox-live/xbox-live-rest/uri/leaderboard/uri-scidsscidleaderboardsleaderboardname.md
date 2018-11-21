@@ -4,16 +4,11 @@ assetID: 16345a17-6025-5453-5694-eaf97f0e83e9
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.html
 
 description: ' /scids/{scid}/leaderboards/{leaderboardname}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /scids/{scid}/leaderboards/{leaderboardname}
 Accesses a predefined global leaderboard. 
 The domain for these URIs is `leaderboards.xboxlive.com`.

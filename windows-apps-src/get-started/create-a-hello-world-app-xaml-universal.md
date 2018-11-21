@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: Learn how to create a "Hello, world" app (XAML)
 description: Use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
-
 ms.date: 03/06/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, first app, hello world
 ms.localizationpriority: medium
 ---
-
 # Create a "Hello, world" app (XAML)
 
 This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.

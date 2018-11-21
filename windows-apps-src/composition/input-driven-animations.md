@@ -1,12 +1,8 @@
 ---
-
 title: Input-driven animations
 description: Learn how to use input animations in your app UI.
-
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

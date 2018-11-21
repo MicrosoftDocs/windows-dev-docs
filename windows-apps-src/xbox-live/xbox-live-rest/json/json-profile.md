@@ -4,16 +4,11 @@ assetID: b92b1750-c2df-39b6-6c5c-f9e8068c8097
 permalink: en-us/docs/xboxlive/rest/json-profile.html
 
 description: ' Profile (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Profile (JSON)
 The personal profile settings for a user. 
 <a id="ID4EN"></a>

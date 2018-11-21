@@ -1,17 +1,12 @@
 ---
-
 title: Marble Maze application structure
 description: The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
-
 ms.date: 09/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, sample, directx, structure
 ms.localizationpriority: medium
 ---
-
 # Marble Maze application structure
 
 

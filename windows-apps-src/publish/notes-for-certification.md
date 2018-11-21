@@ -1,17 +1,12 @@
 ﻿---
-
 Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 title: Notes for certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, notes to testers
 ms.localizationpriority: medium
 ---
-
 # Notes for certification
 
 

@@ -3,15 +3,11 @@ title: Deploy barcode scanner profiles with MDM
 
 description: Barcode scanner profiles can be deployed with an MDM server.
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
-
 ms.date: 09/26/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Deploy barcode scanner profiles with MDM
 
 **Note**  This feature requires Windows 10 Mobile or later.

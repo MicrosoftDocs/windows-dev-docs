@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: Composition animations
 description: Many composition object and effect properties can be animated using key frame and expression animations allowing properties of a UI element to change over time or based on a calculation.
-
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

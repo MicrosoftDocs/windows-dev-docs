@@ -1,13 +1,9 @@
 ---
-
 title: Monetization for games
 description: Implement banner ads, interstitial video ads, and in-app purchases for Universal Windows Platform (UWP) games on Windows 10.
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, monetization
 ms.localizationpriority: medium
 ---

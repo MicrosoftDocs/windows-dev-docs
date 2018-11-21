@@ -1,12 +1,8 @@
 ---
-
 title: App analysis
 description: Analyze your app for performance issues.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -4,15 +4,12 @@ description: A triangle list is a list of isolated triangles. The isolated trian
 ms.assetid: BC50D532-9E9C-4AAE-B466-9E8C4AD1862A
 keywords:
 - Triangle lists
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Triangle lists
 
 

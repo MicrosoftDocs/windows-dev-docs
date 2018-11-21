@@ -4,16 +4,11 @@ assetID: 221c440d-c448-11e9-f455-6d0f95fc16ef
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortorders.html
 
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 Accesses available sort orders for a given mediaitem type and a given version of EDS. 
 The domain for these URIs is `eds.xboxlive.com`.

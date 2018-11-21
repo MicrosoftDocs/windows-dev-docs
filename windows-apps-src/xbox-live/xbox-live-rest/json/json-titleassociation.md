@@ -4,16 +4,11 @@ assetID: 05f4edbb-cc3d-c17d-0979-aac9e44a4988
 permalink: en-us/docs/xboxlive/rest/json-titleassociation.html
 
 description: ' TitleAssociation (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # TitleAssociation (JSON)
 A title that is associated with the achievement. 
 <a id="ID4EN"></a>

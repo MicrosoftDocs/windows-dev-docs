@@ -1,14 +1,10 @@
 ---
-
 Description: Use the pull-to-refresh control to get new content into a list.
 title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-
 ms.date: 03/07/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 pm-contact: predavid

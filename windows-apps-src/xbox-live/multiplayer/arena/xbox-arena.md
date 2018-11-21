@@ -2,15 +2,11 @@
 title: Xbox Arena
 
 description: Learn how to use Xbox Arena to run tournaments for your game.
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---
-
 # Xbox Arena
 
 Xbox Arena is a platform for creating and running online tournaments across Xbox One and Windows 10 through Xbox Live, with the goal of bringing the fun of competitive gaming to a broad audience.

@@ -1,17 +1,12 @@
 ﻿---
-
 Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, add-ons, iap, price
 ms.localizationpriority: medium
 ---
-
 # Set add-on pricing and availability
 
 When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the options on the **Pricing and availability** page determine how much to charge customers for your add-on and how it should be offered to customers.

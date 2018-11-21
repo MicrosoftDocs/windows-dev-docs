@@ -1,17 +1,12 @@
 ---
-
 title: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#
 description: This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
-
 ms.date: 05/14/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Walkthrough: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#
 > [!NOTE]
 > This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. To learn how to create a Windows Runtime Component using C++/WinRT, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).

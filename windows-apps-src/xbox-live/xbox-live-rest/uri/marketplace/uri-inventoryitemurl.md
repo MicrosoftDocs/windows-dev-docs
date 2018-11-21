@@ -4,16 +4,11 @@ assetID: e53242a3-e74d-77a2-4427-62ef7954c731
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurl.html
 
 description: ' /inventory/{itemID}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /inventory/{itemID}
 Accesses the full set of details for a specific inventory item. 
 The domain for these URIs is `inventory.xboxlive.com`.

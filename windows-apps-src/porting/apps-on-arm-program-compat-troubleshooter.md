@@ -2,15 +2,11 @@
 title: Program Compatibility Troubleshooter on ARM
 
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on ARM
-
 ms.date: 02/15/2018
 ms.topic: article
-
-
 keywords: windows 10 s, always connected, compatibility troubleshooter, windows on ARM
 ms.localizationpriority: medium
 ---
-
 # Program Compatibility Troubleshooter on ARM
 Emulation to support x86 apps is a new feature created for Windows 10 on ARM64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
 

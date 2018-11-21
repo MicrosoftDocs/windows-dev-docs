@@ -1,17 +1,12 @@
 ---
-
 title: Declare background tasks in the application manifest
 description: Enable the use of background tasks by declaring them as extensions in the app manifest.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---
-
 # Declare background tasks in the application manifest
 
 

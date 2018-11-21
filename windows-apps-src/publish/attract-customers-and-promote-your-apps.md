@@ -1,16 +1,11 @@
 ---
-
 Description: Attract customers and promote your apps
 title: Attract customers and promote your apps
-
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Attract customers and promote your apps
 
 Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible. [Partner Center](https://partner.microsoft.com/dashboard) offers many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.

@@ -1,17 +1,12 @@
 ---
-
 description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
 title: Testing and debugging tools for Process Lifetime Management (PLM)
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ---
-
 # Testing and debugging tools for Process Lifetime Management (PLM)
 
 One of the key differences between UWP apps and traditional desktop applications is that UWP titles reside in an app container subject to Process Lifecycle Management (PLM). UWP apps can be suspended, resumed, or terminated across all platforms by the Runtime Broker service, and there are dedicated tools for you to use to force those transitions when you are testing or debugging the code that handles them.

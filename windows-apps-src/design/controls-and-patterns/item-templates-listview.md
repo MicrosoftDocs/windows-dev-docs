@@ -1,16 +1,11 @@
 ---
-
 Description: Item templates for list view
 title: Item templates for list view
 template: detail.hbs
-
 ms.date: 11/03/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, fluent
 ---
-
 # Item templates for list view
 
 This section contains item templates that you can use with a [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types. 

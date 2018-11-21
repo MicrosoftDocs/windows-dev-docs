@@ -1,17 +1,12 @@
 ---
-
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: Use the Microsoft Store reviews API to programmatically submit responses to reviews of your app in the Store.
 title: Respond to reviews using Store services
-
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews
 ms.localizationpriority: medium
 ---
-
 # Respond to reviews using Store services
 
 Use the *Microsoft Store reviews API* to programmatically respond to reviews of your app in the Store. This API is especially useful for developers who want to bulk respond to many reviews without using Partner Center. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.

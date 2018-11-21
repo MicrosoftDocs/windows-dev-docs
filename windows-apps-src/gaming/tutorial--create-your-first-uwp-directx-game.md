@@ -1,17 +1,14 @@
 ---
-
 title: Create a DirectX Universal Windows Platform (UWP) game
 description: In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX game sample, game sample, Universal Windows Platform (UWP), Direct3D 11 game
-
 ms.date: 12/01/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Create a simple Universal Windows Platform (UWP) game with DirectX
 
 In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++. We cover all the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.

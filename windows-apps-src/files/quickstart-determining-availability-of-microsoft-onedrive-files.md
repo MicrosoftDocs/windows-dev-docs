@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: Determining availability of Microsoft OneDrive files
 description: Determine if a Microsoft OneDrive file is available using the StorageFile.IsAvailable property.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -1,17 +1,12 @@
 ---
-
 title: Apply textures to primitives
 description: Here, we load raw texture data and apply that data to a 3D primitive by using the cube that we created in Using depth and effects on primitives.
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, textures, directx
 ms.localizationpriority: medium
 ---
-
 # Apply textures to primitives
 
 
@@ -31,7 +26,6 @@ We also assume that you went through [Quickstart: setting up DirectX resources a
 
 Instructions
 ------------
-
 ### 1. Defining variables for a textured cube
 
 First, we need to define the **BasicVertex** and **ConstantBuffer** structures for the textured cube. These structures specify the vertex positions, orientations, and textures for the cube and how the cube will be viewed. Otherwise, we declare variables similarly to the previous tutorial, [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md).

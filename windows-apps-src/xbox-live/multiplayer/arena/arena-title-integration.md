@@ -3,15 +3,11 @@ title: Arena title integration guide
 
 description: Learn how a title can build in support for the Xbox Live Arena platform.
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament
 ms.localizationpriority: medium
 ---
-
 # Arena title integration guide
 
 ## Introduction

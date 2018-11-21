@@ -4,16 +4,11 @@ assetID: 9dd19e75-3b48-d7e0-fc65-6760c15ddf62
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetid.html
 
 description: ' /users/{ownerId}/people/{targetid}'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/people/{targetid}
 Accesses a person by target ID from caller's people collection. 
 The domain for these URIs is `social.xboxlive.com`.

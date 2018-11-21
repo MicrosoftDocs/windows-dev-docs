@@ -1,15 +1,12 @@
 ---
-
 description: Use this method in the Microsoft Store analytics API to get insights data for your desktop application.
 title: Get insights data for your desktop application
-
 ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, insights
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Get insights data for your desktop application
 
 Use this method in the Microsoft Store analytics API to get insights data related to health metrics for a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This data is also available in the [Health report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) for desktop applications in Partner Center.

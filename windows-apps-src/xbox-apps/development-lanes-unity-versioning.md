@@ -1,10 +1,8 @@
 ---
-
 title: Unity - Version control your UWP project
 description: Version your Unity UWP project.
 ms.localizationpriority: medium
 ---
-
 # Unity: Version control your UWP project
 
 Still haven't built your Unity game for Xbox using the Universal Windows Platform (UWP)?  First see [Bringing Unity games to UWP on Xbox](development-lanes-unity.md).

@@ -1,17 +1,12 @@
 ---
-
 title: Perform geocoding and reverse geocoding
 description: This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-
 ms.date: 07/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, geocoding, map, location
 ms.localizationpriority: medium
 ---
-
 # Perform geocoding and reverse geocoding
 
 This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace.

@@ -4,15 +4,12 @@ description: Device state is grouped into state objects which greatly reduce the
 ms.assetid: D998745C-2B75-4E59-9923-AD1A17A92E05
 keywords:
 - State objects
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # State objects
 
 

@@ -4,16 +4,11 @@ assetID: 50cf91ba-29d3-1260-7643-bcb3f8d74fc0
 permalink: en-us/docs/xboxlive/rest/json-gamesessionsummary.html
 
 description: ' GameSessionSummary (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameSessionSummary (JSON)
 A JSON object representing summary data for a game session. 
 <a id="ID4EN"></a>

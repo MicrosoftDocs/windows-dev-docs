@@ -4,16 +4,11 @@ assetID: d013af81-bfbf-c50a-5696-2bb561448616
 permalink: en-us/docs/xboxlive/rest/json-multiplayersession.html
 
 description: ' MultiplayerSession (JSON)'
-
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MultiplayerSession (JSON)
 A JSON object representing the **MultiplayerSession**. 
 <a id="ID4EQ"></a>

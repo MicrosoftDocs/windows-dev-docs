@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Install apps with the WinAppDeployCmd.exe tool
 description: Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device.
-
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

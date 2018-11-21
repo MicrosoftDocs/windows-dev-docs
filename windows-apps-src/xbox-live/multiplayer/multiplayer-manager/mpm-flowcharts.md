@@ -3,15 +3,11 @@ title: Multiplayer manager flowcharts
 
 description: Provides links to Xbox Live multiplayer manager flowcharts.
 ms.assetid: 0e81ab13-9285-4b72-a6ce-f15add559128
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer manager, flowchart
 ms.localizationpriority: medium
 ---
-
 # Multiplayer manager flowcharts
 
 This section contains flowchart diagrams that can help you to visualize the code flow to implementing specific multiplayer manager scenarios.

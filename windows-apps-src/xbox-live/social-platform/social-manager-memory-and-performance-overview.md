@@ -3,11 +3,8 @@ title: Social Manager Memory and Performance
 
 description: Describes memory and performance considerations when using Xbox Live social manager API manager.
 ms.assetid: 2540145e-b8e2-4ab5-9390-65e2c9b19792
-
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, social manager, people
 ms.localizationpriority: medium
 ---

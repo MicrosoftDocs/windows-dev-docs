@@ -1,17 +1,12 @@
 ---
-
 description: Use your current Mac computer to develop apps for Windows.
 title: Setting up your Mac with Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Setting up your Mac with Windows 10
 
 

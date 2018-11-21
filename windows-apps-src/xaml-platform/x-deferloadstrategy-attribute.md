@@ -1,13 +1,9 @@
 ---
-
 title: xDeferLoadStrategy attribute
 description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

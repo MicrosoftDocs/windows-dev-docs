@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
 title: Enterprise Shared Storage
 description: Enterprise shared storage defines local data locations for line of business apps to share data.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

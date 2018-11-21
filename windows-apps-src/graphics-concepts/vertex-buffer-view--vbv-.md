@@ -4,15 +4,12 @@ description: A vertex buffer holds data for a list of vertices.
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
 - Vertex buffer view (VBV)
-
-
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Vertex buffer view (VBV) and Index buffer view (IBV)
 
 

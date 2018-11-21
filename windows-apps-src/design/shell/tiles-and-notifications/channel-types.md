@@ -1,16 +1,11 @@
 ---
-
 Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
 title: Choosing the right push notification channel type
-
 ms.date: 07/07/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Choosing the right push notification channel type
 
 This article covers the three types of UWP push notification channels (primary, secondary, and alternate) that help you deliver content to your app. 
