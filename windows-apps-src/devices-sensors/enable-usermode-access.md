@@ -1,8 +1,8 @@
 ---
-author: JordanRh1
+
 title: Enable usermode access to GPIO, I2C, and SPI
 description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi

@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.
 title: Dependency properties overview
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

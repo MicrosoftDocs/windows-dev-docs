@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Storage Platform
-author: KevinAsgari
+
 description: Learn about the Xbox Live Storage Platform, which includes Connected Storage and Title Storage.
 ms.assetid: 3c92549c-65fd-4d26-a693-3aded8bae498
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

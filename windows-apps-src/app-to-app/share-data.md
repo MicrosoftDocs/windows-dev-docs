@@ -2,8 +2,8 @@
 description: This article explains how to support the Share contract in a Universal Windows Platform (UWP) app.
 title: Share data
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
-author: msatranjr
-ms.author: misatran
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

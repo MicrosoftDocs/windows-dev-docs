@@ -1,9 +1,9 @@
 ﻿---
-author: JnHs
+
 Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

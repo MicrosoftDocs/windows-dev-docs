@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Game programming
 description: Universal Windows Platform (UWP) offers new opportunities to create, distribute, and monetize games. Learn about starting a new game or porting an existing game.
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.author: mtoepke
+
 ms.date: 06/13/2017
 ms.topic: article
 

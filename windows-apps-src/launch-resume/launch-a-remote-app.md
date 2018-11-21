@@ -1,8 +1,8 @@
 ---
-author: PatrickFarley
+
 title: Launch an app on a remote device
 description: Learn how to launch an app on a remote device using Project Rome.
-ms.author: pafarley
+
 ms.date: 02/12/2018
 ms.topic: article
 

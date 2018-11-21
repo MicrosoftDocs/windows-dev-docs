@@ -1,9 +1,9 @@
 ---
 title: Reading a JSON blob
-author: KevinAsgari
+
 description: Learn how to read a JSON blob in Xbox Live Title Storage.
 ms.assetid: 3697af16-d054-4835-af7f-7fee8c628345
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

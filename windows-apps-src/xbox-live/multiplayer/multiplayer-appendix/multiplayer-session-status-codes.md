@@ -1,9 +1,9 @@
 ---
 title: Multiplayer Session Status Codes
-author: KevinAsgari
+
 description: Describes the status codes returned from the Xbox Live service when requesting a multiplayer session.
 ms.assetid: 4ab320d6-8050-41a9-9f00-faaad3b128fd
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

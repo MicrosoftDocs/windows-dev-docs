@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows Desktop Bridge app tests
 description: Use the Desktop Bridge's built-in tests to ensure that your desktop app is optimized for its conversion to a UWP app.
-ms.author: pafarley
+
 ms.date: 12/18/2017
 ms.topic: article
 

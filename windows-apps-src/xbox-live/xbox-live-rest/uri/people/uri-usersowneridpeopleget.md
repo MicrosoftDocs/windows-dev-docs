@@ -2,9 +2,9 @@
 title: GET (/users/{ownerId}/people)
 assetID: c948d031-ec19-7571-31ef-23cb9c5ebfaf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopleget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/people)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
 title: Resource Management System
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/20/2017
 ms.topic: article
 

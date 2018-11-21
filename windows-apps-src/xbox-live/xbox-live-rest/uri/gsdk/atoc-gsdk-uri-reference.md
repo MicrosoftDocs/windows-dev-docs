@@ -2,9 +2,9 @@
 title: Game Server Universal Resource Identifier (URI) Reference
 assetID: bbd7e3f3-77ac-6ffd-8951-fe4b8b48eb4c
 permalink: en-us/docs/xboxlive/rest/atoc-gsdk-uri-reference.html
-author: KevinAsgari
+
 description: ' Game Server Universal Resource Identifier (URI) Reference'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

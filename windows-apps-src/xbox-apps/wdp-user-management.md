@@ -1,8 +1,8 @@
 ---  
-author: WilliamsJason  
+
 title: Xbox Live Test User Management API reference  
 description: Learn how to access the User Management APIs programmatically.
-ms.author: jaswill
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Title Storage URIs
 assetID: 32bba1e4-0980-785e-c098-a96cd88a8e5f
 permalink: en-us/docs/xboxlive/rest/atoc-reference-storagev2.html
-author: KevinAsgari
+
 description: ' Title Storage URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

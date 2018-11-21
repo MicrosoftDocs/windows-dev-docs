@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Support your app with background tasks
 description: The topics in this section show you how to make lightweight code run in the background in response to triggers.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
-ms.author: twhitney
+
 ms.date: 08/21/2017
 ms.topic: article
 

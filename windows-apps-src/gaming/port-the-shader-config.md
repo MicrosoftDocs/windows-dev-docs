@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Port the shader objects
 description: When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

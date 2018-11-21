@@ -1,12 +1,12 @@
 ---
-author: mijacobs
+
 Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
 title: Command design basics for Universal Windows Platform (UWP) apps
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
+
 ms.date: 10/01/2018
 ms.topic: article
 keywords: windows 10, uwp

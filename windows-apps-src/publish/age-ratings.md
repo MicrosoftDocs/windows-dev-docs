@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
-ms.author: wdg-dev-content
+
 ms.date: 05/08/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Optimization and advanced topics for DirectX games
 description: Optimization and advanced topics for DirectX game programming.
 ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
-ms.author: joanlee
+
 ms.date: 02/08/2017
 ms.topic: article
 

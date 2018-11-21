@@ -2,9 +2,9 @@
 title: /users/me/scids/{scid}/clips
 assetID: ed8317f7-7898-47ad-d18d-cd5150daf293
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclips.html
-author: KevinAsgari
+
 description: ' /users/me/scids/{scid}/clips'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 assetID: 221c440d-c448-11e9-f455-6d0f95fc16ef
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortorders.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

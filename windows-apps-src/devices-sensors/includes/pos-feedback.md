@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Support and feedback
 description: Support and feedback include file
-ms.author: jken
+
 ms.date: 06/12/2018
 ms.topic: article
 

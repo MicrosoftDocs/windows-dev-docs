@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 title: Communicate with a remote app service
 description: Exchange messages with an app service running on a remote device using Project Rome.
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

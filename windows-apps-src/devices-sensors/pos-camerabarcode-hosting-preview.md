@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Hosting Preview for Camera Barcode Scanner
 description: Learn how to host a camera barcode scanner preview in your application
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

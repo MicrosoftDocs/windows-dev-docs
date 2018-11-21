@@ -2,9 +2,9 @@
 title: RichPresenceRequest (JSON)
 assetID: 599266be-f747-0be1-fadf-f8e0262dc27f
 permalink: en-us/docs/xboxlive/rest/json-richpresencerequest.html
-author: KevinAsgari
+
 description: ' RichPresenceRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

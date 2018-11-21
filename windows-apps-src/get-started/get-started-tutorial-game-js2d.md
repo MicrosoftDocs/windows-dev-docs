@@ -1,8 +1,8 @@
 ---
 title: Create a UWP game in JavaScript
 description: A simple UWP game for the Microsoft Store, written in JavaScript and CreateJS
-author: GrantMeStrength
-ms.author: jken
+
+
 ms.date: 02/09/2017
 ms.topic: article
 

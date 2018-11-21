@@ -1,9 +1,9 @@
 ---
 title: Xbox Live social platform - For games and gamers
-author: aablackm
+
 description: Provides links to learn about the Xbox Live social platform service.
 ms.assetid: 27b85218-60f3-4eb0-9f7e-fe90e027db5c
-ms.author: aablackm
+
 ms.date: 09/18/2017
 ms.topic: article
 

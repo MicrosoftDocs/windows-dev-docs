@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
 title: Manage your experiment in Partner Center
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

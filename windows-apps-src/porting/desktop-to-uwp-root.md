@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
 Search.Product: eADQiWindows 10XVcnh
 title: Package desktop applications
-ms.author: normesta
+
 ms.date: 09/05/2018
 ms.topic: article
 keywords: windows 10, uwp

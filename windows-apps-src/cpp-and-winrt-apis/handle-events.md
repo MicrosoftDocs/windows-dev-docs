@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
-ms.author: stwhi
+
 ms.date: 05/07/2018
 ms.topic: article
 

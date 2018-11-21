@@ -2,9 +2,9 @@
 title: /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
 assetID: d1e05113-c7a3-d615-52d7-d54f08b30b44
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersxuidscidssciddatapath.html
-author: KevinAsgari
+
 description: ' /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

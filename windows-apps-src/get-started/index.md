@@ -2,8 +2,8 @@
 layout: LandingPage
 description: Get started with the Universal Windows Platform (UWP) and app development for Windows 10.
 title: Get started with the Universal Windows Platform (UWP)
-author: QuinnRadich
-ms.author: quradic
+
+
 ms.date: 03/23/2018
 
 ms.topic: article

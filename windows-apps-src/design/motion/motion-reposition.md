@@ -1,11 +1,11 @@
 ---
-author: mijacobs
+
 Description: Use the reposition animation to move an element or elements into a new position.
 title: Reposition animations in UWP apps
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

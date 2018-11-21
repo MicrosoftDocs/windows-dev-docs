@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Provision Device Portal with a custom SSL certificate
 description: TBD
-ms.author: pafarley
+
 ms.date: 07/11/2017
 ms.topic: article
 

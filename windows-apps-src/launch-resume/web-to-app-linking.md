@@ -1,9 +1,9 @@
 ﻿---
-author: TylerMSFT
+
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows
-ms.author: twhitney
+
 ms.date: 08/25/2017
 ms.topic: article
 

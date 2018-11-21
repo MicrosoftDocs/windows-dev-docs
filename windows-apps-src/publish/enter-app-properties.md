@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

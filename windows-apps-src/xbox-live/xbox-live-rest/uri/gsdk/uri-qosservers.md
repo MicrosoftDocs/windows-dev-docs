@@ -2,9 +2,9 @@
 title: /qosservers
 assetID: 6adbcc27-474c-959b-f0b7-de97241862c7
 permalink: en-us/docs/xboxlive/rest/uri-qosservers.html
-author: KevinAsgari
+
 description: ' /qosservers'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

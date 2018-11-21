@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
-ms.author: stwhi
+
 ms.date: 10/03/2018
 ms.topic: article
 

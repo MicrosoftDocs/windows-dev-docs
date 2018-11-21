@@ -4,8 +4,8 @@ description: When a resource is created as a streaming resource, the tiles that 
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords:
 - Mappings are into a tile pool
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

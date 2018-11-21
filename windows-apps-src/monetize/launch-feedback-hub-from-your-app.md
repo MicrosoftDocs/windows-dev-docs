@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: Launch Feedback Hub from your app
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

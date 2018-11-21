@@ -2,9 +2,9 @@
 title: /titles/{titleId}/clusters
 assetID: 5b1e242c-fd99-180b-e133-87946febd51c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters.html
-author: KevinAsgari
+
 description: ' /titles/{titleId}/clusters'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
 title: What's new for the Xbox Live APIs - May 2017
-author: KevinAsgari
+
 description: What's new for the Xbox Live APIs - May 2017
 ms.assetid: 
-ms.author: kevinasg
+
 ms.date: 04/27/2017
 ms.topic: article
 

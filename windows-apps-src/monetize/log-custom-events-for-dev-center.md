@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
 title: Log custom events for Partner Center
-ms.author: mhopkins
+
 ms.date: 06/01/2018
 ms.topic: article
 

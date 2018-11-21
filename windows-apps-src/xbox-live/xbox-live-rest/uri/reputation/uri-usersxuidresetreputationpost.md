@@ -2,9 +2,9 @@
 title: POST (/users/xuid({xuid})/resetreputation)
 assetID: 3b76857f-b043-2c76-cf0c-c8f355fe3849
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputationpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/resetreputation)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

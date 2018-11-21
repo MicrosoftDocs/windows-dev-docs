@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your desktop application.
 title: Get the stack trace for an error in your desktop application
-ms.author: mhopkins
+
 ms.date: 06/05/2018
 ms.topic: article
 

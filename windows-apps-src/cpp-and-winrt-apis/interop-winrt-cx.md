@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows two helper functions that can be used to convert between C++/CX and C++/WinRT objects.
 title: Interop between C++/WinRT and C++/CX
-ms.author: stwhi
+
 ms.date: 10/09/2018
 ms.topic: article
 

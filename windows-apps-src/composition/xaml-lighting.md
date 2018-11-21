@@ -1,8 +1,8 @@
 ---
-author: daneuber
+
 title: XAML lighting
 description: Light objects are used in conjunction with SceneLightingEffect to simulate dynamic lighting and reflectivity.
-ms.author: jimwalk
+
 ms.date: 06/28/2018
 ms.topic: article
 

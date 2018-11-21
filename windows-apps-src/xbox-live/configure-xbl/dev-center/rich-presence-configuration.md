@@ -1,8 +1,8 @@
 ---
 title: Rich Presence Configuration in Partner Center
-author: aablackm
+
 description: Learn how to configure Rich Presence strings in Partner Center
-ms.author: aablackm
+
 ms.date: 02/27/2018
 ms.topic: article
 

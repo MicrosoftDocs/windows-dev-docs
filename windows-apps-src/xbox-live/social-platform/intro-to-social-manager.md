@@ -1,9 +1,9 @@
 ---
 title: Introduction to Social Manager
-author: aablackm
+
 description: Learn about the Xbox Live Social Manager API to keep track of online friends.
 ms.assetid: d4c6d5aa-e18c-4d59-91f8-63077116eda3
-ms.author: aablackm
+
 ms.date: 03/26/2018
 ms.topic: article
 

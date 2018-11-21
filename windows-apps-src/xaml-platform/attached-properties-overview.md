@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Explains the concept of an attached property in XAML, and provides some examples.
 title: Attached properties overview
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

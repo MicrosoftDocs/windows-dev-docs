@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
 title: Move and draw commands syntax
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

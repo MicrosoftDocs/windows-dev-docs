@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

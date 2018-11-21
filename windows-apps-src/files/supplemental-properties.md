@@ -1,8 +1,8 @@
 ---
 title: Using supplemental properties
 description: Introduction to using supplemental properties and details on how they were implemented in Windows
-author: adwilso
-ms.author: lahugh
+
+
 ms.date: 1/10/2017
 ms.topic: article
 

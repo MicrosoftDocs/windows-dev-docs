@@ -2,9 +2,9 @@
 title: POST (/users/xuid({xuid})/devices/current/titles/current)
 assetID: d5e2d12d-ba75-2d04-2805-c69a4c143f73
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddevicescurrenttitlescurrentpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/devices/current/titles/current)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

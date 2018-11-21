@@ -1,9 +1,9 @@
 ---
-author: Jwmsft
+
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: Animations overview
 description: Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app.
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

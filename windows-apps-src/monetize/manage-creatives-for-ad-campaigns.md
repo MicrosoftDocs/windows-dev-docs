@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: Use this method in the Microsoft Store promotions API to manage creatives for promotional ad campaigns.
 title: Manage creatives
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

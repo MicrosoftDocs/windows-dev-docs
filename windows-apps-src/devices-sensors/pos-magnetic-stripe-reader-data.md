@@ -1,8 +1,8 @@
 ---
-author: eliotcowley
+
 title: Obtain and understand magnetic stripe data
 description: Learn how to obtain and interpret the data from a magnetic stripe.
-ms.author: elcowle
+
 ms.date: 10/04/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: /titles/{titleId}/variants
 assetID: bca30c8f-1f09-729f-4955-38b7809404eb
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants.html
-author: KevinAsgari
+
 description: ' /titles/{titleId}/variants'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

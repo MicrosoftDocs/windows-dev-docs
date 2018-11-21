@@ -1,8 +1,8 @@
 ---
 title: What's new for the Xbox Live
-author: PhillipLucas
+
 description: What's new for the Xbox Live SDK
-ms.author: aablackm
+
 ms.date: 10/23/2018
 ms.topic: article
 

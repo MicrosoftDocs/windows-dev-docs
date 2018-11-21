@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
 title: Text controls
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 10/01/2018
 ms.topic: article
 

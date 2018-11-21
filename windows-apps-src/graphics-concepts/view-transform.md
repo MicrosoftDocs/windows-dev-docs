@@ -4,8 +4,8 @@ description: A view transform locates the viewer in world space, transforming ve
 ms.assetid: DA4C2051-4C28-4ABF-8C06-241C8CB87F2F
 keywords:
 - View transform
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

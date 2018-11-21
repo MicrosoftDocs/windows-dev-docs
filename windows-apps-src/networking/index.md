@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: Technologies for accessing networks, and web services.
 title: Networking and web services
-ms.author: stwhi
+
 ms.date: 11/26/2017
 ms.topic: article
 

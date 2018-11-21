@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

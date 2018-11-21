@@ -2,9 +2,9 @@
 title: UserClaims (JSON)
 assetID: f88d5ee0-2875-fcfb-3098-3cd6afce8748
 permalink: en-us/docs/xboxlive/rest/json-userclaims.html
-author: KevinAsgari
+
 description: ' UserClaims (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

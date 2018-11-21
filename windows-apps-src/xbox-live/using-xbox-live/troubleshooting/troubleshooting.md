@@ -1,9 +1,9 @@
 ---
 title: Troubleshooting Xbox Live
-author: KevinAsgari
+
 description: Learn about the various ways to troubleshooting Xbox Live development.
 ms.assetid: 5e96199b-9177-4789-9c80-79f6b83a2db4
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

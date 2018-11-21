@@ -1,8 +1,8 @@
 ---
-author: WilliamsJason
+
 title: Device Portal Loose folder registration API reference
 description: Learn how to access the loose folder registration APIs programatically.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

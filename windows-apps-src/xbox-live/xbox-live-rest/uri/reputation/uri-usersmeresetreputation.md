@@ -2,9 +2,9 @@
 title: /users/me/resetreputation
 assetID: 24de66b1-5514-b880-f47a-aff2c1d30f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputation.html
-author: KevinAsgari
+
 description: ' /users/me/resetreputation'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

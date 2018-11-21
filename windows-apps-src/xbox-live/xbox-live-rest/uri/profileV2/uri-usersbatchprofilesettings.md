@@ -2,9 +2,9 @@
 title: /users/batch/profile/settings
 assetID: 2809adc7-5daa-1483-8a2e-48380430e6e1
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettings.html
-author: KevinAsgari
+
 description: ' /users/batch/profile/settings'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

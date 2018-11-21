@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Creators service configuration
-author: KevinAsgari
+
 description: Learn about Xbox Live service configuration for the Creators Program.
 ms.assetid: 22b8f893-abb3-426e-9840-f79de0753702
-ms.author: kevinasg
+
 ms.date: 10/03/2017
 ms.topic: article
 

@@ -1,10 +1,10 @@
 ﻿---
-author: normesta
+
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Map style sheet reference
-ms.author: normesta
+
 ms.date: 03/16/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
-author: adwilso
-ms.author: sezhen
+
+
 ms.date: 1/10/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
-ms.author: normesta
+
 ms.date: 05/18/2018
 ms.topic: article
 

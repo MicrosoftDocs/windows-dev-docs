@@ -2,9 +2,9 @@
 title: Enumerations Used In JavaScript Object Notation (JSON) Objects
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
-author: KevinAsgari
+
 description: ' Enumerations Used In JavaScript Object Notation (JSON) Objects'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

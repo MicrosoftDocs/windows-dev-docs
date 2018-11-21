@@ -2,9 +2,9 @@
 title: /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes
 assetID: fc096def-ac64-76c6-09f8-8f33a6bb47a0
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroupsmediaitemtypes.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

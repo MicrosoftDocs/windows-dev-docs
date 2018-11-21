@@ -1,9 +1,9 @@
 ---
 title: Connected Storage loading on demand
-author: aablackm
+
 description: Learn how to load Connected Storage data on demand, instead of all at once.
 ms.assetid: a0797a14-c972-4017-864c-c6ba0d5a3363
-ms.author: aablackm
+
 ms.date: 02/27/2018
 ms.topic: article
 

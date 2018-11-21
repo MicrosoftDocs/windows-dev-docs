@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows Docs in July 2017 - Develop UWP apps
 description: New features, samples, and developer guidance has been added to the Windows 10 developer documentation for July 2017
 keywords: what's new, update, features, developer guidance, Windows 10
-ms.author: quradic
+
 ms.date: 07/05/2017
 ms.topic: article
 

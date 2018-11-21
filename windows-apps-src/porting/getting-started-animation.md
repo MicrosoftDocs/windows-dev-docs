@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 title: Getting started with Animation
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: In this project, we're going to move a rectangle, apply a fade effect, and then bring it back into view.
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: hickeys
+
 Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Extend your desktop application with Windows UIs and components
-ms.author: hickeys
+
 ms.date: 06/08/2018
 ms.topic: article
 

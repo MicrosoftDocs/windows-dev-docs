@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Launch the default app for a file
 description: Learn how to launch the default app for a file.
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
-ms.author: twhitney
+
 ms.date: 07/05/2018
 ms.topic: article
 

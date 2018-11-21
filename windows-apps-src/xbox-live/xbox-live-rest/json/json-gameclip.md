@@ -2,9 +2,9 @@
 title: GameClip (JSON)
 assetID: 204cb702-4ce4-85a8-f231-3b4fb243405f
 permalink: en-us/docs/xboxlive/rest/json-gameclip.html
-author: KevinAsgari
+
 description: ' GameClip (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

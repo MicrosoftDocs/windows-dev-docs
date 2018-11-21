@@ -1,9 +1,9 @@
 ---
 title: What's new for the Xbox Live SDK - February 2016
-author: KevinAsgari
+
 description: What's new for the Xbox Live SDK - February 2016
 ms.assetid: 7ff34ea4-f07d-4584-98e4-13977994ccca
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

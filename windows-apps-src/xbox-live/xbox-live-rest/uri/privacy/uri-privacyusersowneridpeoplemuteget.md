@@ -2,9 +2,9 @@
 title: GET (/users/{ownerId}/people/mute)
 assetID: 49b6c830-95f7-3200-0e46-0a1af573971c
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/people/mute)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

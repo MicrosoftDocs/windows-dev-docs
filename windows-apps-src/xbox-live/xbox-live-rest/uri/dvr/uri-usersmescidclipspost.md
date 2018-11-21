@@ -2,9 +2,9 @@
 title: POST (/users/me/scids/{scid}/clips)
 assetID: 44535926-9fb8-5498-b1c8-514c0763e6c9
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipspost.html
-author: KevinAsgari
+
 description: ' POST (/users/me/scids/{scid}/clips)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

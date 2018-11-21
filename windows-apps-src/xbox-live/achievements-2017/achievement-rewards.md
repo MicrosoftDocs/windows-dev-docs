@@ -1,9 +1,9 @@
 ---
 title: Achievement Rewards
-author: KevinAsgari
+
 description: Describes how you can configure an achievement to deliver rewards.
 ms.assetid: b6fc5bdb-ba7b-4687-985e-894182f066da
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

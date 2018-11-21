@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to use Universal Dismiss on your toast notifications.
 title: Universal Dismiss
 label: Universal Dismiss
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 12/15/2017
 ms.topic: article
 

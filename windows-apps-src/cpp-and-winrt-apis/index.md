@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library.
 title: C++/WinRT
-ms.author: stwhi
+
 ms.date: 05/14/2018
 ms.topic: article
 

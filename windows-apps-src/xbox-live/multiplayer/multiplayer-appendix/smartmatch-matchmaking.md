@@ -1,9 +1,9 @@
 ---
 title: SmartMatch Matchmaking
-author: KevinAsgari
+
 description: Learn about the Xbox Live SmartMatch matchmaking service for matching players in a multiplayer game.
 ms.assetid: ba0c1ecb-e928-4e86-9162-8cb456b697ff
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

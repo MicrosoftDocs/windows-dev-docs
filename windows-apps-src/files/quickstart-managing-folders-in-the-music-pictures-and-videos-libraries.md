@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: Files and folders in the Music, Pictures, and Videos libraries
 description: Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
-ms.author: lahugh
+
 ms.date: 06/18/2018
 ms.topic: article
 

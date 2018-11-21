@@ -1,9 +1,9 @@
 ---
 title: Xbox Live service configuration
-author: KevinAsgari
+
 description: Learn how to configure the Xbox Live service for your game.
 ms.assetid: 631c415b-5366-4a84-ba4f-4f513b229c32
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

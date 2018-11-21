@@ -2,9 +2,9 @@
 title: PermissionCheckBatchResponse (JSON)
 assetID: f157ed8d-7483-1b34-bc3d-e3fcf6a7d055
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchresponse.html
-author: KevinAsgari
+
 description: ' PermissionCheckBatchResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

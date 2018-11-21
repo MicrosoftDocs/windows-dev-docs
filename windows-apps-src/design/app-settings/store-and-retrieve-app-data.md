@@ -1,11 +1,11 @@
 ---
-author: mijacobs
+
 Description: Learn how to store and retrieve local, roaming, and temporary app data.
 title: Store and retrieve settings and other app data
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 11/14/2017
 ms.topic: article
 

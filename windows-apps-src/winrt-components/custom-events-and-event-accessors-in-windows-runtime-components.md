@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 title: Custom events and event accessors in Windows Runtime Components
 description: .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern.
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,11 +1,11 @@
 ---
-author: Xansky
+
 Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Accessibility practices to avoid
 label: Accessibility practices to avoid
 template: detail.hbs
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

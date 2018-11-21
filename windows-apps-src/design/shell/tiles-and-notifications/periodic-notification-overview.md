@@ -1,10 +1,10 @@
 ---
-author: mijacobs
+
 Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
 title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

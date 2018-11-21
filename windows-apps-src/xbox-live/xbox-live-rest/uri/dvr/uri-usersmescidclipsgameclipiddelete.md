@@ -2,9 +2,9 @@
 title: DELETE (/users/me/scids/{scid}/clips/{gameClipId})
 assetID: 486fac60-6884-2e3f-9ef8-8de5da0ad8af
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipiddelete.html
-author: KevinAsgari
+
 description: ' DELETE (/users/me/scids/{scid}/clips/{gameClipId})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
 title: Write a great app description
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: payzer
+
 title: Device Portal SMB API reference
 description: Learn how to access the SMB APIs programatically.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

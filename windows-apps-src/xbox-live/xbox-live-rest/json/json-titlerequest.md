@@ -2,9 +2,9 @@
 title: TitleRequest (JSON)
 assetID: 43aeb6f9-726d-9260-e2ba-f005ea688bf1
 permalink: en-us/docs/xboxlive/rest/json-titlerequest.html
-author: KevinAsgari
+
 description: ' TitleRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

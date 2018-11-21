@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: Learn how to catch AdControl errors in your app.
 title: Error handling in JavaScript walkthrough
-ms.author: mhopkins
+
 ms.date: 05/11/2018
 ms.topic: article
 

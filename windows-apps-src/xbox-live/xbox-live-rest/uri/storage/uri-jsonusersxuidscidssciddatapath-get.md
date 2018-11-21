@@ -2,9 +2,9 @@
 title: GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
 assetID: ab73c1af-d914-b498-6a12-8f74eec349d0
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapath-get.html
-author: KevinAsgari
+
 description: ' GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

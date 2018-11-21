@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.author: stwhi
+
 ms.date: 05/07/2018
 ms.topic: article
 

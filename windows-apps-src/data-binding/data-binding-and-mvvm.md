@@ -1,9 +1,9 @@
 ---
-author: KarlErickson
+
 ms.assetid: F46306EC-DFF3-4FF0-91A8-826C1F8C4A52
 title: Data binding and MVVM
 description: Data binding is at the core of the Model-View-ViewModel (MVVM) UI architectural design pattern, and enables loose coupling between UI and non-UI code.
-ms.author: karler
+
 ms.date: 10/02/2018
 ms.topic: article
 

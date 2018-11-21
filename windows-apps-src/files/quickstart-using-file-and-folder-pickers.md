@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: Open files and folders with a picker
 description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
-ms.author: lahugh
+
 ms.date: 02/08/2017
 ms.topic: article
 

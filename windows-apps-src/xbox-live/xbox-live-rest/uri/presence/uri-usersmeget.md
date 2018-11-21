@@ -2,9 +2,9 @@
 title: GET (/users/me)
 assetID: 726c279b-73fb-02ea-cbff-700ff2dc31af
 permalink: en-us/docs/xboxlive/rest/uri-usersmeget.html
-author: KevinAsgari
+
 description: ' GET (/users/me)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 description: To continue network communication while it's not in the background, an app can use background tasks and either socket broker or control channel triggers.
 title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: stwhi
+
 ms.date: 06/14/2018
 ms.topic: article
 

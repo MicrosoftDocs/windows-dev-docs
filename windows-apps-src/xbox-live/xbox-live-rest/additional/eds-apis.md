@@ -2,9 +2,9 @@
 title: Auxiliary EDS APIs
 assetID: 5729ab80-e88d-0190-fb61-bd0cc4f134f6
 permalink: en-us/docs/xboxlive/rest/eds-apis.html
-author: KevinAsgari
+
 description: ' Auxiliary EDS APIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

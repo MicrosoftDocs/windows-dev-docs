@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 3E0FBB43-F6A4-4558-AA89-20E7760BA73F
 description: This article lists the Dynamic Adaptive Streaming over HTTP (DASH) profiles supported for UWP apps.
 title: Dynamic Adaptive Streaming over HTTP (DASH) profile support
-ms.author: drewbat
+
 ms.date: 02/15/2017
 ms.topic: article
 

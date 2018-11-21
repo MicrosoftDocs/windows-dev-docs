@@ -2,9 +2,9 @@
 title: HopperStatsResults (JSON)
 assetID: 91927da1-2e97-f7bc-ae62-7e0e9966b98e
 permalink: en-us/docs/xboxlive/rest/json-hopperstatsresults.html
-author: KevinAsgari
+
 description: ' HopperStatsResults (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

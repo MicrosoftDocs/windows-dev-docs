@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
-ms.author: mhopkins
+
 ms.date: 05/11/2018
 ms.topic: article
 

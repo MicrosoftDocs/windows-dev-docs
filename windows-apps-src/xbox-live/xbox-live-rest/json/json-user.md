@@ -2,9 +2,9 @@
 title: User (JSON)
 assetID: dbc733e4-0348-0e3d-1f55-17b465e599d6
 permalink: en-us/docs/xboxlive/rest/json-user.html
-author: KevinAsgari
+
 description: ' User (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

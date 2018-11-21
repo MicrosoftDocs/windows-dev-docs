@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic discusses strategies for handling errors when programming with C++/WinRT.
 title: Error handling with C++/WinRT
-ms.author: stwhi
+
 ms.date: 05/21/2018
 ms.topic: article
 

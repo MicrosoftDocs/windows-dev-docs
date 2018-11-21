@@ -2,9 +2,9 @@
 title: DELETE (/users/xuid({xuid})/devices/current/titles/current)
 assetID: 3bf75247-0a2a-0e4c-afcc-9e7654a89648
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddevicescurrenttitlescurrentdelete.html
-author: KevinAsgari
+
 description: ' DELETE (/users/xuid({xuid})/devices/current/titles/current)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

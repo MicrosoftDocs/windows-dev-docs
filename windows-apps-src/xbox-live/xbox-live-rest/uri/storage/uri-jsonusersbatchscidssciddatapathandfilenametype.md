@@ -2,9 +2,9 @@
 title: /json/users/batch/scids/{scid}/data/{pathAndFileName},json
 assetID: 06ae159f-7739-1330-df15-871d260e6ba1
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /json/users/batch/scids/{scid}/data/{pathAndFileName},json'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

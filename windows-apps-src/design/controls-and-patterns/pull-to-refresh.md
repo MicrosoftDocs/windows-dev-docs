@@ -1,10 +1,10 @@
 ---
-author: Jwmsft
+
 Description: Use the pull-to-refresh control to get new content into a list.
 title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 03/07/2018
 ms.topic: article
 

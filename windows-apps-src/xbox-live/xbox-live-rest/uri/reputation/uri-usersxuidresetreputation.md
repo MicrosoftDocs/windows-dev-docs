@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/resetreputation
 assetID: 85c74beb-a12f-4015-e244-36942e366afc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputation.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/resetreputation'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

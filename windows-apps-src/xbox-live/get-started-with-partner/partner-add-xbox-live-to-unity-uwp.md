@@ -1,9 +1,9 @@
 ---
 title: Unity for UWP with .NET scripting
-author: KevinAsgari
+
 description: Add Xbox Live support to Unity for UWP with .NET scripting backend for ID@Xbox and managed partners
 ms.assetid: 790a49ad-eff4-4916-8578-968ca8483211
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

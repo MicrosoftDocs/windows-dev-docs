@@ -4,8 +4,8 @@ description: A point list is a collection of vertices that are rendered as isola
 ms.assetid: 332954AE-019F-4A91-B773-E3A7C92F3297
 keywords:
 - Point lists
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (media/{marketplaceId}/singleMediaGroupSearch)
 assetID: 52096f6d-e670-dc07-b191-039ea80c6291
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearchget.html
-author: KevinAsgari
+
 description: ' GET (media/{marketplaceId}/singleMediaGroupSearch)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

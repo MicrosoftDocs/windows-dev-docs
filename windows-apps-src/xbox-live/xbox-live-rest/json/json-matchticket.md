@@ -2,9 +2,9 @@
 title: MatchTicket (JSON)
 assetID: 12617677-47f2-e517-af53-5ab9687eea2a
 permalink: en-us/docs/xboxlive/rest/json-matchticket.html
-author: KevinAsgari
+
 description: ' MatchTicket (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

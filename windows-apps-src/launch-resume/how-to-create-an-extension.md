@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Create and consume an app extension
 description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
-ms.author: twhitney
+
 ms.date: 10/05/2017
 ms.topic: article
 

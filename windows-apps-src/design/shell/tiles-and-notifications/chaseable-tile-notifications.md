@@ -1,11 +1,11 @@
 ---
-author: andrewleader
+
 Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
 title: Chaseable tile notifications
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 06/13/2017
 ms.topic: article
 

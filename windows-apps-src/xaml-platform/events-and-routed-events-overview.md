@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or Visual C++ component extensions (C++/CX) as your programming language, and XAML for your UI definition.
 title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
+
 ms.date: 07/12/2018
 ms.topic: article
 

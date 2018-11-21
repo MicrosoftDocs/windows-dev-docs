@@ -2,9 +2,9 @@
 title: /users/{ownerId}/people/xuids
 assetID: db2faec7-9f6c-f240-586a-45d6ed596e88
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuids.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/people/xuids'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

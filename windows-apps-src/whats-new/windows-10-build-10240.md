@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
 title: What's new in Windows 10 build 10240 - July 2015
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1507, 10240
-ms.author: quradic
+
 ms.date: 11/02/2017
 ms.topic: article
 

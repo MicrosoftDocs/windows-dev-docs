@@ -1,12 +1,12 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 title: Respond to the presence of the touch keyboard
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.author: kbridge
+
 ms.date: 07/13/2018
 ms.topic: article
 

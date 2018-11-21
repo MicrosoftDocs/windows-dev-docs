@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 title: Load images and assets tailored for scale, theme, high contrast, and others
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/10/2017
 ms.topic: article
 

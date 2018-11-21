@@ -1,9 +1,9 @@
 ---
 title: Flowchart - SmartMatch matchmaking
-author: KevinAsgari
+
 description: Xbox Live multiplayer manager flowchart - play a multiplayer game by using SmartMatch matchmaking.
 ms.assetid: ee25be78-5745-4484-8982-1e1991617b4d
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 title: Microsoft Store marketing guidelines for apps
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

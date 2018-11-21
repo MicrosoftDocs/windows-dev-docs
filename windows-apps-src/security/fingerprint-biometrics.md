@@ -2,8 +2,8 @@
 title: Fingerprint biometrics
 description: This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
-author: PatrickFarley
-ms.author: pafarley
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

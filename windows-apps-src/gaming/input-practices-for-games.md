@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Input practices for games
 description: Learn patterns and techniques for using input devices effectively.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
-ms.author: elcowle
+
 ms.date: 11/20/2017
 ms.topic: article
 

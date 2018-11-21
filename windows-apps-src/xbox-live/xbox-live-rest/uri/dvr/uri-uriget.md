@@ -2,9 +2,9 @@
 title: GET (/{uri})
 assetID: a67a3288-88f9-c504-5fa8-8fd06055d079
 permalink: en-us/docs/xboxlive/rest/uri-uriget.html
-author: KevinAsgari
+
 description: ' GET (/{uri})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

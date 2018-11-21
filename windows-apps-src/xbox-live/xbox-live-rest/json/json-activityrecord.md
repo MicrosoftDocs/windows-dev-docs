@@ -2,9 +2,9 @@
 title: ActivityRecord (JSON)
 assetID: e3a7465b-3451-0266-f8ba-b7602b59f7af
 permalink: en-us/docs/xboxlive/rest/json-activityrecord.html
-author: KevinAsgari
+
 description: ' ActivityRecord (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

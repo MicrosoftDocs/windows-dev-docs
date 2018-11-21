@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: xLoad attribute
 description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage. 
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

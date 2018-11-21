@@ -2,9 +2,9 @@
 title: POST (/titles/{titleId}/clusters)
 assetID: 0977b0b0-872d-f7ad-9ba0-30d56cff4912
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters-post.html
-author: KevinAsgari
+
 description: ' POST (/titles/{titleId}/clusters)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

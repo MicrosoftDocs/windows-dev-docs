@@ -2,9 +2,9 @@
 title: /inventory/{itemID}
 assetID: e53242a3-e74d-77a2-4427-62ef7954c731
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurl.html
-author: KevinAsgari
+
 description: ' /inventory/{itemID}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

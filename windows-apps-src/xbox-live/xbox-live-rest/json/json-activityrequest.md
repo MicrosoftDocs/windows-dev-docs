@@ -2,9 +2,9 @@
 title: ActivityRequest (JSON)
 assetID: 9eb03ab7-352c-4465-ec86-d544e76f63f9
 permalink: en-us/docs/xboxlive/rest/json-activityrequest.html
-author: KevinAsgari
+
 description: ' ActivityRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

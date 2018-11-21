@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Racing Wheel and Force Feedback
 description: Use the Windows.Gaming.Input racing wheel APIs to detect, determine capabilities, read, and send force feedback commands to racing wheels.
 ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
-ms.author: wdg-dev-content
+
 ms.date: 05/09/2018
 ms.topic: article
 

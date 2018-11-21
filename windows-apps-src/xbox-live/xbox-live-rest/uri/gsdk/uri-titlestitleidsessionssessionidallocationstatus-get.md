@@ -2,9 +2,9 @@
 title: GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 assetID: 613ba53f-03cb-5ed3-a5ba-be59e5a146d1
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus-get.html
-author: KevinAsgari
+
 description: ' GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

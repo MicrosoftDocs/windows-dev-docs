@@ -2,9 +2,9 @@
 title: POST (/users/batch/profile/settings)
 assetID: 2a619148-a626-f413-bda1-a2790063075d
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
-author: KevinAsgari
+
 description: ' POST (/users/batch/profile/settings)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters.
 title: Get app acquisition funnel data
-ms.author: mhopkins
+
 ms.date: 08/04/2017
 ms.topic: article
 

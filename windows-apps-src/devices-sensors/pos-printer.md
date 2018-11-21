@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: POSPrinter
 description: This article lists the POSPrinter features that are available for UWP apps and links to the how-to articles that show how to use them.
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

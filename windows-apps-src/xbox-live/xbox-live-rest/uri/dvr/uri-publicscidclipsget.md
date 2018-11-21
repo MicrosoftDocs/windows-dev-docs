@@ -2,9 +2,9 @@
 title: GET (/public/scids/{scid}/clips)
 assetID: 15b3e873-1f96-b1da-2f79-6dac1369a4c0
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
-author: KevinAsgari
+
 description: ' GET (/public/scids/{scid}/clips)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

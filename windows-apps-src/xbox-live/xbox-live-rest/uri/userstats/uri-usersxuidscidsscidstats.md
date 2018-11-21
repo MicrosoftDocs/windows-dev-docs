@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/scids/{scid}/stats
 assetID: 3cf9ffd4-9a8b-2658-402b-2e933f7f6f1b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstats.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/scids/{scid}/stats'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

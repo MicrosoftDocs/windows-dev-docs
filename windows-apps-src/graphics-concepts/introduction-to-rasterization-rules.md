@@ -4,8 +4,8 @@ description: Often, the points specified for vertices do not precisely match the
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords:
 - Introduction to rasterization rules
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

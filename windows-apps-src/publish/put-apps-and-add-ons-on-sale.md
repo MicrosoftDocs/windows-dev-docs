@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

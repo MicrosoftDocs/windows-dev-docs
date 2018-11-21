@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/feedback
 assetID: 86c9663c-650b-bb0c-743c-8280ee3a82f7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedback.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/feedback'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

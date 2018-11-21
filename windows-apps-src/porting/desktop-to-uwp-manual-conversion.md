@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
 title: Package an application manually (Desktop Bridge)
-ms.author: normesta
+
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp

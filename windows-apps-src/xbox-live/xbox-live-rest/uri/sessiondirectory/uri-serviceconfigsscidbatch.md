@@ -2,9 +2,9 @@
 title: /serviceconfigs/{scid}/batch
 assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/batch'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

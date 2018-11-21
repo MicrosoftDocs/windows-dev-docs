@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Version adaptive code
 description: Use the ApiInformation class to take advantage of new APIs while maintaining compatibility with previous versions
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

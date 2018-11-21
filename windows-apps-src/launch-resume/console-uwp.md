@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Create a Universal Windows Platform console app
 description: This topic describes how to write a UWP app that runs in a console window.
 keywords: console uwp
-ms.author: twhitney
+
 ms.date: 08/02/2018
 ms.topic: article
 

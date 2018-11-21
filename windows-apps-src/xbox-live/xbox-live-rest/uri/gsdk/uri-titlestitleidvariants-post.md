@@ -2,9 +2,9 @@
 title: POST (/titles/{titleId}/variants)
 assetID: 84303448-5a11-d96f-907d-77f57f859741
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants-post.html
-author: KevinAsgari
+
 description: ' POST (/titles/{titleId}/variants)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

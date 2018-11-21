@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Partner Center.
 title: Commit an add-on submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

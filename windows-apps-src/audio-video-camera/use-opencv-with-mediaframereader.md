@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 
 description: This article shows you how to use the Open Source Computer Vision Library (OpenCV) with the MediaFrameReader class.
 title: Use OpenCV with MediaFrameReader
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

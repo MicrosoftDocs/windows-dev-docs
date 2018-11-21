@@ -1,11 +1,11 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

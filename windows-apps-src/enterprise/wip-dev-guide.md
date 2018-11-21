@@ -1,10 +1,10 @@
 ---
-author: normesta
+
 Description: This guide helps you enlighten your app to handle enterprise data managed by Windows Information Protection (WIP) policy as well as personal data.
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP) developer guide
-ms.author: normesta
+
 ms.date: 06/21/2017
 ms.topic: article
 

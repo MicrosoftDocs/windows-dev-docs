@@ -1,10 +1,10 @@
 ---
-author: mijacobs
+
 Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
 title: Guidelines for content transition animations
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

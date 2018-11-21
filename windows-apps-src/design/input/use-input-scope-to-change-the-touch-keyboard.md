@@ -1,5 +1,5 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,7 +8,7 @@ title: Use input scope to change the touch keyboard
 ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interaction
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
 description: Use this method in the Microsoft Store submission API to delete an add-on for an app that is registered to your Partner Center account.
 title: Delete an add-on
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

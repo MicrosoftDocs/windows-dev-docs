@@ -2,9 +2,9 @@
 title: Presence URIs
 assetID: 4ba44d9c-8615-cacc-2eee-7ff5e7c74383
 permalink: en-us/docs/xboxlive/rest/atoc-reference-presence.html
-author: KevinAsgari
+
 description: ' Presence URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

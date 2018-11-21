@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

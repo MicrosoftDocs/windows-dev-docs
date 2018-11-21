@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: This case study, which builds on the info given in Bookstore, begins with a Windows Phone Silverlight app that displays grouped data in a LongListSelector.
 title: Windows Phone Silverlight to UWP case study, Bookstore2
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 
@@ -273,8 +273,8 @@ This section contains an example of facilities that open up to us by virtue of h
 When we bind **CollectionViewSource.Source** to Authors, the only thing we're communicating is that each Author in Authors is a group of *something*. We leave it to the **CollectionViewSource** to determine that Author is, in this case, a group of BookSku. That works: but it's not flexible. What if we want Author to be *both* a group of BookSku *and* a group of the addresses where the author has lived? Author can't *be* both of those groups. But, Author can *have* any number of groups. And that's the solution: use the *has-a-group* pattern instead of, or in addition to, the *is-a-group* pattern that we're using currently. Here's how:
 
 -   Change Author so that it no longer derives from **List&lt;T&gt;**.
--   Add this field to Author: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
--   Add this property to Author: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
+-   Add this field to 
+-   Add this property to 
 -   And of course we can repeat the above two steps to add as many groups to Author as we need.
 -   Change the implementation of the AddBookSku method to `this.BookSkus.Add(bookSku);`.
 -   Now that Author *has* at least one group, we need to communicate to the **CollectionViewSource** which of those groups it should use. To do that, add this property to the **CollectionViewSource**: `ItemsPath="BookSkus"`

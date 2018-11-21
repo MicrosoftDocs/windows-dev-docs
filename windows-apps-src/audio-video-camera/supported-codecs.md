@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: This article lists the audio and video codec and format support for UWP apps.
 title: Supported codecs
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -4,8 +4,8 @@ description: There are two ways to encode texture maps that exhibit more complex
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords:
 - Textures with alpha channels
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

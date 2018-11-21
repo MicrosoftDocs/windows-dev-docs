@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/19/2018
 ms.topic: article
 

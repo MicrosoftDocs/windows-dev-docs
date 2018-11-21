@@ -1,8 +1,8 @@
 ---
 title: App development for Windows as a service
 description: Decouple app release and support from specific Windows builds.
-author: GrantMeStrength
-ms.author: jken
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

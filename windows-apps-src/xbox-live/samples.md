@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Samples
-author: KevinAsgari
+
 description: Details the available API code samples for Xbox Live.
 ms.assetid: 4bb6fa66-34d1-4db9-87c8-7e24ad5afc0a
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

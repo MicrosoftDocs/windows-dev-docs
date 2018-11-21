@@ -1,9 +1,9 @@
 ---
 title: Configure single sign-on in Partner Center
-author: KevinAsgari
+
 description: Describes how you can configure single sign-on in Partner Center to allow a title to sign a user into your services by using their Xbox Live ID.
 ms.assetid:
-ms.author: kevinasg
+
 ms.date: 02/21/2018
 ms.topic: article
 

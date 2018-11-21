@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows Docs in September 2017 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for September 2017
 keywords: what's new, update, features, developer guidance, Windows 10, 1709
-ms.author: quradic
+
 ms.date: 09/06/2017
 ms.topic: article
 

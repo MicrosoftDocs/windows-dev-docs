@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Partner Center account.
 title: Get a package flight
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

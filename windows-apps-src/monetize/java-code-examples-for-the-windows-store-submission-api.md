@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: Use the Java code examples in this section to learn more about using the Microsoft Store submission API.
 title: Java sample - submissions for apps, add-ons, and flights
-ms.author: mhopkins
+
 ms.date: 07/10/2017
 ms.topic: article
 

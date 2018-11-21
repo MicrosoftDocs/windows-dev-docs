@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Create an app package with the MakeAppx.exe tool
 description: MakeAppx.exe creates, encrypts, decrypts, and extracts files from app packages and bundles.
-ms.author: lahugh
+
 ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp, packaging

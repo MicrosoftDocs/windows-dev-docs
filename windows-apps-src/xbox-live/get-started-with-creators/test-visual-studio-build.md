@@ -1,8 +1,8 @@
 ---
 title: Test Unity game in Visual Studio
-author: aablackm
+
 description: Checklist for successful testing of Unity builds in Visual Studio.  
-ms.author: aablackm
+
 ms.date: 3/12/2018
 ms.topic: get-started-article
 

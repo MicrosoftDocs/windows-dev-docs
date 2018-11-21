@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Time animations
 description: Use KeyFrameAnimation classes to change your UI over time.
-ms.author: jimwalk
+
 ms.date: 10/10/2017
 ms.topic: article
 

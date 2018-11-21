@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Conditional XAML
 description: Use new APIs in XAML markup while maintaining compatibility with previous versions
-ms.author: jimwalk
+
 ms.date: 10/10/2017
 ms.topic: article
 

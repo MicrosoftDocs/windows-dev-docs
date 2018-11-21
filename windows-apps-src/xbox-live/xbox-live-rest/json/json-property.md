@@ -2,9 +2,9 @@
 title: Property (JSON)
 assetID: 93de547e-d936-6fcc-92cb-e4dd284dd609
 permalink: en-us/docs/xboxlive/rest/json-property.html
-author: KevinAsgari
+
 description: ' Property (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

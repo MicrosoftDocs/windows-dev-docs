@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 Description: Item templates for grid view
 title: Item templates for grid view
 template: detail.hbs
-ms.author: quradic
+
 ms.date: 11/03/2017
 ms.topic: article
 

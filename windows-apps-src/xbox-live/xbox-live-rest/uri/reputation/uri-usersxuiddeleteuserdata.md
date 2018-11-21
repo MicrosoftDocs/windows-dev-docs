@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/deleteuserdata
 assetID: 1925da6f-f6c1-ae5b-5af9-e143b70e6717
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddeleteuserdata.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/deleteuserdata'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

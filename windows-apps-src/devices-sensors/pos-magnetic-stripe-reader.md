@@ -1,8 +1,8 @@
 ---
-author: eliotcowley
+
 title: Magnetic stripe reader
 description: Index topic for the magnetic stripe reader UWP documentation.
-ms.author: elcowle
+
 ms.date: 10/04/2018
 ms.topic: article
 

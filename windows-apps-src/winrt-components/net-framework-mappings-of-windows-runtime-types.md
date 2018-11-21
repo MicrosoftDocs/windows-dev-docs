@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 title: .NET Framework mappings of Windows Runtime types
 description: The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types.
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

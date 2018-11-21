@@ -1,8 +1,8 @@
 ---
-author: PatrickFarley
+
 title: Connected apps and devices (Project Rome)
 description: This section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
-ms.author: pafarley
+
 ms.date: 06/08/2018
 ms.topic: article
 

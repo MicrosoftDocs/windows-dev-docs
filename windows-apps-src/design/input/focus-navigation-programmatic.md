@@ -1,10 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
 title: Programmatic focus navigation with keyboard, gamepad, and accessibility tools
 label: Programmatic focus navigation
 keywords: keyboard, game controller, remote control, navigation, navigation strategy, input, user interaction, accessibility, usability
-ms.author: kbridge
+
 ms.date: 03/19/2018
 ms.topic: article
 

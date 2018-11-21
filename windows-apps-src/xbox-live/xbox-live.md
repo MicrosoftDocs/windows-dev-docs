@@ -1,8 +1,8 @@
 ---
-author: KevinAsgari
+
 title: Xbox Live
 description: Learn how to use Xbox Live services to connect your game to the Xbox Live gaming network.
-ms.author: kevinasg
+
 ms.date: 05/30/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: DELETE (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 assetID: b8d862d1-1651-b6c2-cc25-c5398128e882
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype-delete.html
-author: KevinAsgari
+
 description: ' DELETE (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

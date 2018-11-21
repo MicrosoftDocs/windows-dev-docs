@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
 title: Custom attached properties
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
-ms.author: jimwalk
+
 ms.date: 07/18/2017
 ms.topic: article
 

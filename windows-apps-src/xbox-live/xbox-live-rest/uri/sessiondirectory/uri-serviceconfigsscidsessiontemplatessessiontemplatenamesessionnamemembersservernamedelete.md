@@ -2,9 +2,9 @@
 title: DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 assetID: 39c921d1-a166-74b9-fcbc-ea3c0c58cc40
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.html
-author: KevinAsgari
+
 description: ' DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

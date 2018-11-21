@@ -2,9 +2,9 @@
 title: EDS Tables
 assetID: 7fc0e498-9a45-61b9-a9b2-b7ceb8994e25
 permalink: en-us/docs/xboxlive/rest/edstables.html
-author: KevinAsgari
+
 description: ' EDS Tables'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

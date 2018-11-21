@@ -1,9 +1,9 @@
 ---
 title: Flowchart - Shut down a multiplayer game
-author: KevinAsgari
+
 description: Xbox Live multiplayer manager flowchart - shut down after a multiplayer game is complete.
 ms.assetid: f80eb3ca-faf5-459e-8f55-acb9aedec542
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

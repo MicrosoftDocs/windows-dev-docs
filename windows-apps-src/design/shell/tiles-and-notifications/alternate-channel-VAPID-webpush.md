@@ -1,8 +1,8 @@
 ---
 title: Alternate push channels using Webpush and VAPID in UWP
 description: Directions for using alternate push channels with the VAPID protocol from a UWP app
-author: adwilso
-ms.author: sezhen
+
+
 ms.date: 1/10/2017
 ms.topic: article
 

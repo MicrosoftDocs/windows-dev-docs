@@ -2,9 +2,9 @@
 title: Paging Parameters
 assetID: f8d059fd-30e7-be60-0a46-c9a833c400c6
 permalink: en-us/docs/xboxlive/rest/pagingparameters.html
-author: KevinAsgari
+
 description: ' Paging Parameters'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

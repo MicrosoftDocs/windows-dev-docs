@@ -1,9 +1,9 @@
 ---
 title: Configure your AppXManifest for Multiplayer
-author: KevinAsgari
+
 description: Learn how to configure your UWP AppXManifest to enable Xbox Live multiplayer invites.
 ms.assetid: 72f179e7-4705-4161-9b8a-4d6a1a05b8f7
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

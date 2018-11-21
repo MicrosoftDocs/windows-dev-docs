@@ -2,9 +2,9 @@
 title: /users/{ownerId}/summary
 assetID: 63f8ed09-532d-381e-59e6-2849893df5bf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummary.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/summary'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: Composition native interoperation
 description: The Windows.UI.Composition API provides native interoperation interfaces allowing content to be moved directly into the compositor.
-ms.author: jimwalk
+
 ms.date: 06/22/2018
 ms.topic: article
 

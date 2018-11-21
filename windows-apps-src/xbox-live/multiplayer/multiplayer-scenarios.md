@@ -1,9 +1,9 @@
 ---
 title: Multiplayer scenarios
-author: KevinAsgari
+
 description: Learn about the different multiplayer scenarios and how Xbox Live supports those scenarios.
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 assetID: fb4cff17-2721-89c5-6646-5ab76952b411
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype-post.html
-author: KevinAsgari
+
 description: ' POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

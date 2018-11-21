@@ -2,9 +2,9 @@
 title: /users/{ownerId}/clips
 assetID: cc200b89-dc63-9ab5-b037-7a910f46dae9
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclips.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/clips'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

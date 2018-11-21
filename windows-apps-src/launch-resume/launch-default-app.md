@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Launch the default app for a URI
 description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.author: twhitney
+
 ms.date: 06/26/2017
 ms.topic: article
 

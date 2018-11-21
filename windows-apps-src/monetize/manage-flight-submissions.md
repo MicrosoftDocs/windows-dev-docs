@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Partner Center account.
 title: Manage package flight submissions
-ms.author: mhopkins
+
 ms.date: 04/16/2018
 ms.topic: article
 

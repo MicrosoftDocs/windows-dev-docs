@@ -2,8 +2,8 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: This roadmap provides an overview of key enterprise features for Windows 10 and Universal Windows Platform (UWP) apps.
 title: Enterprise
-author: awkoren
-ms.author: alkoren
+
+
 ms.date: 08/30/2018
 ms.topic: article
 

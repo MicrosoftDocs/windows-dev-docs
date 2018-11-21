@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 title: Choosing a programming language
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: Choosing a programming language
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 

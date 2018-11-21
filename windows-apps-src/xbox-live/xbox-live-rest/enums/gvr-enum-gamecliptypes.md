@@ -2,9 +2,9 @@
 title: GameClipType Enumeration
 assetID: 08fbae38-d96e-8a11-14ab-abb4f1fe99f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gamecliptypes.html
-author: KevinAsgari
+
 description: ' GameClipType Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

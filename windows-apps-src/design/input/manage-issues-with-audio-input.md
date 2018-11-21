@@ -1,12 +1,12 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 title: Manage issues with audio input
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

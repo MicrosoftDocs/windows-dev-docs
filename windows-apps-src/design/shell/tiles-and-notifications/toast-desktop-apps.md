@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Discover the different options desktop Win32 apps have for sending toast notifications
 title: Toast notifications from desktop apps
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/01/2018
 ms.topic: article
 

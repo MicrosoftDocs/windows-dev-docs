@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 title: Display points of interest (POI) on a map
 description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.author: normesta
+
 ms.date: 08/11/2017
 ms.topic: article
 

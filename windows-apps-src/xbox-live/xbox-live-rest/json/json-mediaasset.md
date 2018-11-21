@@ -2,9 +2,9 @@
 title: MediaAsset (JSON)
 assetID: 858c720a-1648-738b-bb43-f050e7cac19e
 permalink: en-us/docs/xboxlive/rest/json-mediaasset.html
-author: KevinAsgari
+
 description: ' MediaAsset (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

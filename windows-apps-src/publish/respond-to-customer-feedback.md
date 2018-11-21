@@ -1,8 +1,8 @@
 ---
 title: Respond to customer feedback
 description: You can respond directly to feedback that your customers leave in Feedback Hub.
-author: JnHs
-ms.author: wdg-dev-content
+
+
 ms.date: 10/31/2018
 ms.topic: article
 

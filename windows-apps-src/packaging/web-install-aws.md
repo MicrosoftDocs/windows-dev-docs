@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Hosting UWP app packages on AWS for web install 
 description: Tutorial for setting up AWS web server to validate app install via App Installer App
-ms.author: cdon
+
 ms.date: 05/30/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Feedback (JSON)
 assetID: 726117c1-f01b-18c0-3b75-a7a7d27d84a2
 permalink: en-us/docs/xboxlive/rest/json-feedback.html
-author: KevinAsgari
+
 description: ' Feedback (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Guidelines for background tasks
 description: Ensure your app meets the requirements for running background tasks.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

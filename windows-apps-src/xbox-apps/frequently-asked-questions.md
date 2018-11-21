@@ -1,8 +1,8 @@
 ---
-author: Mtoepke
+
 title: Frequently asked questions
 description: FAQ about UWP on Xbox.
-ms.author: mstahl
+
 ms.date: 03/29/2017
 ms.topic: article
 

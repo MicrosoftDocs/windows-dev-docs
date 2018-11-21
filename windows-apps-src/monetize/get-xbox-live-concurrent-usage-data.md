@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get Xbox Live concurrent usage data.
 title: Get Xbox Live concurrent usage data
-ms.author: mhopkins
+
 ms.date: 06/04/2018
 ms.topic: article
 

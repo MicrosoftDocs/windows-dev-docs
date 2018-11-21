@@ -2,9 +2,9 @@
 title: Profile (JSON)
 assetID: b92b1750-c2df-39b6-6c5c-f9e8068c8097
 permalink: en-us/docs/xboxlive/rest/json-profile.html
-author: KevinAsgari
+
 description: ' Profile (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ﻿---
 title: Limitations of apps and experiences on ARM
-author: msatranjr
+
 description: Troubleshooting steps for apps that aren't working correctly on ARM.
-ms.author: misatran
+
 ms.date: 02/15/2018
 ms.topic: article
 

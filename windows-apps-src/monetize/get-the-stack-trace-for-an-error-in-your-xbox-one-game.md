@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your Xbox One game.
 title: Get the stack trace for an error in your Xbox One game
-ms.author: mhopkins
+
 ms.date: 11/06/2018
 ms.topic: article
 

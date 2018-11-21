@@ -1,10 +1,10 @@
 ---
-author: TylerMSFT
+
 title: Windows 10 UWP App lifecycle
 description: This topic describes the lifecycle of a Windows 10 Universal Windows Platform (UWP) app from the time it is activated until it is closed.
 keywords: app lifecycle suspended resume launch activate
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.author: twhitney
+
 ms.date: 01/23/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Lists URIs
 assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
-author: KevinAsgari
+
 description: ' Lists URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

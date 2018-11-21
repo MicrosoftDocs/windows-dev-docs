@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Review the release notes for the Microsoft advertising libraries.
 title: Release notes for the advertising libraries
-ms.author: mhopkins
+
 ms.date: 08/23/2017
 ms.topic: article
 

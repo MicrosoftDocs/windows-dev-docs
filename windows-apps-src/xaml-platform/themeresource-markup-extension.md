@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme.
 title: ThemeResource markup extension
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

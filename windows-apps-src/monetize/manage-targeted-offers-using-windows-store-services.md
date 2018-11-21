@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: Use the Microsoft Store targeted offers API to get targeted offers that are available for the current user of your app.
 title: Manage targeted offers using Store services
-ms.author: mhopkins
+
 ms.date: 10/10/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ﻿---
-author: jnHs
+
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

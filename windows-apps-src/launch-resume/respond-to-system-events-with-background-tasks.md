@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Respond to system events with background tasks
 description: Learn how to create a background task that responds to SystemTrigger events.
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
-ms.author: twhitney
+
 ms.date: 07/06/2018
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
 title: XBL In Unity Prefabs and Sign-In
-author: aablackm
+
 description: Covers the social prefabs and script examples for social services on Xbox Live
-ms.author: aablackm
+
 ms.date: 1/24/2018
 ms.topic: get-started-article
 

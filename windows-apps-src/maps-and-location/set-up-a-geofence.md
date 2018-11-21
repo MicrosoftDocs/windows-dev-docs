@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 title: Set up a geofence
 description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

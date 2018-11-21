@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Convert an app service to run in the same process as its host app
 description: Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider.
-ms.author: twhitney
+
 ms.date: 11/03/2017
 ms.topic: article
 

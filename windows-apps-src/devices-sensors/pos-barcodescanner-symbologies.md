@@ -1,8 +1,8 @@
 ﻿---
-author: TerryWarwick
+
 title: Working with barcode scanner symbologies
 description: This article contains information about barcode scanner symbologies.
-ms.author: jken
+
 ms.date: 08/29/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Provides a means to specify the source of a binding in terms of a relative relationship in the run-time object graph.
 title: RelativeSource markup extension
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

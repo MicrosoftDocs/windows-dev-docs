@@ -1,8 +1,8 @@
 ---
 title: Use Game Chat 2 WinRT Projections
-author: KevinAsgari
+
 description: Learn how to use Xbox Live Game Chat 2 with WinRT projections to add voice communication to your game.
-ms.author: kevinasg
+
 ms.date: 4/11/2018
 ms.topic: article
 

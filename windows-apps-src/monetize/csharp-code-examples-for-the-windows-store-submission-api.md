@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Use the C# code examples in this section to learn more about using the Microsoft Store submission API.
 title: C# sample - submissions for apps, add-ons, and flights
-ms.author: mhopkins
+
 ms.date: 08/03/2017
 ms.topic: article
 

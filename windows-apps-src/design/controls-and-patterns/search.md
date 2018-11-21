@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 title: Search and find-in-page
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
 title: Achievements 2017
-author: PhillipLucas
+
 description: Describes how you can configure achievements in Partner Center to deliver rewards.
 ms.assetid:
-ms.author: kevinasg
+
 ms.date: 11/10/2017
 ms.topic: article
 

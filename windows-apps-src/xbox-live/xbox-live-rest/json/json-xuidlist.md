@@ -2,9 +2,9 @@
 title: XuidList (JSON)
 assetID: 06938a52-e582-a15b-ec7f-4b053dfc28ad
 permalink: en-us/docs/xboxlive/rest/json-xuidlist.html
-author: KevinAsgari
+
 description: ' XuidList (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

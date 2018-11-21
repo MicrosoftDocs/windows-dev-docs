@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Add a splash screen
 description: Set your app's splash screen image and background color using Microsoft Visual Studio.
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
-ms.author: twhitney
+
 ms.date: 05/08/2018
 ms.topic: article
 

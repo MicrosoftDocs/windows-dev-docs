@@ -1,9 +1,9 @@
 ---
-author: hickeys
+
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 Search.Product: eADQiWindows 10XVcnh
 title: Integrate your app with Windows 10 (Desktop Bridge)
-ms.author: hickeys
+
 ms.date: 04/18/2018
 ms.topic: article
 

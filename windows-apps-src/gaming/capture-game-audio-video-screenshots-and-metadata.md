@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 
 description: Shows how to record game audio, video, and metadata for in a UWP app.
 title: Capture game audio, video, screenshots, and metadata
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

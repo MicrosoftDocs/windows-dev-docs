@@ -2,9 +2,9 @@
 title: POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 assetID: df61be42-c229-7408-5e4c-dbf4ae95b52b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindexpost.html
-author: KevinAsgari
+
 description: ' POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

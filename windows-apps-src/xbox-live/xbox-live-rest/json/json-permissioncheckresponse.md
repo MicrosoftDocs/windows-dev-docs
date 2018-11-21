@@ -2,9 +2,9 @@
 title: PermissionCheckResponse (JSON)
 assetID: 7a749001-b569-b0e0-2a35-f299474c8710
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckresponse.html
-author: KevinAsgari
+
 description: ' PermissionCheckResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

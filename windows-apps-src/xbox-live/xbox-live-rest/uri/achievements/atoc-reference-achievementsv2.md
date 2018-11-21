@@ -2,9 +2,9 @@
 title: Achievements URIs
 assetID: 568bbc2c-9746-37ef-3514-99ffc96e3c15
 permalink: en-us/docs/xboxlive/rest/atoc-reference-achievementsv2.html
-author: KevinAsgari
+
 description: ' Achievements URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

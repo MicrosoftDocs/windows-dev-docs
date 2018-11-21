@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 build 17134 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, newest, developers, 17134
-ms.author: quradic
+
 ms.date: 4/10/2018
 ms.topic: article
 

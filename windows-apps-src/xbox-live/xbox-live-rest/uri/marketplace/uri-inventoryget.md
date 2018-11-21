@@ -2,9 +2,9 @@
 title: GET (/users/me/inventory)
 assetID: 7b74dd08-2854-319d-3ed0-ddee75d922b9
 permalink: en-us/docs/xboxlive/rest/uri-inventoryget.html
-author: KevinAsgari
+
 description: ' GET (/users/me/inventory)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

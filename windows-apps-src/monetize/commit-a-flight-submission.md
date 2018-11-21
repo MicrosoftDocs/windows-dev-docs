@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Use this method in the Microsoft Store submission API to commit a new or updated package flight submission to Partner Center.
 title: Commit a package flight submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

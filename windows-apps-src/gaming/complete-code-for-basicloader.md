@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Complete code for BasicLoader
 description: Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

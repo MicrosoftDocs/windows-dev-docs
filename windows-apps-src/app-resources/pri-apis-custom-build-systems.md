@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: With the package resource indexing (PRI) APIs, you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs.
 title: Package resource indexing (PRI) APIs and custom build systems
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 05/07/2018
 ms.topic: article
 

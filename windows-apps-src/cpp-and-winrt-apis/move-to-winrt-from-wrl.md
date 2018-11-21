@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows how to port WRL code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from WRL
-ms.author: stwhi
+
 ms.date: 05/30/2018
 ms.topic: article
 

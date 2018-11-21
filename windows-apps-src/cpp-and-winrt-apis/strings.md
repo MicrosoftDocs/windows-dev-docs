@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the winrt::hstring type.
 title: String handling in C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/03/2018
 ms.topic: article
 

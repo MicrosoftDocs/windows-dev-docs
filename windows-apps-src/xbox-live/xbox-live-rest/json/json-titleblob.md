@@ -2,9 +2,9 @@
 title: TitleBlob (JSON)
 assetID: fd1c904d-e8d0-f61f-e403-40b25bd4ac14
 permalink: en-us/docs/xboxlive/rest/json-titleblob.html
-author: KevinAsgari
+
 description: ' TitleBlob (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: /users/{ownerId}/people/mute
 assetID: efb929d8-79a7-83f0-c348-c92ced42bc05
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/people/mute'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

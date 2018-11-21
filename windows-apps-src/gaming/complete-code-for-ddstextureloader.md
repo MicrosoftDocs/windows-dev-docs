@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Complete code for DDSTextureLoader
 description: Complete code for a class and method that loads a DDS texture from memory.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

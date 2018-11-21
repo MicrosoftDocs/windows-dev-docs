@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: A XAML namescope stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term namescope in other programming languages and technologies.
 title: XAML namescopes
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

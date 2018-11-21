@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: Track recently used files and folders
 description: Track files that your user accesses frequently by adding them to your app's most recently used list (MRU).
-ms.author: lahugh
+
 ms.date: 02/08/2017
 ms.topic: article
 

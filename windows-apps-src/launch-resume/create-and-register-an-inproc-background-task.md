@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Create and register an in-process background task
 description: Create and register an in-process task that runs in the same process as your foreground app.
-ms.author: twhitney
+
 ms.date: 11/03/2017
 ms.topic: article
 

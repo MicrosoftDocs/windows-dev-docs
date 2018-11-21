@@ -2,9 +2,9 @@
 title: Reward (JSON)
 assetID: d1c92e8a-afbc-22c5-c0b5-6063963f8c4d
 permalink: en-us/docs/xboxlive/rest/json-reward.html
-author: KevinAsgari
+
 description: ' Reward (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

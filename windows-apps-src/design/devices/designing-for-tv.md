@@ -1,5 +1,5 @@
 ---
-author: eliotcowley
+
 Description: Design your app so that it looks good and functions well on your television.
 title: Designing for Xbox and TV
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
@@ -7,7 +7,7 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
-ms.author: elcowle
+
 ms.date: 11/13/2018
 ms.topic: article
 pm-contact: chigy

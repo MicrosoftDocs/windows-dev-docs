@@ -1,9 +1,9 @@
 ---
-author: JnHs
+
 Description: Common questions about ad campaigns
 title: Common questions about ad campaigns
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

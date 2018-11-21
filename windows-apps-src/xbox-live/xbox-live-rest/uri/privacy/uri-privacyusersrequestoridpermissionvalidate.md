@@ -2,9 +2,9 @@
 title: /users/{requestorId}/permission/validate
 assetID: 400a9721-bf43-76df-4cd1-9f2ae6ca5035
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidate.html
-author: KevinAsgari
+
 description: ' /users/{requestorId}/permission/validate'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

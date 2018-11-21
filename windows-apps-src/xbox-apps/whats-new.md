@@ -1,8 +1,8 @@
 ---
-author: v-angraf
+
 title: What's new for UWP on Xbox One
 description: Highlights new features for UWP apps on Xbox One.
-ms.author: v-angraf
+
 ms.date: 03/29/2017
 ms.topic: article
 

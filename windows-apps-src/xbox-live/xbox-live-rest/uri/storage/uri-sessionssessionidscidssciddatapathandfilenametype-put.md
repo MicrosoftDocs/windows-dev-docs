@@ -2,9 +2,9 @@
 title: PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 assetID: 40005e52-cd24-38ed-cfed-2c590cc2276f
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfilenametype-put.html
-author: KevinAsgari
+
 description: ' PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

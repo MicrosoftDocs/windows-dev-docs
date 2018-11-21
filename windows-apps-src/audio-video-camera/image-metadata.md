@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: This article shows how to read and write image metadata properties and how to geotag files using the GeotagHelper utility class.
 title: Image Metadata
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

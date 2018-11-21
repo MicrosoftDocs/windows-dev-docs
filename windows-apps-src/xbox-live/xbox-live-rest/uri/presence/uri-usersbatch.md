@@ -2,9 +2,9 @@
 title: /users/batch
 assetID: db4c796a-8660-85ff-b92d-085245523f5c
 permalink: en-us/docs/xboxlive/rest/uri-usersbatch.html
-author: KevinAsgari
+
 description: ' /users/batch'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

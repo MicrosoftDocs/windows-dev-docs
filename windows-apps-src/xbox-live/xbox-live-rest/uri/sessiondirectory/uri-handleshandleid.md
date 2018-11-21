@@ -2,9 +2,9 @@
 title: /handles/{handleId}
 assetID: 5b722d3e-fe80-fec5-a26b-8b3db6422004
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleid.html
-author: KevinAsgari
+
 description: ' /handles/{handleId}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,11 +1,11 @@
 ---
-author: Xansky
+
 Description: Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: Control patterns and interfaces
 label: Control patterns and interfaces
 template: detail.hbs
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

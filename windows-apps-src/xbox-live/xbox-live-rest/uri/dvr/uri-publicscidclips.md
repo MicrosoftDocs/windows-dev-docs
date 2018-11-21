@@ -2,9 +2,9 @@
 title: /public/scids/{scid}/clips
 assetID: 55a1f0ae-08bb-6d1e-a1da-cbeb481c42ee
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclips.html
-author: KevinAsgari
+
 description: ' /public/scids/{scid}/clips'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

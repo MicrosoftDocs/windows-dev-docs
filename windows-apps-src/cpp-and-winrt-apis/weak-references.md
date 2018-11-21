@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
 title: Weak references in C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference

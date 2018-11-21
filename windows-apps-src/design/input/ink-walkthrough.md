@@ -1,10 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
+
 ms.assetid: 
 title: Support ink in your UWP app
 description: A step by step tutorial for adding ink support to your UWP app.
 keywords: ink, inking, tuorial
-ms.author: kbridge
+
 ms.date: 01/25/2018
 ms.topic: article
 

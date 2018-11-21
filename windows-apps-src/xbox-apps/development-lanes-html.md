@@ -1,8 +1,8 @@
 ---
-author: JordanEllis6809
+
 title: HTML game development on Xbox
 description: HTML UWP game development on Xbox.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

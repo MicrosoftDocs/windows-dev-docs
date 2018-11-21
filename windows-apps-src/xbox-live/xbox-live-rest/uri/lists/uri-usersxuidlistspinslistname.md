@@ -2,9 +2,9 @@
 title: /users/xuid(xuid)/lists/PINS/{listname}
 assetID: b6421b11-fcd1-cfdb-c1fa-6cab3dab89d9
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistname.html
-author: KevinAsgari
+
 description: ' /users/xuid(xuid)/lists/PINS/{listname}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

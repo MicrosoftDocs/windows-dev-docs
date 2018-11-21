@@ -2,9 +2,9 @@
 title: /serviceconfigs/{scid}/hoppers/{hoppername}
 assetID: ba1e129d-b4c4-6535-46ce-fd184465c85f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppername.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/hoppers/{hoppername}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
    title: Web Services
-   author: udurbha3
+   
    description: Learn how to create a Web Service for your app
    ms.assetid: 
-   ms.author: kevinasg
+   
    ms.date: 06-04-2018
    ms.topic: article
    ms.prod: windows

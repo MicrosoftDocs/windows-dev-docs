@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
 title: How the Resource Management System matches and chooses resources
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/23/2017
 ms.topic: article
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier

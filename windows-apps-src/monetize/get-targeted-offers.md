@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Use this method in the Microsoft Store targeted offers API to get the targeted offers that are available for the current user in the context of the current app.
 title: Get targeted offers
-ms.author: mhopkins
+
 ms.date: 10/10/2017
 ms.topic: article
 

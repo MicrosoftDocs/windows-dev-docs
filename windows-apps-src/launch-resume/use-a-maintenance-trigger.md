@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Use a maintenance trigger
 description: Learn how to use the MaintenanceTrigger class to run lightweight code in the background while the device is plugged in.
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
-ms.author: twhitney
+
 ms.date: 07/06/2018
 ms.topic: article
 

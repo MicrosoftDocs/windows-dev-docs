@@ -1,8 +1,8 @@
 ---
-author: msatranjr
+
 title: Bluetooth developer FAQ
 description: This article contains answers to commonly asked questions related to the UWP bluetooth APIs.
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

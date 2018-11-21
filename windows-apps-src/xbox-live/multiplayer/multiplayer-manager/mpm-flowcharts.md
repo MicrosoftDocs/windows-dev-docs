@@ -1,9 +1,9 @@
 ---
 title: Multiplayer manager flowcharts
-author: KevinAsgari
+
 description: Provides links to Xbox Live multiplayer manager flowcharts.
 ms.assetid: 0e81ab13-9285-4b72-a6ce-f15add559128
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

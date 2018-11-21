@@ -2,9 +2,9 @@
 title: Privacy URIs
 assetID: 5eff3264-ef2a-5ec4-2e68-e5f4be2c0a47
 permalink: en-us/docs/xboxlive/rest/atoc-reference-privacyv2.html
-author: KevinAsgari
+
 description: ' Privacy URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get aggregate conversions by channel data for an add-on during a given date range and other optional filters.
 title: Get add-on conversions by channel
-ms.author: mhopkins
+
 ms.date: 08/04/2017
 ms.topic: article
 

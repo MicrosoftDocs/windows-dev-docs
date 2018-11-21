@@ -2,9 +2,9 @@
 title: UserList (JSON)
 assetID: 894f5a39-4eed-0c5b-fc45-cb0097dc46fd
 permalink: en-us/docs/xboxlive/rest/json-userlist.html
-author: KevinAsgari
+
 description: ' UserList (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

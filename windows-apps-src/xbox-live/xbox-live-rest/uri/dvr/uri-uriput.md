@@ -2,9 +2,9 @@
 title: PUT (/{uri})
 assetID: 24a24c93-f43b-017e-91e0-29e190fec8a8
 permalink: en-us/docs/xboxlive/rest/uri-uriput.html
-author: KevinAsgari
+
 description: ' PUT (/{uri})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

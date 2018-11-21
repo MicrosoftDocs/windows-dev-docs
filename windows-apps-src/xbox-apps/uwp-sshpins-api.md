@@ -1,5 +1,5 @@
 ---
-author: WilliamsJason
+
 title: Device Portal SSH pins API reference
 description: Learn how to remove all trusted SSH pins programatically.
 ms.localizationpriority: medium

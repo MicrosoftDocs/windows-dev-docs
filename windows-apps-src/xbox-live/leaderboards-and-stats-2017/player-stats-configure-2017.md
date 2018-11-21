@@ -1,9 +1,9 @@
 ---
 title: Configure Stats and Leaderboards 2017
-author: KevinAsgari
+
 description: Learn how to configure Xbox Live Featured Stats and Leaderboards in Partner Center with Data Platform 2017.
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

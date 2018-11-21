@@ -2,9 +2,9 @@
 title: POST (/users/batch)
 assetID: bd0b18fe-8a6d-d591-5b13-bcd9643e945a
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchpost.html
-author: KevinAsgari
+
 description: ' POST (/users/batch)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

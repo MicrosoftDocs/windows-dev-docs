@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Arcade stick
 description: Use the Windows.Gaming.Input arcade stick APIs to detect and read arcade sticks.
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

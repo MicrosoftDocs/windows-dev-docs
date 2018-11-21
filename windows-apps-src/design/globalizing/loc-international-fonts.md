@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
 title: International fonts
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 11/02/2017
 ms.topic: article
 

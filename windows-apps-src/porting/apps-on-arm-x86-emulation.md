@@ -1,8 +1,8 @@
 ---
 title: How x86 and ARM32 emulation work on ARM
-author: msatranjr
+
 description: An overview of emulation of x86 apps on ARM.
-ms.author: misatran
+
 ms.date: 02/15/2018
 ms.topic: article
 

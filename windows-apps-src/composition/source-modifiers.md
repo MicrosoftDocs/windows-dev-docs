@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Pull-to-refresh with source modifiers
 description: Create custom Pull-to-Refresh controls using SourceModifiers
-ms.author: jimwalk
+
 ms.date: 10/10/2017
 ms.topic: article
 

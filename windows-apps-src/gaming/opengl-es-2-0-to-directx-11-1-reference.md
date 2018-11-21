@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: OpenGL ES 2.0 to Direct3D 11 reference
 description: Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

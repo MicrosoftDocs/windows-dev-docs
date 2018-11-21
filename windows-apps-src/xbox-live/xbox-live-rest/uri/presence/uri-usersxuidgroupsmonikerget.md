@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/groups/{moniker} )
 assetID: 63aa7e5d-0599-5850-756d-3079c0772238
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/groups/{moniker} )'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

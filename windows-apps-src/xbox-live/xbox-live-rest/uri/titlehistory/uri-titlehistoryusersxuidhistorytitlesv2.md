@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/history/titles
 assetID: 2f8eb79a-42c2-0267-cbf2-8682bb28f270
 permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesv2.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/history/titles'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

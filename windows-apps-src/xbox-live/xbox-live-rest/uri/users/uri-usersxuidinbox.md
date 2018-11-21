@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/inbox
 assetID: 352740c6-42e2-0000-495d-bf384dc3e941
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinbox.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/inbox'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: hickeys
+
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
 title: Fix issues that prevent your desktop application from running in an MSIX container
-ms.author: hickeys
+
 ms.date: 07/02/2018
 ms.topic: article
 

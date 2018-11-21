@@ -4,8 +4,8 @@ description: Streaming resources can be used in shader resource views (SRV), ren
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
 keywords:
 - Pipeline access to streaming resources
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

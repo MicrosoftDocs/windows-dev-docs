@@ -1,8 +1,8 @@
 ---
-author: payzer
+
 title: Xbox best practices
 description: How to optimize your application for Xbox.
-ms.author: wdg-dev-content
+
 ms.date: 10/12/2017
 ms.topic: article
 

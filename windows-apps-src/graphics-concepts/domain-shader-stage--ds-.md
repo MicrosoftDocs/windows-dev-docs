@@ -4,8 +4,8 @@ description: The Domain Shader (DS) stage calculates the vertex position of a su
 ms.assetid: 673CC04A-A74F-495F-AFB7-49157538749C
 keywords:
 - Domain Shader (DS) stage
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

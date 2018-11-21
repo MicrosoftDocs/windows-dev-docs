@@ -1,9 +1,9 @@
 ---
-author: Jwmsft
+
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: Transforms overview
 description: Learn how to use transforms in the Windows Runtime&\#160;API, by changing the relative coordinate systems of elements in the UI.
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

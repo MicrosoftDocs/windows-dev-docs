@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
-ms.author: quradic
+
 ms.date: 1/25/2017
 ms.topic: article
 

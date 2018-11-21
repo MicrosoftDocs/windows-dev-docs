@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Game flow management
 description: Learn how initialize game states, handle events, and set up the game update loop.
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
-ms.author: joanlee
+
 ms.date: 10/24/2017
 ms.topic: article
 

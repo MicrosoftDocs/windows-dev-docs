@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 title: Getting started with Navigation
 description: Getting started with navigation
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 

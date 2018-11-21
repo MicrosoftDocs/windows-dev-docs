@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: PointOfService device claim and enable model
 description: Learn about PointOfService claim and enable model
-ms.author: jken
+
 ms.date: 06/19/2018
 ms.topic: article
 

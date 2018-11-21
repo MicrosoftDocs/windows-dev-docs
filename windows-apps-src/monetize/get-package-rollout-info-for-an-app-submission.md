@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store submission API to get package rollout info for an app submission.
 title: Get rollout info for an app submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

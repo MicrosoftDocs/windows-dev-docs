@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows App Certification Kit
 description: To give your app the best chance of being published on the Microsoft Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit.
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

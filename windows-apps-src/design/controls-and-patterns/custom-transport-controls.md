@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: The media player has customizable XAML transport controls to manage control of audio and video content.
 title: Create custom media transport controls
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

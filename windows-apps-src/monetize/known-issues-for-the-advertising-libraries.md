@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Learn about known issues for the current release of the Microsoft Advertising SDK.
 title: Known issues and troubleshooting for ads in apps
-ms.author: mhopkins
+
 ms.date: 04/16/2018
 ms.topic: article
 

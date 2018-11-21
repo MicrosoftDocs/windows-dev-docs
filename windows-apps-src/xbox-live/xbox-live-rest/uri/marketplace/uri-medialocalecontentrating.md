@@ -2,9 +2,9 @@
 title: /media/{marketplaceId}/contentRating
 assetID: 573cf378-36a4-cc82-0029-37d268da933c
 permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentrating.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/contentRating'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

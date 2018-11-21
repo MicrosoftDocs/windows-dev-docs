@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store submission API to halt a package rollout for a package flight.
 title: Halt the rollout for a flight
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

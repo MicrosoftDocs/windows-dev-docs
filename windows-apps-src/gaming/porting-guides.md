@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Game porting guides
 description: Provides guides for porting your existing games to Direct3D 11, Universal Windows Platform (UWP), and Windows 10.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

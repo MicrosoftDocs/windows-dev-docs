@@ -2,9 +2,9 @@
 title: /handles/query
 assetID: e00d31ad-b9ba-8e52-1333-83192eab0446
 permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
-author: KevinAsgari
+
 description: ' /handles/query'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

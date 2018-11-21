@@ -1,10 +1,10 @@
 ---
-author: QuinnRadich
+
 Description: Design effective help to be displayed reactively inside your app.
 title: Guidelines for designing in-app help.
 label: In-app help
 template: detail.hbs
-ms.author: quradic
+
 ms.date: 02/08/2017
 ms.topic: article
 

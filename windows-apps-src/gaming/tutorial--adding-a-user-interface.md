@@ -1,9 +1,9 @@
 ---
-author: abbycar
+
 title: Add a user interface
 description: Learn how to add a 2D user interface overlay to a DirectX UWP game.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
-ms.author: abigailc
+
 ms.date: 10/24/2017
 ms.topic: article
 

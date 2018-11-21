@@ -2,9 +2,9 @@
 title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)
 assetID: 0ecf27d8-905d-af52-4060-43353d7a3e29
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypefieldsget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

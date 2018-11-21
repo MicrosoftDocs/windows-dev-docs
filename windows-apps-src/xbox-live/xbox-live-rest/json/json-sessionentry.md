@@ -2,9 +2,9 @@
 title: SessionEntry (JSON)
 assetID: b5cf5c3d-83b8-635f-d1a5-0be5d9434ea5
 permalink: en-us/docs/xboxlive/rest/json-sessionentry.html
-author: KevinAsgari
+
 description: ' SessionEntry (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

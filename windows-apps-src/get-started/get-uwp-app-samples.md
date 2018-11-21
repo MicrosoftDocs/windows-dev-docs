@@ -1,8 +1,8 @@
 ---
 title: Get UWP app samples
 description: Learn how to download the UWP code samples from GitHub
-author: JoshuaPartlow
-ms.author: wdg-dev-content
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

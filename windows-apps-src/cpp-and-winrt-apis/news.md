@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: News and changes to C++/WinRT.
 title: What's new in C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new

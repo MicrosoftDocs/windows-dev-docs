@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 title: Game broadcast and capture
 description: This section provides information for adding game capture and broadcast capabilities to a UWP app.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

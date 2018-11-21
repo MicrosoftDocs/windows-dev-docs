@@ -1,5 +1,5 @@
 ---
-author: JordanEllis6809
+
 title: Unity - Version control your UWP project
 description: Version your Unity UWP project.
 ms.localizationpriority: medium

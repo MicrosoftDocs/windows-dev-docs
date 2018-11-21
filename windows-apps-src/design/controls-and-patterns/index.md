@@ -1,11 +1,11 @@
 ---
 description: Get design guidance and coding instructions for adding controls &amp; patterns to your UWP app. Find  over 45 powerful controls for you to use with your app.
 title: UWP Controls and patterns - Windows app development
-author: mijacobs
+
 keywords: uwp controls, user interface, app controls
 label: Controls & patterns
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 11/16/2017
 ms.topic: article
 

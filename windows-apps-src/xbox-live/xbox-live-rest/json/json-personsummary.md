@@ -2,9 +2,9 @@
 title: PersonSummary (JSON)
 assetID: 22fedb5f-5602-98d8-04a6-786fe3905921
 permalink: en-us/docs/xboxlive/rest/json-personsummary.html
-author: KevinAsgari
+
 description: ' PersonSummary (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

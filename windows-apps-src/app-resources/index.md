@@ -1,10 +1,10 @@
 ---
-author: stevewhims
+
 Description: This section shows you how to author, package, and consume your app's string, image, and file resources.
 title: App resources and the Resource Management System
 label: Intro
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/20/2017
 ms.topic: article
 

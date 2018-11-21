@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Move-look controls for games
 description: Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

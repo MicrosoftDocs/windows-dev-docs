@@ -2,9 +2,9 @@
 title: /users/me/gamerpic
 assetID: 1ef06d91-391b-f5ac-af26-9d84a2dbee47
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpic.html
-author: KevinAsgari
+
 description: ' /users/me/gamerpic'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

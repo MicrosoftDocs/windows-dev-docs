@@ -2,9 +2,9 @@
 title: POST (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: 813c0bd2-aca9-a1f6-9e81-a84a4c897b1e
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamepost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid(xuid)/lists/PINS/{listname})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

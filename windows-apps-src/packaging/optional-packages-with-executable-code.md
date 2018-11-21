@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Optional packages with executable code
 description: Learn how to use Visual Studio to create an optional package with executable code. 
-ms.author: lahugh
+
 ms.date: 9/30/2018
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get insights data for your desktop application.
 title: Get insights data for your desktop application
-ms.author: mhopkins
+
 ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, insights

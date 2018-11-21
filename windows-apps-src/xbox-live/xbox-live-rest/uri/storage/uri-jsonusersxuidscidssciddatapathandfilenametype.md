@@ -2,9 +2,9 @@
 title: /json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json
 assetID: d004d715-d73c-693e-2a0b-ce64f482642b
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 assetID: 0a0355f6-940f-c959-bd5e-63b81872c1da
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-delete.html
-author: KevinAsgari
+
 description: ' DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

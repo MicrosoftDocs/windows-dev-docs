@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
 title: Submit responses to reviews
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 assetID: 02e43120-1f71-a3e7-c84e-96147b838b97
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype-put.html
-author: KevinAsgari
+
 description: ' PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

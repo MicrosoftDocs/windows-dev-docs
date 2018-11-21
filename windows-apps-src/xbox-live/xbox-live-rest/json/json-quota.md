@@ -2,9 +2,9 @@
 title: quotaInfo (JSON)
 assetID: 3147ab78-e671-e142-0a3a-688dc4079451
 permalink: en-us/docs/xboxlive/rest/json-quota.html
-author: KevinAsgari
+
 description: ' quotaInfo (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

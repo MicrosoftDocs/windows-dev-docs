@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

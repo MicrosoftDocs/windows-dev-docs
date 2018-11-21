@@ -2,9 +2,9 @@
 title: Reputation URIs
 assetID: d1cb76c0-86a4-8c51-19f6-5f223b517d46
 permalink: en-us/docs/xboxlive/rest/atoc-reference-reputation.html
-author: KevinAsgari
+
 description: ' Reputation URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

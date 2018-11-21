@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: Use the Python code examples in this section to learn more about using the Microsoft Store submission API.
 title: Python sample - submissions for apps, add-ons, and flights
-ms.author: mhopkins
+
 ms.date: 07/10/2017
 ms.topic: article
 

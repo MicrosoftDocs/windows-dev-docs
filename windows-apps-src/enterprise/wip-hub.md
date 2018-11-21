@@ -1,11 +1,11 @@
 ---
-author: normesta
+
 Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP)
-ms.author: normesta
+
 ms.date: 02/08/2017
 ms.topic: article
 

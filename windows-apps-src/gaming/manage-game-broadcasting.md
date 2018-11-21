@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 
 description: Shows how to manage game broadcasting for a UWP app.
 title: Manage game broadcasting
-ms.author: drewbat
+
 ms.date: 09/27/2017
 ms.topic: article
 

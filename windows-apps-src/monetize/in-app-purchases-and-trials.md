@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: Learn how to enable in-app purchases and trials in UWP apps.
 title: In-app purchases and trials
-ms.author: mhopkins
+
 ms.date: 05/09/2018
 ms.topic: article
 

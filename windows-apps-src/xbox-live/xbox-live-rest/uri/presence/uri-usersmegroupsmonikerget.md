@@ -2,9 +2,9 @@
 title: GET (/users/me/groups/{moniker} )
 assetID: c2527a08-411b-d4e4-422f-a8438804bfe6
 permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmonikerget.html
-author: KevinAsgari
+
 description: ' GET (/users/me/groups/{moniker} )'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

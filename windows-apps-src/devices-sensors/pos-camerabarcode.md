@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Camera Barcode Scanner
 description: This article lists the camera barcode scanner features that are available for UWP apps and links to the how-to articles that show how to use them.
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

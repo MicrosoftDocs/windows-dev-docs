@@ -2,9 +2,9 @@
 title: GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 assetID: 29c8c12a-5d9f-89c1-a739-c600bad893c2
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidsscid-get.html
-author: KevinAsgari
+
 description: ' GET (/trustedplatform/users/xuid({xuid})/scids/{scid})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

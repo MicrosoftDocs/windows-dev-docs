@@ -1,8 +1,8 @@
 ---
 title: Create a UWP game in MonoGame 2D
 description: A simple UWP game for the Microsoft Store, written in C# and MonoGame
-author: muhsinking
-ms.author: mukin
+
+
 ms.date: 03/06/2017
 ms.topic: article
 

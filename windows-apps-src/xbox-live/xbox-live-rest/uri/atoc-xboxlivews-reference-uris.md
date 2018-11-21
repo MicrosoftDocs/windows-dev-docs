@@ -2,9 +2,9 @@
 title: Universal Resource Identifier (URI) Reference
 assetID: cb7c6fe2-0376-dab4-9115-e4e3ebcfbd39
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-uris.html
-author: KevinAsgari
+
 description: ' Universal Resource Identifier (URI) Reference'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

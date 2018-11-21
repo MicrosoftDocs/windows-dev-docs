@@ -2,9 +2,9 @@
 title: GameResult (JSON)
 assetID: 43d863c0-2179-ae46-5d4a-2f08cd44b667
 permalink: en-us/docs/xboxlive/rest/json-gameresult.html
-author: KevinAsgari
+
 description: ' GameResult (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

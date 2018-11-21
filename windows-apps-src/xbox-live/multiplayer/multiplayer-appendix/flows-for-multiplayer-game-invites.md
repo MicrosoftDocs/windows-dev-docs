@@ -1,9 +1,9 @@
 ---
 title: Updated Flows For Multiplayer Game Invites
-author: KevinAsgari
+
 description: Provides updated flows for implementing Xbox Live multiplayer game invites.
 ms.assetid: 1569588e-3bbc-47d3-8b7d-cc9774071adc
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

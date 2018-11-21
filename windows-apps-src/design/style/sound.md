@@ -1,11 +1,11 @@
 ---
-author: mijacobs
+
 Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
 label: Sound
 title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

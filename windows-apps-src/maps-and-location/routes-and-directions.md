@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 title: Display routes and directions on a map
 description: Request routes and directions, and display them in your app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
-ms.author: normesta
+
 ms.date: 09/20/2017
 ms.topic: article
 

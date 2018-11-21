@@ -2,9 +2,9 @@
 title: UpdateMetadataRequest (JSON)
 assetID: 0bc210e3-c1dc-9267-e322-aadb9f0a074a
 permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
-author: KevinAsgari
+
 description: ' UpdateMetadataRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

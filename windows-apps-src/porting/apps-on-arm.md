@@ -1,8 +1,8 @@
 ---
 title: Windows 10 on ARM
-author: msatranjr
+
 description: This article provides an overview of how experiences and apps will run on ARM, what the limitations are, and where you can go to learn more.
-ms.author: misatran
+
 ms.date: 02/15/2018
 ms.topic: article
 

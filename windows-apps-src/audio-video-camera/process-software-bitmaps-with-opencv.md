@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: 
 description: This article explains how to use the SoftwareBitmap class with the Open Source Computer Vision Library (OpenCV).
 title: Process bitmaps with OpenCV
-ms.author: lahugh
+
 ms.date: 03/19/2018
 ms.topic: article
 

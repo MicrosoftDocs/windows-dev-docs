@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
 title: Upload app packages
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.author: wdg-dev-content
+
 ms.date: 10/02/2018
 ms.topic: article
 

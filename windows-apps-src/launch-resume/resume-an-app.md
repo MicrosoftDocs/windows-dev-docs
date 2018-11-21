@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Handle app resume
 description: Learn how to refresh displayed content when the system resumes your app.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
-ms.author: twhitney
+
 ms.date: 07/06/2018
 ms.topic: article
 

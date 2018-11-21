@@ -2,9 +2,9 @@
 title: GET (/users/{ownerId}/people/avoid)
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/people/avoid)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
-ms.author: jimwalk
+
 ms.date: 09/17/2018
 ms.topic: article
 

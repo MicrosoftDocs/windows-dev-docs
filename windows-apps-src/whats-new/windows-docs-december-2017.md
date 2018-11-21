@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows Docs in December 2017 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for December 2017
 keywords: what's new, update, features, developer guidance, Windows 10, december
-ms.author: quradic
+
 ms.date: 12/14/2017
 ms.topic: article
 

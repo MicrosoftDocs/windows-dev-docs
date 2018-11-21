@@ -1,9 +1,9 @@
 ---
-author: JnHs
+
 description: In addition to creating an ad campaign for your app that will run in Windows apps, you can promote your app using other channels.
 title: Create a custom app promotion campaign
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

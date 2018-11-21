@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Sign an app package using SignTool
 description: Use SignTool to manually sign an app package with a certificate.
-ms.author: lahugh
+
 ms.date: 09/30/2018
 ms.topic: article
 

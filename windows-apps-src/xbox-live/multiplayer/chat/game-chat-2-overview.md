@@ -1,8 +1,8 @@
 ---
 title: Game Chat 2 overview
-author: KevinAsgari
+
 description: Learn how to add voice communication to your game by using Xbox Live Game Chat 2, an updated version of Game Chat.
-ms.author: tomco
+
 ms.date: 10/20/2017
 ms.topic: article
 

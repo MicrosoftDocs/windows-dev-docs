@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
 title: About house ads
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 assetID: 203345eb-8092-7d38-6eab-cb7d53bda249
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-get.html
-author: KevinAsgari
+
 description: ' GET (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

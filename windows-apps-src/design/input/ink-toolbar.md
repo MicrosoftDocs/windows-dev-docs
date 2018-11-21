@@ -1,11 +1,11 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
 title: Add an InkToolbar to a Universal Windows Platform (UWP) app
 label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

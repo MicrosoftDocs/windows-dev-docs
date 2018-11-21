@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: 3D Printing
 description: This section describes how to utilize 3D printing functionality in your Universal Windows app.
-ms.author: pafarley
+
 ms.date: 10/26/2017
 ms.topic: article
 

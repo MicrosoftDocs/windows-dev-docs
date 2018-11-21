@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
-ms.author: stwhi
+
 ms.date: 05/08/2018
 ms.topic: article
 

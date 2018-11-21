@@ -1,11 +1,11 @@
 ---
-author: andrewleader
+
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Notification listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 06/13/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: e3e4f164-ac5e-cbd9-8c05-2e1ac00dc55e
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.html
-author: KevinAsgari
+
 description: ' PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

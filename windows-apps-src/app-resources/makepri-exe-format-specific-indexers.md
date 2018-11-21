@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
 title: MakePri.exe format-specific indexers
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/18/2017
 ms.topic: article
 

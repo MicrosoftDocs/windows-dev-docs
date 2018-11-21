@@ -1,8 +1,8 @@
 ---
-author: c-don
+
 title: Deploy an app through loose file registration
 description: This guide shows how to use the loose file layout to validate and share Windows 10 apps without needing to package them.
-ms.author: cdon
+
 ms.date: 6/1/2018
 ms.topic: article
 

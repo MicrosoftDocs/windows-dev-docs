@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows 10 build 10586 - November 2015
 description: Windows 10 build 10586 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1511, November, 10586
-ms.author: quradic
+
 ms.date: 11/02/2017
 ms.topic: article
 

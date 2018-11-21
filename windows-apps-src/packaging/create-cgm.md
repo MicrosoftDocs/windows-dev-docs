@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: Create and convert a source content group map
 description: To get your Universal Windows Platform (UWP) app ready for UWP App Streaming Install, you'll need to create a content group map. This article will help you with the specifics of creating and converting a content group map while providing some tips and tricks along the way.
-ms.author: lahugh
+
 ms.date: 9/30/2018
 ms.topic: article
 

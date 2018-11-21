@@ -1,8 +1,8 @@
 ---
-author: eliotcowley
+
 title: Use a software trigger
 description: Learn how to control the act of scanning from software.
-ms.author: elcowle
+
 ms.date: 08/29/2018
 ms.topic: article
 

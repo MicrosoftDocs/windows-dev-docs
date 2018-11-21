@@ -1,8 +1,8 @@
 ---
-author: jnHs
+
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Payment thresholds, methods, and timeframes
-ms.author: wdg-dev-content
+
 ms.date: 10/18/2018
 ms.topic: article
 

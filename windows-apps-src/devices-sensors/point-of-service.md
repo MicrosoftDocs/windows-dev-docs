@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Point of Service
 description: This section contains articles on how to use various features of the Point of Service namespace.
-ms.author: jken
+
 ms.date: 10/04/2018
 ms.topic: article
 

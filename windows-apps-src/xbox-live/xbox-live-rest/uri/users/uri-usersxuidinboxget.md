@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/inbox)
 assetID: c603910d-b430-f157-2634-ceddea89f2bd
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/inbox)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

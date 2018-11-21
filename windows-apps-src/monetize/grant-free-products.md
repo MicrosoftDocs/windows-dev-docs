@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Use this method in the Microsoft Store purchase API to grant a free app or add-on to a given user.
 title: Grant free products
-ms.author: mhopkins
+
 ms.date: 03/16/2018
 ms.topic: article
 

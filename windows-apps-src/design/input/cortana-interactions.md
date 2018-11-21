@@ -1,12 +1,12 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Extend the basic functionality of Cortana with voice commands that activate a UWP app and execute a single action.
 title: Cortana interactions
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, Cortana canvas, Cortana design, user interface, voice commands, VCD
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

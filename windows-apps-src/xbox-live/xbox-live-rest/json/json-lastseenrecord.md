@@ -2,9 +2,9 @@
 title: LastSeenRecord (JSON)
 assetID: 6a93202c-801c-03c6-8386-6acd0f366780
 permalink: en-us/docs/xboxlive/rest/json-lastseenrecord.html
-author: KevinAsgari
+
 description: ' LastSeenRecord (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

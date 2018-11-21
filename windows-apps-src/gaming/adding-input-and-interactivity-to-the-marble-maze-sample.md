@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Adding input and interactivity to the Marble Maze sample
 description: Learn about key practices to keep in mind when you work with input devices.
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
-ms.author: elcowle
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Achievement Title History URIs
 assetID: a7499a25-d957-2ab9-fe47-f2615e5f2ea5
 permalink: en-us/docs/xboxlive/rest/atoc-reference-titlehistoryv2.html
-author: KevinAsgari
+
 description: ' Achievement Title History URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
 title: Development tools for Xbox Live
-author: StaceyHaffner
+
 description: Learn about tools that are provided to help develop and test your Xbox Live enabled title.
 ms.assetid: 380a29bf-41a7-4817-9c57-f48f2b824b52
-ms.author: kevinasg
+
 ms.date: 6/13/2018
 ms.topic: article
 

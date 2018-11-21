@@ -1,9 +1,9 @@
 ---
-author: muhsinking
+
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Use the compass
 description: Learn how to use the compass to determine the current heading.
-ms.author: mukin
+
 ms.date: 06/06/2017
 ms.topic: article
 

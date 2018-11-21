@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: The xBind markup extension is a high performance alternative to Binding. xBind - new for Windows 10 - runs in less time and less memory than Binding and supports better debugging.
 title: xBind markup extension
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

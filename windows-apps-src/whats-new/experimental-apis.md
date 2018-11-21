@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Experimental APIs
 description: Understand experimental APIs
-ms.author: twhitney
+
 ms.date: 11/13/2017
 ms.topic: article
 

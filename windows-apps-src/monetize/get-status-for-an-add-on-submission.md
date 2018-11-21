@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: Use this method in the Microsoft Store submission API to get the status of an add-on submission.
 title: Get the status of an add-on submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

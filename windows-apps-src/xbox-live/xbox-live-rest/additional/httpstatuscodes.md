@@ -2,9 +2,9 @@
 title: Standard HTTP status codes
 assetID: 7a19de56-7acd-ad2b-e8e6-53126991093b
 permalink: en-us/docs/xboxlive/rest/httpstatuscodes.html
-author: KevinAsgari
+
 description: ' Standard HTTP status codes'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

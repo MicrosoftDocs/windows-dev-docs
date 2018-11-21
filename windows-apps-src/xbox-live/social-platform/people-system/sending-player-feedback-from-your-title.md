@@ -1,9 +1,9 @@
 ---
 title: Sending Player Feedback From Your Title
-author: KevinAsgari
+
 description: Learn how your title can help promote positive player experiences by sending player feedback to the Xbox Live reputation service.
 ms.assetid: 49f8eb44-1e31-4248-b645-9123df6f8689
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

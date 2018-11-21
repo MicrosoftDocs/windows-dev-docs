@@ -2,9 +2,9 @@
 title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
 assetID: 0fcbef77-4607-765e-72e1-d2e7620e2c61
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

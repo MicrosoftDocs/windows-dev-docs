@@ -1,9 +1,9 @@
 ---
 title: Get started with Visual Studio for XDK games
-author: KevinAsgari
+
 description: Provides links to learn how to develop Xbox Developer Kit (XDK) games by using Visual Studio.
 ms.assetid: 3430cf97-0136-4c69-bcec-9cc3edf5fc95
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

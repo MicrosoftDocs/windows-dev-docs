@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid}))
 assetID: c97ef943-8bea-8a41-90d7-faea874284c8
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid}))'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

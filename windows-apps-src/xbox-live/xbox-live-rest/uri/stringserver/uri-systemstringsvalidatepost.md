@@ -2,9 +2,9 @@
 title: POST (/system/strings/validate)
 assetID: 6a59bc0b-8edd-87bf-efaf-f16efa3bedf7
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidatepost.html
-author: KevinAsgari
+
 description: ' POST (/system/strings/validate)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

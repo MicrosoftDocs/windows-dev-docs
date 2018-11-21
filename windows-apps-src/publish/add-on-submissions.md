@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: Add-ons (or in-app products) are published through Partner Center.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

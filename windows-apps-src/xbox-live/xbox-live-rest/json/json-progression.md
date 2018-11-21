@@ -2,9 +2,9 @@
 title: Progression (JSON)
 assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
-author: KevinAsgari
+
 description: ' Progression (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

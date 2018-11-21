@@ -1,5 +1,5 @@
 ---
-author: jken
+
 Description: Design your app so that it looks good and functions well in Mixed Reality.
 title: Designing for Mixed Reality
 ms.assetid: 
@@ -7,7 +7,7 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
-ms.author: jken
+
 ms.date: 2/5/2018
 ms.topic: article
 

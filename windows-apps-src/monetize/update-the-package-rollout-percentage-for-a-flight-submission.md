@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store submission API to update the package rollout percentage for a package flight submission.
 title: Update the rollout percentage for a flight submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

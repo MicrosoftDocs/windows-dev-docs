@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 description: You begin the porting process by creating a new Windows 10 project in Visual Studio and copying your files into it.
 title: Porting Windows Phone Silverlight projects to UWP projects
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 

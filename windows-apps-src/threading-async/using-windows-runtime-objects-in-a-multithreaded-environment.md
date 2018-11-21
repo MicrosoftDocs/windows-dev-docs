@@ -6,8 +6,8 @@ ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 
-author: normesta
-ms.author: normesta
+
+
 keywords: windows 10, uwp, timer, threads
 ms.localizationpriority: medium
 ---

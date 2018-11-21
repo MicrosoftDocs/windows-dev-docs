@@ -1,8 +1,8 @@
 ---
 title: Program Compatibility Troubleshooter on ARM
-author: msatranjr
+
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on ARM
-ms.author: misatran
+
 ms.date: 02/15/2018
 ms.topic: article
 

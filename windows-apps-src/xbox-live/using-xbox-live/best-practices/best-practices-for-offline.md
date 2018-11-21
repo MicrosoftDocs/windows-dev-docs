@@ -1,9 +1,9 @@
 ---
 title: Best practices for offline
-author: KevinAsgari
+
 description: Learn about the best practices for handling offline scenarios with Xbox Live enabled titles.
 ms.assetid: 6290dd67-1145-4fe2-8ada-c3a29a9ad29a
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

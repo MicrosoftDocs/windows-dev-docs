@@ -1,8 +1,8 @@
 ---
 Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
 title: Troubleshoot Microsoft Take a Test with the event viewer.
-author: PatrickFarley
-ms.author: pafarley
+
+
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article

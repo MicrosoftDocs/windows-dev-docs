@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.author: elcowle
+
 ms.date: 10/09/2018
 ms.topic: article
 

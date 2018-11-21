@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Set up the game project
 description: The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.author: joanlee
+
 ms.date: 10/24/2017
 ms.topic: article
 

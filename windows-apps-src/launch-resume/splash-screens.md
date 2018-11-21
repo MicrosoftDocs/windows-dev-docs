@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 title: Splash screens
 description: This section describes how to set and configure your app's splash screen.
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

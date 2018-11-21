@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Use the walkthroughs in this section to learn how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK.
 title: Implement ads in your app
-ms.author: mhopkins
+
 ms.date: 05/11/2018
 ms.topic: article
 

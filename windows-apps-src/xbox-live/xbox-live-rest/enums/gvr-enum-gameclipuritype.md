@@ -2,9 +2,9 @@
 title: GameClipUriType Enumeration
 assetID: 945b5ac9-1f4e-5363-1a69-fa7e10c34e05
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipuritype.html
-author: KevinAsgari
+
 description: ' GameClipUriType Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

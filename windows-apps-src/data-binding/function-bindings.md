@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 description: The xBind markup extension allows functions to be used in markup.
 title: Functions in x:Bind
-ms.author: jimwalk
+
 ms.date: 04/26/2018
 ms.topic: article
 

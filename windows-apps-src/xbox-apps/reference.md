@@ -1,8 +1,8 @@
 ---
-author: v-angraf
+
 title: Xbox Device Portal REST API
 description: API reference for UWP on Xbox One.
-ms.author: v-angraf
+
 ms.date: 10/25/2017
 ms.topic: article
 

@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to use custom timestamps on your toast notifications.
 title: Custom timestamps on toasts
 label: Custom timestamps on toasts
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 12/15/2017
 ms.topic: article
 

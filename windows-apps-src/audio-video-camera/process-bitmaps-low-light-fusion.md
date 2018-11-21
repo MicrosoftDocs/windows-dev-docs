@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 description: This article explains how to use the LowLightFusion class to process bitmaps.
 title: Process bitmaps with the Low Light Fusion API
-ms.author: lahugh
+
 ms.date: 03/22/2018
 ms.topic: article
 

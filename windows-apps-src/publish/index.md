@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Publish Windows apps
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

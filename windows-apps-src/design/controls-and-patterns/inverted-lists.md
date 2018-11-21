@@ -1,10 +1,10 @@
 ---
-author: muhsinking
+
 Description: Use an inverted list to add new items at the bottom.
 title: Inverted lists
 label: Inverted lists
 template: detail.hbs
-ms.author: mukin
+
 ms.date: 05/19/2017
 ms.topic: article
 

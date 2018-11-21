@@ -2,9 +2,9 @@
 title: GameClipThumbnail (JSON)
 assetID: 3ed87fc1-734c-d8b5-d908-0ae3359769ed
 permalink: en-us/docs/xboxlive/rest/json-gameclipthumbnail.html
-author: KevinAsgari
+
 description: ' GameClipThumbnail (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

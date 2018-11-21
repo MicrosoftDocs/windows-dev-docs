@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Port an out-of-process background task to an in-process background task
 description: Port an out-of-process background task to an in-process background task that runs inside your foreground app process.
-ms.author: twhitney
+
 ms.date: 09/19/2018
 ms.topic: article
 

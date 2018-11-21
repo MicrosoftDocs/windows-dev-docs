@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: Use this method in the Microsoft Store submission API to delete an existing app submission.
 title: Delete an app submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

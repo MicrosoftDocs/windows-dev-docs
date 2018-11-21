@@ -1,8 +1,8 @@
 ﻿---
-author: TerryWarwick
+
 title: Getting started with Point of Service
 description: This article contains information about getting started with the PointOfService UWP APIs.
-ms.author: jken
+
 ms.date: 06/13/2018
 ms.topic: article
 

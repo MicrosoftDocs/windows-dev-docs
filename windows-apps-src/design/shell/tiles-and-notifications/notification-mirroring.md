@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to use notification mirroring on your toast notifications.
 title: Notification mirroring
 label: Notification mirroring
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 12/15/2017
 ms.topic: article
 

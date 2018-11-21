@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)
 assetID: 890e3f93-4fdc-955f-d849-ba9579d5c1eb
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstatsgetvaluemetadata.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

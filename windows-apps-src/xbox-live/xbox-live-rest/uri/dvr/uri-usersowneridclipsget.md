@@ -2,9 +2,9 @@
 title: GET (/users/{ownerId}/clips)
 assetID: da972b4e-bc38-66f5-2222-5e79d7c8a183
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclipsget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/clips)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: ServiceErrorResponse (JSON)
 assetID: a2077df8-f76c-0233-8e41-68267b681862
 permalink: en-us/docs/xboxlive/rest/json-serviceerrorresponse.html
-author: KevinAsgari
+
 description: ' ServiceErrorResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

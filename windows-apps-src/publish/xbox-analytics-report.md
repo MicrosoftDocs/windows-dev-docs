@@ -1,8 +1,8 @@
 ﻿---
-author: jnHs
+
 Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

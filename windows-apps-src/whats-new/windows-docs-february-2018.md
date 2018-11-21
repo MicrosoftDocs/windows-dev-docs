@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: What's New in Windows Docs in February 2018 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for February 2018
 keywords: what's new, update, features, developer guidance, Windows 10, february
-ms.author: quradic
+
 ms.date: 2/5/2018
 ms.topic: article
 

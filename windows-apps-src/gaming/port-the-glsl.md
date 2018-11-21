@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Port the GLSL
 description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

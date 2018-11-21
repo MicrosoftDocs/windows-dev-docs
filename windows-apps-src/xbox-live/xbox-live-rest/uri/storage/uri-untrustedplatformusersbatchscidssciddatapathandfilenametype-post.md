@@ -2,9 +2,9 @@
 title: POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})
 assetID: 6e28d794-b5c6-0b70-6d46-957e8ae6e8ac
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype-post.html
-author: KevinAsgari
+
 description: ' POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

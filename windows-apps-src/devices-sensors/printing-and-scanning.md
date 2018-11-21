@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
 title: Printing and scanning
 description: This section describes how to print and scan from your Universal Windows app.
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

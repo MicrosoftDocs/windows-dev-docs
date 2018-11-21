@@ -2,9 +2,9 @@
 title: GameSession (JSON)
 assetID: 325af9ae-a9a9-5b36-8342-1aff5aff01d1
 permalink: en-us/docs/xboxlive/rest/json-gamesession.html
-author: KevinAsgari
+
 description: ' GameSession (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

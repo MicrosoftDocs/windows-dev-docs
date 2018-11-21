@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
 title: Intro to controls and patterns
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

@@ -4,8 +4,8 @@ description: Behavior of shader resource view (SRV) reads that involve non-mappe
 ms.assetid: 0E1D64BE-EB09-4F9D-9800-BD23A3B374EE
 keywords:
 - SRV behavior with non-mapped tiles
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

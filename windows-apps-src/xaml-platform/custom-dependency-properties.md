@@ -1,9 +1,9 @@
 ---
-author: jwmsft
+
 description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.author: jimwalk
+
 ms.date: 07/12/2018
 ms.topic: article
 

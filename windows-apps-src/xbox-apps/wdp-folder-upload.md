@@ -1,8 +1,8 @@
 ---
-author: WilliamsJason
+
 title: Device Portal folder upload API reference
 description: Learn how to access the folder upload APIs programatically.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

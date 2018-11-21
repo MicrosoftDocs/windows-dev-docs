@@ -1,8 +1,8 @@
 ---
-author: WilliamsJason
+
 title: Media Capture API reference
 description: Learn how to access the media capture API programatically.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

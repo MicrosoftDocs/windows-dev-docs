@@ -2,9 +2,9 @@
 title: /{uri}
 assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
 permalink: en-us/docs/xboxlive/rest/uri-uri.html
-author: KevinAsgari
+
 description: ' /{uri}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

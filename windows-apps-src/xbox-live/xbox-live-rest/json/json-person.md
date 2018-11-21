@@ -2,9 +2,9 @@
 title: Person (JSON)
 assetID: b49234b1-03cd-f16e-c293-c74174382167
 permalink: en-us/docs/xboxlive/rest/json-person.html
-author: KevinAsgari
+
 description: ' Person (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

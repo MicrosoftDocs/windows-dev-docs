@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
-ms.author: mhopkins
+
 ms.date: 08/23/2017
 ms.topic: article
 

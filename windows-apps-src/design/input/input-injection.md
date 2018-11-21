@@ -1,11 +1,11 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
 title: Simulate user input through input injection
 label: Input injection
 template: detail.hbs
 keywords: device, digitizer, input, interaction, injection
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

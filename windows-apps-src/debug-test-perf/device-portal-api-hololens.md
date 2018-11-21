@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: Device Portal API reference for HoloLens
 description: Learn about the Windows Device Portal for HoloLens REST API's that you can use to access the data and control your device programmatically.
-ms.author: pafarley
+
 ms.date: 03/22/2018
 ms.topic: article
 

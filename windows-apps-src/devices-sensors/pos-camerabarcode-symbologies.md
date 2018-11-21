@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Camera Barcode Scanner Symbologies
 description: Camera Barcode Scanner Supported Symbologies
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

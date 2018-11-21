@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: Use this method in the Microsoft Store analytics API to get aggregate ad campaign performance data for the specified application during a given date range and other optional filters.
 title: Get ad campaign performance data
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

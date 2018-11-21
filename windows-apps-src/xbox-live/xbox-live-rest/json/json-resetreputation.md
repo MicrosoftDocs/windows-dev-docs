@@ -2,9 +2,9 @@
 title: ResetReputation (JSON)
 assetID: 15edb5e7-a00b-4188-9b49-9db5774c4a10
 permalink: en-us/docs/xboxlive/rest/json-resetreputation.html
-author: KevinAsgari
+
 description: ' ResetReputation (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: Use this method in the Microsoft Store submission API to create a new package flight submission for an app that is registered to your Partner Center account.
 title: Create a package flight submission
-ms.author: mhopkins
+
 ms.date: 08/03/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (/sessions/{sessionId}/scids/{scid})
 assetID: 1feaceed-ba0d-0b0c-e809-44ba41f2e4ea
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidsscid-get.html
-author: KevinAsgari
+
 description: ' GET (/sessions/{sessionId}/scids/{scid})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

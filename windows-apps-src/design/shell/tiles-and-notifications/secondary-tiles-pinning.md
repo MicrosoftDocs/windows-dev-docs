@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to pin a secondary tile from your UWP app.
 title: Pin secondary tiles
 label: Pin secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
+
 ms.date: 05/25/2017
 ms.topic: article
 

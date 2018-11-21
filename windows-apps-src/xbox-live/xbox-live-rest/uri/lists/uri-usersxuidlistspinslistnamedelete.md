@@ -2,9 +2,9 @@
 title: DELETE (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: b43e3faa-7791-8bcb-3aec-7bdad8ffbebf
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamedelete.html
-author: KevinAsgari
+
 description: ' DELETE (/users/xuid(xuid)/lists/PINS/{listname})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

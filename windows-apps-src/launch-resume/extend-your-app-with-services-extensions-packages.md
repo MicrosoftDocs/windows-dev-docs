@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Extend your app with services, extensions, and packages
 description: Learn how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
-ms.author: twhitney
+
 ms.date: 05/7/2018
 ms.topic: article
 

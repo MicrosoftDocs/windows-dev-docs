@@ -2,9 +2,9 @@
 title: POST (/serviceconfigs/{scid}/batch)
 assetID: b821a6eb-1add-ef91-bdf5-10e107082197
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatchpost.html
-author: KevinAsgari
+
 description: ' POST (/serviceconfigs/{scid}/batch)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

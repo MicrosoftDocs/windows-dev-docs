@@ -1,12 +1,12 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Learn how to design and optimize your UWP apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
 title: Keyboard interactions
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.author: kbridge
+
 ms.date: 03/29/2017
 ms.topic: article
 

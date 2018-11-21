@@ -1,8 +1,8 @@
 ---
-author: muhsinking
+
 Description: XAML gives you a flexible layout system to create a responsive UI.
 title: Responsive layouts with XAML
-ms.author: mukin
+
 ms.date: 05/19/2017
 ms.topic: article
 

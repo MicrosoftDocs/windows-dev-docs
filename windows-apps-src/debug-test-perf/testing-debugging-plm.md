@@ -1,8 +1,8 @@
 ---
-author: PatrickFarley
+
 description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
 title: Testing and debugging tools for Process Lifetime Management (PLM)
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

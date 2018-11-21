@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Walkthrough-- Direct3D 11 shadow volume depth buffers
 description: This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

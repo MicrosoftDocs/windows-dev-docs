@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: This article lists the DeviceInformation properties related to audio devices
 title: Audio device information properties
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

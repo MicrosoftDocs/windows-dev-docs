@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/inbox/{messageId})
 assetID: d76563d0-2c74-0308-054b-762c80392a02
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageidget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/inbox/{messageId})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

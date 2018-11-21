@@ -1,10 +1,10 @@
 ---
-author: stevewhims
+
 Description: This topic defines the terms user profile language list, app manifest language list, and app runtime language list. We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean.
 title: Understand user profile languages and app manifest languages
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 11/08/2017
 ms.topic: article
 

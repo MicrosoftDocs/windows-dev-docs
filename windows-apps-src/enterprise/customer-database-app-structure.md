@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: Customer database app structure
 description: Review the structure of the customer database tutorial, and why it's constructed how it is.
 keywords: enterprise, tutorial, customer, data, crud
-ms.author: quradic
+
 ms.date: 5/7/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
 title: Use Connected Storage to load data
-author: aablackm
+
 description: Learn how to use Connected Storage to load data.
 ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
-ms.author: aablackm
+
 ms.date: 02/27/2018
 ms.topic: article
 

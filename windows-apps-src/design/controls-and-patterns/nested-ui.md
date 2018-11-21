@@ -1,10 +1,10 @@
 ---
-author: muhsinking
+
 Description: Use nested UI to enable multiple actions on a list item
 title: Nested UI in list items
 label: Nested UI in list items
 template: detail.hbs
-ms.author: mukin
+
 ms.date: 05/19/2017
 ms.topic: article
 

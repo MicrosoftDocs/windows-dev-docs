@@ -1,11 +1,11 @@
 ---
-author: Xansky
+
 Description: Describes the landmarks and headings features of accessibility.
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-ms.author: mhopkins
+
 ms.date: 01/24/2018
 ms.topic: article
 

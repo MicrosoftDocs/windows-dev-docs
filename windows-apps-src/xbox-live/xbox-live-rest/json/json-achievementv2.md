@@ -2,9 +2,9 @@
 title: Achievement (JSON)
 assetID: d3b52f66-ddc7-e676-b419-82209caf71d6
 permalink: en-us/docs/xboxlive/rest/json-achievementv2.html
-author: KevinAsgari
+
 description: ' Achievement (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

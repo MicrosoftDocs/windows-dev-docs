@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: DirectX samples
 description: DirectX game samples.
 ms.assetid: a54273f8-1e91-4d02-8762-6eab2f00f7b0
-ms.author: joanlee
+
 ms.date: 02/08/2017
 ms.topic: article
 

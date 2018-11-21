@@ -2,9 +2,9 @@
 title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)
 assetID: 225e8cb2-44eb-6b7b-eaa0-1ea2d2602f6f
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortordersget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: muhsinking
+
 title: Create adaptive layouts tutorial
 description: This article covers the basics of adaptive layout in XAML
 keywords: XAML, UWP, Getting Started
-ms.author: mukin
+
 ms.date: 08/30/2017
 ms.topic: article
 

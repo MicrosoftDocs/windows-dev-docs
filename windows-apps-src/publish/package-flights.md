@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: You can use package flights to distribute packages that are only given to a limited test group.
 title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

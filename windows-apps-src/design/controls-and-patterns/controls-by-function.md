@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: Provides a list by function of some of the controls that you can use in your apps.
 title: Controls by function
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

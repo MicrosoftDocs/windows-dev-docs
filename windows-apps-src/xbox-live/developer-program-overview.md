@@ -1,9 +1,9 @@
 ---
 title: Developer program overview
-author: KevinAsgari
+
 description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.author: kevinasg
+
 ms.date: 5/30/2018
 ms.topic: article
 

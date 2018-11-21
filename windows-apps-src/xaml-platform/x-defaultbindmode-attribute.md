@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 description: In XAML markup, specifies a default mode for x:Bind.
 title: xDefaultBindMode attribute
-ms.author: jimwalk
+
 ms.date: 02/08/2018
 ms.topic: article
 

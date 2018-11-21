@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Configure a barcode scanner
 description: Learn how to configure a barcode scanner for the intended application.
-ms.author: jken
+
 ms.date: 08/29/2018
 ms.topic: article
 

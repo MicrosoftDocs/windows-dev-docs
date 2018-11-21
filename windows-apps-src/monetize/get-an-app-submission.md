@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: Use this method in the Microsoft Store submission API to get data for an existing app submission.
 title: Get an app submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

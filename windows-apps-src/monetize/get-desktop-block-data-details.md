@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this REST URI to get block details data for a desktop application during a given date range and other optional filters.
 title: Get upgrade block details for your desktop application
-ms.author: mhopkins
+
 ms.date: 07/11/2018
 ms.topic: article
 

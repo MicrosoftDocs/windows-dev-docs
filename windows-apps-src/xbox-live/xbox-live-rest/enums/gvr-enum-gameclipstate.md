@@ -2,9 +2,9 @@
 title: GameClipState Enumeration
 assetID: 97fe5c1e-f7b5-537e-69eb-8284b69cd3e1
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipstate.html
-author: KevinAsgari
+
 description: ' GameClipState Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

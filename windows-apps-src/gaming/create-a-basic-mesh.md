@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Create and display a basic mesh
 description: 3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

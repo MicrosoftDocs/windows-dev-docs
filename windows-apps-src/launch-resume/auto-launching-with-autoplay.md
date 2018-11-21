@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Auto-launching with AutoPlay
 description: You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

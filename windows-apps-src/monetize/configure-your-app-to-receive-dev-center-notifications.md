@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 Description: Learn how to register your UWP app to receive push notifications that you send from Partner Center.
 title: Configure your app for targeted push notifications
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

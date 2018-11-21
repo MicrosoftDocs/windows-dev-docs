@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn about when and where you should use secondary tiles in your UWP app.
 title: Secondary tiles
 label: Secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
+
 ms.date: 05/25/2017
 ms.topic: article
 

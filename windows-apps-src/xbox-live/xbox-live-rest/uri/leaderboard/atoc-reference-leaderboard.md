@@ -2,9 +2,9 @@
 title: Leaderboards URIs
 assetID: f0a0fb49-ef10-3e6e-e989-2f3f30fca954
 permalink: en-us/docs/xboxlive/rest/atoc-reference-leaderboard.html
-author: KevinAsgari
+
 description: ' Leaderboards URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

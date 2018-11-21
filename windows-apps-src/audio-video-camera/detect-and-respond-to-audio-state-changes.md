@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: EE0C1B28-EF9C-4BD9-A3C0-BDF11E75C752
 description: This article explains how UWP apps can detect and respond to system-initiated changes in audio stream levels
 title: Detect and respond to audio state changes
-ms.author: drewbat
+
 ms.date: 04/03/2018
 ms.topic: article
 

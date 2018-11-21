@@ -2,9 +2,9 @@
 title: People URIs
 assetID: e4e6e3c9-7051-a90b-be1c-931816a22b36
 permalink: en-us/docs/xboxlive/rest/atoc-reference-people.html
-author: KevinAsgari
+
 description: ' People URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

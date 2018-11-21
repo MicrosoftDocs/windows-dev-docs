@@ -2,9 +2,9 @@
 title: POST (/handles)
 assetID: 21f3e289-0b0e-2731-befb-bd4c0d71973e
 permalink: en-us/docs/xboxlive/rest/uri-handlespost.html
-author: KevinAsgari
+
 description: ' POST (/handles)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

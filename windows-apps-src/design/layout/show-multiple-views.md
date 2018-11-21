@@ -1,8 +1,8 @@
 ---
-author: Jwmsft
+
 Description: View multiple parts of your app in separate windows.
 title: Show multiple views for an app
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: ptorr-msft
+
 title: Using MRT for Converted Desktop Apps and Games
 description: By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
-ms.author: ptorr
+
 ms.date: 10/25/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GameClipUri (JSON)
 assetID: 03c097e8-7f29-1026-7a77-5c785b8511e9
 permalink: en-us/docs/xboxlive/rest/json-gameclipuri.html
-author: KevinAsgari
+
 description: ' GameClipUri (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

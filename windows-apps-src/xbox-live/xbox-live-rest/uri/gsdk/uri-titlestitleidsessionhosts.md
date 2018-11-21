@@ -2,9 +2,9 @@
 title: /titles/{titleId}/sessionhosts
 assetID: 92d9bdd2-5c8f-761b-3f9a-50f8db7b843c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts.html
-author: KevinAsgari
+
 description: ' /titles/{titleId}/sessionhosts'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

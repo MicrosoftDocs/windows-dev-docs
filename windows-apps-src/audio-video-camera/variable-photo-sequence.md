@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.
 title: Variable photo sequence
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

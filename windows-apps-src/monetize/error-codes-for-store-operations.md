@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: This article describes common error codes for Store operations for apps and add-ons, including in-app purchasing, licensing, and self-install app updates.
 title: Error codes for Store operations
-ms.author: mhopkins
+
 ms.date: 08/24/2017
 ms.topic: article
 

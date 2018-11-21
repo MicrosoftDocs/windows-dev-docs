@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Define the main game object
 description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
-ms.author: joanlee
+
 ms.date: 10/24/2017
 ms.topic: article
 

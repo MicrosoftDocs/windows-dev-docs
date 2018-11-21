@@ -1,8 +1,8 @@
 ---
-author: QuinnRadich
+
 title: Launch screen snipping
 description: This topic describes the ms-screenclip and ms-screensketch URI schemes. Your app can use these URI schemes to launch the Snip & Sketch app or to open a new snip.
-ms.author: quradic
+
 ms.date: 8/1/2017
 ms.topic: article
 keywords: windows 10, uwp, uri, snip, sketch

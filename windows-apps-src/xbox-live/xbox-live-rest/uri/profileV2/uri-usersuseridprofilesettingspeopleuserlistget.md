@@ -2,9 +2,9 @@
 title: GET (/users/{userId}/profile/settings/people/{userList})
 assetID: f6553499-89e2-f21b-a00f-7e5437c045ff
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlistget.html
-author: KevinAsgari
+
 description: ' GET (/users/{userId}/profile/settings/people/{userList})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Package your Universal Windows Platform (UWP) DirectX game
 description: Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes.
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

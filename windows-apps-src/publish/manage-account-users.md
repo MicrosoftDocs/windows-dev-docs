@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

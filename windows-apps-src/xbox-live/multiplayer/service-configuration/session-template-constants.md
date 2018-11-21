@@ -1,9 +1,9 @@
 ---
 title: Session template constants
-author: KevinAsgari
+
 description: Describes the system constants defined in Xbox Live multiplayer session templates.
 ms.assetid: d51b2f12-1c56-4261-8692-8f73459dc462
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

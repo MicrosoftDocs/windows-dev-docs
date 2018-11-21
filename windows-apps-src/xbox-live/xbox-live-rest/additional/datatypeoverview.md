@@ -2,9 +2,9 @@
 title: Data Type Overview
 assetID: c154a6fa-e7b2-4652-f6fc-f946f74480e9
 permalink: en-us/docs/xboxlive/rest/datatypeoverview.html
-author: KevinAsgari
+
 description: ' Data Type Overview'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

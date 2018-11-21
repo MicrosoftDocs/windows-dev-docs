@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 title: Run a background task when your UWP app is updated
 description: Learn how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
-ms.author: twhitney
+
 ms.date: 04/21/2017
 ms.topic: article
 

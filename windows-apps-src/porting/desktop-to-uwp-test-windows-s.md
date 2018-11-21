@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: Test your Windows app for Windows 10 S
-ms.author: normesta
+
 ms.date: 05/11/2017
 ms.topic: article
 

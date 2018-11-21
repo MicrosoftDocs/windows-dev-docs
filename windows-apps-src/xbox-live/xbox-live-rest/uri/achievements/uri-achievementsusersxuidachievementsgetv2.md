@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/achievements)
 assetID: 381d49d1-7a4b-4a1e-1baf-cf674f7e0d54
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsgetv2.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/achievements)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

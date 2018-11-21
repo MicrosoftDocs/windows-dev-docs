@@ -2,9 +2,9 @@
 title: PermissionCheckBatchRequest (JSON)
 assetID: 3100b17c-1b60-fdf2-3af9-7e424f1903ee
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchrequest.html
-author: KevinAsgari
+
 description: ' PermissionCheckBatchRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

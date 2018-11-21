@@ -2,9 +2,9 @@
 title: GameClipVisibility Enumeration
 assetID: fc0295e6-c594-c3a4-4982-6fe08e45ba5d
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipvisibility.html
-author: KevinAsgari
+
 description: ' GameClipVisibility Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

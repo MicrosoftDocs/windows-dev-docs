@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Graphics diagnostics tools
 description: Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

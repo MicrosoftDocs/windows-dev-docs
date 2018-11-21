@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 title: Passing arrays to a Windows Runtime Component
 description: In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output.
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

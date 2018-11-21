@@ -2,9 +2,9 @@
 title: EDS Query Refiners
 assetID: ab5c066a-a48b-3042-351d-d0a15f663276
 permalink: en-us/docs/xboxlive/rest/edsqueryrefiners.html
-author: KevinAsgari
+
 description: ' EDS Query Refiners'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

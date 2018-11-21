@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: UWP programming
 description: Programming UWP games.
 ms.assetid: af7a642e-d448-4a7d-8e90-7065b23e24fb
-ms.author: joanlee
+
 ms.date: 02/08/2017
 ms.topic: article
 

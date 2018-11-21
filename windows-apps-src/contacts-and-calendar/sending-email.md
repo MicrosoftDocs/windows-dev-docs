@@ -1,10 +1,10 @@
 ---
-author: normesta
+
 description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
 title: Send email
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
-ms.author: normesta
+
 ms.date: 10/11/2017
 ms.topic: article
 

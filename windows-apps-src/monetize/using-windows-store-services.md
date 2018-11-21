@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
 description: The Microsoft Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Partner Center account.
 title: Microsoft Store services
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: msatranjr
+
 title: NFC
 description: This section contains articles on how to integrate NFC into Universal Windows Platform (UWP) apps.
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

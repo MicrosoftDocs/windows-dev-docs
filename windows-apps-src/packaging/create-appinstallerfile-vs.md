@@ -1,8 +1,8 @@
 ---
-author: ridomin
+
 title: Create an App Installer file with Visual Studio
 description: Learn how to use Visual Studio to enable automatic updates using the .appinstaller file.
-ms.author: rmpablos
+
 ms.date: 5/2/2018
 ms.topic: article
 

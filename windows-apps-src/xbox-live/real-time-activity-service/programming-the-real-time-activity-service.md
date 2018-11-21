@@ -1,9 +1,9 @@
 ---
 title: Programming the Real-Time Activity Service
-author: KevinAsgari
+
 description: Learn about programming the Xbox Live Real-Time Activity Service with the C++ APIs.
 ms.assetid: 98cdcb1f-41d8-43db-98fc-6647755d3b17
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

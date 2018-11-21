@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: If you encounter errors after submitting your app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

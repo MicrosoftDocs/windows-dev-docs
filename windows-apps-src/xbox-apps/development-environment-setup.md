@@ -1,8 +1,8 @@
 ---
-author: Mtoepke
+
 title: Set up your UWP on Xbox development environment
 description: Steps to set up and test your UWP on Xbox development environment.
-ms.author: scotmi
+
 ms.date: 02/08/2017
 ms.topic: article
 

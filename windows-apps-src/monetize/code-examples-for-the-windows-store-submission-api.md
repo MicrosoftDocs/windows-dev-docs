@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
 description: Use the code examples in this section to learn more about using the Microsoft Store submission API.
 title: Code examples for the submission API
-ms.author: mhopkins
+
 ms.date: 07/10/2017
 ms.topic: article
 

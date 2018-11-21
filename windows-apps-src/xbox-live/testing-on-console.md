@@ -1,8 +1,8 @@
 ---
-author: aablackm
+
 title: Testing on Xbox One Console
 description: Learn how to test Xbox Live services on the Xbox Live Console
-ms.author: aablackm
+
 ms.date: 08/15/2018
 ms.topic: article
 

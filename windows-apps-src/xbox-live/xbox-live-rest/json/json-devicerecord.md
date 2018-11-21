@@ -2,9 +2,9 @@
 title: DeviceRecord (JSON)
 assetID: aca4f4d3-f9b4-8919-5b6d-5ae0fe11e162
 permalink: en-us/docs/xboxlive/rest/json-devicerecord.html
-author: KevinAsgari
+
 description: ' DeviceRecord (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

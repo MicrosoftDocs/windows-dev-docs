@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
 description: Use this method in the Microsoft Store analytics API to get monthly app usage data for a given date range and other optional filters.
 title: Get monthly app usage
-ms.author: mhopkins
+
 ms.date: 08/15/2018
 ms.topic: article
 

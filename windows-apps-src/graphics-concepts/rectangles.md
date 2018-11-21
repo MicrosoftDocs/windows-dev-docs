@@ -4,8 +4,8 @@ description: Throughout Direct3D and Windows programming, objects on the screen 
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
 keywords:
 - Rectangles
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

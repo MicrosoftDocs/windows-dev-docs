@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

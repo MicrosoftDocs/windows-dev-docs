@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 title: Creating Windows Runtime Components in C++
 description: This topic shows how to use C++/CX to create a Windows Runtime component, which is a component that's callable from a Universal Windows app built using C#, Visual Basic, C++, or Javascript.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
-ms.author: misatran
+
 ms.date: 05/14/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: Use this method in the Microsoft Store submission API to retrieve information about all apps that are registered to your Partner Center account.
 title: Get all apps
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

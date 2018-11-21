@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting x86 desktop apps
 description: Common issues with x86 apps when running on ARM, and how to fix them.
-ms.author: misatran
+
 ms.date: 05/09/2018
 ms.topic: article
 

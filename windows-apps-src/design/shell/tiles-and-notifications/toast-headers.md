@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to use headers to visually group your toast notifications in Action Center.
 title: Toast headers
 label: Toast headers
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 12/7/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Mtoepke
+
 title: Getting started with UWP app development on Xbox One
 description: How to set up your PC and Xbox One for UWP development.
-ms.author: scotmi
+
 ms.date: 10/12/2017
 ms.topic: article
 

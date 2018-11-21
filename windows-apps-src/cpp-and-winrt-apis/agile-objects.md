@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out.
 title: Agile objects with C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/20/2018
 ms.topic: article
 

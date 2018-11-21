@@ -1,9 +1,9 @@
 ---
 title: Best practices for calling Xbox Live
-author: KevinAsgari
+
 description: Learn about the best practices for calling Xbox Live APIs.
 ms.assetid: f4c7156b-7736-41e5-9b3d-e87cc8dd2531
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

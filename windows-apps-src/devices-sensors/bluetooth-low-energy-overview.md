@@ -1,8 +1,8 @@
 ---
-author: msatranjr
+
 title: Bluetooth Low Energy
 description: This topic provides a quick overview of Bluetooth LE in UWP apps.
-ms.author: misatran
+
 ms.date: 03/15/2017
 ms.topic: article
 

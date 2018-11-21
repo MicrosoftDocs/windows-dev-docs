@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: 3a59ff5e-f491-491c-81b1-6aff15886aad
 title: Optional packages and related set authoring
 description: Optional packages contain content that can be integrated with a main package. These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content for separate from your original app.
-ms.author: lahugh
+
 ms.date: 09/30/2018
 ms.topic: article
 

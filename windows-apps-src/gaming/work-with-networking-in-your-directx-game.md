@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Networking for games
 description: Learn how to develop and incorporate networking features into your DirectX game.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: BatchRequest (JSON)
 assetID: 2ca34506-8801-efc5-7c83-3c9ec5572276
 permalink: en-us/docs/xboxlive/rest/json-batchrequest.html
-author: KevinAsgari
+
 description: ' BatchRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

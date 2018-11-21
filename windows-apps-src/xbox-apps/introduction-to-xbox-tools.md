@@ -1,8 +1,8 @@
 ---
-author: eliotcowley
+
 title: Introduction to Xbox One tools
 description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
-ms.author: elcowle
+
 ms.date: 10/04/2017
 ms.topic: article
 

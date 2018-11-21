@@ -2,9 +2,9 @@
 title: Requirement (JSON)
 assetID: 74faee8d-42e3-cfcf-22b3-9dcd9227de6b
 permalink: en-us/docs/xboxlive/rest/json-requirement.html
-author: KevinAsgari
+
 description: ' Requirement (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

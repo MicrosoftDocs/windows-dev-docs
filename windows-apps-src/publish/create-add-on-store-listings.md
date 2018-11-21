@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: Create add-on Store listings
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

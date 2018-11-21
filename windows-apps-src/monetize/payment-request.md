@@ -1,8 +1,8 @@
 ﻿---
-author: msatranjr
+
 description: The Payment Request API provides an integrated solution for UWP apps to bypass the process of requiring a user to input payment information and select shipping methods.
 title: Simplify payments with the Payment Request API
-ms.author: misatran
+
 ms.date: 09/26/2017
 ms.topic: article
 

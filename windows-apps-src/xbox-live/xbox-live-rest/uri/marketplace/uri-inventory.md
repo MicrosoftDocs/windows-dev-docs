@@ -2,9 +2,9 @@
 title: /users/me/inventory
 assetID: d7f19ba7-4217-1082-c595-c1388e164283
 permalink: en-us/docs/xboxlive/rest/uri-inventory.html
-author: KevinAsgari
+
 description: ' /users/me/inventory'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

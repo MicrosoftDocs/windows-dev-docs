@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Planning for UWP games
 description: Game planning for UWP games.
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
-ms.author: joanlee
+
 ms.date: 02/08/2017
 ms.topic: article
 

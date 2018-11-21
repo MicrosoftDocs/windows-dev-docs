@@ -1,8 +1,8 @@
 ---
-author: KevinAsgari
+
 title: Xbox Live resources
 description: Find out where to download important resources for Xbox Live development.
-ms.author: kevinasg
+
 ms.date: 09/12/2017
 ms.topic: article
 

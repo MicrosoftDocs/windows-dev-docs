@@ -1,8 +1,8 @@
 ---
-author: WilliamsJason
+
 title: Device Portal controllers API reference
 description: Learn how to get the number of attached physical controllers and turn them off programatically.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

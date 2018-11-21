@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Launch the Windows Maps app
 description: Learn how to launch the Windows Maps app from your app.
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

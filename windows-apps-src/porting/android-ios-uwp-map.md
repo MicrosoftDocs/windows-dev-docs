@@ -1,9 +1,9 @@
 ---
-author: GrantMeStrength
+
 Description: Compare platform features between iOS, Android, and Windows 10.
 Search.Product: eADQiWindows 10XVcnh
 title: Windows apps concept mapping for Android and iOS developers
-ms.author: jken
+
 ms.date: 02/08/2017
 ms.topic: article
 

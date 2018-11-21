@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Summary Page
-author: KevinAsgari
+
 description: Describes how you can leverage the Xbox Live summary view
 ms.assetid:
-ms.author: kevinasg
+
 ms.date: 10/19/2018
 ms.topic: article
 

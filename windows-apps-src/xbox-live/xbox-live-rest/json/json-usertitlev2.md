@@ -2,9 +2,9 @@
 title: UserTitle (JSON)
 assetID: 3e5767af-5704-8463-696b-42a7d2a1e231
 permalink: en-us/docs/xboxlive/rest/json-usertitlev2.html
-author: KevinAsgari
+
 description: ' UserTitle (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

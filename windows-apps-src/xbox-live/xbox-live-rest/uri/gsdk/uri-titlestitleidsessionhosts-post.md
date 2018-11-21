@@ -2,9 +2,9 @@
 title: POST (/titles/{Title Id}/sessionhosts)
 assetID: 8558b336-1af9-8143-9752-477ceb3a8e4e
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts-post.html
-author: KevinAsgari
+
 description: ' POST (/titles/{Title Id}/sessionhosts)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: mithom
+
 title: Input for games
 description: This section demonstrates how to work with gamepads and other input devices for Universal Windows Platform (UWP) games.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

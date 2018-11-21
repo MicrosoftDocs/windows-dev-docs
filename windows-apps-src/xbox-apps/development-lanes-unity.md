@@ -1,8 +1,8 @@
 ---
-author: JordanEllis6809
+
 title: Bringing Unity games to UWP on Xbox
 description: Unity UWP development on Xbox.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
 title: Large sessions
-author: KevinAsgari
+
 description: Learn about using large sessions with Xbox Live multiplayer platform.
-ms.author: kevinasg
+
 ms.date: 07/11/2017
 ms.topic: article
 

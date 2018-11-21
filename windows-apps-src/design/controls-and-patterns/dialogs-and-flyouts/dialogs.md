@@ -1,10 +1,10 @@
 ---
-author: mijacobs
+
 Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

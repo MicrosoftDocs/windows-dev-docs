@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Beta testing
 description: Beta testing gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices.
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

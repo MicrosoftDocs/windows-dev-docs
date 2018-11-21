@@ -2,9 +2,9 @@
 title: POST (/users/xuid({xuid})/outbox)
 assetID: de991d88-efe0-04f2-f6b2-0bc3e68bfd46
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutboxpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/outbox)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

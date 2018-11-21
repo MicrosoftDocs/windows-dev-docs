@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
 title: PlayReady DRM
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

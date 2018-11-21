@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: The previous topic (How the Resource Management System matches and chooses resources) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail.
 title: How the Resource Management System matches language tags
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 11/02/2017
 ms.topic: article
 

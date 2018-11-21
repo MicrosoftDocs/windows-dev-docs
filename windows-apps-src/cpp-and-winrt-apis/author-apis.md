@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.author: stwhi
+
 ms.date: 10/03/2018
 ms.topic: article
 

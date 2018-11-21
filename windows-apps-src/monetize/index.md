@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
 title: Monetization, engagement, and Store services
-ms.author: mhopkins
+
 ms.date: 11/29/2017
 ms.topic: article
 

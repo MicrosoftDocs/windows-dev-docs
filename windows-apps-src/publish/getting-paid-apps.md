@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

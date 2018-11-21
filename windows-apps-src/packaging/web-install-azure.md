@@ -1,8 +1,8 @@
 ---
-author: c-don
+
 title: UWP App Installation from an Azure Web Server 
 description: This tutorial demonstrates how to set up an Azure web server, verify that your web app can host app packages, and invoke and use App Installer effectively.
-ms.author: cdon
+
 ms.date: 09/30/2018
 ms.topic: article
 

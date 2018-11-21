@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Trace Analyzer
-author: KevinAsgari
+
 description: Learn how to use the Xbox Live Trace Analyzer to review the service calls made by your title.
 ms.assetid: b4490fae-d554-403d-bbbc-601af38af0ef
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

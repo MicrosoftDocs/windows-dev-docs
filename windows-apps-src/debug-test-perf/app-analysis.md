@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: App analysis
 description: Analyze your app for performance issues.
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

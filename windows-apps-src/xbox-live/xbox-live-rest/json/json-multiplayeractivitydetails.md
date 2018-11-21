@@ -2,9 +2,9 @@
 title: MultiplayerActivityDetails (JSON)
 assetID: f982aa5e-2694-4ef9-bc55-6c099a3cf9ec
 permalink: en-us/docs/xboxlive/rest/json-multiplayeractivitydetails.html
-author: KevinAsgari
+
 description: ' MultiplayerActivityDetails (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

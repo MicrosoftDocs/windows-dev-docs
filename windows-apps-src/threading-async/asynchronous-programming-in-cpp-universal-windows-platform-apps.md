@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the task class defined in the concurrency namespace in ppltasks.h.
 title: Asynchronous programming in C++
-ms.author: normesta
+
 ms.date: 05/14/2018
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this REST URI to get block data for a desktop application during a given date range and other optional filters.
 title: Get upgrade blocks for your desktop application
-ms.author: mhopkins
+
 ms.date: 07/11/2018
 ms.topic: article
 keywords: windows 10, desktop app blocks, Windows Desktop Application Program

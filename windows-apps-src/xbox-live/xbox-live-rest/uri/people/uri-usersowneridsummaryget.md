@@ -2,9 +2,9 @@
 title: GET (/users/{ownerId}/summary)
 assetID: 754190c9-b15d-f34b-1dca-5c92f6f67d12
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummaryget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/summary)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

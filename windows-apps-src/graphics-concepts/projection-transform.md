@@ -4,8 +4,8 @@ description: A projection transformation controls the camera's internals, like c
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
 - Projection transform
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

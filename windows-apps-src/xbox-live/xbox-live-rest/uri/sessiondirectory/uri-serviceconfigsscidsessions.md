@@ -2,9 +2,9 @@
 title: /serviceconfigs/{scid}/sessions
 assetID: d1932817-dcce-5a5c-d7e4-9fd97e1d287c
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessions.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/sessions'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

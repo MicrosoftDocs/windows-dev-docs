@@ -1,9 +1,9 @@
 ---
-author: jnHs
+
 Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
 title: About community ads
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

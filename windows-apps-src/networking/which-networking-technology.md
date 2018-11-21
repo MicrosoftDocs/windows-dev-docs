@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
 title: Which networking technology?'
-ms.author: stwhi
+
 ms.date: 02/08/2017
 ms.topic: article
 

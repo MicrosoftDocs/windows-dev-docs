@@ -2,9 +2,9 @@
 title: /titles/{titleId}/sessions/{sessionId}/allocationStatus
 assetID: 55611f4b-4ba4-fa9a-ce44-fcc4a6df1b35
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus.html
-author: KevinAsgari
+
 description: ' /titles/{titleId}/sessions/{sessionId}/allocationStatus'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

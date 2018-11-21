@@ -1,8 +1,8 @@
 ---
 title: Player Stats
-author: aablackm
+
 description: Intro to Stats 2017
-ms.author: aablackm
+
 ms.date: 07/02/2018
 ms.topic: article
 

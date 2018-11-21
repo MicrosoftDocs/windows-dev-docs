@@ -2,9 +2,9 @@
 title: POST ({itemID})
 assetID: 2c3c166b-e638-cfb9-d68e-9f8ab9a838d3
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurlpost.html
-author: KevinAsgari
+
 description: ' POST ({itemID})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

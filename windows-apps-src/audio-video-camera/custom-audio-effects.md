@@ -1,8 +1,8 @@
 ---
-author: drewbatgit
+
 Description: This article describes how to create a Windows Runtime component that implements the IBasicAudioEffect interface to allow you to create custom effects for audio streams.
 title: Custom audio effects
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

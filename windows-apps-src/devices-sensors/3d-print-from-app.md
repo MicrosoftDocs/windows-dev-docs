@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 title: 3D printing from your app
 description: Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

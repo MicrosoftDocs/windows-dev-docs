@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Enumerating PointOfService devices
 description: Learn how to enumerate PointOfService devices
-ms.author: jken
+
 ms.date: 10/08/2018
 ms.topic: article
 

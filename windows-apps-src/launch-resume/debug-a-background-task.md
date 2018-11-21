@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Debug a background task
 description: Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

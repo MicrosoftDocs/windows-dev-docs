@@ -2,10 +2,10 @@
 description: Learn how to make your app inclusive and accessible to people around the world.
 keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: Usability in UWP apps - Windows app development
-author: mijacobs
+
 layout: LandingPage
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 10/18/2017
 ms.topic: landing-page
 

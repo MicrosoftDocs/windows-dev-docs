@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Create a certificate for package signing
 description: Create and export a certificate for app package signing with PowerShell tools.
-ms.author: lahugh
+
 ms.date: 09/30/2018
 ms.topic: article
 

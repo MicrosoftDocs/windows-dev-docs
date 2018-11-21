@@ -1,9 +1,9 @@
 ---
 title: Introduction to the Multiplayer system
-author: KevinAsgari
+
 description: Provides a high level introduction to the Xbox Live Multiplayer 2015 system.
 ms.assetid: d025bd2b-2ca4-4ba9-9394-4950d96ad264
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

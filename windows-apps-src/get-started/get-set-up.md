@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Get set up
 description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
-ms.author: quradic
+
 ms.date: 05/07/2018
 ms.topic: article
 

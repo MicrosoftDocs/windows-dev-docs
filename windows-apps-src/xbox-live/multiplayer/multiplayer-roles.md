@@ -1,8 +1,8 @@
 ---
 title: Multiplayer roles
-author: KevinAsgari
+
 description: Learn about using roles to define player roles in Xbox Live multiplayer.
-ms.author: kevinasg
+
 ms.date: 06/29/2017
 ms.topic: article
 

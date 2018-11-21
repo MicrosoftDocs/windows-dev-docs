@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 
 description: This article shows you how to capture video from multiple sources simulataneously to a single file with multiple embedded video tracks.
 title: Capture from multiple sources using MediaFrameSourceGroup
-ms.author: drewbat
+
 ms.date: 09/12/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-ms.author: misatran
+
 ms.date: 07/19/2018
 ms.topic: article
 

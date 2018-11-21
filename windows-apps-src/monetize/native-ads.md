@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Learn how to add native ads to your UWP app.
 title: Native ads
-ms.author: mhopkins
+
 ms.date: 05/11/2018
 ms.topic: article
 

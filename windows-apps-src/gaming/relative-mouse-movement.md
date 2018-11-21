@@ -1,8 +1,8 @@
 ---
-author: scottmill
+
 title: Relative mouse movement
 description: Use relative mouse controls, which don't use the system cursor and don't return absolute screen coordinates, to track the pixel delta between mouse movements in games.
-ms.author: scotmi
+
 ms.date: 02/08/2017
 ms.topic: article
 

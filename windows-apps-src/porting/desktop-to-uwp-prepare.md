@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: This article lists things you need to know before packaging your desktop application. You may not need to do much to get your app ready for the packaging process.
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package a desktop application (Desktop Bridge)
-ms.author: normesta
+
 ms.date: 05/18/20188
 ms.topic: article
 

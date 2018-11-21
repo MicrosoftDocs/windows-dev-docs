@@ -2,9 +2,9 @@
 title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name}
 assetID: aed0764f-4e3d-e0b3-1ea0-543c32f3f822
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

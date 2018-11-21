@@ -1,8 +1,8 @@
 ---
-author: JordanEllis6809
+
 title: Bringing existing games to Xbox
 description: Bringing existing games to Xbox with UWP.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

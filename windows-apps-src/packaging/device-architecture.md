@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: App package architectures
 description: Learn more about which processor architecture(s) you should use when building your UWP app package.
-ms.author: lahugh
+
 ms.date: 7/13/2017
 ms.topic: article
 

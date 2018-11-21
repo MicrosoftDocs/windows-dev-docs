@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
 title: Bluetooth
 description: This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get aggregate add-on acquisition data.
 title: Get Xbox One add-on acquisitions
-ms.author: mhopkins
+
 ms.date: 10/18/2018
 ms.topic: article
 

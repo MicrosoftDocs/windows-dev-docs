@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: PointOfService device capability
 description: The PointOfService capability is required for use of Windows.Devices.PointOfService namespace
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

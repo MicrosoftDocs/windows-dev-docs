@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/groups/{moniker}/broadcasting
 assetID: cf8319f6-46a2-b263-ea4c-f1ce403b571b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcasting.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/groups/{moniker}/broadcasting'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

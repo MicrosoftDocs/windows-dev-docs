@@ -2,9 +2,9 @@
 title: Player (JSON)
 assetID: eaf6d082-869b-d2d3-d548-5cef65e54541
 permalink: en-us/docs/xboxlive/rest/json-player.html
-author: KevinAsgari
+
 description: ' Player (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

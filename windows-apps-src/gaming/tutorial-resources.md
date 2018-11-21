@@ -1,9 +1,9 @@
 ---
-author: joannaleecy
+
 title: Extend the game sample
 description: Learn how to implement a XAML overlay for a UWP DirectX game.
 keywords: DirectX, XAML
-ms.author: joanlee
+
 ms.date: 10/24/2017
 ms.topic: article
 

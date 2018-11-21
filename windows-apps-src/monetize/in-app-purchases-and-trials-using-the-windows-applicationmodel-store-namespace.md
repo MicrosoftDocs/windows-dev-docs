@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
 title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
-ms.author: mhopkins
+
 ms.date: 08/25/2017
 ms.topic: article
 

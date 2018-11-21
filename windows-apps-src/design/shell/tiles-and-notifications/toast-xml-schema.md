@@ -1,11 +1,11 @@
 ---
-author: lex
+
 Description: The following article describes all of the properties and elements within the toast content XML payload.
 title: Toast content XML schema
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/19/2017
 ms.topic: article
 

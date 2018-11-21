@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: Use the Microsoft Store reviews API to programmatically submit responses to reviews of your app in the Store.
 title: Respond to reviews using Store services
-ms.author: mhopkins
+
 ms.date: 06/04/2018
 ms.topic: article
 

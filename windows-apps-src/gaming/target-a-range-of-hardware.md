@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Support shadow maps on a range of hardware
 description: Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

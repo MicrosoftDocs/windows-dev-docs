@@ -1,9 +1,9 @@
 ---
-author: QuinnRadich
+
 title: Windows 10 version 1607 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 version 1607
 keywords: what's new, whats new, update, updates, Windows 10, 1607, 14393, anniversary
-ms.author: quradic
+
 ms.date: 11/02/2017
 ms.topic: article
 

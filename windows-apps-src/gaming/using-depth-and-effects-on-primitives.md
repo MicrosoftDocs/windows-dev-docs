@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Use depth and effects on primitives
 description: Here, we show you how to use depth, perspective, color, and other effects on primitives.
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

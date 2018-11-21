@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your Xbox One game
-ms.author: mhopkins
+
 ms.date: 11/06/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
 title: Manual app packaging
 description: This section contains or links to articles about manually packaging Universal Windows Platform (UWP) apps.
-ms.author: lahugh
+
 ms.date: 04/30/2018
 ms.topic: article
 

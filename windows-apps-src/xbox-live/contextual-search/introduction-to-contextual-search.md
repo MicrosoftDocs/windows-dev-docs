@@ -1,9 +1,9 @@
 ---
 title: Contextual Search
-author: KevinAsgari
+
 description: Learn how to use contextual search to automatically tag broadcasts and game clips with relevant metadata.
 ms.assetid: 0c2afbfa-f32a-4ddd-9e9e-c8ac7eedae18
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

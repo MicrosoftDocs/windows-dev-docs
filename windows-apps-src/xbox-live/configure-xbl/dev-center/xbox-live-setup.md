@@ -1,9 +1,9 @@
 ---
 title: Xbox Live Setup configuration
-author: shrutimundra
+
 description: Describes how you can configure Xbox Live Setup in Partner Center.
 ms.assetid:
-ms.author: kevinasg
+
 ms.date: 10/30/2017
 ms.topic: article
 

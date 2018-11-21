@@ -1,9 +1,9 @@
 ---
 title: Game session visibility and joinability
-author: KevinAsgari
+
 description: Describes Xbox Live game session and game party visibility and joinability.
 ms.assetid: 39b6dac1-0c6b-4dc1-9fe0-3cb7c471fbab
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

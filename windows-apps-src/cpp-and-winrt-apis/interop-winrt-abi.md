@@ -1,8 +1,8 @@
 ---
-author: stevewhims
+
 description: This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects.
 title: Interop between C++/WinRT and the ABI
-ms.author: stwhi
+
 ms.date: 05/21/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (/scids/{scid}/leaderboards/{leaderboardname})
 assetID: 4adea46c-e910-8709-c28e-ce9178e712ef
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardnameget.html
-author: KevinAsgari
+
 description: ' GET (/scids/{scid}/leaderboards/{leaderboardname})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

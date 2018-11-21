@@ -1,9 +1,9 @@
 ---
-author: KarlErickson
+
 title: Create data bindings
 description: This article covers the basics of data binding in XAML
 keywords: XAML, UWP, Getting Started
-ms.author: karler
+
 ms.date: 08/30/2017
 ms.topic: article
 

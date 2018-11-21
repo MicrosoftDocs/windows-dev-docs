@@ -6,8 +6,8 @@ keywords:
 - Streaming resources
 - resources, streaming
 - resources, tiled
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Session Directory URIs
 assetID: e3ba951d-b21f-0014-c358-2603d549d118
 permalink: en-us/docs/xboxlive/rest/atoc-reference-sessiondirectory.html
-author: KevinAsgari
+
 description: ' Session Directory URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

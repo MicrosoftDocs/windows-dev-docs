@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 Description: Follow these best practices for geofencing in your app.
 title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.author: pafarley
+
 ms.date: 02/08/2017
 ms.topic: article
 

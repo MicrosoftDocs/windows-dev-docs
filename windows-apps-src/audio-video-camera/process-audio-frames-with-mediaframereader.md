@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: D6A785C6-DF28-47E6-BDC1-7A7129EC40A0
 description: This article shows you how to use a MediaFrameReader with MediaCapture to get AudioFrames containing audio data from a capture source.
 title: Process audio frames with MediaFrameReader
-ms.author: drewbat
+
 ms.date: 04/18/2018
 ms.topic: article
 

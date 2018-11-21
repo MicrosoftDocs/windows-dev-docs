@@ -1,10 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
+
 ms.assetid: 
 title: Support the Surface Dial (and other wheel devices) in your UWP app
 description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
 keywords: dial, radial, tutorial
-ms.author: kbridge
+
 ms.date: 01/25/2018
 ms.topic: article
 

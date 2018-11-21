@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Learn how to include interstitial ads in a UWP app for Windows 10 using the Microsoft Advertising SDK.
 title: Interstitial ads
-ms.author: mhopkins
+
 ms.date: 03/22/2018
 ms.topic: article
 

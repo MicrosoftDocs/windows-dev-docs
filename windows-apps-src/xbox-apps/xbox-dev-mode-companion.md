@@ -1,8 +1,8 @@
 ---
-author: payzer
+
 title: Xbox Dev Mode Companion
 description: Provides information about the Xbox Dev Mode Companion app.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

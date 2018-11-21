@@ -1,10 +1,10 @@
 ---
-author: manoskow
+
 Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Toast UX Guidance
 label: Toast UX Guidance
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/18/2018
 ms.topic: article
 

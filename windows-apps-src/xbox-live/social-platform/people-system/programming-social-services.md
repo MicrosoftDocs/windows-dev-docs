@@ -1,9 +1,9 @@
 ---
 title: Programming Social Services
-author: KevinAsgari
+
 description: Provides a code example of how to use the Xbox Live Social Manager API.
 ms.assetid: 101d059a-e03f-472c-8300-800aa5730ee2
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

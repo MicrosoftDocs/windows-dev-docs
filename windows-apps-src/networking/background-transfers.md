@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 description: Use the background transfer API to copy files reliably over the network.
 title: Background transfers
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
-ms.author: stwhi
+
 ms.date: 03/23/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: POST (/users/xuid({xuid})/feedback)
 assetID: 48a7a510-a658-f2a3-c6bc-28a3610006e7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedbackpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/feedback)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,10 +1,10 @@
 ---
-author: Xansky
+
 description: Describes the steps needed to ensure your Universal Windows Platform (UWP) app is usable when a high-contrast theme is active.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: High-contrast themes
 template: detail.hbs
-ms.author: mhopkins
+
 ms.date: 09/28/2017
 ms.topic: article
 

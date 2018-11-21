@@ -1,11 +1,11 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
 title: Surface Dial interactions
 label: Surface Dial interactions
 template: detail.hbs
 keywords: Surface Dial, Windows wheel, RadialController, Radial controller, user interaction, input
-ms.author: kbridge
+
 ms.date: 02/08/2017
 ms.topic: article
 

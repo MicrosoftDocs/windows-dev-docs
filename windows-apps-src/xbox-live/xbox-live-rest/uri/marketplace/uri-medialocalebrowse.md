@@ -2,9 +2,9 @@
 title: /media/{marketplaceId}/browse
 assetID: 4fedc780-b3c2-c83b-e7af-9e18666a4771
 permalink: en-us/docs/xboxlive/rest/uri-medialocalebrowse.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/browse'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

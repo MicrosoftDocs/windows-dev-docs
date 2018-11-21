@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Use this method in the Microsoft Store submission API to finalize the package rollout for a package flight submission.
 title: Finalize the rollout for a flight submission
-ms.author: mhopkins
+
 ms.date: 04/17/2018
 ms.topic: article
 

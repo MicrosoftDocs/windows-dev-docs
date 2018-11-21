@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Handle app prelaunch
 description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
-ms.author: twhitney
+
 ms.date: 07/05/2018
 ms.topic: article
 

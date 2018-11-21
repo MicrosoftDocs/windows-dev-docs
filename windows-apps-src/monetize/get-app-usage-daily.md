@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: Use this method in the Microsoft Store analytics API to get daily app usage data for a given date range and other optional filters.
 title: Get daily app usage
-ms.author: mhopkins
+
 ms.date: 08/15/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
 title: Get started with cross-play games
-author: KevinAsgari
+
 description: Learn how to develop cross-play games that run on both PC and Xbox One consoles.
 ms.assetid: 6c8e9d08-a3d2-4bfc-90ee-03c8fde3e66d
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

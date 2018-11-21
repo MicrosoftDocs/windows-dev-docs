@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 title: Web view
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

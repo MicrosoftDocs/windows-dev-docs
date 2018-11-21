@@ -2,9 +2,9 @@
 title: /system/strings/validate
 assetID: ef619178-9337-9965-b665-e8f9fe9e95a3
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidate.html
-author: KevinAsgari
+
 description: ' /system/strings/validate'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

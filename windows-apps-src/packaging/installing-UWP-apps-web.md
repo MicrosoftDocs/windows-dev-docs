@@ -1,8 +1,8 @@
 ---
-author: laurenhughes
+
 title: Installing UWP apps from a web page
 description: In this section, we will review the steps you need to take to allow users to install your apps directly from the web page.
-ms.author: lahugh
+
 ms.date: 11/16/2017
 ms.topic: article
 

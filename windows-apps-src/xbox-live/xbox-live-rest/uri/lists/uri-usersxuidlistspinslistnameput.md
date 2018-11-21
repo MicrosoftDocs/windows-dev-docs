@@ -2,9 +2,9 @@
 title: PUT (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: f7964d2e-a8c8-2caa-ca97-e0d76ef586f4
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameput.html
-author: KevinAsgari
+
 description: ' PUT (/users/xuid(xuid)/lists/PINS/{listname})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

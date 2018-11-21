@@ -2,9 +2,9 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates)
 assetID: 5172c7be-371b-f0b1-d1d0-f0981eb2bfa7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatesget.html
-author: KevinAsgari
+
 description: ' GET (/serviceconfigs/{scid}/sessiontemplates)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

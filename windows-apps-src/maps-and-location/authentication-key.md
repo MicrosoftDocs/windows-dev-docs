@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 title: Request a maps authentication key
 description: Your Universal Windows app must be authenticated before it can use the MapControl and map services in the Windows.Services.Maps namespace.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: normesta
+
 ms.date: 02/08/2017
 ms.topic: article
 

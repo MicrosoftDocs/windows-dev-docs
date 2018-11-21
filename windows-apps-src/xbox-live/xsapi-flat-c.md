@@ -1,8 +1,8 @@
 ---
 title: Xbox Live C APIs
-author: KevinAsgari
+
 description: Learn about the flat C API model that you can use to interact with the Xbox Live service.
-ms.author: kevinasg
+
 ms.date: 06/05/2018
 ms.topic: article
 

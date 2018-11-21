@@ -1,10 +1,10 @@
 ---
-author: andrewleader
+
 Description: Learn how to use a progress bar within your toast notification.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 12/7/2017
 ms.topic: article
 

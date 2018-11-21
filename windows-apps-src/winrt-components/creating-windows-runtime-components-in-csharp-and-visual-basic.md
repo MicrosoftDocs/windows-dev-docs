@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 title: Creating Windows Runtime Components in C# and Visual Basic
 description: Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

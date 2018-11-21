@@ -1,9 +1,9 @@
 ---
 title: Connected Storage Overview
-author: aablackm
+
 description: Learn about using Connected Storage to save and load game data across devices.
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
+
 ms.date: 02/27/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
-ms.author: normesta
+
 ms.date: 10/15/2018
 ms.topic: article
 

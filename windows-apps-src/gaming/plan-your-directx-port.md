@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Plan your DirectX port
 description: Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)-- upgrade your graphics code, and put your game in the Windows Runtime environment.
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

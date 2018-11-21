@@ -1,10 +1,10 @@
 ---
-author: manoskow
+
 Description: Learn how to group notifications in Action Center using collections.
 title: Toast Collections
 label: Toast Collections
 template: detail.hbs
-ms.author: mijacobs
+
 ms.date: 05/16/2018
 ms.topic: article
 

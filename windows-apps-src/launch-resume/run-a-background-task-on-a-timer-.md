@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Run a background task on a timer
 description: Learn how to schedule a one-time background task, or run a periodic background task.
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
-ms.author: twhitney
+
 ms.date: 07/06/2018
 ms.topic: article
 

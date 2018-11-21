@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Launching, resuming, and background tasks
 description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
-ms.author: twhitney
+
 ms.date: 10/04/2017
 ms.topic: article
 

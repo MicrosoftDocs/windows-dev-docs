@@ -1,6 +1,6 @@
 ---
 title: Running Profile Guided Optimization (PGO) on Universal Windows Platform (UWP) apps
-author: erwals-msft
+
 ms.localizationpriority: medium
 ---
 

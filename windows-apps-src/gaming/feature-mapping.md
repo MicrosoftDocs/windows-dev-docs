@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Map DirectX 9 features to DirectX 11 APIs
 description: Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the Universal Windows Platform (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

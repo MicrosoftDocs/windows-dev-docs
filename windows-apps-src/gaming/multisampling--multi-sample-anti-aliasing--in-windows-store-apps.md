@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Multisampling in Universal Windows Platform (UWP) apps
 description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

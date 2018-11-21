@@ -1,9 +1,9 @@
 ---
 title: Rich Presence
-author: KevinAsgari
+
 description: Learn how Xbox Live Rich Presence can help promote your title.
 ms.assetid: 00042359-f877-4b26-9067-58834590b1dd
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

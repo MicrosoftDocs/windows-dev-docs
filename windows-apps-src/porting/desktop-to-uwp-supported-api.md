@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 Search.Product: eADQiWindows 10XVcnh
 title: UWP APIs available to a packaged desktop app (Desktop Bridge)
-ms.author: normesta
+
 ms.date: 10/27/2017
 ms.topic: article
 

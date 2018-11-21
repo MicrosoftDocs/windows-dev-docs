@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.author: wdg-dev-content
+
 ms.date: 11/20/2018
 ms.topic: article
 

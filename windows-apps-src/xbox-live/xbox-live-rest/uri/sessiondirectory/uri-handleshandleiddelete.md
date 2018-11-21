@@ -2,9 +2,9 @@
 title: DELETE (/handles/{handleId})
 assetID: 71cceff4-3a74-dc05-12db-cfe3f20a8aea
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleiddelete.html
-author: KevinAsgari
+
 description: ' DELETE (/handles/{handleId})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

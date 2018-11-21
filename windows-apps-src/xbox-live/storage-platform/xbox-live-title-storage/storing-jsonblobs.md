@@ -1,9 +1,9 @@
 ---
 title: Storing a JSON blob
-author: KevinAsgari
+
 description: Learn how to store a JSON blob in Xbox Live Title Storage.
 ms.assetid: f424aca1-e671-4e31-84c6-098fda4a9558
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

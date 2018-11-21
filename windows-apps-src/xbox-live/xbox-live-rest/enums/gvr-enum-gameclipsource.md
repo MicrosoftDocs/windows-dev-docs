@@ -2,9 +2,9 @@
 title: GameClipSource Enumeration
 assetID: 8dcfbf10-0fb1-86f9-a67b-047e83ee9192
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipsource.html
-author: KevinAsgari
+
 description: ' GameClipSource Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

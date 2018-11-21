@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Important changes from Direct3D 9 to Direct3D 11
 description: This topic explains the high-level differences between DirectX 9 and DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

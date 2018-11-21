@@ -2,9 +2,9 @@
 title: POST (/users/me/resetreputation)
 assetID: 1a4fed45-f608-dac2-3384-2ee493112f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputationpost.html
-author: KevinAsgari
+
 description: ' POST (/users/me/resetreputation)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

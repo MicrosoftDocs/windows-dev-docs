@@ -2,9 +2,9 @@
 title: GameClipsServiceErrorResponse (JSON)
 assetID: dd606f0f-d52d-f88f-0fff-41c15837f9ed
 permalink: en-us/docs/xboxlive/rest/json-gameclipsserviceerrorresponse.html
-author: KevinAsgari
+
 description: ' GameClipsServiceErrorResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

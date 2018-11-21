@@ -2,9 +2,9 @@
 title: PermissionId Enumeration
 assetID: 3e7ee317-4946-1105-ecd7-1e26346deccb
 permalink: en-us/docs/xboxlive/rest/privacy-enum-permissionid.html
-author: KevinAsgari
+
 description: ' PermissionId Enumeration'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

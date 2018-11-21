@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: Camera Barcode Scanner Configuration
 description: Camera Barcode Scanner Enable or Disable
-ms.author: jken
+
 ms.date: 05/1/2018
 ms.topic: article
 

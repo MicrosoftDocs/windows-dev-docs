@@ -1,9 +1,9 @@
 ---
-author: libbymc
+
 title: Create a single-page web app with REST API backend
 description: Use popular web technologies to build a Hosted Web App for the Microsoft Store
 keywords: hosted web app, HWA, REST API, single-page app, SPA
-ms.author: libbymc
+
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium

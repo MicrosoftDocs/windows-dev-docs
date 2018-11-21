@@ -1,9 +1,9 @@
 ---
 title: Multiplayer how-tos
-author: KevinAsgari
+
 description: Describes how to implement common tasks in Xbox Live Multiplayer 2015.
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
-ms.author: kevinasg
+
 ms.date: 08/29/2017
 ms.topic: article
 

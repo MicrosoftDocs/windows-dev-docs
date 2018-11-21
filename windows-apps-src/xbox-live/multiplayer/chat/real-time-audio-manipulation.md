@@ -1,8 +1,8 @@
 ---
 title: Real-time audio manipulation
-author: KevinAsgari
+
 description: Learn how to manipulate and process the chat audio captured by Game Chat 2.
-ms.author: kevinasg
+
 ms.date: 05/10/2018
 ms.topic: article
 

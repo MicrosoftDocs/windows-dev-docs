@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Postpone app suspension with extended execution
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

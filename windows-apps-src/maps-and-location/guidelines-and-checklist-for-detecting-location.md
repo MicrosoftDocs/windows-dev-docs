@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+
 Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.author: misatran
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ﻿---
-author: jnHs
+
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: normesta
+
 Description: This article provides a deeper dive on how the Desktop Bridge works under the covers.
 title: Behind the scenes of the Desktop Bridge
-ms.author: normesta
+
 ms.date: 05/25/2017
 ms.topic: article
 

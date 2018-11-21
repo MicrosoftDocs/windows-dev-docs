@@ -1,8 +1,8 @@
 ﻿---
-author: jnHs
+
 Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Insights report
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

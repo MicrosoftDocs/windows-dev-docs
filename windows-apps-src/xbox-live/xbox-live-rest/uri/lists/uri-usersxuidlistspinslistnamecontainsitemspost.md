@@ -2,9 +2,9 @@
 title: POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 assetID: 86ee6d1a-fb1f-b918-f605-a9b494c0e787
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamecontainsitemspost.html
-author: KevinAsgari
+
 description: ' POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

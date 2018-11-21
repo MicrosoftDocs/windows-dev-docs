@@ -1,8 +1,8 @@
 ---
-author: jwmsft
+
 title: Relation based animations
 description: Create motion based on a property on another object.
-ms.author: jimwalk
+
 ms.date: 10/10/2017
 ms.topic: article
 

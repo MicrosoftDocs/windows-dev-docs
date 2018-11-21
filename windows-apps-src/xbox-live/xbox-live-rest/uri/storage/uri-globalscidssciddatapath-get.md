@@ -2,9 +2,9 @@
 title: GET (/global/scids/{scid}/data/{path})
 assetID: 838abdf2-6fe3-cd7a-4356-6fb0b25a505b
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath-get.html
-author: KevinAsgari
+
 description: ' GET (/global/scids/{scid}/data/{path})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

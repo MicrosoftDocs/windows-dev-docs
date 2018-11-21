@@ -2,9 +2,9 @@
 title: VerifyStringResult (JSON)
 assetID: 272c688e-179e-c7e9-086b-e76d0d4bcb57
 permalink: en-us/docs/xboxlive/rest/json-verifystringresult.html
-author: KevinAsgari
+
 description: ' VerifyStringResult (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

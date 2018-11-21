@@ -1,11 +1,11 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.author: kbridge
+
 ms.date: 10/10/2017
 ms.topic: article
 

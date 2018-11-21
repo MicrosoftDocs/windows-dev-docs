@@ -2,9 +2,9 @@
 title: MediaRequest (JSON)
 assetID: b95c6bc2-e4d3-6fa1-647e-0cb48307e90a
 permalink: en-us/docs/xboxlive/rest/json-mediarequest.html
-author: KevinAsgari
+
 description: ' MediaRequest (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

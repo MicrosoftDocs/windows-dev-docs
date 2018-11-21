@@ -1,9 +1,9 @@
 ---
-author: GrantMeStrength
+
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Create a Hello World app in C++/CX (Windows 10)
 description: With Microsoft Visual Studio 2017, you can use C++/CX to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
-ms.author: jken
+
 ms.date: 06/11/2018
 ms.topic: article
 

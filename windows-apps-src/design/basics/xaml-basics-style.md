@@ -1,9 +1,9 @@
 ---
-author: mijacobs
+
 title: Create custom styles
 description: This article covers the basics of styling UI elements in XAML
 keywords: XAML, UWP, Getting Started
-ms.author: mijacobs
+
 ms.date: 08/31/2017
 ms.topic: article
 

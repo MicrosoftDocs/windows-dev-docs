@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Convert the rendering framework
 description: Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

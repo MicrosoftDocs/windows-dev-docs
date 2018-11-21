@@ -1,9 +1,9 @@
 ---
-author: mithom
+
 title: Headset
 description: Use the Windows.Gaming.Input headset APIs to detect headsets, capture player voice, and playback audio.
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

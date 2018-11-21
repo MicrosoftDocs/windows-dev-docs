@@ -1,9 +1,9 @@
 ---
-author: mijacobs
+
 Description: Use pointer animations to provide users with visual feedback when the user taps on an item.
 title: Pointer click animations in UWP apps
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
-ms.author: jimwalk
+
 ms.date: 08/9/2017
 ms.topic: article
 

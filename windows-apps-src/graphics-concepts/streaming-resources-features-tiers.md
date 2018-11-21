@@ -4,8 +4,8 @@ description: Direct3D supports streaming resources in three tiers of capabilitie
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
 keywords:
 - Streaming resources features tiers
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

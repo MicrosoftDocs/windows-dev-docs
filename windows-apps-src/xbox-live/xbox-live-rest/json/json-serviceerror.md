@@ -2,9 +2,9 @@
 title: ServiceError (JSON)
 assetID: 81c43f6e-bfff-c4b5-d25c-eace22649f01
 permalink: en-us/docs/xboxlive/rest/json-serviceerror.html
-author: KevinAsgari
+
 description: ' ServiceError (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

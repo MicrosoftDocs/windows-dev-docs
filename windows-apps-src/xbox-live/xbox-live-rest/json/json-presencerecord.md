@@ -2,9 +2,9 @@
 title: PresenceRecord (JSON)
 assetID: 414e6ef5-f7bd-70d0-7386-7aa1c3a56e21
 permalink: en-us/docs/xboxlive/rest/json-presencerecord.html
-author: KevinAsgari
+
 description: ' PresenceRecord (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

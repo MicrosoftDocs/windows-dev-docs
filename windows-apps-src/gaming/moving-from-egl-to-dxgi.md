@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+
 title: Compare EGL code to DXGI and Direct3D
 description: The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
-ms.author: mtoepke
+
 ms.date: 02/08/2017
 ms.topic: article
 

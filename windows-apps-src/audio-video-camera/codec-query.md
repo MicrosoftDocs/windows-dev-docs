@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 0A360481-B649-4E90-9BC4-4449BA7445EF
 description: Query for audio and video encoders and decoders installed on a device.
 title: Query for installed codecs
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

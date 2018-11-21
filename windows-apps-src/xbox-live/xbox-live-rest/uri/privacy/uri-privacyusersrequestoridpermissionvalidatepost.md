@@ -2,9 +2,9 @@
 title: POST (/users/{requestorId}/permission/validate)
 assetID: 7a5ea583-ffca-5da7-a02a-535c52535928
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidatepost.html
-author: KevinAsgari
+
 description: ' POST (/users/{requestorId}/permission/validate)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

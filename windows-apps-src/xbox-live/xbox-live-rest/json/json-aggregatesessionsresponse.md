@@ -2,9 +2,9 @@
 title: AggregateSessionsResponse (JSON)
 assetID: 020ee9b2-c96c-2e65-4e6d-f9f4bd25a374
 permalink: en-us/docs/xboxlive/rest/json-aggregatesessionsresponse.html
-author: KevinAsgari
+
 description: ' AggregateSessionsResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

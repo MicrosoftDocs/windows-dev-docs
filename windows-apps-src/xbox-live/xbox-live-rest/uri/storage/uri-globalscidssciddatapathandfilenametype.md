@@ -2,9 +2,9 @@
 title: /global/scids/{scid}/data/{pathAndFileName},{type}
 assetID: 774ce2dc-15c5-fe12-42b9-4e040bd4d2cf
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /global/scids/{scid}/data/{pathAndFileName},{type}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

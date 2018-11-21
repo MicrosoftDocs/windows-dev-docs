@@ -1,8 +1,8 @@
 ---
-author: WilliamsJason
+
 title: How to use Fiddler with Xbox One when developing for UWP
 description: Describes how to use the freeware Fiddler tool to see network traffic on a UWP Xbox One dev kit.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -4,8 +4,8 @@ description: A line list is a list of isolated, straight line segments. Line lis
 ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
 keywords:
 - Line lists
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: Test Surface Hub apps using Visual Studio
 description: The Visual Studio simulator provides an environment to design, develop, debug, and test UWP apps, including apps built for Surface Hub.
-ms.author: pafarley
+
 ms.date: 10/26/2017
 ms.topic: article
 

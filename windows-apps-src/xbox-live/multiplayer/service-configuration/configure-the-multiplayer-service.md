@@ -1,9 +1,9 @@
 ---
 title: Multiplayer Service Configuration
-author: KevinAsgari
+
 description: Learn how to configure the Xbox Live Multiplayer Service.
 ms.assetid: d042d4d5-1c75-4257-8a6f-07eddd39ca7e
-ms.author: kevinasg
+
 ms.date: 07/12/2017
 ms.topic: article
 

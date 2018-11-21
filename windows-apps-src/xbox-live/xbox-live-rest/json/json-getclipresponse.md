@@ -2,9 +2,9 @@
 title: GetClipResponse (JSON)
 assetID: ef128790-dc6a-6055-92d5-2ac08b708443
 permalink: en-us/docs/xboxlive/rest/json-getclipresponse.html
-author: KevinAsgari
+
 description: ' GetClipResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

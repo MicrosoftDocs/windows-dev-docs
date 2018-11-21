@@ -1,9 +1,9 @@
 ---
 title: Create and test a new Creators title
-author: KevinAsgari
+
 description: Learn how to create a new Xbox Live Creators Program title and publish to the test environment.
 ms.assetid: ced4d708-e8c0-4b69-aad0-e953bfdacbbf
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

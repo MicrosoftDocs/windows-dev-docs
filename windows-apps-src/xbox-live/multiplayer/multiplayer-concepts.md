@@ -1,9 +1,9 @@
 ---
 title: Xbox Live multiplayer concepts
-author: KevinAsgari
+
 description: Learn about common multiplayer concepts used by Xbox Live multiplayer systems.
 ms.assetid: 1e765f19-1530-4464-b5cf-b00259807fd3
-ms.author: kevinasg
+
 ms.date: 08/25/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 description: Shows how to add your app next to actions in a contact card
 MSHAttr: PreferredLib:/library/windows/apps
 title: Connect your app to actions on a contact card
-ms.author: normesta
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Game DVR URIs
 assetID: 472f705e-bf28-7894-b1ba-80933d8746a6
 permalink: en-us/docs/xboxlive/rest/atoc-reference-dvr.html
-author: KevinAsgari
+
 description: ' Game DVR URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

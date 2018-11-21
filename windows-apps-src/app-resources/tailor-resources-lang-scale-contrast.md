@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/10/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/history/titles)
 assetID: c0a6cb3b-bab6-03b8-a79e-87defaaa6421
 permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesgetv2.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/history/titles)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

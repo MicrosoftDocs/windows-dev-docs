@@ -1,9 +1,9 @@
 ---
-author: rido-min
+
 Description: This guide explains how to configure your Visual Studio Solution to optimize the application binaries with native images.
 Search.Product: eADQiWindows 10XVcnh
 title: Optimize your .NET Desktop apps with native images
-ms.author: normesta
+
 ms.date: 06/11/2018
 ms.topic: article
 

@@ -1,10 +1,10 @@
 ---
-author: Xansky
+
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Learn how to use the Windows.Services.Store namespace to work with consumable add-ons.
 title: Enable consumable add-on purchases
 keywords: windows 10, uwp, consumable, add-ons, in-app purchases, IAPs, Windows.Services.Store
-ms.author: mhopkins
+
 ms.date: 05/09/2018
 ms.topic: article
 

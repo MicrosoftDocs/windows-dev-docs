@@ -1,9 +1,9 @@
 ---
-author: normesta
+
 Description: Run the Desktop Converter App to package a Windows desktop application (like Win32, WPF, and Windows Forms).
 Search.Product: eADQiWindows 10XVcnh
 title: Package an app using the Desktop App Converter (Desktop Bridge)
-ms.author: normesta
+
 ms.date: 08/21/2018
 ms.topic: article
 keywords: windows 10, uwp

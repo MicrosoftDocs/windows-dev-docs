@@ -1,8 +1,8 @@
 ---
-author: payzer
+
 title: How to turn off scaling
 description: Instructions for turning off the default scale factor.
-ms.author: wdg-dev-content
+
 ms.date: 02/08/2017
 ms.topic: article
 

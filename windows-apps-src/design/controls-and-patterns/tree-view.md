@@ -1,10 +1,10 @@
 ---
-author: Jwmsft
+
 description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid

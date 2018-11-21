@@ -1,5 +1,5 @@
 ---
-author: jwmsft
+
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
@@ -8,7 +8,7 @@ Description: Swipe commanding is a touch accelerator for context menus.
 title: Swipe
 label: Swipe
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 02/08/2017
 ms.topic: article
 

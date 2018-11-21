@@ -2,9 +2,9 @@
 title: GET (/inventory/{itemID})
 assetID: d3ca14a5-0214-ef42-091e-3f05f2a3482d
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurlget.html
-author: KevinAsgari
+
 description: ' GET (/inventory/{itemID})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

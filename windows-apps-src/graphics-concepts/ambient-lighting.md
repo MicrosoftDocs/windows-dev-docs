@@ -4,8 +4,8 @@ description: Ambient lighting provides constant lighting for a scene.
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - Ambient lighting
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

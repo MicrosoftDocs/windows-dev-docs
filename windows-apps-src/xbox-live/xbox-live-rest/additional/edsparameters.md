@@ -2,9 +2,9 @@
 title: EDS Parameters
 assetID: 9475b427-53bc-697b-6d24-1787320260b7
 permalink: en-us/docs/xboxlive/rest/edsparameters.html
-author: KevinAsgari
+
 description: ' EDS Parameters'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

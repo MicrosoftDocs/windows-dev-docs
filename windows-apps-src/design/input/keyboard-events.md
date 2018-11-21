@@ -1,12 +1,12 @@
 ---
-author: Karl-Bridge-Microsoft
+
 Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: Keyboard events
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
-ms.author: kbridge
+
 ms.date: 03/29/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 assetID: 942cf0d7-f988-0495-cf28-cdac608b8109
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeopleget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

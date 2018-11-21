@@ -1,8 +1,8 @@
 ---
-author: TerryWarwick
+
 title: PointOfService device sharing 
 description: Sharing PointOfService peripherals with others
-ms.author: jken
+
 ms.date: 06/14/2018
 ms.topic: article
 

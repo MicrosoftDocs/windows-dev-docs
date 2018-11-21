@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Adding audio to the Marble Maze sample
 description: This document describes the key practices to consider when you work with audio and shows how Marble Maze applies these practices.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
-ms.author: elcowle
+
 ms.date: 10/18/2017
 ms.topic: article
 

@@ -1,12 +1,12 @@
 ---
-author: mijacobs
+
 Description: TODO
 title: Gamepad and remote control interactions
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.author: mijacobs
+
 ms.date: 02/08/2017
 ms.topic: article
 

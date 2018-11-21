@@ -2,9 +2,9 @@
 title: JavaScript Object Notation (JSON) Object Reference
 assetID: 8efcc6f3-d88a-1b15-bcfc-d79a24581b0a
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-json.html
-author: KevinAsgari
+
 description: ' JavaScript Object Notation (JSON) Object Reference'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

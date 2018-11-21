@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt.
 title: Use receipts to verify product purchases
-ms.author: mhopkins
+
 ms.date: 04/16/2018
 ms.topic: article
 

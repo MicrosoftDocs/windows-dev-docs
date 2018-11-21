@@ -2,9 +2,9 @@
 title: /sessions/{sessionId}/scids/{scid}/data/{path}
 assetID: 932459b4-24b4-5b09-8146-ed214de0083a
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath.html
-author: KevinAsgari
+
 description: ' /sessions/{sessionId}/scids/{scid}/data/{path}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: InitialUploadResponse (JSON)
 assetID: 6abb7d37-2c35-2cc3-d9e5-eff695235262
 permalink: en-us/docs/xboxlive/rest/json-initialuploadresponse.html
-author: KevinAsgari
+
 description: ' InitialUploadResponse (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

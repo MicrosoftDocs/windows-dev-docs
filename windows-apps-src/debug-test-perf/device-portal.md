@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.author: pafarley
+
 ms.date: 12/12/2017
 ms.topic: article
 

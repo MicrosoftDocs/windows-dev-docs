@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+
 title: Launch the Microsoft Store app
 description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
-ms.author: twhitney
+
 ms.date: 02/08/2017
 ms.topic: article
 

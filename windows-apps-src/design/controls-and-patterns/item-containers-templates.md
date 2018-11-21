@@ -1,10 +1,10 @@
 ---
-author: muhsinking
+
 Description: Use templates to modify the look of items in ListView or GridView controls.
 title: Item containers and templates
 label: Item containers and templates
 template: detail.hbs
-ms.author: mukin
+
 ms.date: 05/19/2017
 ms.topic: article
 

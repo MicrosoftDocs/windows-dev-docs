@@ -1,9 +1,9 @@
 ---
 title: What's new for the Xbox Live SDK - August 2015
-author: KevinAsgari
+
 description: What's new for the Xbox Live SDK - August 2015
 ms.assetid: a034867b-7cc0-4b97-89d5-3486e95a80b4
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

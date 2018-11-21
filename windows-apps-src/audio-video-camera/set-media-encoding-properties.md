@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: This article shows you how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video.
 title: Set format, resolution, and frame rate for MediaCapture
-ms.author: drewbat
+
 ms.date: 02/08/2017
 ms.topic: article
 

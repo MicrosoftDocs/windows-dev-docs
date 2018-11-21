@@ -1,8 +1,8 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-author: muhsinking
-ms.author: mukin
+
+
 ms.date: 10/25/2017
 ms.topic: article
 

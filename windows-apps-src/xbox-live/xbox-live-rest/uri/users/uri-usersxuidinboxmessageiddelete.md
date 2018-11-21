@@ -2,9 +2,9 @@
 title: DELETE (/users/xuid({xuid})/inbox/{messageId})
 assetID: c54eede3-3e3b-2cbe-1be9-8bf3a48171bc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
-author: KevinAsgari
+
 description: ' DELETE (/users/xuid({xuid})/inbox/{messageId})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

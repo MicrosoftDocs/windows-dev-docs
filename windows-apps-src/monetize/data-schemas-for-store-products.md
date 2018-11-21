@@ -1,8 +1,8 @@
 ---
-author: Xansky
+
 description: Describes the extended JSON data schema for Store products in the Windows.Services.Store namespace.
 title: Data schemas for Store products
-ms.author: mhopkins
+
 ms.date: 09/26/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+
 title: Raw game controller
 description: Use the Windows.Gaming.Input raw game controller APIs to read input from nearly any type of game controller.
 ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
-ms.author: wdg-dev-content
+
 ms.date: 03/08/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: Marketplace URIs
 assetID: 27b6035f-84b9-67a8-6a12-85c450d18a58
 permalink: en-us/docs/xboxlive/rest/atoc-reference-marketplace.html
-author: KevinAsgari
+
 description: ' Marketplace URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

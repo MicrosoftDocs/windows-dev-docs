@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Learn about solutions to common development issues with the Microsoft advertising libraries in XAML apps.
 title: XAML and C# troubleshooting guide
-ms.author: mhopkins
+
 ms.date: 08/23/2017
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners
 assetID: 5a519314-1df1-cbdc-cb04-3a8b663003de
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypequeryrefiners.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

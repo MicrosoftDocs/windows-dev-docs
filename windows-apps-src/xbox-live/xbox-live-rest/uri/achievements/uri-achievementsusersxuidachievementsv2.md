@@ -2,9 +2,9 @@
 title: /users/xuid({xuid})/achievements
 assetID: 4dd89962-ab73-c25b-7a11-3ed35475492e
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsv2.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/achievements'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

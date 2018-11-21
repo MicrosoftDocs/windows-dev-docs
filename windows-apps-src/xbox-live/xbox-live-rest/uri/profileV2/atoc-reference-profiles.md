@@ -2,9 +2,9 @@
 title: Profiles URIs
 assetID: 457f2cb2-9113-e537-c8cc-51f743e30afa
 permalink: en-us/docs/xboxlive/rest/atoc-reference-profiles.html
-author: KevinAsgari
+
 description: ' Profiles URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

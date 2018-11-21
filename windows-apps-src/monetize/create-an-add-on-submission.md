@@ -1,9 +1,9 @@
 ---
-author: Xansky
+
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: Use this method in the Microsoft Store submission API to create a new add-on submission for an app that is registered to Partner Center.
 title: Create an add-on submission
-ms.author: mhopkins
+
 ms.date: 02/08/2017
 ms.topic: article
 

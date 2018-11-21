@@ -1,9 +1,9 @@
 ﻿---
-author: jnHs
+
 Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: Set your add-on product type and product ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

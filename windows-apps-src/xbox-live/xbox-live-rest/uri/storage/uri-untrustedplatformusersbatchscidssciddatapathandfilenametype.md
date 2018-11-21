@@ -2,9 +2,9 @@
 title: /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 assetID: c2909e75-e108-3555-c157-f2d552f10e9f
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

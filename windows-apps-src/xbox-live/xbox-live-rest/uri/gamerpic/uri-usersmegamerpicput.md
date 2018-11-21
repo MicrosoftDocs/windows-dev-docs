@@ -2,9 +2,9 @@
 title: PUT (/users/me/gamerpic)
 assetID: ddf71c62-197d-a81d-35a7-47c6dc9e1b0c
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpicput.html
-author: KevinAsgari
+
 description: ' PUT (/users/me/gamerpic)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

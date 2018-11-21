@@ -1,9 +1,9 @@
 ---
-author: stevewhims
+
 Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
 title: Compile resources manually with MakePri.exe
 template: detail.hbs
-ms.author: stwhi
+
 ms.date: 10/23/2017
 ms.topic: article
 

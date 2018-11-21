@@ -2,9 +2,9 @@
 title: MultiplayerSession (JSON)
 assetID: d013af81-bfbf-c50a-5696-2bb561448616
 permalink: en-us/docs/xboxlive/rest/json-multiplayersession.html
-author: KevinAsgari
+
 description: ' MultiplayerSession (JSON)'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -4,8 +4,8 @@ description: There are limitations on tile access with duplicate mappings, such 
 ms.assetid: 6E40B1DC-BCF1-4B09-82A8-7B2D9B209A61
 keywords:
 - Tile access limitations with duplicate mappings
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

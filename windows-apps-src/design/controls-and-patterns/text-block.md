@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
 Description: Text block is the primary control for displaying read-only text in apps.
 title: Text block
 label: Text block
 template: detail.hbs
-ms.author: jimwalk
+
 ms.date: 05/19/2017
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ﻿---
-author: mcleblanc
+
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
 title: Data binding
 description: Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data.
-ms.author: markl
+
 ms.date: 02/08/2017
 ms.topic: article
 

@@ -4,8 +4,8 @@ description: Programming Direct3D applications requires a working familiarity wi
 ms.assetid: E82EB0A9-0678-496B-96B3-8993BA580099
 keywords:
 - Coordinate systems and geometry
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

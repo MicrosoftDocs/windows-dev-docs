@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Packaging UWP apps
 description: To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.
-ms.author: lahugh
+
 ms.date: 09/30/2018
 ms.topic: article
 

@@ -1,9 +1,9 @@
 ---
-author: JnHs
+
 title: Ad campaign report
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: The Ad campaign report in Partner Center lets you see how your app promotion ad campaigns are performing.
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

@@ -2,9 +2,9 @@
 title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}
 assetID: ae6c6a25-2251-6ffd-ec58-e6c0576a34db
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

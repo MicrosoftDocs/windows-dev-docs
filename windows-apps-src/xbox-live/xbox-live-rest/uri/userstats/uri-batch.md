@@ -2,9 +2,9 @@
 title: /batch
 assetID: 07c51e75-cdbb-3aae-fc02-8a156a0babd4
 permalink: en-us/docs/xboxlive/rest/uri-batch.html
-author: KevinAsgari
+
 description: ' /batch'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

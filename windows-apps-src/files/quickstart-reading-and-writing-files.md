@@ -1,9 +1,9 @@
 ---
-author: laurenhughes
+
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: Create, write, and read a file
 description: Read and write a file using a StorageFile object.
-ms.author: lahugh
+
 ms.date: 06/28/2018
 ms.topic: article
 

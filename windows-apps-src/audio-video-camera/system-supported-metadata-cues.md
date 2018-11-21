@@ -1,9 +1,9 @@
 ---
-author: drewbatgit
+
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
 description: Handle system-supported metadata cues during media playback
 title: System-supported timed metadata cues
-ms.author: drewbat
+
 ms.date: 04/18/2017
 ms.topic: article
 

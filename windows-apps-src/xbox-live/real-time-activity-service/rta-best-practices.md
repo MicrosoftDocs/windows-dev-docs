@@ -1,9 +1,9 @@
 ---
 title: RTA Best Practices
-author: KevinAsgari
+
 description: Learn about the best practices when using the Xbox Live Real-Time Acitivity service.
 ms.assetid: 543b78e3-d06b-4969-95db-2cb996a8bbd3
-ms.author: kevinasg
+
 ms.date: 04/04/2017
 ms.topic: article
 

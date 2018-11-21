@@ -2,9 +2,9 @@
 title: GET (/handles/{handle-id})
 assetID: c95b5ab5-d56a-f70d-20d8-afb48d122ccd
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
-author: KevinAsgari
+
 description: ' GET (/handles/{handle-id})'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: jnHs
+
 Description: Attract customers and promote your apps
 title: Attract customers and promote your apps
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

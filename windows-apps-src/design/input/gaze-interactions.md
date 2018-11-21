@@ -1,6 +1,6 @@
 ---
-author: Karl-Bridge-Microsoft
-ms.author: kbridge
+
+
 title: Gaze interactions
 Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
 label: Gaze interactions

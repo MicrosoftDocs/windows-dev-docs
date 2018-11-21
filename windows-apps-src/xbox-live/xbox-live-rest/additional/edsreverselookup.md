@@ -2,9 +2,9 @@
 title: EDS Reverse Lookup for Video
 assetID: 773f7a8e-7571-3aec-96d6-478437696ea6
 permalink: en-us/docs/xboxlive/rest/edsreverselookup.html
-author: KevinAsgari
+
 description: ' EDS Reverse Lookup for Video'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

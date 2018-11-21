@@ -2,9 +2,9 @@
 title: System Strings Validatation URIs
 assetID: b9a54456-7b4a-f6d8-16b9-5b6c3bd9813e
 permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
-author: KevinAsgari
+
 description: ' System Strings Validatation URIs'
-ms.author: kevinasg
+
 ms.date: 10/12/2017
 ms.topic: article
 

@@ -1,8 +1,8 @@
 ---
-author: JnHs
+
 Description: Learn how to create known user groups to use for package flighting and more.
 title: Create known user groups
-ms.author: wdg-dev-content
+
 ms.date: 10/31/2018
 ms.topic: article
 

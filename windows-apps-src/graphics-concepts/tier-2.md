@@ -4,8 +4,8 @@ description: Tier 2 support for streaming resources adds capabilities beyond Tie
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
 keywords:
 - Tier 2
-author: michaelfromredmond
-ms.author: mithom
+
+
 ms.date: 02/08/2017
 ms.topic: article
 

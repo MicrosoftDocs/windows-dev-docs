@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+
 title: Perform geocoding and reverse geocoding
 description: This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.author: pafarley
+
 ms.date: 07/02/2018
 ms.topic: article
 
