@@ -153,7 +153,7 @@ For more complex and custom UI controls, look at UWP resources available from co
 
 ## One column form example
 This example uses an Acrylic [master/detail](master-details.md) [list view](lists.md) and [NavigationView](navigationview.md) control.
-![Screenshot of another form exmaple](images/FormExample2.png)
+![Screenshot of another form example](images/FormExample2.png)
 ```xaml
 <StackPanel>
     <TextBlock Text="New Customer" Style="{StaticResource TitleTextBlockStyle}"/>
