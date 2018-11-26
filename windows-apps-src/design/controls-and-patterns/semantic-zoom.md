@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
 title: Semantic zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea

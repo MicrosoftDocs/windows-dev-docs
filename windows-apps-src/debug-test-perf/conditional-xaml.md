@@ -1,16 +1,11 @@
 ---
-author: jwmsft
 title: Conditional XAML
 description: Use new APIs in XAML markup while maintaining compatibility with previous versions
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Conditional XAML
 
 *Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.

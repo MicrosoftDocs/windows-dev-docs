@@ -1,13 +1,10 @@
 ---
 title: Troubleshooting Xbox Live sign-in
-author: KevinAsgari
+
 description: Learn how to troubleshoot issues with Xbox Live sign-in.
 ms.assetid: 87b70b4c-c9c1-48ba-bdea-b922b0236da4
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, sign-in, troubleshoot
 ms.localizationpriority: medium
 ---

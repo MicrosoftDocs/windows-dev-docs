@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: Use this method in the Microsoft Store submission API to retrieve information about an add-on for an app that is registered to your Partner Center account.
 title: Get an add-on
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-on, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Get an add-on
 
 Use this method in the Microsoft Store submission API to retrieve information about an add-on (also known as in-app product or IAP) for an app that is registered to your Partner Center account.

@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: Use this method in the Microsoft Store submission API to delete an existing add-on submission.
 title: Delete an add-on submission
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, delete, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Delete an add-on submission
 
 Use this method in the Microsoft Store submission API to delete an existing add-on (also known as in-app product or IAP) submission.

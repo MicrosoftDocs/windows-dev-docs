@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: Learn how to enable in-app purchases and trials in UWP apps.
 title: In-app purchases and trials
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable, subscription
 ms.localizationpriority: medium
 ---
-
 # In-app purchases and trials
 
 The Windows SDK provides APIs you can use to implement the following features to make more money from your Universal Windows Platform (UWP) app:

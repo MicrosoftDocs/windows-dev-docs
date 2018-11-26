@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: Use this method in the Microsoft Store promotions API to manage creatives for promotional ad campaigns.
 title: Manage creatives
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Manage creatives
 
 Use these methods in the Microsoft Store promotions API to upload your own custom creatives to use in promotional ad campaigns or get an existing creative. A creative may be associated with one or more delivery lines, even across ad campaigns, provided it always represents the same app.

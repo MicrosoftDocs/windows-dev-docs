@@ -1,16 +1,12 @@
 ---
 title: What's new for the Xbox Live
-author: PhillipLucas
+
 description: What's new for the Xbox Live SDK
-ms.author: aablackm
 ms.date: 10/23/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # What's new for Xbox Live
 You can also check the [Xbox Live API GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.
 

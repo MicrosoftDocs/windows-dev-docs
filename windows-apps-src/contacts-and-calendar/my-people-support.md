@@ -1,16 +1,11 @@
 ---
 title: Adding My People support to an application
 description: Explains how to add My People support to an application, and how to pin and unpin contacts
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Adding My People support to an application
 
 The My People feature allows users to pin contacts from an application directly to their taskbar, which creates a new contact object that they can interact with in several ways. This article shows how you can add support for this feature, allowing users to pin contacts directly from your app. When contacts are pinned, new types of user interaction become available, such as [My People sharing](my-people-sharing.md) and [notifications](my-people-notifications.md).

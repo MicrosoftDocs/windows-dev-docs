@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: PointOfService device objects
 description: Learn about the creation of PointOfService device objects
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # PointOfService device objects
 
 ## Creating a device object

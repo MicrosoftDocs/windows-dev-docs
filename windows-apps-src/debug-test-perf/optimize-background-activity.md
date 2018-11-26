@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: Optimize background activity
 description: Create UWP apps that work with the system to use background tasks in a battery-efficient way.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Optimize background activity
 
 Universal Windows apps should perform consistently well across all device families. On battery-powered devices, power consumption is a critical factor in the user's overall experience with your app. All-day battery life is a desirable feature to every user, but it requires efficiency from all of the software installed on the device, including your own. 

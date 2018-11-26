@@ -1,17 +1,13 @@
 ---
 title: Xbox Live sandboxes
-author: KevinAsgari
+
 description: Learn about sandboxes for Xbox Live development.
 ms.assetid: a5acb5bf-dc11-4dff-aa94-6d1f01472d2a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Sandboxes Intro
 
 In [Xbox Live Service Configuration](xbox-live-service-configuration.md), it was explained that you must configure information about your title online, usually in [Partner Center](https://partner.microsoft.com/dashboard).  This information includes things like the leaderboards your title wants to display, achievements that players can unlock, matchmaking configuration, etc.

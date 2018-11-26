@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
 title: Motion and animation in UWP apps
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -15,7 +13,6 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Motion for UWP apps
 
 ![hero image](images/header-motion2.svg)

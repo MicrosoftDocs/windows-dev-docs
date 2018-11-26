@@ -1,12 +1,8 @@
 ---
-author: normesta
 title: Use a SQL Server database in a UWP app
 description: Use a SQL Server database in a UWP app.
-ms.author: normesta
 ms.date: 11/13/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---

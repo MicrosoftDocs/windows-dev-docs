@@ -1,17 +1,13 @@
 ---
 title: Designing Xbox Live Experiences
-author: KevinAsgari
+
 description: Learn how to design great experiences for Xbox Live members by planning out player stats, leaderboards, and achievements for your title.
 ms.assetid: d2a85621-7d02-4b11-a7fa-9ebaee0092d5
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, stats, achievements, leaderboards, design
 ms.localizationpriority: medium
 ---
-
 # Designing Xbox Live Experiences
 
 This topic walks you through a sample process of thinking about and adding user statistics,

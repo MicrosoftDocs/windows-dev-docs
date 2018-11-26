@@ -1,13 +1,9 @@
 ﻿---
-author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
 description: Here's an overview of how to register for a Winodws developer account for the Microsoft Store and other Microsoft programs in Partner Center.
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

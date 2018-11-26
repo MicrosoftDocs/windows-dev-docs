@@ -1,17 +1,13 @@
 ---
 title: Get started with Visual Studio for UWP games
-author: KevinAsgari
+
 description: Learn how to set up a Visual Studio project to enable Xbox Live for a UWP game
 ms.assetid: b53bc91f-79db-4d8f-8919-b9144e2d609b
-ms.author: kevinasg
 ms.date: 11/28/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Get started using Visual Studio for UWP games
 
 ## Requirements

@@ -1,16 +1,11 @@
 ---
-author: KevinAsgari
 title: Xbox Live
 description: Learn how to use Xbox Live services to connect your game to the Xbox Live gaming network.
-ms.author: kevinasg
 ms.date: 05/30/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, xbox, xbox live
 ms.localizationpriority: medium
 ---
-
 # Xbox Live
 
 Xbox Live is a premier gaming network that connects millions of gamers across the world. You can add Xbox Live to your Windows 10 or Xbox One game in order to take advantage of the Xbox Live features and services.

@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Learn how to add native ads to your UWP app.
 title: Native ads
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, ad control, native ad
 ms.localizationpriority: medium
 ---
-
 # Native ads
 
 A native ad is a component-based ad format where each piece of the ad creative (such as the title, image, description, and call-to-action text) is delivered to your app as an individual element. You can integrate these elements into your app using your own fonts, colors, animations, and other UI components to stitch together an unobtrusive user experience that fits the look and feel of your app while also earning high yield from the ads.

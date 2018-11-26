@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.author: stwhi
 ms.date: 08/21/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
 ms.localizationpriority: medium
 ---
-
 # XAML controls; bind to a C++/WinRT property
 A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them.
 

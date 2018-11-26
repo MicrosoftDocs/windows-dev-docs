@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get Xbox Live analytics data.
 title: Get Xbox Live analytics data
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox Live analytics
 ms.localizationpriority: medium
 ---
-
 # Get Xbox Live analytics data
 
 Use this method in the Microsoft Store analytics API to get the last 30 days of general analytics data for customers playing your [Xbox Live-enabled game](../xbox-live/index.md), including device accessory usage, internet connection type, gamerscore distribution, game statistics, and friends and followers data. This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in Partner Center.

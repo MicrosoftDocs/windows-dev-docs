@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: Use this method in the Microsoft Store analytics API to get aggregate install data for an application during a given date range and other optional filters.
 title: Get app installs
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app installs
 ms.localizationpriority: medium
 ---
-
 # Get app installs
 
 

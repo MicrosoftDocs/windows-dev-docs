@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, taxation, irs, internal revenue service, tax, income tax, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ---
-
 # Understand IRS tax forms issued by Microsoft
 
 Depending on your location and the amount of sales and/or payments you receive, you may receive one or more tax forms from Microsoft each year. Microsoft is required to issue these forms and file them with the Internal Revenue Service (IRS).

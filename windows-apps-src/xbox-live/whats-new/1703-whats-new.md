@@ -1,17 +1,13 @@
 ---
 title: What's new for the Xbox Live SDK - March 2017
-author: KevinAsgari
+
 description: What's new for the Xbox Live SDK - March 2017
 ms.assetid: 03180585-6f87-4929-acfc-750bd78988a0
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # What's new for the Xbox Live SDK - March 2017
 
 Please see the [What's New - December 2016](1612-whats-new.md) article for what was added in the December 2016 release.

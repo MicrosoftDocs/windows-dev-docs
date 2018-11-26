@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products
 ms.localizationpriority: medium
 ---
-
 # Manage product entitlements from a service
 
 If you have a catalog of apps and add-ons, you can use the *Microsoft Store collection API* and *Microsoft Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Microsoft Store.

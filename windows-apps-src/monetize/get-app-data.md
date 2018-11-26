@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: Use these methods in the Microsoft Store submission API to retrieve data for apps that are registered to your Partner Center account.
 title: Get app data
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, app data
 ms.localizationpriority: medium
 ---
-
 # Get app data
 
 Use the following methods in the Microsoft Store submission API to get data for existing apps in your Partner Center account. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).

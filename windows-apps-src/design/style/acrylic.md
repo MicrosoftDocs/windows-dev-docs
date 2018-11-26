@@ -1,13 +1,9 @@
 ---
-author: mijacobs
 description: A type of brush that creates a translucent texture.
 title: Acrylic material
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: rybick

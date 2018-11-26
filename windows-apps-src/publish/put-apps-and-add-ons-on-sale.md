@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Put apps and add-ons on sale
 
 You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time. You can choose to offer the product either at a lower price tier or with a percentage-based discount. And you can choose whether to offer the sale to everyone, or make it an exclusive offer for customers who own one of your other products.

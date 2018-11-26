@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: Learn how to store and retrieve local, roaming, and temporary app data.
 title: Store and retrieve settings and other app data
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/14/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Store and retrieve settings and other app data
 
 *App data* is mutable data that is specific to a particular app. It includes runtime state, user preferences, and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.

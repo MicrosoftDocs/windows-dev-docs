@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Partner Center account.
 title: Create and manage submissions
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API
 ms.localizationpriority: medium
 ---
-
 # Create and manage submissions
 
 

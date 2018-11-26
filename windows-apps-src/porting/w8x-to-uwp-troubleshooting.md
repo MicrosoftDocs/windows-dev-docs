@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs.
 title: Troubleshooting porting Windows Runtime 8.x to UWP'
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Troubleshooting porting Windows Runtime 8.x to UWP
 
 

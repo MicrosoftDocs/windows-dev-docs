@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Learn how to use banner ads in your UWP app.
 title: Banner ads
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, AdControl, banner ads
 ms.localizationpriority: medium
 ---
-
 # Banner ads
 
 The articles in this section show how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class in the Microsoft Advertising SDK to add banner ads to your UWP app.

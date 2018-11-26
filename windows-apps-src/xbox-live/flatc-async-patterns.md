@@ -1,12 +1,9 @@
 ---
 title: Asynchronous C API calling patterns
-author: aablackm
+
 description: Learn the asynchronous C API calling patterns for the XSAPI C API
-ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program,
 ms.localizationpriority: medium
 ---

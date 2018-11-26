@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Visual Layer
 description: The Windows.UI.Composition API gives you access to the composition layer between the framework layer (XAML), and the graphics layer (DirectX).
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

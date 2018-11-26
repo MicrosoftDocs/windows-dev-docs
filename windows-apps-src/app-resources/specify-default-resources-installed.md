@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
 title: Specify the default resources that your app uses
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/14/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
 # Specify the default resources that your app uses
 
 If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.

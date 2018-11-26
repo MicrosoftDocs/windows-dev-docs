@@ -1,16 +1,11 @@
 ---
-author: QuinnRadich
 title: Page layout for UWP apps
-description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In UWP apps, each page generally has navigation, command, and content elements.  
-ms.author: quradic
+description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In UWP apps, each page generally has navigation, command, and content elements.
 ms.date: 3/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 localizationpriority: medium
 ---
-
 # Page layout
 
 In UWP apps, each [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 

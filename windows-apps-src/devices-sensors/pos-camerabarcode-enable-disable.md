@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: Camera Barcode Scanner Configuration
 description: Camera Barcode Scanner Enable or Disable
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Enable or disable the software decoder that ships with Windows
 In Windows 10, version 1803, the software decoder is installed and enabled by default.  You can disable the software decoder that ships with Windows if you do not want to use Camera Barcode Scanner or if you have acquired a 3rd party decoder that works with Windows.Devices.PointOfService.BarcodeScanner APIs and do not want to use both.
 

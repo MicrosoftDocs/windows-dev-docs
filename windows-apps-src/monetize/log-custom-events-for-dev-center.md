@@ -1,17 +1,12 @@
 ---
-author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
 title: Log custom events for Partner Center
-ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store Services SDK, log events
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ---
-
 # Log custom events for Partner Center
 
 The [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in Partner Center lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.

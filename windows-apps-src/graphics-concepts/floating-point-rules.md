@@ -4,15 +4,12 @@ description: Direct3D supports several floating-point representations. All float
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords:
 - Floating-point rules
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.floating-point_rules"></span>Floating-point rules
 
 

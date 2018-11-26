@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, guidelines, best practices
 ms.localizationpriority: medium
 ---
-
 # UI and user experience guidelines for ads
 
 This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).

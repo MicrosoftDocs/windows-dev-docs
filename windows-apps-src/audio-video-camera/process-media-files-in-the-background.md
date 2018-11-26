@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: This article shows you how to use the MediaProcessingTrigger and a background task to process media files in the background.
 title: Process media files in the background
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Process media files in the background
 
 

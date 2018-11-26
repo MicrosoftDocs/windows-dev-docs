@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: Feedback report
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Feedback report
 
 The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.

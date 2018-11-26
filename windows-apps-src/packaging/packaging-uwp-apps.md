@@ -1,18 +1,13 @@
 ---
-author: laurenhughes
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Packaging UWP apps
 description: To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 f1_keywords: ["vs.packagewizard",  "vs.storeassociationwizard"]
 ms.localizationpriority: medium
 ---
-
 # Package a UWP app with Visual Studio
 
 To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to package it. If you don't want to distribute your app through Microsoft Store, you can sideload the app package directly to a device or distribute it via [Web Install](installing-UWP-apps-web.md). This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about managing and deploying line-of-business (LOB) apps, see [Enterprise app management](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).

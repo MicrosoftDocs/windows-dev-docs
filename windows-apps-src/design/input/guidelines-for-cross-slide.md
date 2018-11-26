@@ -1,17 +1,12 @@
 ---
-author: mijacobs
 Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 title: Guidelines for cross-slide
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Guidelines for cross-slide
 
 

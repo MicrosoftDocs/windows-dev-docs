@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get aggregate conversions by channel data for an application during a given date range and other optional filters.
 title: Get app conversions by channel
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app conversions, channel
 ms.localizationpriority: medium
 ---
-
 # Get app conversions by channel
 
 Use this method in the Microsoft Store analytics API to get aggregate conversions by channel for an application during a given date range and other optional filters.

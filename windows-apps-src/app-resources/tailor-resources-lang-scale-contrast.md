@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
 # Tailor your resources for language, scale, high contrast, and other qualifiers
 
 This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) for a reference table of all the possible qualifier values.

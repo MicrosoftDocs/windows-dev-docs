@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Missing .NET APIs in Unity and UWP
 description: Learn about the missing .NET APIs when building UWP games in Unity, and workarounds for common issues.
 ms.assetid: 28A8B061-5AE8-4CDA-B4AB-2EF0151E57C1
-ms.author: elcowle
 ms.date: 2/21/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, .net, unity
 ms.localizationpriority: medium
 ---
-
 # Missing .NET APIs in Unity and UWP
 
 When building a UWP game using .NET, you may find that some APIs that you might use in the Unity editor or for a standalone PC game are not present for UWP. That's because .NET for UWP apps includes a subset of the types provided in the full .NET Framework for each namespace.

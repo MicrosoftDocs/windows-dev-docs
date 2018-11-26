@@ -1,17 +1,12 @@
 ---
-author: normesta
 title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
 ---
-
 # Display maps with 2D, 3D, and Streetside views
 
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.

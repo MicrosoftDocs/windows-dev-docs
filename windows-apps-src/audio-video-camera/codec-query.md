@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 0A360481-B649-4E90-9BC4-4449BA7445EF
 description: Query for audio and video encoders and decoders installed on a device.
 title: Query for installed codecs
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, codec, encoder, decoder, query
 ms.localizationpriority: medium
 ---
-
 # Query for codecs installed on a device
 The **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** class allows you to query for codecs installed on the current device. The list of codecs that are included with Windows 10 for different device families are listed in the article [Supported codecs](supported-codecs.md), but since users and apps can install additional codecs on a device, you may want to query for codec support at runtime to determine what codecs are available on the current device.
 

@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: Learn how to catch AdControl errors in your app.
 title: Error handling in XAML/C# walkthrough
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, error handling, XAML, c#
 ms.localizationpriority: medium
 ---
-
 # Error handling in XAML/C# walkthrough
 
 This walkthrough demonstrates how to catch ad-related errors in your app. This walkthrough uses an [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.

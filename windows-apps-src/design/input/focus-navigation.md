@@ -1,22 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 title: Focus navigation for keyboard, gamepad, remote control, and accessibility tools
 Description: 
 label: 
 template: detail.hbs
 keywords: keyboard, game controller, remote control, navigation, directional inner navigation, directional area, navigation strategy, input, user interaction, accessibility, usability
 ms.date: 03/02/2018
-ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
-
-
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Focus navigation for keyboard, gamepad, remote control, and accessibility tools
 
 ![Keyboard, remote, and D-pad](images/dpad-remote/dpad-remote-keyboard.png)

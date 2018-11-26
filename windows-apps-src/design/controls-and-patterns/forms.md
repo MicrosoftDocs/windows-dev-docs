@@ -1,16 +1,11 @@
 ---
-author: Jwmsft
 Description: Layout guidelines for forms in UWP apps.
 title: Forms
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 11/07/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, fluent
 ---
-
 # Forms
 A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more. 
 

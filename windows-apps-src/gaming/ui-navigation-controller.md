@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: UI navigation controller
 description: Use the Windows.Gaming.Input UI navigation controller APIs to detect and read different kinds of input devices for UI navigation.
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, ui, navigation
 ms.localizationpriority: medium
 ---
-
 # UI navigation controller
 
 This page describes the basics of programming for UI navigation devices using [Windows.Gaming.Input.UINavigationController][uinavigationcontroller] and related APIs for the Universal Windows Platform (UWP).

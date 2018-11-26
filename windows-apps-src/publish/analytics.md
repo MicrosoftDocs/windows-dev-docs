@@ -1,17 +1,12 @@
 ---
-author: JnHs
 Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
 ms.localizationpriority: medium
 ---
-
 # Analyze app performance
 
 You can view detailed analytics for your apps in [Partner Center](https://partner.microsoft.com/dashboard). Statistics and charts let you know how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find metrics on app health, ad usage, and more.

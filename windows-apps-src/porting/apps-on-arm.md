@@ -1,16 +1,12 @@
 ---
 title: Windows 10 on ARM
-author: msatranjr
+
 description: This article provides an overview of how experiences and apps will run on ARM, what the limitations are, and where you can go to learn more.
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-
-
 keywords: windows 10 s, always connected, ARM, ARM64, x86 emulation
 ms.localizationpriority: medium
 ---
-
 # Windows 10 on ARM
 Originally Windows 10 (as distinguished from Windows 10 Mobile) could run only on PCs that were powered by x86 and x64 processors. Now, Windows 10 desktop (Pro and S editions) can run on machines that are powered by ARM64 processors with the Fall Creators Update. The power-saving nature of the ARM CPU architecture allows these PCs to have all-day battery life and support for mobile data networks. These PCs will provide great application compatibility and allow you to run your existing x86 win32 applications unmodified. E.g. Adobe reader. For more information or demo, look at the [Channel 9 video for the Always Connected PC](https://channel9.msdn.com/Events/Build/2017/P4171). 
 

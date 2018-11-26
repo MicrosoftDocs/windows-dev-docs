@@ -1,17 +1,13 @@
 ---
 title: Configuring Contextual Search
-author: KevinAsgari
+
 description: Learn how to configure contextual search to tag game clips and broadcasts.
 ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration, contextual search, game clip, broadcast
 ms.localizationpriority: medium
 ---
-
 # Configuring Contextual Search
 
 ## Configuration Info

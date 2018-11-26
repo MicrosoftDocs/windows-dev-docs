@@ -1,8 +1,7 @@
 ---
 title: Rich Presence Configuration in Partner Center
-author: aablackm
+
 description: Learn how to configure Rich Presence strings in Partner Center
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 
@@ -10,7 +9,6 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Rich Presence strings, Partner Center
 ---
-
 # Configure Rich Presence in Partner Center
 
 Rich Presence strings display a user's in-game activity. They are displayed under a player's Gamertag in the **Friends & clubs** list as well as in their Xbox Live user profile. Configured Rich Presence strings are appended to the name of the game being played. If you create a game called BubblePop and configure the Rich Presence string "Popping bubbles with friends", your configured string would produce "BubblePop - Popping bubbles with friends" as a status. Below you can see how a Rich Presence string will appear in context.

@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Partner Center.
 title: Commit an add-on submission
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, commit add-on submission, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Commit an add-on submission
 
 Use this method in the Microsoft Store submission API to commit a new or updated add-on (also known as in-app product or IAP) submission to Partner Center. The commit action alerts Partner Center that the submission data has been uploaded (including any related icons). In response, Partner Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in Partner Center.

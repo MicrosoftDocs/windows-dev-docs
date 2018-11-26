@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: Use this method in the Microsoft Store submission API to retrieve package flight information for an app that is registered to your Partner Center account.
 title: Get package flights for an app
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, flights, package flights
 ms.localizationpriority: medium
 ---
-
 # Get package flights for an app
 
 Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Partner Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).

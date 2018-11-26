@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a desktop application for a given date range and other optional filters.
 title: Get error reporting data for your desktop application
-ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, desktop application
 ms.localizationpriority: medium
 ---
-
 # Get error reporting data for your desktop application
 
 Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a desktop application that you have added to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504). This method can only retrieve errors that occurred in the last 30 days. This information is also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in Partner Center.

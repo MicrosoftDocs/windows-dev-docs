@@ -1,15 +1,12 @@
 ---
-author: stevewhims
 description: C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes.
 title: Author COM components with C++/WinRT
-ms.author: stwhi
 ms.date: 09/06/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # Author COM components with C++/WinRT
 
 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.

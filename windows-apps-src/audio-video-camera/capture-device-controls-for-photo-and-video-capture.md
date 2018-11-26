@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: This article shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.
 title: Manual camera controls for photo and video capture
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Manual camera controls for photo and video capture
 
 

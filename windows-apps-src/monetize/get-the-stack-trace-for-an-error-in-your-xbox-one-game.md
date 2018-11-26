@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your Xbox One game.
 title: Get the stack trace for an error in your Xbox One game
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error
 ms.localizationpriority: medium
 ---
-
 # Get the stack trace for an error in your Xbox One game
 
 Use this method in the Microsoft Store analytics API to get the stack trace for an error in your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard. This method can only download the stack trace for an error that occurred in the last 30 days.

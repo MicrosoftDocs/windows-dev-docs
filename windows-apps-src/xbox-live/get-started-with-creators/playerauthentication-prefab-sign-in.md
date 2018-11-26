@@ -1,12 +1,9 @@
 ---
 title: Sign-In with the PlayerAuthentication Prefab
-author: aablackm
+
 description: Overview of the Unity Plugin PlayerAuthentication Prefab
-ms.author: aablackm
 ms.date: 5/08/2018
 ms.topic: get-started-article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
 # Easy Sign-In with the PlayerAuthentication Prefab

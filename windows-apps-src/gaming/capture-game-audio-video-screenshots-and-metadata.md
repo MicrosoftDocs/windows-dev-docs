@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 
 description: Shows how to record game audio, video, and metadata for in a UWP app.
 title: Capture game audio, video, screenshots, and metadata
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, game, capture, audio, video, metadata
 ms.localizationpriority: medium
 ---
-
 # Capture game audio, video, screenshots, and metadata
 This article describes how to capture game video, audio, and screenshots, and how to submit metadata that the system will embed in captured and broadcast media, allowing your app and others to create dynamic experiences that are synchronized to gameplay events. 
 

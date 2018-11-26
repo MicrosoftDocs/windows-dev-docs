@@ -1,17 +1,12 @@
 ---
-author: Xansky
 Description: To run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must code the experiment in your app.
 title: Code your app for experimentation
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---
-
 # Code your app for experimentation
 
 After you [create a project and define remote variables in Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), you are ready to update the code in your Universal Windows Platform (UWP) app to:

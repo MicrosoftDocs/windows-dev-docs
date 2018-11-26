@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your desktop application.
 title: Get the stack trace for an error in your desktop application
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error, desktop application
 ms.localizationpriority: medium
 ---
-
 # Get the stack trace for an error in your desktop application
 
 Use this method in the Microsoft Store analytics API to get the stack trace for an error in a desktop application that you have added to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504). This method can only download the stack trace for an error that occurred in the last 30 days. Stack traces are also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in Partner Center.

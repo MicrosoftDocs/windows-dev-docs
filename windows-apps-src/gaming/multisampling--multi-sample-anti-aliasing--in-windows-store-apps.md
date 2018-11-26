@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Multisampling in Universal Windows Platform (UWP) apps
 description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, multisampling, direct3d
 ms.localizationpriority: medium
 ---
-
 # <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps
 
 

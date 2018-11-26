@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Port from OpenGL ES 2.0 to Direct3D 11
 description: Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, graphics
 ms.localizationpriority: medium
 ---
-
 # Port from OpenGL ES 2.0 to Direct3D 11
 
 

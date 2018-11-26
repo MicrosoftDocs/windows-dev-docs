@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 assetID: 942cf0d7-f988-0495-cf28-cdac608b8109
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeopleget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 Returns a social leaderboard by ranking the stat values (scores) for either all known contacts of the current user or only those contacts designated as favorite people by that user.
 The domain for these URIs is `leaderboards.xboxlive.com`.

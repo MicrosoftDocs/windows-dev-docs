@@ -1,18 +1,13 @@
 ---
-author: normesta
 Description: This article lists things you need to know before packaging your desktop application. You may not need to do much to get your app ready for the packaging process.
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package a desktop application (Desktop Bridge)
-ms.author: normesta
 ms.date: 05/18/20188
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ---
-
 # Prepare to package a desktop application
 
 This article lists the things you need to know before you package your desktop app. You might not have to do much to get your application ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Microsoft Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.

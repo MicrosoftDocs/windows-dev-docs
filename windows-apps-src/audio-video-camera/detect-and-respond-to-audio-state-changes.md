@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: EE0C1B28-EF9C-4BD9-A3C0-BDF11E75C752
 description: This article explains how UWP apps can detect and respond to system-initiated changes in audio stream levels
 title: Detect and respond to audio state changes
-ms.author: drewbat
 ms.date: 04/03/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Detect and respond to audio state changes
 Starting with Windows 10, version 1803, your app can detect when the system lowers or mutes the audio level of an audio stream your app is using. You can receive notifications for capture and render streams, for a particular audio device and audio category, or for a [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) object your app is using for media playback. For example, the system may lower, or "duck", the audio playback level when an alarm is ringing. The system will mute your app when it goes into the background if your app has not declared the *backgroundMediaPlayback* capability in the app manifest. 
 

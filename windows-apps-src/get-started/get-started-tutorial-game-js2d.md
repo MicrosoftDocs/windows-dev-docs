@@ -1,17 +1,12 @@
 ---
 title: Create a UWP game in JavaScript
 description: A simple UWP game for the Microsoft Store, written in JavaScript and CreateJS
-author: GrantMeStrength
-ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ---
-
 # Create a UWP game in JavaScript
 
 ## A simple 2D UWP game for the Microsoft Store, written in JavaScript and CreateJS

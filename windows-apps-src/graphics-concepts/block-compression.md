@@ -4,15 +4,12 @@ description: Block compression is a lossy texture-compression technique for redu
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - Block compression
-author: hickeys
-ms.author: hickeys
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Block compression
 
 Block compression is a lossy texture-compression technique for reducing texture size and memory footprint, giving a performance increase. A block-compressed texture can be smaller than a texture with 32-bits per color.

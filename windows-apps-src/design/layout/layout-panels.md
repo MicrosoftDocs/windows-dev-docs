@@ -1,12 +1,8 @@
 ---
-author: QuinnRadich
 Description: Use layout panels to arrange and group UI elements in your app.
 title: Layout panels for Universal Windows Platform (UWP) apps
-ms.author: quradic
 ms.date: 04/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

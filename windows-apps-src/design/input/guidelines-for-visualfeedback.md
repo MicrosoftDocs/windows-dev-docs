@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use visual feedback to show users when their interactions with a UWP app are detected, interpreted, and handled.
 title: Visual feedback
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: visual feedback, focus feedback, touch feedback, contact visualization, input, interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Guidelines for visual feedback
 
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.

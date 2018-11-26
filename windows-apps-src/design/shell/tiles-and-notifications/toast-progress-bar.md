@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use a progress bar within your toast notification.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/7/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, toast, progress bar, toast progress bar, notification, toast data binding
 ms.localizationpriority: medium
 ---
-
 # Toast progress bar and data binding
 
 Using a progress bar inside your toast notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.

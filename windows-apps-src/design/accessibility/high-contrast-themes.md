@@ -1,18 +1,13 @@
 ---
-author: Xansky
 description: Describes the steps needed to ensure your Universal Windows Platform (UWP) app is usable when a high-contrast theme is active.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: High-contrast themes
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 09/28/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # High contrast themes  
 
 Windows supports high contrast themes for the OS and apps that users may choose to enable. High contrast themes use a small palette of contrasting colors that makes the interface easier to see.

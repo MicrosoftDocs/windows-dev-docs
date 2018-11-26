@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Accessibility overview  
 
 

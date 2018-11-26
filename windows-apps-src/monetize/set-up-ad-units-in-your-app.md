@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Learn how to add application ID and ad unit ID values from Partner Center to your app before you submit your app to the Store.
 title: Set up ad units in your app
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, ad units, testing
 ms.localizationpriority: medium
 ---
-
 # Set up ad units in your app
 
 Every ad control in your Universal Windows Platform (UWP) app has a corresponding *ad unit* that is used by our services to serve ads to the control. Each ad unit consists of an *ad unit ID* and *application ID* that you must assign to code in your app.

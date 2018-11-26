@@ -1,17 +1,14 @@
 ---
-author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: Learn how to use the Windows.Services.Store namespace to purchase an app or one of its add-ons.
 title: Enable in-app purchases of apps and add-ons
 keywords: windows 10, uwp, add-ons, in-app purchases, IAPs, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Enable in-app purchases of apps and add-ons
 
 This article demonstrates how to use members in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to request the purchase the current app or one of its add-ons for the user. For example, if the user currently has a trial version of the app, you can use this process to purchase a full license for the user. Alternatively, you can use this process to purchase an add-on, such as a new game level for the user.

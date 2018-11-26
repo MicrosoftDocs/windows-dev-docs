@@ -1,10 +1,8 @@
 ---
-author: Jwmsft
 Description: A text entry box that provides suggestions as the user types.
 title: Combo box (drop down list)
 label: Combo box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp

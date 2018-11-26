@@ -1,9 +1,7 @@
 ---
-author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 build 15063 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1703, March, newest, 15063
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 
@@ -11,7 +9,6 @@ ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
 ---
-
 # What's New in Windows 10 for developers, build 15063
 
 Windows 10 build 15063 (also known as the Creators Update or version 1703), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).

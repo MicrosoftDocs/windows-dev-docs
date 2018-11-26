@@ -1,17 +1,12 @@
 ---
-author: Mtoepke
 title: Frequently asked questions
 description: FAQ about UWP on Xbox.
-ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ---
-
 # Frequently asked questions
 
 Things not working the way you expected? 

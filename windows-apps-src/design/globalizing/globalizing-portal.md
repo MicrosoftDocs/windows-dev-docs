@@ -1,20 +1,15 @@
 ---
-author: stevewhims
 Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
 Search.SourceType: Video
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
-
 # Globalization and localization
 
 Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.

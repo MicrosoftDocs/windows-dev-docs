@@ -1,16 +1,11 @@
 ---
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
-author: adwilso
-ms.author: sezhen
 ms.date: 1/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
 ---
-
 # WNS Notification Priorities
 By setting a notification's priority with a simple header to WNS POST messages, you can control how notifications are delivered in battery sensitive situations.
 

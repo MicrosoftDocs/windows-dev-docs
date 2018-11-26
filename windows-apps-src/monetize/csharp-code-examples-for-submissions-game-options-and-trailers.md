@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use the C# code examples in this section to learn more about submitting game options and trailers using the Microsoft Store submission API.
 title: C# sample - app submission with game options and trailers
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, game options, trailers, advanced listings, C#
 ms.localizationpriority: medium
 ---
-
 # C\# sample: app submission with game options and trailers
 
 This article provides C# code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:

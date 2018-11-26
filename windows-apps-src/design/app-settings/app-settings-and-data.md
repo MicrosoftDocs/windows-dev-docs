@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
 title: App settings and data
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # App settings and data
 
 

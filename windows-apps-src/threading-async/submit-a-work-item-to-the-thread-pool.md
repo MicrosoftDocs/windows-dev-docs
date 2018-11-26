@@ -1,13 +1,9 @@
 ---
-author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: Submit a work item to the thread pool
 description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, threads, thread pool
 ms.localizationpriority: medium
 ---

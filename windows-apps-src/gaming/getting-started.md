@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Getting started
 description: Game development learning guide
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
-ms.author: wdg-dev-content
 ms.date: 01/25/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, getting started
 localizationpriority: medium
 ---
-
 # Getting started
 
 This article is a getting started guide for creators who want to develop games on Windows or Xbox. 

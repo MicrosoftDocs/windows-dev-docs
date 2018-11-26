@@ -2,16 +2,11 @@
 title: Create a Windows Hello login service
 description: This is Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps.
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
-
 # Create a Windows Hello login service
 
 This is Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps. This article picks up where Part 1, [Windows Hello login app](microsoft-passport-login.md), left off and extends the functionality to demonstrate how you can integrate Windows Hello into your existing application.

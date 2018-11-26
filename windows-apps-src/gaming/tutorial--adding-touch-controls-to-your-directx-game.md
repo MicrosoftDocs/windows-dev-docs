@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Touch controls for games
 description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, touch, controls, directx, input
 ms.localizationpriority: medium
 ---
-
 # Touch controls for games
 
 

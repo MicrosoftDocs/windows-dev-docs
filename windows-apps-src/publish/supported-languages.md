@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.author: wdg-dev-content
 ms.date: 10/25/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Supported languages
 
 

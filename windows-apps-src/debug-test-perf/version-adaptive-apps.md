@@ -1,16 +1,11 @@
 ---
-author: jwmsft
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
-ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Version adaptive apps: Use new APIs while maintaining compatibility with previous versions
 
 Each release of the Windows 10 SDK adds exciting new functionality that you'll want to take advantage of. However, not all your customers will update their devices to the latest version of Windows 10 at the same time, and you want to make sure your app works on the broadest possible range of devices. Here, we show you how to design your app so that it runs on earlier versions of Windows 10, but also takes advantage of new features whenever your app runs on a device with the latest update installed.

@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Accessibility  
 
 

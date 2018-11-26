@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this REST URI to get block details data for a desktop application during a given date range and other optional filters.
 title: Get upgrade block details for your desktop application
-ms.author: mhopkins
 ms.date: 07/11/2018
 ms.topic: article
-
-
 keywords: windows 10, desktop app blocks, Windows Desktop Application Program
 localizationpriority: medium
 ---
-
 # Get upgrade block details for your desktop application
 
 Use this REST URI to get details for Windows 10 devices on which a specific executable in your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in Partner Center.

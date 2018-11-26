@@ -4,15 +4,12 @@ description: Bilinear filtering calculates the weighted average of the 4 texels 
 ms.assetid: 0851AD28-8246-4547-A663-47884DDDFC3E
 keywords:
 - Bilinear texture filtering
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Bilinear texture filtering
 
 

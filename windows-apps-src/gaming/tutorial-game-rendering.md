@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Set up
 description: Learn how to assemble the rendering pipeline to display graphics. Game rendering, set up and prepare data.
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, rendering
 ms.localizationpriority: medium
 ---
-
 # Rendering framework II: Game rendering
 
 In [Rendering framework I](tutorial--assembling-the-rendering-pipeline.md), we've covered how we take the scene info and present it to the display screen. Now, we'll take a step back and learn how to prepare the data for rendering.

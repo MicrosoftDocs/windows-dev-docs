@@ -1,13 +1,9 @@
 ---
-author: mijacobs
 Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Flyout controls
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
@@ -16,7 +12,6 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Flyouts
 
 A flyout is a light dismiss container that can show arbitrary UI as its content. Flyouts can contain other flyouts or context menus to create a nested experience.

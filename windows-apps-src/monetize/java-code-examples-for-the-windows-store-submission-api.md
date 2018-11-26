@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: Use the Java code examples in this section to learn more about using the Microsoft Store submission API.
 title: Java sample - submissions for apps, add-ons, and flights
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, java
 ms.localizationpriority: medium
 ---
-
 # Java sample: submissions for apps, add-ons, and flights
 
 This article provides Java code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:

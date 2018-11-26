@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Use app services and extensions
 description: This section describes how to integrate app services into your UWP app to allow the sharing of data and functionality across apps.
 ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
-ms.author: pafarley
 ms.date: 10/04/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Use app services and extensions
 
 This section describes how to integrate app services into your UWP app to allow the sharing of data and functionality across apps.

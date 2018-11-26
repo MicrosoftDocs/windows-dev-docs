@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 title: Speech recognition
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
 ms.date: 10/25/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Speech recognition
 
 

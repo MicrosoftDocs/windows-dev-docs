@@ -1,18 +1,12 @@
 ---
-author: stevewhims
 Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
 title: MakePri.exe format-specific indexers
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
-
 # MakePri.exe format-specific indexers
 
 This topic describes the format-specific indexers used by the [MakePri.exe](compile-resources-manually-with-makepri.md) tool to generate its index of resources.

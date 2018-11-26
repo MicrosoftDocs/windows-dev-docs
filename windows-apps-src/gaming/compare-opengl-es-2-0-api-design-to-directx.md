@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Plan your port from OpenGL ES 2.0 to Direct3D
 description: If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0.
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, opengl, direct3d
 ms.localizationpriority: medium
 ---
-
 # Plan your port from OpenGL ES 2.0 to Direct3D
 
 

@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get Xbox Live Game Hub data.
 title: Get Xbox Live game hub data
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox Live analytics, Game Hubs
 ms.localizationpriority: medium
 ---
-
 # Get Xbox Live Game Hub data
 
 

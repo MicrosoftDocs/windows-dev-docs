@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Title Storage
-author: KevinAsgari
+
 description: Learn how to use Xbox Live Title Storage to store game information for a title in the cloud.
 ms.assetid: a4182bc8-d232-4e77-93ae-97fe17ac71b1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Title Storage
 
 The Xbox Live title storage service provides a way to store game information for a title in the cloud. Games running on all platforms can use this service.

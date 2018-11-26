@@ -1,17 +1,12 @@
 ---
-author: Xansky
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: Launch Feedback Hub from your app
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Feedback Hub, launch
 ms.localizationpriority: medium
 ---
-
 # Launch Feedback Hub from your app
 
 You can encourage your customers to leave feedback by adding a control (such as a button) to your Universal Windows Platform (UWP) app that launches Feedback Hub. Feedback Hub is a preinstalled app that provides a single place to gather feedback on Windows and installed apps. All customer feedback that is submitted for your app through Feedback Hub is collected and presented to you in the [Feedback report](../publish/feedback-report.md) in Partner Center, so you can see the problems, suggestions, and upvotes that your customers have submitted in one report.

@@ -1,13 +1,9 @@
 ---
-author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea

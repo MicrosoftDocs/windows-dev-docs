@@ -1,17 +1,14 @@
 ---
-author: Xansky
 Description: If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period.
 title: Exclude or limit features in a trial version
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: windows 10, uwp, trial, in-app purchase, IAP, Windows.ApplicationModel.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Exclude or limit features in a trial version
 
 If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.

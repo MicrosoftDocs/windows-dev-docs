@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: D6A785C6-DF28-47E6-BDC1-7A7129EC40A0
 description: This article shows you how to use a MediaFrameReader with MediaCapture to get AudioFrames containing audio data from a capture source.
 title: Process audio frames with MediaFrameReader
-ms.author: drewbat
 ms.date: 04/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Process audio frames with MediaFrameReader
 
 This article shows you how to use a [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) to get audio data from a media frame source. To learn about using a **MediaFrameReader** to get image data, such as from a color, infrared, or depth camera, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md). That article provides a general overview of the frame reader usage pattern and discusses some additional features of the **MediaFrameReader** class, such as using **MediaFrameSourceGroup** to retrieve frames from multiple sources at the same time. 

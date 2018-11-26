@@ -1,16 +1,11 @@
 ﻿---
-author: jnHs
 Description: In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
 title: Associate Azure Active Directory with your Partner Center account
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, azure ad, azure tenant, aad tenant, azure ad tenant, tenant management, tenants
 ms.localizationpriority: medium
 ---
-
 # Associate Azure Active Directory with your Partner Center account
 
 In order to [add and manage account users](add-users-groups-and-azure-ad-applications.md), you must first associate your Partner Center account with your organization's Azure Active Directory. 

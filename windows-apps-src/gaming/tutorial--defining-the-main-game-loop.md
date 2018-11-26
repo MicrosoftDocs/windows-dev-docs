@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Define the main game object
 description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, main object
 ms.localizationpriority: medium
 ---
-
 # Define the main game object
 
 Once you’ve laid out the basic framework of the sample game and implemented a state machine that handles the high-level user and system behaviors, you’ll want to examine the rules and mechanics that turn the game sample into a game. Let’s look at the details of the game sample's main object, and how to translate game rules into interactions with the game world.

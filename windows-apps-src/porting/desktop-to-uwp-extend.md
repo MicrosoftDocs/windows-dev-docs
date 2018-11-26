@@ -1,17 +1,12 @@
 ---
-author: hickeys
 Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Extend your desktop application with Windows UIs and components
-ms.author: hickeys
 ms.date: 06/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Extend your desktop application with modern UWP components
 
 Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime Components.

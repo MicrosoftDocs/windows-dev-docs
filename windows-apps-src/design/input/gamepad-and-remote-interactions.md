@@ -1,20 +1,15 @@
 ---
-author: mijacobs
 Description: TODO
 title: Gamepad and remote control interactions
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Gamepad and remote control interactions
 
 ![Remote and D-pad](images/dpad-remote/dpad-remote.png)

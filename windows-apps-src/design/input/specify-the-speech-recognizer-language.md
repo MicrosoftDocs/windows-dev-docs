@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to select an installed language to use for speech recognition.
 title: Specify the speech recognizer language
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Specify the speech recognizer language
 
 

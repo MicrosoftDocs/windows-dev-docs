@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: Getting started with common controls
 title: Getting started with Common Controls
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Getting started: Common Controls
 
 

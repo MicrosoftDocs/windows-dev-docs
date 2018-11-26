@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Advertising performance report
 
 

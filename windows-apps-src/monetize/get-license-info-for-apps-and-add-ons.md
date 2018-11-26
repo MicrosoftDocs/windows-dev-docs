@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: Learn how to use the Windows.Services.Store namespace to get license info for the current app and its add-ons.
 title: Get license info for your app and add-ons
-ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, licenses, apps, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.localizationpriority: medium
 ---
-
 # Get license info for apps and add-ons
 
 This article demonstrates how to use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to get license info for the current app and its add-ons. For example, you can use this info to determine if the licenses for the app or its add-ons are active, or if they are trial licenses.

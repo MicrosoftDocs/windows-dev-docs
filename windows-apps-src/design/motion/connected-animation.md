@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 description: Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
 title: Connected animation
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp

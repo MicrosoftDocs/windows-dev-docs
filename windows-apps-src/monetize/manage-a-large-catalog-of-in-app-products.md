@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.
 title: Manage a large catalog of in-app products
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, catalog, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ---
-
 # Manage a large catalog of in-app products
 
 If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog. In releases before Windows 10, the Store has a limit of 200 product listings per developer account, and the process described in this topic can be used to work around that limitation. Starting with Windows 10, the Store has no limit to the number of product listings per developer account, and the process described in this article is no longer necessary.

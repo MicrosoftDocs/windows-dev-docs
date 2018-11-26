@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Connected apps and devices (Project Rome)
 description: This section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
-ms.author: pafarley
 ms.date: 06/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ---
-
 # Connected apps and devices (Project Rome)
 
 This section explains how to connect apps across devices and platforms using Project Rome. Learn how to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.

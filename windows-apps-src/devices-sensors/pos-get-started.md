@@ -1,16 +1,11 @@
 ﻿---
-author: TerryWarwick
 title: Getting started with Point of Service
 description: This article contains information about getting started with the point of service UWP APIs.
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Getting started with Point of Service
 
 Point of service, point of sale, or Point of Service devices are computer peripherals used to facilitate retail transactions. Examples of Point of Service devices include electronic cash registers, barcode scanners, magnetic stripe readers, and receipt printers.

@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, collection
 ms.localizationpriority: medium
 ---
-
 # XAML items controls; bind to a C++/WinRT collection
 
 A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable collections in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML items controls to them.

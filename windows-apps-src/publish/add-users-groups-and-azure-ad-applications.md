@@ -1,16 +1,11 @@
 ﻿---
-author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Partner Center account.
 title: Add users, groups, and Azure AD applications to your Partner Center account
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, azure ad application, aad, user, group, multiple users, multi-user
 ms.localizationpriority: medium
 ---
-
 # Add users, groups, and Azure AD applications to your Partner Center account
 
 The **Users** section of [Partner Center](https://partner.microsoft.com/dashboard) (under **Account settings**) lets you use Azure Active Directory to add users to your Partner Center account. Each user is assigned a role (or set of custom permissions) that defines their access to the account. You can also add [groups of users](#groups) and [Azure AD applications](#azure-ad-applications) to grant them access to your Partner Center account.

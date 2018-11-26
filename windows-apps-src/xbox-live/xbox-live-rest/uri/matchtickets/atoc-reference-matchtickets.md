@@ -2,18 +2,13 @@
 title: Matchmaking URIs
 assetID: 667b02a9-6f34-8165-001b-ee8782575202
 permalink: en-us/docs/xboxlive/rest/atoc-reference-matchtickets.html
-author: KevinAsgari
+
 description: ' Matchmaking URIs'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Matchmaking URIs
  
 This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the matchmaking service. 

@@ -1,17 +1,13 @@
 ---
 title: Developer program overview
-author: KevinAsgari
+
 description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.author: kevinasg
 ms.date: 5/30/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, creators
 ms.localizationpriority: medium
 ---
-
 # Developer program overview
 
 If you would like to develop Xbox Live enabled titles, there are several options available to you. Each offers varying levels of time investment on your part, features available to you, and support options.

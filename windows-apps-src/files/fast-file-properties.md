@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Fast access to file properties in UWP
 description: Efficiently gather a list of files and their properties from a library to use in a UWP app.
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, file, properties
 ms.localizationpriority: medium
 ---
-
 # Fast access to file properties in UWP 
 
 Learn how to quickly gather a list of files and their properties from a library and use those properties in an app.  

@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
 title: App management and services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # App management and services
 
 You can manage and view details related to each of your apps in [Partner Center, and configure services such as notifications, A/B testing, and maps.

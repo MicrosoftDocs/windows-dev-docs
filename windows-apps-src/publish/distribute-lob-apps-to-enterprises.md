@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business, store for education, enterprise
 ms.localizationpriority: medium
 ---
-
 # Distribute LOB apps to enterprises
 
 

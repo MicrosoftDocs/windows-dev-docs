@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your Xbox One game
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
 ms.localizationpriority: medium
 ---
-
 # Get error reporting data for your Xbox One game
 
 Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard.

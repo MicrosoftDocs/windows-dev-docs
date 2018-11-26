@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your desktop application.
 title: Get details for an error in your desktop application
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details, desktop application
 ms.localizationpriority: medium
 ---
-
 # Get details for an error in your desktop application
 
 Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in Partner Center.

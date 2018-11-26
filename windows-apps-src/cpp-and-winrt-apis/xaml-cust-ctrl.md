@@ -1,15 +1,12 @@
 ---
-author: stevewhims
 description: This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls.
 title: XAML custom (templated) controls with C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, templated, control
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # XAML custom (templated) controls with C++/WinRT
 
 > [!IMPORTANT]

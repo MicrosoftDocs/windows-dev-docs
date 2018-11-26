@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
 title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea

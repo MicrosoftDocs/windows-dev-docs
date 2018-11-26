@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use this method in the Microsoft Store analytics API to get Xbox Live achievements data.
 title: Get Xbox Live achievements data
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox Live analytics, achievements
 ms.localizationpriority: medium
 ---
-
 # Get Xbox Live achievements data
 
 Use this method in the Microsoft Store analytics API to get the number of customers who have unlocked each achievement for your [Xbox Live-enabled game](../xbox-live/index.md) during the most recent day for which achievements data is available, the previous 30 days leading up to that day, and the total lifetime of your game up to that day. This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in Partner Center.

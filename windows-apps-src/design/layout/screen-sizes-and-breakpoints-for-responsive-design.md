@@ -1,15 +1,12 @@
 ---
-author: mijacobs
 title: Screen sizes and break points for responsive design
 description: Rather than optimizing your UI the many devices across the Windows 10 ecosystem, we recommended designing for a few key width categories called breakpoints.
-ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 #  Screen sizes and breakpoints
 
 UWP apps can run on any device running Windows 10, which includes phones, tablets, desktops, TVs, and more. With a huge number of device targets and screen sizes across the Windows 10 ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called "breakpoints"): 

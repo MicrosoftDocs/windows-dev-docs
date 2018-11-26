@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data for an Xbox One game during a given date range and other optional filters.
 title: Get Xbox One game acquisitions
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox One game acquisitions
 ms.localizationpriority: medium
 ---
-
 # Get Xbox One game acquisitions
 
 Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an Xbox One game that was ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics dashboard.

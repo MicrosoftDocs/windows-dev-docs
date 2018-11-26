@@ -2,18 +2,13 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 assetID: 81139619-dc27-1601-30ba-08f6c45aaaca
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.html
-author: KevinAsgari
+
 description: ' GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 Retrieves a set of session template names.
 

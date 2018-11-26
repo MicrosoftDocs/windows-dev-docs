@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Use this method in the Microsoft Store targeted offers API to get the targeted offers that are available for the current user in the context of the current app.
 title: Get targeted offers
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store targeted offers API, get targeted offers
 ms.localizationpriority: medium
 ---
-
 # Get targeted offers
 
 Use this method to get the targeted offers that are available for the current user, based on whether or not the user is part of the customer segment for the targeted offer. For more information, see [Manage targeted offers using Store services](manage-targeted-offers-using-windows-store-services.md).

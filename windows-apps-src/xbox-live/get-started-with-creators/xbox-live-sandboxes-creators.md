@@ -1,17 +1,13 @@
 ---
 title: Xbox Live sandboxes
-author: PhillipLucas
+
 description: Xbox Live sandboxes introduction
 ms.assetid: e7daf845-e6cb-4561-9dfa-7cfba882f494
-ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live sandboxes introduction
 
 In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Partner Center](https://partner.microsoft.com/dashboard). This information includes things like the stats, leaderboards, localization, and more. Changes to your Xbox Live service configuration need to be published from Partner Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.

@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
 title: URI schemes
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
 # URI schemes
 
 There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw). You can use these URI schemes in your code, in your XAML markup, in your app package manifest, or in your tile and toast notification templates.

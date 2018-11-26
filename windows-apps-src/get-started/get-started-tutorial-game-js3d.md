@@ -1,8 +1,8 @@
 ---
 title: Get Started Tutorial - A 3D UWP game in JavaScript
 description: A UWP game for the Microsoft Store, written in JavaScript with three.js
-author: abbycar
-ms.author: abigailc
+
+
 ms.date: 03/06/2017
 ms.topic: article
 

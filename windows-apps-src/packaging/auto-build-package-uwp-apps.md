@@ -1,12 +1,8 @@
 ---
-author: laurenhughes
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or Store packages.
-ms.author: hickeys
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium

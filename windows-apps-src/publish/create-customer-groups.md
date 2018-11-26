@@ -1,17 +1,12 @@
 ﻿---
-author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Create customer groups
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, customer groups, segment, flight group, known user group
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ---
-
 # Create customer groups
 
 You can create *customer groups* that include a subset of your app's customers. These groups can be used to target customers for promotions, testing, and other purposes.

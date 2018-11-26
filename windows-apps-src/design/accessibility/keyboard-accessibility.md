@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Keyboard accessibility  
 
 

@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, account users, manage users, azure ad, multi-user, multiple users
 ms.localizationpriority: medium
 ---
-
 # Manage account users
 
 You can use Azure Active Directory to add and manage additional users in your [Partner Center](https://partner.microsoft.com/dashboard)  account. You can define the role or custom permissions that each user should have. You can also assign a role to a group of users, or to an Azure AD application.

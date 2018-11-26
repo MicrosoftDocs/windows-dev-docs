@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Marble Maze sample fundamentals
 description: This document describes the fundamental characteristics of the Marble Maze project; for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built.
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
-ms.author: elcowle
 ms.date: 08/22/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, sample, directx, fundamentals
 ms.localizationpriority: medium
 ---
-
 # Marble Maze sample fundamentals
 
 

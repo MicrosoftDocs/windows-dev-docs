@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
 ---
-
 # Set app pricing and availability
 
 

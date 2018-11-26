@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Learn how to include interstitial ads in a UWP app for Windows 10 using the Microsoft Advertising SDK.
 title: Interstitial ads
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, ad control, interstitial
 ms.localizationpriority: medium
 ---
-
 # Interstitial ads
 
 This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).

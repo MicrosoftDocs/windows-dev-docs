@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
 title: App icons and logos
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,7 +10,6 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-
 # App icons and logos 
 
 Every app has an icon/logo that represents it, and that icon appears in multiple locations in the Windows shell: 

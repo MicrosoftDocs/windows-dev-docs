@@ -1,14 +1,11 @@
 ---
-author: mcleanbyron
 description: This article describes how to host UWP XAML UI in your desktop application.
 title: Using the UWP XAML hosting API in a desktop application
-ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32
 ms.localizationpriority: medium
 ---
-
 # Using the UWP XAML hosting API in a desktop application
 
 > [!NOTE]

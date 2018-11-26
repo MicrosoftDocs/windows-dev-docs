@@ -1,10 +1,8 @@
 ---
-author: WilliamsJason
 title: Device Portal remote input API reference
 description: Learn how to remotely send controller, keyboard, and mouse input on an Xbox.
 ms.localizationpriority: medium
 ---
-
 # Remote Input API reference   
 You can send controller, keyboard, and mouse input in real time remotely via this API.
 

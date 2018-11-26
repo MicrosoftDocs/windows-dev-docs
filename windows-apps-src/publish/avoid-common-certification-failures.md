@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
 title: Avoid common certification failures
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Avoid common certification failures
 
 

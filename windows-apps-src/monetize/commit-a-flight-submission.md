@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Use this method in the Microsoft Store submission API to commit a new or updated package flight submission to Partner Center.
 title: Commit a package flight submission
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, commit flight submission
 ms.localizationpriority: medium
 ---
-
 # Commit a package flight submission
 
 Use this method in the Microsoft Store submission API to commit a new or updated package flight submission to Partner Center. The commit action alerts Partner Center that the submission data has been uploaded (including any related packages). In response, Partner Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in  Partner Center.

@@ -1,13 +1,9 @@
 ---
-author: QuinnRadich
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Create a developer account
 description: Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
-ms.author: quradic
 ms.date: 4/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, sign up, developer account
 ms.localizationpriority: medium
 ---
