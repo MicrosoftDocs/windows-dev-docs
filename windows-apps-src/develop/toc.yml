@@ -260,6 +260,8 @@
           href: ../files/thumbnails.md
         - name: Track recently used files and folders
           href: ../files/how-to-track-recently-used-files-and-folders.md
+        - name: Track file system changes in the background
+          href: ../files/change-tracking-filesystem.md
         - name: Access the SD card
           href: ../files/access-the-sd-card.md
         - name: File access permissions
