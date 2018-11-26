@@ -146,7 +146,7 @@ At any point, you can check to see the number of bytes available in your app's m
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### Receive notifications when the system purges metadata
-You can register to recieve a notification when the system begins purging metadata for your app by registering a handler for the **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** event.
+You can register to receive a notification when the system begins purging metadata for your app by registering a handler for the **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** event.
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 
