@@ -212,7 +212,7 @@ if (SUCCEEDED(hr))
     {
         // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc.Get(), &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!
