@@ -17,7 +17,7 @@ This article covers the steps to set up and test your development environment.
 
 ## Visual Studio setup
 
-1. Install Visual Studio 2017, Visual Studio 2015 Update 3, or the latest release of Visual Studio. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads). We recommend that you use the latest version of Visual Studio so that you can recieve the latest updates for developers and security.
+1. Install Visual Studio 2017, Visual Studio 2015 Update 3, or the latest release of Visual Studio. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads). We recommend that you use the latest version of Visual Studio so that you can receive the latest updates for developers and security.
 
 2. If you're installing Visual Studio 2017, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, make sure that you also select the **C++ Universal Windows Platform tools** checkbox in the **Summary** pane on the right, under **Universal Windows Platform development**. It's not part of the default installation.
 

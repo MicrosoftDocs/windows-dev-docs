@@ -50,7 +50,7 @@ For reference, the following table shows the build numbers for each SDK.
 | Creators Update | 1703 | 15063 |
 | Fall Creators Update | 1709 | 16299 |
 | April 2018 Update | 1803 | 17134 |
-| October 2018 Update | 1809 | _Insider Preview_ |
+| October 2018 Update | 1809 | 17763 |
 
 You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/Home/BuildWithWindows) site.
 

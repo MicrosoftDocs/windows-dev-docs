@@ -33,7 +33,7 @@ var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatt
 
 This creates a formatter based on the language and region value of the current context. The order of the components in a format template doesn't matter; the formatter displays them in the right order for the current language. So, it displays "January 1" for English (United States), "1 janvier" for French (France), and "1月1日" for Japanese.
 
-On the other hand, a format pattern is culture-specific. Let's acccess the format pattern for our format template.
+On the other hand, a format pattern is culture-specific. Let's access the format pattern for our format template.
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
