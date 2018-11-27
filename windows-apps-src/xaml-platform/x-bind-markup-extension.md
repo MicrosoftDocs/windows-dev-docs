@@ -137,7 +137,7 @@ These properties work in much the same way as the properties of the [**Binding**
 | **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
 | **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
 | **BindBack** | Specifies a function to use for the reverse direction of a two-way binding. |
-| **UpdateSourceTrigger** | Specifies when to push changes back from the control to the model in TwoWay bindings. The default for all properties except TextBox.Text is PropertyChanged, TextBox.Text is LostFocus.|
+| **UpdateSourceTrigger** | Specifies when to push changes back from the control to the model in TwoWay bindings. The default for all properties except TextBox.Text is PropertyChanged; TextBox.Text is LostFocus.|
 
 > [!NOTE]
 > If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
@@ -148,7 +148,7 @@ These properties work in much the same way as the properties of the [**Binding**
 
 Because **{x:Bind}** uses generated code to achieve its benefits, it requires type information at compile time. This means that you cannot bind to properties where you do not know the type ahead of time. Because of this, you cannot use **{x:Bind}** with the **DataContext** property, which is of type **Object**, and is also subject to change at run time.
 
-When using **{x:Bind}** with data templates, you must indicate the type being bound to by setting an **x:DataType** value, as shown in the example below. You can also set the type to an interface or base class type, and then use casts if necessary to formulate a full expression.
+When using **{x:Bind}** with data templates, you must indicate the type being bound to by setting an **x:DataType** value, as shown in the [Examples](#examples) section. You can also set the type to an interface or base class type, and then use casts if necessary to formulate a full expression.
 
 Compiled bindings depend on code generation. So if you use **{x:Bind}** in a resource dictionary then the resource dictionary needs to have a code-behind class. See [Resource dictionaries with {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) for a code example.
 
