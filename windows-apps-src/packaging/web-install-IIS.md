@@ -115,7 +115,7 @@ Due to network isolation, UWP apps like App Installer are restricted to use IP l
 
 To do this, open **Command Prompt** as an **Administrator** and enter the following:
 ```Command Line
-CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
