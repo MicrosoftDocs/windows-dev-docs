@@ -283,8 +283,10 @@
           items:
             - name: Guidance
               href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-            - name: Pin secondary tiles
+            - name: Pin to Start
               href: shell/tiles-and-notifications/secondary-tiles-pinning.md
+            - name: Pin to taskbar
+              href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
             - name: Desktop applications
               href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
         - name: Tile content
