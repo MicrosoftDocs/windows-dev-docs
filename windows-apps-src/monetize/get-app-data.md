@@ -103,7 +103,7 @@ This resource has the following values.
 
 <span id="add-on-object" />
 
-### Add-on resouce
+### Add-on resource
 
 This resource provides information about an add-on.
 
