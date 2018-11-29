@@ -128,7 +128,7 @@ You should find `microsoft.desktopappinstaller_8wekyb3d8bbwe` in the list.
 Once the local validation of app installation via App Installer is complete, you can remove the loopback exemption that you added in this step by:
 
 ```Command Line
-CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+CheckNetIsolation.exe LoopbackExempt -d -n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 ## Step 9 - Run the Web App 
