@@ -40,7 +40,7 @@ There are many reasons you may see no ads, including network errors. Other reaso
 
 * If you created a new ad unit ID in the past half-hour, you might not see an ad until the servers propagate new data through the system. Existing IDs that have shown ads before should show ads immediately.
 
-If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Ads-In-Apps**.
+If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Contact us**.
 
 You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
