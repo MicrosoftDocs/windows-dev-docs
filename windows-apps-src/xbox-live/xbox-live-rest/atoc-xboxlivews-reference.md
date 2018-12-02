@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Xbox Live Services RESTful Reference
 
-Xbox Live Services is a set of services for managing games and player information. These services support the **Xbox.Services** API which should be used whenever possible. Use the RESTful interface described in this section for newer methods that have not be added to **Xbox.Services** yet.
+Xbox Live Services is a set of services for managing games and player information. These services support the **Xbox.Services** API which should be used whenever possible. Use the RESTful interface described in this section for newer methods that have not been added to **Xbox.Services** yet.
 
 <a id="ID4E5"></a>
 
