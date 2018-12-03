@@ -1,7 +1,7 @@
 ---
 title: Use a SQLite database in a UWP app
 description: Use a SQLite database in a UWP app.
-ms.date: 06/08/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, database
 ms.localizationpriority: medium
@@ -157,10 +157,11 @@ namespace DataAccessLibrary
 
 ```
 
-Add the following using statement to the top of this file.
+Add the following using statements to the top of this file.
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />
