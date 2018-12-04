@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Port the game loop
 description: Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an IFrameworkView to control a full-screen CoreWindow.
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, porting, game loop, direct3d 9, directx 11
 ms.localizationpriority: medium
 ---
-
 # Port the game loop
 
 
@@ -130,7 +125,7 @@ Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
 
 The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
 
-Visit the following in-depth Microsoft Store game game development articles:
+Visit the following in-depth Microsoft Store game development articles:
 
 -   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Audio for games](working-with-audio-in-your-directx-game.md)

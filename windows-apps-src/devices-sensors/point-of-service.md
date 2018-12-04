@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: Point of Service
 description: This section contains articles on how to use various features of the Point of Service namespace.
-ms.author: jken
 ms.date: 10/04/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Point of Service
 This section contains articles on how to use [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) to interact with peripherals found in retail and hospitality environments from Universal Windows Applications.
 

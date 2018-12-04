@@ -1,19 +1,16 @@
 ---
-author: mijacobs
 Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
 title: Device primer for Universal Windows Platform (UWP) apps
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 keywords: device, input, interaction
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 #  Device primer for Universal Windows Platform (UWP) apps
 
 

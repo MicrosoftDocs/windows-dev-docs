@@ -1,17 +1,15 @@
 ---
 description: Learn how to develop a UWP app.
 title: Develop UWP apps
-author: mijacobs
+
 layout: LandingPage
 keywords: uwp app development threading async platform overview portal develop developers
-ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 <div> 
 <h1>Develop UWP apps</h1>
 <p>How-to articles and code for creating UWP apps for Windows 10. </p> 

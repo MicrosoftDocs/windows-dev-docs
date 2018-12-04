@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
 description: Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio.
 title: Creating a project in Visual Studio
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Getting started: Creating a project
 
 ## Creating a project

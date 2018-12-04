@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: Custom automation peers
 label: Custom automation peers
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 07/13/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Custom automation peers  
 
 Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.

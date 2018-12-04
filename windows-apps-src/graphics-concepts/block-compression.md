@@ -4,17 +4,13 @@ description: Block compression is a lossy texture-compression technique for redu
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - Block compression
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Block compression
-
 
 Block compression is a lossy texture-compression technique for reducing texture size and memory footprint, giving a performance increase. A block-compressed texture can be smaller than a texture with 32-bits per color.
 
@@ -26,13 +22,12 @@ A block-compressed texture must be created as a multiple of size 4 in all dimens
 
 ## <span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>How block compression works
 
-
 Block compression is a technique for reducing the amount of memory required to store color data. By storing some colors in their original size, and other colors using an encoding scheme, you can dramatically reduce the amount of memory required to store the image. Since the hardware automatically decodes compressed data, there is no performance penalty for using compressed textures.
 
 To see how compression works, look at the following two examples. The first example describes the amount of memory used when storing uncompressed data; the second example describes the amount of memory used when storing compressed data.
 
--   [Storing uncompressed data](#storing-uncompressed-data)
--   [Storing compressed data](#storing-compressed-data)
+- [Storing uncompressed data](#storing-uncompressed-data)
+- [Storing compressed data](#storing-compressed-data)
 
 ### <span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>Storing uncompressed data
 
@@ -58,14 +53,13 @@ The next section shows how Direct3D enables using block compression in an applic
 
 ## <span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>Using block compression
 
-
 Create a block-compressed texture just like an uncompressed texture except that you specify a block-compressed format.
 
 Next, create a view to bind the texture to the pipeline Since a block-compressed texture can be used only as an input to a shader-stage, you want to create a shader-resource view.
 
 Use a block compressed texture the same way you would use an uncompressed texture. If your application will get a memory pointer to block-compressed data, you need to account for the memory padding in a mipmap that causes the declared size to differ from the actual size.
 
--   [Virtual size versus physical size](#virtual-size-versus-physical-size)
+- [Virtual size versus physical size](#virtual-size-versus-physical-size)
 
 ### <span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>Virtual size versus physical size
 
@@ -83,7 +77,6 @@ In summary, be careful to use aligned memory blocks when copying regions that co
 
 ## <span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>Compression algorithms
 
-
 Block compression techniques in Direct3D break up uncompressed texture data into 4×4 blocks, compress each block, and then store the data. For this reason, textures are expected to be compressed must have texture dimensions that are multiples of 4.
 
 ![block compression](images/d3d10-compression-1.png)
@@ -100,13 +93,11 @@ Direct3D implements several compression schemes, each implements a different tra
 | One-component color             | One component (8)                     | [BC4](#bc4)                    |
 | Two-component color             | Two components (8:8)                  | [BC5](#bc5)                    |
 
- 
-
--   [BC1](#bc1)
--   [BC2](#bc2)
--   [BC3](#bc3)
--   [BC4](#bc4)
--   [BC5](#bc5)
+- [BC1](#bc1)
+- [BC2](#bc2)
+- [BC3](#bc3)
+- [BC4](#bc4)
+- [BC5](#bc5)
 
 ### <span id="BC1"></span><span id="bc1"></span>BC1
 
@@ -118,14 +109,14 @@ The algorithm works on 4×4 blocks of texels. Instead of storing 16 colors, the 
 
 The color indices (a–p) are used to look up the original colors from a color table. The color table contains 4 colors. The first two colors—color\_0 and color\_1—are the minimum and maximum colors. The other two colors, color\_2 and color\_3, are intermediate colors calculated with linear interpolation.
 
-```
+```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
 color_3 = 1/3*color_0 + 2/3*color_1
 ```
 
 The four colors are assigned 2-bit index values that will be saved in blocks a–p.
 
-```
+```cpp
 color_0 = 00
 color_1 = 01
 color_2 = 10
@@ -136,7 +127,7 @@ Finally, each of the colors in blocks a–p are compared with the four colors in
 
 This algorithm lends itself to data that contains 1-bit alpha also. The only difference is that color\_3 is set to 0 (which represents a transparent color) and color\_2 is a linear blend of color\_0 and color\_1.
 
-```
+```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
 color_3 = 0;
 ```
@@ -163,7 +154,7 @@ The BC3 format uses the alpha indices (a–p) to look up the original colors fro
 
 The algorithm determines the number of interpolated alpha values by examining the two reference alpha values. If alpha\_0 is greater than alpha\_1, then BC3 interpolates 6 alpha values; otherwise, it interpolates 4. When BC3 interpolates only 4 alpha values, it sets two additional alpha values (0 for fully transparent and 255 for fully opaque). BC3 compresses the alpha values in the 4×4 texel area by storing the bit code corresponding to the interpolated alpha values which most closely matches the original alpha for a given texel.
 
-```
+```cpp
 if( alpha_0 > alpha_1 )
 {
   // 6 interpolated alpha values.
@@ -198,14 +189,14 @@ The algorithm uses the 3-bit indices to look up colors from a color table that c
 
 The algorithm determines the number of interpolated color values by examining the two reference values. If red\_0 is greater than red\_1, then BC4 interpolates 6 color values; otherwise, it interpolates 4. When BC4 interpolates only 4 color values, it sets two additional color values (0.0f for fully transparent and 1.0f for fully opaque). BC4 compresses the alpha values in the 4×4 texel area by storing the bit code corresponding to the interpolated alpha values that most closely matches the original alpha for a given texel.
 
--   [BC4\_UNORM](#bc4-unorm)
--   [BC4\_SNORM](#bc4-snorm)
+- [BC4\_UNORM](#bc4-unorm)
+- [BC4\_SNORM](#bc4-snorm)
 
 ### <span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
 
 The interpolation of the single-component data is done as in the following code sample.
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -236,7 +227,7 @@ The reference colors are assigned 3-bit indices (000–111 since there are 8 val
 
 The DXGI\_FORMAT\_BC4\_SNORM is exactly the same, except that the data is encoded in SNORM range and when 4 color values are interpolated. The interpolation of the single-component data is done as in the following code sample.
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -256,8 +247,8 @@ else
   red_3 = (3*red_0 + 2*red_1)/5.0f; // bit code 011
   red_4 = (2*red_0 + 3*red_1)/5.0f; // bit code 100
   red_5 = (1*red_0 + 4*red_1)/5.0f; // bit code 101
-  red_6 = -1.0f;                     // bit code 110
-  red_7 =  1.0f;                     // bit code 111
+  red_6 = -1.0f;                    // bit code 110
+  red_7 =  1.0f;                    // bit code 111
 }
 ```
 
@@ -267,8 +258,8 @@ The reference colors are assigned 3-bit indices (000–111 since there are 8 val
 
 Use the BC5 format to store two-component color data using 8 bits for each color. As a result of the increased accuracy (compared to [BC1](#bc1)), BC5 is ideal for storing floating-point data in the range of \[0 to 1\] using the DXGI\_FORMAT\_BC5\_UNORM format and \[-1 to +1\] using the DXGI\_FORMAT\_BC5\_SNORM format. Assuming a 4×4 texture using the largest data format possible, this compression technique reduces the memory required from 32 bytes (16 colors × 2 components/color × 1 byte/component) to 16 bytes.
 
--   [BC5\_UNORM](#bc5-unorm)
--   [BC5\_SNORM](#bc5-snorm)
+- [BC5\_UNORM](#bc5-unorm)
+- [BC5\_SNORM](#bc5-snorm)
 
 The algorithm works on 4×4 blocks of texels. Instead of storing 16 colors for both components, the algorithm stores 2 reference colors for each component (red\_0, red\_1, green\_0, and green\_1) and 16 3-bit color indices for each component (red a through red p and green a through green p), as shown in the following diagram.
 
@@ -282,7 +273,7 @@ The algorithm determines the number of interpolated color values by examining th
 
 The interpolation of the single-component data is done as in the following code sample. The calculations for the green components are similar.
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -313,7 +304,7 @@ The reference colors are assigned 3-bit indices (000–111 since there are 8 val
 
 The DXGI\_FORMAT\_BC5\_SNORM is exactly the same, except that the data is encoded in SNORM range and when 4 data values are interpolated, the two additional values are -1.0f and 1.0f. The interpolation of the single-component data is done as in the following code sample. The calculations for the green components are similar.
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -342,19 +333,18 @@ The reference colors are assigned 3-bit indices (000–111 since there are 8 val
 
 ## <span id="Differences"></span><span id="differences"></span><span id="DIFFERENCES"></span>Format conversion
 
-
 Direct3D enables copies between prestructured-typed textures and block-compressed textures of the same bit widths.
 
 You can copy resources between a few format types. This type of copy operation performs a type of format conversion that reinterprets resource data as a different format type. Consider this example that shows the difference between reinterpreting data with the way a more typical type of conversion behaves:
 
-```
+```cpp
 FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
 To reinterpret 'f' as the type of 'u', use [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx):
 
-```
+```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
@@ -362,7 +352,7 @@ In the preceding reinterpretation, the underlying value of the data doesn’t ch
 
 To perform the more typical type of conversion, use assignment:
 
-```
+```cpp
 u = f; // 'u' becomes 1.
 ```
 
@@ -412,9 +402,6 @@ The following table lists the allowable source and destination formats that you 
 </tbody>
 </table>
 
- 
-
 ## <span id="related-topics"></span>Related topics
-
 
 [Compressed texture resources](compressed-texture-resources.md)

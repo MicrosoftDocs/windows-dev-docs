@@ -1,13 +1,9 @@
 ---
-author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Debugging, testing, and performance
 description: Use Microsoft Visual Studio and other tools to debug and test your app and prepare it for the Microsoft Store certification process.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

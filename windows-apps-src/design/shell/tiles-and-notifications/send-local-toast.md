@@ -1,15 +1,11 @@
 ---
-author: andrewleader
 Description: Learn how to send a local toast notification and handle the user clicking the toast.
 title: Send a local toast notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 ---
@@ -359,7 +355,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 When you specify background activation on your toast (or on a button inside the toast), your background task will be executed instead of activating your foreground app.
 
-For more information on background tasks, please see [Support your app with background tasks](/launch-resume/support-your-app-with-background-tasks.md).
+For more information on background tasks, please see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 If you are targeting build 14393 or higher, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.
 

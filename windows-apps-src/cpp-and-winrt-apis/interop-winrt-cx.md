@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: This topic shows two helper functions that can be used to convert between C++/CX and C++/WinRT objects.
 title: Interop between C++/WinRT and C++/CX
-ms.author: stwhi
 ms.date: 10/09/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, C++/CX
 ms.localizationpriority: medium
 ---
-
 # Interop between C++/WinRT and C++/CX
 
 Strategies for gradually porting the code in your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) are discussed in [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md).

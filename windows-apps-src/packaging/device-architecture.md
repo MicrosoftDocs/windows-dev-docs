@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: App package architectures
 description: Learn more about which processor architecture(s) you should use when building your UWP app package.
-ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, packaging, architecture, package configuration
 ms.localizationpriority: medium
 ---
-
 # App package architectures
 
 App packages are configured to run on a specific processor architecture. By selecting an architecture, you are specifying which device(s) you want your app to run on. Universal Windows Platform (UWP) apps can be configured to run on the following architectures:

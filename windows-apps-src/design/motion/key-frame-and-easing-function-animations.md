@@ -1,13 +1,9 @@
 ---
-author: Jwmsft
 title: Key-frame animations and easing function animations
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: Linear key-frame animations, key-frame animations with a KeySpline value, or easing functions are three different techniques for approximately the same scenario.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

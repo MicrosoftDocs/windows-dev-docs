@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
 ms.localizationpriority: medium
 ---
-
 # App screenshots, images, and trailers
 
 Well-designed images are one of the main ways for you to represent your app to potential customers in the Store.
@@ -62,7 +57,7 @@ You can provide these images as .png files (no greater than 50 MB), each of whic
 
 ### 9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
-This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browing the Store. This image may also be used in search results or in editorially-curated collections.
+This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
 
 This image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
 

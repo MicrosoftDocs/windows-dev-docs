@@ -1,16 +1,12 @@
 ---
-author: QuinnRadich
 title: Windows 10 Build 17763 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17763
 keywords: what's new, whats new, updates, Windows 10, newest, apis, 17763, october
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
-
-
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # New APIs in Windows 10 build 17763
 
 New and updated API namespaces have been made available to developers in Windows 10 build 17763 (Also known as the October 2018 Update or version 1809). Below is a full list of documentation published for namespaces added or modified in this release.

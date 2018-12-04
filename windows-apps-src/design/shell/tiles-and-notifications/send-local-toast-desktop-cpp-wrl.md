@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
 title: Send a local toast notification from desktop C++ WRL apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 03/7/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ---
-
 # Send a local toast notification from desktop C++ WRL apps
 
 Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.
@@ -50,7 +45,7 @@ Include the compat library header file, and the header files and namespaces rela
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
-#include "NotificationActivationCallback.h"
+#include <NotificationActivationCallback.h>
 #include <windows.ui.notifications.h>
 
 using namespace ABI::Windows::Data::Xml::Dom;
@@ -217,7 +212,7 @@ if (SUCCEEDED(hr))
     {
         // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc.Get(), &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!

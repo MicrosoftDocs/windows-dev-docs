@@ -1,16 +1,12 @@
 ---
 title: How x86 and ARM32 emulation work on ARM
-author: msatranjr
+
 description: An overview of emulation of x86 apps on ARM.
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-
-
 keywords: windows 10 s, always connected, x86 emulation on ARM
 ms.localizationpriority: medium
 ---
-
 # How x86 emulation works on ARM
 Emulation for x86 apps makes the rich ecosystem of Win32 apps available on ARM. This provides the user the magical experience of running an existing x86 win32 app without any modifications to the app. The app doesn’t even know that it is running on a Windows on ARM PC, unless it calls specific APIs ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx)).
 

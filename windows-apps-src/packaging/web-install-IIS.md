@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Install a UWP app from an IIS server
 description: This tutorial demonstrates how to set up an IIS server, verify that your web app can host app packages, and invoke and use App Installer effectively.
-ms.author: cdon
 ms.date: 05/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, IIS Server
 ms.localizationpriority: medium
 ---
-
 # Install a UWP app from an IIS server
 
 This tutorial demonstrates how to set up an IIS server, verify that your web app can host app packages, and invoke and use App Installer effectively.
@@ -120,7 +115,7 @@ Due to network isolation, UWP apps like App Installer are restricted to use IP l
 
 To do this, open **Command Prompt** as an **Administrator** and enter the following:
 ```Command Line
-CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -133,7 +128,7 @@ You should find `microsoft.desktopappinstaller_8wekyb3d8bbwe` in the list.
 Once the local validation of app installation via App Installer is complete, you can remove the loopback exemption that you added in this step by:
 
 ```Command Line
-CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+CheckNetIsolation.exe LoopbackExempt -d -n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 ## Step 9 - Run the Web App 

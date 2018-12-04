@@ -1,13 +1,9 @@
 ---
-author: TylerMSFT
 title: Handle file activation
 description: An app can register to become the default handler for a certain file type.
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -16,7 +12,6 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
-
 # Handle file activation
 
 **Important APIs**

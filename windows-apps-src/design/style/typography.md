@@ -1,14 +1,11 @@
 ---
-author: mijacobs
 description: Learn how to use typography in your app to help users understand content easily.
 title: Typography in UWP apps
-ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Typography
 

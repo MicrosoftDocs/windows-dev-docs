@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
 title: Custom text input overview
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: keyboard, text, core text, custom text, Text Services Framework, input, user interactions
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Custom text input
 
 

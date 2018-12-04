@@ -1,16 +1,13 @@
 ---
-author: QuinnRadich
 title: Customer database app structure
 description: Review the structure of the customer database tutorial, and why it's constructed how it is.
 keywords: enterprise, tutorial, customer, data, crud
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 
 
 ms.localizationpriority: med
 ---
-
 # Customer database app structure
 
 Complex line-of-business apps often have many pages and features and a great many lines of code. Because of this, it's of vital importance that you design your app around a predictable structure. There are several application design patterns which are suitable for enterprise apps, but they are all built around the goal of making a large-scale application easier to understand and work with.

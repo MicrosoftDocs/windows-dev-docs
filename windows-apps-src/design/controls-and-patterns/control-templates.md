@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,7 +7,6 @@ title: Control templates
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp

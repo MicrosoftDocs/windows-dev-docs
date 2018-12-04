@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: This article explains how to load and save image files using BitmapDecoder and BitmapEncoder and how to use the SoftwareBitmap object to represent bitmap images.
 title: Create, edit, and save bitmap images
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Create, edit, and save bitmap images
 
 
@@ -44,7 +39,7 @@ Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br22711
 
 To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved. This example uses a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to select an output file.
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream to which the image will be written. Call the static method [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) to get an instance of the [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) class for the specified stream. The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image. **BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 

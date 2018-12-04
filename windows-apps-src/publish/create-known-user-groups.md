@@ -1,16 +1,11 @@
 ---
-author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: Create known user groups
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, targeted group, customers, flight group, user groups, known users
 ms.localizationpriority: medium
 ---
-
 # Create known user groups
 
 Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-flights.md), or for distribution of a submission to a [private audience](choose-visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.

@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Launching and resuming apps (DirectX and C++)
 description: Learn how to launch, suspend, and resume your Universal Windows Platform (UWP) DirectX app.
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, launching, resuming
 ms.localizationpriority: medium
 ---
-
 # Launching and resuming apps (DirectX and C++)
 
 

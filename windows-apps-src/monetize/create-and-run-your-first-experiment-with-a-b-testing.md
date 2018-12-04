@@ -1,36 +1,31 @@
 ---
-author: Xansky
 Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
 title: Create and run your first experiment
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---
-
 # Create and run your first experiment
 
 In this walkthrough, you will:
-* Create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) on the Dev Center dashboard that defines several remote variables that represent the text and color of an app button.
-* Create an app with code that retrieves the remote variable values, uses this data to change the background color of a button, and logs view and conversion event data back to Dev Center.
+* Create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) in Partner Center that defines several remote variables that represent the text and color of an app button.
+* Create an app with code that retrieves the remote variable values, uses this data to change the background color of a button, and logs view and conversion event data back to Partner Center.
 * Create an experiment in the project to test whether changing the background color of the app button successfully increases the number of button clicks.
 * Run the app to gather experiment data.
-* Review the experiment results on the Dev Center dashboard, choose a variation to enable for all users of the app, and complete the experiment.
+* Review the experiment results in Partner Center, choose a variation to enable for all users of the app, and complete the experiment.
 
-For an overview of A/B testing with Dev Center, see [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+For an overview of A/B testing with Partner Center, see [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
 
 ## Prerequisites
 
-To follow this walkthrough, you must have a Windows Dev Center account and you must configure your development computer as described in [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+To follow this walkthrough, you must have a Partner Center account and you must configure your development computer as described in [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
 
-## Create a project with remote variables in Windows Dev Center
+## Create a project with remote variables in Partner Center
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. If you already have an app in Dev Center that you want to use to create an experiment, select that app in your dashboard. If you do not yet have an app in your dashboard, [create a new app by reserving a name](../publish/create-your-app-by-reserving-a-name.md) and then select that app in your dashboard.
+1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard).
+2. If you already have an app in Partner Center that you want to use to create an experiment, select that app in Partner Center. If you do not yet have an app in Partner Center, [create a new app by reserving a name](../publish/create-your-app-by-reserving-a-name.md) and then select that app in Partner Center.
 3. In the navigation pane, click **Services** and then click **Experimentation**.
 4. In the **Projects** section of the next page, click the **New project** button.
 5. In the **New project** page, enter the name **Button Click Experiments** for your new project.
@@ -50,14 +45,14 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 5. In **Solution Explorer**, double-click MainPage.xaml to open the designer for the main page in the app.
 6. Drag a **Button** from **Toolbox** to the page.
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
-8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from the Dev Center dashboard in the previous section.
+8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from Partner Center in the previous section.
     [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. Save the code file and build the project.
 
-## Create the experiment in Windows Dev Center
+## Create the experiment in Partner Center
 
-1. Return to the **Button Click Experiments** project page in the Windows Dev Center dashboard.
+1. Return to the **Button Click Experiments** project page in Partner Center.
 2. In the **Experiments** section, click the **New experiment** button.
 3. In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.
 4. In the **View event** section, type **userViewedButton** in the **View event name** field. Note that this name matches the view event string that you logged in the code you added in the previous section.
@@ -87,13 +82,13 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 Wait at least several hours after completing the previous section, and then follow these steps to review the results of your experiment and complete the experiment.
 
 > [!NOTE]
-> As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> As soon as you activate an experiment, Partner Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in Partner Center.
 
-1. In Dev Center, return to the **Experimentation** page for your app.
+1. In Partner Center, return to the **Experimentation** page for your app.
 2. In the **Active experiments** section, click **Optimize Button Clicks** to go to the page for this experiment.
-3. Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see. For more details about these sections, see [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md#review-the-results-of-your-experiment).
+3. Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see. For more details about these sections, see [Manage your experiment in Partner Center](manage-your-experiment.md#review-the-results-of-your-experiment).
     > [!NOTE]
-    > Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
+    > Partner Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 
 4. Now you are ready to end the experiment. In the **Results summary** section, in the **Variation B** column, click **Switch**. This switches all users of your app to the blue button.
 5. Click **OK** to confirm that you want to end the experiment.
@@ -102,8 +97,8 @@ Wait at least several hours after completing the previous section, and then foll
 
 ## Related topics
 
-* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Create a project and define remote variables in Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
+* [Define your experiment in Partner Center](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Manage your experiment in Partner Center](manage-your-experiment.md)
 * [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)

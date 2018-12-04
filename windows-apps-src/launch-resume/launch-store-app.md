@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the Microsoft Store app
 description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the Microsoft Store app
 
 
@@ -40,7 +35,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Launches the product details page (PDP) for a product. <p>Store ID is recommended for customers on Windows 10, and will work on all OS versions, but the earlier ways of doing it (ex: PFN) are still supported.</p>
-<p>These values can be found in the Windows Dev Center dashboard on the <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App identity</a> page in the App management section for each app.</p>
+<p>These values can be found in [Partner Center](https://partner.microsoft.com/dashboard) on the <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App identity</a> page in the App management section for each app.</p>
 </td>
 <td>
 Store ID <p>(Recommended)</p>

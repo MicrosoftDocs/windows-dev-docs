@@ -1,17 +1,12 @@
 ---
-author: normesta
 Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
-ms.author: normesta
 ms.date: 10/15/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Enhance your desktop application for Windows 10
 
 You can use Windows Runtime APIs to add modern experiences that light up for Windows 10 users.
@@ -32,10 +27,9 @@ Then, add a reference to these files.
 
 |File|Location|
 |--|--|
-|System.Runtime.WindowsRuntime|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|System.Runtime.WindowsRuntime.UI.Xaml|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|System.Runtime.InteropServices.WindowsRuntime|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|Windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Facade|
+|System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
 |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 

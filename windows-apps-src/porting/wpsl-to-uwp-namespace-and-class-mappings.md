@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: This topic provides a comprehensive mapping of Windows Phone Silverlight APIs to their Universal Windows Platform (UWP) equivalents.
 title: Windows Phone Silverlight to UWP namespace and class mappings
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Windows Phone Silverlight to UWP API mappings
 
 

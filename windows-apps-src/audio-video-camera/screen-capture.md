@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Screen capture
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.author: elcowle
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, screen capture
 ms.localizationpriority: medium
 ---
-
 # Screen capture
 
 Starting in Windows 10, version 1803, the [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
@@ -382,6 +377,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## Record a video
+
+If you want to record a video of your application, you can do so more easily with the [Windows.Media.AppRecording namespace](https://docs.microsoft.com/uwp/api/windows.media.apprecording). This is part of the Desktop extension SDK, so it only works on desktop and requires that you add a reference to it from your project. See [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) for more information.
 
 ## See also
 

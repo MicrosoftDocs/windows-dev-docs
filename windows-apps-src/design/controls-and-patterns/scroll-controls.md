@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
 title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
@@ -85,7 +81,7 @@ To add vertical scrolling to your page, wrap the page content in a scroll viewer
 </Page>
 ```
 
-This XAML shows how to place an image in a scroll viewer and enable zooming.
+This XAML shows how to enable horizontal scrolling, place an image in a scroll viewer and enable zooming.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"

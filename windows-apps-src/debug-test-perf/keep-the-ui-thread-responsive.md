@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Keep the UI thread responsive
 description: Users expect an app to remain responsive while it does computation, regardless of the type of machine.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -48,7 +44,7 @@ An example of work that can be performed on a background thread is the calculati
 ```csharp
 public class AsyncExample
 {
-    private async void NextMove-Click(object sender, RoutedEventArgs e)
+    private async void NextMove_Click(object sender, RoutedEventArgs e)
     {
         // The await causes the handler to return immediately.
         await System.Threading.Tasks.Task.Run(() => ComputeNextMove());
@@ -69,7 +65,7 @@ public class AsyncExample
 > public class Example
 > {
 >     // ...
->     private async void NextMove-Click(object sender, RoutedEventArgs e)
+>     private async void NextMove_Click(object sender, RoutedEventArgs e)
 >     {
 >         await Task.Run(() => ComputeNextMove());
 >         // Update the UI with results
@@ -85,7 +81,7 @@ public class AsyncExample
 > ```vb
 > Public Class Example
 >     ' ...
->     Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>     Private Async Sub NextMove_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
 >         Await Task.Run(Function() ComputeNextMove())
 >         ' update the UI with results
 >     End Sub
@@ -97,7 +93,7 @@ public class AsyncExample
 > End Class
 > ```
 
-In this example, the `NextMove-Click` handler returns at the **await** in order to keep the UI thread responsive. But execution picks up in that handler again after `ComputeNextMove` (which executes on a background thread) completes. The remaining code in the handler updates the UI with the results.
+In this example, the `NextMove_Click` handler returns at the **await** in order to keep the UI thread responsive. But execution picks up in that handler again after `ComputeNextMove` (which executes on a background thread) completes. The remaining code in the handler updates the UI with the results.
 
 > **Note**  There's also a [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) and [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API for the UWP, which can be used for similar scenarios. For more info, see [Threading and async programming](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 

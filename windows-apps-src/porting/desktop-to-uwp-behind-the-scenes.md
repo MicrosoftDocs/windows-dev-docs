@@ -1,17 +1,12 @@
 ---
-author: normesta
 Description: This article provides a deeper dive on how the Desktop Bridge works under the covers.
 title: Behind the scenes of the Desktop Bridge
-ms.author: normesta
 ms.date: 05/25/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ---
-
 # Behind the scenes of your packaged desktop application
 
 This article provides a deeper dive on what happens to files and registry entries when you create a Windows app package for your desktop application.

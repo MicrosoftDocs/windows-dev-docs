@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: This section provides information about creating Universal Windows Platform (UWP) apps that capture, play back, or edit photos, videos, or audio.
 title: Audio, video, and camera
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Audio, video, and camera
 
 

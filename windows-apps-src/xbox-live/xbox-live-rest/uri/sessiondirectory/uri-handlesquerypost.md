@@ -2,18 +2,13 @@
 title: POST (/handles/query)
 assetID: a1a47d49-5c3f-8021-a213-13eb8bddf16a
 permalink: en-us/docs/xboxlive/rest/uri-handlesquerypost.html
-author: KevinAsgari
+
 description: ' POST (/handles/query)'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/handles/query)
 Creates queries for session handles.
 

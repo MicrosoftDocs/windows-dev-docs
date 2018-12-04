@@ -4,15 +4,12 @@ description: Streaming resources are needed so GPU memory isn't wasted storing r
 ms.assetid: A88BE65B-104F-4176-9809-C12580A3684C
 keywords:
 - The need for streaming resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # The need for streaming resources
 
 

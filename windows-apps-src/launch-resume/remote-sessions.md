@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Connect devices through remote sessions
 description: Create shared experiences across multiple devices by joining them in a remote session.
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
-ms.author: pafarley
 ms.date: 06/28/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
-
 # Connect devices through remote sessions
 
 The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.

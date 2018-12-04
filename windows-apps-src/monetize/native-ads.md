@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Learn how to add native ads to your UWP app.
 title: Native ads
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, ad control, native ad
 ms.localizationpriority: medium
 ---
-
 # Native ads
 
 A native ad is a component-based ad format where each piece of the ad creative (such as the title, image, description, and call-to-action text) is delivered to your app as an individual element. You can integrate these elements into your app using your own fonts, colors, animations, and other UI components to stitch together an unobtrusive user experience that fits the look and feel of your app while also earning high yield from the ads.
@@ -46,7 +41,7 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
 5.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for native ads.
     > [!NOTE]
-    > Every **NativeAdsManagerV2** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
+    > Every **NativeAdsManagerV2** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
@@ -108,17 +103,17 @@ After you confirm that your native ad implementation successfully shows a test a
 
 1.  Make sure that your native ad implementation follows our [guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
-2.  In the Dev Center dashboard, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
+2.  In Partner Center, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
     > [!NOTE]
-    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
+    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
-4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructor) with the live values you generated in Dev Center.
+4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructor) with the live values you generated in Partner Center.
 
-5.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
+5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
 
-6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
+6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 
 ## Manage ad units for multiple native ads in your app
 

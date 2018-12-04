@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 description: 
 title: Content as objects
 template: detail.hbs
 ms.localizationpriority: medium
 ---
-
 # Content as objects
 
  

@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: Enumerating PointOfService devices
 description: Learn how to enumerate PointOfService devices
-ms.author: jken
 ms.date: 10/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Enumerating Point of Service devices
 In this section you will learn how to [define a device selector](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
 

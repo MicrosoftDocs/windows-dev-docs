@@ -4,15 +4,12 @@ description: The Tessellator (TS) stage creates a sampling pattern of the domain
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
 keywords:
 - Tessellator (TS) stage
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Tessellator (TS) stage
 
 

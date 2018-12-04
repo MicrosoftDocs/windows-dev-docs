@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: Create add-on Store listings
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Create add-on Store listings
 
 When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.

@@ -1,8 +1,6 @@
 ---
-author: KevinAsgari
 title: Xbox Live policies
 description: Describes the policies for adding Xbox Live to a Windows 10 or Xbox One game.
-ms.author: kevinasg
 ms.date: 05/17/2018
 ms.topic: article
 
@@ -11,7 +9,6 @@ layout: LandingPage
 keywords: windows 10, uwp, games, xbox, xbox live, policies
 ms.localizationpriority: medium
 ---
-
 ## Xbox Live policies
 
 **Document version: 2.0**

@@ -1,18 +1,14 @@
 ---
-author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
 Search.Product: eADQiWindows 10XVcnh
 title: Package desktop applications
-ms.author: normesta
 ms.date: 09/05/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Package desktop applications (Desktop Bridge)
 
 Take your existing desktop application and add modern experiences for Windows 10 users. Then, achieve greater reach across international markets by distributing it through the Microsoft Store. You can monetize your application in much simpler ways by leveraging features built right into the store. Of course, you don't have to use the store. Feel free to use your existing channels.
@@ -24,7 +20,7 @@ When you create a package for your desktop application, your application will ge
 Aside from the code that you use to light up Windows 10 experiences, your application remains unchanged and you can continue to distribute it to your existing Windows 7, Windows Vista, or Windows XP user base. On Windows 10, your application continues to run in full-trust user mode just like it’s doing today.
 
 >[!IMPORTANT]
->The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 > [!NOTE]
 > Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through the entire process of bringing your desktop application to the Universal Windows Platform (UWP).
@@ -87,7 +83,7 @@ Visual Studio makes it abundantly easy to create a package. You'll add a packagi
 
 :heavy_check_mark: Generate your package by using a wizard.
 
-:heavy_check_mark: Easily assign an identity to your application from a name that you've already reserved in the Windows Dev Center dashboard.
+:heavy_check_mark: Easily assign an identity to your application from a name that you've already reserved in [Partner Center](https://partner.microsoft.com/dashboard).
 
 See [Package a desktop application by using Visual Studio](desktop-to-uwp-packaging-dot-net.md)
 

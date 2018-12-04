@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Use this method to renew a Microsoft Store key.
 title: Renew a Microsoft Store ID key
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew
 ms.localizationpriority: medium
 ---
-
 # Renew a Microsoft Store ID key
 
 

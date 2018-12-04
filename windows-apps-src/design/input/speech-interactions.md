@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
 title: Speech interactions
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Speech interactions
 
 Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.

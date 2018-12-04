@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use visual feedback to show users when their interactions with a UWP app are detected, interpreted, and handled.
 title: Visual feedback
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: visual feedback, focus feedback, touch feedback, contact visualization, input, interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Guidelines for visual feedback
 
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
@@ -115,20 +112,20 @@ To change the colors on a per-control basis, just edit the focus visual properti
 * [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Input: XAML user input events sample](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

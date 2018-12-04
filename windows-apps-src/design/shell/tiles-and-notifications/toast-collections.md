@@ -1,14 +1,10 @@
 ---
-author: manoskow
 Description: Learn how to group notifications in Action Center using collections.
 title: Toast Collections
 label: Toast Collections
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, notification, collections, collection, group notifications, grouping notifications, group, organize, Action Center, toast
 ms.localizationpriority: medium
 ---

@@ -1,26 +1,21 @@
 ---
-author: normesta
 Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
 title: Package a desktop application by using Visual Studio
-ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ---
-
 # Package a desktop application by using Visual Studio
 
-You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Windows store or sideload it onto one or more PCs.
+You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Microsoft Store or sideload it onto one or more PCs.
 
 The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
 
 >[!IMPORTANT]
->The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 ## First, prepare your application
 
@@ -63,7 +58,7 @@ Review this guide before you begin creating a package for your application: [Pre
 
 7. Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.
 
-   You can upload that file directly to the store.
+   You can upload that file directly to the Store.
 
 **Video**
 

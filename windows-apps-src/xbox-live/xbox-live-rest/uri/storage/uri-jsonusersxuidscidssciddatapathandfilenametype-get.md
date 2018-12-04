@@ -2,18 +2,13 @@
 title: GET (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 assetID: 229cabc6-3c5c-89e1-47e3-96a7f54094c9
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenametype-get.html
-author: KevinAsgari
+
 description: ' GET (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 Downloads a file. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from C++/CX
-ms.author: stwhi
 ms.date: 10/18/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
 ---
-
 # Move to C++/WinRT from C++/CX
 
 This topic shows how to port the code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).

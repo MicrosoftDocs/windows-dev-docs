@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Use the Python code examples in this section to learn more about submitting game options and trailers using the Microsoft Store submission API.
 title: Python sample - app submission with game options and trailers
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, game options, trailers, advanced listings, python
 ms.localizationpriority: medium
 ---
-
 # Python sample: app submission with game options and trailers
 
 This article provides Python code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
@@ -27,7 +22,7 @@ This article provides Python code examples that demonstrate how to use the [Micr
 
 This code calls other example classes and functions to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer. To adapt this code for your own use:
 
-* Assign the ```tenant``` variable to the tenant ID for your app, and assign the ```client``` and ```secret``` variables to the client ID and key for your app. For more information, see [How to associate an Azure AD application with your Windows Dev Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
+* Assign the ```tenant``` variable to the tenant ID for your app, and assign the ```client``` and ```secret``` variables to the client ID and key for your app. For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * Assign the ```application_id``` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.
 
 > [!div class="tabbedCodeSnippets"]

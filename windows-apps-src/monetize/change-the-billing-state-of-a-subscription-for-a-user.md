@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: Use this method in the Microsoft Store purchase API to change the billing state of a subscription for a user.
 title: Change the billing state of a subscription for a user
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
 ---
-
 # Change the billing state of a subscription for a user
 
 Use this method in the Microsoft Store purchase API to change the billing state of a subscription add-on for a given user. You can cancel, extend, refund, or disable automatic renewal for a subscription.

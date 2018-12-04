@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Package creation with the packaging layout
 description: The packaging layout is a single document that describes packaging structure of the app. It specifies the bundles of an app (primary and optional), the packages in the bundles, and the files in the packages.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-
-
 keywords: windows 10, packaging, package layout, asset package
 ms.localizationpriority: medium
 ---
-
 # Package creation with the packaging layout  
 
 With the introduction of asset packages, developers now have the tools to build more packages in addition to more package types. As an app gets larger and more complex, it will often be comprised of more packages, and the difficulty of managing these packages will increase (especially if you are building outside of Visual Studio and using mapping files). To simplify the management of an app’s packaging structure, you can use the packaging layout supported by MakeAppx.exe. 

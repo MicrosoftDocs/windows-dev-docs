@@ -1,16 +1,12 @@
 ---
-author: QuinnRadich
 title: Learning track - Construct and configure a form
 description: Learn what you need to do to create a robust form in your app.
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
-
-
 keywords: get started, uwp, windows 10, learning track, layout, form
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Create and customize a form
 
 If you're creating an app that requires users to input a significant amount of information, chances are you'll want to create a form for them to fill out. This article will show you what you need to know in order to create a form that is useful and robust.

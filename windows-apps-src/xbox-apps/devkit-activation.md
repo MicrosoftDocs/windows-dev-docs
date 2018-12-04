@@ -1,17 +1,12 @@
 ---
-author: Mtoepke
 title: Xbox One Developer Mode activation
 description: How to activate Developer Mode so you can switch between Retail Mode and Developer Mode.
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ---
-
 # Xbox One Developer Mode activation
 
 ## How Developer Mode works
@@ -39,9 +34,9 @@ Developer Mode can be enabled on any retail Xbox One console. After Developer Mo
     
 5.	Go to [partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate).
 
-6.	Sign in to Dev Center with your Dev Center account.
+6.	Sign in to [Partner Center](https://partner.microsoft.com/dashboard) with your account credentials.
 
-7.	Enter the activation code displayed in the Dev Mode Activation app. You have a limited number of activations associated with your account. After Developer Mode has been activated, Dev Center will indicate you have used one of the activations associated with your account.
+7.	Enter the activation code displayed in the Dev Mode Activation app. You have a limited number of activations associated with your account. After Developer Mode has been activated, Partner Center will indicate you have used one of the activations associated with your account.
 
     ![Activation Step 8](images/activation-step-8-rs2.png)    
     

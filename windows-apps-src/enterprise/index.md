@@ -2,29 +2,16 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: This roadmap provides an overview of key enterprise features for Windows 10 and Universal Windows Platform (UWP) apps.
 title: Enterprise
-author: awkoren
-ms.author: alkoren
 ms.date: 08/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Enterprise
 
-This roadmap provides an overview of key enterprise features for Windows 10 Universal Windows Platform (UWP) apps.
+This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows 10 apps.
 
-**Note**  This article is targeted towards developers writing enterprise UWP apps. For general UWP development, see the [How-to guides for Windows 10 apps](https://msdn.microsoft.com/library/windows/apps/mt244352). For WPF, Windows Forms, or Win32 development, visit the [Desktop dev center](https://dev.windows.com/desktop). For IT professional resources, like deploying Windows 10 or managing enterprise security features, see [Windows 10 on TechNet](https://msdn.microsoft.com/library/dn986868).
-
-Is there a version of this application that shows some of the advancements that were showcased at Build during this presentation [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)
-
-Things worth calling out at front:
-
-## What's new for Enterprise applications
-
-Here's some tools, libraries, and capabilities that have been created fairly recently.
+## What's new and recent for enterprise applications
 
 > [!div class="checklist"]
 > * [Windows Template Studio](#template-studio)
@@ -35,6 +22,8 @@ Here's some tools, libraries, and capabilities that have been created fairly rec
 > * [.NET Standard 2.0](#standard)
 > * [SQL Server connectivity](#sql-server)
 > * [MSIX deployment](#MSIX)
+
+For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
 
 <a id="template-studio" />
 
@@ -48,7 +37,7 @@ See [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNam
 
 <a id="desktop-style-UI" />
 
-### Controls to create Desktop-Style UIs
+### Controls to create desktop-style UIs
 
 We've released new UWP XAML controls that fill the gap between a traditional desktop application UI and a UWP UI.
 
@@ -58,7 +47,7 @@ For example, the new [MenuBar](https://review.docs.microsoft.com/en-us/windows/u
 
 <a id="enterprise" />
 
-### Controls to support Enterprise scenarios
+### Controls to support enterprise scenarios
 
 The [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
 
@@ -109,7 +98,7 @@ MSIX is the Windows app package format that provides a modern packaging experien
 
 MSIX is a packaging format built to be safe, secure and reliable, based on a combination of .msi, .appx, App-V and ClickOnce installation technologies.
 
-![MSIX Icon](images/WinUI_MSIX_2col_740x417.png)
+![MSIX Icon](images/MSIX-App-Package.ico)
 
 See [MSIX documentation](https://docs.microsoft.com/windows/msix/).
 
@@ -180,14 +169,10 @@ You have options for distributing apps to your organization’s users. You can u
 
 ## Enterprise UWP samples
 
-Intro text goes here.
-
-Action - talk to Josh and/or Karl to get more enterprise-focused samples together.
-
 | Topic |  Description |
 |------ |--------------|
-| [VanArsdel Inventory Sample](https://github.com/Microsoft/InventorySample) | A sample Windows 10 application (using the Universal Windows Platform) focused in Line of Business scenarios, showing how to use the latest Windows capabilities in Desktop applications. The sample is based around creating and managing customer, orders, and products for the fictitious company VanArsdel.
-Highlights MVVM, SQL database, Entity Framework. List others.|
+| [VanArsdel Inventory Sample](https://github.com/Microsoft/InventorySample) | A UWP sample app that showcases line-of-business scenarios. The sample is based around creating and managing customer, orders, and products for the fictitious company VanArsdel. |
+| [Customer Orders Database Sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | A UWP sample app that showcases features useful to enterprise developers, like Azure Active Directory (AAD) authentication, UI controls (including a data grid), Sqlite and SQL Azure database integration, Entity Framework, and cloud API services. The sample is based around creating and managing customer accounts, orders, and products for the fictitious company Contoso. |
 
 ## Patterns and practices
 

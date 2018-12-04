@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: Behind your UI are your business and data layers.
 title: Porting Windows Phone Silverlight business and data layers to UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 #  Porting Windows Phone Silverlight business and data layers to UWP
 
 

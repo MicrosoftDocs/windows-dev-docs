@@ -1,16 +1,13 @@
 ---
-author: QuinnRadich
 title: What's New in Windows Docs in December 2017 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for December 2017
 keywords: what's new, update, features, developer guidance, Windows 10, december
-ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # What's New in the Windows Developer Docs in December 2017
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and samples have been made available after the release of the Fall Creators Update, containing new and updated information for Windows developers.
@@ -45,7 +42,7 @@ On devices that support touch interactions, add keyboard functionality with the 
 
 The Microsoft Collaborate portal provides tools and services to streamline engineering collaboration within the Microsoft ecosystem by enabling the sharing of engineering system work items (bugs, feature requests, etc.) and the distribution of content (builds, documents, specs). [Learn more](https://docs.microsoft.com/en-us/collaborate).
 
-![Microsoft Collaborate in Dev Center Dashboard](images/microsoft_collaborate_screenshot.PNG)
+![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
 ### Package desktop applications with UWP projects
 

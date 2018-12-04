@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Optimize input latency for UWP DirectX games
 description: Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished.
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx, input latency
 ms.localizationpriority: medium
 ---
-
 #  Optimize input latency for Universal Windows Platform (UWP) DirectX games
 
 

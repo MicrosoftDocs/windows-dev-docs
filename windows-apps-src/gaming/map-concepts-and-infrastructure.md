@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Map OpenGL ES 2.0 to Direct3D 11
 description: When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs.
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, opengl, direct3d, porting
 ms.localizationpriority: medium
 ---
-
 # Map OpenGL ES 2.0 to Direct3D 11
 
 

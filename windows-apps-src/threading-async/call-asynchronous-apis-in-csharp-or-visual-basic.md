@@ -1,13 +1,9 @@
 ---
-author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: Call asynchronous APIs in C# or Visual Basic
 description: The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, C#, Visual Basic, asynchronous
 ms.localizationpriority: medium
 ---

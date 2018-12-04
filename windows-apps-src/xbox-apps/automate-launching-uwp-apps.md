@@ -1,10 +1,9 @@
 ---
 title: Automate launching Windows 10 Universal Windows Platform (UWP) apps
 description: Developers can use protocol activation and launch activation to automate launching their UWP apps or games for automated testing.
-author: listurm
+
 ms.localizationpriority: medium
 ---
-
 # Automate launching Windows 10 UWP apps
 
 ## Introduction

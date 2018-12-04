@@ -1,16 +1,11 @@
 ---
-author: TylerMSFT
 title: Trigger a background task from within your app
 description: Describes how to trigger a background task from within an application
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-
-
 keywords: background task trigger, background task
 ms.localizationpriority: medium
 ---
-
 # Trigger a background task from within your app
 
 Learn how to use the [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) to activate a background task from within your app.

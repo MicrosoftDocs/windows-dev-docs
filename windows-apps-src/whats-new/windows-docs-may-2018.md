@@ -1,14 +1,11 @@
 ---
-author: QuinnRadich
 title: What's New in Windows Docs in May 2018 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for May 2018 and the Microsoft Build conference.
 keywords: what's new, update, features, developer guidance, Windows 10, may, build
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
-
 # What's New in the Windows Developer Docs in May 2018
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.
@@ -109,11 +106,11 @@ We've revitalized our Get started content with new learning tracks. These new to
 
 ### Advertising performance report
 
-The [Advertising performance report](../publish/advertising-performance-report.md) in the Dev Center dashboard now provides viewability metrics. We also added the [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md) article to provide recommendations for optimizing the viewability of your ads.
+The [Advertising performance report](../publish/advertising-performance-report.md) in Partner Center now provides viewability metrics. We also added the [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md) article to provide recommendations for optimizing the viewability of your ads.
 
 ### Targeted push notifications
 
-The [Notifications](../publish/send-push-notifications-to-your-apps-customers.md) page in the Dev Center dashboard now provides additional analytics data for all your notifications in graph and world map views.
+The [Notifications](../publish/send-push-notifications-to-your-apps-customers.md) page in Partner Center now provides additional analytics data for all your notifications in graph and world map views.
 
 ## Videos
 

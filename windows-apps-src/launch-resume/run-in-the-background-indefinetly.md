@@ -1,17 +1,14 @@
 ---
-author: TylerMSFT
 title: Run in the background indefinitely
 description: Use the extendedExecutionUnconstrained capability to run a background task or extended execution session in the background indefinitely.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: background task, extended execution, resources, limits, background task
-ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Run in the background indefinitely
 
 To provide the best experience for users, Windows imposes resource limits on Universal Windows Platform (UWP) apps. Foreground apps are given the most memory and execution time; background apps get less. Users are thus protected from poor foreground app performance and heavy battery drain.

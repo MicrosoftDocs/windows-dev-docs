@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: GLSL-to-HLSL reference
 description: You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you port your graphics architecture from OpenGL ES 2.0 to Direct3D 11 to create a game for Universal Windows Platform (UWP).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, shaders
 ms.localizationpriority: medium
 ---
-
 # GLSL-to-HLSL reference
 
 

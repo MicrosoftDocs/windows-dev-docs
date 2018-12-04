@@ -1,17 +1,12 @@
 ---
-author: normesta
 Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Extend your desktop application with Windows UIs and components
-ms.author: normesta
 ms.date: 06/08/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Extend your desktop application with modern UWP components
 
 Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime Components.
@@ -135,8 +130,8 @@ Add a XAML UI to your UWP project. Here's the XAML for a basic map.
     <maps:MapControl x:Name="myMap" Grid.Column="0" Width="500" Height="500"
                      ZoomLevel="{Binding ElementName=zoomSlider,Path=Value, Mode=TwoWay}"
                      Heading="{Binding ElementName=headingSlider,Path=Value, Mode=TwoWay}"
-                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"    
-                     HorizontalAlignment="Left"               
+                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"
+                     HorizontalAlignment="Left"
                      MapServiceToken="<Your Key Goes Here" />
     <Grid Grid.Column="1" Margin="12">
         <StackPanel>
@@ -157,7 +152,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of the Packagin
   <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
     <uap:Protocol Name="xamluidemo" />
   </uap:Extension>
-</Extensions>    
+</Extensions>
 ```
 
 Give the protocol a name, provide the name of the executable produced by the UWP project, and the name of the entry point class.
@@ -327,6 +322,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
     }
 }
 ```
+
 In this code, we save the image that is being shared by the user into a apps local storage folder. Later, we'll modify the desktop application to pull images from that same folder. The desktop application can do that because it is included in the same package as the UWP app.
 
 <a id="desktop-extensions" />
@@ -362,6 +358,7 @@ Modify your desktop application to find and process the shared file. In this exa
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
+
 For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
 
 ```csharp
@@ -496,11 +493,12 @@ public void RegisterBackgroundTask(String triggerName)
     }
 }
 ```
+
 ## Support and feedback
 
 **Find answers to your questions**
 
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 **Give feedback or make feature suggestions**
 

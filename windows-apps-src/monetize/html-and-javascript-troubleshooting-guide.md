@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, HTML, javascript
 ms.localizationpriority: medium
 ---
-
 # HTML and JavaScript troubleshooting guide
 
 This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
@@ -45,7 +40,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -270,7 +265,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

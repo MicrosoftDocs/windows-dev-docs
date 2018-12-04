@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
 title: Manual app packaging
 description: This section contains or links to articles about manually packaging Universal Windows Platform (UWP) apps.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
 ---
-
 # Manual app packaging
 
 If you want to create and sign an app package, but you didn't use Visual Studio to develop your app, you'll need to use the manual app packaging tools.

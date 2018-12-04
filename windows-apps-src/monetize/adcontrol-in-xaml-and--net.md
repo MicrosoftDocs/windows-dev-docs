@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: Learn how to use the AdControl class to display banner ads in a XAML app for Windows 10 (UWP).
 title: AdControl in XAML and .NET
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, AdControl, ad control, XAML, .net, walkthrough
 ms.localizationpriority: medium
 ---
-
 # AdControl in XAML and .NET
 
 
@@ -77,7 +72,7 @@ This walkthrough shows how to use the [AdControl](https://docs.microsoft.com/uwp
 5. In the **Grid** tag, add the code for the **AdControl**. Assign the  [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) and [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) properties to the [test ad unit values](set-up-ad-units-in-your-app.md#test-ad-units). Also adjust the **Height** and **Width** of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
     > [!NOTE]
-    > Every **AdControl** has a corresponding *ad unit* that is used by our services to serve ads to the control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
+    > Every **AdControl** has a corresponding *ad unit* that is used by our services to serve ads to the control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Partner Center.
 
     The complete **Grid** tag looks like this code.
 
@@ -123,17 +118,17 @@ This walkthrough shows how to use the [AdControl](https://docs.microsoft.com/uwp
 
 1. Make sure your use of banner ads in your app follows our [guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
 
-2.  In the Dev Center dashboard, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
+2.  In Partner Center, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
     > [!NOTE]
-    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
+    > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in Partner Center, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
 3. You can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
-4.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Dev Center.
+4.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Partner Center.
 
-5.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
+5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
 
-6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
+6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 
 <span id="manage" />
 

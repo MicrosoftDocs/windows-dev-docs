@@ -1,18 +1,13 @@
 ---
-author: mijacobs
 Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Windows Push Notification Services (WNS) overview
  
 
@@ -35,7 +30,7 @@ The following diagram shows the complete data flow for sending a push notificati
 ## Registering your app and receiving the credentials for your cloud service
 
 
-Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, go to the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=511146) and select **Dashboard**. After you create your app, you can retrieve the credentials by following the instructions on the **App Management - WNS/MPNS** page. If you want to use the Live Services solution, follow the **Live services site** link on this page.
+Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, sign in to [Partner Center](https://partner.microsoft.com/dashboard). After you create your app, you can retrieve the credentials by following the instructions on the **App Management - WNS/MPNS** page. If you want to use the Live Services solution, follow the **Live services site** link on this page.
 
 Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
 

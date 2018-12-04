@@ -1,9 +1,8 @@
 ---
 title: Xbox Live Summary Page
-author: KevinAsgari
+
 description: Describes how you can leverage the Xbox Live summary view
 ms.assetid:
-ms.author: kevinasg
 ms.date: 10/19/2018
 ms.topic: article
 
@@ -11,10 +10,9 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, xbox live summary, summary, publish, xbox live history, command bar, history tab, summary table
 ---
-
 # The Xbox Live configuration summary page
 
-You can use the [Partner Center](https://developer.microsoft.com/dashboard) to configure Xbox Live for your title. With Partner Center you will be able to manage the service configuration for each of your title's sandboxes.
+You can use [Partner Center](https://developer.microsoft.com/dashboard) to configure Xbox Live for your title. With Partner Center you will be able to manage the service configuration for each of your title's sandboxes.
 In order to configure the Xbox Live aspects of your title, navigate to the Xbox Live section for your title, located under **Services** > **Xbox Live**. On this page, you will find a snapshot of your current configuration on the selected sandbox. You will also find a detailed breakdown of what has been configured and published to the sandbox as well.
 
 ## Sandbox selector

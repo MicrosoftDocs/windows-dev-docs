@@ -1,13 +1,9 @@
 ---
-author: TylerMSFT
 title: Use a maintenance trigger
 description: Learn how to use the MaintenanceTrigger class to run lightweight code in the background while the device is plugged in.
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -15,7 +11,6 @@ dev_langs:
 - cppwinrt
 - cpp
 ---
-
 # Use a maintenance trigger
 
 **Important APIs**
@@ -32,7 +27,7 @@ This example assumes that you have lightweight code you can run in the backgroun
 
 More information on writing a background task class is available in [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) or [Create and register an out-of-process background task](create-and-register-a-background-task.md).
 
-Create a new [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) object. The second parameter, *OneShot*, specifies whether the maintenance task will run only once or continue to run periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies how often the background task will run.
+Create a new [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) object. The second parameter, *OneShot*, specifies whether the maintenance task will run only once or continue to run periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies how often the background task will run.
 
 > [!NOTE]
 > If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.

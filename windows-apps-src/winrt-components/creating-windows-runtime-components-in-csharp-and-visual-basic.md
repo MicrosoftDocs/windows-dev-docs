@@ -1,20 +1,15 @@
 ---
-author: msatranjr
 title: Creating Windows Runtime Components in C# and Visual Basic
 description: Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 dev_langs:
  - CSharp
  - VB
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Creating Windows Runtime Components in C# and Visual Basic
 Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#. This topic outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime. In general, that support is designed to be transparent to the .NET Framework programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
 

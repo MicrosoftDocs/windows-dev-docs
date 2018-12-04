@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the Windows.Web.Syndication namespace.
 title: RSS/Atom feeds
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # RSS/Atom feeds
 
 

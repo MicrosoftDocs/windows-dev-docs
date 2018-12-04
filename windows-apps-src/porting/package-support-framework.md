@@ -1,17 +1,12 @@
 ---
-author: normesta
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
 title: Fix issues that prevent your desktop application from running in an MSIX container
-ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Apply runtime fixes to an MSIX package by using the Package Support Framework
 
 The Package Support Framework is an open source kit that helps you apply fixes to your existing win32 application when you don't have access to the source code, so that it can run in an MSIX container. The Package Support Framework helps your application follow the best practices of the modern runtime environment.
@@ -89,7 +84,7 @@ If you have a .msix (or .appx) file already, you can unpack its contents into a 
 x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makemsix.exe
 x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makemsix.exe
 
-```
+```ps
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
@@ -108,14 +103,13 @@ You can get the PSF Nuget package by using the standalone Nuget command line too
 
 Install the Nuget command line tool from this location: https://www.nuget.org/downloads. Then, from the Nuget command line, run this command:
 
-```
+```ps
 nuget install Microsoft.PackageSupportFramework
 ```
 
 #### Get the package by using Visual Studio
 
 In Visual Studio, right-click your solution or project node and pick one of the Manage Nuget Packages commands.  Search for **Microsoft.PackageSupportFramework** or **PSF** to find the package on Nuget.org. Then, install it.
-
 
 ### Add the Package Support Framework files to your package
 
@@ -185,6 +179,7 @@ Create a file name ``config.json``, and save that file to the root folder of you
     ]
 }
 ```
+
 Following is a guide for the config.json schema:
 
 | Array | key | Value |
@@ -198,18 +193,17 @@ Following is a guide for the config.json schema:
 
 The `applications`, `processes`, and `fixups` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and fixup DLL.
 
-
 ### Package and Test the App
 
 Next, create a package.
 
-```
+```ps
 makeappx pack /d PackageContents /p PSFSamplePackageFixup.msix
 ```
 
 Then, sign it.
 
-```
+```ps
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
@@ -221,7 +215,7 @@ Using PowerShell, install the package.
 >[!NOTE]
 > Remember to uninstall the package first.
 
-```
+```ps
 powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 ```
 
@@ -277,7 +271,6 @@ To look at a complete sample that contains all of these types of projects, see [
 
 Let's walk through the steps to create and configure each of these projects in your solution.
 
-
 ### Create a package solution
 
 If you don't already have a solution for your desktop application, create a new **Blank Solution** in Visual Studio.
@@ -296,7 +289,7 @@ For more information on Windows Application Packaging project, see [Package your
 
 In **Solution Explorer**, right-click the packaging project, select **Edit**, and then add this to the bottom of the project file:
 
-```
+```xml
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
 <ItemGroup>
   <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
@@ -400,6 +393,7 @@ Add a file named ``config.json`` to your packaging project, then, copy and paste
     ]
 }
 ```
+
 Provide a value for each key. Use this table as a guide.
 
 | Array | key | Value |
@@ -460,6 +454,7 @@ Declare the ``FIXUP_DEFINE_EXPORTS`` macro and then add a include statement for 
 #define FIXUP_DEFINE_EXPORTS
 #include <fixup_framework.h>
 ```
+
 >[!IMPORTANT]
 >Make sure that the `FIXUP_DEFINE_EXPORTS` macro appears before the include statement.
 
@@ -524,25 +519,27 @@ To address this issue, use a debugger that supports child process attach.  Note 
 
 To debug target application startup as a child process, start ``WinDbg``.
 
-```
+```ps
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
 At the ``WinDbg`` prompt, enable child debugging and set appropriate breakpoints.
 
-```
+```ps
 .childdbg 1
 g
 ```
+
 (execute until target application starts and breaks into the debugger)
 
-```
+```ps
 sxe ld fixup.dll
 g
 ```
+
 (execute until the fixup DLL is loaded)
 
-```
+```ps
 bp ...
 ```
 
@@ -554,4 +551,3 @@ bp ...
 **Find answers to your questions**
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-

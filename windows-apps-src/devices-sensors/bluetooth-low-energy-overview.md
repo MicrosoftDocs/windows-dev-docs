@@ -1,16 +1,11 @@
 ---
-author: msatranjr
 title: Bluetooth Low Energy
 description: This topic provides a quick overview of Bluetooth LE in UWP apps.
-ms.author: misatran
 ms.date: 03/15/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, central, peripheral, client, server, watcher, publisher
 ms.localizationpriority: medium
 ---
-
 # Bluetooth Low Energy
 Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices. Discovery of devices is done through the Generic Access Profile (GAP) protocol. After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol. This topic provides a quick overview of Bluetooth LE in UWP apps. To see more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification) version 4.0, where Bluetooth LE was introduced. 
 
@@ -28,7 +23,7 @@ The two primary roles of discovery are called Central and Peripheral. In general
 ## Attributes
 A common acronym you will see in the Windows Bluetooth APIs is Generic Attribute (GATT). The GATT Profile defines the structure of data and modes of operation by which two Bluetooth LE devices communicate. The attribute is the main building block of GATT. The main types of attributes are services, characteristics and descriptors. These attributes perform differently between clients and servers, so it is more useful to discuss their interaction in the relevant sections. 
 
-![Typical Attribute heirarchy in a common profile](images/gatt-service.png)
+![Typical Attribute hierarchy in a common profile](images/gatt-service.png)
 
 *The heart rate service is expressed in GATT Server API form*
 

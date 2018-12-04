@@ -1,23 +1,18 @@
 ---
-author: Xansky
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
-ms.author: mhopkins
 ms.date: 06/15/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
 ---
-
 # Request ratings and reviews for your app
 
 You can add code to your Universal Windows Platform (UWP) app to programmatically prompt your customers to rate or review your app. There are several ways you can do this:
 * You can show a rating and review dialog directly in the context of your app.
 * You can programmatically open the rating and review page for your app in the Microsoft Store.
 
-When you are ready to analyze your ratings and reviews data, you can view the data in the Windows Dev Center dashboard or use the Microsoft Store analytics API to retrieve this data programmatically.
+When you are ready to analyze your ratings and reviews data, you can view the data in Partner Center or use the Microsoft Store analytics API to retrieve this data programmatically.
 
 > [!IMPORTANT]
 > When adding a rating function within your app, all reviews must send the user to the Store’s rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
@@ -99,7 +94,7 @@ For more information, see [Launch the Microsoft Store app](../launch-resume/laun
 ## Analyze your ratings and reviews data
 
 To analyze the ratings and reviews data from your customers, you have several options:
-* You can use the [Reviews](../publish/reviews-report.md) report in the Windows Dev Center dashboard to see the ratings and reviews from your customers. You can also download this report to view it offline.
+* You can use the [Reviews](../publish/reviews-report.md) report in Partner Center to see the ratings and reviews from your customers. You can also download this report to view it offline.
 * You can use the [Get app ratings](get-app-ratings.md) and [Get app reviews](get-app-reviews.md) methods in the Store analytics API to programmatically retrieve the ratings and reviews from your customers in JSON format.
 
 ## Related topics

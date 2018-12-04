@@ -1,16 +1,11 @@
 ---
-author: Xansky
 description: Learn about ways to improve the viewability of your ad units.
 title: Optimize the viewability of your ad units
-ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability
 ms.localizationpriority: medium
 ---
-
 # Optimize the viewability of your ad units
 
 The [Advertising performance report](../publish/advertising-performance-report.md) includes viewability metrics for your ad units. Viewability is an important metric because the advertising industry is moving towards valuing viewable impressions rather than just delivered impressions. Advertisers tend to bid for viewable impressions because they have an increased chance of their ads being seen by users.  

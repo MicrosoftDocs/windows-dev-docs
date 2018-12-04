@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Visual Studio tools for game programming
 description: An overview of DirectX specific tools available in Visual Studio.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, visual studio, tools, directx
 ms.localizationpriority: medium
 ---
-
 # Visual Studio tools for game programming
 
 

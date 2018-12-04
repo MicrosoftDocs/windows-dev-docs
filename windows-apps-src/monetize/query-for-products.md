@@ -1,17 +1,12 @@
 ---
-author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store collection API, view products
 ms.localizationpriority: medium
 ---
-
 # Query for products
 
 
@@ -58,7 +53,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 | modifiedAfter     | datetime     | If specified, the service only returns products that have been modified after this date.        | No       |
 | parentProductId   | string       | If specified, the service only returns add-ons that correspond to the specified app.      | No       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | If specified, the service only returns products applicable to the provided product/SKU pairs. For more information, see the table below.      | No       |
-| productTypes      | string       | If specified, the service only returns products that match the specified product types. Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.     | No       |
+| productTypes      | list&lt;string&gt;       | Specifies which products types to return in the query results. Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.     | Yes       |
 | validityType      | string       | When set to **All**, all products for a user will be returned, including expired items. When set to **Valid**, only products that are valid at this point in time are returned (that is, they have an active status, start date &lt; now, and end date is &gt; now). | No       |
 
 
@@ -131,7 +126,7 @@ The CollectionItemContractV6 object contains the following parameters.
 | devOfferId           | string             | The offer ID from an in-app purchase.              | No       |
 | endDate              | datetime           | The end date of the item.              | Yes      |
 | fulfillmentData      | string             | N/A         | No       |
-| inAppOfferToken      | string             | The developer-specified product ID string that is assigned to the item in the Windows Dev Center dashboard. An example product ID is *product123*. | No       |
+| inAppOfferToken      | string             | The developer-specified product ID string that is assigned to the item in Partner Center. A example product ID is *product123*. | No       |
 | itemId               | string             | An ID that identifies this collection item from other items the user owns. This ID is unique per product.   | Yes      |
 | localTicketReference | string             | The ID of the previously supplied *localTicketReference* in the request body.                  | Yes      |
 | modifiedDate         | datetime           | The date this item was last modified.              | Yes      |

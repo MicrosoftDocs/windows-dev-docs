@@ -1,15 +1,12 @@
 ---
-author: jwmsft
 description: Links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML.
 title: TemplateBinding markup extension
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
-ms.author: jimwalk
 ms.date: 10/29/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # {TemplateBinding} markup extension
 
 Links the value of a property in a control template to the value of some other exposed property on the templated control. **TemplateBinding** can only be used within a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML.

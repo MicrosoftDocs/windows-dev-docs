@@ -1,12 +1,8 @@
 ---
 title: Web Account Manager
 description: This article describes how to use the AccountsSettingsPane to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs.
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium

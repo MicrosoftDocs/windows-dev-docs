@@ -1,16 +1,12 @@
 ---
 title: Game Chat 2 Migration
-author: KevinAsgari
+
 description: Learn how to migrate existing Game Chat code to use Game Chat 2.
-ms.author: kevinasg
 ms.date: 5/2/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
 ms.localizationpriority: medium
 ---
-
 # Migration from Game Chat to Game Chat 2
 
 This document details the similarities between Game Chat and Game Chat 2 and how to migrate from Game Chat to Game Chat 2. As such, it is for titles that have an existing Game Chat implementation that wish to migrate to Game Chat 2. If you don't already have a Game Chat implementation, the suggested starting point is [Using Game Chat 2](using-game-chat-2.md). This document contains the following topics:
@@ -408,7 +404,7 @@ Both Game Chat and Game Chat 2 enforce Xbox Live privilege and privacy restricti
 
 ### Game Chat
 
-Game Chat exposed privilege and privacy information throught the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
+Game Chat exposed privilege and privacy information through the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
 
 ### Game Chat 2
 

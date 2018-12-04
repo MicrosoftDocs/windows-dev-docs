@@ -1,17 +1,13 @@
 ---
-author: jwmsft
 description: The Binding markup extension is converted at XAML load time into an instance of the Binding class.
 title: Binding markup extension'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # {Binding} markup extension
 
 

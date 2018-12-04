@@ -1,21 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Customize the built-in handwriting view for ink to text input that is supported by UWP text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
-ms.author: kbridge
 ms.date: 10/13/18
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Text input with the handwriting view
 
 ![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)

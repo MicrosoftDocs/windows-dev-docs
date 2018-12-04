@@ -1,13 +1,9 @@
 ---
-author: laurenhughes
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: Packaging apps
 description: This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
 ---
@@ -30,4 +26,4 @@ This section contains or links to articles about packaging for Universal Windows
 | [Install apps with the WinAppDeployCmd.exe tool](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a UWP app from a Windows 10 machine to any Windows 10 Mobile device. You can use this tool to deploy an app package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. This article describes how to install UWP apps using this tool. |
 | [Set up automated builds for your UWP app](auto-build-package-uwp-apps.md) | If you want to package your app as part of an automated build process, this topic shows you how to use Visual Studio Team Services (VSTS) to do it. |
 | [App capability declarations](app-capability-declarations.md) | Capabilities must be declared in your UWP app's [package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) to access certain API or resources like pictures, music, or devices like the camera or the microphone. |
-| [Download and install package updates from the Store](self-install-package-updates.md) | Your UWP app can programmatically check for package updates and install the updates. Your app can also query for packages that have been marked as mandatory on the Windows Dev Center dashboard and disable functionality until the mandatory update is installed.  |
+| [Download and install package updates from the Store](self-install-package-updates.md) | Your UWP app can programmatically check for package updates and install the updates. Your app can also query for packages that have been marked as mandatory in Partner Center and disable functionality until the mandatory update is installed.  |

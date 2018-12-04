@@ -1,19 +1,16 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion uses timing and easing functions.
 title: Timing and easing - animation in UWP apps
 label: Timing and easing
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Timing and easing
 

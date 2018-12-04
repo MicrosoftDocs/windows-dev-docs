@@ -1,20 +1,15 @@
 ---
-author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: Use this method in the Microsoft Store submission API to retrieve all add-on data for all the apps that are registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve all add-on data for all the apps that are registered to your Partner Center account.
 title: Get all add-ons
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app products, IAPs
 ms.localizationpriority: medium
 ---
-
 # Get all add-ons
 
-Use this method in the Microsoft Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve data for all add-ons for all the apps that are registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -144,7 +139,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No add-ons were found. |
-| 409  | The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The apps or add-ons use Partner Center features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: This section includes topics that explain the XAML framework for Universal Windows Platform (UWP) apps.
 title: XAML platform
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # XAML platform
 
 

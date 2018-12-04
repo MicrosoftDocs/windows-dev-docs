@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
 ---
-
 # App package requirements
 
 Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.

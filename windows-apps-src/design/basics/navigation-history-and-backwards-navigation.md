@@ -1,18 +1,13 @@
 ---
-author: Jwmsft
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
 ms.date: 06/21/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Navigation history and backwards navigation for UWP apps
 
 > **Important APIs**: [BackRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager class](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)

@@ -1,21 +1,16 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data for an application during a given date range and other optional filters.
 title: Get app acquisitions
-ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app acquisitions
 ms.localizationpriority: medium
 ---
-
 # Get app acquisitions
 
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in Partner Center.
 
 ## Prerequisites
 

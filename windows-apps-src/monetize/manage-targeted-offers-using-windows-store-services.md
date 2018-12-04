@@ -1,20 +1,15 @@
 ---
-author: Xansky
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: Use the Microsoft Store targeted offers API to get targeted offers that are available for the current user of your app.
 title: Manage targeted offers using Store services
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, Store services, Microsoft Store targeted offers API, targeted offers
 ms.localizationpriority: medium
 ---
-
 # Manage targeted offers using Store services
 
-If you create a *targeted offer* in the **Engage > Targeted offers** page for your app in the Windows Dev Center dashboard, use the *Microsoft Store targeted offers API* in your app's code to retrieve info that helps you implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+If you create a *targeted offer* in the **Engage > Targeted offers** page for your app in Partner Center, use the *Microsoft Store targeted offers API* in your app's code to retrieve info that helps you implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
 The targeted offers API is a simple REST API that you can use to get the targeted offers that are available for the current user, based on whether or not the user is part of the customer segment for the targeted offer. To use this API in your app's code, follow these steps:
 

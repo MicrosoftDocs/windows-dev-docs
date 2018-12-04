@@ -1,17 +1,13 @@
 ---
 title: Leaderboards
-author: aablackm
+
 description: Learn how to use Xbox Live leaderboards to compare players.
 ms.assetid: 132604f9-6107-4479-9246-f8f497978db7
-ms.author: aablackm
 ms.date: 09/28/2018
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Leaderboards
 
 ## Introduction
@@ -365,7 +361,7 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title on its [Windows Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview), which is case-sensitive.
+> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title in [Partner Center](https://partner.microsoft.com/dashboard), which is case-sensitive.
 
 ### 4. Read the Leaderboard data
 
@@ -535,7 +531,7 @@ statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title on its [Windows Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview), which is case-sensitive.
+> The `statName` used in the `GetLeaderboard()` call must be the same as the name of a stat configured for your title in [Partner Center](https://partner.microsoft.com/dashboard), which is case-sensitive.
 
 ### 4. Read Leaderboard data
 

@@ -1,10 +1,8 @@
 ---
-author: mathy
 title: Device Portal HTTP monitor API reference
 description: Learn how to access HTTP traffic from the focused app on an Xbox.
 ms.localizationpriority: medium
 ---
-
 # HTTP Monitor API reference   
 You can access real-time HTTP traffic for the focused app using this API if the HTTP monitor has been enabled on the Xbox console by checking the box in Dev Home.
 

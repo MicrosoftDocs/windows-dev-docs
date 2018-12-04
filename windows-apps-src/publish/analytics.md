@@ -1,17 +1,12 @@
 ---
-author: JnHs
 Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, analytics, reports, dashboard, apps, data, metrics
 ms.localizationpriority: medium
 ---
-
 # Analyze app performance
 
 You can view detailed analytics for your apps in [Partner Center](https://partner.microsoft.com/dashboard). Statistics and charts let you know how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find metrics on app health, ad usage, and more.
@@ -46,7 +41,7 @@ In this section you'll find details about the info presented in each of the foll
 
 ## Access analytics data outside of Partner Center
 
-In addition to viewing reports in Partner Center, you can access your app analytics in a number of different ways.
+In addition to viewing reports in Partner Center, you can access app analytics in other ways.
 
 ### Microsoft Store analytics API
 
@@ -64,8 +59,3 @@ Use the following resources to get started using Power BI to access your analyti
 
 > [!NOTE]
 > To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Partner Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](http://go.microsoft.com/fwlink/p/?LinkId=703757). For more information about setting up the association, see [Associate Azure Active Directory with your Partner Center account](associate-azure-ad-with-dev-center.md).
-
-### Dev Center app
-
-Install the [Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) app to quickly view details about the health and performance of your apps on any Windows 10 device.
-

@@ -1,17 +1,14 @@
 ---
-author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: Learn how to use the Windows.Services.Store namespace to purchase an app or one of its add-ons.
 title: Enable in-app purchases of apps and add-ons
 keywords: windows 10, uwp, add-ons, in-app purchases, IAPs, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Enable in-app purchases of apps and add-ons
 
 This article demonstrates how to use members in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to request the purchase the current app or one of its add-ons for the user. For example, if the user currently has a trial version of the app, you can use this process to purchase a full license for the user. Alternatively, you can use this process to purchase an add-on, such as a new game level for the user.
@@ -29,8 +26,8 @@ Each method presents a standard purchase UI to the user and then completes async
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
-* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in the Dev Center dashboard](../publish/add-on-submissions.md).
+* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in Partner Center](../publish/add-on-submissions.md).
 
 The code in this example assumes:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

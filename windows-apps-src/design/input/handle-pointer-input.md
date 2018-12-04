@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad, in your Universal Windows Platform (UWP) applications.
 title: Handle pointer input
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Handle pointer input
 
 Receive, process, and manage input data from pointing devices (such as touch, mouse, pen/stylus, and touchpad) in your Universal Windows Platform (UWP) applications.
@@ -494,7 +491,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 ```csharp
 /// <summary>
 /// The pointer canceled event handler.
-/// Fires for for various reasons, including: 
+/// Fires for various reasons, including: 
 ///    - Touch contact canceled by pen coming into range of the surface.
 ///    - The device doesn't report an active contact for more than 100ms.
 ///    - The desktop is locked or the user logged off. 

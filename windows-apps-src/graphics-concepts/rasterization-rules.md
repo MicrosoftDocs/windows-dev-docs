@@ -4,15 +4,12 @@ description: Rasterization rules define how vector data is mapped into raster da
 ms.assetid: B604725F-96A5-4DB6-B597-9EC57FBBC024
 keywords:
 - Rasterization rules
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Rasterization rules
 
 

@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: Edge-based animations show or hide UI that originates from the edge of the screen.
 title: Edge-based UI animations in UWP apps
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Edge-based UI animations
 
 

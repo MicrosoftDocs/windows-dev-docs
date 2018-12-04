@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use headers to visually group your toast notifications in Action Center.
 title: Toast headers
 label: Toast headers
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/7/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, toast, header, toast headers, notification, group toasts, Action Center
 ms.localizationpriority: medium
 ---
-
 # Toast headers
 
 You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.

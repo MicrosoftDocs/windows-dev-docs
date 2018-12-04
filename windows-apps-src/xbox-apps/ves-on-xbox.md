@@ -1,15 +1,10 @@
 ---
-author: M-Stahl
 title: Voice Enabled Shell (VES) on Xbox
 description: Learn how to add voice control support to your UWP apps on Xbox.
-ms.author: mstahl
 ms.date: 10/19/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, xbox, speech, voice enabled shell
 ---
-
 # Using Speech to Invoke UI Elements
 
 Voice Enabled Shell (VES) is an extension to the Windows Speech Platform that enables a first-class speech experience inside apps, allowing users to use speech for invoking on-screen controls and to insert text via dictation. VES strives to provide a common end-to-end see-it-say-it experience on all Windows Shells and devices, with minimum effort required from app developers.  To achieve this, it leverages the Microsoft Speech Platform  and the UI Automation (UIA) framework.

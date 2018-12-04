@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 title: Version adaptive code
 description: Use the ApiInformation class to take advantage of new APIs while maintaining compatibility with previous versions
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ---
-
 # Version adaptive code
 
 You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.

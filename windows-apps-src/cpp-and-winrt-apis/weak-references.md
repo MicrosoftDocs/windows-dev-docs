@@ -1,16 +1,12 @@
 ---
-author: stevewhims
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
 title: Weak references in C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Strong and weak references in C++/WinRT
 
 The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) meets you halfway in your work of building more complex systems simply and correctly.

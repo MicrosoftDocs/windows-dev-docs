@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 description: In XAML markup, specifies a null value for a property.
 title: xNull markup extension
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # {x:Null} markup extension
 
 

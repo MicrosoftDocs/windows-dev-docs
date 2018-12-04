@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Handle device removed scenarios in Direct3D 11
 description: This topic explains how to recreate the Direct3D and DXGI device interface chain when the graphics adapter is removed or reinitialized.
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, games, directx 11, device lost
 ms.localizationpriority: medium
 ---
-
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>Handle device removed scenarios in Direct3D 11
 
 

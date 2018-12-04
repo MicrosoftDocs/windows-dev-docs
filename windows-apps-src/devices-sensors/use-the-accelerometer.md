@@ -1,13 +1,9 @@
 ---
-author: muhsinking
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Use the accelerometer
 description: Learn how to use the accelerometer to respond to user movement.
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

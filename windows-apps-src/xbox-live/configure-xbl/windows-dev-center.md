@@ -1,8 +1,7 @@
 ---
-title: Dev Center service configuration  
-author: KevinAsgari
-description: Links to topics that detail how to configure Xbox Live services on Windows Dev Center.
-ms.author: kevinasg
+title: Partner Center service configuration  
+
+description: Links to topics that detail how to configure Xbox Live services in Partner Center.
 ms.date: 7/30/2018
 ms.topic: article
 
@@ -10,20 +9,19 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center
 ---
+# Partner Center service configuration
 
-# Windows Dev Center service configuration
-
-Games that are published in the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview) and use the full set of Xbox Live features can configure their Xbox Live services in the Dev Center.
+Games that are published in [Partner Center](https://partner.microsoft.com/dashboard) and use the full set of Xbox Live features can configure their Xbox Live services in Partner Center.
 
 > [!IMPORTANT]
 > These topics do not apply to titles in the Xbox Live Creators Program.
 
 Your game must be enabled for full Xbox Live access in order to access the configuration pages.
 
-To access the Xbox Live configuration pages, after selecting your title in [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview), navigate to **Services** > **Xbox Live**.
+To access the Xbox Live configuration pages, after selecting your title in [Partner Center](https://partner.microsoft.com/dashboard), navigate to **Services** > **Xbox Live**.
 
 
-The following topics describe how to configure Xbox Live by using the Windows Dev Center.
+The following topics describe how to configure Xbox Live by using Partner Center.
 
 ## In this section
 

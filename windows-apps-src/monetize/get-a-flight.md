@@ -1,20 +1,15 @@
 ---
-author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Partner Center account.
 title: Get a package flight
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, Microsoft Store submission API, flight, package flight
 ms.localizationpriority: medium
 ---
-
 # Get a package flight
 
-Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -43,8 +38,8 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight you want to get. The Store ID for the app is available on the Dev Center dashboard.  |
-| flightId | string | Required. The ID of the package flight to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in the Dev Center dashboard, this ID is also available in the URL for the flight page in the dashboard.  |
+| applicationId | string | Required. The Store ID of the app that contains the package flight you want to get. The Store ID for the app is available in Partner Center.  |
+| flightId | string | Required. The ID of the package flight to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.  |
 
 
 ### Request body
@@ -87,7 +82,7 @@ The following example demonstrates the JSON response body for a successful call 
 
 | Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
+| flightId            | string  | The ID for the package flight. This value is supplied by Partner Center.  |
 | friendlyName           | string  | The name of the package flight, as specified by the developer.   |  
 | lastPublishedFlightSubmission       | object | An object that provides information about the last published submission for the package flight. For more information, see the [Submission object](#submission_object) section below.  |
 | pendingFlightSubmission        | object  |  An object that provides information about the current pending submission for the package flight. For more information, see the [Submission object](#submission_object) section below.  |   
@@ -115,7 +110,7 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|---------------------  |
 | 400  | The request is invalid. |
 | 404  | The specified package flight could not be found.   |   
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
+| 409  | The app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
 
 
 ## Related topics

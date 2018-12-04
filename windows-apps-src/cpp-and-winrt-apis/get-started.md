@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
-ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ---
-
 # Get started with C++/WinRT
 
 To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), this topic walks through a simple code example based on a new **Windows Console Application (C++/WinRT)** project. This topic also shows how to [add C++/WinRT support to a Windows Desktop application project](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).

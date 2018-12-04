@@ -1,5 +1,4 @@
 ---
-author: eliotcowley
 Description: Design your app so that it looks good and functions well on your television.
 title: Designing for Xbox and TV
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
@@ -7,18 +6,14 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
-ms.author: elcowle
-ms.date: 12/5/2017
+ms.date: 11/13/2018
 ms.topic: article
-
-
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Designing for Xbox and TV
 
 Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
@@ -838,6 +833,54 @@ You would put the previous code snippet in either the page or app resources, and
 
 > [!NOTE]
 > This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) attribute for both the [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) and the [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) to `GridView`.
+
+For more fine-grained control over how items are brought into view, if your application targets version 1803 or later, you can use the [UIElement.BringIntoViewRequested event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). You can put it on the [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) for the **ListView**/**GridView** to catch it before the internal **ScrollViewer** does, as in the following code snippets:
+
+```xaml
+<GridView x:Name="gridView">
+    <GridView.ItemsPanel>
+        <ItemsPanelTemplate>
+            <ItemsWrapGrid Orientation="Horizontal"
+                           BringIntoViewRequested="ItemsWrapGrid_BringIntoViewRequested"/>
+        </ItemsPanelTemplate>
+    </GridView.ItemsPanel>
+</GridView>
+```
+
+```cs
+// The BringIntoViewRequested event is raised by the framework when items receive keyboard (or Narrator) focus or 
+// someone triggers it with a call to UIElement.StartBringIntoView.
+private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoViewRequestedEventArgs args)
+{
+    if (args.VerticalAlignmentRatio != 0.5)  // Guard against our own request
+    {
+        args.Handled = true;
+        // Swallow this request and restart it with a request to center the item.  We could instead have chosen
+        // to adjust the TargetRect’s Y and Height values to add a specific amount of padding as it bubbles up, 
+        // but if we just want to center it then this is easier.
+
+        // (Optional) Account for sticky headers if they exist
+        var headerOffset = 0.0;
+        var itemsWrapGrid = sender as ItemsWrapGrid;
+        if (gridView.IsGrouping && itemsWrapGrid.AreStickyGroupHeadersEnabled)
+        {
+            var header = gridView.GroupHeaderContainerFromItemContainer(args.TargetElement as GridViewItem);
+            if (header != null)
+            {
+                headerOffset = ((FrameworkElement)header).ActualHeight;
+            }
+        }
+
+        // Issue a new request
+        args.TargetElement.StartBringIntoView(new BringIntoViewOptions()
+        {
+            AnimationDesired = true,
+            VerticalAlignmentRatio = 0.5, // a normalized alignment position (0 for the top, 1 for the bottom)
+            VerticalOffset = headerOffset, // applied after meeting the alignment ratio request
+        });
+    }
+}
+```
 
 ## Colors
 

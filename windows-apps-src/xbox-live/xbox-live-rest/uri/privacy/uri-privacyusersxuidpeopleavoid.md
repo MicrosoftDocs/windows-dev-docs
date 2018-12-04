@@ -2,18 +2,13 @@
 title: /users/{ownerId}/people/avoid
 assetID: 13dc3a10-ed04-4600-3afb-aa95a4139a06
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoid.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/people/avoid'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/people/avoid
 Accesses the Avoid list for a user
 

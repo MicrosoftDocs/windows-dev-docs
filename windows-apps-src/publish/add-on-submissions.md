@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: Add-ons (or in-app products) are published through Partner Center.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, iap, in-app purchase, in-app product, iap submission
 ms.localizationpriority: medium
 ---
-
 # Add-on submissions
 
 Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.

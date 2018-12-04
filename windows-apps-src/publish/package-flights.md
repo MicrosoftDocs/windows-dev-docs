@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: You can use package flights to distribute packages that are only given to a limited test group.
 title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, flighting
 ms.localizationpriority: medium
 ---
-
 # Package flights
 
 You can use package flights to distribute specific packages to a limited group of testers. The packages you've already published to the Store will be used for your other customers, so their experience won't be disrupted.

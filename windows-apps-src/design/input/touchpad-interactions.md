@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
 title: Touchpad interactions
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
 keywords: touchpad, PTP, touch, pointer, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Touchpad design guidelines
 
 

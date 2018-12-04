@@ -1,17 +1,12 @@
 ---
-author: normesta
 title: Maps and location overview
 description: This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp, map, location, map services
 ms.localizationpriority: medium
 ---
-
 # Maps and location overview
 
 

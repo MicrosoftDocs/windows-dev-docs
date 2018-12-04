@@ -4,15 +4,12 @@ description: A line strip is a primitive that is composed of connected line segm
 ms.assetid: 6E8C58E1-B463-44FD-A69F-81CCBF25D856
 keywords:
 - Line strips
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Line strips
 
 

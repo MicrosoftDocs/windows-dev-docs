@@ -1,17 +1,12 @@
 ---
-author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the task class defined in the concurrency namespace in ppltasks.h.
 title: Asynchronous programming in C++
-ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-
-
 keywords: windows 10, uwp, threads, asynchronous, C++
 ms.localizationpriority: medium
 ---
-
 # Asynchronous programming in C++/CX
 > [!NOTE]
 > This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.

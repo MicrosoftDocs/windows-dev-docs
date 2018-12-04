@@ -1,17 +1,14 @@
 ---
-author: Xansky
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Learn how to use the Windows.Services.Store namespace to work with consumable add-ons.
 title: Enable consumable add-on purchases
 keywords: windows 10, uwp, consumable, add-ons, in-app purchases, IAPs, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Enable consumable add-on purchases
 
 This article demonstrates how to use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage the user's fulfillment of consumable add-ons in your UWP apps. Use consumable add-ons for items that can be purchased, used, and purchased again. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.
@@ -44,8 +41,8 @@ At any time, you can also [get the remaining balance](enable-consumable-add-on-p
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
-* You have [created a consumable add-on for the app](../publish/add-on-submissions.md) in the Dev Center dashboard.
+* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created a consumable add-on for the app](../publish/add-on-submissions.md) in Partner Center.
 
 The code in these examples assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

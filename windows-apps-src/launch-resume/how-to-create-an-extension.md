@@ -1,16 +1,13 @@
 ---
-author: TylerMSFT
 title: Create and consume an app extension
 description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
-ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # Create and host an app extension
 
 This article shows you how to create a UWP app extension and host it in a UWP app.
@@ -61,7 +58,7 @@ _Package.appxmanifest in the MathExtensionHost project_
         <Extensions>
             <uap3:Extension Category="windows.appExtensionHost">
                 <uap3:AppExtensionHost>
-                  <uap3:Name>microsoft.com.MathExt</uap3:Name>
+                  <uap3:Name>com.microsoft.mathext</uap3:Name>
                 </uap3:AppExtensionHost>
           </uap3:Extension>
         </Extensions>
@@ -96,7 +93,7 @@ _Package.appxmanifest in the MathExtension project:_
         <Extensions>
           ...
           <uap3:Extension Category="windows.appExtension">
-            <uap3:AppExtension Name="Microsoft.com.MathExt"
+            <uap3:AppExtension Name="com.microsoft.mathext"
                                Id="power"
                                DisplayName="x^y"
                                Description="Exponent"
@@ -363,7 +360,7 @@ _Package.appxmanifest in the MathExtension project:_
      <uap:AppService Name="com.microsoft.sqrtservice" />      <!-- This must match the contents of <Service>...</Service> -->
    </uap:Extension>
    <uap3:Extension Category="windows.appExtension">
-     <uap3:AppExtension Name="Microsoft.com.MathExt" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
+     <uap3:AppExtension Name="com.microsoft.mathext" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
        <uap3:Properties>
          <Service>com.microsoft.powservice</Service>   <!-- this must match <uap:AppService Name=...> -->
        </uap3:Properties>

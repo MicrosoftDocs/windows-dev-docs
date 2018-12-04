@@ -1,19 +1,14 @@
 ---
-author: Xansky
 description: Use this REST URI to get block details data for a desktop application during a given date range and other optional filters.
 title: Get upgrade block details for your desktop application
-ms.author: mhopkins
 ms.date: 07/11/2018
 ms.topic: article
-
-
 keywords: windows 10, desktop app blocks, Windows Desktop Application Program
 localizationpriority: medium
 ---
-
 # Get upgrade block details for your desktop application
 
-Use this REST URI to get details for Windows 10 devices on which a specific executable in your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in the Windows Dev Center dashboard.
+Use this REST URI to get details for Windows 10 devices on which a specific executable in your desktop application is blocking a Windows 10 upgrade from running. You can use this URI only for desktop applications that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This information is also available in the [Application blocks report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report) for desktop applications in Partner Center.
 
 This URI is similar to [Get upgrade blocks for your desktop application](get-desktop-block-data.md), but it returns device block info for a specific executable in your desktop application.
 
@@ -46,7 +41,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to retrieve block data. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Blocks report**) and retrieve the product ID from the URL. |  Yes  |
 | fileName | string | The name of the blocked executable |
 | startDate | date | The start date in the date range of block data to retrieve. The default is 90 days prior to the current date. |  No  |
 | endDate | date | The end date in the date range of block data to retrieve. The default is the current date. |  No  |

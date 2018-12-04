@@ -4,15 +4,12 @@ description: This section covers the steps for setting up the depth-stencil buff
 ms.assetid: B3F6CDAA-93ED-4DC1-8E69-972C557C7920
 keywords:
 - Configuring depth-stencil functionality
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 
 
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuring depth-stencil functionality
 
 

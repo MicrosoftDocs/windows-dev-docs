@@ -2,18 +2,13 @@
 title: /sessions/{sessionId}/scids/{scid}
 assetID: a33a1002-3b0b-2a7f-f74a-334f66541172
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidsscid.html
-author: KevinAsgari
+
 description: ' /sessions/{sessionId}/scids/{scid}'
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
-
-
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /sessions/{sessionId}/scids/{scid}
 Retrieves quota information for this storage type. 
 The domain for these URIs is `titlestorage.xboxlive.com`.
