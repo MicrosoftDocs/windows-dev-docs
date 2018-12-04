@@ -4,6 +4,9 @@ description: Starting with the .NET Framework 4.5, you can use managed code to c
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 02/08/2017
 ms.topic: article
+dev_langs:
+ - CSharp
+ - VB
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -84,7 +87,8 @@ For some commonly used collection types, the mapping is between the interfaces t
 
 When a type implements more than one interface, you can use any of the interfaces it implements as a parameter type or return type of a member. For example, you can pass or return a Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) in Visual Basic) as IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, or IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
-**Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
+> [!IMPORTANT]
+> JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
 In the Windows Runtime, IMap&lt;K, V&gt; and IMapView&lt;K, V&gt; are iterated by using IKeyValuePair. When you pass them to managed code, they appear as IDictionary&lt;TKey, TValue&gt; and IReadOnlyDictionary&lt;TKey, TValue&gt;, so naturally you use System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; to enumerate them.
 
