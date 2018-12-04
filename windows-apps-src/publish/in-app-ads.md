@@ -133,7 +133,7 @@ The following table lists the other networks we currently support for each ad ty
 
 ### Supported markets for ad networks
 
-The available ad networks serve ads in all [supported markets](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
+The available ad networks serve ads in all [supported markets](define-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
 
 |  Ad network  |  Supported markets  |
 |--------------|---------------------|

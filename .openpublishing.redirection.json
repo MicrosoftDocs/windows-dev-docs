@@ -1717,6 +1717,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/associate-azure-ad-with-dev-center.md",
+      "redirect_url": "/windows/uwp/publish/associate-azure-ad-with-partner-center",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-profile.md",
+      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/define-pricing-and-market-selection.md",
+      "redirect_url": "/windows/uwp/publish/define-market-selection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/promote-your-app-report.md",
+      "redirect_url": "/windows/uwp/publish/ad-campaign-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/app-declarations.md",
+      "redirect_url": "/windows/uwp/publish/product-declarations",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false

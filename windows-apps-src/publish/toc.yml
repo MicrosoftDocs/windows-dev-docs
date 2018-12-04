@@ -6,7 +6,7 @@
     - name: Account types, locations, and fees
       href: ../publish/account-types-locations-and-fees.md
     - name: Manage account settings and profile info
-      href: ../publish/managing-your-profile.md
+      href: ../publish/manage-account-settings-and-profile.md
     - name: Trademark and copyright protection
       href: ../publish/trademark-and-copyright-protection.md
     - name: Dev Center Insider Program
@@ -15,7 +15,7 @@
   href: ../publish/manage-account-users.md
   items:
     - name: Associate Azure AD with your Partner Center account
-      href: ../publish/associate-azure-ad-with-dev-center.md
+      href: ../publish/associate-azure-ad-with-partner-center.md
     - name: Add users, groups, and Azure AD applications
       href: ../publish/add-users-groups-and-azure-ad-applications.md
     - name: Set roles and custom permissions
@@ -29,7 +29,7 @@
       href: ../publish/set-app-pricing-and-availability.md
       items:
         - name: Define market selection
-          href: ../publish/define-pricing-and-market-selection.md
+          href: ../publish/define-market-selection.md
         - name: Choose visibility options
           href: ../publish/choose-visibility-options.md
         - name: Configure precise release scheduling
@@ -44,7 +44,7 @@
         - name: Category and subcategory table
           href: ../publish/category-and-subcategory-table.md
         - name: Product declarations
-          href: ../publish/app-declarations.md
+          href: ../publish/product-declarations.md
     - name: Age ratings
       href: ../publish/age-ratings.md
     - name: Upload app packages
@@ -181,7 +181,7 @@
     - name: Advertising performance report
       href: ../publish/advertising-performance-report.md
     - name: Ad campaign report
-      href: ../publish/promote-your-app-report.md
+      href: ../publish/ad-campaign-report.md
     - name: Download analytics reports
       href: ../publish/download-analytic-reports.md
 - name: Getting paid
