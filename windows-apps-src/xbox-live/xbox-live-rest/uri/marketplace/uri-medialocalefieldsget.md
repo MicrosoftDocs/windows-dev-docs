@@ -2,18 +2,13 @@
 title: GET (/media/{marketplaceId}/fields)
 assetID: 1d535344-8522-0fd1-4daa-cd0f0a0f1121
 permalink: en-us/docs/xboxlive/rest/uri-medialocalefieldsget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/fields)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/media/{marketplaceId}/fields)
 Gets the fields token. 
 The domain for these URIs is `eds.xboxlive.com`.

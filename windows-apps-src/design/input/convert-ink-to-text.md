@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
 title: Recognize Windows Ink strokes as text and shapes
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Recognize Windows Ink strokes as text and shapes
 
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
@@ -207,7 +204,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
-6. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
+6. Here's the function for drawing a TextBlock on our recognition canvas. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -226,7 +223,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
+7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -271,7 +268,6 @@ Here's this sample in action:
 | ![Before analysis](images/ink/ink-analysis-raw2-small.png) | ![After analysis](images/ink/ink-analysis-analyzed2-small.png) |
 
 ---
-
 ## Constrained handwriting recognition
 
 In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.

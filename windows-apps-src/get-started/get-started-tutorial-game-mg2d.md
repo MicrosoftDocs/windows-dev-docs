@@ -1,17 +1,12 @@
 ---
 title: Create a UWP game in MonoGame 2D
 description: A simple UWP game for the Microsoft Store, written in C# and MonoGame
-author: muhsinking
-ms.author: mukin
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ---
-
 # Create a UWP game in MonoGame 2D
 
 ## A simple 2D UWP game for the Microsoft Store, written in C# and MonoGame
@@ -39,7 +34,7 @@ Open the project in Visual Studio 2017, and press **F5** to run the sample. The 
 
 If you’ve done this, skip the next section about setting up MonoGame to see a step-by-step walkthrough of the code.
 
-**Note:** The game created in this sample is not meant to be complete (or any fun at all). It’s only purpose is to demonstrate all the core concepts of 2D development in MonoGame. Feel free to use this code and make something much better—or just start from scratch after you’ve mastered the basics!
+**Note:** The game created in this sample is not meant to be complete (or any fun at all). Its only purpose is to demonstrate all the core concepts of 2D development in MonoGame. Feel free to use this code and make something much better—or just start from scratch after you’ve mastered the basics!
 
 ## Set up MonoGame project
 1. Install **MonoGame 3.6** for Visual Studio from [MonoGame.net](http://www.monogame.net/)
@@ -65,7 +60,7 @@ Now you’ve created the project, open the **Game1.cs** file from the **Solution
 
 **protected override void UnloadContent()** This method is used to unload non content-manager content. We don’t use this one at all.
 
-**protected override void Update(GameTime gameTIme)** This method is called once for every cycle of the game loop. Here we update the states of any object or variable used in the game. This includes things like an object’s position, speed, or color. This is also where use input is handled. In short, this method handles every part of the game logic except drawing objects on screen.
+**protected override void Update(GameTime gameTime)** This method is called once for every cycle of the game loop. Here we update the states of any object or variable used in the game. This includes things like an object’s position, speed, or color. This is also where user input is handled. In short, this method handles every part of the game logic except drawing objects on screen.
 **protected override void Draw(GameTime gameTime)** This is where objects are drawn on the screen, using the positions given by the Update method.
 
 ## Draw a sprite
@@ -79,7 +74,7 @@ For our purposes, this first sprite is going to be extremely boring. [Click here
 - Open the **Solution Explorer**
 - Right click **Content.mgcb** in the **Content** folder and select **Open With**. From the popup menu select **Monogame Pipeline**, and select **OK**.
 - In the new window, Right-Click the **Content** item and select **Add -> Existing Item**.
-- Locate and select the green rectangle in the file browser
+- Locate and select the green rectangle in the file browser.
 - Name the item “grass.png” and select **Add**.
 
 ### 3. Add class variables
@@ -322,8 +317,8 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 
 The broccoli image is quite a lot larger than we want it to appear in the game, so we’ll scale it down to 0.2 times its original size.
 
-### 5. Program obstacle behavior
-We want the broccoli to spawn somewhere offscreen, and head in the direction of the player’s avatar, so they need to dodge it. To accomplish they, add this method to the **Game1.cs** class:
+### 5. Program obstacle behaviour
+We want the broccoli to spawn somewhere offscreen, and head in the direction of the player’s avatar, so they need to dodge it. To accomplish this, add this method to the **Game1.cs** class:
 
 ```CSharp
 public void SpawnBroccoli()
@@ -378,7 +373,7 @@ public void StartGame()
 ```
 
 ### 7. Handle keyboard input
-Next we need a new method to handle user input via the keyboard. Add this this method to **Game1.cs**:
+Next we need a new method to handle user input via the keyboard. Add this method to **Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -427,7 +422,7 @@ The first quits the game if the **Escape** key is pressed.
 
 The second starts the game if the **Space** key is pressed, and the game is not already started.
 
-The third makes the dino avatar jump if **Space** is pressed, by changing its **dY** property. Note that the player cannot jump unless they are on the “ground” (dino.y = screenHeight * SKYRATIO), and will also not jump if the space key is being help down rather than pressed once. This stops the dino from jumping as soon as the game is started, piggybacking on the same keypress that starts the game.
+The third makes the dino avatar jump if **Space** is pressed, by changing its **dY** property. Note that the player cannot jump unless they are on the “ground” (dino.y = screenHeight * SKYRATIO), and will also not jump if the space key is being held down rather than pressed once. This stops the dino from jumping as soon as the game is started, piggybacking on the same keypress that starts the game.
 
 Finally, the last if/else clause checks if the left or right directional arrows are being pressed, and if so changes the dino’s **dX** property accordingly.
 
@@ -481,9 +476,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-In MonoGame, new calls of **spriteBatch.Draw** will draw over any prior calls. This means that both the broccoli and the dino sprite will be drawn over the  existing grass sprite, so they can never be hidden behind it regardless of their position.
+In MonoGame, new calls of **spriteBatch.Draw** will draw over any prior calls. This means that both the broccoli and the dino sprite will be drawn over the existing grass sprite, so they can never be hidden behind it regardless of their position.
 
-Try running the game now, and moving around the dino with the arrow keys and the spacebar. If you followed the steps above, you should be able to make your avatar move within the game window, and the broccoli should at an ever-increasing speed.
+Try running the game now, and moving around the dino with the arrow keys and the spacebar. If you followed the steps above, you should be able to make your avatar move within the game window, and the broccoli should spawn at an ever-increasing speed.
 
 ![Player avatar and obstacle](images/monogame-tutorial-2.png)
 
@@ -599,7 +594,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-This method detects if two rectangular objects have collided. The algorithm works by testing to see if there is a gap between any of the side sides of the rectangles. If there is any gap, there is no collision—if no gap exists, there must be a collision.
+This method detects if two rectangular objects have collided. The algorithm works by testing to see if there is a gap between any of the sides of the rectangles. If there is any gap, there is no collision—if no gap exists, there must be a collision.
 
 ### 2. Load new textures
 
@@ -647,7 +642,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 This calls the **RectangleCollision** method we created in **SpriteClass**, and flags the game as over if it returns true.
 
 ### 4. Add user input for resetting the game
-Add this code to the **KeyboardHandler** method, to allow the user to reset them game if they press Enter:
+Add this code to the **KeyboardHandler** method, to allow the user to reset the game if they press Enter:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

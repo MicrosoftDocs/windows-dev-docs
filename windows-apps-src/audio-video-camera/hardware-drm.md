@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
 title: Hardware DRM
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Hardware DRM
 
 
@@ -78,7 +73,7 @@ For every media playback, you need to set **MediaProtectionManager** to:
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
+The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalCache\\PlayReady\\\*
 
 -   If there is an mspr.hds file, you are in software DRM.
 -   If you have another \*.hds file, you are in hardware DRM.

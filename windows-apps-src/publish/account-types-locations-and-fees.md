@@ -1,23 +1,18 @@
 ﻿---
-author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
-ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ---
-
 # Account types, locations, and fees
 
-We offer individual accounts and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft developer programs.
+The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
 
 > [!NOTE]
-> When signing up for an account, make sure to sign in with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
+> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
 When you [begin the signup process](http://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
 

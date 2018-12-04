@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Accessible text requirements
 label: Accessible text requirements
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Accessible text requirements  
 
 

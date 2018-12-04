@@ -2,18 +2,13 @@
 title: /serviceconfigs/{scid}/sessions
 assetID: d1932817-dcce-5a5c-d7e4-9fd97e1d287c
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessions.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/sessions'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/sessions
 Supports a GET operation to retrieve a set of session documents. 
 <a id="ID4EO"></a>

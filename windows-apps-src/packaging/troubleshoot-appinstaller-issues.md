@@ -1,16 +1,11 @@
 ---
-author: ridomin
 title: Troubleshoot installation issues with the App Installer file
 description: Common issues when sideloading applications with the App Installer file.
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload
 ms.localizationpriority: medium
 ---
-
 # Troubleshoot installation issues with the App Installer file
 
 If you find any issues when installing an application from the App Installer file, this topic will provide some troubleshooting guidance that may help.
@@ -69,9 +64,9 @@ When installing from an HTTP endpoint, it is important to verify that all files 
 
 If the App Installer app cannot install the app, these steps will help identify the installation issue.
 
-### Verify .appx/.appxbundle file installation
+### Verify app package file installation
 
-- Download the `.appx`/`.appxbundle` file to a local folder and try to install it using the [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell command.
+- Download the app package file to a local folder and try to install it using the [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell command.
 
 - Download the `.appinstaller` file to a local folder and try to install it using the `Add-AppxPackage -Appinstaller` PowerShell command.
 

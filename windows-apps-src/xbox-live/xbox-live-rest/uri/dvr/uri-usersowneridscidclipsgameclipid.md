@@ -2,18 +2,13 @@
 title: /users/{ownerId}/scids/{scid}/clips/{gameClipId}
 assetID: 49b68418-71f1-c5a2-3a9b-869fd1fa663c
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridscidclipsgameclipid.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/scids/{scid}/clips/{gameClipId}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/scids/{scid}/clips/{gameClipId}
 Access a single game clip from the system if all the IDs to locate it are known. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid})/groups/{moniker} )
 assetID: 63aa7e5d-0599-5850-756d-3079c0772238
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/groups/{moniker} )'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/groups/{moniker} )
 Gets the PresenceRecord for a group. 
 The domain for these URIs is `userpresence.xboxlive.com`.

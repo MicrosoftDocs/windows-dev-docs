@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.author: twhitney
 ms.date: 03/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the Windows Settings app
 
 
@@ -65,12 +60,13 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings Page| URI |
 |-------------|-----|
-|Access work or school | ms-settings:workplace |
-|Email & app accounts  | ms-settings:emailandaccounts |
-|Family & other people | ms-settings:otherusers |
-|Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|Sync your settings | ms-settings:sync |
-|Your info | ms-settings:yourinfo |
+| Access work or school | ms-settings:workplace |
+| Email & app accounts  | ms-settings:emailandaccounts |
+| Family & other people | ms-settings:otherusers |
+| Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| Sync your settings | ms-settings:sync |
+| Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Your info | ms-settings:yourinfo |
 
 ## Apps
 
@@ -81,16 +77,21 @@ Use the following URIs to open various pages of the Settings app.
 | Apps for websites | ms-settings:appsforwebsites |
 | Default apps | ms-settings:defaultapps |
 | Manage optional features | ms-settings:optionalfeatures |
+| Offline Maps | ms-settings:maps |
 | Startup apps | ms-settings:startupapps |
+| Video playback | ms-settings:videoplayback |
 
 ## Cortana
 
 |Settings Page| URI |
 |-------------|-----|
-| Cortana Permissions & History | ms-settings:cortana-permissions |
+| Permissions & History | ms-settings:cortana-permissions |
 | More details | ms-settings:cortana-moredetails |
-| Notifications | ms-settings:cortana-notifications |
+| Cortana across my devices | ms-settings:cortana-notifications |
 | Talk to Cortana | ms-settings:cortana-language |
+
+> [!NOTE] 
+> This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
 
 ## Devices
 
@@ -116,6 +117,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
+| Color filters | ms-settings:easeofaccess-colorfilter |
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
@@ -153,7 +155,7 @@ Use the following URIs to open various pages of the Settings app.
 | Settings home page | ms-settings: |
 
 
-## Network, wireless & internet
+## Network & internet
 
 |Settings Page| URI |
 |-------------|-----|
@@ -184,9 +186,14 @@ Use the following URIs to open various pages of the Settings app.
 | Navigation bar | ms-settings:personalization-navbar |
 | Personalization (category) | ms-settings:personalization |
 | Start | ms-settings:personalization-start |
-| Sounds | ms-settings:sounds |
-| Task Bar | ms-settings:taskbar |
+| Taskbar | ms-settings:taskbar |
 | Themes | ms-settings:themes |
+
+## Phone
+
+|Settings Page| URI |
+|-------------|-----|
+| Your phone | ms-settings:mobile-devices  |
 
 ## Privacy
 
@@ -252,7 +259,6 @@ Use the following URIs to open various pages of the Settings app.
 | Messaging | ms-settings:messaging |
 | Multitasking | ms-settings:multitasking |
 | Night light settings | ms-settings:nightlight |
-| Offline Maps | ms-settings:maps |
 | Phone | ms-settings:phone-defaultapps |
 | Projecting to this PC | ms-settings:project |
 | Shared experiences | ms-settings:crossdevice |
@@ -262,9 +268,9 @@ Use the following URIs to open various pages of the Settings app.
 | Remote Desktop | ms-settings:remotedesktop |
 | Phone | ms-settings:phone |
 | Power & sleep | ms-settings:powersleep |
+| Sounds | ms-settings:sounds |
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
-| Video playback | ms-settings:videoplayback |
 
 ## Time and language
 
@@ -285,21 +291,15 @@ Use the following URIs to open various pages of the Settings app.
 | Backup | ms-settings:backup |
 | Delivery Optimization | ms-settings:delivery-optimization |
 | Find My Device | ms-settings:findmydevice |
+| For developers | ms-settings:developers |
 | Recovery | ms-settings:recovery |
 | Troubleshoot | ms-settings:troubleshoot |
-| Windows Defender | ms-settings:windowsdefender |
-| Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Windows Security | ms-settings:windowsdefender |
 | Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-Advanced options | ms-settings:windowsupdate-options |
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
 | Windows Update-View update history | ms-settings:windowsupdate-history |
-
-## Developers
-
-|Settings Page| URI |
-|-------------|-----|
-| For developers | ms-settings:developers |
 
 ## User  Accounts
 

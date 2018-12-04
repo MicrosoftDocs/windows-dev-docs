@@ -1,19 +1,14 @@
 ---
-author: stevewhims
 Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
 title: Adjust layout and fonts, and support RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
-ms.author: stwhi
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---
-
 # Adjust layout and fonts, and support RTL
 Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. Flow direction is the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye.
 

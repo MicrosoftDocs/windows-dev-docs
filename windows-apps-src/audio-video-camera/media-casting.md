@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: This article shows you how to cast media to remote devices from a Universal Windows app.
 title: Media casting
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Media casting
 
 

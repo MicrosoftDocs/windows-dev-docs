@@ -1,21 +1,16 @@
 ﻿---
-author: jnHs
 Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
-ms.author: wdg-dev-content
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Set up your payout account and tax forms
 
 
-In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
+In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms in [Partner Center](https://partner.microsoft.com/dashboard).
 
 If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or add-ons), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile have been completed.
 
@@ -41,8 +36,8 @@ A payout account is the bank account to which we send the proceeds from your sal
  
 **To set up your payout account**
 
-1.  In the Windows Dev Center dashboard, go to **Account settings** by selecting the icon in the top right corner.
-2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
+1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
+2.  In the left navigation menu, select **Payout account**.
 
    > [!NOTE]
    > Because this is sensitive info, you may be prompted to sign in again.
@@ -71,7 +66,7 @@ Common questions about using PayPal as a payment method:
 
 -   **What PayPal settings do I need to have in order to receive payments?** You must ensure that your PayPal account does not block eCheck payments. This setting is managed in PayPal’s Payment Receiving Preferences page. See [PayPal’s account setup page](http://go.microsoft.com/fwlink/p/?linkid=513139) for more info.
 -   **Is my country/region supported?** See [Account types, locations, and fees](account-types-locations-and-fees.md) to find out where PayPal is a supported payment method.
--   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
+-   **Does my PayPal account have to be registered in the same country/region as my Partner Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
 -   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
 
 
@@ -96,9 +91,9 @@ If you’re a developer who lives in Russia, you may need to provide documentati
 
 To ensure your payout is successful, please also keep in mind the following:
 
--   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
 -   Payouts are transferred directly from Microsoft to your bank account in Ruble (RUB) currency.
--   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+-   Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
 -   Payouts must be made to a bank account and not to a bank card.
 
 #### Ukraine
@@ -113,9 +108,9 @@ Microsoft provides all three documents when your first payout is attempted. For 
 
 To ensure your payout is successful, please also keep in mind the following:
 
--   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
 -   Payouts are transferred directly from Microsoft to your bank account in USD currency.
--   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+-   Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
 
 
 ## Tax forms
@@ -125,7 +120,7 @@ After you have [registered for a developer account](opening-a-developer-account.
 -   Specify your country of residence and citizenship.
 -   Fill out the appropriate tax forms.
 
-You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
+You can complete and submit your tax forms electronically in Partner Center; in most cases, you don't need to print and mail any forms.
 
 > [!IMPORTANT]
 > Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Microsoft Store developer activities.
@@ -133,8 +128,8 @@ You can complete and submit your tax forms electronically in your dashboard; in 
  
 **To complete your tax profile**
 
-1.  In the Windows Dev Center dashboard, click the **Account settings** icon in the top right corner.
-2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
+1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
+2.  In the left navigation menu, select **Tax profile**.
 
    > [!NOTE]
    > Because this is sensitive info, you may be prompted to sign in again.

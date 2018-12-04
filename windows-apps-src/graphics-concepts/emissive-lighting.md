@@ -4,15 +4,12 @@ description: Emissive lighting is light that is emitted by an object; for exampl
 ms.assetid: 262EB9E2-DF96-401F-93D6-51A7BB60074B
 keywords:
 - Emissive lighting
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Emissive lighting
 
 

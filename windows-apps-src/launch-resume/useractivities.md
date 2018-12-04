@@ -1,16 +1,13 @@
 ---
-author: TylerMSFT
 title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Continue user activity, even across devices
 
 This topic describes how to help users resume what they were doing in your app on their PC, and across devices.
@@ -154,7 +151,7 @@ Once your application or service is authenticated with a Microsoft Account, it j
 ## Summary
 
 You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API to make your app appear in Timeline and Cortana.
-* Learn more about the **UserActivity** API on the [Windows Dev Center](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
 * See [more sophisticated Adaptive Cards](http://adaptivecards.io/).
 * Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).
@@ -162,14 +159,13 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 
 ## Key APIs
 
-* [UserActivity namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## Related topics
 
-* [Adaptive cards](https://docs.microsoft.com/en-us/adaptive-cards/)
+* [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
 * [Adaptive cards visualizer, samples](http://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
-* [Project Rome on Github](https://github.com/microsoft/project-rome)
-* [Project Rome on Windows Dev Center](https://aka.ms/projectrome)

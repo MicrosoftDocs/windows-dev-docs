@@ -4,15 +4,12 @@ description: Index buffers are memory buffers that contain index data, which are
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
 keywords:
 - Index buffers
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Index buffers
 
 

@@ -1,17 +1,13 @@
 ---
 title: Xbox Live fine grained rate limiting
-author: KevinAsgari
+
 description: Learn how Xbox Live fine grained rate limiting works, and how to prevent your title from being rate limited.
 ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, throttling, rate limiting
 ms.localizationpriority: medium
 ---
-
 # Xbox Live fine grained rate limiting
 
 ## Introduction
@@ -90,7 +86,7 @@ When the associated user and title count is at or above either the burst or sust
 
 ## Implemented limits
 
-The following services have implemented FGRL limits, with enforcement of these limits in place since **May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that was published via Xbox Developer Platform or Dev Center and shipped prior to May 2016 will be considered Legacy and therefore exempted.**
+The following services have implemented FGRL limits, with enforcement of these limits in place since **May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that was published via Xbox Developer Platform or Partner Center and shipped prior to May 2016 will be considered Legacy and therefore exempted.**
 
 | **Name** | **Burst Limit** (15 seconds per user per title) | **Sustain Limit** (300 seconds per user per title) | **Certification Limit** (10x Sustained, 300 seconds per user per title) |
 |----------------------------|---------------------------|----------------------------|----------------------------|

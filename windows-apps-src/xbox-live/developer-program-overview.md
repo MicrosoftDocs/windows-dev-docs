@@ -1,17 +1,13 @@
 ---
 title: Developer program overview
-author: KevinAsgari
+
 description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.author: kevinasg
 ms.date: 5/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, creators
 ms.localizationpriority: medium
 ---
-
 # Developer program overview
 
 If you would like to develop Xbox Live enabled titles, there are several options available to you. Each offers varying levels of time investment on your part, features available to you, and support options.
@@ -25,7 +21,7 @@ The Xbox Live Creators Program only supports the creation of titles for the [Uni
 On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Microsoft Store on Xbox. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience console gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Microsoft Store.
 
 ### Publishing and certification
-You must be enrolled in the [Dev Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
+You must be enrolled in the [Partner Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
 
 1. Integrate Xbox Live Sign-In and display the user identity (Gamertag, Gamerpic, etc.). All other Xbox Live services are optional.
 2. Follow to the standard [Microsoft Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).

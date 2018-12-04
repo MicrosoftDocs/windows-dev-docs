@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/crossMediaGroupSearch
 assetID: 5c8c28a1-a492-2817-7164-eef9ae2f3fd1
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearch.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/crossMediaGroupSearch'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/crossMediaGroupSearch
 Accesses items from several different media groups. 
 The domain for these URIs is `eds.xboxlive.com`.

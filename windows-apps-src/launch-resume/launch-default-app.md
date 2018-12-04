@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the default app for a URI
 description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.author: twhitney
 ms.date: 06/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the default app for a URI
 
 
@@ -40,6 +35,7 @@ This topic describes the following URI schemes built into Windows:
 |[ms-store:](#store-app-uri-scheme)  | Store app |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
+|[msnweather:](#weather-app-uri-scheme) | Weather app |
 
 <br>
 For example, the following URI opens the default browser and displays the Bing web site.
@@ -235,3 +231,11 @@ Use the **ms-windows-store:** URI scheme to [Launch the UWP app](launch-store-ap
 `ms-windows-store://home/`
 
 For more info, see [Launch the UWP app](launch-store-app.md).
+
+### Weather app URI scheme
+
+Use the **msnweather:** URI scheme to launch the Weather app.
+
+| URI Scheme | Results |
+|------------|---------|
+| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Launches the Weather app in the Forecast page based on a location geographic coordinates.<br>`latitude` refers to the latitude of the location.<br> `longitude` refers to the longitude of the location.<br> |

@@ -2,18 +2,13 @@
 title: GET (/qosservers)
 assetID: 8b940c1b-947c-eab3-78ed-4384f57ea0bd
 permalink: en-us/docs/xboxlive/rest/uri-qosservers-get.html
-author: KevinAsgari
+
 description: ' GET (/qosservers)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/qosservers)
 URI called by a client to get the list of QoS servers available for use with Xbox Live Compute. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

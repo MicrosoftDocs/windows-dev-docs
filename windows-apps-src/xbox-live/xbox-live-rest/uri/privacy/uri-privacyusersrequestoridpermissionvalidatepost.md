@@ -2,18 +2,13 @@
 title: POST (/users/{requestorId}/permission/validate)
 assetID: 7a5ea583-ffca-5da7-a02a-535c52535928
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidatepost.html
-author: KevinAsgari
+
 description: ' POST (/users/{requestorId}/permission/validate)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/{requestorId}/permission/validate)
 Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.
 

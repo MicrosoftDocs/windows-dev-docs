@@ -2,18 +2,13 @@
 title: /batch
 assetID: 07c51e75-cdbb-3aae-fc02-8a156a0babd4
 permalink: en-us/docs/xboxlive/rest/uri-batch.html
-author: KevinAsgari
+
 description: ' /batch'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /batch
 Accesses complex batch requests for multiple player statistics across multiple titles. 
 The domain for these URIs is `userstats.xboxlive.com`.

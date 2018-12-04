@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 description: Explains the concept of an attached property in XAML, and provides some examples.
 title: Attached properties overview
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -15,7 +11,6 @@ dev_langs:
   - vb
   - cpp
 ---
-
 # Attached properties overview
 
 An *attached property* is a XAML concept. Attached properties enable additional property/value pairs to be set on an object, but the properties are not part of the original object definition. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.

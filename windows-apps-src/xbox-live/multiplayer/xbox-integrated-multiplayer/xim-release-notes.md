@@ -1,13 +1,10 @@
 ---
 title: Xbox Integrated Multiplayer Release Notes
-author: KevinAsgari
+
 description: Contains release notes about Xbox Integrated Multiplayer.
 ms.assetid: 38df7a49-71b9-4d86-9c49-683ffa7308d6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox integrated multiplayer
 ms.localizationpriority: medium
 ---

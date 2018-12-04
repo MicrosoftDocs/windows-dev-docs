@@ -2,18 +2,13 @@
 title: GET (/users/{ownerId}/clips)
 assetID: da972b4e-bc38-66f5-2222-5e79d7c8a183
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclipsget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/clips)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{ownerId}/clips)
 Retrieve list of user's clips.
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

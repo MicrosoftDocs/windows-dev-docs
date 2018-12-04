@@ -1,28 +1,23 @@
 ﻿---
-author: jnHs
 Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
-ms.author: wdg-dev-content
-ms.date: 12/21/2017
+ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # View app identity details
 
 
-When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Microsoft Store. You can also get a link to your app's Store listing.
+You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
 
 To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Select **App identity** to view these details.
 
 
 ## Values to include in your app package manifest
 
-The following values must be included in your .appx package manifest. If you [use Microsoft Visual Studio to build your packages](../packaging/packaging-uwp-apps.md), and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these items:
+The following values must be included in your package manifest. If you [use Microsoft Visual Studio to build your packages](../packaging/packaging-uwp-apps.md), and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these items:
 
 -   **Package/Identity/Name**
 -   **Package/Identity/Publisher**

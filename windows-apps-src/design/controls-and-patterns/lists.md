@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: Lists display and enable interaction with collection-based content.
 title: Lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
@@ -35,7 +31,7 @@ Design guidelines, features, and examples are given for each list pattern.
 > <strong>Windows 10 Fall Creators Update - Behavior change</strong>
 > </div>
 > By default, instead of performing selection, an active pen now scrolls/pans a list in UWP apps (like touch, touchpad, and passive pen).
-> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
+> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
 
 ## List views
 

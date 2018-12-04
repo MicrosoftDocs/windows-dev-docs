@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 assetID: 221c440d-c448-11e9-f455-6d0f95fc16ef
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortorders.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 Accesses available sort orders for a given mediaitem type and a given version of EDS. 
 The domain for these URIs is `eds.xboxlive.com`.

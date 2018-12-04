@@ -1,0 +1,14 @@
+- name: What's new
+  href: whats-new/toc.yml
+- name: Get started
+  href: get-started/toc.yml
+- name: Design and UI
+  href: design/toc.yml
+- name: Develop apps
+  href: develop/toc.yml
+- name: Develop games
+  href: gaming/toc.yml
+- name: Publish
+  href: publish/toc.yml
+- name: API reference
+  href: /uwp/

@@ -2,18 +2,13 @@
 title: /handles/{handleId}
 assetID: 5b722d3e-fe80-fec5-a26b-8b3db6422004
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleid.html
-author: KevinAsgari
+
 description: ' /handles/{handleId}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /handles/{handleId}
 Supports DELETE and GET operations for session handles specified by identifier. 
 

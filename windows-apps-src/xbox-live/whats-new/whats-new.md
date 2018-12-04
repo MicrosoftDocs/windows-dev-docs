@@ -1,20 +1,16 @@
 ---
 title: What's new for the Xbox Live
-author: PhillipLucas
+
 description: What's new for the Xbox Live SDK
-ms.author: sthaff
-ms.date: 10/04/2017
+ms.date: 10/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # What's new for Xbox Live
 You can also check the [Xbox Live API GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.
 
-#### In this article
+## In this article
 
 * [June 2018](#june-2018)
 * [August 2017](#august-2017)
@@ -47,18 +43,15 @@ Xbox live members can access in-game clubs outside of your game across any Xbox 
 
 APIs are available to create & manage in-game clubs directly from within your game. These APIs exist in the xbox::services::clubs namespace.
 
-
 ## July 2017
 
 ### Xbox Live features
-#### Multiplayer updates
-
-Querying activity handles and search handles now includes the custom session properties in the response.
 
 #### Tournaments
 
 New APIs have been added to support tournaments. You can now use the xbox::services::tournaments::tournament_service class to access the tournaments service from your title.
 These new tournament APIs enable the following scenarios:
+
 * Query the service to find all existing tournaments for the current title.
 * Retrieve details about a tournament from the service.
 * Query the service to retrieve a list of teams for a tournament.
@@ -89,7 +82,7 @@ An updated and improved version of Game Chat is now available. For more informat
 
 #### Multiplayer
 
-* Querying activity handles and search handles now includes the custom session properties in the response.
+* Querying search handles now includes the custom session properties in the response.
 
 #### Bug fixes
 
@@ -121,7 +114,7 @@ These new tournament APIs enable the following scenarios:
 
 #### Data Platform 2017
 
-We have introduced a simplified Stats API.  Traditionally you had to send events corresponding to stat rules defined on XDP or Dev Center and these would update the stat values in the cloud.  We refer to this model as Stats 2013.
+We have introduced a simplified Stats API.  Traditionally you had to send events corresponding to stat rules defined on XDP or Partner Center and these would update the stat values in the cloud.  We refer to this model as Stats 2013.
 
 With Stats 2017, your title is now in control of your stat values.  You simply call an API with the most recent stat value, and that gets sent to the service directly without the need for events.  This uses the new `StatsManager` API and you can read more in [Player Stats](../leaderboards-and-stats-2017/player-stats.md)
 
@@ -144,7 +137,7 @@ There are the following new articles:
 |[Xbox Live Service Configuration](../xbox-live-service-configuration.md) | Updated information on doing service configuration for your Xbox Live Title
 | [Configure Xbox Live in Unity](../get-started-with-creators/configure-xbox-live-in-unity.md) | New information on Unity setup for Xbox Live Creators Program developers |
 | [Xbox Live Sandboxes](../xbox-live-sandboxes.md) | A simplified guide to Xbox Live sandboxes and content isolation |
-| [Xbox Live Test Accounts](../xbox-live-test-accounts.md) | Information about how test accounts work, and how to create them on Windows Dev Center |
+| [Xbox Live Test Accounts](../xbox-live-test-accounts.md) | Information about how test accounts work, and how to create them on Partner Center |
 
 ## Archived
 

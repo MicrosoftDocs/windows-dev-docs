@@ -1,17 +1,14 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: 
 title: Support ink in your UWP app
 description: A step by step tutorial for adding ink support to your UWP app.
 keywords: ink, inking, tuorial
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tutorial: Support ink in your UWP app
 
 ![Surface Pen](images/ink/ink-hero-small.png)  
@@ -37,6 +34,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * A computer (or a virtual machine) running the current version of Windows 10
 * [Visual Studio 2017 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
 * If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)

@@ -1,18 +1,13 @@
 ---
-author: anbare
 Description: Discover the different options desktop Win32 apps have for sending toast notifications
 title: Toast notifications from desktop apps
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---
-
 # Toast notifications from desktop apps
 
 Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few different options for desktop apps due to the different activation schemes.

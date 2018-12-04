@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: UWP programming
 description: Programming UWP games.
 ms.assetid: af7a642e-d448-4a7d-8e90-7065b23e24fb
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, audio, input, networking
 ms.localizationpriority: medium
 ---
-
 # UWP programming
 
 This section provides information about developing UWP games. Note that some of these articles are written in the context of creating a UWP game with DirectX.

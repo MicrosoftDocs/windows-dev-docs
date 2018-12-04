@@ -1,8 +1,10 @@
 ---
 layout: HubPage
 hide_bc: true
+ms.prod: windows
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
+
 localizationpriority: medium
 ---
 <div id="main" class="v2">
@@ -155,7 +157,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/mixed-reality">
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

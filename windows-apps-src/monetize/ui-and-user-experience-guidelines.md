@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
-ms.author: mcleans
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, guidelines, best practices
 ms.localizationpriority: medium
 ---
-
 # UI and user experience guidelines for ads
 
 This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
@@ -70,7 +65,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 * Bypassing the built-in minimum refresh timer for banner ads by any means, including (but not limited to) swapping [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) objects or forcing a page refresh without user interaction.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 
@@ -154,7 +149,7 @@ This section provides examples of interstitial ad scenarios that violate [policy
 
 * Requesting an interstitial ad merely to have a backup ad for a waterfall sequence of ads. If you request an interstitial ad and then receive the [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) event, the next interstitial ad shown in your app must be the ad that is ready to be shown via the [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) method.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 

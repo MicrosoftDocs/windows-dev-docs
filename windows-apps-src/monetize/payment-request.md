@@ -1,15 +1,10 @@
 ﻿---
-author: msatranjr
 description: The Payment Request API provides an integrated solution for UWP apps to bypass the process of requiring a user to input payment information and select shipping methods.
 title: Simplify payments with the Payment Request API
-ms.author: misatran
 ms.date: 09/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, payment request
 ---
-
 # Simplify payments with the Payment Request API
 The Payment Request API  for UWP apps is based on the [W3C Payment Request API spec](https://w3c.github.io/browser-payment-api/). It gives you the ability to streamline the checkout process in your UWP apps. Users can speed through checkout by using payment options and shipping addresses already saved with their Microsoft account. You can increase your conversion rate and reduce your risk of data breaches because the payment information is tokenized. Starting with the Windows 10 Creators Update, users can use their saved payment options to pay easily across  experiences in UWP apps.
 
@@ -17,7 +12,7 @@ The Payment Request API  for UWP apps is based on the [W3C Payment Request API s
 Before you begin using the Payment Request API, there are a few things you must do or be aware of.
 
 ### Getting a Merchant ID
-As part of the payment-request process, Microsoft requests payment tokens on your behalf from your service provider. So before you can start using the API, we need your authorization to request those tokens.  You must follow a few steps to register for a seller account and provide the necessary authorization. To do that, go to [Microsoft Seller Center](https://seller.microsoft.com/en-us/dashboard/registration/seller/?accountprogram=uwp). Once you have done this, copy the resulting merchant ID from the dashboard into your app when constructing the payment request. Then, when your application submits a payment request, you will receive a payment token from your processor which you will need to submit your payment.
+As part of the payment-request process, Microsoft requests payment tokens on your behalf from your service provider. So before you can start using the API, we need your authorization to request those tokens.  You must follow a few steps to register for a seller account and provide the necessary authorization. To do that, go to [Microsoft Seller Center](https://seller.microsoft.com/en-us/dashboard/registration/seller/?accountprogram=uwp). Once you have done this, copy the resulting merchant ID from Partner Center into your app when constructing the payment request. Then, when your application submits a payment request, you will receive a payment token from your processor which you will need to submit your payment.
 
 ### Geographic restrictions and language support
 The Payment Request API can be used only by US-based businesses to process transactions in the United States.

@@ -1,18 +1,14 @@
 ---
-author: stevewhims
 description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---
+# Standard C++ data types and C++/WinRT
 
-# Standard C++ data types and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](strings.md)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
+With [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](strings.md)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
 
 ## Standard initializer lists
 An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain Windows Runtime constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
@@ -151,7 +147,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) when calling asynchronous Windows Runtime APIs. However, in many cases, C++ coroutines provide an efficient and more easily-coded idiom for interacting with asynchronous objects. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
 ## Important APIs
-* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
+* [IVector&lt;T&gt; interface](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
 ## Related topics

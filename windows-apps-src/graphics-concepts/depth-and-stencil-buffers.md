@@ -4,15 +4,12 @@ description: A depth buffer stores depth information to control which areas of p
 ms.assetid: 98B9D73A-04A7-4758-AC27-33CD4CB24216
 keywords:
 - Depth and stencil buffers
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Depth and stencil buffers
 
 

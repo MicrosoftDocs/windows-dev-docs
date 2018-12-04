@@ -1,17 +1,13 @@
 ---
 title: Arena title integration guide
-author: KevinAsgari
+
 description: Learn how a title can build in support for the Xbox Live Arena platform.
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
-ms.author: kevinasg
-ms.date: 09-14-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament
 ms.localizationpriority: medium
 ---
-
 # Arena title integration guide
 
 ## Introduction
@@ -323,7 +319,7 @@ Optionally, you can use data from the Tournament Hub in your title to make tourn
 
 ## Configuring a title for Arena
 
-To enable a title for Arena, some additional steps are required when you configure it in the Xbox Developer Portal (XDP) or Universal Dev Center (UDC).
+To enable a title for Arena, some additional steps are required when you configure it in the Xbox Developer Portal (XDP) or [Partner Center](https://partner.microsoft.com/dashboard).
 
 ### Enabling Arena for your title
 
@@ -338,9 +334,9 @@ Here, you’ll have several options:
 * **Arena Platforms** – Lets you select the platforms on which tournaments can be played for your title.
 * **Tournament Assets** – (Formerly in the ‘Multiplayer and Matchmaking’ section.) These are the tournament images for your title.
 
-Arena can also be enabled on the Windows Dev Center in the **Tournament** menu under the Xbox Live service.
+Arena can also be enabled in Partner Center in the **Tournament** menu under the Xbox Live service.
 
-![Arena Menu on Windows Dev Center](../../images/arena/Arena_On_WDC.JPG)
+![Arena Menu in Partner Center](../../images/arena/Arena_On_WDC.JPG)
 
 You must publish the service configuration for your changes to take effect. Self-service Arena configuration is currently not supported through UDC. If you’re using UDC for service configuration, work with your Development Account Manager to onboard with Arena.
 

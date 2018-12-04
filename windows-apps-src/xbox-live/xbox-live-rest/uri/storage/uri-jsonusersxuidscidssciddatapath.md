@@ -2,18 +2,13 @@
 title: /json/users/xuid({xuid})/scids/{scid}/data/{path}
 assetID: c2745955-5e52-ea2b-7389-cb85202e01c3
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapath.html
-author: KevinAsgari
+
 description: ' /json/users/xuid({xuid})/scids/{scid}/data/{path}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /json/users/xuid({xuid})/scids/{scid}/data/{path}
 Lists file information at a specified path. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

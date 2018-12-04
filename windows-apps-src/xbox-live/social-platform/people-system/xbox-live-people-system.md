@@ -1,17 +1,13 @@
 ---
 title: Xbox Live People System
-author: aablackm
+
 description: Learn about the Xbox Live people system.
 ms.assetid: f1881a52-8e65-4364-9937-d2b8b8476cbf
-ms.author: aablackm
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, social, people system, friends
 ms.localizationpriority: medium
 ---
-
 # Xbox Live People System
 
 Before you begin integrating Xbox Live social services into your title it may be useful for you to understand the system you're working in. To that end, we will briefly describe the workings of the Xbox Live People System. The People System dictates and maintains relationships between gamers in the Xbox Live ecosystem. The People System allows for gamers to easily recognize and organize their contacts on Xbox Live, whether they be close friends or online acquaintances. You can show your real name to people you trust, and hide it from those you don't. You can play favorites with your friends so you'll always know what they're up to first while you're online. The Xbox Live People System allows you to add your good friends, and those who gave you good games all in one safe, easy to organize package.

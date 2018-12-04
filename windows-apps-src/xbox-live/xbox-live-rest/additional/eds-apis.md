@@ -2,18 +2,13 @@
 title: Auxiliary EDS APIs
 assetID: 5729ab80-e88d-0190-fb61-bd0cc4f134f6
 permalink: en-us/docs/xboxlive/rest/eds-apis.html
-author: KevinAsgari
+
 description: ' Auxiliary EDS APIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Auxiliary EDS APIs
 
 There are several Entertainment Discovery Services (EDS) APIs that don't directly provide information about content, but give general information about how to use the service or help drive common UI models.

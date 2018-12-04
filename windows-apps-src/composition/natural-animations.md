@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: Natural motion animations
 description: Learn about natural motion animations and how to use them in your app UI.
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---

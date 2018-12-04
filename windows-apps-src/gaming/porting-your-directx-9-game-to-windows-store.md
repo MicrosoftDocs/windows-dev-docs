@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Port from DirectX 9 to Universal Windows Platform (UWP)
 description: This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx 9, directx 11, porting
 ms.localizationpriority: medium
 ---
-
 # Port from DirectX 9 to Universal Windows Platform (UWP)
 
 

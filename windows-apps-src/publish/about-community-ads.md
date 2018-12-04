@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
 title: About community ads
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.author: wdg-dev-content
-ms.date: 10/04/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # About community ads
 
 If your app [displays banner or banner interstitial ads](../monetize/display-ads-in-your-app.md), you can cross-promote your app with other developers with apps in the Microsoft Store for free. We call this feature *community ads*.  
@@ -27,19 +22,15 @@ Here's how this program works:
 
 ### Opt in to community ads
 
-Before you can create a community ad campaign for one of your apps, you must opt in on the **Monetize** &gt; **In-app ads** page in the Windows Dev Center dashboard.
+Before you can create a community ad campaign for one of your apps, you must opt in on the **Monetize** &gt; **In-app ads** page in [Partner Center](https://partner.microsoft.com/dashboard).
 
 To opt in to community ads for a UWP app:
 
-1. In the **Mediation settings** section on the **In-app ads** page, select an ad unit that you are using in the app.
-2. If the **Let Microsoft choose the best mediation settings for your app** option is selected, community ads are enabled for your ad unit automatically. Otherwise, select the baseline configuration or a market-specific configuration in the **Target** drop-down and then check the **Microsoft Community ads** box in the **Other ad networks** list.
+1. Select an ad unit that you are using in the app and scroll down to **Mediation settings**.
+2. If **Let Microsoft optimize my settings** is selected, community ads are enabled for your ad unit automatically. Otherwise, select the baseline configuration or a market-specific configuration in the **Target** drop-down and then check the **Microsoft Community ads** box in the **Other ad networks** list.
 
     > [!NOTE]
     > You can use the **Weight** fields to specify the ratio of ads you want to show from paid networks and other ad networks including community ads.
-
-To opt in to community ads for a Windows 8.x or Windows Phone 8.x app,
-
-1. On the **In-app ads** page, check the **Show community ads in my app** box.
 
 You do not need to republish your app after making your selections. Once you've opted in, you'll be able to select **Community ad (free)** as the campaign type when you [create an ad campaign](create-an-ad-campaign-for-your-app.md).
 

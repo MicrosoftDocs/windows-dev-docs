@@ -2,18 +2,13 @@
 title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch
 assetID: 4f8e1ece-2ba8-9ea4-e551-2a69c499d7b9
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch
 Supports a POST operation to create a batch query at the session template level.
 

@@ -1,22 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to design and optimize your UWP apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
 title: Keyboard interactions
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ---
-
 # Keyboard interactions
 
 ![keyboard hero image](images/keyboard/keyboard-hero.jpg)
@@ -29,9 +26,9 @@ Across devices, keyboard input is an important part of the overall Universal Win
 
 ***Common interaction patterns are shared between keyboard and gamepad***
 
-In this topic, we focus specifically on UWP app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using software keyboards such as the [touch keyboard](#touch-keyboard) and the [On-Screen Keyboard (OSK)](#osk), and for handling other input device types, such as the Xbox gamepad and remote control.
+In this topic, we focus specifically on UWP app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using [software keyboards](#software-keyboard) such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as the Xbox gamepad and remote control.
 
-Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visual), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.
+Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visuals), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.
 
 **NOTE**  While both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.
 
@@ -56,7 +53,7 @@ Here are the devices and tools discussed in this topic:
 
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
-|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
+|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#osk).|
 |Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md).
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
@@ -77,10 +74,11 @@ The UWP supports a single focus visual design that works well for all input type
 ![Focus visual](images/keyboard/focus-visual.png)
 
 A focus visual:
--   Is shown when a UI element receives focus from a keyboard and/or gamepad/remote control
--   Is rendered as a highlighted border around the UI element to indicate an action can be taken
--   Helps a user navigate an app UI without getting lost
--   Can be customized for your app (See [High visibility focus  visuals](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))
+
+- Is shown when a UI element receives focus from a keyboard and/or gamepad/remote control
+- Is rendered as a highlighted border around the UI element to indicate an action can be taken
+- Helps a user navigate an app UI without getting lost
+- Can be customized for your app (See [High visibility focus  visuals](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))
 
 **NOTE** The UWP focus visual is not the same as the Narrator focus rectangle.
 

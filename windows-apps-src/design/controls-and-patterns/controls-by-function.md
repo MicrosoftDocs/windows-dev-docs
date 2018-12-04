@@ -1,15 +1,11 @@
 ---
-author: Jwmsft
 Description: Provides a list by function of some of the controls that you can use in your apps.
 title: Controls by function
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -17,7 +13,7 @@ ms.localizationpriority: medium
 
 The XAML UI framework for Windows provides an extensive library of controls that support UI development. Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media. 
 
-You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 <table>
 <th align="left">XAML Controls Gallery<th>
@@ -52,21 +48,21 @@ Reference: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/w
 
 Design and how-to: [App bar and command bar control guide](app-bars.md) 
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Sample code: [XAML Commanding sample](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### App bar separator
 Visually separates groups of commands in a command bar.
 
 Reference: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Sample code: [XAML Commanding sample](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### App bar toggle button
 A button for toggling commands in a command bar.
 
 Reference: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Sample code: [XAML Commanding sample](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### Command bar
 A specialized app bar that handles the resizing of app bar button elements.
@@ -84,7 +80,7 @@ Reference: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/win
 
 Design and how-to: [App bar and command bar control guide](app-bars.md)
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Sample code: [XAML Commanding sample](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## Buttons
 
@@ -112,7 +108,7 @@ A button that appears as marked up text and opens the specified URI in a browser
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 Reference: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -164,7 +160,7 @@ Reference: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 
 Design and how-to: [Lists](lists.md) 
 
-Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Sample code: [ListView sample](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### Items control
 A control that presents a collection of items in a UI specified by a data template. 
@@ -189,7 +185,7 @@ Reference: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 
 Design and how-to: [Lists](lists.md) 
 
-Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Sample code: [ListView sample](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## Date and time controls
 
@@ -286,7 +282,7 @@ Reference: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/win
 
 Design and how-to: [Menus and context menus](menus.md) 
 
-Sample code: [XAML Context Menu sample](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+Sample code: [XAML Context Menu sample](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### Popup menu
 A custom menu that presents commands that you specify.
@@ -322,7 +318,7 @@ Reference: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.
 
 Design and how-to: [Image and ImageBrush](images-imagebrushes.md) 
 
-Sample code: [XAML images sample](http://go.microsoft.com/fwlink/p/?linkid=226867)
+Sample code: [XAML images sample](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## Graphics and ink
 
@@ -351,7 +347,7 @@ Reference: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows
 
 How to: [Drawing shapes](../../graphics/drawing-shapes.md) 
 
-Sample code: [XAML vector-based drawing sample](http://go.microsoft.com/fwlink/p/?linkid=226866)
+Sample code: [XAML vector-based drawing sample](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## Layout controls
 
@@ -451,7 +447,7 @@ Reference: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/w
 
 Design and how-to: [Scroll and panning controls guide](scroll-controls.md) 
 
-Sample code: [XAML scrolling, panning and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=238577)
+Sample code: [XAML scrolling, panning and zooming sample](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### Stack panel
 A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.
@@ -540,7 +536,7 @@ Reference: [MediaTransportControls](https://msdn.microsoft.com/library/windows/a
 
 Design and how-to: [Media element control guide](media-playback.md) 
 
-Sample code: [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+Sample code: [Media Transport Controls sample](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### Video
 See Media element.
@@ -581,7 +577,7 @@ Design and how-to: [Split view control guide](split-view.md)
 A container control that hosts web content.
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -589,7 +585,7 @@ Reference: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/window
 
 Design and how-to: Guidelines for Web views 
 
-Sample code: [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?linkid=238582)
+Sample code: [XAML WebView control sample](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### Semantic zoom
 
@@ -610,7 +606,7 @@ Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/w
 
 Design and how-to: [Semantic zoom control guide](semantic-zoom.md)
 
-Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Sample code: [XAML GridView grouping and SemanticZoom sample](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## Progress controls
 
@@ -661,7 +657,7 @@ Reference: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml
 
 Design and how-to: [Text controls](text-controls.md), [Auto suggest box control guide](auto-suggest-box.md)
 
-Sample code: [AutoSuggestBox migration sample](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+Sample code: [AutoSuggestBox migration sample](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### Multi-line text box
 See Text box.
@@ -680,7 +676,7 @@ Reference: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 Design and how-to: [Text controls](text-controls.md), [Password box control guide](password-box.md) 
 
-Sample code: [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579), [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)
+Sample code: [XAML text display sample](https://go.microsoft.com/fwlink/p/?linkid=238579), [XAML text editing sample](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### Rich edit box
 A control that lets a user edit rich text documents with content like formatted text, hyperlinks, and images.
@@ -693,7 +689,7 @@ Reference: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 Design and how-to: [Text controls](text-controls.md), [Rich edit box control guide](rich-edit-box.md)
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Sample code: [XAML text sample](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### Search box
 See Auto suggest box.
@@ -717,7 +713,7 @@ Reference: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 
 Design and how-to: [Text controls](text-controls.md), [Text block control guide](text-block.md), [Rich text block control guide](rich-text-block.md)
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Sample code: [XAML text sample](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### Text box
 A single-line or multi-line plain text field.
@@ -733,7 +729,7 @@ Reference: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/window
 
 Design and how-to: [Text controls](text-controls.md), [Text box control guide](text-box.md) 
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Sample code: [XAML text sample](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## Selection controls
 

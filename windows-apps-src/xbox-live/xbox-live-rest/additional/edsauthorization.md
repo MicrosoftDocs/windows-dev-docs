@@ -2,18 +2,13 @@
 title: EDS Authorization
 assetID: bd0bdc8e-084a-7140-98da-6d3721bda112
 permalink: en-us/docs/xboxlive/rest/edsauthorization.html
-author: KevinAsgari
+
 description: ' EDS Authorization'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Authorization
  
   * [Introduction](#ID4EN)

@@ -4,15 +4,12 @@ description: A colored light map uses the RGB data in the light map for its ligh
 ms.assetid: 6116D7C0-D614-4CF4-952E-A987ED9BD9D7
 keywords:
 - Color light maps
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Color light maps
 
 

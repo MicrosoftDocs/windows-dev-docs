@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Use this method in the Microsoft Store submission API to retrieve package flight information for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve package flight information for an app that is registered to your Partner Center account.
 title: Get package flights for an app
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, flights, package flights
 ms.localizationpriority: medium
 ---
-
 # Get package flights for an app
 
-Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Windows Dev Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Partner Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
 ## Prerequisites
 
@@ -112,7 +107,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No package flights were found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

@@ -4,15 +4,12 @@ description: A light map is a texture or group of textures that contains informa
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
 keywords:
 - Light mapping with textures
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Light mapping with textures
 
 

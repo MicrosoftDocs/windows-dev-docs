@@ -2,18 +2,13 @@
 title: GameClipsServiceErrorResponse (JSON)
 assetID: dd606f0f-d52d-f88f-0fff-41c15837f9ed
 permalink: en-us/docs/xboxlive/rest/json-gameclipsserviceerrorresponse.html
-author: KevinAsgari
+
 description: ' GameClipsServiceErrorResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipsServiceErrorResponse (JSON)
 An optional part of the response to the /users/{ownerId}/scids/{scid}/clips/{gameClipId}/uris/format/{gameClipUriType} API. 
 <a id="ID4EN"></a>

@@ -1,16 +1,12 @@
 ---
 title: Match engagement
-author: KevinAsgari
+
 description: Describes the UX stages of players progressing through a tournament experience.
-ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---
-
 # Match engagement
 
 After a gamer has registered and checked in for a tournament, they’re set up to play. A participant can be at one of four stages. Each stage contains a unique set of criteria guiding users through the in-game tournament experience. The four stages are:

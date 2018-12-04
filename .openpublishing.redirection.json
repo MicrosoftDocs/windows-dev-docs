@@ -486,6 +486,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/using-the-windows-dev-center-dashboard.md",
+      "redirect_url": "/windows/uwp/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/use-map-services.md",
+      "redirect_url": "/windows/uwp/publish/app-management-and-services",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/whats-new/windows-10-build-15021-api-diff.md",
       "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
       "redirect_document_id": false
@@ -507,7 +517,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763-api-diff",
       "redirect_document_id": false
     },
     {
@@ -557,7 +567,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763",
       "redirect_document_id": false
     },
     {
@@ -572,7 +582,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-docs-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-docs-august-2018",
+      "redirect_url": "/windows/uwp/whats-new/windows-docs-september-2018",
       "redirect_document_id": false
     },
     {
@@ -1707,6 +1717,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/associate-azure-ad-with-dev-center.md",
+      "redirect_url": "/windows/uwp/publish/associate-azure-ad-with-partner-center",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-profile.md",
+      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/define-pricing-and-market-selection.md",
+      "redirect_url": "/windows/uwp/publish/define-market-selection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/promote-your-app-report.md",
+      "redirect_url": "/windows/uwp/publish/ad-campaign-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/app-declarations.md",
+      "redirect_url": "/windows/uwp/publish/product-declarations",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false
@@ -1800,7 +1835,26 @@
       "source_path": "windows-apps-src/machine-learning/train-ai-model.md",
       "redirect_url": "https://docs.microsoft.com/windows/ai/get-onnx-model",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/composition/lighting.md",
+      "redirect_url": "/windows/uwp/composition/xaml-lighting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/devices-sensors/pos-barcodescanner-get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
+      "redirect_document_id": true
+    },
+	  {
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/data-sharing-udc.md",
+      "redirect_url": "/windows/uwp/xbox-live/configure-xbl/dev-center/access-policies-udc",
+      "redirect_document_id": true
     }
-
   ]
 }

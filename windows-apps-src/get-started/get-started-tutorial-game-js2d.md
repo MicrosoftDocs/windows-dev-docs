@@ -1,17 +1,12 @@
 ---
 title: Create a UWP game in JavaScript
 description: A simple UWP game for the Microsoft Store, written in JavaScript and CreateJS
-author: GrantMeStrength
-ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ---
-
 # Create a UWP game in JavaScript
 
 ## A simple 2D UWP game for the Microsoft Store, written in JavaScript and CreateJS
@@ -60,7 +55,7 @@ Once the solution has been loaded into Visual Studio, you'll see several files, 
 
 Now you can run the game!
 
-Press **F5** to start the app running. You should see a window open, and our familar dinosaur standing in an idyllic (if sparse) landscape. We will now examine the app, explain some important parts, and unlock the rest of the features as we go.
+Press **F5** to start the app running. You should see a window open, and our familiar dinosaur standing in an idyllic (if sparse) landscape. We will now examine the app, explain some important parts, and unlock the rest of the features as we go.
 
 ![Just an every day dinosaur with a cat ninja on its back](images/JS2D_3.png)
 

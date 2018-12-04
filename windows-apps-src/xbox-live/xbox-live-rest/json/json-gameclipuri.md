@@ -2,18 +2,13 @@
 title: GameClipUri (JSON)
 assetID: 03c097e8-7f29-1026-7a77-5c785b8511e9
 permalink: en-us/docs/xboxlive/rest/json-gameclipuri.html
-author: KevinAsgari
+
 description: ' GameClipUri (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipUri (JSON)
  
 <a id="ID4EO"></a>
@@ -36,7 +31,7 @@ The GameClipUri object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
          "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,

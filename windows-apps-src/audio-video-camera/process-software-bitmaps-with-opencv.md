@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 
 description: This article explains how to use the SoftwareBitmap class with the Open Source Computer Vision Library (OpenCV).
 title: Process bitmaps with OpenCV
-ms.author: lahugh
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ---
-
 # Process bitmaps with OpenCV
 
 This article explains how to use the **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** class, which is used by many different UWP APIs to represent images, with the Open Source Computer Vision Library (OpenCV), an open source, native code library that provides a wide variety of image processing algorithms. 

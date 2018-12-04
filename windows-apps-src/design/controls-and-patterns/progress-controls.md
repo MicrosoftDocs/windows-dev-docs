@@ -1,15 +1,11 @@
 ---
-author: serenaz
 Description: A progress control provides feedback to the user that a long-running operation is underway.
 title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: jeffarn

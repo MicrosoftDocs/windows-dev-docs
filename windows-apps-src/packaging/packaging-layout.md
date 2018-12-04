@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Package creation with the packaging layout
 description: The packaging layout is a single document that describes packaging structure of the app. It specifies the bundles of an app (primary and optional), the packages in the bundles, and the files in the packages.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, packaging, package layout, asset package
 ms.localizationpriority: medium
 ---
-
 # Package creation with the packaging layout  
 
 With the introduction of asset packages, developers now have the tools to build more packages in addition to more package types. As an app gets larger and more complex, it will often be comprised of more packages, and the difficulty of managing these packages will increase (especially if you are building outside of Visual Studio and using mapping files). To simplify the management of an app’s packaging structure, you can use the packaging layout supported by MakeAppx.exe. 
@@ -50,7 +45,7 @@ Here's an example of what a simple packaging layout looks like:
 Let's break this example down to understand how it works.
 
 ### PackageFamily
-This packaging layout will create a single flat .appxbundle file with an x64 architecture package and a “Media” asset package. 
+This packaging layout will create a single flat app bundle file with an x64 architecture package and a “Media” asset package. 
 
 The **PackageFamily** element is used to define an app bundle. You must use the **ManifestPath** attribute to provide an **AppxManifest** for the bundle, the **AppxManifest** should correspond to the **AppxManifest** for the architecture package of the bundle. The **ID** attribute must also be provided. This is used with MakeAppx.exe during package creation so that you can create just this package if you want to, and this will be the file name of the resulting package. The **FlatBundle** attribute is used to describe what type of bundle you want to create, **true** for a flat bundle (which you can read more about here), and **false** for a classic bundle. The **ResourceManager** attribute is used to specify if the resource packages within this bundle will use MRT in order to access the files. This is by default **true**, but as of Windows 10, version 1803, this is not yet ready, so this attribute must be set to **false**.
 
@@ -142,7 +137,7 @@ Resource packages can be specified with the **ResourcePackage** element. Within 
 
 Optional packages each have their own distinct package family names and must be defined with **PackageFamily** elements, while specifying the **Optional** attribute to be **true**. The **RelatedSet** attribute is used to specify whether the optional package is within the related set (by default this is true) – whether the optional package should be updated with the primary package.
 
-The **PrebuiltPackage** element is used to add packages that are not defined in the packaging layout to be included or referenced in the .appxbundle file(s) to be built. In this case, another DLC optional package is being included here so that the primary .appxbundle file can reference it and have it be part of the related set.
+The **PrebuiltPackage** element is used to add packages that are not defined in the packaging layout to be included or referenced in the app bundle file(s) to be built. In this case, another DLC optional package is being included here so that the primary app bundle file can reference it and have it be part of the related set.
 
 
 ## Build app packages with a packaging layout and MakeAppx.exe
@@ -158,7 +153,7 @@ But, if you are updating your app and some packages don't contain any changed fi
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-The `/id` flag can be used to select the packages to be built from the packaging layout, corresponding to the **ID** attribute in the layout. The `/ip` is used to indicate where the previous version of the packages are in this case. The previous version must be provided because the .appxbundle file still needs to reference the previous version of the **Media** package. The `/iv` flag is used to automatically increment the version of the packages being built (instead of changing the version in the **AppxManifest**). Alternatively, the switches `/pv` and `/bv` can be used to directly provide a package version (for all packages to be created) and a bundle version (for all bundles to be created), respectively.
+The `/id` flag can be used to select the packages to be built from the packaging layout, corresponding to the **ID** attribute in the layout. The `/ip` is used to indicate where the previous version of the packages are in this case. The previous version must be provided because the app bundle file still needs to reference the previous version of the **Media** package. The `/iv` flag is used to automatically increment the version of the packages being built (instead of changing the version in the **AppxManifest**). Alternatively, the switches `/pv` and `/bv` can be used to directly provide a package version (for all packages to be created) and a bundle version (for all bundles to be created), respectively.
 Using the advanced packaging layout example on this page, if you want to only build the **Themes** optional bundle and the **Themes.main** app package that it references, you would use this command:
 
 ``` example 

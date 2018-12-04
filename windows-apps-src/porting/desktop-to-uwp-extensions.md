@@ -1,23 +1,18 @@
 ---
-author: normesta
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 Search.Product: eADQiWindows 10XVcnh
 title: Integrate your app with Windows 10 (Desktop Bridge)
-ms.author: normesta
 ms.date: 04/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ---
+# Integrate your packaged desktop application with Windows 10
 
-# Integrate your app with Windows 10 (Desktop Bridge)
+Use extensions to integrate your packaged desktop application with Windows 10 in predefined ways.
 
-Use extensions to integrate your app with Windows 10 in predefined ways.
-
-For example, use an extension to create a firewall exception, make your app the default app for a file type, or point start tiles to the packaged version of your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
+For example, use an extension to create a firewall exception, make your application the default application for a file type, or point start tiles to the packaged version of your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
 This topic describes these extensions and the tasks that you can perform by using them.
 
@@ -26,8 +21,8 @@ This topic describes these extensions and the tasks that you can perform by usin
 Help users transition to your packaged app.
 
 * [Point existing Start tiles and taskbar buttons to your packaged app](#point)
-* [Make your packaged app open files instead of your desktop app](#make)
-* [Associate your packaged app with a set of file types](#associate)
+* [Make your packaged application open files instead of your desktop app](#make)
+* [Associate your packaged application with a set of file types](#associate)
 * [Add options to the context menus of files that have a certain file type](#add)
 * [Open certain types of files directly by using a URL](#open)
 
@@ -83,15 +78,16 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
+
 #### Related sample
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
 <a id="make" />
 
-### Make your packaged app open files instead of your desktop app
+### Make your packaged application open files instead of your desktop app
 
-You can make sure that users open your new packaged app by default for specific types of files instead of opening the desktop version of your app.
+You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.
 
 To do that, you'll specify the [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) of each application from which you want to inherit file associations.
 
@@ -118,7 +114,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associated with your file type association. You can use this Id to manage changes in future versions of your app. |
-|MigrationProgId |The [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) that describes the application, component, and version of the desktop app from which you want to inherit file associations.|
+|MigrationProgId |The [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
 
 #### Example
 
@@ -143,15 +139,16 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
+
 #### Related sample
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
 <a id="associate" />
 
-### Associate your packaged app with a set of file types
+### Associate your packaged application with a set of file types
 
-You can associated your packaged app with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your app appears in the list of suggestions.
+You can associated your packaged application with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your application appears in the list of suggestions.
 
 #### XML namespace
 
@@ -191,8 +188,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="Contoso">
             <uap:SupportedFileTypes>
-      	      <uap:FileType>.txt</uap:FileType>
-      	      <uap:FileType>.avi</uap:FileType>
+            <uap:FileType>.txt</uap:FileType>
+            <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
         </uap:Extension>
@@ -220,14 +217,13 @@ You can add options to that menu. These options give users other ways to interac
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/2
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
-
 #### Elements and attributes of this extension
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[AppID]">
         <SupportedVerbs>
-	          <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
+           <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
     </FileTypeAssociation>
 </Extension>
@@ -240,8 +236,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Category | Always ``windows.fileTypeAssociation``.
 |Name |A unique Id for your app. |
 |Verb |The name that appears in the File Explorer context menu. This string is localizable that uses ```ms-resource```.|
-|Id |The unique Id of the verb. If your app is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your app is a full-trust packaged app, it receives parameters instead (see the next bullet). |
-|Parameters |The list of argument parameters and values associated with the verb. If your app is a full-trust packaged app, these parameters are passed to the app as event args when the app is activated. You can customize the behavior of your app based on different activation verbs. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. If your app is a UWP app, you can’t pass parameters. The app receives the Id instead (see the previous bullet).|
+|Id |The unique Id of the verb. If your application is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your application is a full-trust packaged app, it receives parameters instead (see the next bullet). |
+|Parameters |The list of argument parameters and values associated with the verb. If your application is a full-trust packaged app, these parameters are passed to the application as event args when the application is activated. You can customize the behavior of your application based on different activation verbs. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. If your application is a UWP app, you can’t pass parameters. The app receives the Id instead (see the previous bullet).|
 |Extended |Specifies that the verb appears only if the user shows the context menu by holding the **Shift** key before right-clicking the file. This attribute is optional and defaults to a value of **False** (e.g., always show the verb) if not listed. You specify this behavior individually for each verb (except for "Open," which is always **False**).|
 
 #### Example
@@ -259,8 +255,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="Contoso">
             <uap2:SupportedVerbs>
-      	      <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
-      	      <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
+              <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
+              <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
             </uap2:SupportedVerbs>
           </uap3:FileTypeAssociation>
         </uap:Extension>
@@ -269,6 +265,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
+
 #### Related sample
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -277,7 +274,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 ### Open certain types of files directly by using a URL
 
-You can make sure that users open your new packaged app by default for specific types of files instead of opening the desktop version of your app.
+You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.
 
 #### XML namespaces
 
@@ -291,7 +288,7 @@ You can make sure that users open your new packaged app by default for specific 
     <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes> 
+        </SupportedFileTypes>
     </FileTypeAssociation>
 </Extension>
 ```
@@ -302,7 +299,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |A unique Id for your app. |
-|UseUrl |Indicates whether to open files directly from a URL target. If you do not set this value, attempts by your app to open a file by using a URL cause the system to first download the file locally. |
+|UseUrl |Indicates whether to open files directly from a URL target. If you do not set this value, attempts by your application to open a file by using a URL cause the system to first download the file locally. |
 |Parameters |optional parameters. |
 |FileType |The relevant file extensions. |
 
@@ -321,7 +318,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
-              </uap:SupportedFileTypes> 
+              </uap:SupportedFileTypes>
             </uap3:FileTypeAssociation>
           </uap:Extension>
         </Extensions>
@@ -339,7 +336,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 ### Create firewall exception for your app
 
-If your app requires communication through a port, you can add your app to the list of firewall exceptions.
+If your application requires communication through a port, you can add your application to the list of firewall exceptions.
 
 #### XML namespace
 
@@ -348,8 +345,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 #### Elements and attributes of this extension
 
 ```XML
-<Extension Category="windows.firewallRules">  
-  <FirewallRules Executable="[executable file name]">  
+<Extension Category="windows.firewallRules">
+  <FirewallRules Executable="[executable file name]">
     <Rule
       Direction="[Direction]"
       IPProtocol="[Protocol]"
@@ -357,10 +354,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
       LocalPortMax="LocalPortMax"
       RemotePortMin="RemotePortMin"
       RemotePortMax="RemotePortMax"
-      Profile="[Profile]"/>  
-  </FirewallRules>  
+      Profile="[Profile]"/>
+  </FirewallRules>
 </Extension>
 ```
+
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
 |Name |Description |
@@ -375,8 +373,6 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |RemotePortMax |The highest port number of a range of remote port numbers. |
 |Profile |The network type |
 
-
-
 #### Example
 
 ```XML
@@ -384,15 +380,15 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="desktop2">
   <Extensions>
-    <desktop2:Extension Category="windows.firewallRules">  
-      <desktop2:FirewallRules Executable="Contoso.exe">  
-          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>  
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="Contoso.exe">
+          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>
           <desktop2:Rule Direction="out" IPProtocol="UDP" LocalPortMin="1339" LocalPortMax="1340" RemotePortMin="15"
-                         RemotePortMax="19" Profile="domainAndPrivate"/>  
-          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>  
-      </desktop2:FirewallRules>  
+                         RemotePortMax="19" Profile="domainAndPrivate"/>
+          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>
+      </desktop2:FirewallRules>
   </desktop2:Extension>
 </Extensions>
 </Package>
@@ -413,6 +409,7 @@ Each package can contain only one of these extensions. That means that you can a
 http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### Elements and attributes of this extension
+
 Declare this extension at the package-level of your app manifest.
 
 ```XML
@@ -453,7 +450,7 @@ Declare this extension at the package-level of your app manifest.
 
 Help users organize your files and interact with them in familiar ways.
 
-* [Define how your app behaves when users select and open multiple files at the same time](#define)
+* [Define how your application behaves when users select and open multiple files at the same time](#define)
 * [Show file contents in a thumbnail image within File Explorer](#show)
 * [Show file contents in a Preview pane of File Explorer](#preview)
 * [Enable users to group files by using the Kind column in File Explorer](#enable)
@@ -462,9 +459,9 @@ Help users organize your files and interact with them in familiar ways.
 
 <a id="define" />
 
-### Define how your app behaves when users select and open multiple files at the same time
+### Define how your application behaves when users select and open multiple files at the same time
 
-Specify how your app behaves when a user opens multiple files simultaneously.
+Specify how your application behaves when a user opens multiple files simultaneously.
 
 #### XML namespaces
 
@@ -480,11 +477,12 @@ Specify how your app behaves when a user opens multiple files simultaneously.
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
-	      <SupportedFileTypes>
-		        <FileType>"[FileExtension]"</FileType>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
 </Extension>
 ```
+
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
@@ -498,9 +496,9 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 packaged desktop apps have the same three options as regular desktop apps.
 
- * ``Player``: Your app is activated one time. All of the selected files are passed to your app as argument parameters.
- * ``Single``: Your app is activated one time for the first selected file. Other files are ignored.
- * ``Document``: A new, separate instance of your app is activated for each selected file.
+* ``Player``: Your application is activated one time. All of the selected files are passed to your application as argument parameters.
+* ``Single``: Your application is activated one time for the first selected file. Other files are ignored.
+* ``Document``: A new, separate instance of your application is activated for each selected file.
 
  You can set different preferences for different file types and actions. For example, you may wish to open *Documents* in *Document* mode and *Images* in *Player* mode.
 
@@ -521,8 +519,8 @@ packaged desktop apps have the same three options as regular desktop apps.
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
             </uap2:SupportedVerbs>
-      	    <uap:SupportedFileTypes>
-      		    <uap:FileType>.txt</uap:FileType>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.txt</uap:FileType>
             </uap:SupportedFileTypes>
         </uap:Extension>
       </Extensions>
@@ -686,6 +684,7 @@ For more information about the **Kind** field and the values that you can use fo
     </FileTypeAssociation>
 </Extension>
 ```
+
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
@@ -723,6 +722,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
+
 <a id="make-file-properties" />
 
 ### Make file properties available to search, index, property dialogs, and the details pane
@@ -745,6 +745,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     </uap:FileTypeAssociation>
 </uap:Extension>
 ```
+
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
@@ -809,9 +810,9 @@ Register the handlers that you implement in your application. You can also add c
 |-------|-------------|
 |Category |Always ``windows.cloudfiles``.
 |iconResource |The icon that represents your cloud file provider service. This icon appears in the Navigation pane of File Explorer.  Users choose this icon to show files from your cloud service. |
-|CustomStateHandler Clsid |The class ID of the app that implements the CustomStateHandler. The system uses this Class ID to request custom states and columns for cloud files. |
-|ThumbnailProviderHandler Clsid |The class ID of the app that implements the ThumbnailProviderHandler. The system uses this Class ID to request thumbnail images for cloud files. |
-|ExtendedPropertyHandler Clsid |The class ID of the app that implements the ExtendedPropertyHandler.  The system uses this Class ID to request extended properties for a cloud file. |
+|CustomStateHandler Clsid |The class ID of the application that implements the CustomStateHandler. The system uses this Class ID to request custom states and columns for cloud files. |
+|ThumbnailProviderHandler Clsid |The class ID of the application that implements the ThumbnailProviderHandler. The system uses this Class ID to request thumbnail images for cloud files. |
+|ExtendedPropertyHandler Clsid |The class ID of the application that implements the ExtendedPropertyHandler.  The system uses this Class ID to request extended properties for a cloud file. |
 |Verb |The name that appears in the File Explorer context menu for files provided by your cloud service. |
 |Id |The unique ID of the verb. |
 
@@ -830,7 +831,7 @@ Register the handlers that you implement in your application. You can also add c
                 <ThumbnailProviderHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <ExtendedPropertyhandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <desktop:CloudFilesContextMenus>
-                    <desktop:Verb Id ="keep" Clsid=     
+                    <desktop:Verb Id ="keep" Clsid=
                        "20000000-0000-0000-0000-000000000001">
                        Always keep on this device</desktop:Verb>
                 </desktop:CloudFilesContextMenus>
@@ -844,31 +845,30 @@ Register the handlers that you implement in your application. You can also add c
 
 <a id="start" />
 
-## Start your app in different ways
+## Start your application in different ways
 
-* [Start your app by using a protocol](#protocol)
-* [Start your app by using an alias](#alias)
+* [Start your application by using a protocol](#protocol)
+* [Start your application by using an alias](#alias)
 * [Start an executable file when users log into Windows](#executable)
-* [Enable users to start your app when they connect a device to their PC](#autoplay)
+* [Enable users to start your application when they connect a device to their PC](#autoplay)
 * [Restart automatically after receiving an update from the Microsoft Store](#updates)
 
 <a id="protocol" />
 
-### Start your app by using a protocol
+### Start your application by using a protocol
 
-Protocol associations can enable other programs and system components to interoperate with your packaged app. When your packaged app is started by using a protocol, you can specify specific parameters to pass to its activation event arguments so it can behave accordingly. Parameters are supported only for packaged, full-trust apps. UWP apps can't use parameters.  
+Protocol associations can enable other programs and system components to interoperate with your packaged app. When your packaged application is started by using a protocol, you can specify specific parameters to pass to its activation event arguments so it can behave accordingly. Parameters are supported only for packaged, full-trust apps. UWP apps can't use parameters.
 
 #### XML namespace
 
 http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-
 
 #### Elements and attributes of this extension
 
 ```XML
 <Extension
     Category="windows.protocol">
-	<Protocol
+  <Protocol
       Name="[Protocol name]"
       Parameters="[Parameters]" />
 </Extension>
@@ -880,7 +880,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |-------|-------------|
 |Category |Always ``windows.protocol``.
 |Name |The name of the protocol. |
-|Parameters |The list of parameters and values to pass to your app as event arguments when the app is activated. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. |
+|Parameters |The list of parameters and values to pass to your application as event arguments when the application is activated. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. |
 
 ### Example
 
@@ -893,26 +893,26 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
       <Extensions>
         <uap3:Extension
           Category="windows.protocol">
-      	<uap3:Protocol
-          Name="myapp-cmd"
-          Parameters="/p &quot;%1&quot;" />
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
 </Package>
 ```
+
 <a id="alias" />
 
-### Start your app by using an alias
+### Start your application by using an alias
 
-Users and other processes can use an alias to start your app without having to specify the full path to your app. You can specify that alias name.
+Users and other processes can use an alias to start your application without having to specify the full path to your app. You can specify that alias name.
 
 #### XML namespaces
 
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 * http://schemas.microsoft.com/appx/manifest/desktop/windows10
-
 
 #### Elements and attributes of this extension
 
@@ -922,8 +922,8 @@ Users and other processes can use an alias to start your app without having to s
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
     <AppExecutionAlias>
-		    <desktop:ExecutionAlias Alias="[AliasName]" />
-	  </AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </AppExecutionAlias>
 </Extension>
 ```
 
@@ -946,9 +946,9 @@ Users and other processes can use an alias to start your app without having to s
         Category="windows.appExecutionAlias"
         Executable="exes\launcher.exe"
         EntryPoint="Windows.FullTrustApplication">
-	    <uap3:AppExecutionAlias>
-		    <desktop:ExecutionAlias Alias="Contoso.exe" />
-	    </uap3:AppExecutionAlias>
+      <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="Contoso.exe" />
+      </uap3:AppExecutionAlias>
   </uap3:Extension>
 ...
 </Package>
@@ -960,12 +960,12 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 ### Start an executable file when users log into Windows
 
-Startup tasks allow your app to run an executable automatically whenever a user logs on.
+Startup tasks allow your application to run an executable automatically whenever a user logs on.
 
 > [!NOTE]
-> The user has to start your app at least one time to register this startup task.
+> The user has to start your application at least one time to register this startup task.
 
-Your app can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.
+Your application can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.
 
 Users can manually disable your app's startup task by using Task Manager. If a user disables a task, you can't programmatically re-enable it.
 
@@ -980,7 +980,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
     Category="windows.startupTask"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-	<StartupTask
+  <StartupTask
       TaskId="[TaskID]"
       Enabled="true"
       DisplayName="[DisplayName]" />
@@ -991,7 +991,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |-------|-------------|
 |Category |Always ``windows.startupTask``.|
 |Executable |The relative path to the executable file to start. |
-|TaskId |A unique identifier for your task. Using this identifier, your app can call the APIs in the [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
+|TaskId |A unique identifier for your task. Using this identifier, your application can call the APIs in the [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
 |Enabled |Indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). |
 |DisplayName |The name of the task that appears in Task Manager. You can localize this string by using ```ms-resource```. |
 
@@ -1008,7 +1008,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
           Category="windows.startupTask"
           Executable="bin\MyStartupTask.exe"
           EntryPoint="Windows.FullTrustApplication">
-     	  <desktop:StartupTask
+        <desktop:StartupTask
           TaskId="MyStartupTask"
           Enabled="true"
           DisplayName="My App Service" />
@@ -1018,16 +1018,16 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
  </Package>
 ```
+
 <a id="autoplay" />
 
-### Enable users to start your app when they connect a device to their PC
+### Enable users to start your application when they connect a device to their PC
 
-AutoPlay can present your app as an option when a user connects a device to their PC.
+AutoPlay can present your application as an option when a user connects a device to their PC.
 
 #### XML namespace
 
 http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
-
 
 #### Elements and attributes of this extension
 
@@ -1046,13 +1046,13 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |-------|-------------|
 |Category |Always ``windows.autoPlayHandler``.
 |ActionDisplayName |A string that represents the action that users can take with a device that they connect to a PC (For example: "Import files", or "Play video"). |
-|ProviderDisplayName | A string that represents your app or service (For example: "Contoso video player"). |
+|ProviderDisplayName | A string that represents your application or service (For example: "Contoso video player"). |
 |ContentEvent |The name of a content event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
-|Verb |The Verb setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved. |
-|DropTargetHandler |The class ID of the app that implements the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
-|Parameters |You don't have to implement the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your app by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
+|Verb |The Verb setting identifies a value that is passed to your application for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved. |
+|DropTargetHandler |The class ID of the application that implements the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
+|Parameters |You don't have to implement the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
 |DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
-|HWEventHandler |The Class ID of the app that implements the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
+|HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
 |InitCmdLine |The string parameter that you want to pass into the [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) method of the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
 
 ### Example
@@ -1077,40 +1077,41 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </Applications>
 </Package>
 ```
+
 <a id="updates" />
 
 ### Restart automatically after receiving an update from the Microsoft Store
 
-If your app is open when users install an update to it, the app closes.
+If your application is open when users install an update to it, the application closes.
 
-If you want that app to restart after the update completes, call the  [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function in every process that you want to restart.
+If you want that application to restart after the update completes, call the  [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function in every process that you want to restart.
 
-Each active window in your app receives a [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) message. At this point, your app can call the [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function again to update the command line if necessary.
+Each active window in your application receives a [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) message. At this point, your application can call the [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function again to update the command line if necessary.
 
-When each active window in your app receives the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message, your app should save data and shut down.
+When each active window in your application receives the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message, your application should save data and shut down.
 
 >[!NOTE]
-Your active windows also receive the [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) message in case the app doesn't handle the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message.
+Your active windows also receive the [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) message in case the application doesn't handle the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message.
 
-At this point, your app has 30 seconds to close it's own processes or the platform terminates them forcefully.
+At this point, your application has 30 seconds to close it's own processes or the platform terminates them forcefully.
 
-After the update is complete, your app restarts.
+After the update is complete, your application restarts.
 
 ## Work with other applications
 
 Integrate with other apps, start other processes or share information.
 
-* [Make your app appear as the print target in applications that support printing](#printing)
+* [Make your application appear as the print target in applications that support printing](#printing)
 * [Share fonts with other Windows applications](#fonts)
 * [Start a Win32 process from a Universal Windows Platform (UWP) app](#win32-process)
 
 <a id="printing" />
 
-### Make your app appear as the print target in applications that support printing
+### Make your application appear as the print target in applications that support printing
 
-When users want to print data from another app such as Notepad, you can make your app appear as a print target in the app's list of available print targets.
+When users want to print data from another application such as Notepad, you can make your application appear as a print target in the app's list of available print targets.
 
-You'll have to modify your app so that it receives print data in XML Paper Specification (XPS) format.
+You'll have to modify your application so that it receives print data in XML Paper Specification (XPS) format.
 
 #### XML namespaces
 
@@ -1132,7 +1133,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |-------|-------------|
 |Category |Always ``windows.appPrinter``.
 |DisplayName |The name that you want to appear in the list of print targets for an app. |
-|Parameters |Any parameters that your app requires to properly handle the request. |
+|Parameters |Any parameters that your application requires to properly handle the request. |
 
 #### Example
 
@@ -1153,6 +1154,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Applications>
 </Package>
 ```
+
 Find a sample that uses this extension [Here](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
 <a id="fonts" />
@@ -1176,7 +1178,6 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 ```
 
 Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
-
 
 |Name |Description |
 |-------|-------------|
@@ -1203,6 +1204,7 @@ Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/
   </Applications>
 </Package>
 ```
+
 <a id="win32-process" />
 
 ### Start a Win32 process from a Universal Windows Platform (UWP) app
@@ -1255,15 +1257,16 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 app to continue running in full-trust.
 
-Just create a desktop bridge package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the desktop bridge package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](../launch-resume/app-services.md) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 application to continue running in full-trust.
+
+Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](../launch-resume/app-services.md) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 
 ## Next steps
 
 **Find answers to your questions**
 
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 **Give feedback or make feature suggestions**
 

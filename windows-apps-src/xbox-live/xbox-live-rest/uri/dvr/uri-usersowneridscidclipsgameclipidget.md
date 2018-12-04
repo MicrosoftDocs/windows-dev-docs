@@ -2,18 +2,13 @@
 title: GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})
 assetID: dbd60c93-9d8e-609b-0ae3-b3f7ee26ba2d
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridscidclipsgameclipidget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})
 Get a single game clip from the system if all the IDs to locate it are known. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

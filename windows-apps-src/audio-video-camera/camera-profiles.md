@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: This article discusses how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.
 title: Discover and select camera capabilities with camera profiles
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Discover and select camera capabilities with camera profiles
 
 
@@ -72,7 +67,7 @@ The example method below shows how to use **MediaFrameSourceGroup** objects to f
 > [!NOTE] 
 > The APIs described in this section are deprecated starting with Windows 10, version 1803. See the previous section, **Use media frame source groups to get profiles**.
 
-Selecting a profile that supports HDR begins like the other scenarios. Create a a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
+Selecting a profile that supports HDR begins like the other scenarios. Create a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 

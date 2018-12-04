@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/outbox
 assetID: 0b66b885-15ff-be55-f8be-e6e9d85d087e
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutbox.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/outbox'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/outbox
 Provides send-only access to a user's messaging outbox for Xbox LIVE Services. 
 The domain for these URIs is `msg.xboxlive.com`.

@@ -4,15 +4,12 @@ description: A triangle strip is a series of connected triangles. Because the tr
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords:
 - Triangle strips
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Triangle strips
 
 

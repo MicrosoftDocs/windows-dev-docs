@@ -1,17 +1,12 @@
 ---
-author: JordanEllis6809
 title: HTML game development on Xbox
 description: HTML UWP game development on Xbox.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ---
-
 # Bringing HTML games to UWP on Xbox
 Xbox One is an excellent platform for HTML 5 games. HTML 5 games run on the [Edge](https://developer.microsoft.com/microsoft-edge/) browser engine. Edge is fast and fully supports HTML 5 and CSS 3 features such as WebGL and canvas.
 

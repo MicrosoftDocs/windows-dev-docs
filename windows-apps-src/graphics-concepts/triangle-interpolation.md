@@ -4,15 +4,12 @@ description: During rendering, the pipeline interpolates vertex data across each
 ms.assetid: 1A76DD78-CED7-42BE-BA81-B9050CD3AF9B
 keywords:
 - Triangle interpolation
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Triangle interpolation
 
 

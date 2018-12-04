@@ -1,17 +1,13 @@
 ---
 title: Configuring Contextual Search
-author: KevinAsgari
+
 description: Learn how to configure contextual search to tag game clips and broadcasts.
 ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration, contextual search, game clip, broadcast
 ms.localizationpriority: medium
 ---
-
 # Configuring Contextual Search
 
 ## Configuration Info
@@ -32,7 +28,7 @@ If you are using stats to filter content, be aware that all Contextual Search st
 For example, if you are using stats like SinglePlayerMap and MultiplayerMap to filter content, the player is only going to be in one of them at once.  However, both values will be available to query from the service at any time.  It’s important that as you set one, you clear out the other.  For string based stats, an empty string is great (make sure not to include that in your UI configuration as an option).
 
 ### Configuring a Stat for Contextual Search
-Configuring your title for Contextual Search is easy once you've set up the Events and Stats that power the tagging.  See other existing XDP or Windows Dev Center documentation on setting up Contextual Search if you're not already familiar.
+Configuring your title for Contextual Search is easy once you've set up the Events and Stats that power the tagging.  See other existing XDP or Partner Center documentation on setting up Contextual Search if you're not already familiar.
 
 ![](../images/contextual_search/config02.png)
 
@@ -56,7 +52,7 @@ To successfully configure a stat for Contextual Search, complete the following s
 
   ![](../images/contextual_search/config03.png)
 
-  Please note that only stat instances are supported - stat templates are not accepted.  You should also be aware of the visibility you've set for the stat instance (configured in the Stats portion of XDP or Windows Dev Center).  Only stats that are marked as **Open** will appear in third party experiences.
+  Please note that only stat instances are supported - stat templates are not accepted.  You should also be aware of the visibility you've set for the stat instance (configured in the Stats portion of XDP or Partner Center).  Only stats that are marked as **Open** will appear in third party experiences.
 
 2. Choose your stat Priority. This is a way to delineate the importance of this stat relative to others for search experiences/algorithms.  The acceptable values are 1-10 (1 is the highest).  Leave as 0 or blank for this to be ignored.
 3. Add your Display Name.  This is a localizable string that is exposed to the end user.

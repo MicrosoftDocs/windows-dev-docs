@@ -1,18 +1,14 @@
 ---
-author: normesta
 Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 Search.Product: eADQiWindows 10XVcnh
 title: UWP APIs available to a packaged desktop app (Desktop Bridge)
-ms.author: normesta
 ms.date: 10/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ---
-# UWP APIs available to a packaged desktop app (Desktop Bridge)
+# UWP APIs available to a packaged desktop app
 
 Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 
@@ -24,7 +20,7 @@ Most UWP APIs work well on packaged desktop apps. However, some feature areas ar
 <tr><td>Background tasks</td><td>While packaged apps can register background tasks, only fully UWP apps can run <i>as</i> a background task. For more information, see the <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">Background task sample on GitHub</a>.</td></tr>
 <tr><td>Bluetooth</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
 <tr><td>Chat and phone calls</td><td>Packaged apps cannot run on mobile until they are fully ported to UWP.</td></tr>
-<tr><td>Contract activation</td><td>Only full UWP apps can be activated by by a contract.</td></tr>
+<tr><td>Contract activation</td><td>Only full UWP apps can be activated by a contract.</td></tr>
 <tr><td>Cryptography</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
 <tr><td>Geolocation</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
 <tr><td>File and folder pickers</td><td>Packaged apps have full file system access and do not need UWP pickers.</td></tr>

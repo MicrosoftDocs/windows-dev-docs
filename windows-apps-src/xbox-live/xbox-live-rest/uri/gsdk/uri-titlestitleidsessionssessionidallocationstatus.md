@@ -2,18 +2,13 @@
 title: /titles/{titleId}/sessions/{sessionId}/allocationStatus
 assetID: 55611f4b-4ba4-fa9a-ce44-fcc4a6df1b35
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus.html
-author: KevinAsgari
+
 description: ' /titles/{titleId}/sessions/{sessionId}/allocationStatus'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /titles/{titleId}/sessions/{sessionId}/allocationStatus
 For the given title id and session id, get status of the ticket request. 
 The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.

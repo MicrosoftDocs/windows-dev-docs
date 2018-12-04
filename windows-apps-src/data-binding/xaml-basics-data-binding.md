@@ -1,16 +1,13 @@
 ---
-author: KarlErickson
 title: Create data bindings
 description: This article covers the basics of data binding in XAML
 keywords: XAML, UWP, Getting Started
-ms.author: karler
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Create data bindings
 
 Suppose you've designed and implemented a nice looking UI filled with placeholder images, "lorem ipsum" boilerplate text, and controls that don't do anything yet. Next, you'll want to connect it to real data and transform it from a design prototype into a living app. 

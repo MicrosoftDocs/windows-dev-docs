@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/singleMediaGroupSearch
 assetID: f5599db7-4050-640e-db96-2df01a007c07
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/singleMediaGroupSearch'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/singleMediaGroupSearch
 Allows search for items within a single media group. 
 Note that pages of data returned from this search can be accessed non-sequentially using the skipItems parameter instead of using the continuation token. This API accepts Query Refiners.

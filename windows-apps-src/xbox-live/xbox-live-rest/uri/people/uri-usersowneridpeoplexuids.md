@@ -2,18 +2,13 @@
 title: /users/{ownerId}/people/xuids
 assetID: db2faec7-9f6c-f240-586a-45d6ed596e88
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuids.html
-author: KevinAsgari
+
 description: ' /users/{ownerId}/people/xuids'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/{ownerId}/people/xuids
 Accesses people by XUID from caller's people collection. 
 The domain for these URIs is `social.xboxlive.com`.

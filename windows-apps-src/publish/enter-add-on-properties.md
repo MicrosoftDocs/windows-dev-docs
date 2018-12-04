@@ -1,19 +1,13 @@
 ﻿---
-author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
-ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, add-on, properties, subscription period, product lifetime, content type, iap, in-app purchase, in-app product
 ms.localizationpriority: medium
 ---
-
 # Enter add-on properties
-
 
 When submitting an add-on, the options on the **Properties** page help determine the behavior of your add-on when offered to customers.
 
@@ -29,7 +23,7 @@ The fields you see on this page will vary, depending on the product type of your
 
 ## Product lifetime
 
-If you selected **Durable** for your product type, **Product lifetime** is shown here. The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. If you prefer, you can set the **Product lifetime** so that the add-on expires after a set duration (with options from 1-365 days).
+If you selected **Durable** for your product type, **Product lifetime** is shown here. The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. If you prefer, you can change the **Product lifetime** so that the add-on expires after a set duration (with options from 1-365 days).
 
 
 ## Quantity

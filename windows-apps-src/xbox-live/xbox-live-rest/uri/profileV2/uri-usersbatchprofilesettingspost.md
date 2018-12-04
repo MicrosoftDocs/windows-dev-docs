@@ -2,18 +2,13 @@
 title: POST (/users/batch/profile/settings)
 assetID: 2a619148-a626-f413-bda1-a2790063075d
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
-author: KevinAsgari
+
 description: ' POST (/users/batch/profile/settings)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/batch/profile/settings)
 Get the profile for a user or users. 
 The domain for these URIs is `profile.xboxlive.com`.

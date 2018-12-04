@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Developing with asset packages and package folding
 description: Learn how to efficiently organize your app with asset packages and package folding.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, packaging, package layout, asset package
 ms.localizationpriority: medium
 ---
-
 # Developing with asset packages and package folding 
 
 > [!IMPORTANT]
@@ -24,14 +19,14 @@ If you are thinking about using asset packages for your app or already know that
 
 To understand how package folding doesn’t impact your development process, let’s step back first to understand what happens when you split your app into multiple packages (with either asset packages or resource packages). 
 
-At a high level, when you split some of your app’s files into other packages (that are not architecture packages), you will not be able to access those files directly relative to where your code runs. This is because these packages are all installed into different directories from where your architecture package is installed. For example, if you’re making a game and your game is localized into French and German and you built for both x86 and x64 machines, then you should have these .appx package files within the app bundle of your game:
+At a high level, when you split some of your app’s files into other packages (that are not architecture packages), you will not be able to access those files directly relative to where your code runs. This is because these packages are all installed into different directories from where your architecture package is installed. For example, if you’re making a game and your game is localized into French and German and you built for both x86 and x64 machines, then you should have these app package files within the app bundle of your game:
 
 - 	MyGame_1.0_x86.appx
 - 	MyGame_1.0_x64.appx
 - 	MyGame_1.0_language-fr.appx
 - 	MyGame_1.0_language-de.appx
 
-When your game is installed to a user’s machine, each .appx file will have its own folder in the **WindowsApps** directory. So for a French user running 64-bit Windows, your game will look like this:
+When your game is installed to a user’s machine, each app package file will have its own folder in the **WindowsApps** directory. So for a French user running 64-bit Windows, your game will look like this:
 
 ```example
 C:\Program Files\WindowsApps\
@@ -42,7 +37,7 @@ C:\Program Files\WindowsApps\
 `-- …(other apps)
 ```
 
-Note that the .appx package file that are not applicable to the user will not be installed (the x86 and German packages). 
+Note that the app package files that are not applicable to the user will not be installed (the x86 and German packages). 
 
 For this user, your game’s main executable will be within the **MyGame_1.0_x64** folder and will run from there, and normally, it will only have access to the files within this folder. In order to access the files in the **MyGame_1.0_language-fr** folder, you would have to use either the MRT APIs or the PackageManager APIs. The MRT APIs can automatically select the most appropriate file from the languages installed, you can find out more about MRT APIs at [Windows.ApplicationModel.Resources.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core). Alternatively, you can find the installed location of the French language package using the [PackageManager Class](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager). You should never assume the installed location of the packages of your app since this can change and can vary between users. 
 

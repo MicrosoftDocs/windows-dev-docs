@@ -4,15 +4,12 @@ description: A stencil buffer is used to mask pixels in an image, to produce spe
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
 keywords:
 - Stencil buffers
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Stencil buffers
 
 

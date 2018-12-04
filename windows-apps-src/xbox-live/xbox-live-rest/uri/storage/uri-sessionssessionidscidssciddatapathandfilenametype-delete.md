@@ -2,18 +2,13 @@
 title: DELETE (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 assetID: b4ddc3d2-890d-f677-0109-45d318c3128d
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfilenametype-delete.html
-author: KevinAsgari
+
 description: ' DELETE (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 Deletes a file. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

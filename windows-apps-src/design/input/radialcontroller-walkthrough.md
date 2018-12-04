@@ -1,17 +1,14 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: 
 title: Support the Surface Dial (and other wheel devices) in your UWP app
 description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
 keywords: dial, radial, tutorial
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
@@ -57,7 +54,7 @@ The Dial supports three basic gestures:
 6. Go back to your Windows device and select **Add Bluetooth or other device**.
 7. In the **Add a device** dialog, select **Bluetooth** > **Surface Dial**. Your Surface Dial should now connect and be added to the list of devices under **Mouse, keyboard, & pen** on the **Bluetooth & other devices** settings page.
 8. Test the Dial by pressing and holding it down for a few seconds to display the built-in menu.
-9. If the the menu isn't displayed on your screen (the Dial should also vibrate), go back to the Bluetooth settings, remove the device, and try connecting the device again.
+9. If the menu isn't displayed on your screen (the Dial should also vibrate), go back to the Bluetooth settings, remove the device, and try connecting the device again.
 
 > [!NOTE]
 > Wheel devices can be configured through the **Wheel** settings:

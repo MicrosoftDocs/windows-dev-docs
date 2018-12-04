@@ -1,17 +1,13 @@
 ---
 title: Display People from the People System
-author: KevinAsgari
+
 description: Learn abou the code flow to display people by using the Xbox Live people system.
 ms.assetid: c97b699f-ebc2-4f65-8043-e99cca8cbe0c
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Display People from the People System
 
 Services across Xbox Live return only data owned by that service and return only XUID references to users; for example, the People service only owns and returns the XUIDs that are on a user's People list and some very basic information about each of those XUIDs (such as favorite status). The Presence service owns data about the online status information of XUIDs. The leaderboards service owns ranking information on lists of XUIDs. Display name and gamertag information is never returned from any service other than the Profile service and, therefore, calling multiple services is necessary to render lists of people in experiences.

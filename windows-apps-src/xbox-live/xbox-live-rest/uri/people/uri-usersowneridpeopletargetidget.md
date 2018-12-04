@@ -2,18 +2,13 @@
 title: GET (/users/{ownerId}/people/{targetid})
 assetID: 2fd37b8e-b886-14f2-3399-59f530d85e4e
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetidget.html
-author: KevinAsgari
+
 description: ' GET (/users/{ownerId}/people/{targetid})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{ownerId}/people/{targetid})
 Gets a person by target ID from caller's people collection. 
 The domain for these URIs is `social.xboxlive.com`.

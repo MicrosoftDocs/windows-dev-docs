@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: Save a file with a picker
 description: Use FileSavePicker to let users specify the name and location where they want your app to save a file.
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Save a file with a picker
 
 **Important APIs**

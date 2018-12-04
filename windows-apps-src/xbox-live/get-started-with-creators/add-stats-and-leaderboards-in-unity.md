@@ -1,17 +1,13 @@
 ---
 title: Add player stats and leaderboards to your Unity project
-author: KevinAsgari
+
 description: Lean how to use the Xbox Live Unity plugin to add player stats and leaderboards to your Unity project.
 ms.assetid: 756b3c31-a459-4ad2-97af-119adcd522b5
-ms.author: kevinasg
 ms.date: 10/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, creators
 ms.localizationpriority: medium
 ---
-
 # Add player stats and leaderboards to your Unity project
 
 > [!IMPORTANT]
@@ -47,7 +43,7 @@ There are several prefabs provided in the Xbox Live Unity plugin that you can us
 
 To add a player stat, simply drag the prefab that matches the data type of the stat onto the scene. In the Unity inspector for the stat, you can specify three values:
 
-* The ID of the stat. This must match the ID configured in Windows Dev Center and is case sensitive.
+* The ID of the stat. This must match the ID configured in Partner Center and is case sensitive.
 * The display name of the stat (this name is displayed in the StatPanel prefab UI).
 * The initial value of the stat when the scene starts.
 

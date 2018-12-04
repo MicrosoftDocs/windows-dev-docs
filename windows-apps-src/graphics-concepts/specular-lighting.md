@@ -4,15 +4,12 @@ description: Specular lighting identifies the bright specular highlights that oc
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
 keywords:
 - Specular lighting
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Specular lighting
 
 

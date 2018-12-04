@@ -1,18 +1,13 @@
 ---
-author: anbare
 Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
 title: Secondary tiles
 label: Secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, secondary tiles
 ms.localizationpriority: medium
 ---
-
 # Secondary tiles
 
 
@@ -65,7 +60,7 @@ However, secondary tiles differ from primary tiles in some noticeable ways:
 * Users can delete their secondary tiles at any time without deleting the parent app.
 * Secondary tiles can be created at run time. App tiles can be created only during installation.
 * A flyout prompts the user for confirmation before adding a secondary tile.
-* They cannot be programmatically selected for the lock screen through a request to the user. The user must manually add the the secondary tile through the Personalize page in PC Settings.
+* They cannot be programmatically selected for the lock screen through a request to the user. The user must manually add the secondary tile through the Personalize page in PC Settings.
 
 For sending notifications, specific methods are provided for tile and badge updaters and push notification channels used with secondary tiles. These parallel the versions used with primary tiles. For instance, CreateBadgeUpdaterForApplication vs. CreateBadgeUpdaterForSecondaryTile.
 

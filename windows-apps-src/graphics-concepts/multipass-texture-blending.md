@@ -4,15 +4,12 @@ description: Direct3D applications can achieve numerous special effects by apply
 ms.assetid: FB4D6E3F-4EF5-4D20-BF7E-1008E790E30C
 keywords:
 - Multipass texture blending
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Multipass texture blending
 
 

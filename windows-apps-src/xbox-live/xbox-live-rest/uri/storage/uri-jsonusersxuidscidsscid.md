@@ -2,18 +2,13 @@
 title: /json/users/xuid({xuid})/scids/{scid}
 assetID: e528a5e9-219b-7b28-8ca7-0cd12ae11eff
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidsscid.html
-author: KevinAsgari
+
 description: ' /json/users/xuid({xuid})/scids/{scid}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /json/users/xuid({xuid})/scids/{scid}
 Retrieves quota information for this storage type. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

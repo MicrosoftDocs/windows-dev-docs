@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
 title: Time picker
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv

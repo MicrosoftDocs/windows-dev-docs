@@ -1,17 +1,12 @@
 ---
-author: normesta
 title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
 ---
-
 # Display maps with 2D, 3D, and Streetside views
 
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.
@@ -220,6 +215,8 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 ![Dark style map](images/style-dark.png)
 
 You can also use JSON to define custom styles and then use that JSON to create a [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) object.
+
+Style sheet JSON can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"

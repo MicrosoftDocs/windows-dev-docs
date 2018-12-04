@@ -1,17 +1,13 @@
 ---
 title: Multiplayer scenarios
-author: KevinAsgari
+
 description: Learn about the different multiplayer scenarios and how Xbox Live supports those scenarios.
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Multiplayer scenarios
 There are many different types of multiplayer scenarios, and choosing the right scenario can increase player engagement and the player base for your game, which in turn helps extend the active life of your game for as long as possible.
 

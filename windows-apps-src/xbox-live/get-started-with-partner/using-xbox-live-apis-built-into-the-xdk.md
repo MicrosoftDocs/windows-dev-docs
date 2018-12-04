@@ -1,17 +1,13 @@
 ---
 title: Using Xbox Live APIs built into the XDK
-author: KevinAsgari
+
 description: Learn how to use the built-in Xbox Live APIs in your Xbox Developer Kit (XDK) project.
 ms.assetid: 539caca3-58bc-49d9-8432-ca8e57755be2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Using Xbox Live APIs built into the XDK
 
 1. Right click on your project in Visual Studio, and choose "References".

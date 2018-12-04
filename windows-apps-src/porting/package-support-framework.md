@@ -1,38 +1,17 @@
 ---
-author: normesta
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
 title: Fix issues that prevent your desktop application from running in an MSIX container
-ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Apply runtime fixes to an MSIX package by using the Package Support Framework
 
 The Package Support Framework is an open source kit that helps you apply fixes to your existing win32 application when you don't have access to the source code, so that it can run in an MSIX container. The Package Support Framework helps your application follow the best practices of the modern runtime environment.
 
-To create the Package Support Framework, we leveraged the [Detours](https://www.microsoft.com/en-us/research/project/detours) technology which is an open source framework developed by Microsoft Research (MSR) and helps with API redirection and hooking.
-
-This framework is open source, lightweight, and you can use it to address application issues quickly. It also gives you the opportunity to consult with the community around the globe, and to build on top of the investments of others.
-
-## A quick look inside of the Package Support Framework
-
-The Package Support Framework contains an executable, a runtime manager  DLL, and a set of runtime fixes.
-
-![Package Support Framework](images/desktop-to-uwp/package-support-framework.png)
-
-Here's how it works. You'll create a configuration file that specifies the fix(s) that you want to apply to your application. Then, you'll modify your package to point to the shim launcher executable file.
-
-When users start your application, the shim launcher is the first executable that runs. It reads your configuration file, and injects the runtime fix(s) and the runtime manager  DLL into the application process.
-
-![Package Support Framework  DLL Injection](images/desktop-to-uwp/package-support-framework-2.png)
-
-The runtime manager applies the fix when it's needed by the application to run inside of an MSIX container.
+To learn more, see [Package Support Framework](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
 
 This guide will help you to identify application compatibility issues, and to find, apply, and extend runtime fixes that address them.
 
@@ -68,23 +47,23 @@ The second issue appears in the following image.
 
 ![ProcMon Logfile](images/desktop-to-uwp/procmon_logfile.png)
 
-In this issue, the application is failing to write a .log file to its package path. This would suggest that a file redirection shim might help.
+In this issue, the application is failing to write a .log file to its package path. This would suggest that a file redirection fixup might help.
 
 <a id="find" />
 
 ## Find a runtime fix
 
-The PSF contains runtime fixes that you can use right now, such as the file redirection shim.
+The PSF contains runtime fixes that you can use right now, such as the file redirection fixup.
 
-### File Redirection Shim
+### File Redirection Fixup
 
-You can use the [File Redirection Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) to redirect attempts to write or read data in a directory that isn't accessible from an application that runs in an MSIX container.
+You can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) to redirect attempts to write or read data in a directory that isn't accessible from an application that runs in an MSIX container.
 
-For example, if your application writes to a log file that is in the same directory as your applications executable, then you can use the [File Redirection Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) to create that log file in another location, such as the local app data store.
+For example, if your application writes to a log file that is in the same directory as your applications executable, then you can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) to create that log file in another location, such as the local app data store.
 
 ### Runtime fixes from the community
 
-Make sure to review the community contributions to our [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop) page. It's possible that other developers have resolved an issue similar to yours and have shared a runtime fix.
+Make sure to review the community contributions to our [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework) page. It's possible that other developers have resolved an issue similar to yours and have shared a runtime fix.
 
 ## Apply a runtime fix
 
@@ -101,10 +80,12 @@ Let's go through each task.
 
 ### Create the package layout folder
 
-If you have a .appx file already, you can unpack its contents into a layout folder that will serve as the staging area for your package.  You can do this from an **x64 Native Tools Command Prompt for VS 2017**, or manually with the SDK bin path in the executable search path.
+If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using makemsix tool, based on your installation path of the SDK, this is where you will find the makemsix.exe tool on your Windows 10 PC:
+x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makemsix.exe
+x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makemsix.exe
 
-```
-makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContents
+```ps
+makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
@@ -112,23 +93,23 @@ This will give you something that looks like the following.
 
 ![Package Layout](images/desktop-to-uwp/package_contents.png)
 
-If you don't have a .appx file to start with, you can create the package folder and files from scratch.
+If you don't have a .msix (or .appx) file to start with, you can create the package folder and files from scratch.
 
 ### Get the Package Support Framework files
 
-You can get the PSF Nuget package by using Visual Studio. You can also get it by using the standalone Nuget command line tool.
-
-#### Get the package by using Visual Studio
-
-In Visual Studio, right-click your solution or project node and pick one of the Manage Nuget Packages commands.  Search for **Microsoft.PackageSupportFramework** or **PSF** to find the package on Nuget.org. Then, install it.
+You can get the PSF Nuget package by using the standalone Nuget command line tool or via Visual Studio.
 
 #### Get the package by using the command line tool
 
 Install the Nuget command line tool from this location: https://www.nuget.org/downloads. Then, from the Nuget command line, run this command:
 
-```
+```ps
 nuget install Microsoft.PackageSupportFramework
 ```
+
+#### Get the package by using Visual Studio
+
+In Visual Studio, right-click your solution or project node and pick one of the Manage Nuget Packages commands.  Search for **Microsoft.PackageSupportFramework** or **PSF** to find the package on Nuget.org. Then, install it.
 
 ### Add the Package Support Framework files to your package
 
@@ -136,9 +117,9 @@ Add the required 32-bit and 64-bit PSF  DLLs and executable files to the package
 
 | Application executable is x64 | Application executable is x86 |
 |-------------------------------|-----------|
-| [ShimLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [ShimLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [ShimRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [ShimRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [ShimRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [ShimRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 Your package content should now look something like this.
 
@@ -146,14 +127,14 @@ Your package content should now look something like this.
 
 ### Modify the package manifest
 
-Open your package manifest in a text editor, and then set the `Executable` attribute of the `Application` element to the name of the shim launcher executable file.  If you know the architecture of your target application, select the appropriate version, ShimLauncher32.exe or ShimLauncher64.exe.  If not, ShimLauncher32.exe will work in all cases.  Here's an example.
+Open your package manifest in a text editor, and then set the `Executable` attribute of the `Application` element to the name of the PSF launcher executable file.  If you know the architecture of your target application, select the appropriate version, PSFLauncher32.exe or PSFLauncher64.exe.  If not, PSFLauncher32.exe will work in all cases.  Here's an example.
 
 ```xml
 <Package ...>
   ...
   <Applications>
     <Application Id="PSFSample"
-                 Executable="ShimLauncher32.exe"
+                 Executable="PSFLauncher32.exe"
                  EntryPoint="Windows.FullTrustApplication">
       ...
     </Application>
@@ -163,7 +144,7 @@ Open your package manifest in a text editor, and then set the `Executable` attri
 
 ### Create a configuration file
 
-Create a file name ``config.json``, and save that file to the root folder of your package. Modify the declared app ID of the config.json file to point to the executable that you just replaced. Using the knowledge that you gained from using Process Monitor, you can also set the working directory as well as use the file redirection shim to redirect reads/writes to .log files under the package-relative "PSFSampleApp" directory.
+Create a file name ``config.json``, and save that file to the root folder of your package. Modify the declared app ID of the config.json file to point to the executable that you just replaced. Using the knowledge that you gained from using Process Monitor, you can also set the working directory as well as use the file redirection fixup to redirect reads/writes to .log files under the package-relative "PSFSampleApp" directory.
 
 ```json
 {
@@ -177,9 +158,9 @@ Create a file name ``config.json``, and save that file to the root folder of you
     "processes": [
         {
             "executable": "PSFSample",
-            "shims": [
+            "fixups": [
                 {
-                    "dll": "FileRedirectionShim.dll",
+                    "dll": "FileRedirectionFixup.dll",
                     "config": {
                         "redirectedPaths": {
                             "packageRelative": [
@@ -198,6 +179,7 @@ Create a file name ``config.json``, and save that file to the root folder of you
     ]
 }
 ```
+
 Following is a guide for the config.json schema:
 
 | Array | key | Value |
@@ -206,24 +188,23 @@ Following is a guide for the config.json schema:
 | applications | executable | The package-relative path to the executable that you want to start. In most cases, you can get this value from your package manifest file before you modify it. It's the value of the `Executable` attribute of the `Application` element. |
 | applications | workingDirectory | (Optional) A package-relative path to use as the working directory of the application that starts. If you don't set this value, the operating system uses the `System32` directory as the application's working directory. |
 | processes | executable | In most cases, this will be the name of the `executable` configured above with the path and file extension removed. |
-| shims | dll | Package-relative path to the shim  .appx  to load. |
-| shims | config | (Optional) Controls how the shim dl behaves. The exact format of this value varies on a shim-by-shim basis as each shim can interpret this "blob" as it wants. |
+| fixups | dll | Package-relative path to the fixup, .msix/.appx  to load. |
+| fixups | config | (Optional) Controls how the fixup dl behaves. The exact format of this value varies on a fixup-by-fixup basis as each fixup can interpret this "blob" as it wants. |
 
-The `applications`, `processes`, and `shims` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and shim DLL.
-
+The `applications`, `processes`, and `fixups` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and fixup DLL.
 
 ### Package and Test the App
 
 Next, create a package.
 
-```
-makeappx pack /d PackageContents /p PSFSamplePackageFixup.appx
+```ps
+makeappx pack /d PackageContents /p PSFSamplePackageFixup.msix
 ```
 
 Then, sign it.
 
-```
-signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.appx
+```ps
+signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
 For more information, see [how to create a package signing certificate](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)
@@ -234,19 +215,19 @@ Using PowerShell, install the package.
 >[!NOTE]
 > Remember to uninstall the package first.
 
-```
-powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
+```ps
+powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 ```
 
 Run the application and observe the behavior with runtime fix applied.  Repeat the diagnostic and packaging steps as necessary.
 
-### Use the Trace Shim
+### Use the Trace Fixup
 
-An alternative technique to diagnosing packaged application compatibility issues is to use the Trace Shim. This DLL is included with the PSF and provides a detailed diagnostic view of the app's behavior, similar to Process Monitor.  It is specially designed to reveal application compatibility issues.  To use the Trace Shim, add the DLL to the package, add the following fragment to your config.json, and then package and install your application.
+An alternative technique to diagnosing packaged application compatibility issues is to use the Trace Fixup. This DLL is included with the PSF and provides a detailed diagnostic view of the app's behavior, similar to Process Monitor.  It is specially designed to reveal application compatibility issues.  To use the Trace Fixup, add the DLL to the package, add the following fragment to your config.json, and then package and install your application.
 
 ```json
 {
-    "dll": "TraceShim.dll",
+    "dll": "TraceFixup.dll",
     "config": {
         "traceLevels": {
             "filesystem": "allFailures"
@@ -255,9 +236,9 @@ An alternative technique to diagnosing packaged application compatibility issues
 }
 ```
 
-By default, the Trace Shim filters out failures that might be considered "expected".  For example, applications might try to unconditionally delete a file without checking to see if it already exists, ignoring the result. This has the unfortunate consequence that some unexpected failures might get filtered out, so in the above example, we opt to receive all failures from filesystem functions. We do this because we know from before that the attempt to read from the Config.txt file fails with the message "file not found". This is a failure that is frequently observed and not generally assumed to be unexpected. In practice it's likely best to start out filtering only to unexpected failures, and then falling back to all failures if there's an issue that still can't be identified.
+By default, the Trace Fixup filters out failures that might be considered "expected".  For example, applications might try to unconditionally delete a file without checking to see if it already exists, ignoring the result. This has the unfortunate consequence that some unexpected failures might get filtered out, so in the above example, we opt to receive all failures from filesystem functions. We do this because we know from before that the attempt to read from the Config.txt file fails with the message "file not found". This is a failure that is frequently observed and not generally assumed to be unexpected. In practice it's likely best to start out filtering only to unexpected failures, and then falling back to all failures if there's an issue that still can't be identified.
 
-By default, the output from the Trace Shim gets sent to the attached debugger. For this example, we aren't going to attach a debugger, and will instead use the [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) program from SysInternals to view its output. After running the app, we can see the same failures as before, which would point us towards the same runtime fixes.
+By default, the output from the Trace Fixup gets sent to the attached debugger. For this example, we aren't going to attach a debugger, and will instead use the [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) program from SysInternals to view its output. After running the app, we can see the same failures as before, which would point us towards the same runtime fixes.
 
 ![TraceShim File Not Found](images/desktop-to-uwp/traceshim_filenotfound.png)
 
@@ -270,7 +251,7 @@ You can use Visual Studio to debug a runtime fix, extend a runtime fix, or creat
 > [!div class="checklist"]
 > * Add a packaging project
 > * Add project for the runtime fix
-> * Add a project that starts the Shim Launcher executable
+> * Add a project that starts the PSF Launcher executable
 > * Configure the packaging project
 
 When you're done, your solution will look something like this.
@@ -281,15 +262,14 @@ Let's look at each project in this example.
 
 | Project | Purpose |
 |-------|-----------|
-| DesktopApplicationPackage | This project is based on the [Windows Application Packaging project](desktop-to-uwp-packaging-dot-net.md) and it outputs the the MSIX package. |
+| DesktopApplicationPackage | This project is based on the [Windows Application Packaging project](desktop-to-uwp-packaging-dot-net.md) and it outputs the MSIX package. |
 | Runtimefix | This is a C++ Dynamic-Linked Library project that contains one or more replacement functions that serve as the runtime fix. |
-| ShimLauncher | This is C++ Empty Project. This project is a place to collect the runtime distributable files of the Package Support Framework. It outputs an executable file. That executable is the first thing that runs when you start the solution. |
+| PSFLauncher | This is C++ Empty Project. This project is a place to collect the runtime distributable files of the Package Support Framework. It outputs an executable file. That executable is the first thing that runs when you start the solution. |
 | WinFormsDesktopApplication | This project contains the source code of a desktop application. |
 
 To look at a complete sample that contains all of these types of projects, see [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/).
 
 Let's walk through the steps to create and configure each of these projects in your solution.
-
 
 ### Create a package solution
 
@@ -309,7 +289,7 @@ For more information on Windows Application Packaging project, see [Package your
 
 In **Solution Explorer**, right-click the packaging project, select **Edit**, and then add this to the bottom of the project file:
 
-```
+```xml
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
 <ItemGroup>
   <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
@@ -345,7 +325,7 @@ If you want to debug or extend an existing runtime fix, add the runtime fix file
 
 If you intend to create a brand new fix, don't add anything to this project just yet. We'll help you add the right files to this project later in this guide. For now, we'll continue setting up your solution.
 
-### Add a project that starts the Shim Launcher executable
+### Add a project that starts the PSF Launcher executable
 
 Add a C++ **Empty Project** project to the solution.
 
@@ -353,9 +333,9 @@ Add a C++ **Empty Project** project to the solution.
 
 Add the **PSF** Nuget package to this project by using the same guidance described in the previous section.
 
-Open the property pages for the project, and in the **General** settings page, set the **Target Name** property to ``ShimLauncher32`` or ``ShimLauncher64`` depending on the architecture of your application.
+Open the property pages for the project, and in the **General** settings page, set the **Target Name** property to ``PSFLauncher32`` or ``PSFLauncher64`` depending on the architecture of your application.
 
-![shim launcher reference](images/desktop-to-uwp/shim-exe-reference.png)
+![PSF launcher reference](images/desktop-to-uwp/shim-exe-reference.png)
 
 Add a project reference to the runtime fix project in your solution.
 
@@ -364,7 +344,7 @@ Add a project reference to the runtime fix project in your solution.
 Right-click the reference, and then in the **Properties** window, apply these values.
 
 | Property | Value |
-|-------|-----------|-------|
+|-------|-----------|
 | Copy local | True |
 | Copy Local Satellite Assemblies | True |
 | Reference Assembly Output | True |
@@ -377,14 +357,14 @@ In the packaging project, right-click the **Applications** folder, and then choo
 
 ![Add Project Reference](images/desktop-to-uwp/add-reference-packaging-project.png)
 
-Choose the shim launcher project and your desktop application project, and then choose the **OK** button.
+Choose the PSF launcher project and your desktop application project, and then choose the **OK** button.
 
 ![Desktop project](images/desktop-to-uwp/package-project-references.png)
 
 >[!NOTE]
-> If you don't have the source code to your application, just choose the shim launcher project. We'll show you how to reference your executable when you create a configuration file.
+> If you don't have the source code to your application, just choose the PSF launcher project. We'll show you how to reference your executable when you create a configuration file.
 
-In the **Applications** node, right-click the shim launcher application, and then choose **Set as Entry Point**.
+In the **Applications** node, right-click the PSF launcher application, and then choose **Set as Entry Point**.
 
 ![Set entry point](images/desktop-to-uwp/set-startup-project.png)
 
@@ -402,7 +382,7 @@ Add a file named ``config.json`` to your packaging project, then, copy and paste
     "processes": [
         {
             "executable": "",
-            "shims": [
+            "fixups": [
                 {
                     "dll": "",
                     "config": {
@@ -413,6 +393,7 @@ Add a file named ``config.json`` to your packaging project, then, copy and paste
     ]
 }
 ```
+
 Provide a value for each key. Use this table as a guide.
 
 | Array | key | Value |
@@ -421,8 +402,8 @@ Provide a value for each key. Use this table as a guide.
 | applications | executable | The package-relative path to the executable that you want to start. In most cases, you can get this value from your package manifest file before you modify it. It's the value of the `Executable` attribute of the `Application` element. |
 | applications | workingDirectory | (Optional) A package-relative path to use as the working directory of the application that starts. If you don't set this value, the operating system uses the `System32` directory as the application's working directory. |
 | processes | executable | In most cases, this will be the name of the `executable` configured above with the path and file extension removed. |
-| shims | dll | Package-relative path to the shim DLL to load. |
-| shims | config | (Optional) Controls how the shim dl behaves. The exact format of this value varies on a shim-by-shim basis as each shim can interpret this "blob" as it wants. |
+| fixups | dll | Package-relative path to the fixup DLL to load. |
+| fixups | config | (Optional) Controls how the fixup DLL behaves. The exact format of this value varies on a fixup-by-fixup basis as each fixup can interpret this "blob" as it wants. |
 
 When you're done, your ``config.json`` file will look something like this.
 
@@ -438,7 +419,7 @@ When you're done, your ``config.json`` file will look something like this.
   "processes": [
     {
       "executable": ".*App.*",
-      "shims": [ { "dll": "RuntimeFix.dll" } ]
+      "fixups": [ { "dll": "RuntimeFix.dll" } ]
     }
   ]
 }
@@ -446,11 +427,11 @@ When you're done, your ``config.json`` file will look something like this.
 ```
 
 >[!NOTE]
-> The `applications`, `processes`, and `shims` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and shim DLL.
+> The `applications`, `processes`, and `fixups` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and fixup DLL.
 
 ### Debug a runtime fix
 
-In Visual Studio, press F5 to start the debugger.  The first thing that starts is the shim launcher application, which in turn, starts your target desktop application.  To debug the target desktop application, you'll have to manually attach to the desktop application process by choosing **Debug**->**Attach to Process**, and then selecting the application process. To permit the debugging of a .NET application with a native runtime fix DLL, select managed and native code types (mixed mode debugging).  
+In Visual Studio, press F5 to start the debugger.  The first thing that starts is the PSF launcher application, which in turn, starts your target desktop application.  To debug the target desktop application, you'll have to manually attach to the desktop application process by choosing **Debug**->**Attach to Process**, and then selecting the application process. To permit the debugging of a .NET application with a native runtime fix DLL, select managed and native code types (mixed mode debugging).  
 
 Once you've set this up, you can set break points next to lines of code in the desktop application code and the runtime fix project. If you don't have the source code to your application, you'll be able to set break points only next to lines of code in your runtime fix project.
 
@@ -467,20 +448,21 @@ First, identify which function calls fail when your application runs in an MSIX 
 
 In Visual Studio, open the runtime fix project that you created earlier in this guide.
 
-Declare the ``SHIM_DEFINE_EXPORTS`` macro and then add a include statement for the `shim_framework.h` at the top of each .CPP file where you intend to add the functions of your runtime fix.
+Declare the ``FIXUP_DEFINE_EXPORTS`` macro and then add a include statement for the `fixup_framework.h` at the top of each .CPP file where you intend to add the functions of your runtime fix.
 
 ```c++
-#define SHIM_DEFINE_EXPORTS
-#include <shim_framework.h>
+#define FIXUP_DEFINE_EXPORTS
+#include <fixup_framework.h>
 ```
+
 >[!IMPORTANT]
->Make sure that the `SHIM_DEFINE_EXPORTS` macro appears before the include statement.
+>Make sure that the `FIXUP_DEFINE_EXPORTS` macro appears before the include statement.
 
 Create a function that has the same signature of the function who's behavior you want to modify. Here's an example function that replaces the `MessageBoxW` function.
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
-int WINAPI MessageBoxWShim(
+int WINAPI MessageBoxWFixup(
     _In_opt_ HWND hwnd,
     _In_opt_ LPCWSTR,
     _In_opt_ LPCWSTR caption,
@@ -489,10 +471,10 @@ int WINAPI MessageBoxWShim(
     return MessageBoxWImpl(hwnd, L"SUCCESS: This worked", caption, type);
 }
 
-DECLARE_SHIM(MessageBoxWImpl, MessageBoxWShim);
+DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 ```
 
-The call to `DECLARE_SHIM` maps the `MessageBoxW` function to your new replacement function. When your application attempts to call the `MessageBoxW` function, it will call the replacement function instead.
+The call to `DECLARE_FIXUP` maps the `MessageBoxW` function to your new replacement function. When your application attempts to call the `MessageBoxW` function, it will call the replacement function instead.
 
 #### Protect against recursive calls to functions in runtime fixes
 
@@ -504,10 +486,10 @@ For more information on `reentrancy_guard` see [authoring.md](https://github.com
 
 ### Configuration data
 
-If you want to add configuration data to your runtime fix, consider adding it to the ``config.json``. That way, you can use the `ShimQueryCurrentDllConfig` to easily parse that data. This example parses a boolean and string value from that configuration file.
+If you want to add configuration data to your runtime fix, consider adding it to the ``config.json``. That way, you can use the `FixupQueryCurrentDllConfig` to easily parse that data. This example parses a boolean and string value from that configuration file.
 
 ```c++
-if (auto configRoot = ::ShimQueryCurrentDllConfig())
+if (auto configRoot = ::FixupQueryCurrentDllConfig())
 {
     auto& config = configRoot->as_object();
 
@@ -527,35 +509,37 @@ if (auto configRoot = ::ShimQueryCurrentDllConfig())
 
 While Visual Studio gives you the simplest development and debugging experience, there are some limitations.
 
-First, F5 debugging runs the application by deploying loose files from the package layout folder path, rather than installing from a .appx package.  The layout folder typically does not have the same security restrictions as an installed package folder. As a result, it may not be possible to reproduce package path access denial errors prior to applying a runtime fix.
+First, F5 debugging runs the application by deploying loose files from the package layout folder path, rather than installing from a .msix / .appx package.  The layout folder typically does not have the same security restrictions as an installed package folder. As a result, it may not be possible to reproduce package path access denial errors prior to applying a runtime fix.
 
-To address this issue, use .appx package deployment rather than F5 loose file deployment.  To create a .appx package file, use the [MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) utility from the Windows SDK, as described above. Or, from within Visual Studio, right-click your application project node and select **Store**->**Create App Packages**.
+To address this issue, use .msix / .appx package deployment rather than F5 loose file deployment.  To create a .msix / .appx package file, use the [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) utility from the Windows SDK, as described above. Or, from within Visual Studio, right-click your application project node and select **Store**->**Create App Packages**.
 
 Another issue with Visual Studio is that it does not have built-in support for attaching to any child processes launched by the debugger.   This makes it difficult to debug logic in the startup path of the target application, which must be manually attached by Visual Studio after launch.
 
-To address this issue, use a debugger that supports child process attach.  Note that it is generally not possible to attach a just-in-time (JIT) debugger to the target application.  This is because most JIT techniques involve launching the debugger in place of the target app, via the ImageFileExecutionOptions registry key.  This defeats the detouring mechanism used by ShimLauncher.exe to inject ShimRuntime.dll into the target app.  WinDbg, included in the [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index), and obtained from the [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk), supports child process attach.  It also now supports directly [launching and debugging a UWP app](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
+To address this issue, use a debugger that supports child process attach.  Note that it is generally not possible to attach a just-in-time (JIT) debugger to the target application.  This is because most JIT techniques involve launching the debugger in place of the target app, via the ImageFileExecutionOptions registry key.  This defeats the detouring mechanism used by PSFLauncher.exe to inject FixupRuntime.dll into the target app.  WinDbg, included in the [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index), and obtained from the [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk), supports child process attach.  It also now supports directly [launching and debugging a UWP app](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
 
 To debug target application startup as a child process, start ``WinDbg``.
 
-```
+```ps
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
 At the ``WinDbg`` prompt, enable child debugging and set appropriate breakpoints.
 
-```
+```ps
 .childdbg 1
 g
 ```
+
 (execute until target application starts and breaks into the debugger)
 
-```
+```ps
 sxe ld fixup.dll
 g
 ```
+
 (execute until the fixup DLL is loaded)
 
-```
+```ps
 bp ...
 ```
 

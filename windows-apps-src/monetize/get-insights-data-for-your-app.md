@@ -1,19 +1,15 @@
 ---
-author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get insights data for your app.
 title: Get insights data
-ms.author: mcleans
 ms.date: 07/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, insights
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Get insights data
 
-Use this method in the Microsoft Store analytics API to get insights data related to acquisitions, health, and usage metrics for an app during a given date range and other optional filters. This information is also available in the [Insights report](../publish/insights-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get insights data related to acquisitions, health, and usage metrics for an app during a given date range and other optional filters. This information is also available in the [Insights report](../publish/insights-report.md) in Partner Center.
 
 ## Prerequisites
 

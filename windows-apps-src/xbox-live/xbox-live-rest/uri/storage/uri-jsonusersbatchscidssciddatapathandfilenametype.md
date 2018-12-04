@@ -2,18 +2,13 @@
 title: /json/users/batch/scids/{scid}/data/{pathAndFileName},json
 assetID: 06ae159f-7739-1330-df15-871d260e6ba1
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /json/users/batch/scids/{scid}/data/{pathAndFileName},json'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /json/users/batch/scids/{scid}/data/{pathAndFileName},json
 Downloads multiple files from multiple users with the same filename. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

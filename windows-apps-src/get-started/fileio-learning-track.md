@@ -1,14 +1,11 @@
 ---
-author: TylerMSFT
 title: Work with files
 description: Learn how to work with files in the Universal Windows Platform.
-ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: get started, uwp, windows 10, learning track, files, file io, read file, write file, create file, write text, read text
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Work with files
 
@@ -58,7 +55,7 @@ The **FileIO** class provides a convenient way to write text to the file. `FileI
 
 ## Read text from a file
 
-As with writing a file, reading a file starts with specifying where the file is located. We'll use the same location as in the example above. Then we'll use the the **FileIO** class to read its contents.
+As with writing a file, reading a file starts with specifying where the file is located. We'll use the same location as in the example above. Then we'll use the **FileIO** class to read its contents.
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

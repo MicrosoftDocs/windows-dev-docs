@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: This article lists the audio and video codec and format support for UWP apps.
 title: Supported codecs
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Supported codecs
 
 This article lists the audio, video, and image codec and format availability for UWP apps by default for each device family. Note that these tables list the codecs that are included with the Windows 10 installation for the specified device family. Users and apps can install additional codecs that may be available to use. You can query at runtime for the set of codecs that are currently available for a specific device. For more information, see [Query for codecs installed on a device](codec-query.md).

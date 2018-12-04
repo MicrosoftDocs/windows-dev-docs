@@ -1,22 +1,18 @@
 ---
 title: Get started with Visual Studio for UWP games
-author: KevinAsgari
+
 description: Learn how to set up a Visual Studio project to enable Xbox Live for a UWP game
 ms.assetid: b53bc91f-79db-4d8f-8919-b9144e2d609b
-ms.author: kevinasg
 ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Get started using Visual Studio for UWP games
 
 ## Requirements
 
-1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
+1. Enrollment in the **[Partner Center developer program](https://developer.microsoft.com/store/register)**.
 2. **[Windows 10](https://microsoft.com/windows)**.
 3. **[Visual Studio](https://www.visualstudio.com/)** with the **Universal Windows App Development Tools**. The minimum required version for UWP apps is Visual Studio 2015 Update 3. We recommend that you use the latest release of Visual Studio for developer and security updates. 
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.
@@ -24,9 +20,9 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > Visual Studio 2017 is required if using Windows 10 SDK version 10.0.15063.0 (also known as Creators Update) or later.
 
-## Create a new product on Microsoft Dev Center
+## Create a new product in Partner Center
 
-Every Xbox Live title must have a product created on [Microsoft Dev Center](https://developer.microsoft.com/store) before you will be able to sign-in and make Xbox Live Service calls. See [Create a title on UDC](create-a-new-title.md) for more information.
+Every Xbox Live title must have a product created in [Partner Center](https://partner.microsoft.com/dashboard) before you will be able to sign-in and make Xbox Live Service calls. See [Create a title on UDC](create-a-new-title.md) for more information.
 
 ## Configuring your development device
 
@@ -112,7 +108,7 @@ After you have installed the Xbox Live Platform Extensions SDK, you will need to
 
 ### 4. Associate your Visual Studio project with your UWP app
 
-For your game to be able to sign-in, it must be associated with the product you created on Microsoft Dev Center. You can associate your game in Visual Studio by using the Store Association wizard. In Visual Studio, do the following:
+For your game to be able to sign-in, it must be associated with the product you created in Partner Center. You can associate your game in Visual Studio by using the Store Association wizard. In Visual Studio, do the following:
 
 1.  Right click the primary project (the StartUp Project), click **Store** > **Associate App with the Store...**
 2.  Sign-in with the **Windows Developer account** used for creating the app if asked and follow the prompts.
@@ -137,7 +133,7 @@ To talk to the Xbox Live service, you'll need to add a service configuration fil
 3. Right click on the file, select **Properties** and ensure that:
     1. **Build Action** is set to **Content**, and  
     2. **Copy to Output Directory** is set to **Copy Always**.
-5.  Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title. You can get the correct values from the root Xbox Live page on Microsoft Dev Center. The **PrimaryServiceConfigId** appears on Microsoft Dev Center as **SCID**.
+5.  Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title. You can get the correct values from the root Xbox Live page in Partner Center. The **PrimaryServiceConfigId** appears in Partner Center as **SCID**.
 
 ```json
     {

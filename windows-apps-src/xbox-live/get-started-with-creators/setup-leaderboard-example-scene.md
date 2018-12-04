@@ -1,12 +1,9 @@
 ---
 title: Use the Leaderboard Example Scene in Unity
-author: aablackm
+
 description: Shows the steps to properly setting up the Unity Leaderboard Scene
-ms.author: aablackm
 ms.date: 4/24/2018
 ms.topic: get-started-article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity, leaderboards
 ---
 # The Leaderboard example scene in Unity
@@ -72,4 +69,4 @@ Now play the scene in Unity and you will find that the leaderboard is populated 
 
 ## Populating a Visual Studio built project with real data
 
-In order to populate a leaderboard with real data for your title you will need to build your game to run locally on you machine. You will need a local build because the Unity editor does not have access to Xbox Live. In addition to building your project to run locally, you will have to configure the stat in your leaderboard to a stat that is initialized and has values for your title. In order to associate a stat to your leaderboard you will need to modify the ID and Display Name of the stat object in the leaderboard prefab. The ID will need to match that of a stat configured on the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). After you have done this, build your project as described in the [build section of the configure Xbox Live in Unity article](configure-xbox-live-in-unity.md#build-and-test-the-project). Executing this project as an x64 build targeting the Local Machine should allow you to sign-in with a real gamertag and populate the leaderboard with real data.
+In order to populate a leaderboard with real data for your title you will need to build your game to run locally on you machine. You will need a local build because the Unity editor does not have access to Xbox Live. In addition to building your project to run locally, you will have to configure the stat in your leaderboard to a stat that is initialized and has values for your title. In order to associate a stat to your leaderboard you will need to modify the ID and Display Name of the stat object in the leaderboard prefab. The ID will need to match that of a stat configured in [Partner Center](https://partner.microsoft.com/dashboard). After you have done this, build your project as described in the [build section of the configure Xbox Live in Unity article](configure-xbox-live-in-unity.md#build-and-test-the-project). Executing this project as an x64 build targeting the Local Machine should allow you to sign-in with a real gamertag and populate the leaderboard with real data.

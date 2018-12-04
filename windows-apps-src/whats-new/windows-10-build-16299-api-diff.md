@@ -1,16 +1,13 @@
 ---
-author: QuinnRadich
 title: Windows 10 Fall Creators Update API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 16299
 keywords: what's new, whats new, updates, Windows 10, 1709, fall, creators, apis, 16299
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # New APIs in Windows 10 build 16299
 
 New and updated API namespaces have been made available to developers in Windows 10 build 16299, also known as the Fall Creators Update or version 1709. Below is a full list of documentation published for namespaces added or modified in this release.

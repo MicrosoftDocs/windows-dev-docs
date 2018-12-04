@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 title: Getting started, What next
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps.
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Getting started: What next?
 
 

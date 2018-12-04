@@ -1,12 +1,9 @@
 ---
 title: Sign-In with the PlayerAuthentication Prefab
-author: aablackm
+
 description: Overview of the Unity Plugin PlayerAuthentication Prefab
-ms.author: aablackm
 ms.date: 5/08/2018
 ms.topic: get-started-article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---
 # Easy Sign-In with the PlayerAuthentication Prefab
@@ -17,7 +14,7 @@ The PlayerAuthentication prefab is the easiest way to add Xbox Live Authenticati
 2. Drag an XboxLiveServices prefab onto the scene
 3. Add an EventSystem to the scene (Technically the PlayerAuthentication will create one for you if an EventSystem is not present, but adding it is a good habit.)
 
-And that's it. You can now sign a player into XboxLive in your title by clicking on the PlayerAuthentication prefab in your scene. Testing your scene in Unity by clicking the play button will cause your prefab to generate fake data, this is because the Unity player cannot connect to the Xbox Live service. In order to see a real sign-in you will need to build your project to run locally in Visual Studio. If your title has been configured in the Windows Dev Center and you have authorized a Microsoft account/gamertag to sign in to your title then you will be able to sign-in one of your authorized accounts in a Visual Studio build.
+And that's it. You can now sign a player into XboxLive in your title by clicking on the PlayerAuthentication prefab in your scene. Testing your scene in Unity by clicking the play button will cause your prefab to generate fake data, this is because the Unity player cannot connect to the Xbox Live service. In order to see a real sign-in you will need to build your project to run locally in Visual Studio. If your title has been configured in Partner Center and you have authorized a Microsoft account/gamertag to sign in to your title then you will be able to sign-in one of your authorized accounts in a Visual Studio build.
 
 The PlayerAuthentication prefab's script has a few settings that you can manipulate from its view in the inspector.
 

@@ -1,17 +1,13 @@
 ---
 title: Authorize Xbox Live accounts in your test environment
-author: KevinAsgari
+
 description: Learn how to authorize a public Xbox Live account for use in testing in your development environment.
 ms.assetid: 9772b8f1-81db-4c57-a54d-4e9ca9142111
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts
 ms.localizationpriority: medium
 ---
-
 # Authorize Xbox Live Accounts for Testing in your environment
 
 This topic will go through the process of setting up an Xbox Live account with your publishers test environment
@@ -23,13 +19,13 @@ You will need the following to authorize an Xbox Live test account:
 * An [Xbox Live account](https://support.xbox.com/browse/my-account/manage-account/Create%20account)
 
 ## Navigate to the Xbox Test Account page
-This is located in the Account Settings section of Dev Center
+
+This is located in the Account Settings section of Partner Center
 
 You can arrive at this section in one of two ways
 
-1. From the Dev Center dashboard click the settings gear ⚙️ which will take you to the account view. In the left navigation of the account view click the **Xbox test accounts** link
+1. In [Partner Center](https://partner.microsoft.com/dashboard/windows/overview), click the settings gear ⚙️ in the upper right of the dashboard and select **Developer Settings** from the dropdown. This will open a navigation menu on the left side of the screen where you will select the Xbox Live dropdown and then the **Xbox test accounts** link.
 2. From your Xbox Live Creators configuration page locate the test section and click the link entitled **Authorize Xbox Live accounts for your test environment**
-
 
 ## Authorize an Xbox Live Account for your test environment
 

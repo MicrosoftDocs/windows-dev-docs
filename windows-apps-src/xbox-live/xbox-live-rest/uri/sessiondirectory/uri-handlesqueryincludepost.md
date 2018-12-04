@@ -2,18 +2,13 @@
 title: POST (/handles/query?include=relatedInfo)
 assetID: 66ecd1fe-24d4-4cd5-256d-8950ac658529
 permalink: en-us/docs/xboxlive/rest/uri-handlesqueryincludepost.html
-author: KevinAsgari
+
 description: ' POST (/handles/query?include=relatedInfo)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/handles/query?include=relatedInfo)
 Creates queries for session handles that include related session information.
 

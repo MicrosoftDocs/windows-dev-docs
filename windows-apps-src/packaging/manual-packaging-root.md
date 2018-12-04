@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
 title: Manual app packaging
 description: This section contains or links to articles about manually packaging Universal Windows Platform (UWP) apps.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
 ---
-
 # Manual app packaging
 
 If you want to create and sign an app package, but you didn't use Visual Studio to develop your app, you'll need to use the manual app packaging tools.
@@ -41,5 +36,5 @@ This section contains more advanced topics for componentizing a large and/or com
 |-------|-------------|
 | [Introduction to asset packages](asset-packages.md) | Asset packages are a type of package that act as a centralized location for an application’s common files – effectively eliminating the necessity for duplicated files throughout its architecture packages. |
 | [Developing with asset packages and package folding](package-folding.md) | Learn how to efficiently organize your app with asset packages and package folding. |
-| [Flat bundle app packages](flat-bundles.md) | Describes how to create a flat bundle to bundle your app’s .appx package files with references to app packages. |
+| [Flat bundle app packages](flat-bundles.md) | Describes how to create a flat bundle for your app’s package files. |
 | [Package creation with the packaging layout](packaging-layout.md) | The packaging layout is a single document that describes packaging structure of the app. It specifies the bundles of an app (primary and optional), the packages in the bundles, and the files in the packages. |

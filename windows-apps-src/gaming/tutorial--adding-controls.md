@@ -1,17 +1,12 @@
 ---
-author: abbycar
 title: Add controls
 description: Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
-ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, controls, input
 ms.localizationpriority: medium
 ---
-
 # Add controls
 
 
@@ -95,7 +90,7 @@ State | Description
 The game enters the **WaitForInput** state when the game has been paused. This happens when the player moves the pointer outside the main window of the game, or presses the pause button (the P key or the gamepad **Start** button). The **MoveLookController** registers the press, and informs the game loop when it calls the [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) method. At that point if **IsPauseRequested** returns **true**, the game loop then calls **WaitForPress** on the **MoveLookController** to move the controller into the **WaitForInput** state. 
 
 
-Once in the **WaitForInput** state, the game stops processing almost all gameplay input events until it returns to the **Active** state. The exception is the pause button, with a press of this causing the game to go back to the active state. Other than the pause button, in order for the game to go back to the the **Active** state the player needs to select a menu item. 
+Once in the **WaitForInput** state, the game stops processing almost all gameplay input events until it returns to the **Active** state. The exception is the pause button, with a press of this causing the game to go back to the active state. Other than the pause button, in order for the game to go back to the **Active** state the player needs to select a menu item. 
 
 
 
@@ -401,7 +396,7 @@ You can see the complete code for the **MoveLookController::OnPointerPressed** m
 
 
 
-Here the **MoveLookController** assigns the pointer ID for the pointer that fired the event to a specific variable that corresponds to the look region. In the case of a touch occuring in the look region, the **m\_lookPointerID** variable is set to the pointer ID that fired the event. A boolean variable, **m\_lookInUse**, is also set to indicate that the control has not yet been released.
+Here the **MoveLookController** assigns the pointer ID for the pointer that fired the event to a specific variable that corresponds to the look region. In the case of a touch occurring in the look region, the **m\_lookPointerID** variable is set to the pointer ID that fired the event. A boolean variable, **m\_lookInUse**, is also set to indicate that the control has not yet been released.
 
 Now, let's look at how the game sample handles the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) touch screen event.
 
@@ -578,7 +573,7 @@ Start/Menu button | Pause or resume the game
 
 
 
-In the [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) method, we add two new events to determine if a gamepad has been [added](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) or [removed](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). These events update the **m_gamepadsChanged** property. This is used in the **UpdatePollingDevices** method to check if the the list of known gamepads has changed. 
+In the [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) method, we add two new events to determine if a gamepad has been [added](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) or [removed](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). These events update the **m_gamepadsChanged** property. This is used in the **UpdatePollingDevices** method to check if the list of known gamepads has changed. 
 
 ```cpp
     // Detect gamepad connection and disconnection events.

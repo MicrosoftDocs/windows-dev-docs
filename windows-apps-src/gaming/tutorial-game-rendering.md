@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Set up
 description: Learn how to assemble the rendering pipeline to display graphics. Game rendering, set up and prepare data.
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, rendering
 ms.localizationpriority: medium
 ---
-
 # Rendering framework II: Game rendering
 
 In [Rendering framework I](tutorial--assembling-the-rendering-pipeline.md), we've covered how we take the scene info and present it to the display screen. Now, we'll take a step back and learn how to prepare the data for rendering.
@@ -580,7 +575,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## CreateWindowSizeDependentResource method
 
-CreateWindowSizeDependentResources methods are called every time the window size, orientation, stereo-enabled rendering, or resolution changes. In the sample game, it updates the the projection matrix in __ConstantBufferChangeOnResize__.
+CreateWindowSizeDependentResources methods are called every time the window size, orientation, stereo-enabled rendering, or resolution changes. In the sample game, it updates the projection matrix in __ConstantBufferChangeOnResize__.
 
 Window size resources are updated in this manner: 
 * The App framework gets one of several possible events indicating a change in the window state. 

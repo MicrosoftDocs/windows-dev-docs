@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 assetID: 27318886-f084-d6a8-e582-3eb070ccbc38
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementidget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 Gets the details of the Achievement. 
 The domain for these URIs is `achievements.xboxlive.com`.

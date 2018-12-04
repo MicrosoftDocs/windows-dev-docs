@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: xLoad attribute
-description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage. 
-ms.author: jimwalk
+description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage.
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

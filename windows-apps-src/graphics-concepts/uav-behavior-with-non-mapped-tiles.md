@@ -4,15 +4,12 @@ description: Behavior of unordered access view (UAV) reads and writes depends on
 ms.assetid: CDB224E2-CC07-4568-9AAC-C8DC74536561
 keywords:
 - UAV behavior with non-mapped tiles
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>UAV behavior with non-mapped tiles
 
 

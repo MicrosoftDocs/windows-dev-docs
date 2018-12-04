@@ -1,18 +1,13 @@
 ---
-author: serenaz
 Description: How to use thumbnail images to help users preview files in UWP apps.
 title: Guidelines for thumbnail images in UWP apps
 label: Thumbnail images
 template: detail.hbs
-ms.author: sezhen
 ms.date: 01/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Thumbnail images
 
 These guidelines describe how to use thumbnail images to help users preview files as they browse in your UWP app. 

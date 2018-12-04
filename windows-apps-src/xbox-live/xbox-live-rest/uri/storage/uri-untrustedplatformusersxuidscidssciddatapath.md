@@ -2,18 +2,13 @@
 title: /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
 assetID: d1e05113-c7a3-d615-52d7-d54f08b30b44
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersxuidscidssciddatapath.html
-author: KevinAsgari
+
 description: ' /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
 Lists file information at a specified path. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

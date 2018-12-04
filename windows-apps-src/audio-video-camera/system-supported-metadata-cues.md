@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
 description: Handle system-supported metadata cues during media playback
 title: System-supported timed metadata cues
-ms.author: drewbat
 ms.date: 04/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, metadata, cue, speech, chapter
 ms.localizationpriority: medium
 ---
-
 # System-supported timed metadata cues
 This article describes how to take advantage of several formats of timed metadata that may be embedded in media files or streams. UWP apps can register for events that are raised by the media pipeline during playback whenever these metadata cues are encountered. Using the [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) class, apps can implement their own custom metadata cues, but this article focuses on several metadata standards that are automatically detected by the media pipeline, including:
 

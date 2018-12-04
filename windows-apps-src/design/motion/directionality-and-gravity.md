@@ -1,24 +1,18 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion uses directionality and gravity.
 title: Directionality and gravity - animation in UWP apps
 label: Directionality and gravity
 template: detail.hbs
-ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Directionality and gravity
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 Directional signals help to solidify the mental model of the journey a user takes across experiences. It is important that the direction of any motion support both the continuity of the space as well as the integrity of the objects in the space.
 

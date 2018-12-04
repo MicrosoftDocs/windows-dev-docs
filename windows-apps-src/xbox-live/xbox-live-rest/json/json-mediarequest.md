@@ -2,18 +2,13 @@
 title: MediaRequest (JSON)
 assetID: b95c6bc2-e4d3-6fa1-647e-0cb48307e90a
 permalink: en-us/docs/xboxlive/rest/json-mediarequest.html
-author: KevinAsgari
+
 description: ' MediaRequest (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MediaRequest (JSON)
  
 <a id="ID4EO"></a>

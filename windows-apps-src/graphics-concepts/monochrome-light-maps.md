@@ -4,15 +4,12 @@ description: Monochrome light mapping enables older adapters to perform multipas
 ms.assetid: 60F8F8F6-9DB7-452B-8DC0-407FFAA4BFE1
 keywords:
 - Monochrome light maps
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Monochrome light maps
 
 

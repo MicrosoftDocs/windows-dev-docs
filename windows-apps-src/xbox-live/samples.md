@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Samples
-author: KevinAsgari
+
 description: Details the available API code samples for Xbox Live.
 ms.assetid: 4bb6fa66-34d1-4db9-87c8-7e24ad5afc0a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, sample, samples
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Samples
 
 * [Xbox Live API samples](#xbox-live-api-samples)

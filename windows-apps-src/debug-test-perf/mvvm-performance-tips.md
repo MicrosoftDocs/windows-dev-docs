@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: MVVM and language performance tips
 description: This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Accessibility testing  
 
 Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.

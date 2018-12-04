@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: Things you must do for any network-enabled app.
 title: Networking basics
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
-ms.author: stwhi
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Networking basics
 Things you must do for any network-enabled app.
 

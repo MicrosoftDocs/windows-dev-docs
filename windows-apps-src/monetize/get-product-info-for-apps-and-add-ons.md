@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Learn how to use the Windows.Services.Store namespace to get Store-related product info for the current app or one of its add-ons.
 title: Get product info for apps and add-ons
-ms.author: mcleans
 ms.date: 02/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, Windows.Services.Store
 ms.localizationpriority: medium
 ---
-
 # Get product info for apps and add-ons
 
 This article demonstrates how to use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to access Store-related info for the current app or one of its add-ons.
@@ -25,8 +20,8 @@ For a complete sample application, see the [Store sample](https://github.com/Mic
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
-* If you want to get product info for an add-on for the app, you must also [create the add-on in the Dev Center dashboard](../publish/add-on-submissions.md).
+* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* If you want to get product info for an add-on for the app, you must also [create the add-on in Partner Center](../publish/add-on-submissions.md).
 
 The code in these examples assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

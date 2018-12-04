@@ -149,10 +149,7 @@ namespace MediaBreaks_RS1
             ///Play
         }
         // <SnippetSkipButtonClick>
-        private void SkipButton_Click(object sender, RoutedEventArgs e)
-        {
-            _mediaPlayer.BreakManager.SkipCurrentBreak();
-        }
+        private void SkipButton_Click(object sender, RoutedEventArgs e) => _mediaPlayer.BreakManager.SkipCurrentBreak();
         // </SnippetSkipButtonClick>
 
         
@@ -172,10 +169,8 @@ namespace MediaBreaks_RS1
             var currentIndex = currentBreak.PlaybackList.CurrentItemIndex;
             var itemCount = currentBreak.PlaybackList.Items.Count;
 
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                statusTextBlock.Text = String.Format("Playing ad {0} of {1}", currentIndex + 1, itemCount);
-            });
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>            
+                statusTextBlock.Text = $"Playing ad {currentIndex + 1} of {itemCount}");
         }
         // </SnippetBreakStarted>
 
@@ -183,14 +178,10 @@ namespace MediaBreaks_RS1
         public int GetCurrentBreakItemIndex()
         {
             MediaBreak mediaBreak = _mediaPlayer.BreakManager.CurrentBreak;
-            if(mediaBreak != null)
-            {
-                return (int)mediaBreak.PlaybackList.CurrentItemIndex;
-            } 
-            else 
-            {
-                return -1;
-            }
+            if(!(mediaBreak is null))
+                return (int)mediaBreak.PlaybackList.CurrentItemIndex;            
+            else             
+                return -1;            
         }
         // </SnippetGetCurrentBreakItemIndex>
 
@@ -199,10 +190,7 @@ namespace MediaBreaks_RS1
         private async void BreakManager_BreakEnded(MediaBreakManager sender, MediaBreakEndedEventArgs args)
         {
             // Update UI to show that the MediaBreak is no longer playing
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                statusTextBlock.Text = "";
-            });
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => statusTextBlock.Text = "");
 
             args.MediaBreak.CanStart = false;
         }
@@ -212,13 +200,10 @@ namespace MediaBreaks_RS1
         private async void BreakManager_BreakSkipped(MediaBreakManager sender, MediaBreakSkippedEventArgs args)
         {
             // Update UI to show that the MediaBreak is no longer playing
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                statusTextBlock.Text = "";
-            });
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => statusTextBlock.Text = "");
 
             MediaPlaybackItem currentItem = _mediaPlayer.Source as MediaPlaybackItem;
-            if(currentItem.BreakSchedule.PrerollBreak !=  null 
+            if(!(currentItem.BreakSchedule.PrerollBreak is  null) 
                 && currentItem.BreakSchedule.PrerollBreak == args.MediaBreak)
             {
                 MediaBreak mediaBreak = new MediaBreak(MediaBreakInsertionMethod.Interrupt, TimeSpan.FromMinutes(10));
@@ -234,9 +219,7 @@ namespace MediaBreaks_RS1
             if(args.SeekedOverBreaks.Count > 1
                 && args.NewPosition.TotalMinutes > args.OldPosition.TotalMinutes
                 && args.NewPosition.TotalMinutes - args.OldPosition.TotalMinutes < 10.0)
-            {
                 _mediaPlayer.BreakManager.PlayBreak(args.SeekedOverBreaks[0]);
-            }
         }
         // </SnippetBreakSeekedOver>
 
@@ -251,15 +234,10 @@ namespace MediaBreaks_RS1
         private async void PlaybackSession_BufferingProgressChanged(MediaPlaybackSession sender, object args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                bufferingProgressBar.Value = sender.BufferingProgress;
-            });
+                bufferingProgressBar.Value = sender.BufferingProgress);
         }
         // </SnippetBufferingProgressChanged>
-        private async Task<MediaPlaybackItem> GetMoviePlaybackItem()
-        {
-            return await GetMediaPlaybackItem();
-        }
+        private async Task<MediaPlaybackItem> GetMoviePlaybackItem() => return await GetMediaPlaybackItem();
 
         private async Task<MediaPlaybackItem> GetAdPlaybackItem()
         {
@@ -271,11 +249,15 @@ namespace MediaBreaks_RS1
         {
             //Create a new picker
             FileOpenPicker filePicker = new FileOpenPicker();
+            
+            //create a array of file types you want to support. In this case we are using just 3.
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv"};
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
+            //Add all filetypes to the FileTypeFilter collection of your filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                 filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
@@ -283,19 +265,22 @@ namespace MediaBreaks_RS1
             //Retrieve file from picker
             StorageFile file = await filePicker.PickSingleFileAsync();
 
-            return new MediaPlaybackItem(MediaSource.CreateFromStorageFile(file));
-
-         
+            return new MediaPlaybackItem(MediaSource.CreateFromStorageFile(file));         
         }
+        
         private async Task<MediaPlaybackItem> GetScheduledMediaPlaybackItem()
         {
             //Create a new picker
             FileOpenPicker filePicker = new FileOpenPicker();
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
+             //create a array of file types you want to support. In this case we are using just 3.
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv"};
+
+            //Add all filetypes to the FileTypeFilter collection of your filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                 filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
@@ -304,10 +289,6 @@ namespace MediaBreaks_RS1
             StorageFile file = await filePicker.PickSingleFileAsync();
 
             return new MediaPlaybackItem(MediaSource.CreateFromStorageFile(file), TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(15));
-
-
-        }
-
-        
+        }        
     }
 }

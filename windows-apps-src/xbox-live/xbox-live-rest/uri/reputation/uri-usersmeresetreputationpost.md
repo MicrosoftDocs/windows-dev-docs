@@ -2,18 +2,13 @@
 title: POST (/users/me/resetreputation)
 assetID: 1a4fed45-f608-dac2-3384-2ee493112f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputationpost.html
-author: KevinAsgari
+
 description: ' POST (/users/me/resetreputation)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/me/resetreputation)
 Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking. 
 The domain for these URIs is `reputation.xboxlive.com`.

@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Account Tool
-author: KevinAsgari
+
 description: Learn how to use the Xbox Live Account Tool to quickly create test accounts for testing your Xbox Live enabled title.
 ms.assetid: ec5959f9-1c60-4aa4-94a6-5d8bdcf77a96
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, testing, test accounts
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Account Tool
 
 ## What is Xbox Live Account Tool?

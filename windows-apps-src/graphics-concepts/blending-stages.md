@@ -4,15 +4,12 @@ description: A blending stage is a set of texture operations and their arguments
 ms.assetid: 4FC1470C-11F7-4D60-A856-B580F47113A0
 keywords:
 - Blending stages
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Blending stages
 
 

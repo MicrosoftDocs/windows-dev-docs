@@ -2,18 +2,13 @@
 title: POST (/users/xuid({xuid})/resetreputation)
 assetID: 3b76857f-b043-2c76-cf0c-c8f355fe3849
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputationpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/resetreputation)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/xuid({xuid})/resetreputation)
 Enables the Enforcement team to set the specified user's Reputation Scores to some arbitrary values after (for example) an account hijacking. 
 The domain for these URIs is `reputation.xboxlive.com`.

@@ -4,15 +4,12 @@ description: The rasterizer clips primitives that aren't in view, prepares primi
 ms.assetid: 7E80724B-5696-4A99-91AF-49744B5CD3A9
 keywords:
 - Rasterizer (RS) stage
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Rasterizer (RS) stage
 
 

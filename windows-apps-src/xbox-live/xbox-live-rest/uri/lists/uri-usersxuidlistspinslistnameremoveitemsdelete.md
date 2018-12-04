@@ -2,18 +2,13 @@
 title: DELETE /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems
 assetID: ad049340-f752-e05e-8b34-62adb8e4771f
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameremoveitemsdelete.html
-author: KevinAsgari
+
 description: ' DELETE /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems
 Removes items from a list by index. 
 The domain for these URIs is `eplists.xboxlive.com`.

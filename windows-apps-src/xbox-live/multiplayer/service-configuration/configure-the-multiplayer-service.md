@@ -1,17 +1,13 @@
 ---
 title: Multiplayer Service Configuration
-author: KevinAsgari
+
 description: Learn how to configure the Xbox Live Multiplayer Service.
 ms.assetid: d042d4d5-1c75-4257-8a6f-07eddd39ca7e
-ms.author: kevinasg
 ms.date: 07/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, service configuration, session template, custom invite string, smartmatch hopper
 ms.localizationpriority: medium
 ---
-
 # Multiplayer Service Configuration
 In order for your title to take advantage of the services that Xbox Live provides, you must first define your service configuration. This service configuration exists in the Xbox Live cloud service, and defines how the Xbox Live service interacts with any devices that are running your title/game.
 

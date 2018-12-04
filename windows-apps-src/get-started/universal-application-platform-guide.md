@@ -1,19 +1,15 @@
 ---
-author: TylerMSFT
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.author: twhitney
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
 # What's a Universal Windows Platform (UWP) app?
 
-![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, one dev center, and cloud services](images/universalapps-overview.png)
+![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, partner center, and cloud services](images/universalapps-overview.png)
 
 A UWP app is:
 
@@ -128,9 +124,9 @@ In addition to interaction on different devices, [plan your app](https://msdn.mi
 - Learn how to [Add Cortana to your app](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) so that your app can respond to voice commands.
 - Include [Push notifications](https://msdn.microsoft.com/library/windows/apps/mt187203) and [in-app purchases](https://msdn.microsoft.com/library/windows/apps/mt219684) in your planning. These features should work across devices.
 
-### Submit your app to the store
+### Submit your app to the Store
 
-The new unified Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place. See [Using the unified Windows Dev Center dashboard](../publish/using-the-windows-dev-center-dashboard.md) to learn how to submit your apps for publication in the Microsoft Store.
+[Partner Center](https://partner.microsoft.com/dashboard) lets you manage and submit all of your apps for Windows devices in one place. See [Publish Windows apps and games](../publish/index.md) to learn how to submit your apps for publication in the Microsoft Store.
 
 New features simplify processes while giving you more control. You'll also find detailed [analytic reports](https://msdn.microsoft.com/library/windows/apps/mt148522) combined [payout details](https://msdn.microsoft.com/library/windows/apps/dn986925), ways to [promote your app and engage with your customers](https://msdn.microsoft.com/library/windows/apps/mt148526), and much more.
 

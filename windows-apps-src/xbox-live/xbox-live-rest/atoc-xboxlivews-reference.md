@@ -2,18 +2,13 @@
 title: Xbox Live Services RESTful Reference
 assetID: 527db3b0-5ebd-eeca-4330-2074199c82ff
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference.html
-author: KevinAsgari
+
 description: ' Xbox Live Services RESTful Reference'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Xbox Live Services RESTful Reference
 
 Xbox Live Services is a set of services for managing games and player information. These services support the **Xbox.Services** API which should be used whenever possible. Use the RESTful interface described in this section for newer methods that have not be added to **Xbox.Services** yet.

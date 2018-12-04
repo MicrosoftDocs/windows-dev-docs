@@ -4,15 +4,12 @@ description: Streaming resources are created by specifying a flag when you creat
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
 keywords:
 - Creating streaming resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Creating streaming resources
 
 

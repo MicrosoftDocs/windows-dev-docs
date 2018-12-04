@@ -1,17 +1,12 @@
 ---
-author: Mtoepke
 title: Xbox One Developer Mode deactivation
 description: How to deactivate Developer Mode.
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ---
-
 # Xbox One Developer Mode deactivation
 
 If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.
@@ -69,11 +64,11 @@ To reset your console perform the following steps:
    
     ![Reset and remove everything](images/devkit-deactivation-4.png)
 
-## Deactivate your console using Windows Dev Center
+## Deactivate your console using Partner Center
 
-If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Windows Dev Center.
+If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Partner Center.
 
-1. Navigate to the [Manage Xbox One consoles](https://developer.microsoft.com/xboxdevices) page in Dev Center. You may be prompted to sign in with your Dev Center account.
+1. Navigate to the [Manage Xbox One consoles](https://partner.microsoft.com/xboxdevices) page in Partner Center. You may be prompted to sign in.
 
 2. Find the console that you want to deactivate in the list of consoles by matching the serial number, console ID, or the device ID.  
 

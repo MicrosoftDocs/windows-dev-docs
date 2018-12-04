@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
-ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, game settings, display mode, system requirements, hardware requirements, minimum hardware, recommended hardware, privacy policy, support contact info, app website, support info
 ms.localizationpriority: medium
 ---
-
 # Enter app properties
 
 The **Properties** page of the [app submission process](app-submissions.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
@@ -57,7 +52,7 @@ Enter the URL of the web page where your customers can go for support with your 
 
 ## Game settings
 
-This section will only appear if you selected **Games** as your product’s category. Here you can specify which features your game supports. All of the information that you provide in this section will be displayed on the product’s Store listing.
+This section will only appear if you selected **Games** as your product’s category. Here you can specify which features your game supports. The information that you provide in this section will be displayed on the product’s Store listing.
 
 If your game supports any of the multiplayer options, be sure to indicate the minimum and maximum number of players for a session. You can't enter more than 1,000 minimum or maximum players.
 

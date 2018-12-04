@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Use this method to renew a Microsoft Store key.
 title: Renew a Microsoft Store ID key
-ms.author: mcleans
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew
 ms.localizationpriority: medium
 ---
-
 # Renew a Microsoft Store ID key
 
 
@@ -51,7 +46,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Parameter     | Type   | Description                       | Required |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | string | The Azure AD access token.        | Yes      |
-| key           | string | The expired Microsoft Store ID key. | No       |
+| key           | string | The expired Microsoft Store ID key. | Yes       |
 
 
 ### Request example
@@ -73,9 +68,9 @@ Host: collections.mp.microsoft.com
 
 ### Response body
 
-| Parameter | Type   | Description                                                                                                            | Required |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | string | The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API. | No       |
+| Parameter | Type   | Description                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | string | The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API. |
 
 
 ### Response example
@@ -98,8 +93,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## Error codes
 
 
-| Code | Error        | Inner error code           | Description                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code | Error        | Inner error code           | Description   |
+|------|--------------|----------------------------|---------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | The Azure AD access token is invalid. In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing. |
 | 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Microsoft Store ID key and the *appid* claim in the Azure AD access token do not match.                                                                     |
 

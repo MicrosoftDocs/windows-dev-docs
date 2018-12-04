@@ -1,16 +1,12 @@
 ---
 title: Game Chat 2 Migration
-author: KevinAsgari
+
 description: Learn how to migrate existing Game Chat code to use Game Chat 2.
-ms.author: kevinasg
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
 ms.localizationpriority: medium
 ---
-
 # Migration from Game Chat to Game Chat 2
 
 This document details the similarities between Game Chat and Game Chat 2 and how to migrate from Game Chat to Game Chat 2. As such, it is for titles that have an existing Game Chat implementation that wish to migrate to Game Chat 2. If you don't already have a Game Chat implementation, the suggested starting point is [Using Game Chat 2](using-game-chat-2.md). This document contains the following topics:
@@ -72,7 +68,7 @@ The Game Chat 2 interface does not require a project to choose between compiling
 
 Interacting with the original Game Chat is done through the `ChatManager` class. The following example shows how to construct a `ChatManager` instance using default parameters:
 
-```cppwinrt
+```cpp
 auto chatManager = ref new ChatManager();
 ```
 
@@ -92,16 +88,16 @@ There are several optional parameters that can be specified during initializatio
 
 Adding local users to the original Game Chat API is done through `ChatManager::AddLocalUserToChatChannelAsync()`. Adding the user to multiple chat channels requires multiple calls, each specifying a different channel. The following example shows how to add the user with xuid "myXuid" to channel 0:
 
-```cppwinrt
+```cpp
 auto asyncOperation = chatManager->AddLocalUserToChatChannelAsync(0, L"myXuid");
-``` 
+```
 
 Remote users are not added to the instance directly. When a remote device appears in the title's network, the title creates an object that represents the remote device and informs Game Chat of the new device via `ChatManager::HandleNewRemoteConsole()`. The title must also provide a method of comparing the objects representing the remote devices to Game Chat by implementing `CompareUniqueConsoleIdentifiersHandler`. The following example shows how to provide this delegate to Game Chat, assuming `Platform::String` objects are used to represent remote devices and a new device represented by string `L"1"` has joined the title's network:
 
-```cppwinrt
-auto token = chatManager->OnCompareUniqueConsoleIdentifiers += 
-    ref new CompareUniqueConsoleIdentifiersHandler( 
-        [this](Platform::Object^ obj1, Platform::Object^ obj2) 
+```cpp
+auto token = chatManager->OnCompareUniqueConsoleIdentifiers +=
+    ref new CompareUniqueConsoleIdentifiersHandler(
+        [this](Platform::Object^ obj1, Platform::Object^ obj2)
     {
         return (static_cast<Platform::String^>(obj1)->Equals(static_cast<Platform::String^>(obj2)));
     });
@@ -124,7 +120,7 @@ Adding local users to Game Chat 2 is done synchronously through `chat_manager::a
 chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(L"myLocalXboxUserId");
 ```
 
-Notice that the user is not added to a particular channel - Game Chat 2 uses a concept of "communication relationships" rather than channels to manage whether users can speak to and hear each other. The method of configuring communication relationships is addressed later in this section. 
+Notice that the user is not added to a particular channel - Game Chat 2 uses a concept of "communication relationships" rather than channels to manage whether users can speak to and hear each other. The method of configuring communication relationships is addressed later in this section.
 
 Similar to local users, remote users are added synchronously to the local Game Chat 2 instance. The remote users must simultaneously be associated with identifiers that will be used to represent the remote device. Game Chat 2 refers to an instance of the app running on a remote device as an "Endpoint". In this example, User B will be a user with Xbox User Id `L"remoteXboxUserId"` on an endpoint represented by the integer `1`.
 
@@ -149,10 +145,10 @@ Refer to [Using Game Chat 2 - Configuring Users](using-game-chat-2.md#configurin
 ## Processing data
 
 ### Game Chat
- 
+
 Game Chat does not have its own transport layer; this must be provided by the app. Outgoing packets are handled by subscribing to the `OnOutgoingChatPacketReady` event and inspecting the arguments to determine the packet destination and transport requirements. The following example shows how to subscribe to the event and forward the arguments the `HandleOutgoingPacket()` method implemented by the title:
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnOutgoingChatPacketReady +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::ChatPacketEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::ChatPacketEventArgs^ args)
@@ -163,7 +159,7 @@ auto token = chatManager->OnOutgoingChatPacketReady +=
 
 Incoming packets are submitted to Game Chat via `ChatManager::ProcessingIncomingChatMessage()`. The raw packet buffer and the remote device identifier must be provided. The following example shows how to submit a packet that is stored in the local `packetBuffer` and remote device identifier stored in the local variable `remoteIdentifier`.
 
-```cppwinrt
+```cpp
 Platform::String^ remoteIdentifier = /* The identifier associated with the device that generated this packet */
 Windows::Storage::Streams::IBuffer^ packetBuffer = /* The incoming chat packet */
 
@@ -212,7 +208,7 @@ chatManager::singleton_instance().process_incoming_data(remoteEndpointIdentifier
 
 Game Chat uses an eventing model to inform the app when something of interest occurs - such as the receipt of a text message or the changing of a user's accessibility preference. The app must subscribe to and implement a handler for each event of interest. This example shows how to subscribe to the `OnTextMessageReceived` event and forward the arguments to the `OnTextChatReceived()` or `OnTranscribedChatReceived()` methods implemented by the app:
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnTextMessageReceived +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^ args)
@@ -265,11 +261,11 @@ Because `chat_manager::remove_user()` immediately invalidates the memory associa
 
 ## Text chat
 
-### Game Chat 
+### Game Chat
 
 To send text chat with Game Chat, `GameChatUser::GenerateTextMessage()` can be used. The following example shows how to send a chat text message with a local chat user represented by the `chatUser` variable:
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
@@ -295,7 +291,7 @@ Supporting text chat input and display is required for both Game Chat and Game C
 
 When a user has text-to-speech enabled, `GameChatUser::HasRequestedSynthesizedAudio()` will return true. When this state is detected, `GameChatUser::GenerateTextMessage()` will additionally generate text-to-speech audio that is inserted into the audio stream associated with the local user. The following example shows how to send a chat text message with a local user represented by the `chatUser` variable:
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", true);
 ```
 
@@ -331,7 +327,7 @@ It's recommended that anywhere players are shown, particularly in a list of game
 
 A `GameChatUser` has three properties that are commonly inspected when determining appropriate UI elements - `GameChatUser::TalkingMode`, `GameChatUser::IsMuted`, and `GameChatUser::RestrictionMode`. The following example demonstrates a possible heuristic for determining a particular icon constant vlaue to assign to an `iconToShow` variable from a `GameChatUser` object pointed to by the variable 'chatUser'.
 
-```cppwinrt
+```cpp
 if (chatUser->RestrictionMode != None)
 {
     if (!chatUser->IsMuted)
@@ -408,7 +404,7 @@ Both Game Chat and Game Chat 2 enforce Xbox Live privilege and privacy restricti
 
 ### Game Chat
 
-Game Chat exposed privilege and privacy information throught the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
+Game Chat exposed privilege and privacy information through the `RestrictionMode` property. It can be retrieved by inspecting `GameChatUser::RestrictionMode`.
 
 ### Game Chat 2
 

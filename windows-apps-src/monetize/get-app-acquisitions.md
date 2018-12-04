@@ -1,21 +1,16 @@
 ---
-author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data for an application during a given date range and other optional filters.
 title: Get app acquisitions
-ms.author: mcleans
 ms.date: 03/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app acquisitions
 ms.localizationpriority: medium
 ---
-
 # Get app acquisitions
 
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in Partner Center.
 
 ## Prerequisites
 
@@ -96,7 +91,7 @@ Elements in the *Value* array contain the following values.
 | market              | string | The ISO 3166 country code of the market where the acquisition occurred.  |
 | gender              | string | One of the following strings that specifies the gender of the user who made the acquisition:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>    |
 | ageGroup            | string | One of the following strings that specifies the age group of the user who made the acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>  |
-| acquisitionType     | string | One of the following strings that indicates the type of acquisition:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li></ul>   |
+| acquisitionType     | string | One of the following strings that indicates the type of acquisition:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>Subscription Iap</strong></li><li><strong>Private Audience</strong></li><li><strong>Pre Order</strong></li><li><strong>Xbox Game Pass</strong> (or <strong>Game Pass</strong> if querying for data before March 23, 2018)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li></ul>   |
 | acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level.    |
 
 

@@ -1,16 +1,12 @@
 ---
-author: serenaz
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: Peer-to-peer navigation between two pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
 ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -18,7 +14,6 @@ dev_langs:
 - cppwinrt
 - cpp
 ---
-
 # Implement navigation between two pages
 
 Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app. 
@@ -315,7 +310,7 @@ Finally, whenever a page is loaded into the frame, that page is added as a [**Pa
 
 Our app navigates between two pages, but it really doesn't do anything interesting yet. Often, when an app has multiple pages, the pages need to share information. Let's pass some information from the first page to the second page.
 
-In Page1.xaml, replace the the **HyperlinkButton** you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+In Page1.xaml, replace the **HyperlinkButton** you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` for entering a text string.
 

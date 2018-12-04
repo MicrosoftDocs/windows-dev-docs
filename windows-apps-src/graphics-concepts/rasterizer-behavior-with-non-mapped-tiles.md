@@ -4,15 +4,12 @@ description: This section describes rasterizer behavior with non-mapped tiles.
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - Rasterizer behavior with non-mapped tiles
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Rasterizer behavior with non-mapped tiles
 
 

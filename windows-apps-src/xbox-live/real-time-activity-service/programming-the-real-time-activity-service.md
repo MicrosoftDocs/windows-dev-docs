@@ -1,13 +1,10 @@
 ---
 title: Programming the Real-Time Activity Service
-author: KevinAsgari
+
 description: Learn about programming the Xbox Live Real-Time Activity Service with the C++ APIs.
 ms.assetid: 98cdcb1f-41d8-43db-98fc-6647755d3b17
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, real time activity
 ms.localizationpriority: medium
 ---
@@ -46,7 +43,7 @@ void Example_RealTimeActivity_ConnectAsync()
 
 ### Creating a statistic
 
-You create statistics on XDP if you are an XDK developer or working on a cross-play title.  You create statistic on Dev Center if you are making a pure UWP running on Windows 10.
+You create statistics on XDP if you are an XDK developer or working on a cross-play title.  You create statistics in Partner Center if you are making a pure UWP running on Windows 10.
 
 #### XDK developers
 
@@ -54,10 +51,10 @@ For information on how to create a stat on XDP, please see the [XDP Documentatio
 
 #### UWP developers
 
-If you are developing a UWP on Windows 10 that is not a cross-play title, you define your stats on [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). Read the [Dev Center stats configuration article](../leaderboards-and-stats-2017/player-stats-configure-2017.md) to learn how to configure stats on Dev Center.
+If you are developing a UWP on Windows 10 that is not a cross-play title, you define your stats in [Partner Center](https://partner.microsoft.com/dashboard). Read the [Partner Center stats configuration article](../leaderboards-and-stats-2017/player-stats-configure-2017.md) to learn how to configure stats on Partner Center.
 
 > [!NOTE]
-> Stats 2013 developer will need to contact their DAM for information concerning Stats 2013 configuration on Dev Center.
+> Stats 2013 developer will need to contact their DAM for information concerning [Stats 2013 configuration](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013) in [Partner Center](https://partner.microsoft.com/dashboard).
 
 ### Disconnecting from the Real-Time Activity service
 
@@ -74,7 +71,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## Subscribing to a statistic from the Real-Time Activity
 
-Applications subscribe to a Real-Time Activity (RTA) to get updates when the statistics configured in Xbox Developer Portal (XDP) or Windows Dev Center change.
+Applications subscribe to a Real-Time Activity (RTA) to get updates when the statistics configured in Xbox Developer Portal (XDP) or Partner Center change.
 
 ### Subscribing to a statistic from the Real-Time Activity service
 
@@ -93,7 +90,7 @@ void Example_RealTimeActivity_SubscribeToStatisticChangeAsync()
     // Call to subscribe to an individual statistic.  Once the subscription is complete, the handler will be called with the initial value of the statistic.
     auto statisticResults = xboxLiveContext->user_statistics_service().subscribe_to_statistic_change(
         User::Users->GetAt(0)->XboxUserId->Data(),
-        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Dev Center
+        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Partner Center
          L"YourStat"
         );
 
@@ -125,3 +122,8 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
         );
 }
 ```
+
+> [!IMPORTANT]
+> The Real-Time Activity service will disconnect after two hours of use, your code must be able to detect this and re-establish a connection to the Real-Time Activity service if it is still needed. This is done primarily to ensure that auth tokens are refreshed upon expiration.
+> 
+> If a client uses RTA for multiplayer sessions, and is disconnected for thirty seconds, the Multiplayer Session Directory(MPSD) detects that the RTA session is closed, and kicks the user out of the session. It's up to the RTA client to detect when the connection is closed and initiate a reconnect and resubscribe before MPSD ends the session.

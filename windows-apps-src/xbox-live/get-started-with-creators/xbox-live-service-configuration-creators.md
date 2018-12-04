@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Creators service configuration
-author: KevinAsgari
+
 description: Learn about Xbox Live service configuration for the Creators Program.
 ms.assetid: 22b8f893-abb3-426e-9840-f79de0753702
-ms.author: kevinasg
 ms.date: 10/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live service configuration for the Creators Program
 
 ## What is Service Configuration?
@@ -22,13 +18,13 @@ In case you are not, we'll briefly explain Leaderboards as an example. Leaderboa
 
 But for this to happen, you need to perform some one-time configuration so that Xbox Live knows about your leaderboard. For example whether the values should be sorted in ascending or descending value, and what piece of data it should be sorting.
 
-This configuration happens on [Dev Center](http://dev.windows.com) for Xbox Live Creators Program, and you can read [Getting Started With Xbox Live](get-started-with-xbox-live-creators.md) to learn how to get set up.
+This configuration happens in [Partner Center](https://partner.microsoft.com/dashboard) for Xbox Live Creators Program, and you can read [Getting Started With Xbox Live](get-started-with-xbox-live-creators.md) to learn how to get set up.
 
 ## Get your IDs
 
 To enable Xbox Live services, you will need to obtain several IDs to configure your development environment and title. These can be obtained by updating your Xbox Live service configuration.
 
-If you do not currently have a title in Dev Center, see [Create and test a new Creators title](create-and-test-a-new-creators-title.md) for guidance.
+If you do not currently have a title in Partner Center, see [Create and test a new Creators title](create-and-test-a-new-creators-title.md) for guidance.
 
 ### Critical IDs
 

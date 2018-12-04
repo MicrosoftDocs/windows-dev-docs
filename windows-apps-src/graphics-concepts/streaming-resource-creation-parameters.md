@@ -4,15 +4,12 @@ description: There are some constraints on the type of Direct3D resources that y
 ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
 keywords:
 - Streaming resource creation parameters
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Streaming resource creation parameters
 
 

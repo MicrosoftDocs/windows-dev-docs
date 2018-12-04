@@ -2,18 +2,13 @@
 title: /sessions/{sessionId}/scids/{scid}/data/{path}
 assetID: 932459b4-24b4-5b09-8146-ed214de0083a
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath.html
-author: KevinAsgari
+
 description: ' /sessions/{sessionId}/scids/{scid}/data/{path}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /sessions/{sessionId}/scids/{scid}/data/{path}
 Lists file information at a specified path. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

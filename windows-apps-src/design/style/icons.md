@@ -1,21 +1,17 @@
 ---
-author: mijacobs
 Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
 title: Icons
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Icons for UWP apps
 
 ![Icons header image](images/icons/header-icons.png)
@@ -134,7 +130,7 @@ There are many ways to create an icon. You can use a symbol font like Segoe MDL2
 
 ## Make the icon do something
 
-Once you you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to to do this is to add the icon to a button or a command bar. 
+Once you have an icon, the next step is to make it do something by associating it with command or a navigation action. The best way to do this is to add the icon to a button or a command bar. 
 
 ![Command bar image](images/icons/app-bar-desktop.svg)
 

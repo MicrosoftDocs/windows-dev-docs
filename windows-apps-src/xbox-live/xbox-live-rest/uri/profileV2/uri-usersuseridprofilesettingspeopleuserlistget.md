@@ -2,18 +2,13 @@
 title: GET (/users/{userId}/profile/settings/people/{userList})
 assetID: f6553499-89e2-f21b-a00f-7e5437c045ff
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlistget.html
-author: KevinAsgari
+
 description: ' GET (/users/{userId}/profile/settings/people/{userList})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{userId}/profile/settings/people/{userList})
 Get the profile for a user or users, with People Moniker support. 
 The domain for these URIs is `profile.xboxlive.com`.

@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: If you have a Universal 8.1 app&\#8212;whether it's targeting Windows 8.1, Windows Phone 8.1, or both&\#8212;then you'll find that your source code and skills will port smoothly to Windows 10.
 title: Move from Windows Runtime 8.x to UWP'
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Move from Windows Runtime 8.x to UWP
 
 

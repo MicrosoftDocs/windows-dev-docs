@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Supporting screen orientation (DirectX and C++)
 description: Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, screen orientation, directx
 ms.localizationpriority: medium
 ---
-
 # Supporting screen orientation (DirectX and C++)
 
 

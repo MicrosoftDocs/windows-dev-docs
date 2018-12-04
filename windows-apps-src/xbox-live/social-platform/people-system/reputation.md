@@ -1,17 +1,13 @@
 ---
 title: Reputation
-author: KevinAsgari
+
 description: Learn how Xbox Live uses the reputation service to encourage positive gameplay.
 ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, reputation, social platform
 ms.localizationpriority: medium
 ---
-
 # Reputation
 
 Reputation is a user statistic, just like any other, and is included in calls to retrieve all of a user's statistics and use them in reporting and tracking. The reputation itself is represented by the **Reputation Class**. The **ReputationService Class**represents the reputation service. The corresponding URIs are described in **Reputation URIs**.

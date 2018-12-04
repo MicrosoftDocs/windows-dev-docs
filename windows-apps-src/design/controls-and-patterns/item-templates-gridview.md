@@ -1,13 +1,9 @@
 ---
-author: serenaz
 Description: Item templates for grid view
 title: Item templates for grid view
 template: detail.hbs
-ms.author: sezhen
 ms.date: 11/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, fluent
 ---
 # Item templates for grid view

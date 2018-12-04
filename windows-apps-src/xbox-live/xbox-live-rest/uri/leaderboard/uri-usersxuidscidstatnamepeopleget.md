@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 assetID: 942cf0d7-f988-0495-cf28-cdac608b8109
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeopleget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 Returns a social leaderboard by ranking the stat values (scores) for either all known contacts of the current user or only those contacts designated as favorite people by that user.
 The domain for these URIs is `leaderboards.xboxlive.com`.
@@ -75,7 +70,7 @@ Authorization logic is implemented for the purposes of content isolation and acc
 
 Both leaderboards and user stats can be read from clients on any platform, provided that the caller submits a valid XSTS token with their request. Writes are (obviously) limited to clients supported by the Data Platform.
 
-Title developers can mark statistics as open or restricted with XDP or Dev Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Dev Center.
+Title developers can mark statistics as open or restricted with XDP or Partner Center. Leaderboards are open statistics. Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox. User authorization to a sandbox is managed through XDP or Partner Center.
 
 <a id="ID4EGE"></a>
 

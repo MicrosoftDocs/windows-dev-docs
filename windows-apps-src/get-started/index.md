@@ -2,16 +2,12 @@
 layout: LandingPage
 description: Get started with the Universal Windows Platform (UWP) and app development for Windows 10.
 title: Get started with the Universal Windows Platform (UWP)
-author: QuinnRadich
-ms.author: quradic
 ms.date: 03/23/2018
-ms.prod: windows
 ms.topic: article
 keywords: get started, windows 10, uwp, xaml, c#
-ms.technology: uwp
+
 ms.localizationpriority: medium
 ---
-
 # Get started with Windows 10 apps 
  
 Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.  
@@ -95,7 +91,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">UI Basics</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">Data binding</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style">Custom styles</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Custom styles</a></p>
                 </div>
             </div>
         </div>
@@ -206,7 +202,6 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
 </div>
 
 ---
-
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">

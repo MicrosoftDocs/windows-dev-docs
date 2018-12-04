@@ -1,15 +1,11 @@
 ---
-author: anbare
 Description: Here are the elements and attributes you use to create adaptive tiles.
 title: Adaptive tile schema and templates
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -2,18 +2,13 @@
 title: GET (/handles/{handleId}/session)
 assetID: 1f22954c-e77b-69c2-63f4-741fbd965f8f
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionget.html
-author: KevinAsgari
+
 description: ' GET (/handles/{handleId}/session)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/handles/{handleId}/session)
 Gets a session object for the specified handle identifier.
 

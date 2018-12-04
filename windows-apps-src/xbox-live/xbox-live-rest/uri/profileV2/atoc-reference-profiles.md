@@ -2,18 +2,13 @@
 title: Profiles URIs
 assetID: 457f2cb2-9113-e537-c8cc-51f743e30afa
 permalink: en-us/docs/xboxlive/rest/atoc-reference-profiles.html
-author: KevinAsgari
+
 description: ' Profiles URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Profiles URIs
  
 This section provides detail about the Profile Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *profiles*.

@@ -1,16 +1,12 @@
 ---
 title: Real-time audio manipulation
-author: KevinAsgari
+
 description: Learn how to manipulate and process the chat audio captured by Game Chat 2.
-ms.author: kevinasg
 ms.date: 05/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication, buffer manipulation, audio manipulation
 ms.localizationpriority: medium
 ---
-
 # Real-time audio manipulation
 
 Game Chat 2 gives developers the option to insert themselves into the chat audio pipeline to inspect and manipulate the players' chat audio data. This can be useful for applying interesting audio effects to players' voices in game. Game Chat 2's audio manipulation pipeline is interacted with through audio stream objects that can be polled for audio data. As opposed to using callbacks, this model allows developers to inspect or manipulate audio on whatever processing thread is most convenient for them.

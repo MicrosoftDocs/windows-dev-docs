@@ -2,18 +2,13 @@
 title: ThumbnailType Enumeration
 assetID: a74ead24-596c-2f3e-1d6b-5658ce504b75
 permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailtype.html
-author: KevinAsgari
+
 description: ' ThumbnailType Enumeration'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # ThumbnailType Enumeration
 Details the ThumbnailType enumeration. 
 <a id="ID4ER"></a>

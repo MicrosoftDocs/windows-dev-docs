@@ -2,18 +2,13 @@
 title: GET (/{uri})
 assetID: a67a3288-88f9-c504-5fa8-8fd06055d079
 permalink: en-us/docs/xboxlive/rest/uri-uriget.html
-author: KevinAsgari
+
 description: ' GET (/{uri})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/{uri})
 Download game clip. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

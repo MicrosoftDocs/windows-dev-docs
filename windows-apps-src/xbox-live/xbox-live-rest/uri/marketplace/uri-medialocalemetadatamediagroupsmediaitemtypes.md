@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes
 assetID: fc096def-ac64-76c6-09f8-8f33a6bb47a0
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroupsmediaitemtypes.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes
 Accesses the available mediaItemTypes per media group for the given version of EDS. 
 The domain for these URIs is `eds.xboxlive.com`.

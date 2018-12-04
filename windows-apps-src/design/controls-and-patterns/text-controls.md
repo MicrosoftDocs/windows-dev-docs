@@ -1,15 +1,11 @@
 ---
-author: Jwmsft
 Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
 title: Text controls
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
@@ -18,15 +14,12 @@ ms.localizationpriority: medium
 ---
 # Text controls
 
- 
-
 Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
 
 - The controls for displaying read-only text are [TextBlock](text-block.md) and [RichTextBlock](rich-text-block.md).
-- The controls for text entry and editing are: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md), and [RichEditBox](rich-edit-box.md).
+- The controls for text entry and editing are: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), and [PasswordBox](password-box.md).
 
-> **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [RichEditBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [RichTextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [TextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **Important APIs**: [TextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [RichEditBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## Is this the right control?
 
@@ -118,28 +111,13 @@ See these articles for font guidelines:
 
 ## Pen input
 
-> The pen input feature is currently available only in the Windows Insider Preview. Feature names, terminology, and functionality are not final.
-
 **Applies to:** TextBox, RichEditBox, AutoSuggestBox
 
 Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
 
-![Text box expands when tapped with pen](images/pen-input-expand.gif)
+![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
-Text is recognized as the user writes anywhere in the text box, and a candidate windows shows the recognition results. The user can tap a result to choose it, or continue writing to accept the proposed candidate. The literal (letter-by-letter) recognition results are included in the candidate window, so recognition is not restricted to words in a dictionary. As the user writes, the accepted text input is converted to a script font that retains the feel of natural writing.
-
-![Text box with pen input](images/pen-input-1.png)
-
-A user can edit their text using standard gestures and actions, like these:
-
-- _strike through_ or _scratch out_ - draw through to delete a word or part of a word
-- _join_ - draw an arc between words to delete the space between them
-- _insert_ - draw a caret symbol to insert a space
-- _overwrite_ - write over existing text to replace it
-
-![Overwrite pen input](images/pen-input-2.png)
-
-Embedded text input is enabled by default when your app targets and is running on Windows 10, version 1803 or later. You can opt-out on a per-text box basis to disable the feature and revert to a text input panel. To disable embedded text input, set the text control's **IsHandwritingViewEnabled** property to **false**.
+For more info, see [Text input with the handwriting view](text-handwriting-view.md).
 
 ## Choose the right keyboard for your text control
 

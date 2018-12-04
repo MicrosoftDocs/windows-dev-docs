@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Game flow management
 description: Learn how initialize game states, handle events, and set up the game update loop.
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ---
-
 # Game flow management
 
 The game now has a window, registered a couple event handlers, and loads assets asynchronously. This section explains about the use of game states, how to manage specific key game states, and how to create an update loop for the game engine. Then we'll learn about the user interface flow and finally, understand more about event handlers and events that are needed for a UWP game.

@@ -1,16 +1,11 @@
 ﻿---
-author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
-ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, pricing, app pricing, app price, sell apps, price change, custom price, price, prices, cost, override base price, free-form price, freeform
 ms.localizationpriority: medium
 ---
-
 # Set and schedule app pricing
 
 The **Pricing** section of the [Pricing and availability](set-app-pricing-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [override the base price for specific markets](#override-base-price-for-specific-markets), either by selecting a new price tier or by entering a free-form price in the market's local currency.
@@ -31,26 +26,21 @@ Each  price tier has a corresponding value in each of the more than 60 currencie
 
 In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](../monetize/manage-app-submissions.md#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). You should also review the [price considerations for specific markets](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). You should also review the [price considerations for specific markets](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they have sing a promotional code to get the app for free).
+> If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
 
 ## Schedule price changes
 
 You can optionally schedule one or more price changes if you want the base price of your app to change at a specific date and time. 
 
 > [!IMPORTANT]
-> Price changes are only shown to customers on Windows 10 devices (including Xbox). If your app supports earlier OS versions, the price changes will not apply. 
->
-> - For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. 
-> - For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the first price tier for the customer's market, even if you schedule additional price changes in that market.
-> 
-> Keep this in mind when scheduling price changes. For example, if you initially release your app at a lower price tier and then schedule a date on which the price should increase, your customers on earlier OS versions who purchase the app would pay the lower (original) price.
+> Price changes are only shown to customers on Windows 10 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the first price tier for the customer's market.
 
 Click **Schedule a price change** to see the price change options. Choose the price tier you’d like to use (or enter a free-form price for single-market base price overrides), then select the date, time, and time zone.
 
-You can click **Schedule a price change again** to schedule as many subsequent changes as you’d like.
+You can click **Schedule a price change** again to schedule as many subsequent changes as you’d like.
 
 > [!NOTE]
 > Scheduled price changes work differently from [Sale pricing](put-apps-and-add-ons-on-sale.md). When you put an app on sale, the price shows with a strikethrough in the Store, and customers will be able to purchase the app at the sale price during the time period that you have selected. After the sale period is up, the sale price will no longer apply and the app will be available at its base price (or a different price that you have specified for that market, if applicable).
@@ -63,7 +53,7 @@ You can click **Schedule a price change again** to schedule as many subsequent c
 By default, the options you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more markets, either by choosing a different price tier or entering a free-form price in the market’s local currency.
 
 > [!IMPORTANT]
-> Customers on Windows 8 will always see the app at its **Base price**, even if you select a different price for their market.
+> If your previously-published app supports Windows 8, those customers will always see the app at its **Base price**, even if you select a different price for their market.
 
 To change the price for specific markets, click **Select markets for base price override**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. (If you excluded any markets in the **Markets** section, those markets won't be available.) 
 

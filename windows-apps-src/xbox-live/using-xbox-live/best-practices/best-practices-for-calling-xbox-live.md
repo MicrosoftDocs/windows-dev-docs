@@ -1,17 +1,13 @@
 ---
 title: Best practices for calling Xbox Live
-author: KevinAsgari
+
 description: Learn about the best practices for calling Xbox Live APIs.
 ms.assetid: f4c7156b-7736-41e5-9b3d-e87cc8dd2531
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, best practices
 ms.localizationpriority: medium
 ---
-
 # Best practices for calling Xbox Live
 
 The Xbox Live services can be called from two primary ways: using the Xbox Services API (XSAPI), or calling the REST endpoints directly. Regardless of how your code calls Xbox Live, it is important to have proper calling patterns and retry logic.

@@ -1,22 +1,17 @@
 ---
-author: jnHs
-Description: The Ratings report in the Windows Dev Center dashboard lets you see how customers rated your app in the Store.
+Description: The Ratings report in Partner Center lets you see how customers rated your app in the Store.
 title: Ratings report
-ms.author: wdg-dev-content
-ms.date: 07/17/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, rating, rate, star, stars, rated
 ms.localizationpriority: medium
 ---
-
 # Ratings report
 
 
-The **Ratings** report in the Windows Dev Center dashboard lets you see how customers rated your app in the Store. 
+The **Ratings** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how customers rated your app in the Store. 
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 > [!TIP]
 > For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 

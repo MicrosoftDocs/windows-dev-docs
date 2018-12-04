@@ -1,21 +1,16 @@
 ---
-author: normesta
 Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: Known Issues (Desktop Bridge)
-ms.author: normesta
 ms.date: 06/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ---
+# Known Issues with packaged desktop applications
 
-# Known Issues (Desktop Bridge)
-
-This article contains known issues with the Desktop Bridge.
+This article contains known issues that can occur when you create a Windows app package for your desktop application.
 
 <a id="app-converter" />
 
@@ -33,7 +28,7 @@ You might receive this error when you setup a new base image. This can happen if
 
 To resolve this issue, try running the command `Netsh int ipv4 reset` from an elevated command prompt, and then reboot your machine.
 
-### Your .NET app is compiled with the "AnyCPU" build option and fails to install
+### Your .NET application is compiled with the "AnyCPU" build option and fails to install
 
 This can happen if the main executable or any of the dependencies were placed anywhere in the **Program Files** or **Windows\System32** folder hierarchy.
 
@@ -49,9 +44,9 @@ This is a known limitation and no workaround currently exists. That said, Inbox 
 
 ### Error found in XML. The 'Executable' attribute is invalid - The value 'MyApp.EXE' is invalid according to its datatype
 
-This can happen if the executables in your application have a capitalized **.EXE** extension. Although, the casing of this extension shouldn't affect whether your app runs, this can cause the DAC to generate this error.
+This can happen if the executables in your application have a capitalized **.EXE** extension. Although, the casing of this extension shouldn't affect whether your application runs, this can cause the DAC to generate this error.
 
-To resolve this issue, try specifying the **-AppExecutable** flag when you package, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your app from lowercase to uppercase (For example: from .EXE to .exe).
+To resolve this issue, try specifying the **-AppExecutable** flag when you package, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your application from lowercase to uppercase (For example: from .EXE to .exe).
 
 ### Corrupted or malformed Authenticode signatures
 
@@ -90,7 +85,7 @@ A [Windows update (Version 14393.351 - KB3197954)](https://support.microsoft.com
 
 If updating does not fix the problem or you aren't sure how to recover your PC, please contact [Microsoft Support](https://support.microsoft.com/contactus/).
 
-If you are a developer, you may want to prevent the installation of your packaged application on versions of Windows that do not include this update. Note that by doing this your app will not be available to users that have not yet installed the update. To limit the availability of your app to users that have installed this update, modify your AppxManifest.xml file as follows:
+If you are a developer, you may want to prevent the installation of your packaged application on versions of Windows that do not include this update. Note that by doing this your application will not be available to users that have not yet installed the update. To limit the availability of your application to users that have installed this update, modify your AppxManifest.xml file as follows:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -118,7 +113,7 @@ Double-click the certificate in File Explorer, select the *Details* tab, and the
 
 **Option 3: CertUtil**
 
-Run **certutil** from the the command line on the PFX file and copy the *Subject* field from the output.
+Run **certutil** from the command line on the PFX file and copy the *Subject* field from the output.
 
 ```cmd
 certutil -dump <cert_file.pfx>

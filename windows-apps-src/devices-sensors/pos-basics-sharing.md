@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: PointOfService device sharing 
 description: Sharing PointOfService peripherals with others
-ms.author: jken
 ms.date: 06/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # PointOfService device sharing
 
 Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.

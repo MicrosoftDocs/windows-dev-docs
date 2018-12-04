@@ -1,14 +1,11 @@
 ---
-author: serenaz
 Description: Use alignment, margin, and padding properties to arrange the layout of elements on a page.
 title: Alignment, margin, and padding for layout
-ms.author: sezhen
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Alignment, margin, padding
 

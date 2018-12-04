@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 
 description: Shows how to manage game broadcasting for a UWP app.
 title: Manage game broadcasting
-ms.author: drewbat
 ms.date: 09/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, game, broadcasting
 ms.localizationpriority: medium
 ---
-
 # Manage game broadcasting
 This article shows you how to manage game broadcasting for a UWP app. Users must initiate broadcasting by using the system UI that is built into Windows, but starting with Windows 10, version 1709, apps can launch the system broadcasting UI and can receive notifications when broadcasting starts and stops.
 

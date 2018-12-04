@@ -1,28 +1,30 @@
 ---
-author: stevewhims
 description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from C++/CX
-ms.author: stwhi
-ms.date: 07/20/2018
+ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
 ---
+# Move to C++/WinRT from C++/CX
 
-# Move to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) from C++/CX
-This topic shows how to port [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) code to its equivalent in C++/WinRT.
+This topic shows how to port the code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+
+## Porting strategies
+
+If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/CX and C++/WinRT code can coexist in the same project, with the exceptions of XAML compiler support and Windows Runtime Components. For those two exceptions, you'll need to target either C++/CX or C++/WinRT within the same project.
 
 > [!IMPORTANT]
-> If you want to gradually port your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) code to C++/WinRT, then you can. C++/CX and C++/WinRT code can coexist in the same project, with the exception of XAML compiler support, and Windows Runtime Components. For those exceptions, you'll need to target either C++/CX or C++/WinRT within the same project. But you can use a Windows Runtime Component to factor code out of your XAML app as you port it. Either move as much C++/CX code as you can into a component, and then change the XAML project to C++/WinRT. Or else leave the XAML project as C++/CX, create a new C++/WinRT component, and begin porting C++/CX code out of the XAML project and into the component. You could also have a C++/CX component project alongside a C++/WinRT component project within the same solution, reference both of them from your application project, and gradually port from one to the other.
+> If your project builds a XAML application, then one workflow that we recommend is to first create a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Then, start copying source code and markup over from the C++/CX project. You can add new XAML pages with **Project** \> **Add New Item...** \> **Visual C++** > **Blank Page (C++/WinRT)**.
+>
+> Alternatively, you can use a Windows Runtime Component to factor code out of the XAML C++/CX project as you port it. Either move as much C++/CX code as you can into a component, and then change the XAML project to C++/WinRT. Or else leave the XAML project as C++/CX, create a new C++/WinRT component, and begin porting C++/CX code out of the XAML project and into the component. You could also have a C++/CX component project alongside a C++/WinRT component project within the same solution, reference both of them from your application project, and gradually port from one to the other. See [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md) for more details on using the two language projections in the same project.
 
 > [!NOTE]
 > Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you port from C++/CX to C++/WinRT at your own pace.
 
-Bearing in mind the exceptions mentioned above, the first step in porting a project to C++/WinRT is to manually add C++/WinRT support (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). To do that, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
+Bearing in mind the exceptions mentioned above, the first step in porting a C++/CX project to C++/WinRT is to manually add C++/WinRT support to it (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). To do that, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
 
-Set project property **General** \> **Target Platform Version** to 10.0.17134.0 (Windows 10, version 1803) or greater.
+Ensure that project property **General** \> **Target Platform Version** is set to 10.0.17134.0 (Windows 10, version 1803) or greater.
 
 In your precompiled header file (usually `pch.h`), include `winrt/base.h`.
 
@@ -62,7 +64,7 @@ if (userList != nullptr)
     ...
 ```
 
-When converting to the equivalent C++/WinRT code, you basically remove the hats and change the arrow operator (-&gt;) to the dot operator (.), because C++/WinRT projected types are values, and not pointers.
+When porting to the equivalent C++/WinRT code, you basically remove the hats and change the arrow operator (-&gt;) to the dot operator (.), because C++/WinRT projected types are values, and not pointers.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -176,6 +178,43 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+```
+
+## Converting from a base runtime class to a derived one
+It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+The equivalent C++/WinRT code replaces the `dynamic_cast` with a call to the [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) function, which encapsulates **QueryInterface**. You also have the option to call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), instead, which throws an exception if querying for the required interface (the default interface of the type you're requesting) is not returned. Here's a C++/WinRT code example.
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
 ```
 
 ## Event-handling with a delegate
@@ -346,6 +385,7 @@ void LogWrapLine(winrt::hstring const& str);
 * [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [Handle events by using delegates in C++/WinRT](handle-events.md)
+* [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md)
 * [Microsoft Interface Definition Language 3.0 reference](/uwp/midl-3)
 * [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md)
 * [String handling in C++/WinRT](strings.md)

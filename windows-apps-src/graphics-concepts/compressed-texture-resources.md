@@ -4,15 +4,12 @@ description: Texture maps are digitized images drawn on three-dimensional shapes
 ms.assetid: 2DD5FF94-A029-4694-B103-26946C8DFBC1
 keywords:
 - Compressed texture resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Compressed texture resources
 
 

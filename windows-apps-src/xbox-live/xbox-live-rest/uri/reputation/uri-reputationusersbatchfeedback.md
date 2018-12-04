@@ -2,18 +2,13 @@
 title: /users/batchfeedback
 assetID: da244ed6-05b3-08b5-901b-e4720da1d7de
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedback.html
-author: KevinAsgari
+
 description: ' /users/batchfeedback'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/batchfeedback
  
 The domain and port number for these URIs is `reputation.xboxlive.com:10443`.

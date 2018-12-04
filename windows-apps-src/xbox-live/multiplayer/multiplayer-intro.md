@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Multiplayer Platform
-author: KevinAsgari
+
 description: Learn about the multiplayer platforms that are support by Xbox Live.
 ms.assetid: 958b94b3-dccd-479a-bf52-54f7ff1656fa
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Multiplayer Platform
 
 The Xbox Live Multiplayer Platform empowers your game to bring Xbox Live players together over the Internet and can dramatically extend the life and usage of a title beyond typical solo play.

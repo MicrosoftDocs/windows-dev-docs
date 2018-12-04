@@ -1,17 +1,13 @@
 ---
 title: Connected Storage Overview
-author: aablackm
+
 description: Learn about using Connected Storage to save and load game data across devices.
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Connected Storage
 Connected Storage is designed to allow your title to save gameplay data and other relevant state data that should roam between devices. The Connected Storage API allows titles on Xbox One and Universal Windows Platform(UWP) to save, load, and delete title data that is stored locally and also synced to the cloud whenever the Xbox One or UWP title is connected to the internet. Saved data will be available on any other device which runs your title after synchronization occurs. Developers are encouraged to save title state as accurately as possible to offer the best away from home play experience. Connected Storage is what allows you to progress in a game at home, then pick up your game right where you left off on any other device that supports the same game.
 

@@ -1,17 +1,12 @@
 ---
-author: GrantMeStrength
 title: Building a complex Universal Windows Platform (UWP) app
 description: On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 #  Building a complex Universal Windows Platform (UWP) app
 
 On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.

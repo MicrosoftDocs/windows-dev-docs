@@ -2,18 +2,13 @@
 title: UpdateMetadataRequest (JSON)
 assetID: 0bc210e3-c1dc-9267-e322-aadb9f0a074a
 permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
-author: KevinAsgari
+
 description: ' UpdateMetadataRequest (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # UpdateMetadataRequest (JSON)
 The metadata that should be updated for a clip. 
 <a id="ID4EN"></a>
@@ -37,7 +32,7 @@ The UpdateMetadataRequest object has the following specification.
 Changing User Clip Name and Visibility:
  
 
-```cpp
+```json
 {
   "userCaption": "I've changed this 100 Times!",
   "visibility": "Owner"
@@ -49,7 +44,7 @@ Changing User Clip Name and Visibility:
 Changing just title properties (this is just an example, since the schema of this field is up to the caller):
  
 
-```cpp
+```json
 {
   "titleData": "{ 'Id': '123456', 'Location': 'C:\\videos\\123456.mp4' }"
 }

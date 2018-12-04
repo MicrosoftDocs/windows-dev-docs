@@ -1,19 +1,15 @@
 ---
 title: XboxServices.config
-author: KevinAsgari
+
 description: Describes the XboxServices.config file for associating your UWP game with an Xbox Live configuration.
-ms.author: kevinasg
 ms.date: 03/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration, xboxservices.config
 ms.localizationpriority: medium
 ---
-
 # XboxServices.config file description
 
-When you develop an Xbox Live enabled UWP game, your project must include an XboxServices.config file.  This file enables the Xbox Live SDK to associate your game with your Dev Center app and your Xbox Live services configuration. This file contains a JSON object that details information such as the service configuration ID, title ID, etc.
+When you develop an Xbox Live enabled UWP game, your project must include an XboxServices.config file.  This file enables the Xbox Live SDK to associate your game with your Partner Center app and your Xbox Live services configuration. This file contains a JSON object that details information such as the service configuration ID, title ID, etc.
 
 If you are using Unity to design an Xbox Live Creators Program game by using the Xbox Live plug-in, this file is automatically created for you by the Xbox Live Association Wizard.
 
@@ -26,8 +22,8 @@ The following fields are defined in the JSON object in the config file:
 
 Field | Description
 --- | ---
-PrimaryServiceConfigId  |  The Xbox Live service configuration ID (SCID). On the [Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard), you can find this value on the **Xbox Live** page (for Creators Program) or **Xbox Live Setup** page (for full Xbox Live games), under the **Services** section for your app.
-TitleId  |  The decimal Title ID for your app. On the [Dev Center dashboard](https://developer.microsoft.com/en-us/dashboard), you can find this value on the **Xbox Live** page (for Creators Program) or **Xbox Live Setup** page (for full Xbox Live games), under the **Services** section for your app.
+PrimaryServiceConfigId  |  The Xbox Live service configuration ID (SCID). In [Partner Center](https://partner.microsoft.com/dashboard), you can find this value on the **Xbox Live** page (for Creators Program) or **Xbox Live Setup** page (for full Xbox Live games), under the **Services** section for your app.
+TitleId  |  The decimal Title ID for your app. In [Partner Center](https://partner.microsoft.com/dashboard), you can find this value on the **Xbox Live** page (for Creators Program) or **Xbox Live Setup** page (for full Xbox Live games), under the **Services** section for your app.
 XboxLiveCreatorsTitle  |  If "true", indicates that the app is an Xbox Live Creators Program app. Otherwise, "false".
 Scope  |  **(Optional)** Defines the scope of functionality used by the app. See below for further description.
 

@@ -2,18 +2,13 @@
 title: MediaRecord (JSON)
 assetID: 5052c214-c2ab-9ef1-0b25-e42bd459bf23
 permalink: en-us/docs/xboxlive/rest/json-mediarecord.html
-author: KevinAsgari
+
 description: ' MediaRecord (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MediaRecord (JSON)
  
 <a id="ID4EO"></a>

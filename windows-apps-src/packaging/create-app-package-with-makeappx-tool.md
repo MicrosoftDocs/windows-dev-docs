@@ -1,17 +1,13 @@
 ---
-author: laurenhughes
 title: Create an app package with the MakeAppx.exe tool
 description: MakeAppx.exe creates, encrypts, decrypts, and extracts files from app packages and bundles.
-ms.author: lahugh
 ms.date: 06/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Create an app package with the MakeAppx.exe tool
 
 
@@ -20,10 +16,9 @@ ms.localizationpriority: medium
 > [!IMPORTANT] 
 > If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to create your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .msix or .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) in the Windows Dev Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .msix or .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](../publish/health-report.md) in Partner Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](../publish/upload-app-packages.md). 
 
-> [!NOTE]
-> This page has been updated to include support for the creation of .msix packages, pre-released in the [Windows 10 Insider Preview Build 17682](https://blogs.windows.com/windowsexperience/2018/05/31/announcing-windows-10-insider-preview-build-17682/#UPs6rko5Z56SJsQ6.97). Updates to this tool do not affect .appx package usage. You can continue using this tool with .appx packages as you have before, or use the tool with pre-release support for .msix packages as described below.
+ Updates to this tool in the most recent version of Windows 10 do not affect .appx package usage. You can continue using this tool with .appx packages, or use the tool with support for .msix packages as described below.
 
 To manually create an .appxupload file:
 - Place the .msix and the .appxsym in a folder
@@ -33,8 +28,8 @@ To manually create an .appxupload file:
 ## Using MakeAppx.exe
 
 Based on your installation path of the SDK, this is where **MakeAppx.exe** is on your Windows 10 PC:
-- x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
-- x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+- x86: C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x86\makeappx.exe
+- x64: C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x64\makeappx.exe
 
 There is no ARM version of this tool.
 

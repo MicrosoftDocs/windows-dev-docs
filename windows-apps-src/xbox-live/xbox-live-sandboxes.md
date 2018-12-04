@@ -1,22 +1,18 @@
 ---
 title: Xbox Live sandboxes
-author: KevinAsgari
+
 description: Learn about sandboxes for Xbox Live development.
 ms.assetid: a5acb5bf-dc11-4dff-aa94-6d1f01472d2a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Sandboxes Intro
 
-In [Xbox Live Service Configuration](xbox-live-service-configuration.md), it was explained that you must configure information about your title online, usually on [Windows Dev Center](http://dev.windows.com).  This information includes things like the leaderboards your title wants to display, achievements that players can unlock, matchmaking configuration, etc.
+In [Xbox Live Service Configuration](xbox-live-service-configuration.md), it was explained that you must configure information about your title online, usually in [Partner Center](https://partner.microsoft.com/dashboard).  This information includes things like the leaderboards your title wants to display, achievements that players can unlock, matchmaking configuration, etc.
 
-When you make changes to your service configuration, these need to be published from Dev Center before the changes are picked up by the rest of Xbox Live and can be seen by your title.
+When you make changes to your service configuration, these need to be published from Partner Center before the changes are picked up by the rest of Xbox Live and can be seen by your title.
 
 You publish to what is called a development sandbox.  These allow you to work on changes to your title in an isolated environment.  These offer several benefits described in the below section.
 
@@ -40,7 +36,7 @@ Test accounts can only sign-in to development sandboxes, and will be explained i
 
 The vast majority of developers need only one sandbox.  Fortunately a sandbox is created for you when you create a title.
 
-1. You find out about your sandbox by going to the Dev Center dashboard here:
+1. You find out about your sandbox by going to Partner Center here:
 ![](images/getting_started/first_xbltitle_dashboard.png)
 
 1. Then click on your title:

@@ -1,20 +1,15 @@
 ﻿---
-author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: Feedback report
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
-ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Feedback report
 
-The **Feedback report** in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in your dashboard, or export the data to view offline.
+The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.
 
 > [!NOTE]
 > You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.
@@ -23,7 +18,7 @@ Encouraging your customers to give you feedback about your app is a great way to
 
 You can use the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
 
-Feedback can also be helpful when using [package flighting](package-flights.md), since the Feedback report shows you the specific package that each customer had installed on their device when they left the feedback.
+Feedback can also be helpful when using [package flighting](package-flights.md), since the **Feedback** report shows you the specific package that each customer had installed on their device when they left the feedback.
 
 > [!TIP]
 > For a quick look at the reviews, ratings, and user feedback across all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 

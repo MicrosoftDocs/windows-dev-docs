@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Learn about best practices for ads in apps, including UX guidelines and error handling.
 title: Best practices for ads in apps
-ms.author: mcleans
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ms.localizationpriority: medium
 ---
-
 # Best practices for ads in apps
 
 The articles in this section provide user experience guidelines and error handling guidance for banner ads, interstitial ads, and native ads in your UWP apps.

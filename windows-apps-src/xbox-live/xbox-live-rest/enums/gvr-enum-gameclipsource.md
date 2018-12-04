@@ -2,18 +2,13 @@
 title: GameClipSource Enumeration
 assetID: 8dcfbf10-0fb1-86f9-a67b-047e83ee9192
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipsource.html
-author: KevinAsgari
+
 description: ' GameClipSource Enumeration'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipSource Enumeration
 Details the GameClipSource enumeration. 
 <a id="ID4ET"></a>

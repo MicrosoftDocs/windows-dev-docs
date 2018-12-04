@@ -2,18 +2,13 @@
 title: Achievement Title History URIs
 assetID: a7499a25-d957-2ab9-fe47-f2615e5f2ea5
 permalink: en-us/docs/xboxlive/rest/atoc-reference-titlehistoryv2.html
-author: KevinAsgari
+
 description: ' Achievement Title History URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Achievement Title History URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for achievements-related *title history*. Games running on all platforms can read this historical information.

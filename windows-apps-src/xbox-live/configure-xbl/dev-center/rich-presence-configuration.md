@@ -1,17 +1,15 @@
 ---
-title: Rich Presence Configuration on Dev Center
-author: aablackm
-description: Learn how to configure Rich Presence strings on Windows Dev Center
-ms.author: aablackm
+title: Rich Presence Configuration in Partner Center
+
+description: Learn how to configure Rich Presence strings in Partner Center
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Rich Presence strings, Windows Dev Center
----
 
-# Configure Rich Presence on Windows Dev Center
+
+ms.localizationpriority: medium
+keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Rich Presence strings, Partner Center
+---
+# Configure Rich Presence in Partner Center
 
 Rich Presence strings display a user's in-game activity. They are displayed under a player's Gamertag in the **Friends & clubs** list as well as in their Xbox Live user profile. Configured Rich Presence strings are appended to the name of the game being played. If you create a game called BubblePop and configure the Rich Presence string "Popping bubbles with friends", your configured string would produce "BubblePop - Popping bubbles with friends" as a status. Below you can see how a Rich Presence string will appear in context.
 
@@ -32,17 +30,17 @@ Before configuring Rich Presence strings you and your title must meet the follow
 
 - You must have a Windows development account.
 - Your development account must be registered in the ID@Xbox program or as a managed partner developer account.
-- Your title must be registered in Dev Center and be Xbox Live enabled.
+- Your title must be registered in Partner Center and be Xbox Live enabled.
 
-Before you can use Rich Presence strings you must configure them on your Dev Center dashboard.
+Before you can use Rich Presence strings you must configure them in Partner Center.
 
 ## Rich Presence Configuration Page
 
-Rich Presence strings are configured as a part of the Xbox Live Service for your title on the Dev Center dashboard accessible from [developer.microsoft.com](https://developer.microsoft.com/windows).
+Rich Presence strings are configured as a part of the Xbox Live Service for your title in [Partner Center](https://partner.microsoft.com/dashboard).
 
 Navigate to the Rich Presence configuration page with the following instructions:
 
-1. Go to your [Dev Center dashboard](https://developer.microsoft.com/windows) on developer.microsoft.com.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard) on developer.microsoft.com.
 2. Sign in with your registered Windows developer account if sign-in is requested.
 3. Choose your Xbox Live enabled title or App from the **Overview** page. Do not select a Creators Program title as it will not be enabled for Rich Presence string configuration.
 4. Click on the **Services** drop down and select Xbox Live.

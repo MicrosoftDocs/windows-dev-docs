@@ -2,18 +2,13 @@
 title: Person (JSON)
 assetID: b49234b1-03cd-f16e-c293-c74174382167
 permalink: en-us/docs/xboxlive/rest/json-person.html
-author: KevinAsgari
+
 description: ' Person (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Person (JSON)
 Metadata about a single Person in the People system. 
 <a id="ID4EN"></a>
@@ -36,7 +31,7 @@ The Person object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
     "xuid": "2603643534573581",
     "isFavorite": false,

@@ -1,23 +1,20 @@
 ﻿---
-author: normesta
 description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Map style sheet reference
-ms.author: normesta
 ms.date: 03/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, maps, map style sheet
 ms.localizationpriority: medium
 ---
-
 # Map style sheet reference
 
-Microsoft mapping technologies use map style sheets to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) through the [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) method.
+Microsoft mapping technologies use _map style sheets_ to define the appearance of maps.  A map style sheet is defined using JavaScript Object Notation (JSON) and can be used in various ways including in a Windows Store application's [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) through the [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) method.
 
-For example, you'd use the following JSON to make water areas appear in red, water labels appear in green, and land areas appear in blue:
+Style sheets can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
+
+The following JSON can be used to make water areas appear in red, water labels appear in green, and land areas appear in blue:
 
 ```json
     {"version":"1.*",
@@ -25,7 +22,8 @@ For example, you'd use the following JSON to make water areas appear in red, wat
         "elements":{"water":{"fillColor":"#FF0000","labelColor":"#00FF00"}}
     }
 ```
-You could also use JSON to remove all labels and points from a map.
+
+This JSON can be used to remove all labels and points from a map.
 
 ```json
 
@@ -41,20 +39,21 @@ Sometimes the value of a property is transformed to produce the final result.  F
     }
 ```
 
-This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.
+This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.  These properties can also be applied to user map elements through the [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry) property.
 
 <a id="entries" />
 
 ## Entries
 This table uses ">" characters to represent levels in the entry hierarchy.  It also shows which versions of Windows support each entry and which ignore it.
 
-| Build | Windows Release Name |
-|-------|----------------------|
-| 1506  | Creators Update      |
-| 1629  | Fall Creators Update |
-| 1713  | April 2018 Update    |
+| Version | Windows Release Name |
+|---------|----------------------|
+|  1703   | Creators Update      |
+|  1709   | Fall Creators Update |
+|  1803   | April 2018 Update    |
+|  1809   | October 2018 Update  |
 
-| Name                         | Property Group            | 1506 | 1629 | 1713 | Next | Description    |
+| Name                         | Property Group            | 1703 | 1709 | 1803 | 1809 | Description    |
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | The style sheet version that you want to use. |
 | settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | The settings that apply to the whole style sheet. |
@@ -163,7 +162,7 @@ This section describes the properties that you can use for each entry.
 
 ### Settings properties
 
-| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Property                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | A flag that indicates whether the atmosphere appears in the 3D control. |
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   | A flag that indicates whether or not to show textures on symbolic 3D buildings that have textures. |
@@ -185,7 +184,7 @@ This section describes the properties that you can use for each entry.
 
 ### MapElement properties
 
-| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Property                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | backgroundScale              | Float   |  ✔   |  ✔   |  ✔   |  ✔   | Amount by which the background element of an icon should be scaled.  For example, use *1* for default and *2* for twice as large. |
 | fillColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The color that is used for filling polygons, the background of point icons, and for the center of lines if they have split. |
@@ -208,7 +207,7 @@ This section describes the properties that you can use for each entry.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Property                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The secondary or casing line color of the border of a filled polygon. |
 | borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | The primary line color of the border of a filled polygon. |
@@ -221,7 +220,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Property                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | shape-Background             | Float   |      |      |      |  ✔   | Shape to use as the background of the icon--replacing any shape that exists there. |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | Amount by which the anchor point of an icon stem should be scaled.  For example, use *1* for default and *2* for twice as large. |
@@ -236,6 +235,6 @@ This property group inherits from the [MapElement](#mapelement) property group.
 
 This property group inherits from the [MapElement](#mapelement) property group.
 
-| Property                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Property                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|------------|
 | renderAsSurface              | Bool    |      |      |  ✔   |  ✔   | A flag that indicates that a 3D model should be rendered like a building--without depth fading against the ground. |

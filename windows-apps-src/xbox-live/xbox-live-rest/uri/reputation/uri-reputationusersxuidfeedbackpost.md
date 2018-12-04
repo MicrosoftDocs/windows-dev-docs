@@ -2,18 +2,13 @@
 title: POST (/users/xuid({xuid})/feedback)
 assetID: 48a7a510-a658-f2a3-c6bc-28a3610006e7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedbackpost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/feedback)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/xuid({xuid})/feedback)
 Used from your title if you desire to add a feedback option in your game, as opposed to using the shell. 
 The domain for these URIs is `reputation.xboxlive.com`.

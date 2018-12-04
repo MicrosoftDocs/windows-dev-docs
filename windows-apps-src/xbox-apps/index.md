@@ -1,22 +1,17 @@
 ---
-author: Mtoepke
 title: UWP on Xbox One
 description: How to build apps for the Universal Windows Platform (UWP) on Xbox One.
-ms.author: mstahl
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
 ---
-
 # UWP on Xbox One
 
 Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
 
-UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/en-us/store/register) on Windows Dev Center. When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](http://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](../xbox-live/developer-program-overview.md).
+UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/en-us/store/register) in [Partner Center](https://partner.microsoft.com/dashboard). When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](http://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](../xbox-live/developer-program-overview.md).
 
 This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
 

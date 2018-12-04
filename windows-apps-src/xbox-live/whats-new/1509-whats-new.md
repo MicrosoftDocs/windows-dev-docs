@@ -1,17 +1,13 @@
 ---
 title: What's new for the Xbox Live SDK - September 2015
-author: KevinAsgari
+
 description: What's new for the Xbox Live SDK - September 2015
 ms.assetid: 84b82fde-f6f3-4dc2-b2df-c7c7313a2cc3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # What's new for the Xbox Live SDK - September 2015
 
 Please see the [What's New - August 2015](1508-whats-new.md) article for what was added in the August 2015 release.

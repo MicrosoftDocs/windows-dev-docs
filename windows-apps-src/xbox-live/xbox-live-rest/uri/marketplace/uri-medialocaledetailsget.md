@@ -2,18 +2,13 @@
 title: GET (/media/{marketplaceId}/details)
 assetID: 7c222fc7-d70a-84ac-5aaf-f22d186f7a43
 permalink: en-us/docs/xboxlive/rest/uri-medialocaledetailsget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/details)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/media/{marketplaceId}/details)
 Returns offer details and metadata about one or more items.
 The domain for these URIs is `eds.xboxlive.com`.

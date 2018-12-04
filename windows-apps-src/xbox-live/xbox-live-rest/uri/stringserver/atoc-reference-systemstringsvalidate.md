@@ -2,18 +2,13 @@
 title: System Strings Validatation URIs
 assetID: b9a54456-7b4a-f6d8-16b9-5b6c3bd9813e
 permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
-author: KevinAsgari
+
 description: ' System Strings Validatation URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # System Strings Validatation URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *system strings validation*.

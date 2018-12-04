@@ -1,16 +1,12 @@
 ---
 title: Game Chat 2 overview
-author: KevinAsgari
+
 description: Learn how to add voice communication to your game by using Xbox Live Game Chat 2, an updated version of Game Chat.
-ms.author: tomco
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat, game chat 2, voice communication
 ms.localizationpriority: medium
 ---
-
 # Game Chat 2 Overview
 
 Game Chat 2 allows you to easily add voice and text chat communication to your app while respecting your players' privacy settings and fulfilling the Xbox Requirements for Xbox One Games and Hub Apps relating to voice and text chat. For players that have enabled speech-to-text or text-to-speech conversion via the Ease of Access - Game Chat Transcription settings, Game Chat 2 will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.

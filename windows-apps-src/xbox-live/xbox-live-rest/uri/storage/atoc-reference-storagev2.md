@@ -2,18 +2,13 @@
 title: Title Storage URIs
 assetID: 32bba1e4-0980-785e-c098-a96cd88a8e5f
 permalink: en-us/docs/xboxlive/rest/atoc-reference-storagev2.html
-author: KevinAsgari
+
 description: ' Title Storage URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Title Storage URIs
  
 This section provides details about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *title storage*.

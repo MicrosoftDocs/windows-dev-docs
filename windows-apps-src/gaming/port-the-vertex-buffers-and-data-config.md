@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Port the vertex buffers and data
 description: In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, port, vertex buffers, data, direct3d
 ms.localizationpriority: medium
 ---
-
 # Port the vertex buffers and data
 
 

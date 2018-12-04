@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: This article explains how to load and save image files using BitmapDecoder and BitmapEncoder and how to use the SoftwareBitmap object to represent bitmap images.
 title: Create, edit, and save bitmap images
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Create, edit, and save bitmap images
 
 

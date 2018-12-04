@@ -1,16 +1,11 @@
 ---
-author: payzer
 title: Xbox best practices
 description: How to optimize your application for Xbox.
-ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Xbox best practices
 
 By default, all UWP apps will run on Xbox One without any extra effort on your part. However, if want your app to shine, delight your customers, and compete with the best app experiences on Xbox, you should follow the practices below.

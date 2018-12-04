@@ -1,13 +1,9 @@
 ---
-author: jaster
 ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
 title: Using the Visual Layer with XAML
 description: Learn techniques for using the Visual Layer API's in combination with existing XAML content to create advanced animations and effects.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -37,7 +33,7 @@ For code examples, see the reference page for [**XamlCompositionBrushBase**](htt
 
 **XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
 
-See the [**Lighting**](lighting.md) section for more info on using lights, including lighting XAML UI elements.
+See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
 For code examples, see the reference page for [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
 

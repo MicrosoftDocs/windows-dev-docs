@@ -2,18 +2,13 @@
 title: POST (/users/me/scids/{scid}/clips/{gameClipId})
 assetID: 410aecad-57f9-c3dc-f35f-19c4d8dfb704
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipidpost.html
-author: KevinAsgari
+
 description: ' POST (/users/me/scids/{scid}/clips/{gameClipId})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/me/scids/{scid}/clips/{gameClipId})
 Update game clip metadata for the user's own data. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

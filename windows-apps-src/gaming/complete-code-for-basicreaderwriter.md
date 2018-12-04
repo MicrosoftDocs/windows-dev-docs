@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Complete code for BasicReaderWriter
 description: Complete code for a class and methods for reading and writing binary data files in general.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, basicreaderwriter
 ms.localizationpriority: medium
 ---
-
 # Complete code for BasicReaderWriter
 
 

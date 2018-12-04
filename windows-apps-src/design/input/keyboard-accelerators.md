@@ -1,21 +1,18 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ---
-
 # Keyboard accelerators
 
 ![Surface keyboard](images/accelerators/accelerators_hero2.png)
@@ -244,6 +241,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   args.Handled = true;
 }
 ```
+
+## Override default keyboard behavior
+
+In some cases, you might need to override the default behavior of specific keys such as the Backspace key or the Enter key. For example, 
 
 ## Disable a keyboard accelerator 
 

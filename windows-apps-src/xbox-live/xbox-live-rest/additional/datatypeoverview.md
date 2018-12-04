@@ -2,18 +2,13 @@
 title: Data Type Overview
 assetID: c154a6fa-e7b2-4652-f6fc-f946f74480e9
 permalink: en-us/docs/xboxlive/rest/datatypeoverview.html
-author: KevinAsgari
+
 description: ' Data Type Overview'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Data Type Overview
  
 Xbox Live Services uses a variety of data types related to identity and authentication. This topic provides an overview of those types.

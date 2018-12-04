@@ -1,20 +1,15 @@
 ---
-author: mijacobs
 Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 icon guidelines
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Segoe MDL2 icons
 
  
@@ -54,6 +49,12 @@ If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
+You can also use the static resource `SymbolThemeFontFamily` to access **Segoe MDL2 Assets**, instead of specifying the font by name:
+```xaml
+<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
+```
+
+
 ## How do I get this font?
 * On Windows 10: There's nothing you need to do, the font comes with Windows.
 * On a Mac, you need to download and install the font: <a href="https://aka.ms/SegoeFonts">Get the Segoe UI and MDL2 icon fonts</a>
@@ -69,9 +70,9 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
   <td>Unicode point</td>
   <td>Description</td>
  </tr>
- <tr><td><img src="images/segoe-mdl/E700.png" width="32" height="32" alt="GlobalNavButton" /></td>
+ <tr><td><img src="images/segoe-mdl/E700.png" width="32" height="32" alt="GlobalNavigationButton" /></td>
   <td>E700</td>
-  <td>GlobalNavButton</td>
+  <td>GlobalNavigationButton</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E701.png" width="32" height="32" alt="Wifi" /></td>
   <td>E701</td>

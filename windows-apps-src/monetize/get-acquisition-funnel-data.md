@@ -1,19 +1,14 @@
 ---
-author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters.
 title: Get app acquisition funnel data
-ms.author: mcleans
 ms.date: 08/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, acquisition, funnel
 ms.localizationpriority: medium
 ---
-
 # Get app acquisition funnel data
 
-Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#acquisition-funnel) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#acquisition-funnel) in Partner Center.
 
 ## Prerequisites
 

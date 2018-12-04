@@ -2,18 +2,13 @@
 title: InitialUploadResponse (JSON)
 assetID: 6abb7d37-2c35-2cc3-d9e5-eff695235262
 permalink: en-us/docs/xboxlive/rest/json-initialuploadresponse.html
-author: KevinAsgari
+
 description: ' InitialUploadResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # InitialUploadResponse (JSON)
  
 <a id="ID4EO"></a>
@@ -36,7 +31,7 @@ The InitialUploadResponse object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
    "gameClipId": "6b364924-5650-480f-86a7-fc002a1ee752"  ,  
    "uploadUri": "https://gameclips.xbox.live/upload/xuid(2716903703773872)/6b364924-5650-480f-86a7-fc002a1ee752/container",

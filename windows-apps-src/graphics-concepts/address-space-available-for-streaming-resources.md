@@ -4,15 +4,12 @@ description: This section specifies the virtual address space that is available 
 ms.assetid: 145EB4A3-3910-4126-BC7E-A4CF53E2A098
 keywords:
 - Address space available for streaming resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Address space available for streaming resources
 
 

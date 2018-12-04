@@ -2,18 +2,13 @@
 title: MatchTicket (JSON)
 assetID: 12617677-47f2-e517-af53-5ab9687eea2a
 permalink: en-us/docs/xboxlive/rest/json-matchticket.html
-author: KevinAsgari
+
 description: ' MatchTicket (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MatchTicket (JSON)
 A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD). 
 <a id="ID4EN"></a>
@@ -38,7 +33,7 @@ The MatchTicket JSON object has the following specification.
 ## Sample JSON syntax
  
 
-```cpp
+```json
 {
         "serviceConfig": "07617C5B-3423-4505-B6C6-10A16E1E5DDB",
         "hopperName": "TestHopper",

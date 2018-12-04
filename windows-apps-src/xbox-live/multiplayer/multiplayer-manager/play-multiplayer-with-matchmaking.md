@@ -1,17 +1,13 @@
 ---
 title: Play a multiplayer game by using SmartMatch
-author: KevinAsgari
+
 description: Learn how to use Xbox Live multiplayer manager to let a player find a multiplayer game by using SmartMatch.
 ms.assetid: f9001364-214f-4ba0-a0a6-0f3be0b2f523
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, multiplayer manager, flowchart, smartmatch
 ms.localizationpriority: medium
 ---
-
 # Find a multiplayer game by using SmartMatch
 
 Sometimes, a gamer may not have enough friends online when they want to play a game, or they just want to play against random people online. You can use the Xbox Live SmartMatch service to find other Xbox Live players

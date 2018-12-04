@@ -2,18 +2,13 @@
 title: PermissionId Enumeration
 assetID: 3e7ee317-4946-1105-ecd7-1e26346deccb
 permalink: en-us/docs/xboxlive/rest/privacy-enum-permissionid.html
-author: KevinAsgari
+
 description: ' PermissionId Enumeration'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionId Enumeration
 Details the PermissionId enumeration.
 Permission IDs can be used with the permission validation URLs:

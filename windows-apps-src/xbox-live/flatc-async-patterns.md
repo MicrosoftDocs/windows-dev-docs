@@ -1,12 +1,9 @@
 ---
 title: Asynchronous C API calling patterns
-author: aablackm
+
 description: Learn the asynchronous C API calling patterns for the XSAPI C API
-ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program,
 ms.localizationpriority: medium
 ---
@@ -75,7 +72,7 @@ You can tell an **asynchronous task** is complete a number of different ways:
 * Call **GetAsyncStatus** with true to wait until it completes.
 * Set a waitEvent in the **AsyncBlock** and wait for the event to be signaled
 
-With **GetAsyncStatus** and waitEvent, the **asynchronous task** is considered complete after the the AsyncBlock's **completion callback** executes however the AsyncBlock's **completion callback** is optional.
+With **GetAsyncStatus** and waitEvent, the **asynchronous task** is considered complete after the AsyncBlock's **completion callback** executes however the AsyncBlock's **completion callback** is optional.
 
 Once the **asynchronous task** is complete, you can get the results.
 

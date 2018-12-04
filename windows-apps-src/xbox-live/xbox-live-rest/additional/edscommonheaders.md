@@ -2,18 +2,13 @@
 title: EDS Common Headers
 assetID: 91297c9e-709d-7886-1da0-8a896c4953f4
 permalink: en-us/docs/xboxlive/rest/edscommonheaders.html
-author: KevinAsgari
+
 description: ' EDS Common Headers'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Common Headers
 
 <a id="ID4EO"></a>

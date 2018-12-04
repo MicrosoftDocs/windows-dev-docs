@@ -1,19 +1,14 @@
 ---
-author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your desktop application.
 title: Get details for an error in your desktop application
-ms.author: mcleans
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details, desktop application
 ms.localizationpriority: medium
 ---
-
 # Get details for an error in your desktop application
 
-Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in Partner Center.
 
 Before you can use this method, you must first use the [get error reporting data](get-error-reporting-data.md) method to retrieve the ID of the error for which you want to get detailed info.
 
@@ -47,7 +42,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to retrieve error details. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to retrieve error details. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | failureHash | string | The unique ID of the error for which you want to get detailed info. To get this value for the error you are interested in, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method. |  Yes  |
 | startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date.<p/><p/>**Note:**&nbsp;&nbsp;This method can only retrieve details for errors that occurred in the last 30 days. |  No  |
 | endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |

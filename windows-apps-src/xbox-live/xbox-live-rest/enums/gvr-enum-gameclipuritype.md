@@ -2,18 +2,13 @@
 title: GameClipUriType Enumeration
 assetID: 945b5ac9-1f4e-5363-1a69-fa7e10c34e05
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipuritype.html
-author: KevinAsgari
+
 description: ' GameClipUriType Enumeration'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GameClipUriType Enumeration
 Details the GameClipUriType enumeration. 
 <a id="ID4ET"></a>

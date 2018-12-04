@@ -2,18 +2,13 @@
 title: JavaScript Object Notation (JSON) Object Reference
 assetID: 8efcc6f3-d88a-1b15-bcfc-d79a24581b0a
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-json.html
-author: KevinAsgari
+
 description: ' JavaScript Object Notation (JSON) Object Reference'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # JavaScript Object Notation (JSON) Object Reference
  
 JavaScript Object Notation (JSON) is a lightweight, standards-based, object-oriented notation for encapsulating data on the web.

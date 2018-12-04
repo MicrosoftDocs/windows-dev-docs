@@ -2,18 +2,13 @@
 title: inventoryItem (JSON)
 assetID: 446cca28-b2d3-1b84-f973-94065519b391
 permalink: en-us/docs/xboxlive/rest/json-inventoryitem.html
-author: KevinAsgari
+
 description: ' inventoryItem (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # inventoryItem (JSON)
 The core inventory item represents the standard item on which an entitlement can be granted.
 <a id="ID4EN"></a>
@@ -42,7 +37,7 @@ The inventoryItem object has the following specification.
 ## Sample JSON syntax
 
 
-```cpp
+```json
 inventoryItem {
   "url": string,
   "itemType": "Music" | "Video" | "Game" | "AvatarItem" | "Subscription" | "DLC" | "Consumable" | ...,
@@ -71,7 +66,7 @@ The consumable entity presents the minimal set of properties for a consumable it
 | quantity| 32-bit signed integer| The current quantity of this inventory item.|
 
 
-```cpp
+```json
 consumableInventoryItem {
   "url": string,
   "quantity": int

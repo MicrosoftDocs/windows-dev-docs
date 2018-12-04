@@ -1,12 +1,8 @@
 ---
 title: Web Account Manager
 description: This article describes how to use the AccountsSettingsPane to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs.
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
@@ -333,7 +329,7 @@ Because obtaining a token silently is very simple, you should use this process t
 
 ## Remove a stored account
 
-If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
+If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

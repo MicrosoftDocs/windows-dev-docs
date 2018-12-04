@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
 description: This article shows you how to play media while your app is running in the background.
 title: Play media in the background
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Play media in the background
 This article shows you how to configure your app so that media continues to play when your app moves from the foreground to the background. This means that even after the user has minimized your app, returned to the home screen, or has navigated away from your app in some other way, your app can continue to play audio. 
 
@@ -92,7 +87,7 @@ If you need to make network calls that occur in the background when media is not
 ## Related topics
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
 * [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  

@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Install a related set using an App Installer file
 description: In this section, we will review the steps you need to take to allow the installation of a related set via App Installer. We will also go through the steps to construct a *.appinstaller file that will define your related set.
-ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---
-
 # Install a related set using an App Installer file
 
 If you're just starting out with UWP optional packages or related sets, the following articles are good resources to get started. 
@@ -86,7 +81,7 @@ The basic template includes the App Installer file information.
 ```
 
 ### Step 3: Add the main package information 
-If the main app package is an .appxbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
+If the main app package is an .appxbundle or .msixbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx or .msix file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

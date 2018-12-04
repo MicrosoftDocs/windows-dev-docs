@@ -2,18 +2,13 @@
 title: POST ({itemID})
 assetID: 2c3c166b-e638-cfb9-d68e-9f8ab9a838d3
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurlpost.html
-author: KevinAsgari
+
 description: ' POST ({itemID})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST ({itemID})
 Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.
 The domain for these URIs is `inventory.xboxlive.com`.
