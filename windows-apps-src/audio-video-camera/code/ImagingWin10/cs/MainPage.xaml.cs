@@ -71,7 +71,7 @@ namespace ImagingWin10
             softwareBitmap = await CreateSoftwareBitmapFromFile(inputFile);
 
 
-            // <SnippetPickOuputFile>
+            // <SnippetPickOutputFile>
             FileSavePicker fileSavePicker = new FileSavePicker();
             fileSavePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileSavePicker.FileTypeChoices.Add("JPEG files", new List<string>() { ".jpg" });
@@ -84,7 +84,7 @@ namespace ImagingWin10
                 // The user cancelled the picking operation
                 return;
             }
-            // </SnippetPickOuputFile>
+            // </SnippetPickOutputFile>
 
 
             SaveSoftwareBitmapToFile(softwareBitmap, outputFile);
