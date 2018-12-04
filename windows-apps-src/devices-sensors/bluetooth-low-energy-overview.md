@@ -23,7 +23,7 @@ The two primary roles of discovery are called Central and Peripheral. In general
 ## Attributes
 A common acronym you will see in the Windows Bluetooth APIs is Generic Attribute (GATT). The GATT Profile defines the structure of data and modes of operation by which two Bluetooth LE devices communicate. The attribute is the main building block of GATT. The main types of attributes are services, characteristics and descriptors. These attributes perform differently between clients and servers, so it is more useful to discuss their interaction in the relevant sections. 
 
-![Typical Attribute heirarchy in a common profile](images/gatt-service.png)
+![Typical Attribute hierarchy in a common profile](images/gatt-service.png)
 
 *The heart rate service is expressed in GATT Server API form*
 
