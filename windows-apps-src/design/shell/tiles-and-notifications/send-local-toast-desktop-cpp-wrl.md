@@ -45,7 +45,7 @@ Include the compat library header file, and the header files and namespaces rela
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
-#include "NotificationActivationCallback.h"
+#include <NotificationActivationCallback.h>
 #include <windows.ui.notifications.h>
 
 using namespace ABI::Windows::Data::Xml::Dom;
