@@ -58,7 +58,7 @@ The following steps describe the important parts of this process in detail.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
 
-4. Check the [IsStale](htthttps://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) property to determine whether the cached variation assignment needs to be refreshed with a remote variation assignment from the server. If it does need to be refreshed, call the static [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) method to check for an updated variation assignment from the server and refresh the local cached variation.
+4. Check the [IsStale](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) property to determine whether the cached variation assignment needs to be refreshed with a remote variation assignment from the server. If it does need to be refreshed, call the static [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) method to check for an updated variation assignment from the server and refresh the local cached variation.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
