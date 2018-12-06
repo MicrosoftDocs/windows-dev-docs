@@ -1,8 +1,7 @@
 ---
 title: Script a Leaderboard in Unity
-
 description: Guide on building your own Leaderboard in Unity
-ms.date: 4/24/2018
+ms.date: 04/24/2018
 ms.topic: get-started-article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity, leaderboards
 ---

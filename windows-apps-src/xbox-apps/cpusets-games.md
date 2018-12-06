@@ -1,8 +1,9 @@
 ---
 title: CPUSets for game development
 description: This article provides an overview of the CPUSets API new to the Universal Windows Platform (UWP), and covers the core information pertinent to game and application development.
-
+ms.topic: article
 ms.localizationpriority: medium
+ms.date: 02/08/2017
 ---
 # CPUSets for game development
 
