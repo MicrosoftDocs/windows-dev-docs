@@ -2,7 +2,7 @@
 title: Sign-In with the SignInManager in Unity
 
 description: Overview of the Unity Plugin Sign-In Manager
-ms.date: 5/08/2018
+ms.date: 05/08/2018
 ms.topic: get-started-article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity
 ---

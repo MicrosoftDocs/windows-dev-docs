@@ -2,6 +2,8 @@
 title: Unity - Version control your UWP project
 description: Version your Unity UWP project.
 ms.localizationpriority: medium
+ms.topic: article
+ms.date: 02/08/2017
 ---
 # Unity: Version control your UWP project
 

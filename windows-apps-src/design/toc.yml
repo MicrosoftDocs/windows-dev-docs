@@ -295,7 +295,7 @@
           href: shell/tiles-and-notifications/tile-schema.md
         - name: Special tile templates
           href: shell/tiles-and-notifications/special-tile-templates-catalog.md
-        - name: Send local tile notfication
+        - name: Send local tile notification
           href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
         - name: Chaseable tile notifications
           href: shell/tiles-and-notifications/chaseable-tile-notifications.md

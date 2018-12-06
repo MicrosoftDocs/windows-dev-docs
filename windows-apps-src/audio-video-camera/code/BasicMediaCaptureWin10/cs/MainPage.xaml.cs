@@ -421,7 +421,7 @@ namespace BasicCameraWin10
         // </SnippetInitializeCameraAsync>
 
         /// <summary>
-        /// Starts the preview and adjusts it for for rotation and mirroring after making a request to keep the screen on
+        /// Starts the preview and adjusts it for rotation and mirroring after making a request to keep the screen on
         /// </summary>
         /// <returns></returns>
         // <SnippetStartPreviewAsync>

@@ -491,7 +491,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 ```csharp
 /// <summary>
 /// The pointer canceled event handler.
-/// Fires for for various reasons, including: 
+/// Fires for various reasons, including: 
 ///    - Touch contact canceled by pen coming into range of the surface.
 ///    - The device doesn't report an active contact for more than 100ms.
 ///    - The desktop is locked or the user logged off. 

@@ -1,10 +1,13 @@
 ---
 title: Authentication for UWP projects
-
+author: aablackm
 description: Learn how to sign in Xbox Live users in a Universal Windows Platform (UWP) title.
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
+ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
+
+
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, authentication, sign-in
 ms.localizationpriority: medium
 ---
@@ -12,9 +15,9 @@ ms.localizationpriority: medium
 
 To take advantage of Xbox Live features in games, a user needs to create an Xbox Live profile to identify themselves in the Xbox Live community.  Xbox Live services keep track of game related activities using that Xbox Live profile, such as the user's gamertag and gamer picture, who the user's gaming friends are, what games the user has played, what achievements the user has unlocked, where the user stands on the leaderboard for a particular game, etc.
 
-When a user wants to access Xbox Live services in a particular game on a particular device, the user needs to authenticate first.  The game can call Xbox Live APIs to initiate the authenticate process.  In some cases, the user will be presented with an interface to provide additional information, such as entering the username and password of the Microsoft Account to use, giving permission consent to the game, resolving account issues, accepting new terms of use, etc.
+When a user wants to access Xbox Live services in a particular game on a particular device, the user needs to authenticate first.  The game can call Xbox Live APIs to initiate the authentication process.  In some cases, the user will be presented with an interface to provide additional information, such as entering the username and password of the Microsoft Account to use, giving permission consent to the game, resolving account issues, accepting new terms of use, etc.
 
-Once authenticated, the user is associated with on that device until they explicitly sign out of Xbox Live from the Xbox app.  Only one player is allowed to be authenticated on a device at a time (for all Xbox Live games);  for a new player to be authenticated on the device, the existing authenticated player must sign out first.
+Once authenticated, the user is associated with that device until they explicitly sign out of Xbox Live from the Xbox app.  Only one player is allowed to be authenticated on a non-console device at a time (for all Xbox Live games);  for a new player to be authenticated on a non-console device, the existing authenticated player must sign out first.
 
 ## Steps To Sign-In
 
@@ -29,7 +32,7 @@ At a high level, you use the Xbox Live APIs by following these steps:
 
 ### Creating an XboxLiveUser object
 
-Most of the Xbox Live activities are related to the Xbox Live Users.  As a game developer, you need to first create an XboxLiveUser object to represent the local user.
+Most of the Xbox Live activities are related to the Xbox Live User.  As a game developer, you need to first create an XboxLiveUser object to represent the local user.
 
 C++:
 
@@ -80,7 +83,7 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  Thread Dispatcher is used to communication between threads. Although silent sign in API is not going to show any UI, XSAPI still need the UI thread dispatcher for getting the information about your appx's locale. You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread. Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).
+  Thread Dispatcher is used to communication between threads. Although the silent sign-in API is not going to show any UI, XSAPI still needs the UI thread dispatcher for getting the information about your appx's locale. You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread. Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).
 
 
 There are 3 possible outcomes from the silent sign-in attempt
@@ -349,13 +352,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## Determining if the device is offline
 
-Sign in APIs will still be success when offline if the user has signed in once, and the last signed in account will be returned.
+Sign in APIs will still be successful when offline if the user has signed in once, and the last signed in account will be returned.  
 
-If the title can be played offline (Campaign mode, etc.)
-Regardless the device is online or offline, the title can allow the user to play and record game progress via WriteInGameEvent API and Connected Storage API, both of them work properly while the device is offline.
+If no user has been signed in before, offline sign-in will not be achievable.
 
-If the title cannot be played offline (Multiplayer game or Server based game, etc.)
-The title should call the GetNetworkConnectivityLevel API to find out if the device is offline, and inform the user about the status and possible solutions (for example, ‘You need to connect to Internet to continue…’)
+If the title can be played offline (Campaign mode, etc.), the title can allow the user to play and record game progress via WriteInGameEvent API and Connected Storage API, both of them work properly while the device is offline.
+
+If the title cannot be played offline (Multiplayer game or Server based game, etc.) the title should call the GetNetworkConnectivityLevel API to find out if the device is offline, and inform the user about the status and possible solutions (for example, ‘You need to connect to Internet to continue…’).
 
 ## Online Status Code Samples
 
