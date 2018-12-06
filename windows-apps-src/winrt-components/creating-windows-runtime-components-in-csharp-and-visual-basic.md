@@ -4,6 +4,9 @@ description: Starting with the .NET Framework 4.5, you can use managed code to c
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
 ms.topic: article
+dev_langs:
+ - CSharp
+ - VB
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

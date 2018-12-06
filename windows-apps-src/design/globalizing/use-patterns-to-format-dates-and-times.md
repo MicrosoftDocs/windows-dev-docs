@@ -92,7 +92,7 @@ Suppose you wish to display the current month and day together with the current 
 June 25 | 1:38 PM
 ```
 
-The date part corresponds to the "month day" format template, and the time part corresponds to the "hour minute" format template. So, you can construct formatters for the relevant date and time format templates, and then concatenate their ouput together using a localizable format string.
+The date part corresponds to the "month day" format template, and the time part corresponds to the "hour minute" format template. So, you can construct formatters for the relevant date and time format templates, and then concatenate their output together using a localizable format string.
 
 ```csharp
 var dateToFormat = System.DateTime.Now;

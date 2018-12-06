@@ -45,7 +45,7 @@ Include the compat library header file, and the header files and namespaces rela
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
-#include "NotificationActivationCallback.h"
+#include <NotificationActivationCallback.h>
 #include <windows.ui.notifications.h>
 
 using namespace ABI::Windows::Data::Xml::Dom;
@@ -212,7 +212,7 @@ if (SUCCEEDED(hr))
     {
         // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc.Get(), &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!

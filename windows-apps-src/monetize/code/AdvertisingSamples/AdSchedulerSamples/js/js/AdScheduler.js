@@ -1625,7 +1625,7 @@
         },
 
         /// <field type="Function" locid="MicrosoftNSJS.Advertising.AdScheduler.onPodStart">
-        ///   This event is fired when an ad pod starts. A pod is is a set of ads scheduled to 
+        ///   This event is fired when an ad pod starts. A pod is a set of ads scheduled to 
         ///   start at the same time and which will play in series.
         ///   The handler function takes two parameters: 
         ///       the AdScheduler which fired the event,
