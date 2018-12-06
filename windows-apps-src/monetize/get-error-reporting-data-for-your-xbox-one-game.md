@@ -41,7 +41,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the Xbox One game for which you are retrieving error reporting data. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Partner Center analytics report, the product ID is included in the .tsv file. |  Yes  |
+| applicationId | string | The **Store ID** of the Xbox One game for which you are retrieving error reporting data. The **Store ID** is available on the App identity page in Partner Center. An example **Store ID** is 9WZDNCRFJ3Q8. |  Yes  |
 | startDate | date | The start date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```.  |  No  |
 | endDate | date | The end date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
@@ -54,7 +54,7 @@ To use this method, you need to first do the following:
 
 ### Request example
 
-The following examples demonstrate several requests for getting Xbox One game error reporting data. Replace the *applicationId* value with the  product ID for your game.
+The following examples demonstrate several requests for getting Xbox One game error reporting data. Replace the *applicationId* value with the **Store ID** for your game.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failurehits?applicationId=BRRT4NJ9B3D1&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -83,7 +83,7 @@ Elements in the *Value* array contain the following values.
 | Value           | Type    | Description        |
 |-----------------|---------|---------------------|
 | date            | string  | The first date in the date range for the error data, in the format ```yyyy-mm-dd```. If the request specifies a single day, this value is that date. If the request specifies a longer date range, this value is the first date in that date range. For requests that specify an *aggregationLevel* value of **hour**, this value also includes a time value in the format ```hh:mm:ss``` in the local time zone in which the error occurred.  |
-| applicationId   | string  | The product ID of the Xbox One game for which you want to retrieve error data.   |
+| applicationId   | string  | The **Store ID** of the Xbox One game for which you want to retrieve error data.   |
 | applicationName | string  | The display name of the game.   |
 | failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.  |
 | failureHash     | string  | The unique identifier for the error.   |

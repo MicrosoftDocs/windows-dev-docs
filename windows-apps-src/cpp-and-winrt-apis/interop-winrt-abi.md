@@ -199,15 +199,22 @@ namespace abi
     using namespace ABI::Windows::Foundation;
 };
 
-template <typename T>
-T convert_from_abi(::IUnknown* from)
+namespace sample
 {
-    T to{ nullptr };
+    template <typename T>
+    T convert_from_abi(::IUnknown* from)
+    {
+        T to{ nullptr };
 
-    winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
-        reinterpret_cast<void**>(winrt::put_abi(to))));
+        winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
+            reinterpret_cast<void**>(winrt::put_abi(to))));
 
-    return to;
+        return to;
+    }
+    inline auto put_abi(winrt::hstring& object) noexcept
+    {
+        return reinterpret_cast<HSTRING*>(winrt::put_abi(object));
+    }
 }
 
 int main()
@@ -218,13 +225,13 @@ int main()
     std::wcout << "C++/WinRT: " << uri.Domain().c_str() << std::endl;
 
     // Convert to an ABI type.
-    winrt::com_ptr<abi::IUriRuntimeClass> ptr{ uri.as<abi::IUriRuntimeClass>() };
+    winrt::com_ptr<abi::IUriRuntimeClass> ptr = uri.as<abi::IUriRuntimeClass>();
     winrt::hstring domain;
-    winrt::check_hresult(ptr->get_Domain(reinterpret_cast<HSTRING*>(put_abi(domain))));
+    winrt::check_hresult(ptr->get_Domain(sample::put_abi(domain)));
     std::wcout << "ABI: " << domain.c_str() << std::endl;
 
     // Convert from an ABI type.
-    winrt::Uri uri_from_abi{ convert_from_abi<winrt::Uri>(ptr.get()) };
+    winrt::Uri uri_from_abi = sample::convert_from_abi<winrt::Uri>(ptr.get());
 
     WINRT_ASSERT(uri.Domain() == uri_from_abi.Domain());
     WINRT_ASSERT(uri == uri_from_abi);

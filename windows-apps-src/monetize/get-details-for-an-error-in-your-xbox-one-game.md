@@ -42,7 +42,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the Xbox One game for which you are retrieving error details. To get the product ID of your game, navigate to your game in the Xbox Developer Portal (XDP) and retrieve the product ID from the URL. Alternatively, if you download your health data from the Windows Partner Center analytics report, the product ID is included in the .tsv file. |  Yes  |
+| applicationId | string | The **Store ID** of the Xbox One game for which you are retrieving error details. The **Store ID** is available on the App identity page in Partner Center. An example **Store ID** is 9WZDNCRFJ3Q8. |  Yes  |
 | failureHash | string | The unique ID of the error for which you want to get detailed info. To get this value for the error you are interested in, use the [get error reporting data for your Xbox One game](get-error-reporting-data-for-your-xbox-one-game.md) method and use the **failureHash** value in the response body of that method. |  Yes  |
 | startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date. |  No  |
 | endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |
@@ -54,7 +54,7 @@ To use this method, you need to first do the following:
 
 ### Request example
 
-The following examples demonstrate several requests for getting detailed error data for an Xbox One game. Replace the *applicationId* value with the product ID for your game.
+The following examples demonstrate several requests for getting detailed error data for an Xbox One game. Replace the *applicationId* value with the **Store ID** for your game.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails?applicationId=BRRT4NJ9B3D1&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -84,7 +84,7 @@ Elements in the *Value* array contain the following values.
 
 | Value           | Type    | Description     |
 |-----------------|---------|----------------------------|
-| applicationId   | string  | The product ID of the Xbox One game for which you retrieved detailed error data.      |
+| applicationId   | string  | The **Store ID** of the Xbox One game for which you retrieved detailed error data.      |
 | failureHash     | string  | The unique identifier for the error.     |
 | failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.           |
 | date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
