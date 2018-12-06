@@ -75,7 +75,7 @@ Icons can save space, but when should you use them?
 
 ## Using the right type of icon
 
-There are many ways to create an icon. You can use a symbol font like Segoe MDL2 Assets. You could create you own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the different ways you can add an icon to your app. 
+There are many ways to create an icon. You can use a symbol font like Segoe MDL2 Assets. You could create your own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the different ways you can add an icon to your app. 
 
 ### Use a predefined icon.
 :::row:::
