@@ -20,6 +20,9 @@ To get the latest development tools, see [Downloads and tools for Windows 10](ht
 > [!NOTE]
 > To submit an app that uses optional packages and/or related sets to the Store, you will need permission. Optional packages and related sets can be used for Line of Business (LOB) or enterprise apps without Partner Center permission if they are not submitted to the Store. See [Windows developer support](https://developer.microsoft.com/windows/support) to get permission to submit an app that uses optional packages and related sets.
 
+> [!NOTE]
+> Optional packages containing executable code must be part of a [related set](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets). You will not be able to execute code from an optional package unless it is part of a related set.
+
 ## C++ Optional packages with executable code
 
 To load code from a C++ optional package, see the [OptionalPackageSample](https://github.com/AppInstaller/OptionalPackageSample) repository on GitHub. The [OptionalPackageDLL](https://github.com/AppInstaller/OptionalPackageSample/tree/master/OptionalPackageDLL) shows how to create a project with code that can be executed from the main package. The MyMainApp project demonstrates how to [load code](https://github.com/AppInstaller/OptionalPackageSample/blob/bf6b4915ff1f3b8abfdaacb1ad9e77184c49fe18/MyMainApp/MainPage.xaml.cpp#L182) from the OptionalPackageDLL.dll file.
