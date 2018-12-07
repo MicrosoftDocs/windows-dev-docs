@@ -550,6 +550,8 @@
           href: globalizing/use-mat.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.md
+        - name: Prepare your application for the Japanese era change
+          href: globalizing/japanese-era-change.md
     - name: Guidelines for app help
       href: in-app-help/guidelines-for-app-help.md
       items:

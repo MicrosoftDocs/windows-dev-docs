@@ -5,7 +5,7 @@ title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
@@ -59,3 +59,4 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
 | [Use the Multilingual App Toolkit 4.0](use-mat.md) | The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. |
 | [Multilingual App Toolkit 4.0 FAQ & troubleshooting](mat-faq-troubleshooting.md) | This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0. |
+| [Prepare your application for the Japanese era change](japanese-era-change.md) | Learn about the May 2019 Japanese era change and how to prepare your application. |
