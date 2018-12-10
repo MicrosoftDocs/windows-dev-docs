@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 ---
 # Supported banner ad sizes
 
-The following banner ad sizes are supported for Universal Windows Platform (UWP) apps. When you instantiate your **AdControl** object in your app, make sure you set the height and width properties to match one of these supported sizes.
+The following banner ad sizes are supported for Universal Windows Platform (UWP) apps. When you instantiate your **AdControl** object in your app, make sure you set the width and height properties to match one of these supported sizes.
+
+Sizes are width x height.
 
 * 160x600
 * 300x50
