@@ -55,6 +55,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column:::
         ![hero image](images/framer.png)
         <b>Framer toolkit</b><br>
+        (This toolkit is no longer supported.)<br/>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
