@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
 title: App settings and data
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # App settings and data
 
 
@@ -38,11 +33,11 @@ App data is data that the app itself creates and manages. It includes runtime st
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p><a href="guidelines-for-app-settings.md">Guidelines</a></p></td>
 <td align="left"><p>Best practices for creating and displaying app settings.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
+<td align="left"><p><a href="store-and-retrieve-app-data.md">Store and retrieve app data</a></p></td>
 <td align="left"><p>How to store and retrieve local, roaming, and temporary app data.</p></td>
 </tr>
 </tbody>

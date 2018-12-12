@@ -1,17 +1,12 @@
 ---
-author: mcleblanc
 description: You have two options when you begin the porting process.
 title: Porting a Windows Runtime 8.x project to a UWP project'
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
-ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Porting a Windows Runtime 8.x project to a UWP project
 
 

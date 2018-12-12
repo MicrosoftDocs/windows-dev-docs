@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Adding audio to the Marble Maze sample
 description: This document describes the key practices to consider when you work with audio and shows how Marble Maze applies these practices.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
-ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, audio, games, sample
 ms.localizationpriority: medium
 ---
-
 # Adding audio to the Marble Maze sample
 
 This document describes the key practices to consider when you work with audio and shows how Marble Maze applies these practices. Marble Maze uses [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) to load audio resources from files, and [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) to mix and play audio and to apply effects to audio.
@@ -153,7 +148,7 @@ When you create an effect chain, follow these steps:
 
 6. Disable or enable the effect whenever appropriate.
 
-The **Audio** class defines the **CreateReverb** method to create the effect chain that implements reverb. This method calls the [XAudio2CreateReverb](https://msdn.microsoft.com/library/windows/desktop/ee419213) method to create a **ComPtr&lt;IUnknown&gt;** <!--[IXAudio2SubmixVoice](https://msdn.microsoft.com/library/windows/desktop/ee415915)--> object, **soundEffectXAPO**, which acts as the submix voice for the reverb effect.
+The **Audio** class defines the **CreateReverb** method to create the effect chain that implements reverb. This method calls the [XAudio2CreateReverb](https://msdn.microsoft.com/library/windows/desktop/ee419213) method to create a **ComPtr&lt;IUnknown&gt;** object, **soundEffectXAPO**, which acts as the submix voice for the reverb effect.
 
 ```cpp
 Microsoft::WRL::ComPtr<IUnknown> soundEffectXAPO;
@@ -822,7 +817,7 @@ Marble Maze also uses the **m\_engineExperiencedCriticalError** flag to guard ag
 
 That wraps up the Marble Maze game sample! Though it is a relatively simple game, it contains many of the important parts that go into any UWP DirectX game, and is a good example to follow when making your own game.
 
-Now that you've finished following along, try tinkering around with the source code and seeing what happens. Or check out [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md), another UWP DirectX game sample.
+Now that you've finished following along, try tinkering around with the source code and seeing what happens. Or check out [Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md), another UWP DirectX game sample.
 
 Ready to go further with DirectX? Then check out our guides at [DirectX programming](directx-programming.md).
 

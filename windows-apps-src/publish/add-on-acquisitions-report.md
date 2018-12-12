@@ -1,23 +1,18 @@
----
-author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+﻿---
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Add-on acquisitions report
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
-ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
-ms.localizationpriority: high
+keywords: windows 10, uwp, add-on sales, add-on acquisitions, iap sales, in-app products, iaps, add-ons
+ms.localizationpriority: medium
 ---
-
 # Add-on acquisitions report
 
 
-The **Add-on acquisitions** report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details. It also lets you get conversion info for customers on Windows 10.
+The **Add-on acquisitions** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how many add-ons you've sold, along with demographic and platform details, and shows conversion info for customers on Windows 10 (including Xbox). You can also view near real-time acquisition data for the last hour or seventy-two hour period.
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 In this report, an add-on acquisition means a customer has purchased an add-on from you (or acquired it without paying, if you offered it for free). Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
 
@@ -27,13 +22,13 @@ In this report, an add-on acquisition means a customer has purchased an add-on f
 
 ## Apply filters
 
-Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify.
+Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify. You can also select **1H** or **72H** to show acquisition data in near real time for either one hour or seventy-two hours; these time periods only apply to the **Add-on daily** tab of the **Add-on acquisitions** chart and to the **Acquisitions** tab of the **Markets** chart. 
 
 You can also expand **Filters** to filter all of the data on this page by particular add-on(s), by market and/or by device type.
 
 -   **Add-on**: The default filter is **All add-ons**, but you can limit the data to one or more of the app's add-ons.
 -   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
--   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only, you can choose a specific one here.
+-   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only (such as PC, console, or tablet), you can choose a specific one here.
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
 
@@ -64,7 +59,7 @@ You can view this data in a visual **Map** form, or toggle the setting to view i
 
 ## Add-on page views and conversions by campaign ID
 
-The **Add-on page views and conversions by campaign ID** chart shows you the total number of add-on conversions (acquisitions) per campaign ID over the selected period of time, helping you track conversions and page views from customers on Windows 10 for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Only add-on conversions are shown in this chart.
+The **Add-on page views and conversions by campaign ID** chart shows you the total number of add-on conversions (acquisitions) per campaign ID over the selected period of time, helping you track conversions and page views from customers on Windows 10 (including Xbox) for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Only add-on conversions are shown in this chart.
 
 > [!NOTE]
 > Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views. 

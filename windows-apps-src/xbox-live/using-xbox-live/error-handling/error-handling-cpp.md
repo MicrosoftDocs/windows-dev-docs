@@ -1,17 +1,13 @@
 ---
 title: C++ API error handling
-author: KevinAsgari
+
 description: Learn how to handle errors when making an Xbox Live service call with the C++ APIs.
 ms.assetid: 10b47e68-8b1f-4023-96a4-404f3f6a9850
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, error handling
 ms.localizationpriority: medium
 ---
-
 # C++ API error handling
 
 In the C++ API, rather than throwing exceptions, most calls will return xbox_live_result<payload_type> as appropriate.

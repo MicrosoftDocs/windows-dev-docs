@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: How to resume an app (DirectX and C++)
 description: This topic shows how to restore important application data when the system resumes your Universal Windows Platform (UWP) DirectX app.
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, resuming, directx
 ms.localizationpriority: medium
 ---
-
 # How to resume an app (DirectX and C++)
 
 

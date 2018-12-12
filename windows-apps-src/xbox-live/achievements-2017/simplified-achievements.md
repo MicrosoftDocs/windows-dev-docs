@@ -1,17 +1,13 @@
 ---
 title: Achievements 2017
-author: KevinAsgari
+
 description: Achievements 2017
 ms.assetid: d424db04-328d-470c-81d3-5d4b82cb792f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Achievements 2017
 
 The Achievements 2017 system enables game developers to use a direct calling model to unlock achievements for new Xbox Live games on Xbox One, Windows 10, Windows 10 Phone, Android, and iOS.
@@ -36,7 +32,7 @@ It is worth noting that game developers have also repeatedly shared feedback tha
 
 With Achievements 2017, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
 
-## What’s Different with Achievements 2017
+## What’s different with Achievements 2017
 
 |                          | Achievements 2017 system        | Cloud-Powered Achievements system      |
 |--------------------------|---------------------------------------|----------------------------------------|
@@ -47,7 +43,7 @@ With Achievements 2017, we are building a replacement of the existing Cloud-Powe
 | Real-Time Activity (RTA) | Supported                             | Supported                              |
 | Challenges               | Not Supported   | Supported                      |
 
-## Title Requirements
+## Title requirements
 
 The following are the requirements of any title that will use the Achievements 2017 system.
 
@@ -59,11 +55,11 @@ The following are the requirements of any title that will use the Achievements 2
 
 ## Update_Achievement API
 
-Once your achievements are configured via [XDP](achievements-in-xdp.md) or [UDC](achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the Update_Achievement API.
+Once your achievements are configured via XDP or [UDC](../configure-xbl/dev-center/achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the Update_Achievement API.
 
 The API is available in both the XDK and the Xbox Live SDK.
 
-### API Signature
+### API signature
 
 The API signature is as follows:
 
@@ -75,7 +71,7 @@ The API signature is as follows:
     /// <param name="xboxUserId">The Xbox User ID of the player.</param>
     /// <param name="titleId">The title ID.</param>
     /// <param name="serviceConfigurationId">The service configuration ID (SCID) for the title.</param>
-    /// <param name="achievementId">The achievement ID as defined by XDP or Dev Center.</param>
+    /// <param name="achievementId">The achievement ID as defined by XDP or Partner Center.</param>
     /// <param name="percentComplete">The completion percentage of the achievement to indicate progress.
     /// Valid values are from 1 to 100. Set to 100 to unlock the achievement.  
     /// Progress will be set by the server to the highest value sent</param>
@@ -114,7 +110,7 @@ If the user is online, the request will be immediately sent to the Xbox Live Ach
 
 If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
-### Updating Completion Progress via Update_Achievement API
+### Updating completion progress via Update_Achievement API
 
 To update a user’s progress toward unlocking an achievement, set the *percentComplete* to the appropriate whole number between 1-100.
 
@@ -124,7 +120,7 @@ If *percentComplete* is set to 100, the achievement will unlock.
 
 If *percentComplete* is set to a number greater than 100, the API will behave as if you set it to exactly 100.
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Achievements 2017 system yet?
 

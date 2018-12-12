@@ -1,17 +1,12 @@
 ---
-author: mcleblanc
 title: Choosing a programming language
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: Choosing a programming language
-ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Getting started: Choosing a programming language
 
 

@@ -1,17 +1,12 @@
 ---
-author: JordanEllis6809
 title: Bringing Unity games to UWP on Xbox
 description: Unity UWP development on Xbox.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
 ---
-
 # Bringing Unity games to UWP on Xbox
 
 
@@ -55,7 +50,7 @@ If changes are made to anything that isn't a script, for these changes to be sho
 
 ## Versioning your UWP project
 
-There are a few common situations where adding parts of this newly generated UWP directory to version control bocomes necessary. For example, if you're adding a new dependency to the UWP project (for example, the Xbox Live SDK).  We go over this example in detail at [Version control your UWP project](development-lanes-unity-versioning.md).
+There are a few common situations where adding parts of this newly generated UWP directory to version control becomes necessary. For example, if you're adding a new dependency to the UWP project (for example, the Xbox Live SDK).  We go over this example in detail at [Version control your UWP project](development-lanes-unity-versioning.md).
 
 ## See also
 - [Bringing existing games to Xbox](development-lanes-landing.md)

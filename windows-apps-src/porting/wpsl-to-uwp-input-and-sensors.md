@@ -1,17 +1,12 @@
 ---
-author: mcleblanc
 description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
 title: Porting Windows Phone Silverlight to UWP for I/O, device, and app model'
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
-ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 #  Porting Windows Phone Silverlight to UWP for I/O, device, and app model
 
 

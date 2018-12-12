@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: Test Surface Hub apps using Visual Studio
 description: The Visual Studio simulator provides an environment to design, develop, debug, and test UWP apps, including apps built for Surface Hub.
-ms.author: pafarley
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Test Surface Hub apps using Visual Studio
 The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves with the Surface Hub's screen size and resolution.
 
@@ -92,7 +87,7 @@ By default, Surface Hub only installs apps from the Microsoft Store. To install 
 For more information on the deployment process in general, see [Deploying and debugging UWP apps](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
-   > This feature requires Visual Studio 2015 Update 1 or a later version.
+   > This feature requires Visual Studio 2015 Update 1 or later, however we recommend that you use the latest most up to date version of Visual Studio. An up to date Visual Studio instance will gibe you all the latest development and security updates.
 
 1. Navigate to the debug target dropdown next to the **Start Debugging** button and select **Remote Machine**.
 

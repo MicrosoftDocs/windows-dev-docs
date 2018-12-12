@@ -4,15 +4,12 @@ description: This section lists operations that you can perform on streaming res
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
 keywords:
 - Operations available on streaming resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Operations available on streaming resources
 
 

@@ -1,33 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 title: Manage issues with audio input
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Manage issues with audio input
 
 
 Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)</li>
-<li>[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)</li>
-<li>[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)</li>
-
-</ul>
-</div>
+> **Important APIs**: [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## Assess audio-input quality

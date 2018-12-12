@@ -1,22 +1,17 @@
 ---
-author: mcleanbyron
 Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mcleans
-ms.date: 11/29/2017
+ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ---
-
 # Send requests to the Microsoft Store
 
 Starting in Windows 10, version 1607, the Windows SDK provides APIs for Store-related operations (such as in-app purchases) in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. However, although the services that support the Store are constantly being updated, expanded, and improved between OS releases, new APIs are typically added to the Windows SDK only during major OS releases.
 
-We provide the [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_) method as a flexible way to make new Store operations available to Universal Windows Platform (UWP) apps before a new version of the Windows SDK is released. You can use this method to send requests to the Store for new operations that do not yet have a corresponding API available in the latest release of the Windows SDK.
+We provide the [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) method as a flexible way to make new Store operations available to Universal Windows Platform (UWP) apps before a new version of the Windows SDK is released. You can use this method to send requests to the Store for new operations that do not yet have a corresponding API available in the latest release of the Windows SDK.
 
 > [!NOTE]
 > The **SendRequestAsync** method is available only to apps that target Windows 10, version 1607, or later. Some of the requests supported by this method are only supported in releases after Windows 10, version 1607.
@@ -76,7 +71,7 @@ This request retrieves the remote variables for the highest-ranked flight group 
 |  *requestKind*                   |  Specify 7 to return the highest-ranked flight group for the device, or specify 8 to return the highest-ranked flight group for the current user and device. We recommend using the value 8 for the *requestKind* parameter, because this value will return the highest-ranked flight group across the membership for both the current user and device.  |
 |  *parametersAsJson*                   |  Pass a JSON-formatted string that contains the data shown in the example below.  |
 
-The following example shows the format of the JSON data to pass to *parametersAsJson*. The *type* field must be assigned to the string *GetRemoteVariables*. Assign the *projectId* field to the ID of the project in which you defined the remote variables in the Windows Dev Center dashboard.
+The following example shows the format of the JSON data to pass to *parametersAsJson*. The *type* field must be assigned to the string *GetRemoteVariables*. Assign the *projectId* field to the ID of the project in which you defined the remote variables in Partner Center.
 
 ```json
 { 
@@ -85,7 +80,7 @@ The following example shows the format of the JSON data to pass to *parametersAs
 }
 ```
 
-After you submit this request, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult#Windows_Services_Store_StoreSendRequestResult_Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string with the following fields.
+After you submit this request, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string with the following fields.
 
 |  Field  |  Description  |
 |----------------------|---------------|
@@ -128,7 +123,7 @@ The following example shows the format of the JSON data to pass to *parametersAs
 }
 ```
 
-If there is an error with the request, the [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult#Windows_Services_Store_StoreSendRequestResult_HttpStatusCode) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains the response code.
+If there is an error with the request, the [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains the response code.
 
 ### Remove the current device or user from a flight group
 
@@ -151,9 +146,9 @@ The following example shows the format of the JSON data to pass to *parametersAs
 }
 ```
 
-If there is an error with the request, the [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult#Windows_Services_Store_StoreSendRequestResult_HttpStatusCode) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains the response code.
+If there is an error with the request, the [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains the response code.
 
 ## Related topics
 
 * [Show a rating and review dialog in your app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_)
+* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

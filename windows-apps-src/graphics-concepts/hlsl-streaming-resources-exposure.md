@@ -4,15 +4,12 @@ description: A specific Microsoft High Level Shader Language (HLSL) syntax is re
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
 keywords:
 - HLSL streaming resources exposure
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # HLSL streaming resources exposure
 
 
@@ -55,7 +52,7 @@ This is the summary table of HLSL methods that are changed to support feedback a
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[HLSL objects](https://msdn.microsoft.com/library/windows/desktop/ff471359)</th>
+<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">HLSL objects</a> </th>
 <th align="left">Intrinsic methods with feedback option (*) - also has clamp option</th>
 </tr>
 </thead>

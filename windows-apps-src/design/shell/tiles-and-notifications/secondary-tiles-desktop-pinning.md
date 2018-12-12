@@ -1,31 +1,29 @@
 ---
-author: mijacobs
 Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Pin secondary tiles from desktop application
 label: Pin secondary tiles from desktop application
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium
 ---
-
 # Pin secondary tiles from desktop application
 
 
-Thanks to the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!
+Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
+
+> [!IMPORTANT]
+> **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.
 
 Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.
 
 
 ## Package your app with Desktop Bridge
 
-If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.
+If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.
 
 
 ## Enable access to IInitializeWithWindow interface
@@ -83,10 +81,18 @@ bool isPinned = await tile.RequestCreateAsync();
 ```
 
 
+## Send tile notifications
+
+> [!IMPORTANT]
+> **Requires April 2018 version 17134.81 or later**: You must be running build 17134.81 or later to send tile or badge notifications to secondary tiles from Desktop Bridge apps. Before this .81 servicing update, a 0x80070490 *Element not found* exception would occur when sending tile or badge notifications to secondary tiles from Desktop Bridge apps.
+
+Sending tile or badge notifications is the same as UWP apps. See [Send a local tile notification](sending-a-local-tile-notification.md) to get started.
+
+
 ## Resources
 
 * [Full code sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Secondary tiles overview](secondary-tiles.md)
 * [Pin secondary tiles (UWP)](secondary-tiles-pinning.md)
-* [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop)
+* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
 * [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

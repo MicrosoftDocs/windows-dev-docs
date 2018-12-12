@@ -22,7 +22,7 @@ namespace NativeAdSamples
     public sealed partial class MainPage : Page
     {
         //<Variables>
-        NativeAdsManager myNativeAdsManager = null;
+        NativeAdsManagerV2 myNativeAdsManager = null;
         string myAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
         string myAdUnitId = "test";
         //</Variables>
@@ -32,7 +32,7 @@ namespace NativeAdSamples
             this.InitializeComponent();
 
             //<ConfigureNativeAd>
-            myNativeAdsManager = new NativeAdsManager(myAppId, myAdUnitId);
+            myNativeAdsManager = new NativeAdsManagerV2(myAppId, myAdUnitId);
             myNativeAdsManager.AdReady += MyNativeAd_AdReady;
             myNativeAdsManager.ErrorOccurred += MyNativeAdsManager_ErrorOccurred;
             //</ConfigureNativeAd>
@@ -43,9 +43,9 @@ namespace NativeAdSamples
         }
 
         //<AdReady>
-        void MyNativeAd_AdReady(object sender, object e)
+        void MyNativeAd_AdReady(object sender, NativeAdReadyEventArgs e)
         {
-            NativeAd nativeAd = (NativeAd)e;
+            NativeAdV2 nativeAd = e.NativeAd;
 
             // Show the ad icon.
             if (nativeAd.AdIcon != null)
@@ -85,9 +85,9 @@ namespace NativeAdSamples
             }
 
             // Add the call to action string to the button.
-            if (!string.IsNullOrEmpty(nativeAd.CallToAction))
+            if (!string.IsNullOrEmpty(nativeAd.CallToActionText))
             {
-                CallToActionButton.Content = nativeAd.CallToAction;
+                CallToActionButton.Content = nativeAd.CallToActionText;
                 CallToActionButton.Visibility = Visibility.Visible;
             }
 
@@ -119,7 +119,7 @@ namespace NativeAdSamples
         //</AdReady>
 
         //<ErrorOccurred>
-        private void MyNativeAdsManager_ErrorOccurred(object sender, AdErrorEventArgs e)
+        private void MyNativeAdsManager_ErrorOccurred(object sender, NativeAdErrorEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("NativeAd error " + e.ErrorMessage +
                 " ErrorCode: " + e.ErrorCode.ToString());

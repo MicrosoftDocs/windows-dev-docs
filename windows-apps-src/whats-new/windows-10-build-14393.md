@@ -1,22 +1,19 @@
 ---
-author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 build 14393 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1607, July, newest, 14393
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
 ---
-
 # What's new in Windows 10 for developers, build 14393
 
 Windows 10 build 14939 (also known as the Anniversary Update or version 1607), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 build 14939 API changes](windows-10-build-14393-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
+This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 build 14393 API changes](windows-10-build-14393-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
 
 ## Windows 10 build 14393 - July 2016
 
@@ -50,7 +47,7 @@ New app lifecycle events | Two new events have been added to the [app lifecycle]
 Single Process background activity | Executing background code is much easier and no longer requires creating a background task. You can run code in the background as either a separate process or directly inside the foreground application. See [Background activity with the Single Process Model](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#z3OjoTRbQMVX1puj.99) for details.
 Social extensibility and contact card APIs for the People app | Integrate app-based messaging, voice calling, and video calling actions directly to contact cards. Use contact associations to provide social content into the People app's “What’s new” view.
 StreamSocket | Added new **GetEndpointPairsAsync** methods to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx) that enable you to get a list of the endpoints that are returned by a DNS lookup for a particular service on a particular hostname. This is useful when the service is actually hosted on multiple servers, so your code can attempt to connect to more than one potential service provider, and use the first connection that is established.
-Tiles & Notifications | Badge notifications now appear in the taskbar. <br/><br/> New [chaseable tile notifications](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) let you determine what an app's Live Tile was displaying when clicked on by the user. <br/><br/> The [notification listener](../design/shell/tiles-and-notifications/notification-listener.md) allows you to access all toast notifications, including notifications not from your own app. <br/><br/> Applications can now use the new [**Windows.Ui.Notifications.Management**](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.management.aspx) namespace to send notifications for a specific user to multiple devices.
+Tiles & Notifications | Badge notifications now appear in the taskbar. <br/><br/> New [chaseable tile notifications](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) let you determine what an app's Live Tile was displaying when clicked on by the user. <br/><br/> Use a [hero image](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md#hero-image), [adaptive content](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md#adaptive-content), [attribution text](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md#attribution-text), and [context menu actions](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md#context-menu-actions) on your toast notifications. <br/><br/> The [notification listener](../design/shell/tiles-and-notifications/notification-listener.md) allows you to access all toast notifications, including notifications not from your own app. <br/><br/> [Notification mirroring](../design/shell/tiles-and-notifications/notification-mirroring.md) brings your phone's notifications to your desktop. <br/><br/> [Universal Dismiss](../design/shell/tiles-and-notifications/universal-dismiss.md) lets you link notifications across devices so when the user dismisses from one device, it's dismissed everywhere.
 Text sorting | Added new methods to [**Windows.Data.Text**](https://msdn.microsoft.com/library/windows/apps/windows.data.text.aspx) to support sorting text using phoneme sort order. This is primarily intended for use in sorting data such as proper names in the Japanese language, where it is important to sort names in phonetic order rather than in character code point order.
 Text search in XAML ComboBox | As a user types in a combo box, candidates matching the user's string are brought into view.
 UI Automation | UI automation providers can now notify the system of changes to documents by calling the [**UiaRaiseChangesEvent**](https://msdn.microsoft.com/library/windows/desktop/mt733044(v=vs.85).aspx) function.

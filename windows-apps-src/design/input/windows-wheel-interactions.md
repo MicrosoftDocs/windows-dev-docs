@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
 title: Surface Dial interactions
 label: Surface Dial interactions
 template: detail.hbs
 keywords: Surface Dial, Windows wheel, RadialController, Radial controller, user interaction, input
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
 ---
-
 # Surface Dial interactions
 
 ![Image of Surface Dial with Surface Studio](images/windows-wheel/dial-pen-studio-600px.png)  
@@ -24,11 +21,11 @@ ms.localizationpriority: medium
 Windows wheel devices, such as the Surface Dial, are a new category of input device that enable a host of compelling and unique user interaction experiences for Windows and Windows apps. 
 
 > [!IMPORTANT]
-> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices.
+> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices. 
 
 | Videos |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
 | *Surface Dial app partners* | *Surface Dial for devs* |
 
 With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse). 

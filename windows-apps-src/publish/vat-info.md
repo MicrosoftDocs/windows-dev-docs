@@ -1,21 +1,16 @@
 ---
-author: jnHs
-Description: If you’re required to provide a VAT ID number during the Dev Center registration process, here’s some info to get you started.
+Description: If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
 title: VAT info
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
-ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-
 # VAT info
 
 
-If you’re required to provide a VAT ID number during the Dev Center registration process, here’s some info to get you started.
+If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
 
 ## Understanding VAT numbers
 

@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
 title: Display the camera preview
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Display the camera preview
 
 
@@ -66,7 +61,7 @@ Call [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 ## Handle changes in exclusive control
-As stated in the previous section, **StartPreviewAsync** will throw a **FileLoadException** if another app has exclusive control of the capture device. Starting with Windows 10, version 1703, you can register a handler for the [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture#Windows_Media_Capture_MediaCapture_CaptureDeviceExclusiveControlStatusChanged) event, which is raised whenever the exclusive control status of the device changes. In the handler for this event, check the [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs#Windows_Media_Capture_MediaCaptureDeviceExclusiveControlStatusChangedEventArgs_Status) property to see what the current status is. If the new status is **SharedReadOnlyAvailable**, then you know you can't currently start the preview and you may want to update your UI to alert the user. If the new status is **ExclusiveControlAvailable**, then you can try starting the camera preview again.
+As stated in the previous section, **StartPreviewAsync** will throw a **FileLoadException** if another app has exclusive control of the capture device. Starting with Windows 10, version 1703, you can register a handler for the [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged) event, which is raised whenever the exclusive control status of the device changes. In the handler for this event, check the [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) property to see what the current status is. If the new status is **SharedReadOnlyAvailable**, then you know you can't currently start the preview and you may want to update your UI to alert the user. If the new status is **ExclusiveControlAvailable**, then you can try starting the camera preview again.
 
 [!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
 

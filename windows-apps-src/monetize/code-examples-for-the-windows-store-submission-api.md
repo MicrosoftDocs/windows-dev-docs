@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
 description: Use the code examples in this section to learn more about using the Microsoft Store submission API.
 title: Code examples for the submission API
-ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, code examples
 ms.localizationpriority: medium
 ---
-
 # Code examples for the submission API
 
 This section provides code examples for using the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) in several different programming languages.

@@ -1,16 +1,11 @@
 ---
-author: serenaz
 Description: Layout guidelines for forms in UWP apps.
 title: Forms
 template: detail.hbs
-ms.author: sezhen
 ms.date: 11/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, fluent
 ---
-
 # Forms
 A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more. 
 
@@ -29,7 +24,7 @@ A form is a dedicated page for collecting data inputs that are clearly related t
 
 ## Types of forms
 
-When thinking about how user input is submittted and displayed, there are two types of forms:
+When thinking about how user input is submitted and displayed, there are two types of forms:
 
 ### 1. Instantly updating
 ![settings page](images/control-examples/toggle-switch-news.png)
@@ -41,10 +36,10 @@ The other type of form allows the user to choose when to submit data with a clic
 
 ![calendar add new event page](images/calendar-form.png)
 
-This type of form gives the user flexibility in responding. Typically, this type of form contains more free form input fields, and thus recieves a greater variety of responses. To ensure valid user input and properly formatted data upon submission, consider the following recommendations:
+This type of form gives the user flexibility in responding. Typically, this type of form contains more free form input fields, and thus receives a greater variety of responses. To ensure valid user input and properly formatted data upon submission, consider the following recommendations:
 
 - Make it impossible to submit invalid information by using the correct control (i.e., use a CalendarDatePicker rather than a TextBox for calendar dates). See more on selecting the appropriate input controls in your form in the Input Controls section later.
-- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox#Windows_UI_Xaml_Controls_TextBox_PlaceholderText) property.
+- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) property.
 - Provide users with the appropriate on-screen keyboard by stating the expected input of a control with the [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) property.
 - Mark required input with an asterisk * on the label.
 - Disable the submit button until all required information is filled in.
@@ -57,7 +52,7 @@ This type of form gives the user flexibility in responding. Typically, this type
 To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms. 
 
 ### Labels
-[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property that to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
+[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock) instead.
 
 To [design for accessibility](../accessibility/accessibility.md), label all individual and groups of controls for clarity for both human and screen readers. 
 
@@ -94,7 +89,7 @@ Creating columns can reduce unnecessary white space in forms, especially with la
 </div>
 
 ### Responsive layout
-Forms should resize as the screen or window size changes, so users don't overlook any input fields. For more information, see [responsive design techniques](../basics/design-and-ui-intro.md#responsive-design-techniques). For example, you might want to keep specific regions of the form always in view, no matter the screen size.
+Forms should resize as the screen or window size changes, so users don't overlook any input fields. For more information, see [responsive design techniques](../layout/responsive-design.md). For example, you might want to keep specific regions of the form always in view, no matter the screen size.
 
 ![forms focus](images/forms-focus2.png)
 
@@ -153,7 +148,7 @@ For more complex and custom UI controls, look at UWP resources available from co
 
 ## One column form example
 This example uses an Acrylic [master/detail](master-details.md) [list view](lists.md) and [NavigationView](navigationview.md) control.
-![Screenshot of another form exmaple](images/FormExample2.png)
+![Screenshot of another form example](images/FormExample2.png)
 ```xaml
 <StackPanel>
     <TextBlock Text="New Customer" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -178,7 +173,7 @@ This example uses an Acrylic [master/detail](master-details.md) [list view](list
 ```
 
 ## Two column form example
-This example uses the [Pivot](tabs-pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](app-bars.md) in addition to input controls.
+This example uses the [Pivot](pivot.md) control, [Acrylic](../style/acrylic.md) background, and [CommandBar](app-bars.md) in addition to input controls.
 ![Screenshot of form example](images/FormExample.png)
 ```xaml
 <Grid>

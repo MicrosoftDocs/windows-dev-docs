@@ -1,23 +1,20 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: Keyboard events
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
-ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Keyboard events
 
 ## Keyboard events and focus
@@ -179,7 +176,7 @@ void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Wind
 
 bool KeyboardSupport::MainPage::IsCtrlKeyPressed()
 {
-    var ctrlState = CoreWindow::GetForCurrentThread().GetKeyState(VirtualKey::Control);
+    auto ctrlState = CoreWindow::GetForCurrentThread()->GetKeyState(VirtualKey::Control);
     return (ctrlState & CoreVirtualKeyStates::Down) == CoreVirtualKeyStates::Down;
 }
 
@@ -324,7 +321,7 @@ A general limitation of this technique is that the **AddHandler** API takes a pa
 
 You can override key events for specific controls (such as [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) to provide consistent focus navigation for various input devices, including keyboard and gamepad.
 
-In the following example, we subclass the control and override the KeyDown behavior to move focus to the the GridView content when any arrow key is pressed.
+In the following example, we subclass the control and override the KeyDown behavior to move focus to the GridView content when any arrow key is pressed.
 
 ```csharp
 public class CustomGridView : GridView
@@ -370,9 +367,9 @@ Custom controls can implement their own similar override behavior for key events
 
 Text input controls provide automatic support for the touch keyboard. When the user sets the input focus to a text control by using touch input, the touch keyboard appears automatically. When the input focus is not on a text control, the touch keyboard is hidden.
 
-When the touch keyboard appears, it automatically repositions your UI to ensure that the focused element remains visible. This can cause other important areas of your UI to move off screen. However, you can disable the default behavior and make your own UI adjustments when the touch keyboard appears. For more info, see [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633).
+When the touch keyboard appears, it automatically repositions your UI to ensure that the focused element remains visible. This can cause other important areas of your UI to move off screen. However, you can disable the default behavior and make your own UI adjustments when the touch keyboard appears. For more info, see the [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard).
 
-If you create a custom control that requires text input, but does not derive from a standard text input control, you can add touch keyboard support by implementing the correct UI Automation control patterns. For more info, see [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md) and the [Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019).
+If you create a custom control that requires text input, but does not derive from a standard text input control, you can add touch keyboard support by implementing the correct UI Automation control patterns. For more info, see the [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard).
 
 Key presses on the touch keyboard raise [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) events just like key presses on hardware keyboards. However, the touch keyboard will not raise input events for Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C, and Ctrl+V, which are reserved for text manipulation in the input control.
 
@@ -389,6 +386,7 @@ You can make it much faster and easier for users to enter data in your app by se
 * [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345)
 
 **Samples**
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 * [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)

@@ -4,15 +4,12 @@ description: Use the parameters in this section to define tile pools when creati
 ms.assetid: FDC1AD88-BC41-49EE-881E-F21743D407DB
 keywords:
 - Tile pool creation parameters
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tile pool creation parameters
 
 

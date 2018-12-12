@@ -1,34 +1,31 @@
 ---
-author: TylerMSFT
 title: Create and consume an app service
 description: Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps, and how to consume those services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
-ms.author: twhitney
+keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app, app service
 ms.date: 09/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Create and consume an app service
 
+App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.
 
-Learn how to write a Universal Windows Platform (UWP) app that can provide a service to other UWP apps, and how to consume that service.
+Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating and consuming an app service that runs in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about running an app service in the same process as the provider.
 
-Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating app services that run in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about running an app service in the same process as the provider.
-
-For more app service samples, see [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+For an app service code sample, see [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 ## Create a new app service provider project
 
 In this how-to, we'll create everything in one solution for simplicity.
 
 -   In Microsoft Visual Studio, create a new UWP app project and name it **AppServiceProvider**. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that makes the app service available to other UWP apps.
--   When asked to select a **Target Version** for the project, select at least **10.0.14393**. If you want to use the new `SupportsMultipleInstances` attribute, you must be using Visual Studio 2017 and target **10.0.15063** (**Windows 10 Creator's Update**) or higher.
+-   When asked to select a **Target Version** for the project, select at least **10.0.14393**. If you want to use the new `SupportsMultipleInstances` attribute, you must be using Visual Studio 2017 and target **10.0.15063** (**Windows 10 Creators Update**) or higher.
 
 <span id="appxmanifest"/>
+
 ## Add an app service extension to package.appxmanifest
 
 In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension inside the `&lt;Application&gt;` element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service project exposes the service to other apps. We recommend using a reverse domain name style for the service name.
@@ -60,7 +57,7 @@ The **Category** attribute identifies this application as an app service provide
 
 The **EntryPoint** attribute identifies the namespace qualified class that implements the service, which we'll implement next.
 
-The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process. This is not required but is available to you if you need that functionality and are targeting the `10.0.15063` SDK (**Windows 10 Creator's Update**) or higher. It also should be prefaced by the `uap4` namespace.
+The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process. This is not required but is available to you if you need that functionality and are targeting the `10.0.15063` SDK (**Windows 10 Creators Update**) or higher. It also should be prefaced by the `uap4` namespace.
 
 ## Create the app service
 
@@ -235,6 +232,7 @@ Another way to get the package family name is to deploy the solution (**Build &g
            if (status != AppServiceConnectionStatus.Success)
            {
                textBox.Text= "Failed to connect";
+               this.inventoryService = null;
                return;
            }
        }

@@ -1,13 +1,9 @@
 ---
-author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Create a "Hello, world" app (JS)
 description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10.
-ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -27,7 +23,7 @@ Here you'll learn how to:
 
 ## Before you start...
 
--   [What's a Universal Windows app](whats-a-uwp.md)?
+-   [What's a UWP app?](universal-application-platform-guide.md).
 -   To complete this tutorial, you need Windows 10 and Visual Studio 2017. [Get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 

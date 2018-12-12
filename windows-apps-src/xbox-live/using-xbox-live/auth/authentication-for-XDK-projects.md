@@ -1,17 +1,13 @@
 ---
 title: Authentication for XDK projects
-author: KevinAsgari
+
 description: Learn how to sign in Xbox Live users in an Xbox Development Kit (XDK) title.
 ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Authentication for XDK projects
 
 To take advantage of Xbox Live features in games, a user needs to create an Xbox Live profile to identify themselves in the Xbox Live community.  Xbox Live services keep track of game related activities using that Xbox Live profile, such as the user's gamertag and gamer picture, who the user's gaming friends are, what games the user has played, what achievements the user has unlocked, where the user stands on the leaderboard for a particular game, etc.

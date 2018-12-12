@@ -1,27 +1,20 @@
 ---
-author: mijacobs
 Description: This article describes best practices for creating and displaying app settings.
 title: Guidelines for app settings
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
-
 # Guidelines for app settings
 
 
 
 App settings are the user-customizable portions of your app and live within an app settings page. For example, app settings in a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app's settings could let the user choose between Celsius and Fahrenheit as the default unit of measurement. This article describes best practices for creating and displaying app settings.
 
-![example of a settings pane](images/app-settings.png)
 
 ## Should I include a settings page in my app?
 
@@ -88,12 +81,12 @@ Mobile:
 ## "Color mode" settings
 
 
-If your app allows users to choose the app's color mode, present these options using [radio buttons](../controls-and-patterns/radio-button.md) or a [combo box](../controls-and-patterns/lists.md#drop-down-lists) with the header "Choose a mode". The options should read
+If your app allows users to choose the app's color mode, present these options using [radio buttons](../controls-and-patterns/radio-button.md) or a [combo box](../controls-and-patterns/lists.md#drop-down-lists) with the header "Choose an app mode". The options should read
 - Light
 - Dark
 - Windows default
 
-We also recommend adding a hyperlink to the Colors page of the Windows Settings app where users can check the Windows default theme. Use the string "Windows color settings" for the hyperlink text.
+We also recommend adding a hyperlink to the Colors page of the Windows Settings app where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text.
 
 !["Choose a mode" section](images/appsettings_mode.png)
 
@@ -103,12 +96,12 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 </div>
 -->
 
-## "About" section and "Give feedback" button
+## About section and Feedback button
 
 
-If you need an "About this app" section in your app, create a dedicated app settings page for that. If you want a "Give Feedback" button, place that toward the bottom of the "About this app" page.
+We recommend placing  "About this App" section in your app either as a dedicated page or in its own section. If you want a "Send Feedback" button, place that toward the bottom of the "About this App" page.
 
-"Terms of Use" and "Privacy Statement" should be [hyperlink buttons](../controls-and-patterns/hyperlinks.md) with wrapping text.
+Under a "Legal" subheader, place any "Terms of Use" and "Privacy Statement" (should be [hyperlink buttons](../controls-and-patterns/hyperlinks.md) with wrapping text) as well as additional legal information, such as copyright.
 
 !["about this app" section with "give feedback" button](images/appsettings-about.png)
 

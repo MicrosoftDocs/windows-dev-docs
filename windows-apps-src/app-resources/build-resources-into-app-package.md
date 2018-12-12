@@ -1,13 +1,10 @@
 ---
-author: stevewhims
+
 Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
 title: Build resources into your app package, instead of into a resource pack
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

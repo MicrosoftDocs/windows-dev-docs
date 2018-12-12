@@ -1,26 +1,21 @@
 ---
-author: anbare
 Description: The following article describes all of the properties and elements within tile content.
 title: Tile content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 07/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, tile, tile notification, tile content, schema, tile payload
 ms.localizationpriority: medium
 ---
-
 # Tile content schema
 
  
 
 The following describes all of the properties and elements within tile content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](../tiles-and-notifications\adaptive-tiles-schema.md).
+If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](../tiles-and-notifications/adaptive-tiles-schema.md).
 
 [TileContent](#tilecontent)
 * [TileVisual](#tilevisual)
@@ -153,7 +148,7 @@ An inline image.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
+| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB. |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | Control the desired cropping of the image. |
 | **HintRemoveMargin** | bool? | false | By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true. |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | The horizontal alignment of the image. |
@@ -281,7 +276,7 @@ Supported on Small and Medium. Enables an iconic tile template, where you can ha
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](../tiles-and-notifications\special-tile-templates-catalog.md). |
+| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](../tiles-and-notifications/special-tile-templates-catalog.md). |
 
 
 ## TileBindingContentContact
@@ -330,5 +325,5 @@ A basic text element used on various special templates.
 
 ## Related topics
 
-* [Quickstart: Send a local tile notification](../tiles-and-notifications\sending-a-local-tile-notification.md)
+* [Quickstart: Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

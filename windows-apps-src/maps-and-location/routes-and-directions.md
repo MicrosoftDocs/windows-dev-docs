@@ -1,17 +1,12 @@
 ---
-author: normesta
 title: Display routes and directions on a map
 description: Request routes and directions, and display them in your app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
-ms.author: normesta
 ms.date: 09/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, route, map, location, directions
 ms.localizationpriority: medium
 ---
-
 # Display routes and directions on a map
 
 
@@ -42,9 +37,9 @@ When you request a route, you can specify the following things:
 
 * You can provide a start point and end point only, or you can provide a series of waypoints to compute the route.
 
-    *Stop* waypoints adds additional route legs, each with their own Itinerary. To specify *stop* waypoints, use any of the [**GetDrivingRouteFromWaypointsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder#Windows_Services_Maps_MapRouteFinder_GetDrivingRouteFromWaypointsAsync_Windows_Foundation_Collections_IIterable_Windows_Devices_Geolocation_Geopoint__) overloads.
+    *Stop* waypoints adds additional route legs, each with their own Itinerary. To specify *stop* waypoints, use any of the [**GetDrivingRouteFromWaypointsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getwalkingroutefromwaypointsasync) overloads.
 
-    *Via* waypoint defines intermediate locations between *stop* waypoints. They do not add route legs.  They are merely waypoints that a route must pass through. To specify *via* waypoints, use any of the [**GetDrivingRouteFromEnhancedWaypointsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder#Windows_Services_Maps_MapRouteFinder_GetDrivingRouteFromEnhancedWaypointsAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Maps_EnhancedWaypoint__) overloads.
+    *Via* waypoint defines intermediate locations between *stop* waypoints. They do not add route legs.  They are merely waypoints that a route must pass through. To specify *via* waypoints, use any of the [**GetDrivingRouteFromEnhancedWaypointsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getdrivingroutefromenhancedwaypointsasync) overloads.
 
 * You can specify optimizations (For example: minimize the distance).
 

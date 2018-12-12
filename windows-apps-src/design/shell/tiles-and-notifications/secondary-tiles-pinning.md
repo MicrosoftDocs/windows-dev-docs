@@ -1,19 +1,15 @@
 ---
-author: anbare
-Description: Learn how to pin a secondary tile from your UWP app.
-title: Pin secondary tiles
-label: Pin secondary tiles
+Description: Learn how to pin a secondary tile to Start from your UWP app.
+title: Pin secondary tiles to Start
+label: Pin secondary tiles to Start
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile
 ms.localizationpriority: medium
 ---
 
-# Pin secondary tiles
+# Pin secondary tiles to Start
 
 
 This topic walks you through the steps to create a secondary tile for your UWP app and pin it to the Start menu.
@@ -97,6 +93,11 @@ tile.VisualElements.ShowNameOnSquare150x150Logo = true;
 tile.VisualElements.ShowNameOnWide310x150Logo = true;
 tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
+
+
+## Optional: 3D secondary tiles
+You can enhance your secondary tile for Windows Mixed Reality by adding 3D assets. Users can place 3D tiles directly in their Windows Mixed Reality home instead of the Start menu when using your app in a Mixed Reality environment. For example, you can create 360° photospheres that link directly into a 360° photo viewer app, or let users place a 3D model of a chair from a furniture catalog that opens a details page about the pricing and color options for that object when selected. To get started, refer to the [Mixed Reality developer documentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
+
 
 
 ## Pin the secondary tile

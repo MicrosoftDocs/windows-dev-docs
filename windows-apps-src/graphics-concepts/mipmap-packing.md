@@ -4,15 +4,12 @@ description: Some number of mips (per array slice) can be packed into some numbe
 ms.assetid: 906C3CAC-4E84-4947-B508-06788551BE85
 keywords:
 - Mipmap packing
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Mipmap packing
 
 

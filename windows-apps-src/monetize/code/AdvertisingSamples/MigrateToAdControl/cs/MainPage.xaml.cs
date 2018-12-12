@@ -13,10 +13,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<Snippet1>
+// <Snippet1>
 using Microsoft.Advertising.WinRT.UI;
 using Windows.System.Profile;
-//</Snippet1>
+// </Snippet1>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,16 +27,16 @@ namespace MigrateToAdControl
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<Snippet2>
+        // <Snippet2>
         private const int AD_WIDTH = 320;
         private const int AD_HEIGHT = 50;
         private const string WAPPLICATIONID = "";
         private const string WADUNITID = "";
         private const string MAPPLICATIONID = "";
         private const string MADUNITID = "";
-        //</Snippet2>
+        // </Snippet2>
 
-        //<Snippet3>
+        // <Snippet3>
         // Declare an AdControl.
         private AdControl myAdControl = null;
 
@@ -44,14 +44,14 @@ namespace MigrateToAdControl
         // assign these to non-mobile ad unit info.
         private string myAppId = WAPPLICATIONID;
         private string myAdUnitId = WADUNITID;
-        //</Snippet3>
+        // </Snippet3>
 
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            //<Snippet4>
+            // <Snippet4>
             myAdGrid.Width = AD_WIDTH;
             myAdGrid.Height = AD_HEIGHT;
 
@@ -71,7 +71,7 @@ namespace MigrateToAdControl
             myAdControl.IsAutoRefreshEnabled = true;
 
             myAdGrid.Children.Add(myAdControl);
-            //</Snippet4>
+            // </Snippet4>
 
         }
     }

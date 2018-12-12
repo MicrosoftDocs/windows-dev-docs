@@ -1,5 +1,4 @@
 ---
-author: eliotcowley
 Description: Design your app so that it looks good and functions well on your television.
 title: Designing for Xbox and TV
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
@@ -7,18 +6,14 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
-ms.author: elcowle
-ms.date: 12/5/2017
+ms.date: 11/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Designing for Xbox and TV
 
 Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
@@ -171,6 +166,9 @@ private bool BackRequested()
 }
 ```
 
+> [!NOTE]
+> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls-and-patterns/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
+
 UWP apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
 
 ### Accelerator support
@@ -186,7 +184,7 @@ The following table lists the accelerator support built into the UWP, as well as
 | Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
 | Open/close nav pane | None | View | None | Navigation panes |
 | [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
-| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout) | Context menus |
+| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Context menus |
 
 ## XY focus navigation and interaction
 
@@ -317,50 +315,7 @@ What if you put the `CommandBar` *above* the list/grid? While a user who scrolle
 
 While you can't stack a `CommandBar`'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.
 
-If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) and is the [context menu](../controls-and-patterns/dialogs.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
-
-<!--The following XAML code demonstrates a simple `ContextFlyout`:
-
-```xml
-<Button HorizontalAlignment="Center"
-        Content="Context Flyout">
-    <Button.ContextFlyout>
-        <MenuFlyout>
-            <MenuFlyoutItem Text="Item 1"/>
-        </MenuFlyout>
-    </Button.ContextFlyout>
-</Button>
-```
-
-In the above example, when you press the **Menu** button while the [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) has focus, the context menu appears with the menu item labeled **Item 1**.
-
-`ContextFlyout` takes any element of type [FlyoutBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.aspx); however, most of the time you will likely use [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) or [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx).
-
-Alternatively, you can listen for the [ContextRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextrequested.aspx) event, which occurs when the user has completed a context input gesture (pressing the **Menu** button). In this case you can, in the code-behind, create the context menu, attach it to the **UIElement**, and show the flyout when the event is raised.
-
-The following C# code demonstrates a simple example of this:
-
-```csharp
-MenuFlyout myFlyout = new MenuFlyout();
-MenuFlyoutItem item1 = new MenuFlyoutItem();
-item1.Text = "Item 1";
-myFlyout.Items.Add(item1);
-MyButton.ContextFlyout = myFlyout;
-
-private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventArgs args)
-{
-    Point point = new Point(0, 0);
-    if (args.TryGetPosition(sender, out point)
-    {
-        myFlyout.ShowAt(sender, point);
-    }
-    else
-    {
-        myFlyout.ShowAt(sender as FrameworkElement);
-    }
-}
-```
-> **Note** Don't use both of these options, as `ContextFlyout` already handles the `ContextRequested` event.-->
+If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) and is the [context menu](../controls-and-patterns/dialogs-and-flyouts/index.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
 
 ### UI layout challenges
 
@@ -520,6 +475,21 @@ Try to put initial focus in the top left region of your app (or top right for a 
 One focus visual should always be visible on the screen so that the user can pick up where they left off without searching for the focus. Similarly, there should be a focusable item onscreen at all times&mdash;for example, don't use pop-ups with only text and no focusable elements.
 
 An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.
+
+### Reveal focus
+
+Reveal focus is a lighting effect that animates the border of focusable elements, such as a button, when the user moves gamepad or keyboard focus to them. By animating the glow around the border of the focused elements, Reveal focus gives users a better understanding of where focus is and where focus is going.
+
+Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind) in your app constructor.
+
+```csharp
+    if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
+    {
+        this.FocusVisualKind = FocusVisualKind.Reveal;
+    }
+```
+
+For more information see the guidance for [Reveal focus](/windows/uwp/design/style/reveal-focus).
 
 ### Customizing the focus visual
 
@@ -864,6 +834,54 @@ You would put the previous code snippet in either the page or app resources, and
 > [!NOTE]
 > This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) attribute for both the [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) and the [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) to `GridView`.
 
+For more fine-grained control over how items are brought into view, if your application targets version 1803 or later, you can use the [UIElement.BringIntoViewRequested event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). You can put it on the [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) for the **ListView**/**GridView** to catch it before the internal **ScrollViewer** does, as in the following code snippets:
+
+```xaml
+<GridView x:Name="gridView">
+    <GridView.ItemsPanel>
+        <ItemsPanelTemplate>
+            <ItemsWrapGrid Orientation="Horizontal"
+                           BringIntoViewRequested="ItemsWrapGrid_BringIntoViewRequested"/>
+        </ItemsPanelTemplate>
+    </GridView.ItemsPanel>
+</GridView>
+```
+
+```cs
+// The BringIntoViewRequested event is raised by the framework when items receive keyboard (or Narrator) focus or 
+// someone triggers it with a call to UIElement.StartBringIntoView.
+private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoViewRequestedEventArgs args)
+{
+    if (args.VerticalAlignmentRatio != 0.5)  // Guard against our own request
+    {
+        args.Handled = true;
+        // Swallow this request and restart it with a request to center the item.  We could instead have chosen
+        // to adjust the TargetRect’s Y and Height values to add a specific amount of padding as it bubbles up, 
+        // but if we just want to center it then this is easier.
+
+        // (Optional) Account for sticky headers if they exist
+        var headerOffset = 0.0;
+        var itemsWrapGrid = sender as ItemsWrapGrid;
+        if (gridView.IsGrouping && itemsWrapGrid.AreStickyGroupHeadersEnabled)
+        {
+            var header = gridView.GroupHeaderContainerFromItemContainer(args.TargetElement as GridViewItem);
+            if (header != null)
+            {
+                headerOffset = ((FrameworkElement)header).ActualHeight;
+            }
+        }
+
+        // Issue a new request
+        args.TargetElement.StartBringIntoView(new BringIntoViewOptions()
+        {
+            AnimationDesired = true,
+            VerticalAlignmentRatio = 0.5, // a normalized alignment position (0 for the top, 1 for the bottom)
+            VerticalOffset = headerOffset, // applied after meeting the alignment ratio request
+        });
+    }
+}
+```
+
 ## Colors
 
 By default, the Universal Windows Platform scales your app's colors to the TV-safe range (see [TV-safe colors](#tv-safe-colors) for more information) so that your app looks good on any TV. In addition, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.
@@ -917,21 +935,13 @@ A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.contro
 
 ![Pivot underline](images/designing-for-tv/pivot-underline.png)
 
-<!--By default, when you navigate to a `Pivot`, one of the [PivotItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotitem.aspx)s will get focus. However, you can show focus around all the headers by setting `Pivot.HeaderFocusVisualPlacement="ItemHeaders"`.
-
-![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
-
 You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](../controls-and-patterns/tabs-pivot.md).
-
-<!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
-
-![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
 ### Navigation pane <a name="navigation-pane">
 
 A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button.
 
-While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in [Managing focus navigation](../input/managing-focus-navigation.md#split-view-code-sample) document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls-and-patterns/navigationview.md).
+While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in [Programmatic focus navigation](../input/focus-navigation-programmatic.md#split-view-code-sample) document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls-and-patterns/navigationview.md).
 
 ### CommandBar labels
 
@@ -940,10 +950,6 @@ It is a good idea to have the labels placed to the right of the icons on a [Comm
 ![CommandBar with labels to the right of icons](images/designing-for-tv/commandbar.png)
 
 Setting this property will also cause the labels to always be displayed, which works well for the 10-foot experience because it minimizes the number of clicks for the user. This is also a great model for other device types to follow.
-
-<!--When there isn't enough space in the window to fit all of the `AppBarButton`s, buttons move into an overflow menu, which is accessed by selecting the "..." button. This happens dynamically as the screen resizes. This generally shouldn't be a problem for TV because the screen size is so large, but if you find that you have overflow buttons, you can specify which appear first using the `AppBarButton.DynamicOverflowOrder` property.
-
-![CommandBar with overflow commands](images/designing-for-tv/commandbar-overflow.png)-->
 
 ### Tooltip
 

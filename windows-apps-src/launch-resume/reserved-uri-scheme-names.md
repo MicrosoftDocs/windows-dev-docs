@@ -1,13 +1,9 @@
 ---
-author: TylerMSFT
 title: Reserved file and URI scheme names
 description: This topic lists the reserved file and URI scheme names that are not available to your app.
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

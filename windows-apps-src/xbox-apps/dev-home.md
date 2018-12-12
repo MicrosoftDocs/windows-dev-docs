@@ -1,18 +1,13 @@
 ---
-author: v-angraf
 ms.assetid: a56156e4-7adb-bf37-527b-fc3243e04b46
 title: Developer Home on the Console (Dev Home)
 description: Provides information about the Dev Home app for Xbox One.
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ---
-
 # Developer Home on the Console (Dev Home)
    
   

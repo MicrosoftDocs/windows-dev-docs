@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: 3D printing from your app
 description: Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, 3dprinting, 3d printing
 ms.localizationpriority: medium
 ---
-
 # 3D printing from your app
 
 **Important APIs**
@@ -88,7 +83,7 @@ The **Printing3DModel** object is now repaired and printable. Use [**SaveModelTo
 ## Execute printing task: create a TaskRequested handler
 
 
-Later on, when the 3D print dialog is displayed to the user and the user elects to begin printing, your app will need to pass in the desired parameters to the 3D print pipeline. The 3D print API will raise the **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager#Windows_Graphics_Printing3D_Print3DManager_TaskRequested)** event. You must write a method to handle this event appropriately. As always, the handler method must be of the same type as its event: The **TaskRequested** event has parameters [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (a reference to its sender object) and a [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) object, which holds most of the relevant information.
+Later on, when the 3D print dialog is displayed to the user and the user elects to begin printing, your app will need to pass in the desired parameters to the 3D print pipeline. The 3D print API will raise the **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** event. You must write a method to handle this event appropriately. As always, the handler method must be of the same type as its event: The **TaskRequested** event has parameters [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (a reference to its sender object) and a [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) object, which holds most of the relevant information.
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 

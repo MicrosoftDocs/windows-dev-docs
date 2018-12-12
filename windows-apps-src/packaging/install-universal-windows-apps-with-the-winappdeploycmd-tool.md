@@ -1,26 +1,26 @@
 ---
-author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Install apps with the WinAppDeployCmd.exe tool
 description: Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device.
-ms.author: lahugh
-ms.date: 03/08/2017
+ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Install apps with the WinAppDeployCmd.exe tool
 
 
-Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device. You can use this tool to deploy an .appx package when the Windows 10 device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. You can also deploy the app without packaging first to a remote PC or Xbox One. This article describes how to install UWP apps using this tool.
+Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device. You can use this tool to deploy an app package when the Windows 10 device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. You can also deploy the app without packaging first to a remote PC or Xbox One. This article describes how to install UWP apps using this tool.
 
-You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx file or AppxManifest(for loose files) to side-load your app onto a Windows 10 device. This command does not install the certificate required for your app. To run the app, the Windows 10 device must be in developer mode or already have the certificate installed.
+You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx/.msix file or AppxManifest(for loose files) to side-load your app onto a Windows 10 device. This command does not install the certificate required for your app. To run the app, the Windows 10 device must be in developer mode or already have the certificate installed.
 
 To deploy to mobile devices, you must first create a package. For more information, see [here](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
+The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\<SDK Version>\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). 
+> [!NOTE]
+> In version 15063 and later of the SDK, the SDK is installed side by side within version-specific folders.  Previous SDKs (prior to and including 14393) are written directly to the parent folder.
+
+First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
 
 ## WinAppDeployCmd syntax and options
 
@@ -67,25 +67,26 @@ The following table describes the commands for **WinAppDeployCmd.exe**.
 | getcreds     | Get network credentials for the target uses when running an application from a network share.|
 | deletecreds  | Delete network credentials the target uses when running an application from a network share.|
 
- 
-The following table describes the options for **WinAppDeployCmd.exe**
 
-| **Command**  | **Description**                                                     |
-|--------------|---------------------------------------------------------------------|
-| -h (-help)       | Show the commands, options and arguments.|
-| -ip              | IP address of the target device.|
+The following table describes the options for **WinAppDeployCmd.exe**.
+
+
+| **Command**  | **Description**  |
+|--------------|------------------|
+| -h (-help)       | Show the commands, options and arguments. |
+| -ip              | IP address of the target device. |
 | -g (-guid)       | Unique identifier of the target device.|
-| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. <br />If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
+| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
 | -f (-file)       | File path for the app package to install, update or uninstall.|
-| -p (-package)    | The full package name for the app package to uninstall. <br />(You can use the list command to find the full names for packages already installed on the device.)|
-| -pin             | A pin if it is required to establish a connection with the target device. <br />(You will be prompted to retry with the -pin option if authentication is required.)|
-| -credserver      | The server name of the network credentials for use by the target.|
-| -credusername    | The user name of the network credentials for use by the target.|
-| -credpassword    | The password of the network credentials for use by the target.|
-| -connecttimeout  | The timeout in seconds used when connecting to the device.|
-| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; <br />This will be a well-known, automatically determined remote deployment folder.|
-| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory.|
- 
+| -p (-package)    | The full package name for the app package to uninstall. (You can use the list command to find the full names for packages already installed on the device) |
+| -pin             | A pin if it is required to establish a connection with the target device. (You will be prompted to retry with the -pin option if authentication is required) |
+| -credserver      | The server name of the network credentials for use by the target. |
+| -credusername    | The user name of the network credentials for use by the target. |
+| -credpassword    | The password of the network credentials for use by the target. |
+| -connecttimeout  | The timeout in seconds used when connecting to the device. |
+| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; This will be a well-known, automatically determined remote deployment folder. |
+| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory. |
+
 
 The following table describes the options for **WinAppDeployCmd.exe**.
 
@@ -125,7 +126,7 @@ Uninstalls the specified package (based on its full name) from a Windows 10 devi
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Updates the app that is already installed on the Windows 10 device with an IP address of 192.168.0.1 using the specified .appx package.
+Updates the app that is already installed on the Windows 10 device with an IP address of 192.168.0.1 using the specified app package.
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1

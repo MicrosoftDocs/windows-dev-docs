@@ -1,21 +1,16 @@
 ---
-author: mcleanbyron
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: Use this method in the Microsoft Store analytics API to get aggregate install data for an application during a given date range and other optional filters.
 title: Get app installs
-ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app installs
 ms.localizationpriority: medium
 ---
-
 # Get app installs
 
 
-Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Installs report](../publish/installs-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in Partner Center.
 
 ## Prerequisites
 
@@ -34,7 +29,6 @@ To use this method, you need to first do the following:
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs``` |
 
-<span/>
 
 ### Request header
 
@@ -42,13 +36,12 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve install data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| applicationId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to retrieve install data.  |  Yes  |
 | startDate | date | The start date in the date range of install data to retrieve. The default is the current date. |  No  |
 | endDate | date | The end date in the date range of install data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
@@ -58,7 +51,6 @@ To use this method, you need to first do the following:
 | orderby | string | A statement that orders the result data values for each install. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following fields from the response body:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>successfulInstallCount</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 | groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields from the response body:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>successfulInstallCount</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  No  |
 
-<span/>
  
 ### Request example
 
@@ -81,8 +73,8 @@ Authorization: Bearer <your access token>
 |------------|--------|-------------------------------------------------------|
 | Value      | array  | An array of objects that contain aggregate install data. For more information about the data in each object, see the following table.                                                                                                                      |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of install data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             
-<span/>
+| TotalCount | int    | The total number of rows in the data result for the query.    |
+
 
 Elements in the *Value* array contain the following values.
 
@@ -97,7 +89,6 @@ Elements in the *Value* array contain the following values.
 | market              | string | The ISO 3166 country code of the market where the install occurred.    |
 | successfulInstallCount | number | The number of successful installs that occurred during the specified aggregation level.     |
 
-<span/> 
 
 ### Response example
 

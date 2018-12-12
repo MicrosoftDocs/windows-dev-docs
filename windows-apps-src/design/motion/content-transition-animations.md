@@ -1,33 +1,23 @@
 ---
-author: mijacobs
 Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
 title: Guidelines for content transition animations
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Content transition animations
 
 
 
 Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ContentThemeTransition class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)</li>
-</ul>
-</div>
+> **Important APIs**: [**ContentThemeTransition class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## Do's and don'ts
 

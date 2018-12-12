@@ -1,17 +1,13 @@
 ---
 title: Unity for XDK with IL2CPP backend
-author: KevinAsgari
+
 description: Add Xbox Live support to Unity for XDK with IL2CPP scripting backend for ID@Xbox and managed partners
 ms.assetid: 790a49ad-eff4-4916-8578-968ca8483211
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ---
-
 # Add Xbox Live support to Unity for XDK with IL2CPP scripting backend for ID@Xbox and managed partners
 
 ## Overview
@@ -58,7 +54,7 @@ It will also define the "#if ENABLE_WINMD_SUPPORT" define for you so IntelliSens
 
 **10) Add the following Xbox Live code to the XboxLiveTest.cs source file**
 
-```cpp
+```csharp
 
 using System.Collections;
 using System.Collections.Generic;

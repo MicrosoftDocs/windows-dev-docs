@@ -1,17 +1,12 @@
----
-author: jnHs
+﻿---
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
-ms.author: wdg-dev-content
-ms.date: 10/20/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp, package requirements, packages, package format
-ms.localizationpriority: high
+keywords: windows 10, uwp, package requirements, packages, package format, supported version, submit
+ms.localizationpriority: medium
 ---
-
 # App package requirements
 
 Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
@@ -29,26 +24,26 @@ If you're using Microsoft Visual Studio as your development environment, you alr
 
 When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically. Without the additional information added to the manifest, you may encounter package upload failures. 
 
-When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+When you build your app's UWP packages, Visual Studio can create an .msix or appx file, or a .msixupload or .appxupload file. For UWP apps, we recommend that you always upload the .msixupload or .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Package a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md).
 
 Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
 
 
 ### App bundles
 
-For apps that target Windows 8.1, Windows Phone 8.1, and later, Visual Studio can generate an app bundle (.appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
+For UWP apps, Visual Studio can generate an app bundle (.msixbundle or .appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
 
 > [!NOTE]
-> One app bundle can contain your packages for all architectures. You should submit only one bundle for each targeted OS.
+> One app bundle can contain your packages for all architectures.
 
 With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](../packaging/index.md) and [Package a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md).
 
 
 ## Building the app package manually
 
-If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://msdn.microsoft.com/library/windows/apps/br211476).
+If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
 
-Be sure to review the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
+Be sure to review the [App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
 Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
 
@@ -56,16 +51,10 @@ Your manifest must include some specific info about your account and your app. Y
 > Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
 
 
-App bundles use a different manifest. Review the [Bundle manifest](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) documentation for the details and requirements for app bundle manifests.
+App bundles (.msixbundle or .appxbundle) use a different manifest. Review the [Bundle manifest](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) documentation for the details and requirements for app bundle manifests. Note that in a .msixbundle or .appxbundle, the manifest of each included package must use the same elements and attributes, except for the **ProcessorArchitecture** attribute of the [Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element.
 
 > [!TIP]
 > Be sure to run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
-
-If your app has more than one package, these app manifest elements must be the same in each package (per targeted OS):
-
--   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
 
 
 ## Package format requirements
@@ -74,22 +63,24 @@ Your app’s packages must comply with these requirements.
 
 | App package property | Requirement                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Package size         | .appxbundle: 25 GB maximum per bundle <br>.appx packages targeting Windows 10: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
+| Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle <br>.msix or .appx packages targeting Windows 10: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
 | Block map hashes     | SHA2-256 algorithm                                                   |
 
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## Supported versions
 
 For UWP apps, all packages must target a version of Windows 10 supported by the Store. The versions your package supports must be indicated in the **MinVersion** and **MaxVersionTested** attributes of the [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element of the app manifest.
 
 The versions currently supported range from: 
-- Minimum: 10.0.10500.0
-- Maximum: 10.0.16299.0
+- Minimum: 10.0.10240.0
+- Maximum: 10.0.17763.1
 
 
 ## StoreManifest XML file
 
-StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Microsoft Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Microsoft Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. If used, StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 

@@ -58,18 +58,18 @@ namespace InterstitialAdSamplesCpp
         void RequestAdButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void ShowAdButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 
-        //<Snippet1>
+        // <Snippet1>
         Microsoft::Advertising::WinRT::UI::InterstitialAd^ m_interstitialAd;
         void OnAdReady(Object^ sender, Object^ args);
         void OnAdCompleted(Object^ sender, Object^ args);
         void OnAdCancelled(Object^ sender, Object^ args);
         void OnAdError(Object^ sender, Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args);
-        //</Snippet1>
+        // </Snippet1>
 
-        //<Snippet2>
+        // <Snippet2>
         Platform::String^ myAppId = L"d25517cb-12d4-4699-8bdc-52040c712cab";
         Platform::String^ myAdUnitId = L"test";
-        //</Snippet2>
+        // </Snippet2>
     };
 }
 

@@ -1,4 +1,4 @@
-﻿//<SnippetOpenCVHelperHeader>
+﻿// <SnippetOpenCVHelperHeader>
 #pragma once
 
 // OpenCVHelper.h
@@ -25,4 +25,4 @@ namespace OpenCVBridge
 			unsigned char** pPixelData, unsigned int* capacity);
 	};
 }
-//</SnippetOpenCVHelperHeader>
+// </SnippetOpenCVHelperHeader>

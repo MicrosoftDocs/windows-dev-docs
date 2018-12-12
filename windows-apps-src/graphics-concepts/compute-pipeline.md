@@ -2,16 +2,11 @@
 title: Compute pipeline
 description: The Direct3D compute pipeline is designed to handle calculations that can be done mostly in parallel with the graphics pipeline.
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Compute pipeline
 
 
@@ -39,7 +34,7 @@ The Direct3D compute pipeline is designed to handle calculations that can be don
 <tbody>
 <tr class="odd">
 <td align="left">Purpose</td>
-<td align="left">Like other programmable shaders, [Compute Shader (CS) stage](#compute-shader-stage--cs-.md) is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.</td>
+<td align="left">Like other programmable shaders, <a href="#compute-shader-stage--cs-.md">Compute Shader (CS) stage</a> is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.</td>
 </tr>
 <tr class="even">
 <td align="left">Input</td>

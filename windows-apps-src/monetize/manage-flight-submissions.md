@@ -1,28 +1,24 @@
 ---
-author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Partner Center account.
 title: Manage package flight submissions
-ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 04/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, flight submissions
 ms.localizationpriority: medium
 ---
-
 # Manage package flight submissions
 
 The Microsoft Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Microsoft Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than Partner Center. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-package-flight-submissions" />
+
 ## Methods for managing package flight submissions
 
-Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in your Dev Center account. You can create a package flight by [using the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
+Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in Partner Center. You can create a package flight [in Partner Center](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
 
 <table>
 <colgroup>
@@ -40,43 +36,44 @@ Use the following methods to get, create, update, commit, or delete a package fl
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Get an existing package flight submission](get-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
+<td align="left"><a href="get-a-flight-submission.md">Get an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status```</td>
-<td align="left">[Get the status of an existing package flight submission](get-status-for-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status</td>
+<td align="left"><a href="get-status-for-a-flight-submission.md">Get the status of an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions```</td>
-<td align="left">[Create a new package flight submission](create-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions</td>
+<td align="left"><a href="create-a-flight-submission.md">Create a new package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Update an existing package flight submission](update-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
+<td align="left"><a href="update-a-flight-submission.md">Update an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit```</td>
-<td align="left">[Commit a new or updated package flight submission](commit-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit</td>
+<td align="left"><a href="commit-a-flight-submission.md">Commit a new or updated package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Delete a package flight submission](delete-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
+<td align="left"><a href="delete-a-flight-submission.md">Delete a package flight submission</a></td>
 </tr>
 </tbody>
 </table>
 
 <span id="create-a-package-flight-submission">
-### Create a package flight submission
+
+## Create a package flight submission
 
 To create a submission for a package flight, follow this process.
 
-1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
+1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Partner Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
 
 2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -87,8 +84,9 @@ To create a submission for a package flight, follow this process.
     ```
 
     The response body contains a [flight submission](#flight-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any packages for the submission to Azure Blob storage, and the data for the new submission (including all the listings and pricing information).
-        > [!NOTE]
-        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+
+    > [!NOTE]
+    > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new packages for the submission, [prepare the packages](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) and add them to a ZIP archive.
 
@@ -106,16 +104,16 @@ To create a submission for a package flight, follow this process.
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-  ```csharp
-  string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-  Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
-  await blockBob.UploadFromStreamAsync(stream);
-  ```
+    ```csharp
+    string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
+    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
+        new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    await blockBob.UploadFromStreamAsync(stream);
+    ```
 
-5. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account.
+5. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -129,10 +127,11 @@ To create a submission for a package flight, follow this process.
 
     To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
 
-7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
+7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting Partner Center.
 
 <span/>
-### Code examples
+
+## Code examples
 
 The following articles provide detailed code examples that demonstrate how to create a package flight submission in several different programming languages:
 
@@ -140,13 +139,17 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Java code examples](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
 
-> [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+## StoreBroker PowerShell module
+
+As an alternative to calling the Microsoft Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
+
+For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
+
 ## Manage a gradual package rollout for a package flight submission
 
-You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
 
 To programmatically enable a gradual package rollout for a package flight submission, follow this process using methods in the Microsoft Store submission API:
 
@@ -172,33 +175,35 @@ After a gradual package rollout is enabled for a package flight submission, you 
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout```</td>
-<td align="left">[Get the gradual rollout info for a package flight submission](get-package-rollout-info-for-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout</td>
+<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Get the gradual rollout info for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
-<td align="left">[Update the gradual rollout percentage for a package flight submission](update-the-package-rollout-percentage-for-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Update the gradual rollout percentage for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout```</td>
-<td align="left">[Halt the gradual rollout for a package flight submission](halt-the-package-rollout-for-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
+<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Halt the gradual rollout for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout```</td>
-<td align="left">[Finalize the gradual rollout for a package flight submission](finalize-the-package-rollout-for-a-flight-submission.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
+<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Finalize the gradual rollout for a package flight submission</a></td>
 </tr>
 </tbody>
 </table>
 
 <span/>
+
 ## Data resources
 
 The Microsoft Store submission API methods for managing package flight submissions use the following JSON data resources.
 
 <span id="flight-submission-object" />
+
 ### Flight submission resource
 
 This resource describes a package flight submission.
@@ -258,6 +263,7 @@ This resource has the following values.
 | notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
+
 ### Status details resource
 
 This resource contains additional details about the status of a submission. This resource has the following values.
@@ -270,6 +276,7 @@ This resource contains additional details about the status of a submission. This
 
 
 <span id="status-detail-object" />
+
 ### Status detail resource
 
 This resource contains additional information about any related errors or warnings for a submission. This resource has the following values.
@@ -281,17 +288,19 @@ This resource contains additional information about any related errors or warnin
 
 
 <span id="certification-report-object" />
+
 ### Certification report resource
 
 This resource provides access to the certification report data for a submission. This resource has the following values.
 
 | Value           | Type    | Description         |
 |-----------------|---------|------|
-|     date            |    string     |  The date and time the report was generated, in in ISO 8601 format.    |
+|     date            |    string     |  The date and time the report was generated, in ISO 8601 format.    |
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
 
 
 <span id="flight-package-object" />
+
 ### Flight package resource
 
 This resource provides details about a package in a submission.
@@ -316,13 +325,13 @@ This resource provides details about a package in a submission.
 This resource has the following values.
 
 > [!NOTE]
-> When calling the [update a package flight submission](update-a-flight-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Dev Center.
+> When calling the [update a package flight submission](update-a-flight-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Partner Center.
 
 | Value           | Type    | Description              |
 |-----------------|---------|------|
 | fileName   |   string      |  The name of the package.    |  
 | fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  An ID that uniquely identifies the package. This value is used by Dev Center.   |     
+| id    |  string   |  An ID that uniquely identifies the package. This value is used by Partner Center.   |     
 | version    |  string   |  The version of the app package. For more information, see [Package version numbering](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  string   |  The architecture of the app package (for example, ARM).   |     
 | languages    | array    |  An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
@@ -332,6 +341,7 @@ This resource has the following values.
 
 
 <span id="package-delivery-options-object" />
+
 ### Package delivery options resource
 
 This resource contains gradual package rollout and mandatory update settings for the submission.
@@ -360,6 +370,7 @@ This resource has the following values.
 | mandatoryUpdateEffectiveDate    |  date   |  The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone.   |        
 
 <span id="package-rollout-object" />
+
 ### Package rollout resource
 
 This resource contains gradual [package rollout settings](#manage-gradual-package-rollout) for the submission. This resource has the following values.
@@ -372,7 +383,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 | fallbackSubmissionId    |  string   |  The ID of the submission that will be received by customers who do not get the gradual rollout packages.   |          
 
 > [!NOTE]
-> The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Dev Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
+> The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Partner Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
 
 <span/>
 
@@ -381,6 +392,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 These methods use the following enums.
 
 <span id="submission-status-code" />
+
 ### Submission status code
 
 The following codes represent the status of a submission.

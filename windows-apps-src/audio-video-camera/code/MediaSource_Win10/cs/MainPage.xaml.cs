@@ -18,10 +18,10 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Media.Core;
 using Windows.Media.Playback;
-//</SnippetUsing>
+// </SnippetUsing>
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -33,20 +33,20 @@ namespace MediaSource_Win10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareMediaSource>
+        // <SnippetDeclareMediaSource>
         MediaSource mediaSource;
-        //</SnippetDeclareMediaSource>
+        // </SnippetDeclareMediaSource>
 
-        //<SnippetDeclareMediaPlaybackItem>
+        // <SnippetDeclareMediaPlaybackItem>
         MediaPlaybackItem mediaPlaybackItem;
-        //</SnippetDeclareMediaPlaybackItem>
+        // </SnippetDeclareMediaPlaybackItem>
 
         MediaSource mediaSource2;
         MediaPlaybackItem mediaPlaybackItem2;
 
-        //<SnippetDeclareMediaPlaybackList>
+        // <SnippetDeclareMediaPlaybackList>
         MediaPlaybackList mediaPlaybackList;
-        //</SnippetDeclareMediaPlaybackList>
+        // </SnippetDeclareMediaPlaybackList>
 
         public MainPage()
         {
@@ -60,7 +60,7 @@ namespace MediaSource_Win10
         #region MediaSource
         private async void PlayMediaSource()
         {
-            //<SnippetPlayMediaSource>
+            // <SnippetPlayMediaSource>
             //Create a new picker
             var filePicker = new Windows.Storage.Pickers.FileOpenPicker();
 
@@ -80,7 +80,7 @@ namespace MediaSource_Win10
                 mediaSource = MediaSource.CreateFromStorageFile(file);
                 mediaElement.SetPlaybackSource(mediaSource);
             }
-            //</SnippetPlayMediaSource>
+            // </SnippetPlayMediaSource>
         }
         #endregion
 
@@ -101,7 +101,7 @@ namespace MediaSource_Win10
             //Retrieve file from picker
             StorageFile file = await filePicker.PickSingleFileAsync();
 
-            //<SnippetPlayMediaPlaybackItem>
+            // <SnippetPlayMediaPlaybackItem>
             mediaSource = MediaSource.CreateFromStorageFile(file);
             mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
 
@@ -110,11 +110,11 @@ namespace MediaSource_Win10
             mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
 
             mediaElement.SetPlaybackSource(mediaPlaybackItem);
-            //</SnippetPlayMediaPlaybackItem>
+            // </SnippetPlayMediaPlaybackItem>
         }
        
 
-        //<SnippetVideoTracksChanged>
+        // <SnippetVideoTracksChanged>
         private async void MediaPlaybackItem_VideoTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -130,17 +130,17 @@ namespace MediaSource_Win10
                 }
             });
         }
-        //</SnippetVideoTracksChanged>
+        // </SnippetVideoTracksChanged>
 
-        //<SnippetVideoTracksSelectionChanged>
+        // <SnippetVideoTracksSelectionChanged>
         private void videoTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
             mediaPlaybackItem.VideoTracks.SelectedIndex = trackIndex;
         }
-        //</SnippetVideoTracksSelectionChanged>
+        // </SnippetVideoTracksSelectionChanged>
 
-        //<SnippetAudioTracksChanged>
+        // <SnippetAudioTracksChanged>
         private async void PlaybackItem_AudioTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -156,17 +156,17 @@ namespace MediaSource_Win10
                 }
             });
         }
-        //</SnippetAudioTracksChanged>
+        // </SnippetAudioTracksChanged>
 
-        //<SnippetAudioTracksSelectionChanged>
+        // <SnippetAudioTracksSelectionChanged>
         private void audioTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
             mediaPlaybackItem.AudioTracks.SelectedIndex = trackIndex;
         }
-        //</SnippetAudioTracksSelectionChanged>
+        // </SnippetAudioTracksSelectionChanged>
 
-        //<SnippetTimedMetadataTracksChanged>
+        // <SnippetTimedMetadataTracksChanged>
         private async void MediaPlaybackItem_TimedMetadataTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -187,22 +187,22 @@ namespace MediaSource_Win10
                 }
             });
         }
-        //</SnippetTimedMetadataTracksChanged>
+        // </SnippetTimedMetadataTracksChanged>
 
-        //<SnippetToggleChecked>
+        // <SnippetToggleChecked>
         private void Toggle_Checked(object sender, RoutedEventArgs e)
         {
             mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
                 TimedMetadataTrackPresentationMode.PlatformPresented);
         }
-        //</SnippetToggleChecked>
-        //<SnippetToggleUnchecked>
+        // </SnippetToggleChecked>
+        // <SnippetToggleUnchecked>
         private void Toggle_Unchecked(object sender, RoutedEventArgs e)
         {
             mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
                 TimedMetadataTrackPresentationMode.Disabled);
         }
-        //</SnippetToggleUnchecked>
+        // </SnippetToggleUnchecked>
 
 
 
@@ -212,12 +212,12 @@ namespace MediaSource_Win10
         #endregion
 
         #region timedtextsource
-        //<SnippetTimedTextSourceMap>
+        // <SnippetTimedTextSourceMap>
         Dictionary<TimedTextSource, Uri> timedTextSourceMap;
-        //</SnippetTimedTextSourceMap>
+        // </SnippetTimedTextSourceMap>
         private void AddExternalMetadata()
         {
-            //<SnippetTimedTextSource>
+            // <SnippetTimedTextSource>
             // Create the TimedTextSource and add entry to URI map
             var timedTextSourceUri_En = new Uri("http://contoso.com/MyClipTimedText_en.srt");
             var timedTextSource_En = TimedTextSource.CreateFromUri(timedTextSourceUri_En);
@@ -237,9 +237,9 @@ namespace MediaSource_Win10
             mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
 
             mediaElement.SetPlaybackSource(mediaPlaybackItem);
-            //</SnippetTimedTextSource>
+            // </SnippetTimedTextSource>
         }
-        //<SnippetTimedTextSourceResolved>
+        // <SnippetTimedTextSourceResolved>
         private void TimedTextSource_Resolved(TimedTextSource sender, TimedTextSourceResolveResultEventArgs args)
         {
             var timedTextSourceUri = timedTextSourceMap[sender];
@@ -262,7 +262,7 @@ namespace MediaSource_Win10
                 args.Tracks[0].Label = "Portuguese";
             }
         }
-        //</SnippetTimedTextSourceResolved>
+        // </SnippetTimedTextSourceResolved>
         #endregion
 
         #region custommetadata
@@ -299,7 +299,7 @@ namespace MediaSource_Win10
 
         private void AddTimedMetaDataTrack_Data()
         {
-            //<SnippetAddDataTrack>
+            // <SnippetAddDataTrack>
             TimedMetadataTrack metadataTrack = new TimedMetadataTrack("ID_0", "en-us", TimedMetadataKind.Data);
             metadataTrack.Label = "Custom data track";
             metadataTrack.CueEntered += MetadataTrack_DataCueEntered;
@@ -326,7 +326,7 @@ namespace MediaSource_Win10
             }
 
             mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
-            //</SnippetAddDataTrack>
+            // </SnippetAddDataTrack>
         }
 
         private void MetadataTrack_CueExited(TimedMetadataTrack sender, MediaCueEventArgs args)
@@ -334,19 +334,19 @@ namespace MediaSource_Win10
             
         }
 
-        //<SnippetDataCueEntered>
+        // <SnippetDataCueEntered>
         private void MetadataTrack_DataCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
         {
             DataCue cue = (DataCue)args.Cue;
             string data = System.Text.Encoding.Unicode.GetString(cue.Data.ToArray());
             System.Diagnostics.Debug.WriteLine("Cue entered: " + data);
         }
-        //</SnippetDataCueEntered>
+        // </SnippetDataCueEntered>
 
         private void AddTimedMetaDataTrack_Text()
         {
 
-            //<SnippetAddTextTrack>
+            // <SnippetAddTextTrack>
             TimedMetadataTrack metadataTrack = new TimedMetadataTrack("TrackID_0", "en-us", TimedMetadataKind.Caption);
             metadataTrack.Label = "Custom text track";
             metadataTrack.CueEntered += MetadataTrack_TextCueEntered;
@@ -366,16 +366,16 @@ namespace MediaSource_Win10
             }
 
             mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
-            //</SnippetAddTextTrack>
+            // </SnippetAddTextTrack>
         }
 
-        //<SnippetTextCueEntered>
+        // <SnippetTextCueEntered>
         private void MetadataTrack_TextCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
         {
             TimedTextCue cue = (TimedTextCue)args.Cue;
             System.Diagnostics.Debug.WriteLine("Cue entered: " + cue.Id + " " + cue.Lines[0].Text);
         }
-        //</SnippetTextCueEntered>
+        // </SnippetTextCueEntered>
 
         
         #endregion
@@ -395,7 +395,7 @@ namespace MediaSource_Win10
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
 
-            //<SnippetPlayMediaPlaybackList>
+            // <SnippetPlayMediaPlaybackList>
             StorageFile file = await filePicker.PickSingleFileAsync();
             mediaSource = MediaSource.CreateFromStorageFile(file);
             mediaSource.CustomProperties["Title"] = "Clip 1 title";
@@ -414,10 +414,10 @@ namespace MediaSource_Win10
             mediaPlaybackList.CurrentItemChanged += MediaPlaybackList_CurrentItemChanged;
 
             mediaElement.SetPlaybackSource(mediaPlaybackList);
-            //</SnippetPlayMediaPlaybackList>
+            // </SnippetPlayMediaPlaybackList>
         }
 
-        //<SnippetMediaPlaybackListItemChanged>
+        // <SnippetMediaPlaybackListItemChanged>
         private async void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
         {
             if(args.NewItem.Source.CustomProperties["Title"] != null)
@@ -428,23 +428,23 @@ namespace MediaSource_Win10
                 });
             }
         }
-        //</SnippetMediaPlaybackListItemChanged>
+        // </SnippetMediaPlaybackListItemChanged>
 
-        //<SnippetPrevButton>
+        // <SnippetPrevButton>
         private void prevButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlaybackList.MovePrevious();
         }
-        //</SnippetPrevButton>
+        // </SnippetPrevButton>
 
-        //<SnippetNextButton>
+        // <SnippetNextButton>
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlaybackList.MoveNext();
         }
-        //</SnippetNextButton>
+        // </SnippetNextButton>
 
-        //<SnippetShuffleButton>
+        // <SnippetShuffleButton>
         private async void shuffleButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlaybackList.ShuffleEnabled = !mediaPlaybackList.ShuffleEnabled;
@@ -455,9 +455,9 @@ namespace MediaSource_Win10
                     mediaPlaybackList.ShuffleEnabled ? Windows.UI.Text.FontWeights.Bold : Windows.UI.Text.FontWeights.Light;
             });
         }
-        //</SnippetShuffleButton>
+        // </SnippetShuffleButton>
 
-        //<SnippetRepeatButton>
+        // <SnippetRepeatButton>
         private async void autoRepeatButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlaybackList.AutoRepeatEnabled = !mediaPlaybackList.AutoRepeatEnabled;
@@ -468,7 +468,7 @@ namespace MediaSource_Win10
                     mediaPlaybackList.AutoRepeatEnabled ? Windows.UI.Text.FontWeights.Bold : Windows.UI.Text.FontWeights.Light;
             });
         }
-        //</SnippetRepeatButton>
+        // </SnippetRepeatButton>
         #endregion
 
         private void ShowMessageToUser(string s) { }

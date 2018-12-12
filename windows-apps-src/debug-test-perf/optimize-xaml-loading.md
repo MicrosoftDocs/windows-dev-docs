@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimize your XAML markup
 description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
-ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -34,10 +30,10 @@ Here, we look at some other ways you can reduce the number of elements your app 
 
 If your XAML markup contains elements that you don't show right away, you can defer loading those elements until they are shown. For example, you can delay the creation of non-visible content such as a secondary tab in a tab-like UI. Or, you might show items in a grid view by default, but provide an option for the user to view the data in a list instead. You can delay loading the list until it's needed.
 
-Use the [x:Load attribute](../xaml-platform/x-load-attribute.md) instead of the [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_Visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is you pay a small memory overhead (approx 600 bytes) when the UI is not loaded.
+Use the [x:Load attribute](../xaml-platform/x-load-attribute.md) instead of the [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is you pay a small memory overhead (approx 600 bytes) when the UI is not loaded.
 
 > [!NOTE]
-> You can delay loading elements using the [x:Load](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) attribute. The x:Load attribute is available starting in Windows 10 Creator's Update (version 1703, SDK build 15063). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load. To target earlier versions, use x:DeferLoadStrategy.
+> You can delay loading elements using the [x:Load](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) attribute. The x:Load attribute is available starting in Windows 10 Creators Update (version 1703, SDK build 15063). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load. To target earlier versions, use x:DeferLoadStrategy.
 
 The following examples show the difference in element count and memory use when different techniques are used to hide UI elements. A ListView and a GridView containing identical items are placed in a page's root Grid. The ListView is not visible, but the GridView is shown. The XAML in each of these examples produces the same UI on the screen. We use Visual Studio's [tools for profiling and performance](tools-for-profiling-and-performance.md) to check the element count and memory use.
 

@@ -1,16 +1,11 @@
 ---
 title: My People sharing
 description: Explains how to add support for My People sharing
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # My People sharing
 
 The My People feature allows users to pin contacts to their taskbar, enabling them to stay in touch easily from anywhere in Windows, no matter what application they are connected by. Now users can share content with their pinned contacts by dragging files from the File Explorer to their My People pin. They can also share to any contacts in the Windows contact store via the standard share charm. Keep reading to learn how to enable your application as a My People sharing target.
@@ -106,7 +101,7 @@ The “appId” is the Package Family Name, followed by ‘!’ and the Activata
 
 ## Running as a My People share target
 
-Finally, to run the app, override the [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) method in your app’s main class to handle the share target activation. The [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#properties_) property will contain the contact(s) that are being shared to, or will be empty if this is a standard share operation (not a My People share).
+Finally, to run the app, override the [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) method in your app’s main class to handle the share target activation. The [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) property will contain the contact(s) that are being shared to, or will be empty if this is a standard share operation (not a My People share).
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)

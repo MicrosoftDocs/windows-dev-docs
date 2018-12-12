@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
 title: Design your app for bidirectional text
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, globalization, localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---
-
 # Design your app for bidirectional text
 
 Design your app to provide bidirectional text support (BiDi) so that you can combine script from right to left (RTL) and left to right (LTR) writing systems, which generally contain different types of alphabets.

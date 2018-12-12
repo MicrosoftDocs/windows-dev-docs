@@ -1,12 +1,8 @@
 ---
-author: normesta
 title: Use a SQLite database in a UWP app
 description: Use a SQLite database in a UWP app.
-ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 11/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, SQLite, database
 ms.localizationpriority: medium
 ---
@@ -118,6 +114,7 @@ You don't have to do this. But if you have a reason to include a specific versio
 ![SQLite package](images/sqlite-package-v2.png)
 
 <a id="use-data" />
+
 ## Add and retrieve data in a SQLite database
 
 We'll do these things:
@@ -138,7 +135,7 @@ From your UWP project, add a reference to the **DataAccessLibrary** project in y
 
 ![Data access class library](images/ref-class-library.png)
 
-Add the following ``using`` statement to the **App.xaml.cs** and **MainPage.xaml** files in your UWP project.
+Add the following ``using`` statement to the **App.xaml.cs** and **MainPage.xaml.cs** files in your UWP project.
 
 ```csharp
 using DataAccessLibrary;
@@ -160,13 +157,15 @@ namespace DataAccessLibrary
 
 ```
 
-Add the following using statement to the top of this file.
+Add the following using statements to the top of this file.
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />
+
 ### Initialize the SQLite database
 
 Add a method to the **DataAccess** class that initializes the SQLite database.
@@ -180,7 +179,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);
@@ -208,6 +207,7 @@ public App()
 ```
 
 <a id="insert" />
+
 ### Insert data into the SQLite database
 
 Add a method to the **DataAccess** class that inserts data into the SQLite database. This code uses parameters in the query to prevent SQL injection attacks.
@@ -236,6 +236,7 @@ public static void AddData(string inputText)
 ```
 
 <a id="retrieve" />
+
 ### Retrieve data from the SQLite database
 
 Add a method that gets rows of data from a SQLite database.
@@ -317,3 +318,7 @@ See [Use a SQL Server database in a UWP app](sql-server-databases.md).
 **Share code between different apps across different platforms**
 
 See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+
+**Add master detail pages with Azure SQL back ends**
+
+See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

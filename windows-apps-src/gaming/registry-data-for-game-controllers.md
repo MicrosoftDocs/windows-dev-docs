@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Registry data for game controllers
 description: Learn about the data that you can add to the PC's registry to enable your controller to be used in UWP games.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: wdg-dev-content
-ms.date: 06/06/2017
+ms.date: 06/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, input, registry, custom
 ms.localizationpriority: medium
 ---
-
 # Registry data for game controllers
 
 > [!NOTE]
@@ -39,7 +34,7 @@ The table below explains the expected values under the device root location:
         <td>DWORD</td>
         <td>No</td>
         <td>
-            <p>Indicates that the mapping for this particular device should be skipped.</p>
+            <p>Indicates that this particular device should be disabled.</p>
             <ul>
                 <li><b>0</b>: Device is not disabled.</li>
                 <li><b>1</b>: Device is disabled.</li>

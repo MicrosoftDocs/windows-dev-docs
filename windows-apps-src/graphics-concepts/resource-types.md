@@ -4,15 +4,12 @@ description: Different types of resources have a distinct layout (or memory foot
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
 keywords:
 - Resource types
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Resource types
 
 

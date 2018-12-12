@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
-ms.author: stwhi
-ms.date: 11/13/2017
+ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
-
 # Use the Multilingual App Toolkit 4.0
 
 The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
@@ -125,6 +120,18 @@ After your localizers complete the translation work and send you the translated 
 **Note** The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files.
 
 Rebuild your project to cause the translated strings to be copied into the Resources File(s) (.resw) that corresponds to the .xlf file(s) you just imported.
+
+These third party providers offer localization services, and may be able to assist you.
+
+- [Elanex](https://www.elanex.com/)
+- [Keywords Studios](https://www.keywordsstudios.com/)
+- [Lionbridge](https://www.lionbridge.com)
+- [Moravia](https://www.moravia.com/)
+- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Welocalize](https://www.welocalize.com/)
+
+> [!NOTE]
+> The list above is provided for informational purposes only and is not an endorsement. Microsoft does not make any representation or warranty regarding these vendors or their services, and under no circumstances will Microsoft have any liability for your use of such vendors or services. Any questions, complaints, or claims regarding such vendors or their services must be directed to the appropriate vendor.
 
 #### Option 3. Use the integrated translation services
 

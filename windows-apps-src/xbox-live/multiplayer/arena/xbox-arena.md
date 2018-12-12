@@ -1,16 +1,12 @@
 ---
 title: Xbox Arena
-author: KevinAsgari
+
 description: Learn how to use Xbox Arena to run tournaments for your game.
-ms.author: kevinasg
-ms.date: 09-20-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---
-
 # Xbox Arena
 
 Xbox Arena is a platform for creating and running online tournaments across Xbox One and Windows 10 through Xbox Live, with the goal of bringing the fun of competitive gaming to a broad audience.
@@ -72,6 +68,12 @@ Xbox Arena role (setting up a tournament)	| Title's role (game play)
 Article | description
 --- | ---
 [Arena title integration](arena-title-integration.md) | Learn how to integrate support for Xbox Arena into your title.
+
+## Operations guidance
+
+Article | description
+--- | ---
+[Xbox Arena Operations Portal](operations-portal.md) | Describes the operations portal that you can use to create and manage official tournaments for a title that is integrated with Xbox Arena.
 
 ## User experience guidance
 

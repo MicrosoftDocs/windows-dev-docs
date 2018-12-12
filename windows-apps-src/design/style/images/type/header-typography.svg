@@ -1,0 +1,35 @@
+<svg width="1152" height="551" viewBox="0 0 1152 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>header-typography</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(17449 5488)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -17449 -5488L -16297 -5488L -16297 -4937L -17449 -4937L -17449 -5488Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="header-typography" clip-path="url(#clip-0)">
+<path d="M -17449 -5488L -16297 -5488L -16297 -4937L -17449 -4937L -17449 -5488Z" fill="#3A2E56"/>
+<g id="Group 12">
+<g id="ABCDEFGHIJKLMNOPQ RS">
+<use xlink:href="#path0_fill" transform="translate(-16854.2 -5387.48)" fill="#CF90FF"/>
+</g>
+<g id="Rectangle 21.1">
+<use xlink:href="#path1_fill" transform="translate(-16915.6 -5470)" fill="#3A2E56"/>
+</g>
+<g id="ABCDEFGHIJKLMNOPQ RS">
+<use xlink:href="#path0_fill" transform="translate(-17115.5 -5387.48)" fill="#5C318F"/>
+</g>
+<g id="Rectangle 21">
+<use xlink:href="#path2_fill" transform="translate(-17098.8 -5470)" fill="#3A2E56"/>
+</g>
+<g id="ABCDEFGHIJKLMNOPQ RS">
+<use xlink:href="#path3_fill" transform="translate(-17449 -5387.48)" fill="#FFFFFE"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 401.234 451.483L 342.747 451.483L 294.951 324.917L 103.767 324.917L 58.8015 451.483L 0 451.483L 172.946 0L 227.659 0L 401.234 451.483ZM 277.657 277.376L 206.906 85.0073C 204.6 78.7104 202.294 68.6355 199.988 54.7825L 198.73 54.7825C 196.634 67.586 194.223 77.661 191.498 85.0073L 121.376 277.376L 277.657 277.376Z"/>
+<path id="path1_fill" d="M 0 0L 268.479 0L 268.479 534L 0 534L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 183.219 0L 183.219 534L 0 534L 0 0Z"/>
+<path id="path3_fill" d="M 420.73 451.483L 338.659 451.483L 298.096 336.566L 120.748 336.566L 81.7562 451.483L 0 451.483L 168.858 0L 253.13 0L 420.73 451.483ZM 278.285 275.487L 215.711 95.3971C 213.824 89.52 211.832 80.0748 209.736 67.0613L 208.478 67.0613C 206.592 79.0253 204.495 88.4705 202.189 95.3971L 140.243 275.487L 278.285 275.487Z"/>
+</defs>
+</svg>

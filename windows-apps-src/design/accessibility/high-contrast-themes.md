@@ -1,18 +1,13 @@
 ---
-author: Xansky
 description: Describes the steps needed to ensure your Universal Windows Platform (UWP) app is usable when a high-contrast theme is active.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: High-contrast themes
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 09/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # High contrast themes  
 
 Windows supports high contrast themes for the OS and apps that users may choose to enable. High contrast themes use a small palette of contrasting colors that makes the interface easier to see.
@@ -94,17 +89,17 @@ On the *Settings > Ease of access > High contrast* page, there are 4 high contra
 
 Each **SystemColor*Color** resource is a variable that automatically updates color when the user switches high contrast themes. Following are guidelines for where and when to use each resource.
 
-Resource | Usage
--------- | -----
-**SystemColorWindowTextColor** | Body copy, headings, lists; any text that can't be interacted with
-**SystemColorHotlightColor** | Hyperlinks
-**SystemColorGrayTextColor** | Disabled UI
-**SystemColorHighlightTextColor** | Foreground color for text or UI that's in progress, selected, or currently being interacted with
-**SystemColorHighlightColor** | Background color for text or UI that's in progress, selected, or currently being interacted with
-**SystemColorButtonTextColor** | Foreground color for buttons; any UI that can be interacted with
-**SystemColorButtonFaceColor** | Background color for buttons; any UI that can be interacted with
-**SystemColorWindowColor** | Background of pages, panes, popups, and bars
-<br/>
+Resource | Usage |
+|--------|-------|
+**SystemColorWindowTextColor** | Body copy, headings, lists; any text that can't be interacted with |
+| **SystemColorHotlightColor** | Hyperlinks |
+| **SystemColorGrayTextColor** | Disabled UI |
+| **SystemColorHighlightTextColor** | Foreground color for text or UI that's in progress, selected, or currently being interacted with |
+| **SystemColorHighlightColor** | Background color for text or UI that's in progress, selected, or currently being interacted with |
+| **SystemColorButtonTextColor** | Foreground color for buttons; any UI that can be interacted with |
+| **SystemColorButtonFaceColor** | Background color for buttons; any UI that can be interacted with |
+| **SystemColorWindowColor** | Background of pages, panes, popups, and bars |
+
 It's often helpful to look to existing apps, Start, or the common controls to see how others have solved high contrast design problems that are similar to your own.
 
 **Do**

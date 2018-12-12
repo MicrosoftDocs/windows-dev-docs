@@ -1,18 +1,13 @@
 ---
-author: PatrickFarley
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Test with the Microsoft Emulator for Windows 10 Mobile
 description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Test with the Microsoft Emulator for Windows 10 Mobile
-
 
 Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.
 
@@ -24,9 +19,9 @@ You can test your universal app using a unique Windows 10 Mobile emulator image 
 
 Your computer must meet the following requirements:
 
-BIOS
+CPU (these settings, if available, can be enabled in the BIOS)
 
--   Hardware-assisted virtualization.
+-   Hardware-assisted virtualization ([check compatibility](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Second Level Address Translation (SLAT).
 -   Hardware-based Data Execution Prevention (DEP).
 
@@ -44,23 +39,28 @@ To check the BIOS requirements, see [How to enable Hyper-V for the emulator for 
 
 To check requirements for RAM and operating system, in Control Panel, select **System and Security**, and then select **System**.
 
-Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
+Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015 or later; it is not backward compatible with earlier versions of Visual Studio.
 
 Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
 
-## Installing and uninstalling
+## Installing, uninstalling, and running the emulator
 
--   **Installing**.
+### Installing
+Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
-    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+You can also install the Microsoft Emulator for Windows 10 Mobile using the [Microsoft Emulator setup](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
-    You can also install the Microsoft Emulator for Windows 10 Mobile using the [Microsoft Emulator setup](https://go.microsoft.com/fwlink/p/?LinkID=615095).
+### Uninstalling
 
--   **Uninstalling**.
+You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
 
-    You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
+When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
 
-    When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
+### Running
+
+To run an app in the emulator, simply select an emulated device from the **run** drop-down menu in Visual Studio.
+
+![Available emulators with resolution, size, and memory](images/em-list.png)
 
 ## What's new in Microsoft Emulator for Windows 10 Mobile
 
@@ -76,7 +76,7 @@ In addition to the new features mentioned in the previous section, you can test 
 
 -   **Screen resolution, screen size, and memory**. Reach a broad market for your app by testing it on various emulator images to simulate various screen resolutions, physical sizes, and memory constraints.
 
-    ![Available emulators with resolution, size, and memory](images/em-list.png)
+![Available emulators with resolution, size, and memory](images/em-list.png)
 
 -   **Screen configuration**. Change the emulator from portrait to landscape mode. Change the zoom setting to fit the emulator to your desktop screen.
 
@@ -633,7 +633,7 @@ When you install the emulator, a Windows 10 for Mobile VHD image is installed, w
 
 In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
 
-###How to disable hardware accelerated graphics
+### How to disable hardware accelerated graphics
 
 By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
 

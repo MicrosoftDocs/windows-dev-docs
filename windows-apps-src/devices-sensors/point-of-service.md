@@ -1,24 +1,18 @@
 ---
-author: muhsinking
-title: Point of service
+title: Point of Service
 description: This section contains articles on how to use various features of the Point of Service namespace.
-ms.author: mukin
-ms.date: 05/11/2017
+ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Point of service
+# Point of Service
+This section contains articles on how to use [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) to interact with peripherals found in retail and hospitality environments from Universal Windows Applications.
 
-
-This section contains articles on how to use Point Of Service (POS) peripherals with Universal Windows Platform (UWP) apps. 
-
-**Important APIs**
-- [Windows.Devices.PointOfService](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice)
-
-|Topic|Description|
-|--------|------------------|
-| [Getting started with point of service](pos-get-started.md) | This article will help you get started with the point of service UWP APIs. |
-| [POS device support](pos-device-support.md) | This article provides device support information for each POS device family. |
+| Topic | Description |
+|------|------------|
+| [Basics](pos-basics.md) | This article will help you get started with the point of service UWP APIs. |
+| [Hardware support](pos-device-support.md) | List of known devices that are compatible with [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) UWP APIs. |
+| [Barcode Scanner](pos-barcodescanner.md) | Index of articles on barcode scanner. |
+| [Magnetic stripe reader](pos-magnetic-stripe-reader.md) | Index of articles on magnetic stripe reader.
+| [POSPrinter](pos-printer.md) | Index of articles on POSPrinter. |

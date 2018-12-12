@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Use the C# code examples in this section to learn more about using the Microsoft Store submission API.
 title: C# sample - submissions for apps, add-ons, and flights
-ms.author: mcleans
 ms.date: 08/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, C#
 ms.localizationpriority: medium
 ---
-
 # C\# sample: submissions for apps, add-ons, and flights
 
 This article provides C# code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
@@ -35,12 +30,13 @@ These examples use the following libraries:
 The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Microsoft Store submission API. To adapt this program for your own use:
 
 * Assign the ```ApplicationId```, ```InAppProductId```, and ```FlightId``` properties to the ID of the app, add-on, and package flight you want to manage.
-* Assign the ```ClientId``` and ```ClientSecret``` properties to the client ID and key for your app, and replace the *tenantid* string in the ```TokenEndpoint``` URL with the tenant ID for your app. For more information, see [How to associate an Azure AD application with your Windows Dev Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
+* Assign the ```ClientId``` and ```ClientSecret``` properties to the client ID and key for your app, and replace the *tenantid* string in the ```TokenEndpoint``` URL with the tenant ID for your app. For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
 
 <span id="clientconfiguration" />
+
 ## ClientConfiguration helper class
 
 The sample app uses the ```ClientConfiguration``` helper class to pass Azure Active Directory data and app data to each of the example methods that use the Microsoft Store submission API.
@@ -49,21 +45,23 @@ The sample app uses the ```ClientConfiguration``` helper class to pass Azure Act
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
-The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission. The ```RunAppSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunAppSubmissionUpdateSample``` method performs these tasks:
+The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission. The ```RunAppSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Partner Center. Specifically, the ```RunAppSubmissionUpdateSample``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified app](get-an-app.md).
 2. Next, it [deletes the pending submission for the app](delete-an-app-submission.md), if one exists.
 3. It then [creates a new submission for the app](create-an-app-submission.md) (the new submission is a copy of the last published submission).
 4. It changes some details for the new submission and upload a new package for the submission to Azure Blob storage.
-5. Next, it [updates](update-an-app-submission.md) and then [commits](commit-an-app-submission.md) the new submission to Windows Dev Center.
+5. Next, it [updates](update-an-app-submission.md) and then [commits](commit-an-app-submission.md) the new submission to Partner Center.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-an-app-submission.md) until the submission is successfully committed.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
+
 ## Create an add-on submission
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to create a new add-on submission. The ```RunInAppProductSubmissionCreateSample``` method in the class performs these tasks:
@@ -71,42 +69,45 @@ The following example implements a class that uses several methods in the Micros
 1. To begin, the method [creates a new add-on](create-an-add-on.md).
 2. Next, it [creates a new submission for the add-on](create-an-add-on-submission.md).
 3. It uploads a ZIP archive that contains icons for the submission to Azure Blob storage.
-4. Next, it [commits the new submission to Windows Dev Center](commit-an-add-on-submission.md).
+4. Next, it [commits the new submission to Partner Center](commit-an-add-on-submission.md).
 5. Finally, it periodically [checks the status of the new submission](get-status-for-an-add-on-submission.md) until the submission is successfully committed.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
 
 <span id="update-add-on-submission" />
+
 ## Update an add-on submission
 
-The following example implements a class that uses several methods in the Microsoft Store submission API to update an existing add-on submission. The ```RunInAppProductSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunInAppProductSubmissionUpdateSample``` method performs these tasks:
+The following example implements a class that uses several methods in the Microsoft Store submission API to update an existing add-on submission. The ```RunInAppProductSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Partner Center. Specifically, the ```RunInAppProductSubmissionUpdateSample``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified add-on](get-an-add-on.md).
 2. Next, it [deletes the pending submission for the add-on](delete-an-add-on-submission.md), if one exists.
 3. It then [creates a new submission for the add-on](create-an-add-on-submission.md) (the new submission is a copy of the last published submission).
-5. Next, it [updates](update-an-add-on-submission.md) and then [commits](commit-an-add-on-submission.md) the new submission to Windows Dev Center.
+5. Next, it [updates](update-an-add-on-submission.md) and then [commits](commit-an-add-on-submission.md) the new submission to Partner Center.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-an-add-on-submission.md) until the submission is successfully committed.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
 <span id="create-flight-submission" />
+
 ## Create a package flight submission
 
-The following example implements a class that uses several methods in the Microsoft Store submission API to update a package flight submission. The ```RunFlightSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunFlightSubmissionUpdateSample``` method performs these tasks:
+The following example implements a class that uses several methods in the Microsoft Store submission API to update a package flight submission. The ```RunFlightSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Partner Center. Specifically, the ```RunFlightSubmissionUpdateSample``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified package flight](get-a-flight.md).
 2. Next, it [deletes the pending submission for the package flight](delete-a-flight-submission.md), if one exists.
 3. It then [creates a new submission for the package flight](create-a-flight-submission.md) (the new submission is a copy of the last published submission).
 4. It uploads a new package for the submission to Azure Blob storage.
-5. Next, it [updates](update-a-flight-submission.md) and then [commits](commit-a-flight-submission.md) the new submission to Windows Dev Center.
+5. Next, it [updates](update-a-flight-submission.md) and then [commits](commit-a-flight-submission.md) the new submission to Partner Center.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-a-flight-submission.md) until the submission is successfully committed.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
 
 <span id="ingestionclient" />
+
 ## IngestionClient helper class
 
 The ```IngestionClient``` class provides helper methods that are used by other methods in the sample app to perform the following tasks:

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -13,14 +12,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Threading.Tasks;
 
-//<SnippetUsing>
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+// <SnippetUsing>
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
-//</SnippetUsing>
+using System.Threading.Tasks;
+// </SnippetUsing>
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MIDIWin10
 {
@@ -29,21 +29,21 @@ namespace MIDIWin10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareDeviceWatchers>
+        // <SnippetDeclareDeviceWatchers>
         MyMidiDeviceWatcher inputDeviceWatcher;
         MyMidiDeviceWatcher outputDeviceWatcher;
-        //</SnippetDeclareDeviceWatchers>
+        // </SnippetDeclareDeviceWatchers>
 
-        //<SnippetDeclareMidiPorts>
+        // <SnippetDeclareMidiPorts>
         MidiInPort midiInPort;
         IMidiOutPort midiOutPort;
-        //</SnippetDeclareMidiPorts>
+        // </SnippetDeclareMidiPorts>
 
         public MainPage()
         {
             this.InitializeComponent();
         }
-        //<SnippetEnumerateMidiInputDevices>
+        // <SnippetEnumerateMidiInputDevices>
         private async Task EnumerateMidiInputDevices()
         {
             // Find all input MIDI devices
@@ -64,12 +64,12 @@ namespace MIDIWin10
             foreach (DeviceInformation deviceInfo in midiInputDevices)
             {
                 this.midiInPortListBox.Items.Add(deviceInfo.Name);
-                this.midiInPortListBox.IsEnabled = true;
             }
+            this.midiInPortListBox.IsEnabled = true;
         }
-        //</SnippetEnumerateMidiInputDevices>
+        // </SnippetEnumerateMidiInputDevices>
 
-        //<SnippetEnumerateMidiOutputDevices>
+        // <SnippetEnumerateMidiOutputDevices>
         private async Task EnumerateMidiOutputDevices()
         {
 
@@ -91,10 +91,10 @@ namespace MIDIWin10
             foreach (DeviceInformation deviceInfo in midiOutputDevices)
             {
                 this.midiOutPortListBox.Items.Add(deviceInfo.Name);
-                this.midiOutPortListBox.IsEnabled = true;
             }
+            this.midiOutPortListBox.IsEnabled = true;
         }
-        //</SnippetEnumerateMidiOutputDevices>
+        // </SnippetEnumerateMidiOutputDevices>
 
 
 
@@ -104,7 +104,7 @@ namespace MIDIWin10
             //EnumerateMidiOutputDevices();
 
 
-            //<SnippetStartWatchers>
+            // <SnippetStartWatchers>
             inputDeviceWatcher =
                 new MyMidiDeviceWatcher(MidiInPort.GetDeviceSelector(), midiInPortListBox, Dispatcher);
 
@@ -114,10 +114,10 @@ namespace MIDIWin10
                 new MyMidiDeviceWatcher(MidiOutPort.GetDeviceSelector(), midiOutPortListBox, Dispatcher);
 
             outputDeviceWatcher.StartWatcher();
-            //</SnippetStartWatchers>
+            // </SnippetStartWatchers>
         }
 
-        //<SnippetInPortSelectionChanged>
+        // <SnippetInPortSelectionChanged>
         private async void midiInPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var deviceInformationCollection = inputDeviceWatcher.DeviceInformationCollection;
@@ -127,7 +127,7 @@ namespace MIDIWin10
                 return;
             }
 
-            DeviceInformation devInfo = deviceInformationCollection[midiOutPortListBox.SelectedIndex];
+            DeviceInformation devInfo = deviceInformationCollection[midiInPortListBox.SelectedIndex];
 
             if (devInfo == null)
             {
@@ -136,16 +136,16 @@ namespace MIDIWin10
 
             midiInPort = await MidiInPort.FromIdAsync(devInfo.Id);
 
-            if(midiInPort == null)
+            if (midiInPort == null)
             {
                 System.Diagnostics.Debug.WriteLine("Unable to create MidiInPort from input device");
                 return;
             }
             midiInPort.MessageReceived += MidiInPort_MessageReceived;
         }
-        //</SnippetInPortSelectionChanged>
+        // </SnippetInPortSelectionChanged>
 
-        //<SnippetMessageReceived>
+        // <SnippetMessageReceived>
         private void MidiInPort_MessageReceived(MidiInPort sender, MidiMessageReceivedEventArgs args)
         {
             IMidiMessage receivedMidiMessage = args.Message;
@@ -159,21 +159,21 @@ namespace MIDIWin10
                 System.Diagnostics.Debug.WriteLine(((MidiNoteOnMessage)receivedMidiMessage).Velocity);
             }
         }
-        //</SnippetMessageReceived>
+        // </SnippetMessageReceived>
 
-        //<SnippetOutPortSelectionChanged>
+        // <SnippetOutPortSelectionChanged>
         private async void midiOutPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var deviceInformationCollection = outputDeviceWatcher.DeviceInformationCollection;
 
-            if(deviceInformationCollection == null)
+            if (deviceInformationCollection == null)
             {
                 return;
             }
 
             DeviceInformation devInfo = deviceInformationCollection[midiOutPortListBox.SelectedIndex];
 
-            if(devInfo == null)
+            if (devInfo == null)
             {
                 return;
             }
@@ -187,17 +187,17 @@ namespace MIDIWin10
             }
 
         }
-        //</SnippetOutPortSelectionChanged>
+        // </SnippetOutPortSelectionChanged>
         private void SendMidiMessage()
         {
-            //<SnippetSendMessage>
+            // <SnippetSendMessage>
             byte channel = 0;
             byte note = 60;
             byte velocity = 127;
             IMidiMessage midiMessageToSend = new MidiNoteOnMessage(channel, note, velocity);
 
             midiOutPort.SendMessage(midiMessageToSend);
-            //</SnippetSendMessage>
+            // </SnippetSendMessage>
         }
 
         private void sendMessageButton_Click(object sender, RoutedEventArgs e)
@@ -207,20 +207,20 @@ namespace MIDIWin10
 
         private void CleanUp()
         {
-            //<SnippetCleanUp>
+            // <SnippetCleanUp>
             inputDeviceWatcher.StopWatcher();
             inputDeviceWatcher = null;
 
             outputDeviceWatcher.StopWatcher();
             outputDeviceWatcher = null;
 
-            midiInPort.MessageReceived += MidiInPort_MessageReceived;
+            midiInPort.MessageReceived -= MidiInPort_MessageReceived;
             midiInPort.Dispose();
             midiInPort = null;
 
             midiOutPort.Dispose();
             midiOutPort = null;
-            //</SnippetCleanUp>
+            // </SnippetCleanUp>
         }
     }
 }

@@ -1,17 +1,12 @@
 ---
-author: jnHs
 Description: You can help customers discover your app by linking to your app's listing in the Microsoft Store.
 title: Link to your app
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
-ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, link, windows store protocol, linking to an app, link to app
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-
 # Link to your app
 
 

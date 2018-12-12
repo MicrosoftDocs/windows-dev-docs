@@ -10,21 +10,21 @@ using Windows.Foundation.Collections;
 using Windows.Media.MediaProperties;
 using Windows.Media.Effects;
 
-//<SnippetUsingWin2D>
+// <SnippetUsingWin2D>
 using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas;
-//</SnippetUsingWin2D>
+// </SnippetUsingWin2D>
 
 namespace VideoEffectComponent
 {
     public sealed class ExampleVideoEffectWin2D : IBasicVideoEffect
     {
 
-        //<SnippetSupportedMemoryTypesWin2D>
+        // <SnippetSupportedMemoryTypesWin2D>
         public MediaMemoryTypes SupportedMemoryTypes { get { return MediaMemoryTypes.Gpu; } }
-        //</SnippetSupportedMemoryTypesWin2D>
+        // </SnippetSupportedMemoryTypesWin2D>
 
-        //<SnippetSupportedEncodingPropertiesWin2D>
+        // <SnippetSupportedEncodingPropertiesWin2D>
         public IReadOnlyList<VideoEncodingProperties> SupportedEncodingProperties {
             get
             {
@@ -33,31 +33,31 @@ namespace VideoEffectComponent
                 return new List<VideoEncodingProperties>() { encodingProperties };
             }
         }
-        //</SnippetSupportedEncodingPropertiesWin2D>
+        // </SnippetSupportedEncodingPropertiesWin2D>
 
-        //<SnippetSetEncodingPropertiesWin2D>
+        // <SnippetSetEncodingPropertiesWin2D>
         private CanvasDevice canvasDevice;
         public void SetEncodingProperties(VideoEncodingProperties encodingProperties, IDirect3DDevice device)
         {
             canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device);
         }
-        //</SnippetSetEncodingPropertiesWin2D>
+        // </SnippetSetEncodingPropertiesWin2D>
 
         
 
-        //<SnippetSetPropertiesWin2D>
+        // <SnippetSetPropertiesWin2D>
         private IPropertySet configuration;
         public void SetProperties(IPropertySet configuration)
         {
             this.configuration = configuration;
         }
-        //</SnippetSetPropertiesWin2D>
+        // </SnippetSetPropertiesWin2D>
 
 
         /// <summary> 
         /// Value used for BlurAmount property 
         /// </summary> 
-        //<SnippetBlurAmountWin2D>
+        // <SnippetBlurAmountWin2D>
         public double BlurAmount
         {
             get
@@ -70,9 +70,9 @@ namespace VideoEffectComponent
                 return 3;
             }
         }
-        //</SnippetBlurAmountWin2D>
+        // </SnippetBlurAmountWin2D>
 
-        //<SnippetProcessFrameWin2D>
+        // <SnippetProcessFrameWin2D>
         public void ProcessFrame(ProcessVideoFrameContext context)
         {
 
@@ -93,7 +93,7 @@ namespace VideoEffectComponent
 
             }
         }
-        //</SnippetProcessFrameWin2D>
+        // </SnippetProcessFrameWin2D>
 
         public bool IsReadOnly { get { return false; } }
 

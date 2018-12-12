@@ -1,14 +1,10 @@
 ---
-author: serenaz
 Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
 label: Buttons
 template: detail.hbs
-ms.author: sezhen
-ms.date: 05/19/2017
+ms.date: 10/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 pm-contact: kisai
@@ -16,39 +12,61 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Buttons
 
-
-A button gives the user a way to trigger an immediate action.
-
-> **Important APIs**: [Button class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), [RepeatButton class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx), [Click event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+A button gives the user a way to trigger an immediate action. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
 
 ![Example of buttons](images/controls/button.png)
 
+The XAML framework provides a standard button control as well as several specialized button controls.
+
+Control | Description
+------- | -----------
+[Button](/uwp/api/windows.ui.xaml.controls.button) | Initiates an immediate action. Can be used with a Click event or Command binding.
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a Click event continuously while pressed.
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink, used for navigation. See [Hyperlinks](hyperlinks.md) for more info.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
+
+| **Get the Windows UI Library** |
+| - |
+| DropDownButton, SplitButton, and ToggleSplitButton are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+| **Platform APIs** | **Windows UI Library APIs** |
+| - | - |
+| [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+
 ## Is this the right control?
 
-A button lets the user initiate an immediate action, such as submitting a form.
+Use a **Button** to let the user initiate an immediate action, such as submitting a form.
 
-Don't use a button when the action is to navigate to another page; use a link instead. See [Hyperlinks](hyperlinks.md) for more info.
-> Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a back button.
+Don't use a button when the action is to navigate to another page; use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) instead. See [Hyperlinks](hyperlinks.md) for more info.
+> Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
+
+Use a **RepeatButton** when the user might want to trigger an action repeatedly. For example, use a RepeatButton to increment or decrement a value in a counter.
+
+Use a **DropDownButton** when the button has a flyout that contains more options. The default chevron provides a visual indication that the button includes a flyout.
+
+Use a **SplitButton** when you want the user to be able to initiate an immediate action or choose from additional options independently.
 
 ## Examples
 
-<div style="overflow: hidden; margin: 0 -8px;">
-    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <div style="height: 133px; width: 100%">
-            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
-        </div>
-    </div>
-    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
-        <ul>
-        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-        </ul>
-    </div>
-</div>
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 This example uses two buttons, Allow and Block, in a dialog requesting location access.
 
@@ -181,28 +199,321 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+## Create a drop down button
+
+> DropDownButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+
+A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard Button with a flyout; only the appearance is different.
+
+The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked.
+
+> [!TIP]
+> For more info about flyouts, see [Menus and context menus](menus.md).
+
+### Example - Drop down button
+
+This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+
+![A drop down button with alignment commands](images/drop-down-button-align.png)
+
+```xaml
+<DropDownButton ToolTipService.ToolTip="Alignment">
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E4;"/>
+    <DropDownButton.Flyout>
+        <MenuFlyout Placement="BottomEdgeAlignedLeft">
+            <MenuFlyoutItem Text="Left" Icon="AlignLeft" Tag="left"
+                            Click="AlignmentMenuFlyoutItem_Click"/>
+            <MenuFlyoutItem Text="Center" Icon="AlignCenter" Tag="center"
+                            Click="AlignmentMenuFlyoutItem_Click"/>
+            <MenuFlyoutItem Text="Right" Icon="AlignRight" Tag="right"
+                            Click="AlignmentMenuFlyoutItem_Click"/>
+        </MenuFlyout>
+    </DropDownButton.Flyout>
+</DropDownButton>
+```
+
+```csharp
+private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+{
+    var option = ((MenuFlyoutItem)sender).Tag.ToString();
+
+    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    if (selectedText != null)
+    {
+        // Apply the alignment to the selected paragraphs.
+        var paragraphFormatting = selectedText.ParagraphFormat;
+        if (option == "left")
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Left;
+        }
+        else if (option == "center")
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Center;
+        }
+        else if (option == "right")
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Right;
+        }
+    }
+}
+```
+
+## Create a split button
+
+> SplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+
+A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
+
+> [!NOTE]
+> When invoked with touch, the split button behaves as a drop down button; both halves of the button invoke the flyout. With other methods of input, a user can invoke either half of the button separately.
+
+The typical behavior for a split button is:
+
+- When the user clicks the button part, handle the Click event to invoke the option that's currently selected in the drop down.
+- When the drop down is open, handle invocation of the items in the drop down to both change which option is selected, and then invoke it. It's important to invoke the flyout item because the button Click event doesn't occur when using touch.
+
+> [!TIP]
+> There are many ways to put items in the drop down and handle their invocation. If you use a ListView or GridView, one way is to handle the SelectionChanged event. If you do this, set [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) to **false**. This lets users navigate the options using a keyboard without invoking the item on each change.
+
+### Example - Split button
+
+This example shows how to create a split button that is used to change the foreground color of selected text in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+
+![A split button for selecting foreground color](images/split-button-rtb.png)
+
+```xaml
+<SplitButton ToolTipService.ToolTip="Foreground color"
+             Click="BrushButtonClick">
+    <Border x:Name="SelectedColorBorder" Width="20" Height="20"/>
+    <SplitButton.Flyout>
+        <Flyout x:Name="BrushFlyout" Placement="BottomEdgeAlignedLeft">
+            <!-- Set SingleSelectionFollowsFocus="False"
+                 so that keyboard navigation works correctly. -->
+            <GridView ItemsSource="{x:Bind ColorOptions}" 
+                      SelectionChanged="BrushSelectionChanged"
+                      SingleSelectionFollowsFocus="False"
+                      SelectedIndex="0" Padding="0">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Rectangle Fill="{Binding}" Width="20" Height="20"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemContainerStyle>
+                    <Style TargetType="GridViewItem">
+                        <Setter Property="Margin" Value="2"/>
+                        <Setter Property="MinWidth" Value="0"/>
+                        <Setter Property="MinHeight" Value="0"/>
+                    </Style>
+                </GridView.ItemContainerStyle>
+            </GridView>
+        </Flyout>
+    </SplitButton.Flyout>
+</SplitButton>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    // Color options that are bound to the grid in the split button flyout.
+    private List<SolidColorBrush> ColorOptions = new List<SolidColorBrush>();
+    private SolidColorBrush CurrentColorBrush = null;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Add color brushes to the collection.
+        ColorOptions.Add(new SolidColorBrush(Colors.Black));
+        ColorOptions.Add(new SolidColorBrush(Colors.Red));
+        ColorOptions.Add(new SolidColorBrush(Colors.Orange));
+        ColorOptions.Add(new SolidColorBrush(Colors.Yellow));
+        ColorOptions.Add(new SolidColorBrush(Colors.Green));
+        ColorOptions.Add(new SolidColorBrush(Colors.Blue));
+        ColorOptions.Add(new SolidColorBrush(Colors.Indigo));
+        ColorOptions.Add(new SolidColorBrush(Colors.Violet));
+        ColorOptions.Add(new SolidColorBrush(Colors.White));
+    }
+
+    private void BrushButtonClick(object sender, object e)
+    {
+        // When the button part of the split button is clicked,
+        // apply the selected color.
+        ChangeColor();
+    }
+
+    private void BrushSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        // When the flyout part of the split button is opened and the user selects
+        // an option, set their choice as the current color, apply it, then close the flyout.
+        CurrentColorBrush = (SolidColorBrush)e.AddedItems[0];
+        SelectedColorBorder.Background = CurrentColorBrush;
+        ChangeColor();
+        BrushFlyout.Hide();
+    }
+
+    private void ChangeColor()
+    {
+        // Apply the color to the selected text in a RichEditBox.
+        Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+        if (selectedText != null)
+        {
+            Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+            charFormatting.ForegroundColor = CurrentColorBrush.Color;
+            selectedText.CharacterFormat = charFormatting;
+        }
+    }
+}
+```
+
+## Create a toggle split button
+
+> ToggleSplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+
+A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
+
+A toggle split button is typically used to enable or disable a feature when the feature has multiple options that the user can choose from. For example, in a document editor, it could be used to turn lists on or off, while the drop down is used to choose the style of the list.
+
+> [!NOTE]
+> When invoked with touch, the split button behaves as a drop down button. With other methods of input, a user can invoke either half of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.
+
+### Differences with ToggleButton
+
+Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), ToggleSplitButton does not have an indeterminate state. As a result, you should keep in mind these differences:
+
+- ToggleSplitButton does not have an **IsThreeState** property or **Indeterminate** event.
+- The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a **bool**, not a **nullable bool**.
+- ToggleSplitButton has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
+
+### Example - Toggle split button
+
+The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+
+![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
+
+```xaml
+<ToggleSplitButton x:Name="ListButton"
+                   ToolTipService.ToolTip="List style"
+                   Click="ListButton_Click"
+                   IsCheckedChanged="ListStyleButton_IsCheckedChanged">
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8FD;"/>
+    <ToggleSplitButton.Flyout>
+        <Flyout Placement="BottomEdgeAlignedLeft">
+            <ListView x:Name="ListStylesListView"
+                      SelectionChanged="ListStylesListView_SelectionChanged" 
+                      SingleSelectionFollowsFocus="False">
+                <StackPanel Tag="bullet" Orientation="Horizontal">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7C8;"/>
+                    <TextBlock Text="Bullet" Margin="8,0"/>
+                </StackPanel>
+                <StackPanel Tag="alpha" Orientation="Horizontal">
+                    <TextBlock Text="A" FontSize="24" Margin="2,0"/>
+                    <TextBlock Text="Alpha" Margin="8"/>
+                </StackPanel>
+                <StackPanel Tag="numeric" Orientation="Horizontal">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF146;"/>
+                    <TextBlock Text="Numeric" Margin="8,0"/>
+                </StackPanel>
+                <TextBlock Tag="none" Text="None" Margin="28,0"/>
+            </ListView>
+        </Flyout>
+    </ToggleSplitButton.Flyout>
+</ToggleSplitButton>
+```
+
+```csharp
+private void ListStyleButton_IsCheckedChanged(ToggleSplitButton sender, ToggleSplitButtonIsCheckedChangedEventArgs args)
+{
+    // Use the toggle button to turn the selected list style on or off.
+    if (((ToggleSplitButton)sender).IsChecked == true)
+    {
+        // On. Apply the list style selected in the drop down to the selected text.
+        var listStyle = ((FrameworkElement)(ListStylesListView.SelectedItem)).Tag.ToString();
+        ApplyListStyle(listStyle);
+    }
+    else
+    {
+        // Off. Make the selected text not a list,
+        // but don't change the list style selected in the drop down.
+        ApplyListStyle("none");
+    }
+}
+
+private void ListStylesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var listStyle = ((FrameworkElement)(e.AddedItems[0])).Tag.ToString();
+
+    if (ListButton.IsChecked == true)
+    {
+        // Toggle button is on. Turn it off...
+        if (listStyle == "none")
+        {
+            ListButton.IsChecked = false;
+        }
+        else
+        {
+            // or apply the new selection.
+            ApplyListStyle(listStyle);
+        }
+    }
+    else
+    {
+        // Toggle button is off. Turn it on, which will apply the selection
+        // in the IsCheckedChanged event handler.
+        ListButton.IsChecked = true;
+    }
+}
+
+private void ApplyListStyle(string listStyle)
+{
+    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    if (selectedText != null)
+    {
+        // Apply the list style to the selected text.
+        var paragraphFormatting = selectedText.ParagraphFormat;
+        if (listStyle == "none")
+        {  
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.None;
+        }
+        else if (listStyle == "bullet")
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Bullet;
+        }
+        else if (listStyle == "numeric")
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Arabic;
+        }
+        else if (listStyle == "alpha")
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.UppercaseEnglishLetter;
+        }
+        selectedText.ParagraphFormat = paragraphFormatting;
+    }
+}
+```
+
 ## Recommendations
--   Make sure the purpose and state of a button are clear to the user.
--   When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
-	-   OK/[Do it]/Yes
-	-   [Don't do it]/No
-	-   Cancel
--   Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
--   For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
+
+- Make sure the purpose and state of a button are clear to the user.
+- When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
+    - OK/[Do it]/Yes
+	- [Don't do it]/No
+	- Cancel
+- Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
+- For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
 
 ### Recommended single button layout
 
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
--   Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will automatically right-align.
+- Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will automatically right-align.
 
 ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
--   If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
+- If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
 
 ![A button within a container](images/pushbutton_doc_container.png)
 
--   In pages that contain a single button (for example, an "Apply" button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+- In pages that contain a single button (for example, an "Apply" button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
 
 ![A button on a page](images/pushbutton_doc_page.png)
 
@@ -214,8 +525,8 @@ The back button is a system-provided UI element that enables backward navigation
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
-
 ## Related articles
+
 - [Button class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 - [Radio buttons](radio-button.md)
 - [Check boxes](checkbox.md)

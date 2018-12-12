@@ -1,23 +1,18 @@
 ---
-author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows Desktop Bridge app tests
-description: TBD
-ms.author: pafarley
-ms.date: 06/30/2017
+description: Use the Desktop Bridge's built-in tests to ensure that your desktop app is optimized for its conversion to a UWP app.
+ms.date: 12/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
 ---
-
 # Windows Desktop Bridge app tests
 
-[Desktop Bridge Apps](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) are Windows desktop applications converted to a Universal Windows Platform (UWP) app using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop). After conversion, the Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (a .appx or .appxbundle) targeting Windows 10 Desktop.
+[Desktop Bridge Apps](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) are Windows desktop applications converted to Universal Windows Platform (UWP) apps using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop). After conversion, the Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (a .appx or .appxbundle) targeting Windows 10 Desktop.
 
 ## Required versus optional tests
-There is a new concept of optional tests for Windows Desktop Bridge apps which are informational only and will not be used to evaluate your app during Microsoft Store onboarding. Investigating these test results is recommended to produce better quality apps. The overall pass/fail criteria for store onboarding is determined by the required tests and not by these optional tests.
+Optional tests for Windows Desktop Bridge apps are informational only and will not be used to evaluate your app during Microsoft Store onboarding. We recommend investigating these test results to produce better quality apps. The overall pass/fail criteria for store onboarding is determined by the required tests and not by these optional tests.
 
 ## Current optional tests
 

@@ -1,13 +1,9 @@
 ---
-author: muhsinking
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Use the accelerometer
 description: Learn how to use the accelerometer to respond to user movement.
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -22,8 +18,6 @@ ms.localizationpriority: medium
 **Sample**
 
 -   For a more complete implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
 Learn how to use the accelerometer to respond to user movement.
 

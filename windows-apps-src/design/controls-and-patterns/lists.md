@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: Lists display and enable interaction with collection-based content.
 title: Lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
@@ -35,7 +31,7 @@ Design guidelines, features, and examples are given for each list pattern.
 > <strong>Windows 10 Fall Creators Update - Behavior change</strong>
 > </div>
 > By default, instead of performing selection, an active pen now scrolls/pans a list in UWP apps (like touch, touchpad, and passive pen).
-> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
+> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
 
 ## List views
 
@@ -74,27 +70,27 @@ Here's a simple list view showing grouped data on a phone.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
+<td align="left"><p><a href="listview-and-gridview.md">List view and grid view</a></p></td>
 <td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Item containers and templates](item-containers-templates.md)</p></td>
+<td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
 <td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Item templates for list view](item-templates-listview.md)</p></td>
+<td align="left"><p><a href="item-templates-listview.md">Item templates for list view</a></p></td>
 <td align="left"><p>Use these example item templates for a ListView to get the look of common app types.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Inverted lists](inverted-lists.md)</p></td>
+<td align="left"><p><a href="inverted-lists.md">Inverted lists</a></p></td>
 <td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this guidance to use an inverted list in your app.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Pull-to-refresh](pull-to-refresh.md)</p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
 <td align="left"><p>The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Use this guidance to implement pull-to-refresh in your list view.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
+<td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
 <td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
 </tr>
 </tbody>
@@ -141,19 +137,19 @@ A grid view is an ideal solution for a content library, which is often used to p
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
+<td align="left"><p><a href="listview-and-gridview.md">List view and grid view</a></p></td>
 <td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Item containers and templates](item-containers-templates.md)</p></td>
+<td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
 <td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Item templates for grid view](item-templates-gridview.md)</p></td>
+<td align="left"><p><a href="item-templates-gridview.md">Item templates for grid view</a></p></td>
 <td align="left"><p>Use these example item templates for GridView to get the look of common app types.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
+<td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
 <td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
 </tr>
 </tbody>
@@ -265,6 +261,7 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Thumbnail images](../../files/thumbnails.md)
 
 **For developers**
 - [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878)

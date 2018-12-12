@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: This article explains how to load and save image files using BitmapDecoder and BitmapEncoder and how to use the SoftwareBitmap object to represent bitmap images.
 title: Create, edit, and save bitmap images
-ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Create, edit, and save bitmap images
 
 
@@ -44,7 +39,7 @@ Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br22711
 
 To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved. This example uses a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to select an output file.
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream to which the image will be written. Call the static method [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) to get an instance of the [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) class for the specified stream. The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image. **BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
@@ -116,7 +111,7 @@ The **SoftwareBitmap** class provides the static method, [**Convert**](https://m
 
 ## Transcode an image file
 
-You can transcode an image file directly from a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) to a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Create a [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) from the file to be transcoded. Create a new **BitmapDecoder** from the input stream. Create a new [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) for the encoder to write to and call [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), passing in the in-memory stream and the decoder object. Encode options are not supported when transcoding; instead you should use [**CreateAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.bitmapencoder#Windows_Graphics_Imaging_BitmapEncoder_CreateAsync_System_Guid_Windows_Storage_Streams_IRandomAccessStream_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Graphics_Imaging_BitmapTypedValue___). Any properties in the input image file that you do not specifically set on the encoder, will be written to the output file unchanged. Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to encode to the in-memory stream. Finally, seek the file stream and the in-memory stream to the beginning and call [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) to write the in-memory stream out to the file stream.
+You can transcode an image file directly from a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) to a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Create a [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) from the file to be transcoded. Create a new **BitmapDecoder** from the input stream. Create a new [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) for the encoder to write to and call [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), passing in the in-memory stream and the decoder object. Encode options are not supported when transcoding; instead you should use [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createasync). Any properties in the input image file that you do not specifically set on the encoder, will be written to the output file unchanged. Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to encode to the in-memory stream. Finally, seek the file stream and the in-memory stream to the beginning and call [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) to write the in-memory stream out to the file stream.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 

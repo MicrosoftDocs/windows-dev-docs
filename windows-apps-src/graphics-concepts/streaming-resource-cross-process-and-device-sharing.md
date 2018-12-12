@@ -4,15 +4,12 @@ description: Tile pools can be shared with other processes just like traditional
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords:
 - Streaming resource cross-process and device sharing
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Streaming resource cross-process and device sharing
 
 
@@ -36,7 +33,7 @@ Shared tile pools can't be resized.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Stencil formats not supported with streaming resources](stencil-formats-not-supported-with-streaming-resources.md)</p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">Stencil formats not supported with streaming resources</a></p></td>
 <td align="left"><p>Formats that contain stencil aren't supported with streaming resources.</p></td>
 </tr>
 </tbody>

@@ -1,17 +1,13 @@
 ---
-author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: Share code between a desktop app and a UWP app
-ms.author: normesta
+title: Share code between a desktop application and a UWP app
 ms.date: 10/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Share code between a desktop app and a UWP app
+# Share code between a desktop application and a UWP app
 
 You can move your code into .NET Standard libraries, and then create a Universal Windows Platform (UWP) app to reach all Windows 10 devices. While there's no tool that can convert a desktop application to a UWP app, you can reuse a lot of your existing code and that lowers the cost of building one. This guide shows you how to do that.
 
@@ -20,8 +16,8 @@ You can move your code into .NET Standard libraries, and then create a Universal
 Place as much code as you can into .NET Standard 2.0 class libraries.  As long as your code uses APIs that are defined in the standard, you can reuse it in a UWP app. It's easier than it's ever been to share code in a .NET Standard library because so many more APIs are included in the .NET Standard 2.0.
 
 Here's a great video that tells you more about it.
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### Add .NET Standard libraries
 
@@ -50,10 +46,10 @@ We'll start with Nuget Packages and other dll files that you obtained from a thi
 If your application uses any of them, determine if they are compatible with the .NET Standard 2.0. You can use a Visual Studio extension or a command-line utility to do that.
 
 Use these same tools to analyze your code. Download the tools here ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) and then watch this video to learn how to use them.
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
+If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
 
 ![dot net option](images/desktop-to-uwp/dot-net-option.png)
 
@@ -61,7 +57,7 @@ Some of your code will be platform-specific and will need to remain in your desk
 
 ### Example: Migrating data access code to a .NET Standard 2.0 library
 
-Let's assume that we have a very basic Windows Forms app that shows customers from our Northwind sample database.
+Let's assume that we have a very basic Windows Forms application that shows customers from our Northwind sample database.
 
 ![Windows Forms App](images/desktop-to-uwp/win-forms-app.png)
 
@@ -95,7 +91,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-The [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) shows us an alternative though. We can use the ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes because those classes are available in the .NET Standard 2.0.  
+We can use the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
 
 This revised version uses those classes to get a list of customers, but to create a ``DbConnection`` class, we'll need to pass in a factory object that we create in the client application.
 
@@ -152,9 +148,9 @@ public partial class Customers : Form
 ## Reach all Windows devices
 
 Now you're ready to add a UWP app to your solution.
-<div style="float: left; padding: 10px">
-    ![desktop to UWP bridge image](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![desktop to UWP bridge image](images/desktop-to-uwp/adaptive-ui.png)
+
 You'll still have to design UI pages in XAML and write any device or platform-specific code, but when you are done, you'll be able to reach the full breadth of Windows 10 devices and your app pages will have a modern feel that adapts well to different screen sizes and resolutions.
 
 Your app will respond to input mechanisms other than just a keyboard and mouse, and features and settings will be intuitive across devices. This means that users learn how to do things one time, and then it works in a very familiar way no matter the device.
@@ -200,14 +196,13 @@ public sealed partial class MainPage : Page
 ```
 
 
-To get started with UWP, see [Intro to the Universal Windows Platform](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 ## Reach iOS and Android devices
 
 You can reach Android and iOS devices by adding Xamarin projects.  
-<div style="float: left; padding: 10px">
-    ![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
 
 These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
 

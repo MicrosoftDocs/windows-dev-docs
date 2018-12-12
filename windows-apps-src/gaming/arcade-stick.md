@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Arcade stick
 description: Use the Windows.Gaming.Input arcade stick APIs to detect and read arcade sticks.
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, arcade stick, input
 ms.localizationpriority: medium
 ---
-
 # Arcade stick
 
 This page describes the basics of programming for Xbox One arcade sticks using [Windows.Gaming.Input.ArcadeStick][arcadestick] and related APIs for the Universal Windows Platform (UWP).

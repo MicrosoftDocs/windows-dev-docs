@@ -1,21 +1,13 @@
 ---
-author: mcleanbyron
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: Use this method in the Microsoft Store submission API to delete an existing add-on submission.
 title: Delete an add-on submission
-ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, delete, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Delete an add-on submission
-
-
-
 
 Use this method in the Microsoft Store submission API to delete an existing add-on (also known as in-app product or IAP) submission.
 
@@ -34,8 +26,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -43,22 +33,19 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on that contains the submission to delete. The Store ID is available on the Dev Center dashboard.  |
-| submissionId | string | Required. The ID of the submission to delete. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| inAppProductId | string | Required. The Store ID of the add-on that contains the submission to delete. The Store ID is available in Partner Center.  |
+| submissionId | string | Required. The ID of the submission to delete. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
-<span/>
 
 ### Request body
 
 Do not provide a request body for this method.
 
-<span/>
 
 ### Request example
 
@@ -81,9 +68,8 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be deleted in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 409  | The specified submission was found but it could not be deleted in its current state, or the add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
-<span/>
 
 ## Related topics
 

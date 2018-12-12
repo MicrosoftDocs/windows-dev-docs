@@ -1,17 +1,14 @@
 ---
-author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.author: jken
-ms.date: 03/12/2017
+ms.date: 05/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.localizationpriority: high
----
 
+
+ms.localizationpriority: medium
+---
 # Enable your device for development
 
 ## Activate Developer Mode, sideload apps and access other developer features
@@ -37,7 +34,7 @@ To enable Developer mode, or access other settings:
 2.  Read the disclaimer for the setting you chose, then click **Yes** to accept the change.
 
 > [!NOTE]
-> If your device is owned by an organization, some options might be disabled by your organization.
+> Enabling Developer mode requires administrator access. If your device is owned by an organization, this option might be disabled.
 
 Here's the settings page on the desktop device family:
 
@@ -51,7 +48,7 @@ Here's the settings page on the mobile device family:
 
  You can enable a device for development, or just for sideloading.
 
--   *UWP apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
+-   *Microsoft Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
 -   *Sideloading* is installing and then running or testing an app that has not been certified by the Microsoft Store. For example, an app that is internal to your company only.
 -   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
 
@@ -71,7 +68,6 @@ Device family specific info
 **Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
 
 > [!NOTE]
-
 > If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Microsoft Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Microsoft Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
 
 
@@ -138,12 +134,15 @@ In early versions of Windows 10 Mobile, a Crash Dumps option was present in the 
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Both of the ways listed install only the app package (.appx/.appxbundle); they do not install certificates.
 
 -   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
+-   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device. 
 
 See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more. 
+
+> [!NOTE]
+> If Developer Mode doesn't install correctly, we encourage you to file a feedback request. In the **Feedback Hub** app, select **Add new feedback**, and choose the **Developer Platform** category and the **Developer Mode** subcategory. Submitting feedback will help Microsoft resolve the issue you encountered.
 
 ### Failed to locate the package
 
@@ -242,5 +241,5 @@ Error : DEP0700 : Registration of the app failed.
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
+* [What's a UWP app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

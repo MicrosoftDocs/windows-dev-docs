@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Raw game controller
 description: Use the Windows.Gaming.Input raw game controller APIs to read input from nearly any type of game controller.
 ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
-ms.author: wdg-dev-content
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, input, raw game controller
 ms.localizationpriority: medium
 ---
-
 # Raw game controller
 
 This page describes the basics of programming for nearly any type of game controller using [Windows.Gaming.Input.RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) and related APIs for the Universal Windows Platform (UWP).
@@ -89,7 +84,7 @@ Each raw game controller can be associated with a user account to link their ide
 
 ## Get the capabilities of a raw game controller
 
-After you identify the raw game controller that you're interested in, you can gather information on the capabilities of the controller. You can get the number of buttons on the raw game controller with [RawGameController.ButtonCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_ButtonCount), the number of analog axes with [RawGameController.AxisCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_AxisCount), and the number of switches with [RawGameController.SwitchCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_SwitchCount). Additionally, you can get the type of a switch using [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_).
+After you identify the raw game controller that you're interested in, you can gather information on the capabilities of the controller. You can get the number of buttons on the raw game controller with [RawGameController.ButtonCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.ButtonCount), the number of analog axes with [RawGameController.AxisCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.AxisCount), and the number of switches with [RawGameController.SwitchCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.SwitchCount). Additionally, you can get the type of a switch using [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_).
 
 The following example gets the input counts of a raw game controller:
 
@@ -142,7 +137,7 @@ There is no guarantee of which position in each array will hold which input valu
 
 There is no standardized way to get the label of an axis or switch, so you'll need to test these yourself to determine which input is which.
 
-If you have a specific controller that you want to support, you can get the [RawGameController.HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_HardwareProductId) and [RawGameController.HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_HardwareVendorId) and check if they match that controller. The position of each input in each array is the same for every controller with the same **HardwareProductId** and **HardwareVendorId**, so you don't have to worry about your logic potentially being inconsistent among different controllers of the same type.
+If you have a specific controller that you want to support, you can get the [RawGameController.HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId) and [RawGameController.HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) and check if they match that controller. The position of each input in each array is the same for every controller with the same **HardwareProductId** and **HardwareVendorId**, so you don't have to worry about your logic potentially being inconsistent among different controllers of the same type.
 
 In addition to the raw game controller state, each reading returns a timestamp that indicates precisely when the state was retrieved. The timestamp is useful for relating to the timing of previous readings or to the timing of the game simulation.
 

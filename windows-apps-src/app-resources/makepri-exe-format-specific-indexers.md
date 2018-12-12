@@ -1,21 +1,18 @@
 ---
-author: stevewhims
 Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
 title: MakePri.exe format-specific indexers
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
-
 # MakePri.exe format-specific indexers
 
 This topic describes the format-specific indexers used by the [MakePri.exe](compile-resources-manually-with-makepri.md) tool to generate its index of resources.
+
+> [!NOTE]
+> MakePri.exe is installed when you check the **Windows SDK for UWP Managed Apps** option while installing the Windows Software Development Kit. It is installed to the path `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (as well as in folders named for the other architectures). For example, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe is typically used with the `new`, `versioned`, or `resourcepack` commands. See [MakePri.exe command-line options](makepri-exe-command-options.md). In those cases it indexes source files to generate an index of resources. MakePri.exe uses various individual indexers to read different source resource files or containers for resources. The simplest indexer is the folder indexer, which indexes the contents of a folder, such as `.jpg` or `.png` images.
 

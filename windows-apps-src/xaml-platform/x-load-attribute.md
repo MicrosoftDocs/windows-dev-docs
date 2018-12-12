@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: xLoad attribute
-description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage. 
-ms.author: jimwalk
+description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage.
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -19,7 +15,7 @@ The UI element attributed with x:Load can be loaded and unloaded via code, or us
 The tracking of deferred elements by the XAML framework adds about 600 bytes to the memory usage for each element attributed with x:Load, to account for the placeholder. Therefore, it's possible to overuse this attribute to the extent that your performance actually decreases. We recommend that you only use it on elements that need to be hidden. If you use x:Load on a container, then the overhead is paid only for the element with the x:Load attribute.
 
 > [!IMPORTANT]
-> The x:Load attribute is available starting in Windows 10, version 1703 (Creator's Update). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load.
+> The x:Load attribute is available starting in Windows 10, version 1703 (Creators Update). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load.
 
 ## XAML attribute usage
 

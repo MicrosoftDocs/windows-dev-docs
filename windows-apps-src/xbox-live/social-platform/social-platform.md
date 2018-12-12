@@ -1,17 +1,13 @@
 ---
 title: Xbox Live social platform - For games and gamers
-author: aablackm
+
 description: Provides links to learn about the Xbox Live social platform service.
 ms.assetid: 27b85218-60f3-4eb0-9f7e-fe90e027db5c
-ms.author: aablackm
 ms.date: 09/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live social platform - For games and gamers
 
 For gamers to adopt your title and stay engaged, it is crucial for them to play and compete with others. Xbox Live offers the best gaming social network with over 50 million active gamers and growing. We have created a set of tools to bring gamers together and get their eyes on new and exciting games like the one you’re sure to create. Integrating the Xbox Live social platform in your title is easy and the return on investment is huge whether you are building a single player casual game, a companion app, or a massive multiplayer game.

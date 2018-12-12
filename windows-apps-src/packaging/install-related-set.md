@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Install a related set using an App Installer file
 description: In this section, we will review the steps you need to take to allow the installation of a related set via App Installer. We will also go through the steps to construct a *.appinstaller file that will define your related set.
-ms.author: lahugh
-ms.date: 10/10/2017
+ms.date: 1/4/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---
-
 # Install a related set using an App Installer file
 
 If you're just starting out with UWP optional packages or related sets, the following articles are good resources to get started. 
@@ -31,7 +26,7 @@ Before we go in to more detail, here is a complete sample *.appinstaller file:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -79,19 +74,19 @@ The basic template includes the App Installer file information.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
 </AppInstaller>
 ```
 
 ### Step 3: Add the main package information 
-If the main app package is an .appxbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
+If the main app package is an .appxbundle or .msixbundle file, then use the `<MainBundle>` shown below. If the main app package is an .appx or .msix file, then use `<MainPackage>` in place of `<MainBundle>` in the snippet. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -111,7 +106,7 @@ Similar to the main app package attribute, if the optional package can be either
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -151,7 +146,7 @@ In the dependencies element, you can specify the required framework packages for
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -192,11 +187,11 @@ In the dependencies element, you can specify the required framework packages for
 ```
 
 ### Step 6: Add Update setting 
-The App Installer file can also specify update setting so that the related sets can be automatically updated when a newer App Installer file is published. **<UpdateSettings>** is an optional element. 
+The App Installer file can also specify update setting so that the related sets can be automatically updated when a newer App Installer file is published. **<UpdateSettings>** is an optional element. Within  **<UpdateSettings>** the OnLaunch option specifies that update checks should be made on app launch, and HoursBetweenUpdateChecks="12" specifies that an update check should be made every 12 hours. If HoursBetweenUpdateChecks is not specified, the default interval used to check for updates is 24 hours.
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -234,7 +229,7 @@ The App Installer file can also specify update setting so that the related sets 
     </Dependencies>
     
     <UpdateSettings>
-        <OnLaunch />
+        <OnLaunch HoursBetweenUpdateChecks="12" />
     </UpdateSettings>
 
 </AppInstaller>
@@ -244,4 +239,5 @@ For all of the details on the XML schema, see [App Installer file reference](htt
 
 > [!NOTE]
 > 
-> The App Installer file type is new in the Windows 10 Fall Creators Update. There is no support for deployment of UWP apps using an App Installer file on previous versions of Windows 10. 
+> The App Installer file type is new in the Windows 10 Fall Creators Update. There is no support for deployment of UWP apps using an App Installer file on previous versions of Windows 10.
+> It also should be noted that the **HoursBetweenUpdateChecks** element is new in the next major update to Windows 10.

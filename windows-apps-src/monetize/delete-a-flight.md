@@ -1,23 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
-description: Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Partner Center account.
 title: Delete a package flight
-ms.author: mcleans
-ms.date: 08/03/2017
+ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, delete flight
 ms.localizationpriority: medium
 ---
-
 # Delete a package flight
 
-
-
-
-Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Partner Center account.
 
 
 ## Prerequisites
@@ -35,8 +27,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,22 +34,19 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight you want to delete. The Store ID for the app is available on the Dev Center dashboard.  |
-| flightId | string | Required. The ID of the package flight to delete. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
+| applicationId | string | Required. The Store ID of the app that contains the package flight you want to delete. The Store ID for the app is available in Partner Center.  |
+| flightId | string | Required. The ID of the package flight to delete. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.  |
 
-<span/>
 
 ### Request body
 
 Do not provide a request body for this method.
 
-<span/>
 
 ### Request example
 
@@ -82,9 +69,8 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified package flight could not be found.  |
-| 409  | The specified package flight was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The specified package flight was found but it could not be deleted in its current state, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
-<span/>
 
 ## Related topics
 

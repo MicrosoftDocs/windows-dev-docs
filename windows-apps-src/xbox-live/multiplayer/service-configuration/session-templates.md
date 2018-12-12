@@ -1,17 +1,13 @@
 ---
 title: Multiplayer session templates
-author: KevinAsgari
+
 description: Learn about Xbox Live multiplayer session templates.
 ms.assetid: 178c9863-0fce-4e6a-9147-a928110b53a2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, session template
 ms.localizationpriority: medium
 ---
-
 # Multiplayer session templates
 
 This topic gives a brief overview of multiplayer session templates and provides several examples of templates that you can copy and modify for your multiplayer sessions.

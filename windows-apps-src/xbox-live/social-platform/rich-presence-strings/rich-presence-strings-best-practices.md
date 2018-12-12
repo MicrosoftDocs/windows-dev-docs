@@ -1,17 +1,13 @@
 ---
 title: Rich Presence best practices
-author: KevinAsgari
+
 description: Learn the best practices for using Xbox Live Rich Presence.
 ms.assetid: 51a84137-37e4-4f98-b3d3-5ae70e27753d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, rich presence, best practices
 ms.localizationpriority: medium
 ---
-
 # Rich Presence best practices
 
 The following tips will help you get the most from Rich Presence in your game. Keep in mind that the more Rich Presence strings you define, the richer the experience of other gamers who discover people playing your game.

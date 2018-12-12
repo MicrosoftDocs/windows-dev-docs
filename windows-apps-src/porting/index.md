@@ -1,17 +1,12 @@
 ---
-author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
 title: Porting apps to Windows 10
-ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Porting apps to Windows 10
 
 
@@ -28,8 +23,8 @@ This porting guide explains the differences between your current app's technolog
 | [Windows apps concept mapping for Android and iOS developers](android-ios-uwp-map.md) | If you're a developer with Android or iOS skills or code, and you want to make the move to Windows 10 and the Universal Windows Platform, then this resource has all you need to map platform features—and your knowledge—between the three platforms. |
 | [Move from iOS to UWP](ios-to-uwp-root.md) | Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP? It needn't be as scary as you think. We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better! |
 | [Move from desktop to UWP](desktop-to-uwp-root.md) | Convert your Win32 and .NET 4.6.1 desktop applications to Universal Windows Platform (UWP) apps. |
-| [Move a web app to UWP](hwa-to-uwp-root.md) | Convert your web application to Universal Windows Platform (UWP) apps. *Includes instructions for using either Windows or Mac as your development platform, as well as instruction for converting a Chrome app to work with UWP. |
- 
+| [Convert your web app to a PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | You can now convert your web app to a Progressive Web App (PWA) will work on any platform, including UWP! The [PWA Builder tool](https://www.pwabuilder.com) will generate the necessary manifest for you. This replaces the Hosted Web Apps (HWA) bridge. |
+
 ## Related topics
 
 * [Move from WPF and Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)

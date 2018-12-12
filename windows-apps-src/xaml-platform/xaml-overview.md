@@ -1,19 +1,18 @@
 ---
-author: jwmsft
 description: We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
 title: XAML overview
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
-ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+dev_langs:
+  - csharp
+  - vb
+  - cppwinrt
+  - cpp
 ---
-
 # XAML overview
-
 
 We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
 
@@ -144,29 +143,41 @@ Here's a simple example. The [**Button**](https://msdn.microsoft.com/library/win
 
 When you compile, the compiler now expects that there will be a method named `showUpdatesButton-Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event. For example:
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 namespace App1
 {
     public sealed partial class MainPage: Page {
         ...
-        private void showUpdatesButton-Click (object sender, RoutedEventArgs e) {
+        private void showUpdatesButton_Click (object sender, RoutedEventArgs e) {
             //your code
         }
     }
 }
 ```
+
 ```vb
 ' Namespace included at project level
 Public NotInheritable Class MainPage
     Inherits Page
         ...
-        Private Sub showUpdatesButton-Click (sender As Object, e As RoutedEventArgs e)
+        Private Sub showUpdatesButton_Click (sender As Object, e As RoutedEventArgs e)
             ' your code
         End Sub
     ...
 End Class
 ```
+
+```cppwinrt
+namespace winrt::App1::implementation
+{
+    struct MainPage : MainPageT<MainPage>
+    {
+        ...
+        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+    };
+}
+```
+
 ```cpp
 // .h
 namespace App1
@@ -174,7 +185,7 @@ namespace App1
     public ref class MainPage sealed {
         ...
     private:
-        void showUpdatesButton-Click (Object^ sender, RoutedEventArgs^ e);
+        void showUpdatesButton_Click(Object^ sender, RoutedEventArgs^ e);
     };
 }
 ```
@@ -238,4 +249,3 @@ Once the app actually runs, if any XAML parse errors have gone undetected at des
 **Note**  Apps that use C++/CX for code don't get the specific [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
 Fore more info on debugging a Windows Runtime app, see [Start a debug session](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx).
-

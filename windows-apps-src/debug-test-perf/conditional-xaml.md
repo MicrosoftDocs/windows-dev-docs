@@ -1,19 +1,14 @@
 ---
-author: jwmsft
 title: Conditional XAML
 description: Use new APIs in XAML markup while maintaining compatibility with previous versions
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Conditional XAML
 
-*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsApiContractPresent_System_String_System_UInt16_) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
+*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
 
 Conditional XAML is available starting with the Creators Update (version 1703, build 15063). To use conditional XAML, the Minimum Version of your Visual Studio project must be set to build 15063 (Creators Update) or later, and the Target Version be set to a later version than the Minimum. See [Version adaptive apps](version-adaptive-apps.md) for more info about configuring your Visual Studio project.
 
@@ -58,7 +53,7 @@ We discuss these methods further in later sections of this article.
 
 In this example, you display, "Hello, Conditional XAML", as the content of a text block if the app runs on the Fall Creators Update or later, and default to no content if it's on a previous version.
 
-First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (http://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock#Windows_UI_Xaml_Controls_TextBlock_Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
+First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (http://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
 
 You then define a conditional that returns **true** on devices that are running the Fall Creators Update or later. You use the ApiInformation method **IsApiContractPresent** to check for the 5th version of the UniversalApiContract. Version 5 of the UniversalApiContract was released with the Fall Creators Update (SDK 16299).
 

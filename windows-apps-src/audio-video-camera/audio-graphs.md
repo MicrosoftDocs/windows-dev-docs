@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
 description: This article shows how to use the APIs in the Windows.Media.Audio namespace to create audio graphs for audio routing, mixing, and processing scenarios.
 title: Audio graphs
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Audio graphs
 
 
@@ -30,7 +25,7 @@ After all of the nodes have been created and the connections between them set up
 
 Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
 
-> [!NOTE]  
+> [!NOTE]
 > The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
 
 ## Choosing Windows Runtime AudioGraph or XAudio2
@@ -62,6 +57,7 @@ The [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) c
 -   If you only plan to use the audio graph with files and don't plan to output to an audio device, it is recommended that you use the default quantum size by not setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property.
 -   The [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) property determines the amount of processing the primary render device performs on the output of the audio graph. The **Default** setting allows the system to use the default audio processing for the specified audio render category. This processing can significantly improve the sound of audio on some devices, particularly mobile devices with small speakers. The **Raw** setting can improve performance by minimizing the amount of signal processing performed, but can result in inferior sound quality on some devices.
 -   If the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) is set to **LowestLatency**, the audio graph will automatically use **Raw** for [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
+- Starting with Windows 10, version 1803, you can set the [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) property to set a maximum value used for the [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor), [**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor), and [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor) properties. When an audio graph supports a playback speed factor greater than 1, the system must allocate additional memory in order to maintain a sufficient buffer of audio data. For this reason, setting **MaxPlaybackSpeedFactor** to the lowest value required by your app will reduce the memory consumption of your app. If your app will only play back content at normal speed, it is recommended that you set MaxPlaybackSpeedFactor to 1.
 -   The [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) determines the audio format used by the graph. Only 32-bit float formats are supported.
 -   The [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) sets the primary render device for the audio graph. If you don't set this, the default system device is used. The primary render device is used to calculate the quantum sizes for other nodes in the graph. If there are no audio render devices present on the system, audio graph creation will fail.
 
@@ -105,6 +101,26 @@ A file input node allows you to feed data from an audio file into the graph. Cre
 -   Enable looping of the audio file by setting the [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) property. When non-null, this value indicates the number of times the file will be played in after the initial playback. So, for example, setting **LoopCount** to 1 will cause the file to be played 2 times in total, and setting it to 5 will cause the file to be played 6 times in total. Setting **LoopCount** to null causes the file to be looped indefinitely. To stop looping, set the value to 0.
 -   Adjust the speed at which the audio file is played back by setting the [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). A value of 1 indicates the original speed of the file, .5 is half-speed, and 2 is double speed.
 
+##  MediaSource input node
+
+The [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) class provides a common way to reference media from different sources and exposes a common model for accessing media data regardless of the underlying media format which could be a file on disk, a stream, or an adaptive streaming network source. A [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) node lets you direct audio data from a **MediaSource** into the audio graph. Create a **MediaSourceAudioInputNode** by calling [**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_), passing in a **MediaSource** object representing the content you wish to play. A [**CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult) is returned which you can use to determine the status of the operation by checking the [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) property. If the status is **Success**, you can get the created **MediaSourceAudioInputNode** by accessing the [**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) property. The following example shows the creation of a node from an AdaptiveMediaSource object representing content streaming over the network. For more inforation on working with **MediaSource**, see [Media items, playlists, and tracks](media-playback-with-mediasource.md). For more information on streaming media content over the internet, see [Adaptive streaming](adaptive-streaming.md).
+
+[!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
+
+[!code-cs[CreateMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateMediaSourceInputNode)]
+
+To receive a notification when playback has reached the end of the **MediaSource** content, register a handler for the [**MediaSourceCompleted**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode.mediasourcecompleted) event. 
+
+[!code-cs[RegisterMediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterMediaSourceCompleted)]
+
+[!code-cs[MediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetMediaSourceCompleted)]
+
+While playing a file from diskis likely to always complete successfully, media streamed from a network source may fail during playback due to a change in network connection or other issues that are outside the control of the audio graph. If a **MediaSource** becomes unplayable during playback, the audio graph will raise the [**UnrecoverableErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred) event. You can use the handler for this event to stop and dispose of the audio graph and then reinitialize your graph. 
+
+[!code-cs[RegisterUnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterUnrecoverableError)]
+
+[!code-cs[UnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUnrecoverableError)]
+
 ##  File output node
 
 A file output node lets you direct audio data from the graph into an audio file. Create an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) by calling [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
@@ -132,6 +148,7 @@ The [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windo
 
 -   The [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) object passed into the **QuantumStarted** event handler exposes the [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) property that indicates how many samples the audio graph needs to fill up the quantum to be processed.
 -   Call [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) to pass an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data into the graph.
+- A new set of APIs for using **MediaFrameReader** with audio data were introduced in Windows 10, version 1803. These APIs allow you to obtain **AudioFrame** objects from a media frame source, which can be passed into a **FrameInputNode** using the **AddFrame** method. For more information, see [Process audio frames with MediaFrameReader](process-audio-frames-with-mediaframereader.md).
 -   An example implementation of the **GenerateAudioData** helper method is shown below.
 
 To populate an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) with audio data, you must get access to the underlying memory buffer of the audio frame. To do this you must initialize the **IMemoryBufferByteAccess** COM interface by adding the following code within your namespace.
@@ -157,10 +174,10 @@ An audio frame output node allows you to receive and process audio data output f
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-The [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) event is raised when the audio graph has begins processing a quantum of audio data. You can access the audio data from within the handler for this event. 
+The [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph.QuantumStarted) event is raised when the audio graph has begins processing a quantum of audio data. You can access the audio data from within the handler for this event. 
 
-> [!NOTE]  
-> If you want to retrieve audio frames on a regular cadence, synchronized with the audio graph, call [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) from within the synchronous **QuantumStarted** event handler. The **QuantumProcessed** event is raised asynchronously after the audio engine has completed audio processing, which means its cadence may be irregular. Therefore you should not use the **QuantumProcessed** event for synchronized processing of audio frame data.
+> [!NOTE]
+> If you want to retrieve audio frames on a regular cadence, synchronized with the audio graph, call [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame) from within the synchronous **QuantumStarted** event handler. The **QuantumProcessed** event is raised asynchronously after the audio engine has completed audio processing, which means its cadence may be irregular. Therefore you should not use the **QuantumProcessed** event for synchronized processing of audio frame data.
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
@@ -220,7 +237,7 @@ Starting with Windows 10, version 1607, **AudioGraph** supports spatial audio, w
 
 To create an emitter, you can first create a shape in which the sound is projected from the emitter, which can be a cone or omnidirectional. The [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) class provides static methods for creating each of these shapes. Next, create a decay model. This defines how the volume of the audio from the emitter decreases as the distance from the listener increases. The [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) method creates a decay model that emulates the natural decay of sound using a distance squared falloff model. Finally, create an [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) object. Currently, this object is only used to enable and disable velocity-based Doppler attenuation of the emitter's audio. Call the [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx) constructor, passing in the initialization objects you just created. By default, the emitter is placed at the origin, but you can set the position of the emitter with the [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) property.
 
-> [!NOTE] 
+> [!NOTE]
 > Audio node emitters can only process audio that is formatted in mono with a sample rate of 48kHz. Attempting to use stereo audio or audio with a different sample rate will result in an exception.
 
 You assign the emitter to an audio node when you create it by using the overloaded creation method for the type of node you want. In this example, [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914225) is used to create a file input node from a specified file and the [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter) object you want to associate with the node.

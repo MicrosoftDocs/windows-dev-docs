@@ -1,24 +1,22 @@
 ---
 Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
 title: Take a Test JavaScript API.
-author: PatrickFarley
-ms.author: pafarley
+
+
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 10/06/2017
+ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+
+
+keywords: windows 10, uwp, education
 ms.localizationpriority: medium
 ---
 
 # Take a Test JavaScript API
 
-[Take a Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) is a browser-based app that renders locked down online assessments for high-stakes testing, allowing educators to focus on the assessment content rather than how to provide a secure testing environment. To achieve this, it uses a JavaScript API that any web application can utilize. The Take-a-test API supports the [SBAC browser API standard](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) for high stakes common core testing.
+[Take a Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) is a browser-based UWP app that renders locked-down online assessments for high-stakes testing, allowing educators to focus on the assessment content rather than how to provide a secure testing environment. To achieve this, it uses a JavaScript API that any web application can utilize. The Take-a-test API supports the [SBAC browser API standard](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) for high stakes common core testing.
 
-See the [Take a Test app technical reference](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for more information about the app itself.
-
-For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
+See the [Take a Test app technical reference](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for more information about the app itself. For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
 
 ## Reference documentation
 The Take a Test APIs exist in the following namespaces. Note that all of the APIs depend on a global `SecureBrowser` object.
@@ -27,12 +25,9 @@ The Take a Test APIs exist in the following namespaces. Note that all of the API
 |-----------|-------------|
 |[security namespace](#security-namespace)|Contains APIs that enable you to lock down the device for testing and enforce a testing environment. |
 
-> [!NOTE]
-> The text-to-speech (TTS) namespace has been removed as of Windows 10 version 1709. The [Microsoft Edge Speech Synthesis API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/), an implementation of the [W3C Speech Api](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html), is now the recommended solution for text-to-speech implementation.
-
 ### Security namespace
 
-The security namespace you to lock down the device, check the list of user and system processes, obtain MAC and IP addresses, and clear cached web resources.
+The security namespace allows you to lock down the device, check the list of user and system processes, obtain MAC and IP addresses, and clear cached web resources.
 
 | Method | Description   |
 |--------|---------------|
@@ -54,6 +49,7 @@ The security namespace you to lock down the device, check the list of user and s
 ---
 
 <span id="lockDown"/>
+
 ### lockDown
 Locks down the device. Also used to unlock the device. The testing web application will invoke this call prior to allowing students to start testing. The implementer is required to take any actions necessary to secure the testing environment. The steps taken to secure the environment are device specific and for example, include aspects such as disabling screen captures, disabling voice chat when in secure mode, clearing the system clipboard, entering into a kiosk mode, disabling Spaces in OSX 10.7+ devices, etc. The testing application will enable lockdown before an assessment commences and will disable the lockdown when the student has completed the assessment and is out of the secure test.
 
@@ -71,6 +67,7 @@ Windows 10, version 1709
 ---
 
 <span id="isEnvironmentSecure" />
+
 ### isEnvironmentSecure
 Determines whether the lockdown context is still applied to the device. The testing web application will invoke this prior to allowing students to start testing and periodically when inside the test.
 
@@ -93,6 +90,7 @@ Windows 10, version 1709
 ---
 
 <span id="getDeviceInfo" />
+
 ### getDeviceInfo
 Gets details about the platform on which the testing application is running. This is used to augment any information that was discernible from the user agent.
 
@@ -113,6 +111,7 @@ Windows 10, version 1709
 ---
 
 <span id="examineProcessList" />
+
 ### examineProcessList
 Gets the list of all processes running on the client machine owned by the user. The testing application will invoke this to examine the list and compare it with a list of processes that have been deemed blacklisted during testing cycle. This call should be invoked both at the start of an assessment and periodically while the student is taking the assessment. If a blacklisted process is detected, the assessment should be stopped to preserve test integrity.
 
@@ -132,6 +131,7 @@ Windows 10, version 1709
 ---
 
 <span id="close"/>
+
 ### close
 Closes the browser and unlocks the device. The testing application should invoke this when the user elects to exit the browser.
 
@@ -150,6 +150,7 @@ Windows 10, version 1709
 ---
 
 <span id="getPermissiveMode" />
+
 ### getPermissiveMode
 The testing web application should invoke this to determine if permissive mode is on or off. In permissive mode, a browser is expected to relax some of its stringent security hooks to allow assistive technology to work with the secure browser. For example, browsers that aggressively prevent other application UIs from presenting on top of them might want to relax this when in permissive mode. 
 
@@ -165,6 +166,7 @@ Windows 10, version 1709
 ---
 
 <span id="setPermissiveMode" />
+
 ### setPermissiveMode
 The testing web application should invoke this to toggle permissive mode on or off. In permissive mode, a browser is expected to relax some of its stringent security hooks to allow assistive technology to work with the secure browser. For example, browsers that aggressively prevent other application UIs from presenting on top of them might want to relax this when in permissive mode. 
 
@@ -181,6 +183,7 @@ Windows 10, version 1709
 ---
 
 <span id="emptyClipBoard"/>
+
 ### emptyClipBoard
 Clears the system clipboard. The testing application should invoke this to force clear any data that may be stored in the system clipboard. The **[lockDown](#lockDown)** function also performs this operation.
 
@@ -193,6 +196,7 @@ Windows 10, version 1709
 ---
 
 <span id="getMACAddress" />
+
 ### getMACAddress
 Gets the list of MAC addresses for the device. The testing application should invoke this to assist in diagnostics. 
 
@@ -211,6 +215,7 @@ Windows 10, version 1709
 ---
 
 <span id="getStartTime" />
+
 ### getStartTime
 Gets the time that the testing app was started.
 
@@ -226,6 +231,7 @@ Windows 10, version 1709
 ---
 
 <span id="getCapability"/>
+
 ### getCapability
 Queries whether a capability is enabled or disabled. 
 
@@ -244,6 +250,7 @@ Windows 10, version 1703
 ---
 
 <span id="setCapability"/>
+
 ### setCapability
 Enables or disables a specific capability on the browser.
 
@@ -265,6 +272,7 @@ Windows 10, version 1703
 ---
 
 <span id="isRemoteSession"/>
+
 ### isRemoteSession
 Checks if the current session is logged in remotely.
 
@@ -280,6 +288,7 @@ Windows 10, version 1709
 ---
 
 <span id="isVMSession"/>
+
 ### isVMSession
 Checks if the current session is running within a virtual machine.
 

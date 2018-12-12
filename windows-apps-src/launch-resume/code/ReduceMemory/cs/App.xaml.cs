@@ -27,7 +27,7 @@ namespace BackgroundAudio_RS1
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
-        //<SnippetRegisterEvents>
+        // <SnippetRegisterEvents>
         public App()
         {
             this.InitializeComponent();
@@ -52,13 +52,13 @@ namespace BackgroundAudio_RS1
             // Subscribe to the event that informs the app of this change.
             Windows.System.MemoryManager.AppMemoryUsageIncreased += MemoryManager_AppMemoryUsageIncreased;
         }
-        //</SnippetRegisterEvents>
+        // </SnippetRegisterEvents>
 
-        //<SnippetDeclareBackgroundMode>
+        // <SnippetDeclareBackgroundMode>
         bool _isInBackgroundMode = false; // indicates whether the app has transitioned to the background state
-        //</SnippetDeclareBackgroundMode>
+        // </SnippetDeclareBackgroundMode>
 
-        //<SnippetEnteredBackground>
+        // <SnippetEnteredBackground>
         /// <summary>
         /// The application entered the background.
         /// </summary>
@@ -77,9 +77,9 @@ namespace BackgroundAudio_RS1
             // AppMemoryUsageIncreased is raised with an indication that
             // the application is under memory pressure.
         }
-        //</SnippetEnteredBackground>
+        // </SnippetEnteredBackground>
 
-        //<SnippetMainPageUnloaded>
+        // <SnippetMainPageUnloaded>
         private void MainPage_Unloaded(object sender, RoutedEventArgs e)
         {
            // << free large data sructures and set them to null, here >>
@@ -89,9 +89,9 @@ namespace BackgroundAudio_RS1
            Window.Current.Activated -= Current_Activated;
            GC.Collect();
         }
-        //</SnippetMainPageUnloaded>
+        // </SnippetMainPageUnloaded>
 
-        //<SnippetLeavingBackground>
+        // <SnippetLeavingBackground>
         /// <summary>
         /// The application is leaving the background.
         /// </summary>
@@ -108,9 +108,9 @@ namespace BackgroundAudio_RS1
                 CreateRootFrame(ApplicationExecutionState.Running, string.Empty);
             }
         }
-        //</SnippetLeavingBackground>
+        // </SnippetLeavingBackground>
 
-        //<SnippetMemoryUsageLimitChanging>
+        // <SnippetMemoryUsageLimitChanging>
         /// <summary>
         /// Raised when the memory limit for the app is changing, such as when the app
         /// enters the background.
@@ -134,9 +134,9 @@ namespace BackgroundAudio_RS1
                 ReduceMemoryUsage(e.NewLimit);
             }
         }
-        //</SnippetMemoryUsageLimitChanging>
+        // </SnippetMemoryUsageLimitChanging>
 
-        //<SnippetMemoryUsageIncreased>
+        // <SnippetMemoryUsageIncreased>
         /// <summary>
         /// Handle system notifications that the app has increased its
         /// memory usage level compared to its current target.
@@ -169,9 +169,9 @@ namespace BackgroundAudio_RS1
                 ReduceMemoryUsage(MemoryManager.AppMemoryUsageLimit);
             }
         }
-        //</SnippetMemoryUsageIncreased>
+        // </SnippetMemoryUsageIncreased>
 
-        //<SnippetUnloadViewContent>
+        // <SnippetUnloadViewContent>
         /// <summary>
         /// Reduces application memory usage.
         /// </summary>
@@ -211,9 +211,9 @@ namespace BackgroundAudio_RS1
             // Run the GC to collect released resources.
             GC.Collect();
         }
-        //</SnippetUnloadViewContent>
+        // </SnippetUnloadViewContent>
 
-        //<SnippetCreateRootFrame>
+        // <SnippetCreateRootFrame>
         void CreateRootFrame(ApplicationExecutionState previousExecutionState, string arguments)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -247,7 +247,7 @@ namespace BackgroundAudio_RS1
                 rootFrame.Navigate(typeof(MainPage), arguments);
             }
         }
-        //</SnippetCreateRootFrame>
+        // </SnippetCreateRootFrame>
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

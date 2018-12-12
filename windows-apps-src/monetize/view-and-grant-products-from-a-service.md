@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
-ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-
 # Manage product entitlements from a service
 
 If you have a catalog of apps and add-ons, you can use the *Microsoft Store collection API* and *Microsoft Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Microsoft Store.
@@ -28,29 +23,34 @@ These APIs consist of REST methods that are designed to be used by developers wi
 
 The following steps describe the end-to-end process for using the Microsoft Store collection API and purchase API:
 
-1.  [Configure a Web application in Azure AD](#step-1).
-2.  [Associate your Azure AD client ID with your application in the Windows Dev Center dashboard](#step-2).
+1.  [Configure an application in Azure AD](#step-1).
+2.  [Associate your Azure AD application ID with your app in Partner Center](#step-2).
 3.  In your service, [create Azure AD access tokens](#step-3) that represent your publisher identity.
-4.  In client-side code in your Windows app, [create a Microsoft Store ID key](#step-4) that represents the identity of the current user, and pass the Microsoft Store ID key back to your service.
+4.  In your client Windows app, [create a Microsoft Store ID key](#step-4) that represents the identity of the current user, and pass this key back to your service.
 5.  After you have the required Azure AD access token and Microsoft Store ID key, [call the Microsoft Store collection API or purchase API from your service](#step-5).
 
-The following sections provide more details about each of these steps.
+This end-to-end process involves two software components that perform different tasks:
+
+* **Your service**. This is an application that runs securely in the context of your business environment, and it can be implemented using any development platform you choose. Your service is responsible for creating the Azure AD access tokens needed for the scenario and for calling the REST URIs for the Microsoft Store collection API and purchase API.
+* **Your client Windows app**. This is the app for which you want to access and manage customer entitlement information (including add-ons for the app). This app is responsible for creating the Microsoft Store ID keys you need to call the Microsoft Store collection API and purchase API from your service.
 
 <span id="step-1"/>
-## Step 1: Configure a Web application in Azure AD
 
-Before you can use the Microsoft Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and client ID for the application, and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+## Step 1: Configure an application in Azure AD
+
+Before you can use the Microsoft Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and application ID for the application, and generate a key. The Azure AD Web application represents the service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, application ID and key to generate Azure AD access tokens that you need to call the API.
 
 > [!NOTE]
-> You only need to perform the tasks in this section one time. After you update your Azure AD application manifest and you have your tenant ID, client ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.
+> You only need to perform the tasks in this section one time. After you update your Azure AD application manifest and you have your tenant ID, application ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.
 
-1.  Follow the instructions in [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) to add a Web application to Azure AD.
+1.  If you haven't done so already, follow the instructions in [Integrating Applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) to register a **Web app / API** application with Azure AD.
     > [!NOTE]
-    > On the **Tell us about your application page**, make sure that you choose **Web application and/or web API**. This is required so that you can retrieve a key (also called a *client secret*) for your application. In order to call the Microsoft Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
+    > When you register your application, you must choose **Web app / API** as the application type so that you can retrieve a key (also called a *client secret*) for your application. In order to call the Microsoft Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
 
-2.  In the [Azure Management Portal](http://manage.windowsazure.com/), navigate to **Active Directory**. Select your directory, click the **Applications** tab at the top, and then select your application.
-3.  Click the **Configure** tab. On this tab, obtain the client ID for your application and request a key (this is called a *client secret* in later steps).
-4.  At the bottom of the screen, click **Manage manifest**. Download your Azure AD application manifest and replace the `"identifierUris"` section with the following text.
+2.  In the [Azure Management Portal](https://portal.azure.com/), navigate to **Azure Active Directory**. Select your directory, click **App registrations** in the left navigation pane, and then select your application.
+3.  You are taken to the application's main registration page. On this page, copy the **Application ID** value for use later.
+4.  Create a key that you will need later (this is all called a *client secret*). In the left pane, click **Settings** and then **Keys**. On this page, complete the steps to [create a key](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copy this key for later use.
+5.  Add several required audience URIs to your [application manifest](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest). In the left pane, click **Manifest**. Click **Edit**, replace the `"identifierUris"` section with the following text, and then click **Save**.
 
     ```json
     "identifierUris" : [                                
@@ -60,22 +60,22 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
         ],
     ```
 
-    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values. For more information about how to download your application manifest, see [Understanding the Azure Active Directory application manifest](http://go.microsoft.com/fwlink/?LinkId=722500).
-
-5.  Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).
+    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values.
 
 <span id="step-2"/>
-## Step 2: Associate your Azure AD client ID with your app in Windows Dev Center
 
-Before you can use the Microsoft Store collection API or purchase API to operate on an app or add-on, you must associate your Azure AD client ID with the app (or the app that contains the add-on) in the Dev Center dashboard.
+## Step 2: Associate your Azure AD application ID with your client app in Partner Center
+
+Before you can use the Microsoft Store collection API or purchase API to configure the ownership and purchases for your app or add-on, you must associate your Azure AD application ID with the app (or the app that contains the add-on) in Partner Center.
 
 > [!NOTE]
 > You only need to perform this task one time.
 
-1.  Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and select your app.
-2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.
+1.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and select your app.
+2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD application ID into one of the available **Client ID** fields.
 
 <span id="step-3"/>
+
 ## Step 3: Create Azure AD access tokens
 
 Before you can retrieve a Microsoft Store ID key or call the Microsoft Store collection API or purchase API, your service must create several different Azure AD access tokens that represent your publisher identity. Each token will be used with a different API. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
@@ -84,6 +84,7 @@ Before you can retrieve a Microsoft Store ID key or call the Microsoft Store col
 > Create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
 <span id="access-tokens" />
+
 ### Understanding the different tokens and audience URIs
 
 Depending on which methods you want to call in the Microsoft Store collection API or purchase API, you must create either two or three different tokens. Each access token is associated with a different audience URI (these are the same URIs that you previously added to the `"identifierUris"` section of the Azure AD application manifest).
@@ -97,6 +98,7 @@ Depending on which methods you want to call in the Microsoft Store collection AP
   * If you want to call a method in the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Microsoft Store ID key that you can use with the Microsoft Store purchase API.
 
 <span />
+
 ### Create the tokens
 
 To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
@@ -114,13 +116,14 @@ grant_type=client_credentials
 
 For each token, specify the following parameter data:
 
-* For the *client\_id* and *client\_secret* parameters, specify the client ID and the client secret for your application that you retrieved from the [Azure Management Portal](http://manage.windowsazure.com). Both of these parameters are required in order to create an access token with the level of authentication required by the Microsoft Store collection API or purchase API.
+* For the *client\_id* and *client\_secret* parameters, specify the application ID and the client secret for your application that you retrieved from the [Azure Management Portal](http://manage.windowsazure.com). Both of these parameters are required in order to create an access token with the level of authentication required by the Microsoft Store collection API or purchase API.
 
 * For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.
 
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
 
 <span id="step-4"/>
+
 ## Step 4: Create a Microsoft Store ID key
 
 Before you can call any method in the Microsoft Store collection API or purchase API, your app must create a Microsoft Store ID key and send it to your service. This key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. For more information about the claims in this key, see [Claims in a Microsoft Store ID key](#claims-in-a-microsoft-store-id-key).
@@ -131,40 +134,49 @@ Currently, the only way to create a Microsoft Store ID key is by calling a Unive
 > Each Microsoft Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Microsoft Store ID keys rather than creating new ones.
 
 <span />
+
 ### To create a Microsoft Store ID key for the Microsoft Store collection API
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).
 
-1.  Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI from your service to your client app.
+1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/collections` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
-  * If your app uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases, use the [StoreContext.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomercollectionsidasync.aspx) method.
+  * If your app uses the [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to manage in-app purchases, use the [StoreContext.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomercollectionsidasync) method.
 
-  * If your app uses the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) class in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608674) method.
+  * If your app uses the [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class in the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) method.
 
-    Pass your Azure AD access token to the *serviceTicket* parameter of the method. You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services. If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Microsoft Store collection API.
+    Pass your Azure AD access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
 <span />
+
 ### To create a Microsoft Store ID key for the Microsoft Store purchase API
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
-1.  Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI from your service to your client app.
+1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/purchase` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
-  * If your app uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases, use the [StoreContext.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomerpurchaseidasync.aspx) method.
+  * If your app uses the [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to manage in-app purchases, use the [StoreContext.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getcustomerpurchaseidasync) method.
 
-  * If your app uses the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) class in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608675) method.
+  * If your app uses the [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class in the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) method.
 
-    Pass your Azure AD access token to the *serviceTicket* parameter of the method. You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services. If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Microsoft Store purchase API.
+    Pass your Azure AD access token to the *serviceTicket* parameter of the method. If you maintain anonymous user IDs in the context of services that you manage as the publisher of the current app, you can also pass a user ID to the *publisherUserId* parameter to associate the current user with the new Microsoft Store ID key (the user ID will be embedded in the key). Otherwise, if you don't need to associate a user ID with the Microsoft Store ID key, you can pass any string value to the *publisherUserId* parameter.
 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
+### Diagram
+
+The following diagram illustrates the process of creating a Microsoft Store ID key.
+
+  ![Create Windows Store ID key](images/b2b-1.png)
+
 <span id="step-5"/>
+
 ## Step 5: Call the Microsoft Store collection API or purchase API from your service
 
 After your service has a Microsoft Store ID key that enables it to access a specific user's product ownership information, your service can call the Microsoft Store collection API or purchase API by following these instructions:
@@ -177,8 +189,14 @@ After your service has a Microsoft Store ID key that enables it to access a spec
 
 For each scenario, pass the following information to the API:
 
--   The Azure AD access token that you created earlier with the `https://onestore.microsoft.com` audience URI. This token represents your publisher identity. Pass this token in the request header.
--   The Microsoft Store ID key you retrieved from client-side code in your app. This key represents the identity of the user whose product ownership information you want to access.
+-   In the request header, pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com`. This is one of the tokens you created [earlier in step 3](#step-3). This token represents your publisher identity.
+-   In the request body, pass the Microsoft Store ID key you retrieved [earlier in step 4](#step-4) from client-side code in your app. This key represents the identity of the user whose product ownership information you want to access.
+
+### Diagram
+
+The following diagram describes the process of calling a method in the Microsoft Store collection API or purchase API from your service.
+
+  ![Call collections or puchase API](images/b2b-2.png)
 
 ## Claims in a Microsoft Store ID key
 

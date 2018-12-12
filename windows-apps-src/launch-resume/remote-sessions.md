@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Connect devices through remote sessions
 description: Create shared experiences across multiple devices by joining them in a remote session.
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
-ms.author: pafarley
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
-
 # Connect devices through remote sessions
 
 The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.
@@ -22,7 +17,7 @@ Remote sessions can be created by any Windows device, and any Windows device can
 
 ### Add the remoteSystem capability
 
-In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's Package.appxmanifest file.
+In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's _Package.appxmanifest_ file.
 
 ``` xml
 <Capabilities>
@@ -119,7 +114,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
+To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery). Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method. All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

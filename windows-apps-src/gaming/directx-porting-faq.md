@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: DirectX 11 porting FAQ
 description: Answers to frequently-asked questions about porting games to Universal Windows Platform (UWP).
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx 11
 ms.localizationpriority: medium
 ---
-
 # DirectX 11 porting FAQ
 
 

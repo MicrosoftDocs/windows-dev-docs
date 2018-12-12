@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 description: Uniquely identifies object elements for access to the instantiated object from code-behind or general code.
 title: xName attribute
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # x:Name attribute
 
 

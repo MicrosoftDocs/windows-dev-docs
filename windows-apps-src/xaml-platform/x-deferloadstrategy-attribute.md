@@ -1,20 +1,16 @@
 ---
-author: jwmsft
 title: xDeferLoadStrategy attribute
 description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # x:DeferLoadStrategy attribute
 
 > [!IMPORTANT]
-> Starting in Windows 10, version 1703 (Creator's Update), **x:DeferLoadStrategy** is superceded by the [**x:Load attribute**](x-load-attribute.md). Using `x:Load="False"` is equivilent to `x:DeferLoadStrategy="Lazy"`, but provides the ability to unload the UI if required. See the [x:Load attribute](x-load-attribute.md) for more info.
+> Starting in Windows 10, version 1703 (Creators Update), **x:DeferLoadStrategy** is superseded by the [**x:Load attribute**](x-load-attribute.md). Using `x:Load="False"` is equivalent to `x:DeferLoadStrategy="Lazy"`, but provides the ability to unload the UI if required. See the [x:Load attribute](x-load-attribute.md) for more info.
 
 You can use **x:DeferLoadStrategy="Lazy"** to optimize the startup or tree creation performance of your XAML app. When you use **x:DeferLoadStrategy="Lazy"**, creation of an element and its children is delayed, which decreases startup time and memory costs. This is useful to reduce the costs of elements that are shown infrequently or conditionally. The element will be realized when it's referred to from code or VisualStateManager.
 

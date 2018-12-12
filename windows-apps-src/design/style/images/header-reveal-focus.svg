@@ -1,0 +1,34 @@
+<svg width="1920" height="919" viewBox="0 0 1920 919" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="header-reveal-focus" clip-path="url(#clip0)">
+<rect width="1920" height="918.333" fill="#274B47"/>
+<path id="Rectangle 8.3" d="M 0 0L 433.609 0L 433.609 435.788L 0 435.788L 0 0Z" transform="translate(260 240)" fill="#107C10"/>
+<g id="Rectangle 8.4" transform="translate(740.621 240)">
+<path d="M 0 0L 433.609 0L 433.609 435.788L 0 435.788L 0 0Z" fill="#107C10"/>
+<path d="M 0 0L 433.609 0L 433.609 435.788L 0 435.788L 0 0Z" fill="url(#paint0_linear)" style="mix-blend-mode:overlay"/>
+</g>
+<g id="Rectangle 8.2" filter="url(#filter0_d)">
+<rect width="433.333" height="435" transform="translate(1221.67 240)" fill="#107C10"/>
+<rect x="8" y="8" width="417.333" height="419" transform="translate(1221.67 240)" stroke-width="16" stroke="#69E66E"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="1141.67" y="160" width="593.333" height="595" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="40"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.411765 0 0 0 0 0.901961 0 0 0 0 0.431373 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-704 62 -61.69 -700.48 851.224 506.24)">
+<stop stop-color="white" stop-opacity="0.67"/>
+<stop offset="1" stop-color="#107C10" stop-opacity="0.59"/>
+</linearGradient>
+<clipPath id="clip0">
+<rect width="1920" height="918.333" fill="white"/>
+</clipPath>
+</defs>
+</svg>

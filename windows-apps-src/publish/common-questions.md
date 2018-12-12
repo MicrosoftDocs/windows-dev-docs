@@ -1,17 +1,12 @@
 ---
-author: JnHs
 Description: Common questions about ad campaigns
 title: Common questions about ad campaigns
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-
 # Common questions about ad campaigns
 
 ### How much does it cost to run an ad for my app?
@@ -60,10 +55,3 @@ If you don’t want to wait to be billed, you can pay your bill immediately by s
 
 Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.
 
-### Related topics
-
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [About community ads](about-community-ads.md)
-* [App install ads report](app-install-ads-reports.md)

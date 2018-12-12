@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 title: Sign an app package using SignTool
 description: Use SignTool to manually sign an app package with a certificate.
-ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ---
-
 # Sign an app package using SignTool
 
 
@@ -48,13 +43,16 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
 
 This table shows each HashMethod value and its corresponding hash algorithm:
+
+
 | HashMethod value                              | Hash Algorithm |
 |-----------------------------------------------|----------------|
 | http://www.w3.org/2001/04/xmlenc#sha256       | SHA256         |
 | http://www.w3.org/2001/04/xmldsig-more#sha384 | SHA384         |
 | http://www.w3.org/2001/04/xmlenc#sha512       | SHA512         |
 
-> **Note** Since **SignTool**'s default algorithm is SHA1 (not available in **MakeAppx.exe**), you must always specify a hash algorithm when using **SignTool**.
+> [!NOTE]
+> Since **SignTool**'s default algorithm is SHA1 (not available in **MakeAppx.exe**), you must always specify a hash algorithm when using **SignTool**.
 
 ### Sign the app package
 
@@ -71,16 +69,25 @@ To sign your app package with a certificate from a .pfx file, use the following 
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
+```
 Note that the `/a` option allows **SignTool** to choose the best certificate automatically.
 
 If your certificate is not a .pfx file, use the following syntax:
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
+```
 
 Alternatively, you can specify the SHA1 hash of the desired certificate instead of &lt;Name of Certificate&gt; using this syntax:
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
+```
+```
+SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
 Note that some certificates do not use a password. If your certificate does not have a password, omit "/p &lt;Your Password&gt;" from the sample commands.

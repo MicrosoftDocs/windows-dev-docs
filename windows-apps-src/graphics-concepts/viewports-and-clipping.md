@@ -4,15 +4,12 @@ description: A viewport is a two-dimensional (2D) rectangle into which a 3D scen
 ms.assetid: D0DD646E-13AE-452A-AD22-8C35000D0BA9
 keywords:
 - Viewports and clipping
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Viewports and clipping
 
 

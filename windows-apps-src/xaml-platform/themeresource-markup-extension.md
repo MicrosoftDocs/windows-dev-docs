@@ -1,19 +1,13 @@
 ---
-author: jwmsft
 description: Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme.
 title: ThemeResource markup extension
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # {ThemeResource} markup extension
-
 
 Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme. Similar to [{StaticResource} markup extension](staticresource-markup-extension.md), resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **ThemeResource** usage references the key of that resource in the **ResourceDictionary**.
 
@@ -28,7 +22,7 @@ Provides a value for any XAML attribute by evaluating a reference to a resource,
 | Term | Description |
 |------|-------------|
 | key | The key for the requested resource. This key is initially assigned by the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). A resource key can be any string defined in the XamlName Grammar. |
- 
+
 ## Remarks
 
 A **ThemeResource** is a technique for obtaining values for a XAML attribute that are defined elsewhere in a XAML resource dictionary. The markup extension serves the same basic purpose as the [{StaticResource} markup extension](staticresource-markup-extension.md). The difference in behavior versus {StaticResource} markup extension is that a **ThemeResource** reference can dynamically use different dictionaries as the primary lookup location, depending on which theme is currently being used by the system.
@@ -39,7 +33,7 @@ When the app first starts, any resource reference made by a **ThemeResource** re
 
 For more info on how to define resources and properly use a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), including sample code, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-**Important**  
+**Important**
 As with **StaticResource**, a **ThemeResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. Attempting to do so is not supported. Even if the forward reference doesn't fail, trying to make one carries a performance penalty. For best results, adjust the composition of your resource dictionaries so that forward references are avoided.
 
 Attempting to specify a **ThemeResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
@@ -112,7 +106,7 @@ Each of these brushes is defined earlier in generic.xaml: they had to be defined
 ```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
-... 
+...
             <SolidColorBrush x:Key="ButtonBackgroundThemeBrush" Color="Transparent" />
             <SolidColorBrush x:Key="ButtonForegroundThemeBrush" Color="#FFFFFFFF" />
 ...
@@ -135,7 +129,7 @@ Then each of the other theme dictionaries also has these brushes defined, for ex
             <SolidColorBrush x:Key="ButtonPressedForegroundThemeBrush" Color="{ThemeResource SystemColorButtonFaceColor}" />
 ```
 
-Here the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
+Here the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
 
 ## Windows 8 behavior
 

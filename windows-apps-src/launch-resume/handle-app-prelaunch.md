@@ -1,19 +1,13 @@
 ---
-author: TylerMSFT
 title: Handle app prelaunch
 description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
-ms.author: twhitney
-ms.date: 11/01/2017
+ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Handle app prelaunch
-
 
 Learn how to handle app prelaunch by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
 
@@ -37,7 +31,7 @@ After an app is prelaunched, it will enter the suspended state. (see [Handle app
 
 Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following modification to [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-```cs
+```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
     // CoreApplication.EnablePrelaunch was introduced in Windows 10 version 1607
@@ -118,7 +112,7 @@ There is also code in the example above that you can uncomment if your app needs
 
 Apps activated by prelaunch are not visible to the user. They become visible when the user switches to them. You may want to delay certain operations until your app's main window becomes visible. For example, if your app displays a list of what's new items from a feed, you could update the list during the [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) event rather than use the list that was built when the app was prelaunched because it may become stale by the time the user activates the app. The following code handles the **VisibilityChanged** event for **MainPage**:
 
-```cs
+```csharp
 public sealed partial class MainPage : Page
 {
     public MainPage()
@@ -142,6 +136,26 @@ DirectX games should generally not enable prelaunch because many DirectX games d
 
 If your game targets an earlier version of Windows 10, you can handle the prelaunch condition to exit the application:
 
+```cppwinrt
+void ViewProvider::OnActivated(CoreApplicationView const& /* appView */, Windows::ApplicationModel::Activation::IActivatedEventArgs const& args)
+{
+    if (args.Kind() == Windows::ApplicationModel::Activation::ActivationKind::Launch)
+    {
+        auto launchArgs{ args.as<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>()};
+        if (launchArgs.PrelaunchActivated())
+        {
+            // Opt-out of Prelaunch.
+            CoreApplication::Exit();
+        }
+    }
+}
+
+void ViewProvider::Initialize(CoreApplicationView const & appView)
+{
+    appView.Activated({ this, &App::OnActivated });
+}
+```
+
 ```cpp
 void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^ args)
 {
@@ -162,7 +176,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](https://msdn.microsoft.com/library/windows/apps/br212679.aspx) handler:
 
-```js
+```javascript
     app.onactivated = function (args) {
         if (!args.detail.prelaunchActivated) {
             // TODO: This is not a prelaunch activation. Perform operations which

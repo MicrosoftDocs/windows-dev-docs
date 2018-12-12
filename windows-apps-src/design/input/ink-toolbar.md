@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
 title: Add an InkToolbar to a Universal Windows Platform (UWP) app
 label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ---
-
 # Add an InkToolbar to a Universal Windows Platform (UWP) app
 
 
@@ -34,21 +31,13 @@ As a completely transparent overlay, the InkCanvas does not provide any built-in
 
   We discuss the InkToolbar in this topic.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**InkCanvas class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
-<li>[**InkToolbar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
-<li>[**InkPresenter class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div>
+> **Important APIs**: [**InkCanvas class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [**InkToolbar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [**InkPresenter class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## Default InkToolbar
 
 By default, the [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) includes buttons for drawing, erasing, highlighting, and displaying a stencil (ruler or protractor). Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
 
-![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
+![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
 *Default Windows Ink toolbar*
 
 To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) to an inking app, just place it on the same page as your [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and associate the two controls.
@@ -92,11 +81,11 @@ When you add an ink toolbar to your app, you can accept the default location and
 
 **XAML**
 
-Explicitly specify the location and orientation of the toolbar through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3#Windows_UI_Xaml_Controls_InkToolbar_Orientation) properties.
+Explicitly specify the location and orientation of the toolbar through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) properties.
 
 | Default | Explicit |
 | --- | --- |
-| ![Default ink toolbar location and orientation](.\images\ink\location-default-small.png) | ![Explicit ink toolbar location and orientation](.\images\ink\location-explicit-small.png) |
+| ![Default ink toolbar location and orientation](./images/ink/location-default-small.png) | ![Explicit ink toolbar location and orientation](./images/ink/location-explicit-small.png) |
 | *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
 
 Here's the code for explicitly setting the location and orientation of the ink toolbar in XAML.
@@ -112,10 +101,10 @@ Here's the code for explicitly setting the location and orientation of the ink t
 
 In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device state. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through **Settings > Devices > Pen & Windows Ink > Pen > Choose which hand you write with**.
 
-![Dominant hand setting](.\images\ink\location-handedness-setting.png)  
+![Dominant hand setting](./images/ink/location-handedness-setting.png)  
 *Dominant hand setting*
 
-You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
+You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
 
 **Download this sample from [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
@@ -179,7 +168,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 
     1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
         >[!NOTE] 
-        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged#Windows_UI_Xaml_Data_INotifyPropertyChanged_PropertyChanged) event.
+        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
 
         ```csharp
         public bool LeftHandedLayout
@@ -221,7 +210,7 @@ You can also use binding to look after UI updates based on changes to user prefe
     1. Add two new classes to the Converters folder (for this example, we call them **HorizontalAlignmentFromHandednessConverter.cs** and **VerticalAlignmentFromAppViewConverter.cs**).
     1. Add `using Windows.UI.Xaml` and `using Windows.UI.Xaml.Data` namespaces to each file.
     1. Change each class to `public` and specify that it implements the [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter) interface.
-    1. Add the [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter#Windows_UI_Xaml_Data_IValueConverter_Convert_System_Object_Windows_UI_Xaml_Interop_TypeName_System_Object_System_String_) and [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter#Windows_UI_Xaml_Data_IValueConverter_ConvertBack_System_Object_Windows_UI_Xaml_Interop_TypeName_System_Object_System_String_) methods to each file, as shown here (we leave the ConvertBack method unimplemented).
+    1. Add the [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) and [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) methods to each file, as shown here (we leave the ConvertBack method unimplemented).
         - HorizontalAlignmentFromHandednessConverter positions the ink toolbar to the right side of the app for right-handed users and to the left side of the app for left-handed users.
         ```csharp
         using System;
@@ -290,7 +279,7 @@ You can also use binding to look after UI updates based on changes to user prefe
     1. Add `using using locationandorientation.ViewModels` to the list of namespaces to associate our ViewModel.
     1. Add `using Windows.UI.ViewManagement` to the list of namespaces to enable listening for changes to the device orientation.
     1. Add the [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
-    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
+    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
     ```csharp
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
@@ -408,7 +397,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.
 
 ### Specify the selected button  
-![Pencil button selected at initialization](.\images\ink\ink-tools-default-toolbar.png)  
+![Pencil button selected at initialization](./images/ink/ink-tools-default-toolbar.png)  
 *Windows Ink toolbar with pencil button selected at initialization*
 
 By default, the first (or leftmost) button is selected when your app is launched and the toolbar is initialized. In the default Windows Ink toolbar, this is the ballpoint pen button.
@@ -436,11 +425,11 @@ For this example, we initialize the default toolbar with the pencil button selec
   ```
 
 3. In the handler for the [Loaded](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) event:
-  1. Get a reference to the built-in [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
+    1. Get a reference to the built-in [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
     Passing an [InkToolbarTool.Pencil](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartool.aspx) object in the [GetToolButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.gettoolbutton.aspx) method returns an [InkToolbarToolButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton.aspx) object for the [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
-  2. Set [ActiveTool](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) to the object returned in the previous step.
+    2. Set [ActiveTool](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) to the object returned in the previous step.
 
 ```CSharp
 /// <summary>
@@ -459,7 +448,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 
 ### Specify the built-in buttons
 
-![Specific buttons included at initialization](.\images\ink\ink-tools-specific.png)  
+![Specific buttons included at initialization](./images/ink/ink-tools-specific.png)  
 *Specific buttons included at initialization*
 
 As mentioned, the Windows Ink toolbar includes a collection of default, built-in buttons. These buttons are displayed in the following order (from left to right):
@@ -617,7 +606,7 @@ Depending on your application and the inking functionality required, you can add
 
 You can create a custom pen (activated through a custom pen button) where you define the ink color palette and pen tip properties, such as shape, rotation, and size.
 
-![Custom calligraphic pen button](.\images\ink\ink-tools-custompen.png)  
+![Custom calligraphic pen button](./images/ink/ink-tools-custompen.png)  
 *Custom calligraphic pen button*
 
 For this example, we define a custom pen with a broad tip that enables basic calligraphic ink strokes. We also customize the collection of brushes in the palette displayed on the button flyout.
@@ -741,7 +730,7 @@ Typically, touch input is used for direct manipulation of an object or the app U
 When the app starts, only pen inking is supported and touch is used to pan or zoom the inking surface. When touch inking is enabled, the inking surface cannot be panned or zoomed through touch input.
 
 > [!NOTE]
-> See [Inking controls](..\controls-and-patterns\inking-controls.md) for both [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
+> See [Inking controls](../controls-and-patterns/inking-controls.md) for both [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
 > - The [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar), and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app. 
 > - If supporting inking with touch input, we recommend using the "ED5F" icon from the "Segoe MLD2 Assets" font for the toggle button, with a "Touch writing" tooltip. 
 

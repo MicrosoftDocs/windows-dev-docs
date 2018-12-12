@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Game technologies for Universal Windows Platform (UWP) apps
 description: In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, technology, directx
 ms.localizationpriority: medium
 ---
-
 # Game technologies for UWP apps
 
 
@@ -36,7 +31,7 @@ Real-time games requiring high performance should make use of the DirectX APIs. 
 ## Development Environment
 
 
-To create games for UWP, you'll need to set up your development environment by installing Visual Studio 2015 and later. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
+To create games for UWP, you'll need to set up your development environment by installing Visual Studio 2015 or later. We recommend that you install the latest version of Visual Studio, giving you access to the latest development and security updates. Visual Studio allows you to create UWP apps and provides tools for game development:
 
 -   Visual Studio tools for DX game programming - Visual Studio provides tools for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code. For more information, see [Use Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md).
 -   Visual Studio graphics diagnostics features - Graphics diagnostic tools are now available from within Windows as an optional feature. The diagnostic tools allow you to do graphics debugging, graphics frame analysis, and monitor GPU usage in real time. For more information, see [Use the DirectX runtime and Visual Studio graphics diagnostic features](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
@@ -46,12 +41,12 @@ For more information, see Prepare your Universal Windows Platform and [DirectX p
 ## Getting Started with DirectX Game Project Templates
 
 
-After setting up you development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+After setting up your development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
 
 ## Windows 10 APIs
 
 
-Windows 10 provides a an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
+Windows 10 provides an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
 
 There are many APIs related to game development, but not all games need to use all of the APIs. For example, some games will only use 3D graphics and only make use of Direct3D, some games may only use 2D graphics and only make use of Direct2D, and still other games may make use of both. The following diagram shows the game development related APIs grouped by functionality type.
 
@@ -77,7 +72,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Direct3D 12 when you need to maximize your game's performance and your game is CPU bound.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [Direct3d 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
@@ -85,7 +80,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Direct3D 11 if you have existing Direct3D 11 code, your game is not CPU bound, or you want the benefit of having resources managed for you.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -112,7 +107,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Direct2D can be used instead of Direct3D to provide graphics for pure 2D games such as a side-scroller or board game, or can be used with Direct3D to simplify creation of 2D graphics in a 3D game, such as a user interface or heads-up-display.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
@@ -120,7 +115,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p></p>
     <p><strong>For more information</strong></p>
-    <p>See the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a> documentation.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
@@ -128,7 +123,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>DirectComposition is designed to simplify the process of composing visuals and creating animated transitions. If your game requires complex user interfaces, you can use DirectComposition to simplify the creation and management of the UI.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -155,7 +150,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use XAudio2 when your game needs to play sounds with minimal overhead and delay.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Media Foundation</td>
@@ -163,7 +158,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Media foundation is particularly useful for cinematic scenes or non-interactive components of your game. Media foundation is also useful for decoding audio files for playback using XAudio2.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [Microsoft Media Foundation overview](https://msdn.microsoft.com/library/windows/desktop/ms694197).</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft Media Foundation</a> overview.</p></td>
     </tr>
     </tbody>
     </table>
@@ -190,7 +185,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>If your game needs to support gampad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a> documentation.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
@@ -199,14 +194,14 @@ There are many APIs related to game development, but not all games need to use a
     <li>Lower resource usage</li>
     <li>Lower API call latency for retrieving input</li>
     <li>The ability to work with more than 4 gamepads at once</li>
-    <li>The ability to access addition Xbox One gamepad features, such as the trigger vibration motors</li>
+    <li>The ability to access additional Xbox One gamepad features, such as the trigger vibration motors</li>
     <li>The ability to be notified when controllers connect/disconnect via event instead of polling</li>
     <li>The ability to attribute input to a specific user (Windows.System.User)</li>
     </ul>
     <p><strong>When to use</strong></p>
     <p>If your game needs to support gamepad input and is not using existing XInput code or you need one of the benefits listed above, you should make use of Windows.Gaming.Input.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a> documentation.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -214,7 +209,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Windows.UI.Core.CoreWindows events when you need to track the mouse or key presses in your game.</p>
     <p><strong>For more information</strong></p>
-    <p>See [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) for more information about using the mouse or keyboard in your game.</p></td>
+    <p>See <a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial--adding-move-look-controls-to-your-directx-game">Move-look controls for games</a> for more information about using the mouse or keyboard in your game.</p></td>
     </tr>
     </tbody>
     </table>
@@ -241,7 +236,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use of DirectXMath is optional and simplifies common mathematical operations.</p>
     <p><strong>For more information</strong></p>
-    <p>See the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) documentation.</p></td>
+    <p>See the <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a> documentation.</p></td>
     </tr>
     </tbody>
     </table>
@@ -268,7 +263,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Windows.Networking.Sockets if your game needs to communicate with other computers or devices over the network.</p>
     <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <p>See <a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">Work with networking in your game</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Web.HTTP</td>
@@ -276,7 +271,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Windows.Web.HTTP when your game needs to access a web site to retrieve or store information.</p>
     <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <p>See <a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">Work with networking in your game</a>.</p></td>
     </tr>
     </tbody>
     </table>
@@ -303,7 +298,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use the DirectX Tool Kit if you're a C++ developer looking for a modern replacement to the legacy D3DX utility code or you're an XNA Game Studio developer transitioning to native C++.</p>
     <p><strong>For more information</strong></p>
-    <p>See the DirectX Tool Kit project page, [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK).</p></td>
+    <p>See the DirectX Tool Kit project page, <a href="https://github.com/Microsoft/DirectXTK">https://github.com/Microsoft/DirectXTK</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Win2D</td>
@@ -311,7 +306,7 @@ There are many APIs related to game development, but not all games need to use a
     <p><strong>When to use</strong></p>
     <p>Use Win2D if you're a C++ developer and want an easier to use WinRT wrapper for Direct2D and DirectWrite, or you're a C# developer wanting to use Direct2D and DirectWrite.</p>
     <p><strong>For more information</strong></p>
-    <p>See the Win2D project page, [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D).</p></td>
+    <p>See the Win2D project page, <a href="https://github.com/Microsoft/Win2D">https://github.com/Microsoft/Win2D</a>.</p></td>
     </tr>
     </tbody>
     </table>

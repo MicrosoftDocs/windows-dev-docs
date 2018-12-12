@@ -1,14 +1,10 @@
 ---
-author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows App Certification Kit tests
 description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
 ---
 # Windows App Certification Kit tests
@@ -580,7 +576,6 @@ If any of these capabilities are declared, the test will display a warning to th
 ### Corrective Actions
 
 Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
-<!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
 ## Windows Runtime metadata validation
 

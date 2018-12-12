@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 title: Create a certificate for package signing
 description: Create and export a certificate for app package signing with PowerShell tools.
-ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ---
-
 # Create a certificate for package signing
 
 
@@ -53,7 +48,7 @@ Based on the AppxManifest.xml file from the previous example, you should use the
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the commmand will also produce the certificate's thumbprint.  
+After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the command will also produce the certificate's thumbprint.  
 
 **Note**  
 You can view your certificate in a PowerShell window by using the following commands:

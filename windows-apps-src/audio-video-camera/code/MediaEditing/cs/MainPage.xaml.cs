@@ -15,18 +15,18 @@ using Windows.UI.Xaml.Navigation;
 
 
 
-//<SnippetNamespace1>
+// <SnippetNamespace1>
 using Windows.Media.Editing;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using System.Threading.Tasks;
-//</SnippetNamespace1>
+// </SnippetNamespace1>
 
 
-//<SnippetNamespace2>
+// <SnippetNamespace2>
 using Windows.Media.Transcoding;
 using Windows.UI.Core;
-//</SnippetNamespace2>
+// </SnippetNamespace2>
 
 using AudioEffectComponent;
 using Windows.Media.Effects;
@@ -41,9 +41,9 @@ namespace MediaEditingSnippets
 
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareMediaComposition>
+        // <SnippetDeclareMediaComposition>
         private MediaComposition composition;
-        //</SnippetDeclareMediaComposition>
+        // </SnippetDeclareMediaComposition>
 
 
         public MainPage()
@@ -54,9 +54,9 @@ namespace MediaEditingSnippets
         }
         public async void CreateComposition()
         {
-            //<SnippetMediaCompositionConstructor>
+            // <SnippetMediaCompositionConstructor>
             composition = new MediaComposition();
-            //</SnippetMediaCompositionConstructor>
+            // </SnippetMediaCompositionConstructor>
 
             await PickFileAndAddClip();
 
@@ -71,11 +71,11 @@ namespace MediaEditingSnippets
         }
 
 
-        //<SnippetDeclareMediaStreamSource>
+        // <SnippetDeclareMediaStreamSource>
         private MediaStreamSource mediaStreamSource;
-        //</SnippetDeclareMediaStreamSource>
+        // </SnippetDeclareMediaStreamSource>
 
-        //<SnippetUpdateMediaElementSource> 
+        // <SnippetUpdateMediaElementSource> 
         public void UpdateMediaElementSource()
         {
 
@@ -86,9 +86,9 @@ namespace MediaEditingSnippets
             mediaPlayerElement.Source = MediaSource.CreateFromMediaStreamSource(mediaStreamSource);
 
         }
-        //</SnippetUpdateMediaElementSource>
+        // </SnippetUpdateMediaElementSource>
 
-        //<SnippetOnNavigatedFrom>
+        // <SnippetOnNavigatedFrom>
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             mediaPlayerElement.Source = null;
@@ -96,9 +96,9 @@ namespace MediaEditingSnippets
             base.OnNavigatedFrom(e);
 
         }
-        //</SnippetOnNavigatedFrom>
+        // </SnippetOnNavigatedFrom>
 
-        //<SnippetPickFileAndAddClip>
+        // <SnippetPickFileAndAddClip>
         private async Task PickFileAndAddClip()
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -119,9 +119,9 @@ namespace MediaEditingSnippets
             composition.Clips.Add(clip);
 
         }
-        //</SnippetPickFileAndAddClip>
+        // </SnippetPickFileAndAddClip>
 
-        //<SnippetRenderCompositionToFile>
+        // <SnippetRenderCompositionToFile>
         private async Task RenderCompositionToFile()
         {
             var picker = new Windows.Storage.Pickers.FileSavePicker();
@@ -171,14 +171,14 @@ namespace MediaEditingSnippets
                 ShowErrorMessage("User cancelled the file selection");
             }
         }
-        //</SnippetRenderCompositionToFile>
+        // </SnippetRenderCompositionToFile>
 
         private async void RenderButton_Click(object sender, RoutedEventArgs e)
         {
             await RenderCompositionToFile();
         }
 
-        //<SnippetTrimClipBeforeCurrentPosition>
+        // <SnippetTrimClipBeforeCurrentPosition>
         private void TrimClipBeforeCurrentPosition()
         {
             var currentClip = composition.Clips.FirstOrDefault(
@@ -189,10 +189,10 @@ namespace MediaEditingSnippets
             currentClip.TrimTimeFromStart = positionFromStart;
 
         }
-        //</SnippetTrimClipBeforeCurrentPosition>
+        // </SnippetTrimClipBeforeCurrentPosition>
 
 
-        //<SnippetAddBackgroundAudioTrack>
+        // <SnippetAddBackgroundAudioTrack>
         private async Task AddBackgroundAudioTrack()
         {
             // Add background audio
@@ -217,11 +217,11 @@ namespace MediaEditingSnippets
             composition.BackgroundAudioTracks.Add(backgroundTrack);
 
         }
-        //</SnippetAddBackgroundAudioTrack>
+        // </SnippetAddBackgroundAudioTrack>
 
         private void AddCustomAudioEffect()
         {
-            //<SnippetAddCustomAudioEffect>
+            // <SnippetAddCustomAudioEffect>
             // Create a property set and add a property/value pair
             PropertySet echoProperties = new PropertySet();
             echoProperties.Add("Mix", 0.5f);
@@ -240,7 +240,7 @@ namespace MediaEditingSnippets
             {
                 composition.BackgroundAudioTracks[0].AudioEffectDefinitions.Add(echoEffectDefinition);
             }
-            //</SnippetAddCustomAudioEffect>
+            // </SnippetAddCustomAudioEffect>
         }
 
         private async void AudioButton_Click(object sender, RoutedEventArgs e)
@@ -263,7 +263,7 @@ namespace MediaEditingSnippets
             UpdateMediaElementSource();
 
         }
-        //<SnippetAddOverlay>
+        // <SnippetAddOverlay>
         private void AddOverlay(MediaClip overlayMediaClip, double scale, double left, double top, double opacity)
         {
             Windows.Media.MediaProperties.VideoEncodingProperties encodingProperties =
@@ -285,7 +285,7 @@ namespace MediaEditingSnippets
 
             composition.OverlayLayers.Add(mediaOverlayLayer);
         }
-        //</SnippetAddOverlay>
+        // </SnippetAddOverlay>
 
         private void AppendButton_Click(object sender, RoutedEventArgs e)
         {
@@ -298,7 +298,7 @@ namespace MediaEditingSnippets
             UpdateMediaElementSource();
         }
 
-        //<SnippetAddVideoEffect>
+        // <SnippetAddVideoEffect>
         private void AddVideoEffect()
         {
             var currentClip = composition.Clips.FirstOrDefault(
@@ -308,7 +308,7 @@ namespace MediaEditingSnippets
             VideoStabilizationEffectDefinition videoEffect = new VideoStabilizationEffectDefinition();
             currentClip.VideoEffectDefinitions.Add(videoEffect);
         }
-        //</SnippetAddVideoEffect>
+        // </SnippetAddVideoEffect>
 
         private void EffectsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -326,7 +326,7 @@ namespace MediaEditingSnippets
             videoEffect.OutputSize = new Size(mediaElement.ActualWidth, mediaElement.ActualHeight);
         */
 
-        //<SnippetSaveComposition>
+        // <SnippetSaveComposition>
         private async Task SaveComposition()
         {
             var picker = new Windows.Storage.Pickers.FileSavePicker();
@@ -352,13 +352,13 @@ namespace MediaEditingSnippets
                 };
             }
         }
-        //</SnippetSaveComposition>
+        // </SnippetSaveComposition>
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             await SaveComposition();
         }
 
-        //<SnippetOpenComposition>
+        // <SnippetOpenComposition>
         private async Task OpenComposition()
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -386,7 +386,7 @@ namespace MediaEditingSnippets
                 }
             }
         }
-        //</SnippetOpenComposition>
+        // </SnippetOpenComposition>
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             await OpenComposition();

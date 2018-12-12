@@ -1,17 +1,12 @@
 ---
-author: mithom
 title: UI navigation controller
 description: Use the Windows.Gaming.Input UI navigation controller APIs to detect and read different kinds of input devices for UI navigation.
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, ui, navigation
 ms.localizationpriority: medium
 ---
-
 # UI navigation controller
 
 This page describes the basics of programming for UI navigation devices using [Windows.Gaming.Input.UINavigationController][uinavigationcontroller] and related APIs for the Universal Windows Platform (UWP).
@@ -34,7 +29,7 @@ Because the number and variety of controls supported by each kind of input devic
 
 Navigation devices must support all navigation commands in the _required set_; these are the directional (up, down, left, and right), view, menu, accept, and cancel commands.
 
-The directional commands are intended for primary [XY-focus navigation](..\design\devices\designing-for-tv.md#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
+The directional commands are intended for primary [XY-focus navigation](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
 
 The following table summarizes these commands and their intended uses, with examples.
 | Command | Intended use
@@ -211,7 +206,7 @@ Sometimes you might want to determine when a button transitions from pressed to 
 
 ## Run the UI navigation controller sample
 
-The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how the different input devices behave as UI navigation controllers.
+The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) demonstrates how the different input devices behave as UI navigation controllers.
 
 ## See also
 [Windows.Gaming.Input.Gamepad][]

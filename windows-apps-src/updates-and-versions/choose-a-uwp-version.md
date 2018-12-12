@@ -1,40 +1,46 @@
 ---
-author: QuinnRadich
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
-ms.author: quradic
-ms.date: 11/10/2017
+ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, version, build, versions, windows, choose, update, updates
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-
 # Choose a UWP version
 
 Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
 
-Please note that any UWP projects created in current versions of Visual Studio 2017 cannot be opened in Visual Studio 2015.
+> [!WARNING]
+> UWP projects created in current versions of Visual Studio cannot be opened in Visual Studio 2015.
 
 The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](http://go.microsoft.com/fwlink/?LinkId=821431) in order to target that version. 
 
 | Version | Description |
 | --- | --- |
-| Build 16299 (Fall Creators Update, version 1709) | This is the latest version of Windows 10, released in October 2017. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows** Some highlighted features from this release include: </br> \* **.NET Standard 2.0:** Enjoy a massive increase in the number of .NET APIs and incorporate your favorite NuGet packages and third party libraries into .NET Standard. See more details and explore the documentation [here](https://docs.microsoft.com/dotnet/standard/net-standard). Please note that you must set your **minimum version** to Build 16299 to access these new APIs. </br> \* **Fluent Design:** Use light, depth, perspective, and movement to enhance your app and help users focus on important UI elements. </br> \* **Conditional XAML:** Easily set properties and instantiate objects based on the presence of an API at runtime, enabling your apps to run seamlessly across devices and versions. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-16299.md)
+| Build 17763 (version 1809) | This is the latest version of Windows 10, released in October 2018. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows.** Some highlighted features from this release include: </br> \* **Windows Machine Learning:** Windows Machine Learning has now officially launched, providing features like faster evaluation and support for cutting-edge machine learning models. To learn more about the platform, see [Windows Machine Learning](https://docs.microsoft.com/windows/ai/). </br> \* **Fluent Design:** New features such as menu bar, command bar flyout, and XAML property animations have been added to Windows 10. See the latest at the [Fluent design overview](../design/fluent-design-system/index.md). </br> For information on these and many other features added in this release of Windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-17763.md)
+| Build 17134 (version 1803) | This is version of Windows 10 was released in April 2018. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows.** Some highlighted features from this release include: </br> \* **Fluent Design:** New features such as tree view, pull-to-refresh, and navigation view have been added to Windows 10. See the latest at the [Fluent design overview](../design/fluent-design-system/index.md). </br> \* **Console UWP apps:** You can now write C++ /WinRT or /CX UWP console apps that run in a console window such as a DOS or PowerShell console window. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-17134.md)
+| Build 16299 (Fall Creators Update, version 1709) | This verion of Windows 10 was released in October 2017. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows.** Some highlighted features from this release include: </br> \* **.NET Standard 2.0:** Enjoy a massive increase in the number of .NET APIs and incorporate your favorite NuGet packages and third party libraries into .NET Standard. See more details and explore the documentation [here](https://docs.microsoft.com/dotnet/standard/net-standard). Please note that you must set your **minimum version** to Build 16299 to access these new APIs. </br> \* **Fluent Design:** Use light, depth, perspective, and movement to enhance your app and help users focus on important UI elements. </br> \* **Conditional XAML:** Easily set properties and instantiate objects based on the presence of an API at runtime, enabling your apps to run seamlessly across devices and versions. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-16299.md)
 | Build 15063 (Creators Update, version 1703) | This version of Windows 10 was released in March 2017. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows**. Some highlighted features from this release include:  </br> \* **Ink Analysis:** Windows Ink can now categorize ink strokes into either writing or drawing strokes, and recognized text, shapes, and basid layout structures. </br> \* **Windows.Ui.Composition APIs:** Easily combine and apply animations across your app. </br> \* **Live Editing:** Edit XAML while your app is running, and see the changes applied in real-time. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-15063.md)  |
 | Build 14393 (Anniversary Update, version 1607) | This version of Windows 10 was released in July 2016. Some highlighted features from this release include: </br> \* **Windows Ink:** New InkCanvas and InkToolbar controls. </br> \* **Cortana APIs:** Use new Cortana Actions to integrate Cortana support with specific functions of your app. </br> \* **Windows Hello:** Microsoft Edge now supports Windows Hello, giving web developers access to biometric authentication. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-build-14393.md)  |
 | Build 10586 (November Update, version 1511) | This version of Windows 10 was released in November 2015. Highlighted features include the introduction of ORTC (object real-time communications) APIs for video communication in Microsoft Edge and Providers APIs to enable apps to use Windows Hello face authentication. [More information on features introduced in this build.](../whats-new/windows-10-build-10586.md) |
 | Build 10240 (Windows 10, version 1507) | This is the initial release version of Windows 10, from July 2015. [More information on features introduced in this build.](../whats-new/windows-10-build-10240.md) |
 
-We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (16299). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
+We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (17763). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
 
 ## What's different in each UWP version?
 
 New and changed APIs for UWP are available in every successive version of Windows 10. For specific information about what features were added in which version, see [What's new for developers in Windows 10](../whats-new/windows-10-version-latest.md).
 
 For reference topics that enumerate all device families and their versions, and all API contracts and their versions, see [Device families](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) and [API contracts](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
+
+## .NET API availability in UWP versions
+
+UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+
+If you wish to create reusable cross-platform libraries, .NET Standard is supported on UWP. The [.NET Standard documentation](https://docs.microsoft.com/dotnet/standard/net-standard) provides information on which .NET Standard is supported in which UWP versions.
+
+If you are developing a Desktop app, see instead [.NET Framework versions and dependencies](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) for detailed information on .NET framework availability.
 
 ## Choose which version to use for your app
 
@@ -47,4 +53,4 @@ Be aware that you're declaring that your app works on any version of Windows in 
 
 * In your code, you can freely (that is, without conditional checks) call any API that exists in the version specified by **Minimum Version**.
 * Ensure that you test your code on a device running the **Minimum Version**, to be sure that it works without requiring APIs only present in the **Target Version**.
-* The value of **Target Version** is used to identify all the references (contract winmds) used to compile your project. But those references will enable you to compile your code with calls to APIs that won't necessarily exist on devices that you've declared that you support (via **Minimum Version**). Therefore, any API that was introduced after **Minimum Version** will need to be called via adaptive code. For more information about adaptive code, see [Guide to Universal Windows Platform (UWP) apps](../get-started/universal-application-platform-guide.md).
+* The value of **Target Version** is used to identify all the references (contract winmds) used to compile your project. But those references will enable you to compile your code with calls to APIs that won't necessarily exist on devices that you've declared that you support (via **Minimum Version**). Therefore, any API that was introduced after **Minimum Version** will need to be called via adaptive code. For more information about adaptive code, see [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).

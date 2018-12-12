@@ -1,17 +1,13 @@
 ---
 title: Create a new title
-author: KevinAsgari
-description: Learn how to create a new title for Xbox Live by using the Windows Universal Dev Center (UDC).
+
+description: Learn how to create a new title for Xbox Live by using Partner Center.
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Create a new title for Xbox Live
 
 ## Introduction
@@ -21,29 +17,29 @@ Before writing any code, you must setup a new title on your service configuratio
 This article will walk you through this process with the following assumptions
 
 1. You are developing a Universal Windows Platform (UWP) title.  UWP titles run on Xbox One, Windows 10 desktop PCs, and mobile
-2. You are configuring your title on Windows Dev Center at [http://dev.windows.com/](http://dev.windows.com).  If in doubt, you should use Windows Dev Center.
+2. You are configuring your title in [Partner Center](https://partner.microsoft.com/dashboard).
 3. You are using either Visual Studio with a custom game engine, or Unity.
 4. Your development machine is running Windows 10.
 
-Provided that the above are true, the remainder of this article will walk through everything required to get a title configured on Windows Dev Center, a new project created, and Xbox Live sign-in code written and tested.
+Provided that the above are true, the remainder of this article will walk through everything required to get a title configured in Partner Center, a new project created, and Xbox Live sign-in code written and tested.
 
 > [!NOTE]
 > If you are part of the Xbox Live Creators Program, the above assumptions apply to you and you should follow along with this article.
 
-## Dev Center Setup
+## Partner Center Setup
 
-You need an Xbox Live enabled title created on [Windows Dev Center](http://dev.windows.com) as a pre-requisite to any Xbox Live functionality working.
+You need an Xbox Live enabled title created in [Partner Center](https://partner.microsoft.com/dashboard) as a pre-requisite to any Xbox Live functionality working.
 
 ### Create a Microsoft account
 If you don't have a Microsoft Account (also known as an MSA), you will need to first create one at [https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486).  If you have an Office 365 account, use Outlook.com, or have an Xbox Live account - you probably already have an MSA.
 
 ### Register as an App Developer
-You will need to register as an App Developer before you are allowed to create a new title on Dev Center.
+You will need to register as an App Developer before you are allowed to create a new title in Partner Center.
 
 To register go to https://developer.microsoft.com/en-us/store/register and follow the sign-up process.
 
 ### Create a new UWP title
-Next, you need a UWP title defined on Dev Center.  You do that by first going to the Dashboard
+Next, you need a UWP title defined in Partner Center.  You do that by first going to the Dashboard
 
 ![](../images/getting_started/first_xbltitle_dashboard.png)
 
@@ -53,7 +49,7 @@ Next, you need a UWP title defined on Dev Center.  You do that by first going to
 <p>
 </p>
 
-After clicking on the dashboard, create a new title.  You'll need to reserve a name.
+Then, create a new title.  You'll need to reserve a name.
 
 ![](../images/getting_started/first_xbltitle_newapp.png)
 

@@ -1,36 +1,29 @@
 ---
-author: normesta
 Description: Run the Desktop Converter App to package a Windows desktop application (like Win32, WPF, and Windows Forms).
 Search.Product: eADQiWindows 10XVcnh
 title: Package an app using the Desktop App Converter (Desktop Bridge)
-ms.author: normesta
-ms.date: 09/18/2017
+ms.date: 08/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ---
-
-# Package an app using the Desktop App Converter (Desktop Bridge)
+# Package a desktop application using the Desktop App Converter
 
 [Get the Desktop App Converter](https://aka.ms/converter)
 
-You can use the Desktop App Converter (DAC) to bring your desktop apps to the Universal Windows Platform (UWP). This includes Win32 apps and apps that you've created by using .NET 4.6.1.
+The Desktop App Converter (DAC) creates packages for desktop applications to integrate with the latest Windows features, including distribution and servicing via the Microsoft Store. This includes Win32 apps and apps that you've created by using .NET 4.6.1.
 
-<div style="float: left; padding: 10px">
-    ![DAC Icon](images/desktop-to-uwp/dac.png)
-</div>
+![DAC Icon](images/desktop-to-uwp/dac.png)
 
-While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your app remains unchanged. However, this tool generates a Windows app package with a package identity and the ability to call a vast range of WinRT APIs.
+While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your application remains unchanged. However, this tool generates a Windows app package with a package identity and the ability to call a vast range of WinRT APIs.
 
 You can install that package by using the Add-AppxPackage PowerShell cmdlet on your development machine.
 
 The converter runs the desktop installer in an isolated Windows environment by using a clean base image provided as part of the converter download. It captures any registry and file system I/O made by the desktop installer and packages it as part of the output.
 
 >[!IMPORTANT]
->The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 > [!NOTE]
 > Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
@@ -51,14 +44,15 @@ Here's a few extra things it can do for you.
 
 :heavy_check_mark: Automatically sign your package so that you can test your app.
 
-:heavy_check_mark: Validate your app against Desktop Bridge and Microsoft Store requirements.
+:heavy_check_mark: Validate your application against packaged app and Microsoft Store requirements.
 
 To find a complete list of options, see the [Parameters](#command-reference) section of this guide.
 
 If you're ready to create your package, let's start.
 
-## First, consider how you'll distribute your app
-If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
+## First, prepare your application
+
+Review this guide before you begin creating a package for your application: [Prepare to package a desktop application](desktop-to-uwp-prepare.md).
 
 ## Make sure that your system can run the converter
 
@@ -69,7 +63,6 @@ Make sure that your system meets the following requirements:
 * Hardware-assisted virtualization
 * Second Level Address Translation (SLAT)
 * [Windows Software Development Kit (SDK) for Windows 10](https://go.microsoft.com/fwlink/?linkid=821375).
-
 
 ## Start the Desktop App Converter
 
@@ -83,7 +76,7 @@ Make sure that your system meets the following requirements:
 
 ## Set a few things up (apps with installers only)
 
-You can skip ahead to the next section if your app doesn't have an installer.
+You can skip ahead to the next section if your application doesn't have an installer.
 
 1. Identify the version number of your operating system.
 
@@ -118,10 +111,10 @@ You can skip ahead to the next section if your app doesn't have an installer.
 
 To Package your app, run the ``DesktopAppConverter.exe`` command in the console window that opened when you started the Desktop App Converter.  
 
-You'll specify the package name, publisher and version number of the app by using parameters.
+You'll specify the package name, publisher and version number of the application by using parameters.
 
 > [!NOTE]
-> If you've reserved your app name in the Windows store, you can obtain the package and publisher names by using the Windows Dev Center dashboard. If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
+> If you've reserved your app name in the Microsoft Store, you can obtain the package and publisher names by using [Partner Center](https://partner.microsoft.com/dashboard). If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### A quick look at command parameters
 
@@ -141,13 +134,14 @@ You can read about each one [here](#command-reference).
 
 Here's a few common ways to package your app.
 
-* [Package an app that has an installer (.msi) file](#installer-conversion)
-* [Package an app that has a setup executable file](#setup-conversion)
-* [Package an app that doesn't have an installer](#no-installer-conversion)
-* [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
+* [Package an application that has an installer (.msi) file](#installer-conversion)
+* [Package an application that has a setup executable file](#setup-conversion)
+* [Package an application that doesn't have an installer](#no-installer-conversion)
+* [Package an app, sign the app, and prepare it for Store submission](#optional-parameters)
 
 <a id="installer-conversion" />
-#### Package an app that has an installer (.msi) file
+
+#### Package an application that has an installer (.msi) file
 
 Point to the installer file by using the ``Installer`` parameter.
 
@@ -156,7 +150,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> There are two important things to keep in mind here. First, make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment. <br> Secondly, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
+> There are two important things to keep in mind here. First, make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment. <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
 
 **Video**
 
@@ -165,7 +159,8 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 If your installer includes installers for dependent libraries or frameworks, you might have to organize things a bit a differently. See [Chaining multiple installers with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
 <a id="setup-conversion" />
-#### Package an app that has a setup executable file
+
+#### Package an application that has a setup executable file
 
 Point to the setup executable by using the ``Installer`` parameter.
 
@@ -173,18 +168,19 @@ Point to the setup executable by using the ``Installer`` parameter.
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
-The ``InstallerArguments`` parameter is an optional parameter. However, because the Desktop App Converter needs your installer to run in unattended mode, you might have to use it if your app needs silent flags to run silently. The ``/S`` flag is a very common silent flag, but the flag that you use might be different depending on which installer technology you used to create the setup file.
+The ``InstallerArguments`` parameter is an optional parameter. However, because the Desktop App Converter needs your installer to run in unattended mode, you might have to use it if your application needs silent flags to run silently. The ``/S`` flag is a very common silent flag, but the flag that you use might be different depending on which installer technology you used to create the setup file.
 
 **Video**
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="no-installer-conversion" />
-#### Package an app that doesn't have an installer
 
-In this example, use the ``Installer`` parameter to point to the root folder of your app files.
+#### Package an application that doesn't have an installer
+
+In this example, use the ``Installer`` parameter to point to the root folder of your application files.
 
 Use the `AppExecutable` parameter to point to your apps executable file.
 
@@ -193,26 +189,27 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 **Video**
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="optional-parameters" />
+
 #### Package an app, sign the app, and run validation checks on the package
 
-This example is similar to first one except it shows how you can sign your app for local testing, and then validate your app against Desktop Bridge and Microsoft Store requirements.
+This example is similar to first one except it shows how you can sign your application for local testing, and then validate your application against packaged app and Microsoft Store requirements.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+>If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
-The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the packaged app](#run-app) section of this guide.
+The ``Sign`` parameter generates a certificate and then signs your application with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the packaged app](#run-app) section of this guide.
 
-You can validate you app by using the ``Verify`` parameter.
+You can validate you application by using the ``Verify`` parameter.
 
 ### A quick look at optional parameters
 
@@ -234,6 +231,7 @@ The ``Sign`` and ``Verify`` parameters are optional. There are many more optiona
 You can read about all of them in the next section.
 
 <a id="command-reference" />
+
 ### Parameter Reference
 
 Here's the complete list of parameters (organized by category) that you can use when you run the Desktop App Converter.
@@ -259,17 +257,19 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |<a id="conversion-params" /> <strong>Conversion parameters</strong>|||
 |-AppInstallPath &lt;String&gt;  |Optional |The full path to your application's root folder for the installed files if it were installed (e.g., "C:\Program Files (x86)\MyApp").|
 |-Destination &lt;String&gt; |Required |The desired destination for the converter's appx output - DesktopAppConverter can create this location if it doesn't already exist.|
-|-Installer &lt;String&gt; |Required |The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your app files. |
+|-Installer &lt;String&gt; |Required |The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your application files. |
 |-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path &lt;log_folder&gt; if you want the converter to capture it and put it in the final log folder.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Optional |A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
+|-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to package the output as an MSIX Package. |
 |<a id="identity-params" /><strong>Package identity parameters</strong>||
-|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
+|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-Publisher &lt;String&gt; |Required |The publisher of your Universal Windows App package |
 |-Version &lt;Version&gt; |Required |The version number for your Universal Windows App package |
 |<a id="manifest-params" /><strong>Package manifest parameters</strong>||
 |-AppExecutable &lt;String&gt; |Optional |The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
 |-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with. Example usage: -AppFileTypes "'.md', '.markdown'".|
-|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
+|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-AppDisplayName &lt;String&gt;  |Optional |Specifies a value to set Application Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-AppDescription &lt;String&gt; |Optional |Specifies a value to set Application Description to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |-PackageDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
@@ -283,21 +283,21 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-PackageArch &lt;String&gt; |Required |Generates a package with the specified architecture. Valid options are 'x86' or 'x64'; for example, -PackageArch x86. This parameter is optional. If unspecified, the DesktopAppConverter will try to auto-detect package architecture. If auto-detection fails, it will default to x64 package. |
 |<a id="other-params" /><strong>Miscellaneous parameters</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |Optional |Full path to an already expanded base image.|
-|-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
 | -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
 |&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
-| -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the app package against Desktop Bridge and Microsoft Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
+| -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the app package against packaged app and Microsoft Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
 |-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you package your app.
 
 <a id="run-app" />
+
 ## Run the packaged app
 
 There's two ways to run your app.
 
-One way is to open a PowerShell command prompt, and then type this command: ```Add-AppxPackage –Register AppxManifest.xml```. It's probably the easiest way to run your app because you don't have to sign it.
+One way is to open a PowerShell command prompt, and then type this command: ```Add-AppxPackage –Register AppxManifest.xml```. It's probably the easiest way to run your application because you don't have to sign it.
 
-Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you, and then sign your app with it. That file is named **auto-generated.cer**, and you can find it in the root folder of your packaged app.
+Another way is to sign your application with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you, and then sign your application with it. That file is named **auto-generated.cer**, and you can find it in the root folder of your packaged app.
 
 Follow these steps to install the generated certificate, and then run your app.
 
@@ -324,9 +324,9 @@ Follow these steps to install the generated certificate, and then run your app.
 
 ## Modify the packaged app
 
-You'll likely make changes to your packaged app to address bugs, add visual assets, or enhance your app with modern experiences such as live tiles.
+You'll likely make changes to your packaged application to address bugs, add visual assets, or enhance your application with modern experiences such as live tiles.
 
-After you make your changes, you don't need to run the converter again. In most cases, you can just repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
+After you make your changes, you don't need to run the converter again. In most cases, you can just repackage your application by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
 
 * If you modify any of the visual assets of your app, generate a new Package Resource Index file, and then run the MakeAppx tool to generate a new package. See [Generate a Package Resource Index (PRI) file](desktop-to-uwp-manual-conversion.md#make-pri).
 
@@ -341,7 +341,7 @@ After you make your changes, you don't need to run the converter again. In most 
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-The following two sections describe a couple of optional fix-ups to the packaged app that you might consider.
+The following two sections describe a couple of optional fix-ups to the packaged application that you might consider.
 
 ### Delete unnecessary files and registry keys
 
@@ -354,7 +354,7 @@ If you want, you can review the VFS folder and delete any files that your instal
 During the conversion process, the DesktopAppConverter automatically runs the PEHeaderCertFixTool to fixup any corrupted PE headers. However, you can also run the PEHeaderCertFixTool on a UWP Windows app package, loose files, or a specific binary. Here's an example.
 
 ```CMD
-PEHeaderCertFixTool.exe <binary file>|<.appx package>|&lt;folder> [/c] [/v]
+PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
  /c   -- check for corrupted certificate but do not fix (optional)
  /v   -- verbose (optional)
 example1: PEHeaderCertFixTool app.exe
@@ -390,10 +390,10 @@ You can also refer to [this](desktop-to-uwp-known-issues.md#app-converter) list 
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Run your app / find and fix issues**
+**Run your application / find and fix issues**
 
-See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
+See [Run, debug, and test a packaged desktop application](desktop-to-uwp-debug.md)
 
 **Distribute your app**
 
-See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
+See [Distribute a packaged desktop application](desktop-to-uwp-distribute.md)

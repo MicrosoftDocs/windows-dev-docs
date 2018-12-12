@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 title: Drag animations in UWP apps
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Drag animations
 
 
@@ -21,12 +16,7 @@ ms.localizationpriority: medium
 
 Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
-</ul>
-</div>
+> **Important APIs**: [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## Do's and don'ts

@@ -1,17 +1,12 @@
----
-author: mcleanbyron
+﻿---
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Use this method in the Microsoft Store reviews API to determine whether you can respond to a particular review, or whether you can respond to any review for a given app.
 title: Get response info for reviews
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, response info
 ms.localizationpriority: medium
 ---
-
 # Get response info for reviews
 
 If you want to programmatically respond to a customer review of your app, you can use this method in the Microsoft Store reviews API to first determine whether you have permission to respond to the review. You cannot respond to reviews submitted by customers who have chosen not to receive review responses. After you confirm that you can respond to the review, you can then use the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to it.
@@ -34,7 +29,6 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/{reviewId}/apps/{applicationId}/responses/info``` |
 
-<span/> 
 
 ### Request header
 
@@ -42,16 +36,14 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
 | Parameter        | Type   | Description                                     |  Required  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | string | The Store ID of the app that contains the review for which you want to determine whether you can respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| applicationId | string | The Store ID of the app that contains the review for which you want to determine whether you can respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | reviewId | string | The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md). <br/>If you omit this parameter, the response body for this method will indicate whether you have permissions to respond to any reviews for the specified app. |  No  |
 
-<span/>
 
 ### Request example
 
@@ -70,9 +62,8 @@ Authorization: Bearer <your access token>
 | Value      | Type   | Description    |  
 |------------|--------|-----------------------|
 | CanRespond      | Boolean  | The value **true** indicates that you can respond to the specified review, or that you have permissions to respond to any review for the specified app. Otherwise, this value is **false**.       |
-| DefaultSupportEmail  | string |  Your app's [support email address](../publish/create-app-store-listings.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
+| DefaultSupportEmail  | string |  Your app's [support email address](../publish/enter-app-properties.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
 
-<span/>
  
 ### Response example
 
@@ -88,6 +79,6 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Submit responses to reviews using the Microsoft Store analytics API](submit-responses-to-app-reviews.md)
-* [Respond to customer reviews using the Dev Center dashboard](../publish/respond-to-customer-reviews.md)
+* [Respond to customer reviews using Partner Center](../publish/respond-to-customer-reviews.md)
 * [Respond to reviews using Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
 * [Get app reviews](get-app-reviews.md)

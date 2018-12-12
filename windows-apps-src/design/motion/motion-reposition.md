@@ -1,32 +1,21 @@
 ---
-author: mijacobs
 Description: Use the reposition animation to move an element or elements into a new position.
 title: Reposition animations in UWP apps
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Reposition animations
 
 
 
 Use the reposition animation to move an element or elements into a new position.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)</li>
-<li>[**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)</li>
-</ul>
-</div>
+> **Important APIs**: [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421), [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## Do's and don'ts
 

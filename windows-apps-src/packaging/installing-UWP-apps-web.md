@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Installing UWP apps from a web page
 description: In this section, we will review the steps you need to take to allow users to install your apps directly from the web page.
-ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium
 ---
-
 # Installing UWP apps from a web page
 
 Typically, an app needs to be locally available on a device before it can be installed with the App Installer. For the web scenario, this means that the user must download the app package from the web server, after which it can be installed with App Installer. This is inefficient and wastes disk space, which is why App Installer now has built in features to streamline the process.
@@ -26,8 +21,11 @@ The direct app install is only available in the Windows 10 Fall Creators Update 
 In this mechanism, App Installer registers with the operating system for a protocol activation scheme. When user clicks on a web link, the browser checks with the OS for apps that are registered to that web link. If the scheme matches the protocol activation scheme specified by App Installer, then App Installer is invoked. It's important to note that this mechanism is browser independent. This is beneficial to site administrators, for example, who don't need to consider web browser differences while incorporating this into a webpage. 
 
 ### Requirements for protocol activation scheme
-   - Web servers that support byte range requests (HTTP/1.1)
-   - App Packages need to be hosted on servers that support HTTP/1.1 protocol   
+
+1. Web servers need to have support for byte range requests (HTTP/1.1)
+    - Servers that support HTTP/1.1 protocol should have support for byte range requests 
+2. Web servers will need to know about the Windows 10 app package content types
+    - Here's how to declare the new content types as part of [web config file](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### How to enable this on a webpage 
 App developers who want to host app packages on their web sites need to follow this step:
@@ -57,7 +55,7 @@ Users of previous versions of Windows 10 (with App Installer available) can also
 
 Although this flow isn't quite as seamless as the direct install on Windows 10 Fall Creators Update, users can still quickly engage with the app. Additionally, with this flow the user doesn't have to worry about app package files unnecessarily taking up space in drives. App Installer efficiently manages space by downloading the package to its app data folder and clearing packages when they are no longer needed. 
 
-Here's a quick comparison of the Windows 10 Fall Creator's update version of App Installer and the previous version of App Installer:
+Here's a quick comparison of the Windows 10 Fall Creators update version of App Installer and the previous version of App Installer:
 
 | App Installer, Latest Version | App Installer, Previous Version |
 |------------------------------|----------------------------------|

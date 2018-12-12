@@ -3,25 +3,25 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-//<SnippetNamespaces>
+// <SnippetNamespaces>
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.Graphics.Imaging;
 using Windows.UI.Xaml.Media.Imaging;
-//</SnippetNamespaces>
+// </SnippetNamespaces>
 
 using Windows.Devices.Geolocation;
 using Windows.Storage.FileProperties;
 
 
-//<SnippetDirect3DNamespace>
+// <SnippetDirect3DNamespace>
 using Windows.Graphics.DirectX.Direct3D11;
-//</SnippetDirect3DNamespace>
+// </SnippetDirect3DNamespace>
 
-//<SnippetInteropNamespace>
+// <SnippetInteropNamespace>
 using System.Runtime.InteropServices;
-//</SnippetInteropNamespace>
+// </SnippetInteropNamespace>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,7 +31,7 @@ namespace ImagingWin10
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     /// 
-    //<SnippetCOMImport>
+    // <SnippetCOMImport>
     [ComImport]
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -39,7 +39,7 @@ namespace ImagingWin10
     {
         void GetBuffer(out byte* buffer, out uint capacity);
     }
-    //</SnippetCOMImport>
+    // </SnippetCOMImport>
 
     public sealed partial class MainPage : Page
     {
@@ -53,7 +53,7 @@ namespace ImagingWin10
         private async void OpenButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
 
-            //<SnippetPickInputFile>
+            // <SnippetPickInputFile>
             FileOpenPicker fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileOpenPicker.FileTypeFilter.Add(".jpg");
@@ -66,12 +66,12 @@ namespace ImagingWin10
                 // The user cancelled the picking operation
                 return;
             }
-            //</SnippetPickInputFile>
+            // </SnippetPickInputFile>
 
             softwareBitmap = await CreateSoftwareBitmapFromFile(inputFile);
 
 
-            //<SnippetPickOuputFile>
+            // <SnippetPickOutputFile>
             FileSavePicker fileSavePicker = new FileSavePicker();
             fileSavePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileSavePicker.FileTypeChoices.Add("JPEG files", new List<string>() { ".jpg" });
@@ -84,7 +84,7 @@ namespace ImagingWin10
                 // The user cancelled the picking operation
                 return;
             }
-            //</SnippetPickOuputFile>
+            // </SnippetPickOutputFile>
 
 
             SaveSoftwareBitmapToFile(softwareBitmap, outputFile);
@@ -97,7 +97,7 @@ namespace ImagingWin10
 
         private async Task<SoftwareBitmap> CreateSoftwareBitmapFromFile(StorageFile inputFile)
         {
-            //<SnippetCreateSoftwareBitmapFromFile>
+            // <SnippetCreateSoftwareBitmapFromFile>
             SoftwareBitmap softwareBitmap;
 
             using (IRandomAccessStream stream = await inputFile.OpenAsync(FileAccessMode.Read))
@@ -108,13 +108,13 @@ namespace ImagingWin10
                 // Get the SoftwareBitmap representation of the file
                 softwareBitmap = await decoder.GetSoftwareBitmapAsync();
             }
-            //</SnippetCreateSoftwareBitmapFromFile>
+            // </SnippetCreateSoftwareBitmapFromFile>
 
             return softwareBitmap;
         }
 
 
-        //<SnippetSaveSoftwareBitmapToFile>
+        // <SnippetSaveSoftwareBitmapToFile>
         private async void SaveSoftwareBitmapToFile(SoftwareBitmap softwareBitmap, StorageFile outputFile)
         {
             using (IRandomAccessStream stream = await outputFile.OpenAsync(FileAccessMode.ReadWrite))
@@ -138,15 +138,16 @@ namespace ImagingWin10
                 }
                 catch (Exception err)
                 {
+                    const int WINCODEC_ERR_UNSUPPORTEDOPERATION = unchecked((int)0x88982F81);
                     switch (err.HResult)
                     {
-                        case unchecked((int)0x88982F81): //WINCODEC_ERR_UNSUPPORTEDOPERATION
-                                                         // If the encoder does not support writing a thumbnail, then try again
-                                                         // but disable thumbnail generation.
+                        case WINCODEC_ERR_UNSUPPORTEDOPERATION: 
+                            // If the encoder does not support writing a thumbnail, then try again
+                            // but disable thumbnail generation.
                             encoder.IsThumbnailGenerated = false;
                             break;
                         default:
-                            throw err;
+                            throw;
                     }
                 }
 
@@ -158,14 +159,14 @@ namespace ImagingWin10
 
             }
         }
-        //</SnippetSaveSoftwareBitmapToFile>
+        // </SnippetSaveSoftwareBitmapToFile>
 
         private async void UseEncodingOptions(StorageFile outputFile)
         {
 
             using (IRandomAccessStream stream = await outputFile.OpenAsync(FileAccessMode.ReadWrite))
             {
-                //<SnippetUseEncodingOptions>
+                // <SnippetUseEncodingOptions>
                 var propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
                 var qualityValue = new Windows.Graphics.Imaging.BitmapTypedValue(
                     1.0, // Maximum quality
@@ -179,7 +180,7 @@ namespace ImagingWin10
                     stream,
                     propertySet
                 );
-                //</SnippetUseEncodingOptions>
+                // </SnippetUseEncodingOptions>
             }
 
         }
@@ -193,7 +194,7 @@ namespace ImagingWin10
             softwareBitmap = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight);
 
             // CHANGE THIS SNIPPET NAME - LEAVING NOW TO AVOID RISK OF BUILD BREAK
-            //<SnippetSoftwareBitmapToWriteableBitmap>
+            // <SnippetSoftwareBitmapToWriteableBitmap>
             if (softwareBitmap.BitmapPixelFormat != BitmapPixelFormat.Bgra8 ||
                 softwareBitmap.BitmapAlphaMode == BitmapAlphaMode.Straight)
             {
@@ -205,23 +206,23 @@ namespace ImagingWin10
 
             // Set the source of the Image control
             imageControl.Source = source;
-            //</SnippetSoftwareBitmapToWriteableBitmap>
+            // </SnippetSoftwareBitmapToWriteableBitmap>
         }
         private void WriteableBitmapToSoftwareBitmap(WriteableBitmap writeableBitmap)
         {
-            //<SnippetWriteableBitmapToSoftwareBitmap>
+            // <SnippetWriteableBitmapToSoftwareBitmap>
             SoftwareBitmap outputBitmap = SoftwareBitmap.CreateCopyFromBuffer(
                 writeableBitmap.PixelBuffer,
                 BitmapPixelFormat.Bgra8,
                 writeableBitmap.PixelWidth,
                 writeableBitmap.PixelHeight
             );
-            //</SnippetWriteableBitmapToSoftwareBitmap>
+            // </SnippetWriteableBitmapToSoftwareBitmap>
         }
 
         private unsafe void CreateNewSoftwareBitmap()
         {
-            //<SnippetCreateNewSoftwareBitmap>
+            // <SnippetCreateNewSoftwareBitmap>
             softwareBitmap = new SoftwareBitmap(BitmapPixelFormat.Bgra8, 100, 100, BitmapAlphaMode.Premultiplied);
 
             using (BitmapBuffer buffer = softwareBitmap.LockBuffer(BitmapBufferAccessMode.Write))
@@ -248,23 +249,23 @@ namespace ImagingWin10
                     }
                 }
             }
-            //</SnippetCreateNewSoftwareBitmap>
+            // </SnippetCreateNewSoftwareBitmap>
         }
 
         private void ConvertToBGR8()
         {
-            //<SnippetConvert>
+            // <SnippetConvert>
             SoftwareBitmap bitmapBGRA8 = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
-            //</SnippetConvert>
+            // </SnippetConvert>
         }
-        //<SnippetCreateSoftwareBitmapFromSurface>
+        // <SnippetCreateSoftwareBitmapFromSurface>
         private async void CreateSoftwareBitmapFromSurface(IDirect3DSurface surface)
         {
             softwareBitmap = await SoftwareBitmap.CreateCopyFromSurfaceAsync(surface);
         }
-        //</SnippetCreateSoftwareBitmapFromSurface>
+        // </SnippetCreateSoftwareBitmapFromSurface>
 
-        //<SnippetTranscodeImageFile>
+        // <SnippetTranscodeImageFile>
         private async void TranscodeImageFile(StorageFile imageFile)
         {
 
@@ -289,12 +290,12 @@ namespace ImagingWin10
                 memStream.Dispose();
             }
         }
-        //</SnippetTranscodeImageFile>
+        // </SnippetTranscodeImageFile>
 
 
 
 
-        //<SnippetGetImageProperties>
+        // <SnippetGetImageProperties>
         private async void GetImageProperties(StorageFile imageFile)
         {
             ImageProperties props = await imageFile.Properties.GetImagePropertiesAsync();
@@ -311,11 +312,11 @@ namespace ImagingWin10
                 // Format does not support, or image does not contain DateTaken property
             }
         }
-        //</SnippetGetImageProperties>
+        // </SnippetGetImageProperties>
 
         private async void GetWindowsProperties(StorageFile imageFile)
         {
-            //<SnippetGetWindowsProperties>
+            // <SnippetGetWindowsProperties>
             ImageProperties props = await imageFile.Properties.GetImagePropertiesAsync();
 
             var requests = new System.Collections.Generic.List<string>();
@@ -335,12 +336,12 @@ namespace ImagingWin10
             {
                 aperture = (double)retrievedProps["System.Photo.Aperture"];
             }
-            //</SnippetGetWindowsProperties>
+            // </SnippetGetWindowsProperties>
         }
 
         private async void SetGeoDataFromPoint(StorageFile imageFile)
         {
-            //<SnippetSetGeoDataFromPoint>
+            // <SnippetSetGeoDataFromPoint>
             var point = new Geopoint(
             new BasicGeoposition
             {
@@ -349,13 +350,13 @@ namespace ImagingWin10
             });
 
             await GeotagHelper.SetGeotagAsync(imageFile, point);
-            //</SnippetSetGeoDataFromPoint>
+            // </SnippetSetGeoDataFromPoint>
 
         }
 
         private async void SetGeoDataFromGeolocator(StorageFile imageFile)
         {
-            //<SnippetSetGeoDataFromGeolocator>
+            // <SnippetSetGeoDataFromGeolocator>
             var locator = new Geolocator();
 
             // Shows the user consent UI if needed
@@ -364,7 +365,7 @@ namespace ImagingWin10
             {
                 await GeotagHelper.SetGeotagFromGeolocatorAsync(imageFile, locator);
             }
-            //</SnippetSetGeoDataFromGeolocator>
+            // </SnippetSetGeoDataFromGeolocator>
         }
 
 
@@ -373,11 +374,11 @@ namespace ImagingWin10
         // CAPABILITY!!!!!!!
         private async void GetGeoData(StorageFile imageFile)
         {
-            //<SnippetGetGeoData>
+            // <SnippetGetGeoData>
             Geopoint geoPoint = await GeotagHelper.GetGeotagAsync(imageFile);
-            //</SnippetGetGeoData>
+            // </SnippetGetGeoData>
         }
-        //<SnippetReadImageMetadata>
+        // <SnippetReadImageMetadata>
         private async void ReadImageMetadata(BitmapDecoder bitmapDecoder)
         {
 
@@ -415,8 +416,8 @@ namespace ImagingWin10
                 }
             }
         }
-        //</SnippetReadImageMetadata>
-        //<SnippetWriteImageMetadata>
+        // </SnippetReadImageMetadata>
+        // <SnippetWriteImageMetadata>
         private async void WriteImageMetadata(BitmapEncoder bitmapEncoder)
         {
             var propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
@@ -445,7 +446,7 @@ namespace ImagingWin10
         }
 
         
-        //</SnippetWriteImageMetadata>
+        // </SnippetWriteImageMetadata>
 
     }
 }

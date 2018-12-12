@@ -30,7 +30,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Collections.Generic;
 
 
-//<SnippetUsing>
+// <SnippetUsing>
 using System.Threading.Tasks;         // Used to implement asynchronous methods
 using Windows.Devices.Enumeration;    // Used to enumerate cameras on the device
 using Windows.Devices.Sensors;        // Orientation sensor is used to rotate the camera preview
@@ -44,52 +44,53 @@ using Windows.Storage.FileProperties; // Used for image file encoding
 using Windows.Storage.Streams;        // General file I/O
 using Windows.System.Display;         // Used to keep the screen awake during preview and capture
 using Windows.UI.Core;                // Used for updating UI from within async operations
-//</SnippetUsing>
+// </SnippetUsing>
 
 
-//<SnippetPhoneUsing>
+// <SnippetPhoneUsing>
 using Windows.Phone.UI.Input;
-//</SnippetPhoneUsing>
+// </SnippetPhoneUsing>
 
 
-//<SnippetFaceDetectionUsing>
+// <SnippetFaceDetectionUsing>
 using Windows.Media.Core;
-//</SnippetFaceDetectionUsing>
+// </SnippetFaceDetectionUsing>
 
-//<SnippetSceneAnalysisUsing>
-using Windows.Media.Core;
-using Windows.Media.Devices;
-//</SnippetSceneAnalysisUsing>
-
-//<SnippetHDRPhotoUsing>
+// <SnippetSceneAnalysisUsing>
 using Windows.Media.Core;
 using Windows.Media.Devices;
-//</SnippetHDRPhotoUsing>
+// </SnippetSceneAnalysisUsing>
 
-//<SnippetVideoControllersUsing>
+// <SnippetHDRPhotoUsing>
+using Windows.Media.Core;
 using Windows.Media.Devices;
-//</SnippetVideoControllersUsing>
+// </SnippetHDRPhotoUsing>
 
-//<SnippetVideoTransformEffectUsing>
+// <SnippetVideoControllersUsing>
+using Windows.Media.Devices;
+// </SnippetVideoControllersUsing>
+
+// <SnippetVideoTransformEffectUsing>
 using Windows.Media.Effects;
-//</SnippetVideoTransformEffectUsing>
+// </SnippetVideoTransformEffectUsing>
 
-//<SnippetVideoStabilizationEffectUsing>
+// <SnippetVideoStabilizationEffectUsing>
 using Windows.Media.Core;
-//</SnippetVideoStabilizationEffectUsing>
+// </SnippetVideoStabilizationEffectUsing>
 
-//<SnippetVPSUsing>
+// <SnippetVPSUsing>
 using Windows.Media.Capture.Core;
 using Windows.Media.Devices.Core;
-//</SnippetVPSUsing>
+// </SnippetVPSUsing>
 
-//<SnippetPreviewFrameUsing>
+// <SnippetPreviewFrameUsing>
 using Windows.Media;
-//</SnippetPreviewFrameUsing>
+// </SnippetPreviewFrameUsing>
 
-//<SnippetMediaEncodingPropertiesUsing>
+// <SnippetMediaEncodingPropertiesUsing>
 using Windows.Media.MediaProperties;
-//</SnippetMediaEncodingPropertiesUsing>
+using Windows.Media.Capture.Frames;
+// </SnippetMediaEncodingPropertiesUsing>
 
 
 namespace BasicCameraWin10
@@ -98,44 +99,44 @@ namespace BasicCameraWin10
     public sealed partial class MainPage : Page
     {
         // Receive notifications about rotation of the device and UI and apply any necessary rotation to the preview stream and UI controls
-        //<SnippetDisplayInformationAndOrientation>       
+        // <SnippetDisplayInformationAndOrientation>       
         private readonly DisplayInformation _displayInformation = DisplayInformation.GetForCurrentView();
         private DisplayOrientations _displayOrientation = DisplayOrientations.Portrait;
 
         private readonly SimpleOrientationSensor _orientationSensor = SimpleOrientationSensor.GetDefault();
         private SimpleOrientation _deviceOrientation = SimpleOrientation.NotRotated;
-        //</SnippetDisplayInformationAndOrientation> 
+        // </SnippetDisplayInformationAndOrientation> 
 
         // Rotation metadata to apply to the preview stream and recorded videos (MF_MT_VIDEO_ROTATION)
         // Reference: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868174.aspx
-        //<SnippetRotationKey>
+        // <SnippetRotationKey>
         private static readonly Guid RotationKey = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");
-        //</SnippetRotationKey>
+        // </SnippetRotationKey>
 
         // Prevent the screen from sleeping while the camera is running
-        //<SnippetDisplayRequest>
+        // <SnippetDisplayRequest>
         private readonly DisplayRequest _displayRequest = new DisplayRequest();
-        //</SnippetDisplayRequest>
+        // </SnippetDisplayRequest>
 
         // MediaCapture and its state variables
-        //<SnippetMediaCaptureVariables>
+        // <SnippetMediaCaptureVariables>
         private MediaCapture _mediaCapture;
         private bool _isInitialized;
         private bool _isPreviewing;
         private bool _isRecording;
 
-        //</SnippetMediaCaptureVariables>
+        // </SnippetMediaCaptureVariables>
 
-        //<SnippetPreviewVariables>
+        // <SnippetPreviewVariables>
         private bool _externalCamera;
         private bool _mirroringPreview;
-        //</SnippetPreviewVariables>
+        // </SnippetPreviewVariables>
         // Information about the camera device
 
 
-        //<SnippetDeclareSystemMediaTransportControls>
+        // <SnippetDeclareSystemMediaTransportControls>
         private readonly SystemMediaTransportControls _systemMediaControls = SystemMediaTransportControls.GetForCurrentView();
-        //</SnippetDeclareSystemMediaTransportControls>
+        // </SnippetDeclareSystemMediaTransportControls>
 
         #region Constructor, lifecycle and navigation
 
@@ -146,12 +147,12 @@ namespace BasicCameraWin10
             // Do not cache the state of the UI when suspending/navigating
             NavigationCacheMode = NavigationCacheMode.Disabled;
 
-            //<SnippetRegisterAppLifetimeEvents>
+            // <SnippetRegisterAppLifetimeEvents>
             Application.Current.Suspending += Application_Suspending;
             Application.Current.Resuming += Application_Resuming;
-            //</SnippetRegisterAppLifetimeEvents>
+            // </SnippetRegisterAppLifetimeEvents>
         }
-        //<SnippetSuspending>
+        // <SnippetSuspending>
         private async void Application_Suspending(object sender, SuspendingEventArgs e)
         {
             // Handle global application events only if this page is active
@@ -168,8 +169,8 @@ namespace BasicCameraWin10
                 deferral.Complete();
             }
         }
-        //</SnippetSuspending>
-        //<SnippetResuming>
+        // </SnippetSuspending>
+        // <SnippetResuming>
         private async void Application_Resuming(object sender, object o)
         {
             // Handle global application events only if this page is active
@@ -182,9 +183,9 @@ namespace BasicCameraWin10
                 await InitializeCameraAsync();
             }
         }
-        //</SnippetResuming>
+        // </SnippetResuming>
 
-        //<SnippetOnNavigatedTo>
+        // <SnippetOnNavigatedTo>
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             RegisterOrientationEventHandlers();
@@ -194,9 +195,11 @@ namespace BasicCameraWin10
             await InitializeCameraAsync();
 
             SetPowerlineFrequency();
+
+            ConfigureAdditionalSettings();
         }
-        //</SnippetOnNavigatedTo>
-        //<SnippetOnNavigatingFrom>
+        // </SnippetOnNavigatedTo>
+        // <SnippetOnNavigatingFrom>
         protected override async void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             UnregisterOrientationEventHandlers();
@@ -206,9 +209,9 @@ namespace BasicCameraWin10
             await CleanupCameraAsync();
 
         }
-        //</SnippetOnNavigatingFrom>
+        // </SnippetOnNavigatingFrom>
 
-        //<SnippetSystemMediaControlsPropertyChanged>
+        // <SnippetSystemMediaControlsPropertyChanged>
         private async void SystemMediaControls_PropertyChanged(SystemMediaTransportControls sender, SystemMediaTransportControlsPropertyChangedEventArgs args)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
@@ -229,7 +232,7 @@ namespace BasicCameraWin10
                 }
             });
         }
-        //</SnippetSystemMediaControlsPropertyChanged>
+        // </SnippetSystemMediaControlsPropertyChanged>
         private async void ExtractedFromNavigationAppLifetimeEvents()
         {
             await SetupUiAsync();
@@ -246,7 +249,7 @@ namespace BasicCameraWin10
         /// </summary>
         /// <param name="sender">The event source.</param>
         /// <param name="args">The event data.</param>
-        //<SnippetSimpleOrientationChanged>
+        // <SnippetSimpleOrientationChanged>
         private void OrientationSensor_OrientationChanged(SimpleOrientationSensor sender, SimpleOrientationSensorOrientationChangedEventArgs args)
         {
             if (args.Orientation != SimpleOrientation.Faceup && args.Orientation != SimpleOrientation.Facedown)
@@ -254,7 +257,7 @@ namespace BasicCameraWin10
                 _deviceOrientation = args.Orientation;
             }
         }
-        //</SnippetSimpleOrientationChanged>
+        // </SnippetSimpleOrientationChanged>
 
         /// <summary>
         /// This event will fire when the page is rotated, when the DisplayInformation.AutoRotationPreferences value set in the SetupUiAsync() method cannot be not honored.
@@ -309,30 +312,30 @@ namespace BasicCameraWin10
             // After starting or stopping video recording, update the UI to reflect the MediaCapture state
             UpdateCaptureControls();
         }
-        //<SnippetCameraPressed>
+        // <SnippetCameraPressed>
         private async void HardwareButtons_CameraPressed(object sender, CameraEventArgs e)
         {
             await TakePhotoAsync();
         }
-        //</SnippetCameraPressed>
+        // </SnippetCameraPressed>
 
-        //<SnippetRecordLimitationExceeded>
+        // <SnippetRecordLimitationExceeded>
         private async void MediaCapture_RecordLimitationExceeded(MediaCapture sender)
         {
             await StopRecordingAsync();
         }
-        //</SnippetRecordLimitationExceeded>
+        // </SnippetRecordLimitationExceeded>
 
         private async void RemovedFromCaptureFailureEvent()
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => UpdateCaptureControls());
         }
-        //<SnippetCaptureFailed>
+        // <SnippetCaptureFailed>
         private async void MediaCapture_Failed(MediaCapture sender, MediaCaptureFailedEventArgs errorEventArgs)
         {
             await CleanupCameraAsync();
         }
-        //</SnippetCaptureFailed>
+        // </SnippetCaptureFailed>
 
 
         #endregion Event handlers
@@ -344,7 +347,7 @@ namespace BasicCameraWin10
         /// Initializes the MediaCapture, registers events, gets camera device information for mirroring and rotating, starts preview and unlocks the UI
         /// </summary>
         /// <returns></returns>
-        //<SnippetInitializeCameraAsync>
+        // <SnippetInitializeCameraAsync>
         private async Task InitializeCameraAsync()
         {
 
@@ -415,13 +418,13 @@ namespace BasicCameraWin10
                 }
             }
         }
-        //</SnippetInitializeCameraAsync>
+        // </SnippetInitializeCameraAsync>
 
         /// <summary>
-        /// Starts the preview and adjusts it for for rotation and mirroring after making a request to keep the screen on
+        /// Starts the preview and adjusts it for rotation and mirroring after making a request to keep the screen on
         /// </summary>
         /// <returns></returns>
-        //<SnippetStartPreviewAsync>
+        // <SnippetStartPreviewAsync>
         private async Task StartPreviewAsync()
         {
             // Prevent the device from sleeping while the preview is running
@@ -448,12 +451,12 @@ namespace BasicCameraWin10
                 await SetPreviewRotationAsync();
             }
         }
-        //</SnippetStartPreviewAsync>
+        // </SnippetStartPreviewAsync>
 
         /// <summary>
         /// Gets the current orientation of the UI in relation to the device (when AutoRotationPreferences cannot be honored) and applies a corrective rotation to the preview
         /// </summary>
-        //<SnippetSetPreviewRotation>
+        // <SnippetSetPreviewRotation>
         private async Task SetPreviewRotationAsync()
         {
             // Only need to update the orientation if the camera is mounted on the device
@@ -477,13 +480,13 @@ namespace BasicCameraWin10
             await _mediaCapture.SetEncodingPropertiesAsync(MediaStreamType.VideoPreview, props, null);
 
         }
-        //</SnippetSetPreviewRotation>
+        // </SnippetSetPreviewRotation>
 
         /// <summary>
         /// Stops the preview and deactivates a display request, to allow the screen to go into power saving modes
         /// </summary>
         /// <returns></returns>
-        //<SnippetStopPreviewAsync>
+        // <SnippetStopPreviewAsync>
         private async Task StopPreviewAsync()
         {
             // Stop the preview
@@ -507,14 +510,14 @@ namespace BasicCameraWin10
                 _displayRequest.RequestRelease();
             });
         }
-        //</SnippetStopPreviewAsync>
+        // </SnippetStopPreviewAsync>
 
         /// <summary>
         /// Takes a photo to a StorageFile and adds rotation metadata to it
         /// </summary>
         /// <returns></returns>
         /// 
-        //<SnippetTakePhotoAsync>
+        // <SnippetTakePhotoAsync>
         private async Task TakePhotoAsync()
         {
             var stream = new InMemoryRandomAccessStream();
@@ -534,7 +537,7 @@ namespace BasicCameraWin10
             }
 
         }
-        //</SnippetTakePhotoAsync>
+        // </SnippetTakePhotoAsync>
 
         private void VideoButtonExtractedFromTakePhotoAsync()
         {
@@ -552,7 +555,7 @@ namespace BasicCameraWin10
         /// </summary>
         /// <returns></returns>
         /// 
-        //<SnippetStartRecordingAsync>
+        // <SnippetStartRecordingAsync>
         private async Task StartRecordingAsync()
         {
             try
@@ -578,14 +581,14 @@ namespace BasicCameraWin10
                 Debug.WriteLine("Exception when starting video recording: {0}", ex.ToString());
             }
         }
-        //</SnippetStartRecordingAsync>
+        // </SnippetStartRecordingAsync>
 
         /// <summary>
         /// Stops recording a video
         /// </summary>
         /// <returns></returns>
         /// 
-        //<SnippetStopRecordingAsync>
+        // <SnippetStopRecordingAsync>
         private async Task StopRecordingAsync()
         {
             try
@@ -602,23 +605,23 @@ namespace BasicCameraWin10
                 Debug.WriteLine("Exception when stopping video recording: {0}", ex.ToString());
             }
         }
-        //</SnippetStopRecordingAsync>
+        // </SnippetStopRecordingAsync>
 
         
         private async void PauseRecordingAsync()
         {
-            //<SnippetPauseRecordingAsync>
+            // <SnippetPauseRecordingAsync>
             await _mediaCapture.PauseRecordAsync(MediaCapturePauseBehavior.RetainHardwareResources);
-            //</SnippetPauseRecordingAsync>
+            // </SnippetPauseRecordingAsync>
         }
 
 
         
         private async void ResumeRecordingAsync()
         {
-            //<SnippetResumeRecordingAsync>
+            // <SnippetResumeRecordingAsync>
             await _mediaCapture.ResumeRecordAsync();
-            //</SnippetResumeRecordingAsync>
+            // </SnippetResumeRecordingAsync>
         }
 
 
@@ -627,7 +630,7 @@ namespace BasicCameraWin10
         /// </summary>
         /// <returns></returns>
         /// 
-        //<SnippetCleanupCameraAsync>
+        // <SnippetCleanupCameraAsync>
         private async Task CleanupCameraAsync()
         {
             Debug.WriteLine("CleanupCameraAsync");
@@ -658,7 +661,7 @@ namespace BasicCameraWin10
                 _mediaCapture = null;
             }
         }
-        //</SnippetCleanupCameraAsync>
+        // </SnippetCleanupCameraAsync>
         #endregion MediaCapture methods
 
 
@@ -667,14 +670,14 @@ namespace BasicCameraWin10
 
         private void SetAutoRotationPreferences()
         {
-            //<SnippetSetAutoRotationPreferences>
+            // <SnippetSetAutoRotationPreferences>
             // Attempt to lock page to landscape orientation to prevent the CaptureElement from rotating, as this gives a better experience
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-            //</SnippetSetAutoRotationPreferences>
+            // </SnippetSetAutoRotationPreferences>
 
-            //<SnippetRevertAutoRotationPreferences>
+            // <SnippetRevertAutoRotationPreferences>
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
-            //</SnippetRevertAutoRotationPreferences>
+            // </SnippetRevertAutoRotationPreferences>
         }
 
 
@@ -685,20 +688,20 @@ namespace BasicCameraWin10
         private async Task SetupUiAsync()
         {
 
-            //<SnippetHideStatusBar>
+            // <SnippetHideStatusBar>
             // Hide the status bar
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
                 await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
             }
-            //</SnippetHideStatusBar>
+            // </SnippetHideStatusBar>
 
-            //<SnippetRegisterCameraButtonHandler>
+            // <SnippetRegisterCameraButtonHandler>
             if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
             {
                 HardwareButtons.CameraPressed += HardwareButtons_CameraPressed;
             }
-            //</SnippetRegisterCameraButtonHandler>
+            // </SnippetRegisterCameraButtonHandler>
 
         }
 
@@ -708,27 +711,27 @@ namespace BasicCameraWin10
         /// <returns></returns>
         private async Task CleanupUiAsync()
         {
-            //<SnippetShowStatusBar>
+            // <SnippetShowStatusBar>
             // Show the status bar
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
                 await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().ShowAsync();
             }
-            //</SnippetShowStatusBar>
+            // </SnippetShowStatusBar>
 
-            //<SnippetUnregisterCameraButtonHandler>
+            // <SnippetUnregisterCameraButtonHandler>
             if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
             {
                 HardwareButtons.CameraPressed -= HardwareButtons_CameraPressed;
             }
-            //</SnippetUnregisterCameraButtonHandler>
+            // </SnippetUnregisterCameraButtonHandler>
         }
 
         /// <summary>
         /// This method will update the icons, enable/disable and show/hide the photo/video buttons depending on the current state of the app and the capabilities of the device
         /// </summary>
         /// 
-        //<SnippetUpdateCaptureControls>
+        // <SnippetUpdateCaptureControls>
         private void UpdateCaptureControls()
         {
             // The buttons should only be enabled if the preview started sucessfully
@@ -748,9 +751,9 @@ namespace BasicCameraWin10
                 PhotoButton.Opacity = PhotoButton.IsEnabled ? 1 : 0;
             }
         }
-        //</SnippetUpdateCaptureControls>
+        // </SnippetUpdateCaptureControls>
 
-        //<SnippetRegisterOrientationEventHandlers>
+        // <SnippetRegisterOrientationEventHandlers>
         private void RegisterOrientationEventHandlers()
         {
             // If there is an orientation sensor present on the device, register for notifications
@@ -765,7 +768,7 @@ namespace BasicCameraWin10
 
 
         }
-        //</SnippetRegisterOrientationEventHandlers>
+        // </SnippetRegisterOrientationEventHandlers>
 
         private async void SnippetUpdateButtonOrientation()
         {
@@ -777,7 +780,7 @@ namespace BasicCameraWin10
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => UpdateButtonOrientation());
         }
 
-        //<SnippetUnregisterOrientationEventHandlers>
+        // <SnippetUnregisterOrientationEventHandlers>
         private void UnregisterOrientationEventHandlers()
         {
             if (_orientationSensor != null)
@@ -787,7 +790,7 @@ namespace BasicCameraWin10
 
             _displayInformation.OrientationChanged -= DisplayInformation_OrientationChanged;
         }
-        //</SnippetUnregisterOrientationEventHandlers>
+        // </SnippetUnregisterOrientationEventHandlers>
 
 
 
@@ -817,7 +820,7 @@ namespace BasicCameraWin10
         /// <param name="photoOrientation">The orientation metadata to apply to the photo</param>
         /// <returns></returns>
         /// 
-        //<SnippetReencodeAndSavePhotoAsync>
+        // <SnippetReencodeAndSavePhotoAsync>
         private static async Task ReencodeAndSavePhotoAsync(IRandomAccessStream stream, string filename, PhotoOrientation photoOrientation)
         {
             using (var inputStream = stream)
@@ -837,7 +840,7 @@ namespace BasicCameraWin10
                 }
             }
         }
-        //</SnippetReencodeAndSavePhotoAsync>
+        // </SnippetReencodeAndSavePhotoAsync>
 
 
         #endregion Helper functions
@@ -849,7 +852,7 @@ namespace BasicCameraWin10
         /// Calculates the current camera orientation from the device orientation by taking into account whether the camera is external or facing the user
         /// </summary>
         /// <returns>The camera orientation in space, with an inverted rotation in the case the camera is mounted on the device and is facing the user</returns>
-        //<SnippetGetCameraOrientation>
+        // <SnippetGetCameraOrientation>
         private SimpleOrientation GetCameraOrientation()
         {
             if (_externalCamera)
@@ -875,7 +878,7 @@ namespace BasicCameraWin10
         }
 
             
-        //</SnippetGetCameraOrientation>
+        // </SnippetGetCameraOrientation>
 
         /// <summary>
         /// Converts the given orientation of the device in space to the corresponding rotation in degrees
@@ -883,7 +886,7 @@ namespace BasicCameraWin10
         /// <param name="orientation">The orientation of the device in space</param>
         /// <returns>An orientation in degrees</returns>
         /// 
-        //<SnippetConvertDeviceOrientationToDegrees>
+        // <SnippetConvertDeviceOrientationToDegrees>
         private static int ConvertDeviceOrientationToDegrees(SimpleOrientation orientation)
         {
             switch (orientation)
@@ -899,7 +902,7 @@ namespace BasicCameraWin10
                     return 0;
             }
         }
-        //</SnippetConvertDeviceOrientationToDegrees>
+        // </SnippetConvertDeviceOrientationToDegrees>
 
         /// <summary>
         /// Converts the given orientation of the app on the screen to the corresponding rotation in degrees
@@ -907,7 +910,7 @@ namespace BasicCameraWin10
         /// <param name="orientation">The orientation of the app on the screen</param>
         /// <returns>An orientation in degrees</returns>
         /// 
-        //<SnippetConvertDisplayOrientationToDegrees>
+        // <SnippetConvertDisplayOrientationToDegrees>
         private static int ConvertDisplayOrientationToDegrees(DisplayOrientations orientation)
         {
             switch (orientation)
@@ -923,7 +926,7 @@ namespace BasicCameraWin10
                     return 0;
             }
         }
-        //</SnippetConvertDisplayOrientationToDegrees>
+        // </SnippetConvertDisplayOrientationToDegrees>
 
 
         /// <summary>
@@ -931,7 +934,7 @@ namespace BasicCameraWin10
         /// </summary>
         /// <param name="orientation">The orientation of the device in space</param>
         /// <returns></returns>
-        //<SnippetConvertOrientationToPhotoOrientation>
+        // <SnippetConvertOrientationToPhotoOrientation>
         private static PhotoOrientation ConvertOrientationToPhotoOrientation(SimpleOrientation orientation)
         {
             switch (orientation)
@@ -947,14 +950,14 @@ namespace BasicCameraWin10
                     return PhotoOrientation.Normal;
             }
         }
-        //</SnippetConvertOrientationToPhotoOrientation>
+        // </SnippetConvertOrientationToPhotoOrientation>
 
         /// <summary>
         /// Uses the current device orientation in space and page orientation on the screen to calculate the rotation
         /// transformation to apply to the controls
         /// </summary>
         /// 
-        //<SnippetUpdateButtonOrientation>
+        // <SnippetUpdateButtonOrientation>
         private void UpdateButtonOrientation()
         {
             int device = ConvertDeviceOrientationToDegrees(_deviceOrientation);
@@ -974,24 +977,24 @@ namespace BasicCameraWin10
             PhotoButton.RenderTransform = transform;
             VideoButton.RenderTransform = transform;
         }
-        //</SnippetUpdateButtonOrientation>
+        // </SnippetUpdateButtonOrientation>
         #endregion Rotation helpers
 
         #region Face detection
 
-        //<SnippetDeclareFaceDetectionEffect>
+        // <SnippetDeclareFaceDetectionEffect>
         FaceDetectionEffect _faceDetectionEffect;
-        //</SnippetDeclareFaceDetectionEffect>
+        // </SnippetDeclareFaceDetectionEffect>
 
 
         private bool AreFaceFocusAndExposureSupported()
         {
-            //<SnippetAreFaceFocusAndExposureSupported>
+            // <SnippetAreFaceFocusAndExposureSupported>
             var regionsControl = _mediaCapture.VideoDeviceController.RegionsOfInterestControl;
             bool faceDetectionFocusAndExposureSupported =
                 regionsControl.MaxRegions > 0 &&
                 (regionsControl.AutoExposureSupported || regionsControl.AutoFocusSupported);
-            //</SnippetAreFaceFocusAndExposureSupported>
+            // </SnippetAreFaceFocusAndExposureSupported>
 
             return faceDetectionFocusAndExposureSupported;
         }
@@ -999,7 +1002,7 @@ namespace BasicCameraWin10
 
         private async Task CreateFaceDetectionEffectAsync()
         {
-            //<SnippetCreateFaceDetectionEffectAsync>
+            // <SnippetCreateFaceDetectionEffectAsync>
 
             // Create the definition, which will contain some initialization settings
             var definition = new FaceDetectionEffectDefinition();
@@ -1019,12 +1022,12 @@ namespace BasicCameraWin10
             // Start detecting faces
             _faceDetectionEffect.Enabled = true;
 
-            //</SnippetCreateFaceDetectionEffectAsync>
+            // </SnippetCreateFaceDetectionEffectAsync>
         }
 
         private async Task CleanUpFaceDetectionEffectAsync()
         {
-            //<SnippetCleanUpFaceDetectionEffectAsync>
+            // <SnippetCleanUpFaceDetectionEffectAsync>
             // Disable detection
             _faceDetectionEffect.Enabled = false;
 
@@ -1036,18 +1039,18 @@ namespace BasicCameraWin10
 
             // Clear the member variable that held the effect instance
             _faceDetectionEffect = null;
-            //</SnippetCleanUpFaceDetectionEffectAsync>
+            // </SnippetCleanUpFaceDetectionEffectAsync>
         }
 
         private void RegisterFaceDetectionHandler()
         {
-            //<SnippetRegisterFaceDetectionHandler>
+            // <SnippetRegisterFaceDetectionHandler>
             // Register for face detection events
             _faceDetectionEffect.FaceDetected += FaceDetectionEffect_FaceDetected;
-            //</SnippetRegisterFaceDetectionHandler>
+            // </SnippetRegisterFaceDetectionHandler>
         }
 
-        //<SnippetFaceDetected>
+        // <SnippetFaceDetected>
         private void FaceDetectionEffect_FaceDetected(FaceDetectionEffect sender, FaceDetectedEventArgs args)
         {
             foreach (Windows.Media.FaceAnalysis.DetectedFace face in args.ResultFrame.DetectedFaces)
@@ -1057,7 +1060,7 @@ namespace BasicCameraWin10
                 // Draw a rectangle on the preview stream for each face
             }
         }
-        //</SnippetFaceDetected>
+        // </SnippetFaceDetected>
 
         #endregion Face detection
 
@@ -1066,13 +1069,13 @@ namespace BasicCameraWin10
 
         // !!!! Be sure to include SceneAnalysis snippet
 
-        //<SnippetDeclareSceneAnalysisEffect>
+        // <SnippetDeclareSceneAnalysisEffect>
         private SceneAnalysisEffect _sceneAnalysisEffect;
-        //</SnippetDeclareSceneAnalysisEffect>
+        // </SnippetDeclareSceneAnalysisEffect>
 
         private async Task CreateSceneAnalysisEffectAsync()
         {
-            //<SnippetCreateSceneAnalysisEffectAsync>
+            // <SnippetCreateSceneAnalysisEffectAsync>
             // Create the definition
             var definition = new SceneAnalysisEffectDefinition();
 
@@ -1084,12 +1087,12 @@ namespace BasicCameraWin10
 
             // Enable HDR analysis
             _sceneAnalysisEffect.HighDynamicRangeAnalyzer.Enabled = true;
-            //</SnippetCreateSceneAnalysisEffectAsync>
+            // </SnippetCreateSceneAnalysisEffectAsync>
        
         }
 
         double MyCertaintyCap = .5;
-        //<SnippetSceneAnalyzed>
+        // <SnippetSceneAnalyzed>
         private void SceneAnalysisEffect_SceneAnalyzed(SceneAnalysisEffect sender, SceneAnalyzedEventArgs args)
         {
             double hdrCertainty = args.ResultFrame.HighDynamicRange.Certainty;
@@ -1100,11 +1103,11 @@ namespace BasicCameraWin10
                 ShowMessageToUser("Enabling HDR capture is recommended.");
             }
         }
-        //</SnippetSceneAnalyzed>
+        // </SnippetSceneAnalyzed>
 
         private async Task CleanSceneAnalysisEffectAsync()
         {
-            //<SnippetCleanUpSceneAnalysisEffectAsync>
+            // <SnippetCleanUpSceneAnalysisEffectAsync>
             // Disable detection
             _sceneAnalysisEffect.HighDynamicRangeAnalyzer.Enabled = false;
 
@@ -1115,7 +1118,7 @@ namespace BasicCameraWin10
 
             // Clear the member variable that held the effect instance
             _sceneAnalysisEffect = null;
-            //</SnippetCleanUpSceneAnalysisEffectAsync>
+            // </SnippetCleanUpSceneAnalysisEffectAsync>
         }
 
         #endregion Scene Analysis
@@ -1142,17 +1145,17 @@ namespace BasicCameraWin10
             _rotationHelper = new CameraRotationHelper(cameraDevice.EnclosureLocation);
         }
 
-        //<SnippetDeclareAdvancedCapture>
+        // <SnippetDeclareAdvancedCapture>
         private AdvancedPhotoCapture _advancedCapture;
-        //</SnippetDeclareAdvancedCapture>
+        // </SnippetDeclareAdvancedCapture>
 
-        //<SnippetHdrSupported>
+        // <SnippetHdrSupported>
         bool _hdrSupported;
         private void IsHdrPhotoSupported()
         {
             _hdrSupported = _mediaCapture.VideoDeviceController.AdvancedPhotoControl.SupportedModes.Contains(Windows.Media.Devices.AdvancedPhotoMode.Hdr);
         }
-        //</SnippetHdrSupported>
+        // </SnippetHdrSupported>
         private async Task CreateAdvancedCaptureAsync()
         {
             
@@ -1160,7 +1163,7 @@ namespace BasicCameraWin10
             // No work to be done if there already is an AdvancedCapture
             if (_advancedCapture != null) return;
 
-            //<SnippetCreateAdvancedCaptureAsync>
+            // <SnippetCreateAdvancedCaptureAsync>
             if (_hdrSupported == false) return;
 
             // Choose HDR mode
@@ -1176,12 +1179,12 @@ namespace BasicCameraWin10
             // Register for events published by the AdvancedCapture
             _advancedCapture.AllPhotosCaptured += AdvancedCapture_AllPhotosCaptured;
             _advancedCapture.OptionalReferencePhotoCaptured += AdvancedCapture_OptionalReferencePhotoCaptured;
-            //</SnippetCreateAdvancedCaptureAsync>
+            // </SnippetCreateAdvancedCaptureAsync>
         }
         
         private async Task CaptureHdrPhotoAsync()
         {
-            //<SnippetCaptureHdrPhotoAsync>
+            // <SnippetCaptureHdrPhotoAsync>
             try
             {
 
@@ -1201,20 +1204,20 @@ namespace BasicCameraWin10
             {
                 Debug.WriteLine("Exception when taking an HDR photo: {0}", ex.ToString());
             }
-            //</SnippetCaptureHdrPhotoAsync>
+            // </SnippetCaptureHdrPhotoAsync>
         }
         
 
-        //<SnippetAdvancedCaptureContext>
+        // <SnippetAdvancedCaptureContext>
         public class MyAdvancedCaptureContextObject
         {
             public string CaptureFileName;
             public PhotoOrientation CaptureOrientation;
         }
-        //</SnippetAdvancedCaptureContext>
+        // </SnippetAdvancedCaptureContext>
         private async void CaptureWithContext()
         {
-            //<SnippetCaptureWithContext>
+            // <SnippetCaptureWithContext>
             // Read the current orientation of the camera and the capture time
             var photoOrientation = CameraRotationHelper.ConvertSimpleOrientationToPhotoOrientation(
                     _rotationHelper.GetCameraCaptureOrientation());
@@ -1229,12 +1232,12 @@ namespace BasicCameraWin10
 
             // Start capture, and pass the context object
             AdvancedCapturedPhoto advancedCapturedPhoto = await _advancedCapture.CaptureAsync(context);
-            //</SnippetCaptureWithContext>
+            // </SnippetCaptureWithContext>
 
             _testHDRImage = advancedCapturedPhoto;
         }
 
-        //<SnippetOptionalReferencePhotoCaptured>
+        // <SnippetOptionalReferencePhotoCaptured>
         private async void AdvancedCapture_OptionalReferencePhotoCaptured(AdvancedPhotoCapture sender, OptionalReferencePhotoCapturedEventArgs args)
         {
             // Retrieve the context (i.e. what capture does this belong to?)
@@ -1248,46 +1251,46 @@ namespace BasicCameraWin10
                 await SaveCapturedFrameAsync(frame, referenceName, context.CaptureOrientation);
             }
         }
-        //</SnippetOptionalReferencePhotoCaptured>
+        // </SnippetOptionalReferencePhotoCaptured>
 
-        //<SnippetAllPhotosCaptured>
+        // <SnippetAllPhotosCaptured>
         private void AdvancedCapture_AllPhotosCaptured(AdvancedPhotoCapture sender, object args)
         {
             // Update UI to enable capture button
         }
-        //</SnippetAllPhotosCaptured>
+        // </SnippetAllPhotosCaptured>
 
 
         public async void CleanUpAdvancedPhotoCapture()
         {
-            //<SnippetCleanUpAdvancedPhotoCapture>
+            // <SnippetCleanUpAdvancedPhotoCapture>
             await _advancedCapture.FinishAsync();
             _advancedCapture = null;
-            //</SnippetCleanUpAdvancedPhotoCapture>
+            // </SnippetCleanUpAdvancedPhotoCapture>
         }
 
 
         #endregion HDR Photo
         #region Low light photo
 
-        //<SnippetLowLightSupported1>
+        // <SnippetLowLightSupported1>
         bool _lowLightSupported;
-        //</SnippetLowLightSupported1>
+        // </SnippetLowLightSupported1>
         private void IsLowLightPhotoSupported()
         {
-            //<SnippetLowLightSupported2>
+            // <SnippetLowLightSupported2>
             _lowLightSupported = 
             _mediaCapture.VideoDeviceController.AdvancedPhotoControl.SupportedModes.Contains(Windows.Media.Devices.AdvancedPhotoMode.LowLight);
-            //</SnippetLowLightSupported2>
+            // </SnippetLowLightSupported2>
 
         }
-        //</SnippetLowLightSupported>
+
         private async Task CreateAdvancedCaptureLowLightAsync()
         {
             // No work to be done if there already is an AdvancedCapture
             if (_advancedCapture != null) return;
 
-            //<SnippetCreateAdvancedCaptureLowLightAsync>
+            // <SnippetCreateAdvancedCaptureLowLightAsync>
             if (_lowLightSupported == false) return;
 
             // Choose LowLight mode
@@ -1297,36 +1300,36 @@ namespace BasicCameraWin10
             // Prepare for an advanced capture
             _advancedCapture = 
                 await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Nv12));
-            //</SnippetCreateAdvancedCaptureLowLightAsync>
+            // </SnippetCreateAdvancedCaptureLowLightAsync>
         }
 
         private async Task CaptureLowLightAsync()
         {
-            //<SnippetCaptureLowLight>
+            // <SnippetCaptureLowLight>
             AdvancedCapturedPhoto advancedCapturedPhoto = await _advancedCapture.CaptureAsync();
             var photoOrientation = ConvertOrientationToPhotoOrientation(GetCameraOrientation());
             var fileName = String.Format("SimplePhoto_{0}_LowLight.jpg", DateTime.Now.ToString("HHmmss"));
             await SaveCapturedFrameAsync(advancedCapturedPhoto.Frame, fileName, photoOrientation);
-            //</SnippetCaptureLowLight>
+            // </SnippetCaptureLowLight>
 
-            //<SnippetSoftwareBitmapFromCapturedFrame>
+            // <SnippetSoftwareBitmapFromCapturedFrame>
             SoftwareBitmap bitmap;
             if (advancedCapturedPhoto.Frame.SoftwareBitmap != null)
             {
                 bitmap = advancedCapturedPhoto.Frame.SoftwareBitmap;
             }
-            //</SnippetSoftwareBitmapFromCapturedFrame>
+            // </SnippetSoftwareBitmapFromCapturedFrame>
 
         }
         private async Task ShowUncompressedNv12()
         {
-            //<SnippetUncompressedNv12>
+            // <SnippetUncompressedNv12>
             _advancedCapture =
                 await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Nv12));
-            //</SnippetUncompressedNv12>
+            // </SnippetUncompressedNv12>
         }
 
-        //<SnippetSaveCapturedFrameAsync>
+        // <SnippetSaveCapturedFrameAsync>
         private static async Task<StorageFile> SaveCapturedFrameAsync(CapturedFrame frame, string fileName, PhotoOrientation photoOrientation)
         {
             var folder = await KnownFolders.PicturesLibrary.CreateFolderAsync("MyApp", CreationCollisionOption.OpenIfExists);
@@ -1346,11 +1349,11 @@ namespace BasicCameraWin10
             }
             return file;
         }
-        //</SnippetSaveCapturedFrameAsync>
+        // </SnippetSaveCapturedFrameAsync>
         #endregion
 
         #region HDR Video
-        //<SnippetSetHdrVideoMode>
+        // <SnippetSetHdrVideoMode>
         private void SetHdrVideoMode(HdrVideoMode mode)
         {
             if (!_mediaCapture.VideoDeviceController.HdrVideoControl.Supported)
@@ -1369,13 +1372,13 @@ namespace BasicCameraWin10
 
             _mediaCapture.VideoDeviceController.HdrVideoControl.Mode = mode;
         }
-        //</SnippetSetHdrVideoMode>
+        // </SnippetSetHdrVideoMode>
 
         #endregion HDR Video
 
         #region Optical image stablization
 
-        //<SnippetSetOpticalImageStabilizationMode>
+        // <SnippetSetOpticalImageStabilizationMode>
         private void SetOpticalImageStabilizationMode(OpticalImageStabilizationMode mode)
         {
             if (!_mediaCapture.VideoDeviceController.OpticalImageStabilizationControl.Supported)
@@ -1394,37 +1397,37 @@ namespace BasicCameraWin10
 
             _mediaCapture.VideoDeviceController.OpticalImageStabilizationControl.Mode = mode;
         }
-        //</SnippetSetOpticalImageStabilizationMode>
+        // </SnippetSetOpticalImageStabilizationMode>
         #endregion Optical image stablization
 
         #region Exposure priority
 
         private void EnableExposurePriority()
         {
-            //<SnippetEnableExposurePriority>
+            // <SnippetEnableExposurePriority>
             if (!_mediaCapture.VideoDeviceController.ExposurePriorityVideoControl.Supported)
             {
                 ShowMessageToUser("Exposure priority not available");
                 return;
             }
             _mediaCapture.VideoDeviceController.ExposurePriorityVideoControl.Enabled = true;
-            //</SnippetEnableExposurePriority>
+            // </SnippetEnableExposurePriority>
         }
         #endregion Exposure priority
 
         #region Video stabilization effect
 
-        //<SnippetDeclareVideoStabilizationEffect>
+        // <SnippetDeclareVideoStabilizationEffect>
         private VideoStabilizationEffect _videoStabilizationEffect;
         private VideoEncodingProperties _inputPropertiesBackup;
         private VideoEncodingProperties _outputPropertiesBackup;
         private MediaEncodingProfile _encodingProfile;
-        //</SnippetDeclareVideoStabilizationEffect>
+        // </SnippetDeclareVideoStabilizationEffect>
 
 
         public async Task CreateVideoStabilizationEffectAsync()
         {
-            //<SnippetCreateVideoStabilizationEffect>
+            // <SnippetCreateVideoStabilizationEffect>
             // Create the effect definition
             VideoStabilizationEffectDefinition stabilizerDefinition = new VideoStabilizationEffectDefinition();
 
@@ -1437,17 +1440,17 @@ namespace BasicCameraWin10
             await SetUpVideoStabilizationRecommendationAsync();
 
             _videoStabilizationEffect.Enabled = true;
-            //</SnippetCreateVideoStabilizationEffect>
+            // </SnippetCreateVideoStabilizationEffect>
 
         }
 
         public void EncodingProfileMember()
         { 
-            //<SnippetEncodingProfileMember>
+            // <SnippetEncodingProfileMember>
             _encodingProfile = MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto);
-            //</SnippetEncodingProfileMember>
+            // </SnippetEncodingProfileMember>
         }
-        //<SnippetSetUpVideoStabilizationRecommendationAsync>
+        // <SnippetSetUpVideoStabilizationRecommendationAsync>
         private async Task SetUpVideoStabilizationRecommendationAsync()
         {
 
@@ -1474,8 +1477,8 @@ namespace BasicCameraWin10
                 _encodingProfile.Video = recommendation.OutputProperties;
             }
         }
-        //</SnippetSetUpVideoStabilizationRecommendationAsync>
-        //<SnippetVideoStabilizationEnabledChanged>
+        // </SnippetSetUpVideoStabilizationRecommendationAsync>
+        // <SnippetVideoStabilizationEnabledChanged>
         private async void VideoStabilizationEffect_EnabledChanged(VideoStabilizationEffect sender, VideoStabilizationEffectEnabledChangedEventArgs args)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
@@ -1484,10 +1487,10 @@ namespace BasicCameraWin10
                 ShowMessageToUser("video stabilization status: " + sender.Enabled + ". Reason: " + args.Reason);
             });
         }
-        //</SnippetVideoStabilizationEnabledChanged>
+        // </SnippetVideoStabilizationEnabledChanged>
         public async Task CleanUpVideoStabilizationEffectAsync()
         {
-            //<SnippetCleanUpVisualStabilizationEffect>
+            // <SnippetCleanUpVisualStabilizationEffect>
             // Clear all effects in the pipeline
             await _mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
 
@@ -1507,14 +1510,14 @@ namespace BasicCameraWin10
             _videoStabilizationEffect.EnabledChanged -= VideoStabilizationEffect_EnabledChanged;
 
             _videoStabilizationEffect = null;
-            //</SnippetCleanUpVisualStabilizationEffect>
+            // </SnippetCleanUpVisualStabilizationEffect>
         }
 
         #endregion Video stabilization effect
 
         #region Smooth zoom
 
-        //<SnippetIsSmoothZoomSupported>
+        // <SnippetIsSmoothZoomSupported>
         private bool IsSmoothZoomSupported()
         {
             if (!_mediaCapture.VideoDeviceController.ZoomControl.Supported)
@@ -1533,10 +1536,10 @@ namespace BasicCameraWin10
 
             return true;
         }
-        //</SnippetIsSmoothZoomSupported>
+        // </SnippetIsSmoothZoomSupported>
 
 
-        //<SnippetRegisterPinchGestureHandler>
+        // <SnippetRegisterPinchGestureHandler>
         private void RegisterPinchGestureHandler()
         {
             if (!IsSmoothZoomSupported())
@@ -1548,9 +1551,9 @@ namespace BasicCameraWin10
             PreviewControl.ManipulationMode = ManipulationModes.Scale;
             PreviewControl.ManipulationDelta += PreviewControl_ManipulationDelta;
         }
-        //</SnippetRegisterPinchGestureHandler>
+        // </SnippetRegisterPinchGestureHandler>
 
-        //<SnippetManipulationDelta>
+        // <SnippetManipulationDelta>
         private void PreviewControl_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
             var zoomControl = _mediaCapture.VideoDeviceController.ZoomControl;
@@ -1569,7 +1572,7 @@ namespace BasicCameraWin10
             _mediaCapture.VideoDeviceController.ZoomControl.Configure(settings);
 
         }
-        //</SnippetManipulationDelta>
+        // </SnippetManipulationDelta>
 
         #endregion Smooth zoom
 
@@ -1579,7 +1582,7 @@ namespace BasicCameraWin10
 
         public async Task CreateVideoTransformEffectAsync()
         {
-            //<SnippetCreateVideoTransformEffect>
+            // <SnippetCreateVideoTransformEffect>
             // Create the effect definition
             VideoTransformEffectDefinition transformDefinition = new VideoTransformEffectDefinition();
 
@@ -1601,17 +1604,17 @@ namespace BasicCameraWin10
             _encodingProfile = MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto);
             _encodingProfile.Video.Width = 320;
             _encodingProfile.Video.Height = 320;
-            //</SnippetCreateVideoTransformEffect>
+            // </SnippetCreateVideoTransformEffect>
 
         }
 
 
         public async Task CleanUpVideoTransformEffectAsync()
         {
-            //<SnippetCleanUpVideoTransformEffectAsync>
+            // <SnippetCleanUpVideoTransformEffectAsync>
             // Clear all effects in the pipeline
             await _mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
-            //</SnippetCleanUpVideoTransformEffectAsync>
+            // </SnippetCleanUpVideoTransformEffectAsync>
         }
 
         #endregion Video transform effect
@@ -1621,12 +1624,12 @@ namespace BasicCameraWin10
         public void BasicInitExample()
         {   
             /*
-            //<SnippetBasicInitExample>
+            // <SnippetBasicInitExample>
             var mediaInitSettings = new MediaCaptureInitializationSettings { VideoDeviceId = cameraDevice.Id };
-            //</SnippetBasicInitExample>
+            // </SnippetBasicInitExample>
             */
         }
-        //<SnippetGetVideoProfileSupportedDeviceIdAsync>
+        // <SnippetGetVideoProfileSupportedDeviceIdAsync>
         public async Task<string> GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel panel)
         {
             string deviceId = string.Empty;
@@ -1647,11 +1650,11 @@ namespace BasicCameraWin10
 
             return deviceId;
         }
-        //</SnippetGetVideoProfileSupportedDeviceIdAsync>
+        // </SnippetGetVideoProfileSupportedDeviceIdAsync>
 
         public async void GetWVGA30FPSProfile()
         {
-            //<SnippetGetDeviceWithProfileSupport>
+            // <SnippetGetDeviceWithProfileSupport>
             string videoDeviceId = await GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel.Back);
 
             if (string.IsNullOrEmpty(videoDeviceId))
@@ -1659,9 +1662,9 @@ namespace BasicCameraWin10
                 // No devices on the specified panel support video profiles. .
                 return;
             }
-            //</SnippetGetDeviceWithProfileSupport>
+            // </SnippetGetDeviceWithProfileSupport>
 
-            //<SnippetFindWVGA30FPSProfile>
+            // <SnippetFindWVGA30FPSProfile>
 
             var mediaInitSettings = new MediaCaptureInitializationSettings { VideoDeviceId = videoDeviceId };
 
@@ -1682,20 +1685,24 @@ namespace BasicCameraWin10
                 // Could not locate a WVGA 30FPS profile, use default video recording profile
                 mediaInitSettings.VideoProfile = profiles[0];
             }
-            //</SnippetFindWVGA30FPSProfile>
+            // </SnippetFindWVGA30FPSProfile>
 
             // Initialize MediaCapture
-            //<SnippetInitCaptureWithProfile>
+            // <SnippetInitCaptureWithProfile>
             await _mediaCapture.InitializeAsync(mediaInitSettings);
-            //</SnippetInitCaptureWithProfile>
+            // </SnippetInitCaptureWithProfile>
 
 
         }
 
+
+
+        // These concurrency APIs were never implemented by hardware vendors and are de facto deprecated.
+        /*
         private async void GetConcurrentProfile()
         {
             // Initialize our concurrency support flag.
-            //<SnippetConcurrencySetup>
+            // <SnippetConcurrencySetup>
             MediaCapture mediaCaptureFront = new MediaCapture();
             MediaCapture mediaCaptureBack = new MediaCapture();
 
@@ -1706,9 +1713,9 @@ namespace BasicCameraWin10
             string backVideoDeviceId = string.Empty;
 
             bool concurrencySupported = false;
-            //</SnippetConcurrencySetup>
+            // </SnippetConcurrencySetup>
 
-            //<SnippetFindConcurrencyDevices>
+            // <SnippetFindConcurrencyDevices>
             // Find front and back Device ID of capture device that supports Video Profile
             frontVideoDeviceId = await GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel.Front);
             backVideoDeviceId = await GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel.Back);
@@ -1722,9 +1729,9 @@ namespace BasicCameraWin10
 
             mediaInitSettingsFront.VideoDeviceId = frontVideoDeviceId;
             mediaInitSettingsBack.VideoDeviceId = backVideoDeviceId;
-            //</SnippetFindConcurrencyDevices>
+            // </SnippetFindConcurrencyDevices>
 
-            //<SnippetFindConcurrentProfiles>
+            // <SnippetFindConcurrentProfiles>
             // Acquire concurrent profiles available to front and back capture devices, then locate a concurrent
             // profile Id that matches for both devices
             var concurrentProfile = (from frontProfile in MediaCapture.FindConcurrentProfiles(frontVideoDeviceId)
@@ -1746,27 +1753,29 @@ namespace BasicCameraWin10
                 mediaInitSettingsFront.VideoProfile = null;
                 mediaInitSettingsBack.VideoProfile = null;
             }
-            //</SnippetFindConcurrentProfiles>
+            // </SnippetFindConcurrentProfiles>
 
-            //<SnippetInitConcurrentMediaCaptures>
+            // <SnippetInitConcurrentMediaCaptures>
             await mediaCaptureFront.InitializeAsync(mediaInitSettingsFront);
             if (concurrencySupported)
             {
                 // Only initialize the back camera if concurrency is available.  
                 await mediaCaptureBack.InitializeAsync(mediaInitSettingsBack);
             }
-            //</SnippetInitConcurrentMediaCaptures>
+            // </SnippetInitConcurrentMediaCaptures>
         }
+        */
 
+    
         private async void GetHdrProfile()
         {
-            //<SnippetGetHdrProfileSetup>
+            // <SnippetGetHdrProfileSetup>
             MediaCaptureInitializationSettings mediaInitSettings = new MediaCaptureInitializationSettings();
             string videoDeviceId = string.Empty;
             bool HdrVideoSupported = false;
-            //</SnippetGetHdrProfileSetup>
+            // </SnippetGetHdrProfileSetup>
 
-            //<SnippetFindDeviceHDR>
+            // <SnippetFindDeviceHDR>
             // Select the first video capture device found on the back of the device
             videoDeviceId = await GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel.Back);
 
@@ -1775,9 +1784,9 @@ namespace BasicCameraWin10
                 // No devices on the specified panel support video profiles. .
                 return;
             }
-            //</SnippetFindDeviceHDR>
+            // </SnippetFindDeviceHDR>
 
-            //<SnippetFindHDRProfile>
+            // <SnippetFindHDRProfile>
             IReadOnlyList<MediaCaptureVideoProfile> profiles =
                 MediaCapture.FindKnownVideoProfiles(videoDeviceId, KnownVideoProfile.VideoRecording);
 
@@ -1804,9 +1813,38 @@ namespace BasicCameraWin10
                     break;
                 }
             }
-            //</SnippetFindHDRProfile>
+            // </SnippetFindHDRProfile>
         }
-        
+
+        //<SnippetFindKnownVideoProfile>
+        private async Task<MediaCaptureInitializationSettings> GetKnownVideoProfile(KnownVideoProfile knownVideoProfile)
+        {
+            IReadOnlyList<MediaFrameSourceGroup> sourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+            MediaCaptureInitializationSettings settings = null;
+
+            foreach (MediaFrameSourceGroup sg in sourceGroups)
+            {
+                // Find a device that support VariablePhotoSequence
+                IReadOnlyList<MediaCaptureVideoProfile> profileList = MediaCapture.FindKnownVideoProfiles(
+                                              sg.Id,
+                                              knownVideoProfile); // e.g. KnownVideoProfile.HdrWithWcgVideo
+
+                if (profileList.Count > 0)
+                {
+                    settings = new MediaCaptureInitializationSettings();
+                    settings.VideoProfile = profileList[0];
+                    settings.VideoDeviceId = sg.Id;
+                    break;
+                }
+            }
+            return settings;
+
+            
+        }
+        // </SnippetFindKnownVideoProfile>
+
+
+
         private async void GetPhotoAndVideoSupport()
         {
             string videoDeviceId = string.Empty;
@@ -1821,7 +1859,7 @@ namespace BasicCameraWin10
             }
             var mediaInitSettings = new MediaCaptureInitializationSettings { VideoDeviceId = videoDeviceId };
 
-            //<SnippetGetPhotoAndVideoSupport>
+            // <SnippetGetPhotoAndVideoSupport>
             var simultaneousPhotoAndVideoSupported = false;
 
             IReadOnlyList<MediaCaptureVideoProfile> profiles = MediaCapture.FindAllVideoProfiles(videoDeviceId);
@@ -1841,21 +1879,21 @@ namespace BasicCameraWin10
                 // Simultaneous photo and video not supported
                 simultaneousPhotoAndVideoSupported = false;
             }
-            //</SnippetGetPhotoAndVideoSupport>
+            // </SnippetGetPhotoAndVideoSupport>
         }
         #endregion Camera Profiles
 
         #region Variable Photo Sequence
-        //<SnippetVPSMemberVariables>
+        // <SnippetVPSMemberVariables>
         VariablePhotoSequenceCapture _photoSequenceCapture;
         SoftwareBitmap[] _images;
         CapturedFrameControlValues[] _frameControlValues;
         int _photoIndex;
-        //</SnippetVPSMemberVariables>
+        // </SnippetVPSMemberVariables>
 
         public async Task PrepareVariablePhotoSequence()
         {
-            //<SnippetIsVPSSupported>
+            // <SnippetIsVPSSupported>
             var varPhotoSeqController = _mediaCapture.VideoDeviceController.VariablePhotoSequenceController;
             
             if (!varPhotoSeqController.Supported)
@@ -1863,9 +1901,9 @@ namespace BasicCameraWin10
                 ShowMessageToUser("Variable Photo Sequence is not supported");
                 return;
             }
-            //</SnippetIsVPSSupported>
+            // </SnippetIsVPSSupported>
 
-            //<SnippetIsExposureCompensationSupported>
+            // <SnippetIsExposureCompensationSupported>
             var frameCapabilities = varPhotoSeqController.FrameCapabilities;
 
             if (!frameCapabilities.ExposureCompensation.Supported)
@@ -1873,9 +1911,9 @@ namespace BasicCameraWin10
                 ShowMessageToUser("EVCompenstaion is not supported in FrameController");
                 return;
             }
-            //</SnippetIsExposureCompensationSupported>
+            // </SnippetIsExposureCompensationSupported>
 
-            //<SnippetInitFrameControllers>
+            // <SnippetInitFrameControllers>
             var frame0 = new FrameController();
             var frame1 = new FrameController();
             var frame2 = new FrameController();
@@ -1888,11 +1926,11 @@ namespace BasicCameraWin10
             varPhotoSeqController.DesiredFrameControllers.Add(frame0);
             varPhotoSeqController.DesiredFrameControllers.Add(frame1);
             varPhotoSeqController.DesiredFrameControllers.Add(frame2);
-            //</SnippetInitFrameControllers>
+            // </SnippetInitFrameControllers>
 
             
 
-            //<SnippetPrepareVPS>
+            // <SnippetPrepareVPS>
             try
             {
                 var imageEncodingProperties = ImageEncodingProperties.CreateJpeg();
@@ -1906,11 +1944,11 @@ namespace BasicCameraWin10
             {
                 ShowMessageToUser("Exception in PrepareVariablePhotoSequence: " + ex.Message);
             }
-            //</SnippetPrepareVPS>
+            // </SnippetPrepareVPS>
         }
         
 
-        //<SnippetStartVPSCapture>
+        // <SnippetStartVPSCapture>
         private async void StartPhotoCapture()
         {
             _images = new SoftwareBitmap[3];
@@ -1920,9 +1958,9 @@ namespace BasicCameraWin10
 
             await _photoSequenceCapture.StartAsync();
         }
-        //</SnippetStartVPSCapture>
+        // </SnippetStartVPSCapture>
 
-        //<SnippetOnPhotoCaptured>
+        // <SnippetOnPhotoCaptured>
         void OnPhotoCaptured(VariablePhotoSequenceCapture s, VariablePhotoCapturedEventArgs args)
         {
 
@@ -1930,15 +1968,15 @@ namespace BasicCameraWin10
             _frameControlValues[_photoIndex] = args.CapturedFrameControlValues;
             _photoIndex++;
         }
-        //</SnippetOnPhotoCaptured>
+        // </SnippetOnPhotoCaptured>
 
-        //<SnippetOnStopped>
+        // <SnippetOnStopped>
         void OnStopped(object s, object e)
         {
             _isRecording = false;
             MyPostProcessingFunction(_images, _frameControlValues, 3);
         }
-        //</SnippetOnStopped>
+        // </SnippetOnStopped>
 
         private void MyPostProcessingFunction(SoftwareBitmap[] images, CapturedFrameControlValues[] values, int count)
         {
@@ -1947,7 +1985,7 @@ namespace BasicCameraWin10
         
         private void UpdateFrameControllers()
         {
-            //<SnippetUpdateFrameControllers>
+            // <SnippetUpdateFrameControllers>
             var varPhotoSeqController = _mediaCapture.VideoDeviceController.VariablePhotoSequenceController;
 
             if (varPhotoSeqController.FrameCapabilities.Flash.Supported &&
@@ -1959,16 +1997,16 @@ namespace BasicCameraWin10
                     varPhotoSeqController.DesiredFrameControllers[i].FlashControl.PowerPercent = 100;
                 }
             }
-            //</SnippetUpdateFrameControllers>
+            // </SnippetUpdateFrameControllers>
         }
         private async void CleanUpVPS()
         {
-            //<SnippetCleanUpVPS>
+            // <SnippetCleanUpVPS>
             await _photoSequenceCapture.FinishAsync();
             _photoSequenceCapture.PhotoCaptured -= OnPhotoCaptured;
             _photoSequenceCapture.Stopped -= OnStopped;
             _photoSequenceCapture = null;
-            //</SnippetCleanUpVPS>
+            // </SnippetCleanUpVPS>
         }
         #endregion Variable Photo Sequence
 
@@ -1976,30 +2014,30 @@ namespace BasicCameraWin10
 
         private async Task GetPreviewFrameAsSoftwareBitmapAsync()
         {
-            //<SnippetCreateFormatFrame>
+            // <SnippetCreateFormatFrame>
             // Get information about the preview
             var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
 
             // Create a video frame in the desired format for the preview frame
             VideoFrame videoFrame = new VideoFrame(BitmapPixelFormat.Bgra8, (int)previewProperties.Width, (int)previewProperties.Height);
-            //</SnippetCreateFormatFrame>
+            // </SnippetCreateFormatFrame>
 
-            //<SnippetGetPreviewFrameAsync>
+            // <SnippetGetPreviewFrameAsync>
             VideoFrame previewFrame = await _mediaCapture.GetPreviewFrameAsync(videoFrame);
-            //</SnippetGetPreviewFrameAsync>
+            // </SnippetGetPreviewFrameAsync>
 
-            //<SnippetGetPreviewBitmap>
+            // <SnippetGetPreviewBitmap>
             SoftwareBitmap previewBitmap = previewFrame.SoftwareBitmap;
-            //</SnippetGetPreviewBitmap>
+            // </SnippetGetPreviewBitmap>
 
-            //<SnippetGetPreviewSurface>
+            // <SnippetGetPreviewSurface>
             var previewSurface = previewFrame.Direct3DSurface;
-            //</SnippetGetPreviewSurface>
+            // </SnippetGetPreviewSurface>
 
-            //<SnippetCleanUpPreviewFrame>
+            // <SnippetCleanUpPreviewFrame>
             previewFrame.Dispose();
             previewFrame = null;
-            //</SnippetCleanUpPreviewFrame>
+            // </SnippetCleanUpPreviewFrame>
         }
 
         /// <summary>
@@ -2011,7 +2049,7 @@ namespace BasicCameraWin10
 
         #region Set Resolution
        
-        //<SnippetCheckIfStreamsAreIdentical>
+        // <SnippetCheckIfStreamsAreIdentical>
         private void CheckIfStreamsAreIdentical()
         {
             if (_mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.AllStreamsIdentical ||
@@ -2020,10 +2058,10 @@ namespace BasicCameraWin10
                 ShowMessageToUser("Preview and video streams for this device are identical. Changing one will affect the other");
             }
         }
-        //</SnippetCheckIfStreamsAreIdentical>
+        // </SnippetCheckIfStreamsAreIdentical>
 
 
-        //<SnippetPopulateStreamPropertiesUI>
+        // <SnippetPopulateStreamPropertiesUI>
         private void PopulateStreamPropertiesUI(MediaStreamType streamType, ComboBox comboBox, bool showFrameRate = true)
         {
             // Query all properties of the specified stream type 
@@ -2042,9 +2080,9 @@ namespace BasicCameraWin10
                 comboBox.Items.Add(comboBoxItem);
             }
         }
-        //</SnippetPopulateStreamPropertiesUI>
+        // </SnippetPopulateStreamPropertiesUI>
 
-        //<SnippetPreviewSettingsChanged>
+        // <SnippetPreviewSettingsChanged>
         private async void PreviewSettings_Changed(object sender, RoutedEventArgs e)
         {
             if (_isPreviewing)
@@ -2054,8 +2092,8 @@ namespace BasicCameraWin10
                 await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, encodingProperties);
             }
         }
-        //</SnippetPreviewSettingsChanged>
-        //<SnippetPhotoSettingsChanged>
+        // </SnippetPreviewSettingsChanged>
+        // <SnippetPhotoSettingsChanged>
         private async void PhotoSettings_Changed(object sender, RoutedEventArgs e)
         {
             if (_isPreviewing)
@@ -2065,8 +2103,8 @@ namespace BasicCameraWin10
                 await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.Photo, encodingProperties);
             }
         }
-        //</SnippetPhotoSettingsChanged>
-        //<SnippetVideoSettingsChanged>
+        // </SnippetPhotoSettingsChanged>
+        // <SnippetVideoSettingsChanged>
         private async void VideoSettings_Changed(object sender, RoutedEventArgs e)
         {
             if (_isPreviewing)
@@ -2076,8 +2114,8 @@ namespace BasicCameraWin10
                 await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, encodingProperties);
             }
         }
-        //</SnippetVideoSettingsChanged>
-        //<SnippetMatchPreviewAspectRatio>
+        // </SnippetVideoSettingsChanged>
+        // <SnippetMatchPreviewAspectRatio>
         private void MatchPreviewAspectRatio(MediaStreamType streamType, ComboBox comboBox)
         {
             // Query all properties of the specified stream type
@@ -2106,7 +2144,7 @@ namespace BasicCameraWin10
             }
             comboBox.SelectedIndex = -1;
         }
-        //</SnippetMatchPreviewAspectRatio>
+        // </SnippetMatchPreviewAspectRatio>
 
         #endregion Set Resolution
         private void ShowMessageToUser(string message)
@@ -2115,5 +2153,9 @@ namespace BasicCameraWin10
 
         }
 
+        private void ConfigureAdditionalSettings()
+        {
+            UpdateDenoiseCapabilities();
+        }
     }
 }

@@ -14,13 +14,13 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
 
-//<SnippetAdaptiveStreamingUsing>
+// <SnippetAdaptiveStreamingUsing>
 using Windows.Media.Streaming.Adaptive;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using Windows.Media.Playback;
 using Windows.Media.Core;
-//</SnippetAdaptiveStreamingUsing>
+// </SnippetAdaptiveStreamingUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,9 +31,9 @@ namespace AdaptiveStreaming_RS1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareMediaPlayer>
+        // <SnippetDeclareMediaPlayer>
         MediaPlayer _mediaPlayer;
-        //</SnippetDeclareMediaPlayer>
+        // </SnippetDeclareMediaPlayer>
 
         public MainPage()
         {
@@ -48,29 +48,29 @@ namespace AdaptiveStreaming_RS1
 
         public void ManifestSourceNoUI()
         {
-            //<SnippetManifestSourceNoUI>
+            // <SnippetManifestSourceNoUI>
             System.Uri manifestUri = new Uri("http://amssamples.streaming.mediaservices.windows.net/49b57c87-f5f3-48b3-ba22-c55cfdffa9cb/Sintel.ism/manifest(format=m3u8-aapl)");
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = MediaSource.CreateFromUri(manifestUri);
             _mediaPlayer.Play();
-            //</SnippetManifestSourceNoUI>
+            // </SnippetManifestSourceNoUI>
         }
 
         public void ManifestSource()
         {
-            //<SnippetManifestSource>
+            // <SnippetManifestSource>
             System.Uri manifestUri = new Uri("http://amssamples.streaming.mediaservices.windows.net/49b57c87-f5f3-48b3-ba22-c55cfdffa9cb/Sintel.ism/manifest(format=m3u8-aapl)");
             mediaPlayerElement.Source = MediaSource.CreateFromUri(manifestUri);
             mediaPlayerElement.MediaPlayer.Play();
-            //</SnippetManifestSource>
+            // </SnippetManifestSource>
 
         }
 
-        //<SnippetDeclareAMS>
+        // <SnippetDeclareAMS>
         AdaptiveMediaSource ams;
-        //</SnippetDeclareAMS>
+        // </SnippetDeclareAMS>
 
-        //<SnippetInitializeAMS>
+        // <SnippetInitializeAMS>
         async private void InitializeAdaptiveMediaSource(System.Uri uri)
         {
             AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(uri);
@@ -108,22 +108,22 @@ namespace AdaptiveStreaming_RS1
 
         
 
-        //</SnippetInitializeAMS>
+        // </SnippetInitializeAMS>
 
 
-        //<SnippetDeclareHttpClient>
+        // <SnippetDeclareHttpClient>
         Windows.Web.Http.HttpClient httpClient;
-        //</SnippetDeclareHttpClient>
+        // </SnippetDeclareHttpClient>
 
         async private void InitializeAdaptiveMediaSourceWithCustomHeaders(System.Uri uri)
         {
             System.Uri manifestUri = new Uri("http://amssamples.streaming.mediaservices.windows.net/49b57c87-f5f3-48b3-ba22-c55cfdffa9cb/Sintel.ism/manifest(format=m3u8-aapl)");
 
-            //<SnippetInitializeAMSWithHttpClient>
+            // <SnippetInitializeAMSWithHttpClient>
             httpClient = new Windows.Web.Http.HttpClient();
             httpClient.DefaultRequestHeaders.TryAppendWithoutValidation("X-CustomHeader", "This is a custom header");
             AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(manifestUri, httpClient);
-            //</SnippetInitializeAMSWithHttpClient>
+            // </SnippetInitializeAMSWithHttpClient>
 
             if (result.Status == AdaptiveMediaSourceCreationStatus.Success)
             {
@@ -149,7 +149,7 @@ namespace AdaptiveStreaming_RS1
             }
         }
 
-        //<SnippetAMSDownloadRequested>
+        // <SnippetAMSDownloadRequested>
         private async void DownloadRequested(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadRequestedEventArgs args)
         {
 
@@ -184,7 +184,7 @@ namespace AdaptiveStreaming_RS1
             }
         }
     
-        //</SnippetAMSDownloadRequested>
+        // </SnippetAMSDownloadRequested>
 
         private Task<IBuffer> CreateMyCustomManifest(Uri resourceUri)
         {
@@ -192,24 +192,26 @@ namespace AdaptiveStreaming_RS1
             return httpClient.GetBufferAsync(resourceUri).AsTask<IBuffer, Windows.Web.Http.HttpProgress>();
         }
 
-        //<SnippetAMSDownloadCompleted>
+        // <SnippetAMSDownloadCompleted>
         private void DownloadCompleted(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadCompletedEventArgs args)
         {
             var statistics = args.Statistics;
 
             MyLogMessageFunction("download completed for: " + args.ResourceType + " - " +
              args.ResourceUri +
-             " – RequestId:" + args.RequestId + 
-             " – Position:" + args.Position + 
+             " – RequestId:" + args.RequestId +
+             " – Position:" + args.Position +
+             " - Duration:" + args.ResourceDuration +
+             " - ContentType:" + args.ResourceContentType +
              " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
              " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
              " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
              " - ContentBytesReceivedCount:" + statistics.ContentBytesReceivedCount);
 
         }
-        //</SnippetAMSDownloadCompleted>
+        // </SnippetAMSDownloadCompleted>
 
-        //<SnippetAMSDownloadFailed>
+        // <SnippetAMSDownloadFailed>
         private void DownloadFailed(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadFailedEventArgs args)
         {
             var statistics = args.Statistics;
@@ -218,16 +220,18 @@ namespace AdaptiveStreaming_RS1
              " - " + args.ResourceUri +
              " – Error:" + args.ExtendedError.HResult +
              " - RequestId" + args.RequestId + 
-             " – Position:" + args.Position + 
+             " – Position:" + args.Position +
+             " - Duration:" + args.ResourceDuration +
+             " - ContentType:" + args.ResourceContentType +
              " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
              " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
              " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
              " - ContentBytesReceivedCount:" + statistics.ContentBytesReceivedCount);
 
         }
-        //</SnippetAMSDownloadFailed>
+        // </SnippetAMSDownloadFailed>
 
-        //<SnippetAMSBitrateEvents>
+        // <SnippetAMSBitrateEvents>
         private async void DownloadBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadBitrateChangedEventArgs args)
         {
             await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, new DispatchedHandler(() =>
@@ -243,21 +247,22 @@ namespace AdaptiveStreaming_RS1
                 txtPlaybackBitrate.Text = args.NewValue.ToString();
             }));
         }
-        //</SnippetAMSBitrateEvents>
+        // </SnippetAMSBitrateEvents>
 
-        //<SnippetAMSDiagnosticAvailable>
+        // <SnippetAMSDiagnosticAvailable>
         private void DiagnosticAvailable(AdaptiveMediaSourceDiagnostics sender, AdaptiveMediaSourceDiagnosticAvailableEventArgs args)
         {
             MySendTelemetryFunction(args.RequestId, args.Position,
                                     args.DiagnosticType, args.SegmentId,
                                     args.ResourceType, args.ResourceUri,
+                                    args.ResourceDuration, args.ResourceContentType,
                                     args.ResourceByteRangeOffset,
                                     args.ResourceByteRangeLength, 
                                     args.Bitrate,
                                     args.ExtendedError);
 
         }
-        //</SnippetAMSDiagnosticAvailable>
+        // </SnippetAMSDiagnosticAvailable>
 
 
         private void MyLogMessageFunction(string s)
@@ -267,6 +272,7 @@ namespace AdaptiveStreaming_RS1
         private void MySendTelemetryFunction(int? requestId, TimeSpan? position,
             AdaptiveMediaSourceDiagnosticType? type, ulong? segmentId,
             AdaptiveMediaSourceResourceType? resourceType, Uri resourceUri,
+            TimeSpan? duration, string resourceContentType,
             ulong? byteRangeOffset, ulong? byteRangeLength, uint? bitrate, Exception extendedError)
         {
 

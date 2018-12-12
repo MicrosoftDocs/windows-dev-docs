@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 title: Store and retrieve Windows Ink stroke data
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, user interaction, input
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Store and retrieve Windows Ink stroke data
 
 
@@ -22,13 +19,7 @@ UWP apps that support Windows Ink can serialize and deserialize ink strokes to a
 > [!NOTE]
 > ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div> 
+> **Important APIs**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## Save ink strokes to a file
 
@@ -69,7 +60,7 @@ Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https:/
 2.  We then set some basic ink input behaviors.
 
     The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
-```    CSharp
+```csharp
 public MainPage()
     {
         this.InitializeComponent();
@@ -95,7 +86,8 @@ public MainPage()
     Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
     We then call [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) to the stream.
-```    CSharp
+
+```csharp
 // Save ink data to a file.
     private async void btnSave_Click(object sender, RoutedEventArgs e)
     {
@@ -158,7 +150,7 @@ public MainPage()
     }
 ```
 
-> [!NOTE]  
+> [!NOTE]
 > GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
 
 ## Load ink strokes from a file
@@ -200,7 +192,7 @@ Here, we demonstrate how to load ink strokes from a file and render them on an [
 2.  We then set some basic ink input behaviors.
 
     The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
-```    CSharp
+```csharp
 public MainPage()
     {
         this.InitializeComponent();
@@ -324,7 +316,7 @@ For this example, we enable stroke selection when input is modified with a pen b
     The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
 
     For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
-```    CSharp
+```csharp
 public MainPage()
     {
         this.InitializeComponent();
@@ -376,7 +368,8 @@ public MainPage()
     We then call [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) to remove the strokes from the ink canvas.
 
     Finally, we delete all selection strokes from the selection canvas.
-```    CSharp
+    
+```csharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
     {
         inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
@@ -384,7 +377,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
         ClearSelection();
     }
 ```
-```    CSharp
+```csharp
 // Clean up selection UI.
     private void ClearSelection()
     {
@@ -406,18 +399,21 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-    For copy, we simply call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
-```    CSharp
+For copy, we simply call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+
+
+```csharp
 private void btnCopy_Click(object sender, RoutedEventArgs e)
     {
         inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
     }
 ```
 
-    For paste, we call [**CanPasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208495) to ensure that the content on the clipboard can be pasted to the ink canvas.
+For paste, we call [**CanPasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208495) to ensure that the content on the clipboard can be pasted to the ink canvas.
 
-    If so, we call [**PasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208503) to insert the clipboard ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011), which then renders the strokes to the ink canvas.
-```    CSharp
+If so, we call [**PasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208503) to insert the clipboard ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011), which then renders the strokes to the ink canvas.
+
+```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
     {
         if (inkCanvas.InkPresenter.StrokeContainer.CanPasteFromClipboard())

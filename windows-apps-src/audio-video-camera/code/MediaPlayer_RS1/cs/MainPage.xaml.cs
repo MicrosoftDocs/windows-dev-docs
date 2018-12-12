@@ -36,6 +36,7 @@ using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using Windows.Graphics.Display;
+using Windows.Media.Streaming.Adaptive;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -93,39 +94,39 @@ namespace MediaPlayer_Win10
         }
         private void SimpleFilePlayback()
         {
-            //<SnippetSimpleFilePlayback>
+            // <SnippetSimpleFilePlayback>
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
             mediaPlayer.Play();
-            //</SnippetSimpleFilePlayback>
+            // </SnippetSimpleFilePlayback>
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetCloseMediaPlayer>
+            // <SnippetCloseMediaPlayer>
             mediaPlayer.Dispose();
-            //</SnippetCloseMediaPlayer>
+            // </SnippetCloseMediaPlayer>
         }
 
         private void BindPlayerToElement()
         {
-            //<SnippetSetMediaPlayer>
+            // <SnippetSetMediaPlayer>
             _mediaPlayerElement.SetMediaPlayer(mediaPlayer);
-            //</SnippetSetMediaPlayer>
+            // </SnippetSetMediaPlayer>
         }
 
         private void GetPlayerFromElementButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetGetPlayerFromElement>
+            // <SnippetGetPlayerFromElement>
             _mediaPlayerElement.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
             mediaPlayer = _mediaPlayerElement.MediaPlayer;
             mediaPlayer.Play();
-            //</SnippetGetPlayerFromElement>
+            // </SnippetGetPlayerFromElement>
         }
 
         private async void SetAudioEndpointButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetSetAudioEndpointEnumerate>
+            // <SnippetSetAudioEndpointEnumerate>
             string audioSelector = MediaDevice.GetAudioRenderSelector();
             var outputDevices = await DeviceInformation.FindAllAsync(audioSelector);
             foreach (var device in outputDevices)
@@ -135,10 +136,10 @@ namespace MediaPlayer_Win10
                 deviceItem.Tag = device;
                 _audioDeviceComboBox.Items.Add(deviceItem);
             }
-            //</SnippetSetAudioEndpointEnumerate>
+            // </SnippetSetAudioEndpointEnumerate>
         }
 
-        //<SnippetSetAudioEndpontSelectionChanged>
+        // <SnippetSetAudioEndpontSelectionChanged>
         private void _audioDeviceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DeviceInformation selectedDevice = (DeviceInformation)((ComboBoxItem)_audioDeviceComboBox.SelectedItem).Tag;
@@ -147,14 +148,16 @@ namespace MediaPlayer_Win10
                 mediaPlayer.AudioDevice = selectedDevice;
             }
         }
-        //</SnippetSetAudioEndpontSelectionChanged>
+        // </SnippetSetAudioEndpontSelectionChanged>
 
         private void SetAudioCategory()
         {
-            //<SnippetSetAudioCategory>
+            // <SnippetSetAudioCategory>
             mediaPlayer.AudioCategory = MediaPlayerAudioCategory.Media;
-            //</SnippetSetAudioCategory>
+            // </SnippetSetAudioCategory>
         }
+
+       
         private void VariousMediaPlayerFeatures()
         {
             mediaPlayer.SourceChanged += _mediaPlayer_SourceChanged;
@@ -173,15 +176,15 @@ namespace MediaPlayer_Win10
 
         
 
-        //<SnippetSkipForwardClick>
+        // <SnippetSkipForwardClick>
         private void _skipForwardButton_Click(object sender, RoutedEventArgs e)
         {
             var session = mediaPlayer.PlaybackSession;
             session.Position = session.Position + TimeSpan.FromSeconds(10);
         }
-        //</SnippetSkipForwardClick>
+        // </SnippetSkipForwardClick>
 
-        //<SnippetSpeedChecked>
+        // <SnippetSpeedChecked>
         private void _speedToggleButton_Checked(object sender, RoutedEventArgs e)
         {
             mediaPlayer.PlaybackSession.PlaybackRate = 2.0;
@@ -190,16 +193,23 @@ namespace MediaPlayer_Win10
         {
             mediaPlayer.PlaybackSession.PlaybackRate = 1.0;
         }
-        //</SnippetSpeedChecked>
+        // </SnippetSpeedChecked>
+
+        private void SetRotation()
+        {
+            //<SnippetSetRotation>
+            mediaPlayer.PlaybackSession.PlaybackRotation = MediaRotation.Clockwise90Degrees;
+            //</SnippetSetRotation>
+        }
 
         private void RegisterBufferHandlerButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetRegisterBufferingHandlers>
+            // <SnippetRegisterBufferingHandlers>
             mediaPlayer.PlaybackSession.BufferingStarted += MediaPlaybackSession_BufferingStarted;
             mediaPlayer.PlaybackSession.BufferingEnded += MediaPlaybackSession_BufferingEnded;
-            //</SnippetRegisterBufferingHandlers>
+            // </SnippetRegisterBufferingHandlers>
         }
-        //<SnippetBufferingHandlers>
+        // <SnippetBufferingHandlers>
         private void MediaPlaybackSession_BufferingStarted(MediaPlaybackSession sender, object args)
         {
             MediaPlaybackSessionBufferingStartedEventArgs bufferingStartedEventArgs = args as MediaPlaybackSessionBufferingStartedEventArgs;
@@ -215,23 +225,23 @@ namespace MediaPlayer_Win10
         {
             // update the UI to indicate that playback is no longer buffering
         }
-        //</SnippetBufferingHandlers>
+        // </SnippetBufferingHandlers>
 
         private void RegisterGestureHandlerButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetRegisterPinchZoomEvents>
+            // <SnippetRegisterPinchZoomEvents>
             _mediaPlayerElement.ManipulationMode = ManipulationModes.Scale | ManipulationModes.TranslateX | ManipulationModes.TranslateY;
             _mediaPlayerElement.ManipulationDelta += _mediaPlayerElement_ManipulationDelta;
             _mediaPlayerElement.DoubleTapped += _mediaPlayerElement_DoubleTapped;
-            //</SnippetRegisterPinchZoomEvents>
+            // </SnippetRegisterPinchZoomEvents>
         }
 
 
-        //<SnippetDeclareSourceRect>
+        // <SnippetDeclareSourceRect>
         Rect _sourceRect = new Rect(0, 0, 1, 1);
-        //</SnippetDeclareSourceRect>
+        // </SnippetDeclareSourceRect>
 
-        //<SnippetManipulationDelta>
+        // <SnippetManipulationDelta>
         private void _mediaPlayerElement_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
 
@@ -271,19 +281,19 @@ namespace MediaPlayer_Win10
 
             mediaPlayer.PlaybackSession.NormalizedSourceRect = _sourceRect;
         }
-        //</SnippetManipulationDelta>
-        //<SnippetDoubleTapped>
+        // </SnippetManipulationDelta>
+        // <SnippetDoubleTapped>
         private void _mediaPlayerElement_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             _sourceRect = new Rect(0, 0, 1, 1);
             mediaPlayer.PlaybackSession.NormalizedSourceRect = _sourceRect;
         }
-        //</SnippetDoubleTapped>
+        // </SnippetDoubleTapped>
 
 
         //private void SetVideoVisual()
         //{
-        //    //<SnippetCompositor>
+        //    // <SnippetCompositor>
         //    Visual elementVisual = ElementCompositionPreview.GetElementVisual(_compositionCanvas);
         //    var compositor = elementVisual.Compositor;
 
@@ -294,12 +304,12 @@ namespace MediaPlayer_Win10
         //    spriteVisual.Brush = compositor.CreateSurfaceBrush(surface.CompositionSurface);
 
         //    ElementCompositionPreview.SetElementChildVisual(_compositionCanvas, spriteVisual);
-        //    //</SnippetCompositor>
+        //    // </SnippetCompositor>
         //}
 
         private void SetVideoVisualButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetCompositor>
+            // <SnippetCompositor>
             mediaPlayer.SetSurfaceSize(new Size(_compositionCanvas.ActualWidth, _compositionCanvas.ActualHeight));
 
             var compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
@@ -316,19 +326,19 @@ namespace MediaPlayer_Win10
             container.Children.InsertAtTop(spriteVisual);
 
             ElementCompositionPreview.SetElementChildVisual(_compositionCanvas, container);
-            //</SnippetCompositor>
+            // </SnippetCompositor>
         }
 
 
         MediaPlayer _mediaPlayer2;
         
-        //<SnippetDeclareMediaTimelineController>
+        // <SnippetDeclareMediaTimelineController>
         MediaTimelineController _mediaTimelineController;
-        //</SnippetDeclareMediaTimelineController>
+        // </SnippetDeclareMediaTimelineController>
 
         private void SetTimelineControllerButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetSetTimelineController>
+            // <SnippetSetTimelineController>
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
             _mediaPlayerElement.SetMediaPlayer(mediaPlayer);
@@ -345,7 +355,7 @@ namespace MediaPlayer_Win10
 
             _mediaPlayer2.CommandManager.IsEnabled = false;
             _mediaPlayer2.TimelineController = _mediaTimelineController;
-            //</SnippetSetTimelineController>
+            // </SnippetSetTimelineController>
 
             
  
@@ -356,14 +366,14 @@ namespace MediaPlayer_Win10
         
 
 
-        //<SnippetPlayButtonClick>
+        // <SnippetPlayButtonClick>
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             _mediaTimelineController.Start();
         }
-        //</SnippetPlayButtonClick>
+        // </SnippetPlayButtonClick>
 
-        //<SnippetPauseButtonClick>
+        // <SnippetPauseButtonClick>
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
             if(_mediaTimelineController.State == MediaTimelineControllerState.Running)
@@ -377,44 +387,44 @@ namespace MediaPlayer_Win10
                 _pauseButton.Content = "Pause";
             }
         }
-        //</SnippetPauseButtonClick>
+        // </SnippetPauseButtonClick>
 
-        //<SnippetFastForwardButtonClick>
+        // <SnippetFastForwardButtonClick>
         private void FastForwardButton_Click(object sender, RoutedEventArgs e)
         {
             _mediaTimelineController.ClockRate = 2.0;
         }
-        //</SnippetFastForwardButtonClick>
+        // </SnippetFastForwardButtonClick>
 
-        //<SnippetRewindButtonClick>
+        // <SnippetRewindButtonClick>
         private void RewindButton_Click(object sender, RoutedEventArgs e)
         {
             _mediaTimelineController.ClockRate = -.5;
         }
-        //</SnippetRewindButtonClick>
+        // </SnippetRewindButtonClick>
 
 
         private void GetMediaSourceLengthButton_Click(object sender, RoutedEventArgs e)
         {
 
-            //<SnippetCreateSourceWithOpenCompleted>
+            // <SnippetCreateSourceWithOpenCompleted>
             var mediaSource = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
             mediaSource.OpenOperationCompleted += MediaSource_OpenOperationCompleted;
             mediaPlayer.Source = mediaSource;
             _mediaPlayerElement.SetMediaPlayer(mediaPlayer);
-            //</SnippetCreateSourceWithOpenCompleted>
+            // </SnippetCreateSourceWithOpenCompleted>
 
-            //<SnippetRegisterPositionChanged>
+            // <SnippetRegisterPositionChanged>
             _mediaTimelineController.PositionChanged += _mediaTimelineController_PositionChanged;
-            //</SnippetRegisterPositionChanged>
+            // </SnippetRegisterPositionChanged>
 
-            //<SnippetRegisterStateChanged>
+            // <SnippetRegisterStateChanged>
             _mediaTimelineController.StateChanged += _mediaTimelineController_StateChanged;
-            //</SnippetRegisterStateChanged>
+            // </SnippetRegisterStateChanged>
 
-            //<SnippetRegisterFailed>
+            // <SnippetRegisterFailed>
             _mediaTimelineController.Failed += _mediaTimelineController_Failed;
-            //</SnippetRegisterFailed>
+            // </SnippetRegisterFailed>
 
             // Do not include in snippet.
             mediaSource = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
@@ -423,11 +433,11 @@ namespace MediaPlayer_Win10
         }
 
 
-        //<SnippetDeclareDuration>
+        // <SnippetDeclareDuration>
         TimeSpan _duration;
-        //</SnippetDeclareDuration>
+        // </SnippetDeclareDuration>
 
-        //<SnippetOpenCompleted>
+        // <SnippetOpenCompleted>
         private async void MediaSource_OpenOperationCompleted(MediaSource sender, MediaSourceOpenOperationCompletedEventArgs args)
         {
             _duration = sender.Duration.GetValueOrDefault();
@@ -439,10 +449,10 @@ namespace MediaPlayer_Win10
                 _positionSlider.StepFrequency = 1;
             }); 
         }
-        //</SnippetOpenCompleted>
+        // </SnippetOpenCompleted>
 
         
-        //<SnippetPositionChanged>
+        // <SnippetPositionChanged>
         private async void _mediaTimelineController_PositionChanged(MediaTimelineController sender, object args)
         {
             if (_duration != TimeSpan.Zero)
@@ -453,7 +463,7 @@ namespace MediaPlayer_Win10
                 });
             }
         }
-        //</SnippetPositionChanged>
+        // </SnippetPositionChanged>
 
         private void _positionSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
@@ -472,7 +482,7 @@ namespace MediaPlayer_Win10
 
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                //<SnippetOffsetSliders>
+                // <SnippetOffsetSliders>
                 _timelineOffsetSlider1.Minimum = -1 * _duration.TotalSeconds;
                 _timelineOffsetSlider1.Maximum = _duration.TotalSeconds;
                 _timelineOffsetSlider1.StepFrequency = 1;
@@ -480,11 +490,11 @@ namespace MediaPlayer_Win10
                 _timelineOffsetSlider2.Minimum = -1 * _duration2.TotalSeconds;
                 _timelineOffsetSlider2.Maximum = _duration2.TotalSeconds;
                 _timelineOffsetSlider2.StepFrequency = 1;
-                //</SnippetOffsetSliders>
+                // </SnippetOffsetSliders>
             });
         }
 
-        //<SnippetTimelineOffset>
+        // <SnippetTimelineOffset>
         private void _timelineOffsetSlider1_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             mediaPlayer.TimelineControllerPositionOffset = TimeSpan.FromSeconds(_timelineOffsetSlider1.Value);
@@ -494,10 +504,10 @@ namespace MediaPlayer_Win10
         {
             _mediaPlayer2.TimelineControllerPositionOffset = TimeSpan.FromSeconds(_timelineOffsetSlider2.Value);
         }
-        //</SnippetTimelineOffset>
+        // </SnippetTimelineOffset>
 
 
-        //<SnippetStateChanged>
+        // <SnippetStateChanged>
         private void _mediaTimelineController_StateChanged(MediaTimelineController sender, object args)
         {
             if(sender.State == MediaTimelineControllerState.Stalled)
@@ -509,14 +519,14 @@ namespace MediaPlayer_Win10
                 _timelineProgressRing.Visibility = Visibility.Collapsed;
             }
         }
-        //</SnippetStateChanged>
+        // </SnippetStateChanged>
 
-        //<SnippetTimelineControllerFailed>
+        // <SnippetTimelineControllerFailed>
         private void _mediaTimelineController_Failed(MediaTimelineController sender, MediaTimelineControllerFailedEventArgs args)
         {
             // This is an internal error that can't be recovered from. Alert the user.
         }
-        //</SnippetTimelineControllerFailed>
+        // </SnippetTimelineControllerFailed>
 
         #region frame server
 
@@ -525,19 +535,19 @@ namespace MediaPlayer_Win10
 
         private void FrameServerButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetFrameServerInit>
+            // <SnippetFrameServerInit>
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
             mediaPlayer.VideoFrameAvailable += mediaPlayer_VideoFrameAvailable;
             mediaPlayer.IsVideoFrameServerEnabled = true;
             mediaPlayer.Play();
-            //</SnippetFrameServerInit>
+            // </SnippetFrameServerInit>
         }
 
         SoftwareBitmap frameServerDest;
         CanvasImageSource canvasImageSource;
 
-        //<SnippetVideoFrameAvailable>
+        // <SnippetVideoFrameAvailable>
         private async void mediaPlayer_VideoFrameAvailable(MediaPlayer sender, object args)
         {
             CanvasDevice canvasDevice = CanvasDevice.GetSharedDevice();
@@ -619,30 +629,32 @@ namespace MediaPlayer_Win10
                 }
 
                 using (CanvasBitmap inputBitmap = CanvasBitmap.CreateFromSoftwareBitmap(canvasDevice, frameServerDest))
-                using (CanvasDrawingSession ds = canvasImageSource.CreateDrawingSession(Windows.UI.Colors.Black))
                 {
+                    using (CanvasDrawingSession ds = canvasImageSource.CreateDrawingSession(Windows.UI.Colors.Black))
+                    {
 
-                    mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
+                        mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
 
-                    //Rect subtitleTargetRect = new Rect(0, 0, inputBitmap.Bounds.Width, inputBitmap.Bounds.Bottom * .1);
-                    Rect subtitleTargetRect = new Rect(0, 0, 100, 100);
+                        //Rect subtitleTargetRect = new Rect(0, 0, inputBitmap.Bounds.Width, inputBitmap.Bounds.Bottom * .1);
+                        Rect subtitleTargetRect = new Rect(0, 0, 100, 100);
 
-                    mediaPlayer.RenderSubtitlesToSurface(inputBitmap);//, subtitleTargetRect);
+                        mediaPlayer.RenderSubtitlesToSurface(inputBitmap);//, subtitleTargetRect);
 
-                    //var gaussianBlurEffect = new GaussianBlurEffect
-                    //{
-                    //    Source = inputBitmap,
-                    //    BlurAmount = 5f,
-                    //    Optimization = EffectOptimization.Speed
-                    //};
+                        //var gaussianBlurEffect = new GaussianBlurEffect
+                        //{
+                        //    Source = inputBitmap,
+                        //    BlurAmount = 5f,
+                        //    Optimization = EffectOptimization.Speed
+                        //};
 
-                    //ds.DrawImage(gaussianBlurEffect);
+                        //ds.DrawImage(gaussianBlurEffect);
 
-                    ds.DrawImage(inputBitmap);
+                        ds.DrawImage(inputBitmap);
+                    }
                 }
             });
         }
-        //</SnippetVideoFrameAvailable>
+        // </SnippetVideoFrameAvailable>
         #endregion
 
         #region spherical video
@@ -652,15 +664,15 @@ namespace MediaPlayer_Win10
 
         private void SphericalVideoButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetOpenSphericalVideo>
+            // <SnippetOpenSphericalVideo>
             mediaPlayer = new MediaPlayer();
             mediaPlayer.MediaOpened += _mediaPlayer_MediaOpened;
             mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video_spherical.mp4"));
             _mediaPlayerElement.SetMediaPlayer(mediaPlayer);
             mediaPlayer.Play();
-            //</SnippetOpenSphericalVideo>
+            // </SnippetOpenSphericalVideo>
         }
-        //<SnippetSphericalMediaOpened>
+        // <SnippetSphericalMediaOpened>
         private void _mediaPlayer_MediaOpened(MediaPlayer sender, object args)
         {
             if (sender.PlaybackSession.SphericalVideoProjection.FrameFormat == SphericalVideoFrameFormat.Equirectangular)
@@ -674,8 +686,8 @@ namespace MediaPlayer_Win10
                 // If the spherical format is unsupported, you can use frame server mode to implement a custom projection
             }
         }
-        //</SnippetSphericalMediaOpened>
-        //<SnippetSphericalOnKeyDown>
+        // </SnippetSphericalMediaOpened>
+        // <SnippetSphericalOnKeyDown>
         protected override void OnKeyDown(KeyRoutedEventArgs e)
         {
             if (mediaPlayer.PlaybackSession.SphericalVideoProjection.FrameFormat != SphericalVideoFrameFormat.Equirectangular)
@@ -693,24 +705,24 @@ namespace MediaPlayer_Win10
                     break;
             }
         }
-        //</SnippetSphericalOnKeyDown>
+        // </SnippetSphericalOnKeyDown>
         private void SphericalVideoListButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.MediaOpened += _mediaPlayer_MediaOpened;
 
-            //<SnippetSphericalList>
+            // <SnippetSphericalList>
             var playbackList = new MediaPlaybackList();
             var item = new MediaPlaybackItem(MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/RIFTCOASTER HD_injected.mp4")));
             item.VideoTracksChanged += Item_VideoTracksChanged;
             playbackList.Items.Add(item);
             mediaPlayer.Source = playbackList;
-            //</SnippetSphericalList>
+            // </SnippetSphericalList>
 
             _mediaPlayerElement.SetMediaPlayer(mediaPlayer);
             mediaPlayer.Play();
         }
-        //<SnippetSphericalTracksChanged>
+        // <SnippetSphericalTracksChanged>
         private void Item_VideoTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             if (args.CollectionChange != CollectionChange.ItemInserted)
@@ -725,10 +737,95 @@ namespace MediaPlayer_Win10
                 }
             }
         }
-        //</SnippetSphericalTracksChanged>
+        // </SnippetSphericalTracksChanged>
+
+        #endregion
+
+        #region degradation reason
+        AdaptiveMediaSource adaptiveMediaSource;
+        //<SnippetPolicyDegradation>
+        private void MediaPlayer_MediaOpened(MediaPlayer sender, object args)
+        {
+            MediaPlaybackSessionOutputDegradationPolicyState info = sender.PlaybackSession.GetOutputDegradationPolicyState();
+
+            if (info.VideoConstrictionReason != MediaPlaybackSessionVideoConstrictionReason.None)
+            {
+                // Switch to lowest bitrate to save bandwidth
+                adaptiveMediaSource.DesiredMaxBitrate = adaptiveMediaSource.AvailableBitrates[0];
+
+                // Log the degradation reason or show a message to the user
+                System.Diagnostics.Debug.WriteLine("Logging constriction reason: " + info.VideoConstrictionReason);
+            }
+        }
+        //</SnippetPolicyDegradation>
+        #endregion
+
+        #region audio state monitor
+
+        private void RegisterAudioMonitor_Click(object sender, RoutedEventArgs e)
+        {
+            //<SnippetRegisterAudioStateMonitor>
+            mediaPlayer.AudioStateMonitor.SoundLevelChanged += AudioStateMonitor_SoundLevelChanged;
+            //</SnippetRegisterAudioStateMonitor>
+        }
+        //<SnippetAudioStateVars>
+        bool isPodcast;
+        bool isPausedDueToAudioStateMonitor;
+        //</SnippetAudioStateVars>
+
+        //<SnippetSoundLevelChanged>
+        private void AudioStateMonitor_SoundLevelChanged(Windows.Media.Audio.AudioStateMonitor sender, object args)
+        {
+            if ((sender.SoundLevel == SoundLevel.Full) || (sender.SoundLevel == SoundLevel.Low && !isPodcast))
+            {
+                if (isPausedDueToAudioStateMonitor)
+                {
+                    mediaPlayer.Play();
+                    isPausedDueToAudioStateMonitor = false;
+                }
+            }
+            else if ((sender.SoundLevel == SoundLevel.Muted) ||
+                 (sender.SoundLevel == SoundLevel.Low && isPodcast))
+            {
+                if (mediaPlayer.PlaybackSession.PlaybackState == MediaPlaybackState.Playing)
+                {
+                    mediaPlayer.Pause();
+                    isPausedDueToAudioStateMonitor = true;
+                }
+            }
+
+        }
+        //</SnippetSoundLevelChanged>
+
+        //<SnippetButtonUserClick>
+        private void PauseButton_User_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPausedDueToAudioStateMonitor)
+            {
+                isPausedDueToAudioStateMonitor = false;
+            }
+            else
+            {
+                mediaPlayer.Pause();
+            }
+        }
+
+        public void PlayButton_User_Click()
+        {
+            isPausedDueToAudioStateMonitor = false;
+            mediaPlayer.Play();
+        }
+        //</SnippetButtonUserClick>
+        #endregion
     }
 
-    #endregion
+
+
+
+
+
+
+
 
 }
 

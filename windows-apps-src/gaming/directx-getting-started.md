@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: DirectX getting started
 description: Getting started with DirectX programming.
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
-ms.author: joanlee
 ms.date: 06/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, directx
 ms.localizationpriority: medium
 ---
-
 # DirectX: Getting started
 
 This section provides information to help you get started on developing UWP games using DirectX. 
@@ -36,15 +31,15 @@ when your game resumes.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[The app object and DirectX](about-the-metro-style-user-interface-and-directx.md)</p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">The app object and DirectX</a></p></td>
 <td align="left"><p>Access and interoperate with the app object directly.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Project templates and tools for games](prepare-your-dev-environment-for-windows-store-directx-game-development.md)</p></td>
+<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">Project templates and tools for games</a></p></td>
 <td align="left"><p>Prepare your dev environment for UWP DirectX game development.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Launching and resuming apps](launching-and-resuming-apps-directx-and-cpp.md)</p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">Launching and resuming apps</a></p></td>
 <td align="left"><p>Launch, suspend, and resume your UWP DirectX game.</p></td>
 </tr>
 </tbody>

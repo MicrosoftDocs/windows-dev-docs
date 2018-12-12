@@ -1,17 +1,13 @@
 ---
 title: Rich Presence updating strings
-author: KevinAsgari
+
 description: Learn how to update an Xbox Live Rich Presence string.
 ms.assetid: eb2bb82e-8730-4d74-9b33-95d133360e44
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, rich presence
 ms.localizationpriority: medium
 ---
-
 # Rich Presence updating strings
 
 To update the Rich Presence string in your title, you can call the Write Title URI with the appropriate parameters in a JSON object. This restful call is also wrapped by Xbox Service APIs. See **Microsoft.Xbox.Services.Presence Namespace** for information on the related API.
@@ -20,25 +16,21 @@ The URI looks like this:
 
           POST /users/xuid({xuid})/devices/current/titles/current
 
-
 Below are only the fields for setting Rich Presence strings. There are other optional fields related to the writing presence for a title not listed here.
 
-
-### TitleRequest Object
+## TitleRequest Object
 
 Property | Type | Req'd | Description
 ---|---|---|---
 Activity|ActivityRequest|N|Record that describes in-title information (Rich Presence and media info, if available)
 
-<p/>
-### ActivityRequest Object
+## ActivityRequest Object
 
 Property | Type | Req'd | Description
 ---|---|---|---
 richPresence|RichPresenceRequest|N|The friendlyName of the Rich Presence string that should be used.
 
-<p/>
-### RichPresenceRequest Object
+## RichPresenceRequest Object
 
 Property | Type | Req'd | Description
 ---|---|---|---
@@ -74,7 +66,6 @@ Then, when someone attempts to read user 12345's Rich Presence, the service will
 In this case, let's say that a user wants to read the en-US string. Reading rich presence would work as follows (for more information about this call, see **GET (/users/xuid({xuid}))**
 
           GET /users/xuid(12345)?level=all
-
 
 The wrapper API for this is **PresenceService.GetPresenceAsync Method**
 

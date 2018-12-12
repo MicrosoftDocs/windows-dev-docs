@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Discover remote devices
 description: Learn how to discover remote devices from your app using Project Rome.
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
-
 # Discover remote devices
 Your app can use the wireless network, Bluetooth, and cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device. The remote devices do not need to have any special software installed in order to be discoverable.
 
@@ -28,9 +23,12 @@ Filter objects must be constructed before or while the **RemoteSystemWatcher** o
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-> [!TIP]
+> [!NOTE]
 > The "proximal" filter value does not guarantee the degree of physical proximity. For scenarios that require reliable physical proximity, use the value [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) in your filter. Currently, this filter only allows devices that are discovered by Bluetooth. As new discovery mechanisms and protocols which guarantee physical proximity are supported, they will be included here as well.  
-There is also a property in the [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) class that indicates whether a discovered device is in fact within physical proximity: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem#Windows_System_RemoteSystems_RemoteSystem_IsAvailableByProximity).
+There is also a property in the [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) class that indicates whether a discovered device is in fact within physical proximity: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+
+> [!NOTE]
+> If you intend to discover devices over a local network (determined by your discovery type filter selection), your network needs to be using a "private" or "domain" profile. Your device will not discover other devices over a "public" network.
 
 Once a list of [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) objects is created, it can be passed into the constructor of a **RemoteSystemWatcher**.
 
@@ -52,7 +50,7 @@ A **RemoteSystem** object is retrieved if a valid **HostName** object is provide
 
 ## Querying a capability on a remote system
 
-Although separate from discovery filtering, querying device capabilities can be an important part of the discovery process. Using the [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) method, you can query discovered remote systems for support of certain capabilities such as remote session connectivity or spatial entity (holographic) sharing. See the [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) class for the list of queryable capabilities.
+Although separate from discovery filtering, querying device capabilities can be an important part of the discovery process. Using the [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) method, you can query discovered remote systems for support of certain capabilities such as remote session connectivity or spatial entity (holographic) sharing. See the [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) class for the list of queryable capabilities.
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests
@@ -60,9 +58,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 ```
 
 ## Cross-user discovery
-
-> [!WARNING]
-> The features in this section are not currently available to developers.
 
 Developers can specify the discovery of _all_ devices in proximity to the client device, not just devices registered to the same user. This is implemented through a special **IRemoteSystemFilter**, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). It is implemented like the other filter types:
 

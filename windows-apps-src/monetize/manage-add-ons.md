@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Use these methods in the Microsoft Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage add-ons for apps that are registered to your Partner Center account.
 title: Manage add-ons
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Manage add-ons
 
 Use the following methods in the Microsoft Store submission API to manage add-ons for your apps. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
@@ -34,23 +29,23 @@ These methods can only be used to get, create, or delete add-ons. To create subm
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
-<td align="left">[Get all add-ons for your apps](get-all-add-ons.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
+<td align="left"><a href="get-all-add-ons.md">Get all add-ons for your apps</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
-<td align="left">[Get a specific add-on](get-an-add-on.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
+<td align="left"><a href="get-an-add-on.md">Get a specific add-on</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
-<td align="left">[Create an add-on](create-an-add-on.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
+<td align="left"><a href="create-an-add-on.md">Create an add-on</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
-<td align="left">[Delete an add-on](delete-an-add-on.md)</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
+<td align="left"><a href="delete-an-add-on.md">Delete an add-on</a></td>
 </tr>
 </tbody>
 </table>
@@ -64,6 +59,7 @@ If you have not done so already, complete all the [prerequisites](create-and-man
 The Microsoft Store submission API methods for managing add-ons use the following JSON data resources.
 
 <span id="add-on-object" />
+
 ### Add-on resource
 
 This resource describes an add-on.
@@ -105,6 +101,7 @@ This resource has the following values.
 | pendingInAppProductSubmission        | object  |  A [submission resource](#submission-object) that provides information about the current pending submission for the add-on.  |   |
 
 <span id="application-object" />
+
 ### Application resource
 
 This resource descries the app that an add-on is associated with. The following example demonstrates the format of this resource.
@@ -131,6 +128,7 @@ This resource has the following values.
 | totalCount   | int  | The number of app objects in the *applications* array of the response body.                                                                                                                                                 |
 
 <span id="submission-object" />
+
 ### Submission resource
 
 This resource provides information about a submission for an add-on. The following example demonstrates the format of this resource.
@@ -152,6 +150,7 @@ This resource has the following values.
 | resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.     |
  
 <span/>
+
 ## Related topics
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

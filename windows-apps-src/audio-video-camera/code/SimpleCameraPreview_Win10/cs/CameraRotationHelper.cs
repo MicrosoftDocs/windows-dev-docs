@@ -13,7 +13,7 @@ using Windows.Storage.FileProperties;
 
 namespace SimpleCameraPreview_Win10
 {
-    //<SnippetCameraRotationHelperFull>
+    // <SnippetCameraRotationHelperFull>
     class CameraRotationHelper
     {
         private EnclosureLocation _cameraEnclosureLocation;
@@ -67,17 +67,7 @@ namespace SimpleCameraPreview_Win10
         private SimpleOrientation GetCameraOrientationRelativeToNativeOrientation()
         {
             // Get the rotation angle of the camera enclosure
-            var enclosureAngle = ConvertClockwiseDegreesToSimpleOrientation((int)_cameraEnclosureLocation.RotationAngleInDegreesClockwise);
-
-            // Account for the fact that, on portrait-first devices, the built in camera sensor is read at a 90 degree offset to the native orientation
-            if (_displayInformation.NativeOrientation == DisplayOrientations.Portrait && !IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                return AddOrientations(SimpleOrientation.Rotated90DegreesCounterclockwise, enclosureAngle);
-            }
-            else
-            {
-                return AddOrientations(SimpleOrientation.NotRotated, enclosureAngle);
-            }
+            return ConvertClockwiseDegreesToSimpleOrientation((int)_cameraEnclosureLocation.RotationAngleInDegreesClockwise);
         }
 
         // Gets the rotation to rotate ui elements
@@ -260,5 +250,5 @@ namespace SimpleCameraPreview_Win10
             }
         }
     }
-    //</SnippetCameraRotationHelperFull>
+    // </SnippetCameraRotationHelperFull>
 }

@@ -1,16 +1,13 @@
 ---
-author: QuinnRadich
 title: Windows 10 Fall Creators Update API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 16299
 keywords: what's new, whats new, updates, Windows 10, 1709, fall, creators, apis, 16299
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # New APIs in Windows 10 build 16299
 
 New and updated API namespaces have been made available to developers in Windows 10 build 16299, also known as the Fall Creators Update or version 1709. Below is a full list of documentation published for namespaces added or modified in this release.
@@ -191,10 +188,6 @@ paymentrequest.id <br> paymentrequest.paymentrequest
 
 coreuseractivitymanager <br> coreuseractivitymanager.createuseractivitysessioninbackground <br> coreuseractivitymanager.deleteuseractivitysessionsintimerangeasync
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core.windows)
-
-windows.applicationmodel.useractivities.core
-
 ### [windows.applicationmodel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 #### [iuseractivitycontentinfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.iuseractivitycontentinfo)
@@ -228,10 +221,6 @@ useractivitystate
 #### [useractivityvisualelements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements)
 
 useractivityvisualelements <br> useractivityvisualelements.attribution <br> useractivityvisualelements.backgroundcolor <br> useractivityvisualelements.content <br> useractivityvisualelements.description <br> useractivityvisualelements.displaytext
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.windows)
-
-windows.applicationmodel.useractivities
 
 ### [windows.applicationmodel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
@@ -615,10 +604,6 @@ printticketvalue <br> printticketvalue.getvalueasinteger <br> printticketvalue.g
 
 printticketvaluetype
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.windows)
-
-windows.graphics.printing.printticket
-
 #### [workflowprintticket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.workflowprintticket)
 
 workflowprintticket <br> workflowprintticket.documentbindingfeature <br> workflowprintticket.documentcollatefeature <br> workflowprintticket.documentduplexfeature <br> workflowprintticket.documentholepunchfeature <br> workflowprintticket.documentinputbinfeature <br> workflowprintticket.documentnupfeature <br> workflowprintticket.documentstaplefeature <br> workflowprintticket.getcapabilities <br> workflowprintticket.getfeature <br> workflowprintticket.getparameterinitializer <br> workflowprintticket.jobpasscodefeature <br> workflowprintticket.mergeandvalidateticket <br> workflowprintticket.name <br> workflowprintticket.notifyxmlchangedasync <br> workflowprintticket.pageborderlessfeature <br> workflowprintticket.pagemediasizefeature <br> workflowprintticket.pagemediatypefeature <br> workflowprintticket.pageorientationfeature <br> workflowprintticket.pageoutputcolorfeature <br> workflowprintticket.pageoutputqualityfeature <br> workflowprintticket.pageresolutionfeature <br> workflowprintticket.setparameterinitializerasinteger <br> workflowprintticket.setparameterinitializerasstring <br> workflowprintticket.validateasync <br> workflowprintticket.xmlnamespace <br> workflowprintticket.xmlnode
@@ -701,10 +686,6 @@ printworkflowuiactivatedeventargs <br> printworkflowuiactivatedeventargs.kind <b
 
 printworkflowxpsdataavailableeventargs <br> printworkflowxpsdataavailableeventargs.getdeferral <br> printworkflowxpsdataavailableeventargs.operation
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.windows)
-
-windows.graphics.printing.workflow
-
 ### [windows.graphics.printing3d](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
 #### [printing3d3mfpackage](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)
@@ -747,10 +728,6 @@ appbroadcastingstatusdetails <br> appbroadcastingstatusdetails.isanyappbroadcast
 
 appbroadcastingui <br> appbroadcastingui.getdefault <br> appbroadcastingui.getforuser <br> appbroadcastingui.getstatus <br> appbroadcastingui.showbroadcastui
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.windows)
-
-windows.media.appbroadcasting
-
 ### [windows.media.apprecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)
 
 #### [apprecordingmanager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)
@@ -780,10 +757,6 @@ apprecordingstatus <br> apprecordingstatus.canrecord <br> apprecordingstatus.can
 #### [apprecordingstatusdetails](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatusdetails)
 
 apprecordingstatusdetails <br> apprecordingstatusdetails.isanyappbroadcasting <br> apprecordingstatusdetails.isappinactive <br> apprecordingstatusdetails.isblockedforapp <br> apprecordingstatusdetails.iscaptureresourceunavailable <br> apprecordingstatusdetails.isdisabledbysystem <br> apprecordingstatusdetails.isdisabledbyuser <br> apprecordingstatusdetails.isgamestreaminprogress <br> apprecordingstatusdetails.isgpuconstrained <br> apprecordingstatusdetails.istimespanrecordingdisabled
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.media.apprecording.windows)
-
-windows.media.apprecording
 
 ### [windows.media.capture.frames](https://docs.microsoft.com/uwp/api/windows.media.capture.frames)
 
@@ -1515,10 +1488,6 @@ iadaptivecardbuilderstatics <br> iadaptivecardbuilderstatics.createadaptivecardf
 
 taskbarmanager <br> taskbarmanager.getdefault <br> taskbarmanager.isapplistentrypinnedasync <br> taskbarmanager.iscurrentapppinnedasync <br> taskbarmanager.ispinningallowed <br> taskbarmanager.issupported <br> taskbarmanager.requestpinapplistentryasync <br> taskbarmanager.requestpincurrentappasync
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.shell.windows)
-
-windows.ui.shell
-
 ### [windows.ui.startscreen](https://docs.microsoft.com/uwp/api/windows.ui.startscreen)
 
 #### [secondarytilevisualelements](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytilevisualelements)
@@ -1546,10 +1515,6 @@ coreinputviewocclusionkind
 #### [coreinputviewocclusionschangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputviewocclusionschangedeventargs)
 
 coreinputviewocclusionschangedeventargs <br> coreinputviewocclusionschangedeventargs.handled <br> coreinputviewocclusionschangedeventargs.occlusions
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.windows)
-
-windows.ui.viewmanagement.core
 
 ### [windows.ui.webui](https://docs.microsoft.com/uwp/api/windows.ui.webui)
 
@@ -1920,10 +1885,6 @@ texthighlighterbase
 textrange
 
 ### [windows.ui.xaml.hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
-
-#### [designerappexitedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappexitedeventargs)
-
-designerappexitedeventargs <br> designerappexitedeventargs.exitcode
 
 #### [designerappmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappmanager)
 

@@ -23,10 +23,13 @@ using Windows.Media.MediaProperties;
 using Windows.Media;
 using System.Runtime.InteropServices;
 using Windows.Media.Effects;
+using Windows.Media.Core;
+using Windows.Media.Streaming.Adaptive;
+using System.Diagnostics;
 
-//<SnippetUsingAudioEffectComponent>
+// <SnippetUsingAudioEffectComponent>
 using AudioEffectComponent;
-//</SnippetUsingAudioEffectComponent>
+// </SnippetUsingAudioEffectComponent>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -34,7 +37,7 @@ namespace AudioGraphSnippets
 {
     // We are initializing a COM interface for use within the namespace
     // This interface allows access to memory at the byte level which we need to populate audio data that is generated
-    //<SnippetComImportIMemoryBufferByteAccess>
+    // <SnippetComImportIMemoryBufferByteAccess>
     [ComImport]
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -42,7 +45,7 @@ namespace AudioGraphSnippets
     {
         void GetBuffer(out byte* buffer, out uint capacity);
     }
-    //</SnippetComImportIMemoryBufferByteAccess>
+    // </SnippetComImportIMemoryBufferByteAccess>
 
 
     /// <summary>
@@ -53,33 +56,37 @@ namespace AudioGraphSnippets
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareAudioGraph>
+        // <SnippetDeclareAudioGraph>
         AudioGraph audioGraph;
-        //</SnippetDeclareAudioGraph>
+        // </SnippetDeclareAudioGraph>
 
-        //<SnippetDeclareFileInputNode>
+        // <SnippetDeclareFileInputNode>
         AudioFileInputNode fileInputNode;
-        //</SnippetDeclareFileInputNode>
+        // </SnippetDeclareFileInputNode>
 
-        //<SnippetDeclareFileOutputNode>
+        // <SnippetDeclareFileOutputNode>
         AudioFileOutputNode fileOutputNode;
-        //</SnippetDeclareFileOutputNode>
+        // </SnippetDeclareFileOutputNode>
 
-        //<SnippetDeclareDeviceInputNode>
+        // <SnippetDeclareMediaSourceInputNode>
+        MediaSourceAudioInputNode mediaSourceInputNode;
+        // </SnippetDeclareMediaSourceInputNode>
+
+        // <SnippetDeclareDeviceInputNode>
         AudioDeviceInputNode deviceInputNode;
-        //</SnippetDeclareDeviceInputNode>
+        // </SnippetDeclareDeviceInputNode>
 
-        //<SnippetDeclareDeviceOutputNode>
+        // <SnippetDeclareDeviceOutputNode>
         AudioDeviceOutputNode deviceOutputNode;
-        //</SnippetDeclareDeviceOutputNode>
+        // </SnippetDeclareDeviceOutputNode>
 
-        //<SnippetDeclareFrameInputNode>
+        // <SnippetDeclareFrameInputNode>
         AudioFrameInputNode frameInputNode;
-        //</SnippetDeclareFrameInputNode>
+        // </SnippetDeclareFrameInputNode>
 
-        //<SnippetDeclareFrameOutputNode>
+        // <SnippetDeclareFrameOutputNode>
         AudioFrameOutputNode frameOutputNode;
-        //</SnippetDeclareFrameOutputNode>
+        // </SnippetDeclareFrameOutputNode>
 
         public MainPage()
         {
@@ -120,7 +127,7 @@ namespace AudioGraphSnippets
         {
             throw new NotImplementedException();
         }
-        //<SnippetInitAudioGraph>
+        // <SnippetInitAudioGraph>
         private async Task InitAudioGraph()
         {
 
@@ -135,13 +142,13 @@ namespace AudioGraphSnippets
             audioGraph = result.Graph;
 
         }
-        //</SnippetInitAudioGraph>
+        // </SnippetInitAudioGraph>
 
         private async Task EnumerateAudioRenderDevices()
         {
             AudioGraphSettings settings = new AudioGraphSettings(Windows.Media.Render.AudioRenderCategory.Media);
 
-            //<SnippetEnumerateAudioRenderDevices>
+            // <SnippetEnumerateAudioRenderDevices>
             Windows.Devices.Enumeration.DeviceInformationCollection devices =
              await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(Windows.Media.Devices.MediaDevice.GetAudioRenderSelector());
 
@@ -150,10 +157,10 @@ namespace AudioGraphSnippets
 
 
             settings.PrimaryRenderDevice = selectedDevice;
-            //</SnippetEnumerateAudioRenderDevices>
+            // </SnippetEnumerateAudioRenderDevices>
         }
 
-        //<SnippetCreateFileInputNode>
+        // <SnippetCreateFileInputNode>
         private async Task CreateFileInputNode()
         {
             if (audioGraph == null)
@@ -182,8 +189,8 @@ namespace AudioGraphSnippets
 
             fileInputNode = result.FileInputNode;
         }
-        //</SnippetCreateFileInputNode>
-        //<SnippetCreateFileOutputNode>
+        // </SnippetCreateFileInputNode>
+        // <SnippetCreateFileOutputNode>
         private async Task CreateFileOutputNode()
         {
             FileSavePicker saveFilePicker = new FileSavePicker();
@@ -228,9 +235,81 @@ namespace AudioGraphSnippets
 
             fileOutputNode = result.FileOutputNode;
         }
-        //</SnippetCreateFileOutputNode>
+        // </SnippetCreateFileOutputNode>
 
-        //<SnippetCreateDeviceInputNode>
+
+
+        // <SnippetCreateMediaSourceInputNode>
+        private async Task CreateMediaSourceInputNode(System.Uri contentUri)
+        {
+            if (audioGraph == null)
+                return;
+
+            var adaptiveMediaSourceResult = await AdaptiveMediaSource.CreateFromUriAsync(contentUri);
+            if(adaptiveMediaSourceResult.Status != AdaptiveMediaSourceCreationStatus.Success)
+            {
+                Debug.WriteLine("Failed to create AdaptiveMediaSource");
+                return;
+            }
+
+            var mediaSource = MediaSource.CreateFromAdaptiveMediaSource(adaptiveMediaSourceResult.MediaSource);
+            CreateMediaSourceAudioInputNodeResult mediaSourceAudioInputNodeResult =
+                await audioGraph.CreateMediaSourceAudioInputNodeAsync(mediaSource);
+
+            if (mediaSourceAudioInputNodeResult.Status != MediaSourceAudioInputNodeCreationStatus.Success)
+            {
+                switch (mediaSourceAudioInputNodeResult.Status)
+                {
+                    case MediaSourceAudioInputNodeCreationStatus.FormatNotSupported:
+                        Debug.WriteLine("The MediaSource uses an unsupported format");
+                        break;
+                    case MediaSourceAudioInputNodeCreationStatus.NetworkError:
+                        Debug.WriteLine("The MediaSource requires a network connection and a network-related error occurred");
+                        break;
+                    case MediaSourceAudioInputNodeCreationStatus.UnknownFailure:
+                    default:
+                        Debug.WriteLine("An unknown error occurred while opening the MediaSource");
+                        break;
+                }
+                return;
+            }
+
+            mediaSourceInputNode = mediaSourceAudioInputNodeResult.Node;
+        }
+        // </SnippetCreateMediaSourceInputNode>
+
+        private void RegisterMediaSourceCompleted()
+        {
+            // <SnippetRegisterMediaSourceCompleted>
+            mediaSourceInputNode.MediaSourceCompleted += MediaSourceInputNode_MediaSourceCompleted;
+            // </SnippetRegisterMediaSourceCompleted>
+        }
+        // <SnippetMediaSourceCompleted>
+        private void MediaSourceInputNode_MediaSourceCompleted(MediaSourceAudioInputNode sender, object args)
+        {
+            audioGraph.Stop();
+        }
+        // </SnippetMediaSourceCompleted>
+        private void RegisterUnrecoverableError()
+        {
+            // <SnippetRegisterUnrecoverableError>
+            audioGraph.UnrecoverableErrorOccurred += AudioGraph_UnrecoverableErrorOccurred;
+            // </SnippetRegisterUnrecoverableError>
+        }
+        // <SnippetUnrecoverableError>
+        private void AudioGraph_UnrecoverableErrorOccurred(AudioGraph sender, AudioGraphUnrecoverableErrorOccurredEventArgs args)
+        {
+            if (sender == audioGraph && args.Error != AudioGraphUnrecoverableError.None)
+            {
+                Debug.WriteLine("The audio graph encountered and unrecoverable error.");
+                audioGraph.Stop();
+                audioGraph.Dispose();
+                InitAudioGraph();
+            }
+        }
+        // </SnippetUnrecoverableError>
+
+        // <SnippetCreateDeviceInputNode>
         private async Task CreateDeviceInputNode()
         {
             // Create a device output node
@@ -245,9 +324,9 @@ namespace AudioGraphSnippets
 
             deviceInputNode = result.DeviceInputNode;
         }
-        //</SnippetCreateDeviceInputNode>
+        // </SnippetCreateDeviceInputNode>
 
-        //<SnippetCreateDeviceOutputNode>
+        // <SnippetCreateDeviceOutputNode>
         private async Task CreateDeviceOutputNode()
         {
             // Create a device output node
@@ -262,12 +341,12 @@ namespace AudioGraphSnippets
 
             deviceOutputNode = result.DeviceOutputNode;
         }
-        //</SnippetCreateDeviceOutputNode>
+        // </SnippetCreateDeviceOutputNode>
 
 
         private async Task EnumerateAudioCaptureDevices()
         {
-            //<SnippetEnumerateAudioCaptureDevices>
+            // <SnippetEnumerateAudioCaptureDevices>
             Windows.Devices.Enumeration.DeviceInformationCollection devices =
              await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector());
 
@@ -276,7 +355,7 @@ namespace AudioGraphSnippets
 
             CreateAudioDeviceInputNodeResult result =
                 await audioGraph.CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory.Media, audioGraph.EncodingProperties, selectedDevice);
-            //</SnippetEnumerateAudioCaptureDevices>
+            // </SnippetEnumerateAudioCaptureDevices>
         }
         private Windows.Devices.Enumeration.DeviceInformation ShowMyDeviceSelectionUI(Windows.Devices.Enumeration.DeviceInformationCollection devices)
         {
@@ -284,7 +363,7 @@ namespace AudioGraphSnippets
         }
 
 
-        //<SnippetCreateFrameInputNode>
+        // <SnippetCreateFrameInputNode>
         private void CreateFrameInputNode()
         {
             // Create the FrameInputNode at the same format as the graph, except explicitly set mono.
@@ -299,9 +378,9 @@ namespace AudioGraphSnippets
             // This event is triggered when the node is required to provide data
             frameInputNode.QuantumStarted += node_QuantumStarted;
         }
-        //</SnippetCreateFrameInputNode>
+        // </SnippetCreateFrameInputNode>
 
-        //<SnippetQuantumStarted>
+        // <SnippetQuantumStarted>
         private void node_QuantumStarted(AudioFrameInputNode sender, FrameInputNodeQuantumStartedEventArgs args)
         {
             // GenerateAudioData can provide PCM audio data by directly synthesizing it or reading from a file.
@@ -315,13 +394,13 @@ namespace AudioGraphSnippets
                 frameInputNode.AddFrame(audioData);
             }
         }
-        //</SnippetQuantumStarted>
+        // </SnippetQuantumStarted>
 
 
         // NOTE ABOUT COMPILING WITH /unsafe (Use unsafe code in project properties/build)
 
 
-        //<SnippetGenerateAudioData>
+        // <SnippetGenerateAudioData>
         private double audioWaveTheta = 0;
 
         unsafe private AudioFrame GenerateAudioData(uint samples)
@@ -360,27 +439,27 @@ namespace AudioGraphSnippets
 
             return frame;
         }
-        //</SnippetGenerateAudioData>
+        // </SnippetGenerateAudioData>
 
-        //<SnippetCreateFrameOutputNode>
+        // <SnippetCreateFrameOutputNode>
         private void CreateFrameOutputNode()
         {
             frameOutputNode = audioGraph.CreateFrameOutputNode();
             audioGraph.QuantumStarted += AudioGraph_QuantumStarted;
         }
-        //</SnippetCreateFrameOutputNode>
+        // </SnippetCreateFrameOutputNode>
 
-        //<SnippetQuantumStartedFrameOutput>
+        // <SnippetQuantumStartedFrameOutput>
         private void AudioGraph_QuantumStarted(AudioGraph sender, object args)
         {
             AudioFrame frame = frameOutputNode.GetFrame();
             ProcessFrameOutput(frame);
 
         }
-        //</SnippetQuantumStartedFrameOutput>
+        // </SnippetQuantumStartedFrameOutput>
 
 
-        //<SnippetProcessFrameOutput>
+        // <SnippetProcessFrameOutput>
         unsafe private void ProcessFrameOutput(AudioFrame frame)
         {
             using (AudioBuffer buffer = frame.LockBuffer(AudioBufferAccessMode.Write))
@@ -396,26 +475,26 @@ namespace AudioGraphSnippets
                 dataInFloat = (float*)dataInBytes;
             }
         }
-        //</SnippetProcessFrameOutput>
+        // </SnippetProcessFrameOutput>
 
         private void DemonstrateConnections()
         {
-            //<SnippetAddOutgoingConnection1>
+            // <SnippetAddOutgoingConnection1>
             fileInputNode.AddOutgoingConnection(deviceOutputNode);
-            //</SnippetAddOutgoingConnection1>
+            // </SnippetAddOutgoingConnection1>
 
-            //<SnippetAddOutgoingConnection2>
+            // <SnippetAddOutgoingConnection2>
             fileInputNode.AddOutgoingConnection(fileOutputNode);
-            //</SnippetAddOutgoingConnection2>
+            // </SnippetAddOutgoingConnection2>
 
-            //<SnippetAddOutgoingConnection3>
+            // <SnippetAddOutgoingConnection3>
             deviceInputNode.AddOutgoingConnection(deviceOutputNode, .5);
-            //</SnippetAddOutgoingConnection3>
+            // </SnippetAddOutgoingConnection3>
 
         }
 
 
-        //<SnippetCreateSubmixNode>
+        // <SnippetCreateSubmixNode>
         private void CreateSubmixNode()
         {
             AudioSubmixNode submixNode = audioGraph.CreateSubmixNode();
@@ -423,20 +502,20 @@ namespace AudioGraphSnippets
             frameInputNode.AddOutgoingConnection(submixNode);
             submixNode.AddOutgoingConnection(fileOutputNode);
         }
-        //</SnippetCreateSubmixNode>
+        // </SnippetCreateSubmixNode>
 
         private void AddEffect()
         {
             AudioSubmixNode submixNode = audioGraph.CreateSubmixNode();
 
-            //<SnippetAddEffect>
+            // <SnippetAddEffect>
             EchoEffectDefinition echoEffect = new EchoEffectDefinition(audioGraph);
             echoEffect.Delay = 1000.0;
             echoEffect.Feedback = .2;
             echoEffect.WetDryMix = .5;
 
             submixNode.EffectDefinitions.Add(echoEffect);
-            //</SnippetAddEffect>
+            // </SnippetAddEffect>
 
             fileInputNode.EffectDefinitions.Add(echoEffect);
         }
@@ -444,7 +523,7 @@ namespace AudioGraphSnippets
         private void AddCustomEffect()
         {
 
-            //<SnippetAddCustomEffect>
+            // <SnippetAddCustomEffect>
             // Create a property set and add a property/value pair
             PropertySet echoProperties = new PropertySet();
             echoProperties.Add("Mix", 0.5f);
@@ -452,7 +531,7 @@ namespace AudioGraphSnippets
             // Instantiate the custom effect defined in the 'AudioEffectComponent' project
             AudioEffectDefinition echoEffectDefinition = new AudioEffectDefinition(typeof(ExampleAudioEffect).FullName, echoProperties);
             fileInputNode.EffectDefinitions.Add(echoEffectDefinition);
-            //</SnippetAddCustomEffect>
+            // </SnippetAddCustomEffect>
 
             
         }
@@ -478,7 +557,7 @@ namespace AudioGraphSnippets
                 return;
             }
 
-            //<SnippetCreateEmitter>
+            // <SnippetCreateEmitter>
             var emitterShape = AudioNodeEmitterShape.CreateOmnidirectional();
             var decayModel = AudioNodeEmitterDecayModel.CreateNatural(.1, 1, 10, 100);
             var settings = AudioNodeEmitterSettings.None;
@@ -494,7 +573,7 @@ namespace AudioGraphSnippets
             }
 
             fileInputNode = result.FileInputNode;
-            //</SnippetCreateEmitter>
+            // </SnippetCreateEmitter>
 
 
             
@@ -505,28 +584,30 @@ namespace AudioGraphSnippets
             var newObjectPosition = new System.Numerics.Vector3(10, 0, 5);
             var oldObjectPosition = new System.Numerics.Vector3(10, 0, 5);
 
-            //<SnippetUpdateEmitter>
+            // <SnippetUpdateEmitter>
             var emitter = fileInputNode.Emitter;
             emitter.Position = newObjectPosition;
             emitter.DopplerVelocity = newObjectPosition - oldObjectPosition;
-            //</SnippetUpdateEmitter>
+            // </SnippetUpdateEmitter>
         }
         private void CreateListener()
         {
             
-            //<SnippetListener>
+            // <SnippetListener>
             deviceOutputNode.Listener.Position = new System.Numerics.Vector3(100, 0, 0);
             deviceOutputNode.Listener.Orientation = System.Numerics.Quaternion.CreateFromYawPitchRoll(0, (float)Math.PI, 0);
-            //</SnippetListener>
+            // </SnippetListener>
         }
         public void UpdateListener()
         {
             var newUserPosition = new System.Numerics.Vector3(10, 0, 5);
 
-            //<SnippetUpdateListener>
+            // <SnippetUpdateListener>
             deviceOutputNode.Listener.Position = newUserPosition;
-            //</SnippetUpdateListener>
+            // </SnippetUpdateListener>
         }
+
+
 
         public void ShowErrorMessage(string message)
         {

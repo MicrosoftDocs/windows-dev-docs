@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: This article describes how to use the CameraCaptureUI class to capture photos or videos using the camera UI built into Windows.
 title: Capture photos and video with Windows built-in camera UI
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Capture photos and video with Windows built-in camera UI
 
 
@@ -21,7 +16,7 @@ This article describes how to use the CameraCaptureUI class to capture photos or
 If you want to provide your own camera UI or if your scenario requires more robust, low-level control of the capture operation, you should use the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object and implement your own capture experience. For more information, see [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
 > [!NOTE]
-> You should not specify the **webcam** or **microphone** capabilities in your app manifest file if you are using CameraCaptureUI. If you do so, your app will be displayed in the device's camera privacy settings, but even if the user denies camera access to your app, it will not prevent the CameraCaptureUI from capturing media. This is because the Windows built-in camera app is a trusted first-party app that requires the user to initiate photo, audio, and video capture with a button press. Your app may fail WACK (Windows Application Certification Kit) certification when submitted to the Store if you specify the webcam or microphone capabilities when using CameraCaptureUI.
+> You should not specify the **webcam** or **microphone** capabilities in your app manifest file if your app only uses CameraCaptureUI. If you do so, your app will be displayed in the device's camera privacy settings, but even if the user denies camera access to your app, it will not prevent the CameraCaptureUI from capturing media. This is because the Windows built-in camera app is a trusted first-party app that requires the user to initiate photo, audio, and video capture with a button press. Your app may fail Windows Application Certification Kit certification when submitted to the Store if you specify the webcam or microphone capabilities when using CameraCaptureUI as your only photo capture mechanism.
 > You must specify the webcam or microphone capabilities in your app manifest file if you are using MediaCapture to capture audio, photos, or video programmatically.
 
 ## Capture a photo with CameraCaptureUI
@@ -75,12 +70,12 @@ Call [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br24
 
 What you do with the captured video file depends on the scenario for your app. The rest of this article shows you how to quickly create a media composition from one or more captured videos and show it in your UI.
 
-First, add a [**MediaPlayerElement**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control in which the video composition will be displayed to your XAML page.
+First, add a [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control in which the video composition will be displayed to your XAML page.
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 
-With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
+With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  

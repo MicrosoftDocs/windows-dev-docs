@@ -1,16 +1,11 @@
 ---
 title: Adding WebVR support to a 3D Babylon.js game
 description: Learn how to add WebVR support to an existing 3D Babylon.js game.
-author: abbycar
-ms.author: abigailc
 ms.date: 11/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
 ---
-
 # Adding WebVR support to a 3D Babylon.js game
 
 If you've created a 3D game with Babylon.js and thought that it might look great in virtual reality (VR), follow the simple steps in this tutorial to make that a reality.
@@ -171,7 +166,7 @@ A click in the game now creates a prompt like the following, or displays the gam
 
 ![immersive prompt](images/immersiveview.png)
 
-We can also add a piece of code that will display the the `UniversalCamera` view before we switch to our `WebVRFreeCamera`, allowing the user to look at the game instead of a blue window. 
+We can also add a piece of code that will display the `UniversalCamera` view before we switch to our `WebVRFreeCamera`, allowing the user to look at the game instead of a blue window. 
 
 Add the following after `engine.runRenderLoop(function () {`.
 ```javascript

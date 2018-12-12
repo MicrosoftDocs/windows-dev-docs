@@ -1,23 +1,18 @@
 ---
-author: mcleanbyron
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: Use this method in the Microsoft Store analytics API to get aggregate ad campaign performance data for the specified application during a given date range and other optional filters.
 title: Get ad campaign performance data
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Get ad campaign performance data
 
 
 Use this method in the Microsoft Store analytics API to get an aggregate summary of promotional ad campaign performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
-This method returns the same data that is provided by the [App install ads report](../publish/app-install-ads-reports.md) on the Windows Dev Center dashboard. For more information about ad campaigns, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
+This method returns the same data that is provided by the [Ad campaign report](../publish/app-install-ads-reports.md) in Partner Center. For more information about ad campaigns, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
 
 To create, update, or retrieve details for ad campaigns, you can use the [Manage ad campaigns](manage-ad-campaigns.md) methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md).
 
@@ -37,7 +32,6 @@ To use this method, you need to first do the following:
 |--------|--------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/promotion``` |
 
-<span />
 
 ### Request header
 
@@ -45,7 +39,6 @@ To use this method, you need to first do the following:
 |---------------|--------|---------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span />
 
 ### Request parameters
 
@@ -53,7 +46,7 @@ To retrieve ad campaign performance data for a specific app, use the *applicatio
 
 | Parameter     | Type   | Description     | Required |
 |---------------|--------|-----------------|----------|
-| applicationId   | string    | The Store ID of the app for which you want to retrieve ad campaign performance data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9NBLGGH4R315. |    No      |
+| applicationId   | string    | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to retrieve ad campaign performance data. |    No      |
 |  startDate  |  date   |  The start date in the date range of ad campaign performance data to retrieve, in the format YYYY/MM/DD. The default is the current date minus 30 days.   |   No    |
 | endDate   |  date   |  The end date in the date range of ad campaign performance data to retrieve, in the format YYYY/MM/DD. The default is the current date minus one day.   |   No    |
 | top   |  int   |  The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.   |   No    |
@@ -63,9 +56,6 @@ To retrieve ad campaign performance data for a specific app, use the *applicatio
 | orderby   |  string   |  <p>A statement that orders the result data values for the ad campaign performance data. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:</p><ul><li><strong>date</strong></li><li><strong>campaignId</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,campaignId</em></p>   |   No    |
 |  groupby  |  string   |  <p>A statement that applies data aggregation only to the specified fields. You can specify the following fields:</p><ul><li><strong>campaignId</strong></li><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>currencyCode</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p>   |   No    |
 
-
-<span />
- 
 
 ### Request example
 
@@ -88,9 +78,12 @@ Authorization: Bearer <your access token>
 |------------|--------|---------------|
 | Value      | array  | An array of objects that contain aggregate ad campaign performance data. For more information about the data in each object, see the [campaign performance object](#campaign-performance-object) section below.          |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 5 but there are more than 5 items of data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
+| TotalCount | int    | The total number of rows in the data result for the query.                                |
+
 
 <span id="campaign-performance-object" />
+
+
 ### Campaign performance object
 
 Elements in the *Value* array contain the following values.
@@ -109,7 +102,6 @@ Elements in the *Value* array contain the following values.
 | iapInstalls            | long | The number of add-on (also called in-app purchase or IAP) installs related to the campaign.      |
 | activeUsers            | long | The number of users who have clicked an ad that is part of the campaign and returned to the app.      |
 
-<span />
 
 ### Response example
 

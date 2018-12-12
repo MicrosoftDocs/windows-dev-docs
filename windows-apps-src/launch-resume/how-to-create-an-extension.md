@@ -1,16 +1,13 @@
 ---
-author: TylerMSFT
 title: Create and consume an app extension
 description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
-ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Create and host an app extension
 
 This article shows you how to create a UWP app extension and host it in a UWP app.
@@ -22,7 +19,7 @@ This article is accompanied by a code sample:
 
 ## Introduction to app extensions
 
-Plugins, add-ins, and add-ons are different names you may be familiar with for what we call app extensions in the Universal Windows Platform (UWP). Microsoft Edge extensions are UWP app extensions. UWP app extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
+In the Universal Windows Platform (UWP), app extensions provide functionality similar to what plug-ins, add-ins, and add-ons do on other platforms. Microsoft Edge extensions are UWP app extensions, for example. UWP app extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
 
 UWP app extensions are UWP apps that have an extension declaration that allows them to share content and deployment events with a host app. An extension app can provide multiple extensions.
 
@@ -61,7 +58,7 @@ _Package.appxmanifest in the MathExtensionHost project_
         <Extensions>
             <uap3:Extension Category="windows.appExtensionHost">
                 <uap3:AppExtensionHost>
-                  <uap3:Name>microsoft.com.MathExt</uap3:Name>
+                  <uap3:Name>com.microsoft.mathext</uap3:Name>
                 </uap3:AppExtensionHost>
           </uap3:Extension>
         </Extensions>
@@ -96,7 +93,7 @@ _Package.appxmanifest in the MathExtension project:_
         <Extensions>
           ...
           <uap3:Extension Category="windows.appExtension">
-            <uap3:AppExtension Name="Microsoft.com.MathExt"
+            <uap3:AppExtension Name="com.microsoft.mathext"
                                Id="power"
                                DisplayName="x^y"
                                Description="Exponent"
@@ -113,7 +110,7 @@ _Package.appxmanifest in the MathExtension project:_
 </Package>
 ```
 
-Again, notice the `xmlns:uap3="http://..."` line, and the presence of `uap3` in `IgnorableNamespaces`. These are necessary because we are using the uap3 namespace.
+Again, notice the `xmlns:uap3="http://..."` line, and the presence of `uap3` in `IgnorableNamespaces`. These are necessary because we are using the `uap3` namespace.
 
 `<uap3:Extension Category="windows.appExtension">` identifies this app as an extension.
 
@@ -121,11 +118,12 @@ The meaning of the `<uap3:AppExtension>` attributes are as follows:
 
 |Attribute|Description|Required|
 |---------|-----------|:------:|
-|**Name**|This is the extension contract name. When it matches the **Name** declared in a host, that host will be able to find this extension.|:heavy_check_mark:|
-|**ID**| Uniquely identifies this extension. Because there can be multiple extensions that use the same extension contract name (imagine a paint app that supports several extensions), you can use the ID to tell them apart. App extension hosts can use the ID to infer something about the type of extension. For example, you could have one Extension designed for desktop and another for mobile, with the ID being the differentiator. You could also use the **Properties** element, discussed below, for that.|:heavy_check_mark:|
+|**Name**|This is the extension contract name. When it matches the **Name** declared in a host, that host will be able to find this extension.| :heavy_check_mark: |
+|**ID**| Uniquely identifies this extension. Because there can be multiple extensions that use the same extension contract name (imagine a paint app that supports several extensions), you can use the ID to tell them apart. App extension hosts can use the ID to infer something about the type of extension. For example, you could have one Extension designed for desktop and another for mobile, with the ID being the differentiator. You could also use the **Properties** element, discussed below, for that.| :heavy_check_mark: |
 |**DisplayName**| Can be used from your host app to identify the extension to the user. It is queryable from, and can use, the [new resource management system](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
 |**Description** | Can be used from your host app to describe the extension to the user. It is queryable from, and can use, the [new resource management system](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
-|**PublicFolder**|The name of a folder, relative to the package root, where you can share content with the extension host. By convention the name is "Public", but you can use any name that matches a folder in your extension.|:heavy_check_mark:|
+|**PublicFolder**|The name of a folder, relative to the package root, where you can share content with the extension host. By convention the name is "Public", but you can use any name that matches a folder in your extension.| :heavy_check_mark: |
+
 `<uap3:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the <Service> element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
 
 ## Decide how you will implement the extension.
@@ -362,7 +360,7 @@ _Package.appxmanifest in the MathExtension project:_
      <uap:AppService Name="com.microsoft.sqrtservice" />      <!-- This must match the contents of <Service>...</Service> -->
    </uap:Extension>
    <uap3:Extension Category="windows.appExtension">
-     <uap3:AppExtension Name="Microsoft.com.MathExt" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
+     <uap3:AppExtension Name="com.microsoft.mathext" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
        <uap3:Properties>
          <Service>com.microsoft.powservice</Service>   <!-- this must match <uap:AppService Name=...> -->
        </uap3:Properties>
@@ -417,6 +415,7 @@ This topic provides an introduction to app extensions. The key things to note ar
 
 ## Related topics
 
+* [Introduction to App Extensions](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)

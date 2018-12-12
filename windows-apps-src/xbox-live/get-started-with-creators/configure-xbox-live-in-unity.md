@@ -1,17 +1,13 @@
 ---
 title: Configure Xbox Live in Unity
-author: StaceyHaffner
+
 description: Learn how to use the Xbox Live Unity plugin to configure Xbox Live in your Unity game.
 ms.assetid: 55147c41-cc49-47f3-829b-fa7e1a46b2dd
-ms.author: kevinasg
-ms.date: 10/27/2017
+ms.date: 1/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, configure
-ms.localizationpriority: medium
+localizationpriority: medium
 ---
-
 # Configure Xbox Live in Unity
 
 > [!NOTE]
@@ -26,11 +22,16 @@ This topic will go through the process of setting up the Xbox Live plugin in Uni
 You will need the following before you can use Xbox Live in Unity:
 
 1. An **[Xbox Live account](https://support.xbox.com/browse/my-account/manage-account/Create%20account)**.
-1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
+1. Enrollment in the **[Partner Center developer program](https://developer.microsoft.com/store/register)**.
 2. **[Windows 10 Anniversary Update](https://microsoft.com/windows)** or later
 3. **[Unity](https://store.unity.com/)** versions **5.5.4p5** (or newer), **2017.1p5** (or newer), or **2017.2.0f3** (or newer) with **[Microsoft Visual Studio Tools for Unity](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)** and **Windows Store .NET Scripting Backend**.
 4. **[Visual Studio 2015](https://www.visualstudio.com/)** or **[Visual Studio 2017 15.3.3](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
 5. **[Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)**.
+
+
+> [!NOTE]
+> If you want to use the IL2CPP scripting backend with Xbox Live, you will need Unity 2017.2.0p2 or newer and the Xbox Live Unity plugin version "1802 Preview Release" or higher.
+
 
 ## Import the Unity plugin
 
@@ -41,6 +42,38 @@ To import the plugin into your new or existing Unity project, follow these steps
 3. In Unity, click **Assets** > **Import Package** > **Custom Package** and navigate to **XboxLive.unitypackage**.
 
 ![successful import](../images/unity/get-started-with-creators/importXBL_Small.gif)
+
+### (Optional) Configure the plugin to work in the Unity Editor (.NET 4.6 or IL2CPP only)
+
+> [!NOTE]
+> Support for changing the Scripting Runtime Version in Unity requires the Xbox Live Unity Plugin version "1711 Release" or higher for .NET 4.6 and version "1802 Preview Release" or higher for IL2CPP.
+
+There are three settings that can be configured in Unity to define how your code is compiled:
+
+1. The **scripting backend** is the compiler that is used. Unity supports two different scripting backends for Universal Windows Platform: .NET and IL2CPP.
+2. The **Scripting Runtime Version** is the version of the scripting runtime that runs the Unity Editor.
+3. The **API Compatibility Level** is the API surface you'll build your game against.
+
+The following table shows the current scripting support matrix for the Xbox Live Unity Plugin:
+
+| Scripting Backend 	| Scripting Runtime Version	| Supported 	| Minimum Unity Version Required |
+|-------------------	|-------------------	    |-----------	|------------------------------- |
+| IL2CPP            	| .NET 3.5 Equivalent       | No        	| N/A                            |
+| Il2CPP            	| .NET 4.6 Equivalent       | Yes       	| 2017.2.0p2                     |
+| .NET              	| .NET 3.5 Equivalent       | Yes       	| Same as prerequisites          |
+| .NET              	| .NET 4.6 Equivalent       | Yes       	| Same as prerequisites          |
+
+We've added additional scripting runtime support to the Xbox Live Unity Plugin, starting with version "1711 Release". By default, the plugin is configured to run in the Unity editor with the .NET scripting backend and scripting runtime version of .NET 3.5. If your project is using the scripting runtime version of .NET 4.6, you will need to configure the plugin to work properly in the editor:
+
+1. In the Unity project explorer, navigate to **Xbox Live\Libs\UnityEditor\NET46** and select all of the DLLs in the folder.
+2. In the Inspector window, check **Editor** under **Include Platforms**.
+3. In the Unity project explorer, navigate to **Xbox Live\Libs\UnityEditor\NET35** and select all of the DLLs in the folder.
+4. In the Inspector window, uncheck **Editor** under **Include Platforms**.
+
+![change scripting runtime](../images/unity/get-started-with-creators/changeScriptingRuntime.gif)
+
+> [!IMPORTANT]
+> These steps will need to be reversed if you change the scripting runtime version in your project back to 3.5.
 
 ## Set Visual Studio as the IDE in Unity
 
@@ -59,7 +92,7 @@ The Unity plugin's file structure is broken into the following parts:
     * __Libs__ is where the Xbox Live libraries are stored.
     * __Prefabs__ contains various [Unity prefab](https://docs.unity3d.com/Manual/Prefabs.html) objects that implement Xbox Live functionality.
     * __Scripts__ contains all the code files that call the Xbox Live APIs from the prefabs. This is a great place to look for examples about how to properly call the Xbox Live APIs.
-    * __Tools\AssociationWizard__ contains the Xbox Live Association Wizard, used to pull down application configuration from the [Windows Dev Center](https://developer.microsoft.com/windows) for use within Unity.
+    * __Tools\AssociationWizard__ contains the Xbox Live Association Wizard, used to pull down application configuration from [Partner Center](https://developer.microsoft.com/windows) for use within Unity.
 
 ## Enable Xbox Live
 
@@ -67,7 +100,7 @@ For your title to interact with Xbox Live, you'll need to setup the initial Xbox
 
 1. In the **Xbox Live** menu, select **Configuration**.
 2. In the **Xbox Live** window, select **Run Xbox Live Association Wizard**.
-3. In the **Associate Your title with the Windows Store** dialog, click **Next**, and then sign in with your Dev Center account.
+3. In the **Associate Your title with the Windows Store** dialog, click **Next**, and then sign in with your Partner Center account.
 4. Select the app that you want to associate with this project, and then click **Select**. If you don't see it there, try clicking **Refresh**. Alternatively, you can create a new app by reserving a name and clicking **Reserve**.
 5. You will be prompted to enable Xbox Live if you have not already. Click **Enable** to enable Xbox Live in your title.
 6. Click **Finish** to save your configuration.
@@ -83,16 +116,16 @@ See [Xbox Live sandboxes](../xbox-live-sandboxes.md) for information about sandb
 
 ## Build and test the project
 
-When running your title in the editor, you will see fake data when you try to use Xbox Live functionality. For example, if you [add sign in capabilities](sign-in-to-xbox-live-in-unity.md) to your scene and try to sign in, you will see **Fake User** appear as your profile name, with a placeholder icon. To sign in with a real profile and test out Xbox Live functionality in your title, you'll need to build a UWP solution and run it in Visual Studio.  You can build the UWP project in Unity by following these steps:
+When running your title in the editor, you will see fake data when you try to use Xbox Live functionality. For example, if you [add sign in capabilities](unity-prefabs-and-sign-in.md) to your scene and try to sign in, you will see **Fake User** appear as your profile name, with a placeholder icon. To sign in with a real profile and test out Xbox Live functionality in your title, you'll need to build a UWP solution and run it in Visual Studio.  You can build the UWP project in Unity by following these steps:
 
 1. Open the **Build Settings** window by selecting **File** > **Build Settings**.
 2. Add all of the scenes that you want to include in your build under the **Scenes In Build** section.
-3. Switch to the **Windows Store** platform by selecting **Windows Store** under **Platform** and clicking **Switch Platform**.
-4. Set **SDK** to **Universal 10**.
+3. Switch to the **Universal Windows Platform** by selecting **Universal Windows Platform** under **Platform** and clicking **Switch Platform**.
+4. Set **SDK** to **10.0.15063.0** or greater.
 5. To enable script debugging check **Unity C# Projects**.
-6. Click **Build** and specify the location of the project. 
+6. Click **Build** and specify the location of the project.
 
-![build in unity](../images/unity/get-started-with-creators/buildInUnity.gif)
+![build settings](../images/unity/build_settings.JPG)
 
 Once the build has finished, Unity will have generated a new UWP solution file which you will need to run in Visual Studio:
 
@@ -104,7 +137,18 @@ If you enabled **script debugging** when you built the UWP solution from Unity, 
 ![Fake User: 123456789](../images/unity/get-started-with-creators/visualStudio.PNG)
 
 > [!NOTE]
-> Make sure that you are signing into Xbox Live with an [authorized test account](authorize-xbox-live-accounts.md).
+> Before using your Visual Studio build to test your game with real data, follow [this checklist](test-visual-studio-build.md) to help ensure your title will be able to access the Xbox Live service.
+
+> [!IMPORTANT]
+> As of May 2018 it is now required that you make an update to the package.appxmanifest.xml file in order to test your UWP title properly in Visual Studio. To do this:
+>
+> 1. Search the Solution Explorer for the package.appxmanifest.xml file
+> 2. Right click the file and choose View Code.  
+    If the View Code option is not available or the package.appxmanifest file does not have an extension. You will need to open the file as an xml and continue with the remaining steps.
+> 3. Under the `<Properties></Properties>` section, add the following line: `<uap:SupportedUsers>multiple</uap:SupportedUsers>`.
+> 4. Deploy the game to your Xbox by starting a remote debugging build from Visual Studio. You can find instruction to set up your title on an Xbox in the [Set up your UWP on Xbox development environment](../../xbox-apps/development-environment-setup.md) article.
+>
+> The piece of configuration changed may look like it is enabling multi-player but it is still necessary to run your game in single player scenarios.
 
 ## Try out the examples
 
@@ -114,6 +158,5 @@ Try the **SignInAndProfile** scene for signing into your Microsoft Account, the 
 
 ## See also
 
-* [Sign in to Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
+* [Sign in to Xbox Live in Unity](unity-prefabs-and-sign-in.md)
 * [Authorize Xbox Live accounts](authorize-xbox-live-accounts.md)
- 

@@ -1,16 +1,12 @@
 ---
 title: Join a tournament
-author: KevinAsgari
+
 description: Learn how to create UI for players to join your game's tournaments.
-ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---
-
 # Join a tournament by using the Arena UI
 
 The Arena APIs can provide your title with data about registration, check-in, and team info, but they *don’t* provide the functionality to *execute* the related tasks. Your title is expected to use the Arena UI or a third-party Tournament Organizer (TO), or to build their own tournament-management support.

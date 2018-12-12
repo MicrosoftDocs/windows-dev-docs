@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
 title: PlayReady DRM
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # PlayReady DRM
 
 
@@ -153,8 +148,8 @@ The following table outlines the mappings between various OPLs in the PlayReady 
     </tr>
     <tr>
         <th>270</th>
-        <td>**SWDRM**: Attempts to engage HDCP. If HDCP fails to engage, the PC will constrain the effective resolution to 520,000 pixels per frame and pass the content</td>
-        <td>**HWDRM**: Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked</td>
+        <td><b>SWDRM</b>: Attempts to engage HDCP. If HDCP fails to engage, the PC will constrain the effective resolution to 520,000 pixels per frame and pass the content</td>
+        <td><b>HWDRM</b>: Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked</td>
     </tr>
     <tr>
         <th>300</th>
@@ -169,7 +164,7 @@ The following table outlines the mappings between various OPLs in the PlayReady 
     </tr>
     <tr>
         <th>400</th>
-        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [Compliance Rules for PlayReady Products](https://www.microsoft.com/playready/licensing/compliance/).</td>
+        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the <a href="https://www.microsoft.com/playready/licensing/compliance/">Compliance Rules for PlayReady Products</a>.</td>
         <td colspan="2" rowspan="2">N/A\*</td>
     </tr>
     <tr>
@@ -269,7 +264,7 @@ PlayReady DRM allows you to play content over Miracast output as soon as HDCP 2.
     <tr>
         <th>400</th>
         <td rowspan="2" colspan="2">N/A\*</td>
-        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [Compliance Rules for PlayReady Products](https://www.microsoft.com/playready/licensing/compliance/).</td>
+        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the <a href="https://www.microsoft.com/playready/licensing/compliance/">Compliance Rules for PlayReady Products</a>.</td>
         <td rowspan="2">N/A\*</td>
     </tr>
     <tr>
@@ -327,15 +322,15 @@ The following table describes the PlayReady DRM for Windows 10 implementation of
         <th>Analog computer monitor</th>
         <td>D783A191-E083-4BAF-B2DA-E69F910B3772</td>
         <td>Connected output is: VGA, DVI&ndash;analog, etc.</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th>Analog component</th>
         <td>811C5110-46C8-4C6E-8163-C0482A15D47E</td>
         <td>Connected output is: component</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th rowspan="2">Analog TV outputs</th>
@@ -379,15 +374,15 @@ The following table describes the PlayReady DRM for Windows 10 implementation th
         <th>Unknown output</th>
         <td>786627D8-C2A6-44BE-8F88-08AE255B01A7</td>
         <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
-        <td>**SWDRM:** Passes content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> Passes content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th>Unknown output with constriction</th>
         <td>B621D91F-EDCC-4035-8D4B-DC71760D43E9</td>
         <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
 </table>
 <br/>
@@ -417,14 +412,14 @@ Regarding the media protection manager, make sure your code has the following se
 ```cs
 var mediaProtectionManager = new Windows.Media.Protection.MediaProtectionManager();
 
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionSystemId"] = 
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionSystemId"] = 
              '{F4637010-03C3-42CD-B932-B48ADF3A6A54}'
 var cpsystems = new Windows.Foundation.Collections.PropertySet();
 cpsystems["{F4637010-03C3-42CD-B932-B48ADF3A6A54}"] = 
                 "Windows.Media.Protection.PlayReady.PlayReadyWinRTTrustedInput";
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionSystemIdMapping"] = cpsystems;
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionSystemIdMapping"] = cpsystems;
 
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionContainerGuid"] = 
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionContainerGuid"] = 
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 
@@ -469,7 +464,7 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
     ```
     
 ## Query for protection capabilities
-Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_). The following code example illustrates the usage of this method.  
+Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). The following code example illustrates the usage of this method.  
 
     ```cs
     using namespace Windows::Media::Protection;
@@ -510,10 +505,10 @@ For a sample implementation of secure stop, see the securestop.cs file in the Pl
 
 ## Use PlayReady DRM on Xbox One
 
-To use PlayReady DRM in a UWP app on Xbox One, you will first need to register your Dev Center account that you're using to publish the app for authorization to use PlayReady. You can do this in one of two ways:
+To use PlayReady DRM in a UWP app on Xbox One, you will first need to register your [Partner Center](https://partner.microsoft.com/dashboard) account that you're using to publish the app for authorization to use PlayReady. You can do this in one of two ways:
 
 * Have your contact at Microsoft request permission.
-* Apply for authorization by sending your Dev Center account and company name to [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
+* Apply for authorization by sending your Partner Center account and company name to [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
 
 Once you receive authorization, you'll need to add an additional `<DeviceCapability>` to the app manifest. You'll have to add this manually because there is currently no setting available in the App Manifest Designer. Follow these steps to configure it:
 

@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
 title: Submit responses to reviews
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, add-on acquisitions
 ms.localizationpriority: medium
 ---
-
 # Submit responses to reviews
 
 
@@ -19,7 +14,8 @@ Use this method in the Microsoft Store reviews API to programmatically respond t
 
 When a customer submits a review, they can choose not to receive responses to their review. If you try to respond to a review for which the customer chose not to receive responses, the response body of this method will indicate that the response attempt was unsuccessful. Before calling this method, you can optionally determine whether you are allowed to respond to a given review by using the [get response info for app reviews](get-response-info-for-app-reviews.md) method.
 
->**Note**&nbsp;&nbsp;In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).
+> [!NOTE]
+> In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
 
 ## Prerequisites
 
@@ -37,7 +33,6 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/responses``` |
 
-<span/> 
 
 ### Request header
 
@@ -45,13 +40,11 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
 This method has no request parameters.
 
-<span/> 
 
 ### Request body
 
@@ -61,15 +54,17 @@ The request body has the following values.
 |---------------|--------|-----------------------------------------|
 | Responses | array | An array of objects that contain the response data you want to submit. For more information about the data in each object, see the following table. |
 
+
 Each object in the *Responses* array contains the following values.
 
 | Value        | Type   | Description           |  Required  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  The Store ID of the app with the review you want to respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.   |  Yes  |
+| ApplicationId | string |  The Store ID of the app with the review you want to respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of Partner Center. An example Store ID is 9WZDNCRFJ3Q8.   |  Yes  |
 | ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).   |  Yes  |
 | ResponseText | string | The response you want to submit. Your response must follow [these guidelines](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
-| IsPublic | Boolean |  The value **true** indicates that your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. The value **false** indicates that your response will be sent to the customer via email, and will not be visible to other customers in your app's Store listing.     |  Yes  |
+| IsPublic | Boolean |  If you specify **true**, your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. If you specify **false** and the user hasn't opted out of receiving email responses, your response will be sent to the customer via email, and it will not be visible to other customers in your app's Store listing. If you specify **false** and the user has opted out of receiving email responses, an error will be returned.   |  Yes  |
+
 
 ### Request example
 
@@ -107,6 +102,7 @@ Content-Type: application/json
 |---------------|--------|---------------------|
 | Result | array | An array of objects that contain data about each response you submitted. For more information about the data in each object, see the following table.  |
 
+
 Each object in the *Result* array contains the following values.
 
 | Value        | Type   | Description                                                                 |
@@ -115,6 +111,7 @@ Each object in the *Result* array contains the following values.
 | ReviewId | string |  The ID of the review you responded to. This is a GUID.   |
 | Successful | string | The value **true** indicates that your response was sent successfully. The value **false** indicates that your response was unsuccessful.    |
 | FailureReason | string | If **Successful** is **false**, this value contains a reason for the failure. If **Successful** is **true**, this value is empty.      |
+
 
 ### Response example
 
@@ -141,7 +138,7 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Respond to customer reviews using the Dev Center dashboard](../publish/respond-to-customer-reviews.md)
+* [Respond to customer reviews using Partner Center](../publish/respond-to-customer-reviews.md)
 * [Respond to reviews using Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Get app reviews](get-app-reviews.md)

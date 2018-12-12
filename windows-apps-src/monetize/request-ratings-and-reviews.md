@@ -1,27 +1,25 @@
 ---
-author: mcleanbyron
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
-ms.author: mcleans
-ms.date: 11/29/2017
+ms.date: 06/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
 ---
-
 # Request ratings and reviews for your app
 
 You can add code to your Universal Windows Platform (UWP) app to programmatically prompt your customers to rate or review your app. There are several ways you can do this:
 * You can show a rating and review dialog directly in the context of your app.
 * You can programmatically open the rating and review page for your app in the Microsoft Store.
 
-When you are ready to analyze your ratings and reviews data, you can view the data in the Windows Dev Center dashboard or use the Microsoft Store analytics API to retrieve this data programmatically.
+When you are ready to analyze your ratings and reviews data, you can view the data in Partner Center or use the Microsoft Store analytics API to retrieve this data programmatically.
+
+> [!IMPORTANT]
+> When adding a rating function within your app, all reviews must send the user to the Store’s rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## Show a rating and review dialog in your app
 
-To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. Pass the integer 16 to the *requestKind* parameter and an empty string to the *parametersAsJson* parameter as shown in this code example. This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft, and it requires using statements for the **Windows.Services.Store**, **System.Threading.Tasks**, and **Newtonsoft.Json.Linq** namespaces.
+To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. Pass the integer 16 to the *requestKind* parameter and an empty string to the *parametersAsJson* parameter as shown in this code example. This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft, and it requires using statements for the **Windows.Services.Store**, **System.Threading.Tasks**, and **Newtonsoft.Json.Linq** namespaces.
 
 > [!IMPORTANT]
 > The request to show the rating and review dialog must be called on the UI thread in your app.
@@ -52,7 +50,7 @@ The **SendRequestAsync** method uses a simple integer-based request system and J
 
 ### Response data for the rating and review request
 
-After you submit the request to display the rating and review dialog, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult#Windows_Services_Store_StoreSendRequestResult_Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string that indicates whether the request was successful.
+After you submit the request to display the rating and review dialog, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string that indicates whether the request was successful.
 
 The following example demonstrates the return value for this request after the customer successfully submits a rating or review.
 
@@ -85,7 +83,7 @@ The following table describes the fields in the JSON-formatted data string.
 
 ## Launch the rating and review page for your app in the Store
 
-If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
+If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
@@ -96,7 +94,7 @@ For more information, see [Launch the Microsoft Store app](../launch-resume/laun
 ## Analyze your ratings and reviews data
 
 To analyze the ratings and reviews data from your customers, you have several options:
-* You can use the [Reviews](../publish/reviews-report.md) report in the Windows Dev Center dashboard to see the ratings and reviews from your customers. You can also download this report to view it offline.
+* You can use the [Reviews](../publish/reviews-report.md) report in Partner Center to see the ratings and reviews from your customers. You can also download this report to view it offline.
 * You can use the [Get app ratings](get-app-ratings.md) and [Get app reviews](get-app-reviews.md) methods in the Store analytics API to programmatically retrieve the ratings and reviews from your customers in JSON format.
 
 ## Related topics

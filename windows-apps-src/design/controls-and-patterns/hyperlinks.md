@@ -1,15 +1,11 @@
 ---
-author: Jwmsft
 Description: Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.
 title: Hyperlinks
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
@@ -40,20 +36,19 @@ Choose the right type of hyperlink based on your needs:
 
 ## Examples
 
-<div style="overflow: hidden; margin: 0 -8px;">
-    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <div style="height: 133px; width: 100%">
-            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
-        </div>
-    </div>
-    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/HyperlinkButton">open the app and see the HyperlinkButton in action</a>.</p>
-        <ul>
-        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-        </ul>
-    </div>
-</div>
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/HyperlinkButton">open the app and see the HyperlinkButton in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## Create a Hyperlink text element
 
@@ -91,9 +86,18 @@ Here's how to use a HyperlinkButton, both with text and with an image.
 </StackPanel>
 
 ```
+
 The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:
 
 ![Example of a hyperlink as a button control](images/controls_hyperlink-button-image.png)
+
+This example shows how to create a HyperlinkButton in code.
+
+```csharp
+var helpLinkButton = new HyperlinkButton();
+helpLinkButton.Content = "Help";
+helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
+```
 
 ## Handle navigation
 
@@ -104,9 +108,11 @@ For both kinds of hyperlinks, you handle navigation the same way; you can set th
 To use the hyperlink to navigate to a URI, set the NavigateUri property. When a user clicks or taps the hyperlink, the specified URI opens in the default browser. The default browser runs in a separate process from your app.
 
 > [!NOTE]
-> You don't have to use http: or https: schemes. You can use schemes such as ms-appx:, ms-appdata:, or ms-resources:, if there's resource content at these locations that's appropriate to load in a browser. However, the file: scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> A URI is represented by the [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) class. When programming with .NET, this class is hidden and you should use the [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) class. For more info, see the reference pages for these classes.
 
-> When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.
+You don't have to use **http:** or **https:** schemes. You can use schemes such as **ms-appx:**, **ms-appdata:**, or **ms-resources:**, if there's resource content at these locations that's appropriate to load in a browser. However, the **file:** scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+
+When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.
 
 If you don't want the hyperlink to load content in a default Web browser (and don't want a browser to appear), then don't set a value for NavigateUri. Instead, handle the Click event, and write code that does what you want.
 
@@ -157,7 +163,7 @@ The default color of the hyperlink is the accent color of the system. You can se
 ## Recommendations
 
 -   Only use hyperlinks for navigation; don't use them for other actions.
--   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows 10 type ramp](../style/fonts.md).
+-   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows 10 type ramp](../style/typography.md).
 -   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 -   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
 

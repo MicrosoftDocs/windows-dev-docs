@@ -1,17 +1,14 @@
 ---
 Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
 title: Troubleshoot Microsoft Take a Test with the event viewer.
-author: PatrickFarley
-ms.author: pafarley
+
+
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, education
 ms.localizationpriority: medium
 ---
-
 # Troubleshoot Microsoft Take a Test with the event viewer
 
 You can use the Event Viewer to view Take a Test events and errors. Take a Test logs events when a lockdown request has been received, device enrollment has succeeded, lockdown policies were successfully applied, and more.

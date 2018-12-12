@@ -1,0 +1,47 @@
+<svg width="188" height="183" viewBox="0 0 188 183" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>illo-lighting</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(17080 -6735)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -17080 6735L -16892 6735L -16892 6918L -17080 6918L -17080 6735Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="illo-lighting" clip-path="url(#clip-0)">
+<path d="M -17080 6735L -16892 6735L -16892 6918L -17080 6918L -17080 6735Z" fill="#FFFFFF"/>
+<g id="Group 28">
+<g id="Group 14.1">
+<g id="Rectangle 15 Copy 2">
+<use xlink:href="#path0_fill" transform="translate(-17080 6735)" fill="#FFFFFF"/>
+<use xlink:href="#path0_fill" transform="translate(-17080 6735)" fill="#FDB72B"/>
+</g>
+</g>
+</g>
+<g id="Group 30" filter="url(#filter0_d)">
+<g id="Rectangle 45">
+<use xlink:href="#path1_fill" transform="translate(-17058 6781)" fill="#FFEDCA"/>
+<use xlink:href="#path1_fill" transform="translate(-17058 6781)" fill="url(#paint3_linear)" fill-opacity="0.3"/>
+</g>
+<g id="Rectangle 45.1">
+<use xlink:href="#path2_fill" transform="translate(-17020 6781)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-17068" y="6774" width="164" height="112" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="3"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.43 0 0 0 0 0.315333 0 0 0 0 0.086 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(19 46 -19 7.84783 9.5 -3.92391)">
+<stop offset="0" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 188 0L 188 183L 0 183L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 38 0L 38 92L 0 92L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 106 0L 106 92L 0 92L 0 0Z"/>
+</defs>
+</svg>

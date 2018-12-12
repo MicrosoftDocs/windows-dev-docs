@@ -1,94 +1,69 @@
 ---
-author: QuinnRadich
 title: Create apps with the Universal Windows Platform
 description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
-ms.author: quradic
-ms.date: 08/24/2017
+ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, get started
 ms.localizationpriority: medium
 ---
-
-# Tutorials
+# Start coding
 
 ![Build your app](images/build-your-app.png)
 
-Welcome to the UWP ([what's UWP again?](whats-a-uwp.md)) platform! Whether you're looking to get started with your first UWP app or are looking to use more advanced features, these tutorials will put you on the right track. You'll learn how to:
+Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you at the right information you need to start coding the Windows 10 apps you want to create.
 
--   Create UWP projects in Microsoft Visual Studio.
--   Add UI elements and code to your project.
--   Use XAML, data binding, and other fundamental UWP elements.
--   Incorporate unique UWP features such as Ink and Dial into your app.
--   Use third party libraries to add new functionality.
--   Build and debug your app on your local machine.
+Before you begin development, you should be sure to [get set up.](get-set-up.md)
 
-## Ask a bot!
+## Learning tracks
 
-If you're stuck or need some help finding the right docs, try asking the experimental chat bot below. For example, ask 'Where can I download Visual Studio?' or 'Tell me about Fluent Design". If you don't get a useful answer, try rewording your query slightly.
+The following learning tracks show you what you need to know to complete some basic tasks, and where you can find that info. They aren't tutorials, but they provide reference code to ensure you're on the right track.
 
-<iframe src='https://webchat.botframework.com/embed/DocBot4?s=T2nP6qZUXC8.cwA.lvc.AR-ZBwtULpaITu6_dAhMwrmg4R2GSLNzIoiMNFL8M7M' height="400" width="400"></iframe>
+| Task | Description |
+| --- | --- |
+| [Construct a form](construct-form-learning-track.md) | Learn how to create a form that's easy to use and looks good no matter the screen size. | 
+| [Display customers in a list](display-customers-in-list-learning-track.md) | Learn how to display and edit data in your UI. | 
+| [Save and load settings](settings-learning-track.md) | Learn how and where to save and retrieve settings. |
+| [Work with files](fileio-learning-track.md) | Learn how to read from and write to files, and which folders you do and don't have access to. | 
 
-## Write your first UWP app in your favorite programming language
+All our learning tracks are written for experienced devs who are getting familiar with Windows 10. If you're just beginning, start with our content [for new developers](#For-new-developers).
 
-If you're a new developer or if you're familiar with the Windows platform and want to get started with UWP, check out these basic tutorials:
+## For new developers
 
-* [Create your first UWP app with C# or Visual C++](your-first-app.md)
+If you're a new dev, Microsoft has many resources to teach you the basics of how to use the code and tools that you'll need for Windows 10 development. 
 
-Are you an IOS developer?
+* [Create a "Hello World" app](your-first-app.md)
 
-* Use the [Windows Bridge for iOS](https://developer.microsoft.com/windows/bridges/ios) to convert your existing code to a UWP app, and keep developing in Objective-C.
+If you want a more detailed walkthrough on the basics of coding, the C# language, Visual Studio, or the features of the Universal Windows Platform, you should check out the following resources:
 
-If you're still learning or need to refresh your memory, try reading these external resources:
+**Docs:**
 
-* [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [Get started with C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
+* [C# Quickstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [Get started with Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
-## Customize your app's layout and appearance with XAML
+**Videos**
 
-Most UWP apps use the XAML markup language to create their UI. Learn how you can use its core features to customize your app's visual presentation.
+* [Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
+* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
-* [Learn the basics of utilizing XAML in your app](xaml-basics-intro.md)
+## Using the docs
 
-Once you're familiar with what XAML can do, check out this guidance for creating a unique look for your app.
+If you've already explored our learning tracks, or if you're interested in something they don't cover, you should take your own tour through our documentation. Here's a quick overview of what you can expect to find in each area:
 
-* [Intro to app UI design](../design/basics/design-and-ui-intro.md)
-* [Layout for UWP apps](../design/layout/index.md)
-* [Controls and patterns for UWP apps](../design/controls-and-patterns/index.md)
+| Area | Description |
+| --- | --- |
+| **What's New?** | Each major update of Windows 10 sees our docs expanded with new guidance. These docs have information about the feature into and developer guidance we've added for every release, as well as lists of new APIs: </br>   [What's new for devs in the latest Windows 10 release](../whats-new/windows-10-version-latest.md) </br> Major releases aren't the only time we update our docs, though. There's always new information being added for you to explore, and we'll keep you up to date on the latest: </br>   [What's new in the docs](../whats-new/windows-docs-latest.md) |
+| **Design and UI** | All information on the visual presentation and UI of your app is contained in this area of the docs. If you're interested on the specifics of the XAML markup language or just want to create a unique look for your docs, start here: </br>   [Design basics for UWP apps](../design/basics/index.md) |
+| **Develop apps** | If you want detailed information on a specific Windows 10 feature, or are just interested in seeing what you can do with UWP development, check out this area of our docs: </br>   [UWP app features](../develop/index.md). </br> API reference for Windows 10 apps is hosted in a related set of docs, which you can find here: </br>   [Windows UWP namespaces](https://docs.microsoft.com/en-us/uwp/api/) </br>   [File and XML schemas](https://docs.microsoft.com/uwp/schemas/) |
+| **Develop games** | These docs contain information on how to develop games on Windows or Xbox. This includes setup instructions, developer programs, and instructions for programming with DirectX or Xbox features. </br>   [Getting started with game development](../gaming/getting-started.md) |
+| **Publish** | These docs contain information on how to publish your app to the Windows Store, from app submission to pricing to promotion and customer engagement: </br>   [Publish your app to the Windows Store](../publish/index.md) |
 
-## Use features unique to Windows 10
+## Other docs
 
-What makes Windows 10 special? Learn to use just some of its unique features.
+Some specialized Windows 10 platforms, like web development or Mixed Reality, have their own doc sets. If you're interested in developing an app with those features, check out their documentation:
 
-* [Using ink in your UWP app](ink-walkthrough.md)
-* [Support the Surface Dial](radialcontroller-walkthrough.md)
-* [Explore what's new in the latest vesion of Windows](../whats-new/windows-10-version-latest.md)
-
-Expand your horizons and your app's features with external tools:
-
-* [A simple 2D UWP game, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
-
-## Develop JavaScript and web apps
-
-UWP is an extremely flexible platform that supports a wide variety of languages and frameworks. Build UWP apps with JavaScript, and use your skills to build hosted web apps which can be featured in the Microsoft Store.
-
-* [Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.](create-js-apps.md)
-
-Interested in more information on building web apps?
-
-* [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
-
-## Cross-platform and mobile development
-
-* Need to target Android and iOS? Check out [Xamarin](https://www.xamarin.com).
-
-## See Also
-
-* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
-* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
-* [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
-* [Get set up](get-set-up.md)
-* [Sign up for Windows account](sign-up.md)
-
+| Docs | Description |
+| --- | --- |
+| **Microsoft Azure** | Information on cloud development and Microsoft Azure can be found in the [Microsoft Azure developer documentation.](https://docs.microsoft.com/azure/) |
+| **Web development** | Information on Microsoft Edge, WebVR, and other Windows web development features can be found in the [Microsoft Edge developer documentation.](https://docs.microsoft.com/microsoft-edge/) |
+| **Windows Mixed Reality** | Mixed reality blends real-world and virtual content into experiences where physical and digital objects coexists. Information on building apps for the Microsoft HoloLens and other immersive headsets can be found in the [Windows Mixed Reality documentation.](https://docs.microsoft.com/en-us/windows/mixed-reality/)|

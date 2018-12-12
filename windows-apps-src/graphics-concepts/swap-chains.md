@@ -4,15 +4,12 @@ description: A swap chain is a collection of buffers that are used for displayin
 ms.assetid: A38E8BB7-1E77-4D93-B321-D3572A80D5DD
 keywords:
 - Swap chains
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Swap chains
 
 

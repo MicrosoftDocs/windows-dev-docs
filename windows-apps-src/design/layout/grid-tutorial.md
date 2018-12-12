@@ -1,26 +1,21 @@
 ---
-author: muhsinking
-Description: This tutorial-style article walks the reader through the steps to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
-title: Create a simple weather app by using Grid and StackPanel
+Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+title: Use Grid and StackPanel to create a simple weather app.
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ---
-
-# Create a simple weather app by using Grid and StackPanel
+# Tutorial: Use Grid and StackPanel to create a simple weather app
 
 Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows 10. This tutorial takes 10-20 minutes.
 
 > **Important APIs**: [Grid class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## Prerequisites
-- Windows 10 and Microsoft Visual Studio 2015. [Click here to learn how to get set up with Visual Studio](../../get-started/get-set-up.md).
+- Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Click here to learn how to get set up with Visual Studio](../../get-started/get-set-up.md).
 - Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Step 1: Create a blank app

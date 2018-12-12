@@ -2,20 +2,13 @@
 title: Transform overview
 description: Matrix transformations handle a lot of the low level math of 3D graphics.
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Transform overview
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
 Matrix transformations handle a lot of the low level math of 3D graphics.
 

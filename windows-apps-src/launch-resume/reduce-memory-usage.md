@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: This article shows you how to reduce memory when your app moves to the background.
 title: Reduce memory usage when your app moves to the background state
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Free memory when your app moves to the background
 
 This article shows you how to reduce the amount of memory that your app uses when it moves to the background state so that it won't be suspended and possibly terminated.
@@ -35,7 +30,7 @@ This is the most important event to handle to keep the platform from suspending 
 
 When your app moves from the foreground to the background, the [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) event is raised. When your app returns to the foreground, the [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) event is raised. You can register handlers for these events when your app is created. In the default project template, this is done in the **App** class constructor in App.xaml.cs.
 
-Because running in the background will reduce the memory resources your app is allowed to retain, you should also register for the [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) and [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) events which you can use to check your app's current memory usage and the current limit. The handlers for these events are shown in the following examples. For more information on the application lifecycle for UWP apps, see [App lifecycle](../\launch-resume\app-lifecycle.md).
+Because running in the background will reduce the memory resources your app is allowed to retain, you should also register for the [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) and [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) events which you can use to check your app's current memory usage and the current limit. The handlers for these events are shown in the following examples. For more information on the application lifecycle for UWP apps, see [App lifecycle](..//launch-resume/app-lifecycle.md).
 
 [!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
 
@@ -60,14 +55,14 @@ Check to see if the [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library
 
 [!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-**ReduceMemoryUsage** is a helper method that you can implement to release memory when your app is over the usage limit while running in the background. How you release memory depends on the specifics of your app, but one recommended way to free up memory is to dispose of your UI and the other resources associated with your app view. To do so, ensure that you are running in the background state then set the [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) property of your app's window to `null` and unregister your UI event handlers and remove any other references you may have to the page. Failing to unregister your UI event handlers and clearing any other references you may have to the page will prevent the page resources from being released. Then call **GC.Collect** to reclaim the freed up memory immediately.
+**ReduceMemoryUsage** is a helper method that you can implement to release memory when your app is over the usage limit while running in the background. How you release memory depends on the specifics of your app, but one recommended way to free up memory is to dispose of your UI and the other resources associated with your app view. To do so, ensure that you are running in the background state then set the [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) property of your app's window to `null` and unregister your UI event handlers and remove any other references you may have to the page. Failing to unregister your UI event handlers and clearing any other references you may have to the page will prevent the page resources from being released. Then call **GC.Collect** to reclaim the freed up memory immediately. Typically you don't force garbage collection because the system will take care of it for you. In this specific case, we are reducing the amount of memory charged to this application as it goes into the background to reduce the likelihood that the system will determine that it should terminate the app to reclaim memory.
 
 [!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
 When the window content is collected, each Frame begins its disconnection process. If there are Pages in the visual object tree under the window content, these will begin firing their Unloaded event. Pages cannot be completely cleared from memory unless all references to them are removed. In the Unloaded callback, do the following to ensure that memory is quickly freed:
 * Clear and set any large data structures in your Page to `null`.
 * Unregister all event handlers that have callback methods within the Page. Make sure to register those callbacks during the Loaded event handler for the Page. The Loaded event is raised when the UI has been reconstituted and the Page has been added to the visual object tree.
-* Call `GC.Collect` at the end of the Unloaded callback to quickly garbage collect any of the large data structures you have just set to `null`.
+* Call `GC.Collect` at the end of the Unloaded callback to quickly garbage collect any of the large data structures you have just set to `null`. Again, typically you don't force garbage collection because the system will take care of it for you. In this specific case, we are reducing the amount of memory charged to this application as it goes into the background to reduce the likelihood that the system will determine that it should terminate the app to reclaim memory.
 
 [!code-cs[MainPageUnloaded](./code/ReduceMemory/cs/App.xaml.cs#SnippetMainPageUnloaded)]
 

@@ -1,6 +1,5 @@
 ---
-author: Jwmsft
-Description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -8,6 +7,7 @@ title: XAML styles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
+
 ms.localizationpriority: medium
 ---
 # XAML styles
@@ -104,7 +104,7 @@ To make styles easier to maintain and to optimize style reuse, you can create st
 
 ![styled buttons usign based-on styles.](images/styles-buttons-based-on.png)
 
-The base style targets [ContentControl](https://msdn.microsoft.com/library/windows/apps/br209365), and sets the [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Height), and [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Width) properties. The styles based on this style target [CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) and [Button](https://msdn.microsoft.com/library/windows/apps/br209265), which derive from **ContentControl**. The based-on styles set different colors for the [BorderBrush](https://msdn.microsoft.com/library/windows/apps/br209397) and [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
+The base style targets [ContentControl](https://msdn.microsoft.com/library/windows/apps/br209365), and sets the [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), and [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) properties. The styles based on this style target [CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) and [Button](https://msdn.microsoft.com/library/windows/apps/br209265), which derive from **ContentControl**. The based-on styles set different colors for the [BorderBrush](https://msdn.microsoft.com/library/windows/apps/br209397) and [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
 
 ```XAML
 <Page.Resources>

@@ -1,16 +1,11 @@
 ---
-author: libbymc
 title: Create a single-page web app with REST API backend
 description: Use popular web technologies to build a Hosted Web App for the Microsoft Store
 keywords: hosted web app, HWA, REST API, single-page app, SPA
-ms.author: libbymc
 ms.date: 05/10/2017
 ms.topic: article
-ms.prod: Microsoft Edge, Azure, Visual Studio Code
-ms.technology: web
 ms.localizationpriority: medium
 ---
-
 # Create a single-page web app with REST API backend
 
 **Build a Hosted Web App for the Microsoft Store with popular fullstack web technologies**
@@ -242,15 +237,15 @@ Try:
 
 1. Creating a new `size=2` game.
 
-    ![Start a new memory game from the Swagger UI](images\swagger_new.png)
+    ![Start a new memory game from the Swagger UI](images/swagger_new.png)
 
 2. Guessing a couple of values.
 
-    ![Guess a card from the Swagger UI](images\swagger_guess.png)
+    ![Guess a card from the Swagger UI](images/swagger_guess.png)
 
 3. Checking the game board as the game progresses.
 
-    ![Check the game state from the Swagger UI](images\swagger_game.png)
+    ![Check the game state from the Swagger UI](images/swagger_game.png)
 
 If everything looks good, your API service is ready to host on Azure! If you're running into problems, try commenting out the following lines in \data\game.js.
 
@@ -293,7 +288,7 @@ Here are some useful resources for going further:
 
  - [Azure DocumentDB docs](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## Part II: Build a single-page web appl
+## Part II: Build a single-page web application
 
 Now that you've built (or [downloaded](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) the [REST API backend](#part-i-build-a-rest-api-backend) from Part I,  you're ready to create the single-page memory game front-end with [Node](https://nodejs.org/en/), [Express](http://expressjs.com/), and [Bootstrap](http://getbootstrap.com/).
 
@@ -302,7 +297,7 @@ Part II of this tutorial will give you experience with:
 * [Node.js](https://nodejs.org/en/): to create the server hosting your game
 * [jQuery](http://jquery.com/): a JavaScript library
 * [Express](http://expressjs.com/): for the web application framework
-* [Pug](https://pugjs.org/): (formally Jade) for the templating engine
+* [Pug](https://pugjs.org/): (formerly Jade) for the templating engine
 * [Bootstrap](http://getbootstrap.com/): for the responsive layout
 * [Visual Studio Code](https://code.visualstudio.com/): for code authoring, markdown viewing, and debugging
 
@@ -376,24 +371,24 @@ You can find the files you need for this half of the tutorial in the [Start](htt
 
 3. Next, fill in the `restoreGame()` function that restores the last game played. For simplicity's sake, the app always loads the last game played. If there is not a game stored on the server, use the drop-down menu to start a new game. 
 
-Copy and paste this code into `restoreGame()`.
+	Copy and paste this code into `restoreGame()`.
 
-    ``` javascript 
-    // reset the game
-    gameBoardSize = 0;
-    cardsFlipped = 0;
+   ``` javascript 
+   // reset the game
+   gameBoardSize = 0;
+   cardsFlipped = 0;
 
-    // fetch the game state from the server 
-    $.get("http://localhost:8000/game", function (response) {
-        // store game board size
-        gameBoardSize = response.length;
+   // fetch the game state from the server 
+   $.get("http://localhost:8000/game", function (response) {
+       // store game board size
+       gameBoardSize = response.length;
 
-        // draw the game board
-        drawGameBoard(response);
-    });
-    ```
+       // draw the game board
+       drawGameBoard(response);
+   });
+   ```
 
-    The game will now fetch the game state from the server. For more information about the [`/game`](#part-i-build-a-rest-api-backend) method being used in this step, see Part I of this tutorial. If you are using Azure (or another service) to host the backend API, replace the *localhost* address above with your production URL.
+	The game will now fetch the game state from the server. For more information about the [`/game`](#part-i-build-a-rest-api-backend) method being used in this step, see Part I of this tutorial. If you are using Azure (or another service) to host the backend API, replace the *localhost* address above with your production URL.
 
 4. Now we want to create the `drawGameBoard()` function.  This function:
 

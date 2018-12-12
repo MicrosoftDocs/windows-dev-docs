@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
-title: Fast Access to file properties in UWP
+title: Fast access to file properties in UWP
 description: Efficiently gather a list of files and their properties from a library to use in a UWP app.
-ms.author: lahugh
-ms.date: 10/13/2017
+ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, file, properties
 ms.localizationpriority: medium
 ---
-
-# Fast Access to file properties in UWP 
+# Fast access to file properties in UWP 
 
 Learn how to quickly gather a list of files and their properties from a library and use those properties in an app.  
 
@@ -36,17 +31,17 @@ In this example, we will
 ### Creating the query 
 To build the query, we use a QueryOptions object to specify that the app is interested in enumerating only certain types of images files and to filter out files protected with Windows Information Protection (System.Security.EncryptionOwners). 
 
-It is important to set the properties the app is going to access using [QueryOptions.SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions#Windows_Storage_Search_QueryOptions_SetPropertyPrefetch_Windows_Storage_FileProperties_PropertyPrefetchOptions_Windows_Foundation_Collections_IIterable_System_String__). If the app accesses a property that isn’t prefetched, it will incur a significant performance penalty.
+It is important to set the properties the app is going to access using [QueryOptions.SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). If the app accesses a property that isn’t prefetched, it will incur a significant performance penalty.
 
-Setting [IndexerOption.OnlyUseIndexerAndOptimzeForIndexedProperties](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.IndexerOption) tells the system to return results as quickly as possible, but to only include the properties specified in [SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions#Windows_Storage_Search_QueryOptions_SetPropertyPrefetch_Windows_Storage_FileProperties_PropertyPrefetchOptions_Windows_Foundation_Collections_IIterable_System_String__). 
+Setting [IndexerOption.OnlyUseIndexerAndOptimzeForIndexedProperties](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.IndexerOption) tells the system to return results as quickly as possible, but to only include the properties specified in [SetPropertyPrefetch](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). 
 
 ### Paging in the results 
-Users may have thousands or millions of files in their pictures library, so calling [GetFilesAsync](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult#Windows_Storage_Search_StorageFileQueryResult_GetFilesAsync_System_UInt32_System_UInt32_) would overwhelm their machine because it creates a StorageFile for each image. This can be solved by creating a fixed number of StorageFiles at one time, processing them into the UI, and then releasing the memory. 
+Users may have thousands or millions of files in their pictures library, so calling [GetFilesAsync](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) would overwhelm their machine because it creates a StorageFile for each image. This can be solved by creating a fixed number of StorageFiles at one time, processing them into the UI, and then releasing the memory. 
 
-In our example, we do this by using [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult#Windows_Storage_Search_StorageFileQueryResult_GetFilesAsync_System_UInt32_System_UInt32_) to only fetch 100 files at a time. The app will then process the files and allow the OS to release that memory afterwards. This technique caps the maximum memory of the app and ensures the system stays responsive. Of course, you will need to adjust the number of files returned for your scenario, but to ensure a responsive experience for all users, it's recommended to not fetch more than 500 files at one time.
+In our example, we do this by using [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) to only fetch 100 files at a time. The app will then process the files and allow the OS to release that memory afterwards. This technique caps the maximum memory of the app and ensures the system stays responsive. Of course, you will need to adjust the number of files returned for your scenario, but to ensure a responsive experience for all users, it's recommended to not fetch more than 500 files at one time.
 
 
-C# Sample  
+**Example**  
 ```csharp
 StorageFolder folderToEnumerate = KnownFolders.PicturesLibrary; 
 // Check if the folder is indexed before doing anything. 
@@ -114,11 +109,12 @@ while (images.Count != 0 || index < 10000) 
 The resulting StorageFile files only contain the properties requested, but are returned 10 times faster compared to the other IndexerOptions. The app can still request access to properties not already included in the query, but there is a performance penalty to open the file and retrieve those properties.  
 
 ## Adding folders to Libraries 
-Apps can request the user to add the location to the index using [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary#Windows_Storage_StorageLibrary_RequestAddFolderAsync). Once the location is included, it will be automatically indexed and apps can use this technique to enumerate the files.
+Apps can request the user to add the location to the index using [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync). Once the location is included, it will be automatically indexed and apps can use this technique to enumerate the files.
  
 ## See also
 [QueryOptions API Reference](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Enumerate and query files and folders](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)   
+[File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+[Fast Property Access Walkthrough](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  

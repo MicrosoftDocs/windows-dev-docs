@@ -18,7 +18,7 @@ namespace ImagingWin10
 
         private async void OpenCVButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            //<SnippetOpenCVBlur>
+            // <SnippetOpenCVBlur>
             FileOpenPicker fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileOpenPicker.FileTypeFilter.Add(".jpg");
@@ -57,7 +57,7 @@ namespace ImagingWin10
             var bitmapSource = new SoftwareBitmapSource();
             await bitmapSource.SetBitmapAsync(outputBitmap);
             imageControl.Source = bitmapSource;
-            //</SnippetOpenCVBlur>
+            // </SnippetOpenCVBlur>
         }
     }
 }

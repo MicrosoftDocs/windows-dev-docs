@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 Description: Follow these best practices for geofencing in your app.
 title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, geofencing
 ms.localizationpriority: medium
 ---
-
 # Guidelines for geofencing apps
 
 
@@ -128,7 +123,6 @@ If your app needs to use a geofence with a small radius, advise users to use you
 
 * [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
-<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 

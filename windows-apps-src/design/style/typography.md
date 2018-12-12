@@ -1,216 +1,347 @@
 ---
-author: mijacobs
-description: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
-title: Typography
-ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
-template: detail.hbs
-ms.author: mijacobs
-ms.date: 05/19/2017
+description: Learn how to use typography in your app to help users understand content easily.
+title: Typography in UWP apps
+ms.date: 04/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Typography
 
-As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+![hero image](images/header-typography.svg)
 
-## Typeface
+As the visual representation of language, typography’s main task is to communicate information. Its style should never get in the way of that goal. In this article, we'll discuss how to style typography in your UWP app to help users understand content easily and efficiently.
 
-We’ve selected Segoe UI for use on all Microsoft digital designs. Segoe UI provides a wide range of characters and is designed to maintain optimal legibility across sizes and pixel densities. It offers a clean, light, and open aesthetic that complements the content of the system.
+## Font
 
-![Sample text of Segoe UI font](images/segoe-sample.png)
+You should use one font throughout your app's UI, and we recommend sticking with the default font for UWP apps, **Segoe UI**. It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.
 
-## Weights
+![Sample text of Segoe UI font](images/type/segoe-sample.svg)
 
-We approach typography with an eye to simplicity and efficiency. We choose to use one typeface, a minimum of weights and sizes, and a clear hierarchy. Positioning and alignment follow the default style for the given language. In English the sequence runs left to right, top to bottom. Relationships between text and images are clear and straightforward.
+To display non-English languages or to select a different font for your app, please see [Languages](#Languages) and [Fonts](#Fonts) for our recommended fonts for UWP apps.
 
-![Shows supported font weights. Light, semilight, regular, semibold, and bold](images/weights.png)
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Pick one font for your UI.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Don't mix multiple fonts.
+    :::column-end:::
+:::row-end:::
 
-## Line spacing
+## Size and scaling
 
-![Example of line spacing at 125%](images/line-spacing.png)
+Font sizes in UWP apps automatically scale on all devices. The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible as a 24 px font on 5" phone that's a few inches away.
 
-Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary. For example with 15px Segoe UI, 125% of 15px is 18.75px. We recommend rounding up and setting line height to 20px to stay on the 4px grid. This ensures a good reading experience and adequate space for diacritical marks. See the Type ramp section below for specific examples.
+![viewing distances for different devices](images/type/scaling-chart.svg)
 
-When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type’s line height.
+Because of how the scaling system works, you're designing in effective pixels, not actual physical pixels, and you shouldn't have to alter font sizes for different screens sizes or resolutions.
 
-![Shows how large type stacks on small type](images/line-height-stacking.png)
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Follow the UWP [type ramp](#type-ramp) sizing.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use a font size smaller than 12 px.
+    :::column-end:::
+:::row-end:::
 
-In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
+## Hierarchy
 
-```xaml
-<StackPanel Width="200">
-    <!-- Setting a bottom margin of 3px on the header
-         puts the baseline of the body text exactly 24px
-         below the baseline of the header. 24px is the
-         recommended line height for a 20px font size,
-         which is what’s set in SubtitleTextBlockStyle.
-         The bottom margin will be different for
-         different font size pairings. -->
-    <TextBlock
-        Style="{StaticResource SubtitleTextBlockStyle}"
-        Margin="0,0,0,3"
-        Text="Header text" />
-    <TextBlock
-        Style="{StaticResource BodyTextBlockStyle}"
-        TextWrapping="Wrap"
-        Text="This line of text should be positioned where the above header would have wrapped." />
-</StackPanel>
+:::row:::
+    :::column:::
+        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/type-hierarchy.svg)
+    :::column-end:::
+:::row-end:::
+
+### Type ramp
+
+The UWP type ramp establishes crucial relationships between the type styles on a page, helping users read content easily. All sizes are in effective pixels and are optimized for UWP apps running on all devices.
+
+![Type ramp](images/type/type-ramp.svg)
+
+### Using the type ramp
+
+:::row:::
+    :::column:::
+        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+```XAML
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
+<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Use "Body" for most text.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<h2>Kerning and tracking</h2>
+        Use "Base" for titles when space is constrained.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use "Caption" for primary action or any long strings.
 
-Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain its humanist integrity, the kerning and tracking settings must have specific values.
+        Use "Header" or "Subheader" if text needs to wrap.
+    :::column-end:::
+:::row-end:::
 
-Kerning should be set to “metrics” and tracking should be set to “0”.
-  </div>
-  <div class="side-by-side-content-right">
-<h2>Word and letter spacing</h2>
+## Alignment
 
-Similar to kerning and tracking, word spacing and letter spacing use specific settings to ensure optimum legibility and humanist integrity.
+The default [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) is Left, and in most instances, flush-left and ragged right provides consistent anchoring of the content and a uniform layout. For RTL languages, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
-Word spacing by default is always 100% and letter spacing should be set to “0”.
-  </div>
-</div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-![The difference between kerning and tracking](images/kerning-tracking.png)  
-  </div>
-  <div class="side-by-side-content-right">
-![The difference between word and letter spacing.](images/word-letter.png) 
-  </div>
-</div>
-</div>
+![Shows flush-left text.](images/type/alignment.svg)
 
-
->[!NOTE]
->In a XAML text control use [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) to control tracking. By default Typography.Kerning is set to “true” and FontStretch is set to “Normal”, which are the recommended values.
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<h2>Alignment</h2>
-
-Generally, we recommend that visual elements and columns of type be left-aligned. In most instances, this flush-left and ragged-right approach provides consistent anchoring of the content and a uniform layout. 
-  </div>
-  <div class="side-by-side-content-right">
-<h2>Line endings</h2>
-
-When typography is not positioned as flush left and ragged right, try to ensure even line endings and avoid hyphenation.
-  </div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-![Shows flush-left text.](images/alignment.png)  
-  </div>
-  <div class="side-by-side-content-right">
-![Shows even line endings.](images/line-endings.png) 
-  </div>
-</div>
-</div>
-
-
-## Paragraphs
-
-To provide aligned column edges, paragraphs should be indicated by skipping a line without indentation.
-
-![Shows a full line of space between paragraphs](images/paragraphs.png)
+```xaml
+<TextBlock TextAlignment="Left">
+```
 
 ## Character count
 
-If a line is too short, the eye will have to travel left and right too often, breaking the reader’s rhythm. If possible, 50–60 letters per line is best for ease of reading.
-
-Segoe provides a wide range of characters and is designed to maintain optimal legibility in both small and large sizes as well as low and high pixel densities. Using the optimal number of letters in a text column line ensures good legibility in an application.
-
-Lines that are too long will strain the eye and may disorient the user. Lines that are too short force the reader’s eye to travel too much and can cause fatigue.
-
-![Shows 3 paragraphs with different line lengths](images/character-count.png)
-
-## Hanging text alignment
-
-The horizontal alignment of icons with text can be handled in a number of ways depending on the size of the icon and the amount of text. When the text, either single or multiple lines, fits within the height of the icon, the text should be vertically centered.
-
-Once the height of the text extends beyond the height of the icon, the first line of text should align vertically and the additional text should flow on naturally below. When using characters with larger cap, ascender and descender heights, care should be taken to observe the same alignment guidance.
-
-![Shows several icon and text pairings](images/hanging-text-alignment.png)
-
->[!NOTE]
->XAML’s [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Keep to 50–60 letters per line for ease of reading.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Less than 20 characters or more than 60 characters per line is difficult to read.
+    :::column-end:::
+:::row-end:::
 
 ## Clipping and ellipses
 
-Clip by default—assume that text will wrap unless the redline specifies otherwise. When using non-wrapping text, we recommend clipping rather than using ellipses. Clipping can occur at the edge of the container, at the edge of the device, at the edge of a scrollbar, etc.
+When the amount of text extends beyond the space available, we recommend clipping text, which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).
 
-Exceptions—for containers which are not well-defined (e.g. no differentiating background color), then non-wrapping text can be redlined to use the ellipse ”…”.
+![Shows a device frame with some text clipping](images/type/clipping.svg)
 
-![Shows a device frame with some text clipping](images/clipping.png)
+```xaml
+<TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
+```
 
-## Type ramp
-The type ramp establishes a crucial design relationship from headlines to body text and ensures a clear and understandable hierarchy between the different levels. This hierarchy builds a structure which enables users to easily navigate through written communication.
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Clip text, and wrap if multiple lines are enabled.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use ellipses to avoid visual clutter.
+    :::column-end:::
+:::row-end:::
 
-<div class="uwpd-image-with-caption">
-	<img src="images/type-ramp.png" alt="Shows the type ramp" />
-	<div>All sizes are in effective pixels. For more details, see [Intro to UWP app design](../basics/design-and-ui-intro.md).</div>
-</div>
+**Note**: If containers are not well-defined (e.g. no differentiating background color), or when there is a link to see more text, then use ellipses.
 
->[!NOTE]
->Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
+## Languages 
 
+Segoe UI is our font for English, European languages, Greek, Hebrew, Armenian, Georgian, and Arabic.​ For other languages, see the following recommendations.
 
-<!--
-<div class="microsoft-internal-note">
-SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
-</div>
--->
+### Globalizing/localizing fonts
 
+Use the [LanguageFont font-mapping APIs](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) for programmatic access to the recommended font family, size, weight, and style for a particular language. The LanguageFont object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts. For more info, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
-## Primary and secondary text
+### Fonts for non-Latin languages
 
-To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#themes), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
+<table>
+<thead>
+<tr class="header">
+<th align="left">Font-family</th>
+<th align="left">Styles</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Embrima;">Ebrima</td>
+<td align="left">Regular, Bold</td>
+<td align="left">User-interface font for African scripts (Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</td>
+</tr>
+<tr class="even">
+<td style="font-family: Gadugi;">Gadugi</td>
+<td align="left">Regular, Bold</td>
+<td align="left">User-interface font for North American scripts (Canadian Syllabics, Cherokee).</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
+<td align="left">Regular, Semilight, Bold</td>
+<td align="left">User-interface font for Southeast Asian scripts (Buginese, Lao, Khmer, Thai).</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
+<td align="left">Regular</td>
+<td align="left">User-interface font for Korean.</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Microsoft JhengHei UI;">Microsoft JhengHei UI</td>
+<td align="left">Regular, Bold, Light</td>
+<td align="left">User-interface font for Traditional Chinese.</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Microsoft YaHei UI;">Microsoft YaHei UI</td>
+<td align="left">Regular, Bold, Light</td>
+<td align="left">User-interface font for Simplified Chinese.</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Myanmar Text;">Myanmar Text</td>
+<td align="left">Regular</td>
+<td align="left">Fallback font for Myanmar script.</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
+<td align="left">Regular, Semilight, Bold</td>
+<td align="left">User-interface font for South Asian scripts (Bangla, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu)</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: SimSun;">SimSun</td>
+<td align="left">Regular</td>
+<td align="left">A legacy Chinese UI font. </td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
+<td align="left">Light, Semilight, Regular, Semibold, Bold</td>
+<td align="left">User-interface font for Japanese.</td>
+</tr>
+</tbody>
+</table>
 
-<!-- Need new images
-![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
-Recommended use of SubtitleAlt. Also note the primary and secondary text usage in list items.
+## Fonts
 
-![Two phone apps using CaptionAlt](images/type-ramp-example-1.png)
-Recommended use of CaptionAlt.
--->
+### Sans-serif fonts
 
-## All caps titles
+Sans-serif fonts are a great choice for headings and UI elements. 
 
-Certain page titles should be in ALL CAPS to add yet another dimension of hierarchy. These titles should use BaseAlt with the character spacing set to 75 thousandths of an em. This treatment may also be used to help with app navigation.
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Font-family</th>
+<th align="left">Styles</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left" style="font-family: Arial;">Arial</td>
+<td align="left">Regular, Italic, Bold, Bold Italic, Black</td>
+<td align="left">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew) Black weight supports European scripts only.</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Calibri;">Calibri</td>
+<td align="left">Regular, Italic, Bold, Bold Italic, Light, Light Italic</td>
+<td align="left">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic and Hebrew). Arabic available in the uprights only.</td>
+</tr>
+<td style="font-family: Consolas;">Consolas</td>
+<td>Regular, Italic, Bold, Bold Italic</td>
+<td>Fixed width font that supports European scripts (Latin, Greek and Cyrillic).</td>
+</tr>
 
-However, proper names change their meaning when capitalized in certain languages, so any page titles based on names or user input should *not* be converted to all caps.
+<tr>
+<td style="font-family: Segoe UI;">Segoe UI</td>
+<td>Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
+<td>User-interface font for European and Middle East scripts (Arabic, Armenian, Cyrillic, Georgian, Greek, Hebrew, Latin), and also Lisu script.</td>
+</tr>
 
+<tr class="even">
+<td style="font-family: Selawik;">Selawik</td>
+<td align="left">Regular, Semilight, Light, Bold, Semibold</td>
+<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. <a href="https://github.com/Microsoft/Selawik">Get Selawik on GitHub.</a></td>
+</tr>
 
-<!-- Need new images
-![Shows several apps where they should and should not use all caps](images/all-caps.png)
-Green shows where all caps should be used. Red shows where it should not.
--->
+</tbody>
+</table>
 
-## Do’s and don’ts
-* Use Body for most text
-* Use Base for titles when space is constrained
-* Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
-* Don’t use Caption for long strings or any primary action
-* Don’t use Header or Subheader if text needs to wrap
-* Don’t combine Subtitle and SubtitleAlt on the same page
+### Serif fonts
 
+Serif fonts are good for presenting large amounts of text. 
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Font-family</th>
+<th align="left">Styles</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Cambria;">Cambria</td>
+<td align="left">Regular</td>
+<td align="left">Serif font that supports European scripts (Latin, Greek, Cyrillic).</td>
+</tr>
+<tr class="even">
+<td style="font-family: Courier New;">Courier New</td>
+<td align="left">Regular, Italic, Bold, Bold Italic</td>
+<td align="left">Serif fixed width font supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew).</td>
+</tr>
+<tr class="odd">
+<td style="font-family: Georgia;">Georgia</td>
+<td align="left">Regular, Italic, Bold, Bold Italic</td>
+<td align="left">Supports European scripts (Latin, Greek and Cyrillic).</td>
+</tr>
+
+<tr class="even">
+<td style="font-family: Times New Roman;">Times New Roman</td>
+<td align="left">Regular, Italic, Bold, Bold Italic</td>
+<td align="left">Legacy font that supports European scripts (Latin, Greek, Cyrillic, Arabic, Armenian, Hebrew).</td>
+</tr>
+
+</tbody>
+</table>
+
+### Symbols and icons
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Font-family</th>
+<th align="left">Styles</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Segoe MDL2 Assets</td>
+<td align="left">Regular</td>
+<td align="left">User-interface font for app icons. For more info, see the <a href="segoe-ui-symbol-font.md">Segoe MDL2 assets article</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">Segoe UI Emoji</td>
+<td align="left">Regular</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Segoe UI Symbol</td>
+<td align="left">Regular</td>
+<td align="left">Fallback font for symbols</td>
+</tr>
+</tbody>
+</table>
 
 ## Related articles
 
 * [Text controls](../controls-and-patterns/text-controls.md)
-* [Fonts](../style/fonts.md)
-* [Segoe MDL2 icons](segoe-ui-symbol-font.md)
+* [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
+* [XAML styles](../controls-and-patterns/xaml-styles.md)
+* [Microsoft Typography](https://docs.microsoft.com/typography/)

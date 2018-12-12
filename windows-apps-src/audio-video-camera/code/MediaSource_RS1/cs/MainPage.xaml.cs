@@ -17,13 +17,14 @@ using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Media.Core;
 using Windows.Media.Playback;
 
-//</SnippetUsing>
+// </SnippetUsing>
 
 using Windows.Media.Streaming.Adaptive;
+using Windows.Networking.BackgroundTransfer;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -34,96 +35,96 @@ namespace MediaSource_RS1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareMediaSource>
+        // <SnippetDeclareMediaSource>
         MediaSource _mediaSource;
-        //</SnippetDeclareMediaSource>
+        // </SnippetDeclareMediaSource>
 
-        //<SnippetDeclareMediaPlaybackItem>
+        // <SnippetDeclareMediaPlaybackItem>
         MediaPlaybackItem _mediaPlaybackItem;
-        //</SnippetDeclareMediaPlaybackItem>
+        // </SnippetDeclareMediaPlaybackItem>
 
         MediaSource _mediaSource2;
         MediaPlaybackItem _mediaPlaybackItem2;
 
-        //<SnippetDeclareMediaPlaybackList>
+        // <SnippetDeclareMediaPlaybackList>
         MediaPlaybackList _mediaPlaybackList;
-        //</SnippetDeclareMediaPlaybackList>
+        // </SnippetDeclareMediaPlaybackList>
 
-        //<SnippetDeclareMediaPlayer>
+        // <SnippetDeclareMediaPlayer>
         MediaPlayer _mediaPlayer;
-        //</SnippetDeclareMediaPlayer>
+        // </SnippetDeclareMediaPlayer>
 
         public MainPage()
         {
             this.InitializeComponent();
-
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
             //PlayMediaPlaybackItemWithCustomTracks();
             //PlayMediaPlaybackList();
             //InitSpeechCueScenario();
         }
+        
         #region MediaSource
-        private void PlayMediaSourceButton_Click(object sender, RoutedEventArgs e)
-        {
-            PlayMediaSource();
-        }
+        private async void PlayMediaSourceButton_Click(object sender, RoutedEventArgs e) => await PlayMediaSource();        
 
-        private async void PlayMediaSource()
+        private async Task PlayMediaSource()
         {
-            //<SnippetPlayMediaSource>
+            // <SnippetPlayMediaSource>
             //Create a new picker
             var filePicker = new Windows.Storage.Pickers.FileOpenPicker();
-
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
-
+            
+            //make a collection of all video types you want to support (for testing we are adding just 3).
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv"};   
+               
+            //Add your fileTypes to the FileTypeFilter list of filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                filePicker.FileTypeFilter.Add(fileType);
+            }
+            
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
 
             //Retrieve file from picker
             StorageFile file = await filePicker.PickSingleFileAsync();
 
-            if (file != null)
+            if (!(file is null))
             {
                 _mediaSource = MediaSource.CreateFromStorageFile(file);
                 _mediaPlayer = new MediaPlayer();
                 _mediaPlayer.Source = _mediaSource;
                 mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             }
-            //</SnippetPlayMediaSource>
+            // </SnippetPlayMediaSource>
 
-            //<SnippetPlay>
+            // <SnippetPlay>
             _mediaPlayer.Play();
-            //</SnippetPlay>
+            // </SnippetPlay>
 
-            //<SnippetAutoPlay>
+            // <SnippetAutoPlay>
             _mediaPlayer.AutoPlay = true;
-            //</SnippetAutoPlay>
+            // </SnippetAutoPlay>
         }
         #endregion
 
         #region MediaPlaybackItem
-        private void PlayMediaPlaybackItemButton_Click(object sender, RoutedEventArgs e)
-        {
-            PlayMediaPlaybackItem();
-        }
+        private void PlayMediaPlaybackItemButton_Click(object sender, RoutedEventArgs e) => PlayMediaPlaybackItem();
 
         private async void PlayMediaPlaybackItem()
         {
             //Create a new picker
             FileOpenPicker filePicker = new FileOpenPicker();
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
+            //make a collection of all video types you want to support (for testing we are adding just 3).
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv"};   
+               
+            //Add your fileTypes to the FileTypeFilter list of filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
@@ -131,43 +132,47 @@ namespace MediaSource_RS1
             //Retrieve file from picker
             StorageFile file = await filePicker.PickSingleFileAsync();
 
-            //<SnippetPlayMediaPlaybackItem>
-            _mediaSource = MediaSource.CreateFromStorageFile(file);
-            _mediaPlaybackItem = new MediaPlaybackItem(_mediaSource);
+            if (!(file is null))
+            {
+                // <SnippetPlayMediaPlaybackItem>
+                _mediaSource = MediaSource.CreateFromStorageFile(file);
+                _mediaPlaybackItem = new MediaPlaybackItem(_mediaSource);
 
-            _mediaPlaybackItem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
-            _mediaPlaybackItem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
-            _mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
+                _mediaPlaybackItem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
+                _mediaPlaybackItem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
+                _mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
 
-            _mediaPlayer = new MediaPlayer();
-            _mediaPlayer.Source = _mediaPlaybackItem;
-            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-            //</SnippetPlayMediaPlaybackItem>
+                _mediaPlayer = new MediaPlayer();
+                _mediaPlayer.Source = _mediaPlaybackItem;
+                mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+                // </SnippetPlayMediaPlaybackItem>
+            }
+            
+            if (!(_mediaPlaybackItem is null))
+            {
+                var mediaPlaybackItem = _mediaPlaybackItem;
+                // <SnippetSetVideoProperties>
+                MediaItemDisplayProperties props = mediaPlaybackItem.GetDisplayProperties();
+                props.Type = Windows.Media.MediaPlaybackType.Video;
+                props.VideoProperties.Title = "Video title";
+                props.VideoProperties.Subtitle = "Video subtitle";
+                props.VideoProperties.Genres.Add("Documentary");
+                mediaPlaybackItem.ApplyDisplayProperties(props);
+                // </SnippetSetVideoProperties>
 
-
-            var mediaPlaybackItem = _mediaPlaybackItem;
-            //<SnippetSetVideoProperties>
-            MediaItemDisplayProperties props = mediaPlaybackItem.GetDisplayProperties();
-            props.Type = Windows.Media.MediaPlaybackType.Video;
-            props.VideoProperties.Title = "Video title";
-            props.VideoProperties.Subtitle = "Video subtitle";
-            props.VideoProperties.Genres.Add("Documentary");
-            mediaPlaybackItem.ApplyDisplayProperties(props);
-            //</SnippetSetVideoProperties>
-
-            //<SnippetSetMusicProperties>
-            props = mediaPlaybackItem.GetDisplayProperties();
-            props.Type = Windows.Media.MediaPlaybackType.Music;
-            props.MusicProperties.Title = "Song title";
-            props.MusicProperties.Artist = "Song artist";
-            props.MusicProperties.Genres.Add("Polka");
-            mediaPlaybackItem.ApplyDisplayProperties(props);
-            //</SnippetSetMusicProperties>
-
+                // <SnippetSetMusicProperties>
+                props = mediaPlaybackItem.GetDisplayProperties();
+                props.Type = Windows.Media.MediaPlaybackType.Music;
+                props.MusicProperties.Title = "Song title";
+                props.MusicProperties.Artist = "Song artist";
+                props.MusicProperties.Genres.Add("Polka");
+                mediaPlaybackItem.ApplyDisplayProperties(props);
+                // </SnippetSetMusicProperties>
+            }
         }
 
 
-        //<SnippetVideoTracksChanged>
+        // <SnippetVideoTracksChanged>
         private async void MediaPlaybackItem_VideoTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -177,23 +182,23 @@ namespace MediaSource_RS1
                 {
                     var videoTrack = sender.VideoTracks[index];
                     ComboBoxItem item = new ComboBoxItem();
-                    item.Content = String.IsNullOrEmpty(videoTrack.Label) ? "Track " + index : videoTrack.Label;
+                    item.Content = String.IsNullOrEmpty(videoTrack.Label) ? $"Track {index}" : videoTrack.Label;
                     item.Tag = index;
                     videoTracksComboBox.Items.Add(item);
                 }
             });
         }
-        //</SnippetVideoTracksChanged>
+        // </SnippetVideoTracksChanged>
 
-        //<SnippetVideoTracksSelectionChanged>
+        // <SnippetVideoTracksSelectionChanged>
         private void videoTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
             _mediaPlaybackItem.VideoTracks.SelectedIndex = trackIndex;
         }
-        //</SnippetVideoTracksSelectionChanged>
+        // </SnippetVideoTracksSelectionChanged>
 
-        //<SnippetAudioTracksChanged>
+        // <SnippetAudioTracksChanged>
         private async void PlaybackItem_AudioTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -203,23 +208,23 @@ namespace MediaSource_RS1
                 {
                     var audioTrack = sender.AudioTracks[index];
                     ComboBoxItem item = new ComboBoxItem();
-                    item.Content = String.IsNullOrEmpty(audioTrack.Label) ? "Track " + index : audioTrack.Label;
+                    item.Content = String.IsNullOrEmpty(audioTrack.Label) ? $"Track {index}" : audioTrack.Label;
                     item.Tag = index;
                     videoTracksComboBox.Items.Add(item);
                 }
             });
         }
-        //</SnippetAudioTracksChanged>
+        // </SnippetAudioTracksChanged>
 
-        //<SnippetAudioTracksSelectionChanged>
+        // <SnippetAudioTracksSelectionChanged>
         private void audioTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
             _mediaPlaybackItem.AudioTracks.SelectedIndex = trackIndex;
         }
-        //</SnippetAudioTracksSelectionChanged>
+        // </SnippetAudioTracksSelectionChanged>
 
-        //<SnippetTimedMetadataTracksChanged>
+        // <SnippetTimedMetadataTracksChanged>
         private async void MediaPlaybackItem_TimedMetadataTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -230,7 +235,7 @@ namespace MediaSource_RS1
 
                     ToggleButton toggle = new ToggleButton()
                     {
-                        Content = String.IsNullOrEmpty(timedMetadataTrack.Label) ? "Track " + index : timedMetadataTrack.Label,
+                        Content = String.IsNullOrEmpty(timedMetadataTrack.Label) ? $"Track {index}" : timedMetadataTrack.Label,
                         Tag = (uint)index
                     };
                     toggle.Checked += Toggle_Checked;
@@ -240,25 +245,22 @@ namespace MediaSource_RS1
                 }
             });
         }
-        //</SnippetTimedMetadataTracksChanged>
+        // </SnippetTimedMetadataTracksChanged>
 
-        //<SnippetToggleChecked>
-        private void Toggle_Checked(object sender, RoutedEventArgs e)
-        {
+        // <SnippetToggleChecked>
+        private void Toggle_Checked(object sender, RoutedEventArgs e) =>         
             _mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
                 TimedMetadataTrackPresentationMode.PlatformPresented);
-        }
-        //</SnippetToggleChecked>
-        //<SnippetToggleUnchecked>
-        private void Toggle_Unchecked(object sender, RoutedEventArgs e)
-        {
+        
+        // </SnippetToggleChecked>
+        // <SnippetToggleUnchecked>
+        private void Toggle_Unchecked(object sender, RoutedEventArgs e) =>         
             _mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
                 TimedMetadataTrackPresentationMode.Disabled);
-        }
-        //</SnippetToggleUnchecked>
+        
+        // </SnippetToggleUnchecked>
 
-
-        //<SnippetAudioTracksChanged_CodecCheck>
+        // <SnippetAudioTracksChanged_CodecCheck>
         private async void SnippetAudioTracksChanged_CodecCheck(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
             if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -270,13 +272,12 @@ namespace MediaSource_RS1
                 {
                     if (decoderStatus == MediaDecoderStatus.Degraded)
                     {
-                        ShowMessageToUser(string.Format("Track {0} can play but playback will be degraded. {1}",
-                            insertedTrack.Name, insertedTrack.SupportInfo.DegradationReason));
+                        ShowMessageToUser($"Track {insertedTrack.Name} can play but playback will be degraded. {insertedTrack.SupportInfo.DegradationReason}");
                     }
                     else
                     {
                         // status is MediaDecoderStatus.UnsupportedSubtype or MediaDecoderStatus.UnsupportedEncoderProperties
-                        ShowMessageToUser(string.Format("Track {0} uses an unsupported media format.", insertedTrack.Name));
+                        ShowMessageToUser($"Track {insertedTrack.Name} uses an unsupported media format.");
                     }
 
                     Windows.Media.MediaProperties.AudioEncodingProperties props = insertedTrack.GetEncodingProperties();
@@ -289,9 +290,9 @@ namespace MediaSource_RS1
             }
 
         }
-        //</SnippetAudioTracksChanged_CodecCheck>
+        // </SnippetAudioTracksChanged_CodecCheck>
 
-        //<SnippetOpenFailed>
+        // <SnippetOpenFailed>
         private async void InsertedTrack_OpenFailed(AudioTrack sender, AudioTrackOpenFailedEventArgs args)
         {
             LogError(args.ExtendedError.HResult);
@@ -301,7 +302,7 @@ namespace MediaSource_RS1
                 await SelectAnotherTrackOrSkipPlayback(sender.PlaybackItem);
             }
         }
-        //</SnippetOpenFailed>
+        // </SnippetOpenFailed>
 
 
         public async Task HelpUserInstallCodec(Windows.Media.MediaProperties.AudioEncodingProperties props)
@@ -309,18 +310,14 @@ namespace MediaSource_RS1
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
                 // This is fake async so the method can be called async
-
-            }
-            );
+            });
         }
         public async Task SelectAnotherTrackOrSkipPlayback(MediaPlaybackItem item)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
                 // This is fake async so the method can be called async
-
-            }
-            );
+            });
         }
 
         public void LogError(int hresult)
@@ -336,12 +333,12 @@ namespace MediaSource_RS1
         #endregion
 
         #region timedtextsource
-        //<SnippetTimedTextSourceMap>
+        // <SnippetTimedTextSourceMap>
         Dictionary<TimedTextSource, Uri> timedTextSourceMap;
-        //</SnippetTimedTextSourceMap>
+        // </SnippetTimedTextSourceMap>
         private void AddExternalMetadata()
         {
-            //<SnippetTimedTextSource>
+            // <SnippetTimedTextSource>
             // Create the TimedTextSource and add entry to URI map
             var timedTextSourceUri_En = new Uri("http://contoso.com/MyClipTimedText_en.srt");
             var timedTextSource_En = TimedTextSource.CreateFromUri(timedTextSourceUri_En);
@@ -364,17 +361,17 @@ namespace MediaSource_RS1
             _mediaPlayer.Source = _mediaPlaybackItem;
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
 
-            //</SnippetTimedTextSource>
+            // </SnippetTimedTextSource>
         }
-        //<SnippetTimedTextSourceResolved>
+        // <SnippetTimedTextSourceResolved>
         private void TimedTextSource_Resolved(TimedTextSource sender, TimedTextSourceResolveResultEventArgs args)
         {
             var timedTextSourceUri = timedTextSourceMap[sender];
 
-            if (args.Error != null)
+            if (!(args.Error is null))
             {
                 // Show that there was an error in your UI
-                ShowMessageToUser("There was an error resolving track: " + timedTextSourceUri);
+                ShowMessageToUser($"There was an error resolving track: {timedTextSourceUri}");
                 return;
             }
 
@@ -389,23 +386,25 @@ namespace MediaSource_RS1
                 args.Tracks[0].Label = "Portuguese";
             }
         }
-        //</SnippetTimedTextSourceResolved>
+        // </SnippetTimedTextSourceResolved>
         #endregion
 
         #region custommetadata
-        private void PlayMediaPlaybackItemWithCustomTracks_Click(object sender, RoutedEventArgs e)
-        {
-            PlayMediaPlaybackItemWithCustomTracks();
-        }
+        private void PlayMediaPlaybackItemWithCustomTracks_Click(object sender, RoutedEventArgs e) => PlayMediaPlaybackItemWithCustomTracks();
+        
         private async void PlayMediaPlaybackItemWithCustomTracks()
         {
             //Create a new picker
             FileOpenPicker filePicker = new FileOpenPicker();
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
+            //make a collection of all video types you want to support (for testing we are adding just 3).
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv"};   
+               
+            //Add your fileTypes to the FileTypeFilter list of filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
@@ -413,26 +412,27 @@ namespace MediaSource_RS1
             //Retrieve file from picker
             StorageFile file = await filePicker.PickSingleFileAsync();
 
-            _mediaSource = MediaSource.CreateFromStorageFile(file);
-            _mediaPlaybackItem = new MediaPlaybackItem(_mediaSource);
+            if(!(file is null))
+            { 
+                _mediaSource = MediaSource.CreateFromStorageFile(file);
+                _mediaPlaybackItem = new MediaPlaybackItem(_mediaSource);
 
+                _mediaPlaybackItem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
+                _mediaPlaybackItem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
+                _mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
 
+                AddTimedMetaDataTrack_Data();
+                AddTimedMetaDataTrack_Text();
 
-            _mediaPlaybackItem.AudioTracksChanged += PlaybackItem_AudioTracksChanged;
-            _mediaPlaybackItem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
-            _mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
-
-            AddTimedMetaDataTrack_Data();
-            AddTimedMetaDataTrack_Text();
-
-            _mediaPlayer = new MediaPlayer();
-            _mediaPlayer.Source = _mediaPlaybackItem;
-            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+                _mediaPlayer = new MediaPlayer();
+                _mediaPlayer.Source = _mediaPlaybackItem;
+                mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+            }
         }
 
         private void AddTimedMetaDataTrack_Data()
         {
-            //<SnippetAddDataTrack>
+            // <SnippetAddDataTrack>
             TimedMetadataTrack metadataTrack = new TimedMetadataTrack("ID_0", "en-us", TimedMetadataKind.Data);
             metadataTrack.Label = "Custom data track";
             metadataTrack.CueEntered += MetadataTrack_DataCueEntered;
@@ -446,7 +446,6 @@ namespace MediaSource_RS1
 
             for (int i = 0; i < 10; i++)
             {
-
                 DataCue cue = new DataCue();
                 cue.Id = "ID_" + i;
                 cue.Data = buffer;
@@ -455,19 +454,17 @@ namespace MediaSource_RS1
                 cue.Duration = TimeSpan.FromSeconds(2);
 
                 metadataTrack.AddCue(cue);
-
             }
 
             _mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
-            //</SnippetAddDataTrack>
+            // </SnippetAddDataTrack>
         }
 
         private void MetadataTrack_CueExited(TimedMetadataTrack sender, MediaCueEventArgs args)
         {
-
         }
 
-        //<SnippetDataCueEntered>
+        // <SnippetDataCueEntered>
         private void MetadataTrack_DataCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
         {
             DataCue cue = (DataCue)args.Cue;
@@ -475,16 +472,14 @@ namespace MediaSource_RS1
             System.Diagnostics.Debug.WriteLine("Cue entered: " + data);
             System.Diagnostics.Debug.WriteLine("Custom prop value: " + cue.Properties["AdUrl"]);
         }
-        //</SnippetDataCueEntered>
+        // </SnippetDataCueEntered>
 
         private void AddTimedMetaDataTrack_Text()
         {
-
-            //<SnippetAddTextTrack>
+            // <SnippetAddTextTrack>
             TimedMetadataTrack metadataTrack = new TimedMetadataTrack("TrackID_0", "en-us", TimedMetadataKind.Caption);
             metadataTrack.Label = "Custom text track";
             metadataTrack.CueEntered += MetadataTrack_TextCueEntered;
-
 
             for (int i = 0; i < 10; i++)
             {
@@ -500,42 +495,42 @@ namespace MediaSource_RS1
             }
 
             _mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
-            //</SnippetAddTextTrack>
+            // </SnippetAddTextTrack>
         }
 
-        //<SnippetTextCueEntered>
+        // <SnippetTextCueEntered>
         private void MetadataTrack_TextCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
         {
             TimedTextCue cue = (TimedTextCue)args.Cue;
             System.Diagnostics.Debug.WriteLine("Cue entered: " + cue.Id + " " + cue.Lines[0].Text);
         }
-        //</SnippetTextCueEntered>
+        // </SnippetTextCueEntered>
 
 
         #endregion
 
         #region MediaPlaybackList
 
-        private void MediaPlaybackListButton_Click(object sender, RoutedEventArgs e)
-        {
-            PlayMediaPlaybackList();
-        }
+        private void MediaPlaybackListButton_Click(object sender, RoutedEventArgs e) => PlayMediaPlaybackList();        
 
         private async void PlayMediaPlaybackList()
         {
             //Create a new picker
             FileOpenPicker filePicker = new FileOpenPicker();
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
-            filePicker.FileTypeFilter.Add(".mp3");
+            //make a collection of all video types you want to support (for testing we are adding just 4).
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv", ".mp3"};   
+               
+            //Add your fileTypes to the FileTypeFilter list of filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
 
-            //<SnippetPlayMediaPlaybackList>
+            // <SnippetPlayMediaPlaybackList>
             _mediaPlaybackList = new MediaPlaybackList();
 
             var files = await filePicker.PickMultipleFilesAsync();
@@ -552,50 +547,42 @@ namespace MediaSource_RS1
 
             _mediaPlaybackList.MaxPlayedItemsToKeepOpen = 3;
 
-
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = _mediaPlaybackList;
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-            //</SnippetPlayMediaPlaybackList>
+            // </SnippetPlayMediaPlaybackList>
 
             for (int i = 0; i < _mediaPlaybackList.Items.Count; i++)
             {
 
                 var props = _mediaPlaybackList.Items[i].GetDisplayProperties();
                 props.Type = Windows.Media.MediaPlaybackType.Music;
-                props.MusicProperties.Title = "Track title " + i;
-                props.MusicProperties.Artist = "Track artist " + i;
+                props.MusicProperties.Title = $"Track title {i}";
+                props.MusicProperties.Artist = $"Track artist {i}";
                 _mediaPlaybackList.Items[i].ApplyDisplayProperties(props);
             }
         }
 
-        //<SnippetDeclareItemQueue>
+        // <SnippetDeclareItemQueue>
         Queue<MediaPlaybackItem> _playbackItemQueue = new Queue<MediaPlaybackItem>();
         int maxCachedItems = 3;
-        //</SnippetDeclareItemQueue>
+        // </SnippetDeclareItemQueue>
 
-        //<SnippetMediaPlaybackListItemChanged>
-        private void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
-        {
+        // <SnippetMediaPlaybackListItemChanged>
+        private void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args) => 
             LogTelemetryData($"CurrentItemChanged reason: {args.Reason.ToString()}");
-        }
-        //</SnippetMediaPlaybackListItemChanged>
+        
+        // </SnippetMediaPlaybackListItemChanged>
 
-        //<SnippetPrevButton>
-        private void prevButton_Click(object sender, RoutedEventArgs e)
-        {
-            _mediaPlaybackList.MovePrevious();
-        }
-        //</SnippetPrevButton>
+        // <SnippetPrevButton>
+        private void prevButton_Click(object sender, RoutedEventArgs e) =>  _mediaPlaybackList.MovePrevious();        
+        // </SnippetPrevButton>
 
-        //<SnippetNextButton>
-        private void nextButton_Click(object sender, RoutedEventArgs e)
-        {
-            _mediaPlaybackList.MoveNext();
-        }
-        //</SnippetNextButton>
+        // <SnippetNextButton>
+        private void nextButton_Click(object sender, RoutedEventArgs e) => _mediaPlaybackList.MoveNext();
+        // </SnippetNextButton>
 
-        //<SnippetShuffleButton>
+        // <SnippetShuffleButton>
         private async void shuffleButton_Click(object sender, RoutedEventArgs e)
         {
             _mediaPlaybackList.ShuffleEnabled = !_mediaPlaybackList.ShuffleEnabled;
@@ -606,9 +593,9 @@ namespace MediaSource_RS1
                     _mediaPlaybackList.ShuffleEnabled ? Windows.UI.Text.FontWeights.Bold : Windows.UI.Text.FontWeights.Light;
             });
         }
-        //</SnippetShuffleButton>
+        // </SnippetShuffleButton>
 
-        //<SnippetRepeatButton>
+        // <SnippetRepeatButton>
         private async void autoRepeatButton_Click(object sender, RoutedEventArgs e)
         {
             _mediaPlaybackList.AutoRepeatEnabled = !_mediaPlaybackList.AutoRepeatEnabled;
@@ -619,34 +606,29 @@ namespace MediaSource_RS1
                     _mediaPlaybackList.AutoRepeatEnabled ? Windows.UI.Text.FontWeights.Bold : Windows.UI.Text.FontWeights.Light;
             });
         }
-        //</SnippetRepeatButton>
-
-
-
-        //<SnippetItemOpened>
+        // </SnippetRepeatButton>
+        
+        // <SnippetItemOpened>
         private void MediaPlaybackList_ItemOpened(MediaPlaybackList sender, MediaPlaybackItemOpenedEventArgs args)
         {
-
-
         }
-        //</SnippetItemOpened>
+        // </SnippetItemOpened>
 
-        //<SnippetItemFailed>
+        // <SnippetItemFailed>
         private void MediaPlaybackList_ItemFailed(MediaPlaybackList sender, MediaPlaybackItemFailedEventArgs args)
         {
             LogError(args.Error.ErrorCode.ToString());
             LogError(args.Error.ExtendedError.HResult);
-
         }
-        //</SnippetItemFailed>
+        // </SnippetItemFailed>
 
         private void DisablePlaybackForItemsButton_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetRegisterNetworkStatusChanged>
+            // <SnippetRegisterNetworkStatusChanged>
             Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
-            //</SnippetRegisterNetworkStatusChanged>
+            // </SnippetRegisterNetworkStatusChanged>
         }
-        //<SnippetNetworkStatusChanged>
+        // <SnippetNetworkStatusChanged>
         private void NetworkInformation_NetworkStatusChanged(object sender)
         {
             if (Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile() == null)
@@ -669,7 +651,7 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetNetworkStatusChanged>
+        // </SnippetNetworkStatusChanged>
         #endregion
 
         #region MediaBinder
@@ -680,7 +662,7 @@ namespace MediaSource_RS1
         }
         private void InitMediaBinder()
         {
-            //<SnippetInitMediaBinder>
+            // <SnippetInitMediaBinder>
             _mediaPlaybackList = new MediaPlaybackList();
 
             var binder = new MediaBinder();
@@ -696,9 +678,9 @@ namespace MediaSource_RS1
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = _mediaPlaybackList;
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-            //</SnippetInitMediaBinder>
+            // </SnippetInitMediaBinder>
         }
-        //<SnippetBinderBinding>
+        // <SnippetBinderBinding>
         private void Binder_Binding(MediaBinder sender, MediaBindingEventArgs args)
         {
             // Get a deferral if you need to perform async operations
@@ -710,7 +692,7 @@ namespace MediaSource_RS1
             // Call complete after your async operations are complete
             // deferral.Complete();
         }
-        //</SnippetBinderBinding>
+        // </SnippetBinderBinding>
 
         IReadOnlyList<StorageFile> binderFiles;
 
@@ -718,19 +700,20 @@ namespace MediaSource_RS1
         {
             var filePicker = new FileOpenPicker();
 
-            //Add filetype filters.  In this case wmv and mp4.
-            filePicker.FileTypeFilter.Add(".wmv");
-            filePicker.FileTypeFilter.Add(".mp4");
-            filePicker.FileTypeFilter.Add(".mkv");
-            filePicker.FileTypeFilter.Add(".mp3");
+            //make a collection of all video types you want to support (for testing we are adding just 4).
+            string[] fileTypes = new string[] {".wmv", ".mp4", ".mkv", ".mp3"};   
+               
+            //Add your fileTypes to the FileTypeFilter list of filePicker.
+            foreach (string fileType in fileTypes)
+            {
+                filePicker.FileTypeFilter.Add(fileType);
+            }
 
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
             _mediaPlaybackList = new MediaPlaybackList();
 
             binderFiles = await filePicker.PickMultipleFilesAsync();
-
-
 
             _mediaPlaybackList = new MediaPlaybackList();
 
@@ -763,13 +746,12 @@ namespace MediaSource_RS1
             }
         }
 
-        //<SnippetBinderBindingAMS>
+        // <SnippetBinderBindingAMS>
         private async void Binder_Binding_AdaptiveMediaSource(MediaBinder sender, MediaBindingEventArgs args)
         {
-
             var deferral = args.GetDeferral();
 
-            var contentUri = new Uri("http://contoso.com/media/" + args.MediaBinder.Token);
+            var contentUri = new Uri($"http://contoso.com/media/{args.MediaBinder.Token}");
             AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(contentUri);
 
             if (result.MediaSource != null)
@@ -780,40 +762,55 @@ namespace MediaSource_RS1
 
             deferral.Complete();
         }
-        //</SnippetBinderBindingAMS>
-        //<SnippetAMSBindingCurrentItemChanged>
+        // </SnippetBinderBindingAMS>
+        // <SnippetAMSBindingCurrentItemChanged>
         private void AMSMediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
         {
-            if (args.NewItem != null)
+            if (!(args.NewItem is null))
             {
                 var ams = args.NewItem.Source.AdaptiveMediaSource;
-                if (ams != null)
+                if (!(ams is null))
                 {
                     ams.PlaybackBitrateChanged += Ams_PlaybackBitrateChanged;
                 }
             }
         }
-        //</SnippetAMSBindingCurrentItemChanged>
+        // </SnippetAMSBindingCurrentItemChanged>
 
-        private void Ams_PlaybackBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourcePlaybackBitrateChangedEventArgs args)
-        {
-            throw new NotImplementedException();
-        }
+        private void Ams_PlaybackBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourcePlaybackBitrateChangedEventArgs args) => throw new NotImplementedException();
         #endregion
 
+        #region DownloadOperation
 
+        private async void MediaSourceDownloadOperation()
+        {
+            //<SnippetCreateMediaSourceFromDownload>
+            StorageFile destinationFile = await KnownFolders.VideosLibrary.CreateFileAsync("file.mp4", CreationCollisionOption.GenerateUniqueName);
+
+            var downloader = new BackgroundDownloader();
+            var downloadOperation = downloader.CreateDownload(new Uri("http://server.com/file.mp4"), destinationFile);
+            MediaSource mediaSource =
+                  MediaSource.CreateFromDownloadOperation(downloadOperation);
+            //</SnippetCreateMediaSourceFromDownload>
+            //<SnippetStartDownload>
+            downloadOperation.IsRandomAccessRequired = true;
+            var startAsyncTask = downloadOperation.StartAsync().AsTask();
+            mediaPlayerElement.Source = mediaSource;
+            //</SnippetStartDownload>
+
+        }
+
+        #endregion
 
         private void ShowMessageToUser(string s) { }
         private void LogTelemetryData(string s) { }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_mediaPlayer != null)
+            if (!(_mediaPlayer is null))
             {
                 _mediaPlayer.Play();
             }
         }
-
-
     }
 }

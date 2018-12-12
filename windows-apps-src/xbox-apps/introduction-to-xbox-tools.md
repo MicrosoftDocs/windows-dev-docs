@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Introduction to Xbox One tools
 description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
-ms.author: elcowle
 ms.date: 10/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, xbox one, tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ---
-
 # Introduction to Xbox One tools
 
 This section covers how to access the Xbox Device Portal through the Dev Home app.
@@ -26,10 +21,6 @@ For more information about Dev Home, see [Developer Home on the Console (Dev Hom
 
 ## Xbox Device Portal
 The Xbox Device Portal is a browser-based device management tool that allows you to add games and apps, add Xbox Live test accounts, change sandboxes, and much more.
-
-<!-- > [!NOTE]
-> For more information on the Xbox Device Portal, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md). -->
-<!--TODO: Where is the documentation for the Xbox Device Portal?-->
 
 To enable the Xbox Device Portal on your Xbox One console:
 

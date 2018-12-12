@@ -1,18 +1,13 @@
 ---
 title: What's new for the Xbox Live SDK - August 2016
-author: KevinAsgari
+
 description: What's new for the Xbox Live SDK - August 2016
 ms.assetid: fa52e7bd-2c2c-4c25-94ab-761036a7ca79
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # What's new for the Xbox Live SDK - August 2016
 
 Please see the [What's New - June 2016](1606-whats-new.md) article for what was added in the June 2016 release.
@@ -80,7 +75,7 @@ We have included documentation for the Xbox Integrated Multiplayer (XIM) API.  T
 
 XIM is a self-contained interface for easily adding multiplayer real-time networking and chat communication to your game through the power of Xbox Live services.
 
-This preview of the API’s documentation is shared here to encourage customer feedback and inquiry. We talked about this API earlier at Xfest 2016, and you can see archived [presentation material on the Xbox Developer Portal](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx) from the “Turn-Key Multiplayer Networking and Chat” talk. Note that this preview documentation is only for the C++ API. WinRT equivalents for C# and other languages will be released later in the year.
+This preview of the API’s documentation is shared here to encourage customer feedback and inquiry. We talked about this API earlier at Xfest 2016, and you can see archived [presentation material on the managed partner developer site](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx) from the “Turn-Key Multiplayer Networking and Chat” talk. Note that this preview documentation is only for the C++ API. WinRT equivalents for C# and other languages will be released later in the year.
 
 If you are interested in XIM’s capabilities, have feedback or other questions about this project, please feel free to post on the [Xbox Developer Forum](https://forums.xboxlive.com/) or reach out through your developer account manager.
 

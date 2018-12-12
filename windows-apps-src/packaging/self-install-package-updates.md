@@ -1,57 +1,33 @@
 ---
-author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: Download and install package updates for your app
-description: Learn how to mark packages as mandatory in the Dev Center dashboard and write code in your app to download and install package updates.
-ms.author: mcleans
-ms.date: 03/15/2017
+title: Download and install package updates from the Store
+description: Learn how to mark packages as mandatory in Partner Center and write code in your app to download and install package updates.
+ms.date: 04/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
-# Download and install package updates for your app
+# Download and install package updates from the Store
 
+Starting in Windows 10, version 1607, you can use methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app from the Microsoft Store, and download and install the updated packages. You can also query for packages that you have marked as mandatory in Partner Center and disable functionality in your app until the mandatory update is installed.
 
-Starting in Windows 10, version 1607, you can use an API in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app, and download and install the updated packages. You can also query for packages that have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard) and disable functionality in your app until the mandatory update is installed.
+Additional [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) methods introduced in Windows 10, version 1803 enable you to download and install package updates silently (without displaying a notification UI to the user), uninstall an [optional package](optional-packages.md), and get info about packages in the download and install queue for your app.
 
-These features help you to automatically keep your user base up to date with the latest version of your app and related services.
+These features help you automatically keep your user base up to date with the latest version of your app, optional packages, and related services in the Store.
 
-## API overview
+## Download and install package updates with the user's permission
 
-Apps that targets Windows 10, version 1607 or later can use the following methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class to download and install package updates.
+This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) method to discover all available package updates from the Store and then call the [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) method to download and install the updates. When using this method to download and install updates, the OS displays a dialog that asks the user's permission before downloading the updates.
 
-|  Method  |  Description  |
-|----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | Call this method to get the list of package updates that are available. Note that there can be a delay of up to a day between the time when a package passes the certification process and when the **GetAppAndOptionalStorePackageUpdatesAsync** method recognizes that the package update is available to the app. |
-| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Call this method to download (but not install) the available package updates. This OS displays a dialog that asks the user's permission to download the updates. |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Call this method to download and install the available package updates. The OS displays dialogs that ask the user's permission to download and install the updates. If you already downloaded the package updates by calling **RequestDownloadStorePackageUpdatesAsync**, this method skips the download process and only installs the updates.  |
+> [!NOTE]
+> These methods support required and [optional packages](optional-packages.md) for your app. Optional packages are useful for downloadable content (DLC) add-ons, dividing your large app for size constraints, or for shipping additional content separate from your core app. To get permission to submit an app that uses optional packages (including DLC add-ons) to the Store, see [Windows developer support](https://developer.microsoft.com/windows/support).
 
-<span/>
+This code example assumes:
 
-These methods use [StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate) objects to represent available update packages. Use the following **StorePackageUpdate** properties to get information about an update package.
-
-|  Property  |  Description  |
-|----------|---------------|
-| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | Use this property to determine whether the package is marked as mandatory in the Dev Center dashboard. |
-| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | Use this property to access the underlying package-related data. |
-
-<span/>
-
-## Code examples
-
-The following code examples demonstrate how to download and install package updates in your app. These example assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.
 * The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault) method.
-
-<span/>
-
-### Download and install all package updates
-
-The following code example demonstrates how to download and install all available package updates.  
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 ```csharp
 private StoreContext context = null;
@@ -100,9 +76,136 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-### Handle mandatory package updates
+> [!NOTE]
+> To only download (but not install) the available package updates, use the [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) method.
 
-The following code example builds off the previous example, and demonstrates how to determine whether any update packages have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard). Typically, you should downgrade your app experience gracefully for the user if a mandatory package update does not successfully download or install.
+### Display download and install progress info
+
+When you call the [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) or [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) method, you can assign a [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) handler that is called one time for each step in the download (or download and install) process for each package in this request. The handler receives a [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) object that provides info about the update package that raised the progress notification. The previous example uses the **PackageDownloadProgress** field of the **StorePackageUpdateStatus** object to display the progress of the download and install process.
+
+Be aware that when you call **RequestDownloadAndInstallStorePackageUpdatesAsync** to download and install package updates in a single operation, the **PackageDownloadProgress** field increases from 0.0 to 0.8 during the download process for a package, and then it increases from 0.8 to 1.0 during the install. Therefore, if you map the percentage shown in your custom progress UI directly to the value of the **PackageDownloadProgress** field, your UI will show 80% when the package is finished downloading and the OS displays the installation dialog. If you want your custom progress UI to display 100% when the package is downloaded and ready to be installed, you can modify your code to assign 100% to your progress UI when the **PackageDownloadProgress** field reaches 0.8.
+
+## Download and install package updates silently
+
+Starting in Windows 10, version 1803, you can use the [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) and [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) methods to download and install package updates silently, without displaying a notification UI to the user. This operation will succeed only if the user has enabled the **Update apps automatically** setting in the Store and the user is not on a metered network. Before calling these methods, you can first check the [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) property to determine whether these conditions are currently met.
+
+This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) method to discover all available package updates and then call the [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) and [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) methods to download and install the updates silently.
+
+This code example assumes:
+* The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+
+> [!NOTE]
+> The **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater**, and **RetryInstallLater** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.
+
+```csharp
+private StoreContext context = null;
+
+public async Task DownloadAndInstallAllUpdatesInBackgroundAsync()
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
+
+    // Get the updates that are available.
+    IReadOnlyList<StorePackageUpdate> storePackageUpdates =
+        await context.GetAppAndOptionalStorePackageUpdatesAsync();
+
+    if (storePackageUpdates.Count > 0)
+    {
+
+        if (!context.CanSilentlyDownloadStorePackageUpdates)
+        {
+            return;
+        }
+
+        // Start the silent downloads and wait for the downloads to complete.
+        StorePackageUpdateResult downloadResult =
+            await context.TrySilentDownloadStorePackageUpdatesAsync(storePackageUpdates);
+
+        switch (downloadResult.OverallState)
+        {
+            case StorePackageUpdateState.Completed:
+                // The download has completed successfully. At this point, confirm whether your app
+                // can restart now and then install the updates (for example, you might only install
+                // packages silently if your app has been idle for a certain period of time). The
+                // IsNowAGoodTimeToRestartApp method is not implemented in this example, you should
+                // implement it as needed for your own app.
+                if (IsNowAGoodTimeToRestartApp())
+                {
+                    await InstallUpdate(storePackageUpdates);
+                }
+                else
+                {
+                    // Retry/reschedule the installation later. The RetryInstallLater method is not  
+                    // implemented in this example, you should implement it as needed for your own app.
+                    RetryInstallLater();
+                    return;
+                }
+                break;
+            // If the user cancelled the download or you can't perform the download for some other
+            // reason (for example, Wi-Fi might have been turned off and the device is now on
+            // a metered network) try again later. The RetryDownloadAndInstallLater method is not  
+            // implemented in this example, you should implement it as needed for your own app.
+            case StorePackageUpdateState.Canceled:
+            case StorePackageUpdateState.ErrorLowBattery:
+            case StorePackageUpdateState.ErrorWiFiRecommended:
+            case StorePackageUpdateState.ErrorWiFiRequired:
+            case StorePackageUpdateState.OtherError:
+                RetryDownloadAndInstallLater();
+                return;
+            default:
+                break;
+        }
+    }
+}
+
+private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageUpdates)
+{
+    // Start the silent installation of the packages. Because the packages have already
+    // been downloaded in the previous method, the following line of code just installs
+    // the downloaded packages.
+    StorePackageUpdateResult downloadResult =
+        await context.TrySilentDownloadAndInstallStorePackageUpdatesAsync(storePackageUpdates);
+
+    switch (downloadResult.OverallState)
+    {
+        // If the user cancelled the installation or you can't perform the installation  
+        // for some other reason, try again later. The RetryInstallLater method is not  
+        // implemented in this example, you should implement it as needed for your own app.
+        case StorePackageUpdateState.Canceled:
+        case StorePackageUpdateState.ErrorLowBattery:
+        case StorePackageUpdateState.OtherError:
+            RetryInstallLater();
+            return;
+        default:
+            break;
+    }
+}
+```
+
+## Mandatory package updates
+
+When you create a package submission in Partner Center for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](../publish/upload-app-packages.md#mandatory-update) and the date and time on which it becomes mandatory. When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
+
+> [!NOTE]
+> The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
+
+To mark a package submission as mandatory:
+
+1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and navigate to the overview page for your app.
+2. Click the name of the submission that contains the package update you want to make mandatory.
+3. Navigate to the **Packages** page for the submission. Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory. This option applies to all UWP packages in the submission.
+
+For more information, see [Upload app packages](../publish/upload-app-packages.md).
+
+> [!NOTE]
+> If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
+
+### Code example for mandatory packages
+
+The following code example demonstrates how to determine whether any update packages are mandatory. Typically, you should downgrade your app experience gracefully for the user if a mandatory package update does not successfully download or install.
 
 ```csharp
 private StoreContext context = null;
@@ -114,6 +217,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
     {
         context = StoreContext.GetDefault();
     }  
+
     // Get the updates that are available.
     IReadOnlyList<StorePackageUpdate> updates =
         await context.GetAppAndOptionalStorePackageUpdatesAsync();
@@ -214,27 +318,143 @@ private void HandleMandatoryPackageError()
 }
 ```
 
-### Display progress info for the download and install
+## Uninstall optional packages
 
-When you call **RequestDownloadStorePackageUpdatesAsync** or **RequestDownloadAndInstallStorePackageUpdatesAsync**, you can assign a [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) handler that is called one time for each step in the download (or download and install) process for each package in this request. The handler receives a [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) object that provides info about the update package that raised the progress notification. The previous examples use the **PackageDownloadProgress** field of the **StorePackageUpdateStatus** object to display the progress of the download and install process.
+Starting in Windows 10, version 1803, you can use the [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) or [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) methods to uninstall an [optional package](optional-packages.md) (including a DLC package) for the current app. For example, if you have an app with content that is installed via optional packages, you might want to provide a UI that enables users to uninstall the optional packages to free up disk space.
 
-Be aware that when you call **RequestDownloadAndInstallStorePackageUpdatesAsync** to download and install package updates in a single operation, the **PackageDownloadProgress** field increases from 0.0 to 0.8 during the download process for a package, and then it increases from 0.8 to 1.0 during the install. Therefore, if you map the percentage shown in your custom progress UI directly to the value of the **PackageDownloadProgress** field, your UI will show 80% when the package is finished downloading and the OS displays the installation dialog. If you want your custom progress UI to display 100% when the package is downloaded and ready to be installed, you can modify your code to assign 100% to your progress UI when the **PackageDownloadProgress** field reaches 0.8.
+The following code example demonstrates how to call [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). This example assumes:
+* The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
-<span id="mandatory-dashboard" />
-## Make a package submission mandatory in the Dev Center dashboard
+```csharp
+public async Task UninstallPackage(Windows.ApplicationModel.Package package)
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
 
-When you create a package submission for an app that targets Windows 10, version 1607 or later, you can mark the package as mandatory and the date/time on which it becomes mandatory. When this property is set and your app discovers that the package update is available by using the API described earlier in this article, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
+    var storeContext = StoreContext.GetDefault();
+    IAsyncOperation<StoreUninstallStorePackageResult> uninstallOperation =
+        storeContext.RequestUninstallStorePackageAsync(package);
+
+    // At this point, you can update your app UI to show that the package
+    // is installing.
+
+    uninstallOperation.Completed += (asyncInfo, status) =>
+    {
+        StoreUninstallStorePackageResult result = uninstallOperation.GetResults();
+        switch (result.Status)
+        {
+            case StoreUninstallStorePackageStatus.Succeeded:
+                {
+                    // Update your app UI to show the package as uninstalled.
+                    break;
+                }
+            default:
+                {
+                    // Update your app UI to show that the package uninstall failed.
+                    break;
+                }
+        }
+    };
+}
+```
+
+## Get download queue info
+
+Starting in Windows 10, version 1803, you can use the [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) and [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) methods to get info about the packages that are in the current download and installation queue from the Store. These methods are useful if your app or game supports large optional packages (including DLCs) that can take hours or days to download and install, and you want to gracefully handle the case where a customer closes your app or game before the download and installation process is complete. When the customer starts your app or game again, your code can use these methods to get info about the state of the packages that are still in the download and installation queue so you can display the status of each package to the customer.
+
+The following code example demonstrates how to call [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) to get the list of in-progress package updates for the current app and retrieve status info for each package. This example assumes:
+* The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 > [!NOTE]
-> The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
+> The **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI**, and **MarkInstallPausedInUI** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.
 
-To mark a package submission as mandatory:
+```csharp
+private StoreContext context = null;
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and navigate to the overview page for your app.
-2. Click the name of the submission that contains the package update you want to make mandatory.
-3. Navigate to the **Packages** page for the submission. Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory. This option applies to all UWP packages in the submission.
+private async Task GetQueuedInstallItemsAndBuildInitialStoreUI()
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
 
-For more information about configuring packages in the Dev Center dashboard, see [Upload app packages](../publish/upload-app-packages.md).
+    // Get the Store packages in the install queue.
+    IReadOnlyList<StoreQueueItem> storeUpdateItems = await context.GetAssociatedStoreQueueItemsAsync();
 
-  > [!NOTE]
-  > If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
+    foreach (StoreQueueItem storeItem in storeUpdateItems)
+    {
+        // In this example we only care about package updates.
+        if (storeItem.InstallKind != StoreQueueItemKind.Update)
+            continue;
+
+        StoreQueueItemStatus currentStatus = storeItem.GetCurrentStatus();
+        StoreQueueItemState installState = currentStatus.PackageInstallState;
+        StoreQueueItemExtendedState extendedInstallState =
+            currentStatus.PackageInstallExtendedState;
+
+        // Handle the StatusChanged event to display current status to the customer.
+        storeItem.StatusChanged += StoreItem_StatusChanged;
+
+        switch (installState)
+        {
+            // Download and install are still in progress, so update the status for this  
+            // item and provide the extended state info. The following methods are not
+            // implemented in this example; you should implement them as needed for your
+            // app's UI.
+            case StoreQueueItemState.Active:
+                MarkUpdateInProgressInUI(storeItem, extendedInstallState);
+                break;
+            case StoreQueueItemState.Canceled:
+                RemoveItemFromUI(storeItem);
+                break;
+            case StoreQueueItemState.Completed:
+                MarkInstallCompleteInUI(storeItem);
+                break;
+            case StoreQueueItemState.Error:
+                MarkInstallErrorInUI(storeItem);
+                break;
+            case StoreQueueItemState.Paused:
+                MarkInstallPausedInUI(storeItem, installState, extendedInstallState);
+                break;
+        }
+    }
+}
+
+private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
+{
+    StoreQueueItemStatus currentStatus = sender.GetCurrentStatus();
+    StoreQueueItemState installState = currentStatus.PackageInstallState;
+    StoreQueueItemExtendedState extendedInstallState = currentStatus.PackageInstallExtendedState;
+
+    switch (installState)
+    {
+        // Download and install are still in progress, so update the status for this  
+        // item and provide the extended state info. The following methods are not
+        // implemented in this example; you should implement them as needed for your
+        // app's UI.
+        case StoreQueueItemState.Active:
+            MarkUpdateInProgressInUI(sender, extendedInstallState);
+            break;
+        case StoreQueueItemState.Canceled:
+            RemoveItemFromUI(sender);
+            break;
+        case StoreQueueItemState.Completed:
+            MarkInstallCompleteInUI(sender);
+            break;
+        case StoreQueueItemState.Error:
+            MarkInstallErrorInUI(sender);
+            break;
+        case StoreQueueItemState.Paused:
+            MarkInstallPausedInUI(sender, installState, extendedInstallState);
+            break;
+    }
+}
+```
+
+## Related topics
+
+* [Optional packages and related set authoring](optional-packages.md)

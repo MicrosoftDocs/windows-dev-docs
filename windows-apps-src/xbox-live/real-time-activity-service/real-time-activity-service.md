@@ -1,17 +1,13 @@
 ---
 title: Real-Time Activity Service
-author: KevinAsgari
+
 description: Learn about the Xbox Live Real-Time Activity service.
 ms.assetid: 50de262f-fc55-4301-83b5-0a8a30bc7852
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, real time activity service.
 ms.localizationpriority: medium
 ---
-
 # Real-Time Activity Service
 
 The Real-Time Activity (RTA) service allows an application on any device to subscribe to state data, user statistics, and presence. The system allows subscriptions to one's own data and to others' data in any title based on their privacy settings. This allows a flow of information without having to constantly poll to get the latest data.

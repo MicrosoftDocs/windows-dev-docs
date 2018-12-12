@@ -4,15 +4,12 @@ description: Light properties describe a light source's type (point, directional
 ms.assetid: E832C3FD-9921-41C4-87B8-056E16B61B77
 keywords:
 - Light properties
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Light properties
 
 

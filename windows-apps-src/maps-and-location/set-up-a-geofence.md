@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Set up a geofence
 description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, geofence, notifications
 ms.localizationpriority: medium
 ---
-
 # Set up a geofence
 
 
@@ -71,6 +66,7 @@ switch (accessStatus)
         GeofenceMonitor.Current.StatusChanged += OnGeofenceStatusChanged;
         break;
 
+
     case GeolocationAccessStatus.Denied:
         _rootPage.NotifyUser("Access denied.", NotifyType.ErrorMessage);
         break;
@@ -113,6 +109,7 @@ Geocircle geocircle = new Geocircle(position, radius);
 
 // Create the geofence.
 Geofence geofence = new Geofence(fenceId, geocircle);
+
 ```
 
 You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
@@ -157,6 +154,17 @@ DateTimeOffset startTime = DateTime.Now;
 
 // Create the geofence.
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
+```
+
+After creating, remember to register your new [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) to the monitor.
+
+```csharp
+// Register the geofence
+try {
+   GeofenceMonitor.Current.Geofences.Add(geofence);
+} catch {
+   // Handle failure to add geofence
+}
 ```
 
 ### Step 4: Handle changes in location permissions

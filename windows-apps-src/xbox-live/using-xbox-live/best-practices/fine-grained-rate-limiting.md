@@ -1,22 +1,18 @@
 ---
 title: Xbox Live fine grained rate limiting
-author: KevinAsgari
+
 description: Learn how Xbox Live fine grained rate limiting works, and how to prevent your title from being rate limited.
 ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, throttling, rate limiting
 ms.localizationpriority: medium
 ---
-
 # Xbox Live fine grained rate limiting
 
 ## Introduction
 
-This article provides an overview of Xbox Live fine grained rate limiting. In addition to summarizing what rate limiting is this paper also intends to help you determine if you are being limited, and If you are what tools and resources are at your disposal.
+This article provides an overview of Xbox Live fine grained rate limiting. In addition to summarizing what rate limiting is, this paper also intends to help you determine if you are being limited, and if you are, what tools and resources are at your disposal.
 
 ## Terminology Guide
 
@@ -28,7 +24,7 @@ This article provides an overview of Xbox Live fine grained rate limiting. In ad
 | Burst        | Represents a volume of requests received in a short period of time          
 | Sustain      | Represents a high volume of calls received constantly over a period of time
 | User + Title | Represents the pairing of a user and title as one entity                    
-
+| XLTA         | Xbox Live Trace Analyzer tool, used for determining if your title is being rate limited
 
 ## Xbox Live Fine Grained Rate Limiting
 
@@ -64,7 +60,7 @@ This approach works for most API’s however it was not resilient enough for gam
 
 Choosing just one limit in this case would require compromising on both ends of the call pattern spectrum. The Xbox Live solution uses two periods and limits. The smaller period is called the Burst period while the bigger longer one is known as the Sustain period. The burst time period for FGRL is always 15 seconds whereas the sustain is always 300 seconds (5 minutes) So during a 5 minute sustain period there are 20 burst periods. Both burst and sustain limits are tracking at the same time and as such count requests at the same time. Both the burst and the sustain limit are set on the service meaning each service has its own burst and sustain count. To help you understand how these two limits work together the table below shows a user playing a title which is making a number of requests of a service that has implemented FGRL. In this case the burst limit is 30 requests in 15 seconds and the sustain limit is 100 requests over 5 minutes.
 
-| Time Period (seconds)  | Requests per  burst period  | Requests per sustain period  | \# of throttled Requests within the 15 sec interval | Which Limit?                                                                                                                (burst, sustain, or both)  |
+| Time Period (seconds)  | Requests per  burst period  | Requests per sustain period  | \# of throttled Requests within the 15 sec interval | Which Limit? (burst, sustain, or both)  |
 |-------------|--------------|----------------|-----------------------------------------------------|---------------------------|
 | 0-15        | 35           | 35             | 5                                                   | Burst                     |
 | 15-30       | 28           | 63             | 0                                                   | N/A                       |
@@ -80,39 +76,65 @@ The table shows that in the first 15 seconds the user trips the burst limit by m
 
 When the associated user and title count is at or above either the burst or sustain limit the service will not handle the request and will instead return a HTTP 429 response. The HTTP 429 code stands for “too many requests” will be accompanied by a header containing a “retry after X seconds” value. FGRL 429’s contains a retry after header that specifies the amount of time the calling entities should wait before trying again. Developers that use XSAPI will not have to worry as XSAPI honors and handles the Retry-After header. The actual response will contain the following fields:
 
-| Field Name      | Value Type | Example              | Definition                       |
-|-----------------|------------|----------------------|----------------------------------|
-| Version         | Integer    | ```“version”:1```    |                                  |
-| currentRequests | Integer    | ```“currentRequests”:13``` | Total number of requests sent    |
-| maxRequests     | Integer    | ```“maxRequests”:10```     | Total number of requests allowed |
-| periodInSeconds | Integer    | ```“periodInSeconds”:15`` | Time window                      |
-| Type            | String     | ```“type”:”burst”```       | Throttle limit type              |
+| Field Name      | Value Type | Example                | Definition                       |
+|-----------------|------------|------------------------|----------------------------------|
+| Version         | Integer    | `"version":1`          |                                  |
+| currentRequests | Integer    | `"currentRequests":13` | Total number of requests sent    |
+| maxRequests     | Integer    | `"maxRequests":10`     | Total number of requests allowed |
+| periodInSeconds | Integer    | `“periodInSeconds”:15` | Time window                      |
+| Type            | String     | `“type”:”burst”`       | Throttle limit type              |
 
 ## Implemented limits
 
-The following services will be implementing FGRL limits which will **begin enforcing in May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that is currently in XDP or Dev Center and shipping around May 2016 will be considered Legacy and therefore exempted.** The limits below are not finalized yet
+The following services have implemented FGRL limits, with enforcement of these limits in place since **May 2016**. To reiterate, these limits will be the same across all sandboxes and titles. **Any title that was published via Xbox Developer Platform or Partner Center and shipped prior to May 2016 will be considered Legacy and therefore exempted.**
 
-| **Service Name**          | **Burst Limit (15 seconds per user per title)** | **Sustain Limit (300 seconds per user per title)** |
-|---------------------------|-------------------------------------------------|----------------------------------------------------|
-| Game Clips Transfer       | 50                                              | 300                                                |
-| Game Clips Metadata       | 50                                              | 300                                                |
-| Smart Match (not MPSD)    | 10                                              | 100                                                |
-| Title Storage             | 30                                              | 300                                                |
-| Stats Read (not creation) | 100                                             | 300                                                |
-| Achievements Read         | 100                                             | 100                                                |
-| Leaderboards Read         | 30                                              | 100                                                |
-| Profile                   | 10                                              | 30                                                 |
-| People                    | 10                                              | 30                                                 |
-| Privacy                   | 10                                              | 30                                                 |
-| Presence                  | Read 10, Write 3                                | Read 100, Write 30                                 |
+| **Name** | **Burst Limit** (15 seconds per user per title) | **Sustain Limit** (300 seconds per user per title) | **Certification Limit** (10x Sustained, 300 seconds per user per title) |
+|----------------------------|---------------------------|----------------------------|----------------------------|
+| Stats Read                 | 100                       | 300                        | 3000                       |
+| Profile                    | 10                        | 30                         | 300                        |
+| MPSD                       | 30                        | 300                        | 3000                       |
+| Presence                   | Read 10, Write 3          | Read 100, Write 30         | Read 1000, Write 300       |
+| Social                     | 10                        | 30                         | 300                        |
+| Leaderboards               | 30                        | 100                        | 1000                       |
+| Achievements               | 100                       | 300                        | 3000                       |
+| Smart Match                | 10                        | 100                        | 1000                       |
+| User Posts                 | 100                       | 300                        | 3000                       |
+| Stats Write                | 100                       | 300                        | 3000                       |
+| Privacy                    | 10                        | 30                         | 300                        |
+| Clubs                      | 10                        | 30                         | 300                        |
 
 The table above represents the current list of services that were selected for FGRL. This list is not final as new services and existing services can be added. When a service is going to be added the table will be updated and an announcement will be made. The limits represented in the table should also not be viewed as finalized. As services change and evolve so too will the limits however you will be notified and the necessary legacy exemptions will be made.
 
-## How can I determine I am being throttled and what steps can I take?
+As of **April 2018** titles will not pass certification if they exceed the sustain limit (limit at which rate limiting takes effect) by 10x.  For example, if the sustained limit at which FGRL takes effect is set to 300 calls in 300 seconds as specified in the table above, titles at or above 3000 calls in 300 seconds will fail certification. 
 
-Please refer to the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.md) document as it will contain steps for improving your call pattern as well as an explanation of how the XSAPI assertion, XSAPI Social and Multiplayer managers, and live trace tool can be used to notify you of and mitigate throttling issues. You can find the best practices paper on GDNP and SDK and XDK docs 1602 and higher
+## Service Mapping and Title Effects of Rate Limiting
+
+| **Name** | **Service Endpoint** | **Anticipiated Game Impact of FGRL**
+| --- | :---: | --- 
+| Stats Read | userstats.xboxlive.com | Achievements or Leaderboards entries not updated or retrieved.
+| Profile | profile.xboxlive.com | Player’s data not updated or displayed correctly.
+| MPSD | sessiondirectory.xboxlive.com | Joins/invites would not complete correctly, sessions not created or updated properly which can cause title failures.
+| Presence | presence.xboxlive.com | Player’s in-game presence would not be accurate.
+| Social | social.xboxlive.com | Impacts all friends writes (e.g. adding a friend, making someone favorite etc.) and may impact friend reads (e.g. fetch my friend list). Developers are encouraged to call the peoplehub for read rather than social.xboxlive.com.
+| Leaderboards | leaderboards.xboxlive.com | In-game UX for leaderboards would not populate/update.
+| Achievements | achievements.xboxlive.com | In-game UX for achievements unlocked would not be updated.
+| Smart Match | momatch.xboxlive.com | Matches would not be successfully set up.
+| User Posts | userposts.xboxlive.com | User posts would not appear.
+| Stats Write | statswrite.xboxlive.com | Achievements or Leaderboards entries not updated.
+| Privacy | privacy.xboxlive.com | Privacy failures may result in blocked access for all callers.
+| Clubs | Clubhub.xboxlive.com | Player may not be able to see their in-game clubs.
+
+**NOTE:** The latest API mapping is regularly updated and can be found under [Live Trace Analyzer API Mapping](https://github.com/Microsoft/xbox-live-trace-analyzer/blob/master/Source/XboxLiveTraceAnalyzer.APIMap.csv).
 
 ## FAQ
+
+## How can I determine I am being throttled and what steps can I take?
+
+Please refer to the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.md) document as it will contain steps for improving your call pattern as well as an explanation of how the XSAPI assertion and XSAPI Social and Multiplayer managers can be used to notify you of and mitigate throttling issues.
+
+Another option is to record a trace of the Xbox Live calls and then analyze that trace using the [Xbox Live Trace Analyzer tool](https://docs.microsoft.com/windows/uwp/xbox-live/tools/analyze-service-calls).  To record a trace, you can either use Fiddler to record a .SAZ file, or use the built-in trace logging of XSAPI. For more information, how to use turn on traces in XSAPI see the Xbox Live documentation page "Analyze calls to Xbox Live Services". Once you have a trace, the Xbox Live Trace Analyzer tool will warn upon detecting throttled calls.
+
+You can find the best practices paper on GDNP and SDK and XDK docs 1602 and higher.
 
 ### Can limits change?
 
@@ -124,7 +146,7 @@ Yes, more services and new services can and will be creating limits. Though just
 
 ### When will these changes take effect?
 
-You will notice limits in dev/cert sandboxes starting in April. In May you can expect to see limits in RETAIL
+Rate limits have been enforced since **May 2016**.  As of **April 2018**, titles exceeding the specified sustained limits by 10x or more will not pass the Xbox Certification process.
 
 ### What if we can’t adhere to the limits?
 
@@ -132,9 +154,11 @@ Please see the [Xbox Live Best Practices](best-practices-for-calling-xbox-live.m
 
 If after following these steps, you are still unable to remain under the limits, please reach out to your Developer Account Manager.
 
+**NOTE: Titles at or above 10x the specified sustain limit will not be allowed to pass cert after April 2018**.  For example, if the sustained limit at which FGRL takes effect is set to 300 calls in 300 seconds as specified in the table above, titles at or above 3000 calls in 300 seconds will fail certification.
+
 ### What about my existing Title?
 
-Any title in XDP or Dev Center before limits in RETAIL are considered Legacy and exempt
+Any titles in RETAIL before April 2018 are considered Legacy and are exempt.
 
 ### Content Updates?
 

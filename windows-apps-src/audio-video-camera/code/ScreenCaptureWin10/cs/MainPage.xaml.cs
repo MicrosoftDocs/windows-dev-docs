@@ -13,13 +13,13 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Media.Capture;
 using Windows.Foundation.Metadata;
 using Windows.Storage;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
-//</SnippetUsing>
+// </SnippetUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,30 +30,30 @@ namespace ScreenCaptureWin10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetMembers>
+        // <SnippetMembers>
         MediaCapture _mediaCapture;
         bool _isScreenCaptureAvailable = false;
         bool _isRecording = false;
-        //</SnippetMembers>
+        // </SnippetMembers>
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            //<SnippetApiInformation>
+            // <SnippetApiInformation>
             if (ApiInformation.IsTypePresent("Windows.Media.Capture.ScreenCapture"))
             {
                 _isScreenCaptureAvailable = true;
             }
-            //</SnippetApiInformation>
+            // </SnippetApiInformation>
 
-            //<SnippetRegisterAppLifetimeEvents>
+            // <SnippetRegisterAppLifetimeEvents>
             Application.Current.Suspending += Application_Suspending;
             Application.Current.Resuming += Application_Resuming;
-            //</SnippetRegisterAppLifetimeEvents>
+            // </SnippetRegisterAppLifetimeEvents>
         }
 
-        //<SnippetInitMediaCapture>
+        // <SnippetInitMediaCapture>
         public async void InitMediaCapture()
         {
             if (!_isScreenCaptureAvailable)
@@ -90,9 +90,9 @@ namespace ScreenCaptureWin10
                 System.Diagnostics.Debug.WriteLine("InitMediaCapture Exception: " + ex.Message);
             }
         }
-        //</SnippetInitMediaCapture>
+        // </SnippetInitMediaCapture>
 
-        //<SnippetStartRecording>
+        // <SnippetStartRecording>
         private async void StartRecording()
         {
             if(_mediaCapture == null)
@@ -118,9 +118,9 @@ namespace ScreenCaptureWin10
             }
 
         }
-        //</SnippetStartRecording>
+        // </SnippetStartRecording>
 
-        //<SnippetStopRecording>
+        // <SnippetStopRecording>
         private async void StopRecording()
         {
             try
@@ -133,8 +133,8 @@ namespace ScreenCaptureWin10
                 System.Diagnostics.Debug.WriteLine("StartRecording Exception: " + ex.Message);
             }
         }
-        //</SnippetStopRecording>
-        //<SnippetSourceSuspensionChanged>
+        // </SnippetStopRecording>
+        // <SnippetSourceSuspensionChanged>
         private void SourceSuspensionChanged(ScreenCapture sender, SourceSuspensionChangedEventArgs args)
         {
             System.Diagnostics.Debug.WriteLine("SourceSuspensionChanged Event. Args: IsAudioSuspended:" +
@@ -142,23 +142,23 @@ namespace ScreenCaptureWin10
                 " IsVideoSuspended:" +
                 args.IsVideoSuspended.ToString());
         }
-        //</SnippetSourceSuspensionChanged>
+        // </SnippetSourceSuspensionChanged>
 
-        //<SnippetRecordLimitationExceeded>
+        // <SnippetRecordLimitationExceeded>
         private void MediaCapture_RecordLimitationExceeded(MediaCapture sender)
         {
             StopRecording();
         }
-        //</SnippetRecordLimitationExceeded>
+        // </SnippetRecordLimitationExceeded>
 
-        //<SnippetCaptureFailed>
+        // <SnippetCaptureFailed>
         private async void MediaCapture_Failed(MediaCapture sender, MediaCaptureFailedEventArgs errorEventArgs)
         {
             await CleanupCaptureResources();
         }
-        //</SnippetCaptureFailed>
+        // </SnippetCaptureFailed>
 
-        //<SnippetCleanupCaptureResources>
+        // <SnippetCleanupCaptureResources>
         public async Task CleanupCaptureResources()
         {
             if (_isRecording && _mediaCapture != null)
@@ -172,9 +172,9 @@ namespace ScreenCaptureWin10
                 _mediaCapture.Dispose();
             }
         }
-        //</SnippetCleanupCaptureResources>
+        // </SnippetCleanupCaptureResources>
 
-        //<SnippetSuspending>
+        // <SnippetSuspending>
         private async void Application_Suspending(object sender, SuspendingEventArgs e)
         {
             // Handle global application events only if this page is active
@@ -187,8 +187,8 @@ namespace ScreenCaptureWin10
                 deferral.Complete();
             }
         }
-        //</SnippetSuspending>
-        //<SnippetResuming>
+        // </SnippetSuspending>
+        // <SnippetResuming>
         private void Application_Resuming(object sender, object o)
         {
             // Handle global application events only if this page is active
@@ -197,7 +197,7 @@ namespace ScreenCaptureWin10
                 InitMediaCapture();
             }
         }
-        //</SnippetResuming>
+        // </SnippetResuming>
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             if (_isRecording)

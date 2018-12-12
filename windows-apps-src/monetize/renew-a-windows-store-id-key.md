@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Use this method to renew a Microsoft Store key.
 title: Renew a Microsoft Store ID key
-ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew
 ms.localizationpriority: medium
 ---
-
 # Renew a Microsoft Store ID key
 
 
@@ -22,7 +17,7 @@ Use this method to renew a Microsoft Store key. When you [generate a Microsoft S
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * An expired Microsoft Store ID key that was [generated from client-side code in your app](view-and-grant-products-from-a-service.md#step-4).
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
@@ -36,7 +31,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Collections | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
 | Purchase    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
-<span/>
 
 ### Request header
 
@@ -46,16 +40,14 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request body
 
 | Parameter     | Type   | Description                       | Required |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | string | The Azure AD access token.        | Yes      |
-| key           | string | The expired Microsoft Store ID key. | No       |
+| key           | string | The expired Microsoft Store ID key. | Yes       |
 
-<span/> 
 
 ### Request example
 
@@ -76,11 +68,10 @@ Host: collections.mp.microsoft.com
 
 ### Response body
 
-| Parameter | Type   | Description                                                                                                            | Required |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | string | The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API. | No       |
+| Parameter | Type   | Description                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | string | The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API. |
 
-<span/>
 
 ### Response example
 
@@ -102,12 +93,11 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## Error codes
 
 
-| Code | Error        | Inner error code           | Description                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code | Error        | Inner error code           | Description   |
+|------|--------------|----------------------------|---------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | The Azure AD access token is invalid. In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing. |
 | 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Microsoft Store ID key and the *appid* claim in the Azure AD access token do not match.                                                                     |
 
-<span/>
 
 ## Related topics
 

@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Marble Maze application structure
 description: The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
-ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, sample, directx, structure
 ms.localizationpriority: medium
 ---
-
 # Marble Maze application structure
 
 
@@ -120,7 +115,6 @@ Asynchronous asset loading begins with the **App::Load** method. This method use
     {
         m_main->LoadDeferredResources(true, false);
     });
-
 ```
 
 The **MarbleMazeMain** class defines the *m\_deferredResourcesReady* flag to indicate that asynchronous loading is complete. The **MarbleMazeMain::LoadDeferredResources** method loads the game resources and then sets this flag. The update (**MarbleMazeMain::Update**) and render (**MarbleMazeMain::Render**) phases of the app check this flag. When this flag is set, the game continues as normal. If the flag is not yet set, the game shows the loading screen.

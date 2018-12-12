@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 description: Learn about the whitespace processing rules as used by XAML.
 title: XAML and whitespace
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # XAML and whitespace
 
 

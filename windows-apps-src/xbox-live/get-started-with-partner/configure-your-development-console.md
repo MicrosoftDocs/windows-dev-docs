@@ -1,17 +1,13 @@
 ---
 title: Configure your Xbox development console
-author: KevinAsgari
+
 description: Learn how to configure your Xbox development console to support Xbox Live development.
 ms.assetid: f8fd1caa-b1e9-4882-a01f-8f17820dfb55
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Configure your Xbox development console
 
 To configuring your development console:
@@ -37,4 +33,4 @@ Verify your sandbox has been correctly reset. Type xbconfig sandboxid at the com
 
 ## Sign in with a development account
 
-You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Windows Dev Center](https://developer.microsoft.com/en-us/windows)
+You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Partner Center](https://partner.microsoft.com/dashboard)

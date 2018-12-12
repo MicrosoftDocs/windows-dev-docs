@@ -1,25 +1,23 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 title: Respond to the presence of the touch keyboard
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
----
 
+
+---
 # Respond to the presence of the touch keyboard
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
 ### Important APIs
-- [AutomationPeer](https://msdn.microsoft.com/library/windows/apps/br209185)
-- [InputPane](https://msdn.microsoft.com/library/windows/apps/br242255)
+
+- [AutomationPeer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
+- [InputPane](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)
 
 ![the touch keyboard in default layout mode](images/keyboard/default.png)
 
@@ -27,7 +25,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 
 The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347) and [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667).
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [AutomationPeer]((https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) and [Custom automation peers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
@@ -39,28 +37,28 @@ You should have a basic understanding of standard keyboard interactions, handlin
 
 If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+- [Create your first app](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
+- Learn about events with [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 **User experience guidelines:**
 
-For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
+For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard interactions](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions) .
 
 ## Touch keyboard and a custom UI
 
 Here are a few basic recommendations for custom text input controls.
 
--   Display the touch keyboard throughout the entire interaction with your form.
+- Display the touch keyboard throughout the entire interaction with your form.
 
--   Ensure that your custom controls have the appropriate UI Automation [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) for the keyboard to persist when focus moves from a text input field while in the context of text entry. For example, if you have a menu that's opened in the middle of a text-entry scenario, and you want the keyboard to persist, the menu must have the **AutomationControlType** of Menu.
+- Ensure that your custom controls have the appropriate UI Automation [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) for the keyboard to persist when focus moves from a text input field while in the context of text entry. For example, if you have a menu that's opened in the middle of a text-entry scenario, and you want the keyboard to persist, the menu must have the **AutomationControlType** of Menu.
 
--   Don't manipulate UI Automation properties to control the touch keyboard. Other accessibility tools rely on the accuracy of UI Automation properties.
+- Don't manipulate UI Automation properties to control the touch keyboard. Other accessibility tools rely on the accuracy of UI Automation properties.
 
--   Ensure that users can always see the input field that they're interacting with.
+- Ensure that users can always see the input field that they're interacting with.
 
     Because the touch keyboard occludes a large portion of the screen, the UWP ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
 
-    When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events exposed by the [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) object.
+    When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) and [Hiding](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) events exposed by the [**InputPane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) object.
 
     ![a form with and without the touch keyboard showing](images/touch-keyboard-pan1.png)
 
@@ -70,67 +68,155 @@ Here are a few basic recommendations for custom text input controls.
 
 ## Handling the Showing and Hiding events
 
+Here's an example of attaching event handlers for the [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) and [Hiding](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) events of the touch keyboard.
 
-Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
+```csharp
+using Windows.UI.ViewManagement;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.Foundation;
+using Windows.UI.Xaml.Navigation;
 
-```CSharp
-public class MyApplication
+namespace SDKTemplate
 {
-    public MyApplication()
+    /// <summary>
+    /// Sample page to subscribe show/hide event of Touch Keyboard.
+    /// </summary>
+    public sealed partial class Scenario2_ShowHideEvents : Page
     {
-        // Grab the input pane for the main application window and attach
-        // touch keyboard event handlers.
-        Windows.UI.ViewManagement.GetForCurrentView().Showing  
-            += new EventHandler(_OnInputPaneShowing);
-        Windows.UI.ViewManagement.GetForCurrentView().Hiding 
-            += new EventHandler(_OnInputPaneHiding);
-    }
-
-    private void _OnInputPaneShowing(object sender, InputPaneVisibilityEventArgs eventArgs)
-    {
-        // If the size of this window is going to be too small, the app uses 
-        // the Showing event to begin some element removal animations.
-        if (eventArgs.OccludedRect.Top < 400)
+        public Scenario2_ShowHideEvents()
         {
-            _StartElementRemovalAnimations();
+            this.InitializeComponent();
+        }
 
-            // Don't use framework scroll- or visibility-related 
-            // animations that might conflict with the app's logic.
-            eventArgs.EnsuredFocusedElementInView = true; 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            InputPane currentInputPane = InputPane.GetForCurrentView();
+            // Subscribe to Showing/Hiding events
+            currentInputPane.Showing += OnShowing;
+            currentInputPane.Hiding += OnHiding;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            InputPane currentInputPane = InputPane.GetForCurrentView();
+            // Unsubscribe from Showing/Hiding events
+            currentInputPane.Showing -= OnShowing;
+            currentInputPane.Hiding -= OnHiding;
+        }
+
+        void OnShowing(InputPane sender, InputPaneVisibilityEventArgs e)
+        {
+            LastInputPaneEventRun.Text = "Showing";
+        }
+        
+        void OnHiding(InputPane sender, InputPaneVisibilityEventArgs e)
+        {
+            LastInputPaneEventRun.Text = "Hiding";
         }
     }
+}
+```
 
-    private void _OnInputPaneHiding(object sender, InputPaneVisibilityEventArgs eventArgs)
-    {
-        if (_ResetToDefaultElements())
-        {
-            eventArgs.EnsuredFocusedElementInView = true; 
-        }
-    }
+```cppwinrt
+...
+#include <winrt/Windows.UI.ViewManagement.h>
+...
+private:
+    winrt::event_token m_showingEventToken;
+    winrt::event_token m_hidingEventToken;
+...
+Scenario2_ShowHideEvents::Scenario2_ShowHideEvents()
+{
+    InitializeComponent();
+}
 
-    private void _StartElementRemovalAnimations()
-    {
-        // This function starts the process of removing elements 
-        // and starting the animation.
-    }
+void Scenario2_ShowHideEvents::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto inputPane{ Windows::UI::ViewManagement::InputPane::GetForCurrentView() };
+    // Subscribe to Showing/Hiding events
+    m_showingEventToken = inputPane.Showing({ this, &Scenario2_ShowHideEvents::OnShowing });
+    m_hidingEventToken = inputPane.Hiding({ this, &Scenario2_ShowHideEvents::OnHiding });
+}
 
-    private void _ResetToDefaultElements()
-    {
-        // This function resets the window's elements to their default state.
-    }
+void Scenario2_ShowHideEvents::OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto inputPane{ Windows::UI::ViewManagement::InputPane::GetForCurrentView() };
+    // Unsubscribe from Showing/Hiding events
+    inputPane.Showing(m_showingEventToken);
+    inputPane.Hiding(m_hidingEventToken);
+}
+
+void Scenario2_ShowHideEvents::OnShowing(Windows::UI::ViewManagement::InputPane const& /*sender*/, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs const& /*args*/)
+{
+    LastInputPaneEventRun().Text(L"Showing");
+}
+
+void Scenario2_ShowHideEvents::OnHiding(Windows::UI::ViewManagement::InputPane const& /*sender*/, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs const& /*args*/)
+{
+    LastInputPaneEventRun().Text(L"Hiding");
+}
+```
+
+```cpp
+#include "pch.h"
+#include "Scenario2_ShowHideEvents.xaml.h"
+
+using namespace SDKTemplate;
+using namespace Platform;
+using namespace Windows::Foundation;
+using namespace Windows::UI::ViewManagement;
+using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::UI::Xaml::Navigation;
+
+Scenario2_ShowHideEvents::Scenario2_ShowHideEvents()
+{
+    InitializeComponent();
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedTo(NavigationEventArgs^ e)
+{
+    auto inputPane = InputPane::GetForCurrentView();
+    // Subscribe to Showing/Hiding events
+    showingEventToken = inputPane->Showing +=
+        ref new TypedEventHandler<InputPane^, InputPaneVisibilityEventArgs^>(this, &Scenario2_ShowHideEvents::OnShowing);
+    hidingEventToken = inputPane->Hiding +=
+        ref new TypedEventHandler<InputPane^, InputPaneVisibilityEventArgs^>(this, &Scenario2_ShowHideEvents::OnHiding);
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedFrom(NavigationEventArgs^ e)
+{
+    auto inputPane = Windows::UI::ViewManagement::InputPane::GetForCurrentView();
+    // Unsubscribe from Showing/Hiding events
+    inputPane->Showing -= showingEventToken;
+    inputPane->Hiding -= hidingEventToken;
+}
+
+void Scenario2_ShowHideEvents::OnShowing(InputPane^ /*sender*/, InputPaneVisibilityEventArgs^ /*args*/)
+{
+    LastInputPaneEventRun->Text = L"Showing";
+}
+
+void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibilityEventArgs ^ /*args*/)
+{
+    LastInputPaneEventRun->Text = L"Hiding";
 }
 ```
 
 ## Related articles
 
-* [Keyboard interactions](keyboard-interactions.md)
-* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
-* [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
+- [Keyboard interactions](keyboard-interactions.md)
+- [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
+- [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
 
+**Samples**
+
+- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
 **Archive samples**
-* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
+- [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
+- [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
+- [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+- [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)

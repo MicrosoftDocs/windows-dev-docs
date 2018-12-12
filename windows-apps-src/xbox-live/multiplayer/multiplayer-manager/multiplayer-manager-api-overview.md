@@ -1,17 +1,13 @@
 ---
 title: Multiplayer manager API overview
-author: KevinAsgari
+
 description: Learn about the Xbox Live Multiplayer Manager API.
 ms.assetid: 658babf5-d43e-4f5d-a5c5-18c08fe69a66
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, multiplayer manager
 ms.localizationpriority: medium
 ---
-
 # Multiplayer Manager API overview
 
 This page describes a broad overview of the Multiplayer Manager API, and how they are used in a game. It calls out the most important classes and methods in the API. For detailed API information, see the reference documentation. For examples of how to use these APIs in an application, see the Multiplayer Sample.

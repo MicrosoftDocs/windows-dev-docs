@@ -1,22 +1,17 @@
 ---
-author: mtoepke
 title: Load resources in your DirectX game
 description: Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, loading resources
 ms.localizationpriority: medium
 ---
-
 # Load resources in your DirectX game
 
 
 
-Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream. Here, we walk you through a high-level view of what you must consider when loading these files to use in your Universal Windows Platform (UWP) game.
+Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream. Here, we walk you through a high-level view of what you must consider when loading these files to use in your DirectX C/C++ Universal Windows Platform (UWP) game.
 
 For example, the meshes for polygonal objects in your game might have been created with another tool, and exported to a specific format. The same is true for textures, and more so: while a flat, uncompressed bitmap can be commonly written by most tools and understood by most graphics APIs, it can be extremely inefficient for use in your game. Here, we guide you through the basic steps for loading three different types of graphic resources for use with Direct3D: meshes (models), textures (bitmaps), and compiled shader objects.
 
@@ -54,15 +49,15 @@ The complete code for these samples can be found in the following links.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p><a href="complete-code-for-basicloader.md">Complete code for BasicLoader</a></p></td>
 <td align="left"><p>Complete code for a class and methods that convert and load graphics mesh objects into memory.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.</p></td>
+<td align="left"><p><a href="complete-code-for-basicreaderwriter.md">Complete code for BasicReaderWriter</a></p></td>
+<td align="left"><p>Complete code for a class and methods for reading and writing binary data files in general. Used by the <a href="complete-code-for-basicloader.md">BasicLoader</a> class.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p><a href="complete-code-for-ddstextureloader.md">Complete code for DDSTextureLoader</a></p></td>
 <td align="left"><p>Complete code for a class and method that loads a DDS texture from memory.</p></td>
 </tr>
 </tbody>

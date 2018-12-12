@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-//<SnippetBackgroundUsing>
+// <SnippetBackgroundUsing>
 using Windows.ApplicationModel.Background;
 using Windows.Storage;
 using Windows.UI.Notifications;
@@ -13,23 +13,23 @@ using Windows.Data.Xml.Dom;
 using Windows.Media.MediaProperties;
 using Windows.Media.Transcoding;
 using System.Threading;
-//</SnippetBackgroundUsing>
+// </SnippetBackgroundUsing>
 
 namespace MediaProcessingBackgroundTask
 {
-    //<SnippetBackgroundClass>
+    // <SnippetBackgroundClass>
     public sealed class MediaProcessingTask : IBackgroundTask
     {
-        //</SnippetBackgroundClass>
+        // </SnippetBackgroundClass>
 
-        //<SnippetBackgroundMembers>
+        // <SnippetBackgroundMembers>
         IBackgroundTaskInstance backgroundTaskInstance;
         BackgroundTaskDeferral deferral;
         CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
         MediaTranscoder transcoder;
-        //</SnippetBackgroundMembers>
+        // </SnippetBackgroundMembers>
 
-        //<SnippetRun>
+        // <SnippetRun>
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
             Debug.WriteLine("In background task Run method");
@@ -57,9 +57,9 @@ namespace MediaProcessingBackgroundTask
 
             deferral.Complete();
         }
-        //</SnippetRun>
+        // </SnippetRun>
 
-        //<SnippetTranscodeFileAsync>
+        // <SnippetTranscodeFileAsync>
         private async Task TranscodeFileAsync()
         {
             transcoder = new MediaTranscoder();
@@ -118,24 +118,24 @@ namespace MediaProcessingBackgroundTask
                 throw;
             }
         }
-        //</SnippetTranscodeFileAsync>
+        // </SnippetTranscodeFileAsync>
 
-        //<SnippetProgress>
+        // <SnippetProgress>
         void TranscodeProgress(double percent)
         {
             Debug.WriteLine("Transcoding progress:  " + percent.ToString().Split('.')[0] + "%");
             backgroundTaskInstance.Progress = (uint)percent;
         }
-        //</SnippetProgress>
+        // </SnippetProgress>
 
-        //<SnippetOnCanceled>
+        // <SnippetOnCanceled>
         private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
         {
             Debug.WriteLine("Background " + sender.Task.Name + " Cancel Requested..." + reason.ToString());
         }
-        //</SnippetOnCanceled>
+        // </SnippetOnCanceled>
 
-        //<SnippetSendToastNotification>
+        // <SnippetSendToastNotification>
         private void SendToastNotification(string toastMessage)
         {
             ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
@@ -151,7 +151,7 @@ namespace MediaProcessingBackgroundTask
             //Send your toast notification.
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
-        //</SnippetSendToastNotification>
+        // </SnippetSendToastNotification>
 
         
 

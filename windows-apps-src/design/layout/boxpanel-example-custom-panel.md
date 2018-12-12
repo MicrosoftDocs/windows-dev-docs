@@ -1,5 +1,4 @@
 ---
-author: muhsinking
 Description: Learn to write code for a custom Panel class, implementing ArrangeOverride and MeasureOverride methods, and using the Children property.
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
@@ -9,29 +8,18 @@ ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # BoxPanel, an example custom panel
 
  
 
 Learn to write code for a custom [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class, implementing [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) and [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) methods, and using the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property. 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)</li>
-<li>[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)</li>
-<li>[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) </li>
-</ul>
-</div>
+> **Important APIs**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
 
 The example code shows a custom panel implementation, but we don't devote a lot of time explaining the layout concepts that influence how you can customize a panel for different layout scenarios. If you want more info about these layout concepts and how they might apply to your particular layout scenario, see [XAML custom panels overview](custom-panels-overview.md).
 
@@ -137,7 +125,7 @@ How `BoxPanel` divides size is fairly simple: it divides its space into a number
 
 So what does the measure pass do? It sets a value for the read-only [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) property on each element where [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) was called. Having a **DesiredSize** value is possibly important once you get to the arrange pass, because the **DesiredSize** communicates what the size can or should be when arranging and in the final rendering. Even if you don't use **DesiredSize** in your own logic, the system still needs it.
 
-It's possible for this panel to be used when the height component of *availableSize* is unbounded. If that's true, the panel doesn't have a known height to divide. In this case, the logic for the measure pass informs each child that it doesn't have a bounded height, yet. It does so by passing a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) to the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) call for children where [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) is infinite. That's legal. When **Measure** is called, the logic is that the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) is set as the minimum of these: what was passed to **Measure**, or that element's natural size from factors such as explicitly-set [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Width).
+It's possible for this panel to be used when the height component of *availableSize* is unbounded. If that's true, the panel doesn't have a known height to divide. In this case, the logic for the measure pass informs each child that it doesn't have a bounded height, yet. It does so by passing a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) to the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) call for children where [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) is infinite. That's legal. When **Measure** is called, the logic is that the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) is set as the minimum of these: what was passed to **Measure**, or that element's natural size from factors such as explicitly-set [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width).
 
 > [!NOTE]
 > The internal logic of [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) also has this behavior: **StackPanel** passes an infinite dimension value to [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) on children, indicating that there is no constraint on children in the orientation dimension. **StackPanel** typically sizes itself dynamically, to accommodate all children in a stack that grows in that dimension.

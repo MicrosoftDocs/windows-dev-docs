@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace Frames_Win10
 {
-    //<SnippetFrameRenderer>
+    //<SnippetIMemoryBufferByteAccess>
     [ComImport]
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -23,6 +23,8 @@ namespace Frames_Win10
     {
         void GetBuffer(out byte* buffer, out uint capacity);
     }
+    //</SnippetIMemoryBufferByteAccess>
+    // <SnippetFrameRenderer>
 
     class FrameRenderer
     {
@@ -478,5 +480,5 @@ namespace Frames_Win10
             }
         }
     }
-    //</SnippetFrameRenderer>
+    // </SnippetFrameRenderer>
 }

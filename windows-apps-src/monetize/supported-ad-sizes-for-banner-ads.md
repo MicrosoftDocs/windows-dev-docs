@@ -1,20 +1,17 @@
 ---
-author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: Learn about the supported banner ad sizes.
 title: Supported banner ad sizes
-ms.author: mcleans
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, sizes, banner
 ms.localizationpriority: medium
 ---
-
 # Supported banner ad sizes
 
-The following banner ad sizes are supported for Universal Windows Platform (UWP) apps. When you instantiate your **AdControl** object in your app, make sure you set the height and width properties to match one of these supported sizes.
+The following banner ad sizes are supported for Universal Windows Platform (UWP) apps. When you instantiate your **AdControl** object in your app, make sure you set the width and height properties to match one of these supported sizes.
+
+Sizes are width x height.
 
 * 160x600
 * 300x50

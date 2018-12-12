@@ -1,15 +1,12 @@
 ---
 title: Get started with Xbox Live Creators Program
-author: KevinAsgari
+
 description: Provides links to help you get started with the Xbox Live Creators Program.
 ms.assetid: 2a744405-7ee4-42b4-8f36-9916e8c3a530
-ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 12/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 # Get started with the Xbox Live Creators Program
  
@@ -17,14 +14,23 @@ The Xbox Live Creators Program allows you to quickly and directly publish your g
 
 Xbox Live Creators Program games must be a Universal Windows Platform (UWP) application. For Xbox One, see [UWP on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index) and specifically [System resources for UWP apps and games on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation). Games published through the Xbox Live Creators Program do not have access to the achievements or online multiplayer services. For a full list of supported services, see the [Developer program overview feature table](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table).
 
-## 1. Ensure you have a title created on Dev Center
-Every Xbox Live title must be defined on Dev Center before you will be able to sign-in and make Xbox Live Service calls.  [Creating a new Creators title](create-and-test-a-new-creators-title.md) will show you how to do this.
+## 1. Ensure you have a title created in Partner Center
+Every Xbox Live title must be defined in [Partner Center](https://partner.microsoft.com/dashboard) before you will be able to sign-in and make Xbox Live Service calls.  [Creating a new Creators title](create-and-test-a-new-creators-title.md) will show you how to do this.
 
 ## 2. Follow the appropriate guide to setup your IDE or game engine
 You can follow the appropriate "getting started guide" for your platform and engine and learn the basics of Xbox Live as you go along:
 
-* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
+* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration in Partner Center.
 * [Develop a Creators title with Unity](develop-creators-title-with-unity.md) will show you how to create a new Xbox Live enabled Unity game, handle single user and multi-user sign in, add features such as leaderboards and stats, and generate a native Visual Studio project.
+
+While Unity is the only third party game engine for which we provide documentation, The game engines [Construct (2 & 3)](https://www.scirra.com/construct2) and [Game Maker Studio](https://www.yoyogames.com/gamemaker) also have documentation to help you integrate Xbox Live into your Construct or Game Maker Studio game respectively.
+
+* [Game Maker Studio 2 UWP now supports Xbox Live Creators Program](https://www.yoyogames.com/gamemaker/xblc) will show you how to export your Game Maker Studio projects to play on Xbox One and Windows 10 PC.
+* [Using Xbox Live in UWP apps - Construct](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps) will show you how to use Xbox Live in your Construct 2 and 3 games.
+
+For other game development engines without documented Xbox Live integration, you can still use the Xbox Live APIs to add Xbox Live to your title. To use the Xbox Live API from your project, you can either add references to the binaries with NuGet packages or add the API source. Adding NuGet packages makes compilation quicker while adding the source makes debugging easier.
+
+For support using Xbox Live Services with third party game engines that are not Unity, work with the appropriate game engine staff to answer your questions.
 
 ## 3. Xbox Live concepts & testing
 Once you have a title created, you should learn about the Xbox Live concepts that will affect your experience developing titles. It's also important to test your game on all of the platforms that it will support to ensure that it behaves as expected.

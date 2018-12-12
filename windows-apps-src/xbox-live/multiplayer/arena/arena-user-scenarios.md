@@ -1,16 +1,12 @@
 ---
 title: Arena participant user scenarios
-author: KevinAsgari
+
 description: Describes user scenarios for Xbox Arena participants.
-ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
 ms.localizationpriority: medium
 ---
-
 # Participant user scenarios
 
 Tournaments occupy an interesting space in the gaming world: they simultaneously celebrate both collaborative and competitive gameplay, rather than competition only. The blend of teamwork and combat has really gotten its focus and biggest push from the rise of professional tournaments.

@@ -1,17 +1,14 @@
 ---
-author: TylerMSFT
 title: Run in the background indefinitely
 description: Use the extendedExecutionUnconstrained capability to run a background task or extended execution session in the background indefinitely.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: background task, extended execution, resources, limits
-ms.author: twhitney
+keywords: background task, extended execution, resources, limits, background task
 ms.date: 10/3/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Run in the background indefinitely
 
 To provide the best experience for users, Windows imposes resource limits on Universal Windows Platform (UWP) apps. Foreground apps are given the most memory and execution time; background apps get less. Users are thus protected from poor foreground app performance and heavy battery drain.
@@ -63,7 +60,7 @@ Registering for the **Revoked** event will enable your app to do any cleanup wor
 
 ## Run background tasks indefinitely
 
-In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the in the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
+In the Universal Windows Platform, background tasks are processes that run in the background without any form of user interface. Background tasks may generally run for a maximum of twenty-five seconds before they are cancelled. Some of the longer-running tasks also have a check to ensure that the background task is not sitting idle or using memory. In the Windows Creators Update (version 1703), the [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) restricted capability was introduced to remove these limits. The **extendedBackgroundTaskTime** capability is added as a restricted capability in your app's manifest file:
 
 _Package.appxmanifest_
 ```xml

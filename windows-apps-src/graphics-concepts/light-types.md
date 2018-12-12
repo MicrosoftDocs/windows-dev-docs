@@ -4,15 +4,12 @@ description: The light type property defines which type of light source you're u
 ms.assetid: 57748CAF-6F08-4D1D-9ED6-8FAA8C5FE314
 keywords:
 - Light types
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Light types
 
 

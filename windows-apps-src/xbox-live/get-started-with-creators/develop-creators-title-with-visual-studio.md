@@ -1,17 +1,13 @@
 ---
 title: Develop a Creators title with Visual Studio
-author: StaceyHaffner
+
 description: Get started developing an Xbox Live Creators Program title by using Visual Studio
 ms.assetid: 6952dac0-66ff-4717-b3c7-8b3792e834e3
-ms.author: kevinasg
 ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox live creators, visual studio
 ms.localizationpriority: medium
 ---
-
 # Get started developing an Xbox Live Creators Program title with Visual Studio
 
 > [!NOTE]
@@ -19,7 +15,7 @@ ms.localizationpriority: medium
 
 ## Requirements
 
-1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
+1. Enrollment in the **[Partner Center developer program](https://developer.microsoft.com/store/register)**.
 2. **[Windows 10](https://microsoft.com/windows)**.
 3. **[Visual Studio 2015](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.
@@ -27,9 +23,9 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > Visual Studio 2017 is required if using Windows 10 SDK version 10.0.15063.0 (also known as Creators Update) or later.
 
-## Create a new product on Microsoft Dev Center
+## Create a new product in Partner Center
 
-Every Xbox Live title must have a product created on [Microsoft Dev Center](https://developer.microsoft.com/store) before you will be able to sign-in and make Xbox Live Service calls. See [Creating a new Creators title](create-and-test-a-new-creators-title.md) for more information.
+Every Xbox Live title must have a product created in [Partner Center](https://partner.microsoft.com/dashboard) before you will be able to sign-in and make Xbox Live Service calls. See [Creating a new Creators title](create-and-test-a-new-creators-title.md) for more information.
 
 ## Configuring your development device
 
@@ -53,11 +49,11 @@ To learn more about test accounts and how to create one, see [Authorize Xbox Liv
 If you do not already have an existing UWP project, you can create one by doing the following:
 
 1. In Visual Studio, **File** > **New** > **Project**.
-2. In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane. 
+2. In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane.
 3. In the lower portion of the dialog, give the project a name and specify the location of the project.
 4. Specify the Target Version and Minimum Version of the Windows 10 SDK. See [Choose a UWP version](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) for more information.
 
-![create project in VS](../images/getting_started/vs-create-project.gif) 
+![create project in VS](../images/getting_started/vs-create-project.gif)
 
 > [!NOTE]
 > > Xbox Live API (XSAPI) requires a minimum version 10.0.10586.0 or higher.
@@ -68,9 +64,9 @@ The Xbox Services API comes in flavors for C++ and WinRT and have their naming s
 To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source. Adding NuGet packages makes compilation quicker while adding the source makes debugging easier. This article will walk through using NuGet packages. If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md). You can add the Xbox Live SDK NuGet package by:
 
 1. In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
-2. In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box. 
+2. In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box.
 3. Select the version of the Xbox Live SDK that you want to use from the list on the left. In this case, we will use the Microsoft.Xbox.Live.SDK.WinRT.UWP package.
-3. On the right side of the window, check the box next to your project and click **Install**. 
+3. On the right side of the window, check the box next to your project and click **Install**.
 
 ![add XBL via NuGet](../images/getting_started/vs-add-nuget-xbl.gif)
 
@@ -89,20 +85,20 @@ If you want to use the [Connected Storage](../storage-platform/connected-storage
 If you want to use Connected Storage, you will need to install the Xbox Live Platforms Extensions SDK before you can add references to your project. You can do this by:
 
 1. Download and extract the [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk).
-2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using. 
+2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using.
 
 After you have installed the Xbox Live Platform Extensions SDK, you will need to add a reference to it in Visual Studio. You can do this by:
 
-1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...** 
+1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...**
 2. On the left side of the **Reference Manager** dialog, select **Universal Windows** > **Extensions**.
-3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK. 
+3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK.
 4. Click **OK**.
 
 ![add new reference in VS](../images/getting_started/get-started-vs-add-ref.png)
 
 ### 4. Associate your Visual Studio project with your UWP app
 
-For your game to be able to sign-in, it must be associated with the product you created on Microsoft Dev Center. You can associate your game in Visual Studio by using the Store Association wizard. In Visual Studio, do the following:
+For your game to be able to sign-in, it must be associated with the product you created in Partner Center. You can associate your game in Visual Studio by using the Store Association wizard. In Visual Studio, do the following:
 
 1.  Right click the primary project (the StartUp Project), click **Store** > **Associate App with the Store...**
 2.  Sign-in with the **Windows Developer account** used for creating the app if asked and follow the prompts.
@@ -127,7 +123,7 @@ To talk to the Xbox Live service, you'll need to add a service configuration fil
 3. Right click on the file, select **Properties** and ensure that:
     1. **Build Action** is set to **Content**, and  
     2. **Copy to Output Directory** is set to **Copy Always**.
-5.  Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title. You can get the correct values from the root Xbox Live page on Microsoft Dev Center. The **PrimaryServiceConfigId** appears on Microsoft Dev Center as **SCID**.
+5.  Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title. You can get the correct values from the root Xbox Live page in Partner Center. The **PrimaryServiceConfigId** appears in Partner Center as **SCID**.
 
 ```json
     {
@@ -152,5 +148,4 @@ For example:
 
 ## Learn More
 
-The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK) under showcase the APIs available to developers in the Xbox Live Creators program. To use the samples, you will need to change your sandbox to XDKS.1. 
-  
+The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK) under showcase the APIs available to developers in the Xbox Live Creators program. To use the samples, you will need to change your sandbox to XDKS.1.

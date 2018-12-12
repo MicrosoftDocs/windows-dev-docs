@@ -4,15 +4,12 @@ description: Diffuse lighting depends on both the light direction and the object
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
 keywords:
 - Diffuse lighting
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Diffuse lighting
 
 

@@ -1,13 +1,9 @@
 ---
-author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Debugging, testing, and performance
 description: Use Microsoft Visual Studio and other tools to debug and test your app and prepare it for the Microsoft Store certification process.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -22,6 +18,7 @@ This section shows you how to use Microsoft Visual Studio to debug, test, and op
 | [Testing and debugging tools for Process Lifetime Management (PLM)](testing-debugging-plm.md) | Tools and techniques for debugging and testing how your app works with Process Lifetime Management. |
 | [Test with the Microsoft Emulator for Windows 10 Mobile](test-with-the-emulator.md) | Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes. |
 | [Test Surface Hub apps using Visual Studio](test-surface-hub-apps-using-visual-studio.md) | The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves at the Surface Hub's screen size and resolution. |
+| [Deploy an app through loose file registration](loose-file-registration.md) | This guide shows how to use the loose file layout to validate and share Windows 10 apps without needing to package them. |
 | [Beta testing](beta-testing.md) | **Beta testing** gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices. |
 | [Windows Device Portal](device-portal.md) | The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. |
 | [Windows App Certification Kit](windows-app-certification-kit.md) | To give your app the best chance of being published on the Microsoft Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit. |

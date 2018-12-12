@@ -4,15 +4,12 @@ description: When a resource is created as a streaming resource, the tiles that 
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords:
 - Mappings are into a tile pool
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Mappings are into a tile pool
 
 
@@ -58,15 +55,15 @@ The initial contents of the page table are **NULL** for all entries. Application
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Tile pool creation](tile-pool-creation.md)</p></td>
+<td align="left"><p><a href="tile-pool-creation.md">Tile pool creation</a></p></td>
 <td align="left"><p>Applications can create one or more tile pools per Direct3D device. The total size of each tile pool is restricted to Direct3D 11's resource size limit, which is roughly 1/4 of GPU RAM.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Tile pool resizing](tile-pool-resizing.md)</p></td>
+<td align="left"><p><a href="tile-pool-resizing.md">Tile pool resizing</a></p></td>
 <td align="left"><p>Resize a tile pool to grow a tile pool if the application needs more working set for the streaming resources mapping into it, or to shrink if less space is needed.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Hazard tracking versus tile pool resources](hazard-tracking-versus-tile-pool-resources.md)</p></td>
+<td align="left"><p><a href="hazard-tracking-versus-tile-pool-resources.md">Hazard tracking versus tile pool resources</a></p></td>
 <td align="left"><p>For non-streaming resources, Direct3D can prevent certain hazard conditions during rendering, but because hazard tracking would be at a tile level for streaming resources, tracking hazard conditions during rendering of streaming resources might be too expensive.</p></td>
 </tr>
 </tbody>

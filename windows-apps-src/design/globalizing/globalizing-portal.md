@@ -1,20 +1,15 @@
 ---
-author: stevewhims
 Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
 Search.SourceType: Video
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: stwhi
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
-
 # Globalization and localization
 
 Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
@@ -64,3 +59,4 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
 | [Use the Multilingual App Toolkit 4.0](use-mat.md) | The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. |
 | [Multilingual App Toolkit 4.0 FAQ & troubleshooting](mat-faq-troubleshooting.md) | This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0. |
+| [Prepare your application for the Japanese era change](japanese-era-change.md) | Learn about the May 2019 Japanese era change and how to prepare your application. |

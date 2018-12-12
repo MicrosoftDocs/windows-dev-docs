@@ -8,12 +8,12 @@ using Windows.UI.Core;
 using Windows.Media.Capture;
 using Windows.UI.Xaml;
 
-//<SnippetVideoStabilizationEffectUsing>
+// <SnippetVideoStabilizationEffectUsing>
 using Windows.Media.Core;
 using Windows.Media.MediaProperties;
 using Windows.Media.Effects;
 using Windows.Media;
-//</SnippetVideoStabilizationEffectUsing>
+// </SnippetVideoStabilizationEffectUsing>
 
 namespace SimpleCameraPreview_Win10
 {
@@ -21,7 +21,7 @@ namespace SimpleCameraPreview_Win10
     {
         public async void InitializeMediaCaptureWithExclusiveControl()
         {
-            //<SnippetInitMediaCaptureWithExclusiveControl>
+            // <SnippetInitMediaCaptureWithExclusiveControl>
             MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
             settings.SharingMode = MediaCaptureSharingMode.ExclusiveControl;
 
@@ -37,7 +37,7 @@ namespace SimpleCameraPreview_Win10
                 System.Diagnostics.Debug.WriteLine("The app was denied access to the camera");
             }
 
-            //</SnippetInitMediaCapture>
+            // </SnippetInitMediaCapture>
         }
 
         private void RegisterForExclusiveControlEvent()

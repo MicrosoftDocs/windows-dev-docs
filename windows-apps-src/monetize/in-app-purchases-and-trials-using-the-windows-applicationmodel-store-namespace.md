@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
 title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
-ms.author: mcleans
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: uwp, in-app purchases, IAPs, add-ons, trials, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ---
-
 # In-app purchases and trials using the Windows.ApplicationModel.Store namespace
 
 You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
@@ -19,7 +14,7 @@ You can use members in the [Windows.ApplicationModel.Store](https://msdn.microso
 The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md). For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. For more information, see [In-app purchases and trials](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
+> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. For more information, see [In-app purchases and trials](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
 
 ## Get started with the CurrentApp and CurrentAppSimulator classes
 
@@ -40,19 +35,21 @@ For more information about common tasks you can perform using **CurrentApp** and
 | [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)      |   Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt that provides information about the listed product and monetary cost to the customer. Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Microsoft Store. |
 
 <span id="proxy" />
+
 ## Using the WindowsStoreProxy.xml file with CurrentAppSimulator
 
 When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. **CurrentAppSimulator** methods that alter the app's state, for example by buying a license or handling an in-app purchase, only update the state of the **CurrentAppSimulator** object in memory. The contents of WindowsStoreProxy.xml are not changed. When the app starts again, the license state reverts to what is described in WindowsStoreProxy.xml.
 
 A WindowsStoreProxy.xml file is created by default at the following location: %UserProfile%\AppData\Local\Packages\\&lt;app package folder&gt;\LocalState\Microsoft\Windows Store\ApiData. You can edit this file to define the scenario that you want to simulate in the **CurrentAppSimulator** properties.
 
-Although you can modify the values in this file, we recommend that you create your own WindowsStoreProxy.xml file (in a data folder of your Visual Studio project) for **CurrentAppSimulator** to use instead. When simulating the transaction, call [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) to load your file. If you do not call **ReloadSimulatorAsync** to load your own WindowsStoreProxy.xml file, **CurrentAppSimulator** will create/load (but not overwrite) the default WindowsStoreProxy.xml file.
+Although you can modify the values in this file, we recommend that you create your own WindowsStoreProxy.xml file (in a data folder of your Visual Studio project) for **CurrentAppSimulator** to use instead. When simulating the transaction, call [ReloadSimulatorAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync) to load your file. If you do not call **ReloadSimulatorAsync** to load your own WindowsStoreProxy.xml file, **CurrentAppSimulator** will create/load (but not overwrite) the default WindowsStoreProxy.xml file.
 
 > [!NOTE]
 > Be aware that **CurrentAppSimulator** is not fully initialized until **ReloadSimulatorAsync** completes. And, since **ReloadSimulatorAsync** is an asynchronous method, care should be taken to avoid the race condition of querying **CurrentAppSimulator** on one thread while it is being initialized on another. One technique is to use a flag to indicate that initialization is complete. An app that is installed from the Microsoft Store must use **CurrentApp** instead of **CurrentAppSimulator**, and in that case **ReloadSimulatorAsync** is not called and therefore the race condition just mentioned does not apply. For this reason, design your code so that it will work in both cases, both asychronously and synchronously.
 
 
 <span id="proxy-examples" />
+
 ### Examples
 
 This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an app with a trial mode that expires at 05:00 (UTC) on Jan. 19, 2015.
@@ -140,6 +137,7 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 
 
 <span id="proxy-schema" />
+
 ### Schema
 
 This section lists the XSD file that defines the structure of the WindowsStoreProxy.xml file. To apply this schema to the XML editor in Visual Studio when working with your WindowsStoreProxy.xml file, do the following:
@@ -344,6 +342,7 @@ Once you've done this, edits you make to WindowsStoreProxy.xml will be subject t
 
 
 <span id="proxy-descriptions" />
+
 ### Element and attribute descriptions
 
 This section describes the elements and attributes in the WindowsStoreProxy.xml file.
@@ -358,6 +357,7 @@ The root element of this file is the **CurrentApp** element, which represents th
 |  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing.    |
 
 <span id="listinginformation" />
+
 #### ListingInformation element
 
 This element contains data from the app's listing. **ListingInformation** is a required child of the **CurrentApp** element.
@@ -370,6 +370,7 @@ This element contains data from the app's listing. **ListingInformation** is a r
 |  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |     |
 
 <span id="app-child-of-listinginformation"/>
+
 #### App element (child of ListingInformation)
 
 This element describes the app's license. **App** is a required child of the [ListingInformation](#listinginformation) element.
@@ -381,10 +382,11 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **AppId**  |    Yes   |  1   |   The GUID that identifies the app in the Store. This can be any GUID for testing.        |
 |  **LinkUri**  |    Yes  |  1   |    The URI of the listing page in the store. This can be any valid URI for testing.         |
 |  **CurrentMarket**  |    Yes  |  1   |    The customer's country/region.         |
-|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in the Dev Center dashboard when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
+|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in Partner Center when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
 |  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |    |
 
 <span id="marketdata-child-of-app"/>
+
 #### MarketData element (child of App)
 
 This element provides info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element. **MarketData** is a required child of the [App](#app-child-of-listinginformation) element.
@@ -406,6 +408,7 @@ This element provides info about the app for a given country/region. For each co
 |  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
 
 <span id="product-child-of-listinginformation"/>
+
 #### Product element (child of ListingInformation)
 
 This element describes an add-on for the app. **Product** is an optional child of the [ListingInformation](#listinginformation) element, and it contains one or more [MarketData](#marketdata-child-of-product) elements.
@@ -419,6 +422,7 @@ This element describes an add-on for the app. **Product** is an optional child o
 |  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |  |
 
 <span id="marketdata-child-of-product"/>
+
 #### MarketData element (child of Product)
 
 This element provides info about the add-on for a given country/region. For each country/region in which the add-on is listed, you must include a **MarketData** element. **MarketData** is a required child of the [Product](#product-child-of-listinginformation) element.
@@ -443,6 +447,7 @@ This element provides info about the add-on for a given country/region. For each
 |  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
 
 <span id="licenseinformation"/>
+
 #### LicenseInformation element
 
 This element describes the licenses available for this app and its durable in-app products. **LicenseInformation** is a required child of the **CurrentApp** element.
@@ -464,6 +469,7 @@ The following table shows how to simulate some common conditions by combining va
 |  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
+
 #### App element (child of LicenseInformation)
 
 This element describes the app's license. **App** is a required child of the [LicenseInformation](#licenseinformation) element.
@@ -477,6 +483,7 @@ This element describes the app's license. **App** is a required child of the [Li
 |  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |  |
 
 <span id="product-child-of-licenseinformation"/>
+
 #### Product element (child of LicenseInformation)
 
 This element describes the license status of a durable add-on in the app. **Product** is an optional child of the [LicenseInformation](#licenseinformation) element.
@@ -496,6 +503,7 @@ This element describes the license status of a durable add-on in the app. **Prod
 |  **OfferId**  |     No       |   Contains the string used by the app to identify the category in which the add-on belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
 
 <span id="simulation"/>
+
 #### Simulation element
 
 This element describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing. **Simulation** is an optional child of the **CurrentApp** element, and it contains zero or more [DefaultResponse](#defaultresponse) elements.
@@ -507,6 +515,7 @@ This element describes how calls to various [CurrentAppSimulator](https://msdn.m
 |  **SimulationMode**  |    No        |      Values can be **Interactive** or **Automatic**. When this attribute is set to **Automatic**, the methods will automatically return the specified HRESULT error codes. This can be used when running automated test cases.       |
 
 <span id="defaultresponse"/>
+
 #### DefaultResponse element
 
 This element describes the default error code returned by a **CurrentAppSimulator** method. **DefaultResponse** is an optional child of the [Simulation](#simulation) element.
@@ -515,15 +524,17 @@ This element describes the default error code returned by a **CurrentAppSimulato
 
 |  Attribute  |  Required  |  Description   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Yes        |   Assign this attribute to one of the enum values shown for the **StoreMethodName** type in the [schema](#schema). Each of these enum values represents a **CurrentAppSimulator** method for which you want to simulate an error code return value in your app during testing. For example, the value **RequestAppPurchaseAsync_GetResult** indicates you want to simulate the error code return value of the [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync.aspx) method.            |
+|  **MethodName**  |    Yes        |   Assign this attribute to one of the enum values shown for the **StoreMethodName** type in the [schema](#schema). Each of these enum values represents a **CurrentAppSimulator** method for which you want to simulate an error code return value in your app during testing. For example, the value **RequestAppPurchaseAsync_GetResult** indicates you want to simulate the error code return value of the [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) method.            |
 |  **HResult**  |     Yes       |   Assign this attribute to one of the enum values shown for the **ResponseCodes** type in the [schema](#schema). Each of these enum values represents the error code you want to return for the method that is assigned to the **MethodName** attribute for this **DefaultResponse** element.           |
 
 <span id="consumableinformation"/>
+
 #### ConsumableInformation element
 
 This element describes the consumable add-ons available for this app. **ConsumableInformation** is an optional child of the **CurrentApp** element, and it can contain zero or more [Product](#product-child-of-consumableinformation) elements.
 
 <span id="product-child-of-consumableinformation"/>
+
 #### Product element (child of ConsumableInformation)
 
 This element describes a consumable add-on. **Product** is an optional child of the [ConsumableInformation](#consumableinformation) element.

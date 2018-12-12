@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: This article lists the encoding options that can be used with BitmapEncoder.
 title: BitmapEncoder options reference
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # BitmapEncoder options reference
 
 

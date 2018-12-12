@@ -12,18 +12,18 @@ namespace MIDIWin10
 {
     class MyMidiDeviceWatcher
     {
-        //<SnippetWatcherVariables>
+        // <SnippetWatcherVariables>
         DeviceWatcher deviceWatcher;
         string deviceSelectorString;
         ListBox deviceListBox;
         CoreDispatcher coreDispatcher;
-        //</SnippetWatcherVariables>
+        // </SnippetWatcherVariables>
 
-        //<SnippetDeclareDeviceInformationCollection>
+        // <SnippetDeclareDeviceInformationCollection>
         public DeviceInformationCollection DeviceInformationCollection { get; set; }
-        //</SnippetDeclareDeviceInformationCollection>
+        // </SnippetDeclareDeviceInformationCollection>
 
-        //<SnippetWatcherConstructor>
+        // <SnippetWatcherConstructor>
         public MyMidiDeviceWatcher(string midiDeviceSelectorString, ListBox midiDeviceListBox, CoreDispatcher dispatcher)
         {
             deviceListBox = midiDeviceListBox;
@@ -37,9 +37,9 @@ namespace MIDIWin10
             deviceWatcher.Updated += DeviceWatcher_Updated;
             deviceWatcher.EnumerationCompleted += DeviceWatcher_EnumerationCompleted;
         }
-        //</SnippetWatcherConstructor>
+        // </SnippetWatcherConstructor>
 
-        //<SnippetWatcherEventHandlers>
+        // <SnippetWatcherEventHandlers>
         private async void DeviceWatcher_Removed(DeviceWatcher sender, DeviceInformationUpdate args)
         {
             await coreDispatcher.RunAsync(CoreDispatcherPriority.High, () =>
@@ -75,9 +75,9 @@ namespace MIDIWin10
                 UpdateDevices();
             });
         }
-        //</SnippetWatcherEventHandlers>
+        // </SnippetWatcherEventHandlers>
 
-        //<SnippetWatcherUpdateDevices>
+        // <SnippetWatcherUpdateDevices>
         private async void UpdateDevices()
         {
             // Get a list of all MIDI devices
@@ -90,14 +90,14 @@ namespace MIDIWin10
                 deviceListBox.Items.Add("No MIDI devices found!");
             }
 
-            foreach(var deviceInformation in this.DeviceInformationCollection)
+            foreach (var deviceInformation in this.DeviceInformationCollection)
             {
                 deviceListBox.Items.Add(deviceInformation.Name);
             }
         }
-        //</SnippetWatcherUpdateDevices>
+        // </SnippetWatcherUpdateDevices>
 
-        //<SnippetWatcherStopStart>
+        // <SnippetWatcherStopStart>
         public void StartWatcher()
         {
             deviceWatcher.Start();
@@ -106,17 +106,17 @@ namespace MIDIWin10
         {
             deviceWatcher.Stop();
         }
-        //</SnippetWatcherStopStart>
+        // </SnippetWatcherStopStart>
 
-        //<SnippetWatcherDestructor>
+        // <SnippetWatcherDestructor>
         ~MyMidiDeviceWatcher()
         {
             deviceWatcher.Added -= DeviceWatcher_Added;
             deviceWatcher.Removed -= DeviceWatcher_Removed;
             deviceWatcher.Updated -= DeviceWatcher_Updated;
-
+            deviceWatcher.EnumerationCompleted -= DeviceWatcher_EnumerationCompleted;
             deviceWatcher = null;
         }
-        //</SnippetWatcherDestructor>
+        // </SnippetWatcherDestructor>
     }
 }

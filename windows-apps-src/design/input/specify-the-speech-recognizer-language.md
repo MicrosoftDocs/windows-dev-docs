@@ -1,32 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to select an installed language to use for speech recognition.
 title: Specify the speech recognizer language
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Specify the speech recognizer language
 
 
 Learn how to select an installed language to use for speech recognition.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li> [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)</li>
-<li>[**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)</li>
-<li>[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)</li>
-</ul>
-</div>
+> **Important APIs**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.

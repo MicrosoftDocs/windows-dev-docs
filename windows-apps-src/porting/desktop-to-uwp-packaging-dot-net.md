@@ -1,32 +1,28 @@
 ---
-author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Package an app by using Visual Studio (Desktop Bridge)
-ms.author: normesta
+title: Package a desktop application by using Visual Studio
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ---
+# Package a desktop application by using Visual Studio
 
-# Package an app by using Visual Studio (Desktop Bridge)
-
-You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Windows store or sideload it onto one or more PCs.
+You can use Visual Studio to generate a package for your desktop app. Then, you can publish that package to the Microsoft Store or sideload it onto one or more PCs.
 
 The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
 
 >[!IMPORTANT]
->The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
-## First, consider how you'll distribute your app
+## First, prepare your application
 
-If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
+Review this guide before you begin creating a package for your application: [Prepare to package a desktop application](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
+
 ## Create a package
 
 1. In Visual Studio, open the solution that contains your desktop application project.
@@ -36,6 +32,9 @@ If you plan to publish your app to the [Microsoft Store](https://www.microsoft.c
    You won't have to add any code to it. It's just there to generate a package for you. We'll refer to this project as the "packaging project".
 
    ![Packaging project](images/desktop-to-uwp/packaging-project.png)
+
+   >[!NOTE]
+   >This project appears only in Visual Studio 2017 version 15.5 or higher.
 
 3. Set the **Target Version** of this project to any version that you want, but make sure to set the **Minimum Version** to **Windows 10 Anniversary Update**.
 
@@ -53,11 +52,18 @@ If you plan to publish your app to the [Microsoft Store](https://www.microsoft.c
 
    ![Set entry point](images/desktop-to-uwp/entry-point-set.png)
 
-6. Build the packaging project to ensure that no errors appear.
+6. Build the packaging project to ensure that no errors appear.  If you receive errors, open **Configuration Manager** and ensure that your projects target the same platform.
 
-7. Use the [Create App Packages](..\packaging\packaging-uwp-apps.md) wizard to generate an appxupload file.
+   ![Config manager](images/desktop-to-uwp/config-manager.png)
 
-   You can upload that file directly to the store.
+7. Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.
+
+   You can upload that file directly to the Store.
+
+**Video**
+
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## Next steps
 
@@ -69,18 +75,18 @@ Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Run, debug or test your app**
+**Run, debug or test your desktop application**
 
-See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
+See [Run, debug, and test a packaged desktop application](desktop-to-uwp-debug.md)
 
-**Enhance your desktop app by adding UWP APIs**
+**Enhance your desktop application by adding UWP APIs**
 
 See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)
 
-**Extend your desktop app by adding UWP projects and Windows Runtime Components**
+**Extend your desktop application by adding UWP projects and Windows Runtime Components**
 
 See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).
 
 **Distribute your app**
 
-See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
+See [Distribute a packaged desktop application](desktop-to-uwp-distribute.md)

@@ -26,11 +26,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/controls-and-patterns/fonts.md",
-      "redirect_url": "https://msdn.microsoft.com/windows/uwp/style/fonts",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/controls-and-patterns/nav-pane.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview",
       "redirect_document_id": false
@@ -66,8 +61,53 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/get-started/create-js-apps.md",
+      "redirect_url": "/windows/uwp/get-started/your-first-app#javascript-and-html",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/uwp/design/input/radialcontroller-walkthrough/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/ink-walkthrough.md",
+      "redirect_url": "/windows/uwp/design/input/ink-walkthrough/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-intro.md",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-ui.md",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-style.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-basics-style",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-adaptive-layout.md",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-adaptive-layout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-data-binding.md",
+      "redirect_url": "/windows/uwp/data-binding/xaml-basics-data-binding",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/choose-a-uwp-version.md",
       "redirect_url": "/windows/uwp/get-started/../updates-and-versions/choose-a-uwp-version/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/learn-more.md",
+      "redirect_url": "/windows/uwp/get-started/create-uwp-apps",
       "redirect_document_id": false
     },
     {
@@ -436,11 +476,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/publish/ratings-report.md",
-      "redirect_url": "https://msdn.microsoft.com/windows/uwp/publish/reviews-report",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/publish/set-iap-pricing-and-availability.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability",
       "redirect_document_id": false
@@ -451,18 +486,28 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/using-the-windows-dev-center-dashboard.md",
+      "redirect_url": "/windows/uwp/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/use-map-services.md",
+      "redirect_url": "/windows/uwp/publish/app-management-and-services",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/whats-new/windows-10-build-15021-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-latest-preview-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-build-16190-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-latest-preview-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-build-16225-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-latest-preview-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
       "redirect_document_id": false
     },
     {
@@ -472,7 +517,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763-api-diff",
       "redirect_document_id": false
     },
     {
@@ -517,12 +562,27 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-build-16190.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17763",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/whats-new/windows-10-build-17110.md",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/whats-new/windows-10-build-17110-api-diff.md",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17134-api-diff",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/whats-new/windows-docs-latest.md",
+      "redirect_url": "/windows/uwp/whats-new/windows-docs-september-2018",
       "redirect_document_id": false
     },
     {
@@ -1082,7 +1142,12 @@
     },
     {
       "source_path": "windows-apps-src/in-app-help/voice-and-tone.md",
-      "redirect_url": "/windows/uwp/design/style/voice-and-tone",
+      "redirect_url": "/windows/uwp/design/style/writing-style",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/style/voice-and-tone.md",
+      "redirect_url": "/windows/uwp/design/style/writing-style",
       "redirect_document_id": true
     },
     {
@@ -1391,11 +1456,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/style/fonts.md",
-      "redirect_url": "/windows/uwp/design/style/fonts",
-      "redirect_document_id": true
-    },
-    {
       "source_path": "windows-apps-src/style/icons.md",
       "redirect_url": "/windows/uwp/design/style/icons",
       "redirect_document_id": true
@@ -1472,6 +1532,8 @@
     },
     {
       "source_path": "windows-apps-src/style/typography.md",
+      "source_path": "windows-apps-src/design/controls-and-patterns/fonts.md",
+      "source_path": "windows-apps-src/design/style/fonts.md",
       "redirect_url": "/windows/uwp/design/style/typography",
       "redirect_document_id": true
     },
@@ -1577,8 +1639,222 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
       "redirect_document_id": true
-    }                                    
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-to-xbox-live-in-unity.md",
+      "redirect_url": "/windows/uwp/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
+      "redirect_document_id": true
+    },
+    {                           
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer-overview.md",
+      "redirect_url": "/windows/uwp/xbox-live/multiplayer/xbox-integrated-multiplayer",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-clearing.md",
+      "redirect_url": "/windows/uwp/xbox-live/storage-platform/connected-storage/connected-storage-xb-storage",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/input/custom-keyboard-interactions.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/input/managing-focus-navigation.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation-programmatic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/favorite-people.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/gamertags-and-real-names.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/one-way-relationships.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/privacy-and-people-i-know.md",
+      "redirect_url": "/windows/uwp/xbox-live/social-platform/people-system/xbox-live-people-system",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
+      "redirect_url": "/windows/uwp/get-started/universal-application-platform-guide",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/devices-sensors/pos-advanced-connectivity.md",
+      "redirect_url": "/windows/uwp/devices-sensors/point-of-service",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-to-uwp-root.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-access-features.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-chrome-conversion.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-create-mac.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/resolve-package-upload-errors.md",
+      "redirect_url": "/windows/uwp/publish/upload-app-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/manage-add-ons-in-bulk.md",
+      "redirect_url": "/windows/uwp/publish/add-on-submissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/associate-azure-ad-with-dev-center.md",
+      "redirect_url": "/windows/uwp/publish/associate-azure-ad-with-partner-center",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-profile.md",
+      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/define-pricing-and-market-selection.md",
+      "redirect_url": "/windows/uwp/publish/define-market-selection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/promote-your-app-report.md",
+      "redirect_url": "/windows/uwp/publish/ad-campaign-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/app-declarations.md",
+      "redirect_url": "/windows/uwp/publish/product-declarations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-create-windows.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/tabs-pivot.md",
+      "redirect_url": "windows-apps-src/design/controls-and-patterns/pivot.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/controls-and-patterns/dialogs.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/monetize/download-the-cab-file-for-an-oem-hardware-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/download-the-cab-file-for-an-oem-hardware-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/download-the-cab-file-for-a-windows-10-driver-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/download-the-cab-file-for-a-windows-10-driver-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-details-for-an-oem-hardware-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-details-for-an-oem-hardware-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-details-for-a-windows-10-driver-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-details-for-a-windows-10-driver-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-details-for-a-windows-7-or-windows-8.x-driver-error.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-details-for-a-windows-7-or-windows-8.x-driver-error",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-error-reporting-data-for-windows-10-drivers.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-error-reporting-data-for-windows-10-drivers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-oem-hardware-error-reporting-data.md",
+      "redirect_url": "https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-oem-hardware-error-reporting-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/index.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/overview.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/conversion-samples.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/convert-model-winmltools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/integrate-model.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/integrate-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/samples.md",
+      "redirect_url": "https://github.com/Microsoft/Windows-Machine-Learning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/machine-learning/train-ai-model.md",
+      "redirect_url": "https://docs.microsoft.com/windows/ai/get-onnx-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/composition/lighting.md",
+      "redirect_url": "/windows/uwp/composition/xaml-lighting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/devices-sensors/pos-barcodescanner-get-started.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
+      "redirect_document_id": true
+    },
+	  {
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
+      "redirect_url": "https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/data-sharing-udc.md",
+      "redirect_url": "/windows/uwp/xbox-live/configure-xbl/dev-center/access-policies-udc",
+      "redirect_document_id": true
+    }
   ]
 }

@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
-ms.author: mcleans
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, HTML, javascript
 ms.localizationpriority: medium
 ---
-
 # HTML and JavaScript troubleshooting guide
 
 This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
@@ -29,6 +24,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 ## HTML
 
 <span id="html-notappearing"/>
+
 ### AdControl not appearing
 
 1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
@@ -44,7 +40,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -68,7 +64,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-5.  Check the element positioning. The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) must be inside the viewable area.
+5.  Check the element positioning. The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.
 
 6.  Check the **visibility** property. This property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
 
@@ -134,9 +130,10 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 11. Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
 
-12. Live values for [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
+12. Live values for [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="html-blackboxblinksdisappears"/>
+
 ### Black box blinks and disappears
 
 1.  Double-check all steps in the previous [AdControl not appearing](#html-notappearing) section.
@@ -163,6 +160,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 3.  The **AdControl** is behaving normally. By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
 
 <span id="html-adsnotrefreshing"/>
+
 ### Ads not refreshing
 
 1.  Check the **isAutoRefreshEnabled** property. By default, this optional property is set to true. When set to false, the **refresh** method must be used to retrieve another ad.
@@ -212,9 +210,11 @@ This topic contains solutions to common development issues with the Microsoft ad
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
 <span id="js"/>
+
 ## JavaScript
 
 <span id="js-adcontrolnotappearing"/>
+
 ### AdControl not appearing
 
 1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
@@ -265,7 +265,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -280,6 +280,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="js-blackboxblinksdisappears"/>
+
 ### Black box blinks and disappears
 
 1.  Double-check all steps in the [AdControl not appearing](#js-adcontrolnotappearing) section.
@@ -328,11 +329,12 @@ This topic contains solutions to common development issues with the Microsoft ad
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 
 <span id="js-adsnotrefreshing"/>
+
 ### Ads not refreshing
 
-1.  Check whether the [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
+1.  Check whether the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
 
-2.  Check calls to the [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Check calls to the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
 
     This example demonstrates how to create the **div** for the **AdControl**.
 

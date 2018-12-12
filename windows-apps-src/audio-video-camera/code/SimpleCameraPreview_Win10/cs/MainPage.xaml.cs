@@ -11,17 +11,17 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-//<SnippetSimpleCameraPreviewUsing>
+// <SnippetSimpleCameraPreviewUsing>
+using Windows.UI.Xaml.Navigation;
 using Windows.Media.Capture;
 using Windows.ApplicationModel;
 using System.Threading.Tasks;
 using Windows.System.Display;
 using Windows.Graphics.Display;
-//</SnippetSimpleCameraPreviewUsing>
+// </SnippetSimpleCameraPreviewUsing>
 
-//<SnippetSimpleCaptureUsing>
+// <SnippetSimpleCaptureUsing>
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Storage.Streams;
@@ -29,14 +29,21 @@ using Windows.Storage.FileProperties;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.UI.Xaml.Media.Imaging;
-//</SnippetSimpleCaptureUsing>
+// </SnippetSimpleCaptureUsing>
 
 
-//<SnippetOrientationUsing>
+// <SnippetOrientationUsing>
 using Windows.Devices.Enumeration;
 using Windows.UI.Core;
+// </SnippetOrientationUsing>
 
-//</SnippetOrientationUsing>
+//<SnippetAudioStateMonitorUsing>
+// Namespaces for monitoring audio state
+using Windows.Media;
+using Windows.Media.Audio;
+//</SnippetAudioStateMonitorUsing>
+
+using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -49,26 +56,26 @@ namespace SimpleCameraPreview_Win10
     {
 
         #region Simple preview access
-        //<SnippetDeclareMediaCapture>
+        // <SnippetDeclareMediaCapture>
         MediaCapture mediaCapture;
         bool isPreviewing;
-        //</SnippetDeclareMediaCapture>
+        // </SnippetDeclareMediaCapture>
 
-        //<SnippetDeclareDisplayRequest>
+        // <SnippetDeclareDisplayRequest>
         DisplayRequest displayRequest = new DisplayRequest();
-        //</SnippetDeclareDisplayRequest>
+        // </SnippetDeclareDisplayRequest>
 
-        //<SnippetRegisterSuspending>
+        // <SnippetRegisterSuspending>
         public MainPage()
         {
             this.InitializeComponent();
 
             Application.Current.Suspending += Application_Suspending;
         }
-        //</SnippetRegisterSuspending>
+        // </SnippetRegisterSuspending>
 
 
-        //<SnippetStartPreviewAsync>
+        // <SnippetStartPreviewAsync>
         private async Task StartPreviewAsync()
         {
             try
@@ -99,9 +106,9 @@ namespace SimpleCameraPreview_Win10
             }
 
         }
-        //</SnippetStartPreviewAsync>
+        // </SnippetStartPreviewAsync>
 
-        //<SnippetExclusiveControlStatusChanged>
+        // <SnippetExclusiveControlStatusChanged>
         private async void _mediaCapture_CaptureDeviceExclusiveControlStatusChanged(MediaCapture sender, MediaCaptureDeviceExclusiveControlStatusChangedEventArgs args)
         {
             if (args.Status == MediaCaptureDeviceExclusiveControlStatus.SharedReadOnlyAvailable)
@@ -116,13 +123,13 @@ namespace SimpleCameraPreview_Win10
                 });
             }
         }
-        //</SnippetExclusiveControlStatusChanged>
+        // </SnippetExclusiveControlStatusChanged>
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
              
         }
-        //<SnippetCleanupCameraAsync>
+        // <SnippetCleanupCameraAsync>
         private async Task CleanupCameraAsync()
         {
             if (mediaCapture != null)
@@ -146,16 +153,16 @@ namespace SimpleCameraPreview_Win10
             }
             
         }
-        //</SnippetCleanupCameraAsync>
+        // </SnippetCleanupCameraAsync>
 
-        //<SnippetOnNavigatedFrom>
+        // <SnippetOnNavigatedFrom>
         protected async override void OnNavigatedFrom(NavigationEventArgs e)
         {
             await CleanupCameraAsync();
         }
-        //</SnippetOnNavigatedFrom>
+        // </SnippetOnNavigatedFrom>
 
-        //<SnippetSuspendingHandler>
+        // <SnippetSuspendingHandler>
         private async void Application_Suspending(object sender, SuspendingEventArgs e)
         {
             // Handle global application events only if this page is active
@@ -166,25 +173,25 @@ namespace SimpleCameraPreview_Win10
                 deferral.Complete();
             }
         }
-        //</SnippetSuspendingHandler>
+        // </SnippetSuspendingHandler>
 
         #endregion
 
         #region Simple capture
         public async void InitializeMediaCapture()
         {
-            //<SnippetInitMediaCapture>
+            // <SnippetInitMediaCapture>
             mediaCapture = new MediaCapture();
             await mediaCapture.InitializeAsync();
             mediaCapture.Failed += MediaCapture_Failed;
-            //</SnippetInitMediaCapture>
+            // </SnippetInitMediaCapture>
         }
 
         
 
         public async Task CaptureToSoftwareBitmap()
         {
-            //<SnippetCaptureToSoftwareBitmap>
+            // <SnippetCaptureToSoftwareBitmap>
             // Prepare and capture photo
             var lowLagCapture = await mediaCapture.PrepareLowLagPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Bgra8));
 
@@ -192,12 +199,12 @@ namespace SimpleCameraPreview_Win10
             var softwareBitmap = capturedPhoto.Frame.SoftwareBitmap;
 
             await lowLagCapture.FinishAsync();            
-            //</SnippetCaptureToSoftwareBitmap>
+            // </SnippetCaptureToSoftwareBitmap>
         }
 
         public async Task CaptureToFile()
         {
-            //<SnippetCaptureToFile>
+            // <SnippetCaptureToFile>
             var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
             StorageFile file = await myPictures.SaveFolder.CreateFileAsync("photo.jpg", CreationCollisionOption.GenerateUniqueName);
 
@@ -218,61 +225,61 @@ namespace SimpleCameraPreview_Win10
                     await encoder.FlushAsync();
                 }
             }
-            //</SnippetCaptureToFile>
+            // </SnippetCaptureToFile>
         }
 
 
-        //<SnippetLowLagMediaRecording>
+        // <SnippetLowLagMediaRecording>
         LowLagMediaRecording _mediaRecording;
-        //</SnippetLowLagMediaRecording>
+        // </SnippetLowLagMediaRecording>
 
         public async Task StartVideoCapture()
         {
 
-            //<SnippetRecordLimitationExceeded>
+            // <SnippetRecordLimitationExceeded>
             mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
-            //</SnippetRecordLimitationExceeded>
+            // </SnippetRecordLimitationExceeded>
 
-            //<SnippetStartVideoCapture>
+            // <SnippetStartVideoCapture>
             var myVideos = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Videos);
             StorageFile file = await myVideos.SaveFolder.CreateFileAsync("video.mp4", CreationCollisionOption.GenerateUniqueName);
             _mediaRecording = await mediaCapture.PrepareLowLagRecordToStorageFileAsync(
                     MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto), file);
             await _mediaRecording.StartAsync();
-            //</SnippetStartVideoCapture>
+            // </SnippetStartVideoCapture>
         }
 
 
 
         public async Task StopVideoCapture()
         {
-            //<SnippetStopRecording>
+            // <SnippetStopRecording>
             await _mediaRecording.StopAsync();
-            //</SnippetStopRecording>
+            // </SnippetStopRecording>
 
-            //<SnippetFinishAsync>
+            // <SnippetFinishAsync>
             await _mediaRecording.FinishAsync();
-            //</SnippetFinishAsync>
+            // </SnippetFinishAsync>
         }
 
 
         public async Task PauseVideoCaptureSimple()
         {
-            //<SnippetPauseRecordingSimple>
+            // <SnippetPauseRecordingSimple>
             await _mediaRecording.PauseAsync(Windows.Media.Devices.MediaCapturePauseBehavior.ReleaseHardwareResources);
-            //</SnippetPauseRecordingSimple>
+            // </SnippetPauseRecordingSimple>
         }
         public async Task ResumeVideoCaptureSimple()
         {
-            //<SnippetResumeRecordingSimple>
+            // <SnippetResumeRecordingSimple>
             await _mediaRecording.ResumeAsync();
-            //</SnippetResumeRecordingSimple>
+            // </SnippetResumeRecordingSimple>
         }
 
         TimeSpan _totalRecordedTime = TimeSpan.Zero;
         public async Task PauseVideoCaptureWithResult()
         {
-            //<SnippetPauseCaptureWithResult>
+            // <SnippetPauseCaptureWithResult>
             MediaCapturePauseResult result = 
                 await _mediaRecording.PauseWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior.RetainHardwareResources);
             
@@ -292,12 +299,12 @@ namespace SimpleCameraPreview_Win10
             });
 
             _totalRecordedTime += result.RecordDuration;
-            //</SnippetPauseCaptureWithResult>
+            // </SnippetPauseCaptureWithResult>
 
         }
         public async Task ResumeVideoCaptureWithResult()
         {
-            //<SnippetResumeCaptureWithResult>
+            // <SnippetResumeCaptureWithResult>
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 PauseImage.Source = null;
@@ -305,7 +312,7 @@ namespace SimpleCameraPreview_Win10
             });
 
             await _mediaRecording.ResumeAsync();
-            //</SnippetResumeCaptureWithResult>
+            // </SnippetResumeCaptureWithResult>
         }
 
         public async Task StartAudioCapture()
@@ -314,7 +321,7 @@ namespace SimpleCameraPreview_Win10
             mediaCapture = new MediaCapture();
             await mediaCapture.InitializeAsync();
 
-            //<SnippetStartAudioCapture>
+            // <SnippetStartAudioCapture>
             mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
 
             var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -322,15 +329,19 @@ namespace SimpleCameraPreview_Win10
             _mediaRecording = await mediaCapture.PrepareLowLagRecordToStorageFileAsync(
                     MediaEncodingProfile.CreateMp3(AudioEncodingQuality.High), file);
             await _mediaRecording.StartAsync();
-            //</SnippetStartAudioCapture>
+            // </SnippetStartAudioCapture>
         }
-        //<SnippetRecordLimitationExceededHandler>
+        public async Task StopAudioCapture()
+        {
+            await _mediaRecording.StopAsync();
+        }
+        // <SnippetRecordLimitationExceededHandler>
         private async void MediaCapture_RecordLimitationExceeded(MediaCapture sender)
         {
             await _mediaRecording.StopAsync();
             System.Diagnostics.Debug.WriteLine("Record limitation exceeded.");
         }
-        //</SnippetRecordLimitationExceededHandler>
+        // </SnippetRecordLimitationExceededHandler>
 
         private void MediaCapture_Failed(MediaCapture sender, MediaCaptureFailedEventArgs errorEventArgs)
         {
@@ -433,35 +444,35 @@ namespace SimpleCameraPreview_Win10
         #region Handle device orientation
         public void SetAutoRotationPreference()
         {
-            //<SnippetAutoRotationPreference>
+            // <SnippetAutoRotationPreference>
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-            //</SnippetAutoRotationPreference>
+            // </SnippetAutoRotationPreference>
         }
 
-        //<SnippetCameraDeviceLocationBools>
+        // <SnippetCameraDeviceLocationBools>
         private bool _externalCamera;
         private bool _mirroringPreview;
-        //</SnippetCameraDeviceLocationBools>
+        // </SnippetCameraDeviceLocationBools>
 
-        //<SnippetFindCameraDeviceByPanelAsync>
+        // <SnippetFindCameraDeviceByPanelAsync>
         //private static async Task<DeviceInformation> FindCameraDeviceByPanelAsync(Windows.Devices.Enumeration.Panel desiredPanel)
         //{
         //    var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
         //    DeviceInformation desiredDevice = allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null && x.EnclosureLocation.Panel == desiredPanel);
         //    return desiredDevice ?? allVideoDevices.FirstOrDefault();
         //}
-        //</SnippetFindCameraDeviceByPanelAsync>
+        // </SnippetFindCameraDeviceByPanelAsync>
 
 
-        //<SnippetDeclareCameraDevice>
+        // <SnippetDeclareCameraDevice>
         DeviceInformation _cameraDevice;
-        //</SnippetDeclareCameraDevice>
+        // </SnippetDeclareCameraDevice>
 
 
         
         private async Task InitializeMediaCaptureWithOrientation()
         {
-            //<SnippetInitMediaCaptureWithOrientation>
+            // <SnippetInitMediaCaptureWithOrientation>
             var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
             DeviceInformation desiredDevice = allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null 
                 && x.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
@@ -502,20 +513,20 @@ namespace SimpleCameraPreview_Win10
                 _mirroringPreview = (_cameraDevice.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
             }
 
-            //</SnippetInitMediaCaptureWithOrientation>
+            // </SnippetInitMediaCaptureWithOrientation>
 
         }
 
-        //<SnippetDeclareRotationHelper>
+        // <SnippetDeclareRotationHelper>
         private CameraRotationHelper _rotationHelper;
-        //</SnippetDeclareRotationHelper>
+        // </SnippetDeclareRotationHelper>
         
         private void InitRotationHelper()
         {
-            //<SnippetInitRotationHelper>
+            // <SnippetInitRotationHelper>
             _rotationHelper = new CameraRotationHelper(_cameraDevice.EnclosureLocation);
             _rotationHelper.OrientationChanged += RotationHelper_OrientationChanged;
-            //</SnippetInitRotationHelper>
+            // </SnippetInitRotationHelper>
         }
 
         
@@ -523,16 +534,16 @@ namespace SimpleCameraPreview_Win10
         
         private async Task StartPreviewWithRotationAsync()
         {
-            //<SnippetStartPreviewWithRotationAsync>
+            // <SnippetStartPreviewWithRotationAsync>
             PreviewControl.Source = mediaCapture;
             PreviewControl.FlowDirection = _mirroringPreview ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
 
             await mediaCapture.StartPreviewAsync();
             await SetPreviewRotationAsync();
-            //</SnippetStartPreviewWithRotationAsync>
+            // </SnippetStartPreviewWithRotationAsync>
         }
 
-        //<SnippetSetPreviewRotationAsync>
+        // <SnippetSetPreviewRotationAsync>
         private async Task SetPreviewRotationAsync()
         {
             if (!_externalCamera)
@@ -545,9 +556,9 @@ namespace SimpleCameraPreview_Win10
                 await mediaCapture.SetEncodingPropertiesAsync(MediaStreamType.VideoPreview, props, null);
             }
         }
-        //</SnippetSetPreviewRotationAsync>
+        // </SnippetSetPreviewRotationAsync>
 
-        //<SnippetHelperOrientationChanged>
+        // <SnippetHelperOrientationChanged>
         private async void RotationHelper_OrientationChanged(object sender, bool updatePreview)
         {
             if (updatePreview)
@@ -564,9 +575,9 @@ namespace SimpleCameraPreview_Win10
                 CapturePhotoButton.RenderTransform = transform;
             });
         }
-        //</SnippetHelperOrientationChanged>
+        // </SnippetHelperOrientationChanged>
 
-        //<SnippetCapturePhotoWithOrientation>
+        // <SnippetCapturePhotoWithOrientation>
         private async Task CapturePhotoWithOrientationAsync()
         {
             var captureStream = new InMemoryRandomAccessStream();
@@ -596,9 +607,9 @@ namespace SimpleCameraPreview_Win10
                 await encoder.FlushAsync();
             }
         }
-        //</SnippetCapturePhotoWithOrientation>
+        // </SnippetCapturePhotoWithOrientation>
 
-        //<SnippetStartRecordingWithOrientationAsync>
+        // <SnippetStartRecordingWithOrientationAsync>
         private async Task StartRecordingWithOrientationAsync()
         {
             try
@@ -619,7 +630,7 @@ namespace SimpleCameraPreview_Win10
                 System.Diagnostics.Debug.WriteLine("Exception when starting video recording: {0}", ex.ToString());
             }
         }
-        //</SnippetStartRecordingWithOrientationAsync>
+        // </SnippetStartRecordingWithOrientationAsync>
 
         private async Task StopRecordingWithOrientationAsync()
         {
@@ -634,7 +645,108 @@ namespace SimpleCameraPreview_Win10
         }
         #endregion
 
+        #region audio state monitor
+        //<SnippetAudioStateVars>
+        AudioStateMonitor captureAudioStateMonitor;
+        AudioStateMonitor renderAudioStateMonitor;
+        //</SnippetAudioStateVars>
 
+        
+        void RegisterAudioPolicyHandlers()
+        {
+            //<SnippetRegisterAudioStateMonitor>
+            captureAudioStateMonitor = AudioStateMonitor.CreateForCaptureMonitoring();
+            captureAudioStateMonitor.SoundLevelChanged += CaptureAudioStateMonitor_SoundLevelChanged; ;
+
+            renderAudioStateMonitor = AudioStateMonitor.CreateForRenderMonitoring();
+            renderAudioStateMonitor.SoundLevelChanged += RenderAudioStateMonitor_SoundLevelChanged; ;
+            //</SnippetRegisterAudioStateMonitor>
+        }
+
+
+
+        //<SnippetCaptureSoundLevelChanged>
+        bool isCapturingAudio = false;
+        bool capturingStoppedForAudioState = false;
+        private void CaptureAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            switch (sender.SoundLevel)
+            {
+                case SoundLevel.Full:
+                    if(capturingStoppedForAudioState)
+                    {
+                        StartAudioCapture();
+                        capturingStoppedForAudioState = false;
+                    }  
+                    break;
+                case SoundLevel.Muted:
+                    if(isCapturingAudio)
+                    {
+                        StopAudioCapture();
+                        capturingStoppedForAudioState = true;
+                    }
+                    break;
+                case SoundLevel.Low:
+                    // This should never happen for capture
+                    Debug.WriteLine("Unexpected audio state.");
+                    break;
+            }
+        }
+        //</SnippetCaptureSoundLevelChanged>
+
+        Windows.Media.Playback.MediaPlayer mediaPlayer;
+        bool isPodcast;
+
+
+        //<SnippetRenderSoundLevelChanged>
+        private void RenderAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            if ((sender.SoundLevel == SoundLevel.Full) ||
+          (sender.SoundLevel == SoundLevel.Low && !isPodcast))
+            {
+                mediaPlayer.Play();
+            }
+            else if ((sender.SoundLevel == SoundLevel.Muted) ||
+                 (sender.SoundLevel == SoundLevel.Low && isPodcast))
+            {
+                // Pause playback if we’re muted or if we’re playing a podcast and are ducked
+                mediaPlayer.Pause();
+            }
+        }
+        //</SnippetRenderSoundLevelChanged>
+
+        //This snippet supports the general AudioStateMonitor article
+
+        //<SnippetDeviceIdCategoryVars>
+        AudioStateMonitor gameChatAudioStateMonitor;
+        //</SnippetDeviceIdCategoryVars>
+        private void RegisterAudioStateMonitorDeviceIdCategory()
+        {
+            //<SnippetSoundLevelDeviceIdCategory>
+            string deviceId = Windows.Media.Devices.MediaDevice.GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole.Communications);
+            gameChatAudioStateMonitor = AudioStateMonitor.CreateForCaptureMonitoringWithCategoryAndDeviceId(MediaCategory.GameChat, deviceId);
+            gameChatAudioStateMonitor.SoundLevelChanged += GameChatSoundLevelChanged;
+            //</SnippetSoundLevelDeviceIdCategory>
+        }
+        //<SnippetGameChatSoundLevelChanged>
+        private void GameChatSoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            switch (sender.SoundLevel)
+            {
+                case SoundLevel.Full:
+                    StartAudioCapture();
+                    break;
+                case SoundLevel.Muted:
+                    StopAudioCapture();
+                    break;
+                case SoundLevel.Low:
+                    // Audio capture should never be "ducked", only muted or full volume.
+                    Debug.WriteLine("Unexpected audio state change.");
+                    break;
+            }
+        }
+        //</SnippetGameChatSoundLevelChanged>
+        #endregion
     }
 
 

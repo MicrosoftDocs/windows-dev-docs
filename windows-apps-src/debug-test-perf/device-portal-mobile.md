@@ -1,14 +1,10 @@
 ---
-author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Mobile
 description: Learn how the Windows Device Portal lets you remotely configure and manage your mobile device.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 # Device Portal for Mobile
@@ -78,3 +74,8 @@ Device Portal on mobile devices provides the standard set of pages. For detailed
 - Performance tracing (WPR) 
 - Devices
 - Networking
+
+## See also
+
+* [Windows Device Portal overview](device-portal.md)
+* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

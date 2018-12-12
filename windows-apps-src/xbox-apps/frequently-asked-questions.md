@@ -1,17 +1,12 @@
 ---
-author: Mtoepke
 title: Frequently asked questions
 description: FAQ about UWP on Xbox.
-ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ---
-
 # Frequently asked questions
 
 Things not working the way you expected? 
@@ -67,17 +62,17 @@ See the [Xbox One Developer Mode Deactivation](devkit-deactivation.md) topic for
 
 ### I sold my Xbox One and left it in Developer Mode. How do I deactivate Developer Mode?
 
-If you no longer have access to your Xbox One, you can deactivate it in Windows Dev Center. 
-For details, see the **Deactivate your console using Windows Dev Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center) topic. 
+If you no longer have access to your Xbox One, you can deactivate it in Windows Partner Center. 
+For details, see the **Deactivate your console using Partner Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-partner-center) topic. 
 
-### I left the Developer Program using Windows Dev Center but I'm in still Developer Mode. What do I do?
+### I left the Developer Program using Partner Center but I'm in still Developer Mode. What do I do?
 
 Start Dev Home and select the **Leave developer mode** button. 
 This will restart your console in Retail Mode. 
 
 ### Can I publish my app?
 
-You can [publish apps](../publish/index.md) through Dev Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
+You can [publish apps](../publish/index.md) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
 
 ### Can I publish my game?
 
@@ -120,26 +115,6 @@ If Visual Studio cannot connect to your Xbox One:
 
 5. Make sure that you are using the Universal (Unencrypted Protocol) in the Authentication drop-down list on the **Debug** tab. For more details, see [Development environment setup](development-environment-setup.md).
 
-<!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
-
-<!--
-If Visual Studio can connect, but deployment is failing (for example you get this error message: "DEP0700 : Registration of the app failed.(0x80073cf9)"):
-
-1. Make sure that your app is not installed by uninstalling it from the Collections app in the Xbox One shell. 
-
-> **Note**&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
-
-2. If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode, and then switch back to Developer Mode. 
-This will clear Dev Storage.
-
-3. If your issues persist, follow the steps above and then use **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
-Go to Settings > System > Console info & updates > Reset console, and select the **Reset and keep my games & apps** button.
-
-> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
-
-> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
-This will delete all of your games, apps, settings and content and deactivate Developer Mode.
--->
 
 ### If I'm building an app using HTML/JavaScript, how do I enable Gamepad navigation?
 

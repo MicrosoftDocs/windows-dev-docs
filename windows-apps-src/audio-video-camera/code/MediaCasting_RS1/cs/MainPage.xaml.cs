@@ -13,20 +13,20 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetBuiltInCastingUsing>
+// <SnippetBuiltInCastingUsing>
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.Media.Core;
-//</SnippetBuiltInCastingUsing>
+// </SnippetBuiltInCastingUsing>
 
-//<SnippetCastingNamespace>
+// <SnippetCastingNamespace>
 using Windows.Media.Casting;
-//</SnippetCastingNamespace>
+// </SnippetCastingNamespace>
 
-//<SnippetEnumerationNamespace>
+// <SnippetEnumerationNamespace>
 using Windows.Devices.Enumeration;
-//</SnippetEnumerationNamespace>
+// </SnippetEnumerationNamespace>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -41,7 +41,7 @@ namespace MediaCasting_RS1
         {
             this.InitializeComponent();
 
-            //<SnippetInitCastingPicker>
+            // <SnippetInitCastingPicker>
             //Initialize our picker object
             castingPicker = new CastingDevicePicker();
 
@@ -50,9 +50,9 @@ namespace MediaCasting_RS1
 
             //Hook up device selected event
             castingPicker.CastingDeviceSelected += CastingPicker_CastingDeviceSelected;
-            //</SnippetInitCastingPicker>
+            // </SnippetInitCastingPicker>
         }
-        //<SnippetOpenButtonClick>
+        // <SnippetOpenButtonClick>
         private async void openButton_Click(object sender, RoutedEventArgs e)
         {
             //Create a new picker
@@ -75,13 +75,13 @@ namespace MediaCasting_RS1
                 mediaPlayerElement.MediaPlayer.Play();
             }
         }
-        //</SnippetOpenButtonClick>
+        // </SnippetOpenButtonClick>
 
-        //<SnippetDeclareCastingPicker>
+        // <SnippetDeclareCastingPicker>
         CastingDevicePicker castingPicker;
-        //</SnippetDeclareCastingPicker>
+        // </SnippetDeclareCastingPicker>
 
-        //<SnippetCastPickerButtonClick>
+        // <SnippetCastPickerButtonClick>
         private void castPickerButton_Click(object sender, RoutedEventArgs e)
         {
             //Retrieve the location of the casting button
@@ -92,9 +92,9 @@ namespace MediaCasting_RS1
             castingPicker.Show(new Rect(pt.X, pt.Y, castPickerButton.ActualWidth, castPickerButton.ActualHeight),
                 Windows.UI.Popups.Placement.Above);
         }
-        //</SnippetCastPickerButtonClick>
+        // </SnippetCastPickerButtonClick>
 
-        //<SnippetCastingDeviceSelected>
+        // <SnippetCastingDeviceSelected>
         private async void CastingPicker_CastingDeviceSelected(CastingDevicePicker sender, CastingDeviceSelectedEventArgs args)
         {
             //Casting must occur from the UI thread.  This dispatches the casting calls to the UI thread.
@@ -111,9 +111,9 @@ namespace MediaCasting_RS1
                 await connection.RequestStartCastingAsync(mediaPlayerElement.MediaPlayer.GetAsCastingSource());
             });
         }
-        //</SnippetCastingDeviceSelected>
+        // </SnippetCastingDeviceSelected>
         /*
-        //<SnippetEmptyStateHandlers>
+        // <SnippetEmptyStateHandlers>
         private async void Connection_StateChanged(CastingConnection sender, object args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -129,15 +129,15 @@ namespace MediaCasting_RS1
                 ShowMessageToUser("Casting Connection State Changed: " + sender.State);
             });
         }
-        //</SnippetEmptyStateHandlers>
+        // </SnippetEmptyStateHandlers>
         */
 
-        //<SnippetDeclareDeviceWatcher>
+        // <SnippetDeclareDeviceWatcher>
         DeviceWatcher deviceWatcher;
         CastingConnection castingConnection;
-        //</SnippetDeclareDeviceWatcher>
+        // </SnippetDeclareDeviceWatcher>
 
-        //<SnippetStartWatcherButtonClick>
+        // <SnippetStartWatcherButtonClick>
         private void startWatcherButton_Click(object sender, RoutedEventArgs e)
         {
             startWatcherButton.IsEnabled = false;
@@ -153,10 +153,13 @@ namespace MediaCasting_RS1
             deviceWatcher.Removed += DeviceWatcher_Removed;
             deviceWatcher.EnumerationCompleted += DeviceWatcher_EnumerationCompleted;
             deviceWatcher.Stopped += DeviceWatcher_Stopped;
-        }
-        //</SnippetStartWatcherButtonClick>
 
-        //<SnippetWatcherAdded>
+            //Start the watcher
+            deviceWatcher.Start();
+        }
+        // </SnippetStartWatcherButtonClick>
+
+        // <SnippetWatcherAdded>
         private async void DeviceWatcher_Added(DeviceWatcher sender, DeviceInformation args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
@@ -166,9 +169,9 @@ namespace MediaCasting_RS1
                 castingDevicesListBox.Items.Add(addedDevice);
             });
         }
-        //</SnippetWatcherAdded>
+        // </SnippetWatcherAdded>
 
-        //<SnippetWatcherRemoved>
+        // <SnippetWatcherRemoved>
         private async void DeviceWatcher_Removed(DeviceWatcher sender, DeviceInformationUpdate args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -182,9 +185,9 @@ namespace MediaCasting_RS1
                 }
             });
         }
-        //</SnippetWatcherRemoved>
+        // </SnippetWatcherRemoved>
 
-        //<SnippetWatcherEnumerationCompleted>
+        // <SnippetWatcherEnumerationCompleted>
         private async void DeviceWatcher_EnumerationCompleted(DeviceWatcher sender, object args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -194,9 +197,9 @@ namespace MediaCasting_RS1
                 deviceWatcher.Stop();
             });
         }
-        //</SnippetWatcherEnumerationCompleted>
+        // </SnippetWatcherEnumerationCompleted>
 
-        //<SnippetWatcherStopped>
+        // <SnippetWatcherStopped>
         private async void DeviceWatcher_Stopped(DeviceWatcher sender, object args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -206,10 +209,10 @@ namespace MediaCasting_RS1
                 watcherProgressRing.IsActive = false;
             });
         }
-        //</SnippetWatcherStopped>
+        // </SnippetWatcherStopped>
 
 
-        //<SnippetSelectionChanged>
+        // <SnippetSelectionChanged>
         private async void castingDevicesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (castingDevicesListBox.SelectedItem != null)
@@ -232,9 +235,9 @@ namespace MediaCasting_RS1
                 disconnectButton.Visibility = Visibility.Visible;
             }
         }
-        //</SnippetSelectionChanged>
+        // </SnippetSelectionChanged>
 
-        //<SnippetStateChanged>
+        // <SnippetStateChanged>
         private async void Connection_StateChanged(CastingConnection sender, object args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -265,9 +268,9 @@ namespace MediaCasting_RS1
                 }
             });
         }
-        //</SnippetStateChanged>
+        // </SnippetStateChanged>
 
-        //<SnippetErrorOccurred>
+        // <SnippetErrorOccurred>
         private async void Connection_ErrorOccurred(CastingConnection sender, CastingConnectionErrorOccurredEventArgs args)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -277,9 +280,9 @@ namespace MediaCasting_RS1
                 castingDevicesListBox.SelectedItem = null;
             });
         }
-        //</SnippetErrorOccurred>
+        // </SnippetErrorOccurred>
 
-        //<SnippetDisconnectButton>
+        // <SnippetDisconnectButton>
         private async void disconnectButton_Click(object sender, RoutedEventArgs e)
         {
             if (castingConnection != null)
@@ -288,7 +291,7 @@ namespace MediaCasting_RS1
                 await castingConnection.DisconnectAsync();
             }
         }
-        //</SnippetDisconnectButton>
+        // </SnippetDisconnectButton>
         private void ShowMessageToUser(string message)
         {
 

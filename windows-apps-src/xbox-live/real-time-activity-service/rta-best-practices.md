@@ -1,17 +1,13 @@
 ---
 title: RTA Best Practices
-author: KevinAsgari
+
 description: Learn about the best practices when using the Xbox Live Real-Time Acitivity service.
 ms.assetid: 543b78e3-d06b-4969-95db-2cb996a8bbd3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, real time activity
 ms.localizationpriority: medium
 ---
-
 # Real Time Activity (RTA) Best Practices
 These best practices will help you make the most out of your title's use of RTA.
 
@@ -29,8 +25,12 @@ When your title doesn't require real-time updates on a statistic, it should term
 
 Titles should be aware that when the authentication token for the user expires, their session will be terminated by the service. The title needs to be capable of detecting when such event happens, reconnect and re-subscribe to all the statistics it was previously subscribed to.
 
+RTA connections are closed after two hours by design, which will force the client to reconnect. This is done because the auth token for the connection is cached to save on message bandwidth. Eventually that token will expire. By closing the connection and forcing the client to reconnect the client is forced to refresh the auth token.
+
 A client could also get disconnected due to a user's ISP having issues or when the process for the title is suspended. When this happens, a WebSocket event is raised to let the client know. In general, it is best practice to be able to handle disconnects from the service.
 
+> [!WARNING]
+> If a client uses RTA for multiplayer sessions, and is disconnected for thirty seconds, the [Multiplayer Session Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md) detects that the RTA session is closed, and kicks the user out of the session. It's up to the RTA client to detect when the connection is closed and initiate a reconnect and resubscribe before the MPSD ends the session.
 
 ## Managing Subscriptions
 

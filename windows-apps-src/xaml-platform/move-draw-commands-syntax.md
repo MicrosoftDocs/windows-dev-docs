@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
 title: Move and draw commands syntax
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Move and draw commands syntax
 
 
@@ -19,7 +14,7 @@ Learn about the move and draw commands (a mini-language) that you can use to spe
 
 ## Properties that use move and draw command strings
 
-The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation. This representation is basically a finished set of vectors that is ready for presentation. The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements. For a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) object you also need values for [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape#Windows_UI_Xaml_Shapes_Shape_Fill), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow. For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.
+The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation. This representation is basically a finished set of vectors that is ready for presentation. The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements. For a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) object you also need values for [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow. For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.
 
 There are two properties in the Windows Runtime that can use a string representing move and draw commands: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) and [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). If you set one of these properties by specifying move and draw commands, you typically set it as a XAML attribute value along with other required attributes of that element. Without getting into the specifics, here's what that looks like:
 

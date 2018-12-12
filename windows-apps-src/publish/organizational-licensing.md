@@ -1,17 +1,13 @@
----
-author: jnHs
+﻿---
 Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
-ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing
-ms.localizationpriority: high
----
+keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing, enterprise, education store, business store, volume purchase, bulk
+localizationpriority: high
 
+---
 # Organizational licensing options
 
 
@@ -19,10 +15,14 @@ You can indicate whether and how your app can be offered for volume purchases th
 
 Through these settings, you can opt to allow your app to be made available to organizations (business and educational) who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
 
+You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+
 > [!NOTE]
 > Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
 
-You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+> [!IMPORTANT]
+> Submissions that use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) won't be made available to Microsoft Store for Business and Microsoft Store for Education. To make your app available for volume purchases by organizations, you must create and submit your submissions in Partner Center.
+
 
 ## Allowing your app to be offered to organizations
 
@@ -46,7 +46,7 @@ Note that this box is **unchecked** by default. You must check the box to allow 
 Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.
 
 > [!IMPORTANT]
-> Offline licensing is not supported for .xap packages.  
+> Offline licensing is not supported for .xap packages.
 
  
 ## Paid app support
@@ -54,7 +54,7 @@ Offline licensing allows organizations to acquire your app on a volume basis, an
 Currently, developer accounts located in certain markets are able to offer paid apps for volume acquisition through Microsoft Store for Business. 
 
 > [!NOTE]
-> In some markets, the price shown for an app in Microsoft Store for Business or Microsoft Store for Education may be different than the price shown to retail customers in the Microsoft Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For a list of markets where Microsoft Store for Business and Microsoft Store for Education are available, see [Microsoft Store for Business and Microsoft Store for Education overview](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
+> In some markets, the price shown for an app in Microsoft Store for Business or Microsoft Store for Education may be different than the price shown to retail customers in the Microsoft Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). For a list of markets where Microsoft Store for Business and Microsoft Store for Education are available, see [Microsoft Store for Business and Microsoft Store for Education overview](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
 
 If your country or region is not listed below, your paid apps currently will not be offered in Microsoft Store for Business and Microsoft Store for Education. If this is the case, the organizational licensing selections you make for your paid apps may be applied at a later time, as we may add support for submissions from additional developer account markets in the future.
 

@@ -1,23 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Windows Dev Center.
+description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Partner Center.
 title: Commit an add-on submission
-ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, commit add-on submission, in-app product, IAP
 ms.localizationpriority: medium
 ---
-
 # Commit an add-on submission
 
-
-
-
-Use this method in the Microsoft Store submission API to commit a new or updated add-on (also known as in-app product or IAP) submission to Windows Dev Center. The commit action alerts Dev Center that the submission data has been uploaded (including any related icons). In response, Dev Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in the Dev Center dashboard.
+Use this method in the Microsoft Store submission API to commit a new or updated add-on (also known as in-app product or IAP) submission to Partner Center. The commit action alerts Partner Center that the submission data has been uploaded (including any related icons). In response, Partner Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in Partner Center.
 
 For more information about how the commit operation fits into the process of submitting an add-on by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
@@ -37,8 +29,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -46,16 +36,14 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to commit. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Get all add-ons](get-all-add-ons.md) and [Create an add-on](create-an-add-on.md). |
-| submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to commit. The Store ID is available in Partner Center, and it is included in the response data for requests to [Get all add-ons](get-all-add-ons.md) and [Create an add-on](create-an-add-on.md). |
+| submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
-<span/>
 
 ### Request body
 
@@ -86,7 +74,6 @@ The following example demonstrates the JSON response body for a successful call 
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
-<span/>
 
 ## Error codes
 
@@ -96,9 +83,7 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be committed in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
-
-<span/>
+| 409  | The specified submission was found but it could not be committed in its current state, or the add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 
 ## Related topics

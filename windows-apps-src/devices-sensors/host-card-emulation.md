@@ -1,13 +1,9 @@
 ---
-author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: Create an NFC Smart Card app
 description: Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure element, but that model required secure payment apps to be tightly coupled with mobile-network operators (MNO).
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

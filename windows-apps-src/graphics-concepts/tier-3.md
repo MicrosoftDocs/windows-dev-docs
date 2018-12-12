@@ -4,15 +4,12 @@ description: Tier 3 adds support for Texture3D for streaming resources, in addit
 ms.assetid: 86E2F311-A221-4C87-BA89-642FF388FAEB
 keywords:
 - Tier 3
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tier 3
 
 

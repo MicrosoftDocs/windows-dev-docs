@@ -4,15 +4,12 @@ description: Constant buffers contain shader constant data. The value of them is
 ms.assetid: 99AEC6B0-A43B-4B61-8C3A-ECC8DE1B69A7
 keywords:
 - Constant buffer view (CBV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Constant buffer view (CBV)
 
 

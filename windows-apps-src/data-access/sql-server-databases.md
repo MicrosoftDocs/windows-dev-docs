@@ -1,12 +1,8 @@
 ---
-author: normesta
 title: Use a SQL Server database in a UWP app
 description: Use a SQL Server database in a UWP app.
-ms.author: normesta
 ms.date: 11/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
@@ -32,6 +28,7 @@ In the **Capabilities** tab, select the **Enterprise Authentication** checkbox.
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
 
 <a id="use-data" />
+
 ## Add and retrieve data in a SQL Server database
 
 In this section,  we'll do these things:
@@ -61,7 +58,7 @@ sealed partial class App : Application
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
-    public string ConnectionString { get => connectionString; set => connectionString = value;  
+    public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
 }
@@ -216,6 +213,16 @@ Start the project and see products from the Northwind sample database appear in 
 
 Explore the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace to see what other things you can do with data in your SQL Server database.
 
+## Trouble connecting to your database?
+
+In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the **Computer Management** console.
+
+![Computer Management](images/computer-management.png)
+
+Then, make sure that your SQL Server Browser service is running.
+
+![SQL Server Browser Service](images/sql-browser-service.png)
+
 ## Next steps
 
 **Use a light-weight database to store data on the users device**
@@ -225,3 +232,7 @@ See [Use a SQLite database in a UWP app](sqlite-databases.md).
 **Share code between different apps across different platforms**
 
 See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+
+**Add master detail pages with Azure SQL back ends**
+
+See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

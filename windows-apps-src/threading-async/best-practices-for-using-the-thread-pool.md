@@ -1,19 +1,13 @@
 ---
-author: normesta
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: Best practices for using the thread pool
 description: This topic describes best practices for working with the thread pool.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, thread, thread pool
 ms.localizationpriority: medium
 ---
 # Best practices for using the thread pool
-
-
 
 This topic describes best practices for working with the thread pool.
 
@@ -36,7 +30,7 @@ This topic describes best practices for working with the thread pool.
 
 -   Use pre-allocated work items when you can't tolerate a resource allocation failure at time of use.
 
-## Dont's
+## Don'ts
 
 
 -   Don't create periodic timers with a *period* value of &lt;1 millisecond (including 0). This will cause the work item to behave as a single-shot timer.

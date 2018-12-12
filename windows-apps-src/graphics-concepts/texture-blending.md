@@ -4,15 +4,12 @@ description: Direct3D can blend as many as eight textures onto primitives in a s
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
 - Texture blending
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Texture blending
 
 
@@ -59,11 +56,11 @@ If your application varies the number of stages it uses for different situations
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Blending stages](blending-stages.md)</p></td>
+<td align="left"><p><a href="blending-stages.md">Blending stages</a></p></td>
 <td align="left"><p>A blending stage is a set of texture operations and their arguments that define how textures are blended.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Multipass texture blending](multipass-texture-blending.md)</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">Multipass texture blending</a></p></td>
 <td align="left"><p>Direct3D applications can achieve numerous special effects by applying various textures to a primitive over the course of multiple rendering passes. The common term for this is <em>multipass texture blending</em>. A typical use for multipass texture blending is to emulate the effects of complex lighting and shading models by applying multiple colors from several different textures. One such application is called <em>light mapping</em>.</p></td>
 </tr>
 </tbody>

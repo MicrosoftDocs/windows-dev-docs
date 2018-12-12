@@ -1,32 +1,31 @@
 ---
-author: KevinAsgari
 title: Xbox Live resources
 description: Find out where to download important resources for Xbox Live development.
-ms.author: kevinasg
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, xbox, xbox live, resources, API, reference
 ms.localizationpriority: medium
 ---
-
 # Xbox Live resources
 
 This topic contains links to useful resources for developing Xbox Live games.
 
 ## API reference
 
-You can download the API reference documentation at:
+The WinRT SDK API reference can be found online here:
+
+* [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
+
+The C++ SDK is currently only available in offline format.
+
+You can download the full API reference documentation (which includes C++ as well as WinRT) at:
 
 * [Xbox Live API reference](https://aka.ms/xboxliveuwpdocs)
 
-You can find the REST API information online at:
+You can find the REST API information at:
 
-* [Xbox Live RESTful reference](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/rest/atoc-xboxlivews-reference)
+* [Xbox Live RESTful reference](xbox-live-rest/atoc-xboxlivews-reference.md)
 
->[!NOTE]
-> To access the online RESTful documentation, you will need to sign in with a Microsoft Account (MSA).
 
 ## Xbox Live API source code
 
@@ -40,6 +39,9 @@ For developers in the Xbox Live Creators Program that are using Unity to develop
 
 * [Xbox Live Unity plug-in](https://github.com/Microsoft/xbox-live-unity-plugin)
 
+> [!WARNING]
+> Because this is an Xbox Live Creators Program tool, the Xbox Live Unity plug-in will not provide the full suite of Xbox Live features. Refer to the [developer program overview feature table](developer-program-overview.md#feature-table) to see what Xbox Live services will be available.
+
 ## Xbox Live Platform Extensions SDK
 
 This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform. This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.
@@ -52,13 +54,9 @@ This package contains winmd files and documentation related to Secure Networking
 
 ## Xbox Live tools
 
-There are several useful tools that you can download from GitHub to help you while you are developing your Xbox Live enabled game.
+There are several useful tools that you use to help you develop for Xbox Live. Find more information at:
 
-* [Xbox Live PowerShell module](https://github.com/Microsoft/xbox-live-powershell-module) - contains PowerShell cmdlets to help you switch sandboxes on your development machine.
-
-* [Xbox Live trace analyzer](https://github.com/Microsoft/xbox-live-trace-analyzer) - a tool that helps you analyze your Xbox Live service calls to ensure that you are calling the service in an efficient manner.
-
-* [Xbox Live resiliency Fiddler plug-in](https://github.com/Microsoft/xbox-live-resiliency-fiddler-plugin) - a Fiddler plug-in that helps you simulate loss of Xbox Live connectivity scenarios while testing your game.
+* [Development tools for Xbox Live](tools/tools.md)
 
 ## Xbox Live code samples
 

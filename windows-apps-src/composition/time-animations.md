@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: Time animations
 description: Use KeyFrameAnimation classes to change your UI over time.
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
@@ -96,7 +92,7 @@ Then we will define the properties of the KeyFrameAnimation to describe it’s d
 Finally, in order to run an animation, you need to start it on a property of a CompositionObject.
 
 ```csharp
-redVisual.StartAnimation("Translation", animation);
+redVisual.StartAnimation("Offset.X", animation);
 ```
 
 Here's the full code.
@@ -110,6 +106,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Translation", animation);
+    visual.StartAnimation("Offset.X", animation);
 } 
 ```

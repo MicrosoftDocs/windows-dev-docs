@@ -1,20 +1,13 @@
 ---
-author: stevewhims
 Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
 title: How the Resource Management System matches and chooses resources
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
-
 # How the Resource Management System matches and chooses resources
-
 When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This is done by taking all qualifiers into consideration to rank all of the candidates.
 
 In this ranking process, the different qualifiers are given different priorities: language has the greatest impact on the overall ranking, followed by contrast, then scale, and so on. For each qualifier, candidate qualifiers are compared with the context qualifier value to determine a quality of match. How the comparison is done depends upon the qualifier.
@@ -38,10 +31,9 @@ For all the resource candidates still in consideration, the resource loader look
 If there is a tie, the next-highest priority context qualifier value is inspected and the process continues, until a best match is found.
 
 ## Example of choosing a resource candidate
-
 Consider these files.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +45,7 @@ de/images/logo.jpg
 
 And suppose that these are the settings in the current context.
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +53,7 @@ Contrast: Standard
 
 The Resource Management System eliminates three of the files, because high contrast and the German language do not match the context defined by the settings. That leaves these candidates.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +62,7 @@ fr/images/logo.scale-100.jpg
 
 For those remaining candidates, the Resource Management System uses the highest-priority context qualifier, which is language. The English resources are a closer match than the French ones because English is listed before French in the settings.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +70,13 @@ en/images/logo.scale-100.jpg
 
 Next, the Resource Management System uses the next-highest priority context qualifier, scale. So this is the resource returned.
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
-You can use the advanced [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) method to retrieve all of the candidates in the order that they match the context settings. For the example we just walked through, **ResolveAll** returns candidates in this order.
+You can use the advanced [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) method to retrieve all of the candidates in the order that they match the context settings. For the example we just walked through, **ResolveAll** returns candidates in this order.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -92,10 +84,9 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## Example of producing a fallback choice
-
 Consider these files.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -106,7 +97,7 @@ de/images/contrast-standard/logo.jpg
 
 And suppose that these are the settings in the current context.
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -114,7 +105,7 @@ Contrast: High
 
 All the files are eliminated because they do not match the context. So we enter a default pass, where the default (see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)) during creation of the PRI file was this.
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -122,7 +113,7 @@ Contrast: Standard
 
 This leaves all the resources that match either the current user or the default.
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -130,14 +121,12 @@ de/images/contrast-standard/logo.jpg
 
 The Resource Management System uses the highest-priority context qualifier, language, to return the named resource with the highest score.
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 
 ## Important APIs
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## Related topics
-
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)

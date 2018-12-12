@@ -4,15 +4,12 @@ description: Render targets enable a scene to be rendered to a temporary interme
 ms.assetid: 9BA8FC35-9A51-438D-BFEA-02E254D6C93E
 keywords:
 - Render target view (RTV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Render target view (RTV)
 
 

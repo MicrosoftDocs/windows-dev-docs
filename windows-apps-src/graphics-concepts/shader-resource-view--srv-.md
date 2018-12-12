@@ -4,15 +4,12 @@ description: Shader resource views typically wrap textures in a format that the 
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
 keywords:
 - Shader resource view (SRV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Shader resource view (SRV) and Unordered Access view (UAV)
 
 

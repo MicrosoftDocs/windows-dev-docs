@@ -1,22 +1,18 @@
 ---
-author: mtoepke
 title: Complete code for DDSTextureLoader
 description: Complete code for a class and method that loads a DDS texture from memory.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, ddstextureloader
 ms.localizationpriority: medium
 ---
-
 # Complete code for DDSTextureLoader
 
 
 
 Complete code for a class and method that loads a DDS texture from memory.
+See [Load resources in your DirectX game](load-a-game-asset.md) for a discussion about textures and using this example.
 
 This topic contains these sections:
 
@@ -65,7 +61,6 @@ This sample is not available for download.
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #pragma once
 
 void CreateDDSTextureFromMemory(
@@ -98,7 +93,6 @@ void CreateDDSTextureFromMemory(
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #include "pch.h"
 #include <dxgiformat.h>
 #include <assert.h>

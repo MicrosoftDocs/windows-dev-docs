@@ -1,8 +1,10 @@
 ---
 layout: HubPage
 hide_bc: true
+ms.prod: windows
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
+
 localizationpriority: medium
 ---
 <div id="main" class="v2">
@@ -98,7 +100,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/desktop">
+                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -155,7 +157,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/mixed-reality">
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -186,6 +188,25 @@ localizationpriority: medium
                                             <div class="cardText">
                                                 <h3>Web</h3>
                                                 <p>Create experiences powered by Microsoft Edge and the latest web standards.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/ai/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows AI</h3>
+                                                <p>Build intelligent apps for Windows and Windows devices.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -247,7 +268,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -258,7 +279,7 @@ localizationpriority: medium
                                             </div>
                                             <div class="cardText">
                                                 <h3>Develop</h3>
-                                                <p>Develop, test, and deploy drivers.</p>
+                                                <p>Develop, test, and deploy drivers by using the Windows Driver Kit (WDK).</p>
                                             </div>
                                         </div>
                                     </div>
@@ -445,6 +466,25 @@ localizationpriority: medium
                                             <div class="cardText">
                                                 <h3>Microsoft Store for Education</h3>
                                                 <p>Learn to find, acquire, distribute, and manage apps for your school with Microsoft Store for Education.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/illustrations/dynamics-gdpr-center.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Windows Privacy</h3>
+                                                <p>Learn about privacy in Windows and get ready for General Data Protection Regulation (GDPR).</p>
                                             </div>
                                         </div>
                                     </div>

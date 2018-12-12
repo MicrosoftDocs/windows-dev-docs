@@ -1,13 +1,9 @@
 ---
-author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Use brushes
 description: Brush objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI.
-ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -176,6 +172,10 @@ SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
 
 ```vb
 Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
+```
+
+```cppwinrt
+Windows::UI::Xaml::Media::SolidColorBrush blueBrush{ Windows::UI::Colors::Blue() };
 ```
 
 ```cpp

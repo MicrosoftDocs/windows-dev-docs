@@ -1,20 +1,15 @@
 ---
-author: normesta
-Description: Enhance your desktop app for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
-ms.author: normesta
-ms.date: 08/12/2017
+ms.date: 10/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Enhance your desktop application for Windows 10
 
-You can use UWP APIs to add modern experiences that light up for Windows 10 users.
+You can use Windows Runtime APIs to add modern experiences that light up for Windows 10 users.
 
 First, set up your project. Then, add Windows 10 experiences. You can build separately for Windows 10 users or distribute the same exact binaries to all users regardless of which version of Windows they run.
 
@@ -22,7 +17,7 @@ First, set up your project. Then, add Windows 10 experiences. You can build sepa
 
 You'll have to make a few changes to your project to use UWP APIs.
 
-### Modify a .NET project to use UWP APIs
+### Modify a .NET project to use Windows Runtime APIs
 
 Open the **Reference Manager** dialog box, choose the **Browse** button, and then select  **All Files**.
 
@@ -32,10 +27,9 @@ Then, add a reference to these files.
 
 |File|Location|
 |--|--|
-|System.Runtime.WindowsRuntime|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|System.Runtime.WindowsRuntime.UI.Xaml|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|System.Runtime.InteropServices.WindowsRuntime|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5|
-|Windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Facade|
+|System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+|System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
 |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
@@ -43,31 +37,11 @@ In the **Properties** window, set the **Copy Local** field of each *.winmd* file
 
 ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
-### Modify a C++ project to use UWP APIs
+### Modify a C++ project to use Windows Runtime APIs
 
-Open the property pages of your project.
+Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
-In the **General** settings of the **C/C++** settings group, set the **Consume Windows Runtime Extension** field to **Yes(/ZW)**.
-
-   ![Consume Windows Runtime Extension](images/desktop-to-uwp/enable-winrt-objects.png)
-
-Open the **Additional #using Directories** dialog box, and add these directories.
-
-* C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages
-* C:\Program Files (x86)\Windows Kits\10\UnionMetadata
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*latest version*>
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*latest version*>
-
-![Additional using directories](images/desktop-to-uwp/additional-using.png)
-
-Open the **Additional Include Directories** dialog box, and add this directory: C:\Program Files (x86)\Windows Kits\10\Include\<*latest version*>\um
-
-![Additional include directories](images/desktop-to-uwp/additional-include.png)
-
-In the **Code Generation** settings of the **C/C++** settings group, set the **Enable Minimal Rebuild** setting to **No(/GM-)**.
-
-![Enable Minimal Rebuild](images/desktop-to-uwp/disable-min-build.png)
-
+To configure your project for C++/WinRT, See [Modify a Windows Desktop application project to add C++/WinRT support](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ## Add Windows 10 experiences
 
@@ -75,11 +49,11 @@ Now you're ready to add modern experiences that light up when users run your app
 
 :white_check_mark: **First, decide what experiences you want to add**
 
-There's lots to choose from. For example, you can simplify your purchase order flow by using monetization APIs, or direct attention to your app when you have something interesting to share, such as a new picture that another user has posted.
+There's lots to choose from. For example, you can simplify your purchase order flow by using monetization APIs, or direct attention to your application when you have something interesting to share, such as a new picture that another user has posted.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your app and has the added bonus of making your app appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
+Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your application and has the added bonus of making your application appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
 
 Visit our [developer center](https://developer.microsoft.com/windows) for ideas.
 
@@ -87,7 +61,7 @@ Visit our [developer center](https://developer.microsoft.com/windows) for ideas.
 
 You'll often hear us use the terms "enhance" and "extend" so we'll take a moment to explain exactly what each of these terms mean.
 
-We use the term "enhance" to describe UWP APIs that you can call directly from your desktop application. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in this [list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop application. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that show modern UIs such as a UWP map control or a Windows Hello security prompt.
+We use the term "enhance" to describe Windows Runtime APIs that you can call directly from your desktop application. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in this [list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop application. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that show modern UIs such as a UWP map control or a Windows Hello security prompt.
 
 That said, if you want to include those experiences in your application, just "extend" the application by adding a UWP project to your solution. The desktop project is still the entry point of your application, but the UWP project gives you access to all of the APIs that do not appear in this [list](desktop-to-uwp-supported-api.md). The desktop application can communicate with the UWP process by using a an app service and we have lots of guidance on how to set that up. If you want to add an experience that requires a UWP project, see [Extend with UWP](desktop-to-uwp-extend.md).
 
@@ -115,8 +89,8 @@ private void ShowToast()
 {
     string title = "featured picture of the day";
     string content = "beautiful scenery";
-    string image = "https://unsplash.it/360/180?image=104";
-    string logo = "https://unsplash.it/64?image=883";
+    string image = "https://picsum.photos/360/180?image=104";
+    string logo = "https://picsum.photos/64?image=883";
 
     string xmlString =
     $@"<toast><visual>
@@ -147,8 +121,8 @@ void UWP::ShowToast()
 {
 	Platform::String ^title = "featured picture of the day";
 	Platform::String ^content = "beautiful scenery";
-	Platform::String ^image = "https://unsplash.it/360/180?image=104";
-	Platform::String ^logo = "https://unsplash.it/64?image=883";
+	Platform::String ^image = "https://picsum.photos/360/180?image=104";
+	Platform::String ^logo = "https://picsum.photos/64?image=883";
 
 	Platform::String ^xmlString =
 		L"<toast><visual><binding template='ToastGeneric'>" +
@@ -166,11 +140,11 @@ void UWP::ShowToast()
 	ToastNotificationManager::CreateToastNotifier()->Show(ref new ToastNotification(toastXml));
 }
 ```
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
-You can modernize your app for Windows 10 without having to create a new branch and maintain separate code bases.
+You can modernize your application for Windows 10 without having to create a new branch and maintain separate code bases.
 
 If you want to build separate binaries for Windows 10 users, use conditional compilation. If you'd prefer to build one set of binaries that you deploy to all Windows users, use runtime checks.
 
@@ -184,7 +158,7 @@ First, add a new build configuration to your project.
 
 ![Build Configuration](images/desktop-to-uwp/build-config.png)
 
-For that build configuration, create a constant that to identify code that calls UWP APIs.  
+For that build configuration, create a constant that to identify code that calls Windows Runtime APIs.  
 
 For .NET-based projects, the constant is called a **Conditional Compilation Constant**.
 
@@ -221,9 +195,9 @@ The compiler builds that code only if that constant is defined in your active bu
 
 ### Runtime checks
 
-You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your app calls UWP APIs only if the user is runs your app as a packaged app on Windows 10.
+You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all UWP code. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
 ## Related Video
 
@@ -234,7 +208,7 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 * [Hello World Sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
 * [Secondary Tile](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Store API Sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
-* [WinForms app that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
+* [WinForms application that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 

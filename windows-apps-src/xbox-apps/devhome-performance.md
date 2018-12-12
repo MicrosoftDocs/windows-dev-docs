@@ -1,19 +1,13 @@
 ---
-author: v-angraf
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
 title: Performance Page (Dev Home)
 description: Provides information about the Performance page of the Dev Home app for Xbox One.
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ---
-
-
 # Performance Page (Dev Home)
    
   

@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Use this method in the Microsoft Store purchase API to grant a free app or add-on to a given user.
 title: Grant free products
-ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store purchase API, grant products
 ms.localizationpriority: medium
 ---
-
 # Grant free products
 
 Use this method in the Microsoft Store purchase API to grant a free app or add-on (also known as in-app product or IAP) to a given user.
@@ -22,7 +17,7 @@ Currently, you can only grant free products. If your service attempts to use thi
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user for whom you want to grant a free product.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
@@ -36,7 +31,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 |--------|--------------------------------------------------------|
 | POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
-<span/> 
 
 ### Request header
 
@@ -47,7 +41,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request body
 
@@ -63,7 +56,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | quantity       | int    | The quantity to purchase. Currently, the only supported value is 1. If not specified, the default is 1.   | No       |
 | skuId          | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.     | Yes      |
 
-<span/>
 
 ### Request example
 
@@ -109,7 +101,6 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | decimal                     | If using a separate payment instrument and stored value (CSV), the amount charged to CSV.            | Yes      |
 | totalTaxAmount            | decimal                     | The total amount of tax for all line items.    | Yes      |
 
-<span/>
 
 The ClientContext object contains the following parameters.
 
@@ -117,7 +108,6 @@ The ClientContext object contains the following parameters.
 |-----------|--------|---------------------------------------|----------|
 | client    | string | The client ID that created the order. | No       |
 
-<span/>
 
 The OrderLineItemV6 object contains the following parameters.
 
@@ -149,7 +139,6 @@ The OrderLineItemV6 object contains the following parameters.
 | Title                   | string         | The localized title of the line item.                                                                        | Yes      |
 | totalAmount             | decimal        | The total purchase amount of the line item including tax.                                                    | Yes      |
 
-<span/>
 
 The IdentityV6 object contains the following parameters.
 
@@ -158,7 +147,6 @@ The IdentityV6 object contains the following parameters.
 | identityType  | string | Contains the value **"pub"**.                                                      | Yes      |
 | identityValue | string | The string value of the *publisherUserId* from the specified Microsoft Store ID key. | Yes      |
 
-<span/> 
 
 ### Response example
 

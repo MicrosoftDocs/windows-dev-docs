@@ -1,24 +1,19 @@
 ---
 title: Reputation
-author: KevinAsgari
+
 description: Learn how Xbox Live uses the reputation service to encourage positive gameplay.
 ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, reputation, social platform
 ms.localizationpriority: medium
 ---
-
 # Reputation
 
 Reputation is a user statistic, just like any other, and is included in calls to retrieve all of a user's statistics and use them in reporting and tracking. The reputation itself is represented by the **Reputation Class**. The **ReputationService Class**represents the reputation service. The corresponding URIs are described in **Reputation URIs**.
 
-| Important                                                                                                                                                                          |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Reputation statistics are global across the service, not tied to a specific title. The service configuration ID (SCID) for the service is the global SCID used to access reputation statistics. |
+> [!IMPORTANT]
+> Reputation statistics are global across the service, not tied to a specific title. The service configuration ID (SCID) for the service is the global SCID used to access reputation statistics.
 
 
 ## Features of the Reputation Service
@@ -53,9 +48,8 @@ When enough negative feedback has been reported for a specific user, the title s
 
 For reputation-filtered matchmaking, specified by Xbox Requirement (XR), the title retrieves the player's **Reputation.OverallReputation Property**. This value is a score that indicates the state of the player's overall reputation.
 
-| Note                                                                                                                                                                                                                                                                                                                                                                                      |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| If your title is looking for the OverallReputationIsBad attribute in a JSON file, and does not find it, it is safe to assume that the user has a good reputation. This can happen with new accounts, until feedback has been processed for the user. Players with any feedback from other users will always have reputation statistics, and a value for the **Reputation.OverallReputation** property. |
+> [!NOTE]
+> If your title is looking for the OverallReputationIsBad attribute in a JSON file, and does not find it, it is safe to assume that the user has a good reputation. This can happen with new accounts, until feedback has been processed for the user. Players with any feedback from other users will always have reputation statistics, and a value for the **Reputation.OverallReputation** property.
 
 
 ## Reputation as an Indicator of Behavior

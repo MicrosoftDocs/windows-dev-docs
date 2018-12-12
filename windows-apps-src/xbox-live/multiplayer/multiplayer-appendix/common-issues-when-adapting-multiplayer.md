@@ -1,17 +1,13 @@
 ---
 title: Common Multiplayer 2015 migration issues
-author: KevinAsgari
+
 description: Learn about common issues you may run into when adapting your multiplayer 2014 title to 2015 Multiplayer.
 ms.assetid: 206f8fe4-c7aa-44b8-923b-18f679d8439f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Common issues When adapting your multiplayer 2014 title to multiplayer 2015
 
 This topic describes issues that you must consider when adapting your 2014 Multiplayer titles for 2015 Multiplayer.

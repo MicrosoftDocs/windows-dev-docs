@@ -1,19 +1,14 @@
 ---
-author: Xansky
 Description: Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Designing inclusive software in Windows 10
 label: Designing inclusive software
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Designing inclusive software for Windows 10  
 
 Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.

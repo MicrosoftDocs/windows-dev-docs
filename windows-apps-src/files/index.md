@@ -1,13 +1,9 @@
 ---
-author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: Files, folders, and libraries
 description: Learn about reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library.
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -27,9 +23,10 @@ You use the APIs in the [Windows.Storage](https://msdn.microsoft.com/library/win
 | [Determining availability of Microsoft OneDrive files](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Determine if a Microsoft OneDrive file is available using the [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property. |
 | [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos. |
 | [Track recently used files and folders](how-to-track-recently-used-files-and-folders.md) | Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU. |
+| [Track file system changes in the background](change-tracking-filesystem.md) | Track changes to the file system, even when the app isn't running.|
 | [Access the SD card](access-the-sd-card.md) | You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage. |
 | [File access permissions](file-access-permissions.md) | Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities. |
-| [Fast Access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
+| [Fast access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
 
 ## Related samples
 [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993)

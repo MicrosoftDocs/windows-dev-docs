@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt.
 title: Use receipts to verify product purchases
-ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 04/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, receipts, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ---
-
 # Use receipts to verify product purchases
 
 Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipt provides information about the listed product and monetary cost to the customer.
@@ -19,17 +14,20 @@ Each Microsoft Store transaction that results in a successful product purchase c
 Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made add-on (also called in-app product or IAP) purchases from the Microsoft Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
 
 > [!IMPORTANT]
-> This article shows how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to get and validate a receipt for an in-app purchase. If you are using the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace for in-app purchases (introduced in Windows 10, version 1607, and available to projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Microsoft Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
+> This article shows how to use members of the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) namespace to get and validate a receipt for an in-app purchase. If you are using the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) namespace for in-app purchases (introduced in Windows 10, version 1607, and available to projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Microsoft Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
 
 ## Requesting a receipt
 
 
 The **Windows.ApplicationModel.Store** namespace supports several ways to get a receipt:
 
-* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) or [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (or one of the other overloads of this method), the return value contains the receipt.
-* You can call the [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) method to retrieve the current receipt info for your app and any add-ons in your app.
+* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) or [CurrentApp.RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (or one of the other overloads of this method), the return value contains the receipt.
+* You can call the [CurrentApp.GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) method to retrieve the current receipt info for your app and any add-ons in your app.
 
 An app receipt looks something like this.
+
+> [!NOTE]
+> This example is formatted to help make the XML readable. Real app receipts do not include whitespace between elements.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -54,6 +52,9 @@ An app receipt looks something like this.
 ```
 
 A product receipt looks like this.
+
+> [!NOTE]
+> This example is formatted to help make the XML readable. Real product receipts do not include whitespace between elements.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -88,6 +89,7 @@ Here's an example of that validation process. This code runs in a .NET Framework
 [!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
+
 ## Element and attribute descriptions for a receipt
 
 This section describes the elements and attributes in a receipt.
@@ -112,6 +114,7 @@ The root element of this file is the **Receipt** element, which contains informa
 |  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
 
 <span id="appreceipt" />
+
 ### AppReceipt element
 
 This element contains purchase information for the current app.
@@ -126,6 +129,7 @@ This element contains purchase information for the current app.
 |  **PurchaseDate**  |    Date when the app was acquired.          |  |
 
 <span id="productreceipt" />
+
 ### ProductReceipt element
 
 This element contains information about an in-app purchase for the current app.

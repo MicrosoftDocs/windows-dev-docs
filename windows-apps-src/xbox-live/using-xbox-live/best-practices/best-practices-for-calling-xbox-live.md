@@ -1,17 +1,13 @@
 ---
 title: Best practices for calling Xbox Live
-author: KevinAsgari
+
 description: Learn about the best practices for calling Xbox Live APIs.
 ms.assetid: f4c7156b-7736-41e5-9b3d-e87cc8dd2531
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, best practices
 ms.localizationpriority: medium
 ---
-
 # Best practices for calling Xbox Live
 
 The Xbox Live services can be called from two primary ways: using the Xbox Services API (XSAPI), or calling the REST endpoints directly. Regardless of how your code calls Xbox Live, it is important to have proper calling patterns and retry logic.
@@ -112,8 +108,7 @@ XSAPI exposes the RTA service as a set of subscribe APIs that clients can use. E
 <br>
 * user\_statistics\_service::subscribe\_to\_statistic\_change
 <br>
-* social\_service::subscribe\_to\_social\_relationship\_change
-<br>
+* social\_service::subscribe\_to\_social\_relationship\_change<br>
  
 
 ## Use Xbox Live client side managers
@@ -164,7 +159,7 @@ but note that this API will not prevent your title from being throttled. Your ti
 
 ### Xbox Live Trace Analyzer tool
 
-Another option is to record a trace of the Xbox Live calls and then analyze that trace using the Xbox Live Trace Analyzer tool.
+Another option is to record a trace of the Xbox Live calls and then analyze that trace using the [Xbox Live Trace Analyzer tool.](https://docs.microsoft.com/windows/uwp/xbox-live/tools/analyze-service-calls)
 
 To record a trace, you can either use Fiddler to record a .SAZ file, or by using the built-in trace logging of XSAPI. For more information, how to use turn on traces in XSAPI see the Xbox Live documentation page "Analyze calls to Xbox Live Services". Once you have a trace, the Xbox Live Trace Analyzer tool will warn upon detecting throttled calls.
 

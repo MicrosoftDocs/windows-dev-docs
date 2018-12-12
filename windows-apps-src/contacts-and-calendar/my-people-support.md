@@ -1,16 +1,11 @@
 ---
 title: Adding My People support to an application
 description: Explains how to add My People support to an application, and how to pin and unpin contacts
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Adding My People support to an application
 
 The My People feature allows users to pin contacts from an application directly to their taskbar, which creates a new contact object that they can interact with in several ways. This article shows how you can add support for this feature, allowing users to pin contacts directly from your app. When contacts are pinned, new types of user interaction become available, such as [My People sharing](my-people-sharing.md) and [notifications](my-people-notifications.md).
@@ -92,7 +87,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 	// Add appId and contact panel support to the annotation
 	String appId = "MyApp_vqvv5s4y3scbg!App";
 	annotation.ProviderProperties.Add("ContactPanelAppID", appId);
-	annotation.SupportedOperations = ContactAnnotationOperations::ContactProfile;
+	annotation.SupportedOperations = ContactAnnotationOperations.ContactProfile;
 
 	// Save annotation to contact annotation list
 	// Windows.ApplicationModel.Contacts.ContactAnnotationList 
@@ -202,7 +197,7 @@ Here is an example of how to identify a toast notification is related to a speci
 ```
 
 > [!NOTE]
-> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
 > If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the RemoteIdHelper class shown later in this topic in order to add a unique tag to all of your remote IDs before you add them to the system. Or you can choose to not use the RemoteId property at all and instead you create a custom extended property in which to store remote IDs for your contacts.
 
 ## The PinnedContactManager class
@@ -250,6 +245,8 @@ async Task PinMultipleContacts(Contact[] contacts)
 ## See also
 + [My People sharing](my-people-sharing.md)
 + [My People notificatons](my-people-notifications.md)
++ [Channel 9 video on adding My People support to an application](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [My People integration sample](http://aka.ms/mypeoplebuild2017)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connect your app to actions on a contact card](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

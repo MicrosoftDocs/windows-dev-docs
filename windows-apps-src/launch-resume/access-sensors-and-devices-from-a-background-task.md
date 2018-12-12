@@ -1,17 +1,12 @@
 ---
-author: muhsinking
 title: Access sensors and devices from a background task
 description: DeviceUseTrigger lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 ---
-
 # Access sensors and devices from a background task
 
 
@@ -39,7 +34,7 @@ Some critical device operations, such as long running firmware updates, cannot b
 Background tasks that use [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) let your app communicate over many protocols/APIs, most of which aren't supported by system-triggered background tasks. The following are supported on a Universal Windows app.
 
 | Protocol         | DeviceUseTrigger in a Universal Windows app                                                                                                                                                    |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | USB              | ![this protocol is supported.](images/ap-tools.png)                                                                                                                                            |
 | HID              | ![this protocol is supported.](images/ap-tools.png)                                                                                                                                            |
 | Bluetooth RFCOMM | ![this protocol is supported.](images/ap-tools.png)                                                                                                                                            |
@@ -112,7 +107,7 @@ Windows enforces policies when your app uses a [**DeviceUseTrigger**](https://ms
 This table indicates which task initiation policies apply to a Universal Windows app.
 
 | Policy | DeviceUseTrigger in a Universal Windows app |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+|--------|---------------------------------------------|
 | Your app is in the foreground when triggering the background task. | ![policy applies](images/ap-tools.png) |
 | The device is attached to the system (or in range for a wireless device). | ![policy applies](images/ap-tools.png) |
 | The device is accessible to the app using the supported device peripheral APIs (the Windows Runtime APIs for USB, HID, Bluetooth, Sensors, and so on). If your app can't access the device or sensor, access to the background task is denied. | ![policy applies](images/ap-tools.png) |
@@ -121,7 +116,7 @@ This table indicates which task initiation policies apply to a Universal Windows
 | The maximum number of [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background tasks has not yet been reached on the device (on which your app is running). | **Desktop device family**: An unlimited number of tasks can be registered and run in parallel. **Mobile device family**: 1 task on a 512 MB device; otherwise, 2 tasks can be registered and run in parallel. |
 | The maximum number of peripheral devices or sensors that your app can access from a single [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background task, when using the supported APIs/protocols. | unlimited |
 | Your background task consumes 400ms of CPU time (assuming a 1GHz CPU) every minute when the screen is locked, or every 5 minutes when the screen is not locked. Failure to meet this policy can result in cancellation of your task. | ![policy applies](images/ap-tools.png) |
- 
+
 ### Runtime policy checks
 
 Windows enforces the following runtime policy requirements while your task is running in the background. If any of the runtime requirements stops being true, Windows will cancel your device background task.
@@ -129,7 +124,7 @@ Windows enforces the following runtime policy requirements while your task is ru
 This table indicates which runtime policies apply to a Universal Windows app.
 
 | Policy check | DeviceUseTrigger in a Universal Windows app |
-|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+|--------------|:-------------------------------------------:|
 | The device is attached to the system (or in range for a wireless device). | ![policy check applies](images/ap-tools.png) |
 | Task is performing regular I/O to the device (1 I/O every 5 seconds). | ![policy check applies](images/ap-tools.png) |
 | App has not canceled the task. | ![policy check applies](images/ap-tools.png) |

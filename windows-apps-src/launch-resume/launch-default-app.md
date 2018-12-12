@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the default app for a URI
 description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.author: twhitney
 ms.date: 06/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the default app for a URI
 
 
@@ -28,7 +23,7 @@ URI schemes let you open apps by clicking hyperlinks. Just as you can start a ne
 This topic describes the following URI schemes built into Windows:
 
 | URI Scheme | Launches |
-| -------|--------------|
+| ----------:|----------|
 |[bingmaps:, ms-drive-to:, and ms-walk-to: ](#maps-app-uri-schemes) | Maps app |
 |[http:](#http-uri-scheme) | Default web browser |
 |[mailto:](#email-uri-scheme) | Default email app |
@@ -40,8 +35,10 @@ This topic describes the following URI schemes built into Windows:
 |[ms-store:](#store-app-uri-scheme)  | Store app |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
+|[msnweather:](#weather-app-uri-scheme) | Weather app |
 
-<br> For example, the following URI opens the default browser and displays the Bing web site.
+<br>
+For example, the following URI opens the default browser and displays the Bing web site.
 
 `http://bing.com`
 
@@ -130,7 +127,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ## URI Schemes ##
 
 The various URI schemes are described below.
-<br>
 
 ### Call app URI scheme
 
@@ -138,8 +134,8 @@ Use the **ms-call:** URI scheme to launch the Call app.
 
 | URI Scheme       | Result                   |
 |------------------|--------------------------|
-| ms-call:settings | Calls app settings page. | 
-<br>
+| ms-call:settings | Calls app settings page. |
+
 ### Email URI scheme
 
 Use the **mailto:** URI scheme to launch the default mail app.
@@ -148,7 +144,7 @@ Use the **mailto:** URI scheme to launch the default mail app.
 |------------|---------------------------------|
 | mailto:    | Launches the default email app. |
 | mailto:\[email address\] | Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send. |
-<br>
+
 ### HTTP URI scheme
 
 Use the **http:** URI scheme to launch the default web browser.
@@ -156,7 +152,7 @@ Use the **http:** URI scheme to launch the default web browser.
 | URI Scheme | Results                           |
 |------------|-----------------------------------|
 | http:      | Launches the default web browser. |
-<br>
+
 ### Maps app URI schemes
 
 Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
@@ -166,7 +162,7 @@ Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [lau
 ![an example of the windows maps app.](images/mapnyc.png)
 
 For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your own app, see [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695).
-<br>
+
 ### Messaging app URI scheme
 
 Use the **ms-chat:** URI scheme to launch the Windows Messaging app.
@@ -178,7 +174,7 @@ Use the **ms-chat:** URI scheme to launch the Windows Messaging app.
 | ms-chat:?Body={body} | Allows the messaging application to be launched with a string to use as the content of the message.|
 | ms-chat:?Addresses={address}&Body={body} | Allows the messaging application to be launched with a particular addresses' information, and with a string to use as the content of the message. Note: Addresses can be concatenated. |
 | ms-chat:?TransportId={transportId}  | Allows the messaging application to be launched with a particular transport ID. |
-<br>
+
 ### Tone picker URI scheme
 
 Use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system tones. You can also save new ringtones and get the display name of a tone.
@@ -190,25 +186,23 @@ Use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system to
 Parameters are passed via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) to the LaunchURI API. See [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) for details.
 
 ### Nearby Numbers app URI scheme
-<br>
+
 Use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers app.
 
 | URI Scheme | Results |
 |------------|---------|
-| ms-yellowpage:?input=\[keyword\]&method=\[String or T9\] | Launches the Nearby Numbers app. `input` refers to the keyword you want to search. `method` refers to the type of search (string or T9 search). <br> If `method` is `T9` (a type of keyboard) then `keyword` should be a numeric string that maps to the T9 keyboard letters to search for.<br>If `method` is `String` then `keyword` is the keyword to search for. |
- 
-<br>
+| ms-yellowpage:?input=\[keyword\]&method=\[String or T9\] | Launches the Nearby Numbers app.<br>`input` refers to the keyword you want to search.<br>`method` refers to the type of search (string or T9 search).<br>If `method` is `T9` (a type of keyboard) then `keyword` should be a numeric string that maps to the T9 keyboard letters to search for.<br>If `method` is `String` then `keyword` is the keyword to search for. |
+
 ### People app URI scheme
 
 Use the **ms-people:** URI scheme to launch the People app.
 For more info, see [Launch the People app](launch-people-apps.md).
 
-<br>
 ### Photos app URI scheme
 
-Use the **ms-photos:** URI scheme to launch the Photos app to view an image or edit a video.  
-    For example, to view an image: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
-    Or to edit a video: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
+Use the **ms-photos:** URI scheme to launch the Photos app to view an image or edit a video. For example:  
+To view an image: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
+Or to edit a video: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
 > [!NOTE]
 > The URIs to edit a video or display an image are only available on desktop.
@@ -230,7 +224,6 @@ Use the **ms-settings:** URI scheme to [launch the Windows Settings app](launch-
 
 For more info, see [Launch the Windows Settings app](launch-settings-app.md) and [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
-<br>
 ### Store app URI scheme
 
 Use the **ms-windows-store:** URI scheme to [Launch the UWP app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the UWP app and launches the home page of the Store.
@@ -238,3 +231,11 @@ Use the **ms-windows-store:** URI scheme to [Launch the UWP app](launch-store-ap
 `ms-windows-store://home/`
 
 For more info, see [Launch the UWP app](launch-store-app.md).
+
+### Weather app URI scheme
+
+Use the **msnweather:** URI scheme to launch the Weather app.
+
+| URI Scheme | Results |
+|------------|---------|
+| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Launches the Weather app in the Forecast page based on a location geographic coordinates.<br>`latitude` refers to the latitude of the location.<br> `longitude` refers to the longitude of the location.<br> |

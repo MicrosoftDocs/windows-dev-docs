@@ -1,17 +1,12 @@
 ---
-author: Mtoepke
 title: UWP on Xbox One samples
 description: Samples and libraries to help you build great Xbox One and TV experiences.
-ms.author: scotmi
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ---
-
 # UWP on Xbox One samples
 
 There are several cross-platform UWP samples that have been optimized for Xbox One when running on that platform. You can browse the code on GitHub, read through the readme's and wiki's, and clone the projects to your machine.

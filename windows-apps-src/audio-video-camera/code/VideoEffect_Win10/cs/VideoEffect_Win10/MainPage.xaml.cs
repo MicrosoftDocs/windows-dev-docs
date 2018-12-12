@@ -85,7 +85,7 @@ namespace VideoEffect_Win10
                 PreviewControl.Source = mediaCapture;
 
 
-                //<SnippetAddVideoEffectAsync>
+                // <SnippetAddVideoEffectAsync>
                 var videoEffectDefinition = new VideoEffectDefinition("VideoEffectComponent.ExampleVideoEffect");
 
                 IMediaExtension videoEffect =
@@ -94,7 +94,7 @@ namespace VideoEffect_Win10
                 videoEffect.SetProperties(new PropertySet() { { "FadeValue", .25 } });
 
                 await mediaCapture.StartPreviewAsync();
-                //</SnippetAddVideoEffectAsync>
+                // </SnippetAddVideoEffectAsync>
             }
             catch (Exception)
             {
@@ -117,7 +117,7 @@ namespace VideoEffect_Win10
                 await mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, allStreamProperties.Last().EncodingProperties);
 
 
-                //<SnippetAddVideoEffectAsyncWin2D>
+                // <SnippetAddVideoEffectAsyncWin2D>
                 var videoEffectDefinition = new VideoEffectDefinition("VideoEffectComponent.ExampleVideoEffectWin2D");
 
                 IMediaExtension videoEffect =
@@ -126,7 +126,7 @@ namespace VideoEffect_Win10
                 videoEffect.SetProperties(new PropertySet() { { "BlurAmount", 1.0 } });
 
                 await mediaCapture.StartPreviewAsync();
-                //</SnippetAddVideoEffectAsyncWin2D>
+                // </SnippetAddVideoEffectAsyncWin2D>
             }
             catch (Exception)
             {
@@ -161,7 +161,7 @@ namespace VideoEffect_Win10
             MediaEncodingProfile mediaEncodingProfile =
                 MediaEncodingProfile.CreateMp4(VideoEncodingQuality.HD720p);
 
-            //<SnippetTrancodeWithEffect>
+            // <SnippetTrancodeWithEffect>
             MediaTranscoder transcoder = new MediaTranscoder();
 
             // Using the in-box video stabilization effect works
@@ -179,7 +179,7 @@ namespace VideoEffect_Win10
             {
                 var transcodeOp = prepareOp.TranscodeAsync();
             }
-            //</SnippetTrancodeWithEffect>
+            // </SnippetTrancodeWithEffect>
         }
         private async void AddEffectToMediaClip()
         {
@@ -199,7 +199,7 @@ namespace VideoEffect_Win10
             var storageItemAccessList = Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList;
             storageItemAccessList.Add(pickedFile);
 
-            //<SnippetAddEffectToComposition>
+            // <SnippetAddEffectToComposition>
             MediaComposition composition = new MediaComposition();
             var clip = await MediaClip.CreateFromFileAsync(pickedFile);
             composition.Clips.Add(clip);
@@ -207,7 +207,7 @@ namespace VideoEffect_Win10
             var videoEffectDefinition = new VideoEffectDefinition("VideoEffectComponent.ExampleVideoEffect", new PropertySet() { { "FadeValue", .5 } });
 
             clip.VideoEffectDefinitions.Add(videoEffectDefinition);
-            //</SnippetAddEffectToComposition>
+            // </SnippetAddEffectToComposition>
 
             var mediaStreamSource = composition.GeneratePreviewMediaStreamSource(
                 (int)PreviewControl.ActualWidth,

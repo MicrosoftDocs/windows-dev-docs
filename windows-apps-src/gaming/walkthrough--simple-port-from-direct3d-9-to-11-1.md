@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Walkthrough-- Porting Direct3D 9 to DirectX 11 and UWP
 description: This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, port, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ---
-
 # Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
 
 
@@ -31,16 +26,16 @@ This porting exercise shows how to bring a simple rendering framework from Direc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md">Initialize Direct3D 11</a></p></td>
 <td align="left"><p>Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-2--rendering.md">Convert the rendering framework</a></p></td>
 <td align="left"><p>Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
-<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225).</p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Port the game loop</a></p></td>
+<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> to control a full-screen <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Provision Device Portal with a custom SSL certificate
 description: TBD
-ms.author: pafarley
 ms.date: 07/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
-
 # Provision Device Portal with a custom SSL certificate
 In the Windows 10 Creators Update, Windows Device Portal added a way for device administrators to install a custom certificate for use in HTTPS communication. 
 

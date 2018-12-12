@@ -1,18 +1,12 @@
 ---
-author: stevewhims
 Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
 title: NumeralSystem values
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, globalization, localization
 ms.localizationpriority: medium
 ---
-
-
 # NumeralSystem values
 
 This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. These classes contain a **NumeralSystem** property.

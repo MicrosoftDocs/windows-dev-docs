@@ -2,16 +2,11 @@
 title: Intro to secure Windows app development
 description: This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps.
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
-author: awkoren
-ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
-
 # Intro to secure Windows app development
 
 

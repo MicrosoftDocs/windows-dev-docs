@@ -1,17 +1,12 @@
----
-author: jnHs
+﻿---
 Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: Payout summary
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
-ms.localizationpriority: high
+keywords: windows 10, uwp, payout summary, statement, payments, earnings, payouts, payment, proceeds
+ms.localizationpriority: medium
 ---
-
 # Payout summary
 
 
@@ -22,10 +17,11 @@ If you use advertising to earn money, you'll see payment info for advertising pr
 If you sell products in the Azure Marketplace, you’ll also see info on successful payouts in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](http://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about Azure Marketplace payout reporting can be found [here](http://go.microsoft.com/fwlink/p/?LinkID=722439).
 
 > [!NOTE]
-> To be eligible for payout, your proceeds must reach the applicable [payment threshold](payment-thresholds-methods-and-timeframes.md). If the proceeds are less than the payment threshold, they will remain in the **Reserved** category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
+> To be eligible for payout, your proceeds must reach the applicable [payment threshold](payment-thresholds-methods-and-timeframes.md). If the proceeds are less than the payment threshold, they will remain in the **Reserved** category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). For advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
 >
 > Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
 
+To view your **Payout summary**, click the **Payout** icon that appears near the upper right hand corner in Partner Center, then select **Payout summary**.
 
 ## Current proceeds and payments
 

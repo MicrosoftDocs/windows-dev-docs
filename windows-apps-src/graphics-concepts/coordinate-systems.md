@@ -4,15 +4,12 @@ description: Typically 3D graphics applications use one of two types of Cartesia
 ms.assetid: 138D9B81-146F-4E9F-B742-1EDED8FBF2AE
 keywords:
 - Coordinate systems
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Coordinate systems
 
 

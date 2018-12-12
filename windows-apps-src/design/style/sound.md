@@ -1,15 +1,11 @@
 ---
-author: mijacobs
 Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
 label: Sound
 title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: mattben
@@ -17,10 +13,9 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Sound
 
- 
+![hero image](images/header-sound.svg)
 
 There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.
 
@@ -35,6 +30,19 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 The **ElementSoundPlayer** has three different states: **On** **Off** and **Auto**.
 
 If set to **Off**, no matter where your app is run, sound will never play. If set to **On** sounds for your app will play on every platform.
+
+Enabling ElementSoundPlayer will automatically enable spatial audio (3D sound) as well. To disable 3D sound (while still keeping the sound on), disable the **SpatialAudioMode** of the ElementSoundPlayer: 
+
+```C#
+ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
+```
+
+The **SpatialAudioMode** property can takes these values: 
+- **Auto**: Spatial audio will turn on when sound is on. 
+- **Off**: Spatial audio is always off, even if sound is on.
+- **On**: Spatial audio will always play.
+
+To learn more about spatial audio and how XAML handles it see [AudioGraph - Spatial Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
 ### Sound for TV and Xbox
 

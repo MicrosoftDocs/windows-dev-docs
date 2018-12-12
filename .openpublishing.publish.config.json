@@ -1,27 +1,27 @@
 {
   "build_entry_point": "op",
-  "need_generate_pdf_url_template": true, 
-  "need_generate_intellisense": false,
-  "git_repository_url_open_to_public_contributors": "http://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp",
-  "branch_target_mapping": {
-    "live": [
-      "Publish",
-      "Pdf"
-    ]
-  },
-
-  "Targets": {
-    "Pdf": {
-      "template_folder": "_themes.pdf"
-    }
-  },
   "docsets_to_publish": [
+    {
+      "docset_name": "arm",
+      "build_source_folder": "landing/arm-docs",
+      "build_output_subfolder": "arm",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
     {
       "docset_name": "hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "hub",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -30,14 +30,14 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
-      "is_dynamic_rendering": false
+      "is_dynamic_rendering": false,
+      "version": 0
     },
     {
       "docset_name": "windows-apps",
       "build_source_folder": "windows-apps-src",
       "build_output_subfolder": "windows-apps-src",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -46,7 +46,8 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
-      "is_dynamic_rendering": false
+      "is_dynamic_rendering": false,
+      "version": 0
     }
   ],
   "notification_subscribers": [
@@ -55,7 +56,10 @@
   "branches_to_filter": [
     ""
   ],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
+  "git_repository_branch_open_to_public_contributors": "docs",
   "skip_source_output_uploading": false,
+  "resolve_user_profile_using_github": true,
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -66,8 +70,27 @@
     {
       "path_to_root": "_themes.pdf",
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-      "branch": "master"
-    }    
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "xbox-live-unity-plugin",
+      "url": "https://github.com/Microsoft/xbox-live-unity-plugin.git",
+      "branch": "master",
+      "branch_mapping": {}
+    }
   ],
-  "resolve_user_profile_using_github": true
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "Pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
+  "need_generate_intellisense": false
 }

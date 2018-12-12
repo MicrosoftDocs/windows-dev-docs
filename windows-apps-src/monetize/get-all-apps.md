@@ -1,23 +1,16 @@
 ---
-author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: Use this method in the Microsoft Store submission API to retrieve information about all apps that are registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about all apps that are registered to your Partner Center account.
 title: Get all apps
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, apps
 ms.localizationpriority: medium
 ---
-
 # Get all apps
 
 
-
-
-Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -34,8 +27,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -43,18 +34,16 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
 All request parameters are optional for this method. If you call this method without parameters, the response contains data for all apps that are registered to your account.
- 
+
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  top  |  int  |  The number of items to return in the request (that is, the number of apps to return). If your account has more apps than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
 |  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
 
-<span/>
 
 ### Request body
 
@@ -120,9 +109,8 @@ The following example demonstrates the JSON response body returned by a successf
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | array  | An array of objects that contain information about each app that is registered to your account. For more information about the data in each object, see [Application resource](get-app-data.md#application_object).                                                                                                                           |
 | @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 20 apps registered to your account, the response body will include a @nextLink value of ```applications?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` to request the next 10 apps. |
-| totalCount | int    | The total number of rows in the data result for the query (that is, the total number of apps that are registered to your account).                                                                                                                                                                                                                             |
+| totalCount | int    | The total number of rows in the data result for the query (that is, the total number of apps that are registered to your account).                                                |
 
-<span/>
 
 ## Error codes
 
@@ -131,9 +119,8 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No apps were found. |
-| 409  | The apps use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The apps use Partner Center features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
-<span/>
 
 ## Related topics
 

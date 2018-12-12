@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 
-//<SnippetLLFUsing>
+// <SnippetLLFUsing>
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.Graphics.Imaging;
@@ -10,7 +10,7 @@ using Windows.Media.Core;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-//</SnippetLLFUsing>
+// </SnippetLLFUsing>
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -32,17 +32,17 @@ namespace LowLightFusionSample
         // Return a vector of software bitmaps of maximum count of maxFrames selected by a user and loaded from a stream  
         public async Task<List<SoftwareBitmap>> GetSelectedSoftwareBitmaps()
         {
-            //<SnippetGetMaxLLFFrames>
+            // <SnippetGetMaxLLFFrames>
             // Query the supported max number of input bitmap frames for Low Light Fusion 
             int maxFrames = LowLightFusion.MaxSupportedFrameCount;
 
             // The bitmap frames to perform Low Light Fusion on.
             var framelist = new List<SoftwareBitmap>(maxFrames);
-            //</SnippetGetMaxLLFFrames>
+            // </SnippetGetMaxLLFFrames>
 
 
 
-            //<SnippetGetFrames>
+            // <SnippetGetFrames>
             var fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             fileOpenPicker.FileTypeFilter.Add(".png");
@@ -59,10 +59,10 @@ namespace LowLightFusionSample
             {
                 Debug.WriteLine("You can only choose up to {0} image(s) to input.", maxFrames);
             }
-            //</SnippetGetFrames>
+            // </SnippetGetFrames>
 
 
-            //<SnippetDecodeFrames>
+            // <SnippetDecodeFrames>
             SoftwareBitmap softwareBitmap;
 
             // Decode the images into bitmaps
@@ -96,13 +96,13 @@ namespace LowLightFusionSample
                 }
             }           
             return framelist;
-            //</SnippetDecodeFrames>
+            // </SnippetDecodeFrames>
         }
 
         // Encode the resulting bitmap frame and save it to a file
         public async Task EncodeAndSaveToFileAsync(SoftwareBitmap frame)
         {
-            //<SnippetEncodeFrame>
+            // <SnippetEncodeFrame>
             // Convert bitmap to Rgba16, Rgba8, or Bgra8 for encoding.
             var frameConverted = SoftwareBitmap.Convert(frame, BitmapPixelFormat.Bgra8);
 
@@ -151,7 +151,7 @@ namespace LowLightFusionSample
                     await encoder.FlushAsync();
                 }
             }
-            //</SnippetEncodeFrame>
+            // </SnippetEncodeFrame>
         }
 
         // Perform Low Light Fusion on user selected images
@@ -161,9 +161,9 @@ namespace LowLightFusionSample
             List<SoftwareBitmap> pictures = await GetSelectedSoftwareBitmaps();
 
             // 2. Fuse the bitmaps and perform Low Light Fusion to get the resulting frame
-            //<SnippetFuseFrames>
+            // <SnippetFuseFrames>
             LowLightFusionResult result = await LowLightFusion.FuseAsync(pictures);
-            //</SnippetFuseFrames>
+            // </SnippetFuseFrames>
 
             // 3. Encode the resulting Low Light Fusion frame to a file 
             await EncodeAndSaveToFileAsync(result.Frame);

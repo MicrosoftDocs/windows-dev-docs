@@ -1,13 +1,9 @@
 ---
-author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Get file properties
 description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a file represented by a StorageFile object.
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -23,7 +19,8 @@ ms.localizationpriority: medium
 
 Get properties—top-level, basic, and extended—for a file represented by a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-**Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> [!NOTE]
+> Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 

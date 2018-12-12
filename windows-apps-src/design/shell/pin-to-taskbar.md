@@ -1,19 +1,15 @@
 ---
-author: mijacobs
 Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications\primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning. 
+You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications/primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning. 
 
 ![Taskbar](images/taskbar/taskbar.png)
 
@@ -55,7 +51,7 @@ else
 
 UWP apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. 
 
-Even if the taskbar is available, a group policy on the user's machine might disable taskbar pinning. So, before you attempt to pin your app, you need to check whether pinning to the taskbar is supported. The [TaskbarManager.IsPinningAllowed property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsPinningAllowed) returns true if the taskbar is present and allows pinning. 
+Even if the taskbar is available, a group policy on the user's machine might disable taskbar pinning. So, before you attempt to pin your app, you need to check whether pinning to the taskbar is supported. The [TaskbarManager.IsPinningAllowed property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed) returns true if the taskbar is present and allows pinning. 
 
 ```csharp
 // Check if taskbar allows pinning (Group Policy can disable it, or some device families don't have taskbar)
@@ -63,12 +59,12 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 ```
 
 > [!NOTE]
-> If you don't want to pin your app to the taskbar and just want to find out whether the taskbar is available, use the [TaskbarManager.IsSupported property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsSupported).
+> If you don't want to pin your app to the taskbar and just want to find out whether the taskbar is available, use the [TaskbarManager.IsSupported property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsSupported).
 
 
 ## 3. Check whether your app is currently pinned to the taskbar
 
-Obviously, there's no point in asking the user to let you pin the app to the taskbar if it's already pinned there. You can use the [TaskbarManager.IsCurrentAppPinnedAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsCurrentAppPinnedAsync) to check whether the app is already pinned before asking the user.
+Obviously, there's no point in asking the user to let you pin the app to the taskbar if it's already pinned there. You can use the [TaskbarManager.IsCurrentAppPinnedAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsCurrentAppPinnedAsync) to check whether the app is already pinned before asking the user.
 
 ```csharp
 // Check whether your app is currently pinned
@@ -89,7 +85,7 @@ else
 
 If the taskbar is present and pinning is allowed and your app currently isn't pinned, you might want to show a subtle tip to let users know that they can pin your app. For example, you might show a pin icon somewhere in your UI that the user can click. 
 
-If the user clicks your pin suggestion UI, you would then call the [TaskbarManager.RequestPinCurrentAppAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_RequestPinCurrentAppAsync). This method displays a dialog that asks the user to confirm that they want your app pinned to the taskbar.
+If the user clicks your pin suggestion UI, you would then call the [TaskbarManager.RequestPinCurrentAppAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.RequestPinCurrentAppAsync). This method displays a dialog that asks the user to confirm that they want your app pinned to the taskbar.
 
 > [!IMPORTANT]
 > This must be called from a foreground UI thread, otherwise an exception will be thrown.
@@ -108,4 +104,4 @@ This method returns a boolean value that indicates whether your app is now pinne
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Pin an app to the Start menu](tiles-and-notifications\primary-tile-apis.md)
+* [Pin an app to the Start menu](tiles-and-notifications/primary-tile-apis.md)
