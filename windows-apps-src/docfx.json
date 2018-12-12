@@ -18,7 +18,7 @@
 		"ms.prod": "uwp",
         "Search.Product": "eADQiWindows 10XVcnh",
         "uhfHeaderId": "MSDocsHeader-WinUWP",
-        "titleSuffix": "UWP app developer",
+        "titleSuffix": "Windows UWP applications",
         "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
         "feedback_system": "GitHub",
         "feedback_github_repo": "MicrosoftDocs/windows-uwp",
