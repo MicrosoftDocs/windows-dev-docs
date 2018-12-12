@@ -193,7 +193,7 @@ std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
-auto workItem = ref new WorkItemHandler(
+auto workItem = ref new Windows::System::Threading::WorkItemHandler(
     \[this, n, nthPrime](IAsyncAction^ workItem)
 {
     unsigned int progress = 0; // For progress reporting.
