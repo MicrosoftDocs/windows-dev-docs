@@ -382,7 +382,9 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
         D2D1_RECT_F const rect{ 100.0f, 100.0f, size.width - 100.0f, size.height - 100.0f };
         m_target->DrawRectangle(rect, m_brush.get(), 100.0f);
 
-        WINRT_TRACE("Draw %.2f x %.2f @ %.2f\n", size.width, size.height, m_dpi);
+        char buffer[1024];
+        (void)snprintf(buffer, sizeof(buffer), "Draw %.2f x %.2f @ %.2f\n", size.width, size.height, m_dpi);
+        ::OutputDebugStringA(buffer);
     }
 
     void Render()
