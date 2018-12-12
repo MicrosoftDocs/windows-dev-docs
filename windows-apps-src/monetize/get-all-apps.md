@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Get all apps
 
 
-Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Partner Center account.
+Use this method in the Microsoft Store submission API to retrieve data for the apps that are registered to your Partner Center account.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications` |
 
 
 ### Request header
@@ -37,7 +37,7 @@ This method has the following syntax. See the following sections for usage examp
 
 ### Request parameters
 
-All request parameters are optional for this method. If you call this method without parameters, the response contains data for all apps that are registered to your account.
+All request parameters are optional for this method. If you call this method without parameters, the response contains data for the first 10 apps that are registered to your account.
 
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
@@ -51,19 +51,44 @@ Do not provide a request body for this method.
 
 ### Request examples
 
-The following example demonstrates how to retrieve information about all the apps that are registered to your account.
+The following example demonstrates how to retrieve the first 10 apps that are registered to your account.
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-The following example demonstrates how to retrieve the first 10 apps that are registered to your account.
+The following example demonstrates how to retrieve information about all the apps that are registered to your account. First, get the top 10 apps:
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
+
+Then recursively call `GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}` until `{@nextlink}` is null or doesn't exist in the response. For example:
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+  
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=20&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+If you already know the total number of apps you have in your account, you can simply pass that number in the **top** parameter to get information about all your apps.
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
 
 ## Response
 
@@ -108,7 +133,7 @@ The following example demonstrates the JSON response body returned by a successf
 | Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | array  | An array of objects that contain information about each app that is registered to your account. For more information about the data in each object, see [Application resource](get-app-data.md#application_object).                                                                                                                           |
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 20 apps registered to your account, the response body will include a @nextLink value of ```applications?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` to request the next 10 apps. |
+| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 20 apps registered to your account, the response body will include a @nextLink value of `applications?skip=10&top=10`, which indicates that you can call `https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10` to request the next 10 apps. |
 | totalCount | int    | The total number of rows in the data result for the query (that is, the total number of apps that are registered to your account).                                                |
 
 
