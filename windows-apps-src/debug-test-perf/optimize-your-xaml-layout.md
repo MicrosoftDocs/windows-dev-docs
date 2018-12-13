@@ -69,7 +69,7 @@ Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR
 The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
 
 ```xml
-  <Grid>
+<Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
