@@ -57,7 +57,7 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 Acrylic's most noticeable characteristic is its transparency. There are two acrylic blend types that change what’s visible through the material:
  - **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
  - **In-app acrylic** adds a sense of depth within the app frame, providing both focus and hierarchy.
-> [!Note]
+
  ![Background acrylic](images/BackgroundAcrylic_DarkTheme.png)
 
  ![In-app acrylic](images/AppAcrylic_DarkTheme.png)
