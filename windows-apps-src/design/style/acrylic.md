@@ -57,7 +57,7 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 Acrylic's most noticeable characteristic is its transparency. There are two acrylic blend types that change what’s visible through the material:
  - **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
  - **In-app acrylic** adds a sense of depth within the app frame, providing both focus and hierarchy.
-
+> [!Note]
  ![Background acrylic](images/BackgroundAcrylic_DarkTheme.png)
 
  ![In-app acrylic](images/AppAcrylic_DarkTheme.png)
@@ -198,7 +198,8 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
 
 To add an acrylic brush, define the three resources for dark, light and high contrast themes. Note that in high contrast, we recommend using a SolidColorBrush with the same x:Key as the dark/light AcrylicBrush.
 
->**Note:** If not specified, TintLuminosityOpacity will automatically adjust it's value based on your TintColor and TintOpacity.
+> [!Note] 
+> If you don't specify a TintLuminosityOpacity value, the system will automatically adjust its value based on your TintColor and TintOpacity.
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
