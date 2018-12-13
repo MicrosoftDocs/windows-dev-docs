@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Create your app by reserving a name
 
-The first step in creating a new app in your [Partner Center](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
+The first step in creating a new app in [Partner Center](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
 
 You can reserve a name for your app even if you haven't started to build your app yet. We recommend doing so as soon as possible, so that nobody else can use the name. Note that you will need to submit the app within three months in order to keep that name reserved for your use.
 
