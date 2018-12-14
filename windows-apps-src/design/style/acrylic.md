@@ -66,7 +66,7 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 
 ## When to use acrylic
 
-* Use in-app acrylic for supporting UI, such as NavigationView or in-line commanding elements. 
+* Use in-app acrylic for supporting UI, such as NavigationView or in-line commanding elements.
 * Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dimsissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
 
 If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow on your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
@@ -186,6 +186,7 @@ To paint a specific surface, apply one of the above theme resources to element b
 You may choose to add a color tint to your app’s acrylic to show branding or provide visual balance with other elements on the page. To show color rather than greyscale, you’ll need to define your own acrylic brushes using the following properties.
  - **TintColor**: the color/tint overlay layer. Consider specifying both the RGB color value and alpha channel opacity.
  - **TintOpacity**: the opacity of the tint layer. We recommend 80% opacity as a starting point, although different colors may look more compelling at other translucencies.
+ - **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
  - **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
  - **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
 
@@ -193,7 +194,12 @@ You may choose to add a color tint to your app’s acrylic to show branding or p
 
 ![Dark theme acrylic swatches](images/CustomAcrylic_Swatches_DarkTheme.png)
 
+![Luminosity opactity compared to tint opacity](images/LuminosityVersusTint.png)
+
 To add an acrylic brush, define the three resources for dark, light and high contrast themes. Note that in high contrast, we recommend using a SolidColorBrush with the same x:Key as the dark/light AcrylicBrush.
+
+> [!Note] 
+> If you don't specify a TintLuminosityOpacity value, the system will automatically adjust its value based on your TintColor and TintOpacity.
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -202,6 +208,7 @@ To add an acrylic brush, define the three resources for dark, light and high con
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FF7F0000"/>
     </ResourceDictionary>
 
@@ -215,6 +222,7 @@ To add an acrylic brush, define the three resources for dark, light and high con
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FFFF7F7F"/>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
@@ -243,10 +251,9 @@ else
 
 ## Extend acrylic into the title bar
 
-To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) properties to [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent). 
+To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) properties to [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent).
 
 ```csharp
-/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -256,11 +263,10 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), as shown here, or in your app's first page. 
-
+This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), as shown here, or in your app's first page.
 
 ```csharp
-// Call your extend acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {

@@ -45,7 +45,7 @@ You can customize the appearance of the control by modifying the default templat
 
 ## Template structure
 
-The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. The transport control's default style is shown in the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class reference page. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
+The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
 - The first section of the template contains the [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) definitions for the various components of the MediaTransportControls.
 - The second section defines the various visual states that are used by the MediaTransportControls.
 - The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
