@@ -65,7 +65,7 @@ The  scale factor determines the size of UI elements, such as text. Scale factor
 :::row-end:::  
 
 
-Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunatly, Visual Studio provides a tool that makes it easy to generate and update these icons. 
+Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunately, Visual Studio provides a tool that makes it easy to generate and update these icons. 
 
 ## Microsoft Store listing image
 
