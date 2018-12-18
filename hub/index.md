@@ -47,7 +47,7 @@ localizationpriority: medium
               </a>
           </li>
           <li>
-              <a href="https://mva.microsoft.com/">
+              <a href="/learn/browse/?roles=developer&products=windows">
                   <div class="cardSize">
                       <div class="cardPadding">
                           <div class="card">
@@ -57,7 +57,7 @@ localizationpriority: medium
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Explore Microsoft Virtual Academy</h3>
+                                  <h3>Explore Microsoft Learn</h3>
                               </div>
                           </div>
                       </div>
