@@ -618,6 +618,25 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
+Below is a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version of the **NavView_ItemInvoked** handler from the C# code example above. The technique in the C++/WinRT handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in the C# example; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing scalar values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+
+```cppwinrt
+void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
+{
+    if (args.IsSettingsInvoked())
+    {
+        // Navigate to Settings.
+    }
+    else if (args.InvokedItemContainer())
+    {
+        Windows::UI::Xaml::Interop::TypeName pageTypeName;
+        pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
+        pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+        ContentFrame().Navigate(pageTypeName, nullptr);
+    }
+}
+```
+
 ## Navigation view customization
 
 ### Pane Backgrounds
