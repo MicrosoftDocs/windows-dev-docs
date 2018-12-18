@@ -207,7 +207,7 @@ When using colored text on a colored background, make sure there is enough contr
 
 The chart below illustrates an example of the various light/dark shades of accent color, and how colored type can be applied on a colored surface.
 
-![color-on-color](images/color/color-on-color.svg)
+![color-on-color](images/color/color-on-color.png)
 
 For more information about styling controls, see [XAML styles](../controls-and-patterns/xaml-styles.md).
 
