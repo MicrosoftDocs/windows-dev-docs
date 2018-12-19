@@ -207,7 +207,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
 <div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
-            <a href="dev-center-insider-program.md">
+            <a href="account-types-locations-and-fees.md">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
@@ -217,7 +217,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Dev Center Insider Program</h3>
+                                <h3>Account types, locations, and fees</h3>
                             </div>
                         </div>
                     </div>
