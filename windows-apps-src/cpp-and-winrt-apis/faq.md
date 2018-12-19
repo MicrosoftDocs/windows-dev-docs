@@ -144,5 +144,9 @@ a.f();
 
 The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
 
+## How do I turn a string into a type&mdash;for navigation, for example?
+
+At the end of the [Navigation view code example](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
+
 > [!NOTE]
 > If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

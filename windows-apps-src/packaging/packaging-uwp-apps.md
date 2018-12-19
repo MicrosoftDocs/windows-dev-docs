@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to package it. If you don't want to distribute your app through Microsoft Store, you can sideload the app package directly to a device or distribute it via [Web Install](installing-UWP-apps-web.md). This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about managing and deploying line-of-business (LOB) apps, see [Enterprise app management](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
-In Windows 10, you can submit an app package, app bundle, or a complete app package upload file to [Partner Center](https://partner.microsoft.com/dashboard). Of these options, submitting a package upload file will provide the best experience. 
+In Windows 10, you can submit an app package, app bundle, or a complete app package upload file to [Partner Center](https://partner.microsoft.com/dashboard). Of these options, submitting a package upload file will provide the best experience.
 
 ## Types of app packages
 
@@ -22,7 +22,7 @@ In Windows 10, you can submit an app package, app bundle, or a complete app pack
 - **App Bundle (.appxbundle or .msixbundle)**  
     An app bundle is a type of package that can contain multiple app packages, each of which is built to support a specific device architecture. For example, an app bundle can contain three separate app packages for the x86, x64, and ARM configurations. App bundles should be generated whenever possible because they allow your app to be available on the widest possible range of devices.  
 
-- **App Package Upload File (.appxupload)**  
+- **App Package Upload File (.appxupload or .msixupload)**  
     A single file that can contain multiple app packages or an app bundle to support various processor architectures. The upload file also contains a symbol file to [Analyze app performance](https://docs.microsoft.com/windows/uwp/publish/analytics) after your app has been published in the Microsoft Store. This file will be automatically created for you if you are packaging your app with Visual Studio with the intention of submitting it to Partner Center for publishing. It's important to note that these are the **only** valid app package Partner Center submissions that can be created using Visual Studio.
 
 Here is an overview of the steps to prepare and create an app package:
@@ -55,23 +55,23 @@ The Visual Studio manifest designer allows you to update the manifest file witho
 
     Check that you have all the images that are required for a UWP app on the **Visual Assets** tab.
 
-    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. 
-    
+    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate.
+
     >[!IMPORTANT]
-    >If you're publishing your app in Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate. 
-    
+    >If you're publishing your app in Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate.
+
     If you are not publishing your app and simply want to sideload an app package, you first need to trust the package. To trust the package, the certificate must be installed on the user's device. For more information about sideloading, see [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 
 4.  Save your **Package.appxmanifest** file after you have made the necessary edits for your app.
 
-If you are distributing your app via Microsoft Store, Visual Studio can associate your package with the Store. When you associate your app, some of the fields in the Packaging tab of the manifest designer are automatically updated.
+If you are distributing your app via the Microsoft Store, Visual Studio can associate your package with the Store. To do this, right-click your project name in Solution Explorer and choose **Store**->**Associate App with the Store**. You can also do this in the **Create App Packages** wizard, which is described in the following section. When you associate your app, some of the fields in the Packaging tab of the manifest designer are automatically updated.
 
 ## Create an app package upload file
 
 To distribute an app through Microsoft Store you must create an app package (.appx or .msix), app bundle (.appxbundle or .msixbundle), or an upload package (.appxupload) and [submit the packaged app to Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Although it is possible to submit an app package or app bundle to Partner Center alone, you are encouraged to submit an upload package.
 
 >[!NOTE]
-> The app package upload file (.appxupload) is the **only** type of valid app package for Partner Center that can be created using Visual Studio. Other valid [app packages can be created manually](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool), without Visual Studio. 
+> The app package upload file (.appxupload or .msixupload) is the **only** type of valid app package for Partner Center that can be created using Visual Studio. Other valid [app packages can be created manually](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool), without Visual Studio.
 
 You can do that by using the **Create App Packages** wizard. Follow these steps to create a package suitable for Partner Center submission using Visual Studio.
 
@@ -83,19 +83,17 @@ You can do that by using the **Create App Packages** wizard. Follow these steps 
 
     The **Create App Packages** wizard appears.
 
-3.  Select Yes in the first dialog asking if you want to build packages to upload to Partner Center, then click Next.  
+3.  Select **I want to create packages to upload to the Microsoft Store using a new app name** in the first dialog and then click **Next**.  
     ![Create Your Packages dialog window shown](images/packaging-screen3.jpg)
 
-    If you choose No, Visual Studio will not generate the app package upload (.appxupload) file for Partner Center submissions. If you only want to sideload your app to run it on internal devices or for testing purposes, then you can select this option. For more information about sideloading, see [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
-4.  Sign in with your developer account to Partner Center. If you don't have a developer account yet, the wizard will help you create one.
-5.  Select the app name for your package, or reserve a new one if you have not already reserved one in Partner Center.  
+    If you have already associated your project with an app in the Store, you also have an option to create packages for the associated Store app. If you choose **I want to create packages for sideloading**, Visual Studio will not generate the app package upload (.msixupload or .appxupload) file for Partner Center submissions. If you only want to sideload your app to run it on internal devices or for testing purposes, then you can select this option. For more information about sideloading, see [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
+4.  On the next page, sign in with your developer account to Partner Center. If you don't have a developer account yet, the wizard will help you create one.
     ![Create App Packages window with app name selection shown](images/packaging-screen4.jpg)
-6.  Make sure you select all three architecture configurations (x86, x64, and ARM) in the **Select and Configure Packages** dialog to ensure that your app can be deployed to the widest range of devices. In the **Generate app bundle** listbox, select **Always**. An app bundle (.appxbundle) is preferred over a single app package file because it contains a collection of app packages configured for each type of processor architecture. When you choose to generate the app bundle, the app bundle will be included in the final app package upload (.appxupload) file along with debugging and crash analytic information. If you're unsure which architecture(s) to choose, or want to learn more about which architectures are used by various devices, see [App package architectures](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
+5.  Select the app name for your package from the list of apps currently registered to your account, or reserve a new one if you have not already reserved one in Partner Center.  
+6.  Make sure you select all three architecture configurations (x86, x64, and ARM) in the **Select and Configure Packages** dialog to ensure that your app can be deployed to the widest range of devices. In the **Generate app bundle** listbox, select **Always**. An app bundle (.appxbundle or .msixbundle) is preferred over a single app package file because it contains a collection of app packages configured for each type of processor architecture. When you choose to generate the app bundle, the app bundle will be included in the final app package upload (.appxupload or .msixupload) file along with debugging and crash analytic information. If you're unsure which architecture(s) to choose, or want to learn more about which architectures are used by various devices, see [App package architectures](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
     ![Create App Packages window with package configuration shown](images/packaging-screen5.jpg)
-
-
 7.  Include full PDB symbol files to [Analyze app performance](https://docs.microsoft.com/windows/uwp/publish/analytics) from Partner Center after your app has been published. Configure any additional details such as version numbering or the package output location.
-9.  Click **Create** to generate the app package. If you selected **Yes** in step 3 and are creating a package for Partner Center submission, the wizard will create a package upload (.appxupload) file. If you selected **No** in step 3, the wizard will create either a single app package or an app bundle based on your selections in step 6.
+9.  Click **Create** to generate the app package. If you selected one of the **I want to create packages to upload to the Microsoft Store** options in step 3 and are creating a package for Partner Center submission, the wizard will create a package upload (.appxupload or .msixupload) file. If you selected **I want to create packages for sideloading** in step 3, the wizard will create either a single app package or an app bundle based on your selections in step 6.
 10. When your app has been successfully packaged, you will see this dialog.  
     ![Package creation completed window with validation options shown](images/packaging-screen6.jpg)
 
@@ -107,7 +105,7 @@ You can do that by using the **Create App Packages** wizard. Follow these steps 
 
     If you have a remote Windows 10 device that you want to use for testing, you will need to install the Windows App Certification Kit manually on that device. The next section will walk you through these steps. After you've done that, then you can select **Remote machine** and click **Launch Windows App Certification Kit** to connect to the remote device and run the validation tests.
 
-12. After WACK has finished and your app has passed certification, you are ready to submit your app to Partner Center. Make sure you upload the correct file. The default location of the file can be found in the root folder of your solution `\[AppName]\AppPackages` and it will end with the .appxupload file extension. The name will be of the form `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` if you opted for an app bundle with all of the package architecture selected.
+12. After WACK has finished and your app has passed certification, you are ready to submit your app to Partner Center. Make sure you upload the correct file. The default location of the file can be found in the root folder of your solution `\[AppName]\AppPackages` and it will end with the .appxupload or .msixupload file extension. The name will be of the form `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` or `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` if you opted for an app bundle with all of the package architecture selected.
 
 For more information on submitting your app to Partner Center, see [App submissions](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
@@ -125,7 +123,7 @@ For more information on submitting your app to Partner Center, see [App submissi
 
 ## Sideload your app package
 
-Introduced in the Windows 10 Anniversary Update, app packages can be installed simply by double clicking the app package file. To use this, navigate to your app package or app bundle file, and double click it. The App Installer launches and provides the basic app information as well as an install button, installation progress bar, and any relevant error messages. 
+Introduced in the Windows 10 Anniversary Update, app packages can be installed simply by double clicking the app package file. To use this, navigate to your app package or app bundle file, and double click it. The App Installer launches and provides the basic app information as well as an install button, installation progress bar, and any relevant error messages.
 
 ![App Installer display for installing a sample app called Contoso](images/appinstaller-screen.png)
 
