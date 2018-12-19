@@ -279,25 +279,25 @@ End Using
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
 {
-    dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+    dataWriter.WriteString("DataWriter has methods to write to various types, such as DateTimeOffset.");
 }
 ```
 
 ```cppwinrt
 Windows::Storage::Streams::DataWriter dataWriter;
-dataWriter.WriteString(L"DataWriter has methods to write to various types, such as DataTimeOffset.");
+dataWriter.WriteString(L"DataWriter has methods to write to various types, such as DateTimeOffset.");
 // The code in step 4 goes here.
 ```
 
 ```cpp
 // Added after code from part 2
 DataWriter^ dataWriter = ref new DataWriter(outputStream);
-dataWriter->WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+dataWriter->WriteString("DataWriter has methods to write to various types, such as DateTimeOffset.");
 ```
 
 ```vb
 Dim dataWriter As New DataWriter(outputStream)
-dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
+dataWriter.WriteString("DataWriter has methods to write to various types, such as DateTimeOffset.")
 ```
 
 4.  Lastly, add this code (if you're using C#, within the inner **using** statement) to save the text to your file with [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
