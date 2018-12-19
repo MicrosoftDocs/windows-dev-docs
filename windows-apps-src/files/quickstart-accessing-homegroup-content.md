@@ -2,7 +2,7 @@
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: Accessing HomeGroup content
 description: Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -28,7 +28,7 @@ Access content stored in the user's HomeGroup folder, including pictures, music,
     To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
 
     > [!NOTE]
-    >  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.     
+    > Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.     
 
 -   **Understand how to use file pickers**
 
