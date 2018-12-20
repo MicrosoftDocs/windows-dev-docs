@@ -369,13 +369,13 @@ In this example, recognition is initiated when the user clicks a button to indic
 
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
 
-```csharp
-// Recognize all ink strokes on the ink canvas.
-    IReadOnlyList<InkRecognitionResult> recognitionResults =
-        await inkRecognizerContainer.RecognizeAsync(
-            inkCanvas.InkPresenter.StrokeContainer,
-            InkRecognitionTarget.All);
-```
+    ```csharp
+    // Recognize all ink strokes on the ink canvas.
+        IReadOnlyList<InkRecognitionResult> recognitionResults =
+            await inkRecognizerContainer.RecognizeAsync(
+                inkCanvas.InkPresenter.StrokeContainer,
+                InkRecognitionTarget.All);
+    ```
 
     Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 

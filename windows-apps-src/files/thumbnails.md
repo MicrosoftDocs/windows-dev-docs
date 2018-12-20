@@ -3,7 +3,7 @@ Description: How to use thumbnail images to help users preview files in UWP apps
 title: Guidelines for thumbnail images in UWP apps
 label: Thumbnail images
 template: detail.hbs
-ms.date: 01/08/2018
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -12,7 +12,9 @@ ms.localizationpriority: medium
 
 These guidelines describe how to use thumbnail images to help users preview files as they browse in your UWP app. 
 
-> **Important APIs**: [ThumbnailMode enum](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+**Important APIs**
+
+-   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## Should my app include thumbnails?
 
