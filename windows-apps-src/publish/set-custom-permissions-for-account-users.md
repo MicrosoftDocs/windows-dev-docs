@@ -164,7 +164,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    <b>Usage</b> </td><td>    Can view the <a href="usage-report.md">Usage report</a> for the product.     </td><td>    N/A       </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Health</b> </td><td>    Can view the <a href="health-report.md">Health report</a> for the product.    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Customer feedback</b>    </td><td>    Can view the <a href="reviews-report.md">Reviews</a> and <a href="feedback-report.md">Feedback</a> reports for the product.       </td><td>    N/A (to respond to feedback or reviews, the <b>Contact customer</b> permission must be granted)   </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>Xbox analytics</b> </td><td>    Can view the [Xbox analytics report](xbox-analytics-report.md) for the product.    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
+    <tr><td align="left">    <b>Xbox analytics</b> </td><td>    Can view the <a href="xbox-analytics-report.md">Xbox analytics report</a> for the product.    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
     </tbody>
     </table>
 

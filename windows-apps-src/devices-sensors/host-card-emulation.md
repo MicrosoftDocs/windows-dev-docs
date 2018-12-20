@@ -376,5 +376,5 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Important **  
+<b>Important</b>  
 The legacy binary SMS intercept support in Windows Phone 8.1 has been removed and replaced with new broader SMS support in Windows 10 Mobile, but any legacy Windows Phone 8.1 apps relying on that must update to use the new Windows 10 Mobile SMS APIs.

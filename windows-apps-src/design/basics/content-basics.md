@@ -100,7 +100,7 @@ To create these page patterns, you'll need to use a combination of individual co
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">Text block</a>, <a href="../controls-and-patterns/text-box.md">text box</a>, <a href="../controls-and-patterns/rich-edit-box.md">rich edit box</a></p>
 </td>
 <td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls-and-patterns/text-controls.md">Text controls</a>.
-<p>For guidelines on how to display text, see [Typography](../style/typography.md).</p>
+<p>For guidelines on how to display text, see <a href="../style/typography.md">Typography</a>.</p>
 </td>
 </tr>
 <tr class="odd">

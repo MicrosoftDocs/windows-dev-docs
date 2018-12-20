@@ -35,7 +35,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Launches the product details page (PDP) for a product. <p>Store ID is recommended for customers on Windows 10, and will work on all OS versions, but the earlier ways of doing it (ex: PFN) are still supported.</p>
-<p>These values can be found in [Partner Center](https://partner.microsoft.com/dashboard) on the <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App identity</a> page in the App management section for each app.</p>
+<p>These values can be found in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> on the <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App identity</a> page in the App management section for each app.</p>
 </td>
 <td>
 Store ID <p>(Recommended)</p>
@@ -51,7 +51,7 @@ Store ID <p>(Recommended)</p>
 </tr>
 <tr>
 <td>Product ID (Windows Phone 7.x/8.x)</td>
-<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
+<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d</td>
 </tr>
 <tr>
 <td>Product ID (Windows 8.x)</td>

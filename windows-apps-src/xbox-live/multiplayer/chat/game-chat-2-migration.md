@@ -269,7 +269,7 @@ To send text chat with Game Chat, `GameChatUser::GenerateTextMessage()` can be u
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
-The second boolean parameter controls text-to-speech conversion. For more details, see [Accessibility](#accessibilityGame Chat then generates a chat packet containing this message. Remote instances of Game Chat will be notified of the text message via the `OnTextMessageReceived` event.
+The second boolean parameter controls text-to-speech conversion. For more details, see [Accessibility](#accessibility). Game Chat then generates a chat packet containing this message. Remote instances of Game Chat will be notified of the text message via the `OnTextMessageReceived` event.
 
 ### Game Chat 2
 

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Create a periodic work item
 
 
-** Important APIs **
+<b>Important APIs</b>
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
