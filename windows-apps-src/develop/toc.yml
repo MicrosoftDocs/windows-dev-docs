@@ -1002,7 +1002,7 @@
               href: ../xaml-platform/template-settings-classes.md
             - name: "x:Class attribute"
               href: ../xaml-platform/x-class-attribute.md
-            - name: "{x:DefaultBindMode} attribute"
+            - name: "x:DefaultBindMode attribute"
               href: ../xaml-platform/x-defaultbindmode-attribute.md
             - name: "x:DeferLoadStrategy attribute"
               href: ../xaml-platform/x-deferloadstrategy-attribute.md
