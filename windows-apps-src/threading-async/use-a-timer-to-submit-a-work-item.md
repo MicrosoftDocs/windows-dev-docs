@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Use a timer to submit a work item
 
 
-** Important APIs **
+<b>Important APIs</b>
 
 -   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
 -   [**Windows.System.Threading namespace**](https://msdn.microsoft.com/library/windows/apps/BR229642)

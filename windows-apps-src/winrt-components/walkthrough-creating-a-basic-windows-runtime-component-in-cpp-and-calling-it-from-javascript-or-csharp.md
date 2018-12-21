@@ -18,14 +18,14 @@ In this example, we create the component project first, but you could create the
 
 Notice that the main class of the component contains examples of property and method definitions, and an event declaration. These are provided just to show you how it's done. They are not required, and in this example, we'll replace all of the generated code with our own code.
 
-## **To create the C++ component project**
-On the Visual Studio menu bar, choose **File, New, Project**.
+### **To create the C++ component project**
+1. On the Visual Studio menu bar, choose **File, New, Project**.
 
-In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
+2. In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
 
-In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.
+3. In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.
 
-Choose the **OK** button.
+4. Choose the **OK** button.
 
 ## **To add an activatable class to the component**
 An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++). In your component, you declare it as **public ref class sealed**. In fact, the Class1.h and .cpp files already have a ref class. You can change the name, but in this example we’ll use the default name—Class1. You can define additional ref classes or regular classes in your component if they are required. For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
@@ -79,15 +79,15 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## To add the header and namespace directives
-In Class1.cpp, add these #include directives:
+### To add the header and namespace directives
+1. In Class1.cpp, add these #include directives:
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-Now add these using statements to pull in the required namespaces:
+2. Now add these using statements to pull in the required namespaces:
 
 ```cpp
 using namespace concurrency;
@@ -263,22 +263,22 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 ## Creating a JavaScript client app
 If you just want to create a C# client, you can skip this section.
 
-## To create a JavaScript project
-In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.
+### To create a JavaScript project
+1. In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.
 
-Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.
+2. Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.
 
-Accept the default name—App1—by choosing the **OK** button.
+3. Accept the default name—App1—by choosing the **OK** button.
 
-Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.
+4. Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.
 
-Add a project reference to WinRT_CPP:
+5. Add a project reference to WinRT_CPP:
 
-Open the shortcut menu for the References node and choose **Add Reference**.
+6. Open the shortcut menu for the References node and choose **Add Reference**.
 
-In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.
+7. In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.
 
-In the center pane, select WinRT_CPP and then choose the **OK** button
+8. In the center pane, select WinRT_CPP and then choose the **OK** button
 
 ## To add the HTML that invokes the JavaScript event handlers
 Paste this HTML into the <body> node of the default.html page:
@@ -434,22 +434,22 @@ Press F5 to run the app.
 
 ## Creating a C# client app
 
-## To create a C# project
-In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.
+### To create a C# project
+1. In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.
 
-Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.
+2. Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.
 
-Name this app CS_Client and then choose the **OK** button.
+3. Name this app CS_Client and then choose the **OK** button.
 
-Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.
+4. Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.
 
-Add a project reference to WinRT_CPP:
+5. Add a project reference to WinRT_CPP:
 
-Open the shortcut menu for the **References** node and choose **Add Reference**.
+   - Open the shortcut menu for the **References** node and choose **Add Reference**.
 
-In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.
+   - In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.
 
-In the center pane, select WinRT_CPP and then choose the **OK** button.
+   - In the center pane, select WinRT_CPP and then choose the **OK** button.
 
 ## To add the XAML that defines the user interface
 Copy the following code into the Grid element in MainPage.xaml.
@@ -578,20 +578,20 @@ Select either the C# project or JavaScript project as the startup project by ope
 ## Inspecting your component in Object Browser (optional)
 In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files. This includes the types in the Platform namespace and the default namespace. However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.
 
-## **To inspect a component**
-On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
+### **To inspect a component**
+1. On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
 
-In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
+2. In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
 
 ## Debugging tips
 For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:
 
-## **To download debugging symbols**
-On the menu bar, choose **Tools, Options**.
+### **To download debugging symbols**
+1. On the menu bar, choose **Tools, Options**.
 
-In the **Options** dialog box, expand **Debugging** and select **Symbols**.
+2. In the **Options** dialog box, expand **Debugging** and select **Symbols**.
 
-Select **Microsoft Symbol Servers** and the choose the **OK** button.
+3. Select **Microsoft Symbol Servers** and the choose the **OK** button.
 
 It might take some time to download the symbols the first time. For faster performance the next time you press F5, specify a local directory in which to cache the symbols.
 

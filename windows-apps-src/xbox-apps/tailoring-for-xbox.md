@@ -68,3 +68,4 @@ The **App Dev on Xbox** event is a great starting point for developers new to bu
 
 - [UWP on Xbox One](index.md)
 - [Designing for Xbox and TV](../design/devices/designing-for-tv.md)
+- [Progressive Web Apps for Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

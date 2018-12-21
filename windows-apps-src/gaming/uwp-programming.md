@@ -34,7 +34,7 @@ This section provides information about developing UWP games. Note that some of 
 </tr>
 <tr class="odd">
     <td align="left">
-        <p>[Missing .NET APIs in Unity and UWP](missing-dot-net-apis-in-unity-and-uwp.md)</p>
+        <p><a href="missing-dot-net-apis-in-unity-and-uwp.md">Missing .NET APIs in Unity and UWP</a></p>
     </td>
     <td align="left">
         <p>Learn about the missing .NET APIs when building UWP games in Unity, and workarounds for common issues.</p>

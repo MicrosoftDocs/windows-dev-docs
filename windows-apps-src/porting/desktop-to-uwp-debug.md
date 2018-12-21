@@ -94,9 +94,9 @@ You can also sign your application manually. Here's how
   > [!IMPORTANT]
   > Make sure that the publisher name on your certificate matches the publisher name of your app.
 
-    **Related sample**
+**Related sample**
 
-    [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
 ### Test your application for Windows 10 S

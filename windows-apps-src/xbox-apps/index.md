@@ -49,3 +49,4 @@ The following talks on Channel 9 are a great source of information for building 
 
 - [Automate launching Windows 10 UWP apps](automate-launching-uwp-apps.md)
 - [CPUSets for game development](cpusets-games.md)
+- [Progressive Web Apps for Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
