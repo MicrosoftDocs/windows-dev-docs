@@ -1,2 +1,4 @@
 This is another line.
 Another line2.
+Conflict 1
+Conflict 2
