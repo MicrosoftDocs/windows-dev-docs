@@ -159,9 +159,9 @@ For example, the `ContentDialog` control shown here provides inner navigation by
 
 If items are displayed in a single column, Up/Down arrow key navigates items. If items are displayed in a single row, Right/Left arrow key navigates items. If items are multiple columns, all 4 arrow keys navigate.
 
-#### Make a set of related controls a single tab stop
+#### Define a single tab stop for a collection of related controls
 
-By making a set of related, or complementary, controls a single tab stop, you can minimize the number of overall tab stops in your app.
+By defining a single tab stop for a collection of related, or complementary, controls, you can minimize the number of overall tab stops in your app.
 
 For example, the following images show two stacked `ListView` controls. The image on the left shows arrow key navigation used with a tab stop to navigate between `ListView` controls, while the image on the right shows how navigation between child elements could be made easier and more efficient by eliminating the need for to traverse parent controls with a tab key.
 
