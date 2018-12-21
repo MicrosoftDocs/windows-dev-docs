@@ -114,6 +114,7 @@
 			"xbox-apps/**.md": "kevinasg",
 			"xbox-live/**.md": "kevinasg", 
 			"get-started/**.md": "quradic",
+			"design/**.md": "mijacobs",
 			"design/accessibility/**.md": "kbridge",
 			"design/app-settings/**.md": "mijacobs",
 			"design/basics/**.md": "mijacobs",
