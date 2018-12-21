@@ -1,3 +1,0 @@
-This is another line.
-Another line2.
-Conflict line
