@@ -122,7 +122,7 @@ Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure
 
 ### Specify text trimming behavior
 
-If text wrapping is not the preferred behavior, most text controls let either clip your text or specify ellipses for the text trimming behavior. Clipping is preferred to ellipses as ellipses take up space themselves.
+If text wrapping is not the preferred behavior, most text controls let you either clip your text or specify ellipses for the text trimming behavior. Clipping is preferred to ellipses as ellipses take up space themselves.
 
 > [!NOTE]
 > If you need to clip your text, clip the end of the string, not the beginning.
