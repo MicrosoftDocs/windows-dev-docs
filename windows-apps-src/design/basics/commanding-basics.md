@@ -17,7 +17,7 @@ In a Universal Windows Platform (UWP) app, *command elements* are interactive UI
 
 ## Provide the best command experience
 
-The most important aspect of a command interface is what your trying to let a user accomplish. As you plan the functionality of your app, consider the steps required to accomplish those tasks and the user experiences you want to enable. Once you've completed an initial draft of these experiences, then you can make decisions on the tools and interactions to implement them.
+The most important aspect of a command interface is what you're trying to let a user accomplish. As you plan the functionality of your app, consider the steps required to accomplish those tasks and the user experiences you want to enable. Once you've completed an initial draft of these experiences, then you can make decisions on the tools and interactions to implement them.
 
 Here are some common application experiences:
 
