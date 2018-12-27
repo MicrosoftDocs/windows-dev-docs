@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/feedback
 assetID: 86c9663c-650b-bb0c-743c-8280ee3a82f7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedback.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/feedback'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/feedback
  
 The domain for these URIs is `reputation.xboxlive.com`.

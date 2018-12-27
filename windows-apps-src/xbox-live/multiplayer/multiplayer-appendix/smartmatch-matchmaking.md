@@ -1,17 +1,13 @@
 ---
 title: SmartMatch Matchmaking
-author: KevinAsgari
+
 description: Learn about the Xbox Live SmartMatch matchmaking service for matching players in a multiplayer game.
 ms.assetid: ba0c1ecb-e928-4e86-9162-8cb456b697ff
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, matchmaking, smartmatch
 ms.localizationpriority: medium
 ---
-
 # SmartMatch Matchmaking
 
 This article has the following sections
@@ -25,7 +21,7 @@ This article has the following sections
 
 The XSAPI provides a matchmaking service, called SmartMatch, that is wrapped by the [Multiplayer Manager API](../multiplayer-manager/multiplayer-manager-api-overview.md).  For advanced API usage, you can refer to the **MatchmakingService Class**, but if you find you have a matchmaking scenario not possible to implement using the Multiplayer Manager, please provide feedback to us via your DAM.  Regardless of which API you use, the conceptual information in this article applies.
 
-SmartMatch matchmaking groups players based on user information and the matchmaking request for the users who want to play together. Matchmaking is server-based, meaning that users provide a request to the service, and they are later notified when a match is found. When building a title for Xbox One, you can use SmartMatch as described in [Using SmartMatch Matchmaking](using-smartmatch-matchmaking.md). alternatively, you can your own matchmaking service as described in [using your own matchmaking service](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service). Note that accessing this link requires that you have a Microsoft dev center account which is enabled for Xbox Live development.
+SmartMatch matchmaking groups players based on user information and the matchmaking request for the users who want to play together. Matchmaking is server-based, meaning that users provide a request to the service, and they are later notified when a match is found. When building a title for Xbox One, you can use SmartMatch as described in [Using SmartMatch Matchmaking](using-smartmatch-matchmaking.md). alternatively, you can your own matchmaking service as described in [using your own matchmaking service](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service). Note that accessing this link requires that you have a [Partner Center](https://partner.microsoft.com/dashboard) account which is enabled for Xbox Live development.
 
 ### About SmartMatch
 
@@ -102,7 +98,7 @@ The title submits attributes at the match ticket level in the ticketAttributesJs
 
 The title specifies per-member attributes on each member within the match ticket session. These are set by calling the MultiplayerSession.SetCurrentUserMemberCustomPropertyJson method, using a property name of "matchAttrs". This call places the attributes in the /members/{index}/properties/custom/matchAttrs field on each player within the ticket session.
 
-The matchmaking process "flattens" each per-member into a single ticket-level attribute, based on the flatten method specified for that attribute in the Xbox Live configuration UI for the hopper. This can be configured on [XDP](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
+The matchmaking process "flattens" each per-member into a single ticket-level attribute, based on the flatten method specified for that attribute in the Xbox Live configuration UI for the hopper. This can be configured on [XDP](https://xdp.xboxlive.com) or [Partner Center](https://partner.microsoft.com/dashboard).
 
 
 ### Making the Match
@@ -172,7 +168,7 @@ The following example demonstrates the high level matchmaking using Live Compute
 
 ### Configuration of SmartMatch Matchmaking Runtime Operations
 
-All configuration of SmartMatch matchmaking occurs through the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview). Configuration uses the ServiceConfiguration-&gt;Multiplayer & Matchmaking section for a title.
+All configuration of SmartMatch matchmaking occurs through the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or [Partner Center](https://partner.microsoft.com/dashboard). Configuration uses the ServiceConfiguration-&gt;Multiplayer & Matchmaking section for a title.
 
 
 #### Matchmaking Session Template Configuration
@@ -187,7 +183,7 @@ For a ticket session, you might use a dedicated template. Alternatively, you can
 
 For a target session, you must use a template that is intended for matchmade game play. It should have settings that enable QoS checks between peers prior to the start of game play, and must be marked with the "gameplay" capability.
 
-With the config UI for XDP or Dev Center, you can map each session to one or more hoppers, each containing rules that determine how sessions are matched together in that hopper. For more information, see Basic Hopper Configuration for Matchmaking.
+With the config UI for XDP or Partner Center, you can map each session to one or more hoppers, each containing rules that determine how sessions are matched together in that hopper. For more information, see Basic Hopper Configuration for Matchmaking.
 
 
 #### Basic Hopper Configuration for Matchmaking
@@ -423,7 +419,7 @@ The title prefers avoiding a game with the player most recently played.
 
 ### Configuring Team Rules
 
-To set up the Team Rule, begin by creating one in on your chosen configuration platform (XDP or Dev Center). Fill out the team sizes your game expects to create from the tickets matched in this hopper. For instance, if your game expects 4v4, you should create two entries, expecting a maximum size of 4 each, and a different name. There is a minimum team size as well--use this if a game can be played with fewer players on a team. Otherwise, the minimum and maximum should be the same value.
+To set up the Team Rule, begin by creating one in on your chosen configuration platform (XDP or Partner Center). Fill out the team sizes your game expects to create from the tickets matched in this hopper. For instance, if your game expects 4v4, you should create two entries, expecting a maximum size of 4 each, and a different name. There is a minimum team size as well--use this if a game can be played with fewer players on a team. Otherwise, the minimum and maximum should be the same value.
 
 
 #### Using Team Rules

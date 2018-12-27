@@ -2,12 +2,8 @@
 description: This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app.
 title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -96,7 +92,7 @@ The system will automatically show the appropriate animations for dropping into 
 
 ## Implementing custom drag and drop
 
-The [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs in the the [Windows.ApplicationModel.DataTransfer.DragDrop.Core namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+The [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs in the [Windows.ApplicationModel.DataTransfer.DragDrop.Core namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
 | Functionality | WinRT API |
 | --- | --- |

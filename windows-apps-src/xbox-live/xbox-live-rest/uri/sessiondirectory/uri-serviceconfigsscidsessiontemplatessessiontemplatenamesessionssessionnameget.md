@@ -2,18 +2,13 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: 6a4c4a13-c968-3271-cbc3-b742a8de98b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.html
-author: KevinAsgari
+
 description: ' GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 Gets a session object.
 

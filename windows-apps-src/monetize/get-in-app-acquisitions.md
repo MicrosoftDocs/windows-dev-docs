@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data for an add-on during a given date range and other optional filters.
 title: Get add-on acquisitions
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, add-on acquisitions
 ms.localizationpriority: medium
 ---
-
 # Get add-on acquisitions
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in Partner Center.
 
 ## Prerequisites
 

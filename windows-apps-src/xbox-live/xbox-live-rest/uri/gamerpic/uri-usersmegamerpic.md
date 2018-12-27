@@ -2,18 +2,13 @@
 title: /users/me/gamerpic
 assetID: 1ef06d91-391b-f5ac-af26-9d84a2dbee47
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpic.html
-author: KevinAsgari
+
 description: ' /users/me/gamerpic'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/me/gamerpic
 Accesses a 1080x1080 gamerpic.  
 <a id="ID4EQ"></a>

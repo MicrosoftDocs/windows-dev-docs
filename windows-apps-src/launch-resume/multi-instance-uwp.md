@@ -1,13 +1,11 @@
 ---
-author: TylerMSFT
 title: Create a multi-instance Universal Windows App
 description: This topic describes how to write UWP apps that support multi-instancing.
 keywords: multi-instance uwp
-ms.author: twhitney
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
 # Create a multi-instance Universal Windows App
@@ -56,7 +54,7 @@ To see it in action, watch this video about Creating multi-instance UWP apps.
 
 The **Multi-Instance Redirection UWP app** template adds `SupportsMultipleInstances` to the package.appxmanifest file as shown above, and also adds a **Program.cs** (or **Program.cpp**, if you are using the C++ version of the template) to your project that contains a `Main()` function. The logic for redirecting activation goes in the `Main` function. The template for **Program.cs** is shown below.
 
-The [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) property represents the shell-provided preferred instance for this activation request, if there is one (or `null` if there isn't one). If the shell provides a preference, then you can can redirect activation to that instance, or you can ignore it if you choose.
+The [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) property represents the shell-provided preferred instance for this activation request, if there is one (or `null` if there isn't one). If the shell provides a preference, then you can redirect activation to that instance, or you can ignore it if you choose.
 
 ``` csharp
 public static class Program
@@ -123,7 +121,7 @@ If an instance registered with the key is found, then that instance is activated
 ## Additional considerations
 
 - Multi-instancing is supported by UWP apps that target desktop and Internet of Things (IoT) projects.
-- To avoid race-conditions and contention issues, multi-instance apps need to take steps to partition/synchronize access to settings, app-local storage, and any other resource (such as user files, a data store, and so on) that can be shared among multiple instances. Standard synchronization mechanisms such as mutexes, semaphores, events, and and so on, are available.
+- To avoid race-conditions and contention issues, multi-instance apps need to take steps to partition/synchronize access to settings, app-local storage, and any other resource (such as user files, a data store, and so on) that can be shared among multiple instances. Standard synchronization mechanisms such as mutexes, semaphores, events, and so on, are available.
 - If the app has `SupportsMultipleInstances` in its Package.appxmanifest file, then its extensions do not need to declare `SupportsMultipleInstances`. 
 - If you add `SupportsMultipleInstances` to any other extension, apart from background tasks or app-services, and the app that hosts the extension doesn't also declare `SupportsMultipleInstances` in its Package.appxmanifest file, then a schema error is generated.
 - Apps can use the [**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) declaration in their manifest to group multiple background tasks into the same host. This conflicts with multi-instancing, where each activation goes into a separate host. Therefore an app cannot declare both `SupportsMultipleInstances` and `ResourceGroup` in their manifest.

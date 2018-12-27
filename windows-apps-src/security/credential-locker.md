@@ -2,16 +2,11 @@
 title: Credential locker
 description: This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
-
 # Credential locker
 
 

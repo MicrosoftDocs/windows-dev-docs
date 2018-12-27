@@ -1,22 +1,17 @@
 ---
-author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Notification listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, notification listener, usernotificationlistener, documentation, access notifications
 ms.localizationpriority: medium
 ---
-
 # Notification listener: Access all notifications
 
-The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you recieve a call. 
+The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you receive a call. 
 
 > [!IMPORTANT]
 > **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use Notification Listener.
@@ -90,7 +85,7 @@ switch (accessStatus)
 }
 ```
 
-The user can revoke access at any time via Windows Settings. Therefore, your app should always check the access status via the [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) method before executing code that uses the notfication listener. If the user revokes access, the APIs will silently fail rather than throwing an exception (for example, the API to get all notifications will simply return an empty list).
+The user can revoke access at any time via Windows Settings. Therefore, your app should always check the access status via the [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) method before executing code that uses the notification listener. If the user revokes access, the APIs will silently fail rather than throwing an exception (for example, the API to get all notifications will simply return an empty list).
 
 
 ## Access the user's notifications
@@ -256,7 +251,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
@@ -293,4 +288,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## How to fix delays in the background task
 
-When testing your app, you might notice that the background task is sometimes delayed, and doesn't trigger for several minutes. To fix this, you'll want to prompt the user to go to the system settings -> System -> Battery -> Battery usage by app, find your app in the list, select it, and change it to be "Always allowed in background". After this, the background task should always be triggered within around a second of the notification being received.
+When testing your app, you might notice that the background task is sometimes delayed and doesn't trigger for several minutes. To fix the delay, prompt the user to go to the system settings -> System -> Battery -> Battery usage by app, find your app in the list, select it, and set it to be "Always allowed in background." After this, the background task should always be triggered within around a second of the notification being received.

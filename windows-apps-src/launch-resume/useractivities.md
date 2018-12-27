@@ -1,16 +1,13 @@
 ---
-author: TylerMSFT
 title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Continue user activity, even across devices
 
 This topic describes how to help users resume what they were doing in your app on their PC, and across devices.
@@ -98,7 +95,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on on the secondary page when the app comes up.
+What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on the secondary page when the app comes up.
 
 ## Use Adaptive Cards to improve the Timeline experience
 
@@ -154,7 +151,7 @@ Once your application or service is authenticated with a Microsoft Account, it j
 ## Summary
 
 You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API to make your app appear in Timeline and Cortana.
-* Learn more about the **UserActivity** API on the [Windows Dev Center](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
 * See [more sophisticated Adaptive Cards](http://adaptivecards.io/).
 * Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).

@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Basic 3D graphics for DirectX games
 description: We show how to use DirectX programming to implement the fundamental concepts of 3D graphics.
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, graphics
 ms.localizationpriority: medium
 ---
-
 # Basic 3D graphics for DirectX games
 
 

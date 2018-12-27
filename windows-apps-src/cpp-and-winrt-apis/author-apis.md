@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
 ---
-
 # Author APIs with C++/WinRT
 
 This topic shows how to author [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.

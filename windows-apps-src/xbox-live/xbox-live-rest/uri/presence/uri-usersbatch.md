@@ -2,18 +2,13 @@
 title: /users/batch
 assetID: db4c796a-8660-85ff-b92d-085245523f5c
 permalink: en-us/docs/xboxlive/rest/uri-usersbatch.html
-author: KevinAsgari
+
 description: ' /users/batch'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/batch
 Access presence for a batch of users. 
 The domain for these URIs is `userpresence.xboxlive.com`.

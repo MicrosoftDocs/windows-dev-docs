@@ -1,14 +1,10 @@
 ---
-author: QuinnRadich
 Description: A button gives the user a way to trigger an immediate action.
 title: Buttons
 label: Buttons
 template: detail.hbs
-ms.author: quradic
 ms.date: 10/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 pm-contact: kisai
@@ -16,6 +12,7 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Buttons
 
@@ -30,9 +27,9 @@ Control | Description
 [Button](/uwp/api/windows.ui.xaml.controls.button) | Initiates an immediate action. Can be used with a Click event or Command binding.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a Click event continuously while pressed.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink, used for navigation. See [Hyperlinks](hyperlinks.md) for more info.
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | (Preview) A button with a chevron to open an attached flyout.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | (Preview) A button with two sides. One side initiates an action, and the other side opens a menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | (Preview) A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
 
 | **Get the Windows UI Library** |
 | - |
@@ -204,7 +201,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## Create a drop down button
 
-> **Preview**: DropDownButton requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> DropDownButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard Button with a flyout; only the appearance is different.
 
@@ -263,7 +260,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## Create a split button
 
-> **Preview**: SplitButton requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> SplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -370,7 +367,7 @@ public sealed partial class MainPage : Page
 
 ## Create a toggle split button
 
-> **Preview**: ToggleSplitButton requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/) or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> ToggleSplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
 

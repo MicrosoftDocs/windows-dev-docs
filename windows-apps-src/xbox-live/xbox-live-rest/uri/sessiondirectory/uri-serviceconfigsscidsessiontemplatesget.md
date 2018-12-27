@@ -2,18 +2,13 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates)
 assetID: 5172c7be-371b-f0b1-d1d0-f0981eb2bfa7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatesget.html
-author: KevinAsgari
+
 description: ' GET (/serviceconfigs/{scid}/sessiontemplates)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/serviceconfigs/{scid}/sessiontemplates)
 Retrieves a set of MPSD session templates.
 

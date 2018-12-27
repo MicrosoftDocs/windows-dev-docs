@@ -2,18 +2,13 @@
 title: /users/me/groups/{moniker}
 assetID: 3d319a19-da5e-a485-985d-46dcff4bb521
 permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmoniker.html
-author: KevinAsgari
+
 description: ' /users/me/groups/{moniker}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/me/groups/{moniker}
 Accesses the PresenceRecord for my group. 
 The domain for these URIs is `userpresence.xboxlive.com`.

@@ -2,18 +2,13 @@
 title: PermissionCheckResponse (JSON)
 assetID: 7a749001-b569-b0e0-2a35-f299474c8710
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckresponse.html
-author: KevinAsgari
+
 description: ' PermissionCheckResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionCheckResponse (JSON)
 The results of a check from a single user for a single permission setting against a single target user. 
 <a id="ID4EN"></a>

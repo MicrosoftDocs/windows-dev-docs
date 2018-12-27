@@ -1,17 +1,13 @@
 ---
 title: Best practices for offline
-author: KevinAsgari
+
 description: Learn about the best practices for handling offline scenarios with Xbox Live enabled titles.
 ms.assetid: 6290dd67-1145-4fe2-8ada-c3a29a9ad29a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, offline
 ms.localizationpriority: medium
 ---
-
 # Best practices for offline
 
 Xbox One is designed as a connected device, and the best experiences, such as multiplayer gaming and video streaming, require connectivity. However, Xbox One does support many forms of offline play. This topic discusses how to handle offline play.

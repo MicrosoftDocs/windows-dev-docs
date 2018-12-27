@@ -1,23 +1,18 @@
 ﻿---
-author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Add-on acquisitions report
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
-ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, add-on sales, add-on acquisitions, iap sales, in-app products, iaps, add-ons
 ms.localizationpriority: medium
 ---
-
 # Add-on acquisitions report
 
 
-The **Add-on acquisitions** report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details, and shows conversion info for customers on Windows 10 (including Xbox). You can also view near real-time acquisition data for the last hour or seventy-two hour period.
+The **Add-on acquisitions** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how many add-ons you've sold, along with demographic and platform details, and shows conversion info for customers on Windows 10 (including Xbox). You can also view near real-time acquisition data for the last hour or seventy-two hour period.
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 In this report, an add-on acquisition means a customer has purchased an add-on from you (or acquired it without paying, if you offered it for free). Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
 

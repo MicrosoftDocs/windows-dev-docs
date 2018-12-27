@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Use this method in the Microsoft Store targeted offers API to get the targeted offers that are available for the current user in the context of the current app.
 title: Get targeted offers
-ms.author: mcleans
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store targeted offers API, get targeted offers
 ms.localizationpriority: medium
 ---
-
 # Get targeted offers
 
 Use this method to get the targeted offers that are available for the current user, based on whether or not the user is part of the customer segment for the targeted offer. For more information, see [Manage targeted offers using Store services](manage-targeted-offers-using-windows-store-services.md).
@@ -54,7 +49,7 @@ This method returns a JSON-formatted response body that contains an array of obj
 
 | Field      | Type   | Description         |
 |------------|--------|------------------|
-| offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in the Windows Dev Center dashboard.            |
+| offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in Partner Center.            |
 | trackingId  | string | A GUID that you can optionally use to keep track of the targeted offer in your own code or services. |
 
 

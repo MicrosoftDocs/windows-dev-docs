@@ -1,13 +1,13 @@
 ---
-author: joannaleecy
+
 title: Define the game's UWP app framework
 description: The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
-ms.author: joanlee
+
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ---

@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: Use this method in the Microsoft Store promotions API to manage targeting profiles for promotional ad campaigns.
 title: Manage targeting profiles
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Manage targeting profiles
 
 
@@ -142,7 +137,7 @@ The request and response bodies for these methods contain the following fields. 
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  integer   |  The ID of the targeting profile.     |   Yes    |       |   No      |       
 |  name   |  string   |   The name of the targeting profile.    |    No   |      |  Yes     |       
-|  targetingType   |  string   |  One of the following values: <ul><li>**Auto**: Specify this value to allow Microsoft to choose the targeting profile based on the settings for your app in Dev Center.</li><li>**Manual**: Specify this value to define your own targeting profile.</li></ul>     |  No     |  Auto    |   Yes    |       
+|  targetingType   |  string   |  One of the following values: <ul><li>**Auto**: Specify this value to allow Microsoft to choose the targeting profile based on the settings for your app in Partner Center.</li><li>**Manual**: Specify this value to define your own targeting profile.</li></ul>     |  No     |  Auto    |   Yes    |       
 |  age   |  array   |   One or more integers that identify the age ranges of the users to target. For a complete list of integers, see [Age values](#age-values) in this article.    |    No    |  null    |     No    |       
 |  gender   |  array   |  One or more integers that identify the genders of the users to target. For a complete list of integers, see [Gender values](#gender-values) in this article.       |  No    |  null    |     No    |       
 |  country   |  array   |  One or more integers that identify the country codes of the users to target. For a complete list of integers, see [Country code values](#country-code-values) in this article.    |  No    |  null   |      No   |       

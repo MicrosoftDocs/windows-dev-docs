@@ -1,20 +1,16 @@
 ---
-author: normesta
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Create a periodic work item
 description: Learn how to create a work item that repeats periodically.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, periodic work item, threading, timers
 ms.localizationpriority: medium
 ---
 # Create a periodic work item
 
 
-** Important APIs **
+<b>Important APIs</b>
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)

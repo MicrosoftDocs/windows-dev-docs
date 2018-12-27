@@ -4,15 +4,12 @@ description: Texture filtering produces a color for each pixel in the primitive'
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
 keywords:
 - Texture filtering
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Texture filtering
 
 

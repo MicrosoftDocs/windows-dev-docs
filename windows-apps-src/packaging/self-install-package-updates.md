@@ -1,19 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Download and install package updates from the Store
-description: Learn how to mark packages as mandatory in the Dev Center dashboard and write code in your app to download and install package updates.
-ms.author: mcleans
+description: Learn how to mark packages as mandatory in Partner Center and write code in your app to download and install package updates.
 ms.date: 04/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Download and install package updates from the Store
 
-Starting in Windows 10, version 1607, you can use methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app from the Microsoft Store, and download and install the updated packages. You can also query for packages that you have marked as mandatory on the Windows Dev Center dashboard and disable functionality in your app until the mandatory update is installed.
+Starting in Windows 10, version 1607, you can use methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app from the Microsoft Store, and download and install the updated packages. You can also query for packages that you have marked as mandatory in Partner Center and disable functionality in your app until the mandatory update is installed.
 
 Additional [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) methods introduced in Windows 10, version 1803 enable you to download and install package updates silently (without displaying a notification UI to the user), uninstall an [optional package](optional-packages.md), and get info about packages in the download and install queue for your app.
 
@@ -191,14 +187,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## Mandatory package updates
 
-When you create a package submission for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](../publish/upload-app-packages.md#mandatory-update) and the date and time on which it becomes mandatory. When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
+When you create a package submission in Partner Center for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](../publish/upload-app-packages.md#mandatory-update) and the date and time on which it becomes mandatory. When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
 
 > [!NOTE]
 > The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
 
 To mark a package submission as mandatory:
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and navigate to the overview page for your app.
+1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard) and navigate to the overview page for your app.
 2. Click the name of the submission that contains the package update you want to make mandatory.
 3. Navigate to the **Packages** page for the submission. Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory. This option applies to all UWP packages in the submission.
 

@@ -1,15 +1,11 @@
 ---
-author: QuinnRadich
 Description: Command bars give users easy access to your app's most common tasks.
 title: Command bar
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 pm-contact: yulikl
@@ -31,7 +27,7 @@ Command bars provide users with easy access to your app's most common tasks. Com
 The CommandBar control is a general-purpose, flexible, light-weight control that can display both complex content, such as images or text blocks, as well as simple commands such as [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), and [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) controls.
 
 > [!NOTE]
-XAML provides both the [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) control and the [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) control. You should use the AppBar only when you are upgrading a Universal Windows 8 app that uses the AppBar, and need to minimize changes. For new apps in Windows 10, we recommend using the CommandBar control instead. This document assumes you are using the CommandBar control.
+> XAML provides both the [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) control and the [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) control. You should use the AppBar only when you are upgrading a Universal Windows 8 app that uses the AppBar, and need to minimize changes. For new apps in Windows 10, we recommend using the CommandBar control instead. This document assumes you are using the CommandBar control.
 
 ## Examples
 

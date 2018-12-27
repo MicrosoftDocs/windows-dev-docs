@@ -1,16 +1,11 @@
 ---
-author: ptorr-msft
 title: Using MRT for Converted Desktop Apps and Games
 description: By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
-ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ms.localizationpriority: medium
 ---
-
 # Use the Windows 10 Resource Management System in a legacy app or game
 
 ## Overview
@@ -193,7 +188,7 @@ Finally, if you're using Visual Studio to create a new project and migrate your 
 You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a "pure" UWP. 
 These changes are outside the scope of this document.
 
-***
+---
 
 ## Phase 1: Localize the application manifest
 
@@ -216,7 +211,7 @@ If you want to create the resources manually:
 0. In the XML file, add the following content, where the <span style="background-color: yellow">highlighted text</span> is replaced with the appropriate text for your app, in your default
 language.
 
-**Note** There are restrictions on the lengths of some of these strings. For more info, see [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live).
+[!Note] There are restrictions on the lengths of some of these strings. For more info, see [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live).
 
 <blockquote>
 <pre>
@@ -354,8 +349,7 @@ for the `.AppX` file (this sample uses the parent directory; it can be anywhere 
  * `/p` sets the output Package name
  * `/o` sets it to Overwrite the output file if it exists
 0. Once the package is created, it must be signed. The easiest way to get a signing certificate is by creating an empty Universal Windows project in Visual Studio and copying the `.pfx` 
-file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in [the **How to create an app package signing certificate** topic on MSDN]
-(https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
+file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">How to create an app package signing certificate</a>, a topic on MSDN. 
  * **Important:** If you manually create a signing certificate, make sure you place the files in a different directory than your source project or your package source, otherwise it 
 might get included as part of the package, including the private key!
 0. To sign the package, use the following command. Note that the `Publisher` specified in the `Identity` element of the `AppxManifest.xml` must match the `Subject` of the certificate 

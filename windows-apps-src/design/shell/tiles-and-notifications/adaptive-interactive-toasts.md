@@ -1,19 +1,14 @@
 ---
-author: andrewleader
 Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 title: Toast content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload
 ms.localizationpriority: medium
 ---
-
 # Toast content
 
 Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.

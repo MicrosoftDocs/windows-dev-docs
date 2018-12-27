@@ -1,33 +1,28 @@
 ﻿---
-author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Partner Center account.
 title: Manage app submissions
-ms.author: mcleans
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, app submissions
 ms.localizationpriority: medium
 ---
-
 # Manage app submissions
 
 The Microsoft Store submission API provides methods you can use to manage submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Microsoft Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 > [!IMPORTANT]
-> You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md) or to publish submissions for [LOB apps](../publish/distribute-lob-apps-to-enterprises.md) directly to enterprises. For both of these scenarios, you must use the Windows Dev Center dashboard publish the submission.
+> You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md) or to publish submissions for [LOB apps](../publish/distribute-lob-apps-to-enterprises.md) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
 
 
 <span id="methods-for-app-submissions" />
 
 ## Methods for managing app submissions
 
-Use the following methods to get, create, update, commit, or delete an app submission. Before you can use these methods, the app must already exist in your Dev Center account and you must first create one submission for the app in the dashboard. For more information, see the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
+Use the following methods to get, create, update, commit, or delete an app submission. Before you can use these methods, the app must already exist in your Partner Center account and you must first create one submission for the app in Partner Center. For more information, see the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
 
 <table>
 <colgroup>
@@ -124,7 +119,7 @@ To create a submission for an app, follow this process.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Commit the app submission](commit-an-app-submission.md) by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account.
+5. [Commit the app submission](commit-an-app-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -138,13 +133,13 @@ To create a submission for an app, follow this process.
 
     To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
 
-7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
+7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting Partner Center.
 
 <span id="manage-gradual-package-rollout">
 
 ## Methods for managing a gradual package rollout
 
-You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
 
 To programmatically enable a gradual package rollout for an app submission, follow this process using methods in the Microsoft Store submission API:
 
@@ -336,7 +331,7 @@ This resource has the following values.
 
 | Value      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md), [get all apps](get-all-apps.md), and [get an app](get-an-app.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
+| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md), [get all apps](get-all-apps.md), and [get an app](get-an-app.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 | applicationCategory           | string  |   A string that specifies the [category and/or subcategory](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) for your app. Categories and subcategories are combined into a single string with the underscore '_' character, such as **BooksAndReference_EReader**.      |  
 | pricing           |  object  | A [pricing resource](#pricing-object) that contains pricing info for the app.        |   
 | visibility           |  string  |  The visibility of the app. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -359,7 +354,7 @@ This resource has the following values.
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 device family](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
-| friendlyName           |   string  |  The friendly name of the submission, as shown in the Dev Center dashboard. This value is generated for you when you create the submission.       |  
+| friendlyName           |   string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.       |  
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
 
 
@@ -386,8 +381,8 @@ This resources contains sale info for an app.
 
 > [!IMPORTANT]
 > The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an app submission using the Microsoft Store submission API. In the future, we will update the Microsoft Store submission API to introduce a new way to programmatically access sales information for app submissions.
->    * After calling the [GET method to get an app submission](get-an-app-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your app submission.
->    * When calling the [PUT method to update an app submission](update-an-app-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your app submission.
+>    * After calling the [GET method to get an app submission](get-an-app-submission.md), the *sales* value will be empty. You can continue to use Partner Center to get the sale data for your app submission.
+>    * When calling the [PUT method to update an app submission](update-an-app-submission.md), the information in the *sales* value is ignored. You can continue to use Partner Center to change the sale data for your app submission.
 
 This resource has the following values.
 
@@ -422,9 +417,9 @@ This resource contains base listing info for an app. This resource has the follo
 |  copyrightAndTrademarkInfo                |   string      |  Optional [copyright and/or trademark info](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
 |  keywords                |  array       |  An array of [keyword](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) to help your app appear in search results.    |
 |  licenseTerms                |    string     | The optional [license terms](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) for your app.     |
-|  privacyPolicy                |   string      |   This value is obsolete. To set or change the privacy policy URL for your app, you must do this on the [Properties](../publish/enter-app-properties.md#privacy-policy-url) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.       |
-|  supportContact                |   string      |  This value is obsolete. To set or change the support contact URL or email address for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#support-contact-info) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.        |
-|  websiteUrl                |   string      |  This value is obsolete. To set or change the URL of the web page for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#website) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.      |    
+|  privacyPolicy                |   string      |   This value is obsolete. To set or change the privacy policy URL for your app, you must do this on the [Properties](../publish/enter-app-properties.md#privacy-policy-url) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.       |
+|  supportContact                |   string      |  This value is obsolete. To set or change the support contact URL or email address for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#support-contact-info) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.        |
+|  websiteUrl                |   string      |  This value is obsolete. To set or change the URL of the web page for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#website) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.      |    
 |  description               |    string     |   The [description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) for the app listing.   |     
 |  features               |    array     |  An array of up to 20 strings that list the [features](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) for your app.     |
 |  releaseNotes               |  string       |  The [release notes](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) for your app.    |
@@ -448,7 +443,7 @@ This resource contains image and icon data for an app listing. For more informat
 |-----------------|---------|------|
 |  fileName               |    string     |   The name of the image file in the ZIP archive that you uploaded for the submission.    |     
 |  fileStatus               |   string      |  The status of the image file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
-|  id  |  string  | The ID for the image. This value is supplied by Dev Center.  |
+|  id  |  string  | The ID for the image. This value is supplied by Partner Center.  |
 |  description  |  string  | The description for the image.  |
 |  imageType  |  string  | Indicates the type of the image. The following strings are currently supported. <p/>[Screenshot images](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (use this value for the desktop screenshot)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (use this value for the 1:1 300 x 300 pixels logo)</li></ul><p/>[Promotional images](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox images](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optional promotional images](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
@@ -457,7 +452,7 @@ This resource contains image and icon data for an app listing. For more informat
 
 ### Gaming options resource
 
-This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in the Dev Center dashboard.
+This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in Partner Center.
 
 ```json
 {
@@ -564,13 +559,13 @@ This resource contains details about an app package for the submission.
 This resource has the following values.  
 
 > [!NOTE]
-> When calling the [update an app submission](update-an-app-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Dev Center.
+> When calling the [update an app submission](update-an-app-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Partner Center.
 
 | Value           | Type    | Description                   |
 |-----------------|---------|------|
 | fileName   |   string      |  The name of the package.    |  
 | fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  An ID that uniquely identifies the package. This value is provided by Dev Center.   |     
+| id    |  string   |  An ID that uniquely identifies the package. This value is provided by Partner Center.   |     
 | version    |  string   |  The version of the app package. For more information, see [Package version numbering](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  string   |  The architecture of the package (for example, ARM).   |     
 | languages    | array    |  An array of language codes for the languages the app supports. For more information, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
@@ -589,7 +584,7 @@ This resource provides access to the certification report data for a submission.
 
 | Value           | Type    | Description             |
 |-----------------|---------|------|
-|     date            |    string     |  The date and time the report was generated, in in ISO 8601 format.    |
+|     date            |    string     |  The date and time the report was generated, in ISO 8601 format.    |
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
 
 
@@ -636,13 +631,13 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 | fallbackSubmissionId    |  string   |  The ID of the submission that will be received by customers who do not get the gradual rollout packages.   |          
 
 > [!NOTE]
-> The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Dev Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
+> The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Partner Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
 
 <span id="trailer-object" />
 
 ### Trailers resource
 
-This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](../publish/app-screenshots-and-images.md#trailers) options for submissions in the Dev Center dashboard.
+This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](../publish/app-screenshots-and-images.md#trailers) options for submissions in Partner Center.
 
 You can add up to 15 trailer resources to the *trailers* array in an [app submission resource](#app-submission-object). To upload trailer video files and thumbnail images for a submission, add these files to the same ZIP archive that contains the packages and listing images for the submission, and then upload this ZIP archive to the shared access signature (SAS) URI for the submission. For more information uploading the ZIP archive to the SAS URI, see [Create an app submission](#create-an-app-submission).
 
@@ -674,9 +669,9 @@ This resource has the following values.
 
 | Value           | Type    | Description        |
 |-----------------|---------|------|
-|  id               |    string     |   The ID for the trailer. This value is provided by Dev Center.   |
+|  id               |    string     |   The ID for the trailer. This value is provided by Partner Center.   |
 |  videoFileName               |    string     |    The name of the trailer video file in the ZIP archive that contains files for the submission.    |     
-|  videoFileId               |   string      |  The ID for the trailer video file. This value is provided by Dev Center.   |     
+|  videoFileId               |   string      |  The ID for the trailer video file. This value is provided by Partner Center.   |     
 |  trailerAssets               |   object      |  A dictionary of key and value pairs, where each key is a language code and each value is a [trailer assets resource](#trailer-assets-object) that contains additional locale-specific assets for the trailer. For more information about the supported language codes, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
@@ -703,7 +698,7 @@ This resource describes the thumbnail image for a trailer. This resource has the
 | Value           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    string     |   The name of the thumbnail image file in the ZIP archive that you uploaded for the submission.    |     
-|  id  |  string  | The ID for the thumbnail image. This value is provided by Dev Center.  |
+|  id  |  string  | The ID for the thumbnail image. This value is provided by Partner Center.  |
 |  description  |  string  | The description for the thumbnail image. This value is metadata only, and is not displayed to users.   |
 
 <span/>
@@ -723,7 +718,7 @@ The following values represent available price tiers in the [pricing resource](#
 |  Base               |   The price tier is not set; use the base price for the app.      |     
 |  NotAvailable              |   The app is not available in the specified region.    |     
 |  Free              |   The app is free.    |    
-|  Tier*xxx*               |   A string that specifies the price tier for the app, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in the Dev Center dashboard and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).    |
+|  Tier*xxx*               |   A string that specifies the price tier for the app, in the format **Tier<em>xxxx</em>**. Currently, the following ranges of price tiers are supported:<br/><br/><ul><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **true**, the available price tier values for your account are **Tier1012** - **Tier1424**.</li><li>If the *isAdvancedPricingModel* value of the [pricing resource](#pricing-object) is **false**, the available price tier values for your account are **Tier2** - **Tier96**.</li></ul>To see the complete table of price tiers that are available for your developer account, including the market-specific prices that are associated with each tier, go to the **Pricing and availability** page for any of your app submissions in Partner Center and click the **view table** link in the **Markets and custom prices** section (for some developer accounts, this link is in the **Pricing** section).    |
 
 
 <span id="enterprise-licensing" />
@@ -733,7 +728,7 @@ The following values represent available price tiers in the [pricing resource](#
 The following values represent the organizational licensing behavior for the app. For more information about these options, see [Organizational licensing options](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing).
 
 > [!NOTE]
-> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md). To publish submissions to the Microsoft Store for Business and Microsoft Store for Education, you must use the Windows Dev Center dashboard.
+> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md). To publish submissions to the Microsoft Store for Business and Microsoft Store for Education, you must use Partner Center.
 
 
 | Value           |  Description      |
@@ -772,4 +767,4 @@ The following values represent the status code of a submission.
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get app data using the Microsoft Store submission API](get-app-data.md)
-* [App submissions in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [App submissions in Partner Center](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)

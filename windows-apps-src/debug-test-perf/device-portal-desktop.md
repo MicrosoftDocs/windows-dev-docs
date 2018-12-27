@@ -1,13 +1,9 @@
 ---
-author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
-ms.author: pafarley
 ms.date: 03/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---

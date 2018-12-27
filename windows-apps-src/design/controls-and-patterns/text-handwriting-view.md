@@ -1,26 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Customize the built-in handwriting view for ink to text input that is supported by UWP text controls such as the TextBox, RichEditBox (and controls like the AutoSuggestBox that provide a similar text input experience).
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
-ms.author: kbridge
-ms.date: 09/10/18
+ms.date: 10/13/18
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Text input with the handwriting view
 
-![Text box expands when tapped with pen](images/pen-input-expand-cropped.gif)
+![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
-Customize the built-in handwriting view for ink to text input that is supported by UWP text controls such as the [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), and other controls that provide a similar text input experience (like the [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
+Customize the built-in handwriting view for ink to text input supported by UWP text controls such as the [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), and controls derived from these such as the [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## Overview
 
@@ -31,8 +27,7 @@ Text is recognized as the user writes anywhere in the text box, and a candidate 
 > [!NOTE]
 > The handwriting view is enabled by default, but you can disable it on a per-control basis and revert to the text input panel instead.
 
-
-![Text box with pen input](images/pen-input-1.png)
+![Text box with ink and suggestions](images/handwritingview/handwritingview-inksuggestion1.gif)
 
 A user can edit their text using standard gestures and actions, like these:
 
@@ -41,7 +36,7 @@ A user can edit their text using standard gestures and actions, like these:
 - _insert_ - draw a caret symbol to insert a space
 - _overwrite_ - write over existing text to replace it
 
-![Overwrite pen input](images/pen-input-2.png)
+![Text box with ink correction](images/handwritingview/handwritingview-inkcorrection1.gif)
 
 ## Disable the handwriting view
 

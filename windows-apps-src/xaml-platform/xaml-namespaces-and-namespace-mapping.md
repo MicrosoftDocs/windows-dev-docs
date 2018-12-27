@@ -1,17 +1,12 @@
 ---
-author: jwmsft
 description: This topic explains the XML/XAML namespace (xmlns) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 title: XAML namespaces and namespace mapping
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # XAML namespaces and namespace mapping
 
 

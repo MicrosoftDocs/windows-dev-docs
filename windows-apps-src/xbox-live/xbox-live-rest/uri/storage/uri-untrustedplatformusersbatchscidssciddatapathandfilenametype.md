@@ -2,18 +2,13 @@
 title: /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 assetID: c2909e75-e108-3555-c157-f2d552f10e9f
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.html
-author: KevinAsgari
+
 description: ' /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 Downloads multiple files from multiple users with the same filename. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

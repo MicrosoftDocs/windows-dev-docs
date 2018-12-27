@@ -1,12 +1,8 @@
 ---
-author: TerryWarwick
 title: Getting Started with Camera Barcode Scanner
 description: Learning how to use camera barcode scanner
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---

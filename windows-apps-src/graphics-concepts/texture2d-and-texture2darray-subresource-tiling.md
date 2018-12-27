@@ -4,15 +4,12 @@ description: These tables show how Texture2D and Texture2DArray subresources are
 ms.assetid: 2DC14DFC-5299-44D9-895F-5A223D3FD530
 keywords:
 - Texture2D and Texture2DArray subresource tiling
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Texture2D and Texture2DArray subresource tiling
 
 

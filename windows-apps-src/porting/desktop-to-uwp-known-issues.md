@@ -1,18 +1,13 @@
 ---
-author: normesta
 Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: Known Issues (Desktop Bridge)
-ms.author: normesta
 ms.date: 06/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ---
-
 # Known Issues with packaged desktop applications
 
 This article contains known issues that can occur when you create a Windows app package for your desktop application.
@@ -118,7 +113,7 @@ Double-click the certificate in File Explorer, select the *Details* tab, and the
 
 **Option 3: CertUtil**
 
-Run **certutil** from the the command line on the PFX file and copy the *Subject* field from the output.
+Run **certutil** from the command line on the PFX file and copy the *Subject* field from the output.
 
 ```cmd
 certutil -dump <cert_file.pfx>

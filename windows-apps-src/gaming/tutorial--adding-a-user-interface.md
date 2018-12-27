@@ -1,17 +1,12 @@
 ---
-author: abbycar
 title: Add a user interface
 description: Learn how to add a 2D user interface overlay to a DirectX UWP game.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
-ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, user interface, directx
 ms.localizationpriority: medium
 ---
-
 # Add a user interface
 
 
@@ -314,7 +309,7 @@ The [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.co
 - **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the approperiate rectangle using the corresponding **ID2D1SolidColorBrush**.
 - [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw) is called to stop all drawing operations on `m_levelBitmap`.
 - Another Bitmap is created using **CreateBitmap** named `m_tooSmallBitmap` to use as a fallback, showing only if the display configuration is too small for the game.
-- Repeat process for drawing on `m_levelBitmap` for `m_tooSmallBitmap`, this time only drawing the the string `Paused` in the body.
+- Repeat process for drawing on `m_levelBitmap` for `m_tooSmallBitmap`, this time only drawing the string `Paused` in the body.
 
 
 

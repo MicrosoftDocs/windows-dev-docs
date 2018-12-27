@@ -4,15 +4,12 @@ description: Resize a tile pool to grow a tile pool if the application needs mor
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords:
 - Tile pool resizing
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tile pool resizing
 
 

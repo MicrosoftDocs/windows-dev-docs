@@ -1,17 +1,12 @@
 ---
-author: msatranjr
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
 title: Bluetooth
 description: This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Bluetooth
 This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps. There are two different bluetooth technologies that you can choose to implement in your app.
 

@@ -1,17 +1,13 @@
 ---
 title: What is Xbox Live?
-author: KevinAsgari
+
 description: Learn about what the Xbox Live service can do for your game.
 ms.assetid: 5a402113-b485-46f3-a30e-73f4b71492b6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # What is Xbox Live?
 
 Xbox Live is a premier gaming network that connects millions of gamers across the world. You can add Xbox Live to your Windows 10 or Xbox One game in order to take advantage of the Xbox Live features and services.

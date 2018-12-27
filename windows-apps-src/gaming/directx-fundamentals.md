@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Fundamentals of DirectX programming
 description: Basics of DirectX programming.
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, game, directx, load, rasterize, mesh, bitmap, 2D, 3D
 ms.localizationpriority: medium
 ---
-
 # Fundamentals of DirectX programming
 
 This section provides information about the basic blocks of DirectX programming.

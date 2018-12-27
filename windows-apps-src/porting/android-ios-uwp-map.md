@@ -1,19 +1,14 @@
 ---
-author: GrantMeStrength
 Description: Compare platform features between iOS, Android, and Windows 10.
 Search.Product: eADQiWindows 10XVcnh
 title: Windows apps concept mapping for Android and iOS developers
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
 ---
-
-#Windows apps concept mapping for Android and iOS developers
+# Windows apps concept mapping for Android and iOS developers
 
 If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
 
@@ -297,7 +292,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>App lifecycle.</strong> <br><br>Handling events on app launch, suspension, resume and close, providing an opportunity to save/restore application state and run other tasks.</td>
-<td align="left">Each activity has its own <strong>activity lifecycle</strong> with states such as <strong>resumed</strong>. <strong>Lifecycle callbacks</strong> such as <strong>onResume</strong> are implemented in in your <strong>activity classes</strong>.</td>
+<td align="left">Each activity has its own <strong>activity lifecycle</strong> with states such as <strong>resumed</strong>. <strong>Lifecycle callbacks</strong> such as <strong>onResume</strong> are implemented in your <strong>activity classes</strong>.</td>
 <td align="left">The <strong>application lifecycle</strong> has states such as <strong>suspended</strong>. Methods such as <strong>applicationDidEnterBackground:</strong> are implemented in the <strong>application delegate object</strong> to run code on state changes.</td>
 <td align="left">Your application has the <strong>app execution states</strong> NotRunning, Activated, Running, Suspending, Suspended and Resuming.<br/><br/>You can implement the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application class</a></strong> methods OnLaunched, OnActivated, Suspending or Resuming in your app to run code when the state changes.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App lifecycle</a></td>
 </tr>

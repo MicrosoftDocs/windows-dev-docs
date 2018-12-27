@@ -2,18 +2,13 @@
 title: SessionEntry (JSON)
 assetID: b5cf5c3d-83b8-635f-d1a5-0be5d9434ea5
 permalink: en-us/docs/xboxlive/rest/json-sessionentry.html
-author: KevinAsgari
+
 description: ' SessionEntry (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # SessionEntry (JSON)
 Contains data for a fitness session. 
 <a id="ID4EN"></a>

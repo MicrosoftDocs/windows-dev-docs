@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 description: 
 title: Content as objects
 template: detail.hbs
 ms.localizationpriority: medium
 ---
-
 # Content as objects
 
  
@@ -31,7 +29,7 @@ A clear visual hierarchy tells users which elements are the most important and c
   <p>So, how do you create a clear visual hierarchy? With earlier versions of Windows 10, you could use white space, position, and typography to define a visual hierarchy. </p>
   </div>
   <div class="side-by-side-content-right">
-    ![A flat layout](images/content-as-objects/flat-layout.png)
+    <a href="images/content-as-objects/flat-layout.png">A flat layout</a>
     
   </div>
 </div>
@@ -39,7 +37,7 @@ A clear visual hierarchy tells users which elements are the most important and c
 
 With Windows 10 RS2, we literally added another dimension: depth. 
 
-![Depth in layout](images/content-as-objects/depth-in-layout2.png)
+<a href="images/content-as-objects/depth-in-layout2.png">Depth in layout</a>
 
 
 ## Use depth to establish a hierarchy 
@@ -55,7 +53,7 @@ With Windows 10 RS2, we literally added another dimension: depth.
     </p>
   </div>
   <div class="side-by-side-content-right">
-    ![Depth in layout](images/content-as-objects/elements-forward-backward.png) 
+    <a href="images/content-as-objects/elements-forward-backward.png">Depth in layout</a> 
     
   </div>
 </div>
@@ -72,13 +70,13 @@ With Windows 10 RS2, we literally added another dimension: depth.
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Beyond background** <br/>
+<b>Beyond background</b>
   This layer lives behind the app.  When elements move to this layer, we recommend making them non-interactive. Elements at this layer has the slowest parallax and are clipped to the app window. TODO: Does this layer scale? 
 
 <p>Example background elements include image behind content, TODO: Example, TODO: Example.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![The beyond background layer of an app](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">The beyond background layer of an app</a>
     
   </div>
 </div>
@@ -89,13 +87,13 @@ With Windows 10 RS2, we literally added another dimension: depth.
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Passive layer** <br/>
+<b>Passive layer</b>
   This is the base layer of the app, where UI elements live by default.  Elements move in real-time on this layer (no parallax), are clipped to the app window, and are rendered at 100% scale. 
 
 <p>Example elements: The app background, text, secondary UI, such as app navigation UI.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![The passive layer of an app](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">The passive layer of an app</a>
     
   </div>
 </div>
@@ -106,13 +104,13 @@ With Windows 10 RS2, we literally added another dimension: depth.
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Calls to action** <br/>
+<b>Calls to action</b>
   This layer is for interactive items that you prioritize above passive layer elements. Elements on this layer have medium parallax and are clipped to the app window. TODO: Do elements at this layer scale or have a drop shadow?
 
 <p>Example elements: lists, grids, primary commands (TODO: Such as...).</p> 
   </div>
   <div class="side-by-side-content-right">
-    ![The call-to-action layer of an app](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">The call-to-action layer of an app</a>
     
   </div>
 </div>
@@ -122,13 +120,13 @@ With Windows 10 RS2, we literally added another dimension: depth.
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Hero layer** <br/>
+<b>Hero layer</b>
   This layer is for the highest priority element on the screen at the time.  Elements on this layer can break the bounds of the app window, they can scale, and they automatically get a drop shadow.
 
 <p>Example elements: photographic elements, the currently selected item.</p>  
   </div>
   <div class="side-by-side-content-right">
-    ![The hero layer of an app](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">The hero layer of an app</a>
     
   </div>
 </div>

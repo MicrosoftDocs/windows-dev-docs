@@ -2,18 +2,13 @@
 title: GET (/users/me)
 assetID: 726c279b-73fb-02ea-cbff-700ff2dc31af
 permalink: en-us/docs/xboxlive/rest/uri-usersmeget.html
-author: KevinAsgari
+
 description: ' GET (/users/me)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/me)
 Obtain the current user's [PresenceRecord](../../json/json-presencerecord.md) without having to know the user's XUID.
 The domain for these URIs is `userpresence.xboxlive.com`.

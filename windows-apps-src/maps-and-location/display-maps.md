@@ -1,17 +1,12 @@
 ---
-author: normesta
 title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
 ---
-
 # Display maps with 2D, 3D, and Streetside views
 
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.
@@ -420,7 +415,7 @@ private async void display3DLocation()
 
 Get info about locations on the map by calling the following methods of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) method - Get the geographic location that corresponds to the specified point in the viewport of the Map control.
+-   [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) method - Get the geographic location that corresponds to the specified point in the viewport of the Map control.
 -   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) method - Get the point in the viewport of the Map control that corresponds to the specified geographic location.
 -   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) method - Determine whether the specified geographic location is currently visible in the viewport of the Map control.
 -   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) method - Get the elements on the map located at the specified point in the viewport of the Map control.

@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 title: Frequently-asked questions about C++/WinRT
-ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
 ---
-
 # Frequently-asked questions about C++/WinRT
 Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
@@ -23,7 +18,7 @@ See [How to retarget your C++/WinRT project to a later version of the Windows SD
 
 ## Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134
 
-If you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Language** > **Command Line** under **Additional Options**, then delete it).
+If you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Command Line** under **Additional Options**, then delete it).
 
 ## What are the requirements for the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)?
 The [VSIX](https://aka.ms/cppwinrt/vsix) enforces a minimum Windows SDK target version of 10.0.17134.0 (Windows 10, version 1803). You'll also need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). You can identify a project that uses the VSIX by the presence of `<CppWinRTEnabled>true</CppWinRTEnabled>` in `<PropertyGroup Label="Globals">` in the `.vcxproj` file. For more info, see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
@@ -32,7 +27,7 @@ The [VSIX](https://aka.ms/cppwinrt/vsix) enforces a minimum Windows SDK target v
 A runtime class is a type that can be activated and consumed via modern COM interfaces, typically across executable boundaries. However, a runtime class can also be used within the compilation unit that implements it. You declare a runtime class in Interface Definition Language (IDL), and you can implement it in standard C++ using C++/WinRT.
 
 ## What do *the projected type* and *the implementation type* mean?
-If you're only *consuming* a Windows Runtime class (runtime class), then you'll be dealing exclusively with *projected types*. C++/WinRT is a *language projection*, so projected types are part of the surface of the Windows Runtime that's *projected* into C++ with C++/WinRT. For more details, see see [Consume APIs with C++/WinRT](consume-apis.md).
+If you're only *consuming* a Windows Runtime class (runtime class), then you'll be dealing exclusively with *projected types*. C++/WinRT is a *language projection*, so projected types are part of the surface of the Windows Runtime that's *projected* into C++ with C++/WinRT. For more details, see [Consume APIs with C++/WinRT](consume-apis.md).
 
 The *implementation type* contains the implementation of a runtime class, so it's only available in the project that implements the runtime class. When you're working in a project that implements runtime classes (a Windows Runtime component project, or a project that uses XAML UI), it's important to be comfortable with the distinction between your implementation type for a runtime class, and the projected type that represents the runtime class projected into C++/WinRT. For more details, see [Author APIs with C++/WinRT](author-apis.md).
 
@@ -48,7 +43,7 @@ If the unresolved symbol is a Windows Runtime free function, such as [RoInitiali
 #pragma comment(lib, "windowsapp")
 ```
 
-We do recommend that you resolve any linker errors that you can by linking **WindowsApp.lib**. But, if you don't need your application to pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store), then you can link an alternative static-link library instead. For example, if your linker error refers to **CoIncrementMTAUsage** (or **WINRT_CoIncrementMTAUsage**), then you can resolve that by linking Ole32.lib if absolutely necessary (for example, if your version of **WindowsApp.lib** doesn't export the function).
+It's important that you resolve any linker errors that you can by linking **WindowsApp.lib** instead of an alternative static-link library, otherwise your application won't pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store).
 
 ## Should I implement [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) and, if so, how?
 If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
@@ -148,6 +143,10 @@ a.f();
 ```
 
 The recommended pattern shown above applies not just to C++/WinRT but to all Windows Runtime language projections.
+
+## How do I turn a string into a type&mdash;for navigation, for example?
+
+At the end of the [Navigation view code example](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
 
 > [!NOTE]
 > If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

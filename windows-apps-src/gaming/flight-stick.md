@@ -1,17 +1,12 @@
 ---
-author: eliotcowley
 title: Flight stick
 description: Use the Windows.Gaming.Input flight stick APIs to read input from flight sticks.
 ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
-ms.author: wdg-dev-content
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, input, flight stick
 ms.localizationpriority: medium
 ---
-
 # Flight stick
 
 This page describes the basics of programming for Xbox One-certified flight sticks using [Windows.Gaming.Input.FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) and related APIs for the Universal Windows Platform (UWP).

@@ -1,12 +1,8 @@
 ---
-author: normesta
 title: Use a SQL Server database in a UWP app
 description: Use a SQL Server database in a UWP app.
-ms.author: normesta
 ms.date: 11/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
@@ -27,7 +23,7 @@ To connect your app directly to a SQL Server database, make sure that the minimu
 
 Open the **Package.appxmanifest** file of your UWP project in the manifest designer.
 
-In the **Capabilities** tab, select the **Enterprise Authentication** checkbox.
+In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.
 
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
 
@@ -59,8 +55,13 @@ Our connection string points to the Northwind database in a SQL Server Express i
 ```csharp
 sealed partial class App : Application
 {
+    // Connection string for using Windows Authentication.
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+    // This is an example connection string for using SQL Server Authentication.
+    // private string connectionString =
+    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 

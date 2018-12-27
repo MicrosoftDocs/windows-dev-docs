@@ -1,13 +1,9 @@
 ---
-author: jwmsft
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: Optimize animations, media, and images
 description: Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -217,7 +213,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+Example 2 code-behind (bad)—setting the BitmapImage's UriSource before connecting it to the tree.
 
 ```csharp
 var bitmapImage = new BitmapImage();

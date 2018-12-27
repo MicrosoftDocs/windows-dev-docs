@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use custom audio on your toast notifications.
 title: Custom audio on toasts
 label: Custom audio on toasts
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast, custom audio, notification, audio, sound
 ms.localizationpriority: medium
 ---
-
 # Custom audio on toasts
 
 Toast notifications can use custom audio, which lets your app express your brand's unique sound effects. For example, a messaging app can use their own messaging sound on their Toast notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.

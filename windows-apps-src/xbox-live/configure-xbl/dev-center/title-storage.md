@@ -1,20 +1,19 @@
 ---
-title: Title Storage configuration on Dev Center
-author: aablackm
-description: Learn how to configure Title Storage on Windows Dev Center
-ms.author: aablackm
+title: Title Storage configuration in Partner Center
+
+description: Learn how to configure Title Storage in Partner Center
 ms.date: 04/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Title Storage, Windows Dev Center
+keywords: Xbox Live, Xbox, games, uwp, windows 10, Xbox one, Title Storage, Partner Center
 ---
-# Configure storage for you title on Windows Dev Center
+# Configure storage for you title in Partner Center
 
 Xbox Live allows you to save data associated with your game in the cloud through the Title Storage service. The Title Storage configuration page allows you to determine what types of cloud storage services your game will allow, as well as upload files to be used for Global Storage.
 
-You can find the Xbox Live Title Storage configuration page by going to your [Windows Dev Center Dashboard](https://developer.microsoft.com/en-us/dashboard/windows/overview), choosing your app from **Overview** or **Products**, opening the **Services** drop down, and selecting **Xbox Live**. Developers in the Creators Program will need to click **show options** in the **Cloud saves and storage** section of their configuration page to see the Title Storage configuration options. Those with the full set of Xbox Live features available will need to find the **Title Storage** link to navigate to the Title Storage configuration page.
+You can find the Xbox Live Title Storage configuration page by going to [Partner](https://partner.microsoft.com/dashboard), choosing your app from **Overview** or **Products**, opening the **Services** drop down, and selecting **Xbox Live**. Developers in the Creators Program will need to click **show options** in the **Cloud saves and storage** section of their configuration page to see the Title Storage configuration options. Those with the full set of Xbox Live features available will need to find the **Title Storage** link to navigate to the Title Storage configuration page.
 
 Title Storage configuration has two main sections. The Title Storage settings section and the global storage file management section.
 
@@ -30,7 +29,7 @@ There are four storage types which can be activated on the Title Storage configu
 
 |Storage Type |Description |Example Usage  |
 |---------|---------|---------|
-|Global             |Data Uploaded to Windows Dev Center that can be read by any device, and is accessible to every user. Can only be written to by the developer uploads to Windows Dev Center. | Advertise updates to all users via in-game news feed.     |
+|Global             |Data Uploaded to Partner Center that can be read by any device, and is accessible to every user. Can only be written to by the developer uploads to Partner Center. | Advertise updates to all users via in-game news feed.     |
 |Connected Storage  |Allows background syncing of game data on XboxOne and Windows 10 Games. A robust fault tolerant game save service. Can be read by any device, can be written to by Xbox One and Windows 10 devices    | Save files for an individual user to allow play on a separate console.         |
 |Universal          |Network accessible blob storage that gives read/write access to any device that is not an Xbox 360 or Windows Phone. Can be read by Android and IOS devices.      | save playtime or other stats to be accessible from multiple Windows devices.        |
 |Trusted            |Network accessible blob storage that can only be written by Xbox One, Xbox 360 and Windows Phone. Can be read by any device. Can be read by Android and IOS.     | store a player's ranking in multiplayer.        |

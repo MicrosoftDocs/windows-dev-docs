@@ -1,15 +1,11 @@
 ---
-author: mijacobs
 Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 title: Tiles, badges, and notifications
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -40,7 +36,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 | [Tile content](create-adaptive-tiles.md) | Tile notification content is specified using adaptive, a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. |
 | [Tile content schema](../tiles-and-notifications/tile-schema.md) | Here are the elements and attributes you use to create adaptive tiles. |
 | [Special tile templates](special-tile-templates-catalog.md) | Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. |
-| [Send local tile notfication](sending-a-local-tile-notification.md) | Learn how to send a local tile notification, adding rich dynamic content to your Live Tile. |
+| [Send local tile notification](sending-a-local-tile-notification.md) | Learn how to send a local tile notification, adding rich dynamic content to your Live Tile. |
 
 
 ## Notifications

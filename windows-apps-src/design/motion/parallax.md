@@ -1,15 +1,11 @@
 ---
-author: mijacobs
 Description: Use the ParallaxView control to add depth and movement to your app.
 title: How to use the ParallaxView control to add depth and movement to your app.
 ms.assetid: 
 label: Parallax View
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: conrwi
@@ -17,8 +13,6 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
-
 # Parallax
 
 Parallax is a visual effect where items closer to the viewer move faster than items in the background. Parallax creates a feeling of depth, perspective, and movement. In a UWP app, you can use the ParallaxView control to create a parallax effect.  
@@ -106,8 +100,8 @@ The ParallaxView automatically adjusts the size of the image so it works for the
 
 The VerticalShift and HorizontalShift properties let you control degree of the parallax effect.
 
-* The VerticalShift property specifies how far we want the background to vertically shift during the entire parallax operation. A value of 0 means the the background doesn't move at all.
-* The HorizontalShift property specifies how far we want the background to horizontally shift during the entire parallax operation. A value of 0 means the the background doesn't move at all.
+* The VerticalShift property specifies how far we want the background to vertically shift during the entire parallax operation. A value of 0 means the background doesn't move at all.
+* The HorizontalShift property specifies how far we want the background to horizontally shift during the entire parallax operation. A value of 0 means the background doesn't move at all.
 
 Larger values create a more dramatic effect. 
 

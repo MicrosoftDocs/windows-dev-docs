@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
-description: Use the Microsoft Store promotions API to programmatically manage promotional ad campaigns for apps that are registered to your or your organization''s Windows Dev Center account.
+description: Use the Microsoft Store promotions API to programmatically manage promotional ad campaigns for apps that are registered to your or your organization's Partner Center account.
 title: Run ad campaigns using Store services
-ms.author: mcleans
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Run ad campaigns using Store services
 
-Use the *Microsoft Store promotions API* to programmatically manage promotional ad campaigns for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to create, update and monitor your campaigns and other related assets such as targeting and creatives. This API is especially useful for developers who create large volumes of campaigns, and who want to do so without using the Windows Dev Center dashboard. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the *Microsoft Store promotions API* to programmatically manage promotional ad campaigns for apps that are registered to your or your organization's Partner Center account. This API enables you to create, update and monitor your campaigns and other related assets such as targeting and creatives. This API is especially useful for developers who create large volumes of campaigns, and who want to do so without using Partner Center. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
 The following steps describe the end-to-end process:
 
@@ -22,10 +17,10 @@ The following steps describe the end-to-end process:
 2.  Before you call a method in the Microsoft Store promotions API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store promotions API before the token expires. After the token expires, you can generate a new token.
 3.  [Call the Microsoft Store promotions API](#call-the-windows-store-promotions-api).
 
-You can alternatively create and manage ad campaigns using the Windows Dev Center dashboard, and any ad campaigns that you create programmatically via the Microsoft Store promotions API can also be accessed in the dashboard. For more information about managing ad campaigns in the dashboard, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
+You can alternatively create and manage ad campaigns using Partner Center, and any ad campaigns that you create programmatically via the Microsoft Store promotions API can also be accessed in Partner Center. For more information about managing ad campaigns in Partner Center, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
 
 > [!NOTE]
-> Any developer with a Windows Dev Center account can use the Microsoft Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
+> Any developer with a Partner Center account can use the Microsoft Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
 
 <span id="prerequisites" />
 
@@ -33,19 +28,19 @@ You can alternatively create and manage ad campaigns using the Windows Dev Cente
 
 Before you start writing code to call the Microsoft Store promotions API, make sure that you have completed the following prerequisites.
 
-* Before you can successfully create and start an ad campaign using this API, you must first [create one paid ad campaign using the **Promote your app** page in the Dev Center dashboard](../publish/create-an-ad-campaign-for-your-app.md), and you must add at least one payment instrument on this page. After you do this, you will be able to successfully create billable delivery lines for ad campaigns using this API. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Promote your app** page in the dashboard.
+* Before you can successfully create and start an ad campaign using this API, you must first [create one paid ad campaign using the **Ad campaigns** page in Partner Center](../publish/create-an-ad-campaign-for-your-app.md), and you must add at least one payment instrument on this page. After you do this, you will be able to successfully create billable delivery lines for ad campaigns using this API. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
 
-* You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store promotions API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+* You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store promotions API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
     > [!NOTE]
     > You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
-To associate an Azure AD application with your Dev Center account and retrieve the required values:
+To associate an Azure AD application with your Partner Center account and retrieve the required values:
 
-1.  In Dev Center, [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).
+1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
 
-2.  Next, from the **Users** page in the **Account settings** section of Dev Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account) that represents the app or service that you will use to manage promotion campaigns for your Dev Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Dev Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account). 
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to manage promotion campaigns for your Partner Center account. Make sure you assign this application the **Manager** role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Return to the **Users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
@@ -70,7 +65,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section. For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.
+For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.
 
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 

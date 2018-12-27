@@ -1,22 +1,17 @@
 ---
-author: Jwmsft
 Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
 title: Text controls
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Text controls
 
 Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
@@ -120,7 +115,7 @@ See these articles for font guidelines:
 
 Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
 
-![Text box expands when tapped with pen](images/pen-input-expand.gif)
+![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
 For more info, see [Text input with the handwriting view](text-handwriting-view.md).
 

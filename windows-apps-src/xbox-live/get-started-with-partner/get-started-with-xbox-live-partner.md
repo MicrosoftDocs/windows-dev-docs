@@ -1,24 +1,20 @@
 ---
 title: Get started with Xbox Live as a partner
-author: KevinAsgari
+
 description: Provides links to help a managed partner or ID@Xbox member get started with Xbox Live development.
 ms.assetid: 69ab75d1-c0e7-4bad-bf8f-5df5cfce13d5
-ms.author: kevinasg
 ms.date: 06/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, partner, ID@Xbox
 ms.localizationpriority: medium
 ---
-
 # Get started with Xbox Live as a managed partner or an ID@Xbox developer
 
 This section covers getting started with Xbox Live as a managed partner or as an ID@Xbox developer. Partners and ID developers can access the full range of Xbox Live features, including achievements, multiplayer, and more.
 
 Managed partners and ID@Xbox developers can develop Xbox Live titles for both the Universal Windows Platform (UWP) or the Xbox Developer Kit (XDK) platform.
 
-In addition to the content available here, there is also additional documentation that is available to partners with an authorized Dev Center account. You can access that content here: [Xbox Live partner content](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content).
+In addition to the content available here, there is also additional documentation that is available to partners with an authorized Partner Center account. You can access that content here: [Xbox Live partner content](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content).
 
 ## Why should you use Xbox Live?
 
@@ -38,13 +34,13 @@ Decide between making an Xbox Development Kit (XDK), Universal Windows Platform 
   - For Xbox One, see [UWP on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index) and specifically [System resources for UWP apps and games on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)
 - Cross-play games are typically games that target Xbox One and Windows PC using both the XDK and UWP paths.
 
-## 2. Ensure that you have a title created on Dev Center or XDP
-Every Xbox Live title must be defined on Dev Center or the Xbox Developer Portal (XDP) before you will be able to sign-in and make Xbox Live Service calls.  [Creating A New Title](create-a-new-title.md) will show you how to do this.
+## 2. Ensure that you have a title created in Partner Center or XDP
+Every Xbox Live title must be defined in Partner Center or the Xbox Developer Portal (XDP) before you will be able to sign-in and make Xbox Live Service calls.  [Creating A New Title](create-a-new-title.md) will show you how to do this.
 
 ## 3. Follow the appropriate guide to setup your IDE or game engine
 You can follow the appropriate Getting Started guide for your platform and engine and learn the basics of Xbox Live as you go along.
 
-* [Getting started using Visual Studio for UWP games](get-started-with-visual-studio-and-uwp.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
+* [Getting started using Visual Studio for UWP games](get-started-with-visual-studio-and-uwp.md) will show you how to link your Visual Studio project with your Xbox Live configuration in Partner Center.
 * [Getting started using Unity for UWP games](partner-add-xbox-live-to-unity-uwp.md) will show you how to create a new Xbox Live enabled Unity title, add features such as Leaderboards to your title, and generate a native Visual Studio project.
 * [Getting started using Visual Studio for XDK based games](xdk-developers.md) will show you how to get your Visual Studio project setup if you are making an Xbox One title using the XDK.
 * [Getting started making a cross-play game](get-started-with-cross-play-games.md) explains how to make a product that is an XDK based game for Xbox One and a UWP based game for Windows 10 PC.

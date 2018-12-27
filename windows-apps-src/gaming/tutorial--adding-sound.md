@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Add sound
 description: Develop a simple sound engine using XAudio2 APIs to playback game music and sound effects.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, sound
 ms.localizationpriority: medium
 ---
-
 # Add sound
 
 In this topic, we create a simple sound engine using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. If you are new to __XAudio2__, we have included a short intro under [Audio concepts](#audio-concepts).
@@ -336,7 +331,7 @@ Triggers to play sound effects are defined in [Simple3DGame::UpdateDynamics](#si
 
 Since interaction of between objects differs greatly, depending on the game, we are not going to discuss the dynamics of the game objects here. If you're interested to understand its implementation, go to [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) method.
 
-In principle, when a collision occurs, it triggers the sound effect to play by calling [SoundEffect::PlaySound]((soundeffectplaysound-method). This method stops any sound effects that's currently playing and queues the in-memory buffer with the desired sound data. It uses source voice to set the volume, submit sound data, and start the playback.
+In principle, when a collision occurs, it triggers the sound effect to play by calling **SoundEffect::PlaySound**. This method stops any sound effects that's currently playing and queues the in-memory buffer with the desired sound data. It uses source voice to set the volume, submit sound data, and start the playback.
 
 ### SoundEffect::PlaySound method
 

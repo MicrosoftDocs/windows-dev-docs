@@ -1,18 +1,14 @@
 ---
-author: normesta
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
 title: Package an application manually (Desktop Bridge)
-ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Package a desktop application manually
 
 This topic shows you how to package your application without using tools such as Visual Studio or the Desktop App Converter (DAC).
@@ -24,7 +20,7 @@ Consider manual packaging if you install your application by using the xcopy com
 If you're uncertain about what changes your installer makes to the system, or if you'd rather use automated tools to generate your package manifest, consider any of [these](desktop-to-uwp-root.md#convert) options.
 
 >[!IMPORTANT]
->The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 ## First, prepare your application
 
@@ -82,11 +78,11 @@ Here's an example **Identity** element with placeholder text for the attributes.
 			    ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> If you've reserved your application name in the Windows store, you can obtain the Name and Publisher by using the Windows Dev Center dashboard. If you plan to sideload your application onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
+> If you've reserved your application name in the Microsoft Store, you can obtain the Name and Publisher by using [Partner Center](https://partner.microsoft.com/dashboard). If you plan to sideload your application onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### Properties
 
-The [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) element has 3 required child elements. Here is an example **Properties** node with placeholder text for the elements. The **DisplayName** is the name of your application that you reserve in the store, for apps which are uploaded to the store.
+The [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) element has 3 required child elements. Here is an example **Properties** node with placeholder text for the elements. The **DisplayName** is the name of your application that you reserve in the Store, for apps which are uploaded to the Store.
 
 ```XML
 <Properties>
@@ -155,7 +151,7 @@ Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxp
 
 ## (Optional) Add Target-based unplated assets
 
-Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets).
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
 1. Obtain the correct 44x44 images and then copy them into the folder that contains your images (i.e., Assets).
 

@@ -1,17 +1,13 @@
 ---
 title: Use Connected Storage to load data
-author: aablackm
+
 description: Learn how to use Connected Storage to load data.
 ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Use Connected Storage to load data
 
 Data is asynchronously read using the `ReadAsync` or `GetAsync` connected storage method.
@@ -148,7 +144,7 @@ string[] blobsToRead = new string[] { c_saveBlobName };
 
 // GetAsync allocates a new Dictionary to hold the retrieved data. You can also use ReadAsync
 // to provide your own preallocated Dictionary.
-GameSaveBlobGetResult result = await container.GetAsync(blobsToRead);
+GameSaveBlobGetResult result = await gameSaveContainer.GetAsync(blobsToRead);
 
 int loadedData = 0;
 

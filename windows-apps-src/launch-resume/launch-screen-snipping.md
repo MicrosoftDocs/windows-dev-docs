@@ -1,16 +1,12 @@
 ---
-author: QuinnRadich
 title: Launch screen snipping
 description: This topic describes the ms-screenclip and ms-screensketch URI schemes. Your app can use these URI schemes to launch the Snip & Sketch app or to open a new snip.
-ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, uri, snip, sketch
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Launch screen snipping
 
 The **ms-screenclip:** and **ms-screensketch:** URI schemes allows you to initiate snipping or editing screenshots.
@@ -35,6 +31,7 @@ The **ms-screensketch:** URI allows you to programatically launch the Snip & Ske
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | sharedAccessToken | string | no | A token identifying the file to open in the Snip & Sketch app. Retrieved from [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). If this parameter is omitted, the app will be launched without a file open. |
+| secondarySharedAccessToken | string | no | A string identifying a JSON file with metadata about the snip. The metadata may include a **clipPoints** field with an array of x,y coordinates, and/or a [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
 | isTemporary | bool | no | If set to True, Screen Sketch will try to delete the file after opening it. |
 
@@ -43,5 +40,32 @@ The following example calls the [LaunchUriAsync](https://docs.microsoft.com/uwp/
 ```csharp
 
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screensketch:edit?source=MyApp&isTemporary=false&sharedAccessToken=2C37ADDA-B054-40B5-8B38-11CED1E1A2D"));
+
+```
+
+The following example illustrates what a file specified by the **secondaryFileAccessToken** parameter of **ms-screenshot** might contain:
+
+```json
+{
+  "clipPoints": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 2080,
+      "y": 0
+    },
+    {
+      "x": 2080,
+      "y": 780
+    },
+    {
+      "x": 0,
+      "y": 780
+    }
+  ],
+  "userActivity": "{\"$schema\":\"http://activity.windows.com/user-activity.json\",\"UserActivity\":\"type\",\"1.0\":\"version\",\"cross-platform-identifiers\":[{\"platform\":\"windows_universal\",\"application\":\"Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge\"},{\"platform\":\"host\",\"application\":\"edge.activity.windows.com\"}],\"activationUrl\":\"microsoft-edge:https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"contentUrl\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"visualElements\":{\"attribution\":{\"iconUrl\":\"https://www.microsoft.com/favicon.ico?v2\",\"alternateText\":\"microsoft.com\"},\"description\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"backgroundColor\":\"#FF0078D7\",\"displayText\":\"Use snipping tool to capture screenshots - Windows Help\",\"content\":{\"$schema\":\"http://adaptivecards.io/schemas/adaptive-card.json\",\"type\":\"AdaptiveCard\",\"version\":\"1.0\",\"body\":[{\"type\":\"Container\",\"items\":[{\"type\":\"TextBlock\",\"text\":\"Use snipping tool to capture screenshots - Windows Help\",\"weight\":\"bolder\",\"size\":\"large\",\"wrap\":true,\"maxLines\":3},{\"type\":\"TextBlock\",\"text\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"size\":\"normal\",\"wrap\":true,\"maxLines\":3}]}]}},\"isRoamable\":true,\"appActivityId\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\"}"
+}
 
 ```

@@ -1,15 +1,11 @@
 ---
-author: Jwmsft
 Description: The media player has customizable XAML transport controls to manage control of audio and video content.
 title: Create custom media transport controls
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -49,7 +45,7 @@ You can customize the appearance of the control by modifying the default templat
 
 ## Template structure
 
-The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. The transport control's default style is shown in the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class reference page. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
+The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
 - The first section of the template contains the [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) definitions for the various components of the MediaTransportControls.
 - The second section defines the various visual states that are used by the MediaTransportControls.
 - The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
@@ -213,9 +209,10 @@ One reason you might want to customize MediaTransportControls is to add a custom
               VerticalAlignment="Center" />
 ```
 
-    You must add it to the CommandBar in the appropriate location. (For more info, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
+You must add it to the CommandBar in the appropriate location. (For more information, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
 
-    You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
+You can also customize the icon for the button. For more information, see the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"><b>AppBarButton</b></a> reference.
+	
 
 2. In the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) override, get the button from the template and register a handler for its [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. This code goes in the `CustomMediaTransportControls` class.
 

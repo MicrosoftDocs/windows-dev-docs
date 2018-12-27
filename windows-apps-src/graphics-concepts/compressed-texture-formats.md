@@ -4,15 +4,12 @@ description: This section contains information about the internal organization o
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
 keywords:
 - Compressed texture formats
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Compressed texture formats
 
 

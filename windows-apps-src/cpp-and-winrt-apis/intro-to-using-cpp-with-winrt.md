@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
 ---
-
 # Introduction to C++/WinRT
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/nOFNc2uTmGs]
@@ -85,7 +80,7 @@ In an IDL file, define the runtime classes in your component, their default inte
 Bundle the built Windows Runtime Component binary and its `.winmd` with the UWP app consuming them.
 
 ## Custom types in the C++/WinRT projection
-In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
+In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
 

@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Handle URI activation
 description: Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Handle URI activation
 
 **Important APIs**

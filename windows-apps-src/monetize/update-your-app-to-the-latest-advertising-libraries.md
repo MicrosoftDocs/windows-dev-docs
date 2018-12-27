@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 description: Learn how to update your app to use the latest supported Microsoft advertising libraries and make sure that your app continues to receive banner ads.
 title: Update your app to the latest advertising libraries for banner ads
-ms.author: mcleans
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, AdControl, AdMediatorControl, migrate
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ---
-
 # Update your app to the latest advertising libraries for banner ads
 
 As of April 1, 2017, we no longer serve banner ads to apps that use an unsupported advertising SDK release. If you use **AdControl** to display banner ads in your Universal Windows Platform (UWP) app, use the information in this article to determine whether you are using an unsupported advertising SDK and migrate your app to a supported SDK.
@@ -26,7 +21,7 @@ Before this SDK was released, we previously provided the **AdControl** class in 
 
 * When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
 
-* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your Dev Center account. If you update your app to use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
+* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your DePartnerv Center account. If you update your app to use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
 
 * Banner ads will also no longer be served for any ad unit that is used in more than one app. Make sure that your ad units are each used in only one app.
 
@@ -85,4 +80,4 @@ Remove all existing references to the Microsoft advertising libraries from the p
 
 Test your app to make sure it displays banner ads as expected.
 
-If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in the Dev Center dashboard to republish your app.
+If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in Partner Center to republish your app.

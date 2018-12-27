@@ -1,17 +1,13 @@
 ---
 title: Unity for UWP with .NET scripting
-author: KevinAsgari
+
 description: Add Xbox Live support to Unity for UWP with .NET scripting backend for ID@Xbox and managed partners
 ms.assetid: 790a49ad-eff4-4916-8578-968ca8483211
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ---
-
 # Add Xbox Live support to Unity for UWP with .NET scripting backend for ID@Xbox and managed partners
 
 **1) Install Unity**
@@ -156,7 +152,7 @@ If the app launches, but fails to signin then check the following:
 
 a) Your machine is set to the your developer sandbox.  Use the SwitchSandbox.cmd script in the \Tools folder of the Xbox Live SDK to do this.
 
-b) You are signing in with an Xbox Live account that has access to the developer sandbox.  Normal retail Xbox Live accounts don't have access.  You can use XDP or Dev Center to create test accounts.
+b) You are signing in with an Xbox Live account that has access to the developer sandbox.  Normal retail Xbox Live accounts don't have access.  You can use XDP or Partner Center to create test accounts.
 
 c) Your package.appxmanfiest in your UWP app is set to the correct Identity.  You can edit this manually, but the easiest way to fix this is to right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store".
 

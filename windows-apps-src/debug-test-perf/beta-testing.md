@@ -1,13 +1,9 @@
 ---
-author: PatrickFarley
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Beta testing
 description: Beta testing gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -38,9 +34,9 @@ It's best to conduct beta testing as the final stage of testing before you relea
 
 ## Next steps
 
-In the unified Windows Dev Center dashboard, you can limit distribution of your apps to only your testers, regardless of which operating systems your app targets. There’s no need to create a separate version of your app with a separate name and package identity; you can do your testing, then create a new submission when you’re ready to make the app available to everyone. (Of course, you can create a separate app for testing only if you prefer. If you do, make sure to give it a different name from what you intend as the final, public app name.)
+In [Partner Center](https://partner.microsoft.com/dashboard), you can limit distribution of your apps to only your testers, regardless of which operating systems your app targets. There’s no need to create a separate version of your app with a separate name and package identity; you can do your testing, then create a new submission when you’re ready to make the app available to everyone. (Of course, you can create a separate app for testing only if you prefer. If you do, make sure to give it a different name from what you intend as the final, public app name.)
 
-See [Beta testing and targeted distribution](https://msdn.microsoft.com/library/windows/apps/Mt185377) to learn how to submit your app to the Store for beta testing.
+See [Beta testing and targeted distribution](../publish/beta-testing-and-targeted-distribution.md) to learn how to submit your app to the Store for beta testing.
 
  
 

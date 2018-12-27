@@ -1,19 +1,16 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
 title: Recognize Windows Ink strokes as text and shapes
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Recognize Windows Ink strokes as text and shapes
 
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
@@ -207,7 +204,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
-6. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
+6. Here's the function for drawing a TextBlock on our recognition canvas. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -226,7 +223,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
+7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -271,7 +268,6 @@ Here's this sample in action:
 | ![Before analysis](images/ink/ink-analysis-raw2-small.png) | ![After analysis](images/ink/ink-analysis-analyzed2-small.png) |
 
 ---
-
 ## Constrained handwriting recognition
 
 In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.
@@ -288,36 +284,37 @@ In this example, recognition is initiated when the user clicks a button to indic
 1.  First, we set up the UI.
 
     The UI includes a "Recognize" button, the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), and an area to display recognition results.    
-```    XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="HeaderPanel"
-                    Orientation="Horizontal"
-                    Grid.Row="0">
-            <TextBlock x:Name="Header"
-                       Text="Basic ink recognition sample"
-                       Style="{ThemeResource HeaderTextBlockStyle}"
-                       Margin="10,0,0,0" />
-            <Button x:Name="recognize"
-                    Content="Recognize"
-                    Margin="50,0,10,0"/>
-        </StackPanel>
-        <Grid Grid.Row="1">
+
+    ```    XAML
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <InkCanvas x:Name="inkCanvas"
-                       Grid.Row="0"/>
-            <TextBlock x:Name="recognitionResult"
-                       Grid.Row="1"
-                       Margin="50,0,10,0"/>
+            <StackPanel x:Name="HeaderPanel"
+                        Orientation="Horizontal"
+                        Grid.Row="0">
+                <TextBlock x:Name="Header"
+                        Text="Basic ink recognition sample"
+                        Style="{ThemeResource HeaderTextBlockStyle}"
+                        Margin="10,0,0,0" />
+                <Button x:Name="recognize"
+                        Content="Recognize"
+                        Margin="50,0,10,0"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <InkCanvas x:Name="inkCanvas"
+                        Grid.Row="0"/>
+                <TextBlock x:Name="recognitionResult"
+                        Grid.Row="1"
+                        Margin="50,0,10,0"/>
+            </Grid>
         </Grid>
-    </Grid>
-```
+    ```
 
 2. For this example, you need to first add the namespace type references required for our ink functionality:
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
@@ -327,142 +324,144 @@ In this example, recognition is initiated when the user clicks a button to indic
 3.  We then set some basic ink input behaviors.
 
     The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). A listener for the click event on the "Recognize" button is also declared.
-```csharp
-public MainPage()
-    {
-        this.InitializeComponent();
 
-        // Set supported inking device types.
-        inkCanvas.InkPresenter.InputDeviceTypes =
-            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
-            Windows.UI.Core.CoreInputDeviceTypes.Pen;
+    ```csharp
+    public MainPage()
+        {
+            this.InitializeComponent();
 
-        // Set initial ink stroke attributes.
-        InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
-        drawingAttributes.Color = Windows.UI.Colors.Black;
-        drawingAttributes.IgnorePressure = false;
-        drawingAttributes.FitToCurve = true;
-        inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
+            // Set supported inking device types.
+            inkCanvas.InkPresenter.InputDeviceTypes =
+                Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+                Windows.UI.Core.CoreInputDeviceTypes.Pen;
 
-        // Listen for button click to initiate recognition.
-        recognize.Click += Recognize_Click;
-    }
-```
+            // Set initial ink stroke attributes.
+            InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
+            drawingAttributes.Color = Windows.UI.Colors.Black;
+            drawingAttributes.IgnorePressure = false;
+            drawingAttributes.FitToCurve = true;
+            inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
+
+            // Listen for button click to initiate recognition.
+            recognize.Click += Recognize_Click;
+        }
+    ```
 
 4.  Finally, we perform the basic handwriting recognition. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
 
     An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stores all ink strokes in an [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) object. The strokes are exposed through the [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) property of the **InkPresenter** and retrieved using the [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) method.
-```csharp
-// Get all strokes on the InkCanvas.
-    IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
-```
+
+    ```csharp
+    // Get all strokes on the InkCanvas.
+        IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+    ```
 
     An [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) is created to manage the handwriting recognition process.
 
-```csharp
-// Create a manager for the InkRecognizer object
-    // used in handwriting recognition.
-    InkRecognizerContainer inkRecognizerContainer =
-        new InkRecognizerContainer();
-```
+    ```csharp
+    // Create a manager for the InkRecognizer object
+        // used in handwriting recognition.
+        InkRecognizerContainer inkRecognizerContainer =
+            new InkRecognizerContainer();
+    ```
 
     [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) is called to retrieve a set of [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) objects.
 
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
 
-```csharp
-// Recognize all ink strokes on the ink canvas.
-    IReadOnlyList<InkRecognitionResult> recognitionResults =
-        await inkRecognizerContainer.RecognizeAsync(
-            inkCanvas.InkPresenter.StrokeContainer,
-            InkRecognitionTarget.All);
-```
+    ```csharp
+    // Recognize all ink strokes on the ink canvas.
+        IReadOnlyList<InkRecognitionResult> recognitionResults =
+            await inkRecognizerContainer.RecognizeAsync(
+                inkCanvas.InkPresenter.StrokeContainer,
+                InkRecognitionTarget.All);
+    ```
 
     Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
     We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
 
-```csharp
-string str = "Recognition result\n";
-    // Iterate through the recognition results.
-    foreach (var result in recognitionResults)
-    {
-        // Get all recognition candidates from each recognition result.
-        IReadOnlyList<string> candidates = result.GetTextCandidates();
-        str += "Candidates: " + candidates.Count.ToString() + "\n";
-        foreach (string candidate in candidates)
+    ```csharp
+    string str = "Recognition result\n";
+        // Iterate through the recognition results.
+        foreach (var result in recognitionResults)
         {
-            str += candidate + " ";
+            // Get all recognition candidates from each recognition result.
+            IReadOnlyList<string> candidates = result.GetTextCandidates();
+            str += "Candidates: " + candidates.Count.ToString() + "\n";
+            foreach (string candidate in candidates)
+            {
+                str += candidate + " ";
+            }
         }
-    }
-    // Display the recognition candidates.
-    recognitionResult.Text = str;
-    // Clear the ink canvas once recognition is complete.
-    inkCanvas.InkPresenter.StrokeContainer.Clear();
-```
+        // Display the recognition candidates.
+        recognitionResult.Text = str;
+        // Clear the ink canvas once recognition is complete.
+        inkCanvas.InkPresenter.StrokeContainer.Clear();
+    ```
 
     Here's the click handler example, in full.
 
-```csharp
-// Handle button click to initiate recognition.
-    private async void Recognize_Click(object sender, RoutedEventArgs e)
-    {
-        // Get all strokes on the InkCanvas.
-        IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
-
-        // Ensure an ink stroke is present.
-        if (currentStrokes.Count > 0)
+    ```csharp
+    // Handle button click to initiate recognition.
+        private async void Recognize_Click(object sender, RoutedEventArgs e)
         {
-            // Create a manager for the InkRecognizer object
-            // used in handwriting recognition.
-            InkRecognizerContainer inkRecognizerContainer =
-                new InkRecognizerContainer();
+            // Get all strokes on the InkCanvas.
+            IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
 
-            // inkRecognizerContainer is null if a recognition engine is not available.
-            if (!(inkRecognizerContainer == null))
+            // Ensure an ink stroke is present.
+            if (currentStrokes.Count > 0)
             {
-                // Recognize all ink strokes on the ink canvas.
-                IReadOnlyList<InkRecognitionResult> recognitionResults =
-                    await inkRecognizerContainer.RecognizeAsync(
-                        inkCanvas.InkPresenter.StrokeContainer,
-                        InkRecognitionTarget.All);
-                // Process and display the recognition results.
-                if (recognitionResults.Count > 0)
+                // Create a manager for the InkRecognizer object
+                // used in handwriting recognition.
+                InkRecognizerContainer inkRecognizerContainer =
+                    new InkRecognizerContainer();
+
+                // inkRecognizerContainer is null if a recognition engine is not available.
+                if (!(inkRecognizerContainer == null))
                 {
-                    string str = "Recognition result\n";
-                    // Iterate through the recognition results.
-                    foreach (var result in recognitionResults)
+                    // Recognize all ink strokes on the ink canvas.
+                    IReadOnlyList<InkRecognitionResult> recognitionResults =
+                        await inkRecognizerContainer.RecognizeAsync(
+                            inkCanvas.InkPresenter.StrokeContainer,
+                            InkRecognitionTarget.All);
+                    // Process and display the recognition results.
+                    if (recognitionResults.Count > 0)
                     {
-                        // Get all recognition candidates from each recognition result.
-                        IReadOnlyList<string> candidates = result.GetTextCandidates();
-                        str += "Candidates: " + candidates.Count.ToString() + "\n";
-                        foreach (string candidate in candidates)
+                        string str = "Recognition result\n";
+                        // Iterate through the recognition results.
+                        foreach (var result in recognitionResults)
                         {
-                            str += candidate + " ";
+                            // Get all recognition candidates from each recognition result.
+                            IReadOnlyList<string> candidates = result.GetTextCandidates();
+                            str += "Candidates: " + candidates.Count.ToString() + "\n";
+                            foreach (string candidate in candidates)
+                            {
+                                str += candidate + " ";
+                            }
                         }
+                        // Display the recognition candidates.
+                        recognitionResult.Text = str;
+                        // Clear the ink canvas once recognition is complete.
+                        inkCanvas.InkPresenter.StrokeContainer.Clear();
                     }
-                    // Display the recognition candidates.
-                    recognitionResult.Text = str;
-                    // Clear the ink canvas once recognition is complete.
-                    inkCanvas.InkPresenter.StrokeContainer.Clear();
+                    else
+                    {
+                        recognitionResult.Text = "No recognition results.";
+                    }
                 }
                 else
                 {
-                    recognitionResult.Text = "No recognition results.";
+                    Windows.UI.Popups.MessageDialog messageDialog = new Windows.UI.Popups.MessageDialog("You must install handwriting recognition engine.");
+                    await messageDialog.ShowAsync();
                 }
             }
             else
             {
-                Windows.UI.Popups.MessageDialog messageDialog = new Windows.UI.Popups.MessageDialog("You must install handwriting recognition engine.");
-                await messageDialog.ShowAsync();
+                recognitionResult.Text = "No ink strokes to recognize.";
             }
         }
-        else
-        {
-            recognitionResult.Text = "No ink strokes to recognize.";
-        }
-    }
-```
+    ```
 
 ## International recognition
 

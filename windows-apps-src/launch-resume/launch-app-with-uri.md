@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 title: Launch an app with a URI
 description: This section describes how to use a Uniform Resource Identifier (URI) to launch one app from another app.
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch an app with a URI
 
 This section describes how to use a Uniform Resource Identifier (URI) to launch one app from another app, enabling helpful app-to-app scenarios.

@@ -4,15 +4,12 @@ description: Operations on tile pools include resizing a tile pool, offering res
 ms.assetid: 90347F7F-C991-4287-BD70-494533ECDC8A
 keywords:
 - Operations available on tile pools
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Operations available on tile pools
 
 

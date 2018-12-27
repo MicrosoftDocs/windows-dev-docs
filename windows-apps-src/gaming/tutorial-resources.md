@@ -1,16 +1,13 @@
 ---
-author: joannaleecy
 title: Extend the game sample
 description: Learn how to implement a XAML overlay for a UWP DirectX game.
 keywords: DirectX, XAML
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Extend the game sample
 
 At this point we've covered the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, incorporate sounds, and implement controls. You're on your way to creating a game of your own, but if you need more help and info, check out these resources.

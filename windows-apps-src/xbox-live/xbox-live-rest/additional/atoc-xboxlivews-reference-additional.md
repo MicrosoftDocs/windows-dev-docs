@@ -2,18 +2,13 @@
 title: Additional Reference
 assetID: 2ed55e24-4a4f-625b-7cbb-f10855382bb4
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-additional.html
-author: KevinAsgari
+
 description: ' Additional Reference'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Additional Reference
 
 The topics in this section provide supplementary reference material for Xbox Live Services and Entertainment Discover Services (EDS).

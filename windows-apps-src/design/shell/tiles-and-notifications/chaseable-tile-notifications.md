@@ -1,19 +1,14 @@
 ---
-author: andrewleader
 Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
 title: Chaseable tile notifications
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, chaseable tiles, live tiles, chaseable tile notifications
 ms.localizationpriority: medium
 ---
-
 # Chaseable tile notifications
 
 Chaseable tile notifications let you determine which tile notifications your app's Live Tile was displaying when the user clicked the tile.  

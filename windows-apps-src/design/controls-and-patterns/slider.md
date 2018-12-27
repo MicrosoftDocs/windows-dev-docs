@@ -1,15 +1,11 @@
 ---
-author: QuinnRadich
 Description: Lets the user set a value in a given range.
 title: Sliders
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv

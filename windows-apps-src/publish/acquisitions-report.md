@@ -1,23 +1,18 @@
 ﻿---
-author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
-ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, acquisitions, app sales, app downloads, installs, funnel, acquisition, conversions, channel, app page views
 ms.localizationpriority: medium
 ---
-
 # Acquisitions report
 
 
-The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details, and shows info about how customers on Windows 10 (including Xbox) have arrived at your app's listing. You can also view near real-time acquisition data for the last hour or seventy-two hour period. 
+The **Acquisitions** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see who has acquired and installed your app, along with demographic and platform details, and shows info about how customers on Windows 10 (including Xbox) have arrived at your app's listing. You can also view near real-time acquisition data for the last hour or seventy-two hour period. 
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
 

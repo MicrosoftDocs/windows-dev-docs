@@ -2,18 +2,13 @@
 title: ActivityRecord (JSON)
 assetID: e3a7465b-3451-0266-f8ba-b7602b59f7af
 permalink: en-us/docs/xboxlive/rest/json-activityrecord.html
-author: KevinAsgari
+
 description: ' ActivityRecord (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # ActivityRecord (JSON)
 A formatted and localized string about one or more users' rich presence. 
 <a id="ID4EN"></a>

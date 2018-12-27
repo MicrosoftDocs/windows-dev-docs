@@ -4,15 +4,12 @@ description: The Compute Shader (CS) stage provides high-speed general-purpose c
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords:
 - Compute Shader (CS) stage
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Compute Shader (CS) stage
 
 

@@ -1,16 +1,12 @@
 ---
 title: Multiplayer roles
-author: KevinAsgari
+
 description: Learn about using roles to define player roles in Xbox Live multiplayer.
-ms.author: kevinasg
 ms.date: 06/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, roles
 ms.localizationpriority: medium
 ---
-
 # Roles
 
 For some game sessions, you may want to specify that certain members have certain gameplay roles, such as support, medic, assault, etc. You may also wat to reserve game slots for players that will fill a specific gameplay role. By using the Xbox Live roles feature, the service can track which players are assigned which gameplay roles, and enforce a maximum number of players that can select a specific gameplay role.

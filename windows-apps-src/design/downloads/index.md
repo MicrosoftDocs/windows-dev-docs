@@ -2,14 +2,11 @@
 description: Get the latest downloads and tools for UWP apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: Design toolkits and samples for UWP apps
-author: mijacobs
-ms.author: mijacobs
-ms.date: 10/12/2017
+ms.date: 10/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Design toolkits and samples for UWP apps
  
@@ -23,26 +20,32 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
+        ![hero image](images/figma.png)
+        <b>Figma toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/figmatoolkit">Download</a>
+    :::column-end:::
+    :::column:::
+        ![hero image](images/sketch.png)
+        <b>Sketch toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
+    :::column-end:::    
+    :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
         ![hero image](images/adobe-illustrator.png)
         <b>Adobe Illustrator toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
-    :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch</b><br>
-        v1803, March 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
-    :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
         ![hero image](images/adobe-photoshop.png)
         <b>Adobe Photoshop toolkit</b><br>
@@ -52,10 +55,9 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column:::
         ![hero image](images/framer.png)
         <b>Framer toolkit</b><br>
+        (This toolkit is no longer supported.)<br/>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
-    :::column-end:::
-    :::column:::
     :::column-end:::
 :::row-end:::
 
@@ -97,6 +99,11 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
     
 ## Samples
+
+![Fluent XAML Theme Editor image](images/XamlThemeEditor_screenshot.png)
+**Fluent XAML Theme Editor**<br>
+The Fluent XAML Theme Editor is a tool that helps demonstrate the flexibility of the Fluent Design System as well as supports the app development process by generating XAML markup for our ResourceDictionary framework used in Universal Windows Platform applications (UWPs).
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">Download the tool sample</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">Check out the tool on GitHub</a>
 
 ![VanArsdel image](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>

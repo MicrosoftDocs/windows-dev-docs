@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/groups/{moniker}/broadcasting/count
 assetID: 535c8d46-7001-c31e-3e9d-82ad275095ae
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingcount.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/groups/{moniker}/broadcasting/count'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/groups/{moniker}/broadcasting/count
 Accesses the count of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI. 
 The domain for these URIs is `userpresence.xboxlive.com`.

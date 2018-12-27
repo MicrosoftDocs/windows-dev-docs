@@ -1,19 +1,14 @@
 ---
-author: andrewleader
 Description: The following article describes all of the properties and elements within tile content.
 title: Tile content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 07/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, tile, tile notification, tile content, schema, tile payload
 ms.localizationpriority: medium
 ---
-
 # Tile content schema
 
  

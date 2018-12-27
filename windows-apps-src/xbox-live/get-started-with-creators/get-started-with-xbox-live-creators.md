@@ -1,13 +1,10 @@
 ---
 title: Get started with Xbox Live Creators Program
-author: KevinAsgari
+
 description: Provides links to help you get started with the Xbox Live Creators Program.
 ms.assetid: 2a744405-7ee4-42b4-8f36-9916e8c3a530
-ms.author: kevinasg
 ms.date: 12/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
@@ -17,13 +14,13 @@ The Xbox Live Creators Program allows you to quickly and directly publish your g
 
 Xbox Live Creators Program games must be a Universal Windows Platform (UWP) application. For Xbox One, see [UWP on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index) and specifically [System resources for UWP apps and games on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation). Games published through the Xbox Live Creators Program do not have access to the achievements or online multiplayer services. For a full list of supported services, see the [Developer program overview feature table](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table).
 
-## 1. Ensure you have a title created on Dev Center
-Every Xbox Live title must be defined on Dev Center before you will be able to sign-in and make Xbox Live Service calls.  [Creating a new Creators title](create-and-test-a-new-creators-title.md) will show you how to do this.
+## 1. Ensure you have a title created in Partner Center
+Every Xbox Live title must be defined in [Partner Center](https://partner.microsoft.com/dashboard) before you will be able to sign-in and make Xbox Live Service calls.  [Creating a new Creators title](create-and-test-a-new-creators-title.md) will show you how to do this.
 
 ## 2. Follow the appropriate guide to setup your IDE or game engine
 You can follow the appropriate "getting started guide" for your platform and engine and learn the basics of Xbox Live as you go along:
 
-* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
+* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration in Partner Center.
 * [Develop a Creators title with Unity](develop-creators-title-with-unity.md) will show you how to create a new Xbox Live enabled Unity game, handle single user and multi-user sign in, add features such as leaderboards and stats, and generate a native Visual Studio project.
 
 While Unity is the only third party game engine for which we provide documentation, The game engines [Construct (2 & 3)](https://www.scirra.com/construct2) and [Game Maker Studio](https://www.yoyogames.com/gamemaker) also have documentation to help you integrate Xbox Live into your Construct or Game Maker Studio game respectively.

@@ -4,15 +4,12 @@ description: Sampling is the process of reading input values from a texture, or 
 ms.assetid: 7ECE13BB-9FC5-44A3-B1B2-2FE163F1D627
 keywords:
 - Sampler
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Sampler
 
 

@@ -2,18 +2,13 @@
 title: GET (/users/{requestorId}/permission/validate)
 assetID: 8d22c668-af9a-1d24-8d65-830c2ce913d7
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidateget.html
-author: KevinAsgari
+
 description: ' GET (/users/{requestorId}/permission/validate)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/{requestorId}/permission/validate)
 Gets a yes-or-no answer about whether the user is allowed to perform the specified action with a target user.
 

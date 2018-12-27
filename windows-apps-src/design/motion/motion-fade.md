@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 title: Fade animations in UWP apps
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Fade animations
 
 

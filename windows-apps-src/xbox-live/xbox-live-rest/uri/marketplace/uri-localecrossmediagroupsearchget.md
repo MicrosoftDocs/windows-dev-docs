@@ -2,18 +2,13 @@
 title: GET (/media/{marketplaceId}/crossMediaGroupSearch)
 assetID: 7c509af1-8dce-f419-c4de-2fad54fd1edb
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearchget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/crossMediaGroupSearch)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/media/{marketplaceId}/crossMediaGroupSearch)
 Gets items from several different media groups. 
 The domain for these URIs is `eds.xboxlive.com`.

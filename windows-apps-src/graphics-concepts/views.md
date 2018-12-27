@@ -4,15 +4,12 @@ description: The term \ 0034;view \ 0034; is used to mean \ 0034;data in the req
 ms.assetid: 0C7FB99F-7391-472F-BA53-576888DFC171
 keywords:
 - Views
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Views
 
 

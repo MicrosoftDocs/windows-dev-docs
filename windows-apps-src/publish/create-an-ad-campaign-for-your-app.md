@@ -1,31 +1,26 @@
 ﻿---
-author: JnHs
-Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
-ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ad, campaign, promote
 ms.localizationpriority: medium
 ---
-
 # Create an ad campaign for your app
 
-You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
+You can create ad campaigns in [Partner Center](https://partner.microsoft.com/dashboard) to help promote your app and grow its user base. By default, we will choose the target audience for your ads based on the settings for your app in Partner Center, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
 You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
 > [!NOTE]
-> This section of the documentation describes how to create an ad campaign on the Dev Center dashboard. Alternatively, you can use the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
+> This section of the documentation describes how to create an ad campaign in Partner Center. Alternatively, you can use the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
 
 ## Instructions
 
 Here's how to create an ad campaign to promote an app.
 
-1.  From the left navigation menu of the dashboard, expand **Attract** and then select **Ad campaigns**.
+1.  From the left navigation menu of [Partner Center](https://partner.microsoft.com/dashboard), expand **Attract** and then select **Ad campaigns**.
 2.  Select **Create campaign** (or if you have created campaigns before, select **New campaign**).
 3.  On the next page, in the **Objective type** section, choose one of the following:
     * **Increase installs for your app**. Select this option if your ad campaign is intended to get people to install your app.
@@ -45,7 +40,7 @@ Here's how to create an ad campaign to promote an app.
 
         The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
 
-    * Specify a payment method for your ad campaign by clicking **Add new payment method** and fill in your account details. If you have already provided a payment instrument, you can select **Choose a different payment method** if you need to update it. The country/region of your payment method's billing address must match the country/region associated with your Dev Center account.
+    * Specify a payment method for your ad campaign by clicking **Add new payment method** and fill in your account details. If you have already provided a payment instrument, you can select **Choose a different payment method** if you need to update it. The country/region of your payment method's billing address must match the country/region associated with your developer account.
 
     * If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
@@ -100,10 +95,3 @@ Here's how to create an ad campaign to promote an app.
 To see how your campaigns are performing, return to the **Ad campaigns** page. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. For more info, see [Ad campaign report](promote-your-app-report.md).
 
 To edit a campaign, select its name in the list.
-
-## Related topics
-
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [Promote your app report](promote-your-app-report.md)
-* [Common questions about ad campaigns](common-questions.md)

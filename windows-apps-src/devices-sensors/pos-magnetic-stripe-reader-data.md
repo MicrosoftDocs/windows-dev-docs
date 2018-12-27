@@ -1,16 +1,11 @@
 ---
-author: eliotcowley
 title: Obtain and understand magnetic stripe data
 description: Learn how to obtain and interpret the data from a magnetic stripe.
-ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
 ms.localizationpriority: medium
 ---
-
 # Obtain and understand magnetic stripe data
 
 Once you've set up your magnetic stripe reader in your application using the steps outlined in [Getting started with Point of Service](pos-basics.md), you're ready to start getting data from it.

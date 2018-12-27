@@ -1,17 +1,13 @@
 ---
 title: Error handling
-author: KevinAsgari
+
 description: Learn how to handle errors when making an Xbox Live service call.
 ms.assetid: e433dfbd-488b-44ff-8333-1dcf0329cd60
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, error, service call
 ms.localizationpriority: medium
 ---
-
 # Error handling
 
 Developers should take special care when making a service call. Your title should always handle errors when making network calls. Even for service calls that have been working consistently during development, service calls can fail in real world environments for a number of different reasons. For example, your call may fail due to:

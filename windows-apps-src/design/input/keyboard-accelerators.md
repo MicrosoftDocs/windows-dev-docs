@@ -1,21 +1,18 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ---
-
 # Keyboard accelerators
 
 ![Surface keyboard](images/accelerators/accelerators_hero2.png)
@@ -192,9 +189,9 @@ The ScopeOwner attribute of the MenuFlyoutItem.KeyboardAccelerators element mark
 
 ## Invoke a keyboard accelerator 
 
-The [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) object uses the [UI Automation (UIA) control pattern](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx) to take action when an accelerator is invoked.
+The [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) object uses the [UI Automation (UIA) control pattern](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) to take action when an accelerator is invoked.
 
-The UIA [control patterns] expose common control functionality. For example, the Button control implements the [Invoke](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx) control pattern to support the Click event (typically a control is invoked by clicking, double-clicking, or pressing Enter, a predefined keyboard shortcut, or some alternate combination of keystrokes). When a keyboard accelerator is used to invoke a control, the XAML framework looks up whether the control implements the Invoke control pattern and, if so, activates it (it is not necessary to listen for the KeyboardAcceleratorInvoked event).
+The UIA [control patterns] expose common control functionality. For example, the Button control implements the [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) control pattern to support the Click event (typically a control is invoked by clicking, double-clicking, or pressing Enter, a predefined keyboard shortcut, or some other combination of keystrokes). When a keyboard accelerator is used to invoke a control, the XAML framework looks up whether the control implements the Invoke control pattern and, if so, activates it (it is not necessary to listen for the KeyboardAcceleratorInvoked event).
 
 In the following example, Control+S triggers the Click event because the button implements the Invoke pattern.
 
@@ -217,10 +214,12 @@ If no match is identified, the accelerator is invalid and a debug message is pro
 ## Custom keyboard accelerator behavior
 
 The Invoked event of the [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) object is fired when the accelerator is executed. The [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) event object includes the following properties:
-- **Handled** (Boolean): Setting this to true prevents the event triggering the control pattern and stops accelerator event bubbling. The default is false.
-- **Element** (DependencyObject): The object that contains the accelerator.
 
-Here we demonstrate how to define a collection of keyboard accelerators and how to handle the Invoked event.
+- [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Boolean): Setting this to true prevents the event triggering the control pattern and stops accelerator event bubbling. The default is false.
+- [**Element**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): The object associated with the accelerator.
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): The keyboard accelerator used to raise the Invoked event.
+
+Here we demonstrate how to define a collection of keyboard accelerators for items in a ListView, and how to handle the Invoked event for each accelerator.
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -228,19 +227,20 @@ Here we demonstrate how to define a collection of keyboard accelerators and how 
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
@@ -256,7 +256,7 @@ If a control is disabled, the associated accelerator is also disabled. In the fo
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -486,7 +486,7 @@ Here, we review some low-level aspects of keyboard accelerators.
 
 ### When an accelerator is invoked
 
-Accelerators are composed of two types of keys: modifiers and non-modifiers. Modifier keys include Shift, Menu, Control, and the Windows key, which are exposed through [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers). Non-modifiers are any virtual key, such as Delete, F3, Spacebar, Esc, and all alphanumeric and punctuation keys. A keyboard accelerator is invoked when the user presses a non-modifier key while they press and hold one or more modifier keys. For example, if the user presses Ctrl+Shift+M, when the user presses M, the framework checks the modifiers (Ctrl and Shift) and fires the accelerator, if it exists.
+Accelerators are composed of two types of keys: modifiers and non-modifiers. Modifier keys include Shift, Menu, Control, and the Windows key, which are exposed through [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Non-modifiers are any virtual key, such as Delete, F3, Spacebar, Esc, and all alphanumeric and punctuation keys. A keyboard accelerator is invoked when the user presses a non-modifier key while they press and hold one or more modifier keys. For example, if the user presses Ctrl+Shift+M, when the user presses M, the framework checks the modifiers (Ctrl and Shift) and fires the accelerator, if it exists.
 
 > [!NOTE]
 > By design, the accelerator autorepeats (for example, when the user presses Ctrl+Shift and then holds down M, the accelerator is invoked repeatedly until M is released). This behavior cannot be modified.
@@ -498,7 +498,7 @@ Input events occur in a specific sequence that you can intercept and handle base
 
 In XAML, a keystroke is processed as if there is just one input bubbling pipeline. This input pipeline is used by the KeyDown/KeyUp events and character input. For example, if an element has focus and the user presses a key down, a KeyDown event is raised on the element, followed by the parent of the element, and so on up the tree, until the args.Handled property is true.
 
-The KeyDown event is also used by some controls to implement the built-in control accelerators. When a control has a keyboard accelerator, it handles the KeyDown event, which means that there won't be KeyDown event bubbling. For example, the RichEditBox supports copy with Ctrl+C. When Ctrl is pressed, the KeyDown event is fired and bubbles, but when the user presses C at the same time, the KeyDown event is marked Handled and is not raised (unless the handledEventsToo parameter of [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) is set to true).
+The KeyDown event is also used by some controls to implement the built-in control accelerators. When a control has a keyboard accelerator, it handles the KeyDown event, which means that there won't be KeyDown event bubbling. For example, the RichEditBox supports copy with Ctrl+C. When Ctrl is pressed, the KeyDown event is fired and bubbles, but when the user presses C at the same time, the KeyDown event is marked Handled and is not raised (unless the handledEventsToo parameter of [UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) is set to true).
 
 #### The CharacterReceived event
 

@@ -1,16 +1,11 @@
 ---
-author: eliotcowley
 title: Use a software trigger
 description: Learn how to control the act of scanning from software.
-ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Use a software trigger
 
 It can be useful to control the act of scanning from software if you are using a barcode scanner in presentation mode or if the scanner does not have a physical trigger such as a camera-based barcode scanner. You can initiate the scan process by calling [StartSoftwareTriggerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).

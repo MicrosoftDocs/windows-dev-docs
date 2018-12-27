@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.author: twhitney
 ms.date: 03/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the Windows Settings app
 
 
@@ -122,6 +117,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
+| Color filters | ms-settings:easeofaccess-colorfilter |
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |

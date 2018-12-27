@@ -2,18 +2,13 @@
 title: POST (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: 813c0bd2-aca9-a1f6-9e81-a84a4c897b1e
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamepost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid(xuid)/lists/PINS/{listname})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/xuid(xuid)/lists/PINS/{listname})
 Inserts items into the list at the index based on the query string parameter **insertIndex**. 
 The domain for these URIs is `eplists.xboxlive.com`.

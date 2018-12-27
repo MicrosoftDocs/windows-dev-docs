@@ -2,18 +2,13 @@
 title: PUT (/{uri})
 assetID: 24a24c93-f43b-017e-91e0-29e190fec8a8
 permalink: en-us/docs/xboxlive/rest/uri-uriput.html
-author: KevinAsgari
+
 description: ' PUT (/{uri})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PUT (/{uri})
 Upload game clip data.
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

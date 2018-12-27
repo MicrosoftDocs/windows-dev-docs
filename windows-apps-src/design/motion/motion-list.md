@@ -1,19 +1,14 @@
 ---
-author: mijacobs
 Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
 title: Add and delete animations in UWP apps
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Add and delete animations
 
 

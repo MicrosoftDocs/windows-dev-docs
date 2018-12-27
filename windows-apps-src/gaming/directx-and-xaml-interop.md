@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: DirectX and XAML interop
 description: You can use Extensible Application Markup Language (XAML) and Microsoft DirectX together in your Universal Windows Platform (UWP) game.
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, xaml interop
 ms.localizationpriority: medium
 ---
-
 # DirectX and XAML interop
 
 

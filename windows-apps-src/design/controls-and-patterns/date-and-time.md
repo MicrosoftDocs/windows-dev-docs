@@ -1,15 +1,11 @@
 ---
-author: muhsinking
 Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
 title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv

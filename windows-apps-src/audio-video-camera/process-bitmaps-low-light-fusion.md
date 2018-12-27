@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 description: This article explains how to use the LowLightFusion class to process bitmaps.
 title: Process bitmaps with the Low Light Fusion API
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, low light fusion, bitmaps, image processing
 ms.localizationpriority: medium
 ---
-
 # Process bitmaps with the LowLightFusion API
 
 Low-light images are difficult to capture with good image quality, especially on mobile devices with fixed aperture and sensor size. To compensate for low-lighting, devices may increase exposure time or sensor gain, which can lead to motion blur and increased noise in images. 

@@ -4,15 +4,12 @@ description: A mipmap is a sequence of textures, each of which is a progressivel
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
 keywords:
 - Texture filtering with mipmaps
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Texture filtering with mipmaps
 
 

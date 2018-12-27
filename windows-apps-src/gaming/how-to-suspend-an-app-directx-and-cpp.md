@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: How to suspend an app (DirectX and C++)
 description: This topic shows how to save important system state and app data when the system suspends your Universal Windows Platform (UWP) DirectX app.
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, suspend, directx
 ms.localizationpriority: medium
 ---
-
 # How to suspend an app (DirectX and C++)
 
 

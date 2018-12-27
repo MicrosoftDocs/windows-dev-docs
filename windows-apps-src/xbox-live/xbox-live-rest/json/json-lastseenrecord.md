@@ -2,18 +2,13 @@
 title: LastSeenRecord (JSON)
 assetID: 6a93202c-801c-03c6-8386-6acd0f366780
 permalink: en-us/docs/xboxlive/rest/json-lastseenrecord.html
-author: KevinAsgari
+
 description: ' LastSeenRecord (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # LastSeenRecord (JSON)
 Information about when the system last saw a user, available when the user has no valid DeviceRecord. 
 <a id="ID4EN"></a>

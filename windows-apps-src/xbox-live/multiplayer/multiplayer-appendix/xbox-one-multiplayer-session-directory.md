@@ -1,20 +1,16 @@
 ---
 title: Xbox One Multiplayer Session Directory
-author: KevinAsgari
+
 description: Learn about creating multiplayer sessions by using the Xbox Live Mutliplayer Session Directory (MPSD) service.
 ms.assetid: 70da1be3-5f39-4eed-b62d-9cdd47e413d2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox One Multiplayer Session Directory
 
-This topic provides an overview of multiplayer session creation using the new Xbox One Multiplayer Session Directory (MPSD) service. The paper is directed primarily toward Xbox One title developers who submit their session templates directly to Xbox Development Portal (XDP). The MPSD service can be configured with the Windows Dev Center as well, but is not focused on in this article. It is intended to familiarize them with terms and concepts associated with MPSD configuration, usage, and troubleshooting of multiplayer sessions.
+This topic provides an overview of multiplayer session creation using the new Xbox One Multiplayer Session Directory (MPSD) service. The paper is directed primarily toward Xbox One title developers who submit their session templates directly to Xbox Development Portal (XDP). The MPSD service can be configured with Partner Center as well, but is not focused on in this article. It is intended to familiarize them with terms and concepts associated with MPSD configuration, usage, and troubleshooting of multiplayer sessions.
 
 ## Revision summary
 
@@ -43,7 +39,7 @@ The Multiplayer Session Directory centralizes game session metadata across all t
 | Term                 | Definition                                                                                                                                                                                                                                                                                  |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Multiplayer session  | A secure document that resides in the Xbox Live cloud and represents a group of users who are (or will be) connected together while playing a title on Xbox One. All the aspects of multiplayer—such as matchmaking, parties, join-in-progress, and so on—leverage the multiplayer session. |
-| Game session         | This is the the actual game session, exposed in the MPSD, in which users are playing together. All multiplayer scenarios ultimately end up in a game session.                                                                                                                               |
+| Game session         | This is the actual game session, exposed in the MPSD, in which users are playing together. All multiplayer scenarios ultimately end up in a game session.                                                                                                                               |
 | Match ticket session | This is a session used to track match ticket submission during matchmaking.                                                                                                                                                                                                                 |
 | Inactive player      | A player who has been set to the Inactive state within the session. The title sets a user to the Inactive state when the game is constrained, suspended, or otherwise inactive as defined by the title.                                                                                     |
 

@@ -1,14 +1,10 @@
 ---
-author: andrewleader
 Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
 title: Primary tile API's
 label: Primary tile API's
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile
 ms.localizationpriority: medium
 ---

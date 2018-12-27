@@ -1,13 +1,9 @@
 ---
-author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: Submit a work item to the thread pool
 description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, threads, thread pool
 ms.localizationpriority: medium
 ---
@@ -15,7 +11,7 @@ ms.localizationpriority: medium
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+<b>Important APIs</b>
 
 -   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
@@ -197,7 +193,7 @@ std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
-auto workItem = ref new WorkItemHandler(
+auto workItem = ref new Windows::System::Threading::WorkItemHandler(
     \[this, n, nthPrime](IAsyncAction^ workItem)
 {
     unsigned int progress = 0; // For progress reporting.

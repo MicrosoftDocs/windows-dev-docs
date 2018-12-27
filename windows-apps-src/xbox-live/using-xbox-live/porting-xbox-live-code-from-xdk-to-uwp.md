@@ -1,17 +1,13 @@
 ---
 title: Porting Xbox Live code from XDK to UWP
-author: KevinAsgari
+
 description: Learn how to port Xbox Live code from the Xbox Development Kit (XDK) platform to the Universal Windows Platform (UWP).
 ms.assetid: 69939f95-44ad-4ffd-851f-59b0745907c8
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk, porting
 ms.localizationpriority: medium
 ---
-
 # Porting Xbox Live code from the Xbox Developer Kit (XDK) to Universal Windows Platform (UWP)
 
 ## Introduction
@@ -24,17 +20,17 @@ Other topics to be covered in this article include preparing your Windows develo
 
 <a name="_Setting_up_and"></a>
 
-## Setting up and configuring your project in Dev Center and XDP
+## Setting up and configuring your project in Partner Center and XDP
 
-A UWP title that uses Xbox Live services needs to be configured in the [Windows Dev Center](https://dev.windows.com/en-us) or the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/). For the latest information, see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) in the Xbox Live Programming Guide included with the [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx).
+A UWP title that uses Xbox Live services needs to be configured in [Partner Center](https://partner.microsoft.com/dashboard). For the latest information, see [Adding Xbox Live to a new or existing UWP project](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) in the Xbox Live Programming Guide included with the [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx).
 
 Topics on that page include these steps for using Xbox Live services in your title:
 
--   Create the UWP app project in the Windows Dev Center.
+-   Create the UWP app project in Partner Center.
 
 -   Use XDP to set up your project for Xbox Live usage.
 
--   Link your Dev Center product to your XDP product.
+-   Link your Partner Center product to your XDP product.
 
 -   Create developer accounts in XDP (required when running your Xbox Live title in your sandbox).
 
@@ -74,7 +70,7 @@ Also, for some programmatic considerations, see the later section [Supporting mu
 
 The most common changes between the Xbox and UWP versions of the appxmanifest.xml file are:
 
-1. Package Identity matters in UWP, even during development. Both the Identity Name and Publisher *must match* what was defined in Dev Center for your UWP app.
+1. Package Identity matters in UWP, even during development. Both the Identity Name and Publisher *must match* what was defined in Partner Center for your UWP app.
 
 1. A Package Dependency section is required. For example:
 
@@ -384,7 +380,7 @@ For a discussion on this topic, see the forum post [xsapi & user privileges](htt
 
 ### Supporting multiplayer cross-play between Xbox One and PC UWP
 
-In addition to new session template requirements in XDP (see [Setting up and configuring your project in Dev Center and XDP](#_Setting_up_and)), cross-play comes with new restrictions on session join ability. You can no longer use "None" as a session join restriction. You must use either "Followed" or "Local" (the default restriction is "Local").
+In addition to new session template requirements in XDP (see [Setting up and configuring your project in Partner Center and XDP](#_Setting_up_and)), cross-play comes with new restrictions on session join ability. You can no longer use "None" as a session join restriction. You must use either "Followed" or "Local" (the default restriction is "Local").
 
 Also, the join and read restrictions default to "Local" because of the required **userAuthorizationStyle** capability for Windows 10 multiplayer.
 

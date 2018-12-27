@@ -1,17 +1,12 @@
 ---
-author: normesta
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
 title: Fix issues that prevent your desktop application from running in an MSIX container
-ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Apply runtime fixes to an MSIX package by using the Package Support Framework
 
 The Package Support Framework is an open source kit that helps you apply fixes to your existing win32 application when you don't have access to the source code, so that it can run in an MSIX container. The Package Support Framework helps your application follow the best practices of the modern runtime environment.
@@ -62,13 +57,13 @@ The PSF contains runtime fixes that you can use right now, such as the file redi
 
 ### File Redirection Fixup
 
-You can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) to redirect attempts to write or read data in a directory that isn't accessible from an application that runs in an MSIX container.
+You can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) to redirect attempts to write or read data in a directory that isn't accessible from an application that runs in an MSIX container.
 
-For example, if your application writes to a log file that is in the same directory as your applications executable, then you can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) to create that log file in another location, such as the local app data store.
+For example, if your application writes to a log file that is in the same directory as your applications executable, then you can use the [File Redirection Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) to create that log file in another location, such as the local app data store.
 
 ### Runtime fixes from the community
 
-Make sure to review the community contributions to our [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop) page. It's possible that other developers have resolved an issue similar to yours and have shared a runtime fix.
+Make sure to review the community contributions to our [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework) page. It's possible that other developers have resolved an issue similar to yours and have shared a runtime fix.
 
 ## Apply a runtime fix
 
@@ -85,10 +80,12 @@ Let's go through each task.
 
 ### Create the package layout folder
 
-If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package.  You can do this from an **x64 Native Tools Command Prompt for VS 2017**, or manually with the SDK bin path in the executable search path.
+If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using makemsix tool, based on your installation path of the SDK, this is where you will find the makeappx.exe tool on your Windows 10 PC:
+x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
+x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
-```
-makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
+```ps
+makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
@@ -100,19 +97,19 @@ If you don't have a .msix (or .appx) file to start with, you can create the pack
 
 ### Get the Package Support Framework files
 
-You can get the PSF Nuget package by using Visual Studio. You can also get it by using the standalone Nuget command line tool.
-
-#### Get the package by using Visual Studio
-
-In Visual Studio, right-click your solution or project node and pick one of the Manage Nuget Packages commands.  Search for **Microsoft.PackageSupportFramework** or **PSF** to find the package on Nuget.org. Then, install it.
+You can get the PSF Nuget package by using the standalone Nuget command line tool or via Visual Studio.
 
 #### Get the package by using the command line tool
 
 Install the Nuget command line tool from this location: https://www.nuget.org/downloads. Then, from the Nuget command line, run this command:
 
-```
+```ps
 nuget install Microsoft.PackageSupportFramework
 ```
+
+#### Get the package by using Visual Studio
+
+In Visual Studio, right-click your solution or project node and pick one of the Manage Nuget Packages commands.  Search for **Microsoft.PackageSupportFramework** or **PSF** to find the package on Nuget.org. Then, install it.
 
 ### Add the Package Support Framework files to your package
 
@@ -120,9 +117,9 @@ Add the required 32-bit and 64-bit PSF  DLLs and executable files to the package
 
 | Application executable is x64 | Application executable is x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 Your package content should now look something like this.
 
@@ -182,6 +179,7 @@ Create a file name ``config.json``, and save that file to the root folder of you
     ]
 }
 ```
+
 Following is a guide for the config.json schema:
 
 | Array | key | Value |
@@ -195,18 +193,17 @@ Following is a guide for the config.json schema:
 
 The `applications`, `processes`, and `fixups` keys are arrays. That means that you can use the config.json file to specify more than one application, process, and fixup DLL.
 
-
 ### Package and Test the App
 
 Next, create a package.
 
-```
+```ps
 makeappx pack /d PackageContents /p PSFSamplePackageFixup.msix
 ```
 
 Then, sign it.
 
-```
+```ps
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
@@ -218,8 +215,8 @@ Using PowerShell, install the package.
 >[!NOTE]
 > Remember to uninstall the package first.
 
-```
-powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
+```ps
+powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 Run the application and observe the behavior with runtime fix applied.  Repeat the diagnostic and packaging steps as necessary.
@@ -265,7 +262,7 @@ Let's look at each project in this example.
 
 | Project | Purpose |
 |-------|-----------|
-| DesktopApplicationPackage | This project is based on the [Windows Application Packaging project](desktop-to-uwp-packaging-dot-net.md) and it outputs the the MSIX package. |
+| DesktopApplicationPackage | This project is based on the [Windows Application Packaging project](desktop-to-uwp-packaging-dot-net.md) and it outputs the MSIX package. |
 | Runtimefix | This is a C++ Dynamic-Linked Library project that contains one or more replacement functions that serve as the runtime fix. |
 | PSFLauncher | This is C++ Empty Project. This project is a place to collect the runtime distributable files of the Package Support Framework. It outputs an executable file. That executable is the first thing that runs when you start the solution. |
 | WinFormsDesktopApplication | This project contains the source code of a desktop application. |
@@ -273,7 +270,6 @@ Let's look at each project in this example.
 To look at a complete sample that contains all of these types of projects, see [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/).
 
 Let's walk through the steps to create and configure each of these projects in your solution.
-
 
 ### Create a package solution
 
@@ -293,7 +289,7 @@ For more information on Windows Application Packaging project, see [Package your
 
 In **Solution Explorer**, right-click the packaging project, select **Edit**, and then add this to the bottom of the project file:
 
-```
+```xml
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
 <ItemGroup>
   <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
@@ -397,6 +393,7 @@ Add a file named ``config.json`` to your packaging project, then, copy and paste
     ]
 }
 ```
+
 Provide a value for each key. Use this table as a guide.
 
 | Array | key | Value |
@@ -457,6 +454,7 @@ Declare the ``FIXUP_DEFINE_EXPORTS`` macro and then add a include statement for 
 #define FIXUP_DEFINE_EXPORTS
 #include <fixup_framework.h>
 ```
+
 >[!IMPORTANT]
 >Make sure that the `FIXUP_DEFINE_EXPORTS` macro appears before the include statement.
 
@@ -521,25 +519,27 @@ To address this issue, use a debugger that supports child process attach.  Note 
 
 To debug target application startup as a child process, start ``WinDbg``.
 
-```
+```ps
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
 At the ``WinDbg`` prompt, enable child debugging and set appropriate breakpoints.
 
-```
+```ps
 .childdbg 1
 g
 ```
+
 (execute until target application starts and breaks into the debugger)
 
-```
+```ps
 sxe ld fixup.dll
 g
 ```
+
 (execute until the fixup DLL is loaded)
 
-```
+```ps
 bp ...
 ```
 
@@ -551,4 +551,3 @@ bp ...
 **Find answers to your questions**
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-

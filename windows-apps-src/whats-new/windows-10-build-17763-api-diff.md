@@ -1,1913 +1,1854 @@
 ---
-author: QuinnRadich
 title: Windows 10 Build 17763 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17763
 keywords: what's new, whats new, updates, Windows 10, newest, apis, 17763, october
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # New APIs in Windows 10 build 17763
 
 New and updated API namespaces have been made available to developers in Windows 10 build 17763 (Also known as the October 2018 Update or version 1809). Below is a full list of documentation published for namespaces added or modified in this release.
 
 For information on APIs added in the previous public release, see [New APIs in the Windows 10 April Update](windows-10-build-17134-api-diff.md).
 
-## windows.ai
+## Windows.AI
 
-### [windows.ai.machinelearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)
+### [Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)
 
-#### [ilearningmodelfeaturedescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodelfeaturedescriptor)
+#### [ILearningModelFeatureDescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodelfeaturedescriptor)
 
-ilearningmodelfeaturedescriptor <br> ilearningmodelfeaturedescriptor.description <br> ilearningmodelfeaturedescriptor.isrequired <br> ilearningmodelfeaturedescriptor.kind <br> ilearningmodelfeaturedescriptor.name
+ILearningModelFeatureDescriptor <br> ILearningModelFeatureDescriptor.Description <br> ILearningModelFeatureDescriptor.IsRequired <br> ILearningModelFeatureDescriptor.Kind <br> ILearningModelFeatureDescriptor.Name
 
-#### [ilearningmodelfeaturevalue](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodelfeaturevalue)
+#### [ILearningModelFeatureValue](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodelfeaturevalue)
 
-ilearningmodelfeaturevalue <br> ilearningmodelfeaturevalue.kind
+ILearningModelFeatureValue <br> ILearningModelFeatureValue.Kind
 
-#### [ilearningmodeloperatorprovider](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodeloperatorprovider)
+#### [ILearningModelOperatorProvider](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.ilearningmodeloperatorprovider)
 
-ilearningmodeloperatorprovider
+ILearningModelOperatorProvider
 
-#### [imagefeaturedescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.imagefeaturedescriptor)
+#### [ImageFeatureDescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.imagefeaturedescriptor)
 
-imagefeaturedescriptor <br> imagefeaturedescriptor.bitmapalphamode <br> imagefeaturedescriptor.bitmappixelformat <br> imagefeaturedescriptor.description <br> imagefeaturedescriptor.height <br> imagefeaturedescriptor.isrequired <br> imagefeaturedescriptor.kind <br> imagefeaturedescriptor.name <br> imagefeaturedescriptor.width
+ImageFeatureDescriptor <br> ImageFeatureDescriptor.BitmapAlphaMode <br> ImageFeatureDescriptor.BitmapPixelFormat <br> ImageFeatureDescriptor.Description <br> ImageFeatureDescriptor.Height <br> ImageFeatureDescriptor.IsRequired <br> ImageFeatureDescriptor.Kind <br> ImageFeatureDescriptor.Name <br> ImageFeatureDescriptor.Width
 
-#### [imagefeaturevalue](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.imagefeaturevalue)
+#### [ImageFeatureValue](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.imagefeaturevalue)
 
-imagefeaturevalue <br> imagefeaturevalue.createfromvideoframe <br> imagefeaturevalue.kind <br> imagefeaturevalue.videoframe
+ImageFeatureValue <br> ImageFeatureValue.CreateFromVideoFrame <br> ImageFeatureValue.Kind <br> ImageFeatureValue.VideoFrame
 
-#### [itensor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.itensor)
+#### [ITensor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.itensor)
 
-itensor <br> itensor.shape <br> itensor.tensorkind
+ITensor <br> ITensor.Shape <br> ITensor.TensorKind
 
-#### [learningmodel](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodel)
+#### [LearningModel](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodel)
 
-learningmodel <br> learningmodel.author <br> learningmodel.close <br> learningmodel.description <br> learningmodel.domain <br> learningmodel.inputfeatures <br> learningmodel.loadfromfilepath <br> learningmodel.loadfromfilepath <br> learningmodel.loadfromstoragefileasync <br> learningmodel.loadfromstoragefileasync <br> learningmodel.loadfromstream <br> learningmodel.loadfromstream <br> learningmodel.loadfromstreamasync <br> learningmodel.loadfromstreamasync <br> learningmodel.metadata <br> learningmodel.name <br> learningmodel.outputfeatures <br> learningmodel.version
+LearningModel <br> LearningModel.Author <br> LearningModel.Close <br> LearningModel.Description <br> LearningModel.Domain <br> LearningModel.InputFeatures <br> LearningModel.LoadFromFilePath <br> LearningModel.LoadFromFilePath <br> LearningModel.LoadFromStorageFileAsync <br> LearningModel.LoadFromStorageFileAsync <br> LearningModel.LoadFromStream <br> LearningModel.LoadFromStream <br> LearningModel.LoadFromStreamAsync <br> LearningModel.LoadFromStreamAsync <br> LearningModel.Metadata <br> LearningModel.Name <br> LearningModel.OutputFeatures <br> LearningModel.Version
 
-#### [learningmodelbinding](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelbinding)
+#### [LearningModelBinding](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelbinding)
 
-learningmodelbinding <br> learningmodelbinding.bind <br> learningmodelbinding.bind <br> learningmodelbinding.clear <br> learningmodelbinding.first <br> learningmodelbinding.haskey <br> learningmodelbinding.learningmodelbinding <br> learningmodelbinding.lookup <br> learningmodelbinding.size <br> learningmodelbinding.split
+LearningModelBinding <br> LearningModelBinding.Bind <br> LearningModelBinding.Bind <br> LearningModelBinding.Clear <br> LearningModelBinding.First <br> LearningModelBinding.HasKey <br> LearningModelBinding.#ctor <br> LearningModelBinding.Lookup <br> LearningModelBinding.Size <br> LearningModelBinding.Split
 
-#### [learningmodeldevice](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodeldevice)
+#### [LearningModelDevice](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodeldevice)
 
-learningmodeldevice <br> learningmodeldevice.adapterid <br> learningmodeldevice.createfromdirect3d11device <br> learningmodeldevice.direct3d11device <br> learningmodeldevice.learningmodeldevice
+LearningModelDevice <br> LearningModelDevice.AdapterId <br> LearningModelDevice.CreateFromDirect3D11Device <br> LearningModelDevice.Direct3D11Device <br> LearningModelDevice.#ctor
 
-#### [learningmodeldevicekind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodeldevicekind)
+#### [LearningModelDeviceKind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodeldevicekind)
 
-learningmodeldevicekind
+LearningModelDeviceKind
 
-#### [learningmodelevaluationresult](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelevaluationresult)
+#### [LearningModelEvaluationResult](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelevaluationresult)
 
-learningmodelevaluationresult <br> learningmodelevaluationresult.correlationid <br> learningmodelevaluationresult.errorstatus <br> learningmodelevaluationresult.outputs <br> learningmodelevaluationresult.succeeded
+LearningModelEvaluationResult <br> LearningModelEvaluationResult.CorrelationId <br> LearningModelEvaluationResult.ErrorStatus <br> LearningModelEvaluationResult.Outputs <br> LearningModelEvaluationResult.Succeeded
 
-#### [learningmodelfeaturekind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelfeaturekind)
+#### [LearningModelFeatureKind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelfeaturekind)
 
-learningmodelfeaturekind
+LearningModelFeatureKind
 
-#### [learningmodelsession](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelsession)
+#### [LearningModelSession](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.learningmodelsession)
 
-learningmodelsession <br> learningmodelsession.close <br> learningmodelsession.device <br> learningmodelsession.evaluate <br> learningmodelsession.evaluateasync <br> learningmodelsession.evaluatefeatures <br> learningmodelsession.evaluatefeaturesasync <br> learningmodelsession.evaluationproperties <br> learningmodelsession.learningmodelsession <br> learningmodelsession.learningmodelsession <br> learningmodelsession.model
+LearningModelSession <br> LearningModelSession.Close <br> LearningModelSession.Device <br> LearningModelSession.Evaluate <br> LearningModelSession.EvaluateAsync <br> LearningModelSession.EvaluateFeatures <br> LearningModelSession.EvaluateFeaturesAsync <br> LearningModelSession.EvaluationProperties <br> LearningModelSession.#ctor <br> LearningModelSession.#ctor <br> LearningModelSession.Model
 
-#### [mapfeaturedescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.mapfeaturedescriptor)
+#### [MapFeatureDescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.mapfeaturedescriptor)
 
-mapfeaturedescriptor <br> mapfeaturedescriptor.description <br> mapfeaturedescriptor.isrequired <br> mapfeaturedescriptor.keykind <br> mapfeaturedescriptor.kind <br> mapfeaturedescriptor.name <br> mapfeaturedescriptor.valuedescriptor
+MapFeatureDescriptor <br> MapFeatureDescriptor.Description <br> MapFeatureDescriptor.IsRequired <br> MapFeatureDescriptor.KeyKind <br> MapFeatureDescriptor.Kind <br> MapFeatureDescriptor.Name <br> MapFeatureDescriptor.ValueDescriptor
 
-#### [sequencefeaturedescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.sequencefeaturedescriptor)
+#### [SequenceFeatureDescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.sequencefeaturedescriptor)
 
-sequencefeaturedescriptor <br> sequencefeaturedescriptor.description <br> sequencefeaturedescriptor.elementdescriptor <br> sequencefeaturedescriptor.isrequired <br> sequencefeaturedescriptor.kind <br> sequencefeaturedescriptor.name
+SequenceFeatureDescriptor <br> SequenceFeatureDescriptor.Description <br> SequenceFeatureDescriptor.ElementDescriptor <br> SequenceFeatureDescriptor.IsRequired <br> SequenceFeatureDescriptor.Kind <br> SequenceFeatureDescriptor.Name
 
-#### [tensorboolean](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorboolean)
+#### [TensorBoolean](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorboolean)
 
-tensorboolean <br> tensorboolean.create <br> tensorboolean.create <br> tensorboolean.createfromarray <br> tensorboolean.createfromiterable <br> tensorboolean.getasvectorview <br> tensorboolean.kind <br> tensorboolean.shape <br> tensorboolean.tensorkind
+TensorBoolean <br> TensorBoolean.Create <br> TensorBoolean.Create <br> TensorBoolean.CreateFromArray <br> TensorBoolean.CreateFromIterable <br> TensorBoolean.GetAsVectorView <br> TensorBoolean.Kind <br> TensorBoolean.Shape <br> TensorBoolean.TensorKind
 
-#### [tensordouble](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensordouble)
+#### [TensorDouble](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensordouble)
 
-tensordouble <br> tensordouble.create <br> tensordouble.create <br> tensordouble.createfromarray <br> tensordouble.createfromiterable <br> tensordouble.getasvectorview <br> tensordouble.kind <br> tensordouble.shape <br> tensordouble.tensorkind
+TensorDouble <br> TensorDouble.Create <br> TensorDouble.Create <br> TensorDouble.CreateFromArray <br> TensorDouble.CreateFromIterable <br> TensorDouble.GetAsVectorView <br> TensorDouble.Kind <br> TensorDouble.Shape <br> TensorDouble.TensorKind
 
-#### [tensorfeaturedescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfeaturedescriptor)
+#### [TensorFeatureDescriptor](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfeaturedescriptor)
 
-tensorfeaturedescriptor <br> tensorfeaturedescriptor.description <br> tensorfeaturedescriptor.isrequired <br> tensorfeaturedescriptor.kind <br> tensorfeaturedescriptor.name <br> tensorfeaturedescriptor.shape <br> tensorfeaturedescriptor.tensorkind
+TensorFeatureDescriptor <br> TensorFeatureDescriptor.Description <br> TensorFeatureDescriptor.IsRequired <br> TensorFeatureDescriptor.Kind <br> TensorFeatureDescriptor.Name <br> TensorFeatureDescriptor.Shape <br> TensorFeatureDescriptor.TensorKind
 
-#### [tensorfloat](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfloat)
+#### [TensorFloat](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfloat)
 
-tensorfloat <br> tensorfloat.create <br> tensorfloat.create <br> tensorfloat.createfromarray <br> tensorfloat.createfromiterable <br> tensorfloat.getasvectorview <br> tensorfloat.kind <br> tensorfloat.shape <br> tensorfloat.tensorkind
+TensorFloat <br> TensorFloat.Create <br> TensorFloat.Create <br> TensorFloat.CreateFromArray <br> TensorFloat.CreateFromIterable <br> TensorFloat.GetAsVectorView <br> TensorFloat.Kind <br> TensorFloat.Shape <br> TensorFloat.TensorKind
 
-#### [tensorfloat16bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfloat16bit)
+#### [TensorFloat16Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorfloat16bit)
 
-tensorfloat16bit <br> tensorfloat16bit.create <br> tensorfloat16bit.create <br> tensorfloat16bit.createfromarray <br> tensorfloat16bit.createfromiterable <br> tensorfloat16bit.getasvectorview <br> tensorfloat16bit.kind <br> tensorfloat16bit.shape <br> tensorfloat16bit.tensorkind
+TensorFloat16Bit <br> TensorFloat16Bit.Create <br> TensorFloat16Bit.Create <br> TensorFloat16Bit.CreateFromArray <br> TensorFloat16Bit.CreateFromIterable <br> TensorFloat16Bit.GetAsVectorView <br> TensorFloat16Bit.Kind <br> TensorFloat16Bit.Shape <br> TensorFloat16Bit.TensorKind
 
-#### [tensorint16bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint16bit)
+#### [TensorInt16Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint16bit)
 
-tensorint16bit <br> tensorint16bit.create <br> tensorint16bit.create <br> tensorint16bit.createfromarray <br> tensorint16bit.createfromiterable <br> tensorint16bit.getasvectorview <br> tensorint16bit.kind <br> tensorint16bit.shape <br> tensorint16bit.tensorkind
+TensorInt16Bit <br> TensorInt16Bit.Create <br> TensorInt16Bit.Create <br> TensorInt16Bit.CreateFromArray <br> TensorInt16Bit.CreateFromIterable <br> TensorInt16Bit.GetAsVectorView <br> TensorInt16Bit.Kind <br> TensorInt16Bit.Shape <br> TensorInt16Bit.TensorKind
 
-#### [tensorint32bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint32bit)
+#### [TensorInt32Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint32bit)
 
-tensorint32bit <br> tensorint32bit.create <br> tensorint32bit.create <br> tensorint32bit.createfromarray <br> tensorint32bit.createfromiterable <br> tensorint32bit.getasvectorview <br> tensorint32bit.kind <br> tensorint32bit.shape <br> tensorint32bit.tensorkind
+TensorInt32Bit <br> TensorInt32Bit.Create <br> TensorInt32Bit.Create <br> TensorInt32Bit.CreateFromArray <br> TensorInt32Bit.CreateFromIterable <br> TensorInt32Bit.GetAsVectorView <br> TensorInt32Bit.Kind <br> TensorInt32Bit.Shape <br> TensorInt32Bit.TensorKind
 
-#### [tensorint64bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint64bit)
+#### [TensorInt64Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint64bit)
 
-tensorint64bit <br> tensorint64bit.create <br> tensorint64bit.create <br> tensorint64bit.createfromarray <br> tensorint64bit.createfromiterable <br> tensorint64bit.getasvectorview <br> tensorint64bit.kind <br> tensorint64bit.shape <br> tensorint64bit.tensorkind
+TensorInt64Bit <br> TensorInt64Bit.Create <br> TensorInt64Bit.Create <br> TensorInt64Bit.CreateFromArray <br> TensorInt64Bit.CreateFromIterable <br> TensorInt64Bit.GetAsVectorView <br> TensorInt64Bit.Kind <br> TensorInt64Bit.Shape <br> TensorInt64Bit.TensorKind
 
-#### [tensorint8bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint8bit)
+#### [TensorInt8Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorint8bit)
 
-tensorint8bit <br> tensorint8bit.create <br> tensorint8bit.create <br> tensorint8bit.createfromarray <br> tensorint8bit.createfromiterable <br> tensorint8bit.getasvectorview <br> tensorint8bit.kind <br> tensorint8bit.shape <br> tensorint8bit.tensorkind
+TensorInt8Bit <br> TensorInt8Bit.Create <br> TensorInt8Bit.Create <br> TensorInt8Bit.CreateFromArray <br> TensorInt8Bit.CreateFromIterable <br> TensorInt8Bit.GetAsVectorView <br> TensorInt8Bit.Kind <br> TensorInt8Bit.Shape <br> TensorInt8Bit.TensorKind
 
-#### [tensorkind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorkind)
+#### [TensorKind](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorkind)
 
-tensorkind
+TensorKind
 
-#### [tensorstring](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorstring)
+#### [TensorString](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensorstring)
 
-tensorstring <br> tensorstring.create <br> tensorstring.create <br> tensorstring.createfromarray <br> tensorstring.createfromiterable <br> tensorstring.getasvectorview <br> tensorstring.kind <br> tensorstring.shape <br> tensorstring.tensorkind
+TensorString <br> TensorString.Create <br> TensorString.Create <br> TensorString.CreateFromArray <br> TensorString.CreateFromIterable <br> TensorString.GetAsVectorView <br> TensorString.Kind <br> TensorString.Shape <br> TensorString.TensorKind
 
-#### [tensoruint16bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint16bit)
+#### [TensorUInt16Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint16bit)
 
-tensoruint16bit <br> tensoruint16bit.create <br> tensoruint16bit.create <br> tensoruint16bit.createfromarray <br> tensoruint16bit.createfromiterable <br> tensoruint16bit.getasvectorview <br> tensoruint16bit.kind <br> tensoruint16bit.shape <br> tensoruint16bit.tensorkind
+TensorUInt16Bit <br> TensorUInt16Bit.Create <br> TensorUInt16Bit.Create <br> TensorUInt16Bit.CreateFromArray <br> TensorUInt16Bit.CreateFromIterable <br> TensorUInt16Bit.GetAsVectorView <br> TensorUInt16Bit.Kind <br> TensorUInt16Bit.Shape <br> TensorUInt16Bit.TensorKind
 
-#### [tensoruint32bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint32bit)
+#### [TensorUInt32Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint32bit)
 
-tensoruint32bit <br> tensoruint32bit.create <br> tensoruint32bit.create <br> tensoruint32bit.createfromarray <br> tensoruint32bit.createfromiterable <br> tensoruint32bit.getasvectorview <br> tensoruint32bit.kind <br> tensoruint32bit.shape <br> tensoruint32bit.tensorkind
+TensorUInt32Bit <br> TensorUInt32Bit.Create <br> TensorUInt32Bit.Create <br> TensorUInt32Bit.CreateFromArray <br> TensorUInt32Bit.CreateFromIterable <br> TensorUInt32Bit.GetAsVectorView <br> TensorUInt32Bit.Kind <br> TensorUInt32Bit.Shape <br> TensorUInt32Bit.TensorKind
 
-#### [tensoruint64bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint64bit)
+#### [TensorUInt64Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint64bit)
 
-tensoruint64bit <br> tensoruint64bit.create <br> tensoruint64bit.create <br> tensoruint64bit.createfromarray <br> tensoruint64bit.createfromiterable <br> tensoruint64bit.getasvectorview <br> tensoruint64bit.kind <br> tensoruint64bit.shape <br> tensoruint64bit.tensorkind
+TensorUInt64Bit <br> TensorUInt64Bit.Create <br> TensorUInt64Bit.Create <br> TensorUInt64Bit.CreateFromArray <br> TensorUInt64Bit.CreateFromIterable <br> TensorUInt64Bit.GetAsVectorView <br> TensorUInt64Bit.Kind <br> TensorUInt64Bit.Shape <br> TensorUInt64Bit.TensorKind
 
-#### [tensoruint8bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint8bit)
+#### [TensorUInt8Bit](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.tensoruint8bit)
 
-tensoruint8bit <br> tensoruint8bit.create <br> tensoruint8bit.create <br> tensoruint8bit.createfromarray <br> tensoruint8bit.createfromiterable <br> tensoruint8bit.getasvectorview <br> tensoruint8bit.kind <br> tensoruint8bit.shape <br> tensoruint8bit.tensorkind
+TensorUInt8Bit <br> TensorUInt8Bit.Create <br> TensorUInt8Bit.Create <br> TensorUInt8Bit.CreateFromArray <br> TensorUInt8Bit.CreateFromIterable <br> TensorUInt8Bit.GetAsVectorView <br> TensorUInt8Bit.Kind <br> TensorUInt8Bit.Shape <br> TensorUInt8Bit.TensorKind
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.windows)
+## Windows.ApplicationModel
 
-windows.ai.machinelearning
+### [Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
 
-## windows.applicationmodel
+#### [VoipCallCoordinator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.voipcallcoordinator)
 
-### [windows.applicationmodel.calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
+VoipCallCoordinator.ReserveCallResourcesAsync
 
-#### [voipcallcoordinator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.voipcallcoordinator)
+### [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat)
 
-voipcallcoordinator.reservecallresourcesasync
+#### [ChatCapabilitiesManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatcapabilitiesmanager)
 
-### [windows.applicationmodel.chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat)
+ChatCapabilitiesManager.GetCachedCapabilitiesAsync <br> ChatCapabilitiesManager.GetCapabilitiesFromNetworkAsync
 
-#### [chatcapabilitiesmanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatcapabilitiesmanager)
+#### [RcsManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.rcsmanager)
 
-chatcapabilitiesmanager.getcachedcapabilitiesasync <br> chatcapabilitiesmanager.getcapabilitiesfromnetworkasync
+RcsManager.TransportListChanged
 
-#### [rcsmanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.rcsmanager)
+### [Windows.ApplicationModel.DataTransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
 
-rcsmanager.transportlistchanged
+#### [Clipboard](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard)
 
-### [windows.applicationmodel.datatransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
+Clipboard.ClearHistory <br> Clipboard.DeleteItemFromHistory <br> Clipboard.GetHistoryItemsAsync <br> Clipboard.HistoryChanged <br> Clipboard.HistoryEnabledChanged <br> Clipboard.IsHistoryEnabled <br> Clipboard.IsRoamingEnabled <br> Clipboard.RoamingEnabledChanged <br> Clipboard.SetContentWithOptions <br> Clipboard.SetHistoryItemAsContent
 
-#### [clipboard](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboard)
+#### [ClipboardContentOptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardcontentoptions)
 
-clipboard.clearhistory <br> clipboard.deleteitemfromhistory <br> clipboard.gethistoryitemsasync <br> clipboard.historychanged <br> clipboard.historyenabledchanged <br> clipboard.ishistoryenabled <br> clipboard.isroamingenabled <br> clipboard.roamingenabledchanged <br> clipboard.setcontentwithoptions <br> clipboard.sethistoryitemascontent
+ClipboardContentOptions <br> ClipboardContentOptions.#ctor <br> ClipboardContentOptions.HistoryFormats <br> ClipboardContentOptions.IsAllowedInHistory <br> ClipboardContentOptions.IsRoamable <br> ClipboardContentOptions.RoamingFormats
 
-#### [clipboardcontentoptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardcontentoptions)
+#### [ClipboardHistoryChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistorychangedeventargs)
 
-clipboardcontentoptions <br> clipboardcontentoptions.clipboardcontentoptions <br> clipboardcontentoptions.historyformats <br> clipboardcontentoptions.isallowedinhistory <br> clipboardcontentoptions.isroamable <br> clipboardcontentoptions.roamingformats
+ClipboardHistoryChangedEventArgs
 
-#### [clipboardhistorychangedeventargs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistorychangedeventargs)
+#### [ClipboardHistoryItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitem)
 
-clipboardhistorychangedeventargs
+ClipboardHistoryItem <br> ClipboardHistoryItem.Content <br> ClipboardHistoryItem.Id <br> ClipboardHistoryItem.Timestamp
 
-#### [clipboardhistoryitem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitem)
+#### [ClipboardHistoryItemsResult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitemsresult)
 
-clipboardhistoryitem <br> clipboardhistoryitem.content <br> clipboardhistoryitem.id <br> clipboardhistoryitem.timestamp
+ClipboardHistoryItemsResult <br> ClipboardHistoryItemsResult.Items <br> ClipboardHistoryItemsResult.Status
 
-#### [clipboardhistoryitemsresult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitemsresult)
+#### [ClipboardHistoryItemsResultStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitemsresultstatus)
 
-clipboardhistoryitemsresult <br> clipboardhistoryitemsresult.items <br> clipboardhistoryitemsresult.status
+ClipboardHistoryItemsResultStatus
 
-#### [clipboardhistoryitemsresultstatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.clipboardhistoryitemsresultstatus)
+#### [DataPackagePropertySetView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertysetview)
 
-clipboardhistoryitemsresultstatus
+DataPackagePropertySetView.IsFromRoamingClipboard
 
-#### [datapackagepropertysetview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertysetview)
+#### [SetHistoryItemAsContentStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sethistoryitemascontentstatus)
 
-datapackagepropertysetview.isfromroamingclipboard
+SetHistoryItemAsContentStatus
 
-#### [sethistoryitemascontentstatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sethistoryitemascontentstatus)
+### [Windows.ApplicationModel.Store.Preview.InstallControl](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol)
 
-sethistoryitemascontentstatus
+#### [AppInstallationToastNotificationMode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallationtoastnotificationmode)
 
-### [windows.applicationmodel.store.preview.installcontrol](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol)
+AppInstallationToastNotificationMode
 
-#### [appinstallationtoastnotificationmode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallationtoastnotificationmode)
+#### [AppInstallItem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallitem)
 
-appinstallationtoastnotificationmode
+AppInstallItem.CompletedInstallToastNotificationMode <br> AppInstallItem.InstallInProgressToastNotificationMode <br> AppInstallItem.PinToDesktopAfterInstall <br> AppInstallItem.PinToStartAfterInstall <br> AppInstallItem.PinToTaskbarAfterInstall
 
-#### [appinstallitem](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallitem)
+#### [AppInstallManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallmanager)
 
-appinstallitem.completedinstalltoastnotificationmode <br> appinstallitem.installinprogresstoastnotificationmode <br> appinstallitem.pintodesktopafterinstall <br> appinstallitem.pintostartafterinstall <br> appinstallitem.pintotaskbarafterinstall
+AppInstallManager.CanInstallForAllUsers
 
-#### [appinstallmanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstallmanager)
+#### [AppInstallOptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstalloptions)
 
-appinstallmanager.caninstallforallusers
+AppInstallOptions.CampaignId <br> AppInstallOptions.CompletedInstallToastNotificationMode <br> AppInstallOptions.ExtendedCampaignId <br> AppInstallOptions.InstallForAllUsers <br> AppInstallOptions.InstallInProgressToastNotificationMode <br> AppInstallOptions.PinToDesktopAfterInstall <br> AppInstallOptions.PinToStartAfterInstall <br> AppInstallOptions.PinToTaskbarAfterInstall <br> AppInstallOptions.StageButDoNotInstall
 
-#### [appinstalloptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appinstalloptions)
+#### [AppUpdateOptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appupdateoptions)
 
-appinstalloptions.campaignid <br> appinstalloptions.completedinstalltoastnotificationmode <br> appinstalloptions.extendedcampaignid <br> appinstalloptions.installforallusers <br> appinstalloptions.installinprogresstoastnotificationmode <br> appinstalloptions.pintodesktopafterinstall <br> appinstalloptions.pintostartafterinstall <br> appinstalloptions.pintotaskbarafterinstall <br> appinstalloptions.stagebutdonotinstall
+AppUpdateOptions.AutomaticallyDownloadAndInstallUpdateIfFound
 
-#### [appupdateoptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.installcontrol.appupdateoptions)
+### [Windows.ApplicationModel.Store.Preview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview)
 
-appupdateoptions.automaticallydownloadandinstallupdateiffound
+#### [DeliveryOptimizationDownloadMode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationdownloadmode)
 
-### [windows.applicationmodel.store.preview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview)
+DeliveryOptimizationDownloadMode
 
-#### [deliveryoptimizationdownloadmode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationdownloadmode)
+#### [DeliveryOptimizationDownloadModeSource](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationdownloadmodesource)
 
-deliveryoptimizationdownloadmode
+DeliveryOptimizationDownloadModeSource
 
-#### [deliveryoptimizationdownloadmodesource](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationdownloadmodesource)
+#### [DeliveryOptimizationSettings](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationsettings)
 
-deliveryoptimizationdownloadmodesource
+DeliveryOptimizationSettings <br> DeliveryOptimizationSettings.DownloadMode <br> DeliveryOptimizationSettings.DownloadModeSource <br> DeliveryOptimizationSettings.GetCurrentSettings
 
-#### [deliveryoptimizationsettings](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.deliveryoptimizationsettings)
+#### [StoreConfiguration](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.storeconfiguration)
 
-deliveryoptimizationsettings <br> deliveryoptimizationsettings.downloadmode <br> deliveryoptimizationsettings.downloadmodesource <br> deliveryoptimizationsettings.getcurrentsettings
+StoreConfiguration.IsPinToDesktopSupported <br> StoreConfiguration.IsPinToStartSupported <br> StoreConfiguration.IsPinToTaskbarSupported <br> StoreConfiguration.PinToDesktop <br> StoreConfiguration.PinToDesktopForUser
 
-#### [storeconfiguration](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.preview.storeconfiguration)
+### [Windows.ApplicationModel.UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-storeconfiguration.ispintodesktopsupported <br> storeconfiguration.ispintostartsupported <br> storeconfiguration.ispintotaskbarsupported <br> storeconfiguration.pintodesktop <br> storeconfiguration.pintodesktopforuser
+#### [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)
 
-### [windows.applicationmodel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+UserActivity.IsRoamable
 
-#### [useractivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)
+### [Windows.ApplicationModel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
-useractivity.isroamable
+#### [AppInstallerInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstallerinfo)
 
-### [windows.applicationmodel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
+AppInstallerInfo <br> AppInstallerInfo.Uri
 
-#### [appinstallerinfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstallerinfo)
+#### [LimitedAccessFeatureRequestResult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeaturerequestresult)
 
-appinstallerinfo <br> appinstallerinfo.uri
+LimitedAccessFeatureRequestResult <br> LimitedAccessFeatureRequestResult.EstimatedRemovalDate <br> LimitedAccessFeatureRequestResult.FeatureId <br> LimitedAccessFeatureRequestResult.Status
 
-#### [limitedaccessfeaturerequestresult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeaturerequestresult)
+#### [LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)
 
-limitedaccessfeaturerequestresult <br> limitedaccessfeaturerequestresult.estimatedremovaldate <br> limitedaccessfeaturerequestresult.featureid <br> limitedaccessfeaturerequestresult.status
+LimitedAccessFeatures <br> LimitedAccessFeatures.TryUnlockFeature
 
-#### [limitedaccessfeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)
+#### [LimitedAccessFeatureStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeaturestatus)
 
-limitedaccessfeatures <br> limitedaccessfeatures.tryunlockfeature
+LimitedAccessFeatureStatus
 
-#### [limitedaccessfeaturestatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeaturestatus)
+#### [Package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
 
-limitedaccessfeaturestatus
+Package.CheckUpdateAvailabilityAsync <br> Package.GetAppInstallerInfo
 
-#### [package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
+#### [PackageUpdateAvailability](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdateavailability)
 
-package.checkupdateavailabilityasync <br> package.getappinstallerinfo
+PackageUpdateAvailability
 
-#### [packageupdateavailability](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdateavailability)
+#### [PackageUpdateAvailabilityResult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdateavailabilityresult)
 
-packageupdateavailability
+PackageUpdateAvailabilityResult <br> PackageUpdateAvailabilityResult.Availability <br> PackageUpdateAvailabilityResult.ExtendedError
 
-#### [packageupdateavailabilityresult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.packageupdateavailabilityresult)
+## Windows.Data
 
-packageupdateavailabilityresult <br> packageupdateavailabilityresult.availability <br> packageupdateavailabilityresult.extendederror
+### [Windows.Data.Text](https://docs.microsoft.com/uwp/api/windows.data.text)
 
-## windows.data
+#### [TextPredictionGenerator](https://docs.microsoft.com/uwp/api/windows.data.text.textpredictiongenerator)
 
-### [windows.data.text](https://docs.microsoft.com/uwp/api/windows.data.text)
+TextPredictionGenerator.GetCandidatesAsync <br> TextPredictionGenerator.GetNextWordCandidatesAsync <br> TextPredictionGenerator.InputScope
 
-#### [textpredictiongenerator](https://docs.microsoft.com/uwp/api/windows.data.text.textpredictiongenerator)
+#### [TextPredictionOptions](https://docs.microsoft.com/uwp/api/windows.data.text.textpredictionoptions)
 
-textpredictiongenerator.getcandidatesasync <br> textpredictiongenerator.getnextwordcandidatesasync <br> textpredictiongenerator.inputscope
+TextPredictionOptions
 
-#### [textpredictionoptions](https://docs.microsoft.com/uwp/api/windows.data.text.textpredictionoptions)
+## Windows.Devices
 
-textpredictionoptions
+### [Windows.Devices.Display.Core](https://docs.microsoft.com/uwp/api/windows.devices.display.core)
 
-## windows.devices
+#### [DisplayAdapter](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayadapter)
 
-### [windows.devices.display.core](https://docs.microsoft.com/uwp/api/windows.devices.display.core)
+DisplayAdapter <br> DisplayAdapter.DeviceInterfacePath <br> DisplayAdapter.FromId <br> DisplayAdapter.Id <br> DisplayAdapter.PciDeviceId <br> DisplayAdapter.PciRevision <br> DisplayAdapter.PciSubSystemId <br> DisplayAdapter.PciVendorId <br> DisplayAdapter.Properties <br> DisplayAdapter.SourceCount
 
-#### [displayadapter](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayadapter)
+#### [DisplayBitsPerChannel](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaybitsperchannel)
 
-displayadapter <br> displayadapter.deviceinterfacepath <br> displayadapter.fromid <br> displayadapter.id <br> displayadapter.pcideviceid <br> displayadapter.pcirevision <br> displayadapter.pcisubsystemid <br> displayadapter.pcivendorid <br> displayadapter.properties <br> displayadapter.sourcecount
+DisplayBitsPerChannel
 
-#### [displaybitsperchannel](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaybitsperchannel)
+#### [DisplayDevice](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaydevice)
 
-displaybitsperchannel
+DisplayDevice <br> DisplayDevice.CreatePeriodicFence <br> DisplayDevice.CreatePrimary <br> DisplayDevice.CreateScanoutSource <br> DisplayDevice.CreateSimpleScanout <br> DisplayDevice.CreateTaskPool <br> DisplayDevice.IsCapabilitySupported <br> DisplayDevice.WaitForVBlank
 
-#### [displaydevice](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaydevice)
+#### [DisplayDeviceCapability](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaydevicecapability)
 
-displaydevice <br> displaydevice.createperiodicfence <br> displaydevice.createprimary <br> displaydevice.createscanoutsource <br> displaydevice.createsimplescanout <br> displaydevice.createtaskpool <br> displaydevice.iscapabilitysupported <br> displaydevice.waitforvblank
+DisplayDeviceCapability
 
-#### [displaydevicecapability](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaydevicecapability)
+#### [DisplayFence](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayfence)
 
-displaydevicecapability
+DisplayFence
 
-#### [displayfence](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayfence)
+#### [DisplayManager](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanager)
 
-displayfence
+DisplayManager <br> DisplayManager.Changed <br> DisplayManager.Close <br> DisplayManager.Create <br> DisplayManager.CreateDisplayDevice <br> DisplayManager.Disabled <br> DisplayManager.Enabled <br> DisplayManager.GetCurrentAdapters <br> DisplayManager.GetCurrentTargets <br> DisplayManager.PathsFailedOrInvalidated <br> DisplayManager.ReleaseTarget <br> DisplayManager.Start <br> DisplayManager.Stop <br> DisplayManager.TryAcquireTarget <br> DisplayManager.TryAcquireTargetsAndCreateEmptyState <br> DisplayManager.TryAcquireTargetsAndCreateSubstate <br> DisplayManager.TryAcquireTargetsAndReadCurrentState <br> DisplayManager.TryReadCurrentStateForAllTargets
 
-#### [displaymanager](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanager)
+#### [DisplayManagerChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerchangedeventargs)
 
-displaymanager <br> displaymanager.changed <br> displaymanager.close <br> displaymanager.create <br> displaymanager.createdisplaydevice <br> displaymanager.disabled <br> displaymanager.enabled <br> displaymanager.getcurrentadapters <br> displaymanager.getcurrenttargets <br> displaymanager.pathsfailedorinvalidated <br> displaymanager.releasetarget <br> displaymanager.start <br> displaymanager.stop <br> displaymanager.tryacquiretarget <br> displaymanager.tryacquiretargetsandcreateemptystate <br> displaymanager.tryacquiretargetsandcreatesubstate <br> displaymanager.tryacquiretargetsandreadcurrentstate <br> displaymanager.tryreadcurrentstateforalltargets
+DisplayManagerChangedEventArgs <br> DisplayManagerChangedEventArgs.GetDeferral <br> DisplayManagerChangedEventArgs.Handled
 
-#### [displaymanagerchangedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerchangedeventargs)
+#### [DisplayManagerDisabledEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerdisabledeventargs)
 
-displaymanagerchangedeventargs <br> displaymanagerchangedeventargs.getdeferral <br> displaymanagerchangedeventargs.handled
+DisplayManagerDisabledEventArgs <br> DisplayManagerDisabledEventArgs.GetDeferral <br> DisplayManagerDisabledEventArgs.Handled
 
-#### [displaymanagerdisabledeventargs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerdisabledeventargs)
+#### [DisplayManagerEnabledEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerenabledeventargs)
 
-displaymanagerdisabledeventargs <br> displaymanagerdisabledeventargs.getdeferral <br> displaymanagerdisabledeventargs.handled
+DisplayManagerEnabledEventArgs <br> DisplayManagerEnabledEventArgs.GetDeferral <br> DisplayManagerEnabledEventArgs.Handled
 
-#### [displaymanagerenabledeventargs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerenabledeventargs)
+#### [DisplayManagerOptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanageroptions)
 
-displaymanagerenabledeventargs <br> displaymanagerenabledeventargs.getdeferral <br> displaymanagerenabledeventargs.handled
+DisplayManagerOptions
 
-#### [displaymanageroptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanageroptions)
+#### [DisplayManagerPathsFailedOrInvalidatedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerpathsfailedorinvalidatedeventargs)
 
-displaymanageroptions
+DisplayManagerPathsFailedOrInvalidatedEventArgs <br> DisplayManagerPathsFailedOrInvalidatedEventArgs.GetDeferral <br> DisplayManagerPathsFailedOrInvalidatedEventArgs.Handled
 
-#### [displaymanagerpathsfailedorinvalidatedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerpathsfailedorinvalidatedeventargs)
+#### [DisplayManagerResult](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerresult)
 
-displaymanagerpathsfailedorinvalidatedeventargs <br> displaymanagerpathsfailedorinvalidatedeventargs.getdeferral <br> displaymanagerpathsfailedorinvalidatedeventargs.handled
+DisplayManagerResult
 
-#### [displaymanagerresult](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerresult)
+#### [DisplayManagerResultWithState](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerresultwithstate)
 
-displaymanagerresult
+DisplayManagerResultWithState <br> DisplayManagerResultWithState.ErrorCode <br> DisplayManagerResultWithState.ExtendedErrorCode <br> DisplayManagerResultWithState.State
 
-#### [displaymanagerresultwithstate](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymanagerresultwithstate)
+#### [DisplayModeInfo](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymodeinfo)
 
-displaymanagerresultwithstate <br> displaymanagerresultwithstate.errorcode <br> displaymanagerresultwithstate.extendederrorcode <br> displaymanagerresultwithstate.state
+DisplayModeInfo <br> DisplayModeInfo.GetWireFormatSupportedBitsPerChannel <br> DisplayModeInfo.IsInterlaced <br> DisplayModeInfo.IsStereo <br> DisplayModeInfo.IsWireFormatSupported <br> DisplayModeInfo.PresentationRate <br> DisplayModeInfo.Properties <br> DisplayModeInfo.SourcePixelFormat <br> DisplayModeInfo.SourceResolution <br> DisplayModeInfo.TargetResolution
 
-#### [displaymodeinfo](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymodeinfo)
+#### [DisplayModeQueryOptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymodequeryoptions)
 
-displaymodeinfo <br> displaymodeinfo.getwireformatsupportedbitsperchannel <br> displaymodeinfo.isinterlaced <br> displaymodeinfo.isstereo <br> displaymodeinfo.iswireformatsupported <br> displaymodeinfo.presentationrate <br> displaymodeinfo.properties <br> displaymodeinfo.sourcepixelformat <br> displaymodeinfo.sourceresolution <br> displaymodeinfo.targetresolution
+DisplayModeQueryOptions
 
-#### [displaymodequeryoptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaymodequeryoptions)
+#### [DisplayPath](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypath)
 
-displaymodequeryoptions
+DisplayPath <br> DisplayPath.ApplyPropertiesFromMode <br> DisplayPath.FindModes <br> DisplayPath.IsInterlaced <br> DisplayPath.IsStereo <br> DisplayPath.PresentationRate <br> DisplayPath.Properties <br> DisplayPath.Rotation <br> DisplayPath.Scaling <br> DisplayPath.SourcePixelFormat <br> DisplayPath.SourceResolution <br> DisplayPath.Status <br> DisplayPath.Target <br> DisplayPath.TargetResolution <br> DisplayPath.View <br> DisplayPath.WireFormat
 
-#### [displaypath](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypath)
+#### [DisplayPathScaling](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypathscaling)
 
-displaypath <br> displaypath.applypropertiesfrommode <br> displaypath.findmodes <br> displaypath.isinterlaced <br> displaypath.isstereo <br> displaypath.presentationrate <br> displaypath.properties <br> displaypath.rotation <br> displaypath.scaling <br> displaypath.sourcepixelformat <br> displaypath.sourceresolution <br> displaypath.status <br> displaypath.target <br> displaypath.targetresolution <br> displaypath.view <br> displaypath.wireformat
+DisplayPathScaling
 
-#### [displaypathscaling](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypathscaling)
+#### [DisplayPathStatus](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypathstatus)
 
-displaypathscaling
+DisplayPathStatus
 
-#### [displaypathstatus](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypathstatus)
+#### [DisplayPresentationRate](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypresentationrate)
 
-displaypathstatus
+DisplayPresentationRate
 
-#### [displaypresentationrate](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaypresentationrate)
+#### [DisplayPrimaryDescription](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayprimarydescription)
 
-displaypresentationrate
+DisplayPrimaryDescription <br> DisplayPrimaryDescription.ColorSpace <br> DisplayPrimaryDescription.CreateWithProperties <br> DisplayPrimaryDescription.#ctor <br> DisplayPrimaryDescription.Format <br> DisplayPrimaryDescription.Height <br> DisplayPrimaryDescription.IsStereo <br> DisplayPrimaryDescription.MultisampleDescription <br> DisplayPrimaryDescription.Properties <br> DisplayPrimaryDescription.Width
 
-#### [displayprimarydescription](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayprimarydescription)
+#### [DisplayRotation](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayrotation)
 
-displayprimarydescription <br> displayprimarydescription.colorspace <br> displayprimarydescription.createwithproperties <br> displayprimarydescription.displayprimarydescription <br> displayprimarydescription.format <br> displayprimarydescription.height <br> displayprimarydescription.isstereo <br> displayprimarydescription.multisampledescription <br> displayprimarydescription.properties <br> displayprimarydescription.width
+DisplayRotation
 
-#### [displayrotation](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayrotation)
+#### [DisplayScanout](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayscanout)
 
-displayrotation
+DisplayScanout
 
-#### [displayscanout](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayscanout)
+#### [DisplaySource](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaysource)
 
-displayscanout
+DisplaySource <br> DisplaySource.AdapterId <br> DisplaySource.GetMetadata <br> DisplaySource.SourceId
 
-#### [displaysource](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaysource)
+#### [DisplayState](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystate)
 
-displaysource <br> displaysource.adapterid <br> displaysource.getmetadata <br> displaysource.sourceid
+DisplayState <br> DisplayState.CanConnectTargetToView <br> DisplayState.Clone <br> DisplayState.ConnectTarget <br> DisplayState.ConnectTarget <br> DisplayState.DisconnectTarget <br> DisplayState.GetPathForTarget <br> DisplayState.GetViewForTarget <br> DisplayState.IsReadOnly <br> DisplayState.IsStale <br> DisplayState.Properties <br> DisplayState.Targets <br> DisplayState.TryApply <br> DisplayState.TryFunctionalize <br> DisplayState.Views
 
-#### [displaystate](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystate)
+#### [DisplayStateApplyOptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateapplyoptions)
 
-displaystate <br> displaystate.canconnecttargettoview <br> displaystate.clone <br> displaystate.connecttarget <br> displaystate.connecttarget <br> displaystate.disconnecttarget <br> displaystate.getpathfortarget <br> displaystate.getviewfortarget <br> displaystate.isreadonly <br> displaystate.isstale <br> displaystate.properties <br> displaystate.targets <br> displaystate.tryapply <br> displaystate.tryfunctionalize <br> displaystate.views
+DisplayStateApplyOptions
 
-#### [displaystateapplyoptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateapplyoptions)
+#### [DisplayStateFunctionalizeOptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystatefunctionalizeoptions)
 
-displaystateapplyoptions
+DisplayStateFunctionalizeOptions
 
-#### [displaystatefunctionalizeoptions](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystatefunctionalizeoptions)
+#### [DisplayStateOperationResult](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateoperationresult)
 
-displaystatefunctionalizeoptions
+DisplayStateOperationResult <br> DisplayStateOperationResult.ExtendedErrorCode <br> DisplayStateOperationResult.Status
 
-#### [displaystateoperationresult](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateoperationresult)
+#### [DisplayStateOperationStatus](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateoperationstatus)
 
-displaystateoperationresult <br> displaystateoperationresult.extendederrorcode <br> displaystateoperationresult.status
+DisplayStateOperationStatus
 
-#### [displaystateoperationstatus](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaystateoperationstatus)
+#### [DisplaySurface](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaysurface)
 
-displaystateoperationstatus
+DisplaySurface
 
-#### [displaysurface](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaysurface)
+#### [DisplayTarget](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytarget)
 
-displaysurface
+DisplayTarget <br> DisplayTarget.Adapter <br> DisplayTarget.AdapterRelativeId <br> DisplayTarget.DeviceInterfacePath <br> DisplayTarget.IsConnected <br> DisplayTarget.IsEqual <br> DisplayTarget.IsSame <br> DisplayTarget.IsStale <br> DisplayTarget.IsVirtualModeEnabled <br> DisplayTarget.IsVirtualTopologyEnabled <br> DisplayTarget.MonitorPersistence <br> DisplayTarget.Properties <br> DisplayTarget.StableMonitorId <br> DisplayTarget.TryGetMonitor <br> DisplayTarget.UsageKind
 
-#### [displaytarget](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytarget)
+#### [DisplayTargetPersistence](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytargetpersistence)
 
-displaytarget <br> displaytarget.adapter <br> displaytarget.adapterrelativeid <br> displaytarget.deviceinterfacepath <br> displaytarget.isconnected <br> displaytarget.isequal <br> displaytarget.issame <br> displaytarget.isstale <br> displaytarget.isvirtualmodeenabled <br> displaytarget.isvirtualtopologyenabled <br> displaytarget.monitorpersistence <br> displaytarget.properties <br> displaytarget.stablemonitorid <br> displaytarget.trygetmonitor <br> displaytarget.usagekind
+DisplayTargetPersistence
 
-#### [displaytargetpersistence](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytargetpersistence)
+#### [DisplayTask](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytask)
 
-displaytargetpersistence
+DisplayTask <br> DisplayTask.SetScanout <br> DisplayTask.SetWait
 
-#### [displaytask](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytask)
+#### [DisplayTaskPool](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytaskpool)
 
-displaytask <br> displaytask.setscanout <br> displaytask.setwait
+DisplayTaskPool <br> DisplayTaskPool.CreateTask <br> DisplayTaskPool.ExecuteTask
 
-#### [displaytaskpool](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytaskpool)
+#### [DisplayTaskSignalKind](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytasksignalkind)
 
-displaytaskpool <br> displaytaskpool.createtask <br> displaytaskpool.executetask
+DisplayTaskSignalKind
 
-#### [displaytasksignalkind](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaytasksignalkind)
+#### [DisplayView](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayview)
 
-displaytasksignalkind
+DisplayView <br> DisplayView.ContentResolution <br> DisplayView.Paths <br> DisplayView.Properties <br> DisplayView.SetPrimaryPath
 
-#### [displayview](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displayview)
+#### [DisplayWireFormat](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformat)
 
-displayview <br> displayview.contentresolution <br> displayview.paths <br> displayview.properties <br> displayview.setprimarypath
+DisplayWireFormat <br> DisplayWireFormat.BitsPerChannel <br> DisplayWireFormat.ColorSpace <br> DisplayWireFormat.CreateWithProperties <br> DisplayWireFormat.#ctor <br> DisplayWireFormat.Eotf <br> DisplayWireFormat.HdrMetadata <br> DisplayWireFormat.PixelEncoding <br> DisplayWireFormat.Properties
 
-#### [displaywireformat](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformat)
+#### [DisplayWireFormatColorSpace](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformatcolorspace)
 
-displaywireformat <br> displaywireformat.bitsperchannel <br> displaywireformat.colorspace <br> displaywireformat.createwithproperties <br> displaywireformat.displaywireformat <br> displaywireformat.eotf <br> displaywireformat.hdrmetadata <br> displaywireformat.pixelencoding <br> displaywireformat.properties
+DisplayWireFormatColorSpace
 
-#### [displaywireformatcolorspace](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformatcolorspace)
+#### [DisplayWireFormatEotf](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformateotf)
 
-displaywireformatcolorspace
+DisplayWireFormatEotf
 
-#### [displaywireformateotf](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformateotf)
+#### [DisplayWireFormatHdrMetadata](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformathdrmetadata)
 
-displaywireformateotf
+DisplayWireFormatHdrMetadata
 
-#### [displaywireformathdrmetadata](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformathdrmetadata)
+#### [DisplayWireFormatPixelEncoding](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformatpixelencoding)
 
-displaywireformathdrmetadata
+DisplayWireFormatPixelEncoding
 
-#### [displaywireformatpixelencoding](https://docs.microsoft.com/uwp/api/windows.devices.display.core.displaywireformatpixelencoding)
+### [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)
 
-displaywireformatpixelencoding
+#### [DeviceInformationPairing](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationpairing)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.display.core.windows)
+DeviceInformationPairing.TryRegisterForAllInboundPairingRequestsWithProtectionLevel
 
-windows.devices.display.core
+### [Windows.Devices.Lights.Effects](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects)
 
-### [windows.devices.enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)
+#### [ILampArrayEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.ilamparrayeffect)
 
-#### [deviceinformationpairing](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationpairing)
+ILampArrayEffect <br> ILampArrayEffect.ZIndex
 
-deviceinformationpairing.tryregisterforallinboundpairingrequestswithprotectionlevel
+#### [LampArrayBitmapEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraybitmapeffect)
 
-### [windows.devices.lights.effects](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects)
+LampArrayBitmapEffect <br> LampArrayBitmapEffect.BitmapRequested <br> LampArrayBitmapEffect.Duration <br> LampArrayBitmapEffect.#ctor <br> LampArrayBitmapEffect.StartDelay <br> LampArrayBitmapEffect.SuggestedBitmapSize <br> LampArrayBitmapEffect.UpdateInterval <br> LampArrayBitmapEffect.ZIndex
 
-#### [ilamparrayeffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.ilamparrayeffect)
+#### [LampArrayBitmapRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraybitmaprequestedeventargs)
 
-ilamparrayeffect <br> ilamparrayeffect.zindex
+LampArrayBitmapRequestedEventArgs <br> LampArrayBitmapRequestedEventArgs.SinceStarted <br> LampArrayBitmapRequestedEventArgs.UpdateBitmap
 
-#### [lamparraybitmapeffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraybitmapeffect)
+#### [LampArrayBlinkEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayblinkeffect)
 
-lamparraybitmapeffect <br> lamparraybitmapeffect.bitmaprequested <br> lamparraybitmapeffect.duration <br> lamparraybitmapeffect.lamparraybitmapeffect <br> lamparraybitmapeffect.startdelay <br> lamparraybitmapeffect.suggestedbitmapsize <br> lamparraybitmapeffect.updateinterval <br> lamparraybitmapeffect.zindex
+LampArrayBlinkEffect <br> LampArrayBlinkEffect.AttackDuration <br> LampArrayBlinkEffect.Color <br> LampArrayBlinkEffect.DecayDuration <br> LampArrayBlinkEffect.#ctor <br> LampArrayBlinkEffect.Occurrences <br> LampArrayBlinkEffect.RepetitionDelay <br> LampArrayBlinkEffect.RepetitionMode <br> LampArrayBlinkEffect.StartDelay <br> LampArrayBlinkEffect.SustainDuration <br> LampArrayBlinkEffect.ZIndex
 
-#### [lamparraybitmaprequestedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraybitmaprequestedeventargs)
+#### [LampArrayColorRampEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraycolorrampeffect)
 
-lamparraybitmaprequestedeventargs <br> lamparraybitmaprequestedeventargs.sincestarted <br> lamparraybitmaprequestedeventargs.updatebitmap
+LampArrayColorRampEffect <br> LampArrayColorRampEffect.Color <br> LampArrayColorRampEffect.CompletionBehavior <br> LampArrayColorRampEffect.#ctor <br> LampArrayColorRampEffect.RampDuration <br> LampArrayColorRampEffect.StartDelay <br> LampArrayColorRampEffect.ZIndex
 
-#### [lamparrayblinkeffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayblinkeffect)
+#### [LampArrayCustomEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraycustomeffect)
 
-lamparrayblinkeffect <br> lamparrayblinkeffect.attackduration <br> lamparrayblinkeffect.color <br> lamparrayblinkeffect.decayduration <br> lamparrayblinkeffect.lamparrayblinkeffect <br> lamparrayblinkeffect.occurrences <br> lamparrayblinkeffect.repetitiondelay <br> lamparrayblinkeffect.repetitionmode <br> lamparrayblinkeffect.startdelay <br> lamparrayblinkeffect.sustainduration <br> lamparrayblinkeffect.zindex
+LampArrayCustomEffect <br> LampArrayCustomEffect.Duration <br> LampArrayCustomEffect.#ctor <br> LampArrayCustomEffect.UpdateInterval <br> LampArrayCustomEffect.UpdateRequested <br> LampArrayCustomEffect.ZIndex
 
-#### [lamparraycolorrampeffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraycolorrampeffect)
+#### [LampArrayEffectCompletionBehavior](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectcompletionbehavior)
 
-lamparraycolorrampeffect <br> lamparraycolorrampeffect.color <br> lamparraycolorrampeffect.completionbehavior <br> lamparraycolorrampeffect.lamparraycolorrampeffect <br> lamparraycolorrampeffect.rampduration <br> lamparraycolorrampeffect.startdelay <br> lamparraycolorrampeffect.zindex
+LampArrayEffectCompletionBehavior
 
-#### [lamparraycustomeffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraycustomeffect)
+#### [LampArrayEffectPlaylist](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectplaylist)
 
-lamparraycustomeffect <br> lamparraycustomeffect.duration <br> lamparraycustomeffect.lamparraycustomeffect <br> lamparraycustomeffect.updateinterval <br> lamparraycustomeffect.updaterequested <br> lamparraycustomeffect.zindex
+LampArrayEffectPlaylist <br> LampArrayEffectPlaylist.Append <br> LampArrayEffectPlaylist.EffectStartMode <br> LampArrayEffectPlaylist.First <br> LampArrayEffectPlaylist.GetAt <br> LampArrayEffectPlaylist.GetMany <br> LampArrayEffectPlaylist.IndexOf <br> LampArrayEffectPlaylist.#ctor <br> LampArrayEffectPlaylist.Occurrences <br> LampArrayEffectPlaylist.OverrideZIndex <br> LampArrayEffectPlaylist.Pause <br> LampArrayEffectPlaylist.PauseAll <br> LampArrayEffectPlaylist.RepetitionMode <br> LampArrayEffectPlaylist.Size <br> LampArrayEffectPlaylist.Start <br> LampArrayEffectPlaylist.StartAll <br> LampArrayEffectPlaylist.Stop <br> LampArrayEffectPlaylist.StopAll
 
-#### [lamparrayeffectcompletionbehavior](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectcompletionbehavior)
+#### [LampArrayEffectStartMode](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectstartmode)
 
-lamparrayeffectcompletionbehavior
+LampArrayEffectStartMode
 
-#### [lamparrayeffectplaylist](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectplaylist)
+#### [LampArrayRepetitionMode](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayrepetitionmode)
 
-lamparrayeffectplaylist <br> lamparrayeffectplaylist.append <br> lamparrayeffectplaylist.effectstartmode <br> lamparrayeffectplaylist.first <br> lamparrayeffectplaylist.getat <br> lamparrayeffectplaylist.getmany <br> lamparrayeffectplaylist.indexof <br> lamparrayeffectplaylist.lamparrayeffectplaylist <br> lamparrayeffectplaylist.occurrences <br> lamparrayeffectplaylist.overridezindex <br> lamparrayeffectplaylist.pause <br> lamparrayeffectplaylist.pauseall <br> lamparrayeffectplaylist.repetitionmode <br> lamparrayeffectplaylist.size <br> lamparrayeffectplaylist.start <br> lamparrayeffectplaylist.startall <br> lamparrayeffectplaylist.stop <br> lamparrayeffectplaylist.stopall
+LampArrayRepetitionMode
 
-#### [lamparrayeffectstartmode](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayeffectstartmode)
+#### [LampArraySolidEffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraysolideffect)
 
-lamparrayeffectstartmode
+LampArraySolidEffect <br> LampArraySolidEffect.Color <br> LampArraySolidEffect.CompletionBehavior <br> LampArraySolidEffect.Duration <br> LampArraySolidEffect.#ctor <br> LampArraySolidEffect.StartDelay <br> LampArraySolidEffect.ZIndex
 
-#### [lamparrayrepetitionmode](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayrepetitionmode)
+#### [LampArrayUpdateRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayupdaterequestedeventargs)
 
-lamparrayrepetitionmode
+LampArrayUpdateRequestedEventArgs <br> LampArrayUpdateRequestedEventArgs.SetColor <br> LampArrayUpdateRequestedEventArgs.SetColorForIndex <br> LampArrayUpdateRequestedEventArgs.SetColorsForIndices <br> LampArrayUpdateRequestedEventArgs.SetSingleColorForIndices <br> LampArrayUpdateRequestedEventArgs.SinceStarted
 
-#### [lamparraysolideffect](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparraysolideffect)
+### [Windows.Devices.Lights](https://docs.microsoft.com/uwp/api/windows.devices.lights)
 
-lamparraysolideffect <br> lamparraysolideffect.color <br> lamparraysolideffect.completionbehavior <br> lamparraysolideffect.duration <br> lamparraysolideffect.lamparraysolideffect <br> lamparraysolideffect.startdelay <br> lamparraysolideffect.zindex
+#### [LampArray](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparray)
 
-#### [lamparrayupdaterequestedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.lamparrayupdaterequestedeventargs)
+LampArray <br> LampArray.BoundingBox <br> LampArray.BrightnessLevel <br> LampArray.DeviceId <br> LampArray.FromIdAsync <br> LampArray.GetDeviceSelector <br> LampArray.GetIndicesForKey <br> LampArray.GetIndicesForPurposes <br> LampArray.GetLampInfo <br> LampArray.HardwareProductId <br> LampArray.HardwareVendorId <br> LampArray.HardwareVersion <br> LampArray.IsConnected <br> LampArray.IsEnabled <br> LampArray.LampArrayKind <br> LampArray.LampCount <br> LampArray.MinUpdateInterval <br> LampArray.RequestMessageAsync <br> LampArray.SendMessageAsync <br> LampArray.SetColor <br> LampArray.SetColorForIndex <br> LampArray.SetColorsForIndices <br> LampArray.SetColorsForKey <br> LampArray.SetColorsForKeys <br> LampArray.SetColorsForPurposes <br> LampArray.SetSingleColorForIndices <br> LampArray.SupportsVirtualKeys
 
-lamparrayupdaterequestedeventargs <br> lamparrayupdaterequestedeventargs.setcolor <br> lamparrayupdaterequestedeventargs.setcolorforindex <br> lamparrayupdaterequestedeventargs.setcolorsforindices <br> lamparrayupdaterequestedeventargs.setsinglecolorforindices <br> lamparrayupdaterequestedeventargs.sincestarted
+#### [LampArrayKind](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.lights.effects.windows)
+LampArrayKind
 
-windows.devices.lights.effects
+#### [LampInfo](https://docs.microsoft.com/uwp/api/windows.devices.lights.lampinfo)
 
-### [windows.devices.lights](https://docs.microsoft.com/uwp/api/windows.devices.lights)
+LampInfo <br> LampInfo.BlueLevelCount <br> LampInfo.FixedColor <br> LampInfo.GainLevelCount <br> LampInfo.GetNearestSupportedColor <br> LampInfo.GreenLevelCount <br> LampInfo.Index <br> LampInfo.Position <br> LampInfo.Purposes <br> LampInfo.RedLevelCount <br> LampInfo.UpdateLatency
 
-#### [lamparray](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparray)
+#### [LampPurposes](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes)
 
-lamparray <br> lamparray.boundingbox <br> lamparray.brightnesslevel <br> lamparray.deviceid <br> lamparray.fromidasync <br> lamparray.getdeviceselector <br> lamparray.getindicesforkey <br> lamparray.getindicesforpurposes <br> lamparray.getlampinfo <br> lamparray.hardwareproductid <br> lamparray.hardwarevendorid <br> lamparray.hardwareversion <br> lamparray.isconnected <br> lamparray.isenabled <br> lamparray.lamparraykind <br> lamparray.lampcount <br> lamparray.minupdateinterval <br> lamparray.requestmessageasync <br> lamparray.sendmessageasync <br> lamparray.setcolor <br> lamparray.setcolorforindex <br> lamparray.setcolorsforindices <br> lamparray.setcolorsforkey <br> lamparray.setcolorsforkeys <br> lamparray.setcolorsforpurposes <br> lamparray.setsinglecolorforindices <br> lamparray.supportsvirtualkeys
+LampPurposes
 
-#### [lamparraykind](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind)
+### [Windows.Devices.PointOfService.Provider](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider)
 
-lamparraykind
+#### [BarcodeScannerDisableScannerRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerdisablescannerrequest)
 
-#### [lampinfo](https://docs.microsoft.com/uwp/api/windows.devices.lights.lampinfo)
+BarcodeScannerDisableScannerRequest.ReportFailedAsync <br> BarcodeScannerDisableScannerRequest.ReportFailedAsync
 
-lampinfo <br> lampinfo.bluelevelcount <br> lampinfo.fixedcolor <br> lampinfo.gainlevelcount <br> lampinfo.getnearestsupportedcolor <br> lampinfo.greenlevelcount <br> lampinfo.index <br> lampinfo.position <br> lampinfo.purposes <br> lampinfo.redlevelcount <br> lampinfo.updatelatency
+#### [BarcodeScannerEnableScannerRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerenablescannerrequest)
 
-#### [lamppurposes](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamppurposes)
+BarcodeScannerEnableScannerRequest.ReportFailedAsync <br> BarcodeScannerEnableScannerRequest.ReportFailedAsync
 
-lamppurposes
+#### [BarcodeScannerFrameReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerframereader)
 
-### [windows.devices.pointofservice.provider](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider)
+BarcodeScannerFrameReader <br> BarcodeScannerFrameReader.Close <br> BarcodeScannerFrameReader.Connection <br> BarcodeScannerFrameReader.FrameArrived <br> BarcodeScannerFrameReader.StartAsync <br> BarcodeScannerFrameReader.StopAsync <br> BarcodeScannerFrameReader.TryAcquireLatestFrameAsync
 
-#### [barcodescannerdisablescannerrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerdisablescannerrequest)
+#### [BarcodeScannerFrameReaderFrameArrivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerframereaderframearrivedeventargs)
 
-barcodescannerdisablescannerrequest.reportfailedasync <br> barcodescannerdisablescannerrequest.reportfailedasync
+BarcodeScannerFrameReaderFrameArrivedEventArgs <br> BarcodeScannerFrameReaderFrameArrivedEventArgs.GetDeferral
 
-#### [barcodescannerenablescannerrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerenablescannerrequest)
+#### [BarcodeScannerGetSymbologyAttributesRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannergetsymbologyattributesrequest)
 
-barcodescannerenablescannerrequest.reportfailedasync <br> barcodescannerenablescannerrequest.reportfailedasync
+BarcodeScannerGetSymbologyAttributesRequest.ReportFailedAsync <br> BarcodeScannerGetSymbologyAttributesRequest.ReportFailedAsync
 
-#### [barcodescannerframereader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerframereader)
+#### [BarcodeScannerHideVideoPreviewRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerhidevideopreviewrequest)
 
-barcodescannerframereader <br> barcodescannerframereader.close <br> barcodescannerframereader.connection <br> barcodescannerframereader.framearrived <br> barcodescannerframereader.startasync <br> barcodescannerframereader.stopasync <br> barcodescannerframereader.tryacquirelatestframeasync
+BarcodeScannerHideVideoPreviewRequest.ReportFailedAsync <br> BarcodeScannerHideVideoPreviewRequest.ReportFailedAsync
 
-#### [barcodescannerframereaderframearrivedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerframereaderframearrivedeventargs)
+#### [BarcodeScannerProviderConnection](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerproviderconnection)
 
-barcodescannerframereaderframearrivedeventargs <br> barcodescannerframereaderframearrivedeventargs.getdeferral
+BarcodeScannerProviderConnection.CreateFrameReaderAsync <br> BarcodeScannerProviderConnection.CreateFrameReaderAsync <br> BarcodeScannerProviderConnection.CreateFrameReaderAsync
 
-#### [barcodescannergetsymbologyattributesrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannergetsymbologyattributesrequest)
+#### [BarcodeScannerSetActiveSymbologiesRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannersetactivesymbologiesrequest)
 
-barcodescannergetsymbologyattributesrequest.reportfailedasync <br> barcodescannergetsymbologyattributesrequest.reportfailedasync
+BarcodeScannerSetActiveSymbologiesRequest.ReportFailedAsync <br> BarcodeScannerSetActiveSymbologiesRequest.ReportFailedAsync
 
-#### [barcodescannerhidevideopreviewrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerhidevideopreviewrequest)
+#### [BarcodeScannerSetSymbologyAttributesRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannersetsymbologyattributesrequest)
 
-barcodescannerhidevideopreviewrequest.reportfailedasync <br> barcodescannerhidevideopreviewrequest.reportfailedasync
+BarcodeScannerSetSymbologyAttributesRequest.ReportFailedAsync <br> BarcodeScannerSetSymbologyAttributesRequest.ReportFailedAsync
 
-#### [barcodescannerproviderconnection](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerproviderconnection)
+#### [BarcodeScannerStartSoftwareTriggerRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerstartsoftwaretriggerrequest)
 
-barcodescannerproviderconnection.createframereaderasync <br> barcodescannerproviderconnection.createframereaderasync <br> barcodescannerproviderconnection.createframereaderasync
+BarcodeScannerStartSoftwareTriggerRequest.ReportFailedAsync <br> BarcodeScannerStartSoftwareTriggerRequest.ReportFailedAsync
 
-#### [barcodescannersetactivesymbologiesrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannersetactivesymbologiesrequest)
+#### [BarcodeScannerStopSoftwareTriggerRequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerstopsoftwaretriggerrequest)
 
-barcodescannersetactivesymbologiesrequest.reportfailedasync <br> barcodescannersetactivesymbologiesrequest.reportfailedasync
+BarcodeScannerStopSoftwareTriggerRequest.ReportFailedAsync <br> BarcodeScannerStopSoftwareTriggerRequest.ReportFailedAsync
 
-#### [barcodescannersetsymbologyattributesrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannersetsymbologyattributesrequest)
+#### [BarcodeScannerVideoFrame](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannervideoframe)
 
-barcodescannersetsymbologyattributesrequest.reportfailedasync <br> barcodescannersetsymbologyattributesrequest.reportfailedasync
+BarcodeScannerVideoFrame <br> BarcodeScannerVideoFrame.Close <br> BarcodeScannerVideoFrame.Format <br> BarcodeScannerVideoFrame.Height <br> BarcodeScannerVideoFrame.PixelData <br> BarcodeScannerVideoFrame.Width
 
-#### [barcodescannerstartsoftwaretriggerrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerstartsoftwaretriggerrequest)
+### [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
 
-barcodescannerstartsoftwaretriggerrequest.reportfailedasync <br> barcodescannerstartsoftwaretriggerrequest.reportfailedasync
+#### [BarcodeScannerCapabilities](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities)
 
-#### [barcodescannerstopsoftwaretriggerrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerstopsoftwaretriggerrequest)
+BarcodeScannerCapabilities.IsVideoPreviewSupported
 
-barcodescannerstopsoftwaretriggerrequest.reportfailedasync <br> barcodescannerstopsoftwaretriggerrequest.reportfailedasync
+#### [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)
 
-#### [barcodescannervideoframe](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannervideoframe)
+ClaimedBarcodeScanner.Closed
 
-barcodescannervideoframe <br> barcodescannervideoframe.close <br> barcodescannervideoframe.format <br> barcodescannervideoframe.height <br> barcodescannervideoframe.pixeldata <br> barcodescannervideoframe.width
+#### [ClaimedBarcodeScannerClosedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescannerclosedeventargs)
 
-### [windows.devices.pointofservice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
+ClaimedBarcodeScannerClosedEventArgs
 
-#### [barcodescannercapabilities](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities)
+#### [ClaimedCashDrawer](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer)
 
-barcodescannercapabilities.isvideopreviewsupported
+ClaimedCashDrawer.Closed
 
-#### [claimedbarcodescanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)
+#### [ClaimedCashDrawerClosedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawerclosedeventargs)
 
-claimedbarcodescanner.closed
+ClaimedCashDrawerClosedEventArgs
 
-#### [claimedbarcodescannerclosedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescannerclosedeventargs)
+#### [ClaimedLineDisplay](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay)
 
-claimedbarcodescannerclosedeventargs
+ClaimedLineDisplay.Closed
 
-#### [claimedcashdrawer](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer)
+#### [ClaimedLineDisplayClosedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplayclosedeventargs)
 
-claimedcashdrawer.closed
+ClaimedLineDisplayClosedEventArgs
 
-#### [claimedcashdrawerclosedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawerclosedeventargs)
+#### [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
 
-claimedcashdrawerclosedeventargs
+ClaimedMagneticStripeReader.Closed
 
-#### [claimedlinedisplay](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay)
+#### [ClaimedMagneticStripeReaderClosedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereaderclosedeventargs)
 
-claimedlinedisplay.closed
+ClaimedMagneticStripeReaderClosedEventArgs
 
-#### [claimedlinedisplayclosedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplayclosedeventargs)
+#### [ClaimedPosPrinter](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter)
 
-claimedlinedisplayclosedeventargs
+ClaimedPosPrinter.Closed
 
-#### [claimedmagneticstripereader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
+#### [ClaimedPosPrinterClosedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinterclosedeventargs)
 
-claimedmagneticstripereader.closed
+ClaimedPosPrinterClosedEventArgs
 
-#### [claimedmagneticstripereaderclosedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereaderclosedeventargs)
+### [Windows.Devices.Sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
 
-claimedmagneticstripereaderclosedeventargs
+#### [SimpleOrientationSensor](https://docs.microsoft.com/uwp/api/windows.devices.sensors.simpleorientationsensor)
 
-#### [claimedposprinter](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter)
+SimpleOrientationSensor.FromIdAsync <br> SimpleOrientationSensor.GetDeviceSelector
 
-claimedposprinter.closed
+### [Windows.Devices.SmartCards](https://docs.microsoft.com/uwp/api/windows.devices.smartcards)
 
-#### [claimedposprinterclosedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinterclosedeventargs)
+#### [KnownSmartCardAppletIds](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.knownsmartcardappletids)
 
-claimedposprinterclosedeventargs
+KnownSmartCardAppletIds <br> KnownSmartCardAppletIds.PaymentSystemEnvironment <br> KnownSmartCardAppletIds.ProximityPaymentSystemEnvironment
 
-### [windows.devices.sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
+#### [SmartCardAppletIdGroup](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup)
 
-#### [hingeanglereading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.hingeanglereading)
+SmartCardAppletIdGroup.Description <br> SmartCardAppletIdGroup.Logo <br> SmartCardAppletIdGroup.Properties <br> SmartCardAppletIdGroup.SecureUserAuthenticationRequired
 
-hingeanglereading <br> hingeanglereading.angleindegrees <br> hingeanglereading.properties <br> hingeanglereading.timestamp
+#### [SmartCardAppletIdGroupRegistration](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration)
 
-#### [hingeanglesensor](https://docs.microsoft.com/uwp/api/windows.devices.sensors.hingeanglesensor)
+SmartCardAppletIdGroupRegistration.SetPropertiesAsync <br> SmartCardAppletIdGroupRegistration.SmartCardReaderId
 
-hingeanglesensor <br> hingeanglesensor.deviceid <br> hingeanglesensor.fromidasync <br> hingeanglesensor.getcurrentreadingasync <br> hingeanglesensor.getdefaultasync <br> hingeanglesensor.getdeviceselector <br> hingeanglesensor.getrelatedtoadjacentpanelsasync <br> hingeanglesensor.minreportthresholdindegrees <br> hingeanglesensor.readingchanged <br> hingeanglesensor.reportthresholdindegrees
+## Windows.Foundation
 
-#### [hingeanglesensorreadingchangedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.sensors.hingeanglesensorreadingchangedeventargs)
+### [Windows.Foundation](https://docs.microsoft.com/uwp/api/windows.foundation)
 
-hingeanglesensorreadingchangedeventargs <br> hingeanglesensorreadingchangedeventargs.reading
+#### [GuidHelper](https://docs.microsoft.com/uwp/api/windows.foundation.guidhelper)
 
-#### [simpleorientationsensor](https://docs.microsoft.com/uwp/api/windows.devices.sensors.simpleorientationsensor)
+GuidHelper <br> GuidHelper.CreateNewGuid <br> GuidHelper.Empty <br> GuidHelper.Equals
 
-simpleorientationsensor.fromidasync <br> simpleorientationsensor.getdeviceselector
+## Windows.Globalization
 
-### [windows.devices.smartcards](https://docs.microsoft.com/uwp/api/windows.devices.smartcards)
+### [Windows.Globalization](https://docs.microsoft.com/uwp/api/windows.globalization)
 
-#### [knownsmartcardappletids](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.knownsmartcardappletids)
+#### [CurrencyIdentifiers](https://docs.microsoft.com/uwp/api/windows.globalization.currencyidentifiers)
 
-knownsmartcardappletids <br> knownsmartcardappletids.paymentsystemenvironment <br> knownsmartcardappletids.proximitypaymentsystemenvironment
+CurrencyIdentifiers.MRU <br> CurrencyIdentifiers.SSP <br> CurrencyIdentifiers.STN <br> CurrencyIdentifiers.VES
 
-#### [smartcardappletidgroup](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup)
+## Windows.Graphics
 
-smartcardappletidgroup.description <br> smartcardappletidgroup.logo <br> smartcardappletidgroup.properties <br> smartcardappletidgroup.secureuserauthenticationrequired
+### [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
 
-#### [smartcardappletidgroupregistration](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration)
+#### [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool)
 
-smartcardappletidgroupregistration.setpropertiesasync <br> smartcardappletidgroupregistration.smartcardreaderid
+Direct3D11CaptureFramePool.CreateFreeThreaded
 
-## windows.foundation
+#### [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)
 
-### [windows.foundation](https://docs.microsoft.com/uwp/api/windows.foundation)
+GraphicsCaptureItem.CreateFromVisual
 
-#### [guidhelper](https://docs.microsoft.com/uwp/api/windows.foundation.guidhelper)
+### [Windows.Graphics.Display.Core](https://docs.microsoft.com/uwp/api/windows.graphics.display.core)
 
-guidhelper <br> guidhelper.createnewguid <br> guidhelper.empty <br> guidhelper.equals
+#### [HdmiDisplayMode](https://docs.microsoft.com/uwp/api/windows.graphics.display.core.hdmidisplaymode)
 
-## windows.globalization
+HdmiDisplayMode.IsDolbyVisionLowLatencySupported
 
-### [windows.globalization](https://docs.microsoft.com/uwp/api/windows.globalization)
+### [Windows.Graphics.Holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
 
-#### [currencyidentifiers](https://docs.microsoft.com/uwp/api/windows.globalization.currencyidentifiers)
+#### [HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera)
 
-currencyidentifiers.mru <br> currencyidentifiers.ssp <br> currencyidentifiers.stn <br> currencyidentifiers.ves
+HolographicCamera.IsHardwareContentProtectionEnabled <br> HolographicCamera.IsHardwareContentProtectionSupported
 
-## windows.graphics
+#### [HolographicQuadLayerUpdateParameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters)
 
-### [windows.graphics.capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+HolographicQuadLayerUpdateParameters.AcquireBufferToUpdateContentWithHardwareProtection <br> HolographicQuadLayerUpdateParameters.CanAcquireWithHardwareProtection
 
-#### [direct3d11captureframepool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool)
+### [Windows.Graphics.Imaging](https://docs.microsoft.com/uwp/api/windows.graphics.imaging)
 
-direct3d11captureframepool.createfreethreaded
+#### [BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder)
 
-#### [graphicscaptureitem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)
+BitmapDecoder.HeifDecoderId <br> BitmapDecoder.WebpDecoderId
 
-graphicscaptureitem.createfromvisual
+#### [BitmapEncoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)
 
-### [windows.graphics.display.core](https://docs.microsoft.com/uwp/api/windows.graphics.display.core)
+BitmapEncoder.HeifEncoderId
 
-#### [hdmidisplaymode](https://docs.microsoft.com/uwp/api/windows.graphics.display.core.hdmidisplaymode)
+## Windows.Management
 
-hdmidisplaymode.isdolbyvisionlowlatencysupported
+### [Windows.Management.Deployment](https://docs.microsoft.com/uwp/api/windows.management.deployment)
 
-### [windows.graphics.holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
+#### [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)
 
-#### [holographiccamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera)
+PackageManager.DeprovisionPackageForAllUsersAsync
 
-holographiccamera.ishardwarecontentprotectionenabled <br> holographiccamera.ishardwarecontentprotectionsupported
+## Windows.Media
 
-#### [holographicquadlayerupdateparameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters)
+### [Windows.Media.Audio](https://docs.microsoft.com/uwp/api/windows.media.audio)
 
-holographicquadlayerupdateparameters.acquirebuffertoupdatecontentwithhardwareprotection <br> holographicquadlayerupdateparameters.canacquirewithhardwareprotection
+#### [CreateAudioDeviceInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiodeviceinputnoderesult)
 
-### [windows.graphics.imaging](https://docs.microsoft.com/uwp/api/windows.graphics.imaging)
+CreateAudioDeviceInputNodeResult.ExtendedError
 
-#### [bitmapdecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder)
+#### [CreateAudioDeviceOutputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiodeviceoutputnoderesult)
 
-bitmapdecoder.heifdecoderid <br> bitmapdecoder.webpdecoderid
+CreateAudioDeviceOutputNodeResult.ExtendedError
 
-#### [bitmapencoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)
+#### [CreateAudioFileInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileinputnoderesult)
 
-bitmapencoder.heifencoderid
+CreateAudioFileInputNodeResult.ExtendedError
 
-## windows.management
+#### [CreateAudioFileOutputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileoutputnoderesult)
 
-### [windows.management.deployment](https://docs.microsoft.com/uwp/api/windows.management.deployment)
+CreateAudioFileOutputNodeResult.ExtendedError
 
-#### [packagemanager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)
+#### [CreateAudioGraphResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiographresult)
 
-packagemanager.deprovisionpackageforallusersasync
+CreateAudioGraphResult.ExtendedError
 
-## windows.media
+#### [CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)
 
-### [windows.media.audio](https://docs.microsoft.com/uwp/api/windows.media.audio)
+CreateMediaSourceAudioInputNodeResult.ExtendedError
 
-#### [createaudiodeviceinputnoderesult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiodeviceinputnoderesult)
+#### [MixedRealitySpatialAudioFormatPolicy](https://docs.microsoft.com/uwp/api/windows.media.audio.mixedrealityspatialaudioformatpolicy)
 
-createaudiodeviceinputnoderesult.extendederror
+MixedRealitySpatialAudioFormatPolicy
 
-#### [createaudiodeviceoutputnoderesult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiodeviceoutputnoderesult)
+#### [SetDefaultSpatialAudioFormatResult](https://docs.microsoft.com/uwp/api/windows.media.audio.setdefaultspatialaudioformatresult)
 
-createaudiodeviceoutputnoderesult.extendederror
+SetDefaultSpatialAudioFormatResult <br> SetDefaultSpatialAudioFormatResult.Status
 
-#### [createaudiofileinputnoderesult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileinputnoderesult)
+#### [SetDefaultSpatialAudioFormatStatus](https://docs.microsoft.com/uwp/api/windows.media.audio.setdefaultspatialaudioformatstatus)
 
-createaudiofileinputnoderesult.extendederror
+SetDefaultSpatialAudioFormatStatus
 
-#### [createaudiofileoutputnoderesult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiofileoutputnoderesult)
+#### [SpatialAudioDeviceConfiguration](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudiodeviceconfiguration)
 
-createaudiofileoutputnoderesult.extendederror
+SpatialAudioDeviceConfiguration <br> SpatialAudioDeviceConfiguration.ActiveSpatialAudioFormat <br> SpatialAudioDeviceConfiguration.ConfigurationChanged <br> SpatialAudioDeviceConfiguration.DefaultSpatialAudioFormat <br> SpatialAudioDeviceConfiguration.DeviceId <br> SpatialAudioDeviceConfiguration.GetForDeviceId <br> SpatialAudioDeviceConfiguration.IsSpatialAudioFormatSupported <br> SpatialAudioDeviceConfiguration.IsSpatialAudioSupported <br> SpatialAudioDeviceConfiguration.SetDefaultSpatialAudioFormatAsync
 
-#### [createaudiographresult](https://docs.microsoft.com/uwp/api/windows.media.audio.createaudiographresult)
+#### [SpatialAudioFormatConfiguration](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudioformatconfiguration)
 
-createaudiographresult.extendederror
+SpatialAudioFormatConfiguration <br> SpatialAudioFormatConfiguration.GetDefault <br> SpatialAudioFormatConfiguration.MixedRealityExclusiveModePolicy <br> SpatialAudioFormatConfiguration.ReportConfigurationChangedAsync <br> SpatialAudioFormatConfiguration.ReportLicenseChangedAsync
 
-#### [createmediasourceaudioinputnoderesult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)
+#### [SpatialAudioFormatSubtype](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudioformatsubtype)
 
-createmediasourceaudioinputnoderesult.extendederror
+SpatialAudioFormatSubtype <br> SpatialAudioFormatSubtype.DolbyAtmosForHeadphones <br> SpatialAudioFormatSubtype.DolbyAtmosForHomeTheater <br> SpatialAudioFormatSubtype.DolbyAtmosForSpeakers <br> SpatialAudioFormatSubtype.DTSHeadphoneX <br> SpatialAudioFormatSubtype.DTSXUltra <br> SpatialAudioFormatSubtype.WindowsSonic
 
-#### [mixedrealityspatialaudioformatpolicy](https://docs.microsoft.com/uwp/api/windows.media.audio.mixedrealityspatialaudioformatpolicy)
+### [Windows.Media.Control](https://docs.microsoft.com/uwp/api/windows.media.control)
 
-mixedrealityspatialaudioformatpolicy
+#### [CurrentSessionChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.control.currentsessionchangedeventargs)
 
-#### [setdefaultspatialaudioformatresult](https://docs.microsoft.com/uwp/api/windows.media.audio.setdefaultspatialaudioformatresult)
+CurrentSessionChangedEventArgs
 
-setdefaultspatialaudioformatresult <br> setdefaultspatialaudioformatresult.status
+#### [GlobalSystemMediaTransportControlsSession](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssession)
 
-#### [setdefaultspatialaudioformatstatus](https://docs.microsoft.com/uwp/api/windows.media.audio.setdefaultspatialaudioformatstatus)
+GlobalSystemMediaTransportControlsSession <br> GlobalSystemMediaTransportControlsSession.GetPlaybackInfo <br> GlobalSystemMediaTransportControlsSession.GetTimelineProperties <br> GlobalSystemMediaTransportControlsSession.MediaPropertiesChanged <br> GlobalSystemMediaTransportControlsSession.PlaybackInfoChanged <br> GlobalSystemMediaTransportControlsSession.SourceAppUserModelId <br> GlobalSystemMediaTransportControlsSession.TimelinePropertiesChanged <br> GlobalSystemMediaTransportControlsSession.TryChangeAutoRepeatModeAsync <br> GlobalSystemMediaTransportControlsSession.TryChangeChannelDownAsync <br> GlobalSystemMediaTransportControlsSession.TryChangeChannelUpAsync <br> GlobalSystemMediaTransportControlsSession.TryChangePlaybackPositionAsync <br> GlobalSystemMediaTransportControlsSession.TryChangePlaybackRateAsync <br> GlobalSystemMediaTransportControlsSession.TryChangeShuffleActiveAsync <br> GlobalSystemMediaTransportControlsSession.TryFastForwardAsync <br> GlobalSystemMediaTransportControlsSession.TryGetMediaPropertiesAsync <br> GlobalSystemMediaTransportControlsSession.TryPauseAsync <br> GlobalSystemMediaTransportControlsSession.TryPlayAsync <br> GlobalSystemMediaTransportControlsSession.TryRecordAsync <br> GlobalSystemMediaTransportControlsSession.TryRewindAsync <br> GlobalSystemMediaTransportControlsSession.TrySkipNextAsync <br> GlobalSystemMediaTransportControlsSession.TrySkipPreviousAsync <br> GlobalSystemMediaTransportControlsSession.TryStopAsync <br> GlobalSystemMediaTransportControlsSession.TryTogglePlayPauseAsync
 
-setdefaultspatialaudioformatstatus
+#### [GlobalSystemMediaTransportControlsSessionManager](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionmanager)
 
-#### [spatialaudiodeviceconfiguration](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudiodeviceconfiguration)
+GlobalSystemMediaTransportControlsSessionManager <br> GlobalSystemMediaTransportControlsSessionManager.CurrentSessionChanged <br> GlobalSystemMediaTransportControlsSessionManager.GetCurrentSession <br> GlobalSystemMediaTransportControlsSessionManager.GetSessions <br> GlobalSystemMediaTransportControlsSessionManager.RequestAsync <br> GlobalSystemMediaTransportControlsSessionManager.SessionsChanged
 
-spatialaudiodeviceconfiguration <br> spatialaudiodeviceconfiguration.activespatialaudioformat <br> spatialaudiodeviceconfiguration.configurationchanged <br> spatialaudiodeviceconfiguration.defaultspatialaudioformat <br> spatialaudiodeviceconfiguration.deviceid <br> spatialaudiodeviceconfiguration.getfordeviceid <br> spatialaudiodeviceconfiguration.isspatialaudioformatsupported <br> spatialaudiodeviceconfiguration.isspatialaudiosupported <br> spatialaudiodeviceconfiguration.setdefaultspatialaudioformatasync
+#### [GlobalSystemMediaTransportControlsSessionMediaProperties](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionmediaproperties)
 
-#### [spatialaudioformatconfiguration](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudioformatconfiguration)
+GlobalSystemMediaTransportControlsSessionMediaProperties <br> GlobalSystemMediaTransportControlsSessionMediaProperties.AlbumArtist <br> GlobalSystemMediaTransportControlsSessionMediaProperties.AlbumTitle <br> GlobalSystemMediaTransportControlsSessionMediaProperties.AlbumTrackCount <br> GlobalSystemMediaTransportControlsSessionMediaProperties.Artist <br> GlobalSystemMediaTransportControlsSessionMediaProperties.Genres <br> GlobalSystemMediaTransportControlsSessionMediaProperties.PlaybackType <br> GlobalSystemMediaTransportControlsSessionMediaProperties.Subtitle <br> GlobalSystemMediaTransportControlsSessionMediaProperties.Thumbnail <br> GlobalSystemMediaTransportControlsSessionMediaProperties.Title <br> GlobalSystemMediaTransportControlsSessionMediaProperties.TrackNumber
 
-spatialaudioformatconfiguration <br> spatialaudioformatconfiguration.getdefault <br> spatialaudioformatconfiguration.mixedrealityexclusivemodepolicy <br> spatialaudioformatconfiguration.reportconfigurationchangedasync <br> spatialaudioformatconfiguration.reportlicensechangedasync
+#### [GlobalSystemMediaTransportControlsSessionPlaybackControls](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackcontrols)
 
-#### [spatialaudioformatsubtype](https://docs.microsoft.com/uwp/api/windows.media.audio.spatialaudioformatsubtype)
+GlobalSystemMediaTransportControlsSessionPlaybackControls <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsChannelDownEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsChannelUpEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsFastForwardEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsNextEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPauseEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPlaybackPositionEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPlaybackRateEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPlayEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPlayPauseToggleEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsPreviousEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsRecordEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsRepeatEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsRewindEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsShuffleEnabled <br> GlobalSystemMediaTransportControlsSessionPlaybackControls.IsStopEnabled
 
-spatialaudioformatsubtype <br> spatialaudioformatsubtype.dolbyatmosforheadphones <br> spatialaudioformatsubtype.dolbyatmosforhometheater <br> spatialaudioformatsubtype.dolbyatmosforspeakers <br> spatialaudioformatsubtype.dtsheadphonex <br> spatialaudioformatsubtype.dtsxultra <br> spatialaudioformatsubtype.windowssonic
+#### [GlobalSystemMediaTransportControlsSessionPlaybackInfo](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackinfo)
 
-### [windows.media.control](https://docs.microsoft.com/uwp/api/windows.media.control)
+GlobalSystemMediaTransportControlsSessionPlaybackInfo <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.AutoRepeatMode <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.Controls <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.IsShuffleActive <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.PlaybackRate <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.PlaybackStatus <br> GlobalSystemMediaTransportControlsSessionPlaybackInfo.PlaybackType
 
-#### [currentsessionchangedeventargs](https://docs.microsoft.com/uwp/api/windows.media.control.currentsessionchangedeventargs)
+#### [GlobalSystemMediaTransportControlsSessionPlaybackStatus](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackstatus)
 
-currentsessionchangedeventargs
+GlobalSystemMediaTransportControlsSessionPlaybackStatus
 
-#### [globalsystemmediatransportcontrolssession](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssession)
+#### [GlobalSystemMediaTransportControlsSessionTimelineProperties](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessiontimelineproperties)
 
-globalsystemmediatransportcontrolssession <br> globalsystemmediatransportcontrolssession.getplaybackinfo <br> globalsystemmediatransportcontrolssession.gettimelineproperties <br> globalsystemmediatransportcontrolssession.mediapropertieschanged <br> globalsystemmediatransportcontrolssession.playbackinfochanged <br> globalsystemmediatransportcontrolssession.sourceappusermodelid <br> globalsystemmediatransportcontrolssession.timelinepropertieschanged <br> globalsystemmediatransportcontrolssession.trychangeautorepeatmodeasync <br> globalsystemmediatransportcontrolssession.trychangechanneldownasync <br> globalsystemmediatransportcontrolssession.trychangechannelupasync <br> globalsystemmediatransportcontrolssession.trychangeplaybackpositionasync <br> globalsystemmediatransportcontrolssession.trychangeplaybackrateasync <br> globalsystemmediatransportcontrolssession.trychangeshuffleactiveasync <br> globalsystemmediatransportcontrolssession.tryfastforwardasync <br> globalsystemmediatransportcontrolssession.trygetmediapropertiesasync <br> globalsystemmediatransportcontrolssession.trypauseasync <br> globalsystemmediatransportcontrolssession.tryplayasync <br> globalsystemmediatransportcontrolssession.tryrecordasync <br> globalsystemmediatransportcontrolssession.tryrewindasync <br> globalsystemmediatransportcontrolssession.tryskipnextasync <br> globalsystemmediatransportcontrolssession.tryskippreviousasync <br> globalsystemmediatransportcontrolssession.trystopasync <br> globalsystemmediatransportcontrolssession.trytoggleplaypauseasync
+GlobalSystemMediaTransportControlsSessionTimelineProperties <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.EndTime <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.LastUpdatedTime <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.MaxSeekTime <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.MinSeekTime <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.Position <br> GlobalSystemMediaTransportControlsSessionTimelineProperties.StartTime
 
-#### [globalsystemmediatransportcontrolssessionmanager](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionmanager)
+#### [MediaPropertiesChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.control.mediapropertieschangedeventargs)
 
-globalsystemmediatransportcontrolssessionmanager <br> globalsystemmediatransportcontrolssessionmanager.currentsessionchanged <br> globalsystemmediatransportcontrolssessionmanager.getcurrentsession <br> globalsystemmediatransportcontrolssessionmanager.getsessions <br> globalsystemmediatransportcontrolssessionmanager.requestasync <br> globalsystemmediatransportcontrolssessionmanager.sessionschanged
+MediaPropertiesChangedEventArgs
 
-#### [globalsystemmediatransportcontrolssessionmediaproperties](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionmediaproperties)
+#### [PlaybackInfoChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.control.playbackinfochangedeventargs)
 
-globalsystemmediatransportcontrolssessionmediaproperties <br> globalsystemmediatransportcontrolssessionmediaproperties.albumartist <br> globalsystemmediatransportcontrolssessionmediaproperties.albumtitle <br> globalsystemmediatransportcontrolssessionmediaproperties.albumtrackcount <br> globalsystemmediatransportcontrolssessionmediaproperties.artist <br> globalsystemmediatransportcontrolssessionmediaproperties.genres <br> globalsystemmediatransportcontrolssessionmediaproperties.playbacktype <br> globalsystemmediatransportcontrolssessionmediaproperties.subtitle <br> globalsystemmediatransportcontrolssessionmediaproperties.thumbnail <br> globalsystemmediatransportcontrolssessionmediaproperties.title <br> globalsystemmediatransportcontrolssessionmediaproperties.tracknumber
+PlaybackInfoChangedEventArgs
 
-#### [globalsystemmediatransportcontrolssessionplaybackcontrols](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackcontrols)
+#### [SessionsChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.control.sessionschangedeventargs)
 
-globalsystemmediatransportcontrolssessionplaybackcontrols <br> globalsystemmediatransportcontrolssessionplaybackcontrols.ischanneldownenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.ischannelupenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isfastforwardenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isnextenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.ispauseenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isplaybackpositionenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isplaybackrateenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isplayenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isplaypausetoggleenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.ispreviousenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isrecordenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isrepeatenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isrewindenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isshuffleenabled <br> globalsystemmediatransportcontrolssessionplaybackcontrols.isstopenabled
+SessionsChangedEventArgs
 
-#### [globalsystemmediatransportcontrolssessionplaybackinfo](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackinfo)
+#### [TimelinePropertiesChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.control.timelinepropertieschangedeventargs)
 
-globalsystemmediatransportcontrolssessionplaybackinfo <br> globalsystemmediatransportcontrolssessionplaybackinfo.autorepeatmode <br> globalsystemmediatransportcontrolssessionplaybackinfo.controls <br> globalsystemmediatransportcontrolssessionplaybackinfo.isshuffleactive <br> globalsystemmediatransportcontrolssessionplaybackinfo.playbackrate <br> globalsystemmediatransportcontrolssessionplaybackinfo.playbackstatus <br> globalsystemmediatransportcontrolssessionplaybackinfo.playbacktype
+TimelinePropertiesChangedEventArgs
 
-#### [globalsystemmediatransportcontrolssessionplaybackstatus](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessionplaybackstatus)
+### [Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)
 
-globalsystemmediatransportcontrolssessionplaybackstatus
+#### [MediaStreamSample](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsample)
 
-#### [globalsystemmediatransportcontrolssessiontimelineproperties](https://docs.microsoft.com/uwp/api/windows.media.control.globalsystemmediatransportcontrolssessiontimelineproperties)
+MediaStreamSample.CreateFromDirect3D11Surface <br> MediaStreamSample.Direct3D11Surface
 
-globalsystemmediatransportcontrolssessiontimelineproperties <br> globalsystemmediatransportcontrolssessiontimelineproperties.endtime <br> globalsystemmediatransportcontrolssessiontimelineproperties.lastupdatedtime <br> globalsystemmediatransportcontrolssessiontimelineproperties.maxseektime <br> globalsystemmediatransportcontrolssessiontimelineproperties.minseektime <br> globalsystemmediatransportcontrolssessiontimelineproperties.position <br> globalsystemmediatransportcontrolssessiontimelineproperties.starttime
+### [Windows.Media.Devices.Core](https://docs.microsoft.com/uwp/api/windows.media.devices.core)
 
-#### [mediapropertieschangedeventargs](https://docs.microsoft.com/uwp/api/windows.media.control.mediapropertieschangedeventargs)
+#### [CameraIntrinsics](https://docs.microsoft.com/uwp/api/windows.media.devices.core.cameraintrinsics)
 
-mediapropertieschangedeventargs
+CameraIntrinsics.#ctor
 
-#### [playbackinfochangedeventargs](https://docs.microsoft.com/uwp/api/windows.media.control.playbackinfochangedeventargs)
+### [Windows.Media.Import](https://docs.microsoft.com/uwp/api/windows.media.import)
 
-playbackinfochangedeventargs
+#### [PhotoImportItem](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportitem)
 
-#### [sessionschangedeventargs](https://docs.microsoft.com/uwp/api/windows.media.control.sessionschangedeventargs)
+PhotoImportItem.Path
 
-sessionschangedeventargs
+### [Windows.Media.MediaProperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties)
 
-#### [timelinepropertieschangedeventargs](https://docs.microsoft.com/uwp/api/windows.media.control.timelinepropertieschangedeventargs)
+#### [ImageEncodingProperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties)
 
-timelinepropertieschangedeventargs
+ImageEncodingProperties.CreateHeif
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.media.control.windows)
+#### [MediaEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)
 
-windows.media.control
+MediaEncodingSubtypes.Heif
 
-### [windows.media.core](https://docs.microsoft.com/uwp/api/windows.media.core)
+### [Windows.Media.Protection.PlayReady](https://docs.microsoft.com/uwp/api/windows.media.protection.playready)
 
-#### [mediastreamsample](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsample)
+#### [PlayReadyStatics](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics)
 
-mediastreamsample.createfromdirect3d11surface <br> mediastreamsample.direct3d11surface
+PlayReadyStatics.HardwareDRMDisabledAtTime <br> PlayReadyStatics.HardwareDRMDisabledUntilTime <br> PlayReadyStatics.ResetHardwareDRMDisabled
 
-### [windows.media.devices.core](https://docs.microsoft.com/uwp/api/windows.media.devices.core)
+## Windows.Networking
 
-#### [cameraintrinsics](https://docs.microsoft.com/uwp/api/windows.media.devices.core.cameraintrinsics)
+### [Windows.Networking.Connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
 
-cameraintrinsics.cameraintrinsics
+#### [ConnectionProfile](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.connectionprofile)
 
-### [windows.media.import](https://docs.microsoft.com/uwp/api/windows.media.import)
+ConnectionProfile.CanDelete <br> ConnectionProfile.TryDeleteAsync
 
-#### [photoimportitem](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportitem)
+#### [ConnectionProfileDeleteStatus](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.connectionprofiledeletestatus)
 
-photoimportitem.path
+ConnectionProfileDeleteStatus
 
-### [windows.media.mediaproperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties)
+## Windows.Perception
 
-#### [imageencodingproperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties)
+### [Windows.Perception.Spatial.Preview](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview)
 
-imageencodingproperties.createheif
+#### [SpatialGraphInteropPreview](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)
 
-#### [mediaencodingsubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)
+SpatialGraphInteropPreview <br> SpatialGraphInteropPreview.CreateCoordinateSystemForNode <br> SpatialGraphInteropPreview.CreateCoordinateSystemForNode <br> SpatialGraphInteropPreview.CreateCoordinateSystemForNode <br> SpatialGraphInteropPreview.CreateLocatorForNode
 
-mediaencodingsubtypes.heif
+### [Windows.Perception.Spatial](https://docs.microsoft.com/uwp/api/windows.perception.spatial)
 
-### [windows.media.protection.playready](https://docs.microsoft.com/uwp/api/windows.media.protection.playready)
+#### [SpatialAnchorExporter](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter)
 
-#### [playreadystatics](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics)
+SpatialAnchorExporter <br> SpatialAnchorExporter.GetAnchorExportSufficiencyAsync <br> SpatialAnchorExporter.GetDefault <br> SpatialAnchorExporter.RequestAccessAsync <br> SpatialAnchorExporter.TryExportAnchorAsync
 
-playreadystatics.hardwaredrmdisabledattime <br> playreadystatics.hardwaredrmdisableduntiltime <br> playreadystatics.resethardwaredrmdisabled
+#### [SpatialAnchorExportPurpose](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexportpurpose)
 
-## windows.networking
+SpatialAnchorExportPurpose
 
-### [windows.networking.connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
+#### [SpatialAnchorExportSufficiency](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexportsufficiency)
 
-#### [connectionprofile](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.connectionprofile)
+SpatialAnchorExportSufficiency <br> SpatialAnchorExportSufficiency.IsMinimallySufficient <br> SpatialAnchorExportSufficiency.RecommendedSufficiencyLevel <br> SpatialAnchorExportSufficiency.SufficiencyLevel
 
-connectionprofile.candelete <br> connectionprofile.trydeleteasync
+#### [SpatialLocation](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation)
 
-#### [connectionprofiledeletestatus](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.connectionprofiledeletestatus)
+SpatialLocation.AbsoluteAngularAccelerationAxisAngle <br> SpatialLocation.AbsoluteAngularVelocityAxisAngle
 
-connectionprofiledeletestatus
+### [Windows.Perception](https://docs.microsoft.com/uwp/api/windows.perception)
 
-## windows.perception
+#### [PerceptionTimestamp](https://docs.microsoft.com/uwp/api/windows.perception.perceptiontimestamp)
 
-### [windows.perception.spatial.preview](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview)
+PerceptionTimestamp.SystemRelativeTargetTime
 
-#### [spatialgraphinteroppreview](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)
+#### [PerceptionTimestampHelper](https://docs.microsoft.com/uwp/api/windows.perception.perceptiontimestamphelper)
 
-spatialgraphinteroppreview <br> spatialgraphinteroppreview.createcoordinatesystemfornode <br> spatialgraphinteroppreview.createcoordinatesystemfornode <br> spatialgraphinteroppreview.createcoordinatesystemfornode <br> spatialgraphinteroppreview.createlocatorfornode
+PerceptionTimestampHelper.FromSystemRelativeTargetTime
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.windows)
+## Windows.Services
 
-windows.perception.spatial.preview
+### [Windows.Services.Cortana](https://docs.microsoft.com/uwp/api/windows.services.cortana)
 
-### [windows.perception.spatial](https://docs.microsoft.com/uwp/api/windows.perception.spatial)
+#### [CortanaActionableInsights](https://docs.microsoft.com/uwp/api/windows.services.cortana.cortanaactionableinsights)
 
-#### [spatialanchorexporter](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexporter)
+CortanaActionableInsights <br> CortanaActionableInsights.GetDefault <br> CortanaActionableInsights.GetForUser <br> CortanaActionableInsights.IsAvailableAsync <br> CortanaActionableInsights.ShowInsightsAsync <br> CortanaActionableInsights.ShowInsightsAsync <br> CortanaActionableInsights.ShowInsightsForImageAsync <br> CortanaActionableInsights.ShowInsightsForImageAsync <br> CortanaActionableInsights.ShowInsightsForTextAsync <br> CortanaActionableInsights.ShowInsightsForTextAsync <br> CortanaActionableInsights.User
 
-spatialanchorexporter <br> spatialanchorexporter.getanchorexportsufficiencyasync <br> spatialanchorexporter.getdefault <br> spatialanchorexporter.requestaccessasync <br> spatialanchorexporter.tryexportanchorasync
+#### [CortanaActionableInsightsOptions](https://docs.microsoft.com/uwp/api/windows.services.cortana.cortanaactionableinsightsoptions)
 
-#### [spatialanchorexportpurpose](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexportpurpose)
+CortanaActionableInsightsOptions <br> CortanaActionableInsightsOptions.ContentSourceWebLink <br> CortanaActionableInsightsOptions.#ctor <br> CortanaActionableInsightsOptions.SurroundingText
 
-spatialanchorexportpurpose
+### [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)
 
-#### [spatialanchorexportsufficiency](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchorexportsufficiency)
+#### [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)
 
-spatialanchorexportsufficiency <br> spatialanchorexportsufficiency.isminimallysufficient <br> spatialanchorexportsufficiency.recommendedsufficiencylevel <br> spatialanchorexportsufficiency.sufficiencylevel
+StoreAppLicense.IsDiscLicense
 
-#### [spatiallocation](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocation)
+#### [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)
 
-spatiallocation.absoluteangularaccelerationaxisangle <br> spatiallocation.absoluteangularvelocityaxisangle
+StoreContext.RequestRateAndReviewAppAsync <br> StoreContext.SetInstallOrderForAssociatedStoreQueueItemsAsync
 
-### [windows.perception](https://docs.microsoft.com/uwp/api/windows.perception)
+#### [StoreQueueItem](https://docs.microsoft.com/uwp/api/windows.services.store.storequeueitem)
 
-#### [perceptiontimestamp](https://docs.microsoft.com/uwp/api/windows.perception.perceptiontimestamp)
+StoreQueueItem.CancelInstallAsync <br> StoreQueueItem.PauseInstallAsync <br> StoreQueueItem.ResumeInstallAsync
 
-perceptiontimestamp.systemrelativetargettime
+#### [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)
 
-#### [perceptiontimestamphelper](https://docs.microsoft.com/uwp/api/windows.perception.perceptiontimestamphelper)
+StoreRateAndReviewResult <br> StoreRateAndReviewResult.ExtendedError <br> StoreRateAndReviewResult.ExtendedJsonData <br> StoreRateAndReviewResult.Status <br> StoreRateAndReviewResult.WasUpdated
 
-perceptiontimestamphelper.fromsystemrelativetargettime
+#### [StoreRateAndReviewStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewstatus)
 
-## windows.services
+StoreRateAndReviewStatus
 
-### [windows.services.cortana](https://docs.microsoft.com/uwp/api/windows.services.cortana)
+## Windows.Storage
 
-#### [cortanaactionableinsights](https://docs.microsoft.com/uwp/api/windows.services.cortana.cortanaactionableinsights)
+### [Windows.Storage.Provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
 
-cortanaactionableinsights <br> cortanaactionableinsights.getdefault <br> cortanaactionableinsights.getforuser <br> cortanaactionableinsights.isavailableasync <br> cortanaactionableinsights.showinsightsasync <br> cortanaactionableinsights.showinsightsasync <br> cortanaactionableinsights.showinsightsforimageasync <br> cortanaactionableinsights.showinsightsforimageasync <br> cortanaactionableinsights.showinsightsfortextasync <br> cortanaactionableinsights.showinsightsfortextasync <br> cortanaactionableinsights.user
+#### [StorageProviderSyncRootInfo](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageprovidersyncrootinfo)
 
-#### [cortanaactionableinsightsoptions](https://docs.microsoft.com/uwp/api/windows.services.cortana.cortanaactionableinsightsoptions)
+StorageProviderSyncRootInfo.ProviderId
 
-cortanaactionableinsightsoptions <br> cortanaactionableinsightsoptions.contentsourceweblink <br> cortanaactionableinsightsoptions.cortanaactionableinsightsoptions <br> cortanaactionableinsightsoptions.surroundingtext
+## Windows.System
 
-### [windows.services.store](https://docs.microsoft.com/uwp/api/windows.services.store)
+### [Windows.System.Implementation.Holographic](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic)
 
-#### [storeapplicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)
+#### [SysHolographicDeploymentProgress](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentprogress)
 
-storeapplicense.isdisclicense
+SysHolographicDeploymentProgress
 
-#### [storecontext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)
+#### [SysHolographicDeploymentResult](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentresult)
 
-storecontext.requestrateandreviewappasync <br> storecontext.setinstallorderforassociatedstorequeueitemsasync
+SysHolographicDeploymentResult <br> SysHolographicDeploymentResult.DeploymentState <br> SysHolographicDeploymentResult.ExtendedError
 
-#### [storequeueitem](https://docs.microsoft.com/uwp/api/windows.services.store.storequeueitem)
+#### [SysHolographicDeploymentState](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentstate)
 
-storequeueitem.cancelinstallasync <br> storequeueitem.pauseinstallasync <br> storequeueitem.resumeinstallasync
+SysHolographicDeploymentState
 
-#### [storerateandreviewresult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)
+#### [SysHolographicDisplay](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplay)
 
-storerateandreviewresult <br> storerateandreviewresult.extendederror <br> storerateandreviewresult.extendedjsondata <br> storerateandreviewresult.status <br> storerateandreviewresult.wasupdated
+SysHolographicDisplay <br> SysHolographicDisplay.DeviceId <br> SysHolographicDisplay.Display <br> SysHolographicDisplay.ExperienceMode <br> SysHolographicDisplay.LeftViewportParameters <br> SysHolographicDisplay.OutputAdapterId <br> SysHolographicDisplay.RightViewportParameters
 
-#### [storerateandreviewstatus](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewstatus)
+#### [SysHolographicDisplayExperienceMode](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplayexperiencemode)
 
-storerateandreviewstatus
+SysHolographicDisplayExperienceMode
 
-## windows.storage
+#### [SysHolographicDisplayWatcher](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplaywatcher)
 
-### [windows.storage.provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
+SysHolographicDisplayWatcher <br> SysHolographicDisplayWatcher.Added <br> SysHolographicDisplayWatcher.EnumerationCompleted <br> SysHolographicDisplayWatcher.Removed <br> SysHolographicDisplayWatcher.Start <br> SysHolographicDisplayWatcher.Status <br> SysHolographicDisplayWatcher.Stop <br> SysHolographicDisplayWatcher.Stopped <br> SysHolographicDisplayWatcher.#ctor
 
-#### [storageprovidersyncrootinfo](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageprovidersyncrootinfo)
+#### [SysHolographicDisplayWatcherStatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplaywatcherstatus)
 
-storageprovidersyncrootinfo.providerid
+SysHolographicDisplayWatcherStatus
 
-## windows.system
+#### [SysHolographicPreviewMediaSource](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicpreviewmediasource)
 
-### [windows.system.implementation.holographic](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic)
+SysHolographicPreviewMediaSource <br> SysHolographicPreviewMediaSource.Create
 
-#### [sysholographicdeploymentprogress](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentprogress)
+#### [SysHolographicWindowingEnvironment](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironment)
 
-sysholographicdeploymentprogress
+SysHolographicWindowingEnvironment <br> SysHolographicWindowingEnvironment.DeployAsync <br> SysHolographicWindowingEnvironment.GetDefault <br> SysHolographicWindowingEnvironment.GetDeploymentStateAsync <br> SysHolographicWindowingEnvironment.IsDeviceSetupComplete <br> SysHolographicWindowingEnvironment.IsLearningExperienceComplete <br> SysHolographicWindowingEnvironment.IsPreviewActive <br> SysHolographicWindowingEnvironment.IsPreviewActiveChanged <br> SysHolographicWindowingEnvironment.IsProtectedContentPresent <br> SysHolographicWindowingEnvironment.IsProtectedContentPresentChanged <br> SysHolographicWindowingEnvironment.IsSpeechPersonalizationSupported <br> SysHolographicWindowingEnvironment.SetIsSpeechPersonalizationEnabledAsync <br> SysHolographicWindowingEnvironment.StartAsync <br> SysHolographicWindowingEnvironment.Status <br> SysHolographicWindowingEnvironment.StatusChanged <br> SysHolographicWindowingEnvironment.StopAsync
 
-#### [sysholographicdeploymentresult](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentresult)
+#### [SysHolographicWindowingEnvironmentComponentKind](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentkind)
 
-sysholographicdeploymentresult <br> sysholographicdeploymentresult.deploymentstate <br> sysholographicdeploymentresult.extendederror
+SysHolographicWindowingEnvironmentComponentKind
 
-#### [sysholographicdeploymentstate](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdeploymentstate)
+#### [SysHolographicWindowingEnvironmentComponentState](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentstate)
 
-sysholographicdeploymentstate
+SysHolographicWindowingEnvironmentComponentState
 
-#### [sysholographicdisplay](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplay)
+#### [SysHolographicWindowingEnvironmentComponentStatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentstatus)
 
-sysholographicdisplay <br> sysholographicdisplay.deviceid <br> sysholographicdisplay.display <br> sysholographicdisplay.experiencemode <br> sysholographicdisplay.leftviewportparameters <br> sysholographicdisplay.outputadapterid <br> sysholographicdisplay.rightviewportparameters
+SysHolographicWindowingEnvironmentComponentStatus
 
-#### [sysholographicdisplayexperiencemode](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplayexperiencemode)
+#### [SysHolographicWindowingEnvironmentState](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentstate)
 
-sysholographicdisplayexperiencemode
+SysHolographicWindowingEnvironmentState
 
-#### [sysholographicdisplaywatcher](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplaywatcher)
+#### [SysHolographicWindowingEnvironmentStatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentstatus)
 
-sysholographicdisplaywatcher <br> sysholographicdisplaywatcher.added <br> sysholographicdisplaywatcher.enumerationcompleted <br> sysholographicdisplaywatcher.removed <br> sysholographicdisplaywatcher.start <br> sysholographicdisplaywatcher.status <br> sysholographicdisplaywatcher.stop <br> sysholographicdisplaywatcher.stopped <br> sysholographicdisplaywatcher.sysholographicdisplaywatcher
+SysHolographicWindowingEnvironmentStatus <br> SysHolographicWindowingEnvironmentStatus.ComponentStatuses <br> SysHolographicWindowingEnvironmentStatus.State
 
-#### [sysholographicdisplaywatcherstatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicdisplaywatcherstatus)
+#### [SysSpatialInputDevice](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevice)
 
-sysholographicdisplaywatcherstatus
+SysSpatialInputDevice <br> SysSpatialInputDevice.Handedness <br> SysSpatialInputDevice.HasPositionalTracking <br> SysSpatialInputDevice.TryGetBatteryReport
 
-#### [sysholographicpreviewmediasource](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicpreviewmediasource)
+#### [SysSpatialInputDeviceWatcher](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevicewatcher)
 
-sysholographicpreviewmediasource <br> sysholographicpreviewmediasource.create
+SysSpatialInputDeviceWatcher <br> SysSpatialInputDeviceWatcher.Added <br> SysSpatialInputDeviceWatcher.EnumerationCompleted <br> SysSpatialInputDeviceWatcher.Removed <br> SysSpatialInputDeviceWatcher.Start <br> SysSpatialInputDeviceWatcher.Status <br> SysSpatialInputDeviceWatcher.Stop <br> SysSpatialInputDeviceWatcher.Stopped <br> SysSpatialInputDeviceWatcher.#ctor <br> SysSpatialInputDeviceWatcher.Updated
 
-#### [sysholographicwindowingenvironment](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironment)
+#### [SysSpatialInputDeviceWatcherStatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevicewatcherstatus)
 
-sysholographicwindowingenvironment <br> sysholographicwindowingenvironment.deployasync <br> sysholographicwindowingenvironment.getdefault <br> sysholographicwindowingenvironment.getdeploymentstateasync <br> sysholographicwindowingenvironment.isdevicesetupcomplete <br> sysholographicwindowingenvironment.islearningexperiencecomplete <br> sysholographicwindowingenvironment.ispreviewactive <br> sysholographicwindowingenvironment.ispreviewactivechanged <br> sysholographicwindowingenvironment.isprotectedcontentpresent <br> sysholographicwindowingenvironment.isprotectedcontentpresentchanged <br> sysholographicwindowingenvironment.isspeechpersonalizationsupported <br> sysholographicwindowingenvironment.setisspeechpersonalizationenabledasync <br> sysholographicwindowingenvironment.startasync <br> sysholographicwindowingenvironment.status <br> sysholographicwindowingenvironment.statuschanged <br> sysholographicwindowingenvironment.stopasync
+SysSpatialInputDeviceWatcherStatus
 
-#### [sysholographicwindowingenvironmentcomponentkind](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentkind)
+#### [SysSpatialLocator](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatiallocator)
 
-sysholographicwindowingenvironmentcomponentkind
+SysSpatialLocator <br> SysSpatialLocator.GetFloorLocator
 
-#### [sysholographicwindowingenvironmentcomponentstate](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentstate)
+#### [SysSpatialStageBoundaryDisposition](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialstageboundarydisposition)
 
-sysholographicwindowingenvironmentcomponentstate
+SysSpatialStageBoundaryDisposition
 
-#### [sysholographicwindowingenvironmentcomponentstatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentcomponentstatus)
+#### [SysSpatialStageManager](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialstagemanager)
 
-sysholographicwindowingenvironmentcomponentstatus
+SysSpatialStageManager <br> SysSpatialStageManager.DoesAnyStageHaveBoundariesAsync <br> SysSpatialStageManager.GetBoundaryDisposition <br> SysSpatialStageManager.SetAndSaveNewStageAsync <br> SysSpatialStageManager.SetBoundaryEnabled <br> SysSpatialStageManager.#ctor <br> SysSpatialStageManager.UpdateStageAnchorAsync
 
-#### [sysholographicwindowingenvironmentstate](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentstate)
+### [Windows.System.Preview](https://docs.microsoft.com/uwp/api/windows.system.preview)
 
-sysholographicwindowingenvironmentstate
+#### [HingeState](https://docs.microsoft.com/uwp/api/windows.system.preview.hingestate)
 
-#### [sysholographicwindowingenvironmentstatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysholographicwindowingenvironmentstatus)
+HingeState
 
-sysholographicwindowingenvironmentstatus <br> sysholographicwindowingenvironmentstatus.componentstatuses <br> sysholographicwindowingenvironmentstatus.state
+#### [TwoPanelHingedDevicePosturePreview](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreview)
 
-#### [sysspatialinputdevice](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevice)
+TwoPanelHingedDevicePosturePreview <br> TwoPanelHingedDevicePosturePreview.GetCurrentPostureAsync <br> TwoPanelHingedDevicePosturePreview.GetDefaultAsync <br> TwoPanelHingedDevicePosturePreview.PostureChanged
 
-sysspatialinputdevice <br> sysspatialinputdevice.handedness <br> sysspatialinputdevice.haspositionaltracking <br> sysspatialinputdevice.trygetbatteryreport
+#### [TwoPanelHingedDevicePosturePreviewReading](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreviewreading)
 
-#### [sysspatialinputdevicewatcher](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevicewatcher)
+TwoPanelHingedDevicePosturePreviewReading <br> TwoPanelHingedDevicePosturePreviewReading.HingeState <br> TwoPanelHingedDevicePosturePreviewReading.Panel1Id <br> TwoPanelHingedDevicePosturePreviewReading.Panel1Orientation <br> TwoPanelHingedDevicePosturePreviewReading.Panel2Id <br> TwoPanelHingedDevicePosturePreviewReading.Panel2Orientation <br> TwoPanelHingedDevicePosturePreviewReading.Timestamp
 
-sysspatialinputdevicewatcher <br> sysspatialinputdevicewatcher.added <br> sysspatialinputdevicewatcher.enumerationcompleted <br> sysspatialinputdevicewatcher.removed <br> sysspatialinputdevicewatcher.start <br> sysspatialinputdevicewatcher.status <br> sysspatialinputdevicewatcher.stop <br> sysspatialinputdevicewatcher.stopped <br> sysspatialinputdevicewatcher.sysspatialinputdevicewatcher <br> sysspatialinputdevicewatcher.updated
+#### [TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreviewreadingchangedeventargs)
 
-#### [sysspatialinputdevicewatcherstatus](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialinputdevicewatcherstatus)
+TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs <br> TwoPanelHingedDevicePosturePreviewReadingChangedEventArgs.Reading
 
-sysspatialinputdevicewatcherstatus
+### [Windows.System.Profile.SystemManufacturers](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers)
 
-#### [sysspatiallocator](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatiallocator)
+#### [SystemSupportDeviceInfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers.systemsupportdeviceinfo)
 
-sysspatiallocator <br> sysspatiallocator.getfloorlocator
+SystemSupportDeviceInfo <br> SystemSupportDeviceInfo.FriendlyName <br> SystemSupportDeviceInfo.OperatingSystem <br> SystemSupportDeviceInfo.SystemFirmwareVersion <br> SystemSupportDeviceInfo.SystemHardwareVersion <br> SystemSupportDeviceInfo.SystemManufacturer <br> SystemSupportDeviceInfo.SystemProductName <br> SystemSupportDeviceInfo.SystemSku
 
-#### [sysspatialstageboundarydisposition](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialstageboundarydisposition)
+#### [SystemSupportInfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers.systemsupportinfo)
 
-sysspatialstageboundarydisposition
+SystemSupportInfo.LocalDeviceInfo
 
-#### [sysspatialstagemanager](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.sysspatialstagemanager)
+### [Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)
 
-sysspatialstagemanager <br> sysspatialstagemanager.doesanystagehaveboundariesasync <br> sysspatialstagemanager.getboundarydisposition <br> sysspatialstagemanager.setandsavenewstageasync <br> sysspatialstagemanager.setboundaryenabled <br> sysspatialstagemanager.sysspatialstagemanager <br> sysspatialstagemanager.updatestageanchorasync
+#### [SystemOutOfBoxExperienceState](https://docs.microsoft.com/uwp/api/windows.system.profile.systemoutofboxexperiencestate)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.system.implementation.holographic.windows)
+SystemOutOfBoxExperienceState
 
-windows.system.implementation.holographic
+#### [SystemSetupInfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemsetupinfo)
 
-### [windows.system.preview](https://docs.microsoft.com/uwp/api/windows.system.preview)
+SystemSetupInfo <br> SystemSetupInfo.OutOfBoxExperienceState <br> SystemSetupInfo.OutOfBoxExperienceStateChanged
 
-#### [hingestate](https://docs.microsoft.com/uwp/api/windows.system.preview.hingestate)
+#### [WindowsIntegrityPolicy](https://docs.microsoft.com/uwp/api/windows.system.profile.windowsintegritypolicy)
 
-hingestate
+WindowsIntegrityPolicy <br> WindowsIntegrityPolicy.CanDisable <br> WindowsIntegrityPolicy.IsDisableSupported <br> WindowsIntegrityPolicy.IsEnabled <br> WindowsIntegrityPolicy.IsEnabledForTrial <br> WindowsIntegrityPolicy.PolicyChanged
 
-#### [twopanelhingeddeviceposturepreview](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreview)
+### [Windows.System.RemoteSystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
 
-twopanelhingeddeviceposturepreview <br> twopanelhingeddeviceposturepreview.getcurrentpostureasync <br> twopanelhingeddeviceposturepreview.getdefaultasync <br> twopanelhingeddeviceposturepreview.posturechanged
+#### [RemoteSystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
 
-#### [twopanelhingeddeviceposturepreviewreading](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreviewreading)
+RemoteSystem.Apps
 
-twopanelhingeddeviceposturepreviewreading <br> twopanelhingeddeviceposturepreviewreading.hingestate <br> twopanelhingeddeviceposturepreviewreading.panel1id <br> twopanelhingeddeviceposturepreviewreading.panel1orientation <br> twopanelhingeddeviceposturepreviewreading.panel2id <br> twopanelhingeddeviceposturepreviewreading.panel2orientation <br> twopanelhingeddeviceposturepreviewreading.timestamp
+#### [RemoteSystemApp](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemapp)
 
-#### [twopanelhingeddeviceposturepreviewreadingchangedeventargs](https://docs.microsoft.com/uwp/api/windows.system.preview.twopanelhingeddeviceposturepreviewreadingchangedeventargs)
+RemoteSystemApp <br> RemoteSystemApp.Attributes <br> RemoteSystemApp.DisplayName <br> RemoteSystemApp.Id <br> RemoteSystemApp.IsAvailableByProximity <br> RemoteSystemApp.IsAvailableBySpatialProximity
 
-twopanelhingeddeviceposturepreviewreadingchangedeventargs <br> twopanelhingeddeviceposturepreviewreadingchangedeventargs.reading
+#### [RemoteSystemAppRegistration](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemappregistration)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.system.preview.windows)
+RemoteSystemAppRegistration <br> RemoteSystemAppRegistration.Attributes <br> RemoteSystemAppRegistration.GetDefault <br> RemoteSystemAppRegistration.GetForUser <br> RemoteSystemAppRegistration.SaveAsync <br> RemoteSystemAppRegistration.User
 
-windows.system.preview
+#### [RemoteSystemConnectionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectioninfo)
 
-### [windows.system.profile.systemmanufacturers](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers)
+RemoteSystemConnectionInfo <br> RemoteSystemConnectionInfo.IsProximal <br> RemoteSystemConnectionInfo.TryCreateFromAppServiceConnection
 
-#### [systemsupportdeviceinfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers.systemsupportdeviceinfo)
+#### [RemoteSystemConnectionRequest](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectionrequest)
 
-systemsupportdeviceinfo <br> systemsupportdeviceinfo.friendlyname <br> systemsupportdeviceinfo.operatingsystem <br> systemsupportdeviceinfo.systemfirmwareversion <br> systemsupportdeviceinfo.systemhardwareversion <br> systemsupportdeviceinfo.systemmanufacturer <br> systemsupportdeviceinfo.systemproductname <br> systemsupportdeviceinfo.systemsku
+RemoteSystemConnectionRequest.CreateForApp <br> RemoteSystemConnectionRequest.RemoteSystemApp
 
-#### [systemsupportinfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers.systemsupportinfo)
+#### [RemoteSystemWebAccountFilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwebaccountfilter)
 
-systemsupportinfo.localdeviceinfo
+RemoteSystemWebAccountFilter <br> RemoteSystemWebAccountFilter.Account <br> RemoteSystemWebAccountFilter.#ctor
 
-### [windows.system.profile](https://docs.microsoft.com/uwp/api/windows.system.profile)
+### [Windows.System.Update](https://docs.microsoft.com/uwp/api/windows.system.update)
 
-#### [systemoutofboxexperiencestate](https://docs.microsoft.com/uwp/api/windows.system.profile.systemoutofboxexperiencestate)
+#### [SystemUpdateAttentionRequiredReason](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateattentionrequiredreason)
 
-systemoutofboxexperiencestate
+SystemUpdateAttentionRequiredReason
 
-#### [systemsetupinfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemsetupinfo)
+#### [SystemUpdateItem](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateitem)
 
-systemsetupinfo <br> systemsetupinfo.outofboxexperiencestate <br> systemsetupinfo.outofboxexperiencestatechanged
+SystemUpdateItem <br> SystemUpdateItem.Description <br> SystemUpdateItem.DownloadProgress <br> SystemUpdateItem.ExtendedError <br> SystemUpdateItem.Id <br> SystemUpdateItem.InstallProgress <br> SystemUpdateItem.Revision <br> SystemUpdateItem.State <br> SystemUpdateItem.Title
 
-#### [windowsintegritypolicy](https://docs.microsoft.com/uwp/api/windows.system.profile.windowsintegritypolicy)
+#### [SystemUpdateItemState](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateitemstate)
 
-windowsintegritypolicy <br> windowsintegritypolicy.candisable <br> windowsintegritypolicy.isdisablesupported <br> windowsintegritypolicy.isenabled <br> windowsintegritypolicy.isenabledfortrial <br> windowsintegritypolicy.policychanged
+SystemUpdateItemState
 
-### [windows.system.remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
+#### [SystemUpdateLastErrorInfo](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatelasterrorinfo)
 
-#### [remotesystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
+SystemUpdateLastErrorInfo <br> SystemUpdateLastErrorInfo.ExtendedError <br> SystemUpdateLastErrorInfo.IsInteractive <br> SystemUpdateLastErrorInfo.State
 
-remotesystem.apps
+#### [SystemUpdateManager](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatemanager)
 
-#### [remotesystemapp](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemapp)
+SystemUpdateManager <br> SystemUpdateManager.AttentionRequiredReason <br> SystemUpdateManager.BlockAutomaticRebootAsync <br> SystemUpdateManager.DownloadProgress <br> SystemUpdateManager.ExtendedError <br> SystemUpdateManager.GetAutomaticRebootBlockIds <br> SystemUpdateManager.GetFlightRing <br> SystemUpdateManager.GetUpdateItems <br> SystemUpdateManager.InstallProgress <br> SystemUpdateManager.IsSupported <br> SystemUpdateManager.LastErrorInfo <br> SystemUpdateManager.LastUpdateCheckTime <br> SystemUpdateManager.LastUpdateInstallTime <br> SystemUpdateManager.RebootToCompleteInstall <br> SystemUpdateManager.SetFlightRing <br> SystemUpdateManager.StartCancelUpdates <br> SystemUpdateManager.StartInstall <br> SystemUpdateManager.State <br> SystemUpdateManager.StateChanged <br> SystemUpdateManager.TrySetUserActiveHours <br> SystemUpdateManager.UnblockAutomaticRebootAsync <br> SystemUpdateManager.UserActiveHoursEnd <br> SystemUpdateManager.UserActiveHoursMax <br> SystemUpdateManager.UserActiveHoursStart
 
-remotesystemapp <br> remotesystemapp.attributes <br> remotesystemapp.displayname <br> remotesystemapp.id <br> remotesystemapp.isavailablebyproximity <br> remotesystemapp.isavailablebyspatialproximity
+#### [SystemUpdateManagerState](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatemanagerstate)
 
-#### [remotesystemappregistration](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemappregistration)
+SystemUpdateManagerState
 
-remotesystemappregistration <br> remotesystemappregistration.attributes <br> remotesystemappregistration.getdefault <br> remotesystemappregistration.getforuser <br> remotesystemappregistration.saveasync <br> remotesystemappregistration.user
+#### [SystemUpdateStartInstallAction](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatestartinstallaction)
 
-#### [remotesystemconnectioninfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectioninfo)
+SystemUpdateStartInstallAction
 
-remotesystemconnectioninfo <br> remotesystemconnectioninfo.isproximal <br> remotesystemconnectioninfo.trycreatefromappserviceconnection
+### [Windows.System.UserProfile](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
 
-#### [remotesystemconnectionrequest](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemconnectionrequest)
+#### [AssignedAccessSettings](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)
 
-remotesystemconnectionrequest.createforapp <br> remotesystemconnectionrequest.remotesystemapp
+AssignedAccessSettings <br> AssignedAccessSettings.GetDefault <br> AssignedAccessSettings.GetForUser <br> AssignedAccessSettings.IsEnabled <br> AssignedAccessSettings.IsSingleAppKioskMode <br> AssignedAccessSettings.User
 
-#### [remotesystemwebaccountfilter](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwebaccountfilter)
+### [Windows.System](https://docs.microsoft.com/uwp/api/windows.system)
 
-remotesystemwebaccountfilter <br> remotesystemwebaccountfilter.account <br> remotesystemwebaccountfilter.remotesystemwebaccountfilter
+#### [AppUriHandlerHost](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerhost)
 
-### [windows.system.update](https://docs.microsoft.com/uwp/api/windows.system.update)
+AppUriHandlerHost <br> AppUriHandlerHost.#ctor <br> AppUriHandlerHost.#ctor <br> AppUriHandlerHost.Name
 
-#### [systemupdateattentionrequiredreason](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateattentionrequiredreason)
+#### [AppUriHandlerRegistration](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerregistration)
 
-systemupdateattentionrequiredreason
+AppUriHandlerRegistration <br> AppUriHandlerRegistration.GetAppAddedHostsAsync <br> AppUriHandlerRegistration.Name <br> AppUriHandlerRegistration.SetAppAddedHostsAsync <br> AppUriHandlerRegistration.User
 
-#### [systemupdateitem](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateitem)
+#### [AppUriHandlerRegistrationManager](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerregistrationmanager)
 
-systemupdateitem <br> systemupdateitem.description <br> systemupdateitem.downloadprogress <br> systemupdateitem.extendederror <br> systemupdateitem.id <br> systemupdateitem.installprogress <br> systemupdateitem.revision <br> systemupdateitem.state <br> systemupdateitem.title
+AppUriHandlerRegistrationManager <br> AppUriHandlerRegistrationManager.GetDefault <br> AppUriHandlerRegistrationManager.GetForUser <br> AppUriHandlerRegistrationManager.TryGetRegistration <br> AppUriHandlerRegistrationManager.User
 
-#### [systemupdateitemstate](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdateitemstate)
+#### [Launcher](https://docs.microsoft.com/uwp/api/windows.system.launcher)
 
-systemupdateitemstate
+Launcher.LaunchFolderPathAsync <br> Launcher.LaunchFolderPathAsync <br> Launcher.LaunchFolderPathForUserAsync <br> Launcher.LaunchFolderPathForUserAsync
 
-#### [systemupdatelasterrorinfo](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatelasterrorinfo)
+## Windows.UI
 
-systemupdatelasterrorinfo <br> systemupdatelasterrorinfo.extendederror <br> systemupdatelasterrorinfo.isinteractive <br> systemupdatelasterrorinfo.state
+### [Windows.UI.Accessibility](https://docs.microsoft.com/uwp/api/windows.ui.accessibility)
 
-#### [systemupdatemanager](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatemanager)
+#### [ScreenReaderPositionChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.accessibility.screenreaderpositionchangedeventargs)
 
-systemupdatemanager <br> systemupdatemanager.attentionrequiredreason <br> systemupdatemanager.blockautomaticrebootasync <br> systemupdatemanager.downloadprogress <br> systemupdatemanager.extendederror <br> systemupdatemanager.getautomaticrebootblockids <br> systemupdatemanager.getflightring <br> systemupdatemanager.getupdateitems <br> systemupdatemanager.installprogress <br> systemupdatemanager.issupported <br> systemupdatemanager.lasterrorinfo <br> systemupdatemanager.lastupdatechecktime <br> systemupdatemanager.lastupdateinstalltime <br> systemupdatemanager.reboottocompleteinstall <br> systemupdatemanager.setflightring <br> systemupdatemanager.startcancelupdates <br> systemupdatemanager.startinstall <br> systemupdatemanager.state <br> systemupdatemanager.statechanged <br> systemupdatemanager.trysetuseractivehours <br> systemupdatemanager.unblockautomaticrebootasync <br> systemupdatemanager.useractivehoursend <br> systemupdatemanager.useractivehoursmax <br> systemupdatemanager.useractivehoursstart
+ScreenReaderPositionChangedEventArgs <br> ScreenReaderPositionChangedEventArgs.IsReadingText <br> ScreenReaderPositionChangedEventArgs.ScreenPositionInRawPixels
 
-#### [systemupdatemanagerstate](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatemanagerstate)
+#### [ScreenReaderService](https://docs.microsoft.com/uwp/api/windows.ui.accessibility.screenreaderservice)
 
-systemupdatemanagerstate
+ScreenReaderService <br> ScreenReaderService.CurrentScreenReaderPosition <br> ScreenReaderService.ScreenReaderPositionChanged <br> ScreenReaderService.#ctor
 
-#### [systemupdatestartinstallaction](https://docs.microsoft.com/uwp/api/windows.system.update.systemupdatestartinstallaction)
+### [Windows.UI.Composition.Interactions](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions)
 
-systemupdatestartinstallaction
+#### [InteractionSourceConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourceconfiguration)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.system.update.windows)
+InteractionSourceConfiguration <br> InteractionSourceConfiguration.PositionXSourceMode <br> InteractionSourceConfiguration.PositionYSourceMode <br> InteractionSourceConfiguration.ScaleSourceMode
 
-windows.system.update
+#### [InteractionSourceRedirectionMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourceredirectionmode)
 
-### [windows.system.userprofile](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
+InteractionSourceRedirectionMode
 
-#### [assignedaccesssettings](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)
+#### [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
 
-assignedaccesssettings <br> assignedaccesssettings.getdefault <br> assignedaccesssettings.getforuser <br> assignedaccesssettings.isenabled <br> assignedaccesssettings.issingleappkioskmode <br> assignedaccesssettings.user
+InteractionTracker.IsInertiaFromImpulse <br> InteractionTracker.TryUpdatePosition <br> InteractionTracker.TryUpdatePositionBy
 
-### [windows.system](https://docs.microsoft.com/uwp/api/windows.system)
+#### [InteractionTrackerClampingOption](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerclampingoption)
 
-#### [appurihandlerhost](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerhost)
+InteractionTrackerClampingOption
 
-appurihandlerhost <br> appurihandlerhost.appurihandlerhost <br> appurihandlerhost.appurihandlerhost <br> appurihandlerhost.name
+#### [InteractionTrackerInertiaStateEnteredArgs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
 
-#### [appurihandlerregistration](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerregistration)
+InteractionTrackerInertiaStateEnteredArgs.IsInertiaFromImpulse
 
-appurihandlerregistration <br> appurihandlerregistration.getappaddedhostsasync <br> appurihandlerregistration.name <br> appurihandlerregistration.setappaddedhostsasync <br> appurihandlerregistration.user
+#### [VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource)
 
-#### [appurihandlerregistrationmanager](https://docs.microsoft.com/uwp/api/windows.system.appurihandlerregistrationmanager)
+VisualInteractionSource.PointerWheelConfig
 
-appurihandlerregistrationmanager <br> appurihandlerregistrationmanager.getdefault <br> appurihandlerregistrationmanager.getforuser <br> appurihandlerregistrationmanager.trygetregistration <br> appurihandlerregistrationmanager.user
+### [Windows.UI.Composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
 
-#### [launcher](https://docs.microsoft.com/uwp/api/windows.system.launcher)
+#### [AnimationPropertyAccessMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationpropertyaccessmode)
 
-launcher.launchfolderpathasync <br> launcher.launchfolderpathasync <br> launcher.launchfolderpathforuserasync <br> launcher.launchfolderpathforuserasync
+AnimationPropertyAccessMode
 
-## windows.ui
+#### [AnimationPropertyInfo](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationpropertyinfo)
 
-### [windows.ui.accessibility](https://docs.microsoft.com/uwp/api/windows.ui.accessibility)
+AnimationPropertyInfo <br> AnimationPropertyInfo.AccessMode
 
-#### [screenreaderpositionchangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.accessibility.screenreaderpositionchangedeventargs)
+#### [BooleanKeyFrameAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.booleankeyframeanimation)
 
-screenreaderpositionchangedeventargs <br> screenreaderpositionchangedeventargs.isreadingtext <br> screenreaderpositionchangedeventargs.screenpositioninrawpixels
+BooleanKeyFrameAnimation <br> BooleanKeyFrameAnimation.InsertKeyFrame
 
-#### [screenreaderservice](https://docs.microsoft.com/uwp/api/windows.ui.accessibility.screenreaderservice)
+#### [CompositionAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimation)
 
-screenreaderservice <br> screenreaderservice.currentscreenreaderposition <br> screenreaderservice.screenreaderpositionchanged <br> screenreaderservice.screenreaderservice
+CompositionAnimation.SetExpressionReferenceParameter
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.accessibility.windows)
+#### [CompositionGeometricClip](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiongeometricclip)
 
-windows.ui.accessibility
+CompositionGeometricClip <br> CompositionGeometricClip.Geometry <br> CompositionGeometricClip.ViewBox
 
-### [windows.ui.composition.interactions](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions)
+#### [CompositionGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiongradientbrush)
 
-#### [interactionsourceconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourceconfiguration)
+CompositionGradientBrush.MappingMode
 
-interactionsourceconfiguration <br> interactionsourceconfiguration.positionxsourcemode <br> interactionsourceconfiguration.positionysourcemode <br> interactionsourceconfiguration.scalesourcemode
+#### [CompositionMappingMode](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionmappingmode)
 
-#### [interactionsourceredirectionmode](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactionsourceredirectionmode)
+CompositionMappingMode
 
-interactionsourceredirectionmode
+#### [CompositionObject](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionobject)
 
-#### [interactiontracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
+CompositionObject.PopulatePropertyInfo <br> CompositionObject.StartAnimationGroupWithIAnimationObject <br> CompositionObject.StartAnimationWithIAnimationObject
 
-interactiontracker.isinertiafromimpulse <br> interactiontracker.tryupdateposition <br> interactiontracker.tryupdatepositionby
+#### [Compositor](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
 
-#### [interactiontrackerclampingoption](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerclampingoption)
+Compositor.CreateBooleanKeyFrameAnimation <br> Compositor.CreateGeometricClip <br> Compositor.CreateGeometricClip <br> Compositor.CreateRedirectVisual <br> Compositor.CreateRedirectVisual
 
-interactiontrackerclampingoption
+#### [IAnimationObject](https://docs.microsoft.com/uwp/api/windows.ui.composition.ianimationobject)
 
-#### [interactiontrackerinertiastateenteredargs](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontrackerinertiastateenteredargs)
+IAnimationObject <br> IAnimationObject.PopulatePropertyInfo
 
-interactiontrackerinertiastateenteredargs.isinertiafromimpulse
+#### [RedirectVisual](https://docs.microsoft.com/uwp/api/windows.ui.composition.redirectvisual)
 
-#### [visualinteractionsource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource)
+RedirectVisual <br> RedirectVisual.Source
 
-visualinteractionsource.pointerwheelconfig
+### [Windows.UI.Input.Inking.Preview](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.preview)
 
-### [windows.ui.composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
+#### [PalmRejectionDelayZonePreview](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.preview.palmrejectiondelayzonepreview)
 
-#### [animationpropertyaccessmode](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationpropertyaccessmode)
+PalmRejectionDelayZonePreview <br> PalmRejectionDelayZonePreview.Close <br> PalmRejectionDelayZonePreview.CreateForVisual <br> PalmRejectionDelayZonePreview.CreateForVisual
 
-animationpropertyaccessmode
+### [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
 
-#### [animationpropertyinfo](https://docs.microsoft.com/uwp/api/windows.ui.composition.animationpropertyinfo)
+#### [HandwritingLineHeight](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.handwritinglineheight)
 
-animationpropertyinfo <br> animationpropertyinfo.accessmode
+HandwritingLineHeight
 
-#### [booleankeyframeanimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.booleankeyframeanimation)
+#### [PenAndInkSettings](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.penandinksettings)
 
-booleankeyframeanimation <br> booleankeyframeanimation.insertkeyframe
+PenAndInkSettings <br> PenAndInkSettings.FontFamilyName <br> PenAndInkSettings.GetDefault <br> PenAndInkSettings.HandwritingLineHeight <br> PenAndInkSettings.IsHandwritingDirectlyIntoTextFieldEnabled <br> PenAndInkSettings.IsTouchHandwritingEnabled <br> PenAndInkSettings.PenHandedness <br> PenAndInkSettings.UserConsentsToHandwritingTelemetryCollection
 
-#### [compositionanimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimation)
+#### [PenHandedness](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.penhandedness)
 
-compositionanimation.setexpressionreferenceparameter
+PenHandedness
 
-#### [compositiongeometricclip](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiongeometricclip)
+### [Windows.UI.Notifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications)
 
-compositiongeometricclip <br> compositiongeometricclip.geometry <br> compositiongeometricclip.viewbox
+#### [ScheduledToastNotificationShowingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.notifications.scheduledtoastnotificationshowingeventargs)
 
-#### [compositiongradientbrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiongradientbrush)
+ScheduledToastNotificationShowingEventArgs <br> ScheduledToastNotificationShowingEventArgs.Cancel <br> ScheduledToastNotificationShowingEventArgs.GetDeferral <br> ScheduledToastNotificationShowingEventArgs.ScheduledToastNotification
 
-compositiongradientbrush.mappingmode
+#### [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier)
 
-#### [compositionmappingmode](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionmappingmode)
+ToastNotifier.ScheduledToastNotificationShowing
 
-compositionmappingmode
+### [Windows.UI.Shell](https://docs.microsoft.com/uwp/api/windows.ui.shell)
 
-#### [compositionobject](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionobject)
+#### [SecurityAppKind](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappkind)
 
-compositionobject.populatepropertyinfo <br> compositionobject.startanimationgroupwithianimationobject <br> compositionobject.startanimationwithianimationobject
+SecurityAppKind
 
-#### [compositor](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
+#### [SecurityAppManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappmanager)
 
-compositor.createbooleankeyframeanimation <br> compositor.creategeometricclip <br> compositor.creategeometricclip <br> compositor.createredirectvisual <br> compositor.createredirectvisual
+SecurityAppManager <br> SecurityAppManager.Register <br> SecurityAppManager.#ctor <br> SecurityAppManager.Unregister <br> SecurityAppManager.UpdateState
 
-#### [ianimationobject](https://docs.microsoft.com/uwp/api/windows.ui.composition.ianimationobject)
+#### [SecurityAppState](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappstate)
 
-ianimationobject <br> ianimationobject.populatepropertyinfo
+SecurityAppState
 
-#### [redirectvisual](https://docs.microsoft.com/uwp/api/windows.ui.composition.redirectvisual)
+#### [SecurityAppSubstatus](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappsubstatus)
 
-redirectvisual <br> redirectvisual.source
+SecurityAppSubstatus
 
-### [windows.ui.input.inking.preview](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.preview)
+#### [TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
 
-#### [palmrejectiondelayzonepreview](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.preview.palmrejectiondelayzonepreview)
+TaskbarManager.IsSecondaryTilePinnedAsync <br> TaskbarManager.RequestPinSecondaryTileAsync <br> TaskbarManager.TryUnpinSecondaryTileAsync
 
-palmrejectiondelayzonepreview <br> palmrejectiondelayzonepreview.close <br> palmrejectiondelayzonepreview.createforvisual <br> palmrejectiondelayzonepreview.createforvisual
+### [Windows.UI.StartScreen](https://docs.microsoft.com/uwp/api/windows.ui.startscreen)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.preview.windows)
+#### [StartScreenManager](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)
 
-windows.ui.input.inking.preview
+StartScreenManager.ContainsSecondaryTileAsync <br> StartScreenManager.TryRemoveSecondaryTileAsync
 
-### [windows.ui.input.inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
+### [Windows.UI.Text.Core](https://docs.microsoft.com/uwp/api/windows.ui.text.core)
 
-#### [handwritinglineheight](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.handwritinglineheight)
+#### [CoreTextLayoutRequest](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretextlayoutrequest)
 
-handwritinglineheight
+CoreTextLayoutRequest.LayoutBoundsVisualPixels
 
-#### [penandinksettings](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.penandinksettings)
+### [Windows.UI.Text](https://docs.microsoft.com/uwp/api/windows.ui.text)
 
-penandinksettings <br> penandinksettings.fontfamilyname <br> penandinksettings.getdefault <br> penandinksettings.handwritinglineheight <br> penandinksettings.ishandwritingdirectlyintotextfieldenabled <br> penandinksettings.istouchhandwritingenabled <br> penandinksettings.penhandedness <br> penandinksettings.userconsentstohandwritingtelemetrycollection
+#### [RichEditTextDocument](https://docs.microsoft.com/uwp/api/windows.ui.text.richedittextdocument)
 
-#### [penhandedness](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.penhandedness)
+RichEditTextDocument.ClearUndoRedoHistory
 
-penhandedness
+### [Windows.UI.ViewManagement.Core](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core)
 
-### [windows.ui.notifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications)
+#### [CoreInputView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputview)
 
-#### [scheduledtoastnotificationshowingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.notifications.scheduledtoastnotificationshowingeventargs)
+CoreInputView.TryHide <br> CoreInputView.TryShow <br> CoreInputView.TryShow
 
-scheduledtoastnotificationshowingeventargs <br> scheduledtoastnotificationshowingeventargs.cancel <br> scheduledtoastnotificationshowingeventargs.getdeferral <br> scheduledtoastnotificationshowingeventargs.scheduledtoastnotification
+#### [CoreInputViewKind](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputviewkind)
 
-#### [toastnotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier)
+CoreInputViewKind
 
-toastnotifier.scheduledtoastnotificationshowing
+### [Windows.UI.WebUI](https://docs.microsoft.com/uwp/api/windows.ui.webui)
 
-### [windows.ui.shell](https://docs.microsoft.com/uwp/api/windows.ui.shell)
+#### [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.backgroundactivatedeventargs)
 
-#### [securityappkind](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappkind)
+BackgroundActivatedEventArgs <br> BackgroundActivatedEventArgs.TaskInstance
 
-securityappkind
+#### [BackgroundActivatedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.backgroundactivatedeventhandler)
 
-#### [securityappmanager](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappmanager)
+BackgroundActivatedEventHandler
 
-securityappmanager <br> securityappmanager.register <br> securityappmanager.securityappmanager <br> securityappmanager.unregister <br> securityappmanager.updatestate
+#### [NewWebUIViewCreatedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.webui.newwebuiviewcreatedeventargs)
 
-#### [securityappstate](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappstate)
+NewWebUIViewCreatedEventArgs <br> NewWebUIViewCreatedEventArgs.ActivatedEventArgs <br> NewWebUIViewCreatedEventArgs.GetDeferral <br> NewWebUIViewCreatedEventArgs.HasPendingNavigate <br> NewWebUIViewCreatedEventArgs.WebUIView
 
-securityappstate
+#### [WebUIApplication](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiapplication)
 
-#### [securityappsubstatus](https://docs.microsoft.com/uwp/api/windows.ui.shell.securityappsubstatus)
+WebUIApplication.BackgroundActivated <br> WebUIApplication.NewWebUIViewCreated
 
-securityappsubstatus
+#### [WebUIView](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiview)
 
-#### [taskbarmanager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+WebUIView <br> WebUIView.Activated <br> WebUIView.AddInitializeScript <br> WebUIView.ApplicationViewId <br> WebUIView.BuildLocalStreamUri <br> WebUIView.CanGoBack <br> WebUIView.CanGoForward <br> WebUIView.CapturePreviewToStreamAsync <br> WebUIView.CaptureSelectedContentToDataPackageAsync <br> WebUIView.Closed <br> WebUIView.ContainsFullScreenElement <br> WebUIView.ContainsFullScreenElementChanged <br> WebUIView.ContentLoading <br> WebUIView.CreateAsync <br> WebUIView.CreateAsync <br> WebUIView.DefaultBackgroundColor <br> WebUIView.DeferredPermissionRequests <br> WebUIView.DocumentTitle <br> WebUIView.DOMContentLoaded <br> WebUIView.FrameContentLoading <br> WebUIView.FrameDOMContentLoaded <br> WebUIView.FrameNavigationCompleted <br> WebUIView.FrameNavigationStarting <br> WebUIView.GetDeferredPermissionRequestById <br> WebUIView.GoBack <br> WebUIView.GoForward <br> WebUIView.IgnoreApplicationContentUriRulesNavigationRestrictions <br> WebUIView.InvokeScriptAsync <br> WebUIView.LongRunningScriptDetected <br> WebUIView.Navigate <br> WebUIView.NavigateToLocalStreamUri <br> WebUIView.NavigateToString <br> WebUIView.NavigateWithHttpRequestMessage <br> WebUIView.NavigationCompleted <br> WebUIView.NavigationStarting <br> WebUIView.NewWindowRequested <br> WebUIView.PermissionRequested <br> WebUIView.Refresh <br> WebUIView.ScriptNotify <br> WebUIView.Settings <br> WebUIView.Source <br> WebUIView.Stop <br> WebUIView.UnsafeContentWarningDisplaying <br> WebUIView.UnsupportedUriSchemeIdentified <br> WebUIView.UnviewableContentIdentified <br> WebUIView.WebResourceRequested
 
-taskbarmanager.issecondarytilepinnedasync <br> taskbarmanager.requestpinsecondarytileasync <br> taskbarmanager.tryunpinsecondarytileasync
+### [Windows.UI.Xaml.Automation.Peers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers)
 
-### [windows.ui.startscreen](https://docs.microsoft.com/uwp/api/windows.ui.startscreen)
+#### [AppBarButtonAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.appbarbuttonautomationpeer)
 
-#### [startscreenmanager](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)
+AppBarButtonAutomationPeer.Collapse <br> AppBarButtonAutomationPeer.Expand <br> AppBarButtonAutomationPeer.ExpandCollapseState
 
-startscreenmanager.containssecondarytileasync <br> startscreenmanager.tryremovesecondarytileasync
+#### [AutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer)
 
-### [windows.ui.text.core](https://docs.microsoft.com/uwp/api/windows.ui.text.core)
+AutomationPeer.IsDialog <br> AutomationPeer.IsDialogCore
 
-#### [coretextlayoutrequest](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretextlayoutrequest)
+#### [MenuBarAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.menubarautomationpeer)
 
-coretextlayoutrequest.layoutboundsvisualpixels
+MenuBarAutomationPeer <br> MenuBarAutomationPeer.#ctor
 
-### [windows.ui.text](https://docs.microsoft.com/uwp/api/windows.ui.text)
+#### [MenuBarItemAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.menubaritemautomationpeer)
 
-#### [richedittextdocument](https://docs.microsoft.com/uwp/api/windows.ui.text.richedittextdocument)
+MenuBarItemAutomationPeer <br> MenuBarItemAutomationPeer.Collapse <br> MenuBarItemAutomationPeer.Expand <br> MenuBarItemAutomationPeer.ExpandCollapseState <br> MenuBarItemAutomationPeer.Invoke <br> MenuBarItemAutomationPeer.#ctor
 
-richedittextdocument.clearundoredohistory
+### [Windows.UI.Xaml.Automation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation)
 
-### [windows.ui.viewmanagement.core](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core)
+#### [AutomationElementIdentifiers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationelementidentifiers)
 
-#### [coreinputview](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputview)
+AutomationElementIdentifiers.IsDialogProperty
 
-coreinputview.tryhide <br> coreinputview.tryshow <br> coreinputview.tryshow
+#### [AutomationProperties](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)
 
-#### [coreinputviewkind](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputviewkind)
+AutomationProperties.GetIsDialog <br> AutomationProperties.IsDialogProperty <br> AutomationProperties.SetIsDialog
 
-coreinputviewkind
+### [Windows.UI.Xaml.Controls.Maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
 
-### [windows.ui.webui](https://docs.microsoft.com/uwp/api/windows.ui.webui)
+#### [MapTileAnimationState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileanimationstate)
 
-#### [backgroundactivatedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.webui.backgroundactivatedeventargs)
+MapTileAnimationState
 
-backgroundactivatedeventargs <br> backgroundactivatedeventargs.taskinstance
+#### [MapTileBitmapRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs)
 
-#### [backgroundactivatedeventhandler](https://docs.microsoft.com/uwp/api/windows.ui.webui.backgroundactivatedeventhandler)
+MapTileBitmapRequestedEventArgs.FrameIndex
 
-backgroundactivatedeventhandler
+#### [MapTileSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource)
 
-#### [newwebuiviewcreatedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.webui.newwebuiviewcreatedeventargs)
+MapTileSource.AnimationState <br> MapTileSource.AnimationStateProperty <br> MapTileSource.AutoPlay <br> MapTileSource.AutoPlayProperty <br> MapTileSource.FrameCount <br> MapTileSource.FrameCountProperty <br> MapTileSource.FrameDuration <br> MapTileSource.FrameDurationProperty <br> MapTileSource.Pause <br> MapTileSource.Play <br> MapTileSource.Stop
 
-newwebuiviewcreatedeventargs <br> newwebuiviewcreatedeventargs.activatedeventargs <br> newwebuiviewcreatedeventargs.getdeferral <br> newwebuiviewcreatedeventargs.haspendingnavigate <br> newwebuiviewcreatedeventargs.webuiview
+#### [MapTileUriRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs)
 
-#### [webuiapplication](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiapplication)
+MapTileUriRequestedEventArgs.FrameIndex
 
-webuiapplication.backgroundactivated <br> webuiapplication.newwebuiviewcreated
+### [Windows.UI.Xaml.Controls.Primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
 
-#### [webuiview](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiview)
+#### [CommandBarFlyoutCommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.commandbarflyoutcommandbar)
 
-webuiview <br> webuiview.activated <br> webuiview.addinitializescript <br> webuiview.applicationviewid <br> webuiview.buildlocalstreamuri <br> webuiview.cangoback <br> webuiview.cangoforward <br> webuiview.capturepreviewtostreamasync <br> webuiview.captureselectedcontenttodatapackageasync <br> webuiview.closed <br> webuiview.containsfullscreenelement <br> webuiview.containsfullscreenelementchanged <br> webuiview.contentloading <br> webuiview.createasync <br> webuiview.createasync <br> webuiview.defaultbackgroundcolor <br> webuiview.deferredpermissionrequests <br> webuiview.documenttitle <br> webuiview.domcontentloaded <br> webuiview.framecontentloading <br> webuiview.framedomcontentloaded <br> webuiview.framenavigationcompleted <br> webuiview.framenavigationstarting <br> webuiview.getdeferredpermissionrequestbyid <br> webuiview.goback <br> webuiview.goforward <br> webuiview.ignoreapplicationcontenturirulesnavigationrestrictions <br> webuiview.invokescriptasync <br> webuiview.longrunningscriptdetected <br> webuiview.navigate <br> webuiview.navigatetolocalstreamuri <br> webuiview.navigatetostring <br> webuiview.navigatewithhttprequestmessage <br> webuiview.navigationcompleted <br> webuiview.navigationstarting <br> webuiview.newwindowrequested <br> webuiview.permissionrequested <br> webuiview.refresh <br> webuiview.scriptnotify <br> webuiview.settings <br> webuiview.source <br> webuiview.stop <br> webuiview.unsafecontentwarningdisplaying <br> webuiview.unsupportedurischemeidentified <br> webuiview.unviewablecontentidentified <br> webuiview.webresourcerequested
+CommandBarFlyoutCommandBar <br> CommandBarFlyoutCommandBar.#ctor <br> CommandBarFlyoutCommandBar.FlyoutTemplateSettings
 
-### [windows.ui.xaml.automation.peers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers)
+#### [CommandBarFlyoutCommandBarTemplateSettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.commandbarflyoutcommandbartemplatesettings)
 
-#### [appbarbuttonautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.appbarbuttonautomationpeer)
+CommandBarFlyoutCommandBarTemplateSettings <br> CommandBarFlyoutCommandBarTemplateSettings.CloseAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ContentClipRect <br> CommandBarFlyoutCommandBarTemplateSettings.CurrentWidth <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandDownAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandDownAnimationHoldPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandDownAnimationStartPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandDownOverflowVerticalPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandedWidth <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandUpAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandUpAnimationHoldPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandUpAnimationStartPosition <br> CommandBarFlyoutCommandBarTemplateSettings.ExpandUpOverflowVerticalPosition <br> CommandBarFlyoutCommandBarTemplateSettings.OpenAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.OpenAnimationStartPosition <br> CommandBarFlyoutCommandBarTemplateSettings.OverflowContentClipRect <br> CommandBarFlyoutCommandBarTemplateSettings.WidthExpansionAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.WidthExpansionAnimationStartPosition <br> CommandBarFlyoutCommandBarTemplateSettings.WidthExpansionDelta <br> CommandBarFlyoutCommandBarTemplateSettings.WidthExpansionMoreButtonAnimationEndPosition <br> CommandBarFlyoutCommandBarTemplateSettings.WidthExpansionMoreButtonAnimationStartPosition
 
-appbarbuttonautomationpeer.collapse <br> appbarbuttonautomationpeer.expand <br> appbarbuttonautomationpeer.expandcollapsestate
+#### [FlyoutBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase)
 
-#### [automationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer)
+FlyoutBase.AreOpenCloseAnimationsEnabled <br> FlyoutBase.AreOpenCloseAnimationsEnabledProperty <br> FlyoutBase.InputDevicePrefersPrimaryCommands <br> FlyoutBase.InputDevicePrefersPrimaryCommandsProperty <br> FlyoutBase.IsOpen <br> FlyoutBase.IsOpenProperty <br> FlyoutBase.ShowAt <br> FlyoutBase.ShowMode <br> FlyoutBase.ShowModeProperty <br> FlyoutBase.TargetProperty
 
-automationpeer.isdialog <br> automationpeer.isdialogcore
+#### [FlyoutShowMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutshowmode)
 
-#### [menubarautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.menubarautomationpeer)
+FlyoutShowMode
 
-menubarautomationpeer <br> menubarautomationpeer.menubarautomationpeer
+#### [FlyoutShowOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutshowoptions)
 
-#### [menubaritemautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.menubaritemautomationpeer)
+FlyoutShowOptions <br> FlyoutShowOptions.ExclusionRect <br> FlyoutShowOptions.#ctor <br> FlyoutShowOptions.Placement <br> FlyoutShowOptions.Position <br> FlyoutShowOptions.ShowMode
 
-menubaritemautomationpeer <br> menubaritemautomationpeer.collapse <br> menubaritemautomationpeer.expand <br> menubaritemautomationpeer.expandcollapsestate <br> menubaritemautomationpeer.invoke <br> menubaritemautomationpeer.menubaritemautomationpeer
+#### [NavigationViewItemPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.navigationviewitempresenter)
 
-### [windows.ui.xaml.automation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation)
+NavigationViewItemPresenter <br> NavigationViewItemPresenter.Icon <br> NavigationViewItemPresenter.IconProperty <br> NavigationViewItemPresenter.#ctor
 
-#### [automationelementidentifiers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationelementidentifiers)
+### [Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
-automationelementidentifiers.isdialogproperty
+#### [AnchorRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.anchorrequestedeventargs)
 
-#### [automationproperties](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)
+AnchorRequestedEventArgs <br> AnchorRequestedEventArgs.Anchor <br> AnchorRequestedEventArgs.AnchorCandidates
 
-automationproperties.getisdialog <br> automationproperties.isdialogproperty <br> automationproperties.setisdialog
+#### [AppBarElementContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarelementcontainer)
 
-### [windows.ui.xaml.controls.maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
+AppBarElementContainer <br> AppBarElementContainer.#ctor <br> AppBarElementContainer.DynamicOverflowOrder <br> AppBarElementContainer.DynamicOverflowOrderProperty <br> AppBarElementContainer.IsCompact <br> AppBarElementContainer.IsCompactProperty <br> AppBarElementContainer.IsInOverflow <br> AppBarElementContainer.IsInOverflowProperty
 
-#### [maptileanimationstate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileanimationstate)
+#### [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)
 
-maptileanimationstate
+AutoSuggestBox.Description <br> AutoSuggestBox.DescriptionProperty
 
-#### [maptilebitmaprequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs)
+#### [BackgroundSizing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.backgroundsizing)
 
-maptilebitmaprequestedeventargs.frameindex
+BackgroundSizing
 
-#### [maptilesource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource)
+#### [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border)
 
-maptilesource.animationstate <br> maptilesource.animationstateproperty <br> maptilesource.autoplay <br> maptilesource.autoplayproperty <br> maptilesource.framecount <br> maptilesource.framecountproperty <br> maptilesource.frameduration <br> maptilesource.framedurationproperty <br> maptilesource.pause <br> maptilesource.play <br> maptilesource.stop
+Border.BackgroundSizing <br> Border.BackgroundSizingProperty <br> Border.BackgroundTransition
 
-#### [maptileurirequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs)
+#### [CalendarDatePicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker)
 
-maptileurirequestedeventargs.frameindex
+CalendarDatePicker.Description <br> CalendarDatePicker.DescriptionProperty
 
-### [windows.ui.xaml.controls.primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
+#### [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
 
-#### [commandbarflyoutcommandbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.commandbarflyoutcommandbar)
+ComboBox.Description <br> ComboBox.DescriptionProperty <br> ComboBox.IsEditableProperty <br> ComboBox.Text <br> ComboBox.TextBoxStyle <br> ComboBox.TextBoxStyleProperty <br> ComboBox.TextProperty <br> ComboBox.TextSubmitted
 
-commandbarflyoutcommandbar <br> commandbarflyoutcommandbar.commandbarflyoutcommandbar <br> commandbarflyoutcommandbar.flyouttemplatesettings
+#### [ComboBoxTextSubmittedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.comboboxtextsubmittedeventargs)
 
-#### [commandbarflyoutcommandbartemplatesettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.commandbarflyoutcommandbartemplatesettings)
+ComboBoxTextSubmittedEventArgs <br> ComboBoxTextSubmittedEventArgs.Handled <br> ComboBoxTextSubmittedEventArgs.Text
 
-commandbarflyoutcommandbartemplatesettings <br> commandbarflyoutcommandbartemplatesettings.closeanimationendposition <br> commandbarflyoutcommandbartemplatesettings.contentcliprect <br> commandbarflyoutcommandbartemplatesettings.currentwidth <br> commandbarflyoutcommandbartemplatesettings.expanddownanimationendposition <br> commandbarflyoutcommandbartemplatesettings.expanddownanimationholdposition <br> commandbarflyoutcommandbartemplatesettings.expanddownanimationstartposition <br> commandbarflyoutcommandbartemplatesettings.expanddownoverflowverticalposition <br> commandbarflyoutcommandbartemplatesettings.expandedwidth <br> commandbarflyoutcommandbartemplatesettings.expandupanimationendposition <br> commandbarflyoutcommandbartemplatesettings.expandupanimationholdposition <br> commandbarflyoutcommandbartemplatesettings.expandupanimationstartposition <br> commandbarflyoutcommandbartemplatesettings.expandupoverflowverticalposition <br> commandbarflyoutcommandbartemplatesettings.openanimationendposition <br> commandbarflyoutcommandbartemplatesettings.openanimationstartposition <br> commandbarflyoutcommandbartemplatesettings.overflowcontentcliprect <br> commandbarflyoutcommandbartemplatesettings.widthexpansionanimationendposition <br> commandbarflyoutcommandbartemplatesettings.widthexpansionanimationstartposition <br> commandbarflyoutcommandbartemplatesettings.widthexpansiondelta <br> commandbarflyoutcommandbartemplatesettings.widthexpansionmorebuttonanimationendposition <br> commandbarflyoutcommandbartemplatesettings.widthexpansionmorebuttonanimationstartposition
+#### [CommandBarFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbarflyout)
 
-#### [flyoutbase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase)
+CommandBarFlyout <br> CommandBarFlyout.#ctor <br> CommandBarFlyout.PrimaryCommands <br> CommandBarFlyout.SecondaryCommands
 
-flyoutbase.areopencloseanimationsenabled <br> flyoutbase.areopencloseanimationsenabledproperty <br> flyoutbase.inputdeviceprefersprimarycommands <br> flyoutbase.inputdeviceprefersprimarycommandsproperty <br> flyoutbase.isopen <br> flyoutbase.isopenproperty <br> flyoutbase.showat <br> flyoutbase.showmode <br> flyoutbase.showmodeproperty <br> flyoutbase.targetproperty
+#### [ContentPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentpresenter)
 
-#### [flyoutshowmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutshowmode)
+ContentPresenter.BackgroundSizing <br> ContentPresenter.BackgroundSizingProperty <br> ContentPresenter.BackgroundTransition
 
-flyoutshowmode
+#### [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
 
-#### [flyoutshowoptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutshowoptions)
+Control.BackgroundSizing <br> Control.BackgroundSizingProperty <br> Control.CornerRadius <br> Control.CornerRadiusProperty
 
-flyoutshowoptions <br> flyoutshowoptions.exclusionrect <br> flyoutshowoptions.flyoutshowoptions <br> flyoutshowoptions.placement <br> flyoutshowoptions.position <br> flyoutshowoptions.showmode
+#### [DataTemplateSelector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datatemplateselector)
 
-#### [navigationviewitempresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.navigationviewitempresenter)
+DataTemplateSelector.GetElement <br> DataTemplateSelector.RecycleElement
 
-navigationviewitempresenter <br> navigationviewitempresenter.icon <br> navigationviewitempresenter.iconproperty <br> navigationviewitempresenter.navigationviewitempresenter
+#### [DatePicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker)
 
-### [windows.ui.xaml.controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+DatePicker.SelectedDate <br> DatePicker.SelectedDateChanged <br> DatePicker.SelectedDateProperty
 
-#### [anchorrequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.anchorrequestedeventargs)
+#### [DatePickerSelectedValueChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerselectedvaluechangedeventargs)
 
-anchorrequestedeventargs <br> anchorrequestedeventargs.anchor <br> anchorrequestedeventargs.anchorcandidates
+DatePickerSelectedValueChangedEventArgs <br> DatePickerSelectedValueChangedEventArgs.NewDate <br> DatePickerSelectedValueChangedEventArgs.OldDate
 
-#### [appbarelementcontainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarelementcontainer)
+#### [DropDownButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dropdownbutton)
 
-appbarelementcontainer <br> appbarelementcontainer.appbarelementcontainer <br> appbarelementcontainer.dynamicoverfloworder <br> appbarelementcontainer.dynamicoverfloworderproperty <br> appbarelementcontainer.iscompact <br> appbarelementcontainer.iscompactproperty <br> appbarelementcontainer.isinoverflow <br> appbarelementcontainer.isinoverflowproperty
+DropDownButton <br> DropDownButton.#ctor
 
-#### [autosuggestbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)
+#### [DropDownButtonAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dropdownbuttonautomationpeer)
 
-autosuggestbox.description <br> autosuggestbox.descriptionproperty
+DropDownButtonAutomationPeer <br> DropDownButtonAutomationPeer.Collapse <br> DropDownButtonAutomationPeer.#ctor <br> DropDownButtonAutomationPeer.Expand <br> DropDownButtonAutomationPeer.ExpandCollapseState
 
-#### [backgroundsizing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.backgroundsizing)
+#### [Frame](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)
 
-backgroundsizing
+Frame.IsNavigationStackEnabled <br> Frame.IsNavigationStackEnabledProperty <br> Frame.NavigateToType
 
-#### [border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border)
+#### [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
 
-border.backgroundsizing <br> border.backgroundsizingproperty <br> border.backgroundtransition
+Grid.BackgroundSizing <br> Grid.BackgroundSizingProperty
 
-#### [calendardatepicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker)
+#### [IconSourceElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconsourceelement)
 
-calendardatepicker.description <br> calendardatepicker.descriptionproperty
+IconSourceElement <br> IconSourceElement.IconSource <br> IconSourceElement.#ctor <br> IconSourceElement.IconSourceProperty
 
-#### [combobox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
+#### [IScrollAnchorProvider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)
 
-combobox.description <br> combobox.descriptionproperty <br> combobox.iseditableproperty <br> combobox.text <br> combobox.textboxstyle <br> combobox.textboxstyleproperty <br> combobox.textproperty <br> combobox.textsubmitted
+IScrollAnchorProvider <br> IScrollAnchorProvider.CurrentAnchor <br> IScrollAnchorProvider.RegisterAnchorCandidate <br> IScrollAnchorProvider.UnregisterAnchorCandidate
 
-#### [comboboxtextsubmittedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.comboboxtextsubmittedeventargs)
+#### [MenuBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubar)
 
-comboboxtextsubmittedeventargs <br> comboboxtextsubmittedeventargs.handled <br> comboboxtextsubmittedeventargs.text
+MenuBar <br> MenuBar.Items <br> MenuBar.ItemsProperty <br> MenuBar.#ctor
 
-#### [commandbarflyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbarflyout)
+#### [MenuBarItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritem)
 
-commandbarflyout <br> commandbarflyout.commandbarflyout <br> commandbarflyout.primarycommands <br> commandbarflyout.secondarycommands
+MenuBarItem <br> MenuBarItem.Items <br> MenuBarItem.ItemsProperty <br> MenuBarItem.#ctor <br> MenuBarItem.Title <br> MenuBarItem.TitleProperty
 
-#### [contentpresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentpresenter)
+#### [MenuBarItemFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritemflyout)
 
-contentpresenter.backgroundsizing <br> contentpresenter.backgroundsizingproperty <br> contentpresenter.backgroundtransition
+MenuBarItemFlyout <br> MenuBarItemFlyout.#ctor
 
-#### [control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
+#### [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-control.backgroundsizing <br> control.backgroundsizingproperty <br> control.cornerradius <br> control.cornerradiusproperty
+NavigationView.ContentOverlay <br> NavigationView.ContentOverlayProperty <br> NavigationView.IsPaneVisible <br> NavigationView.IsPaneVisibleProperty <br> NavigationView.OverflowLabelMode <br> NavigationView.OverflowLabelModeProperty <br> NavigationView.PaneCustomContent <br> NavigationView.PaneCustomContentProperty <br> NavigationView.PaneDisplayMode <br> NavigationView.PaneDisplayModeProperty <br> NavigationView.PaneHeader <br> NavigationView.PaneHeaderProperty <br> NavigationView.SelectionFollowsFocus <br> NavigationView.SelectionFollowsFocusProperty <br> NavigationView.ShoulderNavigationEnabled <br> NavigationView.ShoulderNavigationEnabledProperty <br> NavigationView.TemplateSettings <br> NavigationView.TemplateSettingsProperty
 
-#### [datatemplateselector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datatemplateselector)
+#### [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem)
 
-datatemplateselector.getelement <br> datatemplateselector.recycleelement
+NavigationViewItem.SelectsOnInvoked <br> NavigationViewItem.SelectsOnInvokedProperty
 
-#### [datepicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker)
+#### [NavigationViewItemInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewiteminvokedeventargs)
 
-datepicker.selecteddate <br> datepicker.selecteddatechanged <br> datepicker.selecteddateproperty
+NavigationViewItemInvokedEventArgs.InvokedItemContainer <br> NavigationViewItemInvokedEventArgs.RecommendedNavigationTransitionInfo
 
-#### [datepickerselectedvaluechangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerselectedvaluechangedeventargs)
+#### [NavigationViewOverflowLabelMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewoverflowlabelmode)
 
-datepickerselectedvaluechangedeventargs <br> datepickerselectedvaluechangedeventargs.newdate <br> datepickerselectedvaluechangedeventargs.olddate
+NavigationViewOverflowLabelMode
 
-#### [dropdownbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dropdownbutton)
+#### [NavigationViewPaneDisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewpanedisplaymode)
 
-dropdownbutton <br> dropdownbutton.dropdownbutton
+NavigationViewPaneDisplayMode
 
-#### [dropdownbuttonautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.dropdownbuttonautomationpeer)
+#### [NavigationViewSelectionChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewselectionchangedeventargs)
 
-dropdownbuttonautomationpeer <br> dropdownbuttonautomationpeer.collapse <br> dropdownbuttonautomationpeer.dropdownbuttonautomationpeer <br> dropdownbuttonautomationpeer.expand <br> dropdownbuttonautomationpeer.expandcollapsestate
+NavigationViewSelectionChangedEventArgs.RecommendedNavigationTransitionInfo <br> NavigationViewSelectionChangedEventArgs.SelectedItemContainer
 
-#### [frame](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)
+#### [NavigationViewSelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewselectionfollowsfocus)
 
-frame.isnavigationstackenabled <br> frame.isnavigationstackenabledproperty <br> frame.navigatetotype
+NavigationViewSelectionFollowsFocus
 
-#### [grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
+#### [NavigationViewShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewshouldernavigationenabled)
 
-grid.backgroundsizing <br> grid.backgroundsizingproperty
+NavigationViewShoulderNavigationEnabled
 
-#### [iconsourceelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconsourceelement)
+#### [NavigationViewTemplateSettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewtemplatesettings)
 
-iconsourceelement <br> iconsourceelement.iconsource <br> iconsourceelement.iconsourceelement <br> iconsourceelement.iconsourceproperty
+NavigationViewTemplateSettings <br> NavigationViewTemplateSettings.BackButtonVisibility <br> NavigationViewTemplateSettings.BackButtonVisibilityProperty <br> NavigationViewTemplateSettings.LeftPaneVisibility <br> NavigationViewTemplateSettings.LeftPaneVisibilityProperty <br> NavigationViewTemplateSettings.#ctor <br> NavigationViewTemplateSettings.OverflowButtonVisibility <br> NavigationViewTemplateSettings.OverflowButtonVisibilityProperty <br> NavigationViewTemplateSettings.PaneToggleButtonVisibility <br> NavigationViewTemplateSettings.PaneToggleButtonVisibilityProperty <br> NavigationViewTemplateSettings.SingleSelectionFollowsFocus <br> NavigationViewTemplateSettings.SingleSelectionFollowsFocusProperty <br> NavigationViewTemplateSettings.TopPadding <br> NavigationViewTemplateSettings.TopPaddingProperty <br> NavigationViewTemplateSettings.TopPaneVisibility <br> NavigationViewTemplateSettings.TopPaneVisibilityProperty
 
-#### [iscrollanchorprovider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider)
+#### [Panel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel)
 
-iscrollanchorprovider <br> iscrollanchorprovider.currentanchor <br> iscrollanchorprovider.registeranchorcandidate <br> iscrollanchorprovider.unregisteranchorcandidate
+Panel.BackgroundTransition
 
-#### [menubar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubar)
+#### [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)
 
-menubar <br> menubar.items <br> menubar.itemsproperty <br> menubar.menubar
+PasswordBox.CanPasteClipboardContent <br> PasswordBox.CanPasteClipboardContentProperty <br> PasswordBox.Description <br> PasswordBox.DescriptionProperty <br> PasswordBox.PasteFromClipboard <br> PasswordBox.SelectionFlyout <br> PasswordBox.SelectionFlyoutProperty
 
-#### [menubaritem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritem)
+#### [RelativePanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)
 
-menubaritem <br> menubaritem.items <br> menubaritem.itemsproperty <br> menubaritem.menubaritem <br> menubaritem.title <br> menubaritem.titleproperty
+RelativePanel.BackgroundSizing <br> RelativePanel.BackgroundSizingProperty
 
-#### [menubaritemflyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritemflyout)
+#### [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)
 
-menubaritemflyout <br> menubaritemflyout.menubaritemflyout
+RichEditBox.Description <br> RichEditBox.DescriptionProperty <br> RichEditBox.ProofingMenuFlyout <br> RichEditBox.ProofingMenuFlyoutProperty <br> RichEditBox.SelectionChanging <br> RichEditBox.SelectionFlyout <br> RichEditBox.SelectionFlyoutProperty <br> RichEditBox.TextDocument
 
-#### [navigationview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+#### [RichEditBoxSelectionChangingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditboxselectionchangingeventargs)
 
-navigationview.contentoverlay <br> navigationview.contentoverlayproperty <br> navigationview.ispanevisible <br> navigationview.ispanevisibleproperty <br> navigationview.overflowlabelmode <br> navigationview.overflowlabelmodeproperty <br> navigationview.panecustomcontent <br> navigationview.panecustomcontentproperty <br> navigationview.panedisplaymode <br> navigationview.panedisplaymodeproperty <br> navigationview.paneheader <br> navigationview.paneheaderproperty <br> navigationview.selectionfollowsfocus <br> navigationview.selectionfollowsfocusproperty <br> navigationview.shouldernavigationenabled <br> navigationview.shouldernavigationenabledproperty <br> navigationview.templatesettings <br> navigationview.templatesettingsproperty
+RichEditBoxSelectionChangingEventArgs <br> RichEditBoxSelectionChangingEventArgs.Cancel <br> RichEditBoxSelectionChangingEventArgs.SelectionLength <br> RichEditBoxSelectionChangingEventArgs.SelectionStart
 
-#### [navigationviewitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem)
+#### [RichTextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock)
 
-navigationviewitem.selectsoninvoked <br> navigationviewitem.selectsoninvokedproperty
+RichTextBlock.CopySelectionToClipboard <br> RichTextBlock.SelectionFlyout <br> RichTextBlock.SelectionFlyoutProperty
 
-#### [navigationviewiteminvokedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewiteminvokedeventargs)
+#### [ScrollContentPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollcontentpresenter)
 
-navigationviewiteminvokedeventargs.invokeditemcontainer <br> navigationviewiteminvokedeventargs.recommendednavigationtransitioninfo
+ScrollContentPresenter.CanContentRenderOutsideBounds <br> ScrollContentPresenter.CanContentRenderOutsideBoundsProperty <br> ScrollContentPresenter.SizesContentToTemplatedParent <br> ScrollContentPresenter.SizesContentToTemplatedParentProperty
 
-#### [navigationviewoverflowlabelmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewoverflowlabelmode)
+#### [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
-navigationviewoverflowlabelmode
+ScrollViewer.AnchorRequested <br> ScrollViewer.CanContentRenderOutsideBounds <br> ScrollViewer.CanContentRenderOutsideBoundsProperty <br> ScrollViewer.CurrentAnchor <br> ScrollViewer.GetCanContentRenderOutsideBounds <br> ScrollViewer.HorizontalAnchorRatio <br> ScrollViewer.HorizontalAnchorRatioProperty <br> ScrollViewer.ReduceViewportForCoreInputViewOcclusions <br> ScrollViewer.ReduceViewportForCoreInputViewOcclusionsProperty <br> ScrollViewer.RegisterAnchorCandidate <br> ScrollViewer.SetCanContentRenderOutsideBounds <br> ScrollViewer.UnregisterAnchorCandidate <br> ScrollViewer.VerticalAnchorRatio <br> ScrollViewer.VerticalAnchorRatioProperty
 
-#### [navigationviewpanedisplaymode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewpanedisplaymode)
+#### [SplitButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbutton)
 
-navigationviewpanedisplaymode
+SplitButton <br> SplitButton.Click <br> SplitButton.Command <br> SplitButton.CommandParameter <br> SplitButton.CommandParameterProperty <br> SplitButton.CommandProperty <br> SplitButton.Flyout <br> SplitButton.FlyoutProperty <br> SplitButton.#ctor
 
-#### [navigationviewselectionchangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewselectionchangedeventargs)
+#### [SplitButtonAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbuttonautomationpeer)
 
-navigationviewselectionchangedeventargs.recommendednavigationtransitioninfo <br> navigationviewselectionchangedeventargs.selecteditemcontainer
+SplitButtonAutomationPeer <br> SplitButtonAutomationPeer.Collapse <br> SplitButtonAutomationPeer.Expand <br> SplitButtonAutomationPeer.ExpandCollapseState <br> SplitButtonAutomationPeer.Invoke <br> SplitButtonAutomationPeer.#ctor
 
-#### [navigationviewselectionfollowsfocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewselectionfollowsfocus)
+#### [SplitButtonClickEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbuttonclickeventargs)
 
-navigationviewselectionfollowsfocus
+SplitButtonClickEventArgs
 
-#### [navigationviewshouldernavigationenabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewshouldernavigationenabled)
+#### [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
 
-navigationviewshouldernavigationenabled
+StackPanel.BackgroundSizing <br> StackPanel.BackgroundSizingProperty
 
-#### [navigationviewtemplatesettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewtemplatesettings)
+#### [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock)
 
-navigationviewtemplatesettings <br> navigationviewtemplatesettings.backbuttonvisibility <br> navigationviewtemplatesettings.backbuttonvisibilityproperty <br> navigationviewtemplatesettings.leftpanevisibility <br> navigationviewtemplatesettings.leftpanevisibilityproperty <br> navigationviewtemplatesettings.navigationviewtemplatesettings <br> navigationviewtemplatesettings.overflowbuttonvisibility <br> navigationviewtemplatesettings.overflowbuttonvisibilityproperty <br> navigationviewtemplatesettings.panetogglebuttonvisibility <br> navigationviewtemplatesettings.panetogglebuttonvisibilityproperty <br> navigationviewtemplatesettings.singleselectionfollowsfocus <br> navigationviewtemplatesettings.singleselectionfollowsfocusproperty <br> navigationviewtemplatesettings.toppadding <br> navigationviewtemplatesettings.toppaddingproperty <br> navigationviewtemplatesettings.toppanevisibility <br> navigationviewtemplatesettings.toppanevisibilityproperty
+TextBlock.CopySelectionToClipboard <br> TextBlock.SelectionFlyout <br> TextBlock.SelectionFlyoutProperty
 
-#### [panel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel)
+#### [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
 
-panel.backgroundtransition
+TextBox.CanPasteClipboardContent <br> TextBox.CanPasteClipboardContentProperty <br> TextBox.CanRedo <br> TextBox.CanRedoProperty <br> TextBox.CanUndo <br> TextBox.CanUndoProperty <br> TextBox.ClearUndoRedoHistory <br> TextBox.CopySelectionToClipboard <br> TextBox.CutSelectionToClipboard <br> TextBox.Description <br> TextBox.DescriptionProperty <br> TextBox.PasteFromClipboard <br> TextBox.ProofingMenuFlyout <br> TextBox.ProofingMenuFlyoutProperty <br> TextBox.Redo <br> TextBox.SelectionChanging <br> TextBox.SelectionFlyout <br> TextBox.SelectionFlyoutProperty <br> TextBox.Undo
 
-#### [passwordbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)
+#### [TextBoxSelectionChangingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textboxselectionchangingeventargs)
 
-passwordbox.canpasteclipboardcontent <br> passwordbox.canpasteclipboardcontentproperty <br> passwordbox.description <br> passwordbox.descriptionproperty <br> passwordbox.pastefromclipboard <br> passwordbox.selectionflyout <br> passwordbox.selectionflyoutproperty
+TextBoxSelectionChangingEventArgs <br> TextBoxSelectionChangingEventArgs.Cancel <br> TextBoxSelectionChangingEventArgs.SelectionLength <br> TextBoxSelectionChangingEventArgs.SelectionStart
 
-#### [relativepanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)
+#### [TextCommandBarFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)
 
-relativepanel.backgroundsizing <br> relativepanel.backgroundsizingproperty
+TextCommandBarFlyout <br> TextCommandBarFlyout.#ctor
 
-#### [richeditbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)
+#### [TimePicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker)
 
-richeditbox.description <br> richeditbox.descriptionproperty <br> richeditbox.proofingmenuflyout <br> richeditbox.proofingmenuflyoutproperty <br> richeditbox.selectionchanging <br> richeditbox.selectionflyout <br> richeditbox.selectionflyoutproperty <br> richeditbox.textdocument
+TimePicker.SelectedTime <br> TimePicker.SelectedTimeChanged <br> TimePicker.SelectedTimeProperty
 
-#### [richeditboxselectionchangingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditboxselectionchangingeventargs)
+#### [TimePickerSelectedValueChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerselectedvaluechangedeventargs)
 
-richeditboxselectionchangingeventargs <br> richeditboxselectionchangingeventargs.cancel <br> richeditboxselectionchangingeventargs.selectionlength <br> richeditboxselectionchangingeventargs.selectionstart
+TimePickerSelectedValueChangedEventArgs <br> TimePickerSelectedValueChangedEventArgs.NewTime <br> TimePickerSelectedValueChangedEventArgs.OldTime
 
-#### [richtextblock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock)
+#### [ToggleSplitButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbutton)
 
-richtextblock.copyselectiontoclipboard <br> richtextblock.selectionflyout <br> richtextblock.selectionflyoutproperty
+ToggleSplitButton <br> ToggleSplitButton.IsChecked <br> ToggleSplitButton.IsCheckedChanged <br> ToggleSplitButton.#ctor
 
-#### [scrollcontentpresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollcontentpresenter)
+#### [ToggleSplitButtonAutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbuttonautomationpeer)
 
-scrollcontentpresenter.cancontentrenderoutsidebounds <br> scrollcontentpresenter.cancontentrenderoutsideboundsproperty <br> scrollcontentpresenter.sizescontenttotemplatedparent <br> scrollcontentpresenter.sizescontenttotemplatedparentproperty
+ToggleSplitButtonAutomationPeer <br> ToggleSplitButtonAutomationPeer.Collapse <br> ToggleSplitButtonAutomationPeer.Expand <br> ToggleSplitButtonAutomationPeer.ExpandCollapseState <br> ToggleSplitButtonAutomationPeer.Toggle <br> ToggleSplitButtonAutomationPeer.#ctor <br> ToggleSplitButtonAutomationPeer.ToggleState
 
-#### [scrollviewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)
+#### [ToggleSplitButtonIsCheckedChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbuttonischeckedchangedeventargs)
 
-scrollviewer.anchorrequested <br> scrollviewer.cancontentrenderoutsidebounds <br> scrollviewer.cancontentrenderoutsideboundsproperty <br> scrollviewer.currentanchor <br> scrollviewer.getcancontentrenderoutsidebounds <br> scrollviewer.horizontalanchorratio <br> scrollviewer.horizontalanchorratioproperty <br> scrollviewer.reduceviewportforcoreinputviewocclusions <br> scrollviewer.reduceviewportforcoreinputviewocclusionsproperty <br> scrollviewer.registeranchorcandidate <br> scrollviewer.setcancontentrenderoutsidebounds <br> scrollviewer.unregisteranchorcandidate <br> scrollviewer.verticalanchorratio <br> scrollviewer.verticalanchorratioproperty
+ToggleSplitButtonIsCheckedChangedEventArgs
 
-#### [splitbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbutton)
+#### [ToolTip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltip)
 
-splitbutton <br> splitbutton.click <br> splitbutton.command <br> splitbutton.commandparameter <br> splitbutton.commandparameterproperty <br> splitbutton.commandproperty <br> splitbutton.flyout <br> splitbutton.flyoutproperty <br> splitbutton.splitbutton
+ToolTip.PlacementRect <br> ToolTip.PlacementRectProperty
 
-#### [splitbuttonautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbuttonautomationpeer)
+#### [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
 
-splitbuttonautomationpeer <br> splitbuttonautomationpeer.collapse <br> splitbuttonautomationpeer.expand <br> splitbuttonautomationpeer.expandcollapsestate <br> splitbuttonautomationpeer.invoke <br> splitbuttonautomationpeer.splitbuttonautomationpeer
+TreeView.CanDragItems <br> TreeView.CanDragItemsProperty <br> TreeView.CanReorderItems <br> TreeView.CanReorderItemsProperty <br> TreeView.ContainerFromItem <br> TreeView.ContainerFromNode <br> TreeView.DragItemsCompleted <br> TreeView.DragItemsStarting <br> TreeView.ItemContainerStyle <br> TreeView.ItemContainerStyleProperty <br> TreeView.ItemContainerStyleSelector <br> TreeView.ItemContainerStyleSelectorProperty <br> TreeView.ItemContainerTransitions <br> TreeView.ItemContainerTransitionsProperty <br> TreeView.ItemFromContainer <br> TreeView.ItemsSource <br> TreeView.ItemsSourceProperty <br> TreeView.ItemTemplate <br> TreeView.ItemTemplateProperty <br> TreeView.ItemTemplateSelector <br> TreeView.ItemTemplateSelectorProperty <br> TreeView.NodeFromContainer
 
-#### [splitbuttonclickeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitbuttonclickeventargs)
+#### [TreeViewCollapsedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewcollapsedeventargs)
 
-splitbuttonclickeventargs
+TreeViewCollapsedEventArgs.Item
 
-#### [stackpanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+#### [TreeViewDragItemsCompletedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewdragitemscompletedeventargs)
 
-stackpanel.backgroundsizing <br> stackpanel.backgroundsizingproperty
+TreeViewDragItemsCompletedEventArgs <br> TreeViewDragItemsCompletedEventArgs.DropResult <br> TreeViewDragItemsCompletedEventArgs.Items
 
-#### [textblock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock)
+#### [TreeViewDragItemsStartingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewdragitemsstartingeventargs)
 
-textblock.copyselectiontoclipboard <br> textblock.selectionflyout <br> textblock.selectionflyoutproperty
+TreeViewDragItemsStartingEventArgs <br> TreeViewDragItemsStartingEventArgs.Cancel <br> TreeViewDragItemsStartingEventArgs.Data <br> TreeViewDragItemsStartingEventArgs.Items
 
-#### [textbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
+#### [TreeViewExpandingEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewexpandingeventargs)
 
-textbox.canpasteclipboardcontent <br> textbox.canpasteclipboardcontentproperty <br> textbox.canredo <br> textbox.canredoproperty <br> textbox.canundo <br> textbox.canundoproperty <br> textbox.clearundoredohistory <br> textbox.copyselectiontoclipboard <br> textbox.cutselectiontoclipboard <br> textbox.description <br> textbox.descriptionproperty <br> textbox.pastefromclipboard <br> textbox.proofingmenuflyout <br> textbox.proofingmenuflyoutproperty <br> textbox.redo <br> textbox.selectionchanging <br> textbox.selectionflyout <br> textbox.selectionflyoutproperty <br> textbox.undo
+TreeViewExpandingEventArgs.Item
 
-#### [textboxselectionchangingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textboxselectionchangingeventargs)
+#### [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem)
 
-textboxselectionchangingeventargs <br> textboxselectionchangingeventargs.cancel <br> textboxselectionchangingeventargs.selectionlength <br> textboxselectionchangingeventargs.selectionstart
+TreeViewItem.HasUnrealizedChildren <br> TreeViewItem.HasUnrealizedChildrenProperty <br> TreeViewItem.ItemsSource <br> TreeViewItem.ItemsSourceProperty
 
-#### [textcommandbarflyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)
+#### [WebView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview)
 
-textcommandbarflyout <br> textcommandbarflyout.textcommandbarflyout
+WebView.WebResourceRequested
 
-#### [timepicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker)
+#### [WebViewWebResourceRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewwebresourcerequestedeventargs)
 
-timepicker.selectedtime <br> timepicker.selectedtimechanged <br> timepicker.selectedtimeproperty
+WebViewWebResourceRequestedEventArgs <br> WebViewWebResourceRequestedEventArgs.GetDeferral <br> WebViewWebResourceRequestedEventArgs.Request <br> WebViewWebResourceRequestedEventArgs.Response
 
-#### [timepickerselectedvaluechangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerselectedvaluechangedeventargs)
+### [Windows.UI.Xaml.Core.Direct](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct)
 
-timepickerselectedvaluechangedeventargs <br> timepickerselectedvaluechangedeventargs.newtime <br> timepickerselectedvaluechangedeventargs.oldtime
+#### [IXamlDirectObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.ixamldirectobject)
 
-#### [togglesplitbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbutton)
+IXamlDirectObject
 
-togglesplitbutton <br> togglesplitbutton.ischecked <br> togglesplitbutton.ischeckedchanged <br> togglesplitbutton.togglesplitbutton
+### [Windows.UI.Xaml.Core.Direct](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct)
 
-#### [togglesplitbuttonautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbuttonautomationpeer)
+#### [XamlDirect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamldirect)
 
-togglesplitbuttonautomationpeer <br> togglesplitbuttonautomationpeer.collapse <br> togglesplitbuttonautomationpeer.expand <br> togglesplitbuttonautomationpeer.expandcollapsestate <br> togglesplitbuttonautomationpeer.toggle <br> togglesplitbuttonautomationpeer.togglesplitbuttonautomationpeer <br> togglesplitbuttonautomationpeer.togglestate
+XamlDirect <br> XamlDirect.AddEventHandler <br> XamlDirect.AddEventHandler <br> XamlDirect.AddToCollection <br> XamlDirect.ClearCollection <br> XamlDirect.ClearProperty <br> XamlDirect.CreateInstance <br> XamlDirect.GetBooleanProperty <br> XamlDirect.GetCollectionCount <br> XamlDirect.GetColorProperty <br> XamlDirect.GetCornerRadiusProperty <br> XamlDirect.GetDateTimeProperty <br> XamlDirect.GetDefault <br> XamlDirect.GetDoubleProperty <br> XamlDirect.GetDurationProperty <br> XamlDirect.GetEnumProperty <br> XamlDirect.GetGridLengthProperty <br> XamlDirect.GetInt32Property <br> XamlDirect.GetMatrix3DProperty <br> XamlDirect.GetMatrixProperty <br> XamlDirect.GetObject <br> XamlDirect.GetObjectProperty <br> XamlDirect.GetPointProperty <br> XamlDirect.GetRectProperty <br> XamlDirect.GetSizeProperty <br> XamlDirect.GetStringProperty <br> XamlDirect.GetThicknessProperty <br> XamlDirect.GetTimeSpanProperty <br> XamlDirect.GetXamlDirectObject <br> XamlDirect.GetXamlDirectObjectFromCollectionAt <br> XamlDirect.GetXamlDirectObjectProperty <br> XamlDirect.InsertIntoCollectionAt <br> XamlDirect.RemoveEventHandler <br> XamlDirect.RemoveFromCollection <br> XamlDirect.RemoveFromCollectionAt <br> XamlDirect.SetBooleanProperty <br> XamlDirect.SetColorProperty <br> XamlDirect.SetCornerRadiusProperty <br> XamlDirect.SetDateTimeProperty <br> XamlDirect.SetDoubleProperty <br> XamlDirect.SetDurationProperty <br> XamlDirect.SetEnumProperty <br> XamlDirect.SetGridLengthProperty <br> XamlDirect.SetInt32Property <br> XamlDirect.SetMatrix3DProperty <br> XamlDirect.SetMatrixProperty <br> XamlDirect.SetObjectProperty <br> XamlDirect.SetPointProperty <br> XamlDirect.SetRectProperty <br> XamlDirect.SetSizeProperty <br> XamlDirect.SetStringProperty <br> XamlDirect.SetThicknessProperty <br> XamlDirect.SetTimeSpanProperty <br> XamlDirect.SetXamlDirectObjectProperty
 
-#### [togglesplitbuttonischeckedchangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglesplitbuttonischeckedchangedeventargs)
+#### [XamlEventIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamleventindex)
 
-togglesplitbuttonischeckedchangedeventargs
+XamlEventIndex
 
-#### [tooltip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltip)
+#### [XamlPropertyIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamlpropertyindex)
 
-tooltip.placementrect <br> tooltip.placementrectproperty
+XamlPropertyIndex
 
-#### [treeview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
+#### [XamlTypeIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamltypeindex)
 
-treeview.candragitems <br> treeview.candragitemsproperty <br> treeview.canreorderitems <br> treeview.canreorderitemsproperty <br> treeview.containerfromitem <br> treeview.containerfromnode <br> treeview.dragitemscompleted <br> treeview.dragitemsstarting <br> treeview.itemcontainerstyle <br> treeview.itemcontainerstyleproperty <br> treeview.itemcontainerstyleselector <br> treeview.itemcontainerstyleselectorproperty <br> treeview.itemcontainertransitions <br> treeview.itemcontainertransitionsproperty <br> treeview.itemfromcontainer <br> treeview.itemssource <br> treeview.itemssourceproperty <br> treeview.itemtemplate <br> treeview.itemtemplateproperty <br> treeview.itemtemplateselector <br> treeview.itemtemplateselectorproperty <br> treeview.nodefromcontainer
+XamlTypeIndex
 
-#### [treeviewcollapsedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewcollapsedeventargs)
+### [Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
 
-treeviewcollapsedeventargs.item
+#### [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)
 
-#### [treeviewdragitemscompletedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewdragitemscompletedeventargs)
+DesktopWindowXamlSource <br> DesktopWindowXamlSource.Close <br> DesktopWindowXamlSource.Content <br> DesktopWindowXamlSource.#ctor <br> DesktopWindowXamlSource.GotFocus <br> DesktopWindowXamlSource.HasFocus <br> DesktopWindowXamlSource.NavigateFocus <br> DesktopWindowXamlSource.TakeFocusRequested
 
-treeviewdragitemscompletedeventargs <br> treeviewdragitemscompletedeventargs.dropresult <br> treeviewdragitemscompletedeventargs.items
+#### [DesktopWindowXamlSourceGotFocusEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsourcegotfocuseventargs)
 
-#### [treeviewdragitemsstartingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewdragitemsstartingeventargs)
+DesktopWindowXamlSourceGotFocusEventArgs <br> DesktopWindowXamlSourceGotFocusEventArgs.Request
 
-treeviewdragitemsstartingeventargs <br> treeviewdragitemsstartingeventargs.cancel <br> treeviewdragitemsstartingeventargs.data <br> treeviewdragitemsstartingeventargs.items
+#### [DesktopWindowXamlSourceTakeFocusRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsourcetakefocusrequestedeventargs)
 
-#### [treeviewexpandingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewexpandingeventargs)
+DesktopWindowXamlSourceTakeFocusRequestedEventArgs <br> DesktopWindowXamlSourceTakeFocusRequestedEventArgs.Request
 
-treeviewexpandingeventargs.item
+#### [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)
 
-#### [treeviewitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem)
+WindowsXamlManager <br> WindowsXamlManager.Close <br> WindowsXamlManager.InitializeForCurrentThread
 
-treeviewitem.hasunrealizedchildren <br> treeviewitem.hasunrealizedchildrenproperty <br> treeviewitem.itemssource <br> treeviewitem.itemssourceproperty
+#### [XamlSourceFocusNavigationReason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationreason)
 
-#### [webview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview)
+XamlSourceFocusNavigationReason
 
-webview.webresourcerequested
+#### [XamlSourceFocusNavigationRequest](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationrequest)
 
-#### [webviewwebresourcerequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewwebresourcerequestedeventargs)
+XamlSourceFocusNavigationRequest <br> XamlSourceFocusNavigationRequest.CorrelationId <br> XamlSourceFocusNavigationRequest.HintRect <br> XamlSourceFocusNavigationRequest.Reason <br> XamlSourceFocusNavigationRequest.#ctor <br> XamlSourceFocusNavigationRequest.#ctor <br> XamlSourceFocusNavigationRequest.#ctor
 
-webviewwebresourcerequestedeventargs <br> webviewwebresourcerequestedeventargs.getdeferral <br> webviewwebresourcerequestedeventargs.request <br> webviewwebresourcerequestedeventargs.response
+#### [XamlSourceFocusNavigationResult](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationresult)
 
-### [windows.ui.xaml.core.direct](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct)
+XamlSourceFocusNavigationResult <br> XamlSourceFocusNavigationResult.WasFocusMoved <br> XamlSourceFocusNavigationResult.#ctor
 
-#### [ixamldirectobject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.ixamldirectobject)
+### [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input)
 
-ixamldirectobject
+#### [CanExecuteRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.canexecuterequestedeventargs)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.windows)
+CanExecuteRequestedEventArgs <br> CanExecuteRequestedEventArgs.CanExecute <br> CanExecuteRequestedEventArgs.Parameter
 
-windows.ui.xaml.core.direct
+#### [ExecuteRequestedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.executerequestedeventargs)
 
-#### [xamldirect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamldirect)
+ExecuteRequestedEventArgs <br> ExecuteRequestedEventArgs.Parameter
 
-xamldirect <br> xamldirect.addeventhandler <br> xamldirect.addeventhandler <br> xamldirect.addtocollection <br> xamldirect.clearcollection <br> xamldirect.clearproperty <br> xamldirect.createinstance <br> xamldirect.getbooleanproperty <br> xamldirect.getcollectioncount <br> xamldirect.getcolorproperty <br> xamldirect.getcornerradiusproperty <br> xamldirect.getdatetimeproperty <br> xamldirect.getdefault <br> xamldirect.getdoubleproperty <br> xamldirect.getdurationproperty <br> xamldirect.getenumproperty <br> xamldirect.getgridlengthproperty <br> xamldirect.getint32property <br> xamldirect.getmatrix3dproperty <br> xamldirect.getmatrixproperty <br> xamldirect.getobject <br> xamldirect.getobjectproperty <br> xamldirect.getpointproperty <br> xamldirect.getrectproperty <br> xamldirect.getsizeproperty <br> xamldirect.getstringproperty <br> xamldirect.getthicknessproperty <br> xamldirect.gettimespanproperty <br> xamldirect.getxamldirectobject <br> xamldirect.getxamldirectobjectfromcollectionat <br> xamldirect.getxamldirectobjectproperty <br> xamldirect.insertintocollectionat <br> xamldirect.removeeventhandler <br> xamldirect.removefromcollection <br> xamldirect.removefromcollectionat <br> xamldirect.setbooleanproperty <br> xamldirect.setcolorproperty <br> xamldirect.setcornerradiusproperty <br> xamldirect.setdatetimeproperty <br> xamldirect.setdoubleproperty <br> xamldirect.setdurationproperty <br> xamldirect.setenumproperty <br> xamldirect.setgridlengthproperty <br> xamldirect.setint32property <br> xamldirect.setmatrix3dproperty <br> xamldirect.setmatrixproperty <br> xamldirect.setobjectproperty <br> xamldirect.setpointproperty <br> xamldirect.setrectproperty <br> xamldirect.setsizeproperty <br> xamldirect.setstringproperty <br> xamldirect.setthicknessproperty <br> xamldirect.settimespanproperty <br> xamldirect.setxamldirectobjectproperty
+#### [FocusManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager)
 
-#### [xamleventindex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamleventindex)
+FocusManager.GettingFocus <br> FocusManager.GotFocus <br> FocusManager.LosingFocus <br> FocusManager.LostFocus
 
-xamleventindex
+#### [FocusManagerGotFocusEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanagergotfocuseventargs)
 
-#### [xamlpropertyindex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamlpropertyindex)
+FocusManagerGotFocusEventArgs <br> FocusManagerGotFocusEventArgs.CorrelationId <br> FocusManagerGotFocusEventArgs.NewFocusedElement
 
-xamlpropertyindex
+#### [FocusManagerLostFocusEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanagerlostfocuseventargs)
 
-#### [xamltypeindex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.core.direct.xamltypeindex)
+FocusManagerLostFocusEventArgs <br> FocusManagerLostFocusEventArgs.CorrelationId <br> FocusManagerLostFocusEventArgs.OldFocusedElement
 
-xamltypeindex
+#### [GettingFocusEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs)
 
-### [windows.ui.xaml.hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
+GettingFocusEventArgs.CorrelationId
 
-#### [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)
+#### [LosingFocusEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs)
 
-desktopwindowxamlsource <br> desktopwindowxamlsource.close <br> desktopwindowxamlsource.content <br> desktopwindowxamlsource.desktopwindowxamlsource <br> desktopwindowxamlsource.gotfocus <br> desktopwindowxamlsource.hasfocus <br> desktopwindowxamlsource.navigatefocus <br> desktopwindowxamlsource.takefocusrequested
+LosingFocusEventArgs.CorrelationId
 
-#### [desktopwindowxamlsourcegotfocuseventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsourcegotfocuseventargs)
+#### [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)
 
-desktopwindowxamlsourcegotfocuseventargs <br> desktopwindowxamlsourcegotfocuseventargs.request
+StandardUICommand <br> StandardUICommand.Kind <br> StandardUICommand.KindProperty <br> StandardUICommand.#ctor <br> StandardUICommand.#ctor
 
-#### [desktopwindowxamlsourcetakefocusrequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsourcetakefocusrequestedeventargs)
+#### [StandardUICommandKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommandkind)
 
-desktopwindowxamlsourcetakefocusrequestedeventargs <br> desktopwindowxamlsourcetakefocusrequestedeventargs.request
+StandardUICommandKind
 
-#### [windowsxamlmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)
+#### [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)
 
-windowsxamlmanager <br> windowsxamlmanager.close <br> windowsxamlmanager.initializeforcurrentthread
+XamlUICommand <br> XamlUICommand.AccessKey <br> XamlUICommand.AccessKeyProperty <br> XamlUICommand.CanExecute <br> XamlUICommand.CanExecuteChanged <br> XamlUICommand.CanExecuteRequested <br> XamlUICommand.Command <br> XamlUICommand.CommandProperty <br> XamlUICommand.Description <br> XamlUICommand.DescriptionProperty <br> XamlUICommand.Execute <br> XamlUICommand.ExecuteRequested <br> XamlUICommand.IconSource <br> XamlUICommand.IconSourceProperty <br> XamlUICommand.KeyboardAccelerators <br> XamlUICommand.KeyboardAcceleratorsProperty <br> XamlUICommand.Label <br> XamlUICommand.LabelProperty <br> XamlUICommand.NotifyCanExecuteChanged <br> XamlUICommand.#ctor
 
-#### [xamlsourcefocusnavigationreason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationreason)
+### [Windows.UI.Xaml.Markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
 
-xamlsourcefocusnavigationreason
+#### [FullXamlMetadataProviderAttribute](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.fullxamlmetadataproviderattribute)
 
-#### [xamlsourcefocusnavigationrequest](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationrequest)
+FullXamlMetadataProviderAttribute <br> FullXamlMetadataProviderAttribute.#ctor
 
-xamlsourcefocusnavigationrequest <br> xamlsourcefocusnavigationrequest.correlationid <br> xamlsourcefocusnavigationrequest.hintrect <br> xamlsourcefocusnavigationrequest.reason <br> xamlsourcefocusnavigationrequest.xamlsourcefocusnavigationrequest <br> xamlsourcefocusnavigationrequest.xamlsourcefocusnavigationrequest <br> xamlsourcefocusnavigationrequest.xamlsourcefocusnavigationrequest
+#### [IXamlBindScopeDiagnostics](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlbindscopediagnostics)
 
-#### [xamlsourcefocusnavigationresult](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.xamlsourcefocusnavigationresult)
+IXamlBindScopeDiagnostics <br> IXamlBindScopeDiagnostics.Disable
 
-xamlsourcefocusnavigationresult <br> xamlsourcefocusnavigationresult.wasfocusmoved <br> xamlsourcefocusnavigationresult.xamlsourcefocusnavigationresult
+#### [IXamlType2](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamltype2)
 
-### [windows.ui.xaml.input](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input)
+IXamlType2 <br> IXamlType2.BoxedType
 
-#### [canexecuterequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.canexecuterequestedeventargs)
+### [Windows.UI.Xaml.Media.Animation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation)
 
-canexecuterequestedeventargs <br> canexecuterequestedeventargs.canexecute <br> canexecuterequestedeventargs.parameter
+#### [BasicConnectedAnimationConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration)
 
-#### [executerequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.executerequestedeventargs)
+BasicConnectedAnimationConfiguration <br> BasicConnectedAnimationConfiguration.#ctor
 
-executerequestedeventargs <br> executerequestedeventargs.parameter
+#### [ConnectedAnimation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
-#### [focusmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager)
+ConnectedAnimation.Configuration
 
-focusmanager.gettingfocus <br> focusmanager.gotfocus <br> focusmanager.losingfocus <br> focusmanager.lostfocus
+#### [ConnectedAnimationConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationconfiguration)
 
-#### [focusmanagergotfocuseventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanagergotfocuseventargs)
+ConnectedAnimationConfiguration
 
-focusmanagergotfocuseventargs <br> focusmanagergotfocuseventargs.correlationid <br> focusmanagergotfocuseventargs.newfocusedelement
+#### [DirectConnectedAnimationConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)
 
-#### [focusmanagerlostfocuseventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanagerlostfocuseventargs)
+DirectConnectedAnimationConfiguration <br> DirectConnectedAnimationConfiguration.#ctor
 
-focusmanagerlostfocuseventargs <br> focusmanagerlostfocuseventargs.correlationid <br> focusmanagerlostfocuseventargs.oldfocusedelement
+#### [GravityConnectedAnimationConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)
 
-#### [gettingfocuseventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs)
+GravityConnectedAnimationConfiguration <br> GravityConnectedAnimationConfiguration.#ctor
 
-gettingfocuseventargs.correlationid
+#### [SlideNavigationTransitionEffect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.slidenavigationtransitioneffect)
 
-#### [losingfocuseventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs)
+SlideNavigationTransitionEffect
 
-losingfocuseventargs.correlationid
+#### [SlideNavigationTransitionInfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.slidenavigationtransitioninfo)
 
-#### [standarduicommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)
+SlideNavigationTransitionInfo.Effect <br> SlideNavigationTransitionInfo.EffectProperty
 
-standarduicommand <br> standarduicommand.kind <br> standarduicommand.kindproperty <br> standarduicommand.standarduicommand <br> standarduicommand.standarduicommand
+### [Windows.UI.Xaml.Media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
 
-#### [standarduicommandkind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommandkind)
+#### [Brush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush)
 
-standarduicommandkind
+Brush.PopulatePropertyInfo <br> Brush.PopulatePropertyInfoOverride
 
-#### [xamluicommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)
+### [Windows.UI.Xaml.Navigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.navigation)
 
-xamluicommand <br> xamluicommand.accesskey <br> xamluicommand.accesskeyproperty <br> xamluicommand.canexecute <br> xamluicommand.canexecutechanged <br> xamluicommand.canexecuterequested <br> xamluicommand.command <br> xamluicommand.commandproperty <br> xamluicommand.description <br> xamluicommand.descriptionproperty <br> xamluicommand.execute <br> xamluicommand.executerequested <br> xamluicommand.iconsource <br> xamluicommand.iconsourceproperty <br> xamluicommand.keyboardaccelerators <br> xamluicommand.keyboardacceleratorsproperty <br> xamluicommand.label <br> xamluicommand.labelproperty <br> xamluicommand.notifycanexecutechanged <br> xamluicommand.xamluicommand
+#### [FrameNavigationOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.navigation.framenavigationoptions)
 
-### [windows.ui.xaml.markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
+FrameNavigationOptions <br> FrameNavigationOptions.#ctor <br> FrameNavigationOptions.IsNavigationStackEnabled <br> FrameNavigationOptions.TransitionInfoOverride
 
-#### [fullxamlmetadataproviderattribute](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.fullxamlmetadataproviderattribute)
+### [Windows.UI.Xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml)
 
-fullxamlmetadataproviderattribute <br> fullxamlmetadataproviderattribute.fullxamlmetadataproviderattribute
+#### [BrushTransition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.brushtransition)
 
-#### [ixamlbindscopediagnostics](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlbindscopediagnostics)
+BrushTransition <br> BrushTransition.#ctor <br> BrushTransition.Duration
 
-ixamlbindscopediagnostics <br> ixamlbindscopediagnostics.disable
+#### [ColorPaletteResources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.colorpaletteresources)
 
-#### [ixamltype2](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamltype2)
+ColorPaletteResources <br> ColorPaletteResources.Accent <br> ColorPaletteResources.AltHigh <br> ColorPaletteResources.AltLow <br> ColorPaletteResources.AltMedium <br> ColorPaletteResources.AltMediumHigh <br> ColorPaletteResources.AltMediumLow <br> ColorPaletteResources.BaseHigh <br> ColorPaletteResources.BaseLow <br> ColorPaletteResources.BaseMedium <br> ColorPaletteResources.BaseMediumHigh <br> ColorPaletteResources.BaseMediumLow <br> ColorPaletteResources.ChromeAltLow <br> ColorPaletteResources.ChromeBlackHigh <br> ColorPaletteResources.ChromeBlackLow <br> ColorPaletteResources.ChromeBlackMedium <br> ColorPaletteResources.ChromeBlackMediumLow <br> ColorPaletteResources.ChromeDisabledHigh <br> ColorPaletteResources.ChromeDisabledLow <br> ColorPaletteResources.ChromeGray <br> ColorPaletteResources.ChromeHigh <br> ColorPaletteResources.ChromeLow <br> ColorPaletteResources.ChromeMedium <br> ColorPaletteResources.ChromeMediumLow <br> ColorPaletteResources.ChromeWhite <br> ColorPaletteResources.#ctor <br> ColorPaletteResources.ErrorText <br> ColorPaletteResources.ListLow <br> ColorPaletteResources.ListMedium
 
-ixamltype2 <br> ixamltype2.boxedtype
+#### [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)
 
-### [windows.ui.xaml.media.animation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation)
+DataTemplate.GetElement <br> DataTemplate.RecycleElement
 
-#### [basicconnectedanimationconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration)
+#### [DebugSettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings)
 
-basicconnectedanimationconfiguration <br> basicconnectedanimationconfiguration.basicconnectedanimationconfiguration
+DebugSettings.FailFastOnErrors
 
-#### [connectedanimation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
+#### [EffectiveViewportChangedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.effectiveviewportchangedeventargs)
 
-connectedanimation.configuration
+EffectiveViewportChangedEventArgs <br> EffectiveViewportChangedEventArgs.BringIntoViewDistanceX <br> EffectiveViewportChangedEventArgs.BringIntoViewDistanceY <br> EffectiveViewportChangedEventArgs.EffectiveViewport <br> EffectiveViewportChangedEventArgs.MaxViewport
 
-#### [connectedanimationconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationconfiguration)
+#### [ElementFactoryGetArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementfactorygetargs)
 
-connectedanimationconfiguration
+ElementFactoryGetArgs <br> ElementFactoryGetArgs.Data <br> ElementFactoryGetArgs.#ctor <br> ElementFactoryGetArgs.Parent
 
-#### [directconnectedanimationconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration)
+#### [ElementFactoryRecycleArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementfactoryrecycleargs)
 
-directconnectedanimationconfiguration <br> directconnectedanimationconfiguration.directconnectedanimationconfiguration
+ElementFactoryRecycleArgs <br> ElementFactoryRecycleArgs.Element <br> ElementFactoryRecycleArgs.#ctor <br> ElementFactoryRecycleArgs.Parent
 
-#### [gravityconnectedanimationconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)
+#### [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement)
 
-gravityconnectedanimationconfiguration <br> gravityconnectedanimationconfiguration.gravityconnectedanimationconfiguration
+FrameworkElement.EffectiveViewportChanged <br> FrameworkElement.InvalidateViewport <br> FrameworkElement.IsLoaded
 
-#### [slidenavigationtransitioneffect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.slidenavigationtransitioneffect)
+#### [IElementFactory](https://docs.microsoft.com/uwp/api/windows.ui.xaml.ielementfactory)
 
-slidenavigationtransitioneffect
+IElementFactory <br> IElementFactory.GetElement <br> IElementFactory.RecycleElement
 
-#### [slidenavigationtransitioninfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.slidenavigationtransitioninfo)
+#### [ScalarTransition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.scalartransition)
 
-slidenavigationtransitioninfo.effect <br> slidenavigationtransitioninfo.effectproperty
+ScalarTransition <br> ScalarTransition.Duration <br> ScalarTransition.#ctor
 
-### [windows.ui.xaml.media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
+#### [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)
 
-#### [brush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush)
+UIElement.CanBeScrollAnchor <br> UIElement.CanBeScrollAnchorProperty <br> UIElement.CenterPoint <br> UIElement.OpacityTransition <br> UIElement.PopulatePropertyInfo <br> UIElement.PopulatePropertyInfoOverride <br> UIElement.Rotation <br> UIElement.RotationAxis <br> UIElement.RotationTransition <br> UIElement.Scale <br> UIElement.ScaleTransition <br> UIElement.StartAnimation <br> UIElement.StopAnimation <br> UIElement.TransformMatrix <br> UIElement.Translation <br> UIElement.TranslationTransition
 
-brush.populatepropertyinfo <br> brush.populatepropertyinfooverride
+#### [Vector3Transition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.vector3transition)
 
-### [windows.ui.xaml.navigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.navigation)
+Vector3Transition <br> Vector3Transition.Components <br> Vector3Transition.Duration <br> Vector3Transition.#ctor
 
-#### [framenavigationoptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.navigation.framenavigationoptions)
+#### [Vector3TransitionComponents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.vector3transitioncomponents)
 
-framenavigationoptions <br> framenavigationoptions.framenavigationoptions <br> framenavigationoptions.isnavigationstackenabled <br> framenavigationoptions.transitioninfooverride
+Vector3TransitionComponents
 
-### [windows.ui.xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml)
+## Windows.Web
 
-#### [brushtransition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.brushtransition)
+### [Windows.Web.UI.Interop](https://docs.microsoft.com/uwp/api/windows.web.ui.interop)
 
-brushtransition <br> brushtransition.brushtransition <br> brushtransition.duration
+#### [WebViewControl](https://docs.microsoft.com/uwp/api/windows.web.ui.interop.webviewcontrol)
 
-#### [colorpaletteresources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.colorpaletteresources)
+WebViewControl.AddInitializeScript <br> WebViewControl.GotFocus <br> WebViewControl.LostFocus
 
-colorpaletteresources <br> colorpaletteresources.accent <br> colorpaletteresources.althigh <br> colorpaletteresources.altlow <br> colorpaletteresources.altmedium <br> colorpaletteresources.altmediumhigh <br> colorpaletteresources.altmediumlow <br> colorpaletteresources.basehigh <br> colorpaletteresources.baselow <br> colorpaletteresources.basemedium <br> colorpaletteresources.basemediumhigh <br> colorpaletteresources.basemediumlow <br> colorpaletteresources.chromealtlow <br> colorpaletteresources.chromeblackhigh <br> colorpaletteresources.chromeblacklow <br> colorpaletteresources.chromeblackmedium <br> colorpaletteresources.chromeblackmediumlow <br> colorpaletteresources.chromedisabledhigh <br> colorpaletteresources.chromedisabledlow <br> colorpaletteresources.chromegray <br> colorpaletteresources.chromehigh <br> colorpaletteresources.chromelow <br> colorpaletteresources.chromemedium <br> colorpaletteresources.chromemediumlow <br> colorpaletteresources.chromewhite <br> colorpaletteresources.colorpaletteresources <br> colorpaletteresources.errortext <br> colorpaletteresources.listlow <br> colorpaletteresources.listmedium
+### [Windows.Web.UI](https://docs.microsoft.com/uwp/api/windows.web.ui)
 
-#### [datatemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)
+#### [IWebViewControl2](https://docs.microsoft.com/uwp/api/windows.web.ui.iwebviewcontrol2)
 
-datatemplate.getelement <br> datatemplate.recycleelement
-
-#### [debugsettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings)
-
-debugsettings.failfastonerrors
-
-#### [effectiveviewportchangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.effectiveviewportchangedeventargs)
-
-effectiveviewportchangedeventargs <br> effectiveviewportchangedeventargs.bringintoviewdistancex <br> effectiveviewportchangedeventargs.bringintoviewdistancey <br> effectiveviewportchangedeventargs.effectiveviewport <br> effectiveviewportchangedeventargs.maxviewport
-
-#### [elementfactorygetargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementfactorygetargs)
-
-elementfactorygetargs <br> elementfactorygetargs.data <br> elementfactorygetargs.elementfactorygetargs <br> elementfactorygetargs.parent
-
-#### [elementfactoryrecycleargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementfactoryrecycleargs)
-
-elementfactoryrecycleargs <br> elementfactoryrecycleargs.element <br> elementfactoryrecycleargs.elementfactoryrecycleargs <br> elementfactoryrecycleargs.parent
-
-#### [frameworkelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement)
-
-frameworkelement.effectiveviewportchanged <br> frameworkelement.invalidateviewport <br> frameworkelement.isloaded
-
-#### [ielementfactory](https://docs.microsoft.com/uwp/api/windows.ui.xaml.ielementfactory)
-
-ielementfactory <br> ielementfactory.getelement <br> ielementfactory.recycleelement
-
-#### [scalartransition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.scalartransition)
-
-scalartransition <br> scalartransition.duration <br> scalartransition.scalartransition
-
-#### [uielement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)
-
-uielement.canbescrollanchor <br> uielement.canbescrollanchorproperty <br> uielement.centerpoint <br> uielement.opacitytransition <br> uielement.populatepropertyinfo <br> uielement.populatepropertyinfooverride <br> uielement.rotation <br> uielement.rotationaxis <br> uielement.rotationtransition <br> uielement.scale <br> uielement.scaletransition <br> uielement.startanimation <br> uielement.stopanimation <br> uielement.transformmatrix <br> uielement.translation <br> uielement.translationtransition
-
-#### [vector3transition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.vector3transition)
-
-vector3transition <br> vector3transition.components <br> vector3transition.duration <br> vector3transition.vector3transition
-
-#### [vector3transitioncomponents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.vector3transitioncomponents)
-
-vector3transitioncomponents
-
-## windows.web
-
-### [windows.web.ui.interop](https://docs.microsoft.com/uwp/api/windows.web.ui.interop)
-
-#### [webviewcontrol](https://docs.microsoft.com/uwp/api/windows.web.ui.interop.webviewcontrol)
-
-webviewcontrol.addinitializescript <br> webviewcontrol.gotfocus <br> webviewcontrol.lostfocus
-
-### [windows.web.ui](https://docs.microsoft.com/uwp/api/windows.web.ui)
-
-#### [iwebviewcontrol2](https://docs.microsoft.com/uwp/api/windows.web.ui.iwebviewcontrol2)
-
-iwebviewcontrol2 <br> iwebviewcontrol2.addinitializescript
-
+IWebViewControl2 <br> IWebViewControl2.AddInitializeScript

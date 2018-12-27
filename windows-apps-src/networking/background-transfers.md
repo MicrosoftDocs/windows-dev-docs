@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: Use the background transfer API to copy files reliably over the network.
 title: Background transfers
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
-ms.author: stwhi
 ms.date: 03/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Background transfers
 Use the background transfer API to copy files reliably over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
 

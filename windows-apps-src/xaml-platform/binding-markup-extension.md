@@ -1,17 +1,13 @@
 ---
-author: jwmsft
 description: The Binding markup extension is converted at XAML load time into an instance of the Binding class.
 title: Binding markup extension'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # {Binding} markup extension
 
 
@@ -19,7 +15,7 @@ ms.localizationpriority: medium
 
 **Note**  For general info about using data binding in your app with **{Binding}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-The **{Binding}** markup extension is used to data bind properties on controls to values comming from a data source such as code. The **{Binding}** markup extension is converted at XAML load time into an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class. This binding object gets a value from a property on a data source, and pushes it to the property on the control. The binding object can optionally be configured to observe changes in the value of the data source property and update itself based on those changes. It can also optionally be configured to push changes to the control value back to the source property. The property that is the target of a data binding must be a dependency property. For more info, see [Dependency properties overview](dependency-properties-overview.md).
+The **{Binding}** markup extension is used to data bind properties on controls to values coming from a data source such as code. The **{Binding}** markup extension is converted at XAML load time into an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class. This binding object gets a value from a property on a data source, and pushes it to the property on the control. The binding object can optionally be configured to observe changes in the value of the data source property and update itself based on those changes. It can also optionally be configured to push changes to the control value back to the source property. The property that is the target of a data binding must be a dependency property. For more info, see [Dependency properties overview](dependency-properties-overview.md).
 
 **{Binding}** has the same dependency property precedence as a local value, and setting a local value in imperative code removes the effect of any **{Binding}** set in markup.
 

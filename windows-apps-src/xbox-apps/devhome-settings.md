@@ -1,19 +1,13 @@
 ---
-author: v-angraf
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: Settings Page (Dev Home)
 description: Provides information about the Settings page of the Dev Home app for Xbox One.
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ---
-
-
 # Settings Page (Dev Home)
    
   

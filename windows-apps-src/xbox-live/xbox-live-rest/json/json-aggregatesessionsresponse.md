@@ -2,18 +2,13 @@
 title: AggregateSessionsResponse (JSON)
 assetID: 020ee9b2-c96c-2e65-4e6d-f9f4bd25a374
 permalink: en-us/docs/xboxlive/rest/json-aggregatesessionsresponse.html
-author: KevinAsgari
+
 description: ' AggregateSessionsResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # AggregateSessionsResponse (JSON)
 Contains aggregated data for a user's fitness sessions. 
 <a id="ID4EN"></a>

@@ -1,13 +1,9 @@
 ---
-author: QuinnRadich
 description: Enables users to view and set ratings that reflect satisfaction with content and services. 
 title: Rating Control
 template: detail.hbs
-ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: kimsea
@@ -15,7 +11,6 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Rating control
 
 The rating control allows users to view and set ratings that reflect degrees of satisfaction with content and services. Users can interact with the rating control with touch, pen, mouse, gamepad or keyboard. The follow guidance shows how to use the rating control's features to provide flexibility and customization.

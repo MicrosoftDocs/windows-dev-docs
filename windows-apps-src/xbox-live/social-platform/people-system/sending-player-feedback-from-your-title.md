@@ -1,17 +1,13 @@
 ---
 title: Sending Player Feedback From Your Title
-author: KevinAsgari
+
 description: Learn how your title can help promote positive player experiences by sending player feedback to the Xbox Live reputation service.
 ms.assetid: 49f8eb44-1e31-4248-b645-9123df6f8689
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, reputation, player feedback
 ms.localizationpriority: medium
 ---
-
 # Sending player feedback from your title
 The majority of Xbox Live members are awesome, but there are a small percentage of "Bad Apples" who hurt other people's game experiences. We identify these small percentages of users through user and title submitted feedback. We help protect the rest of the population by ensuring that these "Bad Apples" have a limited multiplayer experience where they can't interfere with good players' games. Xbox relies heavily on users to report other users to keep the system accurate, but titles in Xbox One can directly participate and dramatically help improve the accuracy of the user reputation population.
 

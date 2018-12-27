@@ -2,18 +2,13 @@
 title: Gamerpic URIs
 assetID: 811ab696-c433-aa54-90d8-66614ad09901
 permalink: en-us/docs/xboxlive/rest/atoc-reference-gamerpic.html
-author: KevinAsgari
+
 description: ' Gamerpic URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Gamerpic URIs
  
 This section provides detail about the Gamerpic Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *gamerpics*.

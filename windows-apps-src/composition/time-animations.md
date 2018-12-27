@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: Time animations
 description: Use KeyFrameAnimation classes to change your UI over time.
-ms.author: jimwalk
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
@@ -60,22 +56,22 @@ With these concepts in mind, let’s talk through the general formula for constr
 1. Using the animation template, start adding KeyFrames and defining properties of the animation.
     - At least one KeyFrame is required (the 100% or 1f keyframe).
     - It is recommended to define a duration as well.
-1. Once you are ready to run this animation then call StartAnimation(…) on the CompositionObject, targeting the property which you want to animate. Specifically:
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. If you have a running animation and you will like to stop the Animation or Animation Group you can use these APIs:
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. Once you are ready to run this animation then call StartAnimation(…) on the CompositionObject, targeting the property that you want to animate. Specifically:
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. If you have a running animation and you want to stop the Animation or Animation Group, you can use these APIs:
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 Let’s take a look an example to see this formula in action.
 
 ## Example
 
-In this example, you want to animate the offset of a visual from <0,0,0> to <20,20,20> over 1 seconds. In addition, you want to see the visual animate between these positions 10 times.
+In this example, you want to animate the offset of a visual from <0,0,0> to <200,0,0> over 1 second. In addition, you want to see the visual animate between these positions 10 times.
 
 ![Key frame animation](images/animation/animated-rectangle.gif)
 
-You first start by identifying the CompositionObject and property you want to animate. In this case, the red square is represented by a Composition Visual named `redSquare`. You start your animation from this object.
+You first start by identifying the CompositionObject and property you want to animate. In this case, the red square is represented by a Composition Visual named `redVisual`. You start your animation from this object.
 
 Next, because you want to animate the Offset property, you need to create a Vector3KeyFrameAnimation (Offset is of type Vector3). You also define the corresponding KeyFrames for the KeyFrameAnimation.
 
@@ -84,7 +80,7 @@ Next, because you want to animate the Offset property, you need to create a Vect
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-Then we will define the properties of the KeyFrameAnimation to describe it’s duration along with the behavior to animate between the two positions (current and <200,0,0>) 10 times.
+Then you define the properties of the KeyFrameAnimation to describe it’s duration along with the behavior to animate between the two positions (current and <200,0,0>) 10 times.
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -96,13 +92,13 @@ Then we will define the properties of the KeyFrameAnimation to describe it’s d
 Finally, in order to run an animation, you need to start it on a property of a CompositionObject.
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 Here's the full code.
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -110,6 +106,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```

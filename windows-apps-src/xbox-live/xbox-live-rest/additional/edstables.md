@@ -2,18 +2,13 @@
 title: EDS Tables
 assetID: 7fc0e498-9a45-61b9-a9b2-b7ceb8994e25
 permalink: en-us/docs/xboxlive/rest/edstables.html
-author: KevinAsgari
+
 description: ' EDS Tables'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # EDS Tables
 
   * [Media Group to Media Item Map](#ID4EQ)

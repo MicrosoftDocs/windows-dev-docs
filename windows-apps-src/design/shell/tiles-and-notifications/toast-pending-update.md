@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to create multi-step interactions in your notifications.
 title: Toast with pending update activation
 label: Toast with pending update activation
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast, pending update, pendingupdate, multi-step interactivity, multi-step interactions
 ms.localizationpriority: medium
 ---
-
 # Toast with pending update activation
 
 You can use **PendingUpdate** to create multi-step interactions in your toast notifications. For example, as seen below, you can create a series of toasts where the subsequent toasts depend on responses from the previous toasts.

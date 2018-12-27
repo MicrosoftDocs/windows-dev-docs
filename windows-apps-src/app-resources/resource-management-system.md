@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
 title: Resource Management System
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
-
 # Resource Management System
 The Resource Management System has both build-time and run-time features. At build time, the system creates an index of all the different variants of the resources that are packaged up with your app. This index is the Package Resource Index, or PRI, and it's also included in your app's package. At run-time, the system detects the user and machine settings that are in effect, consults the information in the PRI, and automatically loads the resources that are the best match for those settings.
 

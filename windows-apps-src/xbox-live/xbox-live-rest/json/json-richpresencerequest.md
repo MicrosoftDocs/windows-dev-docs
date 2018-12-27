@@ -2,18 +2,13 @@
 title: RichPresenceRequest (JSON)
 assetID: 599266be-f747-0be1-fadf-f8e0262dc27f
 permalink: en-us/docs/xboxlive/rest/json-richpresencerequest.html
-author: KevinAsgari
+
 description: ' RichPresenceRequest (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # RichPresenceRequest (JSON)
 Request for information about which rich presence information should be used. 
 <a id="ID4EN"></a>

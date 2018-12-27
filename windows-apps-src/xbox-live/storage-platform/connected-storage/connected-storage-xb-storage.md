@@ -1,17 +1,13 @@
 ---
 title: Managing local Connected Storage
-author: aablackm
+
 description: Learn how to manage local Connected Storage data in a development environment.
 ms.assetid: 630cb5fc-5d48-4026-8d6c-3aa617d75b2e
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Managing local Connected Storage
 While Connected Storage is used to store your game data in the cloud, there is also a local storage component to the Connected Storage service. Whether you are on a PC or console there is a local cache of the Connected Storage data which contains the data synced to the cloud. Whether you are creating an XDK or UWP title there is a tool to allow you to manage your local Connected Storage data.
 

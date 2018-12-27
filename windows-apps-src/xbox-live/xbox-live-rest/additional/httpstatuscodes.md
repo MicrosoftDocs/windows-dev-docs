@@ -2,18 +2,13 @@
 title: Standard HTTP status codes
 assetID: 7a19de56-7acd-ad2b-e8e6-53126991093b
 permalink: en-us/docs/xboxlive/rest/httpstatuscodes.html
-author: KevinAsgari
+
 description: ' Standard HTTP status codes'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Standard HTTP status codes
  
 The Hypertext Transport Protocol (HTTP) standard describes a number of status codes that are returned by the server in response to a client request. Xbox Live Services methods return HTTP protocol-compliant status codes to describe the status of the request.

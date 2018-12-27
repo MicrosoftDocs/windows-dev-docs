@@ -1,12 +1,8 @@
 ---
-author: msatranjr
 title: Bluetooth developer FAQ
 description: This article contains answers to commonly asked questions related to the UWP bluetooth APIs.
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
@@ -66,7 +62,7 @@ You don't have to for Bluetooth RFCOMM (classic) devices. Starting with Windows 
 **(15030 and above)** Pairing Bluetooth devices is no longer needed. Use the new Async APIs like GetGattServicesAsync and GetCharacteristicsAsync in order to query the current state of the remote device. See the [Client docs](gatt-client.md) for more details. 
 
 ## When should I pair with a device before communicating with it?
-Generally, if you require a trusted, long-term bond with a device, pair with it (either directing the user to the settings page or using the Device Enumeration and Pairing APIs). If you simply need to read information off the device that is exposed publically (a temperature sensor or beacon), then connect or listen for advertisements without making any effort to pair with the device. This will prevent interoperability problems in the long run because a host of devices do not support pairing. 
+Generally, if you require a trusted, long-term bond with a device, pair with it (either directing the user to the settings page or using the Device Enumeration and Pairing APIs). If you simply need to read information off the device that is exposed publicly (a temperature sensor or beacon), then connect or listen for advertisements without making any effort to pair with the device. This will prevent interoperability problems in the long run because a host of devices do not support pairing. 
 
 ## Do all Windows devices support Peripheral Role?
 

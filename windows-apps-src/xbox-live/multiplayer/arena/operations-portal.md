@@ -1,16 +1,12 @@
 ---
 title: Xbox Arena Operations Portal
-author: KevinAsgari
+
 description: Learn how to use the operations portal to manage your Xbox tournaments.
-ms.author: kevinasg
-ms.date: 06-18-2018
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, operations, portal
 ms.localizationpriority: medium
 ---
-
 # Xbox Arena Operations Portal
 
 
@@ -30,7 +26,7 @@ The Xbox Arena portal offers features beyond those of player-created tournaments
 
 * Create invitation-only tournaments
 * Specify which countries and regions can participate in the tournament
-* Select customized art assets published via Dev Center
+* Select customized art assets published via Partner Center
 * Set a prizing flag (an icon that indicates to players that the tournament rewards a prize for winning) and the terms of use for prize tournaments
 * Create customized game modes to be interpreted by the title or associated title services for setting up a match
 * Create tournaments in developer sandboxes

@@ -2,18 +2,13 @@
 title: POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 assetID: fb4cff17-2721-89c5-6646-5ab76952b411
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype-post.html
-author: KevinAsgari
+
 description: ' POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 Downloads multiple files from multiple users with the same filename. The file to be downloaded is determined by the URI of the request. The body of the request contains the list of XUIDs of the users whose files to download. The body of the response will be a multi-part MIME message, with each part representing a file for a particular user with its own set of headers. It's possible for the parts of the response to be a mix of successes and failures. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

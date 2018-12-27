@@ -1,16 +1,11 @@
 ---
-author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get aggregate conversions by channel data for an application during a given date range and other optional filters.
 title: Get app conversions by channel
-ms.author: mcleans
 ms.date: 08/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app conversions, channel
 ms.localizationpriority: medium
 ---
-
 # Get app conversions by channel
 
 Use this method in the Microsoft Store analytics API to get aggregate conversions by channel for an application during a given date range and other optional filters.
@@ -18,7 +13,7 @@ Use this method in the Microsoft Store analytics API to get aggregate conversion
 * A *conversion* means that a customer (signed in with a Microsoft account) has newly obtained a license to your app (whether you charged money or you've offered it for free).
 * The *channel* is the method in which a customer arrived at your app's listing page (for example, via the Store or a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md)).
 
-This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) in the Windows Dev Center dashboard.
+This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) in Partner Center.
 
 ## Prerequisites
 

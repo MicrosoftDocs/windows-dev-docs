@@ -2,18 +2,13 @@
 title: /users/me/consumables/{itemID}
 assetID: 45724827-5e35-326f-3f17-f49e606d9e08
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurl.html
-author: KevinAsgari
+
 description: RESTful endpoint for Xbox consumable items for a user.
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/me/consumables/{itemID}
 Accesses the full set of details for a specific consumable inventory item.
 The domain for these URIs is `inventory.xboxlive.com`.

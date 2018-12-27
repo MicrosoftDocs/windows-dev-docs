@@ -1,0 +1,35 @@
+- name: Overview
+  href: index.md
+- name: What's a UWP app?
+  href: ../get-started/universal-application-platform-guide.md
+- name: Get set up
+  href: ../get-started/get-set-up.md
+  items:
+    - name: Enable your device for development
+      href: ../get-started/enable-your-device-for-development.md
+    - name: Create a developer account
+      href: ../get-started/sign-up.md
+- name: Start coding
+  href: ../get-started/create-uwp-apps.md
+  items:
+    - name: Construct a form
+      href: construct-form-learning-track.md
+    - name: Display customers in a list
+      href: display-customers-in-list-learning-track.md
+    - name: Save and load settings
+      href: settings-learning-track.md
+    - name: Work with files
+      href: fileio-learning-track.md
+    - name: Your first app
+      href: ../get-started/your-first-app.md
+      items:
+        - name: Create "Hello, world" app (C#)
+          href: ../get-started/create-a-hello-world-app-xaml-universal.md
+        - name: Create "Hello, world" app (C++)
+          href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
+        - name: Create "Hello, world" app (JS)
+          href: ../get-started/create-a-hello-world-app-js-uwp.md
+    - name: Building a complex app
+      href: ../get-started/plan-your-app.md
+- name: Get UWP app samples
+  href: ../get-started/get-uwp-app-samples.md

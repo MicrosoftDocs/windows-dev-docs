@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: Use this method in the Microsoft Store submission API to get the status of an add-on submission.
 title: Get the status of an add-on submission
-ms.author: mcleans
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, status
 ms.localizationpriority: medium
 ---
-
 # Get the status of an add-on submission
 
 Use this method in the Microsoft Store submission API to get the status of an add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
@@ -22,7 +17,7 @@ To use this method, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
+* Create an add-on submission for one of your apps. You can do this in Partner Center, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
 
 ## Request
 
@@ -44,8 +39,8 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on that contains the submission for which you want to get the status. The Store ID is available on the Dev Center dashboard.  |
-| submissionId | string | Required. The ID of the submission for which you want to get the status. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
+| inAppProductId | string | Required. The Store ID of the add-on that contains the submission for which you want to get the status. The Store ID is available in Partner Center.  |
+| submissionId | string | Required. The ID of the submission for which you want to get the status. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
 
 ### Request body
@@ -91,7 +86,7 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | The submission could not be found. |
-| 409  | The add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## Related topics

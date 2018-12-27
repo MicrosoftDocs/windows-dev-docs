@@ -2,18 +2,13 @@
 title: QueryClipsResponse (JSON)
 assetID: 5d668588-54d6-3cf3-20ad-bb2600a156b3
 permalink: en-us/docs/xboxlive/rest/json-queryclipsresponse.html
-author: KevinAsgari
+
 description: ' QueryClipsResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # QueryClipsResponse (JSON)
 Wraps the list of return game clips along with paging information for the list. 
 <a id="ID4EN"></a>

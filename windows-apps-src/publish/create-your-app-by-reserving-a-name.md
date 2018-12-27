@@ -1,32 +1,29 @@
 ﻿---
-author: jnHs
-Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Create your app by reserving a name
 keywords: windows 10, uwp, name reservation, app name, app names, names, product name, naming, reserved name, title, names, titles
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
-ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Create your app by reserving a name
 
-The first step in creating a new app in your [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
+The first step in creating a new app in [Partner Center](https://partner.microsoft.com/dashboard) is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
 
 You can reserve a name for your app even if you haven't started to build your app yet. We recommend doing so as soon as possible, so that nobody else can use the name. Note that you will need to submit the app within three months in order to keep that name reserved for your use.
 
 When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) value must match the name that you reserved for your app. If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.
 
 > [!IMPORTANT]
-> You can reserve additional names for an app, and you may choose to use one of those in the published version of your app instead of the one you reserve when you first create your app in the dashboard. However, be aware that the first name you enter here will be used in some of your app's [identity details](view-app-identity-details.md), such as the **Package Family Name (PFN)**. These values may be visible to some users, and cannot be changed, so make sure that the name you reserve is appropriate for this use.
+> You can reserve additional names for an app, and you may choose to use one of those in the published version of your app instead of the one you reserve when you first create your app in Partner Center. However, be aware that the first name you enter here will be used in some of your app's [identity details](view-app-identity-details.md), such as the **Package Family Name (PFN)**. These values may be visible to some users, and cannot be changed, so make sure that the name you reserve is appropriate for this use.
 
 
 ## Create your app by reserving a new name
 
-Reserving a name is the first step in creating an app in the dashboard. 
+Reserving a name is the first step in creating an app in Partner Center. 
 
 1.  From the **Overview** page, click **Create a new app**.
 2.  In the text box, enter the name that you want to use, and then select **Check availability**. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
@@ -55,7 +52,7 @@ Choosing the right name for your app is an important task. Pick a name that will
 
 ## Manage additional app names
 
-You can add and manage additional names on the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.
+You can add and manage additional names on the **Manage app names** page in the **App management** section for each of your apps in Partner Center.
 
 In some cases, you may want to reserve multiple names to use for the same app, such as when you want to offer your app in multiple languages and want to use different names for each language. You will need to reserve an additional name if you want to change an app's name completely.
 

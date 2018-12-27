@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 
 description: This article shows you how to use the Open Source Computer Vision Library (OpenCV) with the MediaFrameReader class.
 title: Use OpenCV with MediaFrameReader
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ---
-
 # Use the Open Source Computer Vision Library (OpenCV) with MediaFrameReader
 
 This article shows you how to use the Open Source Computer Vision Library (OpenCV), a native code library that provides a wide variety of image processing algorithms, with the [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) class that can read media frames from multiple sources simulataneously. The example code in this article walks you through creating a simple app that obtains frames from a color sensor, blurs each frame using the OpenCV library, and then displays the processed image in a XAML **Image** control. 

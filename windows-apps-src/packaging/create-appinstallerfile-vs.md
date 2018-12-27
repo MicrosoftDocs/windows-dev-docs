@@ -1,16 +1,11 @@
 ---
-author: ridomin
 title: Create an App Installer file with Visual Studio
 description: Learn how to use Visual Studio to enable automatic updates using the .appinstaller file.
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload
 ms.localizationpriority: medium
 ---
-
 # Create an App Installer file with Visual Studio
 
 Starting with Windows 10, Version 1804, and Visual Studio 2017, Update 15.7, sideloaded apps can be configured to receive automatic updates using an `.appinstaller` file. Visual Studio supports enabling these updates.

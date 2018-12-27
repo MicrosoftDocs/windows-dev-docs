@@ -1,18 +1,13 @@
 ---
-author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.author: quradic
 ms.date: 06/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Navigation history and backwards navigation for UWP apps
 
 > **Important APIs**: [BackRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager class](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
@@ -284,21 +279,6 @@ The code examples provided above demonstrate how to handle all of these inputs.
 Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
 
 If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button:
-
-- If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
-
-    ![Title bar back button](images/nav-back-pc.png)
-
-- If an app is **tabbed**, then the back button is rendered inside a new system back bar.
-
-    ![System drawn back button bar](images/back-nav/tabs.png)
-
-### System back bar
-
-> [!NOTE]
-> "System back bar" is only a description, not an official name.
-
-The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
 
 - If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
 

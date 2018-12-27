@@ -2,18 +2,13 @@
 title: /public/scids/{scid}/clips
 assetID: 55a1f0ae-08bb-6d1e-a1da-cbeb481c42ee
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclips.html
-author: KevinAsgari
+
 description: ' /public/scids/{scid}/clips'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /public/scids/{scid}/clips
 Access public clips. This URI actually can be specified in two forms, `/public/scids/{scid}/clips` and `/public/titles/{titleId}/clips`. See below for more details. 
 The domain for this URI is `gameclipsmetadata.xboxlive.com`.

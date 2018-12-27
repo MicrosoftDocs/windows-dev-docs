@@ -1,22 +1,17 @@
 ---
-author: mcleanbyron
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: Use this method in the Microsoft Store promotions API to create, edit, and get promotional ad campaigns.
 title: Manage ad campaigns
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---
-
 # Manage ad campaigns
 
 Use these methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md) to create, edit and get promotional ad campaigns for your app. Each campaign you create using this method can be associated with only one app.
 
->**Note**&nbsp;&nbsp;You can also create and manage ad campaigns using the Windows Dev Center dashboard, and campaigns that you create programmatically can be accessed in the dashboard. For more information about managing ad campaigns in the dashboard, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
+>**Note**&nbsp;&nbsp;You can also create and manage ad campaigns using Partner Center, and campaigns that you create programmatically can be accessed in Partner Center. For more information about managing ad campaigns in Partner Center, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
 
 When you use these methods to create or update a campaign, you typically also call one or more of the following methods to manage the *delivery lines*, *targeting profiles*, and *creatives* that are associated with the campaign. For more information about the relationship between campaigns, delivery lines, targeting profiles, and creatives, see [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
@@ -30,7 +25,7 @@ To use these methods, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 
-  >**Note**&nbsp;&nbsp;As part of the prerequisites, be sure that you [create at least one paid ad campaign in the Dev Center dashboard](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in the dashboard. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Promote your app** page in the dashboard.
+  >**Note**&nbsp;&nbsp;As part of the prerequisites, be sure that you [create at least one paid ad campaign in Partner Center](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in Partner Center. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
 
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 

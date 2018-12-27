@@ -2,16 +2,11 @@
 title: Lighting overview
 description: When you use Direct3D lighting, you allow Direct3D to handle the details of illumination for you. Advanced users can perform lighting on their own, if desired.
 ms.assetid: FCBF6A92-4EAC-4CCC-A76C-79985AF348AE
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Lighting overview
 
 When you use Direct3D lighting, you allow Direct3D to handle the details of illumination for you. Advanced users can perform lighting on their own, if desired.

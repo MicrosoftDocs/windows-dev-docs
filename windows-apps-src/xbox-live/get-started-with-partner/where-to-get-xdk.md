@@ -1,17 +1,13 @@
 ---
 title: How to get the XDK
-author: KevinAsgari
+
 description: Learn how to get access to get the Xbox Developer Kit (XDK) as a managed partner.
 ms.assetid: 5e7abfb7-5d68-4e77-a941-13dd081268ac
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ---
-
 # How to get the Xbox Development Kit (XDK)
 
 The Xbox Development Kit (XDK) is not publicly available. There are two groups, managed partners and ID@Xbox developers, who are allowed access to the XDK and associated development resources like documentation and middleware tools. The XDK can be downloaded from the [software downloads page](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads) on the developer.microsoft.com site.

@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/achievements/{scid}/{achievementid}
 assetID: 656a6d63-1a11-b0a5-63d2-2b010abd62e7
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementid.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/achievements/{scid}/{achievementid}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/achievements/{scid}/{achievementid}
 Returns details about the achievement, including its configured metadata and user-specific data. 
 

@@ -1,17 +1,12 @@
 ---
-author: mithom
 title: Input for games
 description: This section demonstrates how to work with gamepads and other input devices for Universal Windows Platform (UWP) games.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, input
 ms.localizationpriority: medium
 ---
-
 # Input for games
 
 This section describes the different kinds of input devices that can be used in Universal Windows Platform (UWP) games on Windows 10 and Xbox One, demonstrates their basic usage, and recommends patterns and techniques for effective input programming in games.

@@ -1,23 +1,18 @@
 ﻿---
-author: jnHs
 Description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
 title: Manage app names
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
-ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app names, change app name, update app name, game name, product name
 ms.localizationpriority: medium
 ---
-
 # Manage app names
 
-The **Manage app names** lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in the [Windows Dev Center dashboard](https://partner.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
+The **Manage app names** lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in [Partner Center](https://partner.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
 
 > [!IMPORTANT]
-> You can reserve additional names for an app, and you may choose to use one of those in the published version of your app instead of the one you reserved when you first created your app in the dashboard. However, be aware that the first name that you reserve for your product will be used in some of your it's [identity details](view-app-identity-details.md), such as the **Package Family Name (PFN)**. These values may be visible to some users, and cannot be changed, so make sure that the name you reserve first is appropriate for this use.
+> You can reserve additional names for an app, and you may choose to use one of those in the published version of your app instead of the one you reserved when you first created your app in Partner Center. However, be aware that the first name that you reserve for your product will be used in some of your it's [identity details](view-app-identity-details.md), such as the **Package Family Name (PFN)**. These values may be visible to some users, and cannot be changed, so make sure that the name you reserve first is appropriate for this use.
 
 
 ## Reserve additional names for your app
@@ -36,7 +31,7 @@ If you no longer want to use a name you've previously reserved, you can release 
 
 To delete one of your app's reserved names, find the name you no longer want to use and then click **Delete**. In the confirmation dialog, click **Delete** again to confirm.
 
-Note that your app must have at least one reserved name. To completely remove an app from your dashboard, (and release all the names you've reserved for that app), click **Delete this app** from the **App overview** page. If you have a submission for the app in progress, you'll need to delete that submission first. Note that if you've already published the app to the Store, you can't delete it from your dashboard (though you can use the **Show/hide products** functionality on your **Overview** page to hide it). 
+Note that your app must have at least one reserved name. To completely remove an app from Partner Center (and release all the names you've reserved for that app), click **Delete this app** from the **App overview** page. If you have a submission for the app in progress, you'll need to delete that submission first. Note that if you've already published the app to the Store, you can't delete it from Partner Center (though you can use the **Show/hide products** functionality on your **Overview** page to hide it). 
 
 
 ## Rename an app that has already been published
@@ -57,7 +52,7 @@ To update a Store listing so that it uses the new name, go to the [Store listing
 Once your app has been published with the new name, you can delete any older names that you no longer need to use.
 
 > [!TIP]
-> Each app appears in your dashboard using the first name which you reserved for it. If you've followed the steps above to rename an app, and you'd like it to appear in your dashboard using the new name, you must delete the original name (by clicking **Delete** on the **Manage app names** page). 
+> Each app appears in Partner Center using the first name which you reserved for it. If you've followed the steps above to rename an app, and you'd like it to appear in Partner Center using the new name, you must delete the original name (by clicking **Delete** on the **Manage app names** page). 
 
  
 

@@ -1,17 +1,14 @@
 ---
-author: QuinnRadich
 title: Windows 10 version 1607 API changes
 description: Developers can use the following list to identify new or changed namespaces in Windows 10 version 1607
 keywords: what's new, whats new, update, updates, Windows 10, 1607, 14393, anniversary
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ---
-
 # New APIs in Windows 10 build 14393
 
 New and updated API namespaces have been made available to developers in Windows 10 build 14393, also known as the Anniversary Update or version 1607. This table lists the namespaces that have been added or changed in this release.

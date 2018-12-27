@@ -1,17 +1,12 @@
 ---
-author: mtoepke
 title: Game programming resources
 description: For more info about game programming on Windows, check out the following resources.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, programming
 ms.localizationpriority: medium
 ---
-
 # Game programming resources
 
 

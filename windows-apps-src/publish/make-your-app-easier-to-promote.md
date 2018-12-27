@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 title: Make your app easier to promote
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
-ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, promotional, promotion, featured, showcase, store
 ms.localizationpriority: medium
 ---
-
 # Make your app easier to promote
 
 
@@ -26,7 +21,7 @@ The Microsoft Store showcases different apps grouped by category or theme. There
 
     When featuring apps, the Microsoft Store may use your [app screenshots and images](app-screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing. You can provide different sets of screenshots to show how the app looks on each device type that it supports.
 
-    To maximize your app's chance of getting featured in the Store, provide all applicable images in the **Store logos** and **Additional art assets** sections of your Store listing. The **9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)** and **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** images are particularly important for Windows 10 (including Xbox). If your app supports the Xbox and/or Holographic device family, we recommend providing all applicable images for those device families as well. For more details and guidelines, see [App screenshots, images, and trailers](app-screenshots-and-images.md).
+    To maximize your app's chance of getting featured in the Store, provide all applicable images in the **Store logos** and **Additional art assets** sections of your Store listing. The **9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)** and **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** images are particularly important. If your app supports the Xbox and/or Holographic device family, we recommend providing all applicable images for those device families as well. For more details and guidelines, see [App screenshots, images, and trailers](app-screenshots-and-images.md).
 
 -   **Build one version of your app, not one free version and a distinct paid version**
 

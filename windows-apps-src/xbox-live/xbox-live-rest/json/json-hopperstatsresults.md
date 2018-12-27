@@ -2,18 +2,13 @@
 title: HopperStatsResults (JSON)
 assetID: 91927da1-2e97-f7bc-ae62-7e0e9966b98e
 permalink: en-us/docs/xboxlive/rest/json-hopperstatsresults.html
-author: KevinAsgari
+
 description: ' HopperStatsResults (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # HopperStatsResults (JSON)
 A JSON object representing the statistics for a hopper. 
 <a id="ID4EN"></a>

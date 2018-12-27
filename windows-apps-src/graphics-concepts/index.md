@@ -4,15 +4,12 @@ description: Defines graphics terms used by Microsoft Direct3D.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D Graphics Glossary
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Direct3D graphics glossary
 
 

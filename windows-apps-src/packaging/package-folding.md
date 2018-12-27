@@ -1,16 +1,11 @@
 ---
-author: laurenhughes
 title: Developing with asset packages and package folding
 description: Learn how to efficiently organize your app with asset packages and package folding.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, packaging, package layout, asset package
 ms.localizationpriority: medium
 ---
-
 # Developing with asset packages and package folding 
 
 > [!IMPORTANT]

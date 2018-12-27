@@ -1,15 +1,12 @@
 ---
-author: QuinnRadich
 description: Learn how to use accent colors and themes in your UWP apps.
 title: Color in UWP apps
-ms.author: quradic
 ms.date: 4/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Color
 
@@ -210,7 +207,7 @@ When using colored text on a colored background, make sure there is enough contr
 
 The chart below illustrates an example of the various light/dark shades of accent color, and how colored type can be applied on a colored surface.
 
-![color-on-color](images/color/color-on-color.svg)
+![color-on-color](images/color/color-on-color.png)
 
 For more information about styling controls, see [XAML styles](../controls-and-patterns/xaml-styles.md).
 

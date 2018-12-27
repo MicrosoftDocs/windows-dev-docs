@@ -1,17 +1,13 @@
 ---
 title: Xbox Live Title Storage
-author: KevinAsgari
+
 description: Learn how to use Xbox Live Title Storage to store game information for a title in the cloud.
 ms.assetid: a4182bc8-d232-4e77-93ae-97fe17ac71b1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live Title Storage
 
 The Xbox Live title storage service provides a way to store game information for a title in the cloud. Games running on all platforms can use this service.
@@ -40,7 +36,7 @@ For managed partners and ID@Xbox members:
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
 | Trusted Platform   | 256 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. More secure, but with platform restrictions. | Any platform may read, but only Xbox One, Xbox 360, or Windows Phone may write.  | Configurable to public or owner only.       |
 | Universal Platform | 64 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. | Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read. | Configurable to public or owner only.       |
-| Global             | 256 MB | 256 MB            | Data that everyone can read, such as rosters, maps, challenges, or art resources. | Only writeable via the Xbox Developer Portal or Windows Dev Center, any platform may read.                                | All users may read.
+| Global             | 256 MB | 256 MB            | Data that everyone can read, such as rosters, maps, challenges, or art resources. | Only writeable via the Xbox Developer Portal or Partner Center, any platform may read.                                | All users may read.
 
 ### Deprecated storage Types
 

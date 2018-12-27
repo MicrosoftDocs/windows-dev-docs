@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use notification mirroring on your toast notifications.
 title: Notification mirroring
 label: Notification mirroring
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast, action center in the cloud, notification mirroring, notification, cross device
 ms.localizationpriority: medium
 ---
-
 # Notification mirroring
 
 Notification mirroring, powered by Action Center in the Cloud, allows you to see your phone's notifications on your PC.

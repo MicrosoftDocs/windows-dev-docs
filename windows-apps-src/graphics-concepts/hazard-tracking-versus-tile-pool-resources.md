@@ -4,15 +4,12 @@ description: For non-streaming resources, Direct3D can prevent certain hazard co
 ms.assetid: 8B0C73D3-3F77-41E8-B17D-C595DEE39E49
 keywords:
 - Hazard tracking versus tile pool resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Hazard tracking versus tile pool resources
 
 

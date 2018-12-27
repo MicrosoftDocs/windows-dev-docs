@@ -1,17 +1,13 @@
 ---
 title: Get started with cross-play games
-author: KevinAsgari
+
 description: Learn how to develop cross-play games that run on both PC and Xbox One consoles.
 ms.assetid: 6c8e9d08-a3d2-4bfc-90ee-03c8fde3e66d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, cross-play, play anywhere
 ms.localizationpriority: medium
 ---
-
 # Get started with cross-play games
 
 ## Summary
@@ -20,7 +16,7 @@ With the launch of Windows 10, game developers will be able to release single pr
 
 Ingesting an XDK+UWP today game requires 4 major steps:
 
-1.  Create your UWP product in the Windows Dev Center
+1.  Create your UWP product in Partner Center
 
 2.  Create your XDK game in XDP, selecting the platforms you want to share XBL configuration across
 
@@ -36,7 +32,7 @@ The purpose of this document is to further detail these 4 steps to make it as ea
 
 1.  Cross-Play: A game that is releasing on more than one platform, but shares a single Xbox title ID and service configuration. The end result is that both versions of the game share the same Xbox Live configuration - achievements, leaderboards, game saves, multiplayer, and more.
 
-2.  Windows Dev Center: The portal where you can reserve app identities for use in UWP development today and setup Xbox Live configuration for UWP.
+2.  Partner Center: The [portal](https://partner.microsoft.com/dashboard) where you can reserve app identities for use in UWP development today and setup Xbox Live configuration for UWP.
 
 3.  XDP: The Xbox Developer Portal, which exists today to ingest, configure, and publish Xbox One XDK and SRA games, and will see added use to ingest, configure, and publish XDK+UWP Cross-Play games.
 
@@ -46,9 +42,9 @@ The purpose of this document is to further detail these 4 steps to make it as ea
 
 2.  Service Configuration ID (SCID): Each Xbox title (identified by a Title ID) has a corresponding Service Configuration ID (aka SCID). This ID allows Xbox Live to uniquely identify the rules / configuration to use when interacting with your title.
 
-3.  Package Family Name (PFN): This is an identity assigned to each product created in the Dev Center. Once you bind your UWP to the identity of this Dev Center product, it will take on this PFN. PFNs are unique product identifiers, which may span multiple platforms. PFNs are 1:1 with Xbox Title IDs.
+3.  Package Family Name (PFN): This is an identity assigned to each product created in Partner Center. Once you bind your UWP to the identity of this Partner Center product, it will take on this PFN. PFNs are unique product identifiers, which may span multiple platforms. PFNs are 1:1 with Xbox Title IDs.
 
-4.  MSA App ID: Also known as MSA Client ID, this is another app identity assigned by MSA at product creation time in the Dev Center. This identity helps Microsoft services identify your app. MSA App IDs are 1:1 with PFNs (and accordingly with Xbox Title IDs).
+4.  MSA App ID: Also known as MSA Client ID, this is another app identity assigned by MSA at product creation time in Partner Center. This identity helps Microsoft services identify your app. MSA App IDs are 1:1 with PFNs (and accordingly with Xbox Title IDs).
 
 ## Scenario Overview
 
@@ -88,15 +84,15 @@ Until Xbox One supports UWP games, Cross-Play games require an XDK (for Xbox One
 
 Any XDK + UWP Cross-Play game comes with some important restrictions:
 
-1.  **XDK titles must be ingested in XDP**. Both from a service configuration and mainline publishing experience, Dev Center is not equipped to support XDK based titles.
+1.  **XDK titles must be ingested in XDP**. Both from a service configuration and mainline publishing experience, Partner Center is not equipped to support XDK based titles.
 
-2.  **A single service configuration created in XDP can be used both by the XDK and UWP version of a game**. We’ve added new features to XDP to allow a game to share a single service configuration between its XDK and UWP versions. The UWP version will still need to be published in Dev Center for packages / catalog, but all service configuration publishing can be done in XDP.
+2.  **A single service configuration created in XDP can be used both by the XDK and UWP version of a game**. We’ve added new features to XDP to allow a game to share a single service configuration between its XDK and UWP versions. The UWP version will still need to be published in Partner Center for packages / catalog, but all service configuration publishing can be done in XDP.
 
-3.  **Service configuration cannot be split between XDP and Dev Center**. XDP and Dev Center are not aware of one another – publishing in one over-writes any existing publishes from the other. This has the potential to irreparably break service configuration and create terrible user experiences (vanishing achievements, lost game saves, etc.), and as a result we require 100% of service configuration to be done in XDP for XDK+UWP cross-play games.
+3.  **Service configuration cannot be split between XDP and Partner Center**. XDP and Partner Center are not aware of one another – publishing in one over-writes any existing publishes from the other. This has the potential to irreparably break service configuration and create terrible user experiences (vanishing achievements, lost game saves, etc.), and as a result we require 100% of service configuration to be done in XDP for XDK+UWP cross-play games.
 
-### Create your UWP product in the Windows Dev Center
+### Create your UWP product in Partner Center
 
-Create a UWP product in Windows Dev Center by following the guide: [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
+Create a UWP product in Partner Center by following the guide: [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
 
 ## Setup your XDK product in XDP
 
@@ -134,9 +130,9 @@ Once you make it to the Product Setup page, select the “Application ID Setup�
 
 **You** **do not need to enter Name and Publisher attribution**, **and specifically should not use the “Get Application ID” link on the page**, as you already have an MSA App ID you need to enter in this field and do not want a new one generated for your application.
 
-Once you’ve entered your MSA App ID in the “Application ID” field, click the “Submit Application ID Setup” button. This will save your MSA App ID information with Xbox Live security – whenever you make a request to retrieve an XToken from your UWP, the title claim contained within will now map to this XDP product (as long as the UWP is properly using the AppX Manifest Identity you created in the Windows Dev Center!)
+Once you’ve entered your MSA App ID in the “Application ID” field, click the “Submit Application ID Setup” button. This will save your MSA App ID information with Xbox Live security – whenever you make a request to retrieve an XToken from your UWP, the title claim contained within will now map to this XDP product (as long as the UWP is properly using the AppX Manifest Identity you created in Partner Center!)
 
-### Enter the Dev Center PFN into XDP
+### Enter the Partner Center PFN into XDP
 
 While the above steps are enough to get your UWP game authenticated and using Xbox Live with the Service Configuration you create and publish in XDP, certain Xbox Live features (like multiplayer invites) need to be aware of your UWP game’s PFN in order to work correctly.
 
@@ -148,29 +144,29 @@ On this page, enter the PFN for your UWP app (as retrieved in section 4.1.1), th
 
 This configuration is not immediately made live. It is brought live through future Service Configuration publishes to a sandbox. As such, this information is sandboxed, and needs to be published to each sandbox to be available.
 
-### Flag your App for Xbox Cert in the Dev Center
+### Flag your App for Xbox Cert in Partner Center
 
-Today, getting your game recognized as Xbox Live enabled for Xbox Cert requires some manual intervention. Work with your release manager to flag your app is Xbox Live enabled in the Dev Center for SmartCert detection.
+Today, getting your game recognized as Xbox Live enabled for Xbox Cert requires some manual intervention. Work with your release manager to flag your app is Xbox Live enabled in Partner Center for SmartCert detection.
 
 ### Update your UWP Game in the Xbox App
 
-Normally, the Xbox App uses an auto-generated Title ID for all UWP games to power the Xbox Live experiences within the Xbox App. In order to have your UWP game properly use the XDP-generated Title ID in the Xbox App, a data update needs to be made within the Windows Dev Center, **before you submit your UWP game for release.**
+Normally, the Xbox App uses an auto-generated Title ID for all UWP games to power the Xbox Live experiences within the Xbox App. In order to have your UWP game properly use the XDP-generated Title ID in the Xbox App, a data update needs to be made within Partner Center, **before you submit your UWP game for release.**
 
-To do this, please contact your DAM and tell them you want to update your Xbox App Title ID for your title name.  Be sure to include the Title ID created in XDP (visible in XDP under Product Setup &gt; Product Details) and the URL for Windows 10 for your UWP (visible in the Dev Center under App Management &gt; App Identity).
+To do this, please contact your DAM and tell them you want to update your Xbox App Title ID for your title name.  Be sure to include the Title ID created in XDP (visible in XDP under Product Setup &gt; Product Details) and the URL for Windows 10 for your UWP (visible in Partner Center under App management &gt; App identity).
 
 ## Configure Xbox Live in XDP
 
 ### Service Configuration
 
-With our XDP and Dev Center products properly configured and bound, you are free to setup your shared Xbox Live configuration within XDP as you would normally for an XDK title.
+With our XDP and Partner Center products properly configured and bound, you are free to setup your shared Xbox Live configuration within XDP as you would normally for an XDK title.
 
-**REMINDER** – Bound XDK+UWP games should, under no circumstances, enable, configure, or publish Xbox Live service configuration through the Dev Center. Failure to follow this guidance can permanently harm the Xbox Live configuration for your game.
+**REMINDER** – Bound XDK+UWP games should, under no circumstances, enable, configure, or publish Xbox Live service configuration through the Partner Center. Failure to follow this guidance can permanently harm the Xbox Live configuration for your game.
 
 ### Catalog Configuration
 
-For an XDK+UWP game, catalog configuration needs to be setup twice: once in XDP for your XDK, and also in Dev Center for your UWP.
+For an XDK+UWP game, catalog configuration needs to be setup twice: once in XDP for your XDK, and also in Partner Center for your UWP.
 
-For the XDP configuration, this is exactly the same as a normal XDK product. For the Dev Center configuration, more detailed steps can be found [here](https://dev.windows.com/en-us/publish).
+For the XDP configuration, this is exactly the same as a normal XDK product. For the Partner Center configuration, more detailed steps can be found [here](https://dev.windows.com/en-us/publish).
 
 <table>
   <tr>
@@ -182,9 +178,9 @@ For the XDP configuration, this is exactly the same as a normal XDK product. For
 
 ### Binary Configuration
 
-For an XDK+UWP game, binary configuration needs to be setup twice: once in XDP for your XDK, and also in Dev Center for your UWP.
+For an XDK+UWP game, binary configuration needs to be setup twice: once in XDP for your XDK, and also in Partner Center for your UWP.
 
-For the XDP configuration, this is exactly the same as a normal XDK product. For the Dev Center configuration, more detailed steps can be found [here](https://dev.windows.com/en-us/publish).
+For the XDP configuration, this is exactly the same as a normal XDK product. For the Partner Center configuration, more detailed steps can be found [here](https://dev.windows.com/en-us/publish).
 
 <table>
   <tr>
@@ -196,7 +192,7 @@ For the XDP configuration, this is exactly the same as a normal XDK product. For
 
 ## Publish in XDP
 
-Generally speaking, publishing an XDK+UWP game follows the same process as separately publishing an XDK title in XDP and your UWP in Dev Center. As such the below focuses on unique process or considerations to make for cross-play games.
+Generally speaking, publishing an XDK+UWP game follows the same process as separately publishing an XDK title in XDP and your UWP in Partner Center. As such the below focuses on unique process or considerations to make for cross-play games.
 
 ### Dev Sandbox Publishing
 
@@ -214,42 +210,42 @@ While XDP allows you to publish your catalog & binary to the dev sandbox version
 
 ### CERT Sandbox Publishing
 
-### Coordination between XDP publishing and Dev Center publishing
+### Coordination between XDP publishing and Partner Center publishing
 
-In XDP, moving from CERT to RETAIL are two separate, explicit actions. However, in Dev Center, the submission process automatically moves your game through certification and on to retail. As such, there is an order of operations to respect.
+In XDP, moving from CERT to RETAIL are two separate, explicit actions. However, in Partner Center, the submission process automatically moves your game through certification and on to retail. As such, there is an order of operations to respect.
 
 When you’re ready to go to certification, you should follow the following steps in order:
 
 1.  Publish your XDK product in XDP to CERT (including catalog, binary, and service config)
 
-2.  Start your Dev Center submission for your UWP product
+2.  Start your Partner Center submission for your UWP product
 
     1.  **Be sure to select “Publish this app manually” or “No sooner than \[date\]” in the Publish date field!** If you don’t do this, your UWP game could be released to retail automatically without your intervention
 
 <table>
   <tr>
     <td>
-      For a UWP-only game, it is still required to publish your catalog and service config to CERT in XDP before starting your Dev Center submission, even though you don’t have an XDK title binary that you’re publishing.
+      For a UWP-only game, it is still required to publish your catalog and service config to CERT in XDP before starting your Partner Center submission, even though you don’t have an XDK title binary that you’re publishing.
     </td>
   </tr>
 </table>
 
 ### RETAIL Sandbox Publishing
 
-### Coordination between XDP publishing and Dev Center publishing
+### Coordination between XDP publishing and Partner Center publishing
 
 Once certification of your XDK title has completed, and your UWP has left certification and is ready to publish, you are ready to publish your app to RETAIL. Again, it’s important to follow this process in a specific order to ensure that your XDK title and UWP stay aligned.
 
 1.  Once you’re ready, publish your XDK product in XDP to RETAIL (including catalog, binary, and service config)
 
-2.  In the Dev Center, on the certification page of your product, select “Publish Now” if you had previously selected “Publish this app manually”, or wait for the publish to occur if you selected “No sooner than \[date\]”.
+2.  In Partner Center, on the certification page of your product, select “Publish now” if you had previously selected “Publish this app manually”, or wait for the publish to occur if you selected “No sooner than \[date\]”.
 
 Once these steps have completed, you should have your XDK title and UWP game published to the world, with a shared service configuration in RETAIL. Congratulations!
 
 <table>
   <tr>
     <td>
-      For a UWP-only game, it is still required to publish your catalog and service config to RETAIL in XDP before publishing completes in the Dev Center, otherwise the released UWP will not be able to access Xbox Live.
+      For a UWP-only game, it is still required to publish your catalog and service config to RETAIL in XDP before publishing completes in Partner Center, otherwise the released UWP will not be able to access Xbox Live.
     </td>
   </tr>
 </table>

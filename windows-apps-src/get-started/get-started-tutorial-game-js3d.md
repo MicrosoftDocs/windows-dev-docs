@@ -1,12 +1,12 @@
 ---
 title: Get Started Tutorial - A 3D UWP game in JavaScript
 description: A UWP game for the Microsoft Store, written in JavaScript with three.js
-author: abbycar
-ms.author: abigailc
+
+
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
@@ -350,7 +350,7 @@ function createGround() {
 
     var ground = new THREE.Mesh(groundGeo, groundMat);
     ground.position.set(0, 1, 0);
-    // Rotate the place to to ground level
+    // Rotate the place to ground level
     ground.rotation.x = degreesToRadians(90);
     scene.add(ground);
 }

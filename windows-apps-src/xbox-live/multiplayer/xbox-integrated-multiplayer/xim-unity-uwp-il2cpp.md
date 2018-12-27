@@ -1,16 +1,12 @@
 ---
 title: Use XIM (Unity with IL2CPP)
-author: KevinAsgari
+
 description: Using Xbox Integrated Multiplayer with Unity for UWP with IL2CPP scripting backend
-ms.author: kevinasg
 ms.date: 04/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ---
-
 # Use XIM (Unity with IL2CPP)
 
 ## Overview

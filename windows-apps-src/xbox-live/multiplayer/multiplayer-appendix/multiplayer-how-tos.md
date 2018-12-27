@@ -1,17 +1,13 @@
 ---
 title: Multiplayer how-tos
-author: KevinAsgari
+
 description: Describes how to implement common tasks in Xbox Live Multiplayer 2015.
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
-ms.author: kevinasg
 ms.date: 08/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer 2015
 ms.localizationpriority: medium
 ---
-
 # Multiplayer how-to's
 
 This topic contains information on how to implement specific tasks related to using multiplayer 2015.
@@ -92,7 +88,7 @@ The title must do the following to create a new session:
     {
       XboxLiveContext^ xboxLiveContext = ref new Microsoft::Xbox::Services::XboxLiveContext(User::Users->GetAt(0));
 
-      // Values found in Xbox Developer Portal(XDP) or Windows Dev Center configuration
+      // Values found in Xbox Developer Portal(XDP) or Partner Center configuration
       MultiplayerSessionReference^ multiplayerSessionReference = ref new MultiplayerSessionReference(
         "c83c597b-7377-4886-99e3-2b5818fa5e4f", // serviceConfigurationId
         "team-deathmatch", // sessionTemplateName

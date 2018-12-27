@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid:
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your app.
 title: Download the CAB file for an error in your app
-ms.author: mcleans
 ms.date: 06/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB
 ms.localizationpriority: medium
 ---
-
 # Download the CAB file for an error in your app
 
-Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your app that was reported to Dev Center. This method can only download the CAB file for an app error that occurred in the last 30 days. CAB file downloads are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your app that has been reported to Partner Center. This method can only download the CAB file for an app error that occurred in the last 30 days. CAB file downloads are also available in the **Failures** section of the [Health report](../publish/health-report.md) in Partner Center.
 
 Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file you want to download.
 
@@ -48,7 +43,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to download a CAB file. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| applicationId | string | The Store ID of the app for which you want to download a CAB file. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | cabId | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
 
  

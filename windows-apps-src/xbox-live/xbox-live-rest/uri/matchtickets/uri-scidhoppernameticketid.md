@@ -2,18 +2,13 @@
 title: /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 assetID: 25deb7fe-859c-01d2-d14f-455a36c08a7c
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
 Supports a DELETE operation for a match ticket.

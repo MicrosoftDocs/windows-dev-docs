@@ -1,21 +1,17 @@
 ---
-author: stevewhims
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
-ms.author: stwhi
-ms.date: 10/03/2018
+ms.date: 10/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ---
-
 # Concurrency and asynchronous operations with C++/WinRT
 
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## Asynchronous operations and Windows Runtime "Async" functions
+
 Any Windows Runtime API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function (with a name ending in "Async"). The implementation of an asynchronous function initiates the work on another thread and returns immediately with an object that represents the asynchronous operation. When the asynchronous operation completes, that returned object contains any value that resulted from the work. The **Windows::Foundation** Windows Runtime namespace contains four types of asynchronous operation object.
 
 - [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
@@ -25,9 +21,10 @@ Any Windows Runtime API that has the potential to take more than 50 milliseconds
 
 Each of these asynchronous operation types is projected into a corresponding type in the **winrt::Windows::Foundation** C++/WinRT namespace. C++/WinRT also contains an internal await adapter struct. You don't use it directly but, thanks to that struct, you can write a `co_await` statement to cooperatively await the result of any function that returns one of these asychronous operation types. And you can author your own coroutines that return these types.
 
-An example of an asynchronous Windows function is [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), which returns an asynchronous operation object of type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Let's look at some ways&mdash;blocking and non-blocking&mdash;of using C++/WinRT to call an API such as that.
+An example of an asynchronous Windows function is [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), which returns an asynchronous operation object of type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Let's look at some ways&mdash;first blocking, and then non-blocking&mdash;of using C++/WinRT to call an API such as that.
 
 ## Block the calling thread
+
 The code example below receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread until the results of the asynchronous operation are available.
 
 ```cppwinrt
@@ -45,7 +42,7 @@ void ProcessFeed()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
     SyndicationClient syndicationClient;
-    SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+    SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
     // use syndicationFeed.
 }
 
@@ -59,6 +56,7 @@ int main()
 Calling **get** makes for convenient coding, and it's ideal for console apps or background threads where you may not want to use a coroutine for whatever reason. But it's not concurrent nor asynchronous, so it's not appropriate for a UI thread (and an assertion will fire in unoptimized builds if you attempt to use it on one). To avoid holding up OS threads from doing other useful work, we need a different technique.
 
 ## Write a coroutine
+
 C++/WinRT integrates C++ coroutines into the programming model to provide a natural way to cooperatively wait for a result. You can produce your own Windows Runtime asynchronous operation by writing a coroutine. In the code example below, **ProcessFeedAsync** is the coroutine.
 
 > [!NOTE]
@@ -96,7 +94,7 @@ int main()
 {
     winrt::init_apartment();
 
-    auto processOp = ProcessFeedAsync();
+    auto processOp{ ProcessFeedAsync() };
     // do other work while the feed is being printed.
     processOp.get(); // no more work to do; call get() so that we see the printout before the application exits.
 }
@@ -109,6 +107,7 @@ You can aggregate a coroutine into other coroutines. Or you can call **get** to 
 It's also possible to handle the completed and/or progress events of asynchronous actions and operations by using delegates. For details, and code examples, see [Delegate types for asynchronous actions and operations](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
 ## Asychronously return a Windows Runtime type
+
 In this next example we wrap a call to **RetrieveFeedAsync**, for a specific URI, to give us a **RetrieveBlogFeedAsync** function that asynchronously returns a [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed).
 
 ```cppwinrt
@@ -142,7 +141,7 @@ int main()
 {
     winrt::init_apartment();
 
-    auto feedOp = RetrieveBlogFeedAsync();
+    auto feedOp{ RetrieveBlogFeedAsync() };
     // do other work.
     PrintFeed(feedOp.get());
 }
@@ -168,6 +167,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 ``` 
 
 ## Asychronously return a non-Windows-Runtime type
+
 If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**concurrency::task**](/cpp/parallel/concrt/reference/task-class). We recommend **concurrency::task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
 
 > [!TIP]
@@ -192,7 +192,7 @@ concurrency::task<std::wstring> RetrieveFirstTitleAsync()
     {
         Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
         SyndicationClient syndicationClient;
-        SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+        SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
         return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
     });
 }
@@ -201,13 +201,14 @@ int main()
 {
     winrt::init_apartment();
 
-    auto firstTitleOp = RetrieveFirstTitleAsync();
+    auto firstTitleOp{ RetrieveFirstTitleAsync() };
     // Do other work here.
     std::wcout << firstTitleOp.get() << std::endl;
 }
 ```
 
 ## Parameter-passing
+
 For synchronous functions, you should use `const&` parameters by default. That will avoid the overhead of copies (which involve reference counting, and that means interlocked increments and decrements).
 
 ```cppwinrt
@@ -246,7 +247,10 @@ IASyncAction DoWorkAsync(Param const value);
 Also see [Standard arrays and vectors](std-cpp-data-types.md#standard-arrays-and-vectors), which deals with how to pass a standard vector into an asynchronous callee.
 
 ## Offloading work onto the Windows thread pool
-Before you do compute-bound work in a coroutine, you need to return execution to the caller so that the caller isn't blocked (in other words, introduce a suspension point). If you're not already doing that by `co-await`-ing some other operation, then you can `co-await` the **winrt::resume_background** function. That returns control to the caller, and then immediately resumes execution on a thread pool thread.
+
+A coroutine is a function like any other in that a caller is blocked until a function returns execution to it. And, the first opportunity for a coroutine to return is the first `co_await`, `co_return`, or `co_yield`.
+
+So, before you do compute-bound work in a coroutine, you need to return execution to the caller (in other words, introduce a suspension point) so that the caller isn't blocked. If you're not already doing that by `co_await`-ing some other operation, then you can `co_await` the [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) function. That returns control to the caller, and then immediately resumes execution on a thread pool thread.
 
 The thread pool being used in the implementation is the low-level [Windows thread pool](https://msdn.microsoft.com/library/windows/desktop/ms686766), so it's optimially efficient.
 
@@ -266,6 +270,7 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 ```
 
 ## Programming with thread affinity in mind
+
 This scenario expands on the previous one. You offload some work onto the thread pool, but then you want to display progress in the user interface (UI).
 
 ```cppwinrt
@@ -278,7 +283,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-The code above throws a [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) exception, because a **TextBlock** must be updated from the thread that created it, which is the UI thread. One solution is to capture the thread context within which our coroutine was originally called. Instantiate a **winrt::apartment_context** object, and then `co_await` it.
+The code above throws a [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) exception, because a **TextBlock** must be updated from the thread that created it, which is the UI thread. One solution is to capture the thread context within which our coroutine was originally called. To do that, instantiate a [**winrt::apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context) object, do background work, and then `co_await` the **apartment_context** to switch back to the calling context.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -296,9 +301,10 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 As long as the coroutine above is called from the UI thread that created the **TextBlock**, then this technique works. There will be many cases in your app where you're certain of that.
 
-For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can `co-await` the **winrt::resume_foreground** function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
+For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can `co_await` the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
 
 ```cppwinrt
+#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
@@ -310,9 +316,193 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
+## Execution contexts, resuming, and switching in a coroutine
+
+Broadly speaking, after a suspension point in a coroutine, the original thread of execution may go away and resumption may occur on any thread (in other words, any thread may call the **Completed** method for the async operation).
+
+But if you `co_await` any of the four Windows Runtime asynchronous operation types (**IAsyncXxx**), then C++/WinRT captures the calling context at the point you `co_await`. And it ensures that you're still on that context when the continuation resumes. C++/WinRT does this by checking whether you're already on the calling context and, if not, switching to it. If you were on a single-threaded apartment (STA) thread before `co_await`, then you'll be on the same one afterward; if you were on a multi-threaded apartment (MTA) thread before `co_await`, then you'll be on one afterward.
+
+```cppwinrt
+IAsyncAction ProcessFeedAsync()
+{
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
+
+    // The thread context at this point is captured...
+    SyndicationFeed syndicationFeed{ co_await syndicationClient.RetrieveFeedAsync(rssFeedUri) };
+    // ...and is restored at this point.
+}
+```
+
+The reason you can rely on this behavior is because C++/WinRT provides code to adapt those Windows Runtime asynchronous operation types to the C++ coroutine language support (these pieces of code are called wait adapters). The remaining awaitable types in C++/WinRT are simply thread pool wrappers and/or helpers; so they complete on the thread pool.
+
+```cppwinrt
+using namespace std::chrono;
+IAsyncOperation<int> return_123_after_5s()
+{
+	// No matter what the thread context is at this point...
+    co_await 5s;
+	// ...we're on the thread pool at this point.
+    co_return 123;
+}
+```
+
+If you `co_await` some other type&mdash;even within a C++/WinRT coroutine implementation&mdash;then another library provides the adapters, and you'll need to understand what those adapters do in terms of resumption and contexts.
+
+To keep context switches down to a minimum, you can use some of the techniques that we've already seen in this topic. Let's see some illustrations of doing that. In this next pseudo-code example, we show the outline of an event handler that calls a Windows Runtime API to load an image, drops onto a background thread to process that image, and then returns to the UI thread to display the image in the UI.
+
+```cppwinrt
+#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
+{
+    // We begin in the UI context.
+
+    // Call StorageFile::OpenAsync to load an image file.
+
+    // The call to OpenAsync occurred on a background thread, but C++/WinRT has restored us to the UI thread by this point.
+
+    co_await winrt::resume_background();
+
+	// We're now on a background thread.
+
+    // Process the image.
+
+    co_await winrt::resume_foreground(this->Dispatcher());
+
+	// We're back on MainPage's UI thread.
+
+    // Display the image in the UI.
+}
+```
+
+For this scenario, there's a little bit of ineffiency around the call to **StorageFile::OpenAsync**. There's a necessary context switch to a background thread (so that the handler can return execution to the caller), on resumption after which C++/WinRT restores the UI thread context. But, in this case, it's not necessary to be on the UI thread until we're about to update the UI. The more Windows Runtime APIs we call *before* our call to **winrt::resume_background**, the more unnecessary back-and-forth context switches we incur. The solution is not to call *any* Windows Runtime APIs before then. Move them all after the **winrt::resume_background**.
+
+```cppwinrt
+#include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
+{
+    // We begin in the UI context.
+
+    co_await winrt::resume_background();
+
+	// We're now on a background thread.
+
+    // Call StorageFile::OpenAsync to load an image file.
+
+    // Process the image.
+
+    co_await winrt::resume_foreground(this->Dispatcher());
+
+	// We're back on MainPage's UI thread.
+
+    // Display the image in the UI.
+}
+```
+
+If you want to do something more advanced, then you could write your own await adapters. For example, if you want a `co_await` to resume on the same thread that the async action completes on (so, there's no context switch), then you could begin by writing await adapters similar to the ones shown below.
+
+> [!NOTE]
+> The code example below is provided for educational purposes only; it's to get you started understanding how await adapters work. If you want to use this technique in your own codebase, then we recommend that you develop and test your own await adapter struct(s). For example, you could write **complete_on_any**, **complete_on_current**, and **complete_on(dispatcher)**. Also consider making them templates that take the **IAsyncXxx** type as a template parameter.
+
+```cppwinrt
+struct no_switch
+{
+    no_switch(Windows::Foundation::IAsyncAction const& async) : m_async(async)
+    {
+    }
+
+    bool await_ready() const
+    {
+        return m_async.Status() == Windows::Foundation::AsyncStatus::Completed;
+    }
+
+    void await_suspend(std::experimental::coroutine_handle<> handle) const
+    {
+        m_async.Completed([handle](Windows::Foundation::IAsyncAction const& /* asyncInfo */, Windows::Foundation::AsyncStatus const& /* asyncStatus */)
+        {
+            handle();
+        });
+    }
+
+    auto await_resume() const
+    {
+        return m_async.GetResults();
+    }
+
+private:
+    Windows::Foundation::IAsyncAction const& m_async;
+};
+```
+
+To understand how to use the **no_switch** await adapters, you'll first need to know that when the C++ compiler encounters a `co_await` expression it looks for functions called **await_ready**, **await_suspend**, and **await_resume**. The C++/WinRT library provides those functions so that you get reasonable behavior by default, like this.
+
+```cppwinrt
+IAsyncAction async{ ProcessFeedAsync() };
+co_await async;
+```
+
+To use the **no_switch** await adapters, just change the type of that `co_await` expression from **IAsyncXxx** to **no_switch**, like this.
+
+```cppwinrt
+IAsyncAction async{ ProcessFeedAsync() };
+co_await static_cast<no_switch>(async);
+```
+
+Then, instead of looking for the three **await_xxx** functions that match **IAsyncXxx**, the C++ compiler looks for functions that match **no_switch**.
+
 ## Canceling an asychronous operation, and cancellation callbacks
 
-The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Let's begin with a simple example.
+The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Here's an example that calls [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve a potentially large collection of files, and it stores the resulting asynchronous operation object in a data member. The user has the option to cancel the operation.
+
+```cppwinrt
+// MainPage.xaml
+...
+<Button x:Name="workButton" Click="OnWork">Work</Button>
+<Button x:Name="cancelButton" Click="OnCancel">Cancel</Button>
+...
+
+// MainPage.h
+...
+#include <winrt/Windows.Storage.Search.h>
+...
+struct MainPage : MainPageT<MainPage>
+{
+    MainPage()
+    {
+        InitializeComponent();
+    }
+
+    IAsyncAction OnWork(IInspectable /* sender */, RoutedEventArgs /* args */)
+    {
+        workButton().Content(winrt::box_value(L"Working..."));
+
+        // Enable the Pictures Library capability in the app manifest file.
+        StorageFolder picturesLibrary{ KnownFolders::PicturesLibrary() };
+
+        m_async = picturesLibrary.GetFilesAsync(CommonFileQuery::OrderByDate, 0, 1000);
+
+        IVectorView<StorageFile> filesInFolder{ co_await m_async };
+
+        workButton().Content(box_value(L"Done!"));
+
+        // Process the files in some way.
+    }
+
+    void OnCancel(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        if (m_async.Status() != AsyncStatus::Completed)
+        {
+            m_async.Cancel();
+            workButton().Content(winrt::box_value(L"Canceled"));
+        }
+    }
+
+private:
+    IAsyncOperation<::IVectorView<StorageFile>> m_async;
+};
+```
+
+For the implementation side of cancellation, let's begin with a simple example.
 
 ```cppwinrt
 // pch.h
@@ -380,6 +570,7 @@ IAsyncAction MainCoroutineAsync()
 Waiting on **winrt::get_cancellation_token** retrieves a cancellation token with knowledge of the **IAsyncAction** that the coroutine is producing on your behalf. You can use the function call operator on that token to query the cancellation state&mdash;essentially polling for cancellation. If you're performing some compute-bound operation, or iterating through a large collection, then this is a reasonable technique.
 
 ### Register a cancellation callback
+
 The Windows Runtime's cancellation doesn't automatically flow to other asynchronous objects. But&mdash;introduced in version 10.0.17763.0 (Windows 10, version 1809) of the Windows SDK&mdash;you can register a cancellation callback. This is a pre-emptive hook by which cancellation can be propagated, and makes it possible to integrate with existing concurrency libraries.
 
 In this next code example, **NestedCoroutineAsync** does the work, but it has no special cancellation logic in it. **CancellationPropagatorAsync** is essentially a wrapper on the nested coroutine; the wrapper forwards cancellation pre-emptively.

@@ -1,16 +1,11 @@
 ---
-author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: Create known user groups
-ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, targeted group, customers, flight group, user groups, known users
 ms.localizationpriority: medium
 ---
-
 # Create known user groups
 
 Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-flights.md), or for distribution of a submission to a [private audience](choose-visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
@@ -19,7 +14,7 @@ In order to be counted as a member of the group, each person must be authenticat
 
 ## To create a known user group
 
-1. In the Windows Dev Center dashboard, expand **Engage** in the left navigation menu and then select **Customer groups**. 
+1. In [Partner Center](https://partner.microsoft.com/dashboard), expand **Engage** in the left navigation menu and then select **Customer groups**. 
 2. In the **My customer groups** section, select **Create new group**.
 3. On the next page, enter a name for your group in the **Group name** box.
 4. Ensure that the **Known user group** radio button is selected.
@@ -35,7 +30,7 @@ You can also create a known user group by selecting **Create a flight group** fr
 
 ## To edit a known user group
 
-You cannot remove a known user group from your dashboard (or change its name) after it's been created, but you can edit its membership at any time.
+You cannot remove a known user group from Partner Center (or change its name) after it's been created, but you can edit its membership at any time.
 
 To review and edit your known user groups, expand the **Engage** menu in the left navigation menu and select **Customer groups**. Under **My customer groups**, select the name of the group you want to edit. You can also edit a known user group from the package flight creation page by selecting **View and manage existing groups** when creating a new flight, or by selecting the group's name from a package flight's overview page. 
 

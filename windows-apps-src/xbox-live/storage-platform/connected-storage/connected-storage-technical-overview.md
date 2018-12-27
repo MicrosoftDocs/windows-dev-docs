@@ -1,17 +1,13 @@
 ---
 title: Connected Storage technical overview
-author: aablackm
+
 description: A deep dive on the inner working of Connected Storage.
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Connected Storage
 
 > [!NOTE]
@@ -73,7 +69,6 @@ Xbox One provides several storage options, each with its own benefits and constr
 
 Connected storage
 -----------------
-
 Connected storage is designed to help apps save Xbox One gameplay data and other relevant app states-data that should roam between consoles. The Connected Storage API, specific to Xbox One, assists with saving and uploading that data. The API works in combination with the Xbox One application model.
 
 The Connected Storage API provides the following features:
@@ -93,7 +88,6 @@ For more information about the Connected Storage API, see the appropriate sectio
 
 Xbox Live Title Storage
 -----------------------
-
 The Title Storage service offers a cross-platform REST API for data storage with the following capabilities:
 
 -   Provides data sharing across users, apps, and various platforms
@@ -115,7 +109,6 @@ For more information, see *Xbox Live Title Storage*, in the XDK documentation.
 
 Local temporary storage
 -----------------------
-
 On the console, an app has access to local temporary storage with the following characteristics:
 
 -   2 GB of dedicated hard drive storage, accessible by the path T:\\.
@@ -126,7 +119,6 @@ For more information about local storage, see Local Storage, in the XDK document
 
 Configuring your app for connected storage
 ------------------------------------------
-
 When you use the Connected Storage API, all read and write operations are associated with an Xbox Live Primary Service Configuration ID (SCID), defined in your app's manifest file, AppXManifest.xml:
 
 ```xml

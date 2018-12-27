@@ -1,19 +1,16 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion fundamentals come together in your app.
 title: Motion in practice - animation in UWP apps
 label: Motion in practice
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Bringing it together
 
@@ -77,7 +74,8 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 
 ## Implicit Animations
 
-> **Preview**: Implicit animation requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/).
+> Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
+
 
 Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
 

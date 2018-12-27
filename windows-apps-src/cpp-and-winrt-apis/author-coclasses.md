@@ -1,16 +1,12 @@
 ---
-author: stevewhims
 description: C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes.
 title: Author COM components with C++/WinRT
-ms.author: stwhi
 ms.date: 09/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Author COM components with C++/WinRT
 
 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
@@ -418,29 +414,7 @@ Alternatively (and arguably more likely), you can choose to host your coclass(es
 
 You can begin the task of creating an in-process COM server by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Dynamic-Link Library (DLL)** project.
 
-### Set project properties
-
-Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Set **Windows SDK Version** to *10.0.17134.0 (Windows 10, version 1803)*, or later.
-
-To add Visual Studio support for C++/WinRT to your project, edit your `.vcxproj` file, find `<PropertyGroup Label="Globals">` and, inside that property group, set the property `<CppWinRTEnabled>true</CppWinRTEnabled>`.
-
-Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
-
-### The precompiled header
-
-Rename your `stdafx.h` and `stdafx.cpp` to `pch.h` and `pch.cpp`, respectively. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
-
-Find and replace all `#include "stdafx.h"` with `#include "pch.h"`.
-
-In `pch.h`, include `winrt/base.h`.
-
-```cppwinrt
-// pch.h
-...
-#include <winrt/base.h>
-```
-
-Confirm that you're not affected by [Why won't my new project compile?](/windows/uwp/cpp-and-winrt-apis/faq).
+To add C++/WinRT support to the new project, follow the steps described in [Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ### Implement the coclass, class factory, and in-proc server exports
 

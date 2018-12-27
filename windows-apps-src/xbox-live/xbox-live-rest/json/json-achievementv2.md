@@ -2,18 +2,13 @@
 title: Achievement (JSON)
 assetID: d3b52f66-ddc7-e676-b419-82209caf71d6
 permalink: en-us/docs/xboxlive/rest/json-achievementv2.html
-author: KevinAsgari
+
 description: ' Achievement (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Achievement (JSON)
 An Achievement object (version 2).
 <a id="ID4EN"></a>

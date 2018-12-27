@@ -1,16 +1,11 @@
 ---
-author: eliotcowley
 title: Magnetic stripe reader
 description: Index topic for the magnetic stripe reader UWP documentation.
-ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos, magnetic stripe reader
 ms.localizationpriority: medium
 ---
-
 # Magnetic stripe reader
 
 A magnetic stripe reader can scan certain types of cards that have a magnetic stripe on them, such as credit cards, driver's licenses, and store loyalty cards. You have likely encountered one when buying something in a store.

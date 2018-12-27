@@ -1,12 +1,8 @@
 ---
-author: jwmsft
 title: App analysis
 description: Analyze your app for performance issues.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -58,7 +54,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+Example 2 code-behind (bad)—setting the BitmapImage's UriSource before connecting it to the tree.
 
 ```vb
 var bitmapImage = new BitmapImage();

@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Test with the Microsoft Emulator for Windows 10 Mobile
 description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Test with the Microsoft Emulator for Windows 10 Mobile
 
 Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.

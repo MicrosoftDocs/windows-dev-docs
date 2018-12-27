@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Game flow management
 description: Learn how initialize game states, handle events, and set up the game update loop.
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ---
-
 # Game flow management
 
 The game now has a window, registered a couple event handlers, and loads assets asynchronously. This section explains about the use of game states, how to manage specific key game states, and how to create an update loop for the game engine. Then we'll learn about the user interface flow and finally, understand more about event handlers and events that are needed for a UWP game.
@@ -295,7 +290,7 @@ These are the event handlers used in this sample and the events they handle.
 <td align="left">OnDpiChanged</td>
 <td align="left">Handles <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. The DPI of the display has changed and the game adjusts its resources accordingly.
 <div class="alert">
-<strong>Note</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) coordinates are in DIPs (Device Independent Pixels) for [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
+<strong>Note</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a> coordinates are in DIPs (Device Independent Pixels) for <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
 </div>
 <div>
 </div></td>

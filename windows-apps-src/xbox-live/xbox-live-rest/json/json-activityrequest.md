@@ -2,18 +2,13 @@
 title: ActivityRequest (JSON)
 assetID: 9eb03ab7-352c-4465-ec86-d544e76f63f9
 permalink: en-us/docs/xboxlive/rest/json-activityrequest.html
-author: KevinAsgari
+
 description: ' ActivityRequest (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # ActivityRequest (JSON)
 A request for information about one or more users' rich presence. 
 <a id="ID4EN"></a>

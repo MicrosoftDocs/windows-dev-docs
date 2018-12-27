@@ -2,18 +2,13 @@
 title: GetClipResponse (JSON)
 assetID: ef128790-dc6a-6055-92d5-2ac08b708443
 permalink: en-us/docs/xboxlive/rest/json-getclipresponse.html
-author: KevinAsgari
+
 description: ' GetClipResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GetClipResponse (JSON)
 Wraps the game clip. 
 <a id="ID4EN"></a>

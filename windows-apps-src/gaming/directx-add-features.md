@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Add features to DirectX games
 description: Add features to your DirectX game.
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, game, directx, xaml, screen rotation, input
 ms.localizationpriority: medium
 ---
-
 # Add features to DirectX games
 
 This section provides information about adding various features to your DirectX games.

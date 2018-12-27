@@ -2,18 +2,13 @@
 title: MultiplayerSessionReference (JSON)
 assetID: 6e03e060-8c9b-b394-415f-af7e85be569f
 permalink: en-us/docs/xboxlive/rest/json-multiplayersessionreference.html
-author: KevinAsgari
+
 description: ' MultiplayerSessionReference (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MultiplayerSessionReference (JSON)
 A JSON object representing the **MultiplayerSessionReference**. 
 <a id="ID4EQ"></a>

@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
-ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Guidance for app package management
 
 Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
@@ -27,52 +22,10 @@ Learn how your app's packages are made available to your customers, and how to m
 
 Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.
 
-Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. However, customers will only get those packages if the app doesn't include a package that targets their current OS version.
+Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. However, customers on Windows 10 will only get those packages if the app doesn't include UWP packages targeting the applicable device family.
 
-For example, Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. 
-
-The following examples illustrate various scenarios for an app that includes packages targeting different OS versions (unless specific constraints of your packages don't allow them to run on every OS version/device type listed here; for example, the package's architecture must be appropriate for the device). 
-
-### Example app 1
-
-| Package's targeted operating system | Operating systems that will get this package |
-|-------------------------------------|----------------------------------------------|
-| Windows 8.1                         | Windows 10 desktop devices, Windows 8.1      |
-| Windows Phone 8.1                   | Windows 10 mobile devices, Windows Phone 8.1 |
-| Windows Phone 8                     | Windows Phone 8                              |
-| Windows Phone 7.1                   | Windows Phone 7.x                            |
-
-In example app 1, the app does not yet have Universal Windows Platform (UWP) packages that are specifically built for Windows 10 devices, but customers on Windows 10 can still get the app. Those customers will get the best packages available for their device type.
-
-### Example app 2
-
-| Package's targeted operating system  | Operating systems that will get this package |
-|--------------------------------------|----------------------------------------------|
-| Windows 10 (universal device family) | Windows 10 (all device families)             |
-| Windows 8.1                          | Windows 8.1                                  |
-| Windows Phone 8.1                    | Windows Phone 8.1                            |
-| Windows Phone 7.1                    | Windows Phone 7.x, Windows Phone 8           |
-
-In example app 2, there is no package that can run on Windows 8. Customers who are running any other OS version can get the app. All customers on Windows 10 will get the same package.
-
-### Example app 3
-
-| Package's targeted operating system | Operating systems that will get this package                  |
-|-------------------------------------|---------------------------------------------------------------|
-| Windows 10 (desktop device family)  | Windows 10 desktop devices                                    |
-| Windows Phone 8                     | Windows 10 mobile devices, Windows Phone 8, Windows Phone 8.1 |
-
-In example app 3, since there is no UWP package that targets the mobile device family, customers on Windows 10 mobile devices will get the Windows Phone 8 package. If this app later adds a package that targets the mobile device family (or the universal device family), that package will then be available to customers on Windows 10 mobile devices instead of the Windows Phone 8 package.
-
-Also note that this example app does not include any package that can run on Windows Phone 7.x.
-
-### Example app 4
-
-| Package's targeted operating system  | Operating systems that will get this package |
-|--------------------------------------|----------------------------------------------|
-| Windows 10 (universal device family) | Windows 10 (all device families)             |
-
-In example app 4, any device that is running Windows 10 can get the app, but it will not be available to customers on any previous OS version. Because the UWP package targets the universal device family, it will be available to any Windows 10 device (per your [device family availability selections](device-family-availability.md)).
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
 
 
 ## Removing an app from the Store
@@ -86,7 +39,7 @@ This option has the same effect as if you created a submission and chose **Make 
 
 Note that any customers who already have the app will still be able to use it and can download it again (and could even get updates if you submit new packages later).
 
-After making the app unavailable, you'll still see it in your dashboard. If you decide to offer the app to customers again, you can click **Make app available** from the App overview page. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.
+After making the app unavailable, you'll still see it in Partner Center. If you decide to offer the app to customers again, you can click **Make app available** from the App overview page. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.
 
 > [!NOTE]
 > If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8.1 and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8.1, remove all of your Windows Phone 8.1 packages from the submission. After the update is published, no new customers on Windows Phone 8.1 will be able to acquire the app though customers who already have it can continue to use it). However, the app will still be available for new customers on Windows 10.

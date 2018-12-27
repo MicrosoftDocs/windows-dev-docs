@@ -1,16 +1,11 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-author: muhsinking
-ms.author: mukin
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # My People notifications
 
 My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)

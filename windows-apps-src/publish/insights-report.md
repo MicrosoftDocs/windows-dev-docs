@@ -1,20 +1,15 @@
 ﻿---
-author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Insights report
-ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, insight, trend, anomalies, anomaly, data changes
 ms.localizationpriority: medium
 ---
-
 # Insights report
 
 
-The **Insights** report in the Windows Dev Center dashboard highlights significant changes (increases or decreases in a specific metric) that we detected over the last 30 days in your acquisitions, health, and/or usage data. This lets you get a quick look at potentially important changes without having to view all of the charts in each of these reports.
+The **Insights** report in [Partner Center](https://partner.microsoft.com/dashboard) highlights significant changes (increases or decreases in a specific metric) that we detected over the last 30 days in your acquisitions, health, and/or usage data. This lets you get a quick look at potentially important changes without having to view all of the charts in each of these reports.
 
 > [!NOTE]
 > Data in this report covers the last 30 days. You can't select a different time period for this report.

@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
 title: Guidelines for using Visits tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.author: pafarley
 ms.date: 05/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, geovisit, geovisits
 ms.localizationpriority: medium
 ---
-
 # Guidelines for using Visits tracking
 
 The Visits feature streamlines the process of location tracking to make it more efficient for the practical purposes of many apps. A Visit is defined as a significant geographical area that the user enters and exits. Visits are similar to [geofences](guidelines-for-geofencing.md) in that they allow the app to be notified only when the user enters or exits certain areas of interest, eliminating the need for continual location tracking which can be a drain on battery life. However, unlike geofences, Visit areas are dynamically identified at the platform level and do not need to be defined explicitly by individual apps. Also, the selection of which Visits an app will track is handled by a single granularity setting, rather than by subscribing to individual places.

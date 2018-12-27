@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: 3a59ff5e-f491-491c-81b1-6aff15886aad
 title: Optional packages and related set authoring
 description: Optional packages contain content that can be integrated with a main package. These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content for separate from your original app.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, optional packages, related set, package extension, visual studio
 ms.localizationpriority: medium
 ---
-
 # Optional packages and related set authoring
 Optional packages contain content that can be integrated with a main package. These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content separate from your original app.
 
@@ -26,14 +21,14 @@ Related sets are an extension of optional packages -- they allow you to enforce 
 To get all of the latest development tools, see [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads).
 
 > [!NOTE]
-> To submit an app that uses optional packages and/or related sets to the Microsoft Store, you will need permission. Optional packages and related sets can be used for Line of Business (LOB) or enterprise apps without Dev Center permission if they are not submitted to the Store. See [Windows developer support](https://developer.microsoft.com/windows/support) to get permission to submit an app that uses optional packages and related sets.
+> To submit an app that uses optional packages and/or related sets to the Microsoft Store, you will need permission. Optional packages and related sets can be used for Line of Business (LOB) or enterprise apps without Partner Center permission if they are not submitted to the Store. See [Windows developer support](https://developer.microsoft.com/windows/support) to get permission to submit an app that uses optional packages and related sets.
 
 ### Code sample
 While you're reading this article, it's recommended that you follow along with the [optional package code sample](https://github.com/AppInstaller/OptionalPackageSample) on GitHub for a hands-on understanding of how optional packages and related sets work within Visual Studio.
 
 ## Optional packages
 To create an optional package in Visual Studio, you'll need to:
-1. Make sure your app's **Target Platform Min Version** is set to: 10.0.15063.0.
+1. Make sure your app's **Target Platform Min Version** is set to: 10.0.15063.0 or higher.
 2. From your **main package** project, open the `Package.appxmanifest` file. Navigate to the "Packaging" tab and make a note of your **package family name**, which is everything before the "_" character.
 3. From your **optional package** project, right click the `Package.appxmanifest` and select **Open with > XML (Text) Editor**.
 4. Locate the `<Dependencies>` element in the file. Add the following:
@@ -61,6 +56,7 @@ If you want to load code from an optional package into the main package, you wil
 2. From the window, search the Installed Templates for ".txt" and add a new text file.
 > [!IMPORTANT]
 > The new text file must be named: `Bundle.Mapping.txt`.
+
 3. In the `Bundle.Mapping.txt` file you'll specify relative paths to any optional package projects or external packages. A sample `Bundle.Mapping.txt` file should look something like this:
 
 ```syntax
@@ -74,7 +70,7 @@ If you want to load code from an optional package into the main package, you wil
 
 When your solution is configured this way, Visual Studio will create a bundle manifest for the main package with all of the required metadata for related sets. 
 
-Note that like optional packages, a `Bundle.Mapping.txt` file for related sets will only work on Windows 10, version 1703. Additionally, your app's Target Platform Min Version should be set to 10.0.15063.0.
+Note that like optional packages, a `Bundle.Mapping.txt` file for related sets will only work on Windows 10, version 1703 or higher. Additionally, your app's Target Platform Min Version should be set to 10.0.15063.0 or higher.
 
 ## Known issues<a name="known_issues"></a>
 

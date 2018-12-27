@@ -1,18 +1,14 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Build UWP apps and custom/templated controls that support platform text scaling.
 title: Text scaling
 label: Text scaling
 template: detail.hbs
 keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make text bigger", user interaction, input
-ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Text scaling
 
 ![Example of text scaling 100% to 225%](images/coretext/text-scaling-news-hero-small.png)  
@@ -126,7 +122,7 @@ Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure
 
 ### Specify text trimming behavior
 
-If text wrapping is not the preferred behavior, most text controls let either clip your text or specify ellipses for the text trimming behavior. Clipping is preferred to ellipses as ellipses take up space themselves.
+If text wrapping is not the preferred behavior, most text controls let you either clip your text or specify ellipses for the text trimming behavior. Clipping is preferred to ellipses as ellipses take up space themselves.
 
 > [!NOTE]
 > If you need to clip your text, clip the end of the string, not the beginning.

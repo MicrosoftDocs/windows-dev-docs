@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 ms.assetid: 67a46812-881c-404b-9f3b-c6786f39e72b
 title: Customize the print workflow
 description: Create custom print workflow experiences to meet the needs of your organization.
-ms.author: pafarley
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, printing
 ms.localizationpriority: medium
 ---
-
 # Customize the print workflow
 
 ## Overview

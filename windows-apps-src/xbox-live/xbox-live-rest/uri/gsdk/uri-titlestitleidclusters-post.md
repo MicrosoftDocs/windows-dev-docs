@@ -2,18 +2,13 @@
 title: POST (/titles/{titleId}/clusters)
 assetID: 0977b0b0-872d-f7ad-9ba0-30d56cff4912
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters-post.html
-author: KevinAsgari
+
 description: ' POST (/titles/{titleId}/clusters)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/titles/{titleId}/clusters)
 URI that allows a client to create an Xbox Live Compute server instance. 
 The domain for these URIs is `gameserverms.xboxlive.com`.

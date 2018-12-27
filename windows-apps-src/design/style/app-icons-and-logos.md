@@ -1,19 +1,15 @@
 ---
-author: mijacobs
 Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
 title: App icons and logos
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # App icons and logos 
 
 Every app has an icon/logo that represents it, and that icon appears in multiple locations in the Windows shell: 
@@ -49,7 +45,7 @@ By default, Visual Studio stores your icon assets in an assets subdirectory. Her
 | App icon | App list in start menu, task bar, task manager | Square44x44Logo.png |
 | Splash screen | The app's splash screen | SplashScreen.png  |
 | Badge logo | Your app's tiles | BadgeLogo.png  |
-| Package logo/Store logo | App installer, Dev Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
+| Package logo/Store logo | App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
 
 \* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 
@@ -69,7 +65,7 @@ The  scale factor determines the size of UI elements, such as text. Scale factor
 :::row-end:::  
 
 
-Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunatly, Visual Studio provides a tool that makes it easy to generate and update these icons. 
+Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunately, Visual Studio provides a tool that makes it easy to generate and update these icons. 
 
 ## Microsoft Store listing image
 

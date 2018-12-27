@@ -1,15 +1,11 @@
 ---
-author: andrewleader
 Description: Learn how to send a local toast notification and handle the user clicking the toast.
 title: Send a local toast notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 ---
@@ -82,7 +78,7 @@ In Windows 10, your toast notification content is described using an adaptive la
 
 Let's start by constructing the visual part of the content, which includes the text and images you want the user to see.
 
-Thanks to the the Notifications library, generating the XML content is straightforward. If you don't install the Notifications library from NuGet, you have to construct the XML manually, which leaves room for errors.
+Thanks to the Notifications library, generating the XML content is straightforward. If you don't install the Notifications library from NuGet, you have to construct the XML manually, which leaves room for errors.
 
 > [!NOTE]
 > Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.
@@ -359,7 +355,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 When you specify background activation on your toast (or on a button inside the toast), your background task will be executed instead of activating your foreground app.
 
-For more information on background tasks, please see [Support your app with background tasks](/launch-resume/support-your-app-with-background-tasks.md).
+For more information on background tasks, please see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 If you are targeting build 14393 or higher, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.
 

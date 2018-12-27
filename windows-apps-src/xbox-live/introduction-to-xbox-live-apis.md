@@ -1,17 +1,13 @@
 ---
 title: Introduction to Xbox Live APIs
-author: KevinAsgari
+
 description: Learn about the various API models that you can use to interact with the Xbox Live service.
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
-ms.author: kevinasg
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Introduction to Xbox Live APIs
 
 ## Use Xbox Live services

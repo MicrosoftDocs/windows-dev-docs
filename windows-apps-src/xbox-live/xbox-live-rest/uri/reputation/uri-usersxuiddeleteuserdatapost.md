@@ -2,18 +2,13 @@
 title: POST (/users/xuid({xuid})/deleteuserdata)
 assetID: 8be13ff9-5d42-43a1-f2fa-d550d845a552
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddeleteuserdatapost.html
-author: KevinAsgari
+
 description: ' POST (/users/xuid({xuid})/deleteuserdata)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/users/xuid({xuid})/deleteuserdata)
 Completely resets the reputation data for a test user. For testing only.
 

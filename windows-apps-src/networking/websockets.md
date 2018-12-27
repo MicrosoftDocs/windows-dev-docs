@@ -1,17 +1,12 @@
 ---
-author: stevewhims
 description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
-ms.author: stwhi
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ---
-
 # WebSockets
 WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 

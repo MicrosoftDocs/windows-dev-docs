@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid}))
 assetID: c97ef943-8bea-8a41-90d7-faea874284c8
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid}))'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid}))
 Discover the presence of another user or client.
 The domain for these URIs is `userpresence.xboxlive.com`.

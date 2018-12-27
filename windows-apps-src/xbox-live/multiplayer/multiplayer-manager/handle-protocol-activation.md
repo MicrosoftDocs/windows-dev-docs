@@ -1,17 +1,13 @@
 ---
 title: Handle protocol activation
-author: KevinAsgari
+
 description: Learn how to use Xbox Live multiplayer manager to handle protocol activation.
 ms.assetid: e514bcb8-4302-4eeb-8c5b-176e23f3929f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer manager, protocol activation
 ms.localizationpriority: medium
 ---
-
 # Handle protocol activation
 
 Protocol activation is when the system automatically starts a game in response to another action, typically when a player accepts a game invite from another player.

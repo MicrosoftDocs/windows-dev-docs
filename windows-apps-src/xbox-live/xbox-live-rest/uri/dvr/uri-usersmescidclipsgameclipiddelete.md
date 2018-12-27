@@ -2,18 +2,13 @@
 title: DELETE (/users/me/scids/{scid}/clips/{gameClipId})
 assetID: 486fac60-6884-2e3f-9ef8-8de5da0ad8af
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipiddelete.html
-author: KevinAsgari
+
 description: ' DELETE (/users/me/scids/{scid}/clips/{gameClipId})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DELETE (/users/me/scids/{scid}/clips/{gameClipId})
 Delete game clip 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

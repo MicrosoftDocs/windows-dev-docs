@@ -2,18 +2,13 @@
 title: Standard HTTP Request and Response Headers
 assetID: a5f8fd96-9393-5234-04ad-837e5c117c92
 permalink: en-us/docs/xboxlive/rest/httpstandardheaders.html
-author: KevinAsgari
+
 description: ' Standard HTTP Request and Response Headers'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Standard HTTP Request and Response Headers
  
 <a id="ID4ES"></a>

@@ -1,19 +1,14 @@
 ---
-author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your desktop application.
 title: Download the CAB file for an error in your desktop application
-ms.author: mcleans
 ms.date: 03/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB, desktop application
 ms.localizationpriority: medium
 ---
-
 # Download the CAB file for an error in your desktop application
 
-Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error for a desktop application that you have added to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504). This method can only download the CAB file for an app error that occurred in the last 30 days. CAB file downloads are also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error for a desktop application that you have added to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504). This method can only download the CAB file for an app error that occurred in the last 30 days. CAB file downloads are also available in the [Health report](https://msdn.microsoft.com/library/windows/desktop/mt826504) for desktop applications in Partner Center.
 
 Before you can use this method, you must first use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve the ID hash of the CAB file you want to download.
 
@@ -47,7 +42,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to download a CAB file. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to download a CAB file. To get the product ID of a desktop application, open any [Partner Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | cabIdHash | string | The unique ID hash of the CAB file you want to download. To get this value, use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve details for a specific error in your application, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
 

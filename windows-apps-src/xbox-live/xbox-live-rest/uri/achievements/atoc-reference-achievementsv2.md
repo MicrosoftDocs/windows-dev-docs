@@ -2,18 +2,13 @@
 title: Achievements URIs
 assetID: 568bbc2c-9746-37ef-3514-99ffc96e3c15
 permalink: en-us/docs/xboxlive/rest/atoc-reference-achievementsv2.html
-author: KevinAsgari
+
 description: ' Achievements URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Achievements URIs
 
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *achievements*.

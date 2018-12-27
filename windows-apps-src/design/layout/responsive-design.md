@@ -1,16 +1,13 @@
 ---
-author: mijacobs
 Description: Learn responsive design techniques to tailor your app for specific devices
 label: Responsive design techniques
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 localizationpriority: medium
+ms.custom: RS5
 ---
 # Responsive design techniques
 

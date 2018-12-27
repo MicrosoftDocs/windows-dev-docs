@@ -1,20 +1,16 @@
 ---
 title: Xbox Live sandboxes
-author: PhillipLucas
+
 description: Xbox Live sandboxes introduction
 ms.assetid: e7daf845-e6cb-4561-9dfa-7cfba882f494
-ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Xbox Live sandboxes introduction
 
-In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Windows Dev Center](http://dev.windows.com). This information includes things like the stats, leaderboards, localization, and more. Changes to your Xbox Live service configuration need to be published from Dev Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.
+In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Partner Center](https://partner.microsoft.com/dashboard). This information includes things like the stats, leaderboards, localization, and more. Changes to your Xbox Live service configuration need to be published from Partner Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.
 
 A development sandbox allows you to work on changes to your title in an isolated environment. Sandboxes offer several benefits:
 
@@ -26,7 +22,7 @@ By default, Xbox One consoles and Windows 10 PCs are in the RETAIL sandbox. You 
 
 ## Finding out about your sandbox
 
-A sandbox is created for you when you create a title. You can find your Sandbox ID by opening your product in **Windows Dev Center** and navigating to **Services** > **Xbox Live**. The **Sandbox ID** will be listed at the top of the page.
+A sandbox is created for you when you create a title. You can find your Sandbox ID by opening your product in **Partner Center** and navigating to **Services** > **Xbox Live**. The **Sandbox ID** will be listed at the top of the page.
 
 ![](../images/getting_started/devcenter_sandbox_id.png)
 
@@ -104,3 +100,7 @@ You can use [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home
 
 1. Click **Change Sandbox**, located under **Quick Actions**.
 2. Enter the sandbox ID and then click **Save and restart**.
+
+### Sign-In with the Xbox App
+
+Once you've switched your development PC to use the proper sandbox for your title you'll want to verify that you're signed in to Xbox Live with an eligible test account. This can be done by signing into the [Xbox Live App](https://www.xbox.com/en-US/xbox-app). Once your development environment starts using the desired sandbox the Xbox App will sign-in users using the same constraints as any other Xbox Live service running on the sandbox. This makes it useful to verify that you are using a valid account for the sandbox.

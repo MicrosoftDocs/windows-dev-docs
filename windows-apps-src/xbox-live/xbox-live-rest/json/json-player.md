@@ -2,18 +2,13 @@
 title: Player (JSON)
 assetID: eaf6d082-869b-d2d3-d548-5cef65e54541
 permalink: en-us/docs/xboxlive/rest/json-player.html
-author: KevinAsgari
+
 description: ' Player (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Player (JSON)
 Contains data for a player in a game session. 
 <a id="ID4EN"></a>

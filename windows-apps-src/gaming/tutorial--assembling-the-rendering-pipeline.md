@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Intro to rendering
 description: Learn how to assemble the rendering pipeline to display graphics. Intro to rendering.
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, rendering
 ms.localizationpriority: medium
 ---
-
 # Rendering framework I: Intro to rendering
 
 We've covered how to structure a Universal Windows Platform (UWP) game and how to define a state machine to handle the flow of the game in the earlier topics. Now, it's time to learn how to assemble the rendering framework. Let's look at how the sample game renders the game scene using Direct3D 11 (commonly known as DirectX 11).

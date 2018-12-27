@@ -1,17 +1,13 @@
 ---
 title: Using SmartMatch Matchmaking
-author: KevinAsgari
+
 description: Learn how to use Xbox Live SmartMatch to match players in a multiplayer game.
 ms.assetid: 10b6413e-51d9-4fec-9110-5e258d291040
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, matchmaking, smartmatch
 ms.localizationpriority: medium
 ---
-
 # Using SmartMatch Matchmaking
 
 The following flow chart illustrates the SmartMatch matchmaking process.
@@ -41,7 +37,7 @@ The title submits attributes at the match ticket level in the *ticketAttributesJ
 
 The title specifies per-member attributes on each member within the match ticket session. These are set by calling the **MultiplayerSession.SetCurrentUserMemberCustomPropertyJson Method**, using a property name of "matchAttrs". This call places the attributes in the /members/{index}/properties/custom/matchAttrs field on each player within the ticket session.
 
-The matchmaking process "flattens" per-member each into a single ticket-level attribute, based on the flatten method specified for that attribute in the Xbox Live configuration for the hopper. This can be configured on [XDP](https://xdp.xboxlive.com) or [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview).
+The matchmaking process "flattens" per-member each into a single ticket-level attribute, based on the flatten method specified for that attribute in the Xbox Live configuration for the hopper. This can be configured on [XDP](https://xdp.xboxlive.com) or [Partner Center](https://partner.microsoft.com/dashboard).
 
 
 ## Making the Match

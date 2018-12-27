@@ -1,24 +1,19 @@
 ---
-author: normesta
 Description: This article lists things you need to know before packaging your desktop application. You may not need to do much to get your app ready for the packaging process.
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package a desktop application (Desktop Bridge)
-ms.author: normesta
 ms.date: 05/18/20188
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ---
-
 # Prepare to package a desktop application
 
 This article lists the things you need to know before you package your desktop app. You might not have to do much to get your application ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Microsoft Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
 
 >[!IMPORTANT]
->The ability to create a Windows app package for your desktop application (Otherwise known as the Desktop Bridge, was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
+>The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
 + __Your application requires a version of .NET earlier than 4.6.2__. You need to make sure your application runs on .NET 4.6.2. You cannot require or redistribute versions earlier than 4.6.2. This is the version of .NET that shipped in the Windows 10 Anniversary Update. Verifying your application works on this version will ensure that your application will continue to be compatible with future updates of Windows 10.  If your application targets the .NET Framework 4.0 or later, it is expected to run on .NET 4.6.2 but you should still test it.
 
@@ -70,7 +65,7 @@ This article lists the things you need to know before you package your desktop a
 	<tr><td>2015 and 2017 (VC 14)</td><td>Supported</td><td>Supported</td>
 	</table>
 
-	Note: In all cases, you must link to the latest publically available CRT.
+	Note: In all cases, you must link to the latest publicly available CRT.
 
 + __Your application installs and loads assemblies from the Windows side-by-side folder__. For example, your application uses C runtime libraries VC8 or VC9 and is dynamically linking them from Windows side-by-side folder, meaning your code is using the common DLL files from a shared folder. This is not supported. You will need to statically link them by linking to the redistributable library files directly into your code.
 
@@ -100,7 +95,7 @@ The dependencies will not get installed if the application is installed by sidel
 
 + __Your application starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your application onto a system that runs the Windows 10 S, then your application won’t be able to start them at all. This could block your application from submission to the Microsoft Store because all apps submitted to the Microsoft Store must be compatible with Windows 10 S.
 
-Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the application from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with an application that you you've packaged, and your application will behave as expected on systems running Windows 10 S.
+Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the application from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with an application that you've packaged, and your application will behave as expected on systems running Windows 10 S.
 
 + __Your application hosts add-ins, plug-ins, or extensions__.   In many cases, COM-style extensions will likely continue to work as long as the extension has not been packaged, and it installs as full trust. That's because those installers can use their full-trust capabilities to modify the registry and place extension files wherever your host application expects to find them.
 

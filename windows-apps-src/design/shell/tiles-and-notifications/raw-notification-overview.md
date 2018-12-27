@@ -1,18 +1,13 @@
 ---
-author: mijacobs
 Description: Raw notifications are short, general purpose push notifications.
 title: Raw notification overview
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
- 
 # Raw notification overview
 
 

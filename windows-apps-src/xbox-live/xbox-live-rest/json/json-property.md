@@ -2,18 +2,13 @@
 title: Property (JSON)
 assetID: 93de547e-d936-6fcc-92cb-e4dd284dd609
 permalink: en-us/docs/xboxlive/rest/json-property.html
-author: KevinAsgari
+
 description: ' Property (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Property (JSON)
 Contains property data provided by the client for matchmaking request criteria.
 <a id="ID4EN"></a>

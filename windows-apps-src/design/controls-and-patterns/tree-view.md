@@ -1,10 +1,8 @@
 ---
-author: Jwmsft
 description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -14,6 +12,7 @@ doc-status: Published
 dev_langs:
   - csharp
   - vb
+ms.custom: RS5
 ---
 # TreeView
 
@@ -283,7 +282,7 @@ There are 2 ways you can expand or collapse a tree view node in your code.
 
 You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have. The TreeView control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.
 
-Handle the [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The HasUnrealizedChildren property indicates whether the node needs to be filled, or if its Children collection has already been populated. It's important to remember that the TreeViewNode doesn't set this value, you need need to manage it in your app code.
+Handle the [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The HasUnrealizedChildren property indicates whether the node needs to be filled, or if its Children collection has already been populated. It's important to remember that the TreeViewNode doesn't set this value, you need to manage it in your app code.
 
 Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implemetation of 'FillTreeNode'.
 

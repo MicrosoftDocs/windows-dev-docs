@@ -1,10 +1,10 @@
 ---
-author: WilliamsJason
 title: Device Portal SSH pins API reference
 description: Learn how to remove all trusted SSH pins programatically.
 ms.localizationpriority: medium
+ms.topic: article
+ms.date: 02/08/2017
 ---
-
 # SSH Pins API reference
 You can remove all trusted SSH pins on your devkit using this REST API.
 

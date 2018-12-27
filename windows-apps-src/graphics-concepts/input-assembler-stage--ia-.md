@@ -4,15 +4,12 @@ description: The Input Assembler (IA) stage supplies primitive and adjacency dat
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
 keywords:
 - Input Assembler (IA) stage
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Input Assembler (IA) stage
 
 

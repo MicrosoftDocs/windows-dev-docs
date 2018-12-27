@@ -2,16 +2,11 @@
 title: Copy to and from byte arrays
 description: This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
-
 # Copy to and from byte arrays
 
 

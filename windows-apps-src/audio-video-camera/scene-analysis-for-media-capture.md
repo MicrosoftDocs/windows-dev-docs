@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
 description: This article describes how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.
 title: Effects for analyzing camera frames
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Effects for analyzing camera frames
 
 

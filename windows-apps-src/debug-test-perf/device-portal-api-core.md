@@ -1,13 +1,13 @@
 ---
-author: PatrickFarley
+
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
-ms.author: pafarley
+
 ms.date: 03/22/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
@@ -133,16 +133,19 @@ You can register an app in a loose folder by using the following request format.
 
 - None
 
-**Request body** 
+**Request body**
 
+```json
+{
+    "mainpackage" :
     {
-        "mainpackage" :
-        {
-            "networkshare" : "\\some\share\path",
-            "username" : "optional_username",
-            "password" : "optional_password"
-        }
+        "networkshare" : "\\some\share\path",
+        "username" : "optional_username",
+        "password" : "optional_password"
     }
+}
+```
+
 **Response**
 
 **Status code**
@@ -181,25 +184,28 @@ You can register a [related set](https://blogs.msdn.microsoft.com/appinstaller/2
 
 - None
 
-**Request body** 
+**Request body**
 
+```json
+{
+    "mainpackage" :
     {
-        "mainpackage" :
+        "networkshare" : "\\some\share\path",
+        "username" : "optional_username",
+        "password" : "optional_password"
+    },
+    "optionalpackages" :
+    [
         {
-            "networkshare" : "\\some\share\path",
-            "username" : "optional_username",
-            "password" : "optional_password"
+            "networkshare" : "\\some\share\path2",
+            "username" : "optional_username2",
+            "password" : "optional_password2"
         },
-        "optionalpackages" :
-        [
-            {
-                "networkshare" : "\\some\share\path2",
-                "username" : "optional_username2",
-                "password" : "optional_password2"
-            },
-            ...
-        ]
-    } 
+        ...
+    ]
+}
+```
+
 **Response**
 
 **Status code**
@@ -334,7 +340,7 @@ You can get a list of apps installed on the system by using the following reques
 **Response**
 
 The response includes a list of installed packages with associated details. The template for this response is as follows.
-```
+```json
 {"InstalledPackages": [
     {
         "Name": string,
@@ -407,7 +413,7 @@ You can get a list of the Bluetooth radios that are installed on the machine by 
 **Response**
 
 The response includes a JSON array of Bluetooth radios attached to the device.
-``` 
+```json
 {"BluetoothRadios" : [
     {
         "BluetoothAddress" : int64,
@@ -490,11 +496,10 @@ This API has the following expected status codes.
 **Request**
 
 You can get a list of devices that are installed on the machine by using the following request format.
- 
+
 | Method      | Request URI |
 | :------     | :----- |
 | GET | /api/devicemanager/devices |
-
 
 **URI parameters**
 
@@ -511,7 +516,7 @@ You can get a list of devices that are installed on the machine by using the fol
 **Response**
 
 The response includes a JSON array of devices attached to the device.
-``` 
+```json
 {"DeviceList": [
     {
         "Class": string,
@@ -568,7 +573,7 @@ You can get a list of USB descriptors for connected USB devices and Hubs by usin
 **Response**
 
 The response is JSON that includes DeviceID for the USB Device along with the USB Descriptors and port information for hubs.
-``` 
+```json
 {
     "DeviceList": [
         {
@@ -585,7 +590,7 @@ The response is JSON that includes DeviceID for the USB Device along with the US
 ```
 
 **Sample return data**
-```
+```json
 {
     "DeviceList": [{
         "ID": "System",
@@ -703,7 +708,7 @@ You can specify the following additional parameters on the request URI:
 **Response**
 
 The response has the following format.
-```
+```json
 {"CrashDumpEnabled": bool}
 ```
 
@@ -941,7 +946,7 @@ You can get the list of bugcheck minidump files by using the following request f
 **Response**
 
 The response includes a list of dump file names and the sizes of these files. This list will be in the following format. 
-```
+```json
 {"DumpFiles": [
     {
         "FileName": string,
@@ -1038,7 +1043,7 @@ You can get the bugcheck crash control settings by using the following request f
 **Response**
 
 The response includes the crash control settings. For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article. The template for the response is as follows.
-```
+```json
 {
     "autoreboot": bool (0 or 1),
     "dumptype": int (0 to 4),
@@ -1181,7 +1186,7 @@ You can specify the following additional parameters on the request URI:
 | URI parameter | Description |
 | :---          | :--- |
 | autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks. |
-| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration] (https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
+| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
 | maxdumpcount   | (**optional**) The maximum number of dumps to save. |
 | overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached. |
 
@@ -1266,7 +1271,7 @@ These commands are sent from the client to the server.
 | provider *{guid}* disable | Disable the provider marked by *{guid}* (without brackets). |
 
 This responses is sent from the server to the client. This is sent as text and you get the following format by parsing the JSON.
-```
+```json
 {
     "Events":[
         {
@@ -1286,7 +1291,7 @@ This responses is sent from the server to the client. This is sent as text and y
 Payload objects are extra key-value pairs (string:string) that are provided in the original ETW event.
 
 Example:
-```
+```json
 {
     "ID" : 42, 
     "Keyword" : 9223372036854775824, 
@@ -1333,7 +1338,7 @@ You can enumerate through the registered providers by using the following reques
 **Response**
 
 The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider in the following format.
-```
+```json
 {"Providers": [
     {
         "GUID": string, (GUID)
@@ -1385,7 +1390,7 @@ You can enumerate through the registered providers by using the following reques
 
 200 OK. The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider.
 
-```
+```json
 {"Providers": [
     {
         "GUID": string, (GUID)
@@ -1436,7 +1441,7 @@ You can get the device's location stack override status by using the following r
 
 The response includes the override state of the device in the following format. 
 
-```
+```json
 {"Override" : bool}
 ```
 
@@ -1479,7 +1484,7 @@ You can set the device's location stack override status by using the following r
 
 **Request body**
 
-```
+```json
 {"Override" : bool}
 ```
 
@@ -1487,7 +1492,7 @@ You can set the device's location stack override status by using the following r
 
 The response includes the override state that the device has been set to in the following format. 
 
-```
+```json
 {"Override" : bool}
 ```
 
@@ -1536,10 +1541,10 @@ You can get the device's injected (spoofed) location by using the following requ
 
 The response includes the current injected latitude and longitude values in the following format. 
 
-```
+```json
 {
     "Latitude" : double,
-    "Longitude : double
+    "Longitude" : double
 }
 ```
 
@@ -1582,10 +1587,10 @@ You can set the device's injected (spoofed) location by using the following requ
 
 **Request body**
 
-```
+```json
 {
     "Latitude" : double,
-    "Longitude : double
+    "Longitude" : double
 }
 ```
 
@@ -1593,10 +1598,10 @@ You can set the device's injected (spoofed) location by using the following requ
 
 The response includes the location that has been set in the following format. 
 
-```
+```json
 {
     "Latitude" : double,
-    "Longitude : double
+    "Longitude" : double
 }
 ```
 
@@ -1648,7 +1653,7 @@ You can get the name of a machine by using the following request format.
 
 The response includes the computer name in the following format. 
 
-```
+```json
 {"ComputerName": string}
 ```
 
@@ -1698,7 +1703,7 @@ You can get the OS information for a machine by using the following request form
 
 The response includes the OS information in the following format.
 
-```
+```json
 {
     "ComputerName": string,
     "OsEdition": string,
@@ -1754,7 +1759,7 @@ You can get the device family (Xbox, phone, desktop, etc) using the following re
 
 The response includes the device family (SKU - Desktop, Xbox, etc).
 
-```
+```json
 {
    "DeviceType" : string
 }
@@ -1857,14 +1862,14 @@ You can get the name of the active user on the device by using the following req
 The response includes user information in the following format. 
 
 On success: 
-```
+```json
 {
     "UserDisplayName" : string, 
     "UserSID" : string
 }
 ```
 On failure:
-```
+```json
 {
     "Code" : int, 
     "CodeText" : string, 
@@ -1919,7 +1924,7 @@ You can get the list of currently running processes by using the following reque
 **Response**
 
 The response includes a list of processes with details for each process. The information is in JSON format and has the following template.
-```
+```json
 {"Processes": [
     {
         "CPUUsage": float,
@@ -1981,7 +1986,7 @@ This can also be upgraded to a WebSocket connection.  It provides the same JSON 
 **Response**
 
 The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access. This information is in JSON format and has the following template.
-```
+```json
 {
     "AvailablePages": int,
     "CommitLimit": int,
@@ -2060,7 +2065,7 @@ You can get the current state of the battery by using the following request form
 **Response**
 
 The current battery state information is returned using the following format.
-```
+```json
 {
     "AcOnline": int (0 | 1),
     "BatteryPresent": int (0 | 1),
@@ -2117,7 +2122,7 @@ You can get the active power scheme by using the following request format.
 **Response**
 
 The active power scheme has the following format.
-```
+```json
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
@@ -2206,7 +2211,7 @@ You can check the power state of the system by using the following request forma
 **Response**
 
 The power state information has the following template.
-```
+```json
 {"LowPowerState" : false, "LowPowerStateAvailable" : true }
 ```
 
@@ -2386,7 +2391,7 @@ You can enumerate the available sleep study reports by using the following reque
 
 The list of available reports has the following template.
 
-```
+```json
 {"Reports": [
     {
         "FileName": string
@@ -2716,7 +2721,7 @@ You can get the current IP configuration by using the following request format.
 
 The response includes the IP configuration in the following template.
 
-```
+```json
 {"Adapters": [
     {
         "Description": string,
@@ -2852,7 +2857,7 @@ You can enumerate the available wireless network interfaces by using the followi
 
 A list of the available wireless interfaces with details in the following format.
 
-``` 
+```json 
 {"Interfaces": [{
     "Description": string,
     "GUID": string (guid with curly brackets),
@@ -2918,7 +2923,7 @@ You can specify the following additional parameters on the request URI:
 
 The list of wireless networks found on the provided *interface*. This includes details for the networks in the following format.
 
-```
+```json
 {"AvailableNetworks": [
     {
         "AlreadyConnected": bool,
@@ -3134,7 +3139,7 @@ You can specify the following additional parameters on the request URI:
 
 **Request body**
 
-```
+```json
 {"Files": [
     {
         "Name": string, (Filename, not base64 encoded)
@@ -3189,7 +3194,7 @@ You can get the WER reports by using the following request format.
 
 The WER reports in the following format.
 
-```
+```json
 {"WerReports": [
     {
         "User": string,
@@ -3249,7 +3254,7 @@ You can upload a WPR profile and start tracing using that profile by using the f
 
 The WPR session status in the following format.
 
-```
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal or boot)
@@ -3305,7 +3310,7 @@ You can specify the following additional parameters on the request URI:
 
 On start, this API returns the WPR session status in the following format.
 
-```
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (boot)
@@ -3406,7 +3411,7 @@ You can specify the following additional parameters on the request URI:
 
 On start, this API returns the WPR session status in the following format.
 
-```
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal)
@@ -3503,7 +3508,7 @@ You can retrieve the status of the current WPR session by using the following re
 
 The status of the WPR tracing session in the following format.
 
-```
+```json
 {
     "SessionType": string, (Running or Idle) 
     "State": string (normal or boot)
@@ -3555,7 +3560,7 @@ You can get a listing of ETL traces on the device using the following request fo
 
 The listing of completed tracing sessions is provided in the following format.
 
-```
+```json
 {"Items": [{
     "CurrentDir": string (filepath),
     "DateCreated": int (File CreationTime),
@@ -3710,7 +3715,7 @@ View the currently applied tags for the device.  These are advertised via DNS-SD
 
 **Response**
 The currently applied tags in the following format. 
-```
+```json
  {
     "tags": [
         "tag1", 
@@ -3904,7 +3909,7 @@ Obtain a list of accessible top-level folders.
 
 **Response**
 The available folders in the following format. 
-```
+```json
  {"KnownFolders": [
     "folder0",
     "folder1",...
@@ -3959,7 +3964,7 @@ Obtain a list of files in a folder.
 
 **Response**
 The available folders in the following format. 
-```
+```json
 {"Items": [
     {
         "CurrentDir": string (folder under the requested known folder),

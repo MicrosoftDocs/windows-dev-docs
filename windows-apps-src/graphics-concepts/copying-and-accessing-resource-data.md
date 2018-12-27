@@ -4,15 +4,12 @@ description: Usage flags indicate how the application intends to use the resourc
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
 keywords:
 - Copying and accessing resource data
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Copying and accessing resource data
 
 

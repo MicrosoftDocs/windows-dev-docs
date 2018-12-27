@@ -2,18 +2,13 @@
 title: POST (/system/strings/validate)
 assetID: 6a59bc0b-8edd-87bf-efaf-f16efa3bedf7
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidatepost.html
-author: KevinAsgari
+
 description: ' POST (/system/strings/validate)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/system/strings/validate)
 Accepts an array of strings for validation and returns an array of results of equal size. 
 The domain for these URIs is `client-strings.xboxlive.com`.
@@ -31,7 +26,7 @@ The domain for these URIs is `client-strings.xboxlive.com`.
  
 Each result indicates whether the corresponding string is acceptable on Xbox LIVE, and contains the offending string if applicable.
  
-Identical strings will always give identical results. If you recieve a non-successful result, analyze the result and modify the string accordingly.
+Identical strings will always give identical results. If you receive a non-successful result, analyze the result and modify the string accordingly.
  
  
 

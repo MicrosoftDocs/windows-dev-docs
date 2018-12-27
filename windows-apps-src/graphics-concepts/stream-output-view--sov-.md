@@ -4,15 +4,12 @@ description: Stream output views enable the vertex information that the vertex, 
 ms.assetid: F528A920-0EAD-4634-BA5F-CB34A8FAEFFA
 keywords:
 - Stream output view (SOV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Stream output view (SOV)
 
 

@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Port an out-of-process background task to an in-process background task
 description: Port an out-of-process background task to an in-process background task that runs inside your foreground app process.
-ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, background task, app service
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ---
-
 # Port an out-of-process background task to an in-process background task
 
 The simplest way to port your out-of-process (OOP) background activity to in-process activity is to bring your [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) method code inside your application, and initiate it from [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). The technique being described here is not about creating a shim from an OOP background task to an in-process background task; it's about rewriting (or porting) an OOP version to an in-process version.

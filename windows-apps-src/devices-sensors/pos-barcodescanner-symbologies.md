@@ -1,16 +1,11 @@
 ﻿---
-author: TerryWarwick
 title: Working with barcode scanner symbologies
 description: This article contains information about barcode scanner symbologies.
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Working with symbologies
 A [barcode symbology](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) is the mapping of data to a specific barcode format. Some common symbologies include UPC, Code 128, QR Code, and so on.  The Universal Windows Platform barcode scanner APIs allow an application to control how the scanner processes these symbologies without manually configuring the scanner. 
 

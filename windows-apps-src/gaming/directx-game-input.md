@@ -1,17 +1,12 @@
 ---
-author: joannaleecy
 title: Game input for DirectX games
 description: Game input for your DirectX game.
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, game, directx, input, mouse, touch, control
 ms.localizationpriority: medium
 ---
-
 # Game input for DirectX games
 
 This section provides information about adding various types of inputs for your DirectX games.

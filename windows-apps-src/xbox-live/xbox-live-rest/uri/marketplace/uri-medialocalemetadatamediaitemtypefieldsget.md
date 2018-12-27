@@ -2,18 +2,13 @@
 title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)
 assetID: 0ecf27d8-905d-af52-4060-43353d7a3e29
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypefieldsget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)
 Lists fields from which one can expect data, for a given mediaitemtype and a given version of EDS. 
 The domain for these URIs is `eds.xboxlive.com`.

@@ -2,18 +2,13 @@
 title: DeviceRecord (JSON)
 assetID: aca4f4d3-f9b4-8919-5b6d-5ae0fe11e162
 permalink: en-us/docs/xboxlive/rest/json-devicerecord.html
-author: KevinAsgari
+
 description: ' DeviceRecord (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DeviceRecord (JSON)
 Information about a device, including its type and the titles active on it. 
 <a id="ID4EN"></a>

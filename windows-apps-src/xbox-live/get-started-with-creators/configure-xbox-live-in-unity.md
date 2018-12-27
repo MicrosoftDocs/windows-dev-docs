@@ -1,17 +1,13 @@
 ---
 title: Configure Xbox Live in Unity
-author: aablackm
+
 description: Learn how to use the Xbox Live Unity plugin to configure Xbox Live in your Unity game.
 ms.assetid: 55147c41-cc49-47f3-829b-fa7e1a46b2dd
-ms.author: aablackm
 ms.date: 1/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, configure
 localizationpriority: medium
 ---
-
 # Configure Xbox Live in Unity
 
 > [!NOTE]
@@ -26,7 +22,7 @@ This topic will go through the process of setting up the Xbox Live plugin in Uni
 You will need the following before you can use Xbox Live in Unity:
 
 1. An **[Xbox Live account](https://support.xbox.com/browse/my-account/manage-account/Create%20account)**.
-1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
+1. Enrollment in the **[Partner Center developer program](https://developer.microsoft.com/store/register)**.
 2. **[Windows 10 Anniversary Update](https://microsoft.com/windows)** or later
 3. **[Unity](https://store.unity.com/)** versions **5.5.4p5** (or newer), **2017.1p5** (or newer), or **2017.2.0f3** (or newer) with **[Microsoft Visual Studio Tools for Unity](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)** and **Windows Store .NET Scripting Backend**.
 4. **[Visual Studio 2015](https://www.visualstudio.com/)** or **[Visual Studio 2017 15.3.3](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
@@ -96,7 +92,7 @@ The Unity plugin's file structure is broken into the following parts:
     * __Libs__ is where the Xbox Live libraries are stored.
     * __Prefabs__ contains various [Unity prefab](https://docs.unity3d.com/Manual/Prefabs.html) objects that implement Xbox Live functionality.
     * __Scripts__ contains all the code files that call the Xbox Live APIs from the prefabs. This is a great place to look for examples about how to properly call the Xbox Live APIs.
-    * __Tools\AssociationWizard__ contains the Xbox Live Association Wizard, used to pull down application configuration from the [Windows Dev Center](https://developer.microsoft.com/windows) for use within Unity.
+    * __Tools\AssociationWizard__ contains the Xbox Live Association Wizard, used to pull down application configuration from [Partner Center](https://developer.microsoft.com/windows) for use within Unity.
 
 ## Enable Xbox Live
 
@@ -104,7 +100,7 @@ For your title to interact with Xbox Live, you'll need to setup the initial Xbox
 
 1. In the **Xbox Live** menu, select **Configuration**.
 2. In the **Xbox Live** window, select **Run Xbox Live Association Wizard**.
-3. In the **Associate Your title with the Windows Store** dialog, click **Next**, and then sign in with your Dev Center account.
+3. In the **Associate Your title with the Windows Store** dialog, click **Next**, and then sign in with your Partner Center account.
 4. Select the app that you want to associate with this project, and then click **Select**. If you don't see it there, try clicking **Refresh**. Alternatively, you can create a new app by reserving a name and clicking **Reserve**.
 5. You will be prompted to enable Xbox Live if you have not already. Click **Enable** to enable Xbox Live in your title.
 6. Click **Finish** to save your configuration.

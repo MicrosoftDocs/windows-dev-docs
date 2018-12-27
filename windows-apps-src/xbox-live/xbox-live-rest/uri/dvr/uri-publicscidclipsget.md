@@ -2,18 +2,13 @@
 title: GET (/public/scids/{scid}/clips)
 assetID: 15b3e873-1f96-b1da-2f79-6dac1369a4c0
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
-author: KevinAsgari
+
 description: ' GET (/public/scids/{scid}/clips)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/public/scids/{scid}/clips)
 List public clips. 
 The domain for this URI is `gameclipsmetadata.xboxlive.com`.

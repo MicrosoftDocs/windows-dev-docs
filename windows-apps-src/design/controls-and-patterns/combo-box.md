@@ -1,14 +1,10 @@
 ---
-author: Jwmsft
 Description: A text entry box that provides suggestions as the user types.
 title: Combo box (drop down list)
 label: Combo box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact:
@@ -70,10 +66,10 @@ Here's a simple combo box with items added in XAML.
 
 ```xaml
 <ComboBox Header="Colors" PlaceholderText="Pick a color" Width="200">
-    <x:String>Blue<x:String>
-    <x:String>Green<x:String>
-    <x:String>Red<x:String>
-    <x:String>Yellow<x:String>
+    <x:String>Blue</x:String>
+    <x:String>Green</x:String>
+    <x:String>Red</x:String>
+    <x:String>Yellow</x:String>
 </ComboBox>
 ```
 
@@ -165,15 +161,15 @@ To make a combo box that "live updates" while the user is navigating the open li
 
 #### Selected item behavior change
 
-In RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM), the behavior of selected items is updated to support editable combo boxes.
+In Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, the behavior of selected items is updated to support editable combo boxes.
 
-Prior to RS5, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) was required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
+Prior to SDK 17763, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) was required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex = -1
 
-In RS5 and later, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) is not required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
+In SDK 17763 and later, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) is not required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
 
 - SelectedItem = Pink
 - SelectedValue = Pink
@@ -188,7 +184,7 @@ You can set the [IsTextSearchEnabled](/uwp/api/windows.ui.xaml.controls.combobox
 ## Make a combo box editable
 
 > [!IMPORTANT]
-> This feature requires the [latest Windows 10 Insider Preview build and SDK](https://insider.windows.com/for-developers/).
+> This feature requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
 
 By default, a combo box lets the user select from a pre-defined list of options. However, there are cases where the list contains only a subset of valid values, and the user should be able to enter other values that aren't listed. To support this, you can make the combo box editable.
 
@@ -220,7 +216,7 @@ The TextSubmitted event does not occur if the user enters text and then navigate
 
 ### Sample - Validate input and use locally
 
-In this examle, a font size chooser contains a set of values corresponding to the font size ramp, but the user may enter font sizes that are not in the list.
+In this example, a font size chooser contains a set of values corresponding to the font size ramp, but the user may enter font sizes that are not in the list.
 
 When the user adds a value that's not in the list, the font size updates, but the value is not added to the list of font sizes.
 

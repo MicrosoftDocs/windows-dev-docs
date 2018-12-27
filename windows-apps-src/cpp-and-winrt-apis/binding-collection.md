@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, collection
 ms.localizationpriority: medium
 ---
-
 # XAML items controls; bind to a C++/WinRT collection
 
 A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable collections in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML items controls to them.
@@ -41,20 +36,18 @@ Declare a new property in `BookstoreViewModel.idl`.
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
 }
 ...
 ```
 
 > [!IMPORTANT]
-> In the MIDL 3.0 listing above, note that the type of the **BookSkus** property is [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) of [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). In the next section of this topic, we'll be binding the items source of a [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) to **BookSkus**. A list box is an items control, and to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable**, or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> In the MIDL 3.0 listing above, note that the type of the **BookSkus** property is [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) of [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). In the next section of this topic, we'll be binding the items source of a [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) to **BookSkus**. A list box is an items control, and to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IObservableVector** (or **IVector**) of **IInspectable**, or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
 Save and build. Copy the accessor stubs from `BookstoreViewModel.h` and `BookstoreViewModel.cpp` in the `Generated Files` folder, and implement them.
 
 ```cppwinrt
 // BookstoreViewModel.h
-...
-#include "single_threaded_observable_vector.h"
 ...
 struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 {
@@ -62,11 +55,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
 };
 ...
 ```
@@ -76,7 +69,7 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
@@ -86,7 +79,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }
@@ -114,7 +107,7 @@ In `MainPage.cpp`, add a line of code to the **Click** event handler to append a
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-    MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+    MainViewModel().BookSkus().Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 }
 ...
 ```

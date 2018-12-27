@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use a progress bar within your toast notification.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/7/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast, progress bar, toast progress bar, notification, toast data binding
 ms.localizationpriority: medium
 ---
-
 # Toast progress bar and data binding
 
 Using a progress bar inside your toast notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.
@@ -20,7 +15,7 @@ Using a progress bar inside your toast notification allows you to convey the sta
 > [!IMPORTANT]
 > **Requires Creators Update and 1.4.0 of Notifications library**: You must target SDK 15063 and be running build 15063 or higher to use progress bars on toasts. You must use version 1.4.0 or higher of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the progress bar in your toast's content.
 
-A progress bar inside a toast can either be "indetermindate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
+A progress bar inside a toast can either be "indeterminate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
 
 > **Important APIs**: [NotificationData class](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 

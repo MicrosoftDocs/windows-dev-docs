@@ -2,18 +2,13 @@
 title: Matchmaking URIs
 assetID: 667b02a9-6f34-8165-001b-ee8782575202
 permalink: en-us/docs/xboxlive/rest/atoc-reference-matchtickets.html
-author: KevinAsgari
+
 description: ' Matchmaking URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Matchmaking URIs
  
 This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the matchmaking service. 
@@ -35,7 +30,7 @@ Callers of these HTTP/REST URIs must pass the value 103 or later for X-Xbl-Contr
  
 ## System objects and properties
  
-Currently, all configuration of the matchmaking service occurs manually, using the service configuration portion of the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or the [Windows Dev Center](https://partner.microsoft.com/dashboard/windows/overview). Some matchmaking information is also reflected in the objects defined for the MPSD. 
+Currently, all configuration of the matchmaking service occurs manually, using the service configuration portion of the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or [Partner Center](https://partner.microsoft.com/dashboard). Some matchmaking information is also reflected in the objects defined for the MPSD. 
  
 The main JSON objects used for configuring matchmaking are defined in [MatchTicket (JSON)](../../json/json-matchticket.md) and [HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md). Note that all match tickets must define a **ticketSessionRef** object to provide a reference to a multiplayer session containing the player or players who want to be matched with others. 
   

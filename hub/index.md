@@ -1,8 +1,10 @@
 ---
 layout: HubPage
 hide_bc: true
+ms.prod: windows
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
+
 localizationpriority: medium
 ---
 <div id="main" class="v2">
@@ -45,7 +47,7 @@ localizationpriority: medium
               </a>
           </li>
           <li>
-              <a href="https://mva.microsoft.com/">
+              <a href="/learn/browse/?roles=developer&products=windows">
                   <div class="cardSize">
                       <div class="cardPadding">
                           <div class="card">
@@ -55,7 +57,7 @@ localizationpriority: medium
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Explore Microsoft Virtual Academy</h3>
+                                  <h3>Explore Microsoft Learn</h3>
                               </div>
                           </div>
                       </div>
@@ -155,7 +157,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/mixed-reality">
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

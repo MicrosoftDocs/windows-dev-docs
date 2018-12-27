@@ -1,13 +1,9 @@
 ---
-author: cphilippona
 description: Reveal Focus is a lighting effect that animates the border of focusable elements when the user moves gamepad or keyboard focus to them.
 title: Reveal Focus
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 03/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: 
@@ -70,7 +66,7 @@ As you can see, it's fairly easy to turn on Reveal Focus when the app detects it
 
 You can customize the Reveal Focus effect by modifying the focus visual properties for each control: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), and [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). These properties let you customize the color and thickness of the focus rectangle. (They're the same properties you use for creating [High Visibility focus visuals](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
 
-But before you start customzing it, it's helpful to know a little more about about the components that make up Reveal Focus.
+But before you start customzing it, it's helpful to know a little more about the components that make up Reveal Focus.
 
 There are three parts to the default Reveal Focus visuals: the primary border, the secondary border and the Reveal glow. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border. The Reveal Focus glow has a thickness proportional to the thickness of the primary border and runs around the *outside* of the primary border.
 

@@ -1,13 +1,10 @@
 ---
 title: Use Connected Storage to delete data
-author: aablackm
+
 description: Learn how to use Connected Storage to delete blob and container data.
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---

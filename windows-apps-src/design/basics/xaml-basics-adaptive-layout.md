@@ -1,16 +1,13 @@
 ---
-author: muhsinking
 title: Create adaptive layouts tutorial
 description: This article covers the basics of adaptive layout in XAML
 keywords: XAML, UWP, Getting Started
-ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Tutorial: Create adaptive layouts
 
 This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. We'll use these tools to optimize an image editing program for smaller device screens. 

@@ -2,18 +2,13 @@
 title: Reward (JSON)
 assetID: d1c92e8a-afbc-22c5-c0b5-6063963f8c4d
 permalink: en-us/docs/xboxlive/rest/json-reward.html
-author: KevinAsgari
+
 description: ' Reward (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Reward (JSON)
 The reward associated with the achievement.
 <a id="ID4EN"></a>

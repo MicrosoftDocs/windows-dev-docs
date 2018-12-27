@@ -1,17 +1,13 @@
 ---
 title: Working with Connected Storage buffers
-author: KevinAsgari
+
 description: Learn about working with Connected Storage buffers.
 ms.assetid: 1d9d1b52-4bfe-4cd9-8b80-50ca6c0e9ae1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, connected storage
 ms.localizationpriority: medium
 ---
-
 # Working with Connected Storage buffers
 
 The Connected Storage API uses **Windows::Storage::Streams::Buffer** instances to pass data to and from an application. Because WinRT types cannot expose raw pointers, access to the data of a Buffer instance occurs through **DataReader** and **DataWriter** classes. However, **Buffer** also implements the COM interface **IBufferByteAccess**, which makes it possible to obtain a pointer directly to the buffer data.

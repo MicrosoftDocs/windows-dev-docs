@@ -2,18 +2,13 @@
 title: TitleBlob (JSON)
 assetID: fd1c904d-e8d0-f61f-e403-40b25bd4ac14
 permalink: en-us/docs/xboxlive/rest/json-titleblob.html
-author: KevinAsgari
+
 description: ' TitleBlob (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # TitleBlob (JSON)
 Contains information about a title from storage. 
 <a id="ID4EP"></a>

@@ -2,18 +2,13 @@
 title: DeviceEndpoint (JSON)
 assetID: bd6c4af8-e491-8885-970e-e53d1d60642b
 permalink: en-us/docs/xboxlive/rest/json-deviceendpoint.html
-author: KevinAsgari
+
 description: ' DeviceEndpoint (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # DeviceEndpoint (JSON)
  
 <a id="ID4EO"></a>

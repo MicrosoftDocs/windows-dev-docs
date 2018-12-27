@@ -2,18 +2,13 @@
 title: /{uri}
 assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
 permalink: en-us/docs/xboxlive/rest/uri-uri.html
-author: KevinAsgari
+
 description: ' /{uri}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /{uri}
 Access game clip data. 
 The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.

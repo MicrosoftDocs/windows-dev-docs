@@ -1,17 +1,12 @@
 ---
-author: TylerMSFT
 title: Launch the People app
 description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Launch the People app
 
 This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.

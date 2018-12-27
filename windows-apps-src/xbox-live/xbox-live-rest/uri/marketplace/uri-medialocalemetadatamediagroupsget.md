@@ -2,18 +2,13 @@
 title: GET (/media/{marketplaceId}/metadata/mediaGroups)
 assetID: 68dcebed-99c8-c4a9-dbb4-be6a153837c2
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroupsget.html
-author: KevinAsgari
+
 description: ' GET (/media/{marketplaceId}/metadata/mediaGroups)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/media/{marketplaceId}/metadata/mediaGroups)
 Lists all supported mediaGroups for the given EDS version. 
 The domain for these URIs is `eds.xboxlive.com`.

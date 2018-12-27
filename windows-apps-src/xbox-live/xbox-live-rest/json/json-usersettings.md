@@ -2,18 +2,13 @@
 title: UserSettings (JSON)
 assetID: 17c030cb-05e0-f78e-5ab1-cdbd8b801ceb
 permalink: en-us/docs/xboxlive/rest/json-usersettings.html
-author: KevinAsgari
+
 description: ' UserSettings (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # UserSettings (JSON)
 Returns settings for current authenticated user. 
 <a id="ID4EN"></a>

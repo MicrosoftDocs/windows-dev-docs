@@ -1,23 +1,21 @@
 ﻿---
-author: jnHs
-Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
+Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of Partner Center to manage your use of ads.
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.author: wdg-dev-content
-ms.date: 06/28/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # In-app ads
 
-Use the **Monetize** &gt; **In-app ads** page in the Dev Center dashboard to create and manage ad units for:
+Use the **Monetize** &gt; **In-app ads** page in [Partner Center](https://partner.microsoft.com/dashboard) to create and manage ad units for:
 
 * Universal Windows Platform (UWP) apps that use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
-* Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+* Previously published Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 For more information about how to integrate these SDKs with your apps to display ads, see [Display ads in your app with the Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md).
 
@@ -27,7 +25,7 @@ For more information about how to integrate these SDKs with your apps to display
 
 To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial ad](../monetize/interstitial-ads.md), or [native ad](../monetize/native-ads.md) in your app:
 
-1.  Go to the **Monetize** &gt; **In-app ads** page in the dashboard and click **Create ad unit**.
+1.  Go to the **Monetize** &gt; **In-app ads** page in Partner Center and click **Create ad unit**.
 2.  In the **App name** drop-down, select the app in which your ad unit will be used.
 3.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
 4.  In the **Ad unit type** drop-down, select the ad type.
@@ -66,7 +64,7 @@ After you create ad units for one or more apps in your account, these ad units a
 To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA compliance](#coppa) for the app in which the ad unit is used, click the ad unit name.
 
 > [!NOTE]
-> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from your dashboard. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
+> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
 
 <span id="mediation" />
 
@@ -82,21 +80,21 @@ To configure ad mediation settings for a UWP ad unit in your app:
 1. [Create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units).
 2. On the **In-app ads** page, go to the **Mediation settings** section and configuration your settings.
 
-    * By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. We recommend that you use this option. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. When you use this option, you can also choose the ad networks you want to use in the configuration. Uncheck the ad networks that you don't want to be part of the configuration and our algorithm will ensure that your app only receives ads from the selected ad networks.
+    * By default, the **Let Microsoft optimize my settings** check box is selected. We recommend that you use this option. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. When you use this option, you can also choose the ad networks you want to use in the configuration. Uncheck the ad networks that you don't want to be part of the configuration and our algorithm will ensure that your app only receives ads from the selected ad networks.
     * If you want to choose your own ad mediation settings, choose **Modify default settings**.
 
     > [!NOTE]
     > The remaining steps in this section are only applicable if you choose **Modify default settings**.
 
-4. In the **Target** drop-down, choose **Baseline** to configure the default configuration for your ad mediation settings. This default configuration will be applied to all markets, except for markets where you define market-specific configurations.
-6. Next, specify the ratio of ads you want to show in your control from paid networks (which pay you revenue for impressions) and other ad networks (which do not pay you revenue for impressions). To do this, enter a value between 0 and 100 in the **Weight** fields for **Paid ad networks** and **Other ad networks**.  
-7. In the **Paid ad networks** section, select the check box in the **Active** column for each [paid network](#paid-networks) you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control).
-8. If you have selected a **Banner** or **Banner interstitial** ad unit, you will also see a section named **Other ad networks**. The networks in this section do not earn you revenue for ad impressions. Instead, these networks show ads from sources such as app promotion campaigns.
+3. In the **Target** drop-down, choose **Baseline** to configure the default configuration for your ad mediation settings. This default configuration will be applied to all markets, except for markets where you define market-specific configurations.
+4. Next, specify the ratio of ads you want to show in your control from paid networks (which pay you revenue for impressions) and other ad networks (which do not pay you revenue for impressions). To do this, enter a value between 0 and 100 in the **Weight** fields for **Paid ad networks** and **Other ad networks**.  
+5. In the **Paid ad networks** section, select the check box in the **Active** column for each [paid network](#paid-networks) you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control).
+6. If you have selected a **Banner** or **Banner interstitial** ad unit, you will also see a section named **Other ad networks**. The networks in this section do not earn you revenue for ad impressions. Instead, these networks show ads from sources such as app promotion campaigns.
 
     In the **Other ad networks** section, select the check box in the **Active** column for each [other network](#other-networks) you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control). The following other networks are currently supported:
 
-9. For each market where you want to override the default mediation configuration, select the market in the **Target** drop-down, and update the ad network selections and ranking.
-10. Click **Create ad unit** (if you are creating a new ad unit) or **Save** (if you are editing an existing ad unit).
+7. For each market where you want to override the default mediation configuration, select the market in the **Target** drop-down, and update the ad network selections and ranking.
+8. Click **Create ad unit** (if you are creating a new ad unit) or **Save** (if you are editing an existing ad unit).
 
 <span id="paid-networks" />
 
@@ -135,7 +133,7 @@ The following table lists the other networks we currently support for each ad ty
 
 ### Supported markets for ad networks
 
-The available ad networks serve ads in all [supported markets](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
+The available ad networks serve ads in all [supported markets](define-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
 
 |  Ad network  |  Supported markets  |
 |--------------|---------------------|
@@ -148,7 +146,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 
 ## COPPA compliance
 
-When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the dashboard page if the selected app for the ad unit has at least one submission that has reached the [in the Store](../publish/the-app-certification-process.md#in-the-store) step in the app certification process.
+When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the page if the selected app for the ad unit has at least one submission that has reached the [in the Store](../publish/the-app-certification-process.md#in-the-store) step in the app certification process.
 
 For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must select **This application is directed at children under the age of 13** in this section if your app is directed at children under the age of 13. If you select this option, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app.
 

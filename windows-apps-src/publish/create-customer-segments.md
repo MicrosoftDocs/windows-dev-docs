@@ -1,20 +1,15 @@
 ﻿---
-author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
-ms.author: wdg-dev-content
-ms.date: 07/26/2017
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, segment, segments, targeted group, customers
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ---
-
 # Create customer segments
 
-There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
+There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in [Partner Center](https://partner.microsoft.com/dashboard) by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
 
 For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Microsoft Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. 
 
@@ -32,7 +27,7 @@ Things to keep in mind about customer segments:
 
 ## To create a customer segment
 
-1.	In the Windows Dev Center dashboard, expand **Engage** in the left navigation menu and then select **Customer groups**.
+1.	In [Partner Center](https://partner.microsoft.com/dashboard), expand **Engage** in the left navigation menu and then select **Customer groups**.
 2.	On the **Customer groups** page, do one of the following:
  - In the **My customer groups** section, select **Create new group** to define a segment from scratch. On the next page, select the **Segment** radio button.
  - In the **Segment templates** section, select **Copy** next to one of the predefined segments (that you can use as is or modify to suit your needs).
@@ -40,7 +35,7 @@ Things to keep in mind about customer segments:
 4.	In the **Include customers from this app** list, select one of your apps to target.
 5.	In the **Define inclusion conditions** section, specify the filter criteria for the segment.
 
-    You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Usage**, **Demographic**, **Rating**, **Churn prediction**, **Store purchases**, **Store acquisitions**, and **Store spend**.
+    You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Demographic**, **Rating**, **Churn prediction**, **Store purchases**, **Store acquisitions**, and **Store spend**.
 
     For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
 

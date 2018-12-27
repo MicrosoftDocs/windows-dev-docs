@@ -2,18 +2,13 @@
 title: /handles
 assetID: 6e9df852-4a9e-aad4-352f-128af5da876b
 permalink: en-us/docs/xboxlive/rest/uri-handles.html
-author: KevinAsgari
+
 description: ' /handles'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /handles
 Supports a POST operation to set the session for the user's current activity to be displayed in Xbox One dashboard user experience, and to invite session members if required. 
 

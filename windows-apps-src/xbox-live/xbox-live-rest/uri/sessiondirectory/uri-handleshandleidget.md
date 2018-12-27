@@ -2,18 +2,13 @@
 title: GET (/handles/{handle-id})
 assetID: c95b5ab5-d56a-f70d-20d8-afb48d122ccd
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
-author: KevinAsgari
+
 description: ' GET (/handles/{handle-id})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/handles/{handle-id})
 Retrieves handles specified by handle ID.
 

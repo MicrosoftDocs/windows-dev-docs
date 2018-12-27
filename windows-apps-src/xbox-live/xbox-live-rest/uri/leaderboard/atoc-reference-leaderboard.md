@@ -2,18 +2,13 @@
 title: Leaderboards URIs
 assetID: f0a0fb49-ef10-3e6e-e989-2f3f30fca954
 permalink: en-us/docs/xboxlive/rest/atoc-reference-leaderboard.html
-author: KevinAsgari
+
 description: ' Leaderboards URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Leaderboards URIs
 
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *leaderboards*.

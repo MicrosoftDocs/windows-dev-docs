@@ -1,17 +1,12 @@
 ---
-author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: Open files and folders with a picker
 description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
-ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Open files and folders with a picker
 
 **Important APIs**
@@ -114,39 +109,39 @@ Using a file picker involves creating and customizing a file picker object, and 
 
     - **To pick a single file**
 
-    ```cs
-    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-    if (file != null)
-    {
-        // Application now has read/write access to the picked file
-        this.textBlock.Text = "Picked photo: " + file.Name;
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        ```cs
+        Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+        if (file != null)
+        {
+            // Application now has read/write access to the picked file
+            this.textBlock.Text = "Picked photo: " + file.Name;
+        }
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
     - **To pick multiple files**  
 
-    ```cs
-    var files = await picker.PickMultipleFilesAsync();
-    if (files.Count > 0)
-    {
-        StringBuilder output = new StringBuilder("Picked files:\n");
-
-        // Application now has read/write access to the picked file(s)
-        foreach (Windows.Storage.StorageFile file in files)
+        ```cs
+        var files = await picker.PickMultipleFilesAsync();
+        if (files.Count > 0)
         {
-            output.Append(file.Name + "\n");
+            StringBuilder output = new StringBuilder("Picked files:\n");
+    
+            // Application now has read/write access to the picked file(s)
+            foreach (Windows.Storage.StorageFile file in files)
+            {
+                output.Append(file.Name + "\n");
+            }
+            this.textBlock.Text = output.ToString();
         }
-        this.textBlock.Text = output.ToString();
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
 ## Pick a folder: complete code listing
 

@@ -1,19 +1,14 @@
 ---
-author: andrewleader
 Description: The following article describes all of the properties and elements within toast content.
 title: Toast content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Toast content schema
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Toast content schema
 
  

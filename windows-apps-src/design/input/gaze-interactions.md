@@ -1,6 +1,4 @@
 ---
-author: Karl-Bridge-Microsoft
-ms.author: kbridge
 title: Gaze interactions
 Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
 label: Gaze interactions
@@ -8,14 +6,12 @@ template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Gaze interactions and eye tracking in UWP apps
 
 ![Eye tracking hero](images/gaze/eyecontrolbanner1.png)

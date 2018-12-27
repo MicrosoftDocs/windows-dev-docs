@@ -2,18 +2,13 @@
 title: GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 assetID: 29c8c12a-5d9f-89c1-a739-c600bad893c2
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidsscid-get.html
-author: KevinAsgari
+
 description: ' GET (/trustedplatform/users/xuid({xuid})/scids/{scid})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 Retrieves quota information for this storage type. 
 The domain for these URIs is `titlestorage.xboxlive.com`.

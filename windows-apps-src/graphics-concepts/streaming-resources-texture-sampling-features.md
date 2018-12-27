@@ -4,15 +4,12 @@ description: Streaming resources texture sampling features include getting shade
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords:
 - Streaming resources texture sampling features
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Streaming resources texture sampling features
 
 

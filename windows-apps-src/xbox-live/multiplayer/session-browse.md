@@ -1,17 +1,13 @@
 ---
 title: Multiplayer session browse
-author: KevinAsgari
+
 description: Learn how to implement multiplayer session browse by using Xbox Live multiplayer.
 ms.assetid: b4b3ed67-9e2c-4c14-9b27-083b8bccb3ce
-ms.author: kevinasg
 ms.date: 10/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
 # Multiplayer session browse
 
 Multiplayer session browse is a new feature introduced in November 2016 that enables a title to query for a list of open multiplayer game sessions that meet the specified criteria.
@@ -53,7 +49,7 @@ When a title needs to retrieve a list of sessions, the title can send a search q
 When a session is full, or otherwise cannot be joined, a title can remove the search handle from MPSD so that the session will no longer show up in session browse queries.
 
 >[!NOTE]
-> Search handles are intended to be used when displaying a list of sessions to be presented to a user. Using search handles for background matchmaking should be avoided if possible, and instead consider using [SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
+> Search handles are intended to be used when displaying a list of sessions to be presented to a user. Using search handles for background matchmaking is not valid, and instead consider using [SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
 
 ## Set up a session for session browse
 
@@ -223,6 +219,8 @@ Currently, the following filter scenarios are supported:
  If a player attempts to join a session, but that session is full or closed, then your game should refresh the search results as well.
 
  Too many search refreshes can lead to service throttling, so your title should limit the rate at which the query can be refreshed.
+
+ To reduce service call volume, search handles include custom session properties which can be used to store and query rapidly changing session attributes. Such attributes should not be stored in search attributes.
 
 ### Example: query for search handles
 

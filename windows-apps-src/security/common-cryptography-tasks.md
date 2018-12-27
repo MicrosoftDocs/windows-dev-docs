@@ -2,16 +2,11 @@
 title: Common cryptography tasks
 description: These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
-
 # Common cryptography tasks
 
 These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.

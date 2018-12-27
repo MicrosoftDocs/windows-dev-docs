@@ -1,13 +1,10 @@
 ---
 title: Player Stats
-author: aablackm
+
 description: Learn how to set up player stats in Xbox Live.
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
-ms.author: aablackm
 ms.date: 07/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, player stats, leaderboards
 ms.localizationpriority: medium
 ---
@@ -31,7 +28,7 @@ With the launch of Xbox One, Xbox Live introduced a new event-driven stats model
 
 Let's take a look at configuring and updating stats for 2013 and 2017. Let us say we're going to make stats from some generic rpg and want to keep track of monsters killed.
 
-In Stats 2013 your title would send an *event* that contains information about an action performed by a player. In this event the action will be slaying an orc while the player had a sword equipped. Some of the information contained in this event might be that a slay action was taken, the thing slayed was an orc, the combat type was melee, and the weapon used was a sword. Stats 2013 will run this information through a number of rules configured by you, the developer, on the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or the [Windows Dev Center](https://developer.microsoft.com/en-us/windows), and update stats, also configured by you, based on the event. In Stats 2013 the service will keep track of what the value for your slaying statistics should be. The slay orc with sword event could update multiple statistics such as, number of kills, number of orcs slain, and number of sword kills.
+In Stats 2013 your title would send an *event* that contains information about an action performed by a player. In this event the action will be slaying an orc while the player had a sword equipped. Some of the information contained in this event might be that a slay action was taken, the thing slayed was an orc, the combat type was melee, and the weapon used was a sword. Stats 2013 will run this information through a number of rules configured by you, the developer, on the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Partner Center](https://partner.microsoft.com/dashboard), and update stats, also configured by you, based on the event. In Stats 2013 the service will keep track of what the value for your slaying statistics should be. The slay orc with sword event could update multiple statistics such as, number of kills, number of orcs slain, and number of sword kills.
 
 In Stats 2017, you will send up the actual values for your statistics. For the slay orc with sword example, your title will keep track of the number of overall kills, sword kills, and orcs slain individually, and send the service the updated number for each statistic. The service has minimal validation checks to make sure that you're sending a number that makes sense, so it is absolutely up to your title to send up the correct statistic. While you may use the Stats 2017 service to recall the values of stats at the beginning of a game session, you should not use the Stats 2017 service to confirm the value of a stat while the session is ongoing.
 

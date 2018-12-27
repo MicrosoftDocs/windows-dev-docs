@@ -1,16 +1,12 @@
 ---
-author: eliotcowley
 title: Obtain and understand barcode data
 description: Learn how to obtain and interpret the barcode data that you scan.
-ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # Obtain and understand barcode data
 
 Once you've set up your barcode scanner, you of course need a way of understanding the data that you scan. When you scan a barcode, the [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) event is raised. The [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) should subscribe to this event. The **DataReceived** event passes a [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) object, which you can use to access the barcode data.

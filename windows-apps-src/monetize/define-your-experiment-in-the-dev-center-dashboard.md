@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: Define your experiment in the dashboard
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in Partner Center.
+title: Define your experiment in Partner Center
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---
+# Define your experiment in Partner Center
 
-# Define your experiment in the dashboard
-
-After you [create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to create an experiment in the project. When you create the experiment, you will define the goals and variations that your users will receive.
+After you [create a project and define remote variables in Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to create an experiment in the project. When you create the experiment, you will define the goals and variations that your users will receive.
 
 For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -23,7 +18,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
 
 ## Create your experiment
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
+1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard).
 2. Under **Your apps**, select the app for which you want to create an experiment.
 3. In the navigation pane, select **Services** and then select **Experimentation**.
 4. On the **Experimentation** page, identify the project where you want to add an experiment in the projects table, and click the **Add experiment** link for that project.
@@ -33,7 +28,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
     > Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
 
 7. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
-8.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
+8.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Partner Center.
 9. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
 10. In the **Goals and conversion events** section, define at least one goal for your experiment:
   * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
@@ -41,7 +36,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
   * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.
 
 > [!NOTE]
-> Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
+> Partner Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 
@@ -63,7 +58,7 @@ Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#term
 
 When you finish entering the required fields for your experiment, click **Save** to save your experiment.
 
-If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation variables and report view and conversion events to Dev Center. For more information, see [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
+If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation variables and report view and conversion events to Partner Center. For more information, see [Run and manage your experiment in Partner Center](manage-your-experiment.md).
 
 > [!IMPORTANT]
 > A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
@@ -86,12 +81,12 @@ To test your experiment before releasing it to customers, follow this process:
 
 ## Next steps
 
-After you define your experiment in the Dev Center dashboard and code the experiment in your app, you are ready to [run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
+After you define your experiment in Partner Center and code the experiment in your app, you are ready to [run and manage your experiment in Partner Center](manage-your-experiment.md).
 
 ## Related topics
 
-* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Create a project and define remote variables in Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
+* [Manage your experiment in Partner Center](manage-your-experiment.md)
 * [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)

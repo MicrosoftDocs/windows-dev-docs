@@ -2,18 +2,13 @@
 title: MediaAsset (JSON)
 assetID: 858c720a-1648-738b-bb43-f050e7cac19e
 permalink: en-us/docs/xboxlive/rest/json-mediaasset.html
-author: KevinAsgari
+
 description: ' MediaAsset (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # MediaAsset (JSON)
 The media assets associated with the achievement or its rewards.
 <a id="ID4EN"></a>

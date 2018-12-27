@@ -4,15 +4,12 @@ description: A resource is an area in memory that can be accessed by the Direct3
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
 keywords:
 - Resources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Resources
 
 

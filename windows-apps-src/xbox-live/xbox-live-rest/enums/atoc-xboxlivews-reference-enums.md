@@ -2,18 +2,13 @@
 title: Enumerations Used In JavaScript Object Notation (JSON) Objects
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
-author: KevinAsgari
+
 description: ' Enumerations Used In JavaScript Object Notation (JSON) Objects'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Enumerations Used In JavaScript Object Notation (JSON) Objects
  
 Xbox Live Services defines JSON objects that are used in requests to, and responses from, the service. Many JavaScript Object Notation (JSON) objects used by the service have associated enumerations that specify allowed values for fields appearing in the JavaScript Object Notation (JSON) objects. This section lists the enumerations used in the JavaScript Object Notation (JSON) objects. 

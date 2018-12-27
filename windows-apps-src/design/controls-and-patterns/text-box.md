@@ -1,15 +1,11 @@
 ---
-author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 Description: The TextBox control lets a user enter text into an app.
 title: Text box
 label: Text box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv

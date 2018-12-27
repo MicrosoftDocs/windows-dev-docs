@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: This topic discusses strategies for handling errors when programming with C++/WinRT.
 title: Error handling with C++/WinRT
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception
 ms.localizationpriority: medium
 ---
-
 # Error handling with C++/WinRT
 
 This topic discusses strategies for handling errors when programming with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
@@ -74,7 +69,7 @@ winrt::check_bool(::SetEvent(h.get()));
 If the value that you pass to [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) is false, then the following sequence of actions take place.
 
 - **winrt::check_bool** calls the [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) function.
-- **winrt::throw_last_error** calls [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) to retrieve the calling thread's last-error code value, and then then calls the [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) function.
+- **winrt::throw_last_error** calls [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) to retrieve the calling thread's last-error code value, and then calls the [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) function.
 - **winrt::throw_hresult** throws an exception using a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) object (or a standard object) that represents that error code.
 
 Because Windows APIs report run-time errors using various return-value types, there are in addition to **winrt::check_bool** a handful of other useful helper functions for checking values and throwing exceptions.

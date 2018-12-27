@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: This topic shows you how to apply effects to the camera preview and recording video streams and shows you how to use the video stabilization effect.
 title: Effects for video capture
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Effects for video capture
 
 

@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/browse
 assetID: 4fedc780-b3c2-c83b-e7af-9e18666a4771
 permalink: en-us/docs/xboxlive/rest/uri-medialocalebrowse.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/browse'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/browse
 Allows browsing for items within a single media group. 
 The browse API allows clients to browse for items from within a single media group. Pages of data can be accessed non-sequentially using the skipItems parameter instead of using the continuation token.

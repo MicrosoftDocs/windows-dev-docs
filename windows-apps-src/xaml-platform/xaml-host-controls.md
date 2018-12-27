@@ -1,16 +1,12 @@
 ---
-author: normesta
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop applications
-ms.author: normesta
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # UWP controls in desktop applications
 
 > [!NOTE]

@@ -1,17 +1,13 @@
 ---
 title: Use the Xbox Live NuGet package with the XDK
-author: KevinAsgari
+
 description: Learn how to use the Xbox Live API NuGet package to develop XDK titles.
 ms.assetid: 2c5ae514-393d-48bb-afd8-a897d35f7938
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, NuGet
 ms.localizationpriority: medium
 ---
-
 # Use the Xbox Live API NuGet package to develop XDK titles
 
 ### 1.	Ensure you have the latest NuGet Package Manager installed

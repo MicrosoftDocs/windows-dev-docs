@@ -1,13 +1,9 @@
 ---
-author: TylerMSFT
 title: Handle a cancelled background task
 description: Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:
@@ -15,7 +11,6 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
-
 # Handle a cancelled background task
 
 **Important APIs**

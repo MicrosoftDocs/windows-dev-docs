@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how to use custom timestamps on your toast notifications.
 title: Custom timestamps on toasts
 label: Custom timestamps on toasts
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, toast, custom timestamp, timestamp, notification, Action Center
 ms.localizationpriority: medium
 ---
-
 # Custom timestamps on toasts
 
 By default, the timestamp on toast notifications (visible within Action Center) is set to the time that the notification was sent.

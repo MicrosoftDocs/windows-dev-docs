@@ -2,18 +2,13 @@
 title: /handles/{handleId}/session
 assetID: 4ed2dcf5-5d1f-91ce-4a3f-eb3ba68727bf
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsession.html
-author: KevinAsgari
+
 description: ' /handles/{handleId}/session'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /handles/{handleId}/session
 Supports PUT and GET operations for a session, using handle dereferencing. 
 

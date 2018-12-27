@@ -2,18 +2,13 @@
 title: /serviceconfigs/{scid}/hoppers/{name}/stats
 assetID: 56bb4398-445b-e8c5-a4ce-1651576ee7e7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestats.html
-author: KevinAsgari
+
 description: ' /serviceconfigs/{scid}/hoppers/{name}/stats'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /serviceconfigs/{scid}/hoppers/{name}/stats
 
 Supports a GET operation for retrieving statistics for a hopper.

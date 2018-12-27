@@ -1,21 +1,15 @@
 ﻿---
-author: jnHs
 Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
-ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, add-ons, iap, price
 ms.localizationpriority: medium
 ---
-
 # Set add-on pricing and availability
 
-
-When submitting an add-on, the options on the **Pricing and availability** page determine what to charge for your add-on and how it should be offered to customers.
+When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the options on the **Pricing and availability** page determine how much to charge customers for your add-on and how it should be offered to customers.
 
 ## Markets
 
@@ -33,8 +27,8 @@ The default option is **Can be displayed in the parent product’s Store listing
 
 For add-ons that you don't want to make broadly available, select **Hidden in the Store** and one of the following options:
 
--   **Available for purchase from within the parent product only**: Choosing this option allows any customer to purchase the add-on from within your app, but the add-on will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
--   **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device. This add-on is not displayed in the parent product's listing**: Choosing this option means that the add-on won't be displayed in your app's listing, and no new customers may purchase the add-on. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the add-on will still be available for purchase to those customers. To stop offering the add-on to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the add-on, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an add-on that you've opted to make unavailable.
+-   **Available for purchase from within the parent product only**: Choosing this option allows any customer to purchase the add-on from within your app, but the add-on will not be displayed in your app's Store listing or discoverable in the Store. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
+-   **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device. This add-on is not displayed in the parent product's listing**: Choosing this option means that the add-on won't be displayed in your app's listing, and no new customers may purchase the add-on. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your previously-published app is available on Windows 8.1 or earlier, the add-on will still be available for purchase to those customers. To stop offering the add-on to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the add-on, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an add-on that you've opted to make unavailable.
     
  > [!NOTE] 
  > Choosing the **Stop acquisition** option, and/or submitting an app update that removes the add-on from your app's code, does not affect customers who have already purchased the add-on, regardless of their operating system.

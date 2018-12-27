@@ -1,17 +1,12 @@
 ---
-author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for Xbox
 description: Learn how to enable the Device Portal for Xbox One.
-ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
-
 # Device Portal for Xbox
 
 ## Set up Device Portal on Xbox

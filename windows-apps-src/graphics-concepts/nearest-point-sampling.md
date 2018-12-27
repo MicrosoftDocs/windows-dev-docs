@@ -4,15 +4,12 @@ description: Applications are not required to use texture filtering.
 ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords:
 - Nearest-point sampling
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # <span id="direct3dconcepts.nearest-point_sampling"></span>Nearest-point sampling
 
 

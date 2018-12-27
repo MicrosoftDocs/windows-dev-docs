@@ -1,22 +1,17 @@
 ﻿---
-author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
+Description: Partner Center gives you several options to let testers try out your app before you offer it to the public. 
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
-ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
 ms.localizationpriority: medium
 ---
-
 # Beta testing and targeted distribution
 
 No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. Your testers may discover issues that you’ve overlooked, such as misspellings, confusing app flow, or errors that could cause the app to crash. You’ll then have a chance to fix those problems before you release the submission to the public, resulting in a more polished final product. 
 
-The Windows Dev Center dashboard gives you several options to make an app submission available only to specified people so that you can have testers try it out before you offer it to the public. 
+Partner Center gives you several options to let testers try out your app before you offer it to the public.
 
 Whichever method you choose, here are some things to keep in mind as you beta test your app.
 
@@ -30,7 +25,7 @@ Whichever method you choose, here are some things to keep in mind as you beta te
 
 If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](choose-visibility-options.md) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link. 
 
-The **Private audience** option can can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
+The **Private audience** option can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
 
 For more info, see [Private audience](choose-visibility-options.md#audience).
 
@@ -68,6 +63,8 @@ To use this option:
 - After your product has been published, distribute the link (the **URL** on the [App identity page](view-app-identity-details.md)) to your testers so they can try it out.
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## Targeted distribution to Windows Phone customers with specified email addresses
 

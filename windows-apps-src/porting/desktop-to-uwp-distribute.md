@@ -1,21 +1,16 @@
 ---
-author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: Publish your packaged desktop application to a Windows store or sideload it onto one or more devices.
-ms.author: normesta
+title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ---
-
 # Distribute a packaged desktop application
 
-Publish your packaged desktop application to a Windows store or sideload it onto one or more devices.  
+Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.  
 
 > [!NOTE]
 > Do you have a plan for how you might transition users to your packaged application? Before you distribute your app, see the [Transition users to your packaged app](#transition-users) section of this guide to get some ideas.
@@ -24,24 +19,24 @@ Publish your packaged desktop application to a Windows store or sideload it onto
 
 The [Microsoft Store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app.
 
-Publish your application to that store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
+Publish your application to the Microsoft Store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
 
 If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named **runFullTrust**, and we need to approve your application's use of that capability. You can read more about this requirement here: [Restricted capabilities](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
-You don't have to sign your application before you submit it to the store.
+You don't have to sign your application before you submit it to the Store.
 
 >[!IMPORTANT]
-> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
+> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
 
 ## Distribute your application without placing it onto the Microsoft Store
 
-If you'd rather distribute your application without using the store, you can manually distribute apps to one or more devices.
+If you'd rather distribute your application without using the Store, you can manually distribute apps to one or more devices.
 
 This might make sense if you want greater control over the distribution experience or you don't want to get involved with the Microsoft Store certification process.
 
-To distribute your application to other devices without placing it onto the store, you have to obtain a certificate, sign your application by using that certificate, and then sideload your application onto those devices.
+To distribute your application to other devices without placing it in the Store, you have to obtain a certificate, sign your application by using that certificate, and then sideload your application onto those devices.
 
 You can [create a certificate](../packaging/create-certificate-package-signing.md) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
 

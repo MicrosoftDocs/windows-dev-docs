@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
 description: This article shows you how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.
 title: Manual camera controls for video capture
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Manual camera controls for video capture
 
 

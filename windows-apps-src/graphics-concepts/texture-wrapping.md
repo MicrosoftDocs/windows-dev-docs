@@ -4,15 +4,12 @@ description: Texture wrapping changes the basic way that Direct3D rasterizes tex
 ms.assetid: C28FB369-9A91-4D57-A96D-4A5D36484B35
 keywords:
 - Texture wrapping
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Texture wrapping
 
 

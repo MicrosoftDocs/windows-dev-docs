@@ -1,16 +1,11 @@
 ---
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
-author: adwilso
-ms.author: sezhen
 ms.date: 1/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
 ---
-
 # WNS Notification Priorities
 By setting a notification's priority with a simple header to WNS POST messages, you can control how notifications are delivered in battery sensitive situations.
 
@@ -49,7 +44,7 @@ Setting the priority on the notification request is done through an additional h
 | Low | 3 | Raw |
 | Very Low | 4 |  |
 
-To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in in the chart above and match the behavior of existing versions of Windows. 
+To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in the chart above and match the behavior of existing versions of Windows. 
 
 ## Detailed listing of desktop behavior 
 

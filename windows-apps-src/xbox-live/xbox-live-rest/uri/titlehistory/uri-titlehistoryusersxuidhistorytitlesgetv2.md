@@ -2,18 +2,13 @@
 title: GET (/users/xuid({xuid})/history/titles)
 assetID: c0a6cb3b-bab6-03b8-a79e-87defaaa6421
 permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesgetv2.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid({xuid})/history/titles)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid({xuid})/history/titles)
 Gets a list of titles for which the user has unlocked or made progress on its achievements. This API does not return a user's full history of titles played or launched. 
 The domain for these URIs is `achievements.xboxlive.com`.

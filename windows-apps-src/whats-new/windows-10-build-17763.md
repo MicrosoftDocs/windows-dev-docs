@@ -1,16 +1,12 @@
 ---
-author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 build 17763 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, newest, developers, 17763
-ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # What's New in Windows 10 for developers, build 17763
 
 Windows 10 build 17763 (also known as the October 2018 Update or version 1809), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
@@ -56,7 +52,7 @@ Windows Mixed Reality | Developers can now request hardware-protected backbuffer
 ## IoT Core
 
 Feature | Description
- : ---- | : ----
+ :------ | :------
 AssignedAccessSettings | The [AssignedAccessSettings class](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings) enables calls for different methods and properties to access the user's assigned access settings for a specific device.
 Default App Overview | The [Windows 10 IoT Core Default App](https://docs.microsoft.com/windows/iot-core/develop-your-app/iotcoredefaultapp) has been updated with new features and capabilities, such as weather, inking, and audio.
 Dashboard | The [Windows 10 Iot Core Dashboard](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup) now allows developers using a Dragonboard 410C or NXP to flash custom FFUs onto their device.
@@ -68,7 +64,7 @@ Windows.System.Update | The new [Windows.System.Update namespace](https://docs.m
 ## Web development
 
 Feature | Description
- : ---- | :-----
+ :------ | :------
 EdgeHTML 18 | The Windows 10 October 2018 update ships with [EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide), the most recent update to the Microsoft Edge browser and the JavaScript engine for UWP apps. EdgeHTML 18 brings modernized and expanded support for the Web Authentication API, new WebView control features, and more! On the tooling side, EdgeHTML 18 brings new WebDriver capabilities and automatic updates, and enhancements to the Edge DevTools and Edge DevTools Protocol. Check out [What’s new in EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide) and [DevTools in the latest Windows 10 update (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) for all the details.
 Progressive Web Apps | Windows 10 JavaScript apps (web apps running in a *WWAHost.exe* process) now support an optional [per-application background script](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps) that starts before any views are activated and runs for the duration of the process. With this, you can monitor and modify navigations, track state across navigations, monitor navigation errors, and run code before views are activated. When specified as the [`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application) in your [app manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest), each of the app's views (windows) are exposed to the script as instances of the new [`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview) class, providing the same events, properties, and methods as a general (Win32) [WebView](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol).
 Web API extensions | A list of [legacy Microsoft API extensions](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) has been added to the Mozilla Developer Network documentation for cross-browser web development. These API extensions are unique to Internet Explorer or Microsoft Edge, and supplement existing information about compatibility and broswer support in the MDN web docs. Legacy Microsoft [CSS extensions](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) and [JavaScript extensions](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) are also available, and you can find rich web API information from MDN surfaced directly in [Visual Studio Code.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
@@ -91,7 +87,7 @@ The following videos have been published since the Fall Creator's Update, highli
 
 ### C++/WinRT
 
-C++/WinRT is a new way of authoring and consuming Windows Runtime APIs. It's implemented sole in header files, and designed to provide you with first-class access to modern app features. [Watch the video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) to learn how it works, then [read the developer docs](../cpp-and-winrt-apis/index.md) for more info.
+C++/WinRT is a new way of authoring and consuming Windows Runtime APIs. It's implemented solely in header files, and designed to provide you with first-class access to modern app features. [Watch the video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) to learn how it works, then [read the developer docs](../cpp-and-winrt-apis/index.md) for more info.
 
 ### Get Started for Devs: Create and customize a form on Windows 10
 

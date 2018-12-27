@@ -2,18 +2,13 @@
 title: ServiceErrorResponse (JSON)
 assetID: a2077df8-f76c-0233-8e41-68267b681862
 permalink: en-us/docs/xboxlive/rest/json-serviceerrorresponse.html
-author: KevinAsgari
+
 description: ' ServiceErrorResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # ServiceErrorResponse (JSON)
 When a service error is encountered, an appropriate HTTP error code will be returned. Optionally, the service may also include a ServiceErrorResponse object as defined below. In production environments, less data may be included. 
 <a id="ID4EN"></a>

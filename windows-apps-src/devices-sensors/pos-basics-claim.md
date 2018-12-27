@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: PointOfService device claim and enable model
 description: Learn about PointOfService claim and enable model
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Point of Service device claim and enable model
 
 ## Claiming for exclusive use

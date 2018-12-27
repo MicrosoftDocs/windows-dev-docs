@@ -1,13 +1,13 @@
 ---
-author: mcleblanc
+
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: Sample data on the design surface, and for prototyping
 description: It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio.
-ms.author: markl
+
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -137,7 +137,7 @@ So far, we've been using **d:DesignData** to load design-time sample data from a
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-The **IsDesignTimeCreatable** property indicates that the design tool should actually create an instance of the class, which implies that the class has a public default constructor, and that it populates itself with data (either real or sample). If you don't set **IsDesignTimeCreatable** (or if you set it to **False**) then you won't get sample data displayed on the design surface. All the design tool does in that case is to parse the class for its bindable properties and display these in the the **Data** panel and in the **Create Data Binding** dialog.
+The **IsDesignTimeCreatable** property indicates that the design tool should actually create an instance of the class, which implies that the class has a public default constructor, and that it populates itself with data (either real or sample). If you don't set **IsDesignTimeCreatable** (or if you set it to **False**) then you won't get sample data displayed on the design surface. All the design tool does in that case is to parse the class for its bindable properties and display these in the **Data** panel and in the **Create Data Binding** dialog.
 
 Sample data for prototyping
 --------------------------------------------------------

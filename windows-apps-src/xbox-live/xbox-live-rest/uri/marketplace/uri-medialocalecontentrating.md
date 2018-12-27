@@ -2,18 +2,13 @@
 title: /media/{marketplaceId}/contentRating
 assetID: 573cf378-36a4-cc82-0029-37d268da933c
 permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentrating.html
-author: KevinAsgari
+
 description: ' /media/{marketplaceId}/contentRating'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /media/{marketplaceId}/contentRating
 Access the content rating token. 
 The domain for these URIs is `eds.xboxlive.com`.

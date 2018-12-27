@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: Configure a barcode scanner
 description: Learn how to configure a barcode scanner for the intended application.
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Configure a barcode scanner
 
 Barcode scanners can be configured in several different modes.  It is important for your barcode scanner to be configured properly for the intended application.

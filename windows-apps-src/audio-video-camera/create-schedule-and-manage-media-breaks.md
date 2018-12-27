@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
 description: This article shows you how to create, schedule, and manage media breaks to your media playback app.
 title: Create, schedule, and manage media breaks
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-
 # Create, schedule, and manage media breaks
 
 This article shows you how to create, schedule, and manage media breaks to your media playback app. Media breaks are typically used to insert audio or video ads into media content. Starting with Windows 10, version 1607, you can use the [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) class to quickly and easily add media breaks to any [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) that you play with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).

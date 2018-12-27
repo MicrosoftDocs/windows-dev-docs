@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/inbox
 assetID: 352740c6-42e2-0000-495d-bf384dc3e941
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinbox.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/inbox'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/inbox
 Provides access to a user's messaging inbox for Xbox LIVE Services. 
 The domain for these URIs is `msg.xboxlive.com`.

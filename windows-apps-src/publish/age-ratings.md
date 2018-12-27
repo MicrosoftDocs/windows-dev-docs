@@ -1,17 +1,12 @@
 ﻿---
-author: jnHs
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
-ms.author: wdg-dev-content
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, age rating, game rating, iarc, rating, questionnaire, ratings board, content rating
 ms.localizationpriority: medium
 ---
-
 # Age ratings
 
 The **Age ratings** page of the [app submission process](app-submissions.md) lets you provide information about your app so it can receive the appropriate age and content ratings administered by the [International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) rating system. These ratings are about the suitability of the content in the app, rather than the age of the target audience for your app.

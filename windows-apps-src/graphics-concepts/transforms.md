@@ -4,15 +4,12 @@ description: The part of Direct3D that pushes geometry through the fixed functio
 ms.assetid: 0DF2A99A-335C-4D14-9720-6D7996DD635A
 keywords:
 - Transforms
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Transforms
 
 

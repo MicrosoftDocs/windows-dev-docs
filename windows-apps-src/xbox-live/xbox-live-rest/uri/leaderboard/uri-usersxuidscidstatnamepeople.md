@@ -2,18 +2,13 @@
 title: /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
-author: KevinAsgari
+
 description: ' /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 Accesses a social (ranked) leaderboard.
 The domain for these URIs is `leaderboards.xboxlive.com`.

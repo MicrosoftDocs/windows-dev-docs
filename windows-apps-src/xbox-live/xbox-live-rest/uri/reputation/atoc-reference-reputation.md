@@ -2,18 +2,13 @@
 title: Reputation URIs
 assetID: d1cb76c0-86a4-8c51-19f6-5f223b517d46
 permalink: en-us/docs/xboxlive/rest/atoc-reference-reputation.html
-author: KevinAsgari
+
 description: ' Reputation URIs'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # Reputation URIs
  
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the **Microsoft.Xbox.Services.Social.ReputationService**. The domain for the reputation URIs is reputation.xboxlive.com. A typical URI representation might be https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback. 

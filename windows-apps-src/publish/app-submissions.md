@@ -1,17 +1,14 @@
 ---
-author: jnHs
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
-ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # App submissions
 
 
@@ -20,12 +17,15 @@ Once you've [created your app by reserving a name](create-your-app-by-reserving-
 You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
 > [!NOTE]
-> You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access [Windows Dev Center](https://partner.microsoft.com/dashboard) and submit apps to the Microsoft Store.
+> You must have an active [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
 
-After your app is published, you can publish an updated version by creating another submission in your dashboard. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on the App overview page. You can also [remove an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) if you need to do so (and then make it available again later, if you'd like).
+After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page. You can also [remove an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) if you need to do so (and then make it available again later, if you'd like).
 
 > [!NOTE]
-> This section of the documentation describes how to create an app submission on the Dev Center dashboard. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
+> This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
+
+> [!IMPORTANT]
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## App submission checklist
 
@@ -88,17 +88,20 @@ You'll need all the required info for at least one of the languages that your ap
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Description**               | Required                                    | [Write a great app description](write-a-great-app-description.md) |
 | **What's new in this version**   | Optional                                 | [Release notes](create-app-store-listings.md#whats-new-in-this-version)       |
-| **App features**              | Optional                                    | [App features](create-app-store-listings.md#app-features)         |
+| **App features**              | Optional                                    | [Product features](create-app-store-listings.md#product-features)         |
 | **Screenshots**               | Required (at least one screenshot; four or more recommended)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store logos**               | Recommended; required for some OS versions | [Store logos](app-screenshots-and-images.md#store-logos)             |
-| **Additional art assets**     | Recommended (especially for some OS versions)         | [Additional art assets](app-screenshots-and-images.md#additional-art-assets) |
 | **Trailers**                  | Optional                                    | [Trailers](app-screenshots-and-images.md#trailers)                | 
-| **Supplemental fields**  | Optional                                    | [Supplemental information](create-app-store-listings.md#supplemental-fields) 
+| **Windows 10 and Xbox image (16:9 Super hero art)**     | Recommended        | [Windows 10 and Xbox image (16:9 Super hero art)
+](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox images**     | Required for proper display if you publish to Xbox        | [Xbox images
+](app-screenshots-and-images.md#xbox-images) |
+| **Supplemental fields**  | Optional                                    | [Supplemental fields](create-app-store-listings.md#supplemental-fields) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Additional license terms**  | Optional                                    | [Additional license terms](create-app-store-listings.md#additional-license-terms) |
 | **Developed by**              | Optional                                    | [Developed by](create-app-store-listings.md#developed-by)                   |
-| **Platform-specific Store listings** | Optional                               | [Create platform-specific Store listings](create-platform-specific-store-listings.md)  |
+
 
 <span/>
 

@@ -1,18 +1,15 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 title: Respond to the presence of the touch keyboard
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.author: kbridge
 ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
----
 
+
+---
 # Respond to the presence of the touch keyboard
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
@@ -28,7 +25,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 
 The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [AutomationPeer]((https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) and [Custom automation peers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) and [Custom automation peers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 

@@ -1,15 +1,11 @@
 ---
-author: QuinnRadich
 Description: The toggle switch represents a physical switch that allows users to turn things on or off.
 title: Guidelines for toggle switch controls
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
@@ -65,7 +61,7 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 - Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
 - Use check boxes when the user can select multiple items that are related to a single setting or feature.
 
-## Toggle switches in the the Windows UI
+## Toggle switches in the Windows UI
 
 These images show how the Windows UI uses toggle switches. Here's how the Smart Storage Settings screen uses toggle switches:
 

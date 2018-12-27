@@ -1,24 +1,19 @@
 ﻿---
-author: jnHs
-Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
-ms.author: wdg-dev-content
-ms.date: 06/04/2018
+ms.date: 10/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, xbox analytics, xbox live analytics, xbox statistics
 ms.localizationpriority: medium
 ---
-
 # Xbox analytics report
 
-The **Xbox analytics** report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your game. It also provides service health info to help you address client errors.
+The **Xbox analytics** report in [Partner Center](https://partner.microsoft.com/dashboard) shows you statistics about how your customers are engaging with the Xbox features in your game. It also provides service health info to help you address client errors.
 
 > [!IMPORTANT]
 > You’ll only see this report if you’re publishing a game for Xbox or a game that uses Xbox Live services. To do so, you must go through the [concept approval process](../gaming/concept-approval.md), which includes games published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) and games submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). Games published via the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) are not currently visible in this report.
 
-You can view the **Xbox analytics** report from the left navigation menu for your game by expanding **Analytics** and selecting **Xbox analytics**.  You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+You can view the **Xbox analytics** report from the left navigation menu for your game by expanding **Analyze** and selecting **Xbox analytics**.  You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline.
 
 
 ## Overview tab

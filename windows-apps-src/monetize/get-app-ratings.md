@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Use this method in the Microsoft Store analytics API to get aggregate ratings data for a given date range and other optional filters.
 title: Get app ratings
-ms.author: mcleans
 ms.date: 11/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ratings
 ms.localizationpriority: medium
 ---
-
 # Get app ratings
 
-Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in Partner Center.
 
 ## Prerequisites
 
@@ -101,20 +96,20 @@ Authorization: Bearer <your access token>
 
 Elements in the *Value* array contain the following values.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Value           | Type    | Description       |
+|-----------------|---------|-------------------|
 | date            | string  | The first date in the date range for the ratings data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId   | string  | The Store ID of the app for which you are retrieving ratings data.                                                                                                                                                                 |
-| applicationName | string  | The display name of the app.                                                                                                                                                                                                         |
-| market          | string  | The ISO 3166 country code of the market where the rating was submitted.                                                                                                                                                              |
-| osVersion       | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                               |
-| deviceType      | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                           |
-| isRevised       | Boolean | The value **true** indicates that the rating was revised; otherwise **false**.                                                                                                                                                       |
-| oneStar         | number  | The number of one-star ratings.                                                                                                                                                                                                      |
-| twoStars        | number  | The number of two-star ratings.                                                                                                                                                                                                      |
-| threeStars      | number  | The number of three-star ratings.                                                                                                                                                                                                    |
-| fourStars       | number  | The number of four-star ratings.                                                                                                                                                                                                     |
-| fiveStars       | number  | The number of five-star ratings.            |
+| applicationId   | string  | The Store ID of the app for which you are retrieving ratings data.         |
+| applicationName | string  | The display name of the app.    |
+| market          | string  | The ISO 3166 country code of the market where the rating was submitted.        |
+| osVersion       | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.            |
+| deviceType      | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.            |
+| isRevised       | Boolean | The value **true** indicates that the rating was revised; otherwise **false**.   |
+| oneStar         | number  | The number of one-star ratings.        |
+| twoStars        | number  | The number of two-star ratings.    |
+| threeStars      | number  | The number of three-star ratings.   |
+| fourStars       | number  | The number of four-star ratings.    |
+| fiveStars       | number  | The number of five-star ratings.    |
 
 
 ### Response example

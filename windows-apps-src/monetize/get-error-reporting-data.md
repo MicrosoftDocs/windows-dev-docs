@@ -1,20 +1,15 @@
 ---
-author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
-ms.author: mcleans
 ms.date: 09/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
 ms.localizationpriority: medium
 ---
-
 # Get error reporting data for your app
 
-Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This method can only retrieve errors that occurred in the last 30 days. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This method can only retrieve errors that occurred in the last 30 days. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in Partner Center.
 
 You can retrieve additional error information by using the [get error details](get-details-for-an-error-in-your-app.md), [get stack trace](get-the-stack-trace-for-an-error-in-your-app.md), and [download CAB file](download-the-cab-file-for-an-error-in-your-app.md) methods.
 
@@ -47,7 +42,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve error reporting data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| applicationId | string | The Store ID of the app for which you want to retrieve error reporting data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | startDate | date | The start date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```.<p/><p/>**Note:**&nbsp;&nbsp;This method can only retrieve errors that occurred in the last 30 days.  |  No  |
 | endDate | date | The end date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |

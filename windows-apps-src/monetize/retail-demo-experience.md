@@ -1,13 +1,9 @@
 ---
-author: joannaleecy
 title: Add retail demo (RDX) features to your app
 description: Prepare your app for the retail demo mode, helping showcase your app on the retail sales floor.
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
-ms.author: joanlee
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, retail demo app
 ms.localizationpriority: medium
 ---

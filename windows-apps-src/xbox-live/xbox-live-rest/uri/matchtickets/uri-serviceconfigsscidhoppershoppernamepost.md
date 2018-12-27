@@ -2,18 +2,13 @@
 title: POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 assetID: 8cbf62aa-d639-e920-1e39-099133af17f8
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamepost.html
-author: KevinAsgari
+
 description: ' POST (/serviceconfigs/{scid}/hoppers/{hoppername})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
 Creates the specified match ticket.

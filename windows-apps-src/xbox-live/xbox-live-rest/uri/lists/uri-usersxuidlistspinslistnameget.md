@@ -2,18 +2,13 @@
 title: GET (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: a63f595a-61dd-5885-c405-9833230abb94
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameget.html
-author: KevinAsgari
+
 description: ' GET (/users/xuid(xuid)/lists/PINS/{listname})'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # GET (/users/xuid(xuid)/lists/PINS/{listname})
 Returns the contents of a list. 
 The domain for these URIs is `eplists.xboxlive.com`.

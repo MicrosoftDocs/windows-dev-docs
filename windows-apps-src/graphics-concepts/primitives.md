@@ -4,15 +4,12 @@ description: A 3D primitive is a collection of vertices that form a single 3D en
 ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
 keywords:
 - Primitives
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Primitives
 
 

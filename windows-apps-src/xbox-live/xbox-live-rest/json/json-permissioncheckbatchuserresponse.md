@@ -2,18 +2,13 @@
 title: PermissionCheckBatchUserResponse (JSON)
 assetID: c587dbc1-9436-4d55-afcb-deb47e3c2664
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchuserresponse.html
-author: KevinAsgari
+
 description: ' PermissionCheckBatchUserResponse (JSON)'
-ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ---
-
-
 # PermissionCheckBatchUserResponse (JSON)
 The reasons of a batch permission check for list of permission values for a single target user. 
 <a id="ID4EN"></a>

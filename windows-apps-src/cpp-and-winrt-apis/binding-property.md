@@ -1,16 +1,11 @@
 ---
-author: stevewhims
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.author: stwhi
 ms.date: 08/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
 ms.localizationpriority: medium
 ---
-
 # XAML controls; bind to a C++/WinRT property
 A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them.
 
@@ -173,7 +168,7 @@ namespace winrt::Bookstore::implementation
 {
     BookstoreViewModel::BookstoreViewModel()
     {
-        m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+        m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     }
 
     Bookstore::BookSku BookstoreViewModel::BookSku()
@@ -184,7 +179,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 > [!NOTE]
-> The type of `m_bookSku` is the projected type (**winrt::Bookstore::BookSku**), and the template parameter that you use with **make** is the implementation type (**winrt::Bookstore::implementation::BookSku**). Even so, **make** returns an instance of the projected type.
+> The type of `m_bookSku` is the projected type (**winrt::Bookstore::BookSku**), and the template parameter that you use with [**winrt::make**](/uwp/cpp-ref-for-winrt/make) is the implementation type (**winrt::Bookstore::implementation::BookSku**). Even so, **make** returns an instance of the projected type.
 
 ## Add a property of type **BookstoreViewModel** to **MainPage**
 Open `MainPage.idl`, which declares the runtime class that represents our main UI page. Add an import statement to import `BookstoreViewModel.idl`, and add a read-only property named MainViewModel of type **BookstoreViewModel**. Also remove the **MyProperty** property. Also note the `import` directive in the listing below.
@@ -247,7 +242,7 @@ namespace winrt::Bookstore::implementation
 {
     MainPage::MainPage()
     {
-        m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+        m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();
         InitializeComponent();
     }
 
