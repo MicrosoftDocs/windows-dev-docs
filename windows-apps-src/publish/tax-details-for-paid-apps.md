@@ -2,7 +2,7 @@
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 11/20/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp, taxes, app taxes, tax requirements, commerce expansion, tax rate
 ms.localizationpriority: medium
@@ -40,7 +40,7 @@ To understand your tax considerations for price selection, payout implications, 
 | Austria                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 20% tax)     | Microsoft          |
 | Azerbaijan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | The Bahamas                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bahrain                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| Bahrain                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of (selected price minus 5% tax)                 | Microsoft          |
 | Bangladesh                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Barbados                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Belarus                          | Price being selected is the final sale price and includes any applicable taxes.                                                                  | 70% of (selected price minus 20% tax)         | Microsoft          |
