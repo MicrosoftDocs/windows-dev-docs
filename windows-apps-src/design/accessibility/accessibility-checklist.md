@@ -11,13 +11,11 @@ ms.localizationpriority: medium
 ---
 # Accessibility checklist
 
-
-
 Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible .
 
 Here we provide a checklist you can use to ensure that your app is accessible.
 
-1.  Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
+1. Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
 
     An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
 
@@ -25,7 +23,7 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
     For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
 
-2.  Implement keyboard accessibility:
+2. Implement keyboard accessibility:
 
     * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
     * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
@@ -35,32 +33,41 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
     For more info, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3.  Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
+3. Ensure text is a readable size
 
-    * Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access**.)
+    * Windows includes various accessibility tools and settings that users can take advantage of and adjust to their own needs and preferences for reading text. These include:
+        * The Magnifier tool, which enlarges a selected area of the UI. You should ensure the layout of text in your app doesn't make it difficult to use Magnifier for reading.
+        * Global scale and resolution settings in **Settings->System->Display->Scale and layout**. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.
+        * Text size settings in **Settings->Ease of access->Display**. Adjust the **Make text bigger** setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).
+        > [!NOTE]
+        > The **Make everything bigger** setting lets a user specify their preferred size for text and apps in general on their primary screen only.
+
+4. Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
+
     * Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.
     * Switch to a high contrast theme and verify that the UI for your app is readable and usable.
     * Ensure that your UI doesn’t use color as the only way to convey information.
 
     For more info, see [High-contrast themes](high-contrast-themes.md) and [Accessible text requirements](accessible-text-requirements.md).
 
-4.  Run accessibility tools, address reported issues, and verify the screen reading experience.
+5. Run accessibility tools, address reported issues, and verify the screen reading experience.
 
     Use tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) to verify programmatic access, run diagnostic tools such as [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) to discover common errors, and verify the screen reading experience with Narrator.
 
     For more info, see [Accessibility testing](accessibility-testing.md).
 
-5.  Make sure your app manifest settings follow accessibility guidelines.
+6. Make sure your app manifest settings follow accessibility guidelines.
 
-6.  Declare your app as accessible in the Microsoft Store.
+7. Declare your app as accessible in the Microsoft Store.
 
     If you implemented the baseline accessibility support, declaring your app as accessible in the Microsoft Store can help reach more customers and get some additional good ratings.
 
     For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 
-<span id="related_topics"/>
-
 ## Related topics  
+
+* [Accessible text requirements](accessible-text-requirements.md)
+* [Text scaling](../input/text-scaling.md)
 * [Accessibility](accessibility.md)
 * [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Practices to avoid](practices-to-avoid.md) 
+* [Practices to avoid](practices-to-avoid.md)
