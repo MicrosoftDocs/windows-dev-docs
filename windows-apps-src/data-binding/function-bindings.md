@@ -62,19 +62,17 @@ Static functions can be specified using XMLNamespace:ClassName.MethodName syntax
 <Page 
      xmlns:local="using:MyPage">
      ...
-     <Grid x:Name="myGrid" Background="Black" >
-        <TextBlock Foreground="{x:Bind local:GenerateAppropriateForeground(myGrid.Background)}" Text="Hello World!" />
-    </Grid>
+    <StackPanel>
+        <TextBlock x:Name="BigTextBlock" FontSize="20" Text="Big text" />
+        <TextBlock FontSize="{x:Bind local:MyHelpers.Half(BigTextBlock.FontSize)}" 
+                   Text="Small text" />
+    </StackPanel>
 </Page>
 ```
 ```csharp
-public class MyPage : Page
+static public class MyHelpers
 {
-    public static GenerateAppropriateForeground(SolidColorBrush background)
-    {
-        //Implement static function
-        ...
-    }
+    public static double Half(double value) => value / 2.0;
 }
 ```
 
