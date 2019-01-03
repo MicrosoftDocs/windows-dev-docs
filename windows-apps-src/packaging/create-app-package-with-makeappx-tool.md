@@ -1,7 +1,7 @@
 ---
 title: Create an app package with the MakeAppx.exe tool
 description: MakeAppx.exe creates, encrypts, decrypts, and extracts files from app packages and bundles.
-ms.date: 06/21/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
@@ -11,19 +11,13 @@ ms.custom: RS5
 # Create an app package with the MakeAppx.exe tool
 
 
-**MakeAppx.exe** creates both app packages and app package bundles. **MakeAppx.exe** also extracts files from an app package or bundle and encrypts or decrypts app packages and bundles. This tool is included in the Windows 10 SDK and can be used from a command prompt or a script file.
+**MakeAppx.exe** creates both app packages (.msix or .appx) and app package bundles (.msixbundle or .appxbundle). **MakeAppx.exe** also extracts files from an app package or bundle and encrypts or decrypts app packages and bundles. This tool is included in the Windows 10 SDK and can be used from a command prompt or a script file.
 
-> [!IMPORTANT] 
-> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to create your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> [!IMPORTANT]
+> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to create your app package. For more information, see [Package a UWP app with Visual Studio](packaging-uwp-apps.md).
 
-Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .msix or .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](../publish/health-report.md) in Partner Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](../publish/upload-app-packages.md). 
-
- Updates to this tool in the most recent version of Windows 10 do not affect .appx package usage. You can continue using this tool with .appx packages, or use the tool with support for .msix packages as described below.
-
-To manually create an .appxupload file:
-- Place the .msix and the .appxsym in a folder
-- Zip the folder
-- Change the zipped folder extension name from .zip to .appxupload
+> [!IMPORTANT]
+> Note that **MakeAppx.exe** does not create an [app package upload file (.appxupload or .msixupload)](packaging-uwp-apps.md#types-of-app-packages), which is the recommended type of valid app package for [submissions to Partner Center](../publish/upload-app-packages.md). The app package upload file is typically [created as part of the Visual Studio packaging process](packaging-uwp-apps.md#create-an-app-package-upload-file), although it can also be created manually.
 
 ## Using MakeAppx.exe
 
@@ -105,7 +99,7 @@ Options specific to the **pack** command:
 
 The following usage examples show some possible syntax options for the **pack** command:
 
-``` syntax 
+``` syntax
 MakeAppx pack [options] /d <content directory> /p <output package name>
 MakeAppx pack [options] /f <mapping file> /p <output package name>
 MakeAppx pack [options] /m <app package manifest> /f <mapping file> /p <output package name>
@@ -194,7 +188,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 The **MakeAppx.exe** tool can also encrypt or decrypt an existing package or bundle. You must simply provide the package name, the output package name, and whether encryption or decryption should use a key file (/kf) or the global test key (/kt).
 
-Encryption and decryption are not available through the Visual Studio packaging wizard. 
+Encryption and decryption are not available through the Visual Studio packaging wizard.
 
 Options specific to **encrypt** and **decrypt** commands:
 
@@ -245,7 +239,7 @@ Example of a mapping file (without the /m option):
 "\\MyServer\path\icon.png"              "icon.png"
 "my app files\readme.txt"               "my app files\readme.txt"
 "CustomManifest.xml"                    "AppxManifest.xml"
-``` 
+```
 
 When using a mapping file, you can choose whether you would like to use the /m option. The /m option allows the user to specify the resource metadata in the mapping file to be included in the generated manifest. If you use the /m option, the mapping file must contain a section that begins with the line "[ResourceMetadata]", followed by lines that specify "ResourceDimensions" and "ResourceId." It is possible for an app package to contain multiple "ResourceDimensions", but there can only ever be one "ResourceId."
 
@@ -263,11 +257,11 @@ Example of a mapping file (with the /m option):
 
 ## Semantic validation performed by MakeAppx.exe
 
-**MakeAppx.exe** performs limited sematic validation that is designed to catch the most common deployment errors and help ensure that the app package is valid. See the /nv option if you want to skip validation while using **MakeAppx.exe**. 
+**MakeAppx.exe** performs limited sematic validation that is designed to catch the most common deployment errors and help ensure that the app package is valid. See the /nv option if you want to skip validation while using **MakeAppx.exe**.
 
 This validation ensures that:
 - All files referenced in the package manifest are included in the app package.
 - An application does not have two identical keys.
-- An application does not register for a forbidden protocol from this list: SMB, FILE, MS-WWA-WEB, MS-WWA. 
+- An application does not register for a forbidden protocol from this list: SMB, FILE, MS-WWA-WEB, MS-WWA.
 
 This is not a complete semantic validation as it is only designed to catch common errors. Packages built by **MakeAppx.exe** are not guaranteed to be installable.
