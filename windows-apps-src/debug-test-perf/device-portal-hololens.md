@@ -2,7 +2,7 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for HoloLens
 description: Learn how the Windows Device Portal for HoloLens lets you remotely configure and manage your HoloLens device.
-ms.date: 09/26/2017
+ms.date: 1/3/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -28,8 +28,7 @@ ms.localizationpriority: medium
 #### Connect over Wi-Fi 
 
 1. Connect your HoloLens to Wi-Fi.
-2. Look up your device's IP address.- Find the IP address on the device under Settings > Network & Internet > Wi-Fi > Advanced Options.
-    You can also ask, "Hey Cortana, what is my IP address?"
+2. Look up your device's IP address. Find the IP address on the device under **Settings > Network & Internet > Wi-Fi > Hardware properties**. You can also ask, "Hey Cortana, what is my IP address?"
 
 3. From a web browser on your PC, go to `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - The browser will display the following message: "There's a problem with this website's security certificate". This happens because the certificate which is issued to the Device Portal is a test certificate. You can ignore this certificate error for now and proceed.
