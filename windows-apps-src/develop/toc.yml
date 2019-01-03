@@ -1357,7 +1357,7 @@
           href: ../porting/apps-on-arm-x86-emulation.md
         - name: Troubleshooting desktop x86 apps
           href: ../porting/apps-on-arm-troubleshooting-x86.md
-        - name: Troubleshooting UWP ARM32 apps
+        - name: Troubleshooting UWP ARM apps
           href: ../porting/apps-on-arm-troubleshooting-arm32.md
         - name: Program Compatibility Troubleshooter on ARM
           href: ../porting/apps-on-arm-program-compat-troubleshooter.md
