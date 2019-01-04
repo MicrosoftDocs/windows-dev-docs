@@ -3,7 +3,7 @@ description: You can create an expandable tree view by binding the ItemsSource t
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 01/03/2019
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
@@ -22,10 +22,10 @@ The TreeView APIs support the following features:
 
 - N-level nesting
 - Selection of single or multiple nodes
-- (Preview) Data binding to the ItemsSource property on TreeView and TreeViewItem
-- (Preview) TreeViewItem as the root of the TreeView item template
-- (Preview) Arbitrary types of content in a TreeViewItem
-- (Preview) Drag and drop between tree views
+- Data binding to the ItemsSource property on TreeView and TreeViewItem
+- TreeViewItem as the root of the TreeView item template
+- Arbitrary types of content in a TreeViewItem
+- Drag and drop between tree views
 
 | **Get the Windows UI Library** |
 | - |
@@ -59,11 +59,11 @@ The TreeView APIs support the following features:
 
 ## TreeView UI
 
-The tree view uses a combination of indentation and icons to represent the nested relationship between folder/parent nodes and non-folder/child nodes. Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.
+The tree view uses a combination of indentation and icons to represent the nested relationship between parent nodes and child nodes. Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.
 
 ![The chevron icon in TreeView](images/treeview-simple.png)
 
-You can include an icon in the tree view item data template to represent nodes. If you do this, you should use a folder icon only for nodes that represent literal folders, such as the folder structure on a disk.
+You can include an icon in the tree view item data template to represent nodes. For example, if you show a file system hierarchy, you could use folder icons for the parent notes and file icons for the leaf nodes.
 
 ![The chevron and folder icons together in a TreeView](images/treeview-icons.png)
 
@@ -73,9 +73,11 @@ You can create a tree view by binding the [ItemsSource](/uwp/api/windows.ui.xaml
 
 To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the TreeView control’s [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Each TreeViewNode can then have more nodes added to its Children collection. You can nest tree view nodes to whatever depth you require.
 
-Starting in the Windows Insider Preview, you can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with ListView's ItemsSource. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a DataTemplate that renders the item.
+You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with ListView's ItemsSource. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a DataTemplate that renders the item.
 
 > [!IMPORTANT]
+> ItemsSource and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+>
 > ItemsSource is an alternative mechanism to TreeView.RootNodes for putting content into the TreeView control. You cannot set both ItemsSource and RootNodes at the same time. When you use ItemsSource, nodes created for you, and you can access them from TreeView.RootNodes property.
 
 Here's an example of a simple tree view declared in XAML. You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.
@@ -284,7 +286,7 @@ You might need to show a large number of nodes in your tree view, or you might n
 
 Handle the [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The HasUnrealizedChildren property indicates whether the node needs to be filled, or if its Children collection has already been populated. It's important to remember that the TreeViewNode doesn't set this value, you need to manage it in your app code.
 
-Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implemetation of 'FillTreeNode'.
+Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implementation of 'FillTreeNode'.
 
 ```csharp
 private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArgs args)
@@ -376,10 +378,6 @@ The TreeView control supports both single-selection and multi-selection. By defa
 #### Multiple selection
 
 When multiple selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.
-
-Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
-
-![Multiple selection in a tree view](images/treeview-selection.png)
 
 Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown as indeterminate (filled with a black box).
 
