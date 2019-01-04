@@ -320,7 +320,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
           // Initialize a selection lasso.
           lasso = new Polyline()
           {
-            Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+              Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
               StrokeThickness = 1,
               StrokeDashArray = new DoubleCollection() { 5, 2 },
               };
