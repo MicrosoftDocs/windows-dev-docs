@@ -627,3 +627,6 @@ xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr
 ```
 
 When enabling network query with a xim_team_configuration that declares two or more teams, players joined by calling `xim::move_to_network_using_joinable_network_information()` will have a default team index value of 0.
+
+> [!NOTE]
+> If the app has specified multiple local users and is joining a network having less room than the number of local users, the join can still succeed. But only the allowed number of local users may join the network.
