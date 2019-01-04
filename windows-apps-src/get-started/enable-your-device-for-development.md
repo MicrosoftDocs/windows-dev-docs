@@ -40,23 +40,19 @@ Here's the settings page on the desktop device family:
 
 ![Go to Settings, choose Update and security and then choose For developers to view your options](images/devmode-pc-options.png)
 
-Here's the settings page on the mobile device family:
-
-![From Settings on your phone, choose Update and security](images/devmode-mob.png)
-
 ## Which setting should I choose: sideload apps or Developer Mode?
 
  You can enable a device for development, or just for sideloading.
 
 -   *Microsoft Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
 -   *Sideloading* is installing and then running or testing an app that has not been certified by the Microsoft Store. For example, an app that is internal to your company only.
--   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
+-   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode.
 
 By default, you can only install Universal Windows Platform (UWP) apps from the Microsoft Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
 
 ### Sideload apps
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Device family specific info
 
@@ -86,7 +82,7 @@ For each device family, additional developer features might be available. These 
 
 This image shows developer features for Windows 10:
 
-![Developer mode options](images/devmode-mob-options.png) 
+![Developer mode options](images/devmode-mob-options.png)
 
 ### <span id="device-discovery-and-pairing"></span>Device Portal
 
@@ -99,7 +95,7 @@ For device specific setup instructions, see:
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
+If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package.
 
 ### SSH
 
@@ -110,7 +106,7 @@ SSH services are enabled when you enable Device Discovery on your device.  This 
 
 In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, turn off Device Discovery.  
 
-SSH login is done via the "DevToolsUser" account, which accepts a password for authentication.  This password is the PIN displayed on the device after pressing the device discovery "Pair" button, and is only valid while the PIN is displayed.  An SFTP subsystem is also enabled, for manual management of the DevelopmentFiles folder where loose file deployments are installed from Visual Studio. 
+SSH login is done via the "DevToolsUser" account, which accepts a password for authentication.  This password is the PIN displayed on the device after pressing the device discovery "Pair" button, and is only valid while the PIN is displayed.  An SFTP subsystem is also enabled, for manual management of the DevelopmentFiles folder where loose file deployments are installed from Visual Studio.
 
 #### Caveats for SSH usage
 The existing SSH server used in Windows is not yet protocol compliant, so using an SFTP or SSH client may require special configuration.  In particular, the SFTP subsystem runs at version 3 or less, so any connecting client should be configured to expect an old server.  The SSH server on older devices uses `ssh-dss` for public key authentication, which OpenSSH has deprecated.  To connect to such devices the SSH client must be manually configured to accept `ssh-dss`.  
@@ -125,7 +121,7 @@ You should enable device discovery only if you intend to make the device a deplo
 
 ### Optimizations for Windows Explorer, Remote Desktop, and PowerShell (Desktop only)
 
- On the desktop device family, the **For developers** settings page has shortcuts to settings that you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply**, or click the **Show settings** link to open the settings page for that option. 
+ On the desktop device family, the **For developers** settings page has shortcuts to settings that you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply**, or click the **Show settings** link to open the settings page for that option.
 
 
 ## Notes
@@ -137,9 +133,9 @@ There are several tools you can use to deploy an app from a Windows 10 PC to a W
 -   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
-Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device. 
+Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device.
 
-See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more. 
+See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more.
 
 > [!NOTE]
 > If Developer Mode doesn't install correctly, we encourage you to file a feedback request. In the **Feedback Hub** app, select **Add new feedback**, and choose the **Developer Platform** category and the **Developer Mode** subcategory. Submitting feedback will help Microsoft resolve the issue you encountered.
@@ -148,24 +144,24 @@ See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum
 
 "Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
 
-This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing. 
+This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing.
 
 To fix this issue:
 
-1. Ensure your computer is connected to the Internet. 
-2. If you are on a domain-joined computer, speak to your network administrator. The Developer Mode package, like all Features on Demand,  is blocked by default in WSUS. 
+1. Ensure your computer is connected to the Internet.
+2. If you are on a domain-joined computer, speak to your network administrator. The Developer Mode package, like all Features on Demand,  is blocked by default in WSUS.
 2.1. In order to unblock the Developer Mode package in the current and previous releases, the following KBs should be allowed in WSUS: 4016509, 3180030, 3197985  
 3. Check for Windows updates in the Settings > Updates and Security > Windows Updates.
-4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > Manage optional features > Add a feature. If it is missing, Windows cannot find the correct package for your computer. 
+4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > Manage optional features > Add a feature. If it is missing, Windows cannot find the correct package for your computer.
 
-After doing any of the above steps, disable and then re-enable Developer Mode to verify the fix. 
+After doing any of the above steps, disable and then re-enable Developer Mode to verify the fix.
 
 
 ### Failed to install the package
 
 "Developer Mode package failed to install. Error code 0x80004005  Learn more"
 
-This error may occur due to incompatibilities between your build of Windows and the Developer Mode package. 
+This error may occur due to incompatibilities between your build of Windows and the Developer Mode package.
 
 To fix this issue:
 
@@ -175,7 +171,7 @@ To fix this issue:
 
 ## Use group policies or registry keys to enable a device
 
-For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging. 
+For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
 
 You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home. If you do have Windows 10 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
 
