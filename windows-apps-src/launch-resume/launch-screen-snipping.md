@@ -43,7 +43,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-The following example illustrates what a file specified by the **secondaryFileAccessToken** parameter of **ms-screenshot** might contain:
+The following example illustrates what a file specified by the **secondarySharedAccessToken** parameter of **ms-screensketch** might contain:
 
 ```json
 {
