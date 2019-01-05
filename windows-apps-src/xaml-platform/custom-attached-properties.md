@@ -114,19 +114,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -198,7 +200,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## Using your custom attached property in XAML
+## Setting your custom attached property from XAML markup
+
+> [!NOTE]
+> If you're using C++/WinRT, then skip to the following section ([Setting your custom attached property imperatively with C++/WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt)).
 
 After you have defined your attached property and included its support members as part of a custom type, you must then make the definitions available for XAML usage. To do this, you must map a XAML namespace that will reference the code namespace that contains the relevant class. In cases where you have defined the attached property as part of a library, you must include that library as part of the app package for the app.
 
@@ -224,7 +229,32 @@ If you are setting the property on an element that is also within the same mappe
 ```
 
 > [!NOTE]
-> If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
+> If you are writing a XAML UI with C++/CX, then you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated code-behind header (.xaml.h). This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
+
+## Setting your custom attached property imperatively with C++/WinRT
+
+If you're using C++/WinRT, then you can access a custom attached property from imperative code, but not from XAML markup. The code below shows how.
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## Value type of a custom attached property
 
