@@ -1855,6 +1855,11 @@
       "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/data-sharing-udc.md",
       "redirect_url": "/windows/uwp/xbox-live/configure-xbl/dev-center/access-policies-udc",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/publish/dev-center-insider-program.md",
+      "redirect_url": "/windows/uwp/publish",
+      "redirect_document_id": true
     }
   ]
 }
