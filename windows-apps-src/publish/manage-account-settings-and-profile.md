@@ -39,7 +39,6 @@ Changing your publisher display name will also cause us to verify your account a
 Below are some of the other items you'll find in the **Account settings** section.
 
 - **Verification status**: When your account is undergoing the verification process (for example, when you first sign up or after you significantly update your contact info), you can review your verification status here.
-- **Dev Center Insider Program**: You can opt in or out of the [Dev Center Insider Program](dev-center-insider-program.md) from the main **Account settings** page.
 - **Payout account** and **Tax profile**: Here's where you [set up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md). You'll need to do this before you can charge money for apps or add-ons.
 - **Enterprise associations**: Accept invitations from enterprises who'd like you to publish apps for their exclusive use. For more info, see [Distribute line-of-business apps to enterprises](distribute-lob-apps-to-enterprises.md).
 - **Users**: Add users to your account and assign them roles and permissions. For more info, see [Manage account users](manage-account-users.md).

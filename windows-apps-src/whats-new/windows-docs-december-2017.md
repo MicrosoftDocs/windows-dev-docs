@@ -54,7 +54,7 @@ See [Extend your desktop application with modern UWP components](https://docs.mi
 
 ### Subscription add-ons are now available to developers in the Windows Dev Center Insider program
 
-All developers who have joined the [Dev Center Insider program](../publish/dev-center-insider-program.md) can now use subscription add-ons to sell digital products in their apps app (such as app features or digital content) with automated recurring billing periods. For more details, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
+All developers who have joined the Dev Center Insider program can now use subscription add-ons to sell digital products in their apps app (such as app features or digital content) with automated recurring billing periods. For more details, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ## Developer Guidance
 
