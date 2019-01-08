@@ -228,8 +228,8 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
             <MenuFlyoutItem Text="Other Formats..."/>
         </MenuFlyoutSubItem>
         <MenuFlyoutItem Text="Open..."/>
-        <MenuFlyoutItem Text="Save">
-        <MenuFlyoutSeparator />
+        <MenuFlyoutItem Text="Save"/>
+        <MenuFlyoutSeparator/>
         <MenuFlyoutItem Text="Exit"/>
     </MenuBarItem>
 
