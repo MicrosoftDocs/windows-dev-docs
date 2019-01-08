@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 03/20/2018
+ms.date: 1/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -56,6 +56,17 @@ Use the following URIs to open various pages of the Settings app.
 
 > Note that whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
 
+<!-- TODO: 
+* ms-settings:controlcenter
+* ms-settings:cortana-windowssearch
+* ms-settings:holographic
+* ms-settings:keyboard-advanced
+* ms-settings:regionlanguage-adddisplaylanguage (crashed)
+* ms-settings:regionlanguage-setdisplaylanguage (crashed)
+* ms-settings:signinoptions-launchpinenrollment
+* ms-settings:storagecleanup
+* ms-settings:update-security -->
+
 ## Accounts
 
 |Settings Page| URI |
@@ -63,6 +74,7 @@ Use the following URIs to open various pages of the Settings app.
 | Access work or school | ms-settings:workplace |
 | Email & app accounts  | ms-settings:emailandaccounts |
 | Family & other people | ms-settings:otherusers |
+| Set up a kiosk | ms-settings:assignedaccess |
 | Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | Sync your settings | ms-settings:sync |
 | Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -77,7 +89,7 @@ Use the following URIs to open various pages of the Settings app.
 | Apps for websites | ms-settings:appsforwebsites |
 | Default apps | ms-settings:defaultapps |
 | Manage optional features | ms-settings:optionalfeatures |
-| Offline Maps | ms-settings:maps |
+| Offline Maps | ms-settings:maps<br/>ms-settings:maps-downloadmaps (Download maps) |
 | Startup apps | ms-settings:startupapps |
 | Video playback | ms-settings:videoplayback |
 
@@ -88,7 +100,7 @@ Use the following URIs to open various pages of the Settings app.
 | Permissions & History | ms-settings:cortana-permissions |
 | More details | ms-settings:cortana-moredetails |
 | Cortana across my devices | ms-settings:cortana-notifications |
-| Talk to Cortana | ms-settings:cortana-language |
+| Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
 > [!NOTE] 
 > This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
@@ -101,7 +113,7 @@ Use the following URIs to open various pages of the Settings app.
 | AutoPlay | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | Connected Devices | ms-settings:connecteddevices |
-| Default camera | ms-settings:camera |
+| Default camera | ms-settings:camera (**Deprecated in Windows 10, version 1809 and later**) |
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Printers & scanners | ms-settings:printers |
@@ -118,6 +130,7 @@ Use the following URIs to open various pages of the Settings app.
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
 | Color filters | ms-settings:easeofaccess-colorfilter |
+| Cursor & pointer size | ms-settings:easeofaccess-cursorandpointersize |
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
@@ -127,7 +140,7 @@ Use the following URIs to open various pages of the Settings app.
 | Magnifier | ms-settings:easeofaccess-magnifier |
 | Mouse | ms-settings:easeofaccess-mouse |
 | Narrator | ms-settings:easeofaccess-narrator |
-| Other options | ms-settings:easeofaccess-otheroptions |
+| Other options | ms-settings:easeofaccess-otheroptions (**Deprecated in Windows 10, version 1809 and later**) |
 | Speech | ms-settings:easeofaccess-speechrecognition |
 
 ## Extras
@@ -145,7 +158,7 @@ Use the following URIs to open various pages of the Settings app.
 | Game DVR | ms-settings:gaming-gamedvr |
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay |
+| TruePlay | ms-settings:gaming-trueplay (**Deprecated in Windows 10, version 1809 and later**) |
 | Xbox Networking | ms-settings:gaming-xboxnetworking |
 
 ## Home page
@@ -159,7 +172,7 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings Page| URI |
 |-------------|-----|
-| Airplane mode | ms-settings:network-airplanemode (use ms-settings:proximity on Windows 8.x) |
+| Airplane mode | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Cellular & SIM | ms-settings:network-cellular |
 | Data usage | ms-settings:datausage |
 | Dial-up | ms-settings:network-dialup |
@@ -169,7 +182,7 @@ Use the following URIs to open various pages of the Settings app.
 | Mobile hotspot | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Status | ms-settings:network-status |
+| Status | ms-settings:network-status<br/>ms-settings:network |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
 | Wi-Fi Calling | ms-settings:network-wificalling (only available if Wi-Fi calling is enabled) |
@@ -180,10 +193,10 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Background | ms-settings:personalization-background |
 | Choose which folders appear on Start | ms-settings:personalization-start-places |
-| Colors | ms-settings:personalization-colors |
-| Glance | ms-settings:personalization-glance |
+| Colors | ms-settings:personalization-colors<br/>ms-settings:colors |
+| Glance | ms-settings:personalization-glance (**Deprecated in Windows 10, version 1809 and later**) |
 | Lock screen | ms-settings:lockscreen |
-| Navigation bar | ms-settings:personalization-navbar |
+| Navigation bar | ms-settings:personalization-navbar (**Deprecated in Windows 10, version 1809 and later**) |
 | Personalization (category) | ms-settings:personalization |
 | Start | ms-settings:personalization-start |
 | Taskbar | ms-settings:taskbar |
@@ -193,16 +206,16 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings Page| URI |
 |-------------|-----|
-| Your phone | ms-settings:mobile-devices  |
+| Your phone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Your Phone** app) |
 
 ## Privacy
 
 |Settings Page| URI |
 |-------------|-----|
-| Accessory apps | ms-settings:privacy-accessoryapps |
+| Accessory apps | ms-settings:privacy-accessoryapps (**Deprecated in Windows 10, version 1809 and later**) |
 | Account info | ms-settings:privacy-accountinfo |
 | Activity history | ms-settings:privacy-activityhistory |
-| Advertising ID | ms-settings:privacy-advertisingid |
+| Advertising ID | ms-settings:privacy-advertisingid (**Deprecated in Windows 10, version 1809 and later**) |
 | App diagnostics | ms-settings:privacy-appdiagnostics |
 | Automatic file downloads | ms-settings:privacy-automaticfiledownloads |
 | Background Apps | ms-settings:privacy-backgroundapps |
@@ -223,7 +236,7 @@ Use the following URIs to open various pages of the Settings app.
 | Notifications | ms-settings:privacy-notifications |
 | Other devices | ms-settings:privacy-customdevices |
 | Pictures | ms-settings:privacy-pictures |
-| Phone calls | ms-settings:privacy-phonecall |
+| Phone calls | ms-settings:privacy-phonecall (**Deprecated in Windows 10, version 1809 and later**) |
 | Radios | ms-settings:privacy-radios |
 | Speech, inking & typing |ms-settings:privacy-speechtyping |
 | Tasks | ms-settings:privacy-tasks |
@@ -248,6 +261,7 @@ Use the following URIs to open various pages of the Settings app.
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
+| Clipboard | ms-settings:clipboard |
 | Display | ms-settings:display |
 | Default Save Locations | ms-settings:savelocations |
 | Display | ms-settings:screenrotation |
@@ -266,7 +280,7 @@ Use the following URIs to open various pages of the Settings app.
 | Taskbar | ms-settings:taskbar |
 | Notifications & actions | ms-settings:notifications |
 | Remote Desktop | ms-settings:remotedesktop |
-| Phone | ms-settings:phone |
+| Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
 | Sounds | ms-settings:sounds |
 | Storage | ms-settings:storagesense |
@@ -278,9 +292,9 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
+| Language | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
-| Region & language | ms-settings:regionlanguage |
-| Speech Language | ms-settings:speech |
+| Speech | ms-settings:speech |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
 
 ## Update & security
@@ -295,7 +309,7 @@ Use the following URIs to open various pages of the Settings app.
 | Recovery | ms-settings:recovery |
 | Troubleshoot | ms-settings:troubleshoot |
 | Windows Security | ms-settings:windowsdefender |
-| Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP) |
+| Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP)<br/>ms-settings:windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-Advanced options | ms-settings:windowsupdate-options |
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
