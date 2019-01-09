@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # App management and services
 
-You can manage and view details related to each of your apps in [Partner Center, and configure services such as notifications, A/B testing, and maps.
+You can manage and view details related to each of your apps in [Partner Center](https://partner.microsoft.com/dashboard/), and configure services such as notifications, A/B testing, and maps.
 
 When working with an app in Partner Center, you'll see sections in the left navigation menu for **Services** and **App management**. You can expand these sections to access the functionality described below.
 
@@ -43,7 +43,7 @@ For more info, see [Manage product entitlements from a service](../monetize/view
 
 ## Administrator consent
 
-f your product integrates with Azure AD and calls APIs that request either [application permissions or delegated permissions](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) that require administrator consent, enter your Azure AD Client ID here. This lets administrators who acquire the app for their organization grant consent for your product to act on behalf of all users in the tenant.
+If your product integrates with Azure AD and calls APIs that request either [application permissions or delegated permissions](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) that require administrator consent, enter your Azure AD Client ID here. This lets administrators who acquire the app for their organization grant consent for your product to act on behalf of all users in the tenant.
 
 For more info, see [Requesting consent for an entire tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
