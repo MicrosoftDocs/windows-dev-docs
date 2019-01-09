@@ -584,6 +584,9 @@ In the [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/b
         ref new EventHandler<Gamepad^>(this, &MoveLookController::OnGamepadRemoved);
 ```
 
+> [!NOTE]
+> UWP apps cannot receive input from an Xbox One Controller while the app is not in focus.
+
 ### The UpdatePollingDevices method
 
 The [**UpdatePollingDevices**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782) method of the **MoveLookController** instance immediately checks to see if a gamepad is connected. If one is, we'll start reading its state with [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading). This returns the [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) struct, allowing us to check what buttons have been clicked or thumbsticks moved.
