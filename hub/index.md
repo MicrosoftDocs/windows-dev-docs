@@ -378,7 +378,7 @@ localizationpriority: medium
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
+                            <a href="https://docs.microsoft.com/windows-server/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -388,8 +388,8 @@ localizationpriority: medium
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Server 2016</h3>
-                                                <p>Learn to plan, deploy, secure, and scale Windows Server 2016.</p>
+                                                <h3>Windows Server 2019 and Windows Server 2016</h3>
+                                                <p>Learn to plan, deploy, secure, and scale Windows Server 2019 and Windows Server 2016.</p>
                                             </div>
                                         </div>
                                     </div>
