@@ -25,7 +25,7 @@ A single Azure AD tenant can be associated with multiple Partner Center accounts
 
 If your organization already uses Azure AD, follow these steps to link your Partner Center account.
 
-1.  From [Partner Center](https://partner.microsoft.com/dashboard) , select the gear icon (near the upper right corner of the dashboard) and then select **Developer settings**. In the **Settings** menu, select **Tenants**.
+1.  From [Partner Center](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Developer settings**. In the **Settings** menu, select **Tenants**.
 2.  Select **Associate Azure AD with your Partner Center account**.
 3.  Enter your Azure AD credentials for the tenant that you want to associate.
 4.  Review the organization and domain name for your Azure AD tenant. To complete the association, select **Confirm**.
