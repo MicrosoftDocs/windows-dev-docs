@@ -10,8 +10,8 @@ ms.localizationpriority: medium
 # Events and routed events overview
 
 **Important APIs**
--   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
--   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
+- [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
+- [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
 We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or Visual C++ component extensions (C++/CX) as your programming language, and XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports *routed events*: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers.
 
@@ -145,9 +145,9 @@ End Sub
 
 In C++/CX, you also use the **+=** syntax, but there are differences from the basic C# form:
 
--   No delegate inference exists, so you must use **ref new** for the delegate instance.
--   The delegate constructor has two parameters, and requires the target object as the first parameter. Typically you specify **this**.
--   The delegate constructor requires the method address as the second parameter, so the **&** reference operator precedes the method name.
+- No delegate inference exists, so you must use **ref new** for the delegate instance.
+- The delegate constructor has two parameters, and requires the target object as the first parameter. Typically you specify **this**.
+- The delegate constructor requires the method address as the second parameter, so the **&** reference operator precedes the method name.
 
 ```cppwinrt
 textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
@@ -164,11 +164,11 @@ It's not usually necessary to remove event handlers in code, even if you added t
 
 There are some rare cases where you do want to remove event handlers explicitly. These include:
 
--   Handlers you added for static events, which can't get garbage-collected in a conventional way. Examples of static events in the Windows Runtime API are the events of the [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) and [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) classes.
--   Test code where you want the timing of handler removal to be immediate, or code where you what to swap old/new event handlers for an event at run time.
--   The implementation of a custom **remove** accessor.
--   Custom static events.
--   Handlers for page navigations.
+- Handlers you added for static events, which can't get garbage-collected in a conventional way. Examples of static events in the Windows Runtime API are the events of the [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) and [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) classes.
+- Test code where you want the timing of handler removal to be immediate, or code where you what to swap old/new event handlers for an event at run time.
+- The implementation of a custom **remove** accessor.
+- Custom static events.
+- Handlers for page navigations.
 
 [**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) or [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) are possible event triggers that have appropriate positions in state management and object lifetime such that you can use them for removing handlers for other events.
 
@@ -190,31 +190,43 @@ If you need to remove an event handler in C++/CX, you'll need a registration tok
 
 The Windows Runtime with C#, Microsoft Visual Basic or C++/CX supports the concept of a routed event for a set of events that are present on most UI elements. These events are for input and user interaction scenarios, and they are implemented on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) base class. Here's a list of input events that are routed events:
 
--   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
--   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
--   [**DragLeave**](https://msdn.microsoft.com/library/windows/apps/br208924)
--   [**DragOver**](https://msdn.microsoft.com/library/windows/apps/br208925)
--   [**Drop**](https://msdn.microsoft.com/library/windows/apps/br208926)
--   [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)
--   [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)
--   [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)
--   [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947)
--   [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)
--   [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)
--   [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)
--   [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)
--   [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)
--   [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)
--   [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)
--   [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)
--   [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)
--   [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927)
--   [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943)
+- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 A routed event is an event that is potentially passed on (*routed*) from a child object to each of its successive parent objects in an object tree. The XAML structure of your UI approximates this tree, with the root of that tree being the root element in XAML. The true object tree might vary somewhat from the XAML element nesting, because the object tree doesn't include XAML language features such as property element tags. You can conceive of the routed event as *bubbling* from any XAML object element child element that fires the event, toward the parent object element that contains it. The event and its event data can be handled on multiple objects along the event route. If no element has handlers, the route potentially keeps going until the root element is reached.
 
@@ -256,13 +268,13 @@ Certain objects participate in a relationship with the primary visual tree that 
 
 Determining whether and where in UI an element is visible to mouse, touch, and stylus input is called *hit testing*. For touch actions and also for interaction-specific or manipulation events that are consequences of a touch action, an element must be hit-test visible in order to be the event source and fire the event that is associated with the action. Otherwise, the action passes through the element to any underlying elements or parent elements in the visual tree that could interact with that input. There are several factors that affect hit testing, but you can determine whether a given element can fire input events by checking its [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) property. This property returns **true** only if the element meets these criteria:
 
--   The element's [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) property value is [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
--   The element's **Background** or **Fill** property value is not **null**. A **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) value results in transparency and hit test invisibility. (To make an element transparent but also hit testable, use a [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) brush instead of **null**.)
+- The element's [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) property value is [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
+- The element's **Background** or **Fill** property value is not **null**. A **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) value results in transparency and hit test invisibility. (To make an element transparent but also hit testable, use a [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) brush instead of **null**.)
 
 **Note**  **Background** and **Fill** aren't defined by [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), and are instead defined by different derived classes such as [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) and [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). But the implications of brushes you use for foreground and background properties are the same for hit testing and input events, no matter which subclass implements the properties.
 
--   If the element is a control, its [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property value must be **true**.
--   The element must have actual dimensions in layout. An element where either [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) and [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) are 0 won't fire input events.
+- If the element is a control, its [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property value must be **true**.
+- The element must have actual dimensions in layout. An element where either [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) and [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) are 0 won't fire input events.
 
 Some controls have special rules for hit testing. For example, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) has no **Background** property, but is still hit testable within the entire region of its dimensions. [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) and [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) controls are hit testable over their defined rectangle dimensions, regardless of transparent content such as alpha channel in the media source file being displayed. [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) controls have special hit testing behavior because the input can be handled by the hosted HTML and fire script events.
 
@@ -278,13 +290,13 @@ A small number of UI elements support *commanding*. Commanding uses input-relate
 
 For purposes of defining custom events, how you add the event and what that means for your class design is highly dependent on which programming language you are using.
 
--   For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
-    -   For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
-    -   Don't base your event data class on [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
-    -   If you are using custom accessors, see [Custom events and event accessors in Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
-    -   If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](http://msdn.microsoft.com/library/dd833067.aspx). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
--   For C++/CX, see [Events (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
-    -   Use named references even for your own usages of custom events. Don't use lambda for custom events, it can create a circular reference.
+- For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
+    - For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
+    - Don't base your event data class on [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
+    - If you are using custom accessors, see [Custom events and event accessors in Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
+    - If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](http://msdn.microsoft.com/library/dd833067.aspx). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
+- For C++/CX, see [Events (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
+    - Use named references even for your own usages of custom events. Don't use lambda for custom events, it can create a circular reference.
 
 You can't declare a custom routed event for Windows Runtime; routed events are limited to the set that comes from the Windows Runtime.
 
