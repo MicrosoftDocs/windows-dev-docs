@@ -36,8 +36,8 @@ A payout account is the bank account to which we send the proceeds from your sal
  
 **To set up your payout account**
 
-1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
-2.  In the left navigation menu, select **Payout account**.
+1.  In [Partner Center](https://partner.microsoft.com/dashboard), select the **Settings** gear icon in the top right corner, then select **Developer settings**.
+2.  In the left navigation menu of the settings page, select **Payout account**.
 
    > [!NOTE]
    > Because this is sensitive info, you may be prompted to sign in again.
