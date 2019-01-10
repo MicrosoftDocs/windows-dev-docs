@@ -1,6 +1,6 @@
 ---
 title: Extend your app with services, extensions, and packages
-description: Learn how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
+description: Describes how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
 ms.date: 05/7/2018
 ms.topic: article
 keywords: windows 10, uwp, extend, componentize, app service, package, extension
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Extend your app with services, extensions, and packages
 
-There are different technologies in Windows 10 that will help you extend and componentize your app. This table should help you determine which technology you should use for your scenario. It is followed by a brief description of the scenarios and technologies.
+There are many technologies in Windows 10 for extending and componentizing your app. This table should help you determine which technology you should use depending on requirements. It is followed by a brief description of the scenarios and technologies.
 
 | Scenario                           | Resource package   | Asset package      | Optional package   | Flat bundle        | App Extension      | App service        | Streaming Install  |
 |------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
@@ -25,13 +25,13 @@ There are different technologies in Windows 10 that will help you extend and com
 
 ## Scenario descriptions (the rows in the table above)
 
-**3rd party plug-ins**  
+**Third party plug-ins**  
 
 Code that you can download from the store and run from your app. For example, extensions for the Microsoft Edge browser.
 
 **In-proc code plug-ins**  
 
-Code that runs in-process with your app. Only C++ is supported. May also include content. Because the code runs in-process, a higher level of trust is assumed. You may choose not to open up this kind of extensibility to a third-party.
+Code that runs in-process with your app. Only C++ is supported. May also include content. Because the code runs in-process, a higher level of trust is assumed. You may choose not to expose this kind of extensibility to a third-party.
 
 **UX Assets (string/images)**  
 
@@ -57,7 +57,7 @@ Provides functionality to decrease the time it takes to acquire the app from the
 Reduces the size of an app by only including necessary apps or resources.
 
 **Optimize packaging**
-Optimizes the app packaging process for large scale or complex apps.
+Optimizes the app packaging process for large-scale or complex apps.
 
 **Reduce publishing time**
 Minimize the amount of time it takes to publish your app in the Store, local share, or web server.
@@ -69,11 +69,11 @@ Minimize the amount of time it takes to publish your app in the Store, local sha
 Resource packages are asset-only packages that allow your app to adapt to multiple display sizes and system languages. The resource package targets user language, system scale, and DirectX features, allowing the app to be tailored to a variety of user scenarios. Although an app package can contain several resources, the OS will only download the relevant resources per user device, saving bandwidth and disk space.
 
 **Asset package**
-Asset packages are a common, centralized source of executable, or non-executable files that are used by your app. These are typically non-processor or language specific files. For example, this might include a collection of pictures in one asset package, and videos in another asset package, both of which are used by the app. For example, this might include a collection of pictures in one asset package, and videos in another asset package. If your app supports multiple architectures and multiple languages, these assets could be included in the architecture package or resource package, but that also means the assets would be duplicated multiple times across the different architecture packages, taking up disk space. If asset packages are used, they only need to be included in the overall app package once. See [Introduction to asset packages](../packaging/asset-packages.md) to learn more.
+Asset packages are a common, centralized source of executable, or non-executable files for use by your app. These are typically non-processor or language-specific files. For example, this might include a collection of pictures in one asset package, and videos in another asset package, both of which are used by the app. If your app supports multiple architectures and multiple languages, these assets could be included in the architecture package or resource package, but that also means the assets would be duplicated multiple times across the various architecture packages, taking up disk space. If asset packages are used, they only need to be included in the overall app package once. See [Introduction to asset packages](../packaging/asset-packages.md) to learn more.
 
 **Optional package**
 
-Optional packages are used to either supplement or extend the original functionality of an app package. It's possible to publish an app, followed by publishing optional packages at a later time, or to publish both the app and optional packages simultaneously. By extending your app via an optional package, you have the advantages of distributing and monetizing content as a separate app package. Optional packages are typically intended to be developed by the original app developer, since they run with the identity of the main app (unlike app extensions). Depending on how you define your optional package, you can load code, assets, or code and assets from your optional package to your main app. If you're looking to enhance your app with content that can be monetized, licensed, and distributed separately, then optional packages might be the right choice for you. For implementation details, see [Optional packages and related set authoring](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
+Optional packages are used to either supplement or extend the original functionality of an app package. It's possible to publish an app, followed by publishing optional packages at a later time, or to publish both the app and optional packages simultaneously. By extending your app via an optional package, you have the advantages of distributing and monetizing content as a separate app package. Optional packages are typically intended to be developed by the original app developer, since they run with the identity of the main app (unlike app extensions). Depending on how you define your optional package, you can load code, assets, or code and assets from your optional package to your main app. If you need to enhance your app with content that can be monetized, licensed, and distributed separately, then optional packages might be the right choice for you. For implementation details, see [Optional packages and related set authoring](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
 
 **Flat bundle**
 [Flat bundle app packages](../packaging/flat-bundles.md) are similar to regular app bundles, except that instead of including all of the app packages within the folder, the flat bundle only contains *references* to those app packages. By containing references to app packages instead of the files themselves, a flat bundle will reduce the amount of time it takes to package and download an app.
@@ -88,9 +88,9 @@ Applications cannot load code from extensions. If you need code execution, consi
 
 **App Service**
 
-Windows app services enable app-to-app communication by allowing your UWP app to provide services to other Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details.
+Windows app services enable app-to-app communication by allowing your UWP app to provide services to another Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details.
 
-App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.
+App services are UWP apps that provide services to other UWP apps. They are analogous to web services on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.
 
 **UWP App Streaming install**
 
