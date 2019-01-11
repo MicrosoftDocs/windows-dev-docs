@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop applications
-ms.date: 09/21/2018
+ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
@@ -12,7 +12,7 @@ ms.custom: RS5
 > [!NOTE]
 > XAML islands are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These APIs and controls will continue to mature and stabilize in future Windows releases. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 >
-> If you have feedback about XAML islands, send your feedback to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
+> If you have feedback about XAML islands, create a new issue in the [WindowsCommunityToolkit repo](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
 
 Windows 10 now enables you to use UWP controls in non-UWP desktop applications so that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Windows Ink](../design/input/pen-and-stylus-interactions.md) and controls that support the [Fluent Design System](../design/fluent-design-system/index.md) in your existing WPF, Windows Forms, and C++ Win32 applications. This developer scenario is sometimes called *XAML islands*.
 
