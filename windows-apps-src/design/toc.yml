@@ -147,8 +147,6 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
-        - name: Hub
-          href: controls-and-patterns/hub.md
         - name: Master/details
           href: controls-and-patterns/master-details.md
         - name: Navigation view

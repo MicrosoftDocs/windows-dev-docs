@@ -256,7 +256,6 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 
 ## Related articles
 
-- [Hub](hub.md)
 - [Master/details](master-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)

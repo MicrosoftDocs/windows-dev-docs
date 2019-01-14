@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/design/controls-and-patterns/hub.md",
+      "redirect_url": "/windows/uwp/design/basics/navigation-basics",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/files/protect-your-enterprise-data-with-edp.md",
       "redirect_url": "/windows/uwp/files/../enterprise/wip-dev-guide",
       "redirect_document_id": false

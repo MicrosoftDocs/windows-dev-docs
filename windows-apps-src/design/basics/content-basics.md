@@ -32,11 +32,6 @@ Landing pages, also known as hero screens, often appear at the top level of an a
 
 Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
 
-### Hub
-
-![hub](images/content-basics/hub.png)
-
-[Hubs](../controls-and-patterns/hub.md) are designed for window shopping. Users get a good sneak peak at the content that's offered; it's all about showing a great diversity of content while keeping the amount brief. For example, Hub section 1 could contain a hero screen, Hub section 2 could contain a collection, Hub section 3 could contain another collection, and so on.
 
 ### Master/detail
 
