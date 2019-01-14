@@ -112,7 +112,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### Navigation Within a Page
 
-When navigating between panels or views within an app's page (see [Hub](../controls-and-patterns/hub.md) or [Tabs and Pivots](../controls-and-patterns/tabs-pivot.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
+When navigating between panels or views within an app's page (see [Tabs and Pivots](../controls-and-patterns/tabs-pivot.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
 
 The audio experience around this navigation concept is encompassed by the **MovePrevious** and **MoveNext** sounds.
 
