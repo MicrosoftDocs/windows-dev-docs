@@ -64,8 +64,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="forms.md">Forms</a></li>
 
-<li style="list-style-type: none;"><a href="hub.md">Hub</a></li>
-
 <li style="list-style-type: none;"><a href="hyperlinks.md">Hyperlinks</a></li>
 
 <li style="list-style-type: none;"><a href="images-imagebrushes.md">Images and image brushes</a></li>
