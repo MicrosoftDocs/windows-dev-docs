@@ -278,15 +278,9 @@ The code examples provided above demonstrate how to handle all of these inputs.
 
 Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported to ensure backward compatibility, but we no longer recommend relying on [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Instead, your app should draw its own in-app back button.
 
-If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button:
+If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 
-- If your app is **not tabbed**, then the back button is rendered inside the title bar. The visual experience and user interactions for the back button are unchanged from previous builds.
-
-    ![Title bar back button](images/nav-back-pc.png)
-
-- If an app is **tabbed**, then the back button is rendered inside a new system back bar.
-
-    ![System drawn back button bar](images/back-nav/tabs.png)
+![Title bar back button](images/nav-back-pc.png)
 
 ### System back bar
 
