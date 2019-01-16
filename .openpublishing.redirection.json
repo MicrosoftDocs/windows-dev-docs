@@ -587,7 +587,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-docs-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-docs-september-2018",
+      "redirect_url": "/windows/uwp/whats-new/windows-docs-january-2019",
       "redirect_document_id": false
     },
     {
@@ -1653,7 +1653,7 @@
       "redirect_url": "/windows/uwp/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
       "redirect_document_id": true
     },
-    {                           
+    {
       "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer-overview.md",
       "redirect_url": "/windows/uwp/xbox-live/multiplayer/xbox-integrated-multiplayer",
       "redirect_document_id": true
