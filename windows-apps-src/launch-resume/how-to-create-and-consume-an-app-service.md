@@ -209,17 +209,9 @@ The call to [SendResponseAsync](https://msdn.microsoft.com/library/windows/apps/
 
 ## Deploy the service app and get the package family name
 
-The app service provider must be deployed before you can call it from a client. You will also need the package family name of the app service in order to call it.
+The app service provider must be deployed before you can call it from a client. You can deploy it by selecting **Build > Deploy Solution** in Visual Studio.
 
-One way to get the package family name of the app service application is to call [Windows.ApplicationModel.Package.Current.Id.FamilyName](https://msdn.microsoft.com/library/windows/apps/br224670) from within the **AppServiceProvider** project (for example, from the **App** constructor in **App.xaml.cs**) and note the result. To run **AppServiceProvider** in Visual Studio, set it as the startup project in the **Solution Explorer** window and run the project.
-
-Another way to get the package family name is to deploy the solution (**Build &gt; Deploy Solution**) and note the full package name in the **Output** window (**View &gt; Output**). You must remove the platform information from the string in the **Output** window to derive the package name. For example, if the full package name reported in the **Output** window were:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-Then you would extract `1.0.0.0\_x86\_\_`, leaving the following as the package family name:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+You will also need the package family name of the app service provider in order to call it. You can get it by opening the **AppServiceProvider** project's **Package.appxmanifest** file in the designer view (double-click it in the **Solution Explorer**). Select the **Packaging** tab, copy the value next to **Package family name**, and paste it somewhere like Notepad for now.
 
 ## Write a client to call the app service
 
