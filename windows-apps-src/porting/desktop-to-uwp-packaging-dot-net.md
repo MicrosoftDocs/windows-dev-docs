@@ -63,7 +63,7 @@ Review this guide before you begin creating a package for your application: [Pre
 **Video**
 
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
+> [!VIDEO https://www.youtube-nocookie.com/embed/fJkbYPyd08w]
 
 ## Next steps
 
