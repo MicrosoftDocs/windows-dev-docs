@@ -3,9 +3,11 @@
   items:
     - name: API additions in Windows 10, build 17763
       href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: What's new in the Windows docs, September 2018
-  href: ../whats-new/windows-docs-september-2018.md
+- name: What's new in the Windows docs, January 2019
+  href: ../whats-new/windows-docs-january-2019.md
   items:
+    - name: What's new in the Windows docs, September 2018
+      href: ../whats-new/windows-docs-september-2018.md
     - name: What's new in the Windows docs, August 2018
       href: ../whats-new/windows-docs-august-2018.md
     - name: What's new in the Windows docs, July 2018

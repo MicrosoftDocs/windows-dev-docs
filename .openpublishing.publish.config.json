@@ -51,8 +51,10 @@
     }
   ],
   "notification_subscribers": [
-    "v-mikmat@microsoft.com"
+    "mijacobs@microsoft.com",
+    " v-gmoor@microsoft.com"
   ],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     ""
   ],
@@ -60,6 +62,7 @@
   "git_repository_branch_open_to_public_contributors": "docs",
   "skip_source_output_uploading": false,
   "resolve_user_profile_using_github": true,
+  "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -87,10 +90,6 @@
     ]
   },
   "need_generate_pdf_url_template": true,
-  "targets": {
-    "Pdf": {
-      "template_folder": "_themes.pdf"
-    }
-  },
+  "targets": {},
   "need_generate_intellisense": false
 }
