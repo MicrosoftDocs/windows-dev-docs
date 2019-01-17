@@ -117,6 +117,20 @@ private:
 
 All constructors on the projected type *except* the `nullptr_t` constructor cause a backing Windows Runtime object to be created. The `nullptr_t` constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
 
+This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+The assignment creates a new **TextBlock**, and then immediately overwrites it with `value`. Here's the remedy.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
+
 ## If the API is implemented in a Windows Runtime component
 This section applies whether you authored the component yourself, or it came from a vendor.
 
