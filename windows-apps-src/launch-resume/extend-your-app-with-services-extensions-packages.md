@@ -12,7 +12,7 @@ There are many technologies in Windows 10 for extending and componentizing your 
 
 | Scenario                           | Resource package   | Asset package      | Optional package   | Flat bundle        | App Extension      | App service        | Streaming Install  |
 |------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
-| 3rd party code plug-ins            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
+| Third-party code plug-ins            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | In-proc code plug-ins              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
 | UX Assets (strings/images)         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
 | On demand content <br/> (e.g. additional Levels) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
@@ -25,7 +25,7 @@ There are many technologies in Windows 10 for extending and componentizing your 
 
 ## Scenario descriptions (the rows in the table above)
 
-**Third party plug-ins**  
+**Third-party plug-ins**  
 
 Code that you can download from the store and run from your app. For example, extensions for the Microsoft Edge browser.
 
