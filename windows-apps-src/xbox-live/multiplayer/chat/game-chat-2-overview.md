@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 
 Game Chat 2 allows you to easily add voice and text chat communication to your app while respecting your players' privacy settings and fulfilling the Xbox Requirements for Xbox One Games and Hub Apps relating to voice and text chat. For players that have enabled speech-to-text or text-to-speech conversion via the Ease of Access - Game Chat Transcription settings, Game Chat 2 will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
 
+> [!NOTE]
+> If you are looking for an API specific reference, you can find it in the downloadable Xbox Live API Compiled HTML Help (.chm) file [here](https://aka.ms/xboxliveuwpdocs).
+
 - **Communication Relationships** - Game Chat 2 gives you fine-grained control over how your players can communicate with each others. Rather than specifying teams or channels, Game Chat 2 requires that explicit relationships between each pair of users be defined. Game Chat 2 communication relationships support uni and bi-directional communication between any pair of players. Voice and text communication relationships can be set independently of each other.
 
 - **Accessibility** - Game Chat 2 supports speech-to-text and text-to-speech. When enabled, Game Chat 2 will respect the "Game Chat Transcription" preference of your players and will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
