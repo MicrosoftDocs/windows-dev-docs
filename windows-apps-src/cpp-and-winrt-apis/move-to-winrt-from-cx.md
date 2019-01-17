@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from C++/CX
-ms.date: 10/18/2018
+ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
@@ -39,7 +39,7 @@ If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/
 ## Parameter-passing
 When writing C++/CX source code, you pass C++/CX types as function parameters as hat (\^) references.
 
-```cpp
+```cppcx
 void LogPresenceRecord(PresenceRecord^ record);
 ```
 
@@ -55,7 +55,7 @@ A C++/WinRT object is fundamentally a value that holds an interface pointer to t
 ## Variable and field references
 When writing C++/CX source code, you use hat (\^) variables to reference Windows Runtime objects, and the arrow (-&gt;) operator to dereference a hat variable.
 
-```cpp
+```cppcx
 IVectorView<User^>^ userList = User::Users;
 
 if (userList != nullptr)
@@ -64,7 +64,7 @@ if (userList != nullptr)
     ...
 ```
 
-When porting to the equivalent C++/WinRT code, you basically remove the hats and change the arrow operator (-&gt;) to the dot operator (.), because C++/WinRT projected types are values, and not pointers.
+When porting to the equivalent C++/WinRT code, you can get a long way by removing the hats, and changing the arrow operator (-&gt;) to the dot operator (.). C++/WinRT projected types are values, and not pointers.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -75,6 +75,19 @@ if (userList != nullptr)
     ...
 ```
 
+The default constructor for a C++/CX hat pointer initializes it to null. Here's a C++/CX code example in which we create a variable/field of the correct type, but one that's uninitialized. In other words, it doesn't initially refer to a **TextBlock**; we intend to assign a reference later.
+
+```cppcx
+TextBlock^ textBlock;
+
+class MyClass
+{
+    TextBlock^ textBlock;
+};
+```
+
+For the equivalent in C++/WinRT, see [Delayed initialization](consume-apis.md#delayed-initialization).
+
 ## Properties
 The C++/CX language extensions include the concept of properties. When writing C++/CX source code, you can access a property as if it were a field. Standard C++ does not have the concept of a property so, in C++/WinRT, you call get and set functions.
 
@@ -83,7 +96,7 @@ In the examples that follow, **XboxUserId**, **UserState**, **PresenceDeviceReco
 ### Retrieving a value from a property
 Here's how you get a property value in C++/CX.
 
-```cpp
+```cppcx
 void Sample::LogPresenceRecord(PresenceRecord^ record)
 {
     auto id = record->XboxUserId;
@@ -108,7 +121,7 @@ Note that the **PresenceDeviceRecords** function returns a Windows Runtime objec
 ### Setting a property to a new value
 Setting a property to a new value follows a similar pattern. First, in C++/CX.
 
-```cpp
+```cppcx
 record->UserState = newValue;
 ```
 
@@ -121,7 +134,7 @@ record.UserState(newValue);
 ## Creating an instance of a class
 You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to activate a new instance of the runtime class.
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -145,7 +158,7 @@ private:
 
 If a resource is expensive to initialize, then it's common to delay initialization of it until it's actually needed.
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -183,7 +196,7 @@ private:
 ## Converting from a base runtime class to a derived one
 It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
 
-```cpp
+```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
 {
     BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
@@ -220,19 +233,21 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ## Event-handling with a delegate
 Here's a typical example of handling an event in C++/CX, using a lambda function as a delegate in this case.
 
-```cpp
-auto token = myButton->Click += ref new RoutedEventHandler([&](Platform::Object^ sender, RoutedEventArgs^ args)
+```cppcx
+auto token = myButton->Click += ref new RoutedEventHandler([=](Platform::Object^ sender, RoutedEventArgs^ args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
 This is the equivalent in C++/WinRT.
 
 ```cppwinrt
-auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs const& args)
+auto token = myButton().Click([=](IInspectable const& sender, RoutedEventArgs const& args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
@@ -243,7 +258,7 @@ If you're porting from a C++/CX codebase where events and delegates are used int
 ## Revoking a delegate
 In C++/CX you use the `-=` operator to revoke a prior event registration.
 
-```cpp
+```cppcx
 myButton->Click -= token;
 ```
 
@@ -271,7 +286,7 @@ The **Platform::Agile\^** type in C++/CX represents a Windows Runtime class that
 
 In C++/CX.
 
-```cpp
+```cppcx
 Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
@@ -288,7 +303,7 @@ To port to C++/WinRT, change all code that uses **Platform::Exception\^** to use
 
 In C++/CX.
 
-```cpp
+```cppcx
 catch (Platform::Exception^ ex)
 ```
 
@@ -320,7 +335,7 @@ Note that each class (via the **hresult_error** base class) provides a [**to_abi
 
 Here's an example of throwing an exception in C++/CX.
 
-```cpp
+```cppcx
 throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 ```
 
@@ -342,21 +357,21 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
 
-```C++
-auto var = titleRecord->TitleName->Data();
+```cppcx
+auto var{ titleRecord->TitleName->Data() };
 ```
 
 To do the same with C++/WinRT, you can use the [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) function to get a null-terminated C-style string version, just as you can from **std::wstring**.
 
-```C++
-auto var = titleRecord.TitleName().c_str();
+```cppwinrt
+auto var{ titleRecord.TitleName().c_str() };
 ```
 
 When it comes to implementing APIs that take or return strings, you typically change any C++/CX code that uses **Platform::String\^** to use **winrt::hstring** instead.
 
 Here's an example of a C++/CX API that takes a string.
 
-```cpp
+```cppcx
 void LogWrapLine(Platform::String^ str);
 ```
 
@@ -371,6 +386,22 @@ The C++/WinRT toolchain will then generate source code for you that looks like t
 
 ```cppwinrt
 void LogWrapLine(winrt::hstring const& str);
+```
+
+#### ToString()
+
+C++/CX provides the [Object::ToString](/cpp/cppcx/platform-object-class?view=vs-2017#tostring) method.
+
+```cppcx
+int i{ 2 };
+auto s{ i.ToString() }; // s is a Platform::String^ with value L"2".
+```
+
+C++/WinRT doesn't directly provide this facility, but you can turn to alternatives.
+
+```cppwinrt
+int i{ 2 };
+auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## Important APIs
