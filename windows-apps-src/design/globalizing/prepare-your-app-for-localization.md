@@ -74,6 +74,16 @@ Using an informal voice or tone in your strings is a valid choice. You can use c
 
 Pseudo-localize your app to uncover any localizability issues. Pseudo-localization is a kind of localization dry-run, or disclosure test. You produce a set of resources that are not really translated; they only look that way. Your strings are approximately 40% longer than in the default language, for example, and they have delimiters in them so that you can see at a glance whether they have been truncated in the UI.
 
+## Deployment Considerations
+
+When you install your app that contains localized language data you may find that only the default language is available for the app even though you initially included resources for multiple languages. This occurs because of the way the installation process is optimized to only install language resources that match the current language and culture of the device. This means that if your device is configured for en-us when you install the app only the en-us language resources will be installed. If you change the default language of the Operating System the app will still only display en-us resources because it is the only language installed for the app. At this time there is no way to install additional language support for your app after the initial installation. 
+
+If you would like to make sure that all language resources are available after installation you can cerate a configuration file for the app package that specifies that certain resources are required during installation. In this configuration file you can require any resource be installed including the language resources. For more information on guaranteeing resources are installed please refer to this document:  [Ensure that resources are installed on a device regardless of whether a device requires them](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
+ 
+This optimized installation feature is automatically enabled when you generate an appxbundle for your app during packaging. Optionally to ensure that all resources are installed you can disable appxbundle generation when you package your app. This is not recommended however because it may increase the installation time of your app. Instead you should create a packaging configuration file as per the previous paragraph and only require the necessary resources allowing the installer to continue to optimize away unneeded resources. 
+ 
+You can disable appxbundle generation and include all packaged resources by setting the “Generate App Bundle” attribute to “never”. 
+
 ## Geopolitical awareness
 
 Avoid political offense in maps or when referring to regions. Maps might include controversial regional or national boundaries, and they're a frequent source of political offense. Be careful that any UI used for selecting a nation refers to it as a &quot;country/region&quot;. Listing a disputed territory in a list labeled &quot;countries&quot;&mdash;such as in an address form&mdash;might offend some users.
