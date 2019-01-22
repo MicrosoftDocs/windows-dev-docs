@@ -16,7 +16,7 @@ To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/in
 ## A C++/WinRT quick-start
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
