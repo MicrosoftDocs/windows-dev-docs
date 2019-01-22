@@ -19,7 +19,7 @@ The `.appinstaller` file can be hosted in a shared location like a HTTP endpoint
 You can either configure the `TargetPlatformMinVersion` property when you create the project, or change it later from the project properties. 
 
 >[!IMPORTANT]
-> The app installer file is only generated when the `TargetPlatformMinVersion` is Windows 10, Version 1804 or greater.
+> The app installer file is only generated when the `TargetPlatformMinVersion` is Windows 10, Version 1803 or greater.
 
 
 ### Create Packages
