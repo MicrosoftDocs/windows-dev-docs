@@ -15,7 +15,7 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](index.md#topics-about-cwinrt) includes info about both interoperating with, and porting from, C++/CX and WRL.
 
 > [!IMPORTANT]
-> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, and the VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
+> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, and the VSIX](#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
