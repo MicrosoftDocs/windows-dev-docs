@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Create an App Installer file with Visual Studio
 
-Starting with Windows 10, Version 1804, and Visual Studio 2017, Update 15.7, sideloaded apps can be configured to receive automatic updates using an `.appinstaller` file. Visual Studio supports enabling these updates.
+Starting with Windows 10, Version 1803, and Visual Studio 2017, Update 15.7, sideloaded apps can be configured to receive automatic updates using an `.appinstaller` file. Visual Studio supports enabling these updates.
 
 ## App Installer file location
 The `.appinstaller` file can be hosted in a shared location like a HTTP endpoint or a UNC shared folder, and includes the path to find the app packages to be installed. Users install the app from the shared location and enable periodic checks for new updates. 
@@ -19,7 +19,7 @@ The `.appinstaller` file can be hosted in a shared location like a HTTP endpoint
 You can either configure the `TargetPlatformMinVersion` property when you create the project, or change it later from the project properties. 
 
 >[!IMPORTANT]
-> The app installer file is only generated when the `TargetPlatformMinVersion` is Windows 10, Version 1804 or greater.
+> The app installer file is only generated when the `TargetPlatformMinVersion` is Windows 10, Version 1803 or greater.
 
 
 ### Create Packages
