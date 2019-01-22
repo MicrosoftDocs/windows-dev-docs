@@ -18,7 +18,7 @@ Let's say that a runtime class named **BookSku** has a property named **Title**.
 A XAML text element, or control, can bind to, and handle, these events by retrieving the updated value(s) and then updating itself to show the new value.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## Create a Blank App (Bookstore)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Universal** > **Blank App (C++/WinRT)** project, and name it *Bookstore*.

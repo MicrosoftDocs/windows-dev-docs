@@ -41,7 +41,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## Example project showing the two helper functions in use
 
-To reproduce, in a simple way, the scenario of gradually porting the code in a C++/CX project to C++/WinRT, you can begin by creating a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).
+To reproduce, in a simple way, the scenario of gradually porting the code in a C++/CX project to C++/WinRT, you can begin by creating a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)).
 
 This example project also illustrates how you can use namespace aliases for the different islands of code, in order to deal with otherwise potential namespace collisions between the C++/WinRT projection and the C++/CX projection.
 
