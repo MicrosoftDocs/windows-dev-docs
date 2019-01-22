@@ -60,7 +60,7 @@ Static functions can be specified using XMLNamespace:ClassName.MethodName syntax
 
 ```xaml
 <Page 
-     xmlns:local="using:MyPage">
+     xmlns:local="using:MyNamespace">
      ...
     <StackPanel>
         <TextBlock x:Name="BigTextBlock" FontSize="20" Text="Big text" />
@@ -70,9 +70,12 @@ Static functions can be specified using XMLNamespace:ClassName.MethodName syntax
 </Page>
 ```
 ```csharp
-static public class MyHelpers
+namespace MyNamespace
 {
-    public static double Half(double value) => value / 2.0;
+    static public class MyHelpers
+    {
+        public static double Half(double value) => value / 2.0;
+    }
 }
 ```
 
@@ -80,7 +83,7 @@ You can also use system functions directly in markup to accomplish simple scenar
 ```xaml
 <Page 
      xmlns:sys="using:System"
-     xmlns:local="using:MyPage">
+     xmlns:local="using:MyNamespace">
      ...
      <CalendarDatePicker Date="{x:Bind sys:DateTime.Parse(TextBlock1.Text)}" />
      <TextBlock Text="{x:Bind sys:String.Format('{0} is now available in {1}', local:MyPage.personName, local:MyPage.location)}" />
