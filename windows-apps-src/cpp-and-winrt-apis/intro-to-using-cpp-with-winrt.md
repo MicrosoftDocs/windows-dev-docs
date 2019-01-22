@@ -28,7 +28,7 @@ As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains 
 
 With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
 
-## Visual Studio support for C++/WinRT, and the VSIX
+## Visual Studio support for C++/WinRT, XAML, and the VSIX
 For C++/WinRT project templates in Visual Studio, as well as C++/WinRT MSBuild properties and targets, download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 > [!NOTE]
@@ -64,6 +64,8 @@ A project template for a C++/WinRT client application for Windows Desktop, with 
 A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface.
 
 Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement your local runtime classes. We recommend that you declare each runtime class in its own IDL file.
+
+Visual Studio's XAML design surface support for C++/WinRT is close to parity with C#. One exception is the **Events** tab of the **Properties** window. With a C# project, you can use that tab to add event handlers; with a C++/WinRT project, that facility is not present. But see [Handle events by using delegates in C++/WinRT](handle-events.md) for info on how to add event handlers to your code.
 
 ### Core App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.
