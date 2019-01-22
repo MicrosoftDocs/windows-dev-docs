@@ -78,7 +78,7 @@ Here’s the same TextBox and Grid with Margin and Padding values on the TextBox
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4" Width="200">
-    <TextBox Text="This is text in a TextBox." Margin="20" Padding="24,16"/>
+    <TextBox Text="This is text in a TextBox." Margin="20" Padding="16,24"/>
 </Grid>
 ```
 
