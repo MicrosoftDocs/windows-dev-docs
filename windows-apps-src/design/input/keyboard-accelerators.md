@@ -247,7 +247,26 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## Override default keyboard behavior
 
-In some cases, you might need to override the default behavior of specific keys such as the Backspace key or the Enter key. For example, 
+Some controls have keyboard accelerators that handled the keystrokes and, as a consequence, the app keyboard accelerators won't be executed when the focus is on these controls. For example, the TextBox control has built-in keyboard accelerator Control+C  for copying the selected text. When the focus is on the TextBox, and the user presses Control+C, only this keyboard accelerator will be executed.  Others Control+C Keyboard Accelerators created using this API are ignored.
+
+To override this built-in keyboard accelerator, the PreviewKeyDown API should be used.
+
+Here is a sample that overrides the behavior of Control+C on Textblock: 
+
+``` csharp
+ private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
+ {
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(Windows.System.VirtualKey.Control);
+    var isCtrlDown = ctrlState == CoreVirtualKeyStates.Down || ctrlState 
+        ==  (CoreVirtualKeyStates.Down | CoreVirtualKeyStates.Locked);
+    if (isCtrlDown && e.Key == Windows.System.VirtualKey.C)
+    {
+        // Introduce here what you want to execute on invoking keyboard accelerator
+        
+        e.Handled = true;
+    }
+ }
+```  
 
 ## Disable a keyboard accelerator 
 
