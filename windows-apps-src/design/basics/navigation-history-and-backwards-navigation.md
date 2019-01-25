@@ -293,8 +293,6 @@ The system back bar is displayed dynamically, based on back button visibility. W
 
 [Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.
 
-[Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.
-
 ## Guidelines for custom back navigation behavior
 
 If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
