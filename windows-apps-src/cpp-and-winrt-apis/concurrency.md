@@ -601,7 +601,7 @@ IAsyncAction CancellationPropagatorAsync()
     auto cancellation_token{ co_await winrt::get_cancellation_token() };
     auto nested_coroutine{ NestedCoroutineAsync() };
 
-    cancellation_token.callback([&]
+    cancellation_token.callback([=]
     {
         nested_coroutine.Cancel();
     });
