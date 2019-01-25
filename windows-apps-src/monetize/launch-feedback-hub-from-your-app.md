@@ -14,6 +14,9 @@ You can encourage your customers to leave feedback by adding a control (such as 
 To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
 
 > [!NOTE]
+> It is not possible to launch the Feedback Hub in this way on machines running 1809. Attempting to do so will cause the calling app to crash. There are currently no plans to fix it but [there is a workaround](https://stackoverflow.com/questions/53378611/storeservicesfeedbacklauncher-is-not-working/54299697#54299697).
+
+> [!NOTE]
 > Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
 
 ## How to launch Feedback Hub from your app
