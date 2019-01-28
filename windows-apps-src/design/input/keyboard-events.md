@@ -161,7 +161,8 @@ void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
     (void) e;    // Unused parameter
     this->Loaded+=ref new RoutedEventHandler(this,&amp;MainPage::ProgrammaticFocus);
 }
-void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) {
+void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) 
+{
     this->Focus(Windows::UI::Xaml::FocusState::Programmatic);
 }
 
@@ -188,7 +189,8 @@ void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::
 
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (IsCtrlKeyPressed()) {
+    if (IsCtrlKeyPressed()) 
+    {
         if (e->Key==VirtualKey::P) { DemoMovie->Play(); }
         if (e->Key==VirtualKey::A) { DemoMovie->Pause(); }
         if (e->Key==VirtualKey::S) { DemoMovie->Stop(); }
@@ -324,7 +326,7 @@ You can override key events for specific controls (such as [**GridView**](https:
 In the following example, we subclass the control and override the KeyDown behavior to move focus to the GridView content when any arrow key is pressed.
 
 ```csharp
-public class CustomGridView : GridView
+  public class CustomGridView : GridView
   {
     protected override void OnKeyDown(KeyRoutedEventArgs e)
     {
