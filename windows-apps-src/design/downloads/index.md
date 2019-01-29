@@ -121,7 +121,7 @@ A UWP sample that schedules lunches with your friends and coworkers. You create 
 
 ![Xaml controls gallery](images/xaml-controls-gallery.png)
 **XAML Controls Gallery**<br>
-This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
+This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
 
 ## Want more code?
 
