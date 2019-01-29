@@ -1,12 +1,13 @@
 ---
 description: News and changes to C++/WinRT.
 title: What's new in C++/WinRT
-ms.date: 10/03/2018
+ms.date: 01/29/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # What's new in C++/WinRT
 
 The table below contains news and changes to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) in the latest generally-available version of the Windows SDK, which is 10.0.17763.0 (Windows 10, version 1809). These changes may also be present in later SDK Insider Preview versions.
@@ -38,10 +39,7 @@ Other changes.
 - Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.
 
 > [!NOTE]
-> With version 1.0.181002.2 (or later) of the [C++/WinRT Visual Studio Extension (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix) installed, creating a new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) for that project. The Microsoft.Windows.CppWinRT NuGet package provides improved C++/WinRT project build support, making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX, is installed).
->
-> For an existing project&mdash;after you've installed version 1.0.181002.2 (or later) of the VSIX&mdash;we recommend that you open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project.
-
+> Important changes were made to the [C++/WinRT Visual Studio Extension (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix), both in version 1.0.181002.2, and then in version 1.0.190128.4. For details of these changes, and how they might affect your project, see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## Isolation from Windows SDK header files
 
