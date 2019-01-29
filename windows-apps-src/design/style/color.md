@@ -345,7 +345,7 @@ You are not limited to a container or page’s resources, and can also define th
 
 #### MyCustomTheme.xaml
 
-First, you would create a ResourceDictionary. Then place the **ColorSchemeResources** within the ThemeDictionaries and override the desired system colors:
+First, you would create a ResourceDictionary. Then place the **ColorPaletteResources** within the ThemeDictionaries and override the desired system colors:
 
 ```xaml
 <ResourceDictionary
@@ -354,11 +354,16 @@ First, you would create a ResourceDictionary. Then place the **ColorSchemeResour
     xmlns:local="using:TestApp">
 
     <ResourceDictionary.ThemeDictionaries>
-
-        <ColorSchemeResources x:Key="Default"
-            SystemBaseLowColor="LightGreen"
-            SystemBaseMediumLowColor="DarkCyan"/>
-        
+        <ResourceDictionary x:Key="Default">
+            <ResourceDictionary.MergedDictionaries>
+            
+                <ColorPaletteResources x:Key="Default"
+                    Accent="#FF0073CF" 
+                    AltHigh="#FF000000" 
+                    AltLow="#FF000000"/>
+                    
+            </ResourceDictionary>
+        </ResourceDictionary.MergedDictionaries>        
     </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
 ```
