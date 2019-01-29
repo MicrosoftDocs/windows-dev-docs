@@ -166,5 +166,5 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 |-----------------|---------------|
 | [Adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md) | A step-by-step guided experience through adaptive layouts and responsive design. | 
 | [Customer Orders Database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | See layout and forms in action on a multi-page enterprise sample. |
-| [XAML Controls Gallery](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | See a selection of XAML controls, and how they're implemented. |
+| [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) | See a selection of XAML controls, and how they're implemented. |
 | [Additional code samples](https://developer.microsoft.com//windows/samples) | Choose **Controls, layout, and text** in the category drop-down list to see related code samples. |

@@ -122,7 +122,7 @@ Get the _XAML Controls Gallery_ app from the Microsoft Store to see these contro
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a>
 
-<a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
 
 <img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
 
