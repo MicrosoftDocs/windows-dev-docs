@@ -153,7 +153,7 @@ int main()
 
 ## POST binary data over HTTP
 
-This next C++/WinRT example illustrates a POST request that uses binary content.
+The [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) code example below illustrates sending a small amount of binary data with a POST request, using the [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) class.
 
 ```cppwinrt
 // pch.h
@@ -206,6 +206,10 @@ int main()
     std::wcout << httpResponseBody;
 }
 ```
+
+To POST the contents of a binary file, you'll find it easier to use an [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) object. Construct one and, as the argument to its constructor, pass the value returned from a call to [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). That method returns a stream for the data inside your binary file.
+
+Also, if you're uploading a large files (larger than about 10MB), then we recommend that you use the Windows Runtime [Background Transfer](/uwp/api/windows.networking.backgroundtransfer) APIs.
 
 ## Exceptions in Windows.Web.Http
 
