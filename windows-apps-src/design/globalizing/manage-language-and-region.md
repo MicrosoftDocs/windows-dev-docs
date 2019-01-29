@@ -186,6 +186,9 @@ The following table contains examples of what the user would see in your app's U
 </tbody>
 </table>
 
+>[!NOTE]
+> For a list of standard country/region codes used by Microsoft, see the [Official Country/Region List](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+
 ## Important APIs
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
 * [ApplicationLanguages.ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages)
