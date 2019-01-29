@@ -66,7 +66,7 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 
 ## When to use acrylic
 
-* Use in-app acrylic for supporting UI, such as NavigationView or in-line commanding elements.
+* Use in-app acrylic for supporting UI, such as on surfaces that may overlap content when scrolled or interacted with.
 * Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dimsissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
 
 If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow on your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
