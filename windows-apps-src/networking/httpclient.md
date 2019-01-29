@@ -6,9 +6,6 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-dev_langs:
-  - csharp
-  - cppwinrt
 ---
 
 # HttpClient
@@ -100,14 +97,12 @@ catch (Exception ex)
 ```cppwinrt
 // pch.h
 #pragma once
-
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
 // main.cpp : Defines the entry point for the console application.
 #include "pch.h"
 #include <iostream>
-
 using namespace winrt;
 using namespace Windows::Foundation;
 
@@ -145,6 +140,62 @@ int main()
     {
         // Send the GET request.
         httpResponseMessage = httpClient.GetAsync(requestUri).get();
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        httpResponseBody = ex.message();
+    }
+    std::wcout << httpResponseBody;
+}
+```
+
+## POST binary data over HTTP
+
+This next C++/WinRT example illustrates a POST request that uses binary content.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+#include <sstream>
+#include <winrt/Windows.Security.Cryptography.h>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+
+int main()
+{
+    init_apartment();
+
+    // Create an HttpClient object.
+    Windows::Web::Http::HttpClient httpClient;
+
+    Uri requestUri{ L"http://www.contoso.com/post" };
+
+    auto buffer{
+    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+        L"A sentence of text by way of sample data",
+        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+    };
+    Windows::Web::Http::HttpBufferContent postContent{ buffer };
+    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    // Send the POST request asynchronously, and retrieve the response as a string.
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Send the POST request.
+        httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
         httpResponseMessage.EnsureSuccessStatusCode();
         httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
     }
