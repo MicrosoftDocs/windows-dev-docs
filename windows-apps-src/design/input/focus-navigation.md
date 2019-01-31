@@ -1,6 +1,6 @@
 ---
 title: Focus navigation for keyboard, gamepad, remote control, and accessibility tools
-Description: 
+Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: 
 template: detail.hbs
 keywords: keyboard, game controller, remote control, navigation, directional inner navigation, directional area, navigation strategy, input, user interaction, accessibility, usability
@@ -22,7 +22,7 @@ Use focus navigation to provide comprehensive and consistent interaction experie
 
 Focus navigation refers to the underlying mechanism that enables users to navigate and interact with the UI of a UWP application using a keyboard, gamepad, or remote control.
 
-> [!NOTE] 
+> [!NOTE]
 > Input devices are typically classified as pointing devices, such as touch, touchpad, pen, and mouse, and non-pointing devices, such as keyboard, gamepad, and remote control.
 
 This topic describes how to optimize a UWP application and build custom interaction experiences for users that rely on non-pointing input types. 
@@ -34,14 +34,16 @@ See [Handle pointer input](handle-pointer-input.md) for guidance on building cus
 For more general information on building apps and experiences for keyboard, see [Keyboard Interaction](keyboard-interactions.md).
 
 ## General guidance
+
 Only those UI elements that require user interaction should support focus navigation, elements that don’t require an action, such as static images, do not need keyboard focus. Screen readers and similar accessibility tools still announce these static elements, even when they are not included in focus navigation. 
 
 It is important to remember that unlike navigating with a pointer device such as a mouse or touch, focus navigation is linear. When implementing focus navigation, consider how a user will interact with your application and what the logical navigation should be. In most cases, we recommend custom focus navigation behavior follows the preferred reading pattern of the user's culture.
 
 Some other focus navigation considerations include:
+
 - Are controls grouped logically?
-- Are there groups of controls with greater importance? 
-   - If yes, do those groups contain sub-groups?
+- Are there groups of controls with greater importance?
+  - If yes, do those groups contain sub-groups?
 - Does the layout require custom directional navigation (arrow keys) and tab order?
 
 The [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook has an excellent chapter on *Designing the Logical Hierarchy*.
@@ -51,13 +53,12 @@ The [Engineering Software for Accessibility](https://www.microsoft.com/download/
 The 2D inner navigation region of a control, or control group, is referred to as its "directional area". When focus shifts to this object, the keyboard arrow keys (left, right, up, and down) can be used to navigate between child elements within the directional area.
 
 ![directional area](images/keyboard/directional-area-small.png)
-
 *2D Inner navigation region, or directional area, of a control group*
 
 You can use the [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) property (which has possible values of [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), [Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), or [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) to manage 2D inner navigation with the keyboard arrow keys.
 
-> [!NOTE]  
-> Tab order is not affected by this property. To avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.  
+> [!NOTE]
+> Tab order is not affected by this property. To avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.
 
 ### [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (default behavior)
 
@@ -68,7 +69,6 @@ When set to Auto, directional navigation behavior is determined by the element�
 Set **XYFocusKeyboardNavigation** to **Disabled** to block directional navigation to the control and its child elements.
 
 ![XYFocusKeyboardNavigation disabled behavior](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-
 *XYFocusKeyboardNavigation disabled behavior*
 
 In this example, the primary [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. However, the B3 and B4 elements are in a secondary [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) with **XYFocusKeyboardNavigation** set to **Disabled**, which overrides the primary container and disables arrow key navigation to itself and between its child elements.
@@ -126,7 +126,6 @@ Set **XYFocusKeyboardNavigation** to **Enabled** to support 2D directional navig
 When set, navigation with the arrow keys is restricted to elements within the directional area. Tab navigation is not affected, as all controls remain accessible through their tab order hierarchy.
 
 ![XYFocusKeyboardNavigation enabled behavior](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-
 *XYFocusKeyboardNavigation enabled behavior*
 
 In this example, the primary [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. The B3 and B4 elements are in a secondary [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) where **XYFocusKeyboardNavigation** is not set, which then inherits the primary container setting. The B5 element is not within a declared directional area, and does not support arrow key navigation but does support standard tab navigation behavior.
@@ -190,7 +189,6 @@ You can have multiple levels of nested directional areas. If all parent elements
 Here's an example of two nested directional areas within an element that does not explicitly support 2D directional navigation. In this case, directional navigation is not supported between the two nested areas.
 
 ![XYFocusKeyboardNavigation enabled and nested behavior](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-
 *XYFocusKeyboardNavigation enabled and nested behavior*
 
 Here’s a more complex example of three nested directional areas where:
