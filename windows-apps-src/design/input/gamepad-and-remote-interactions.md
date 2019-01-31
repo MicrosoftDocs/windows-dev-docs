@@ -1,10 +1,19 @@
 ---
+<<<<<<< HEAD
+author: Karl-Bridge-Microsoft
+Description: Optimize your app for input from Xbox gamepad and remote control.
+=======
 Description: TODO
+>>>>>>> master
 title: Gamepad and remote control interactions
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
+<<<<<<< HEAD
+ms.author: kbridge
+=======
+>>>>>>> master
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,16 +21,21 @@ ms.localizationpriority: medium
 ---
 # Gamepad and remote control interactions
 
-![Remote and D-pad](images/dpad-remote/dpad-remote.png)
+![keyboard and gamepad image](images/keyboard/keyboard-gamepad.jpg)
 
-Universal Windows Platform (UWP) apps now support gamepad and remote control input, which are the primary input devices for Xbox and TV experiences.
+***Common interaction patterns are shared between gamepad, remote control, and keyboard***
 
-UWP apps should be optimized for these input device types, just like they are for keyboard and mouse input on a PC, and touch input on a phone or tablet.
+Making sure that your app works well with gamepad and remote is the most important step in optimizing for 10-foot experiences. There are several gamepad and remote-specific improvements that you can make to optimize the user interaction experience on a device where their actions are somewhat limited.
 
-Making sure that your app works well with these input devices is a critical  step when optimizing for Xbox and the TV.
+Universal Windows Platform (UWP) apps now support gamepad and remote control input. 
 
-> [!NOTE] 
-> You can now plug in and use the gamepad with UWP apps on PC which makes validating the work easy.
+Gamepads and remote controls are the primary input devices for Xbox and TV experiences. 
+
+UWP apps should be optimized for these input device types, just like they are for keyboard and mouse input on a PC, and touch input on a phone or tablet. 
+
+Making sure that your app works well with these input devices is the most important step when optimizing for Xbox and the TV.
+
+You can now plug in and use the gamepad with UWP apps on PC which makes validating the work easy.
 
 To ensure a successful and enjoyable user experience for your UWP app when using a gamepad or remote control, you should consider the following:
 
