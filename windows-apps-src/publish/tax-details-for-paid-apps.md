@@ -1,24 +1,25 @@
 ﻿---
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
-title: Tax details for paid apps
+title: Tax details
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 01/02/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, taxes, app taxes, tax requirements, commerce expansion, tax rate
 ms.localizationpriority: medium
 ---
-# Tax details for paid apps
+# Tax details for Windows app/game developers and Azure Marketplace publishers
 
 
-To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
+To understand your tax considerations for price selection, and tax responsibility under the App Developer Agreement or Modern Publisher Agreement, see your countries/regions of distribution in the tables below.
 
 > [!NOTE]
 > The Commerce Expansion Adjustment may have payout implications in a limited set of countries/regions. For further details about the Commerce Expansion Adjustment and the markets where it applies, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the list of [affected countries/regions](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
-> Tax rates are subject to change at any time. Microsoft cannot guarantee that the rates in the tables below will always be accurate.
-> 
-> Tax responsibility for Reseller countries/regions and circumstances (as described [below](#reseller-countriesregions)) is covered by Exhibit C of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notwithstanding the information in the table below
+> Tax responsibility for Reseller countries/regions and circumstances (as described [below](#reseller-countriesregions)) is covered by Exhibit C of the [App Developer Agreement](https://docs.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement), notwithstanding the information in the table below.
+> Note that the **Payout implication** column only applies to Windows app/game developers. Tax rates noted in this column are subject to change at any time, and Microsoft cannot guarantee that the rates in the tables below will always be accurate.
+
+
 
  
 
@@ -256,9 +257,16 @@ To understand your tax considerations for price selection, payout implications, 
 | Zambia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Zimbabwe                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 
- 
+The following applies only to Azure Marketplace Publishers, notwithstanding anything to the contrary above: 
 
-## Mixed remittance countries/regions
+| Country/region                   | Tax consideration for price selection                                                                                                             | Tax management                    | 
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Australia (for purchases made through all customer purchase scenarios except Enterprise Agreement) | Price being selected is the final sale price and includes any applicable taxes. | Microsoft |
+| Australia (only for purchases made through the Enterprise Agreement customer purchase scenario) | Price being selected is the final sale price and includes any applicable taxes. | Publisher |
+| Brazil | Price being selected is the final sale price and includes any applicable taxes. | Publisher **(See Reseller countries/regions)** |
+| Mexico | Price being selected is the final sale price and includes any applicable taxes. | Publisher **(See Reseller countries/regions)** |
+
+## Mixed remittance countries/regions for Windows app/game developers
 
 
 Certain Microsoft billing partners may collect and remit sales, use, goods and services, value added or similar taxes, if any, applicable to Customers' acquisition of your App(s) or In-App Product(s) through the Store in the countries/regions listed below. The [reports](payout-summary.md#downloading-payment-transactions) that Microsoft makes available to you will identify the transactions for which a billing partner has collected sales, use, goods and services, value added or similar taxes applicable to Customers' acquisition of your App(s) or In-App Product(s) through the Store. Except for the transactions described in such reporting, neither Microsoft nor its billing services providers will remit any sales, use, goods and services, value added or other similar tax in connection with Customers' acquisition of your App(s) or In-App Product(s) in these country(s). You are responsible for reviewing the reporting provided to you and determining and complying with your obligations, if any, to register, collect, and remit taxes in connection with transactions involving your App(s) or In-App Product(s).
@@ -268,20 +276,23 @@ Certain Microsoft billing partners may collect and remit sales, use, goods and s
 | South Africa                       |
 | Vietnam                            |
 
- 
-
 ## Reseller countries/regions
 
-
 In certain countries/regions, Microsoft acts as a reseller, rather than your agent, in making your app(s) and in-app product(s) available in the Store. For further details about terms and conditions for reseller countries/regions, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+
+The following applies only to Windows app/games developers:   
 
 |                    Reseller countries/regions                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
 | China (except on mobile communication devices running Windows Phone 7.x and on personal computers running Windows 8.x) |
 | Brazil (only for purchases made via devices running Windows 10)     |
 
- 
+The following applies only to Azure Marketplace Publishers: 
 
+|                    Reseller countries/regions                                                                          |
+|------------------------------------------------------------------------------------------------------------------------|
+| Brazil (for purchases made through all customer purchase scenarios except CSP) |
+| Mexico (only for purchases made through the Enterprise Agreement customer purchase scenario) |
 
 
  
