@@ -49,9 +49,9 @@ The UWP XAML hosting API has these prerequisites.
 
 * Windows 10 Insider Preview build 17709 (or a later build) and the corresponding Insider Preview build of the Windows SDK. Because this is an evolving feature, for the best experience we recommend using the latest available build.
 
-* To use the UWP XAML hosting API in your desktop application, you'll need to configure your project so you can call UWP APIs:
+* To use the UWP XAML hosting API in your desktop application, you'll need to configure your project so that you can call UWP APIs.
 
-    * **C++ Win32:** We recommend that you configure your project to use [C++/WinRT](../cpp-and-winrt-apis/index.md). Download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the Visual Studio Marketplace and then add the ```<CppWinRTEnabled>true</CppWinRTEnabled>``` property to your .vcxproj file as described [here](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
+    * **C++ Win32:** We recommend that you configure your project to use [C++/WinRT](../cpp-and-winrt-apis/index.md). For instructions, see [Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
     * **Windows Forms and WPF:** Follow [these instructions](../porting/desktop-to-uwp-enhance.md).
 
