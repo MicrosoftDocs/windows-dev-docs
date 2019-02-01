@@ -41,7 +41,7 @@ The following code example illustrates an interoperation scenario. The example c
 
 There are two code examples below. First, a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) example (which is complete), and then a C++/CX code example (which omits the DirectWrite and Direct2D parts of the example).
 
-To use the C++/WinRT code example below, first create a new **Core App (C++/WinRT)** project in Visual Studio (for requirements, see [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-and-the-vsix)). While creating the project, select as your Target Version **Windows 10, version 1803 (10.0; Build 17134)**. That's the version against which this code was built and tested. Replace the contents of your `App.cpp` source code file with the code listing below, then build and run. The application renders the string "Hello, World!" in black text on a transparent background.
+To use the C++/WinRT code example below, first create a new **Core App (C++/WinRT)** project in Visual Studio (for requirements, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). While creating the project, select as your Target Version **Windows 10, version 1803 (10.0; Build 17134)**. That's the version against which this code was built and tested. Replace the contents of your `App.cpp` source code file with the code listing below, then build and run. The application renders the string "Hello, World!" in black text on a transparent background.
 
 ```cppwinrt
 // App.cpp

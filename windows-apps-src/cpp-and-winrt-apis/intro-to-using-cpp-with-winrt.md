@@ -1,7 +1,7 @@
 ---
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.date: 01/29/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
@@ -16,7 +16,7 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](index.md#topics-about-cwinrt) includes info about both interoperating with, and porting from, C++/CX and WRL.
 
 > [!IMPORTANT]
-> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, and the VSIX](#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
+> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
@@ -29,34 +29,30 @@ As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains 
 
 With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
 
-## Visual Studio support for C++/WinRT, XAML, and the VSIX
-For C++/WinRT project templates in Visual Studio, as well as C++/WinRT MSBuild properties and targets, download and install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
+For Visual Studio support, in addition to a minimum Windows SDK target version of 10.0.17134.0 (Windows 10, version 1803), you'll need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7), or Visual Studio 2019. If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
 
-> [!NOTE]
-> With version 1.0.181002.2 (or later) of the [VSIX extension](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix) installed, creating a new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) for that project. The Microsoft.Windows.CppWinRT NuGet package provides improved C++/WinRT project build support, making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
->
-> For an existing project&mdash;after you've installed version 1.0.181002.2 (or later) of the VSIX extension&mdash;we recommend that you open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. This step is mandatory after you've installed version 1.0.190128.4 (or later) of the VSIX extension.
+You'll need to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-You'll need Visual Studio 2017 (you'll need at least version 15.6, but we recommend at least 15.7) or Visual Studio 2019, and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option  rather than the **Sideload apps** option.
+- The VSIX extension gives you C++/WinRT project and item templates in Visual Studio, so that you can get started with C++/WinRT development.
+- In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. You can opt into it release builds by defining the symbol WINRT_NATVIS.
 
-You'll then be able to create and build, or open, a C++/WinRT project in Visual Studio, and deploy it. Alternatively, you can convert an existing project by adding the `<CppWinRTEnabled>true</CppWinRTEnabled>` property to its `.vcxproj` file.
+The Visual Studio project templates for C++/WinRT are described below. When you create a new C++/WinRT project with the latest version of the VSIX extension installed, the new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). The **Microsoft.Windows.CppWinRT** NuGet package provides C++/WinRT build support (MSBuild properties and targets), making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
 
-```xml
-<Project ...>
-    <PropertyGroup Label="Globals">
-        <CppWinRTEnabled>true</CppWinRTEnabled>
-...
-```
-
-Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+> [!IMPORTANT]
+> If you have projects that were created with (or upgraded to work with) a version of the VSIX extension earlier than 1.0.190128.4, then see [Earlier versions of the VSIX extension](#earlier-versions-of-the-vsix-extension). That section contains important info about the configuration of your projects, which you'll need to know to upgrade them to use the latest version of the VSIX extension.
 
 Because C++/WinRT uses features from the C++17 standard, it needs project property **C/C++** > **Language** > **C++ Language Standard** > **ISO C++17 Standard (/std:c++17)**. You might also want to set **Conformance mode: Yes (/permissive-)**, which further constrains your code to be standards-compliant.
 
 Another project property to be aware of is **C/C++** > **General** > **Treat Warnings As Errors**. Set this to **Yes(/WX)** or **No (/WX-)** to taste. Sometimes, source files generated by the `cppwinrt.exe` tool generate warnings until you add your implementation to them.
 
-The VSIX also gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. You can opt into it release builds by defining the symbol WINRT_NATVIS.
+With your system set up as described above, you'll be able to create and build, or open, a C++/WinRT project in Visual Studio, and deploy it.
 
-Here are the Visual Studio project templates provided by the VSIX.
+Alternatively, you can convert an existing project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or updating to) the latest version of the VSIX extension, open the existing project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. Once you've added the package, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+
+You can identify a project that uses the C++/WinRT MSBuild support by the presence of the **Microsoft.Windows.CppWinRT** NuGet package installed within the project.
+
+Here are the Visual Studio project templates provided by the VSIX extension.
 
 ### Windows Console Application (C++/WinRT)
 A project template for a C++/WinRT client application for Windows Desktop, with a console user-interface.
@@ -81,6 +77,31 @@ This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Wind
 In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. We recommend that you declare each runtime class in its own IDL file.
 
 Bundle the built Windows Runtime Component binary and its `.winmd` with the UWP app consuming them.
+
+## Earlier versions of the VSIX extension
+We recommend that you install (or update to) the latest version of the [VSIX extension](https://aka.ms/cppwinrt/vsix). It is configured to update itself by default. If you do that, and you have projects that were created with a version of the VSIX extension earlier than 1.0.190128.4, then this section contains important info about upgrading those projects to work with the new version. If you don't update, then you'll still find the info in this section useful.
+
+In terms of supported Windows SDK and Visual Studio versions, and Visual Studio configuration, the info in the [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) section above applies to earlier versions of the VSIX extension. The info below describes important differences regarding the behavior and configuration of projects created with (or upgraded to work with) earlier versions.
+
+### Created earlier than 1.0.181002.2
+If your project was created with a version of the VSIX extension earlier than 1.0.181002.2, then C++/WinRT build support was built into that version of the VSIX extension. Your project has the `<CppWinRTEnabled>true</CppWinRTEnabled>` property set in the `.vcxproj` file.
+
+```xml
+<Project ...>
+    <PropertyGroup Label="Globals">
+        <CppWinRTEnabled>true</CppWinRTEnabled>
+...
+```
+
+You can upgrade your project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or upgrading to) the latest version of the VSIX extension, open your project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for your project. Then, edit your `.vcxproj` file, and remove the `<CppWinRTEnabled>true</CppWinRTEnabled>` property.
+
+### Created with (or upgraded to) between 1.0.181002.2 and 1.0.190128.3
+If your project was created with a version of the VSIX extension between 1.0.181002.2 and 1.0.190128.3, inclusive, then the **Microsoft.Windows.CppWinRT** NuGet package was installed in the project automatically by the project template. You might also have upgraded an older project to use a version of the VSIX extension in this range. If you did, then&mdash;since build support was also still present in versions of the VSIX extension in this range&mdash;your upgraded project may or may not have the **Microsoft.Windows.CppWinRT** NuGet package installed.
+
+To upgrade your project, follow the instructions in the previous section and ensure that your project does have the **Microsoft.Windows.CppWinRT** NuGet package installed. Then, also remove the `<CppWinRTEnabled>true</CppWinRTEnabled>` property.
+
+### Invalid upgrade configurations
+With the latest version of the VSIX extension, it's not valid for a project to have the `<CppWinRTEnabled>true</CppWinRTEnabled>` property if it doesn't also have the **Microsoft.Windows.CppWinRT** NuGet package installed. A project with this configuration produces the build error message, "The C++/WinRT VSIX no longer provides project build support.  Please add a project reference to the Microsoft.Windows.CppWinRT Nuget package."
 
 ## Custom types in the C++/WinRT projection
 In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
