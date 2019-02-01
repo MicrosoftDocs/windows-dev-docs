@@ -93,15 +93,19 @@ If your project was created with a version of the VSIX extension earlier than 1.
 ...
 ```
 
-You can upgrade your project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or upgrading to) the latest version of the VSIX extension, open your project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for your project. Then, edit your `.vcxproj` file, and remove the `<CppWinRTEnabled>true</CppWinRTEnabled>` property.
+You can upgrade your project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or upgrading to) the latest version of the VSIX extension, open your project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for your project.
 
 ### Created with (or upgraded to) between 1.0.181002.2 and 1.0.190128.3
 If your project was created with a version of the VSIX extension between 1.0.181002.2 and 1.0.190128.3, inclusive, then the **Microsoft.Windows.CppWinRT** NuGet package was installed in the project automatically by the project template. You might also have upgraded an older project to use a version of the VSIX extension in this range. If you did, then&mdash;since build support was also still present in versions of the VSIX extension in this range&mdash;your upgraded project may or may not have the **Microsoft.Windows.CppWinRT** NuGet package installed.
 
-To upgrade your project, follow the instructions in the previous section and ensure that your project does have the **Microsoft.Windows.CppWinRT** NuGet package installed. Then, also remove the `<CppWinRTEnabled>true</CppWinRTEnabled>` property.
+To upgrade your project, follow the instructions in the previous section and ensure that your project does have the **Microsoft.Windows.CppWinRT** NuGet package installed.
 
 ### Invalid upgrade configurations
 With the latest version of the VSIX extension, it's not valid for a project to have the `<CppWinRTEnabled>true</CppWinRTEnabled>` property if it doesn't also have the **Microsoft.Windows.CppWinRT** NuGet package installed. A project with this configuration produces the build error message, "The C++/WinRT VSIX no longer provides project build support.  Please add a project reference to the Microsoft.Windows.CppWinRT Nuget package."
+
+As mentioned above, a C++/WinRT project now needs to have the NuGet package installed in it.
+
+Since the `<CppWinRTEnabled>` element is now obsolete, you can optionally edit your `.vcxproj`, and delete the element. It's not strictly necessary, but it's an option.
 
 ## Custom types in the C++/WinRT projection
 In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
