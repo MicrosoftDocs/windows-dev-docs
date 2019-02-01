@@ -1,7 +1,7 @@
 ---
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
-ms.date: 06/15/2018
+ms.date: 01/22/2019
 ms.topic: article
 keywords: windows 10, uwp, ratings, reviews
 ms.localizationpriority: medium
@@ -15,42 +15,91 @@ You can add code to your Universal Windows Platform (UWP) app to programmaticall
 When you are ready to analyze your ratings and reviews data, you can view the data in Partner Center or use the Microsoft Store analytics API to retrieve this data programmatically.
 
 > [!IMPORTANT]
-> When adding a rating function within your app, all reviews must send the user to the Store’s rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> When adding a rating function within your app, all reviews must send the user to the Store's rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## Show a rating and review dialog in your app
 
-To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. Pass the integer 16 to the *requestKind* parameter and an empty string to the *parametersAsJson* parameter as shown in this code example. This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft, and it requires using statements for the **Windows.Services.Store**, **System.Threading.Tasks**, and **Newtonsoft.Json.Linq** namespaces.
+To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. 
 
 > [!IMPORTANT]
 > The request to show the rating and review dialog must be called on the UI thread in your app.
 
 ```csharp
-public async Task<bool> ShowRatingReviewDialog()
-{
-    StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
-        StoreContext.GetDefault(), 16, String.Empty);
+using Windows.ApplicationModel.Store;
 
-    if (result.ExtendedError == null)
+private StoreContext _storeContext;
+
+public async Task Initialize()
+{
+    if (App.IsMultiUserApp) // pseudo-code
     {
-        JObject jsonObject = JObject.Parse(result.Response);
-        if (jsonObject.SelectToken("status").ToString() == "success")
-        {
-            // The customer rated or reviewed the app.
-            return true;
-        }
+        IReadOnlyList<User> users = await User.FindAllAsync();
+        User firstUser = users[0];
+        _storeContext = StoreContext.GetForUser(firstUser);
+    }
+    else
+    {
+        _storeContext = StoreContext.GetDefault();
+    }
+}
+
+private async Task PromptUserToRateApp()
+{
+    // Check if we’ve recently prompted user to review, we don’t want to bother user too often and only between version changes
+    if (HaveWePromptedUserInPastThreeMonths())  // pseudo-code
+    {
+        return;
     }
 
-    // There was an error with the request, or the customer chose not to
-    // rate or review the app.
-    return false;
+    StoreRateAndReviewResult result = await 
+        _storeContext.RequestRateAndReviewAppAsync();
+
+    // Check status
+    switch (result.Status)
+    { 
+        case StoreRateAndReviewStatus.Succeeded:
+            // Was this an updated review or a new review, if Updated is false it means it was a users first time reviewing
+            if (result.UpdatedExistingRatingOrReview)
+            {
+                // This was an updated review thank user
+                ThankUserForReview(); // pseudo-code
+            }
+            else
+            {
+                // This was a new review, thank user for reviewing and give some free in app tokens
+                ThankUserForReviewAndGrantTokens(); // pseudo-code
+            }
+            // Keep track that we prompted user and don’t do it again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+            break;
+
+        case StoreRateAndReviewStatus.CanceledByUser:
+            // Keep track that we prompted user and don’t prompt again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+
+            break;
+
+        case StoreRateAndReviewStatus.NetworkError:
+            // User is probably not connected, so we’ll try again, but keep track so we don’t try too often
+            SetUserHasBeenPromptedButHadNetworkError(); // pseudo-code
+
+            break;
+
+        // Something else went wrong
+        case StoreRateAndReviewStatus.OtherError:
+        default:
+            // Log error, passing in ExtendedJsonData however it will be empty for now
+            LogError(result.ExtendedError, result.ExtendedJsonData); // pseudo-code
+            break;
+    }
 }
 ```
 
-The **SendRequestAsync** method uses a simple integer-based request system and JSON-based data parameters to expose miscellaneous Store operations to apps. When you pass the integer 16 to the *requestKind* parameter, you issue a request to show the rating and review dialog and send the related data to the Store. This method was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For a general overview of this method, see [Send requests to the Store](send-requests-to-the-store.md).
+The **RequestRateAndReviewAppAsync** method was introduced in Windows 10, version 1809, and it can only be used in projects that target **Windows 10 October 2018 Update (10.0; Build 17763)** or a later release in Visual Studio.
 
 ### Response data for the rating and review request
 
-After you submit the request to display the rating and review dialog, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string that indicates whether the request was successful.
+After you submit the request to display the rating and review dialog, the [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) property of the [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) class contains a JSON-formatted string that indicates whether the request was successful.
 
 The following example demonstrates the return value for this request after the customer successfully submits a rating or review.
 
@@ -75,11 +124,11 @@ The following example demonstrates the return value for this request after the c
 
 The following table describes the fields in the JSON-formatted data string.
 
-|  Field  |  Description  |
-|----------------------|---------------|
-|  *status*                   |  A string that indicates whether the customer successfully submitted a rating or review. The supported values are **success** and **aborted**.   |
-|  *data*                   |  An object that contains a single Boolean value named *updated*. This value indicates whether the customer updated an existing rating or review. The *data* object is included in success responses only.   |
-|  *errorDetails*                   |  A string that contains the error details for the request. |
+| Field          | Description                                                                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| *status*       | A string that indicates whether the customer successfully submitted a rating or review. The supported values are **success** and **aborted**. |
+| *data*         | An object that contains a single Boolean value named *updated*. This value indicates whether the customer updated an existing rating or review. The *data* object is included in success responses only. |
+| *errorDetails* | A string that contains the error details for the request.                                                                                     |
 
 ## Launch the rating and review page for your app in the Store
 
