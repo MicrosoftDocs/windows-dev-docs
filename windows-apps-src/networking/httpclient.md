@@ -153,7 +153,7 @@ int main()
 
 ## POST binary data over HTTP
 
-The [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) code example below illustrates sending a small amount of binary data with a POST request, using the [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) class.
+The [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) code example below illustrates sending a small amount of binary data with a POST request, using the [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) class. Calling **get** (as seen in the code example below) isn't appropriate for a UI thread. For the correct technique to use in that case, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 ```cppwinrt
 // pch.h
