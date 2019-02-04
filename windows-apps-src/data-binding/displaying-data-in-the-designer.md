@@ -22,8 +22,8 @@ It may be impossible or undesirable (perhaps for reasons of privacy or performan
 
 **Sample apps that demonstrate {Binding}**
 
--   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
--   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
+-   Download the [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950) app.
+-   Download the [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) app.
 
 Setting DataContext in markup
 -----------------------------
@@ -95,7 +95,7 @@ All you need to do is to specify a class for the command to use. The command the
 
 The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
 
-The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](http://go.microsoft.com/fwlink/p/?LinkId=272504) topic, which is still valid for Universal Windows Platform (UWP) apps.
+The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](https://go.microsoft.com/fwlink/p/?LinkId=272504) topic, which is still valid for Universal Windows Platform (UWP) apps.
 
 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
 

@@ -97,7 +97,7 @@ In the following example, the content metadata JSON, following the standards of 
 
 * [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
-* [Adaptive cards visualizer, samples](http://adaptivecards.io/)
+* [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

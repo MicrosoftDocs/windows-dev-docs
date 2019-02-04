@@ -226,4 +226,4 @@ public class ContactItemAdapter
 
 ## Summary and next steps
 
-Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
+Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](https://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.

@@ -23,7 +23,7 @@ You can review each example to learn more about the task it demonstrates, or you
 These examples use the following libraries:
 
 * Microsoft.WindowsAzure.Storage.dll. This library is available in the [Azure SDK for .NET](https://azure.microsoft.com/downloads/), or you can obtain it by installing the [WindowsAzure.Storage NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet package from Newtonsoft.
+* [Newtonsoft.Json](https://www.newtonsoft.com/json) NuGet package from Newtonsoft.
 
 ## Main program
 

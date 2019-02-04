@@ -159,7 +159,7 @@ A Kinect sensor must be connected to the console in order to change these settin
 
 * **When idle, turn off after**: The device will shut down after it has been idle for this amount of time.
 
-* **Power mode**: The power mode of the device. See [About energy-saving and instant-on power modes](http://support.xbox.com/xbox-one/console/learn-about-power-modes) for more information.
+* **Power mode**: The power mode of the device. See [About energy-saving and instant-on power modes](https://support.xbox.com/xbox-one/console/learn-about-power-modes) for more information.
 
 * **Automatically boot console when connected to power**: The device will automatically turn on when it is connected to a power source.
 

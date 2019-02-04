@@ -29,8 +29,8 @@ To see a few different ways in which your app can access contacts and appointmen
 
 ## Related topics
 
-* [Appointments API sample](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Contact manager API sample](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Contact Picker app sample](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Handling Contact Actions sample](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Appointments API sample](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Contact manager API sample](https://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [Contact Picker app sample](https://go.microsoft.com/fwlink/p/?linkid=231575)
+* [Handling Contact Actions sample](https://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Implement ads in your app
 
-The articles in this section show you how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK. For complete sample projects, see the [advertising samples on GitHub](http://aka.ms/githubads).
+The articles in this section show you how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK. For complete sample projects, see the [advertising samples on GitHub](https://aka.ms/githubads).
 
 ## In this section
 

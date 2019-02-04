@@ -42,7 +42,7 @@ There are many reasons you may see no ads, including network errors. Other reaso
 
 If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Contact us**.
 
-You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+You can also post a question in the [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
 ## Test ads are showing in your app instead of live ads
 
@@ -85,7 +85,7 @@ Setting border-related properties inherited by the **AdControl** from its parent
 
 ## More Information
 
-For more information about the latest known issues and to post questions related to the Microsoft Advertising SDK, visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+For more information about the latest known issues and to post questions related to the Microsoft Advertising SDK, visit the [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
  
 

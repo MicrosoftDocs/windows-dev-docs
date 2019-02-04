@@ -385,7 +385,7 @@ As suggested in the third bullet, when an app calls [**NotifyLayoutCompleted**](
 ## Appendix A: Applying matrices for screen rotation (2-D)
 
 
-In the example code in [Resizing the swap chain and pre-rotating its contents](#resizing-the-swap-chain-and-pre-rotating-its-contents) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), you might have noticed that we had separate rotation matrices for Direct2D output and Direct3D output. Let's look at the 2-D matrices, first.
+In the example code in [Resizing the swap chain and pre-rotating its contents](#resizing-the-swap-chain-and-pre-rotating-its-contents) (and in the [DXGI swap chain rotation sample](https://go.microsoft.com/fwlink/p/?linkid=257600)), you might have noticed that we had separate rotation matrices for Direct2D output and Direct3D output. Let's look at the 2-D matrices, first.
 
 There are two reasons that we can't apply the same rotation matrices to Direct2D and Direct3D content:
 
@@ -482,7 +482,7 @@ The next time you present the swap chain, your 2-D image will be rotated to matc
 ## Appendix B: Applying matrices for screen rotation (3-D)
 
 
-In the example code in [Resizing the swap chain and pre-rotating its contents](#resizing-the-swap-chain-and-pre-rotating-its-contents) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), we defined a specific transformation matrix for each possible screen orientation. Now, let's look at the matrixes for rotating 3-D scenes. As before, you create a set of matrices for each of the 4 possible orientations. To prevent rounding errors and thus minor visual artifacts, declare the matrices explicitly in your code.
+In the example code in [Resizing the swap chain and pre-rotating its contents](#resizing-the-swap-chain-and-pre-rotating-its-contents) (and in the [DXGI swap chain rotation sample](https://go.microsoft.com/fwlink/p/?linkid=257600)), we defined a specific transformation matrix for each possible screen orientation. Now, let's look at the matrixes for rotating 3-D scenes. As before, you create a set of matrices for each of the 4 possible orientations. To prevent rounding errors and thus minor visual artifacts, declare the matrices explicitly in your code.
 
 You set up these 3-D rotation matrices as follows. The matrices shown in the following code example are standard rotation matrices for 0, 90, 180, and 270 degree rotations of the vertices that define points in the camera's 3-D scene space. Each vertex's \[x, y, z\] coordinate value in the scene is multiplied by this rotation matrix when the 2-D projection of the scene is computed.
 

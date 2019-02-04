@@ -56,5 +56,5 @@ Please see the [What's New - August 2016](1608-whats-new.md) article for what wa
 * The [Xbox Live introduction](../get-started-with-partner/get-started-with-xbox-live-partner.md) sections have been rewritten.  If you are creating a new Xbox Live enabled title, or are curious about incorporating other Xbox Live functionality into your game, you can see the new docs [here](../get-started-with-partner/get-started-with-xbox-live-partner.md).
 
 ## Tools
-* The Xbox Live Trace Analyzer which you can find at [http://aka.ms/XboxLiveTools](http://aka.ms/XboxLiveTools) now has a CERT mode.  
+* The Xbox Live Trace Analyzer which you can find at [http://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools) now has a CERT mode.  
 * Also in the Xbox Live Trace Analyzer is multi-console support.  If you pass in a Fiddler trace that contains HTTP requests for multiple console, separate reports will be generated for each one.

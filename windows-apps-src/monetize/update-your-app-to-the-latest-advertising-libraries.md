@@ -13,7 +13,7 @@ As of April 1, 2017, we no longer serve banner ads to apps that use an unsupport
 
 ## Overview
 
-UWP apps that show banner ads must use **AdControl** from the advertising libraries that are distributed in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK supports a minimum set of advertising capabilities, including the ability to serve HTML5 rich media via the [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 specification](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) from the Interactive Advertising Bureau (IAB). Many of our advertisers seek these capabilities, and we require app developers to use one of these SDK releases to help make our app ecosystem more attractive to advertisers and ultimately drive more revenue to you.
+UWP apps that show banner ads must use **AdControl** from the advertising libraries that are distributed in the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). This SDK supports a minimum set of advertising capabilities, including the ability to serve HTML5 rich media via the [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 specification](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) from the Interactive Advertising Bureau (IAB). Many of our advertisers seek these capabilities, and we require app developers to use one of these SDK releases to help make our app ecosystem more attractive to advertisers and ultimately drive more revenue to you.
 
 Before this SDK was released, we previously provided the **AdControl** class in several older advertising SDK releases. These older advertising SDK releases are no longer supported because they do not support the minimum advertising capabilities described above. As of April 1, 2017, we no longer serve banner ads to apps that use an unsupported advertising SDK release. If you have an app that still uses an unsupported advertising SDK release, you will see the following behavior:
 
@@ -21,14 +21,14 @@ Before this SDK was released, we previously provided the **AdControl** class in 
 
 * When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
 
-* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your DePartnerv Center account. If you update your app to use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
+* Any ad units that are associated with your app will be deactivated. You cannot remove these deactivated ad units from your DePartnerv Center account. If you update your app to use the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp), ignore these ad units and create new ones.
 
 * Banner ads will also no longer be served for any ad unit that is used in more than one app. Make sure that your ad units are each used in only one app.
 
-If you have an existing app (already in the Store or still under development) that displays banner ads using **AdControl** and you aren't sure which advertising SDK is being used by your app, follow the instructions in this article to determine whether you need to update your app to a supported SDK. If you encounter any issues or you need assistance, please [contact support](http://go.microsoft.com/fwlink/?LinkId=393643).
+If you have an existing app (already in the Store or still under development) that displays banner ads using **AdControl** and you aren't sure which advertising SDK is being used by your app, follow the instructions in this article to determine whether you need to update your app to a supported SDK. If you encounter any issues or you need assistance, please [contact support](https://go.microsoft.com/fwlink/?LinkId=393643).
 
 > [!NOTE]
-> If your app already uses the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps), you do not need to make any further changes to your app.
+> If your app already uses the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (for UWP apps), you do not need to make any further changes to your app.
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ If your app uses an old SDK release, follow these instructions to make sure you 
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.	Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
+3.	Install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp).
 
 ## Part 3: Update your project
 

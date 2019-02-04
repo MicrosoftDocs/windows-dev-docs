@@ -23,7 +23,7 @@ You can review each example to learn more about the task it demonstrates, or you
 These examples have the following requirements:
 
 * Add a reference to the System.Web assembly in your project.
-* Install the [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet package from Newtonsoft to your project.
+* Install the [Newtonsoft.Json](https://www.newtonsoft.com/json) NuGet package from Newtonsoft to your project.
 
 <span id="create-app-submission" />
 

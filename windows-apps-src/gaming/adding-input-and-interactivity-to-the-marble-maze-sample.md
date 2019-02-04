@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 Universal Windows Platform (UWP) games run on a wide variety of devices, such as desktop computers, laptops, and tablets. A device can have a plethora of input and control mechanisms. This document describes the key practices to keep in mind when you work with input devices and shows how Marble Maze applies these practices.
 
 > [!NOTE]
-> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 Here are some of the key points that this document discusses for when you work with input in your game:

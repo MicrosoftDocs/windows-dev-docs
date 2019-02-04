@@ -39,7 +39,7 @@ After you have an MSA token for the current user, call the GET method of the ```
 
 This method returns the product IDs of the add-ons that that are associated with the targeted offers that are available for the current user. With this information, you can offer one or more of the targeted offers as an in-app purchase to the user.
 
-The following example demonstrates how to get the targeted offers for the current user. This example is an excerpt from the [complete example](#code-example). It requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft and additional classes and **using** statements that are provided in the complete example.
+The following example demonstrates how to get the targeted offers for the current user. This example is an excerpt from the [complete example](#code-example). It requires the [Json.NET](https://www.newtonsoft.com/json) library from Newtonsoft and additional classes and **using** statements that are provided in the complete example.
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
@@ -53,7 +53,7 @@ The following code example demonstrates the following tasks:
 * Get all of the targeted offers for the current user by using the [Get targeted offers](get-targeted-offers.md) method.
 * Purchase the add-on that is associated with a targeted offer.
 
-This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft. The example uses this library to serialize and deserialize JSON-formatted data.
+This example requires the [Json.NET](https://www.newtonsoft.com/json) library from Newtonsoft. The example uses this library to serialize and deserialize JSON-formatted data.
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 

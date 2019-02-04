@@ -168,9 +168,9 @@ Push notification tags provide a way to restrict notifications to a subset of cl
 ## Server-side scripts (JavaScript backend only)
 
 
-For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context. See [Azure Mobile Services REST API Reference](http://go.microsoft.com/fwlink/p/?linkid=511139).
+For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context. See [Azure Mobile Services REST API Reference](https://go.microsoft.com/fwlink/p/?linkid=511139).
 
-A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=511140). For a reference to all available functions, see [Mobile Services server script reference](http://go.microsoft.com/fwlink/p/?linkid=257676).
+A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=511140). For a reference to all available functions, see [Mobile Services server script reference](https://go.microsoft.com/fwlink/p/?linkid=257676).
 
 The following custom API code in Notifyallusers.js is also created:
 
@@ -201,7 +201,7 @@ function sendNotifications(request) {
 
 The sendNotifications function sends a single notification as a toast notification. You can also use other types of push notifications.
 
-**Tip**  For information about how to get help while editing scripts, see [Enabling IntelliSense for server-side JavaScript](http://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Tip**  For information about how to get help while editing scripts, see [Enabling IntelliSense for server-side JavaScript](https://go.microsoft.com/fwlink/p/?LinkId=309275).
 
  
 
@@ -225,7 +225,7 @@ If you're updating live tiles with push notifications, you should also follow th
 
 You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) or [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
 
-You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=301694).
+You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=301694).
 
 **Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Running the wizard more than once per project generates code that results in overlapping calls to the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) method, which leads to a runtime exception. If you want to register for push notifications for more than one mobile service, run the wizard once and then rewrite the registration code to ensure that calls to **CreatePushNotificationChannelForApplicationAsync** do not run at the same time. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
 

@@ -62,7 +62,7 @@ The first step to unpairing a device is obtaining the [**DeviceInformation**](ht
 ## Sample
 
 
-To download a sample showing how to use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](http://go.microsoft.com/fwlink/?LinkID=620536).
+To download a sample showing how to use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](https://go.microsoft.com/fwlink/?LinkID=620536).
 
  
 

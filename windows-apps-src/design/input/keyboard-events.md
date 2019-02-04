@@ -387,16 +387,16 @@ You can make it much faster and easier for users to enter data in your app by se
 
 **Samples**
 * [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archive Samples**
-* [Input sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Input sample](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch keyboard sample](https://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Responding to the appearance of the on-screen keyboard sample](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML text editing sample](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

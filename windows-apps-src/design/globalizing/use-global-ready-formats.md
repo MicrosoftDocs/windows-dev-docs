@@ -167,7 +167,7 @@ For scenarios where you wish to provide different functionality based solely on 
 
 ## Samples
 
-* [Calendar details and math sample](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Number formatting and parsing sample](http://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Calendar details and math sample](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [Date and time formatting sample](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [Globalization preferences sample](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Number formatting and parsing sample](https://go.microsoft.com/fwlink/p/?linkid=231620)

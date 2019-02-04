@@ -294,7 +294,7 @@ For purposes of defining custom events, how you add the event and what that mean
     - For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
     - Don't base your event data class on [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
     - If you are using custom accessors, see [Custom events and event accessors in Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
-    - If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](http://msdn.microsoft.com/library/dd833067.aspx). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
+    - If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](https://msdn.microsoft.com/library/dd833067.aspx). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
 - For C++/CX, see [Events (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
     - Use named references even for your own usages of custom events. Don't use lambda for custom events, it can create a circular reference.
 
@@ -307,6 +307,6 @@ Defining a custom event is usually done as part of the exercise of defining a cu
 * [XAML overview](xaml-overview.md)
 * [Quickstart: Touch input](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
 * [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [.NET events and delegates](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [.NET events and delegates](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)

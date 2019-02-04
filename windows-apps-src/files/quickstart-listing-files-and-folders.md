@@ -19,7 +19,7 @@ Access files and folders in either a folder, library, device, or network locatio
 For guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](/uwp/api/windows.storage.applicationdata) class.
 
 > [!NOTE]
-> For a complete sample, see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> For a complete sample, see the [Folder enumeration sample](https://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## Prerequisites
 

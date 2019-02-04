@@ -40,7 +40,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning] 
-> Serious problems might occur if you modify the registry incorrectly.  For added protection, back up the registry before you modify it.  Then, you can restore the registry if a problem occurs.  For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base: <br/><br/> [322756](http://support.microsoft.com/kb/322756) How to back up and restore the registry in Windows.
+> Serious problems might occur if you modify the registry incorrectly.  For added protection, back up the registry before you modify it.  Then, you can restore the registry if a problem occurs.  For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base: <br/><br/> [322756](https://support.microsoft.com/kb/322756) How to back up and restore the registry in Windows.
 
 > [!NOTE]
 > The software decoder built into Windows 10 is provided courtesy of  [**Digimarc Corporation**](https://www.digimarc.com/).

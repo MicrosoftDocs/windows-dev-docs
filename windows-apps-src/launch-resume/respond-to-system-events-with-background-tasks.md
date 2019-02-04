@@ -82,7 +82,7 @@ To ensure that your Universal Windows app continues to run properly after you re
  
 ## Remarks
 
-To see background task registration in action, download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+To see background task registration in action, download the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 Background tasks can run in response to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) and [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) events, but you still need to [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md). You must also call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any background task type.
 
@@ -102,4 +102,4 @@ Apps can register background tasks that respond to [**TimeTrigger**](https://msd
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)

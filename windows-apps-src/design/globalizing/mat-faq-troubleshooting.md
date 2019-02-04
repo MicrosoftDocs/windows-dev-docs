@@ -77,7 +77,7 @@ Before you can use the MAT effectively, your app needs to be localizable. This i
 
 ## What is Microsoft Translator?
 
-Microsoft Translator is a cloud-based service that provides machine-based translation. Machine translation is ideal for gaining access to translation when human translation is not reasonable to obtain. You can learn more at [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220).
+Microsoft Translator is a cloud-based service that provides machine-based translation. Machine translation is ideal for gaining access to translation when human translation is not reasonable to obtain. You can learn more at [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220).
 
 The Toolkit uses the Microsoft Translator service to provide translation suggestions to you. You can see which languages are supported by Microsoft Translator when the Microsoft Translator icon is present in the Translation Languages dialog.
 
@@ -172,5 +172,5 @@ Before you start the Microsoft Store Certification process, you must exclude the
 ## Related topics
 
 * [Use the Multilingual App Toolkit 4.0](use-mat.md)
-* [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [MakePri.exe command-line options](../../app-resources/makepri-exe-command-options.md)

@@ -312,7 +312,7 @@ For a list of the provider patterns that are available in the UWP implementation
 
 A peer can report that it supports more than one pattern. If so, the override should include return path logic for each supported [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) value and return the peer in each matching case. It is expected that the caller will request only one interface at a time, and it is up to the caller to cast to the expected interface.
 
-Here's an example of a [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) and [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This code came from the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Here's an example of a [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) and [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This code came from the [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570).
 
 
 ```csharp
@@ -532,7 +532,7 @@ Beyond this, peers should be relatively conservative regarding exceptions that t
 
 ## Related topics  
 * [Accessibility](accessibility.md)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

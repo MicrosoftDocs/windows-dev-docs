@@ -14,7 +14,7 @@ Popular game engines such as [Construct 2](https://www.scirra.com/blog/176/annou
 
 HTML games are on a level playing field with any other type of game. Developers can get full access to native APIs such as controller input, Kinect, and more.
 
-Xbox One runs on the Universal Windows Platform and that means that, like other Microsoft devices, it supports Hosted Web Apps, which are applications that come completely from a server. To learn more, see [Hosted Web Apps](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm).
+Xbox One runs on the Universal Windows Platform and that means that, like other Microsoft devices, it supports Hosted Web Apps, which are applications that come completely from a server. To learn more, see [Hosted Web Apps](https://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm).
 
 
 This video goes into more detail about Packaged Web apps and Hosted Web Apps on Xbox, including how to build them.

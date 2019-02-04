@@ -23,7 +23,7 @@ Subscription add-ons for UWP apps support the following features:
 * You can add free trial periods of 1 week or 1 month to your subscription.
 * The Windows SDK [provides APIs](#code-examples) you can use in your app to get info about available subscription add-ons for the app and enable the purchase of a subscription add-on. We also provide REST APIs you can call from your services to [manage subscriptions for a user](#manage-subscriptions).
 * You can view analytic reports that provide the number of subscription acquisitions, active subscribers, and canceled subscriptions in a given time period.
-* Customers can manage their subscription on the [http://account.microsoft.com/services](http://account.microsoft.com/services) page for their Microsoft account. Customers can use this page to view all of the subscriptions they have acquired, cancel a subscription, and change the form of payment that is associated with their subscription.
+* Customers can manage their subscription on the [http://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account. Customers can use this page to view all of the subscriptions they have acquired, cancel a subscription, and change the form of payment that is associated with their subscription.
 
 ## Steps to enable a subscription add-on for your app
 
@@ -105,7 +105,7 @@ After your updated app is in the Store and customers can buy your subscription a
 
 ## Cancellations
 
-Customers can use the [http://account.microsoft.com/services](http://account.microsoft.com/services) page for their Microsoft account to view all of the subscriptions they have acquired, cancel a subscription, and change the form of payment that is associated with their subscription. When a customer cancels a subscription using this page, they continue to have access to the subscription for the duration of the current billing period. They do not get a refund for any part of the current billing period. At the end of the current billing period, their subscription is deactivated.
+Customers can use the [http://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account to view all of the subscriptions they have acquired, cancel a subscription, and change the form of payment that is associated with their subscription. When a customer cancels a subscription using this page, they continue to have access to the subscription for the duration of the current billing period. They do not get a refund for any part of the current billing period. At the end of the current billing period, their subscription is deactivated.
 
 You can also cancel a subscription on behalf of a user by using our REST API to [change the billing state of a subscription for a given user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
@@ -120,7 +120,7 @@ We do not offer grace periods for subscription billing. If we are unable to succ
 The following scenarios are not currently supported for subscription add-ons.
 
 * Selling subscriptions to customers directly via the Store is not supported at this time. Subscriptions are available for in-app purchases of digital products only.
-* Customers cannot switch subscription periods using the [http://account.microsoft.com/services](http://account.microsoft.com/services) page for their Microsoft account. To switch to a different subscription period, customers must cancel their current subscription and then purchase a subscription with a different subscription period from your app.
+* Customers cannot switch subscription periods using the [http://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account. To switch to a different subscription period, customers must cancel their current subscription and then purchase a subscription with a different subscription period from your app.
 * Tier switching is currently not supported for subscription add-ons (for example, switching a customer from a basic subscription to a premium subscription with more features).
 * [Sales](../publish/put-apps-and-add-ons-on-sale.md) and [promotional codes](../publish/generate-promotional-codes.md) are currently not supported for subscription add-ons.
 

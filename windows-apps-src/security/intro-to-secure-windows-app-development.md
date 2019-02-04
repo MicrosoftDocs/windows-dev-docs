@@ -90,7 +90,7 @@ Here’s the general workflow for calling the [**WebAuthenticationBroker**](http
 
 If the communication is successful, process the response string returned by the identity provider. If unsuccessful, process the error.
 
-Sample C# code that for this process is below. For information and a detailed walkthrough, see [WebAuthenticationBroker](web-authentication-broker.md). For a complete code sample, check out the [WebAuthenticationBroker sample on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
+Sample C# code that for this process is below. For information and a detailed walkthrough, see [WebAuthenticationBroker](web-authentication-broker.md). For a complete code sample, check out the [WebAuthenticationBroker sample on GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";

@@ -559,11 +559,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## Summary and next steps
 
-Now you have a basic understanding of how to manage appointments. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to manage appointments.
+Now you have a basic understanding of how to manage appointments. Download the [Universal Windows app samples](https://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to manage appointments.
 
 ## Related topics
 
-* [Appointments API sample](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Appointments API sample](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

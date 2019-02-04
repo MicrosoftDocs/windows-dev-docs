@@ -46,7 +46,7 @@ For developers in the Xbox Live Creators Program that are using Unity to develop
 
 This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform. This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.
 
-* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)
+* [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk)
 
 > [!NOTE]
 > - This download is not required if your developer environment is using the Windows 10 Fall Creators Update SDK or later.

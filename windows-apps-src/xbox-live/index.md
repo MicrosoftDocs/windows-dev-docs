@@ -23,7 +23,7 @@ Here are some reasons to add Xbox Live to your game:
 - With cross-device multiplayer, gamers can play with your friends regardless of whether they play on Xbox One or Windows 10 PC.
 
 > [!note]
-> These topics are intended for game developers that want to add support for Xbox Live to their game. If you are looking for consumer Xbox Live information, see [Xbox Live](http://www.xbox.com/live/).
+> These topics are intended for game developers that want to add support for Xbox Live to their game. If you are looking for consumer Xbox Live information, see [Xbox Live](https://www.xbox.com/live/).
 
 ## How Xbox Live works
 

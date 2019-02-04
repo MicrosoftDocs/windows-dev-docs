@@ -48,4 +48,4 @@ The assigned reviewer(s) may approve or reject the PR, or work with you to make 
 
 If you want to provide feedback on the docs instead of making edits yourself, you can [create an issue in the public repo](https://github.com/MicrosoftDocs/windows-uwp/issues). Select the **Issues** tab and select the **New issue** button. Be sure to include the topic title and the URL for the page. Your issue will be assigned to members of the UWP documentation team for review.
 
-* For internal issues, use the [WDG Content Request Tool](http://aka.ms/pubrequest).
+* For internal issues, use the [WDG Content Request Tool](https://aka.ms/pubrequest).

@@ -45,6 +45,6 @@ Below are some of the other items you'll find in the **Account settings** sectio
 - **Tenants**: Manage your Azure AD tenant associations. For more info, see [Associate Azure AD with your Partner Center account](associate-azure-ad-with-dev-center.md).
 - **Programs**: View details about the programs in which you are participating, and learn about other programs that may be of interest.
 - **Agreements**: View the agreements that your account has accepted.
-- **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](http://go.microsoft.com/fwlink/p/?LinkId=533897) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md). 
+- **Dev devices**: View and manage [Windows Phone 8.x devices that you've unlocked for testing](https://go.microsoft.com/fwlink/p/?LinkId=533897) and [Xbox One consoles enabled for development](../xbox-apps/devkit-activation.md). 
 
 

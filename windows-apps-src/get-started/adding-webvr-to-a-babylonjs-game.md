@@ -127,7 +127,7 @@ With the info stored in the `headset` variable, we'll now be able to choose the 
 
 ## Creating and selecting the initial camera
 
-With Babylon.js, WebVR can be added quickly by using the [`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera). This camera can take keyboard input and enables you to use a VR headset to control your "head" rotation.
+With Babylon.js, WebVR can be added quickly by using the [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera). This camera can take keyboard input and enables you to use a VR headset to control your "head" rotation.
 
 
 ### Step 1: Checking for headsets

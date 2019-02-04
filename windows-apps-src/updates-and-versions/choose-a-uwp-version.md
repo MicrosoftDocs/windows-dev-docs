@@ -14,7 +14,7 @@ Each version of Windows 10 has brought new and improved features to the UWP plat
 > [!WARNING]
 > UWP projects created in current versions of Visual Studio cannot be opened in Visual Studio 2015.
 
-The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](http://go.microsoft.com/fwlink/?LinkId=821431) in order to target that version. 
+The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](https://go.microsoft.com/fwlink/?LinkId=821431) in order to target that version. 
 
 | Version | Description |
 | --- | --- |

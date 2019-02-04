@@ -97,7 +97,7 @@ Universal Windows Platform (UWP) apps can run all supported task types without b
 * [Use a maintenance trigger](use-a-maintenance-trigger.md)
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

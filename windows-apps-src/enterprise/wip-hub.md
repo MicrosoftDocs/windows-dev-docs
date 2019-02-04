@@ -61,7 +61,7 @@ If you're ready to enlighten your app, see one of these guides:
 
 **For Desktop apps that you build by using C++**
 
-[Windows Information Protection (WIP) developer guide (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+[Windows Information Protection (WIP) developer guide (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 
 
 ## Create non-enlightened enterprise app

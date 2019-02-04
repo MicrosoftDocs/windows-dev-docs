@@ -263,7 +263,7 @@ The Banned File Check in the Windows App Certification Kit currently checks for 
 This check commonly fails when an app is using a "Release Preview" version of the file instead of the latest official release. 
 
 **Corrective actions**  
-To correct this, use the latest version of the [Bing Maps SDK](http://go.microsoft.com/fwlink/p/?linkid=614880) for UWP apps.
+To correct this, use the latest version of the [Bing Maps SDK](https://go.microsoft.com/fwlink/p/?linkid=614880) for UWP apps.
 
 #### 8.2 Private Code Signing
 Tests for the existence of private code signing binaries within the app package. 

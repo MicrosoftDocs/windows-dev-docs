@@ -16,7 +16,7 @@ In the past, you would simply put a price on your game and then wait for people 
 You can promote and monetize a UWP game in one or more of these ways:
 * Put your game in the Microsoft Store, which is a secured, online store offering [worldwide distribution](#worldwide-distribution-channel). Gamers around the world can buy your game online at the [price you set](#set-a-price-for-your-game).
 * Use APIs in the Windows SDK to create [in-game purchases](#in-game-purchases). Gamers can buy items from within your game, or buy additional content such as extra equipment, skins, maps, or game levels.
-* Use APIs in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) to display ads from ad networks. You can [display ads in your game](#display-ads-in-your-game) and offer the option for gamers to watch video ads in exchange for in-game rewards.
+* Use APIs in the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) to display ads from ad networks. You can [display ads in your game](#display-ads-in-your-game) and offer the option for gamers to watch video ads in exchange for in-game rewards.
 * [Maximize your game's potential through ad campaigns](#maximize-your-games-potential-through-ad-campaigns). Promote your game using paid, community (free), or house (free) ad campaigns to grow its user base.
 
 ## Worldwide distribution channel
@@ -161,7 +161,7 @@ For the full list of countries and regions that support ads, see [Supported mark
 
 The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) classes in the Microsoft Advertising SDK are used to help display ads in games.
 
-To get started, download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later version. For more info, see [Install the Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
+To get started, download and install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later version. For more info, see [Install the Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
 
 #### Implementation guides
 

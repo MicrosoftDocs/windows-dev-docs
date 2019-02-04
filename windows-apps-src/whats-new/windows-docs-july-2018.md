@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of July.
 
-[Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 
@@ -30,7 +30,7 @@ Check out our PWA guides to:
 
 ### Notepad
 
-Available in Windows 10 Insider Preview Build 17713, [Notepad has been updated with many new features](http://aka.ms/ant-man). Zooming, wrap-around find/replace, and support for Unix/Linux (LF) and Mac (CR) line endings are now available to [Windows Insiders](https://insider.windows.com/). 
+Available in Windows 10 Insider Preview Build 17713, [Notepad has been updated with many new features](https://aka.ms/ant-man). Zooming, wrap-around find/replace, and support for Unix/Linux (LF) and Mac (CR) line endings are now available to [Windows Insiders](https://insider.windows.com/). 
 
 ## Developer Guidance
 
@@ -68,11 +68,11 @@ In addition, we've made some updates to existing pages:
 
 ### Get Started for Devs: Create and customize a form on Windows 10
 
-Our [Get Started docs](../get-started/index.md) for Windows developers now provide hands-on experience with basic app development task. This video walks you through one of those topics, and covers the basics of creating a form UI in your app. [Watch the video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) to see the code in action, then [check out the topic yourself.](http://aka.ms/CreateForms)
+Our [Get Started docs](../get-started/index.md) for Windows developers now provide hands-on experience with basic app development task. This video walks you through one of those topics, and covers the basics of creating a form UI in your app. [Watch the video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) to see the code in action, then [check out the topic yourself.](https://aka.ms/CreateForms)
 
 ### Enhance your Bot with Project Personality chat
 
-Project Personality Chat lets you add a customizable persona to your chat bots. By integrating with the Microsoft Bot Framework SDK, you can add small-talk capabilities for a more conversational way to interact with the customers. [Watch the video](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) to learn how to implement it, then [try out the interactive demo](http://aka.ms/PersonalityChat) for a hands-on experience.
+Project Personality Chat lets you add a customizable persona to your chat bots. By integrating with the Microsoft Bot Framework SDK, you can add small-talk capabilities for a more conversational way to interact with the customers. [Watch the video](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) to learn how to implement it, then [try out the interactive demo](https://aka.ms/PersonalityChat) for a hands-on experience.
 
 ### One Dev Question
 

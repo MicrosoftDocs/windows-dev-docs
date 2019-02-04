@@ -27,7 +27,7 @@ We also focused first on adding 3D assets and then on 2D assets. For example, we
 We also needed to iterate through some of these steps multiple times during the development process. For example, as we made changes to the mesh and marble models, we had to also change some of the shader code that supports those models.
 
 > [!NOTE]
-> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 Here are some of the key points that this document discusses for when you work with DirectX and visual game content, namely, when you initialize the DirectX graphics libraries, load scene resources, and update and render the scene:

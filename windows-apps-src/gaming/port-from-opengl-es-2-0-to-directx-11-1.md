@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
 
-> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Microsoft Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Microsoft Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Microsoft Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Microsoft Store Wiki](https://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 

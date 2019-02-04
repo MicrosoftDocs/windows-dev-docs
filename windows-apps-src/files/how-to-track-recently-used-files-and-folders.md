@@ -19,7 +19,7 @@ Track files that your user accesses frequently by adding them to your app's most
 Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) class, which you obtain from the static [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) property. MRU items are stored as [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) objects, so both [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects (which represent files) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects (which represent folders) can be added to the MRU.
 
 > [!NOTE]
-> For complete samples, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994) and the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> For complete samples, see the [File picker sample](https://go.microsoft.com/fwlink/p/?linkid=619994) and the [File access sample](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## Prerequisites
 

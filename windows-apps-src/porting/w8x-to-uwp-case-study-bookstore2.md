@@ -16,9 +16,9 @@ This case study—which builds on the info given in [Bookstore1](w8x-to-uwp-case
 
 ## Downloads
 
-[Download the Bookstore2\_81 Universal 8.1 app](http://go.microsoft.com/fwlink/?linkid=532951).
+[Download the Bookstore2\_81 Universal 8.1 app](https://go.microsoft.com/fwlink/?linkid=532951).
 
-[Download the Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952).
+[Download the Bookstore2Universal\_10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532952).
 
 ## The Universal 8.1 app
 

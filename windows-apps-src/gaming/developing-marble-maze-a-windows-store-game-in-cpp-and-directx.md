@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 This topic describes how to use DirectX and Visual C++ to create a 3D Universal Windows Platform (UWP) game. The game, called Marble Maze, embraces multiple form factors such as tablets as well as traditional desktop and laptop PCs.
 
 > [!NOTE]
-> To download the Marble Maze source code, see the [sample on GitHub](http://go.microsoft.com/fwlink/?LinkId=624011).
+> To download the Marble Maze source code, see the [sample on GitHub](https://go.microsoft.com/fwlink/?LinkId=624011).
 
 > [!IMPORTANT]
 > Marble Maze illustrates design patterns that we consider to be best practices for creating UWP games. You can adapt many of the implementation details to fit your own practices and the unique requirements of the game you are developing. Feel free to use different techniques or libraries when those better suit your needs. (However, always ensure that your code passes the [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).) When we consider an implementation used here to be essential for successful game development, we emphasize it in this documentation.

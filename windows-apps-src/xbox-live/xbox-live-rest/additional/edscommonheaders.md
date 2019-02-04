@@ -41,7 +41,7 @@ ms.localizationpriority: medium
 
 | Header Name| Description| Required?| Notes|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| <b>Cache</b>| Cache Headers| yes| See <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.|
+| <b>Cache</b>| Cache Headers| yes| See <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.|
 | <b>x-xbl-errors</b>| Errors| no| List of errors from various data providers.|
 | <b>x-xbl-traceid</b>| Trace Id from logs| yes| Used to trace back the request specific logs.|
 | <b>x-server-name</b>| Obfuscated name of the server that handles the request.| yes| Used for internal debugging.|

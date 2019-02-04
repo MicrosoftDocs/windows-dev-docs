@@ -15,7 +15,7 @@ An *enlightened* app differentiates between corporate and personal data and know
 
 In this guide, we'll show you how to build one. When you're done, policy administrators will be able to trust your app to consume their organization's data. And employees will love that you've kept their personal data intact on their device even if they un-enroll from the organization's mobile device management (MDM) or leave the organization entirely.
 
-__Note__ This guide helps you enlighten a UWP app. If you want to enlighten a C++ Windows desktop app, see [Windows Information Protection (WIP) developer guide (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+__Note__ This guide helps you enlighten a UWP app. If you want to enlighten a C++ Windows desktop app, see [Windows Information Protection (WIP) developer guide (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 
 You can read more about WIP and enlightened apps here: [Windows Information Protection (WIP)](wip-hub.md).
 
@@ -1157,4 +1157,4 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 ## Related topics
 
-[Windows Information Protection (WIP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[Windows Information Protection (WIP) sample](https://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)

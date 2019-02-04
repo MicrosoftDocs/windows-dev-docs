@@ -104,4 +104,4 @@ If that doesn't resolve the issue, then also check the Dev Center Binding and Ap
 
 If you are getting an error not described here, please refer to the error list in the xbox::services::xbox_live_error_code documentation to get more information about the error codes. You can also refer to errors.h in the XSAPI includes.
 
-After all these steps, if you still cannot sign-in with your title, please post a support thread on the [forums](http://forums.xboxlive.com) or reach out to your DAM.
+After all these steps, if you still cannot sign-in with your title, please post a support thread on the [forums](https://forums.xboxlive.com) or reach out to your DAM.

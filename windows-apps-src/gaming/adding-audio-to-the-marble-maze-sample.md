@@ -14,7 +14,7 @@ This document describes the key practices to consider when you work with audio a
 Marble Maze plays music in the background, and also uses gameplay sounds to indicate game events, such as when the marble hits a wall. An important part of the implementation is that Marble Maze uses a reverb, or echo, effect to simulate the sound of a marble when it bounces. The reverb effect implementation causes echoes to reach you more quickly and loudly in small rooms; echoes are quieter and reach you more slowly in larger rooms.
 
 > [!NOTE]
-> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://go.microsoft.com/fwlink/?LinkId=624011).
 
 Here are some of the key points that this document discusses for when you work with audio in your game:
 

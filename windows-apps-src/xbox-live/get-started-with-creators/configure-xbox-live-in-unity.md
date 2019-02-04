@@ -26,7 +26,7 @@ You will need the following before you can use Xbox Live in Unity:
 2. **[Windows 10 Anniversary Update](https://microsoft.com/windows)** or later
 3. **[Unity](https://store.unity.com/)** versions **5.5.4p5** (or newer), **2017.1p5** (or newer), or **2017.2.0f3** (or newer) with **[Microsoft Visual Studio Tools for Unity](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)** and **Windows Store .NET Scripting Backend**.
 4. **[Visual Studio 2015](https://www.visualstudio.com/)** or **[Visual Studio 2017 15.3.3](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
-5. **[Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)**.
+5. **[Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk)**.
 
 
 > [!NOTE]

@@ -24,7 +24,7 @@ The short answer is that it's subjective, because it depends not only on the obj
 
 Objectively, a screen is measured in units of inches, and physical (raw) pixels. Knowing both of those metrics lets you know how many pixels fit into an inch. That's the pixel density, also known as DPI (dots per inch), also known as PPI (pixels per inch). And the reciprocal of the DPI is the physical size of the pixels as a fraction of an inch. Pixel density is also known as *resolution*, although that term is often used loosely to mean pixel count.
 
-As viewing distance increases, all those objective metrics *seem* smaller, and they resolve into the screen's *effective size*, and its *effective resolution*. Your phone is usually held closest to your eye; your tablet then your PC monitor are next, and furthest away are [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) devices and TVs. To compensate, devices tend to get objectively larger with viewing distance. When you set sizes on your UI elements, you are setting those sizes in units called effective pixels (epx). And Windows 10 will take into account DPI, and the typical viewing distance from a device, to calculate the best size of your UI elements in physical pixels to give the best viewing experience. See [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md).
+As viewing distance increases, all those objective metrics *seem* smaller, and they resolve into the screen's *effective size*, and its *effective resolution*. Your phone is usually held closest to your eye; your tablet then your PC monitor are next, and furthest away are [Surface Hub](https://www.microsoft.com/microsoft-surface-hub) devices and TVs. To compensate, devices tend to get objectively larger with viewing distance. When you set sizes on your UI elements, you are setting those sizes in units called effective pixels (epx). And Windows 10 will take into account DPI, and the typical viewing distance from a device, to calculate the best size of your UI elements in physical pixels to give the best viewing experience. See [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 Even so, we recommend that you test your app with many different devices so that you can confirm each experience for yourself.
 
@@ -58,7 +58,7 @@ Refer back to the [maximizing markup and code reuse](wpsl-to-uwp-porting-to-a-uw
 
 ## More info and design guidelines
 
--   [Design UWP apps](http://dev.windows.com/design)
+-   [Design UWP apps](https://dev.windows.com/design)
 -   [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394)
 -   [Plan for different form factors](https://msdn.microsoft.com/library/windows/apps/dn958435)
 

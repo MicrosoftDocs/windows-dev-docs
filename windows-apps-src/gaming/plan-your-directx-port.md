@@ -29,7 +29,7 @@ Upgrading from Direct3D 9 to Direct3D 11 is more than a search-and-replace chang
 
 You must replace the D3DX and DXUT helper libraries with your own helper libraries, or with community tools. See the [Feature mapping](feature-mapping.md) section for more info.
 
-> **Note**   You can use the [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) to replace some functionality that was formerly provided by D3DX and DXUT.
+> **Note**   You can use the [DirectX Tool Kit](https://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) to replace some functionality that was formerly provided by D3DX and DXUT.
 
  
 

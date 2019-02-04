@@ -268,7 +268,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                             <a href="https://twitter.com/WindowsDocs">@WindowsDocs on Twitter</a>
                         </p>
                         <p>
-                            <a href="http://aka.ms/OneDevMinute">OneDevMinute on YouTube</a>
+                            <a href="https://aka.ms/OneDevMinute">OneDevMinute on YouTube</a>
                         </p>
                         <p>
                             <a href="https://developer.microsoft.com/windows/support">Windows developer support</a>
