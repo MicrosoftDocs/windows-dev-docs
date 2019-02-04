@@ -17,7 +17,7 @@ Once you've [created your app by reserving a name](create-your-app-by-reserving-
 You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
 > [!NOTE]
-> You must have an active [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
+> You must have an active [developer account](https://go.microsoft.com/fwlink/p/?LinkId=615100) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
 
 After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page. You can also [remove an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) if you need to do so (and then make it available again later, if you'd like).
 

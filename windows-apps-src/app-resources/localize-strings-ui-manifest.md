@@ -110,7 +110,7 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 ## Localize the string resources
 1. Make a copy of your Resources File (.resw) for another language.
     1. Under "Strings", create a new sub-folder and name it "de-DE" for Deutsch (Deutschland).
-   <br>**Note** For the folder name, you can use any [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). See [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) for details on the language qualifier and a list of common language tags.
+   <br>**Note** For the folder name, you can use any [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302). See [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) for details on the language qualifier and a list of common language tags.
    2. Make a copy of `Strings/en-US/Resources.resw` in the `Strings/de-DE` folder.
 2. Translate the strings.
     1. Open `Strings/de-DE/Resources.resw` and translate the values in the Value column. You don't need to translate the comments.
@@ -285,6 +285,6 @@ A framework package can access its own resources with an absolute resource ident
 * [x:Uid directive](../xaml-platform/x-uid-directive.md)
 * [attached properties](../xaml-platform/attached-properties-overview.md)
 * [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
 * [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

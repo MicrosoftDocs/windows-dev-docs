@@ -135,4 +135,4 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## Related topics
 
-* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [Date and time formatting sample](https://go.microsoft.com/fwlink/p/?LinkId=231618)

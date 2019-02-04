@@ -33,7 +33,7 @@ Other articles related to HDR capture include:
 > [!NOTE] 
 > This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
 
-There is a Universal Windows Sample demonstrating the use of the **AdvancedPhotoCapture** class that you can use to see the API used in context or as a starting point for your own app. For more information see, [Camera Advanced Capture sample](http://go.microsoft.com/fwlink/?LinkID=620517).
+There is a Universal Windows Sample demonstrating the use of the **AdvancedPhotoCapture** class that you can use to see the API used in context or as a starting point for your own app. For more information see, [Camera Advanced Capture sample](https://go.microsoft.com/fwlink/?LinkID=620517).
 
 ## Advanced photo capture namespaces
 

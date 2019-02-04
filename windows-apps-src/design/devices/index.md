@@ -125,7 +125,7 @@ Typical device capabilities
 
 The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
 
-With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
+With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
 
 Screen sizes
 -   4'' to 5'' for phone

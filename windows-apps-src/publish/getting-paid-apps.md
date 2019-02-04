@@ -15,7 +15,7 @@ Here’s some important info about receiving payment for your apps, add-ons, and
 
 ## Store fee
 
-When you [sign up for a developer account](http://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
+When you [sign up for a developer account](https://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
 
 In most cases, the Store fee is 30%. Fees are officially defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Always review that document if you have any questions.
 

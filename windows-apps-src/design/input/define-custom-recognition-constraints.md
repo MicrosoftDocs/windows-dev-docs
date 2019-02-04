@@ -140,7 +140,7 @@ SRGS grammars provide a full set of features to help you architect complex voice
 -   Use semantics to define what speech recognition means to your app.
 -   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
-For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](http://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](http://go.microsoft.com/fwlink/p/?LinkID=269887).
+For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](https://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](https://go.microsoft.com/fwlink/p/?LinkID=269887).
 
 Keep the following points in mind:
 
@@ -174,7 +174,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
+This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
 
 Here, we listen for variants of "yes" and "no".
 
@@ -232,7 +232,7 @@ To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.
 * [Speech interactions](speech-interactions.md)
 
 **Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

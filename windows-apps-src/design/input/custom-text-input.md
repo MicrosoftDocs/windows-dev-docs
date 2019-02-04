@@ -160,6 +160,6 @@ There will be times the [**Range**](https://msdn.microsoft.com/library/windows/a
 * [Custom Edit Control sample](https://go.microsoft.com/fwlink/?linkid=831024)
  
 **Archive samples**
-* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML text editing sample](https://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 

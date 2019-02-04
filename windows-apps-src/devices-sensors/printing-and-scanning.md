@@ -23,6 +23,6 @@ This section describes how to print and scan from your Universal Windows app.
 
 * [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 

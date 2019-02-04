@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 Your [Universal Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) must be authenticated before it can use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
 
-**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## Get a key
 
@@ -84,7 +84,7 @@ To use services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/li
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)

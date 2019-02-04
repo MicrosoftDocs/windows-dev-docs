@@ -53,4 +53,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-For more information on ESC/POS, including available commands, check out the [Epson ESC/POS FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). For details on [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) and all the available functionality, see [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) on MSDN.
+For more information on ESC/POS, including available commands, check out the [Epson ESC/POS FAQ](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). For details on [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) and all the available functionality, see [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) on MSDN.

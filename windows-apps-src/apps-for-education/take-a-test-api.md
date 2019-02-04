@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Take a Test JavaScript API
 
-[Take a Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) is a browser-based UWP app that renders locked-down online assessments for high-stakes testing, allowing educators to focus on the assessment content rather than how to provide a secure testing environment. To achieve this, it uses a JavaScript API that any web application can utilize. The Take-a-test API supports the [SBAC browser API standard](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) for high stakes common core testing.
+[Take a Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) is a browser-based UWP app that renders locked-down online assessments for high-stakes testing, allowing educators to focus on the assessment content rather than how to provide a secure testing environment. To achieve this, it uses a JavaScript API that any web application can utilize. The Take-a-test API supports the [SBAC browser API standard](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) for high stakes common core testing.
 
 See the [Take a Test app technical reference](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for more information about the app itself. For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
 

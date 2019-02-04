@@ -198,7 +198,7 @@ For larger collections (10-25 items), consider using an indicator that provides 
 
 ![Example of context indicator](images/controls_contextindicator.jpg)
 
-For example code that shows how to add a context indicator to a FlipView, see [XAML FlipView sample](http://go.microsoft.com/fwlink/p/?LinkID=311760).
+For example code that shows how to add a context indicator to a FlipView, see [XAML FlipView sample](https://go.microsoft.com/fwlink/p/?LinkID=311760).
 
 ## Do's and don'ts
 

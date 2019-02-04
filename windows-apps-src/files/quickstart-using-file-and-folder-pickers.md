@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) classes to access files, and the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) to access a folder.
 
 > [!NOTE]
-> For a complete sample, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> For a complete sample, see the [File picker sample](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
 ## Prerequisites
 

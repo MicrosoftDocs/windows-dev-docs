@@ -22,7 +22,7 @@ This article builds on the content of two other articles:
 
 In addition to these articles, to view and download a full, end-to-end working sample of the scenario described in this article, see the [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003) in the Windows Universal Samples GitHub repo.
 
-To get started developing quickly, you can include the OpenCV library in a UWP app project by using NuGet packages, but these packages may not pass the app certficication process when you submit your app to the Store, so it is recommended that you download the OpenCV library source code and build the binaries yourself before submitting your app. Information developing with OpenCV can be found at [http://opencv.org](http://opencv.org)
+To get started developing quickly, you can include the OpenCV library in a UWP app project by using NuGet packages, but these packages may not pass the app certficication process when you submit your app to the Store, so it is recommended that you download the OpenCV library source code and build the binaries yourself before submitting your app. Information developing with OpenCV can be found at [https://opencv.org](https://opencv.org)
 
 
 ## Implement the OpenCVHelper native Windows Runtime Component
@@ -62,7 +62,7 @@ The **FrameArrived** event is raised whenever a new frame is available from the 
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Process software bitmaps with OpenCV](process-software-bitmaps-with-opencv.md)
-* [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003)
  
 

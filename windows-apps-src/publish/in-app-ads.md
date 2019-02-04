@@ -11,8 +11,8 @@ ms.localizationpriority: medium
 
 Use the **Monetize** &gt; **In-app ads** page in [Partner Center](https://partner.microsoft.com/dashboard) to create and manage ad units for:
 
-* Universal Windows Platform (UWP) apps that use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
-* Previously published Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+* Universal Windows Platform (UWP) apps that use the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp).
+* Previously published Windows 8.x and Windows Phone 8.x apps that use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://aka.ms/store-8-sdk).
 
 > [!IMPORTANT]
 > As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
@@ -64,7 +64,7 @@ After you create ad units for one or more apps in your account, these ad units a
 To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA compliance](#coppa) for the app in which the ad unit is used, click the ad unit name.
 
 > [!NOTE]
-> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
+> If an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from Partner Center. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](https://aka.ms/storesupport).
 
 <span id="mediation" />
 
@@ -109,9 +109,9 @@ The following table lists the paid networks we currently support for each ad typ
 | Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md).  |  Banner, Banner interstitial, Native  |
 | MSN Content Recommendations |  Select this option to serve ads from MSN Content Recommendations. |  Banner, Banner interstitial  |
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |
-| Revcontent |  Select this option to serve ads from [Revcontent](http://www.revcontent.com/). |  Banner, Native  |
+| Revcontent |  Select this option to serve ads from [Revcontent](https://www.revcontent.com/). |  Banner, Native  |
 | Smaato |  Select this option to serve ads from [Smaato](https://www.smaato.com/). |  Banner  |
-| smartclip |  Select this option to serve ads from [smartclip](http://www.smartclip.com/). |  Video interstitial  |
+| smartclip |  Select this option to serve ads from [smartclip](https://www.smartclip.com/). |  Video interstitial  |
 | SpotX |  Select this option to serve ads from [SpotX](https://www.spotx.tv/). |  Video interstitial  |
 | Taboola |  Select this option to serve ads from [Taboola](https://www.taboola.com/). |  Banner  |
 | Undertone | Select this option to serve ads from [Undertone](https://www.undertone.com/). | Banner interstitial |
@@ -153,4 +153,4 @@ For purposes of the Children's Online Privacy Protection Act (“COPPA”), you 
 The **COPPA compliance** setting you choose is automatically applied to all ad units for the selected app.
 
 > [!IMPORTANT]
-> If your app is directed at children under the age of 13, you have certain obligations under COPPA. For more information on your obligations, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).
+> If your app is directed at children under the age of 13, you have certain obligations under COPPA. For more information on your obligations, please see [this page](https://go.microsoft.com/fwlink/p/?linkid=536558).

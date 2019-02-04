@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 This walkthrough shows how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class to display banner ads in a Universal Windows Platform (UWP) XAML app for Windows 10 that is implemented using C#.
 
 > [!NOTE]
-> The Microsoft Advertising SDK also supports XAML apps that are implemented using C++. For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).
+> The Microsoft Advertising SDK also supports XAML apps that are implemented using C++. For a complete sample project, see the [advertising samples on GitHub](https://aka.ms/githubads).
 
 ## Prerequisites
 
-* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
+* Install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
 
 ## Integrate a banner ad into your app
 
@@ -143,5 +143,5 @@ You can use multiple **AdControl** objects in a single app (for example, each pa
 
 * [Guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md).
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](https://aka.ms/githubads)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)

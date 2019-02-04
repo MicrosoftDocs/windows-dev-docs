@@ -107,7 +107,7 @@ For each app, only one background task can run at a time. If a background task i
 ## Other resources
 
 
-You can learn more by downloading the [Raw notifications sample](http://go.microsoft.com/fwlink/p/?linkid=241553) for Windows 8.1, and the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?LinkId=231476) for Windows 8.1, and re-using their source code in your Windows 10 app.
+You can learn more by downloading the [Raw notifications sample](https://go.microsoft.com/fwlink/p/?linkid=241553) for Windows 8.1, and the [Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?LinkId=231476) for Windows 8.1, and re-using their source code in your Windows 10 app.
 
 ## Related topics
 

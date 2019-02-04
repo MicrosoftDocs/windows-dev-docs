@@ -14,7 +14,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 Of course, the Fall Creators Update is right around the corner, so stay tuned for a great deal of more documentation that will be arriving in the coming month!
 
-[Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/your-first-app.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 

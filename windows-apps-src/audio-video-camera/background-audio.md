@@ -19,7 +19,7 @@ Scenarios for background audio playback include:
 The background audio implementation described in this article will allow your app to run universally on all Windows devices including Mobile, Desktop, and Xbox.
 
 > [!NOTE]
-> The code in this article was adapted from the UWP [Background Audio sample](http://go.microsoft.com/fwlink/p/?LinkId=800141).
+> The code in this article was adapted from the UWP [Background Audio sample](https://go.microsoft.com/fwlink/p/?LinkId=800141).
 
 ## Explanation of one-process model
 With Windows 10, version 1607, a new single-process model has been introduced that greatly simplifies the process of enabling background audio. Previously, your app was required to manage a background process in addition to your foreground app and then manually communicate state changes between the two processes. Under the new model, you simply add the background audio capability to your app manifest, and your app will automatically continue playing audio when it moves to the background. Two new application lifecycle events, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) let your app know when it is entering and leaving the background. When your app moves into the transitions to or from the background, the memory constraints enforced by the system may change, so you can use these events to check your current memory consumption and free up resources in order to stay below the limit.

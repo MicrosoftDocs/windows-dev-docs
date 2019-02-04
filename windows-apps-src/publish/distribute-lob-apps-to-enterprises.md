@@ -24,7 +24,7 @@ You can publish line-of-business (LOB) apps directly to enterprises for volume a
 The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
 > [!IMPORTANT]
-> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](https://go.microsoft.com/fwlink/p/?LinkId=698846).
 
 When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings** (as long as you are signed in with the Microsoft account that was used to open the developer account).
 
@@ -67,7 +67,7 @@ After you click **Submit to the Store**, the app will go through the certificati
 > [!NOTE]
 > In order to get your LOB app, the organization must be located in a [supported market](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](define-pricing-and-market-selection.md) when submitting your app. 
 
-For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846) and [Distribute apps using your private store](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+For more info, see [Working with line-of-business apps](https://go.microsoft.com/fwlink/p/?LinkId=698846) and [Distribute apps using your private store](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 
 
 ## Update LOB apps
@@ -88,7 +88,7 @@ Making apps available to an enterprise through Microsoft Store for Business or M
 
 In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In this case, the enterprise can deploy apps directly to machines via sideloading, without using Microsoft Store for Business or Microsoft Store for Education.
 
-For more info, see [Sideload LOB apps in Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
+For more info, see [Sideload LOB apps in Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 

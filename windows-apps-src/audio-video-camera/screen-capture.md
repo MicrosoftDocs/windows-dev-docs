@@ -160,7 +160,7 @@ When **Recreate** is called, all existing frames are discarded. This is to preve
 The following code snippet is an end-to-end example of how to implement screen capture in a UWP application. In this sample, we have a button in the front-end which, when clicked, calls the **Button_ClickAsync** method.
 
 > [!NOTE]
-> This snippet uses [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), a library for 2D graphics rendering. See their documentation for information about how to set it up for your project.
+> This snippet uses [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), a library for 2D graphics rendering. See their documentation for information about how to set it up for your project.
 
 ```cs
 using Microsoft.Graphics.Canvas;

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Microsoft provides several tools to help you improve the performance of your Universal Windows Platform (UWP) app. Follow these links to learn how to use these tools.
 
-**XAML UI Responsiveness tool in Visual Studio**. One of the best tools to use for measuring performance impact within your app is the XAML UI Responsiveness Tool. This has been [updated](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) to support even more scenarios.
+**XAML UI Responsiveness tool in Visual Studio**. One of the best tools to use for measuring performance impact within your app is the XAML UI Responsiveness Tool. This has been [updated](https://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) to support even more scenarios.
 
 See also:
 

@@ -83,7 +83,7 @@ This structure has one instance and contains all the necessary components for re
 
 ### Technologies
 
--   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
 ### Prerequisites

@@ -134,7 +134,7 @@ Line-of-business apps often need to communicate with or store data on a variety 
 | [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233) | This walkthrough explains basic networking concepts relevant to all UWP apps, regardless of the communication protocols in use.  |
 | [Which networking technology?](https://msdn.microsoft.com/library/windows/apps/mt280235) | A quick overview of the networking technologies available for UWP apps, with suggestions on how to choose the technologies that are the best fit for your app. |
 | [XML and SOAP serialization](https://msdn.microsoft.com/library/90c86ass.aspx) | XML serialization converts objects into an XML stream that conforms to a   specific XML Schema definition language (XSD). To convert between XML and a strongly-typed class, you can use the native [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) class, or an external library. |
-| [JSON serialization](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript object notation) serialization is a popular format for   communicating with REST APIs. The [Newtonsoft Json.NET](http://www.newtonsoft.com/json), which is fully supported for UWP apps. |
+| [JSON serialization](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript object notation) serialization is a popular format for   communicating with REST APIs. The [Newtonsoft Json.NET](https://www.newtonsoft.com/json), which is fully supported for UWP apps. |
 
 ## Devices
 
@@ -154,7 +154,7 @@ Many users today are bringing their own phone or tablet to work, which have vary
 | Topic | Description |
 |-------|-------------|
 | [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
-| [Adaptive XAML UI code sample](http://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
+| [Adaptive XAML UI code sample](https://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
 | [Xamarin topic]() | Xamarin for targeting phone |
 
 ## Deployment

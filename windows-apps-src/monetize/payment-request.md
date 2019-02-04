@@ -73,6 +73,6 @@ After payment is complete, the user is presented with an **Order confirmed** scr
 ## See also
 - [Windows.ApplicationModel.Payments reference documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)
 - [UWP shopping app sample on GitHub](https://github.com/Microsoft/Windows-appsample-shopping)
-- [W3C Payment Request API specification](http://www.w3.org/TR/payment-request/)
+- [W3C Payment Request API specification](https://www.w3.org/TR/payment-request/)
 - [Payment Request API ](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api)
 

@@ -46,7 +46,7 @@ For more samples, see [Game samples](e2e.md#game-samples).
 
 ### Step 4: Consider joining a program
 
-If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or [ID@Xbox](http://www.xbox.com/Developers/id) program. 
+If you want to develop an Xbox game or use Xbox Live features in your game, join either the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or [ID@Xbox](https://www.xbox.com/Developers/id) program. 
 
 To learn more about Xbox Live features that are available to each of the programs, see [Feature Table](../xbox-live/developer-program-overview.md#feature-table). For more information, see [Developer programs](e2e.md#developer-programs).
 

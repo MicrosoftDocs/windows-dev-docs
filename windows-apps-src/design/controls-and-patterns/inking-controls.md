@@ -78,7 +78,7 @@ Adding an InkCanvas to your app requires just one line of markup:
 ```
 
 > [!NOTE]
-> For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](http://windowsstyleguide/input/pen-and-stylus-interactions/) article.
+> For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](https://windowsstyleguide/input/pen-and-stylus-interactions/) article.
 
 The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
@@ -164,6 +164,6 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 
 ## Related articles
 
-- [Pen and stylus interactions in UWP apps](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Recognize ink strokes](http://windowsstyleguide/input/convert-ink-to-text/)
-- [Store and retrieve ink strokes](http://windowsstyleguide/input/save-and-load-ink/)
+- [Pen and stylus interactions in UWP apps](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [Recognize ink strokes](https://windowsstyleguide/input/convert-ink-to-text/)
+- [Store and retrieve ink strokes](https://windowsstyleguide/input/save-and-load-ink/)

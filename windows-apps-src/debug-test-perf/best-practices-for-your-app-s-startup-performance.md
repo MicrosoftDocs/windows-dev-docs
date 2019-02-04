@@ -97,7 +97,7 @@ Startup performance in a XAML app is directly correlated to the number of elemen
 -   UserControls and control templates will be expanded, so those should also be taken into account.
 -   If you create any XAML that does not appear on the screen, then you should justify whether those pieces of XAML should be created during your startup.
 
-The [Visual Studio Live Visual Tree](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) window shows the child element counts for each node in the tree.
+The [Visual Studio Live Visual Tree](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) window shows the child element counts for each node in the tree.
 
 ![Live visual tree.](images/live-visual-tree.png)
 
@@ -317,7 +317,7 @@ It’s critical that an app with an extended initialization period show a loadin
 > End Class
 > ```
 
-For an example of using extended splash screens, see [Splash screen sample](http://go.microsoft.com/fwlink/p/?linkid=234889).
+For an example of using extended splash screens, see [Splash screen sample](https://go.microsoft.com/fwlink/p/?linkid=234889).
 
 ### Phase 3
 
@@ -333,7 +333,7 @@ How exactly an app reacts to each phase of startup is completely up to you, but 
 
 Reusable code often comes in the form of modules (DLLs) included in a project. Loading these modules requires accessing the disk, and as you can imagine, the cost of doing so can add up. This has the greatest impact on cold startup, but it can have an impact on warm startup, too. In the case of C# and Visual Basic, the CLR tries to delay that cost as much as possible by loading assemblies on demand. That is, the CLR doesn’t load a module until an executed method references it. So, reference only assemblies that are necessary to the launch of your app in startup code so that the CLR doesn’t load unnecessary modules. If you have unused code paths in your startup path that have unnecessary references, you can move these code paths to other methods to avoid the unnecessary loads.
 
-Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) or the [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) to find out what modules are loaded on startup.
+Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) or the [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) to find out what modules are loaded on startup.
 
 ### Make smart web requests
 

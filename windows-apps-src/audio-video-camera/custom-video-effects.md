@@ -156,7 +156,7 @@ Now that the data buffers have been obtained, you can read from the input buffer
 ## Implement the IBasicVideoEffect interface using hardware processing
 
 
-Creating a custom video effect by using hardware (GPU) processing is almost identical to using software processing as described above. This section will show the few differences in an effect that uses hardware processing. This example uses the Win2D Windows Runtime API. For more information about using Win2D, see the [Win2D documentation](http://go.microsoft.com/fwlink/?LinkId=519078).
+Creating a custom video effect by using hardware (GPU) processing is almost identical to using software processing as described above. This section will show the few differences in an effect that uses hardware processing. This example uses the Win2D Windows Runtime API. For more information about using Win2D, see the [Win2D documentation](https://go.microsoft.com/fwlink/?LinkId=519078).
 
 Use the following steps to add the Win2D NuGet package to the project you created as described in the **Add a custom effect to your app** section at the beginning of this article.
 
@@ -235,5 +235,5 @@ For general guidance for creating media compositions from video clips, see [Medi
 ## Related topics
 * [Simple camera preview access](simple-camera-preview-access.md)
 * [Media compositions and editing](media-compositions-and-editing.md)
-* [Win2D documentation](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Media playback](media-playback.md)

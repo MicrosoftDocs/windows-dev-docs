@@ -26,7 +26,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>Get started</b><br/><br/>
-    <a href="http://aka.ms/ads-sdk-uwp">Install the Microsoft Advertising SDK</a>
+    <a href="https://aka.ms/ads-sdk-uwp">Install the Microsoft Advertising SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>Developer guides</b><br/><br/>
@@ -50,7 +50,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
 
 ## Step 1: Install the Microsoft Advertising SDK
 
-To get started, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) on the development computer you use to build your app. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
+To get started, install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) on the development computer you use to build your app. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
 
 ## Step 2: Implement ads in your app
 
@@ -105,16 +105,16 @@ For additional help using the Microsoft Advertising SDK, use the following resou
 |  Task    | Resource |               
 |----------|-------|
 | Report a bug or get assisted support for advertising     | Visit the [support page](https://developer.microsoft.com/en-us/windows/support) and choose **Ads-In-Apps**.        |
-| Get community support     | Visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
-| Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | See the [Advertising samples on GitHub](http://aka.ms/githubads).       |
+| Get community support     | Visit the [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).       |
+| Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | See the [Advertising samples on GitHub](https://aka.ms/githubads).       |
 | Learn about the latest monetization opportunities for Windows apps     | Visit [Monetize your apps](https://developer.microsoft.com/store/monetize).        |
 
 ## Windows 8.1 and Windows Phone 8.x apps
 
-For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
+For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://aka.ms/store-8-sdk). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
 ## Related topics
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [Advertising performance report](../publish/advertising-performance-report.md)
 * [Windows Premium Ads Publishers Program](windows-premium-ads-publishers-program.md)

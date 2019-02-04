@@ -13,14 +13,14 @@ Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between y
 
 In normal operation, a console that communicates through a proxy is at risk of having its communications modified by the proxy, possibly allowing players to cheat. Thus, consoles are designed to not allow communication through a proxy. Using Fiddler with your Xbox One dev kit requires that you perform some special configuration steps on the dev kit to allow it to use the Fiddler proxy. 
 
-Fiddler is freeware, and can be downloaded from the [Fiddler website](http://www.fiddler2.com/fiddler2/). 
+Fiddler is freeware, and can be downloaded from the [Fiddler website](https://www.fiddler2.com/fiddler2/). 
 
 Fiddler can impact the network status reported by the console. If an upstream connection is disabled from the machine running Fiddler, the console may not detect this disconnection until the authentication of the console has expired. If you are using Fiddler, be sure to disconnect the connection between the console and the computer running Fiddler, rather than using Fiddler to simulate a disconnect.
 
 ### To install and enable Fiddler on your development PC
 Follow these steps to install and enable Fiddler to monitor traffic from your dev kit:
 
-1. Install Fiddler on your development PC, following the directions on the [Fiddler website](http://www.fiddler2.com/fiddler2/). 
+1. Install Fiddler on your development PC, following the directions on the [Fiddler website](https://www.fiddler2.com/fiddler2/). 
 2. Launch Fiddler and select **Fiddler Options** from the **Tools** menu. 
 3. Select the **Connections** tab and ensure that **Allow remote computers to connect** is selected. 
 4. Click **OK** to accept your change to the settings. You will see a dialog box saying that Fiddler must be restarted for the change to take effect, and that you may need to configure your firewall manually. Click **OK** on this dialog, but *do not restart Fiddler yet*.

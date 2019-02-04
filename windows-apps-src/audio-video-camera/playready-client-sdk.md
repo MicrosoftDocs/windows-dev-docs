@@ -71,15 +71,15 @@ The following new interfaces, classes, and enumerations were added to PlayReady 
 -   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
 -   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
 
-A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## Things to consider
 
--   PlayReady DRM now supports HDCP Type 1 (supported in HDCP version 2.1 or later). PlayReady carries an HDCP Type Restriction policy in the license for the device to enforce. On Windows 10, this policy will enforce that HDCP 2.2 or later is engaged. This feature can be enabled in your PlayReady Server v3.0 SDK license (the server controls this policy in the license using the HDCP Type Restriction GUID). For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
+-   PlayReady DRM now supports HDCP Type 1 (supported in HDCP version 2.1 or later). PlayReady carries an HDCP Type Restriction policy in the license for the device to enforce. On Windows 10, this policy will enforce that HDCP 2.2 or later is engaged. This feature can be enabled in your PlayReady Server v3.0 SDK license (the server controls this policy in the license using the HDCP Type Restriction GUID). For more information, see the [PlayReady Compliance and Robustness Rules](https://www.microsoft.com/playready/licensing/compliance/).
 -   Windows Media Video (also known as VC-1) is not supported in hardware DRM (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
 -   PlayReady DRM now supports the High Efficiency Video Coding (HEVC /H.265) video compression standard. To support HEVC, your app must use Common Encryption Scheme (CENC) version 2 content which includes leaving the content's slice headers in the clear. Refer to ISO/IEC 23001-7 Information technology -- MPEG systems technologies -- Part 7: Common encryption in ISO base media file format files (Spec version ISO/IEC 23001-7:2015 or higher is required.) for more information. Microsoft also recommends using CENC version 2 for all HWDRM content. In addition, some hardware DRM will support HEVC and some will not (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
 -   To take advantage of certain new PlayReady 3.0 features (including, but not limited to, SL3000 for hardware-based clients, acquiring multiple non-persistent licenses in one license acquisition message, and time-based restrictions on non-persistent licenses), the PlayReady server is required to be the Microsoft PlayReady Server Software Development Kit v3.0.2769 Release version or later.
--   Depending on the Output Protection Policy specified in the content license, media playback may fail for end users if their connected output does not support those requirements. The following table lists the set of common errors that occur as a result. For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
+-   Depending on the Output Protection Policy specified in the content license, media playback may fail for end users if their connected output does not support those requirements. The following table lists the set of common errors that occur as a result. For more information, see the [PlayReady Compliance and Robustness Rules](https://www.microsoft.com/playready/licensing/compliance/).
 
 | Error                                                   | Value      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -395,7 +395,7 @@ Before you begin creating your PlayReady-protected UWP app, the following softwa
 -   If you are compiling any of the samples for PlayReady DRM for UWP apps, you must use Microsoft Visual Studio 2015 or later to compile the samples. You can still use Microsoft Visual Studio 2013 to compile any of the samples from PlayReady DRM for Windows 8.1 Store Apps.
 
 <!--This is no longer available-->
-<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](https://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## PlayReady UWP app migration guide
 
@@ -501,7 +501,7 @@ There are two primary scenarios for sending a secure stop challenge:
 -   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
 -   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
+For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## Use PlayReady DRM on Xbox One
 

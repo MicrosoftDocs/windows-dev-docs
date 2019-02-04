@@ -26,7 +26,7 @@ After all of the nodes have been created and the connections between them set up
 Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
 
 > [!NOTE]
-> The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
+> The [AudioGraph UWP sample](https://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
 
 ## Choosing Windows Runtime AudioGraph or XAudio2
 

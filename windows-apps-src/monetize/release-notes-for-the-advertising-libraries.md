@@ -17,7 +17,7 @@ This section provides release notes for the current release of the Microsoft adv
 ## Installation
 
 
-The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). For more information about installing the SDK, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
+The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). For more information about installing the SDK, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
 
 ## Uninstall previous versions
 
@@ -33,7 +33,7 @@ The Microsoft advertising libraries (which include the **AdControl** and **Inter
 
 ## No toolbox control
 
-In the current release of the Microsoft advertising libraries in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), there is no toolbox control for dragging an **AdControl** or **InterstitialAd** to a design surface in your app. For instructions about adding these controls in your markup and code, see the [developer walkthroughs](developer-walkthroughs.md).
+In the current release of the Microsoft advertising libraries in the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp), there is no toolbox control for dragging an **AdControl** or **InterstitialAd** to a design surface in your app. For instructions about adding these controls in your markup and code, see the [developer walkthroughs](developer-walkthroughs.md).
 
 ## Latitude and longitude properties no longer available
 

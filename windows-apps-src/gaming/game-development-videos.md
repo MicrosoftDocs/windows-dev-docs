@@ -106,20 +106,20 @@ New to version control systems? Intro to Git and Git Virtual File System (GVFS):
 
 ## GDC 2015 game dev session videos
 
--   [The Future of Gaming Across the Microsoft Ecosystem](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
--   [Developing Games for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector, Don Box
--   [Advanced DirectX 12 Graphics and Performance](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
--   [Gaming Consumer Experience on Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
--   [New Opportunities for Independent Developers](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
--   [Developing with Xbox Live for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala, Brian Tyler
--   [Xbox Live Multiplayer: Introducing services for cross-platform matchmaking and gameplay](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
--   [Fable Legends: Cross-device Gameplay with Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto, Julian Davis
--   [Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
--   [Solve the Tough Graphics Problems with Your Game Using DirectX Tools](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz, Rong Lu, Jason Strayer
--   [Better Power, Better Performance: Your Game on DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
--   [Sustained Gaming Performance in multi-core mobile devices](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
--   [Designing Games for a Windows Core World](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams, Shai Hinitz
--   [PC Games for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
+-   [The Future of Gaming Across the Microsoft Ecosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
+-   [Developing Games for Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector, Don Box
+-   [Advanced DirectX 12 Graphics and Performance](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
+-   [Gaming Consumer Experience on Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
+-   [New Opportunities for Independent Developers](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
+-   [Developing with Xbox Live for Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala, Brian Tyler
+-   [Xbox Live Multiplayer: Introducing services for cross-platform matchmaking and gameplay](https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
+-   [Fable Legends: Cross-device Gameplay with Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto, Julian Davis
+-   [Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
+-   [Solve the Tough Graphics Problems with Your Game Using DirectX Tools](https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz, Rong Lu, Jason Strayer
+-   [Better Power, Better Performance: Your Game on DirectX 12](https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
+-   [Sustained Gaming Performance in multi-core mobile devices](https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
+-   [Designing Games for a Windows Core World](https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams, Shai Hinitz
+-   [PC Games for Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
 
 ## //build 2015 session videos
 

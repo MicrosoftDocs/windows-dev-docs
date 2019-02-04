@@ -17,7 +17,7 @@ If you are interested in simply capturing video or photos, such as a typical pho
 > The features discussed in this article are only available starting with Windows 10, version 1607.
 
 > [!NOTE] 
-> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230).
+> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230).
 
 > [!NOTE] 
 > A new set of APIs for using **MediaFrameReader** with audio data were introduced in Windows 10, version 1803. For more information, see [Process audio frames with MediaFrameReader](process-audio-frames-with-mediaframereader.md).
@@ -145,7 +145,7 @@ When you are done reading frames, be sure to stop the media frame reader by call
 For more information about cleaning up media capture objects when your application is suspended, see [**Display the camera preview**](simple-camera-preview-access.md).
 
 ## The FrameRenderer helper class
-The Universal Windows [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230) provides a helper class that makes it easy to display the frames from color, infrared, and depth sources in your app. Typically, you will want to do something more with depth and infrared data than just display it to the screen, but this helper class is a helpful tool for demonstrating the frame reader feature and for debugging your own frame reader implementation.
+The Universal Windows [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230) provides a helper class that makes it easy to display the frames from color, infrared, and depth sources in your app. Typically, you will want to do something more with depth and infrared data than just display it to the screen, but this helper class is a helpful tool for demonstrating the frame reader feature and for debugging your own frame reader implementation.
 
 The **FrameRenderer** helper class implements the following methods.
 
@@ -247,7 +247,7 @@ For more information on using camera profiles, see [Camera profiles](camera-prof
 
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

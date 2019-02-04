@@ -15,7 +15,7 @@ This article shows you how to use the [**IMediaEncodingProperties**](https://msd
 
 Camera profiles offer a more advanced way of discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see [Camera profiles](camera-profiles.md).
 
-The code in this article was adapted from the [CameraResolution sample](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [CameraResolution sample](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
 > [!NOTE] 
 > This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.

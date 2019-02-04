@@ -285,7 +285,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-ExpandedBaseImage &lt;String&gt;  |Optional |Full path to an already expanded base image.|
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
 | -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
-|&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
+|&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216). |
 | -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the app package against packaged app and Microsoft Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
 |-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you package your app.
 
@@ -364,7 +364,7 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 ## Telemetry from Desktop App Converter
 
-Desktop App Converter may collect information about you and your use of the software and send this info to Microsoft. You can learn more about Microsoft's data collection and use in the product documentation and in the [Microsoft Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=521839). You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
+Desktop App Converter may collect information about you and your use of the software and send this info to Microsoft. You can learn more about Microsoft's data collection and use in the product documentation and in the [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=521839). You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
 
 By default, telemetry will be enabled for the Desktop App Converter. Add the following registry key to configure telemetry to a desired setting:  
 
@@ -382,7 +382,7 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 **Find answers to your questions**
 
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 You can also refer to [this](desktop-to-uwp-known-issues.md#app-converter) list of known issues.
 

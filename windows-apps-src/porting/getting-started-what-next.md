@@ -18,7 +18,7 @@ With this basic information, you can now start writing more interesting Universa
 -   [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259): How to create tiles, update tiles and their badges, send toast notifications, and show and update tile and badge updates on the lock screen.
 -   [Launching, resuming, and multitasking](https://msdn.microsoft.com/library/windows/apps/hh770837): How to auto-launch, activate, suspend, and resume apps, and how to work with background tasks.
 -   [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094): How to provide a great end-user experience for apps where the user utilizes more than one device, such as a PC at work and a tablet at home.
--   [Create your first Windows Runtime app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138): A topic focusing on Windows Phone development.
+-   [Create your first Windows Runtime app using C# or Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=394138): A topic focusing on Windows Phone development.
 -   [Videos for iOS and Android devs](https://msdn.microsoft.com/library/windows/apps/dn393982): Some more help, this time in visual format.
 
 Also, be sure to visit our [Community resources](https://developer.microsoft.com/en-us/windows/support) to learn how to get help and get connected through developer forums, blogs, developer camps and workshops, and local Microsoft events and contacts.

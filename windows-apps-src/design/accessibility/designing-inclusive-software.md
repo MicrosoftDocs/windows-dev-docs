@@ -98,7 +98,7 @@ In summary, follow these seven steps to ensure your software is inclusive.
 7.	Deliver your finished product and document your implementation for those who may work on the project after you.  
 
 ## Related topics  
-* [Inclusive design](http://design.microsoft.com/inclusive)
+* [Inclusive design](https://design.microsoft.com/inclusive)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) 

@@ -40,7 +40,7 @@ When responding to a customer's review, you must follow these guidelines. These 
 >
 > Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports, or if they prompt an unusually high number of customers to opt out of receiving review responses.
 
-Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if a review of your app contains offensive, profane, or abusive language, please open a [support request](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if a review of your app contains offensive, profane, or abusive language, please open a [support request](https://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 
 ## Use customer reviews to improve your app

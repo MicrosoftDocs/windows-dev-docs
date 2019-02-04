@@ -283,7 +283,7 @@ Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.co
 
 ## Related topics
 * [Creating Asynchronous Operations in C++/CX for UWP apps](https://msdn.microsoft.com/library/hh750082)
-* [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Visual C++ Language Reference](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Asynchronous Programming][AsyncProgramming]
 * [Task Parallelism (Concurrency Runtime)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

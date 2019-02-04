@@ -24,12 +24,12 @@ The rather clever thing about UWP controls is that they can sense the type of de
 | Date picker (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Image view (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> See also [Image and ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Label (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> See also [Quickstart: displaying text](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Map view (MKMapView) and map view delegate (MKMapViewDelegate) | See [Bing Maps for UWP apps](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Map view (MKMapView) and map view delegate (MKMapViewDelegate) | See [Bing Maps for UWP apps](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Navigation controller (UINavigationController) and navigation controller delegate (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Page control (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Picker view (UIPickerView) and picker view delegate (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> See also [Adding combo boxes and list boxes](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
 | Progress bar (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> See also [Quickstart: adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Scroll view (UIScrollView) and scroll view delegate (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  See also [Extensible Application Markup Language (XAML) scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?LinkId=238577) |
+| Scroll view (UIScrollView) and scroll view delegate (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  See also [Extensible Application Markup Language (XAML) scrolling, panning, and zooming sample](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
 | Search bar (UISearchBar) and search bar delegate (UISearchBarDelegate) | See [Adding search to an app](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  See also [Quickstart: Adding search to an app](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
 | Segmented control (UISegmentedControl) | None |
 | Slider (UISlider) | [Slider](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  See also [How to add a slider](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
@@ -40,7 +40,7 @@ The rather clever thing about UWP controls is that they can sense the type of de
 | Text field (UITextField) and text field delegate (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  See also [Display and edit text](https://msdn.microsoft.com/library/windows/apps/mt280218) |
 | Text view (UITextView) and text view delegate (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  See also [Quickstart: displaying text](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
 | View (UIView) and view controller (UIViewController) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Web view (UIWebView) and web view delegate (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  See also [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?LinkId=238582) |
+| Web view (UIWebView) and web view delegate (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  See also [XAML WebView control sample](https://go.microsoft.com/fwlink/p/?LinkId=238582) |
 | Window (UIWindow) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 
 For even more controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
@@ -53,6 +53,6 @@ For even more controls, see [Controls list](https://msdn.microsoft.com/library/w
 
 ## Related topics
 
-* [build 2014: What about XAML UI and Controls?](http://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [build 2014: Developing Apps using the Common XAML UI Framework](http://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [build 2014: Using Visual Studio to Build XAML Converged Apps](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [build 2014: What about XAML UI and Controls?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [build 2014: Developing Apps using the Common XAML UI Framework](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [build 2014: Using Visual Studio to Build XAML Converged Apps](https://go.microsoft.com/fwlink/p/?LinkID=397876)

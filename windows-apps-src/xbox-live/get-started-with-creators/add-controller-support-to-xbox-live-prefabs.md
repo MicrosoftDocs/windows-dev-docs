@@ -43,4 +43,4 @@ For example, let's say you have a game object called `UserProfile1` which is bas
 
 ## Xbox Controller Button Mappings
 
-For the Xbox Controller Button Mappings in Unity, check out this [Unity Controller Wiki page](http://wiki.unity3d.com/index.php?title=Xbox360Controller).
+For the Xbox Controller Button Mappings in Unity, check out this [Unity Controller Wiki page](https://wiki.unity3d.com/index.php?title=Xbox360Controller).

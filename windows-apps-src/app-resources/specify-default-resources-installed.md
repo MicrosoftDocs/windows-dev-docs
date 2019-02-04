@@ -38,7 +38,7 @@ You can configure what these defaults are in one of two ways. You can either add
    </default>
    ```
    
-   **Note** The value `LANGUAGE-TAG(S)` needs to be synchronized with your app's default language. If that's a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302), then your app's default language needs to be the same tag. If it's a comma-separated list of language tags, then your app's default language needs to be the first tag in the list. You set your app's default language in the **Default language** field on the **Application** tab in your app package manifest source file (`Package.appxmanifest`).
+   **Note** The value `LANGUAGE-TAG(S)` needs to be synchronized with your app's default language. If that's a single [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302), then your app's default language needs to be the same tag. If it's a comma-separated list of language tags, then your app's default language needs to be the first tag in the list. You set your app's default language in the **Default language** field on the **Application** tab in your app package manifest source file (`Package.appxmanifest`).
 
 4. Each `<qualifier>` element tells Visual Studio what value to use as the default for each qualifier name. With the file contents you have so far, you haven't actually changed Visual Studio's behavior. In other words, Visual Studio *already behaved as if* this file were present with these contents, because these are the default defaults. So to override a default with your own default value, you'll have to change a value in the file. Here's an example of how the file might look if you'd edited the first three values.
    ```xml
@@ -97,5 +97,5 @@ Save and close, and rebuild your project.
 ## Related topics
 
 * [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)

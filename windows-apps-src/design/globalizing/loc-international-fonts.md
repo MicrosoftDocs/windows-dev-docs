@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
 
-In the following table, the "Language tag" column lists the [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
+In the following table, the "Language tag" column lists the [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302) of the language. To see a list of the language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
 
 | Language | Language tag | Font used in Windows |
 | --------- | ----------- | -------------------- |
@@ -129,5 +129,5 @@ The Meiryo UI font is used in Windows. Windows includes Yu Gothic and Yu Mincho,
 
 ## Related topics
 
-* [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Supported languages](../../publish/supported-languages.md)

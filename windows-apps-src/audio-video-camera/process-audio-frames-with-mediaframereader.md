@@ -15,7 +15,7 @@ This article shows you how to use a [**MediaFrameReader**](https://msdn.microsof
 > The features discussed in this article are only available starting with Windows 10, version 1803.
 
 > [!NOTE] 
-> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230).
+> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230).
 
 ## Setting up your project
 The process for acquiring audio frames is largely the same as acquiring other types of media frames. As with any app that uses **MediaCapture**, you must declare that your app uses the *webcam* capability before attempting to access any camera device. If your app will capture from an audio device, you should also declare the *microphone* device capability. 
@@ -73,7 +73,7 @@ You can use an [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [Camera frames sample](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [Audio graphs](audio-graphs.md)
  
 

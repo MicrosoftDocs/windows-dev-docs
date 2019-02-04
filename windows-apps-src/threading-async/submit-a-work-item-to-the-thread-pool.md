@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Submit a work item to the thread pool
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 <b>Important APIs</b>
 
@@ -344,7 +344,7 @@ Note that the completion handler checks whether the work item was cancelled befo
 
 ## Summary and next steps
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
 
 ## Related topics
 

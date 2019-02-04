@@ -25,5 +25,5 @@ Banner ads are static display ads that utilize a rectangular portion of a page i
 
 ## Related topics
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](https://aka.ms/githubads)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)

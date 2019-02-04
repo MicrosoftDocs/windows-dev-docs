@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
 
 > [!TIP]
-> To learn more about using maps and location in your app, download the following samples from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
+> To learn more about using maps and location in your app, download the following samples from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
+-   [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [UWP geolocation sample](https://go.microsoft.com/fwlink/p/?linkid=533278)
 
  
 
@@ -45,7 +45,7 @@ Add routes, directions, and geocoding capabilities to your app by using APIs fro
 | [Display points of interest (POI) on a map](display-poi.md) | Add points of interest (POI) to a map by using pushpins, images, shapes, and XAML UI elements. |
 | [Display routes and directions](routes-and-directions.md) | Request routes and directions, and display them in your app. |
 | [Perform geocoding and reverse geocoding](geocoding.md) | Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. |
-| [Find and download map packages for offline use](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| In the past, your app had to direct users to the Settings app to download offline Maps. Now, you can use classes in the [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) namespace to find downloaded packages in a given area (based on a [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> You can also check and listen for the downloaded status of map packages as well as start a download without requiring the user to leave your app. <br> You'll find examples of how to do this in both the reference content and the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+| [Find and download map packages for offline use](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| In the past, your app had to direct users to the Settings app to download offline Maps. Now, you can use classes in the [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) namespace to find downloaded packages in a given area (based on a [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> You can also check and listen for the downloaded status of map packages as well as start a download without requiring the user to leave your app. <br> You'll find examples of how to do this in both the reference content and the [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 ## Get the user's location
 
@@ -68,12 +68,12 @@ Your app can launch the Windows Maps app as shown here to display specific maps 
 
 ## Related topics
 
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP geolocation sample](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Get current location](get-location.md)
 * [Design guidelines for location-aware apps](guidelines-and-checklist-for-detecting-location.md)
 * [Design guidelines for maps](controls-map.md)
 * [Design guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)

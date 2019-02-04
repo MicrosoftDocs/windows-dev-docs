@@ -305,7 +305,7 @@ The ResJSON indexer is identified by a `type` attribute of RESJSON. It indexes t
 </xs:schema>\
 ```
 
-A `.resjson` file contains JSON text (see [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt)). The file must contain a single JSON object with hierarchical properties. Each property must either be another JSON object or a string value.
+A `.resjson` file contains JSON text (see [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). The file must contain a single JSON object with hierarchical properties. Each property must either be another JSON object or a string value.
 
 JSON properties with names that begin with an underscore ("_") are not compiled into the final PRI file, but are maintained in the log file.
 
@@ -394,4 +394,4 @@ The `initialPath` attribute places all resources under this initial path by prep
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)
 * [MakePri.exe command-line options](makepri-exe-command-options.md)
 * [MakePri.exe configuration file](makepri-exe-configuration.md)
-* [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt)
+* [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

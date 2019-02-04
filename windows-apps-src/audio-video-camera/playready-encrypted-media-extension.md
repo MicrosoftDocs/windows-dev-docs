@@ -55,7 +55,7 @@ The following list describes the new features and changes made to PlayReady Encr
 
 This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.
 
-PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
+PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
 
 ## Use hardware DRM
 

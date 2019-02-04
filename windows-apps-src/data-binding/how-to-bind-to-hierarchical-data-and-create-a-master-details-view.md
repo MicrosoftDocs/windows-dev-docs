@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-> **Note**  Also see the [Master/detail sample](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Note**  Also see the [Master/detail sample](https://go.microsoft.com/fwlink/p/?linkid=619991).
 
 You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) where possible, and the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) where necessary.
 

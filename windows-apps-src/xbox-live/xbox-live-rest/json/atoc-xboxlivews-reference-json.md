@@ -284,6 +284,6 @@ Xbox Live Services defines JSON objects that are used in requests to, and respon
 <a id="ID4EZH"></a>
 
  
-##### External links [ECMA International Standard 262: ECMAScript Language Specification](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
+##### External links [ECMA International Standard 262: ECMAScript Language Specification](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
 
    

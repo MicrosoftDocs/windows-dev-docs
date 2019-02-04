@@ -231,7 +231,7 @@ You can also use the terminal simulator tool from MasterCard ([https://www.termi
 -   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
 -   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
 
-To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](http://go.microsoft.com/fwlink/?LinkId=534749).
+To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](https://go.microsoft.com/fwlink/?LinkId=534749).
 
 ### How to Create Scripts for HCE Testing
 
@@ -651,7 +651,7 @@ To disable hardware acceleration:
 
 ## Support Resources
 
-To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](http://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](http://go.microsoft.com/fwlink/?LinkId=535000).
+To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](https://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](https://go.microsoft.com/fwlink/?LinkId=535000).
 
 ## Related topics
 

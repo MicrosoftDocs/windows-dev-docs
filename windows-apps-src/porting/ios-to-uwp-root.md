@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Move from iOS to UWP
 
-If you are an iOS developer wondering how to expand your user base to include Windows 10 and the Universal Windows Platform (UWP), there are a growing number of tools to help you. The approaches you can take depend on the type of app you are working on (game, lifestyle, enterprise, and so on) and how far along you are in the development process. For example, a completed or nearly completed game that is heavily dependent on OpenGL or Cocos2D is an ideal candidate for the [Windows Bridge for iOS](https://dev.windows.com/bridges/ios), whereas if you are planning a cross-platform app for a small business, you should be considering using [Xamarin.Forms](https://www.xamarin.com/forms). And if you have written your app in a cross-platform tool such as Unity, [publishing to Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) is quite straightforward.
+If you are an iOS developer wondering how to expand your user base to include Windows 10 and the Universal Windows Platform (UWP), there are a growing number of tools to help you. The approaches you can take depend on the type of app you are working on (game, lifestyle, enterprise, and so on) and how far along you are in the development process. For example, a completed or nearly completed game that is heavily dependent on OpenGL or Cocos2D is an ideal candidate for the [Windows Bridge for iOS](https://dev.windows.com/bridges/ios), whereas if you are planning a cross-platform app for a small business, you should be considering using [Xamarin.Forms](https://www.xamarin.com/forms). And if you have written your app in a cross-platform tool such as Unity, [publishing to Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) is quite straightforward.
 
 ## Why Windows?
 
@@ -27,5 +27,5 @@ Today, Windows is running on a huge number of devices. The UWP provides develope
 ## Related topics
 
 **For designers and developers**
-* [Building Universal Windows apps for all Windows devices](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Building Universal Windows apps for all Windows devices](https://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [Download design assets for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)

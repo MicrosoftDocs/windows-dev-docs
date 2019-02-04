@@ -13,14 +13,14 @@ A Windows user can use **Settings** > **Time & Language** > **Region & language*
 
 Also in **Settings** > **Time & Language** > **Region & language**, but separate from language, the user can specify their location (known as region) in the world. Note that the display language (and regional variant) setting isn't a determiner of the region setting, and vice versa. For example, a user might be currently living in France but choose a preferred Windows display language of Español (México).
 
-For UWP apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). For example, the BCP-47 language tag "en-US" corresponds to English (United States) in **Settings**. Appropriate UWP APIs accept and return string representations of BCP-47 language tags.
+For UWP apps, a language is represented as a [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302). For example, the BCP-47 language tag "en-US" corresponds to English (United States) in **Settings**. Appropriate UWP APIs accept and return string representations of BCP-47 language tags.
 
-Also see the [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303).
+Also see the [IANA language subtag registry](https://go.microsoft.com/fwlink/p/?linkid=227303).
 
 The following three sections define the terms "user profile language list", "app manifest language list", and "app runtime language list". We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean.
 
 ## User profile language list
-The user profile language list is the name of the list that's configured by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. In code you can use the [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) property to access the user profile language list as a read-only list of strings, where each string is a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
+The user profile language list is the name of the list that's configured by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. In code you can use the [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) property to access the user profile language list as a read-only list of strings, where each string is a single [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -64,7 +64,7 @@ The third language list of interest is the intersection between the two lists th
 
 More specifically, the app runtime language list is made up of these items.
 
-1.  **(Optional) Primary Language Override**. The [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) is a simple override setting for apps that give users their own independent language choice, or apps that have some strong reason to override the default language choices. To learn more, see the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
+1.  **(Optional) Primary Language Override**. The [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) is a simple override setting for apps that give users their own independent language choice, or apps that have some strong reason to override the default language choices. To learn more, see the [Application resources and localization sample](https://go.microsoft.com/fwlink/p/?linkid=231501).
 2.  **The user's languages that are supported by the app**. This is the user profile language list filtered by the app manifest language list. Filtering the user's languages by those supported by the app maintains consistency among software development kits (SDKs), class libraries, dependent framework packages, and the app.
 3.  **If 1 and 2 are empty, then the default or first language supported by the app**. If the user profile language list doesn't contain any languages that the app supports, then the app runtime language is the first language supported by the app.
 
@@ -92,7 +92,7 @@ Name your resource files, or their folders, with language resource qualifiers. T
 **Note** Even resources in your app's default language must specify the language qualifier. For example, if your app's default language is English (United States), then qualify your assets as `\Assets\Images\en-US\logo.png`.
 
 - Windows performs complex matching, including across regional variants such as en-US and en-GB. So include the region sub-tag as appropriate. See [How the Resource Management System matches language tags](../../app-resources/how-rms-matches-lang-tags.md).
-- Specify a language script sub-tag in the qualifier when there is no Suppress-Script value defined for the language. For example, instead of zh-CN or zh-TW, use zh-Hant, zh-Hant-TW, or zh-Hans (for more detail, see the [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303)).
+- Specify a language script sub-tag in the qualifier when there is no Suppress-Script value defined for the language. For example, instead of zh-CN or zh-TW, use zh-Hant, zh-Hant-TW, or zh-Hans (for more detail, see the [IANA language subtag registry](https://go.microsoft.com/fwlink/p/?linkid=227303)).
 - For languages that have a single standard dialect, there is no need to include the region qualifier. For example, use ja instead of ja-JP.
 - Some tools and other components such as machine translators might find specific language tags, such as regional dialect info, helpful in understanding the data.
 
@@ -202,12 +202,12 @@ The following table contains examples of what the user would see in your app's U
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## Related topics
-* [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA language subtag registry](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Supported languages](../../publish/supported-languages.md)
 * [Globalize your date/time/number formats](use-global-ready-formats.md)
 * [How the Resource Management System matches language tags](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## Samples
-* [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [Application resources and localization sample](https://go.microsoft.com/fwlink/p/?linkid=231501)

@@ -149,7 +149,7 @@ When launched via Protocol activation, apps should consider including UI that al
 Any app or website can use your URI scheme name, including malicious ones. So any data that you get in the URI could come from an untrusted source. We recommend that you never perform a permanent action based on the parameters that you receive in the URI. For example, URI parameters could be used to launch the app to a user's account page, but we recommend that you never use them to directly modify the user's account.
 
 > [!NOTE]
-> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
+> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](https://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
 
 > [!NOTE]
 > When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.

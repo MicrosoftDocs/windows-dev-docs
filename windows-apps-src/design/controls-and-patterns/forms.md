@@ -143,8 +143,8 @@ Control | Use
 ### Additional Controls 
 For a complete list of UWP controls, see [index of controls by function](controls-by-function.md).
 
-For more complex and custom UI controls, look at UWP resources available from companies such as [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
-[Infragistics](http://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), and [ActiPro](http://www.actiprosoftware.com/products/controls/universal).
+For more complex and custom UI controls, look at UWP resources available from companies such as [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
+[Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), and [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## One column form example
 This example uses an Acrylic [master/detail](master-details.md) [list view](lists.md) and [NavigationView](navigationview.md) control.

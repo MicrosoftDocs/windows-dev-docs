@@ -76,7 +76,7 @@ Note the asynchronous method calls defined using JavaScript promises. Looking at
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### Uploading multiple files
 **Identify the files and destination for the upload**
@@ -172,7 +172,7 @@ Note the asynchronous method calls defined using JavaScript promises. Looking at
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### Adding additional operation control methods
 The level of control can be increased by implementing additional [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.

@@ -24,7 +24,7 @@ The following table lists the standard HTTP headers used when making Xbox Live S
 | Authorization| STSTokenString| STS authentication token. The value for this header is retrieved from the <b>GetTokenAndSignatureResult.Token</b> property. | 
 | Content-Type| application/xml, application/json, multipart/form-data or application/x-www-form-urlencoded| Specifies the type of content being submitted with a request.| 
 | Content-Length| Integer value| Specifies the length of the data being submitted in a POST request.| 
-| Accept-Language | String| Specifies how to localize any strings returned. See <a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">Advanced Xbox 360 Programming</a> for a list of valid language/locale combinations.| 
+| Accept-Language | String| Specifies how to localize any strings returned. See <a href="https://msdn.microsoft.com/en-us/library/bb975829.aspx">Advanced Xbox 360 Programming</a> for a list of valid language/locale combinations.| 
   
 <a id="ID4E6C"></a>
 

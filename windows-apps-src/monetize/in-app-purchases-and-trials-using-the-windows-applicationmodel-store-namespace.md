@@ -149,7 +149,7 @@ This section lists the XSD file that defines the structure of the WindowsStorePr
 5. Switch to your WindowsStoreProxy.xml file in Visual Studio.
 6. On the **XML** menu, click **Schemas**, then locate the row in the list for the WindowsStoreProxy.xsd file. If the location for the file is not the one you want (for example, if the temporary file is still shown), click **Add**. Navigate to the right file, then click **OK**. You should now see that file in the list. Make sure a checkmark appears in the **Use** column for that schema.
 
-Once you've done this, edits you make to WindowsStoreProxy.xml will be subject to the schema. For more information, see [How to: Select the XML Schemas to Use](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+Once you've done this, edits you make to WindowsStoreProxy.xml will be subject to the schema. For more information, see [How to: Select the XML Schemas to Use](https://go.microsoft.com/fwlink/p/?LinkId=403014).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml

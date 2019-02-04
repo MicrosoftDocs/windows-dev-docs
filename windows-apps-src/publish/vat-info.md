@@ -15,7 +15,7 @@ If you’re required to provide a VAT ID number during the Partner Center regist
 ## Understanding VAT numbers
 
 
-A value added tax (VAT) number is an identifier used for countries or regions in the European Union. For more info, see the European Union’s official [VIES site](http://go.microsoft.com/fwlink/p/?LinkId=258372).
+A value added tax (VAT) number is an identifier used for countries or regions in the European Union. For more info, see the European Union’s official [VIES site](https://go.microsoft.com/fwlink/p/?LinkId=258372).
 
 ## Accepted formats for VAT numbers
 

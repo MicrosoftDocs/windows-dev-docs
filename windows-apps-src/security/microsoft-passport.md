@@ -14,7 +14,7 @@ This article describes the new Windows Hello technology that ships as part of th
 
 Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
-For a complete code sample, see the [Windows Hello code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
+For a complete code sample, see the [Windows Hello code sample on GitHub](https://go.microsoft.com/fwlink/?LinkID=717812).
 
 For a step-by-step walkthrough on creating a UWP app using Windows Hello and the backing authentication service, see the [Windows Hello login app](microsoft-passport-login.md) and [Windows Hello login service](microsoft-passport-login-auth-service.md) articles.
 
@@ -270,7 +270,7 @@ A basic challenge–response flow is shown in this sequence diagram:
 
 ![Windows Hello challenge response](images/passport-challenge-response.png)
 
-Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you look at the [Windows Hello code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
+Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you look at the [Windows Hello code sample on GitHub](https://go.microsoft.com/fwlink/?LinkID=717812), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
 
 In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with CNG (/windows/desktop/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
 
@@ -402,9 +402,9 @@ Mission accomplished! You just made the Internet a safer place!
 
 ### 6.1 Articles and sample code
 
-- [Windows Hello overview](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Windows Hello overview](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 - [Implementation details for Windows Hello](https://msdn.microsoft.com/library/mt589441)
-- [Windows Hello code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows Hello code sample on GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### 6.2 Terminology
 

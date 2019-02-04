@@ -14,7 +14,7 @@ This article explains how to use the **[SoftwareBitmap](https://docs.microsoft.c
 The examples in this article walk you through creating a native code Windows Runtime Component that can be used from a UWP app, including apps that are created using C#. This helper component will expose a single method, **Blur**, which will use OpenCV's blur image processing function. The component implements private methods that get a pointer to the underlying image data buffer which can be used directly by the OpenCV library, making it simple to extend the helper component to implement other OpenCV processing features. 
 
 * For an introduction to using **SoftwareBitmap**, see [Create, edit, and save bitmap images](imaging.md). 
-* To learn how to use the OpenCV library, go to [http://opencv.org](http://opencv.org).
+* To learn how to use the OpenCV library, go to [http://opencv.org](https://opencv.org).
 * To see how to use the OpenCV helper component shown in this article with **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** to implement real-time image processing of frames from a camera, see [Use OpenCV with MediaFrameReader](use-opencv-with-mediaframereader.md).
 * For a complete code example that implements some different effects, see the [Camera Frames + OpenCV Sample](https://go.microsoft.com/fwlink/?linkid=854003) in the Windows Universal Samples GitHub repo.
 

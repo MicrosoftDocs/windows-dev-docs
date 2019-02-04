@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
 
-Add-ons are published through [Partner Center](https://partner.microsoft.com/dashboard), and require you to have an active [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100). You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
+Add-ons are published through [Partner Center](https://partner.microsoft.com/dashboard), and require you to have an active [developer account](https://go.microsoft.com/fwlink/p/?LinkId=615100). You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
 
 The first step in the add-on submission process is to create the add-on in Partner Center by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you'll create a submission so that your add-on can be purchased via the Microsoft Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-publication) to add-ons after the app is in the Store without having to resubmit the app again.
 

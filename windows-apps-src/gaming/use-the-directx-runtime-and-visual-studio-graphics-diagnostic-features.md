@@ -26,7 +26,7 @@ Graphics diagnostics features include the ability to create Direct3D debug devic
 ## Related topics
 
 
-[Graphics Diagnostics Overview in Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Graphics Diagnostics Overview in Visual Studio](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

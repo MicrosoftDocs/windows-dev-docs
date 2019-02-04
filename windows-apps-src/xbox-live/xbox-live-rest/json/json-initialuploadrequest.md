@@ -23,7 +23,7 @@ The InitialUploadRequest object has the following specification.
 | <b>greatestMomentId</b>| string| The string ID for the text to use as the name for the clip. This is managed and localized in the config file for the title by the developer of the title.| 
 | <b>userCaption</b>| string| Optional. Alternate user-entered name for game clip up to a maximum length of 250 characters.| 
 | <b>sessionRef</b>| string| Optional. Game session reference during which the recording was done.| 
-| <b>dateRecorded</b>| DateTime| The time the recording was started, in UTC. Marshalled as a string in ISO 8601 format (see <a href="http://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a> for more information).| 
+| <b>dateRecorded</b>| DateTime| The time the recording was started, in UTC. Marshalled as a string in ISO 8601 format (see <a href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a> for more information).| 
 | <b>durationInSeconds</b>| 32-bit unsigned integer| The length of the clip in seconds.| 
 | <b>expectedBlocks</b>| 32-bit unsigned integer| Optional. Number of blocks into which file will be divided. Omit if file will be transmitted in a single request.| 
 | <b>fileSize</b>| 32-bit unsigned integer| File size in bytes of the video that will be uploaded.| 

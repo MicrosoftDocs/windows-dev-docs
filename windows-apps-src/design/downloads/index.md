@@ -89,11 +89,11 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
-        <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+        <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
       **Tile and icon generator for Adobe Photoshop**
-      This set of actions for Adobe Photoshop generates the 68 recommended tile and icon assets from just 7 files. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Download the tile and icon generator</a></p>
+      This set of actions for Adobe Photoshop generates the 68 recommended tile and icon assets from just 7 files. <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">Download the tile and icon generator</a></p>
     :::column-end:::
 :::row-end:::
 

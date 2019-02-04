@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
 
-[Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Sign up now!](https://go.microsoft.com/fwlink/p/?LinkId=615100)
 
 ## Opening your developer account
 

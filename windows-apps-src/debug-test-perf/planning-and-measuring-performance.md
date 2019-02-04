@@ -98,7 +98,7 @@ You can now use your performance goals to influence your app's design. Using the
 
 **App launch and resume**
 
--   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) and [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+-   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](https://go.microsoft.com/fwlink/p/?LinkId=317595) and [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
 -   Disable animations that occur immediately after the splash screen is dismissed, as these will only lead to a perception of delay in app launch time.
 
 **Adaptive UI, and orientation**
@@ -146,7 +146,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-Also see the [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+Also see the [Logging sample](https://go.microsoft.com/fwlink/p/?LinkId=529576).
 
 With your app instrumented, you can test and measure your app's performance.
 

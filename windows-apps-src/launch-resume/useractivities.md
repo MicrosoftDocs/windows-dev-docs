@@ -30,7 +30,7 @@ A [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.use
 
 1. The [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (e.g. “my-app://page2?action=edit”) or of an AppUriHandler (e.g. http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) exposes a class that allows the user to visually identify an activity with a title, description, or Adaptive Card elements.
-3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [http://schema.org](http://schema.org) data.
+3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [http://schema.org](https://schema.org) data.
 
 To add a **UserActivity** to your app:
 
@@ -99,7 +99,7 @@ What this code does is detect whether the app was activated via a protocol. If i
 
 ## Use Adaptive Cards to improve the Timeline experience
 
-User Activities appear in Cortana and Timeline. When activities appear in Timeline, we display them using the [Adaptive Card](http://adaptivecards.io/) framework. If you do not provide an adaptive card for each activity, Timeline will automatically create a simple activity card based on your application name and icon, the title field and optional description field. Below is an example Adaptive Card payload and the card it produces.
+User Activities appear in Cortana and Timeline. When activities appear in Timeline, we display them using the [Adaptive Card](https://adaptivecards.io/) framework. If you do not provide an adaptive card for each activity, Timeline will automatically create a simple activity card based on your application name and icon, the title field and optional description field. Below is an example Adaptive Card payload and the card it produces.
 
 ![An adaptive card](images/adaptivecard.png)]
 
@@ -153,7 +153,7 @@ Once your application or service is authenticated with a Microsoft Account, it j
 You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API to make your app appear in Timeline and Cortana.
 * Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
-* See [more sophisticated Adaptive Cards](http://adaptivecards.io/).
+* See [more sophisticated Adaptive Cards](https://adaptivecards.io/).
 * Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).
 * Learn more about [Project Rome on GitHub](https://github.com/Microsoft/project-rome).
 
@@ -165,7 +165,7 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 
 * [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
-* [Adaptive cards visualizer, samples](http://adaptivecards.io/)
+* [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

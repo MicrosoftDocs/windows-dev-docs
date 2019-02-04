@@ -92,7 +92,7 @@ Before you use a semantic zoom, you should understand how to use a list view wit
 </SemanticZoom>
  ```
  
-The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
+The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?LinkId=619992). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
   
 **Define the zoomed-in view**
 

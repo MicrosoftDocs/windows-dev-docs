@@ -73,7 +73,7 @@ The best way to test your keyboard accessibility is to unplug your mouse or use 
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
 
 ## Verify the contrast ratio of visible text  
-Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
+Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
 
 > [!NOTE]
 > Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.
@@ -157,5 +157,5 @@ One aspect that you can test is whether there are elements appearing in the UI A
 * [Accessibility](accessibility.md)
 * [Practices to avoid](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Accessibility in Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Accessibility in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

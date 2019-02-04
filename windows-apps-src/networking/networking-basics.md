@@ -39,7 +39,7 @@ The socket broker is intended to replace Control Channel Triggers where it is ap
 ### Choosing a network trigger
 There are some scenarios where either kind of trigger would be suitable. When you are choosing which kind of trigger to use in your app, consider the following advice.
 
--   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+-   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 -   If you are using push-enabled **StreamSockets**, you can use control channel triggers, but should prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). The latter choice allows the system to free up memory and reduce power requirements when the connection is not being actively used.
 -   If you want to minimize the memory footprint of your app when it is not actively servicing network requests, prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) when possible.
 -   If you want your app to be able to receive data while the system is in Connected Standby mode, use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
@@ -501,4 +501,4 @@ The networking APIs support different methods for retrieving this detailed infor
 -   Other APIs provide a method to retrieve the actual **HRESULT** value.
 
 ## Related topics
-* [Networking API Improvements in Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Networking API Improvements in Windows 10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

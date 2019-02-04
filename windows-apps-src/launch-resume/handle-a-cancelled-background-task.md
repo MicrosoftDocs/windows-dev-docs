@@ -129,7 +129,7 @@ When a cancellation request is received, your method that does background work n
 
 Modify the code of your background task class to check the flag variable while it's working. If **\_cancelRequested** becomes set to true, stop work from continuing.
 
-The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled.
+The [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -175,7 +175,7 @@ else
 
 Modify the **Run** method so that after work has stopped, it records whether the task completed or was cancelled. This step applies to out-of-process background tasks because you need a way to communicate between processes when the background task was cancelled. For in-process background tasks, you can simply share state with the application to indicate the task was cancelled.
 
-The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings.
+The [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -249,13 +249,13 @@ else
 
 ## Remarks
 
-You can download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.
+You can download the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.
 
-For illustrative purposes, the sample code shows only portions of the **Run** method (and callback timer) from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+For illustrative purposes, the sample code shows only portions of the **Run** method (and callback timer) from the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## Run method example
 
-The complete **Run** method, and timer callback code, from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context.
+The complete **Run** method, and timer callback code, from the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context.
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -408,4 +408,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
 - [Use a maintenance trigger](use-a-maintenance-trigger.md)
 - [Debug a background task](debug-a-background-task.md)
-- [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)

@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. For example, depending on where your app is running, it could use a background task to synchronize data with devices or monitor sensors. To help preserve battery life and ensure the appropriate user consent, the use of [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) is subject to policies that are described in this topic.
 
-To access sensors or peripheral devices in the background, create a background task that uses the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). For an example that shows how this is done on a PC, see the [Custom USB device sample](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). For an example on a phone, see the [Background Sensors sample](http://go.microsoft.com/fwlink/p/?LinkId=393307).
+To access sensors or peripheral devices in the background, create a background task that uses the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). For an example that shows how this is done on a PC, see the [Custom USB device sample](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). For an example on a phone, see the [Background Sensors sample](https://go.microsoft.com/fwlink/p/?LinkId=393307).
 
 > [!Important]
 > **DeviceUseTrigger** cannot be used with in-process background tasks. The info in this topic only applies to background tasks that run out-of-process.
@@ -27,7 +27,7 @@ When your app is no longer visible to the user, Windows will suspend or terminat
 
 ### Limitation: critical device operations
 
-Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Microsoft Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619).
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Microsoft Store device apps](https://go.microsoft.com/fwlink/p/?LinkId=306619).
 
 ## Protocols/APIs supported in a DeviceUseTrigger background task
 
@@ -86,7 +86,7 @@ Consider these important points when using the [**DeviceUseTrigger**](https://ms
 
 -   Background tasks that use [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) might be canceled by Windows when certain policy requirements are no longer met, including a maximum amount of background time (wall clock time). It's important to consider these policy requirements when using these background tasks to interact with your peripheral device.
 
-**Tip**  To see how these background tasks work, download a sample. For an example that shows how this is done on a PC, see the [Custom USB device sample](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). For an example on a phone, see the [Background Sensors sample](http://go.microsoft.com/fwlink/p/?LinkId=393307).
+**Tip**  To see how these background tasks work, download a sample. For an example that shows how this is done on a PC, see the [Custom USB device sample](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). For an example on a phone, see the [Background Sensors sample](https://go.microsoft.com/fwlink/p/?LinkId=393307).
  
 ## Frequency and foreground restrictions
 

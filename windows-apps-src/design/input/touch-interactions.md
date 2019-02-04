@@ -588,17 +588,17 @@ All of the pointer events, gesture events and manipulation events mentioned here
 
 **Samples**
 
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Archive Samples**
 
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Input: Device capabilities sample](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

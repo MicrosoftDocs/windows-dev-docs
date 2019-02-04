@@ -40,7 +40,7 @@ In the second example, the [**{ThemeResource} markup extension**](../../xaml-pla
 When you need to change a color from its system default, create a ThemeDictionaries collection for your app.
 
 1. Start by creating the proper plumbing, if it doesn't already exist. In App.xaml, create a **ThemeDictionaries** collection, including **Default** and **HighContrast** at a minimum.
-2. In **Default**, create the type of [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) you need, usually a **SolidColorBrush**. Give it a *x:Key* name specific to what it is being used for.
+2. In **Default**, create the type of [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) you need, usually a **SolidColorBrush**. Give it a *x:Key* name specific to what it is being used for.
 3. Assign the **Color** you want for it.
 4. Copy that **Brush** into **HighContrast**.
 
@@ -229,7 +229,7 @@ You can programmatically check if the current theme is a high contrast theme by 
 
 ## Related topics  
 * [Accessibility](accessibility.md)
-* [UI contrast and settings sample](http://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [XAML high contrast sample](http://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI contrast and settings sample](https://go.microsoft.com/fwlink/p/?linkid=231539)
+* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML high contrast sample](https://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)

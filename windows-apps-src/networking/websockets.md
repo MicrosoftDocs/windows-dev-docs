@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 # WebSockets
 WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 
-Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.
+Under the [WebSocket Protocol](https://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.
 
 To establish a WebSocket connection, a specific, HTTP-based handshake is exchanged between the client and the server. If successful, the application-layer protocol is "upgraded" from HTTP to WebSockets, using the previously established TCP connection. Once this occurs, HTTP is completely out of the picture; data can be sent or received using the WebSocket protocol by both endpoints, until the WebSocket connection is closed.
 
@@ -829,8 +829,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## Related topics
-* [WebSocket Protocol](http://tools.ietf.org/html/rfc6455)
+* [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
 * [Sockets](sockets.md)
 
 ## Samples
-* [WebSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620623)

@@ -100,7 +100,7 @@ This section lets you provide artwork to help display your product more effectiv
 
 Trailers are short videos that give customers a way to see your product in action, so they can get a better understanding of what it’s like. They are shown at the top of your app's Store listing (as long as you include a [16:9 Super hero art](#windows-10-and-xbox-image-169-super-hero-art) image). 
 
-Trailers are encoded with [Smooth Streaming](http://www.iis.net/downloads/microsoft/smooth-streaming), which adapts the quality of a video stream delivered to clients in real time based on their available bandwidth and CPU resources.
+Trailers are encoded with [Smooth Streaming](https://www.iis.net/downloads/microsoft/smooth-streaming), which adapts the quality of a video stream delivered to clients in real time based on their available bandwidth and CPU resources.
 
 > [!NOTE]
 > Trailers are only shown to customers on Windows 10, version 1607 or later (which includes Xbox).

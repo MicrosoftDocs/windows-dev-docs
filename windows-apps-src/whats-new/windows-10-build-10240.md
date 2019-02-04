@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # What's new in Windows 10 for developers, build 10240
 
-Windows 10 build 10240 and the updated SDK provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. After [installing the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+Windows 10 build 10240 and the updated SDK provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. After [installing the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 Here's a feature-by-feature look at what's new for you in Windows 10 build 10240 (Also known as Windows 10 version 1507).
 

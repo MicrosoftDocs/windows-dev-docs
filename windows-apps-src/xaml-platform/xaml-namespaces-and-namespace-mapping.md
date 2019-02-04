@@ -59,7 +59,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 -   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) that object otherwise has.
 -   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), overriding [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](http://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](https://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

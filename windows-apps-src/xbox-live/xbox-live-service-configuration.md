@@ -18,7 +18,7 @@ In case you are not, we'll briefly explain Leaderboards as an example. Leaderboa
 
 But for this to happen, you need to perform some one-time configuration so that Xbox Live knows about your leaderboard. For example whether the values should be sorted in ascending or descending value, and what piece of data it should be sorting.
 
-This configuration happens on [Partner Center](https://partner.microsoft.com/dashboard) most of the time. But certain developers will use [Xbox Developer Portal (XDP)](http://xdp.xboxlive.com).
+This configuration happens on [Partner Center](https://partner.microsoft.com/dashboard) most of the time. But certain developers will use [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com).
 
 If you are a developing your title as part of the Xbox Live Creators Program, you use [Partner Center](https://partner.microsoft.com/dashboard), and you can read [Getting Started With Xbox Live](get-started-with-creators/get-started-with-xbox-live-creators.md) to learn how to get set up.
 
@@ -26,7 +26,7 @@ If you are an ID@Xbox Developer or working with a publisher that is a Microsoft 
 
 ## Choose your development portal
 
-As mentioned above, there are two different portals that can be used to configure Xbox Live Services. Partner Center at [https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](http://xdp.xboxlive.com).
+As mentioned above, there are two different portals that can be used to configure Xbox Live Services. Partner Center at [https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](https://xdp.xboxlive.com).
 
 Partner Center is recommended for all titles going forward, but for certain features, you may still want to use XDP. This section will help advise you where to configure your title.
 

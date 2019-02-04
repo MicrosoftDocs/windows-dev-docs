@@ -27,7 +27,7 @@ At its most basic level, the business justification for accessibility is straigh
 
 Number of users who can play your game x Awesomeness of game = Game sales
 
-If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.aao.org/eye-health/diseases/color-blindness-risk), this can potentially have a large impact on your title’s revenue. 
+If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.aao.org/eye-health/diseases/color-blindness-risk), this can potentially have a large impact on your title’s revenue. 
 
 For more business justifications, see [Making Video Games Accessible](https://msdn.microsoft.com/library/windows/desktop/ee415219).
 
@@ -152,7 +152,7 @@ Consumers will want to know if your game can be played by gamers with disabiliti
 
 ## Game accessibility features
 
-This section outlines some features that can make your game more accessible. These features are derived from guidelines taken from the [Game accessibility guidelines](http://gameaccessibilityguidelines.com/), which represent the findings of a collaborative group of studios, specialists, and academics. For more information, see [Game accessibility guidelines](http://gameaccessibilityguidelines.com/). 
+This section outlines some features that can make your game more accessible. These features are derived from guidelines taken from the [Game accessibility guidelines](https://gameaccessibilityguidelines.com/), which represent the findings of a collaborative group of studios, specialists, and academics. For more information, see [Game accessibility guidelines](https://gameaccessibilityguidelines.com/). 
 
 ### Colorblind friendly graphics and user interface
 
@@ -169,7 +169,7 @@ Since it’s less common to have reduced sensitivity to blue light, when designi
     
   + Do not rely solely on color to communicate or distinguish game objects. Use shapes and patterns as well.
   + If you have to rely on colors alone, combine presets with a free selection of colors, so that it can be fully customizable by the players who need them and not creating extra work for players who do not need them.
-  + Use a colorblind simulator to test your designs so that you can view your designs through colorblind eyes. This can help you avoid common contrast issues. [Color Oracle](http://www.colororacle.org) is a free colorblind simulator that can simulate the three most common types of color vision deficiency – deuteranopia, protanopia, and tritanopia.
+  + Use a colorblind simulator to test your designs so that you can view your designs through colorblind eyes. This can help you avoid common contrast issues. [Color Oracle](https://www.colororacle.org) is a free colorblind simulator that can simulate the three most common types of color vision deficiency – deuteranopia, protanopia, and tritanopia.
   
 ### Closed captioning and subtitles
 
@@ -203,13 +203,13 @@ Sound provides feedback to the player, in addition to visual feedback. Good game
 
 ### Fully mappable controls
 
-There are companies and organizations, such as [Special Effect](http://www.specialeffect.org.uk/), that design custom game controllers that can be used with various gaming systems like Windows and Xbox One. This customization allows people with different forms of disabilities to play games they might not be able to play otherwise. For more information on people who are now able to play games independently because of customized controllers, see [who they helped](http://www.specialeffect.org.uk/who-we-helped).
+There are companies and organizations, such as [Special Effect](https://www.specialeffect.org.uk/), that design custom game controllers that can be used with various gaming systems like Windows and Xbox One. This customization allows people with different forms of disabilities to play games they might not be able to play otherwise. For more information on people who are now able to play games independently because of customized controllers, see [who they helped](https://www.specialeffect.org.uk/who-we-helped).
 
 As a game developer, you can make your game more accessible by allowing fully mappable controls so that gamers have the option to plug in their custom controllers and remap the keys according to their needs.
 
 Having fully mappable controls also benefits people who use standard controllers. Your gamers can design a layout that suits their unique individual needs.
 
-Both standard Xbox One and Xbox Elite controllers offer customization of the controllers for precision gaming. To fully utliize their remapping capabilities, __it is recommended that developers include remapping directly in the game__. For more information, see [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) and [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
+Both standard Xbox One and Xbox Elite controllers offer customization of the controllers for precision gaming. To fully utliize their remapping capabilities, __it is recommended that developers include remapping directly in the game__. For more information, see [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) and [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
 
 ### Wider selection of difficulty levels
 
@@ -219,7 +219,7 @@ Tweaking the difficulty level of your game is a delicate process. If it is too e
 
 ### Photosensitivity epilepsy testing
 
-Photosensitive epilepsy (PSE) is a condition where seizures are triggered by visual stimuli, including exposures to flashing lights or certain moving visual forms and patterns. This occurs in about three percent of people and is more common in children and adolescents. In terms of numbers, we are looking at approximately [1 in 4000 people aged 5-24](http://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
+Photosensitive epilepsy (PSE) is a condition where seizures are triggered by visual stimuli, including exposures to flashing lights or certain moving visual forms and patterns. This occurs in about three percent of people and is more common in children and adolescents. In terms of numbers, we are looking at approximately [1 in 4000 people aged 5-24](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
 
 There are many factors that can cause a photosensitive reaction when playing video games, including the duration of gameplay, the frequency of the flash, the intensity of the light, the contrast of the background and the light, the distance between the screen and the gamer, and the wavelength of the light.
 
@@ -235,7 +235,7 @@ Avoid the following:
 * More than five evenly spaced high contrast repeated stripes – rows or columns such as grids and checkerboards, that may be composed of smaller regular elements such as polkadots
 * More than five lines of text formatted as capital letters only, with not much spacing between letters, and line spacing the same height as the lines themselves, effectively turning it into high contrast evenly alternating rows
 
-Use an automated system to check gameplay for stimuli that could trigger photosensitive epilepsy. (Example: [The Harding Test](http://www.hardingtest.com/index.php?page=test) and [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/) developed by Cambridge Research System Ltd and Professor Graham Harding.) 
+Use an automated system to check gameplay for stimuli that could trigger photosensitive epilepsy. (Example: [The Harding Test](https://www.hardingtest.com/index.php?page=test) and [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) developed by Cambridge Research System Ltd and Professor Graham Harding.) 
 
 Include **Flashing On/Off** as a setting option and set **Flashing** as **Off** by default. In doing so, you protect players who do not yet know they are susceptible to seizures.
 
@@ -246,21 +246,21 @@ Design for breaks between game levels, encouraging players to take a break from 
 Here are some external sites that provide additional information about game accessibility.
 
 ### Game accessibility guidelines
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](http://www.includification.com/)
-* [Design Universally Accessible (UA) games](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation guidelines](https://www.includification.com/)
+* [Design Universally Accessible (UA) games](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### Custom input controllers
-* [Special effect](http://www.specialeffect.org.uk/)
-* [War fighter engaged](http://www.warfighterengaged.org/)
+* [Special effect](https://www.specialeffect.org.uk/)
+* [War fighter engaged](https://www.warfighterengaged.org/)
 
 ## References used
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](http://www.includification.com/)
-* [Color Blind Awareness, a Community Interest Company](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [How to do subtitles well- a blog article on Gamasutra by Ian Hamilton](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsy foundation](http://www.epilepsy.com/)
+* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation guidelines](https://www.includification.com/)
+* [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [How to do subtitles well- a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [Innovation for All Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Epilepsy foundation](https://www.epilepsy.com/)
 
 ## Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive)

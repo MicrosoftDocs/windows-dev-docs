@@ -85,7 +85,7 @@ The [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/win
 
 ### DNS Service Discovery
 
-The [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API enables you to advertise a network service to other devices on the network using the DNS-SD protocol described in IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158).
+The [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API enables you to advertise a network service to other devices on the network using the DNS-SD protocol described in IETF [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158).
 
 ### Communicating over Bluetooth
 

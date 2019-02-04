@@ -68,7 +68,7 @@ Here's how to create an ad campaign to promote an app.
         * In the **Language** drop-down, select the language for your ad. The text for the Microsoft Store badge will appear in the language you select.
         * To add an extra line of text to your ad, enter text in the **Custom tagline** field.
             > [!NOTE]
-            > The text you enter here must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
+            > The text you enter here must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](https://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
         * To further customize the ad, expand **Customize ad design / See all ad sizes** and choose any of the following:
             * **Background color**. Choose from the available options.
             * **Images**. Choose one of the available images (taken from your app's Store listing).
@@ -78,13 +78,13 @@ Here's how to create an ad campaign to promote an app.
 
     * **Custom**. Choose this option to use your own ad designs. Note that if you selected a customer segment earlier, you must use custom creatives. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
         * Each file must be a .png or .jpg that is 40 KB or smaller.
-        * Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
+        * Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](https://go.microsoft.com/fwlink?LinkId=532595).
         * The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
         * All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
 
 12.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
     * If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
-    * If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Microsoft Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
+    * If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Microsoft Store. For more information about install tracking with Kochava and Tune, see the [Kochava](https://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
     * If you chose **Increase engagement in your app** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
     * If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 

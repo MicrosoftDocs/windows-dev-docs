@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Request routes and directions, and display them in your app.
 
 >[!Note]
->To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+>To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 >If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
@@ -236,7 +236,7 @@ private async void ShowRouteOnMap()
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)

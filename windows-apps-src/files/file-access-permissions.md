@@ -84,7 +84,7 @@ There are two primary ways to access files and folders in your app's install dir
     
     The "ms-appx:///" prefix in the URI refers to the app's install directory. You can learn more about using app URIs in [How to use URIs to reference content](https://msdn.microsoft.com/library/windows/apps/hh781215).
 
-In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some [C/C++ Standard Library functions from Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
+In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some [C/C++ Standard Library functions from Microsoft Visual Studio](https://msdn.microsoft.com/library/hh875057.aspx).
 
 The app's install directory is a read-only location. You can't gain access to the install directory through the file picker.
 
