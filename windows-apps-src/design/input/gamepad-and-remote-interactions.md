@@ -1,19 +1,12 @@
 ---
-<<<<<<< HEAD
 author: Karl-Bridge-Microsoft
 Description: Optimize your app for input from Xbox gamepad and remote control.
-=======
-Description: TODO
->>>>>>> master
 title: Gamepad and remote control interactions
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-<<<<<<< HEAD
 ms.author: kbridge
-=======
->>>>>>> master
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
