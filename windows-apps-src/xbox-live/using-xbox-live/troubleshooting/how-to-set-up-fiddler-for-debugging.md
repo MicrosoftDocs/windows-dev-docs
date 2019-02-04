@@ -15,7 +15,7 @@ Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between y
 ## For Windows UWP PC apps
 
 1. Make sure that the current user is in the administrator group on the PC
-1. Download Fiddler from [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
+1. Download Fiddler from [http://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. Make sure that you select the version that is “Built for .NET 4”
 1. Once installed, go to Tools->Fiddler Options and enable Capture HTTPS CONNECTs and Decrypt HTTPS traffic.  All communications between the runtime and Xbox LIVE services are encrypted with SSL.  Without this option you won’t see anything useful.  Accept all dialogs Fiddler pops up (should be 5 dialogs including UAC)
 1. Go to “WinConfig”, “Exempt All”, and “Save Changes”.  Otherwise Fiddler won’t work with Store apps.
@@ -40,7 +40,7 @@ Follow the steps here [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uw
 
 In normal operation, a console that communicates through a proxy is at risk of having its communications modified by the proxy, possibly allowing players to cheat. Thus, consoles are designed not to allow communication through a proxy. Using Fiddler with your Xbox One dev kit requires that you perform some special configuration steps on the dev kit to allow it to use the Fiddler proxy.
 
-Fiddler is freeware, and can be downloaded from the [Fiddler website](http://www.telerik.com/fiddler/).
+Fiddler is freeware, and can be downloaded from the [Fiddler website](https://www.telerik.com/fiddler/).
 
 Fiddler can impact the network status reported by the console. If an upstream connection is disabled from the machine running Fiddler, the console may not detect this disconnection until the authentication of the console has expired. If you are using Fiddler, be sure to disconnect the connection between the console and the computer running Fiddler, rather than using Fiddler to simulate a disconnect. Better still, use the network stress tools so simulate disconnection for testing purposes.
 
@@ -48,7 +48,7 @@ Installing and enabling Fiddler on the development PC
 
 Follow these steps to install and enable Fiddler to monitor traffic from your dev kit.
 
-1. Install Fiddler on your development PC, following the directions on the [Fiddler website](http://www.telerik.com/fiddler/).
+1. Install Fiddler on your development PC, following the directions on the [Fiddler website](https://www.telerik.com/fiddler/).
 1. Launch Fiddler and select Fiddler Options from the Tools menu.
 1. Select the Connections tab, and ensure that the Allow remote computers to connect checkbox is checked.
 1. Click OK to accept your change to the settings. You will see a dialog box saying that Fiddler must be restarted for the change to take effect, and that you may need to configure your firewall manually. Click OK on this dialog, but do not restart Fiddler yet.

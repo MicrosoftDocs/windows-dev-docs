@@ -17,7 +17,7 @@ This topic shows how to use the [**FaceDetector**](https://msdn.microsoft.com/li
 
 For an alternative method of tracking faces using the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), see [Scene analysis for media capture](scene-analysis-for-media-capture.md).
 
-The code in this article was adapted from the [Basic Face Detection](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) and [Basic Face Tracking](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [Basic Face Detection](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) and [Basic Face Tracking](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
 
 ## Detect faces in a single image
 
@@ -92,8 +92,8 @@ Call [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps
 ## Related topics
 
 * [Scene analysis for media capture](scene-analysis-for-media-capture.md)
-* [Basic Face Detection sample](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Basic Face Tracking sample](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Basic Face Detection sample](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Basic Face Tracking sample](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Media playback](media-playback.md)

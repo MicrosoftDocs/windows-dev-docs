@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 
-**Tip** To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) on Github.
+**Tip** To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977) on Github.
 
 <a id="tileintro" />
 
@@ -30,7 +30,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (The X and Y coordinates represent the location of the individual tile within the map of the world at the specified level of detail. The tile numbering system starts from {0, 0} in the upper left corner of the map. For example, the tile at {1, 2} is in the second column of the third row of the grid of tiles.)
 
-For more info about the tile system used by mapping services, see [Bing Maps Tile System](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+For more info about the tile system used by mapping services, see [Bing Maps Tile System](https://go.microsoft.com/fwlink/p/?LinkId=626692).
 
 ### Overlay tiles from a tile source
 
@@ -416,7 +416,7 @@ To replace the default map entirely with third-party or custom tiles:
 ## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)

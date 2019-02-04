@@ -17,7 +17,7 @@ The previous topic ([How the Resource Management System matches and chooses reso
 
 Resources with language tag qualifiers are compared and scored based on the app runtime language list. For definitions of the different language lists, see [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md). Matching for the first language in a list occurs before matching of the second language in a list, even for other regional variants. For example, a resource for en-GB is chosen over an fr-CA resource if the app runtime language is en-US. Only if there are no resources for a form of en is a resource for fr-CA chosen (note that the app's default language could not be set to any form of en in that case).
 
-The scoring mechanism uses data that is included in the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) subtag registry, and other data sources. It allows for a scoring gradient with different qualities of match and, when multiple candidates are available, it selects the candidate with the best-matching score.
+The scoring mechanism uses data that is included in the [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) subtag registry, and other data sources. It allows for a scoring gradient with different qualities of match and, when multiple candidates are available, it selects the candidate with the best-matching score.
 
 So, you can tag language content in generic terms, but you can still specify specific content when needed. For example, your app might have many English strings that are common to both the United States, Britain, and other regions. Tagging these strings as "en" (English) saves space and localization overhead. When distinctions need to be made, such as in a string containing the word "color/colour", the United States and British versions can be tagged separately using both language and region subtags, as "en-US" and "en-GB", respectively.
 
@@ -70,7 +70,7 @@ The tags match on the language and script subtags, but they differ in the region
 
 #### Macro region match
 
-The tags match on language and script subtags; both tags have region subtags, one of which denotes a macro region that encompasses the other region. The macro region subtags are always numeric and are derived from the United Nations Statistics Division M.49 country and area codes. For details on encompassing relationships, see [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](http://go.microsoft.com/fwlink/p/?LinkId=247929).
+The tags match on language and script subtags; both tags have region subtags, one of which denotes a macro region that encompasses the other region. The macro region subtags are always numeric and are derived from the United Nations Statistics Division M.49 country and area codes. For details on encompassing relationships, see [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://go.microsoft.com/fwlink/p/?LinkId=247929).
 
 **Note** UN codes for "economic groupings" or "other groupings" are not supported in BCP-47.
  
@@ -185,6 +185,6 @@ English needs special consideration. If an app adds localization for two English
 ## Related topics
 
 * [How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)
-* [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](http://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://go.microsoft.com/fwlink/p/?LinkId=247929)

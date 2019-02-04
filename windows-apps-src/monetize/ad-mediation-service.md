@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Microsoft ad mediation service
 
-When you use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) to [display ads in your apps](display-ads-in-your-app.md), you can optionally use the Microsoft ad mediation service to maximize your ad revenue. This article provides an overview of the ad mediation service and its goals.
+When you use the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) to [display ads in your apps](display-ads-in-your-app.md), you can optionally use the Microsoft ad mediation service to maximize your ad revenue. This article provides an overview of the ad mediation service and its goals.
 
 The ad mediation service is a part of the [Microsoft Ad Monetization platform](https://developer.microsoft.com/windows/ad-monetization-platform). The platform is composed of the following parts.
 
@@ -49,6 +49,6 @@ The ad mediation service works with various ad networks to improve user targetin
 
 ## Related topics
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [Mediation settings](../publish/in-app-ads.md#mediation-settings)
 * [Advertising performance report](../publish/advertising-performance-report.md)

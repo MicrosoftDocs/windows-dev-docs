@@ -57,7 +57,7 @@ In C++/CX, asynchronous programming is based on the [**task class**](https://msd
 The [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) provides support for producing asynchronous APIs that can be consumed from JavaScript or any other language that supports the UWP. For more info, see [Creating Asynchronous Operations in C++/CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx).
 
 ## Asynchronous patterns in UWP using JavaScript
-In JavaScript, asynchronous programming follows the [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) proposed standard by having asynchronous methods return promise objects. Promises are used in both the UWP and Windows Library for JavaScript.
+In JavaScript, asynchronous programming follows the [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) proposed standard by having asynchronous methods return promise objects. Promises are used in both the UWP and Windows Library for JavaScript.
 
 A promise object represents a value that will be fulfilled in the future. In the UWP you get a promise object from a factory function, which by convention has a name that ends with "Async".
 
@@ -65,5 +65,5 @@ In many cases, calling an asynchronous function is almost as simple as calling a
 
 ## Related topics
 * [Call asynchronous APIs in C# or Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Asynchronous Programming with Async and Await (C# and Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Asynchronous Programming with Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Reversi sample feature scenarios: asynchronous code](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

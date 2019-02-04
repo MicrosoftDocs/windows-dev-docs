@@ -33,7 +33,7 @@ the latest zip file.
 > [!NOTE]
 > The UWP samples require Visual Studio 2015 or later and the Windows SDK to open, build, and run. You can get a free copy of Visual
 > Studio Community with support for building UWP apps
-> [here](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads").  
+> [here](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads").  
 >
 > Also, be sure
 > to unzip the entire archive, and not just individual

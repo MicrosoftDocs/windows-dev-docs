@@ -40,7 +40,7 @@ The following values are additional values that refer to your app's package fami
 
 The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
 
-Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](http://go.microsoft.com/fwlink/p/?LinkId=534236) or otherwise identify your app.
+Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](https://go.microsoft.com/fwlink/p/?LinkId=534236) or otherwise identify your app.
 
 The **Store protocol link** can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see [Link to your app](link-to-your-app.md).
 

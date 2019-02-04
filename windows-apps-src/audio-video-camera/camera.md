@@ -44,14 +44,14 @@ This section provides guidance for creating Universal Windows Platform (UWP) app
 
 ## UWP app samples for camera
 
-* [Camera face detection sample](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
-* [Camera preview frame sample](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
-* [Camera HDR sample](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
-* [Camera manual controls sample](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
-* [Camera profile sample](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
-* [Camera resolution sample](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
-* [Camera starter kit](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
-* [Camera video stabilization sample](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
+* [Camera face detection sample](https://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [Camera preview frame sample](https://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [Camera HDR sample](https://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [Camera manual controls sample](https://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [Camera profile sample](https://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [Camera resolution sample](https://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [Camera starter kit](https://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [Camera video stabilization sample](https://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
 ## Related topics
 

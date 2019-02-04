@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
 
-UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/en-us/store/register) in [Partner Center](https://partner.microsoft.com/dashboard). When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](http://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](../xbox-live/developer-program-overview.md).
+UWP on Xbox One supports developing both apps and games. You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox. All you need is a [developer account](https://developer.microsoft.com/en-us/store/register) in [Partner Center](https://partner.microsoft.com/dashboard). When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](https://www.xbox.com/Developers/id) developer. If you plan to be an ID@Xbox developer, we recommend applying to the program first before registering for a developer account. For more info, see [Developer program overview](../xbox-live/developer-program-overview.md).
 
 This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
 
@@ -34,7 +34,7 @@ This section includes setup steps, a guide through the authentication process, i
 |[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |
 | [Automating Xbox One Development tasks](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | The WindowsDevicePortalWrapper project on GitHub provides a library that allows you to automate common development tasks such as deploying or launching an app. The project includes a sample, XboxWdpDriver.exe, that demonstrates how to use the APIs for common tasks. |
 |[Bringing existing games to Xbox](development-lanes-landing.md)|Based on what technology your game is built on top of, we can direct you to step-by-step instructions that can expedite the process of bringing your game to Xbox using the UWP.|
-|[UWP features that aren’t yet supported on Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|
+|[UWP features that aren’t yet supported on Xbox One](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|
 
 ## Videos
 

@@ -59,7 +59,7 @@ The term "funnel" comes from its shape. At the wide end of the funnel, many idea
 
 When you're happy with your concept, you're ready for the next stage—creating your app's blueprint. Information architecture (IA) gives your content the structural integrity it needs. It helps define your app's navigational model and, ultimately, your app's identity. By planning how your content will be organized—and how your users will discover that content—you can get a better idea of how users will experience your app.
 
-Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
+Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](https://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
 
 For related guidelines, see [Navigation design basics](../design/basics/navigation-basics.md).
 

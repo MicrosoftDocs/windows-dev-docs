@@ -214,6 +214,6 @@ Hex values | IsHexInputVisible
 <div class=”microsoft-internal-note”>
 <p>
 <p>
-Note: For more info, see the [color picker redlines](http://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
+Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
 </div>
 -->

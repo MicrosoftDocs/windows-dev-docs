@@ -135,7 +135,7 @@ One of the tools you can use for testing accessibility is called **AccScope**. T
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## Accessible names from dynamic data  
-Windows supports many controls that can be used to display values that come from an associated data source, through a feature known as *data binding*. When you populate lists with data items, you may need to use a technique that sets accessible names for data-bound list items after the initial list is populated. For more info, see "Scenario 4" in the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Windows supports many controls that can be used to display values that come from an associated data source, through a feature known as *data binding*. When you populate lists with data items, you may need to use a technique that sets accessible names for data-bound list items after the initial list is populated. For more info, see "Scenario 4" in the [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -151,5 +151,5 @@ Note that attached properties such as the [**AutomationProperties**](https://msd
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibility testing](accessibility-testing.md)

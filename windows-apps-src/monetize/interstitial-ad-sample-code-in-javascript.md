@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Interstitial ad sample code in JavaScript
 
-This topic provides the complete sample code for a basic JavaScript and HTML Universal Windows Platform (UWP) app that shows an interstitial ad. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).
+This topic provides the complete sample code for a basic JavaScript and HTML Universal Windows Platform (UWP) app that shows an interstitial ad. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project, see the [advertising samples on GitHub](https://aka.ms/githubads).
 
 ## Code example
 
@@ -39,6 +39,6 @@ Replace the values of the ```applicationId``` and ```adUnitId``` variables with 
 
 ## Related topics
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](https://aka.ms/githubads)
 
  

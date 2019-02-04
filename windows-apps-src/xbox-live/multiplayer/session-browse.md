@@ -151,7 +151,7 @@ auto result = xboxLiveContext->multiplayer_service().set_search_handle(searchHan
 
 When retrieving a list of search handles, you can use a search query to restrict the results to the sessions that meet specific criteria.
 
-The search query syntax is an  [OData](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) style syntax, with only the following operators supported:
+The search query syntax is an  [OData](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) style syntax, with only the following operators supported:
 
  Operator | Description
  --- | ---

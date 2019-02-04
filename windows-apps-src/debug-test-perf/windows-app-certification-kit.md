@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-To get your app [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) or prepare it for [publication to the Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666) to ensure your app is safe and efficient.
+To get your app [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) or prepare it for [publication to the Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) to ensure your app is safe and efficient.
 
 ## Prerequisites
 

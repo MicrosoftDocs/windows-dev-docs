@@ -66,7 +66,7 @@ The Bluetooth protocol supports several services, all following the same basic f
 
  
 
-For a more complete listing of available Bluetooth services, see Bluetooth's protocol and service pages [here](http://go.microsoft.com/fwlink/p/?LinkID=619586) and [here](http://go.microsoft.com/fwlink/p/?LinkID=619587). You can also use the [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API to get some common GATT services.
+For a more complete listing of available Bluetooth services, see Bluetooth's protocol and service pages [here](https://go.microsoft.com/fwlink/p/?LinkID=619586) and [here](https://go.microsoft.com/fwlink/p/?LinkID=619587). You can also use the [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API to get some common GATT services.
 
 ## Custom Bluetooth LE services
 

@@ -92,7 +92,7 @@ The API signature is as follows:
 `xbox::services::xbox_live_result<T>` is the return call for all C++ Xbox Live Services API calls.
 
 For more information, check out the Xfest 2015 talk, “XSAPI: C++, No Exceptions!”<br>
-[video](http://go.microsoft.com/?linkid=9888207) |  [slides](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
+[video](https://go.microsoft.com/?linkid=9888207) |  [slides](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
 ### Unlocking via Update_Achievement API
 

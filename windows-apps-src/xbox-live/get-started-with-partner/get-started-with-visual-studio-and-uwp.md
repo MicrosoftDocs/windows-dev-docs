@@ -96,7 +96,7 @@ If you've targeted Windows 10 SDK 10.0.16299 or higher, then you will be able to
 #### Windows 10 SDK version 10.0.15063 or lower
 If you want to use Connected Storage or Secure Sockets, you will need to install the Xbox Live Platforms Extensions SDK before you can add references to your project. You can do this by:
 
-1. Download and extract the [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk).
+1. Download and extract the [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk).
 2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using.
 
 After you have installed the Xbox Live Platform Extensions SDK, you will need to add a reference to it in Visual Studio. You can do this by:

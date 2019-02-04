@@ -141,7 +141,7 @@ For more information about multithreaded programming in Windows, see the followi
 ## Related topics
 
 
-* [DirectXLatency sample](http://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency sample](https://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)

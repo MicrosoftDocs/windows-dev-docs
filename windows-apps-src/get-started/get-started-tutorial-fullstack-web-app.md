@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 This two-part tutorial provides a quick tour of modern fullstack web development as you build a simple memory game that works both in the browser and as a Hosted Web App for the Microsoft Store. In Part I you'll build a simple REST API service for the game's backend. By hosting the game logic in the cloud as an API service, you preserve the game state so your user can keep playing their same game instance across different devices. In Part II you'll build the front-end UI as a single-page web app with responsive layout.
 
-We'll be using some of the most popular web technologies, including the [Node.js](https://nodejs.org/en/) runtime and [Express](http://expressjs.com/) for server-side development, the [Bootstrap](http://getbootstrap.com/) UI framework, the [Pug](https://www.npmjs.com/package/pug) template engine, and [Swagger](http://swagger.io/tools/) for building RESTful APIs. You'll also gain experience with the [Azure Portal](https://ms.portal.azure.com/) for cloud hosting and working with the [Visual Studio Code](https://code.visualstudio.com/) editor.
+We'll be using some of the most popular web technologies, including the [Node.js](https://nodejs.org/en/) runtime and [Express](https://expressjs.com/) for server-side development, the [Bootstrap](https://getbootstrap.com/) UI framework, the [Pug](https://www.npmjs.com/package/pug) template engine, and [Swagger](https://swagger.io/tools/) for building RESTful APIs. You'll also gain experience with the [Azure Portal](https://ms.portal.azure.com/) for cloud hosting and working with the [Visual Studio Code](https://code.visualstudio.com/) editor.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ If you don't already have these resources on your machine, follow these download
 
  - [Node.js](https://nodejs.org/en/download/) - Be sure to select the option to add Node to your PATH.
 
- - [Express generator](http://expressjs.com/en/starter/generator.html)- After you install Node, install Express by running `npm install express-generator -g`
+ - [Express generator](https://expressjs.com/en/starter/generator.html)- After you install Node, install Express by running `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -32,7 +32,7 @@ If you decide to bail on (or postpone) the Azure part, simply skip the final sec
 
 ## Part I: Build a REST API backend
 
-We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](http://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
+We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](https://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
 
 If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-appl), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
 
@@ -105,11 +105,11 @@ Specifies a card to reveal and checks for a match to the previously revealed car
 
 ### 1. Spec out the API and generate code stubs
 
-We'll use [Swagger](http://swagger.io/) to transform the design of our memory game API into working Node.js server code. Here's how you might define our [memory game APIs as Swagger metadata](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json). We'll use this to generate server code stubs.
+We'll use [Swagger](https://swagger.io/) to transform the design of our memory game API into working Node.js server code. Here's how you might define our [memory game APIs as Swagger metadata](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json). We'll use this to generate server code stubs.
 
 1. Create a new folder (in your local *GitHub* directory, for example), and download the [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) file containing our memory game API definitions. Make sure your folder name doesn't contain any spaces.
 
-2. Open your favorite shell ([or use Visual Studio Code's integrated terminal!](https://code.visualstudio.com/docs/editor/integrated-terminal)) to that folder and run the following Node Package Manager (NPM) command to install the [Yeoman](http://yeoman.io/) (yo) code-scaffolding tool and Swagger generator for your global (**-g**) Node environment:
+2. Open your favorite shell ([or use Visual Studio Code's integrated terminal!](https://code.visualstudio.com/docs/editor/integrated-terminal)) to that folder and run the following Node Package Manager (NPM) command to install the [Yeoman](https://yeoman.io/) (yo) code-scaffolding tool and Swagger generator for your global (**-g**) Node environment:
 
     ```
     npm install -g yo
@@ -129,14 +129,14 @@ We'll use [Swagger](http://swagger.io/) to transform the design of our memory ga
 
     Answer everything else as you like; the information is mostly to supply the *package.json* file with your contact info so you can distribute your code as an NPM package.
 
-5. Finally, install all the dependencies (listed in *package.json*) for your new project and [Swagger UI](http://swagger.io/swagger-ui/) support.
+5. Finally, install all the dependencies (listed in *package.json*) for your new project and [Swagger UI](https://swagger.io/swagger-ui/) support.
 
     ```
     npm install
     npm install swaggerize-ui
     ```
 
-    Now start VS Code and **File** > **Open Folder...**, and move to the MemoryGameAPI directory. This is the Node.js API server you just created! It uses the popular [ExpressJS](http://expressjs.com/en/4x/api.html) web application framework to structure and run your project.
+    Now start VS Code and **File** > **Open Folder...**, and move to the MemoryGameAPI directory. This is the Node.js API server you just created! It uses the popular [ExpressJS](https://expressjs.com/en/4x/api.html) web application framework to structure and run your project.
 
 ### 2. Customize the server code and setup debugging
 
@@ -203,7 +203,7 @@ With that, it's time to run your server! Let's set up Visual Studio Code for Nod
 ]
 ```
 
-Now press F5 and open your browser to [http://localhost:8000](http://localhost:8000). The page should open to the Swagger UI for our memory game API, and from there you can expand the details and input fields for each of the methods. You can even try calling the APIs, although their responses will contain only mocked-up data (provided by the [Swagmock](https://www.npmjs.com/package/swagmock) module). It's time to add our game logic to make these APIs real.
+Now press F5 and open your browser to [http://localhost:8000](https://localhost:8000). The page should open to the Swagger UI for our memory game API, and from there you can expand the details and input fields for each of the methods. You can even try calling the APIs, although their responses will contain only mocked-up data (provided by the [Swagmock](https://www.npmjs.com/package/swagmock) module). It's time to add our game logic to make these APIs real.
 
 ### 3. Set up your route handlers
 
@@ -229,7 +229,7 @@ This layer of our program represents the memory cards themselves and provides th
 
 For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd use cloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
 
-Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [http://localhost:8000](http://localhost:8000)) to test out the game API.
+Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [http://localhost:8000](https://localhost:8000)) to test out the game API.
 
 Each time you press the **Try it out!** button on one of the **/game**, **/guess**, or **/new** operations, check the resulting **Response Body** and **Response Code** below to verify that everything's working as expected.
 
@@ -278,7 +278,7 @@ If you've made it this far and Azure is now serving up your swagger UI, there's 
 
 ### Going further
 
-To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](http://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://docs.microsoft.com/en-us/azure/documentdb/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) for your API.
+To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](https://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://docs.microsoft.com/en-us/azure/documentdb/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) for your API.
 
 Here are some useful resources for going further:
 
@@ -290,15 +290,15 @@ Here are some useful resources for going further:
 
 ## Part II: Build a single-page web application
 
-Now that you've built (or [downloaded](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) the [REST API backend](#part-i-build-a-rest-api-backend) from Part I,  you're ready to create the single-page memory game front-end with [Node](https://nodejs.org/en/), [Express](http://expressjs.com/), and [Bootstrap](http://getbootstrap.com/).
+Now that you've built (or [downloaded](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) the [REST API backend](#part-i-build-a-rest-api-backend) from Part I,  you're ready to create the single-page memory game front-end with [Node](https://nodejs.org/en/), [Express](https://expressjs.com/), and [Bootstrap](https://getbootstrap.com/).
 
 Part II of this tutorial will give you experience with: 
 
 * [Node.js](https://nodejs.org/en/): to create the server hosting your game
-* [jQuery](http://jquery.com/): a JavaScript library
-* [Express](http://expressjs.com/): for the web application framework
+* [jQuery](https://jquery.com/): a JavaScript library
+* [Express](https://expressjs.com/): for the web application framework
 * [Pug](https://pugjs.org/): (formerly Jade) for the templating engine
-* [Bootstrap](http://getbootstrap.com/): for the responsive layout
+* [Bootstrap](https://getbootstrap.com/): for the responsive layout
 * [Visual Studio Code](https://code.visualstudio.com/): for code authoring, markdown viewing, and debugging
 
 ### 1. Create a Node.js application by using Express
@@ -327,7 +327,7 @@ Let's start by creating the Node.js project using Express.
     npm start
     ```
 
-5. View your application by going to [http://localhost:3000/](http://localhost:3000/).
+5. View your application by going to [http://localhost:3000/](https://localhost:3000/).
 
     ![A screenshot of http://localhost:3000/](./images/express.png)
 
@@ -458,14 +458,14 @@ You can find the files you need for this half of the tutorial in the [Start](htt
 > [!TIP] 
 > If you're using Visual Studio Code, select all the lines of code you wish to uncomment, and press Crtl + K, U
 
-Here we use [`jQuery.ajax()`](http://api.jquery.com/jQuery.ajax/) and the **PUT** [`/guess`](#part-i-build-a-rest-api-backend) method created in Part I. 
+Here we use [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) and the **PUT** [`/guess`](#part-i-build-a-rest-api-backend) method created in Part I. 
 
 This code executes in the following order.
 
 * The `id` of the first card the user selected is added as the first value to the selectedCards[] array: `selectedCards[0]` 
 * The value (`id`) in `selectedCards[0]` is posted to the server using the [`/guess`](#part-i-build-a-rest-api-backend) method
 * The server responds with the `value` of that card (an integer)
-* A [Bootstrap glyphicon](http://getbootstrap.com/components/) is added to the back of the card whose `id` is `selectedCards[0]`
+* A [Bootstrap glyphicon](https://getbootstrap.com/components/) is added to the back of the card whose `id` is `selectedCards[0]`
 * The first card's `value` (from the server) is stored in the `selectedCardsValues[]` array: `selectedCardsValues[0]`. 
 
 The user's second guess follows the same logic. If the cards that the user selected have the same IDs, (for example, `selectedCards[0] == selectedCards[1]`), the cards are a match! The CSS class `.matched` is added to the matched cards (turning them green) and the cards remained flipped.
@@ -534,7 +534,7 @@ This file extends the layout.pug file and will render our game. Inside of layout
 > Remember: Pug is whitespace sensitive. Make sure all of your indentations are correct!
 
 ### 4. Use Bootstrap's grid system to create a responsive layout
-Bootstrap's [grid system](http://getbootstrap.com/css/#grid) is a fluid grid system that scales a grid as a device's viewport changes. The cards in this game use Bootstrap's predefined grid system classes for the layout, including:
+Bootstrap's [grid system](https://getbootstrap.com/css/#grid) is a fluid grid system that scales a grid as a device's viewport changes. The cards in this game use Bootstrap's predefined grid system classes for the layout, including:
 * `.container-fluid`: specifies the fluid container for the grid
 * `.row-fluid`: specifies the fluid rows
 * `.col-xs-3`: specifies the number of columns
@@ -601,7 +601,7 @@ Adding a flip motion using [CSS Transforms](https://docs.microsoft.com/en-us/mic
     transform: rotateY(180deg);
     ```
 
-    The style defined in `cards.flip` is toggled on and off in the `flipCard` function by using [`.toggleClass()`](http://api.jquery.com/toggleClass/). 
+    The style defined in `cards.flip` is toggled on and off in the `flipCard` function by using [`.toggleClass()`](https://api.jquery.com/toggleClass/). 
 
     ``` javascript
     $(card).toggleClass("flip");
@@ -614,9 +614,9 @@ Congratulations! You've finished creating the web app! Let's test it.
 
 1. Open a command prompt in your memory directory and enter the following command: `npm start`
 
-2. In your browser, go to [http://localhost:3000/](http://localhost:3000/) and play a game!
+2. In your browser, go to [http://localhost:3000/](https://localhost:3000/) and play a game!
 
-3. If you encounter any errors, you can use Visual Studio Code's Node.js debugging tools by pressing F5 on your keyboard and typing `Node.js`. For more information about debugging in Visual Studio Code, check out this [article](http://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
+3. If you encounter any errors, you can use Visual Studio Code's Node.js debugging tools by pressing F5 on your keyboard and typing `Node.js`. For more information about debugging in Visual Studio Code, check out this [article](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
 
     You can also compare your code to the code provided in the Final folder.
 

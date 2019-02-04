@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Interstitial ads
 
-This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](https://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
 
@@ -30,7 +30,7 @@ We provide two types of interstitial ads to use in your apps and games: **inters
 
 ## Prerequisites
 
-* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
+* Install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
 
 ## Integrate an interstitial ad into your app
 
@@ -233,5 +233,5 @@ You can use multiple **InterstitialAd** controls in a single app. In this scenar
 * [Guidelines for interstitial ads](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)
 * [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](https://aka.ms/githubads)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)

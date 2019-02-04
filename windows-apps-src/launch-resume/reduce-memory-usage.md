@@ -97,5 +97,5 @@ When an app moves from the background to the foreground, the app will first get 
 
 ## Related topics
 
-* [Background media playback sample](http://go.microsoft.com/fwlink/p/?LinkId=800141) - shows how to free memory when your app moves to the background state.
+* [Background media playback sample](https://go.microsoft.com/fwlink/p/?LinkId=800141) - shows how to free memory when your app moves to the background state.
 * [Diagnostic Tools](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - use the diagnostic tools to observe garbage collection events and validate that your app is releasing memory the way you expect it to.

@@ -313,7 +313,7 @@ Make sure that the app was compiled as a release build and not a debug build.
 
 Review the error messages to identify the API the app uses that is not an [API for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](https://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
 
 ## Performance tests
 
@@ -537,7 +537,7 @@ The test will validate if the apps render accurately on feature level 9\-1.
 
 ### Corrective Action
 
-Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
+Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](https://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
 
 ### Direct3D Trim after suspend
 

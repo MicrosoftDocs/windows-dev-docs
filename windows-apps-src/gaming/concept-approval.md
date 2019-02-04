@@ -13,13 +13,13 @@ Concept approval is the process of submitting a proposal for a game to Microsoft
 
 ## Who needs concept approval?
 
-This process is only required if you are publishing a game to Xbox through [ID@Xbox](http://www.xbox.com/Developers/id) or as a managed partner. You don't need to go through this process if you join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) and make a Universal Windows Platform (UWP) game, which you can then self-publish to Xbox. However, games made through this program will be featured in a separate section of the Store. If you want your game to be featured alongside big AAA games, or if you want to create a more intensive game using the Xbox Development Kit (XDK), you'll need to go through concept approval.
+This process is only required if you are publishing a game to Xbox through [ID@Xbox](https://www.xbox.com/Developers/id) or as a managed partner. You don't need to go through this process if you join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) and make a Universal Windows Platform (UWP) game, which you can then self-publish to Xbox. However, games made through this program will be featured in a separate section of the Store. If you want your game to be featured alongside big AAA games, or if you want to create a more intensive game using the Xbox Development Kit (XDK), you'll need to go through concept approval.
 
 You also don't need concept approval if you are developing a UWP game for Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device). All you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through Partner Center.
 
 ## Submit your concept for approval
 
-If you are an independent game developer or publisher, you can submit your concept for approval through the ID@Xbox program. Learn more about ID@Xbox and apply [here](http://www.xbox.com/Developers/id).
+If you are an independent game developer or publisher, you can submit your concept for approval through the ID@Xbox program. Learn more about ID@Xbox and apply [here](https://www.xbox.com/Developers/id).
 
 If you are already an ID@Xbox developer, you should have been sent a link to the Game Information Form (GIF) where you can submit your game concept. If you have questions, contact [id@xbox.com](mailto:id@xbox.com).
 

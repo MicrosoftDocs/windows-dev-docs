@@ -42,7 +42,7 @@ For **application development**, resources available may be limited in compariso
 For **games development**, Xbox One, like other games consoles, 
 is a specialized piece of hardware that requires a specific hardware-based development kit to access its full potential. 
 If you are working on a game that requires access to the maximum potential of the Xbox One hardware, 
-consider registering with the [ID@Xbox](http://www.xbox.com/Developers/id) program to get access to an Xbox One development kit.
+consider registering with the [ID@Xbox](https://www.xbox.com/Developers/id) program to get access to an Xbox One development kit.
 
 
 For more information about system resources for UWP apps on Xbox One, see the first part of this video.

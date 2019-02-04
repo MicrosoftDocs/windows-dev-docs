@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Install the Microsoft Advertising SDK
 
-To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
+To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately.
@@ -29,7 +29,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). It may take a few minutes to install. Be sure and wait until the process has finished.
+3.  Download and install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). It may take a few minutes to install. Be sure and wait until the process has finished.
 
 4.  Restart Visual Studio.
 
@@ -60,7 +60,7 @@ To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
 5. In the search box, type **Microsoft.Advertising.XAML** (for a XAML project) or **Microsoft.Advertising.JS** (for a JavaScript/HTML project) and install the corresponding package. When the package is done installing, save your solution.
     > [!NOTE]
-    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
 
 6. Close your solution and then reopen it.
 
@@ -95,7 +95,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 
 ## Understanding framework packages in the Microsoft Advertising SDK
 
-The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) and [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) namespaces.
+The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) and [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) namespaces.
 
 Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 

@@ -30,9 +30,9 @@ The app uses patterns that make use of views and view models. As a result of thi
 
 ## Downloads
 
-[Download the QuizGame Universal 8.1 app](http://go.microsoft.com/fwlink/?linkid=532953). This is the initial state of the app prior to porting. 
+[Download the QuizGame Universal 8.1 app](https://go.microsoft.com/fwlink/?linkid=532953). This is the initial state of the app prior to porting. 
 
-[Download the QuizGame10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532954). This is the state of the app just after  porting. 
+[Download the QuizGame10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532954). This is the state of the app just after  porting. 
 
 [See the latest version of this sample on GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
 

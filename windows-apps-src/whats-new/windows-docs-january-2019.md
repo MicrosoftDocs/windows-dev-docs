@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of January.
 
-[Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
+[Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
 ## Features
 
@@ -65,7 +65,7 @@ Our [frequently asked questions](https://docs.microsoft.com/windows/communitytoo
 
 ### Progressive Web Apps
 
-Progressive Web Apps are web sites that function like native apps across different browsers and a wide variety of Windows 10 devices. [Watch the video](https://youtu.be/ugAewC3308Y) to learn more, and then [check out the docs](http://aka.ms/Windows-PWA) to get started.
+Progressive Web Apps are web sites that function like native apps across different browsers and a wide variety of Windows 10 devices. [Watch the video](https://youtu.be/ugAewC3308Y) to learn more, and then [check out the docs](https://aka.ms/Windows-PWA) to get started.
 
 ### VS Code series
 

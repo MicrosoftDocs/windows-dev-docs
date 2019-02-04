@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps. For more info on how the .NET garbage collector works and tools for debugging and analyzing garbage collector performance, see [Garbage collection](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Note**  Needing to intervene in the default behavior of the garbage collector is strongly indicative of general memory issues with your app. For more info, see [Memory Usage Tool while debugging in Visual Studio 2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). This topic applies to C# and Visual Basic only.
+**Note**  Needing to intervene in the default behavior of the garbage collector is strongly indicative of general memory issues with your app. For more info, see [Memory Usage Tool while debugging in Visual Studio 2015](https://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). This topic applies to C# and Visual Basic only.
 
  
 

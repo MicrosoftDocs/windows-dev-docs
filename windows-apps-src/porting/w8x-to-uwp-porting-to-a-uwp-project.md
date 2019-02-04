@@ -33,7 +33,7 @@ You will find that refactoring a little, and/or adding adaptive code (which is e
 -   You should be able to remove a lot of the conditional compilation directives in your Universal 8.1 app's source code if you only need to support Windows 10. See [Conditional compilation and adaptive code](#conditional-compilation-and-adaptive-code) in this topic.
 -   To use features that are not available on all device families (for example, printers, scanners, or the camera button), you can write adaptive code. See the third example in [Conditional compilation and adaptive code](#conditional-compilation-and-adaptive-code) in this topic.
 -   If you want to support Windows 8.1, Windows Phone 8.1, and Windows 10, then you can keep three projects in the same solution and share code with a Shared project. Alternatively, you can share source code files between projects. Here's how: in Visual Studio, right-click the project in **Solution Explorer**, select **Add Existing Item**, select the files to share, and then click **Add As Link**. Store your source code files in a common folder on the file system where the projects that link to them can see them. And don't forget to add them to source control.
--   For reuse at the binary level, rather than the source code level, see [Creating Windows Runtime Components in C# and Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). There are also Portable Class Libraries, which support the subset of .NET APIs that are available in the .NET Framework for Windows 8.1, Windows Phone 8.1, and Windows 10 apps (.NET Core), and the full .NET Framework. Portable Class Library assemblies are binary compatible with all these platforms. Use Visual Studio to create a project that targets a Portable Class Library. See [Cross-Platform Development with the Portable Class Library](http://msdn.microsoft.com/library/gg597391.aspx).
+-   For reuse at the binary level, rather than the source code level, see [Creating Windows Runtime Components in C# and Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). There are also Portable Class Libraries, which support the subset of .NET APIs that are available in the .NET Framework for Windows 8.1, Windows Phone 8.1, and Windows 10 apps (.NET Core), and the full .NET Framework. Portable Class Library assemblies are binary compatible with all these platforms. Use Visual Studio to create a project that targets a Portable Class Library. See [Cross-Platform Development with the Portable Class Library](https://msdn.microsoft.com/library/gg597391.aspx).
 
 ## Extension SDKs
 
@@ -166,8 +166,8 @@ The next topic is [Troubleshooting](w8x-to-uwp-troubleshooting.md).
 
 ## Related topics
 
-* [Develop apps for the Universal Windows Platform](http://msdn.microsoft.com/library/dn975273.aspx)
+* [Develop apps for the Universal Windows Platform](https://msdn.microsoft.com/library/dn975273.aspx)
 * [Jumpstart your Windows Runtime 8.x app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Creating Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Cross-Platform Development with the Portable Class Library](http://msdn.microsoft.com/library/gg597391.aspx)
+* [Cross-Platform Development with the Portable Class Library](https://msdn.microsoft.com/library/gg597391.aspx)
 

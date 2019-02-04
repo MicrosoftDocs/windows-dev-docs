@@ -23,7 +23,7 @@ When a customer clicks this link, it opens the web-based listing page for your a
 
 You can link directly to your app's listing with a custom badge to let customers know your app is in the Microsoft Store.
 
-To create your badge, visit the [Microsoft Store badges](http://go.microsoft.com/fwlink/p/?LinkID=534236) page. You'll need to have your app's 12-character **Store ID** in order to generate the badge and link. You can find your app's **Store ID** on the [App identity](view-app-identity-details.md) page in the **App management** section.
+To create your badge, visit the [Microsoft Store badges](https://go.microsoft.com/fwlink/p/?LinkID=534236) page. You'll need to have your app's 12-character **Store ID** in order to generate the badge and link. You can find your app's **Store ID** on the [App identity](view-app-identity-details.md) page in the **App management** section.
 
 > [!NOTE]
 > See [App marketing guidelines](app-marketing-guidelines.md) for info and requirements related to your use of the Microsoft Store badge.

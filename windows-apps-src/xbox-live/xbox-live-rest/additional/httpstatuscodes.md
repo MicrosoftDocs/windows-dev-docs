@@ -72,6 +72,6 @@ Here is a list of status codes returned by Xbox Live Services, and their typical
 <a id="ID4EZCAC"></a>
 
  
-##### External links  [W3.org: HTTP/1.1 Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10)
+##### External links  [W3.org: HTTP/1.1 Status Code Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10)
 
    

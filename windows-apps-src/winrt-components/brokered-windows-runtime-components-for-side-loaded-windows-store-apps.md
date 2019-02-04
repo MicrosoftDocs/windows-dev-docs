@@ -842,10 +842,10 @@ list of loaded modules.
 -   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 -   [NorthwindRT Brokered WinRT Component
-    Sample](http://go.microsoft.com/fwlink/p/?LinkID=397349)
+    Sample](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 
 -   [Delivering reliable and trustworthy Microsoft Store
-    apps](http://go.microsoft.com/fwlink/p/?LinkID=393644)
+    apps](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [App contracts and extensions (Windows
     Store apps)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
@@ -853,5 +853,5 @@ list of loaded modules.
 -   [How to sideload apps on Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
 -   [Deploying UWP apps to
-    businesses](http://go.microsoft.com/fwlink/p/?LinkID=264770)
+    businesses](https://go.microsoft.com/fwlink/p/?LinkID=264770)
 

@@ -157,7 +157,7 @@ If you'd like to use only the glow without the primary or secondary focus visual
 
 ## Use your own focus visuals
 
-Another way to customize Reveal Focus is to opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see the [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895).
+Another way to customize Reveal Focus is to opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see the [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
 ## Reveal Focus and the Fluent Design System
@@ -169,7 +169,7 @@ Reveal Focus is a Fluent Design System component that adds light to your app. To
 - [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Designing for Xbox and TV](/windows/uwp/design/devices/designing-for-tv)
 - [Gamepad and remote control interactions](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [Composition Effects](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

@@ -265,7 +265,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Speech interactions](speech-interactions.md)
 
 **Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

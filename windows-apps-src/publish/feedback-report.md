@@ -16,7 +16,7 @@ The **Feedback report** in Partner Center lets you see the problems, suggestions
 
 Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review in the Store.
 
-You can use the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
+You can use the Feedback API in the [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
 
 Feedback can also be helpful when using [package flighting](package-flights.md), since the **Feedback** report shows you the specific package that each customer had installed on their device when they left the feedback.
 
@@ -34,7 +34,7 @@ You can also expand **Filters** to filter all of the data on this page by the fo
 - **Device type**: The default setting is **All devices**. You can choose a specific device type if you want this page to only show feedback left by customers using that type of device.
 - **Package version**: The default setting is **All packages**. You can select one of your packages to show only feedback left from customers who were using that particular package when they left feedback.
 - **Market**: The default setting is **All markets**. You can choose a specific to show only feedback from customers in that market.
-- **Group**: The default setting is **All**. You can choose to view only feedback submitted by [Windows Insiders](http://insider.windows.com).
+- **Group**: The default setting is **All**. You can choose to view only feedback submitted by [Windows Insiders](https://insider.windows.com).
 
 > [!TIP]
 > If you don't see any feedback on the page, check to make sure your filters haven't excluded all of your feedback. For example, if you filter by a **Device type** that your app doesn't support, you won't see any feedback.

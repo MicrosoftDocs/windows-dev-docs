@@ -185,4 +185,4 @@ If there isn't an image, the control displays the contact's name or initials; if
 ## Related articles
 
 * [Contacts and calendar](../../contacts-and-calendar/index.md)
-* [Contact cards sample](http://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)

@@ -96,7 +96,7 @@ An SRGS grammar is an open-standard XML format represented by the [**SpeechRecog
 
 **Samples**
 
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

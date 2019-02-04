@@ -19,9 +19,9 @@ The Bureau of Industry and Security in the United States Department of Commerce 
 
  
 
-For more info about the U.S. Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+For more info about the U.S. Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](https://go.microsoft.com/fwlink/p/?LinkID=245644).
 
-For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 ## Governed uses
 
@@ -37,7 +37,7 @@ First, determine if your app uses a type of cryptography that is governed by the
 -   Copy protection or digital rights management (DRM)
 -   Antivirus protection
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 ## Non-restricted uses
 
@@ -49,8 +49,8 @@ Note that some of the applications of cryptography are not restricted. Here are 
 -   Digital rights management
 -   Using digital signatures
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).
 
-If you don't have an ECCN, see [ECCN Questions and Answers](http://go.microsoft.com/fwlink/p/?LinkID=245646).
+If you don't have an ECCN, see [ECCN Questions and Answers](https://go.microsoft.com/fwlink/p/?LinkID=245646).

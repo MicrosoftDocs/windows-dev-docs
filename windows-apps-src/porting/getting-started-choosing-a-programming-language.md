@@ -25,7 +25,7 @@ Although we're focusing on C# in this article, the other languages offer unique 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Create your first UWP app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [UWP app samples that use DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [UWP app samples that use DirectX](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Where is the DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## Giving C# a go
@@ -33,8 +33,8 @@ Although we're focusing on C# in this article, the other languages offer unique 
 As an iOS developer, you're accustomed to Objective-C and Swift. The closest Microsoft programming language to both is C#. For most developers and most apps, we think C# is the easiest and fastest language to learn and use, so this article's info and walkthroughs focus on that language. To learn more about C#, see the following:
 
 -   [Create your first UWP app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [UWP app samples that use C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [UWP app samples that use C#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 Following is a class written in Objective-C and C#. The Objective-C version is shown first, followed by the C# version.
 

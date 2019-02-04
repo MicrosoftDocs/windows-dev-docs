@@ -16,9 +16,9 @@ This case study—which builds on the info given in [Bookstore1](wpsl-to-uwp-cas
 
 ## Downloads
 
-[Download the Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601).
+[Download the Bookstore2WPSL8 Windows Phone Silverlight app](https://go.microsoft.com/fwlink/p/?linkid=522601).
 
-[Download the Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952).
+[Download the Bookstore2Universal\_10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532952).
 
 ##  The Windows Phone Silverlight app
 

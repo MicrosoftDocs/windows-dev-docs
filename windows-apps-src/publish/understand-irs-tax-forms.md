@@ -121,4 +121,4 @@ I received at least $600 in payments not related to app sales from Microsoft in 
 
 
 > [!NOTE]
-> If you have additional questions or concerns related to **IRS tax forms**, please create a [support ticket](http://aka.ms/storesupport). Microsoft cannot answer questions related to your specific tax circumstances; for those questions, please seek advice from your tax professional.
+> If you have additional questions or concerns related to **IRS tax forms**, please create a [support ticket](https://aka.ms/storesupport). Microsoft cannot answer questions related to your specific tax circumstances; for those questions, please seek advice from your tax professional.

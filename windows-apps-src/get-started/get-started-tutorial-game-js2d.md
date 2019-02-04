@@ -32,9 +32,9 @@ This project is built with JavaScript using Visual Studio. With some minor chang
 To play with this project, you'll need the following:
 
 * A Windows computer (or a virtual machine) running the current version of Windows 10.
-* A copy of Visual Studio. The free Visual Studio Community Edition can be downloaded from the [Visual Studio homepage](http://visualstudio.com).
+* A copy of Visual Studio. The free Visual Studio Community Edition can be downloaded from the [Visual Studio homepage](https://visualstudio.com).
 
-This project makes use of the CreateJS JavaScript framework. CreateJS is a free set of tools, released under a MIT license, designed to make it easy to create sprite-based games. The CreateJS libraries are already present in the project (look for *js/easeljs-0.8.2.min.js*, and *js/preloadjs-0.6.2.min.js* in the Solution Explorer view). More information about CreateJS can be found at the [CreateJS home page](http://www.createjs.com).
+This project makes use of the CreateJS JavaScript framework. CreateJS is a free set of tools, released under a MIT license, designed to make it easy to create sprite-based games. The CreateJS libraries are already present in the project (look for *js/easeljs-0.8.2.min.js*, and *js/preloadjs-0.6.2.min.js* in the Solution Explorer view). More information about CreateJS can be found at the [CreateJS home page](https://www.createjs.com).
 
 
 ## Getting started
@@ -128,7 +128,7 @@ Find the following code, and remove the comments (\\) from the line that referen
     ];
 ```
 
-JavaScript needs a little help when it comes to loading resources such as images, and so we're using a feature of the CreateJS library that can preload images, called a [LoadQueue](http://www.createjs.com/docs/preloadjs/classes/LoadQueue.html). We're can't be sure how long it will take the images to load, so we use the LoadQueue to take care of it. Once the images are available, the queue will tell us they are ready. In order to do that, we first create a new object that lists all our images, and then we create a LoadQueue object. You'll see in the code below how it is set-up to call a function called **loadingComplete()** when everything is ready.
+JavaScript needs a little help when it comes to loading resources such as images, and so we're using a feature of the CreateJS library that can preload images, called a [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html). We're can't be sure how long it will take the images to load, so we use the LoadQueue to take care of it. Once the images are available, the queue will tell us they are ready. In order to do that, we first create a new object that lists all our images, and then we create a LoadQueue object. You'll see in the code below how it is set-up to call a function called **loadingComplete()** when everything is ready.
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -156,10 +156,10 @@ Run the app again (press F5) and you'll see our clouds have appeared.
 
 ### 3. Moving the clouds
 
-Now we're going to make the clouds move. The secret to moving clouds - and moving anything, in fact - is to set-up a [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) function that is repeatedly called multiple times a second. 
+Now we're going to make the clouds move. The secret to moving clouds - and moving anything, in fact - is to set-up a [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) function that is repeatedly called multiple times a second. 
 Every time this function is called, it redraws the graphics in a slightly different place.
 
-<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> by Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 The code to do that is already in the **main.js** file, provided by the CreateJS library, EaselJS. It looks like this:
@@ -212,7 +212,7 @@ A game that you can't interact with isn't a game. So let's allow the player to u
 
 We now have two functions being called whenever the player hits a key or clicks the mouse. Both event will call **userDidSomething()**, a function which looks at the gamestate variable to decide what the game is currently doing, and what needs to happen next as a result.
 
-Gamestate is a common design pattern used in games. Everything that happens, happens in the **gameLoop()** function called by the ticker timer. The gameLoop() keeps track of whether the game is playing, or in a "game over state", or a "ready-to-play state", or any other states defined by the author, using a variable. This state variable is tested in a switch statement, and that defines what other functions are called. So if the state is set to "playing", the functions to make the dinosaur jump and make the barrels move will be called. If the dinosaur is killed by something, the gamestate variable will be set to "game over state", and the "Game over!" message will be displayed instead. If you are interested in game design patterns, the book [Game Programming Patterns](http://gameprogrammingpatterns.com/) is very helpful.
+Gamestate is a common design pattern used in games. Everything that happens, happens in the **gameLoop()** function called by the ticker timer. The gameLoop() keeps track of whether the game is playing, or in a "game over state", or a "ready-to-play state", or any other states defined by the author, using a variable. This state variable is tested in a switch statement, and that defines what other functions are called. So if the state is set to "playing", the functions to make the dinosaur jump and make the barrels move will be called. If the dinosaur is killed by something, the gamestate variable will be set to "game over state", and the "Game over!" message will be displayed instead. If you are interested in game design patterns, the book [Game Programming Patterns](https://gameprogrammingpatterns.com/) is very helpful.
 
 Try running the app again, and finally you'll be able to start playing. Press space (or click the mouse, or tap the screen) to start things happening. 
 
@@ -266,7 +266,7 @@ For more details, see [Publishing your UWP app](https://developer.microsoft.com/
 
 What next? Here are a few suggestions for features to add to your (soon to be) award-winning app.
 
-1. Sound effects. The CreateJS library includes support for sound, with a library called [SoundJS](http://www.createjs.com/soundjs).
+1. Sound effects. The CreateJS library includes support for sound, with a library called [SoundJS](https://www.createjs.com/soundjs).
 2. Gamepad support. There is an [API available](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345).
 3. Make it a much, much better game! That part is up to you, but there are lots of resources available online. 
 

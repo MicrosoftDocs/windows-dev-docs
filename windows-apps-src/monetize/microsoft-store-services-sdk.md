@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 The Microsoft Store Services SDK provides features that help you engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted notifications to your apps and running A/B experiments in your apps. This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.
 
 > [!NOTE]
-> To display ads in your UWP apps, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK. The advertising libraries have been moved from the Microsoft Store Services SDK to the Microsoft Advertising SDK. For more information, see [Display ads in your app](display-ads-in-your-app.md).
+> To display ads in your UWP apps, use the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK. The advertising libraries have been moved from the Microsoft Store Services SDK to the Microsoft Advertising SDK. For more information, see [Display ads in your app](display-ads-in-your-app.md).
 
 
 
@@ -42,7 +42,7 @@ The Microsoft Store Services SDK requires:
 
 There are two options for installing the Microsoft Store Services SDK on your development computer:
 
-* **MSI installer**&nbsp;&nbsp;You can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk).
+* **MSI installer**&nbsp;&nbsp;You can install the SDK via the MSI installer available [here](https://aka.ms/store-em-sdk).
 * **NuGet package**&nbsp;&nbsp;You can install the SDK as a NuGet package.
 
 Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.
@@ -62,7 +62,7 @@ To install the Microsoft Store Services SDK via the MSI installer:
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Download and install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). It may take a few minutes to install. Be sure and wait until the process has finished.
+3.  Download and install the [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). It may take a few minutes to install. Be sure and wait until the process has finished.
 
 4.  Restart Visual Studio.
 
@@ -93,7 +93,7 @@ To install the Microsoft Store Services SDK libraries via NuGet:
 
 5. In the search box, type **Microsoft.Services.Store.Engagement** and install the Microsoft.Services.Store.Engagement package. When the package is done installing, save your solution.
     > [!NOTE]
-    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path. The problem could also be caused by your global packages path being too long. In this case, add the ```globalPackagesFolder``` value into your nuget.config file.
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path. The problem could also be caused by your global packages path being too long. In this case, add the ```globalPackagesFolder``` value into your nuget.config file.
 
 6. Close the Visual Studio solution that contains your project and then reopen the solution.
 

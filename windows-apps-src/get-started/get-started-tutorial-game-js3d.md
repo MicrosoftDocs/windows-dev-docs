@@ -34,7 +34,7 @@ Want to get a glimpse of the app we'll be making before reading further? Check i
 
 To play with this project, you'll need the following:
 -	A Windows computer (or a virtual machine) running the current version of Windows 10.
--	A copy of Visual Studio. The free Visual Studio Community Edition can be downloaded from the [Visual Studio homepage](http://visualstudio.com/).
+-	A copy of Visual Studio. The free Visual Studio Community Edition can be downloaded from the [Visual Studio homepage](https://visualstudio.com/).
 This project makes use of the **three.js** JavaScript library. **three.js** is released under the MIT license. This library is already present in the project (look for `js/libs` in the Solution Explorer view). More information about this library can be found at the [**three.js**](https://threejs.org/) home page.
 
 ## Getting started

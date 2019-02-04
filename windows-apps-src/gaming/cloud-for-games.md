@@ -84,7 +84,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games created <b>Age of Ascent</b>, a massively multiplayer online (MMO) epic 3D space game that can be played on devices that have modern browsers. So this game can be played on PCs, laptops, mobile phones and other mobile devices without plug-ins. The game uses ASP.NET Core, HTML5, WebGL, and Azure.</td>
         <td>
             <ul>
@@ -103,7 +103,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Next Games is the creator of <b>The Walking Dead: No Man's Land</b> video game which is based on AMC's original series. The Walking Dead game used Azure as the backend. It had 1,000,000 downloads in the opening weekend and within the first week, the game became #1 iPhone & iPad Free App in the U.S. App Store, #1 Free App in 12 countries, and #1 Free Game in 13 countries.
         </td>
         <td>
@@ -123,7 +123,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>
@@ -145,7 +145,7 @@ Learn how other developers have implemented cloud solutions in their games.
 ### Other links
 
 * [Hitman and Azure: Create game features like Elusive Target that are only possible using cloud](https://channel9.msdn.com/Series/Hitman)
-* [Azure as the secret sauce for Hitcents, Game Troopers and InnoSpark](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Azure as the secret sauce for Hitcents, Game Troopers and InnoSpark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [Game startups on Bizspark program using Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -209,7 +209,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
     
 * [Developer programs](e2e.md#developer-programs)
 
-    Microsoft offers several developer programs like [ID@Xbox](http://www.xbox.com/Developers/id) and [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) to help you develop and publish games.
+    Microsoft offers several developer programs like [ID@Xbox](https://www.xbox.com/Developers/id) and [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) to help you develop and publish games.
 
 ## Learning resources
 
@@ -240,7 +240,7 @@ We are constantly innovating and adding new features. For more information, see 
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

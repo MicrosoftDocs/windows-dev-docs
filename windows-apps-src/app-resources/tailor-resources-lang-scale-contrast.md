@@ -185,11 +185,11 @@ It’s unlikely that you’ll need the `dxfeaturelevel` qualifier name. It was d
 
 ## HomeRegion
 
-The `homeregion` qualifier corresponds to the user’s setting for country or region. It represents the home location of the user. Values include any valid [BCP-47 region tag](http://go.microsoft.com/fwlink/p/?linkid=227302). That is, any **ISO 3166-1 alpha-2** two-letter region code, plus the set of **ISO 3166-1 numeric** three-digit geographic codes for composed regions (see [United Nations Statistic Division M49 composition of region codes](http://go.microsoft.com/fwlink/p/?linkid=247929)). Codes for "Selected economic and other groupings" are not valid.
+The `homeregion` qualifier corresponds to the user’s setting for country or region. It represents the home location of the user. Values include any valid [BCP-47 region tag](https://go.microsoft.com/fwlink/p/?linkid=227302). That is, any **ISO 3166-1 alpha-2** two-letter region code, plus the set of **ISO 3166-1 numeric** three-digit geographic codes for composed regions (see [United Nations Statistic Division M49 composition of region codes](https://go.microsoft.com/fwlink/p/?linkid=247929)). Codes for "Selected economic and other groupings" are not valid.
 
 ## Language
 
-A `language` qualifier corresponds to the display language setting. Values include any valid [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). For a list of languages, see the [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303).
+A `language` qualifier corresponds to the display language setting. Values include any valid [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302). For a list of languages, see the [IANA language subtag registry](https://go.microsoft.com/fwlink/p/?linkid=227303).
 
 If you want your app to support different display languages, and you have string literals in your code or in your XAML markup, then move those strings out of the code/markup and into a Resources File (`.resw`). You can then make a translated copy of that Resources File for each language that your app supports.
 
@@ -267,7 +267,7 @@ The `theme` qualifier is used to provide resources that best match the default a
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localize your UI strings](localize-strings-ui-manifest.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [United Nations Statistic Division M49 composition of region codes](http://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [United Nations Statistic Division M49 composition of region codes](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [IANA language subtag registry](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [Adjust layout and fonts, and support RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

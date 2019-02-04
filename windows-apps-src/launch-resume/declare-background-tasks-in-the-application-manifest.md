@@ -31,7 +31,7 @@ This topic assumes you have a created one or more background task classes, and t
 
 Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
 
-The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+The following snippet is taken from the [background task sample](https://go.microsoft.com/fwlink/p/?LinkId=618666):
 
 ```xml
 <Application Id="App"

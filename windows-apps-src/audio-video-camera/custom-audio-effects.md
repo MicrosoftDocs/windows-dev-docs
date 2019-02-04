@@ -141,7 +141,7 @@ The following code snippet demonstrates adding the custom audio effect to a vide
 ## Related topics
 * [Simple camera preview access](simple-camera-preview-access.md)
 * [Media compositions and editing](media-compositions-and-editing.md)
-* [Win2D documentation](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Media playback](media-playback.md)
 
  

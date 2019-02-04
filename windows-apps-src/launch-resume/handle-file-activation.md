@@ -123,13 +123,13 @@ When your app is launched via File activation, you should consider including UI 
 
 ## Remarks
 
-The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](http://go.microsoft.com/fwlink/p/?LinkID=142053)
+The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](https://go.microsoft.com/fwlink/p/?LinkID=142053)
 
 ## Related topics
 
 ### Complete example
 
-* [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Association launching sample](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### Concepts
 

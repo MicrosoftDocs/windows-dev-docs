@@ -508,7 +508,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 * [Keyboard events](keyboard-events.md)
 * [Identify input devices](identify-input-devices.md)
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Focus visuals sample](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 ## Appendix
 

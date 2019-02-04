@@ -58,7 +58,7 @@ If you want to customize your device and install other features or packages, che
 
 ## Want more tools and downloads?
 
-For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).
+For the complete list of tools and downloads, see [Downloads](https://go.microsoft.com/fwlink/p/?linkid=285935).
 
 ## See Also
 
