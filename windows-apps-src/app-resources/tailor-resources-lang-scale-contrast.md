@@ -252,7 +252,7 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 
 ## Theme
 
-The `theme` qualifier is used to provide resources that best match the default app mode setting, or your app’s override using [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme).
+The `theme` qualifier is used to provide resources that best match the default app mode setting, or your app’s override using [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
 
 ## Important APIs
 

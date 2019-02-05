@@ -16,7 +16,7 @@ UI tailoring is a broad category encompassing work for performant, beautiful UI 
 - Accommodating user settings for animations
 - Optimizing UI for the given hardware capabilities
 
-Here, we'll cover how to tailor your effects and animations with the Visual Layer in the areas above, but there are many other means to tailor your application to ensure a great end user experience. Guidance docs are available on how to [tailor your UI](/design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) for various devices and [create responsive UI](/design/layout/responsive-design.md).
+Here, we'll cover how to tailor your effects and animations with the Visual Layer in the areas above, but there are many other means to tailor your application to ensure a great end user experience. Guidance docs are available on how to [tailor your UI](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for various devices and [create responsive UI](/windows/uwp/design/layout/responsive-design).
 
 ## User effects settings
 

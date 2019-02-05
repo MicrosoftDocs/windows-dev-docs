@@ -26,7 +26,7 @@ Menus and context menus display a list of commands or options when the user requ
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
-| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## Is this the right control?
 

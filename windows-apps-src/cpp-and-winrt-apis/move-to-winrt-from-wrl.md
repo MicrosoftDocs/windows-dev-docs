@@ -110,7 +110,7 @@ winrt::check_hresult(
 );
 ```
 
-## Porting a WRL module ([Microsoft::WRL::Module]())
+## Porting a WRL module (Microsoft::WRL::Module)
 You can gradually add C++/WinRT code to an existing project that uses WRL to implement a component, and your existing WRL classes will continue to be supported. This section shows how.
 
 If you create a new **Windows Runtime Component (C++/WinRT)** project type in Visual Studio, and build, then the file `Generated Files\module.g.cpp` is generated for you. That file contains the definitions of two useful C++/WinRT functions (listed out below), which you can copy and add to your project. Those function are **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** and, as you can see, they conditionally call WRL in order to support you whatever stage of porting you're at.

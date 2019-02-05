@@ -50,7 +50,7 @@ The following example shows how to intialize a **TimedMetadataStreamDescriptor**
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Call [MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**) to add the metadata stream descriptor to the encoding profile. The following example shows a helper method that takes two video stream descriptors, one audio stream descriptor, and one timed metadata stream descriptor and returns a **MediaEncodingProfile** that can be used to encode the streams.
+Call [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) to add the metadata stream descriptor to the encoding profile. The following example shows a helper method that takes two video stream descriptors, one audio stream descriptor, and one timed metadata stream descriptor and returns a **MediaEncodingProfile** that can be used to encode the streams.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

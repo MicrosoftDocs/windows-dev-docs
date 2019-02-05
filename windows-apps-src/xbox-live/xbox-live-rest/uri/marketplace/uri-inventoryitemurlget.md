@@ -62,7 +62,7 @@ The response to a GET request, assuming it passes authentication and is assigned
  
 ##### Parent 
 
-[GET (/inventory/{itemID})]()
+[GET (/inventory/{itemID})](uri-inventoryget.md)
 
   
 <a id="ID4EJC"></a>
