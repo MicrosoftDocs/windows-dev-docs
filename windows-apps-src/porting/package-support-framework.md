@@ -80,7 +80,7 @@ Let's go through each task.
 
 ### Create the package layout folder
 
-If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using makemsix tool, based on your installation path of the SDK, this is where you will find the makeappx.exe tool on your Windows 10 PC:
+If you have a .msix (or .appx) file already, you can unpack its contents into a layout folder that will serve as the staging area for your package. You can do this from a command prompt using MakeAppx tool, based on your installation path of the SDK, this is where you will find the makeappx.exe tool on your Windows 10 PC:
 x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
 x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
@@ -511,7 +511,7 @@ While Visual Studio gives you the simplest development and debugging experience,
 
 First, F5 debugging runs the application by deploying loose files from the package layout folder path, rather than installing from a .msix / .appx package.  The layout folder typically does not have the same security restrictions as an installed package folder. As a result, it may not be possible to reproduce package path access denial errors prior to applying a runtime fix.
 
-To address this issue, use .msix / .appx package deployment rather than F5 loose file deployment.  To create a .msix / .appx package file, use the [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) utility from the Windows SDK, as described above. Or, from within Visual Studio, right-click your application project node and select **Store**->**Create App Packages**.
+To address this issue, use .msix / .appx package deployment rather than F5 loose file deployment.  To create a .msix / .appx package file, use the [MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) utility from the Windows SDK, as described above. Or, from within Visual Studio, right-click your application project node and select **Store**->**Create App Packages**.
 
 Another issue with Visual Studio is that it does not have built-in support for attaching to any child processes launched by the debugger.   This makes it difficult to debug logic in the startup path of the target application, which must be manually attached by Visual Studio after launch.
 
