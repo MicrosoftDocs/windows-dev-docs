@@ -493,3 +493,7 @@ namespace compositionvisual
     }
 }
 ```
+<improvement suggestion>
+This article does not mention how to use Redirect Visual nor do we seem to have any other published content on such.
+Please create and add a description and sample code how to use Redirect Visual in  CompositionVisual Doc.
+</improvement suggestion>
