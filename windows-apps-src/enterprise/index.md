@@ -41,7 +41,7 @@ See [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNam
 
 We've released new UWP XAML controls that fill the gap between a traditional desktop application UI and a UWP UI.
 
-For example, the new [MenuBar](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button), and [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) controls give you more flexible ways to expose commands, and the [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
+For example, the new [MenuBar](/windows/uwp/design/controls-and-patterns/menus), [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button), and [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) controls give you more flexible ways to expose commands, and the [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
 
 ![MenuBar](images/menu-bar.png)
 
@@ -62,7 +62,7 @@ The Windows UI Library is a set of NuGet packages that provide controls and othe
 
 ![Windows UI Library](images/win-ui.png)
 
-See [Windows UI Library (Preview version)](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
+See [Windows UI Library (Preview version)](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 <a id="xaml-islands" />
 
@@ -155,7 +155,7 @@ Many users today are bringing their own phone or tablet to work, which have vary
 |-------|-------------|
 | [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
 | [Adaptive XAML UI code sample](https://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
-| [Xamarin topic]() | Xamarin for targeting phone |
+| [Xamarin topic](/xamarin/) | Xamarin for targeting phone |
 
 ## Deployment
 

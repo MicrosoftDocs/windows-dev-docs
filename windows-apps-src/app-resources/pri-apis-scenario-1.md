@@ -113,7 +113,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 ::CreateDirectory(generatedPRIsFolder.c_str(), nullptr);
 ```
 
-Immediately after the call to Initialize COM, declare a resource indexer handle and then call [**MrmCreateResourceIndexer**]() to create a resource indexer.
+Immediately after the call to Initialize COM, declare a resource indexer handle and then call [**MrmCreateResourceIndexer**](/windows/desktop/menurc/mrmcreateresourceindexer) to create a resource indexer.
 
 ```cppwinrt
 MrmResourceIndexerHandle indexer;
@@ -133,7 +133,7 @@ Here's an explanation of the arguments being passed to **MrmCreateResourceIndexe
 - A list of default resource qualifiers.
 - A pointer to our resource indexer handle so that the function can set it.
 
-The next step is to add our resources to the resource indexer that we just created. `resources.resw` is a Resources File (.resw) that contains the neutral strings for our target UWP app. Scroll up (in this topic) if you want to see its contents. `de-DE\resources.resw` contains our German strings, and `en-US\resources.resw` our English strings. To add the string resources inside a Resources File to a resource indexer, you call [**MrmIndexResourceContainerAutoQualifiers**](). Thirdly, we call the [**MrmIndexFile**]() function to a file containing a neutral image resource to the resource indexer.
+The next step is to add our resources to the resource indexer that we just created. `resources.resw` is a Resources File (.resw) that contains the neutral strings for our target UWP app. Scroll up (in this topic) if you want to see its contents. `de-DE\resources.resw` contains our German strings, and `en-US\resources.resw` our English strings. To add the string resources inside a Resources File to a resource indexer, you call [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers). Thirdly, we call the [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) function to a file containing a neutral image resource to the resource indexer.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -144,19 +144,19 @@ The next step is to add our resources to the resource indexer that we just creat
 
 In the call to **MrmIndexFile**, the value L"ms-resource:///Files/sample-image.png" is the resource uri. The first path segment is "Files", and that's what will be used as the resource map subtree name when we later generate a PRI file from this resource indexer.
 
-Having briefed the resource indexer about our resource files, it's time to have it generate us a PRI file on disk by calling the [**MrmCreateResourceFile**]() function.
+Having briefed the resource indexer about our resource files, it's time to have it generate us a PRI file on disk by calling the [**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile) function.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
-At this point, a PRI file named `resources.pri` has been created inside a folder named `Generated PRIs`. Now that we're done with the resource indexer, we call [**MrmDestroyIndexerAndMessages**]() to destroy its handle and release any machine resources that it allocated.
+At this point, a PRI file named `resources.pri` has been created inside a folder named `Generated PRIs`. Now that we're done with the resource indexer, we call [**MrmDestroyIndexerAndMessages**](/windows/desktop/menurc/mrmdestroyindexerandmessages) to destroy its handle and release any machine resources that it allocated.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-Since a PRI file is binary, it's going to be easier to view what we've just generated if we dump the binary PRI file to its XML equivalent. A call to [**MrmDumpPriFile**]()does just that.
+Since a PRI file is binary, it's going to be easier to view what we've just generated if we dump the binary PRI file to its XML equivalent. A call to [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile) does just that.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));

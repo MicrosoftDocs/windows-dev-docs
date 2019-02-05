@@ -57,7 +57,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## Opting out of agile object support
 
-You can choose explicitly to opt out of agile object support by passing the [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) marker struct as a template argument to your base class.
+You can choose explicitly to opt out of agile object support by passing the [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) marker struct as a template argument to your base class.
 
 If you derive directly from **winrt::implements**.
 
@@ -114,7 +114,7 @@ The [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) 
 * [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make_agile function template](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non_agile)
+* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

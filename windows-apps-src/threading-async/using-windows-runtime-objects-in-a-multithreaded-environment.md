@@ -155,6 +155,6 @@ By default, classes in the component that can be activated are agile. However, C
 For objects that run on the UI thread and throw exceptions when they are called from a thread other than the UI thread, you can use the UI thread’s [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) object to dispatch the call.
 
 ## See Also
-[C# Guide](/dotnet/articles/csharp/)
+[C# Guide](/dotnet/csharp/)
 
-[Visual Basic Guide](/dotnet/articles/visual-basic/)
+[Visual Basic Guide](/dotnet/visual-basic/)

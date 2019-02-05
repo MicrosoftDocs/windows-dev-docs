@@ -152,7 +152,7 @@ Because a Hyperlink is not a [UIElement](https://msdn.microsoft.com/library/wind
 
 **Content**
 
-Hyperlink has restrictions on the content that can exist in its [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) collection. Specifically, a Hyperlink only permits [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) and other [Span]() types that aren't another Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.
+Hyperlink has restrictions on the content that can exist in its [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) collection. Specifically, a Hyperlink only permits [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) and other [Span](/uwp/api/windows.ui.xaml.documents.span) types that aren't another Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.
 
 **Hyperlink and theme/style behavior**
 

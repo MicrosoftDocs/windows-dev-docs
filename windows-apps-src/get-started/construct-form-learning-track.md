@@ -129,7 +129,7 @@ When you're creating more complex layouts with more visual elements, you'll want
 
 Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back through the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout features, see our [adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md)
 
-Forms also don't have to exist in a vacuum - you could go one step forward and embed yours within a [master/details pattern](../design/controls-and-patterns/master-details.md) or a [pivot control](../design/controls-and-patterns/tabs-pivot.md). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
+Forms also don't have to exist in a vacuum - you could go one step forward and embed yours within a [master/details pattern](../design/controls-and-patterns/master-details.md) or a [pivot control](../design/controls-and-patterns/pivot.md). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
 
 ## Useful APIs and docs
 
@@ -155,7 +155,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 | [Forms](../design/controls-and-patterns/forms.md) | Overall guidance for creating forms. |
 | [Layout panels](../design/layout/layout-panels.md) | Provides an overview of the types of layout panels and where to use them. |
 | [Master/details pattern](../design/controls-and-patterns/master-details.md) | A design pattern that can be implemented around one or multiple forms. |
-| [Pivot control](../design/controls-and-patterns/tabs-pivot.md) | A control that can contain one or multiple forms. |
+| [Pivot control](../design/controls-and-patterns/pivot.md) | A control that can contain one or multiple forms. |
 | [Responsive design](../design/layout/responsive-design.md) | An overview of large-scale responsive design principles. | 
 | [Responsive layouts with XAML](../design/layout/layouts-with-xaml.md) | Specific information on visual states and other implementations of responsive design. |
 | [Screen sizes for responsive design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Guidance on which screen sizes to which responsive layouts should be scoped. |

@@ -226,7 +226,7 @@ In comparison, a peer mesh that uses a heartbeat to detect a disconnection is of
 
 ### Large Sessions
 
-A large MPSD session can have up to 1000 members, but it has some session features disabled, such as getting a list of all members. Session largeness is represented by the **MultiplayerSessionCapabilities.Large Property**. This property is set to true to indicate a large session, and the "large" capability is indicated in the /constants/system/capabilities object. For more information, see [Session Capabilities]().
+A large MPSD session can have up to 1000 members, but it has some session features disabled, such as getting a list of all members. Session largeness is represented by the **MultiplayerSessionCapabilities.Large Property**. This property is set to true to indicate a large session, and the "large" capability is indicated in the /constants/system/capabilities object. 
 
 ## Session User States
 

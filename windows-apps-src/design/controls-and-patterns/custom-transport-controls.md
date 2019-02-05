@@ -51,7 +51,7 @@ The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/w
 - The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
 
 > [!NOTE]
-> For more info about modifying templates, see [Control templates](). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
+> For more info about modifying templates, see [Control templates](/windows/uwp/design/controls-and-patterns/control-templates). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
 
 In the following sections, you learn how to customize several of the main elements of the transport controls:
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): allows a user to scrub through their media and also displays progress
@@ -85,7 +85,7 @@ If you want to modify only the appearance of the MediaTransportControls, you can
 </MediaPlayerElement>
 ```
 
-For more info about modifying styles and templates, see [Styling controls]() and [Control templates]().
+For more info about modifying styles and templates, see [Styling controls](/windows/uwp/design/controls-and-patterns/xaml-styles) and [Control templates](/windows/uwp/design/controls-and-patterns/control-templates).
 
 ### Create a derived control
 
