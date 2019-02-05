@@ -42,4 +42,4 @@ Accesses summary data about the owner from the caller's perspective.
 
 ##### Parent
 
-[/users/{ownerId}/summary]()
+[/users/{ownerId}/summary](uri-usersowneridsummaryget.md)

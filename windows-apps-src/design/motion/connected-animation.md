@@ -47,7 +47,7 @@ Connected animations are generally used when changing pages, though they can be 
 ## Configure connected animation
 
 > [!IMPORTANT]
-> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/debug-test-perf/version-adaptive-apps).
+> This feature requires that your app's Target version be Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 Starting in Windows 10, version 1809, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.
 
@@ -55,16 +55,16 @@ You specify an animation configuration by setting the Configuration property on 
 
 This table describes the available configurations. For more information about the motion principles applied in these animations, see [Directionality and gravity](index.md).
 
-| [GravityConnectedAnimationConfiguration]() |
+| [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
 | This is the default configuration, and is recommended for forward navigation. |
 As the user navigates forward in the app (A to B), the connected element appears to physically “pull off the page”. In doing so, the element appears to move forward in z-space and drops a bit as an effect of gravity taking hold. To overcome the effects of gravity, the element gains velocity and accelerates into its final position. The result is a “scale and dip” animation. |
 
-| [DirectConnectedAnimationConfiguration]() |
+| [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) |
 | - |
 | As the user navigates backwards in the app (B to A), the animation is more direct. The connected element linearly translates from B to A using a decelerate cubic Bezier easing function. The backwards visual affordance returns the user to their previous state as fast as possible while still maintaining the context of the navigation flow. |
 
-| [BasicConnectedAnimationConfiguration]() |
+| [BasicConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
 | This is the default (and only) animation used in versions prior to Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
 
@@ -112,7 +112,7 @@ if (animation != null)
 
 This example shows how to use ConnectedAnimationService to create a transition for forward navigation between two pages (Page_A to Page_B).
 
-The recommended animation configuration for forward navigation is [GravityConnectedAnimationConfiguration](). This is the default, so you don't need to set the [Configuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) property unless you want to specify a different configuration.
+The recommended animation configuration for forward navigation is [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration). This is the default, so you don't need to set the [Configuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) property unless you want to specify a different configuration.
 
 Set up the animation in the source page.
 
@@ -179,7 +179,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 For back navigation (Page_B to Page_A), you follow the same steps, but the source and destination pages are reversed.
 
-When the user navigates back, they expect the app to be returned to the previous state as soon as possible. Therefore, the recommended configuration is [DirectConnectedAnimationConfiguration](). This animation is quicker, more direct, and uses the decelerate easing.
+When the user navigates back, they expect the app to be returned to the previous state as soon as possible. Therefore, the recommended configuration is [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration). This animation is quicker, more direct, and uses the decelerate easing.
 
 Set up the animation in the source page.
 
@@ -308,8 +308,8 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## Do’s and don’ts
 
 - Use a connected animation in page transitions where an element is shared between the source and destination pages.
-- Use [GravityConnectedAnimationConfiguration]() for forward navigation.
-- Use [DirectConnectedAnimationConfiguration]() for back navigation.
+- Use [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) for forward navigation.
+- Use [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) for back navigation.
 - Don't wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation. You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.
 - Use [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) to prevent a transition animation in a **Frame** if you are using **ConnectedAnimationService**, since connected animations aren't meant to be used simultaneously with the default navigation transitions. See [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) for more info on how to use navigation transitions.
 

@@ -31,7 +31,7 @@ The Entertainment Discovery Services (EDS) APIs, by default, returns a very smal
   
 To get more information, the APIs accept a **fields** parameter that specifies which additional pieces of data should be returned. Because there are many possible fields, specifying their name in full for each API call would greatly bloat the request. Instead, the names can be passed into this API which will generate a much smaller value that can be passed into the other APIs.
  
-For any API that accepts this parameter, the provided value must be the superset of all fields in all specified media item types. It's not possible to specify different sets of fields for different media item types. However, if a field applies to one media item type but not another, it will only appear in the media item types where data exists (for example, if "AvatarBodyType" is included in the call to [GET (/media/{marketplaceId}/fields)](), only AvatarItems will contain the field).
+For any API that accepts this parameter, the provided value must be the superset of all fields in all specified media item types. It's not possible to specify different sets of fields for different media item types. However, if a field applies to one media item type but not another, it will only appear in the media item types where data exists (for example, if "AvatarBodyType" is included in the call to [GET (/media/{marketplaceId}/fields)](uri-medialocalefields.md), only AvatarItems will contain the field).
  
 The values returned from this API are highly cacheable -- in fact, they should not change except between deployments of EDS. It's recommended that, if caching is desired, the cache last no longer than the session of the user.
  

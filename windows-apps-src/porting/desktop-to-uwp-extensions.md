@@ -1184,7 +1184,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
   </Extension>
 ```
 
-Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
 
 |Name |Description |
 |-------|-------------|
