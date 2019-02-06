@@ -46,7 +46,7 @@ In addition to design guidance, our Fluent Design articles also show you how to 
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
-    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+    <TextBox Text="Design with XAML" Margin="20" Padding="16,24"/>
 </Grid>
 ```
 
