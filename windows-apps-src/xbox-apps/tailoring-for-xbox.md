@@ -16,11 +16,11 @@ By default, all UWP apps will run on Xbox One without any extra effort on your p
 
 ### *Do:* Turn off mouse mode
 
-Xbox users love their controllers. To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [X-Y focus](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Watch out for focus traps and inaccessible UI.
+Xbox users love their controllers. To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [XY focus navigation and interaction](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)). Watch out for focus traps and inaccessible UI.
 
 ### *Do:* Draw a focus rectangle that is appropriate for a 10-foot experience
 
-Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away. To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](../design/devices/designing-for-tv.md#focus-visual) guidelines. In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.
+Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away. To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](../design/input/gamepad-and-remote-interactions.md#focus-visual) guidelines. In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.
 
 ###	*Do:* Integrate with the SystemMediaTransportControls class
 
