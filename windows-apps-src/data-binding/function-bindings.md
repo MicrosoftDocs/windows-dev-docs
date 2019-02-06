@@ -1,14 +1,15 @@
 ---
 description: The xBind markup extension allows functions to be used in markup.
 title: Functions in x:Bind
-ms.date: 04/26/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ---
 # Functions in x:Bind
 
-**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> [!NOTE]
+> For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](data-binding-in-depth.md).
 
 Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables:
 
@@ -48,7 +49,7 @@ class ColorEntry
 
 ## XAML attribute usage
 
-``` syntax
+```xaml
 <object property="{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}" ... />
 ```
 
@@ -69,6 +70,7 @@ Static functions can be specified using XMLNamespace:ClassName.MethodName syntax
     </StackPanel>
 </Page>
 ```
+
 ```csharp
 namespace MyNamespace
 {
@@ -80,6 +82,7 @@ namespace MyNamespace
 ```
 
 You can also use system functions directly in markup to accomplish simple scenarios like date formatting, text formatting, text concatenations, etc., For example:
+
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -99,9 +102,9 @@ The function being bound to needs to:
 - The argument types need to match the data being passed in – we don’t do narrowing conversions
 - The return type of the function needs to match the type of the property that is using the binding
 
-Starting with the next major update to Windows 10, the binding engine will react to property change notifications fired with the function name and re-evaluate bindings as necessary. For example: 
+The binding engine reacts to property change notifications fired with the function name and re-evaluate bindings as necessary. For example:
 
-```XAML
+```xaml
 <DataTemplate x:DataType="local:Person">
    <StackPanel>
       <TextBlock Text="{x:Bind FullName}" />
@@ -109,6 +112,7 @@ Starting with the next major update to Windows 10, the binding engine will react
    </StackPanel>
 </DataTemplate>
 ```
+
 ```csharp
 public class Person:INotifyPropertyChanged
 {
@@ -142,7 +146,7 @@ public class Person:INotifyPropertyChanged
     public string FullName
     {
         get { return this.fullName; }
-        set 
+        set
         {
             this.fullName = value;
             this.OnPropertyChanged ();
@@ -169,6 +173,7 @@ Multiple function arguments can be specified, separated by comma's (,)
 ### Two way function bindings
 
 In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the **BindBack** binding property. In the below example, the function should take one argument which is the value that needs to be pushed back to the model.
+
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
