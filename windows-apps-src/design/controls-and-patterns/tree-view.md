@@ -4,6 +4,7 @@ title: Tree view
 label: Tree view
 template: detail.hbs
 ms.date: 01/03/2019
+ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
