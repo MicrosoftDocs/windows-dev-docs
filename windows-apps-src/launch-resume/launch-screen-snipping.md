@@ -21,6 +21,7 @@ The **ms-screenclip:** URI allows your app to automatically open up and start a 
 | --- | --- | --- | --- |
 | source | string | no | A freeform string to indicate the source that launched the URI. |
 | delayInSeconds | int | no | An integer value, from 1 to 30. Specifies the delay, in full seconds, between the URI call and when snipping begins. |
+| callbackformat | string | no | This parameter is unavailable. |
 
 ## Launching the Snip & Sketch App
 
