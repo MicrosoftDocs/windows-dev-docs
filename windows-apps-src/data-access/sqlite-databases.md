@@ -77,7 +77,7 @@ There's a couple of benefits to raising the minimum version of your UWP project 
 
 First off, you can use .NET Standard 2.0 libraries instead of regular class libraries. That means that you can share your data access code with any other .NET-based app such as a WPF, Windows Forms, Android, iOS, or ASP.NET app.
 
-Secondly, your app does not have package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
+Secondly, your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
 :heavy_check_mark: Reduces the size of your application because you don't have to download the SQLite binary, and then package it as part of your application.
 
