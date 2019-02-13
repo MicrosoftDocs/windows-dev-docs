@@ -86,7 +86,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
     var options = new FindNextElementOptions ()
     {
         SearchRoot = TicTacToeGrid,
-        NavigationStrategy = NavigationStrategyMode.Heuristic
+        XYFocusNavigationStrategyOverride = XYFocusNavigationStrategyOverride.Projection
     };
 
     switch (e.Key)
