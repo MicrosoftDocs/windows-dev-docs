@@ -1428,7 +1428,7 @@
               href: ../launch-resume/convert-app-service-in-process.md
             - name: Extend your app with services, extensions, and packages
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
-            - name: Create and consume an app extension
+            - name: Create and host an app extension
               href: ../launch-resume/how-to-create-an-extension.md
         - name: Support your app with background tasks
           href: ../launch-resume/support-your-app-with-background-tasks.md
