@@ -14,14 +14,11 @@ ms.localizationpriority: medium
 ---
 # Text box
 
- 
-
 The TextBox control lets a user type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform, plaintext format.
 
 TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
 
 > **Important APIs**: [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [Text property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
-
 
 ## Is this the right control?
 
@@ -80,6 +77,18 @@ Here's the text box that results from this XAML.
 
 It’s common to use a text box to accept data input on a form, and use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) or [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) event if you need to do something when the text changes.
 
+This example shows how to get and set the current content of a text box.
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
 You can add a [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (or label) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) property instead of Header. *For design info, see Guidelines for labels*.
 
 You can restrict the number of characters the user can type by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event to modify pasted text if this is important for your app.
@@ -91,6 +100,7 @@ The text box includes a clear all button ("X") that appears when text is entered
 The clear all button is shown only for editable, single-line text boxes that contain text and have focus.
 
 The clear all button is not shown in any of these cases:
+
 - **IsReadOnly** is **true**
 - **AcceptsReturn** is **true**
 - **TextWrap** has a value other than **NoWrap**
@@ -105,10 +115,10 @@ A read-only text box looks the same as a read/write text box, so it might be con
 A user can select and copy text.
 IsEnabled
 
-
 ### Enable multi-line input
 
 There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
+
 - To let the text box allow and display the newline or return characters, set the [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
 - To enable text wrapping, set the [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
 
@@ -238,46 +248,45 @@ For more info and examples, see [Use input scope to change the touch keyboard](h
 
 ## Recommendations
 
--   Use a label or placeholder text if the purpose of the text box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
--   Give the text box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
--   A text input box is typically single-line (`TextWrap = "NoWrap"`). When users need to enter or edit a long string, set the text input box to multi-line (`TextWrap = "Wrap"`).
--   Generally, a text input box is used for editable text. But you can make a text input box read-only so that its content can be read, selected, and copied, but not edited.
--   If you need to reduce clutter in a view, consider making a set of text input boxes appear only when a controlling checkbox is checked. You can also bind the enabled state of a text input box to a control such as a checkbox.
--   Consider how you want a text input box to behave when it contains a value and the user taps it. The default behavior is appropriate for editing the value rather than replacing it; the insertion point is placed between words and nothing is selected. If replacing is the most common use case for a given text input box, you can select all the text in the field whenever the control receives focus, and typing replaces the selection.
+- Use a label or placeholder text if the purpose of the text box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+- Give the text box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+- A text input box is typically single-line (`TextWrap = "NoWrap"`). When users need to enter or edit a long string, set the text input box to multi-line (`TextWrap = "Wrap"`).
+- Generally, a text input box is used for editable text. But you can make a text input box read-only so that its content can be read, selected, and copied, but not edited.
+- If you need to reduce clutter in a view, consider making a set of text input boxes appear only when a controlling checkbox is checked. You can also bind the enabled state of a text input box to a control such as a checkbox.
+- Consider how you want a text input box to behave when it contains a value and the user taps it. The default behavior is appropriate for editing the value rather than replacing it; the insertion point is placed between words and nothing is selected. If replacing is the most common use case for a given text input box, you can select all the text in the field whenever the control receives focus, and typing replaces the selection.
 
-**Single-line input boxes**
+### Single-line input boxes
 
--   Use several single-line text boxes to capture many small pieces of text information. If the text boxes are related in nature, group those together.
+- Use several single-line text boxes to capture many small pieces of text information. If the text boxes are related in nature, group those together.
 
--   Make the size of single-line text boxes slightly wider than the longest anticipated input. If doing so makes the control too wide, separate it into two controls. For example, you could split a single address input into "Address line 1" and "Address line 2".
--   Set a maximum length for characters that can be entered. If the backing data source doesn't allow a long input string, limit the input and use a validation popup to let users know when they reach the limit.
--   Use single-line text input controls to gather small pieces of text from users.
+- Make the size of single-line text boxes slightly wider than the longest anticipated input. If doing so makes the control too wide, separate it into two controls. For example, you could split a single address input into "Address line 1" and "Address line 2".
+- Set a maximum length for characters that can be entered. If the backing data source doesn't allow a long input string, limit the input and use a validation popup to let users know when they reach the limit.
+- Use single-line text input controls to gather small pieces of text from users.
 
     The following example shows a single-line text box to capture an answer to a security question. The answer is expected to be short, and so a single-line text box is appropriate here.
 
     ![Basic data input](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
 
--   Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
+- Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
 
     ![Formatted data input](images/textinput_example_productkey.png)
 
--   Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.
+- Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.
 
     ![Assisted data input](images/textinput_example_assisted.png)
 
+### Multi-line text input controls
 
-**Multi-line text input controls**
-
--   When you create a rich text box, provide styling buttons and implement their actions.
--   Use a font that's consistent with the style of your app.
--   Make the height of the text control tall enough to accommodate typical entries.
--   When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.
+- When you create a rich text box, provide styling buttons and implement their actions.
+- Use a font that's consistent with the style of your app.
+- Make the height of the text control tall enough to accommodate typical entries.
+- When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.
 
     ![A long span of text](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
--   Don't let your text input controls grow in height while users type.
--   Don't use a multi-line text box when users only need a single line.
--   Don't use a rich text control if a plain text control is adequate.
+- Don't let your text input controls grow in height while users type.
+- Don't use a multi-line text box when users only need a single line.
+- Don't use a rich text control if a plain text control is adequate.
 
 ## Get the sample code
 
