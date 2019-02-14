@@ -75,12 +75,6 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
       "branch": "master",
       "branch_mapping": {}
-    },
-    {
-      "path_to_root": "xbox-live-unity-plugin",
-      "url": "https://github.com/Microsoft/xbox-live-unity-plugin.git",
-      "branch": "master",
-      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {
