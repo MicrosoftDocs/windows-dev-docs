@@ -107,6 +107,8 @@ As mentioned above, a C++/WinRT project now needs to have the NuGet package inst
 
 Since the `<CppWinRTEnabled>` element is now obsolete, you can optionally edit your `.vcxproj`, and delete the element. It's not strictly necessary, but it's an option.
 
+Also, if your `.vcxproj` contains `<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`, then you can remove it so that you can build without requiring the C++/WinRT VSIX extension to be installed.
+
 ## Custom types in the C++/WinRT projection
 In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
 
