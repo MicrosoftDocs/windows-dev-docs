@@ -249,7 +249,7 @@ The **Update** SpriteClass method is called in the **Update** method of Game1.cs
 The **Draw** method is called in the **Draw** method of Game1.cs, and is used to draw the sprite in the game window.
 
 ## User input and animation
-Now we have the SpriteClass built, we’ll use it to create two new game objects, The first is an avatar that the player can control with the arrow keys and the space bar. The second is an object that the player must avoid
+Now we have the SpriteClass built, we’ll use it to create two new game objects, The first is an avatar that the player can control with the arrow keys and the space bar. The second is an object that the player must avoid.
 
 ### 1. Get the textures
 For the player’s avatar we’re going to use Microsoft’s very own ninja cat, riding on his trusty t-rex. [Click here to download the image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png).
@@ -560,7 +560,7 @@ if (!gameStarted)
 
 First we create two Strings, one for each line of text we want to draw. Next, we measure the width and height of each line when printed, using the **SpriteFont.MeasureString(String)** method. This gives us the size as a **Vector2** object, with the **X** property containing its width, and **Y** its height.
 
-Finally, we draw each line. To center the text horizontally, we make the **X** value of it’s position vector equal to **screenWidth / 2 - textSize.X / 2**
+Finally, we draw each line. To center the text horizontally, we make the **X** value of it’s position vector equal to **screenWidth / 2 - textSize.X / 2**.
 
 **Challenge:** how would you change the procedure above to center the text vertically as well as horizontally?
 
