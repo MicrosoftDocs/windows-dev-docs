@@ -61,6 +61,7 @@ Now you’ve created the project, open the **Game1.cs** file from the **Solution
 **protected override void UnloadContent()** This method is used to unload non content-manager content. We don’t use this one at all.
 
 **protected override void Update(GameTime gameTime)** This method is called once for every cycle of the game loop. Here we update the states of any object or variable used in the game. This includes things like an object’s position, speed, or color. This is also where user input is handled. In short, this method handles every part of the game logic except drawing objects on screen.
+
 **protected override void Draw(GameTime gameTime)** This is where objects are drawn on the screen, using the positions given by the Update method.
 
 ## Draw a sprite
@@ -248,7 +249,7 @@ The **Update** SpriteClass method is called in the **Update** method of Game1.cs
 The **Draw** method is called in the **Draw** method of Game1.cs, and is used to draw the sprite in the game window.
 
 ## User input and animation
-Now we have the SpriteClass built, we’ll use it to create two new game objects, The first is an avatar that the player can control with the arrow keys and the space bar. The second is an object that the player must avoid
+Now we have the SpriteClass built, we’ll use it to create two new game objects, The first is an avatar that the player can control with the arrow keys and the space bar. The second is an object that the player must avoid.
 
 ### 1. Get the textures
 For the player’s avatar we’re going to use Microsoft’s very own ninja cat, riding on his trusty t-rex. [Click here to download the image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png).
@@ -559,7 +560,7 @@ if (!gameStarted)
 
 First we create two Strings, one for each line of text we want to draw. Next, we measure the width and height of each line when printed, using the **SpriteFont.MeasureString(String)** method. This gives us the size as a **Vector2** object, with the **X** property containing its width, and **Y** its height.
 
-Finally, we draw each line. To center the text horizontally, we make the **X** value of it’s position vector equal to **screenWidth / 2 - textSize.X / 2**
+Finally, we draw each line. To center the text horizontally, we make the **X** value of it’s position vector equal to **screenWidth / 2 - textSize.X / 2**.
 
 **Challenge:** how would you change the procedure above to center the text vertically as well as horizontally?
 
@@ -570,7 +571,12 @@ Try running the game. Do you see the intro splash screen? Does the score count u
 ## Collision detection
 So we have a broccoli that follows you around, and we have a score that ticks up each time a new one spawns—but as it is there is no way to actually lose this game. We need a way to know if the dino and broccoli sprites collide, and if when they do, to declare the game over.
 
-### 1. Rectangular collision
+### 1. Get the textures
+The last image we need, is one for “game over”. [Click here to download the image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png).
+
+Just as before with the green rectangle, ninja-cat and broccoli images, add this image to **Content.mgcb** via the **MonoGame Pipeline**, naming it “game-over.png”.
+
+### 2. Rectangular collision
 When detecting collisions in a game, objects are often simplified to reduce the complexity of the math involved. We are going to treat both the player avatar and broccoli obstacle as rectangles for the purpose of detecting collision between them.
 
 Open **SpriteClass.cs** and add a new class variable:
@@ -596,7 +602,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 
 This method detects if two rectangular objects have collided. The algorithm works by testing to see if there is a gap between any of the sides of the rectangles. If there is any gap, there is no collision—if no gap exists, there must be a collision.
 
-### 2. Load new textures
+### 3. Load new textures
 
 Then, open **Game1.cs** and add two new class variables, one to store the game over sprite texture, and a Boolean to track the game’s state:
 
@@ -617,7 +623,7 @@ Finally, load the texture into **gameOverTexture** in the **LoadContent** method
 gameOverTexture = Content.Load<Texture2D>("game-over");
 ```
 
-### 3. Implement “game over” logic
+### 4. Implement “game over” logic
 Add this code to the **Update** method, just after the **KeyboardHandler** method is called:
 
 ```CSharp
@@ -641,7 +647,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 
 This calls the **RectangleCollision** method we created in **SpriteClass**, and flags the game as over if it returns true.
 
-### 4. Add user input for resetting the game
+### 5. Add user input for resetting the game
 Add this code to the **KeyboardHandler** method, to allow the user to reset the game if they press Enter:
 
 ```CSharp
@@ -652,7 +658,7 @@ if (gameOver && state.IsKeyDown(Keys.Enter))
 }
 ```
 
-### 5. Draw game over splash and text
+### 6. Draw game over splash and text
 Finally, add this code to the Draw method, just after the first call of **spriteBatch.Draw** (this should be the call that draws the grass texture).
 
 ```CSharp
