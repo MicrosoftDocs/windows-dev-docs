@@ -194,7 +194,7 @@ The topics that document the styles and templates for XAML controls show you exc
 
 For some of the attributes in the XAML examples, you may have noticed resource references that use the [{ThemeResource} markup extension](../../xaml-platform/themeresource-markup-extension.md). This is a technique that enables a single control template to use resources that can be different values depending on which theme is currently active. This is particularly important for brushes and colors, because the main purpose of the themes is to enable users to choose whether they want a dark, light, or high contrast theme applied to the system overall. Apps that use the XAML resource system can use a resource set that's appropriate for that theme, so that the theme choices in an app's UI are reflective of the user's systemwide theme choice.
 
- ## Get the sample code
+## Get the sample code
 
 * [XAML Controls gallery sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Custom text edit control sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
