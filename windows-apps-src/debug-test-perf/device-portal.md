@@ -2,11 +2,12 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 12/12/2017
+ms.date: 2/19/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
+
 # Windows Device Portal overview
 
 The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. It also provides advanced diagnostic tools to help you troubleshoot and view the real-time performance of your Windows device.
@@ -59,20 +60,47 @@ Tools that are common across device families are described here. Other options m
 
 The Apps manager provides install/uninstall and management functionality for app packages and bundles on the host device.
 
-![Device Portal Apps manager page](images/device-portal/wdp-apps.png)
+![Device Portal Apps manager page](images/device-portal/WDP_AppsManager2.png)
 
-- **Installed apps**: Use the dropdown menu to remove or start apps that are installed on the device. Install a new app by clicking **Add**. This initiates the installation UX to deploy packaged apps from local, network or web hosts and register loose files from network shares.
-- **Running apps**: Get information about the apps that are currently running and close them as necessary.
+* **Deploy apps**: Deploy packaged apps from local, network, or web hosts and register loose files from network shares.
+* **Installed apps**: Use the dropdown menu to remove or start apps that are installed on the device.
+* **Running apps**: Get information about the apps that are currently running and close them as necessary.
 
-#### Install an app
+#### Install (sideload) an app
+
+You can sideload apps during development using Windows Device Portal:
 
 1.	When you've created an app package, you can remotely install it onto your device. After you build it in Visual Studio, an output folder is generated.
+
   ![App install](images/device-portal/iot-installapp0.png)
-2.	In the Device Portal's Apps manager section, click **Add** and select  **Install app package from local storage**.
-3.  Click **browse** and find your app package.
-3.	Click **browse** and find the certificate (_.cer_) file (not required on all devices.)
-4.	Check the respective boxes if you want to install optional or framework packages along with the app installation. If you have more than one, add each one individually. 	
-5.	Click **Next** to move to the next step and **Install** to initiate the installation. 
+
+2. In Windows Device Portal, navigate to the **Apps manager** page.
+
+3. In the **Deploy apps** section, select **Local Storage**.
+
+4. Under **Select the application package**, select **Choose File** and browse to the app package that you want to sideload.
+
+5. Under **Select certificate file (.cer) used to sign app package**, select **Choose File** and browse to the certificate associated with that app package.
+
+6. Check the respective boxes if you want to install optional or framework packages along with the app installation, and select **Next** to choose them.
+
+7. Select **Install** to initiate the installation.
+
+8. If the device is running Windows 10 in S mode, and it is the first time that the given certificate has been installed on the device, restart the device.
+
+#### Install a certificate
+
+Alternatively, you can install the certificate via Windows Device Portal, and install the app through other means:
+
+1. In Windows Device Portal, navigate to the **Apps manager** page.
+
+2. In the **Deploy apps** section, select **Install Certificate**.
+
+3. Under **Select certificate file (.cer) used to sign an app package**, select **Choose File** and browse to the certificate associated with the app package that you want to sideload.
+
+4. Select **Install** to initiate the installation.
+
+5. If the device is running Windows 10 in S mode, and it is the first time that the given certificate has been installed on the device, restart the device.
 
 #### Uninstall an app
 1.	Ensure that your app is not running. 
