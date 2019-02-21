@@ -282,7 +282,7 @@ Use the following URIs to open various pages of the Settings app.
 | Remote Desktop | ms-settings:remotedesktop |
 | Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
-| Sounds | ms-settings:sounds |
+| Sound | ms-settings:sound |
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
 

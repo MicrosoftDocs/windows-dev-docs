@@ -147,7 +147,7 @@ Some properties are common across all [**DeviceInformationKind**](https://msdn.m
 | **System.Devices.AepService.ParentAepIsPaired** | Boolean | Indicates whether the parent **AssociationEndpoint** object is paired with the system.                           |
 | **System.Devices.AepService.ProtocolId**        | GUID    | Identity of the protocol used to discover this device.                                                           |
 | **System.Devices.AepService.ServiceClassId**    | GUID    | Iidentity of the service represented by this device.                                                             |
-| **System.Devices.AeoService.ServiceId**         | String  | Identity of this service. This is also the value of [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
+| **System.Devices.AepService.ServiceId**         | String  | Identity of this service. This is also the value of [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | String  | The best display name for the service.                                                                           |
 
  
