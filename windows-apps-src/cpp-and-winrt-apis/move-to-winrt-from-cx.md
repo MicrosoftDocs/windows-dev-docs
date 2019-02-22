@@ -276,6 +276,7 @@ C++/CX provides several data types in the **Platform** namespace. These types ar
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Platform::Array\^** | See [Port **Platform::Array\^**](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -295,6 +296,9 @@ In C++/WinRT.
 ```cppwinrt
 winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
+
+### Port **Platform::Array\^**
+Your options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
 The **Platform::Exception\^** type is produced in C++/CX when a Windows Runtime API returns a non S\_OK HRESULT. The C++/WinRT equivalent is [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
