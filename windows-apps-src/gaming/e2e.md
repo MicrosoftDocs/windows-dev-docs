@@ -1509,21 +1509,6 @@ Develop world-ready games for the Windows platform and learn about the internati
     </tr>
 </table>
 
-### Security
-
-Create an environment where your gamers can play and compete fairly. A game enrolled in TruePlay runs in a protected process which mitigates a class of common attacks. The game monitoring system also helps to identify common cheating scenarios. 
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Tools to combat cheating within PC games</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt808781">TruePlay</a></td>
-    </tr>
-</table>
-
 ## Submitting and publishing your game
 
 The following guides and information help make the publishing and submission process as smooth as possible.
