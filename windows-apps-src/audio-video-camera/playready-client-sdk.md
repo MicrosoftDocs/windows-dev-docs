@@ -71,7 +71,7 @@ The following new interfaces, classes, and enumerations were added to PlayReady 
 -   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
 -   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
 
-A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## Things to consider
 
@@ -501,7 +501,7 @@ There are two primary scenarios for sending a secure stop challenge:
 -   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
 -   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## Use PlayReady DRM on Xbox One
 

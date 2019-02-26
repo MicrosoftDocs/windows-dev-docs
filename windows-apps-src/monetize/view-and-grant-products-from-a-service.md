@@ -247,5 +247,5 @@ Here is an example of a decoded Microsoft Store ID key claim set.
 * [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
 * [Integrating Applications with Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Understanding the Azure Active Directory application manifest]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [Supported Token and Claim Types](https://go.microsoft.com/fwlink/?LinkId=722501)

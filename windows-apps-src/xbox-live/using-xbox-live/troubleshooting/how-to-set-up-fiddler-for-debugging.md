@@ -15,7 +15,7 @@ Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between y
 ## For Windows UWP PC apps
 
 1. Make sure that the current user is in the administrator group on the PC
-1. Download Fiddler from [http://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
+1. Download Fiddler from [https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. Make sure that you select the version that is “Built for .NET 4”
 1. Once installed, go to Tools->Fiddler Options and enable Capture HTTPS CONNECTs and Decrypt HTTPS traffic.  All communications between the runtime and Xbox LIVE services are encrypted with SSL.  Without this option you won’t see anything useful.  Accept all dialogs Fiddler pops up (should be 5 dialogs including UAC)
 1. Go to “WinConfig”, “Exempt All”, and “Save Changes”.  Otherwise Fiddler won’t work with Store apps.

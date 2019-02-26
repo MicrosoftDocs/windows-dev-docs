@@ -30,7 +30,7 @@ A [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.use
 
 1. The [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (e.g. “my-app://page2?action=edit”) or of an AppUriHandler (e.g. http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) exposes a class that allows the user to visually identify an activity with a title, description, or Adaptive Card elements.
-3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [http://schema.org](https://schema.org) data.
+3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [https://schema.org](https://schema.org) data.
 
 To add a **UserActivity** to your app:
 

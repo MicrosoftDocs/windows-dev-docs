@@ -82,7 +82,7 @@ Speaking of which, now is a good time to open **main.js**.
 
 ### 2. Loading the bitmaps
 
-EaselJS provides us with several different types of graphical objects. We can create simple shapes (such as the blue rectangle used for the sky), or bitmaps (such as the clouds we're about to add), text objects, and sprites. Sprites use a (SpriteSheet)[http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: a single bitmap containing multiple images. For example, we use this SpriteSheet to store the different frame of dinosaur animation:
+EaselJS provides us with several different types of graphical objects. We can create simple shapes (such as the blue rectangle used for the sky), or bitmaps (such as the clouds we're about to add), text objects, and sprites. Sprites use a (SpriteSheet)[https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: a single bitmap containing multiple images. For example, we use this SpriteSheet to store the different frame of dinosaur animation:
 
 ![Walking Dino sprite sheet](images/JS2D_4.png)
 

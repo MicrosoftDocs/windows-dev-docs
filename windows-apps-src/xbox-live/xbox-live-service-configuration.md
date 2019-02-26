@@ -26,7 +26,7 @@ If you are an ID@Xbox Developer or working with a publisher that is a Microsoft 
 
 ## Choose your development portal
 
-As mentioned above, there are two different portals that can be used to configure Xbox Live Services. Partner Center at [https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](https://xdp.xboxlive.com).
+As mentioned above, there are two different portals that can be used to configure Xbox Live Services. Partner Center at [https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard) and the Xbox Development Portal (XDP) at [https://xdp.xboxlive.com](https://xdp.xboxlive.com).
 
 Partner Center is recommended for all titles going forward, but for certain features, you may still want to use XDP. This section will help advise you where to configure your title.
 

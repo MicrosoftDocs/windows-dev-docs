@@ -58,7 +58,7 @@ With an existing iOS app, your options are a little more limited. However, all i
 
     A game authoring environment.
 
--   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     A game authoring environment.
 
