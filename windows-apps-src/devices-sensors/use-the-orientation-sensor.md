@@ -70,7 +70,7 @@ This section is divided into two subsections. The first subsection will take you
     using Windows.UI.Core;
     using Windows.Devices.Sensors;
 
-    // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?linkid=234238
+    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
 
     namespace App1
     {
@@ -231,7 +231,7 @@ This section is divided into two subsections. The first subsection will take you
 
     using Windows.UI.Core;
     using Windows.Devices.Sensors;
-    // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?linkid=234238
+    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
 
     namespace App1
     {

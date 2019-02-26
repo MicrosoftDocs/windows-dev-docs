@@ -308,7 +308,7 @@ using Windows.ApplicationModel.Activation;
 using SplashScreenExample.Common;
 using Windows.UI.Core;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace SplashScreenExample
 {
@@ -436,7 +436,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234227
+// The Blank Application template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234227
 
 namespace SplashScreenExample
 {

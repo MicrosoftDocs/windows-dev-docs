@@ -185,7 +185,7 @@ CompositionSurfaceBrush _videoBrush;
 _mediaPlayer = new MediaPlayer();
 
 // Get a source from a URI. This could also be from a file via a picker or a stream
-var source = MediaSource.CreateFromUri(new Uri("http://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
+var source = MediaSource.CreateFromUri(new Uri("https://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
 var item = new MediaPlaybackItem(source);
 _mediaPlayer.Source = item;
 _mediaPlayer.IsLoopingEnabled = true;
