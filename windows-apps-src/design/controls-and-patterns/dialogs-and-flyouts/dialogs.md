@@ -13,7 +13,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-## Dialog controls
+# Dialog controls
 
 Dialog controls are modal UI overlays that provide contextual app information. They block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
 

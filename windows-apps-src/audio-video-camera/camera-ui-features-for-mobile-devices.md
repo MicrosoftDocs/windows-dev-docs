@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-#Camera UI features for mobile devices
+# Camera UI features for mobile devices
 
 This article show you how to take advantage of special camera UI features that are only present on mobile devices. 
 
