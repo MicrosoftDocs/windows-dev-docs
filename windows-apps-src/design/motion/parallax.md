@@ -4,7 +4,7 @@ title: How to use the ParallaxView control to add depth and movement to your app
 ms.assetid: 
 label: Parallax View
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow

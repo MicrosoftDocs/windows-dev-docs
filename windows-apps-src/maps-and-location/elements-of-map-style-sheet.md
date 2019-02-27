@@ -3,7 +3,7 @@ description: The entries and properties of a map style sheet
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Map style sheet reference
-ms.date: 03/16/2017
+ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, maps, map style sheet
 ms.localizationpriority: medium

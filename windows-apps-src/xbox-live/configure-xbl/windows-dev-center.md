@@ -2,7 +2,7 @@
 title: Partner Center service configuration  
 
 description: Links to topics that detail how to configure Xbox Live services in Partner Center.
-ms.date: 7/30/2018
+ms.date: 07/30/2018
 ms.topic: article
 
 

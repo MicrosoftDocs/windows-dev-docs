@@ -1,7 +1,7 @@
 ---
 title: Optional packages with executable code
 description: Learn how to use Visual Studio to create an optional package with executable code.
-ms.date: 9/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
 ms.localizationpriority: medium

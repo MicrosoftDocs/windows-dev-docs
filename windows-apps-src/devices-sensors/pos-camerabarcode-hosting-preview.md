@@ -1,7 +1,7 @@
 ---
 title: Hosting Preview for Camera Barcode Scanner
 description: Learn how to host a camera barcode scanner preview in your application
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
