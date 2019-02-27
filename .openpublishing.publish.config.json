@@ -50,6 +50,22 @@
       "version": 0
     },
     {
+      "docset_name": "windows-uwp-arm",
+      "build_source_folder": "landing/arm-docs",
+      "build_output_subfolder": "windows-uwp-arm",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
+    {
       "docset_name": "windows-uwp-hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "windows-uwp-hub",
