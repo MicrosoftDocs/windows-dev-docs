@@ -48,7 +48,7 @@
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
       "version": 0
-    },
+    }
   ],
   "notification_subscribers": [],
   "sync_notification_subscribers": [],
