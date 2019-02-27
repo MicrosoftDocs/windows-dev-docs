@@ -16,7 +16,7 @@ In this topic, we create a simple sound engine using [XAudio2](https://msdn.micr
 
 ## Objective
 
-Add sounds into the sample game using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+Add sounds into the sample game using [XAudio2](/windows/desktop/xaudio2/xaudio2-introduction).
 
 ## Define the audio engine
 
@@ -45,7 +45,7 @@ In __Simple3DGame::Initialize__, where __m\_controller__ and __m\_renderer__ are
  * Create __m\_audioController__, which is an instance of the [Audio](#audioh) class.
  * Create the audio resources needed using the [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) method. Here, two __XAudio2__ objects &mdash; a music engine object and a sound engine object, and a mastering voice for each of them were created. The music engine object can be used to play background music for your game. The sound engine can be used to play sound effects in your game. For more info, see [Create and initialize the audio resources](#create-and-initialize-the-audio-resources).
  * Create __mediaReader__, which is an instance of [MediaReader](#mediareaderh) class. [MediaReader](#mediareaderh), which is a helper class for the [SoundEffect](#soundeffecth) class, reads small audio files synchronously from file location and returns sound data as a byte array.
- * Use [MediaReader::LoadMedia](#mediareaderloadmedia-method) to load sound files from its location and create a __targetHitSound__ variable to hold the loaded .wav sound data. For more info, see [Load audio file](#load-audio). 
+ * Use [MediaReader::LoadMedia](#mediareaderloadmedia-method) to load sound files from its location and create a __targetHitSound__ variable to hold the loaded .wav sound data. For more info, see [Load audio file](#load-audio-file). 
 
 Sound effects are associated with the game object. So when a collision occurs with that game object, it triggers the sound effect to be played. In this game sample, we have sound effects for the ammo (what we use to shoot targets with) and for the target. 
     
@@ -463,11 +463,11 @@ There are three types of XAudio2 voice objects: source, submix, and mastering vo
 * Submix and mastering voices mix the audio from all voices feeding them, and operate on the result. 
 * Mastering voices receive data from source voices and submix voices, and sends that data to the audio hardware.
 
-For more info, go to [XAudio2 voices](https://msdn.microsoft.com/library/windows/desktop/ee415824.aspx).
+For more info, go to [XAudio2 voices](/windows/desktop/xaudio2/xaudio2-voices).
 
 ### Audio graph
 
-Audio graph is a collection of [XAudio2 voices](#xaudio2-voice-objects). Audio starts at one side of an audio graph in source voices, optionally passes through one or more submix voices, and ends at a mastering voice. An audio graph will contain a source voice for each sound currently playing, zero or more submix voices, and one mastering voice. The simplest audio graph, and the minimum needed to make a noise in XAudio2, is a single source voice outputting directly to a mastering voice. For more info, go to [Audio graphs](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+Audio graph is a collection of [XAudio2 voices](/windows/desktop/xaudio2/xaudio2-voices). Audio starts at one side of an audio graph in source voices, optionally passes through one or more submix voices, and ends at a mastering voice. An audio graph will contain a source voice for each sound currently playing, zero or more submix voices, and one mastering voice. The simplest audio graph, and the minimum needed to make a noise in XAudio2, is a single source voice outputting directly to a mastering voice. For more info, go to [Audio graphs](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
 
 ### Additional reading
 

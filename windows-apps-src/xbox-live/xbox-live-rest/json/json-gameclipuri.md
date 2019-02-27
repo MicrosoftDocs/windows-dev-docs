@@ -33,7 +33,7 @@ The GameClipUri object has the following specification.
 
 ```json
 {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"

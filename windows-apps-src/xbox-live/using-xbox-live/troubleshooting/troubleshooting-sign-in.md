@@ -98,7 +98,7 @@ Double-check the Application ID Setup and Dev Center Binding in XDP. You can vie
 
 ### 0x87DD000E Title not authorized
 
-Double-check that your device is set to the proper development sandbox and that the user has access to the sandbox. See the [Test using the Xbox App](#test-xbox-app) section for more information on how you can verify these with the Xbox App.
+Double-check that your device is set to the proper development sandbox and that the user has access to the sandbox. See the [Test using the Xbox App](#test-using-the-xbox-app) section for more information on how you can verify these with the Xbox App.
 
 If that doesn't resolve the issue, then also check the Dev Center Binding and App ID setup as described above.
 

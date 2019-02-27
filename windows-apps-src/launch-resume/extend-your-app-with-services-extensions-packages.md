@@ -1,7 +1,7 @@
 ---
 title: Extend your app with services, extensions, and packages
 description: Describes how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
-ms.date: 05/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, extend, componentize, app service, package, extension
 ms.localizationpriority: medium

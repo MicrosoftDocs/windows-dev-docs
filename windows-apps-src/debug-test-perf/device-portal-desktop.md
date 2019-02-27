@@ -2,7 +2,7 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
-ms.date: 2/6/2019
+ms.date: 02/6/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -34,7 +34,7 @@ You can enable Device Portal in the **For developers** section of **Settings**. 
 
 ![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
 
-Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so that they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
+Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. 
 
 These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host.
 

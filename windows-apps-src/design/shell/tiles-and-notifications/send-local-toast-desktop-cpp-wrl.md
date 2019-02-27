@@ -3,7 +3,7 @@ Description: Learn how Win32 C++ WRL apps can send local toast notifications and
 title: Send a local toast notification from desktop C++ WRL apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
@@ -389,7 +389,7 @@ if (SUCCEEDED(hr))
 
 ## Step 10: Deploying and debugging
 
-To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/porting/desktop-to-uwp-debug.md).
+To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
 
 To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 

@@ -80,7 +80,7 @@ You don't need to change any of your code that integrates with charms, but you d
 
 ## Controls, and control styles and templates
 
-A Universal 8.1 app running on Windows 10 will retain the 8.1 appearance and behavior with respect to controls. But, when you port that app to a Windows 10 app, there are some differences in appearance and behavior to be aware of. The architecture and design of controls is essentially unchanged for Windows 10 apps, so the changes are mostly around [design language](#design-language-in-windows-10), simplification, and usability improvements.
+A Universal 8.1 app running on Windows 10 will retain the 8.1 appearance and behavior with respect to controls. But, when you port that app to a Windows 10 app, there are some differences in appearance and behavior to be aware of. The architecture and design of controls is essentially unchanged for Windows 10 apps, so the changes are mostly around the design language, simplification, and usability improvements.
 
 **Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps and in Windows Runtime 8.x apps, but not in Windows Phone Store apps. For this reason (and because of the system resource keys that are supported for Windows 10 apps), we recommend that you re-use the custom styles/templates from your Windows Runtime 8.x apps when you're porting your app to Windows 10.
 If you want to be certain that your custom styles/templates are using the latest set of visual states, and are benefitting from performance improvements made to the default styles/templates, then edit a copy of the new Windows 10 default template and re-apply your customization to that. One example of a performance improvement is that any **Border** that formerly enclosed a **ContentPresenter** or a Panel has been removed and a child element now renders the border.
@@ -116,7 +116,7 @@ For more info on UWP app controls, see [Controls by function](https://msdn.micro
 
 ##  Design language in Windows 10
 
-There are some small but important differences in design language between Universal 8.1 apps and Windows 10 apps. For all the details, see [Design](https://dev.windows.com/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
+There are some small but important differences in design language between Universal 8.1 apps and Windows 10 apps. For all the details, see [Design](https://developer.microsoft.com/en-us/windows/apps/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
 
 ## Effective pixels, viewing distance, and scale factors
 
@@ -241,7 +241,7 @@ The design language has evolved for Windows 10 and consequently certain system 
 
 In other cases, resource keys are no longer supported. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `ListViewItemTextBlockStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
 
-For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](https://dev.windows.com/design).
+For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](https://developer.microsoft.com/en-us/windows/apps/design).
 
 This is a full list of the keys that are no longer supported.
 

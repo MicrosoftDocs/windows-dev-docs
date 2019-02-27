@@ -2,7 +2,7 @@
 description: A type of brush that creates a translucent texture.
 title: Acrylic material
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl

@@ -55,7 +55,7 @@ RDX-aware apps that do not meet these high priority requirements need to be inve
 
 * **No anonymous communication**. Because a customer using a retail demo device is an anonymous user, they should not be able to message or share content from the device.
 
-* **Deliver consistent experiences by using the cleanup process**. Every customer should have the same experience when they walk up to a retail demo device. Your app should use [clean up process](#clean-up-process) to return to the same default state after each use. We don't want the next customer to see what the last customer left behind. This includes scoreboards, achievements, and unlocks.
+* **Deliver consistent experiences by using the cleanup process**. Every customer should have the same experience when they walk up to a retail demo device. Your app should use [clean up process](#cleanup-process) to return to the same default state after each use. We don't want the next customer to see what the last customer left behind. This includes scoreboards, achievements, and unlocks.
 
 * **Age appropriate content**. All app content needs to be assigned a Teen or lower rating category. To learn more, see [Getting your app rated by IARC](https://www.globalratings.com/for-developers.aspx) and [ESRB ratings](https://www.esrb.org/ratings/ratings_guide.aspx).
 

@@ -2,7 +2,7 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for HoloLens
 description: Learn how the Windows Device Portal for HoloLens lets you remotely configure and manage your HoloLens device.
-ms.date: 1/3/2019
+ms.date: 01/3/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium

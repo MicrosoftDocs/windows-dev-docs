@@ -119,7 +119,7 @@ If the call is successful, the service returns an array of [Achievement (JSON)](
         [{
                 "name":"Icon Name",
                 "type":"Icon",
-                "url":"http://www.xbox.com"
+                "url":"https://www.xbox.com"
         }],
         "platform":"D",
         "isSecret":true,

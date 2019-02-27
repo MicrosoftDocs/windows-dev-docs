@@ -190,7 +190,7 @@ if (FAILED(hr))
 {
     // If the initialization fails, fall back to the WARP device.
     // For more information on WARP, see:
-    // http://go.microsoft.com/fwlink/?LinkId=286690
+    // https://go.microsoft.com/fwlink/?LinkId=286690
     DX::ThrowIfFailed(
         D3D11CreateDevice(
             nullptr,

@@ -40,7 +40,7 @@ This topic describes the following URI schemes built into Windows:
 <br>
 For example, the following URI opens the default browser and displays the Bing web site.
 
-`http://bing.com`
+`https://bing.com`
 
 You can also launch custom URI schemes too. If there is no app installed to handle that URI, you can recommend an app for the user to install. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 

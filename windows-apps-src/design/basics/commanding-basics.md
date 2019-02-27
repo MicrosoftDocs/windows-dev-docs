@@ -5,7 +5,8 @@ ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 10/01/2018
+ms.author: mijacobs
+ms.date: 11/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -19,7 +20,7 @@ In a Universal Windows Platform (UWP) app, *command elements* are interactive UI
 
 The most important aspect of a command interface is what you're trying to let a user accomplish. As you plan the functionality of your app, consider the steps required to accomplish those tasks and the user experiences you want to enable. Once you've completed an initial draft of these experiences, then you can make decisions on the tools and interactions to implement them.
 
-Here are some common application experiences:
+Here are some common command experiences:
 
 - Sending or submiting information
 - Selecting settings and choices
@@ -27,7 +28,7 @@ Here are some common application experiences:
 - Opening, saving, and deleting files
 - Editing or creating content
 
-Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible.
+Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see [Commanding design for Universal Windows Platform (UWP) apps](../controls-and-patterns/commanding.md) for more detail).
 
 
 
@@ -137,10 +138,10 @@ Here's a list of some of the most common command surfaces.
 
 ## Provide command feedback 
 
-Command feedback communicates to users that an interaction or command was detected, how it was interpreted and handled, and whether it was successful or not. This helps users understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.
+Command feedback communicates to users that an interaction or command was detected, how the command was interpreted and handled, and whether the command was successful or not. This helps users understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.
 
 > [!NOTE]
-> Don't provide feedback unless it is absolutely necessary and the feedback is not available elsewhere. Keep your application UI clean and uncluttered unless you are adding value.
+> Provide feedback only when necessary and only if it's not available elsewhere. Keep your application UI clean and uncluttered unless you are adding value.
 
 Here are some ways to provide feedback in your app.
 

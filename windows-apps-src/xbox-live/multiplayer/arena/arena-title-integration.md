@@ -27,7 +27,7 @@ Your title uses the session to set up the match and report results. Responding t
 ![](../../images/arena/tournament-flow.png)
 
 
-The Arena protocol activation URI contains information about the tournament, the session for the match, and a deep link that your title can invoke when the match is over. The deep link returns the user to the Xbox Arena UI. These URI components are described in more detail in the [Protocol activation](#protocol-activation) section of [Basic requirements for Arena integration](#basic-requirements-for-arena-integration).
+The Arena protocol activation URI contains information about the tournament, the session for the match, and a deep link that your title can invoke when the match is over. The deep link returns the user to the Xbox Arena UI. These URI components are described in more detail in the [Protocol activation](#1protocol-activation) section of [Basic requirements for Arena integration](#basic-requirements-for-arena-integration).
 
 ## Basic requirements for Arena integration
 
@@ -88,7 +88,7 @@ Paramater(s) | Description
 **organizerId, tournamentId** | The **organizerId** and **tournamentId**, when combined, form the unique identifier for the tournament that the match is associated with. Use this identifier to retrieve more detailed information about the tournament from the Tournaments Hub, if you choose to display it in your title.
 **teamId** | The **teamId** is a unique identifier for the team, in the context of the tournament that the user (specified by the **joinerXuid** parameter) is a member of. Like the **organizerId** and **tournamentId** parameters, you can use the **teamId** to optionally retrieve information about the team from the Tournaments Hub.
 **scid, templateName, name** | Together, these identify the session. These are the same three parameters in the MPSD URI path to the session:</br> </br>`https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templateName}/sessions{name}`.</br></br>In XSAPI, they’re the three parameters to the `multiplayer_session_reference `constructor.
-**returnUri, returnPfn** | The **returnUri** is a protocol-activation URI to return the user to the Xbox Arena UI. The **returnPfn** parameter may or may not be present. If it is, it’s the Product Family Name (PFN) for the app that’s intended to handle the **returnUri**. For sample code that shows how to use these values, see [Returning to the Xbox Arena UI](#returning-to-the-xbox-arena-ui).
+**returnUri, returnPfn** | The **returnUri** is a protocol-activation URI to return the user to the Xbox Arena UI. The **returnPfn** parameter may or may not be present. If it is, it’s the Product Family Name (PFN) for the app that’s intended to handle the **returnUri**. For sample code that shows how to use these values, see [Returning to the Xbox Arena UI](#4returning-to-the-xbox-arena-ui).
 
 ### 2.	Playing the match
 

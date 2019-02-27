@@ -3,7 +3,7 @@ title: Create and consume an app service
 description: Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps, and how to consume those services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app, app service
-ms.date: 1/16/2019
+ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
 ---

@@ -66,6 +66,8 @@
       href: controls-and-patterns/index.md
     - name: Intro to controls and events
       href: controls-and-patterns/controls-and-events-intro.md
+    - name: Intro to commanding
+      href: controls-and-patterns/commanding.md
     - name: Index of controls by function
       href: controls-and-patterns/controls-by-function.md
     - name: Basic input

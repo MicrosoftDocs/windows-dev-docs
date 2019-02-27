@@ -2,7 +2,7 @@
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
@@ -109,7 +109,7 @@ Check out [Get set up](get-set-up.md) to download the tools you need to start cr
 
 The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
 
-Good [design](https://go.microsoft.com/fwlink/?LinkId=258848) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://dev.windows.com/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://msdn.microsoft.com/library/windows/apps/dn958439) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+Good [design](https://go.microsoft.com/fwlink/?LinkId=258848) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/en-us/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://msdn.microsoft.com/library/windows/apps/dn958439) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
 
 In addition to interaction on different devices, [plan your app](https://msdn.microsoft.com/library/windows/apps/hh465427) to embrace the benefits of working across multiple devices. For example:
 

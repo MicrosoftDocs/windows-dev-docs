@@ -2,7 +2,7 @@
 title: Use Game Chat 2 WinRT Projections
 
 description: Learn how to use Xbox Live Game Chat 2 with WinRT projections to add voice communication to your game.
-ms.date: 4/11/2018
+ms.date: 04/11/2018
 ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
 ms.localizationpriority: medium
@@ -10,20 +10,6 @@ ms.localizationpriority: medium
 # Using Game Chat 2 (WinRT Projections)
 
 This is a brief walkthrough on using Game Chat 2's C# API. Game developers wanting to access Game Chat 2 through C++ should see [Using Game Chat 2](using-game-chat-2.md).
-
-1. [Prerequisites](#prereq)
-2. [Initialization](#init)
-3. [Configuring users](#config)
-4. [Processing data frames](#data)
-5. [Processing state changes](#state)
-6. [Text chat](#text)
-7. [Accessibility](#access)
-8. [UI](#UI)
-9. [Muting](#mute)
-10. [Bad reputation auto-mute](#automute)
-11. [Privilege and privacy](#priv)
-12. [Cleanup](#cleanup)
-13. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
 
 ## Prerequisites <a name="prereq">
 

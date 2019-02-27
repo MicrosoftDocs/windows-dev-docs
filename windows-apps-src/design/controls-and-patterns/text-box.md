@@ -105,6 +105,19 @@ The clear all button is not shown in any of these cases:
 - **AcceptsReturn** is **true**
 - **TextWrap** has a value other than **NoWrap**
 
+This example shows how to get and set the current content of a text box.
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
+
 ### Make a text box read-only
 
 You can make a text box read-only by setting the [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.

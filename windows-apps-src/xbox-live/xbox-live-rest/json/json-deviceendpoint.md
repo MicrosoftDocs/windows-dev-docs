@@ -38,7 +38,7 @@ The DeviceEndpoint object has the following specification.
 {
   "systemId": "e9af05b4-70de-4920-880f-026c6fb67d1b",
   "userId" : 1234567890
-  "endpointUri": "http://cloud.notify.windows.com/.../",
+  "endpointUri": "https://cloud.notify.windows.com/.../",
   "platform": "Windows",
   "platformVersion": "1.0",
   "deviceName": "Test Endpoint",

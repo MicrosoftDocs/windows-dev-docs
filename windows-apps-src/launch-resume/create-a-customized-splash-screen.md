@@ -2,7 +2,7 @@
 title: Display a splash screen for more time
 description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.date: 2/19/2019
+ms.date: 02/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -308,7 +308,7 @@ using Windows.ApplicationModel.Activation;
 using SplashScreenExample.Common;
 using Windows.UI.Core;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace SplashScreenExample
 {
@@ -436,7 +436,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234227
+// The Blank Application template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234227
 
 namespace SplashScreenExample
 {

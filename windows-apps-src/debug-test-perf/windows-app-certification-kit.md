@@ -18,13 +18,13 @@ To get your app [Windows Certified](https://msdn.microsoft.com/windows/desktop/j
 Prerequisites for testing a Universal Windows app:
 
 -   You must install and run Windows 10.
--   You must install [Windows App Certification Kit version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
+-   You must install [Windows App Certification Kit version 10]( https://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
 -   You must [enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   You must deploy the Windows app that you want to test to your computer.
 
 **A note about in-place upgrades**
 
-The installation of a more recent [Windows App Certification Kit]( http://go.microsoft.com/fwlink/p/?LinkID=309666) will replace any previous version of the kit that is installed on the machine.
+The installation of a more recent [Windows App Certification Kit]( https://go.microsoft.com/fwlink/p/?LinkID=309666) will replace any previous version of the kit that is installed on the machine.
 
 ## Validate your Windows app using the Windows App Certification Kit interactively
 

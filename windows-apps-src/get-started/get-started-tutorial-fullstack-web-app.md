@@ -34,7 +34,7 @@ If you decide to bail on (or postpone) the Azure part, simply skip the final sec
 
 We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](https://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
 
-If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-appl), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
+If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-application), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
 
 ### Game overview
 
@@ -203,7 +203,7 @@ With that, it's time to run your server! Let's set up Visual Studio Code for Nod
 ]
 ```
 
-Now press F5 and open your browser to [http://localhost:8000](https://localhost:8000). The page should open to the Swagger UI for our memory game API, and from there you can expand the details and input fields for each of the methods. You can even try calling the APIs, although their responses will contain only mocked-up data (provided by the [Swagmock](https://www.npmjs.com/package/swagmock) module). It's time to add our game logic to make these APIs real.
+Now press F5 and open your browser to [https://localhost:8000](https://localhost:8000). The page should open to the Swagger UI for our memory game API, and from there you can expand the details and input fields for each of the methods. You can even try calling the APIs, although their responses will contain only mocked-up data (provided by the [Swagmock](https://www.npmjs.com/package/swagmock) module). It's time to add our game logic to make these APIs real.
 
 ### 3. Set up your route handlers
 
@@ -229,7 +229,7 @@ This layer of our program represents the memory cards themselves and provides th
 
 For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd use cloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
 
-Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [http://localhost:8000](https://localhost:8000)) to test out the game API.
+Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [https://localhost:8000](https://localhost:8000)) to test out the game API.
 
 Each time you press the **Try it out!** button on one of the **/game**, **/guess**, or **/new** operations, check the resulting **Response Body** and **Response Code** below to verify that everything's working as expected.
 
@@ -327,7 +327,7 @@ Let's start by creating the Node.js project using Express.
     npm start
     ```
 
-5. View your application by going to [http://localhost:3000/](https://localhost:3000/).
+5. View your application by going to [https://localhost:3000/](https://localhost:3000/).
 
     ![A screenshot of http://localhost:3000/](./images/express.png)
 
@@ -614,7 +614,7 @@ Congratulations! You've finished creating the web app! Let's test it.
 
 1. Open a command prompt in your memory directory and enter the following command: `npm start`
 
-2. In your browser, go to [http://localhost:3000/](https://localhost:3000/) and play a game!
+2. In your browser, go to [https://localhost:3000/](https://localhost:3000/) and play a game!
 
 3. If you encounter any errors, you can use Visual Studio Code's Node.js debugging tools by pressing F5 on your keyboard and typing `Node.js`. For more information about debugging in Visual Studio Code, check out this [article](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
 

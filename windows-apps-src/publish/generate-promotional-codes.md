@@ -65,7 +65,7 @@ To download a fulfilled promotional code order and distribute the codes to custo
     -   **Product name**: The name of the app or add-on that the code is associated with.
     -   **Order name**: The name of the order in which this code was generated.
     -   **Promotional code**: The code itself. This is a 5x5 string of alphanumeric characters separated by hyphens. For example: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **Redeemable URL**: The URL that a customer can use to redeem the code and install your app or add-on. The URL has the following format: http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code>
+    -   **Redeemable URL**: The URL that a customer can use to redeem the code and install your app or add-on. The URL has the following format: https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code>
     -   **Start date**: The date this code became active.
     -   **Expire date**: The date this code expires.
     -   **Code ID**: A unique ID for this code.

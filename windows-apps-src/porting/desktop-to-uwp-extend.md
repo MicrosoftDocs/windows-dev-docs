@@ -97,7 +97,7 @@ To show a XAML-based UI, do these things:
 
 :two: [Create a XAML UI](#xaml-UI)
 
-:three: [Add a protocol extension to the UWP project](#protocol)
+:three: [Add a protocol extension to the UWP project](#add-a-protocol-extension)
 
 :four: [Start the UWP app from your desktop app](#start)
 

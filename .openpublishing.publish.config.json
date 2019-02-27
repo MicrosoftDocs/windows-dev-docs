@@ -2,7 +2,7 @@
   "build_entry_point": "op",
   "docsets_to_publish": [
     {
-      "docset_name": "arm",
+      "docset_name": "windows-uwp-arm",
       "build_source_folder": "landing/arm-docs",
       "build_output_subfolder": "arm",
       "locale": "en-us",
@@ -18,7 +18,7 @@
       "template_folder": "_themes"
     },
     {
-      "docset_name": "hub",
+      "docset_name": "windows-uwp-hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "hub",
       "locale": "en-us",
@@ -34,7 +34,7 @@
       "version": 0
     },
     {
-      "docset_name": "windows-apps",
+      "docset_name": "windows-uwp",
       "build_source_folder": "windows-apps-src",
       "build_output_subfolder": "windows-apps-src",
       "locale": "en-us",

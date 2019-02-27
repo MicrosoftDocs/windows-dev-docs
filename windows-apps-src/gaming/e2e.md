@@ -1064,7 +1064,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </colgroup>
     <tr>
         <td>UWP design basics and guidelines</td>
-        <td><a href="https://dev.windows.com/design">Designing UWP apps</a></td>
+        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Designing UWP apps</a></td>
     </tr>
     <tr>
         <td>Designing for app lifecycle states</td>

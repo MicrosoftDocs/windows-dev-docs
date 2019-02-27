@@ -1,7 +1,7 @@
 ---
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
-ms.date: 1/10/2017
+ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium

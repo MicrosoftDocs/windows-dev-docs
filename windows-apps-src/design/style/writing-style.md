@@ -2,7 +2,7 @@
 title: Writing style
 description: Using the right voice and tone is key to making your app's text seem a natural part of its design.
 keywords: UWP, Windows 10, text, writing, voice, tone, design, UI, UX
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
