@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot installation issues with the App Installer file
 description: Common issues when sideloading applications with the App Installer file.
-ms.date: 5/2/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload
 ms.localizationpriority: medium

@@ -3,7 +3,7 @@ Description: Learn how Win32 C++ WRL apps can send local toast notifications and
 title: Send a local toast notification from desktop C++ WRL apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium

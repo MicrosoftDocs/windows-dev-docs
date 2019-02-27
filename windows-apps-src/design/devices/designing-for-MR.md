@@ -6,7 +6,7 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 
 

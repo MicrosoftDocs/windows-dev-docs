@@ -2,7 +2,7 @@
 title: What's New in Windows Docs in January 2019 - Develop UWP apps
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for January 2019
 keywords: what's new, update, features, developer guidance, Windows 10, january
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ---

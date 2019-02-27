@@ -1,7 +1,7 @@
 ---
 title: Device Portal Xbox info API reference
 description: Learn how to access Xbox device information.
-ms.date: 11/7/2017
+ms.date: 11/072017
 ms.topic: article
 keywords: windows 10, uwp, xbox, device portal
 ms.localizationpriority: medium

@@ -3,7 +3,7 @@ Description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 10/2/2018
+ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow

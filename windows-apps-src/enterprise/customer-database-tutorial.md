@@ -2,7 +2,7 @@
 title: Create a customer database application
 description: Create a customer database application, and learn how to implement basic enterprise app functions.
 keywords: enterprise, tutorial, customer, data, create read update delete, REST, authentication
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 
 
