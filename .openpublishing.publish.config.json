@@ -50,14 +50,9 @@
       "version": 0
     }
   ],
-  "notification_subscribers": [
-    "mijacobs@microsoft.com",
-    "v-gmoor@microsoft.com"
-  ],
+  "notification_subscribers": [],
   "sync_notification_subscribers": [],
-  "branches_to_filter": [
-    ""
-  ],
+  "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
   "git_repository_branch_open_to_public_contributors": "docs",
   "skip_source_output_uploading": false,
@@ -69,31 +64,10 @@
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "master",
       "branch_mapping": {}
-    },
-    {
-      "path_to_root": "_themes.pdf",
-      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-      "branch": "master",
-      "branch_mapping": {}
-    },
-    {
-      "path_to_root": "xbox-live-unity-plugin",
-      "url": "https://github.com/Microsoft/xbox-live-unity-plugin.git",
-      "branch": "master",
-      "branch_mapping": {}
     }
   ],
-  "branch_target_mapping": {
-    "live": [
-      "Publish",
-      "Pdf"
-    ]
-  },
+  "branch_target_mapping": {},
   "need_generate_pdf_url_template": true,
-  "targets": {
-    "Pdf": {
-      "template_folder": "_themes.pdf"
-    }
-  },
+  "targets": {},
   "need_generate_pdf": false
 }
