@@ -34,7 +34,7 @@ The MediaAsset object has the following specification.
 {
   "name":"Icon Name",
   "type":"Icon",
-  "url":"http://www.xbox.com"
+  "url":"https://www.xbox.com"
 }
 
 ```

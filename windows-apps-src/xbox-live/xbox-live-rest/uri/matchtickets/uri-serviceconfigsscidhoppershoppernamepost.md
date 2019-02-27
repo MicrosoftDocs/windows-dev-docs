@@ -88,7 +88,7 @@ All other members are prohibited in a request.
 
 The session referred to by the **ticketSessionRef** object must be created before a match ticket can be created, and the session must contain the players to be matched, along with their player-specific attributes. Each player must create or join the session against the MPSD, adding associated match attributes to the session. The match attributes are placed in a custom property field called matchAttrs on each player.
 
-A create or join request is submitted to **http://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** and might look like this:
+A create or join request is submitted to **https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** and might look like this:
 
 
 ```cpp

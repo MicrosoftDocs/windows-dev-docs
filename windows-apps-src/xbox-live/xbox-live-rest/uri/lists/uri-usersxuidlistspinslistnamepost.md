@@ -115,7 +115,7 @@ The service returns one of the status codes in this section in response to a req
     "ItemId": "3a5095a5-eac3-4215-944d-27bc051faa47",
     "ProviderId": "",
     "Provider": "",
-    "ImageUrl": "http://www.bing.com/thumb/get?bid=Gw%2fsjCGSS4kAAQ584x800&bn=SANGAM&fbid=7wIR63+Clmj+0A&fbn=CC", 
+    "ImageUrl": "https://www.bing.com/thumb/get?bid=Gw%2fsjCGSS4kAAQ584x800&bn=SANGAM&fbid=7wIR63+Clmj+0A&fbn=CC", 
     "AltImageUrl": null, 
     "Title": "The Dark Knight", 
     "SubTitle": null, 
