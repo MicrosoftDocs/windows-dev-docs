@@ -36,7 +36,7 @@ These are some concepts you can use to help design the renderer for your game:
     * Use multiple constant buffers with different frequencies to reduce the amount of data that must be sent to the GPU per frame. This sample separates constants into different buffers based on the frequency that they must be updated. This is a best practice for Direct3D programming. 
     * In this game sample, 4 constant buffers are defined.
         1. __m\_constantBufferNeverChanges__ contains the lighting parameters. It's set one time in the __FinalizeCreateGameDeviceResources__ method and never changes again.
-        2. __m\_constantBufferChangeOnResize__ contains the projection matrix. The projection matrix is dependent on the size and aspect ratio of the window. It's set in [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) and then updated after resources are loaded in the [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) method. If rendering in 3D, it is also changed twice per frame.
+        2. __m\_constantBufferChangeOnResize__ contains the projection matrix. The projection matrix is dependent on the size and aspect ratio of the window. It's set in [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) and then updated after resources are loaded in the [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) method. If rendering in 3D, it is also changed twice per frame.
         3. __m\_constantBufferChangesEveryFrame__ contains the view matrix. This matrix is dependent on the camera position and look direction (the normal to the projection) and changes one time per frame in the __Render__ method. This was discussed earlier in __Rendering framework I: Intro to rendering__, under the [__GameRenderer::Render__ method](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_constantBufferChangesEveryPrim__ contains the model matrix and material properties of each primitive. The model matrix transforms vertices from local coordinates into world coordinates. These constants are specific to each primitive and are updated for every draw call. This was discussed earlier in __Rendering framework I: Intro to rendering__, under the [Primitive rendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * Shader resource objects that hold textures for the primitives are also defined in this class.
@@ -152,7 +152,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 In the game sample (and in Visual Studio's __DirectX 11 App (Universal Windows)__ template), creating and loading game resources is implemented using these two methods that are called from __GameRenderer__ constructor:
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## CreateDeviceDependentResources method
 
@@ -584,7 +584,7 @@ Window size resources are updated in this manner:
 
 For this game sample, a number of method calls are the same as the [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) method. For code walkthrough, go to the previous section.
 
-The game HUD and overlay window size rendering adjustments is covered under [Add a user interface](#tutorial--adding-a-user-interface).
+The game HUD and overlay window size rendering adjustments is covered under [Add a user interface](tutorial--adding-a-user-interface.md).
 
 ```cpp
 // Initializes view parameters when the window size changes.

@@ -37,7 +37,7 @@ Your games and apps are not limited to using just one of these methods. You can 
 The Xbox Live Services API (**XSAPI**) exposes three sets of client side APIs that support a wide range of customer scenarios:
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
-- [XSAPI C++11 based API](#xsapi-c++11-based-api)
+- [XSAPI C++11 based API](#xsapi-c11-based-api)
 - [XSAPI C based API](#xsapi-c-based-api) (**New as of June 2018**)
 
 Comparing the APIs:

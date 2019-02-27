@@ -9,15 +9,15 @@ ms.localizationpriority: medium
 # Enumerating Point of Service devices
 In this section you will learn how to [define a device selector](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
 
-**Method 1:** [Use a device picker](#method-1:-use-a-device-picker)
+**Method 1:** [Use a device picker](#method-1-use-a-device-picker)
 <br/>
 Display a device picker UI and have the user choose a connected device. This method handles updating the list when devices are attached and removed, and is simpler and safer than other methods.
 
-**Method 2:** [Get first available device](#Method-1:-get-first-available-device)<br />Use [GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to access the first available device in a specific Point of Service device class.
+**Method 2:** [Get first available device](#method-2-get-first-available-device)<br />Use [GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to access the first available device in a specific Point of Service device class.
 
-**Method 3:** [Snapshot of devices](#Method-2:-Snapshot-of-devices)<br />Enumerate a snapshot of Point of Service devices that are present on the system at a given point in time. This is useful when you want to build your own UI or need to enumerate devices without displaying a UI to the user. [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) will hold back results until the entire enumeration is completed.
+**Method 3:** [Snapshot of devices](#method-3-snapshot-of-devices)<br />Enumerate a snapshot of Point of Service devices that are present on the system at a given point in time. This is useful when you want to build your own UI or need to enumerate devices without displaying a UI to the user. [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) will hold back results until the entire enumeration is completed.
 
-**Method 4:** [Enumerate and watch](#Method-3:-Enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) is a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.  This is useful when you want to maintain a current list of devices in the background for displaying in your UI rather than waiting for a snapshot to occur.
+**Method 4:** [Enumerate and watch](#method-4-enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) is a more powerful and flexible enumeration model that allows you to enumerate devices that are currently present, and also receive notifications when devices are added or removed from the system.  This is useful when you want to maintain a current list of devices in the background for displaying in your UI rather than waiting for a snapshot to occur.
 
 ## Define a device selector
 A device selector will enable you to limit the devices you are searching through when enumerating devices.  This will allow you to only get relevant results and reduce the time it takes to enumerate the desired devices.

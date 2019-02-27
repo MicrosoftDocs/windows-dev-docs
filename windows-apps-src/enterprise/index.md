@@ -9,21 +9,7 @@ ms.localizationpriority: medium
 ---
 # Enterprise
 
-This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows 10 apps.
-
-## What's new and recent for enterprise applications
-
-> [!div class="checklist"]
-> * [Windows Template Studio](#template-studio)
-> * [Controls to create Desktop-Style UIs](#desktop-style-UI)
-> * [Controls to support Enterprise scenarios](#enterprise)
-> * [Windows UI Library](#UI-library)
-> * [UWP controls in desktop applications](#xaml-islands)
-> * [.NET Standard 2.0](#standard)
-> * [SQL Server connectivity](#sql-server)
-> * [MSIX deployment](#MSIX)
-
-For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
+This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows 10 apps. For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
 
 <a id="template-studio" />
 

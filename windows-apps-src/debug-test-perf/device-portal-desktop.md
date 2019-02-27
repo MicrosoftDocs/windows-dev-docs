@@ -34,7 +34,7 @@ You can enable Device Portal in the **For developers** section of **Settings**. 
 
 ![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
 
-Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so that they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
+Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. 
 
 These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host.
 

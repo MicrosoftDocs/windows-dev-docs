@@ -7,8 +7,6 @@ template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
 ms.date: 03/29/2017
 ms.topic: article
-
-
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
@@ -53,7 +51,7 @@ Here are the devices and tools discussed in this topic:
 
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
-|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#osk).|
+|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#on-screen-keyboard).|
 |Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md). For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
 
