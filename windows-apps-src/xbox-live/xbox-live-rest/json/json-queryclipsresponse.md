@@ -50,7 +50,7 @@ The QueryClipsResponse object has the following specification.
      "views": 5,
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -58,7 +58,7 @@ The QueryClipsResponse object has the following specification.
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
@@ -85,7 +85,7 @@ The QueryClipsResponse object has the following specification.
      "systemProperties": "{ 'Id': '123456', 'Location': 'C:\\videos\\123456.mp4' }",
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -93,13 +93,13 @@ The QueryClipsResponse object has the following specification.
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234567,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
        },
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
          "fileSize": 0,
          "uriType": "SmoothStreaming",
          "expiration": "2013-01-18T11:25:51.6522794Z"

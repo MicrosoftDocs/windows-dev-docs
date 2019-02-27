@@ -72,7 +72,7 @@ The Achievement object has the following specification. All members are required
         [{
                 "name":"Icon Name",
                 "type":"Icon",
-                "url":"http://www.xbox.com"
+                "url":"https://www.xbox.com"
         }],
         "platform":"D",
         "isSecret":true,
