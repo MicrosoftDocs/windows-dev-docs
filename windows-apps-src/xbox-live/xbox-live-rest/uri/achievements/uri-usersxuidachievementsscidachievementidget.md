@@ -143,7 +143,7 @@ The service returns one of the status codes in this section in response to a req
         [{
                 "name":"Icon Name",
                 "type":"Icon",
-                "url":"http://www.xbox.com"
+                "url":"https://www.xbox.com"
         }],
         "platform":"D",
         "isSecret":true,
