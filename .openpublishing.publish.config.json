@@ -34,7 +34,7 @@
       "version": 0
     },
     {
-      "docset_name": "windows-apps",
+      "docset_name": "windows-uwp",
       "build_source_folder": "windows-apps-src",
       "build_output_subfolder": "windows-apps-src",
       "locale": "en-us",
