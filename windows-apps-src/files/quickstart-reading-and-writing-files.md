@@ -322,6 +322,10 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await dataWriter.StoreAsync()
     Await outputStream.FlushAsync()
     ```
+
+**Best practices for writing to a file**
+
+For additional details and best practice guidance, see [Best practices for writing to files](best-practices-for-writing-to-files.md).
     
 ## Reading from a file
 
@@ -543,3 +547,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
+
+## See also
+
+- [Best practices for writing to files](best-practices-for-writing-to-files.md)
