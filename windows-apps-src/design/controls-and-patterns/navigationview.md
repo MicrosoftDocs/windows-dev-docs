@@ -137,7 +137,7 @@ You can use the PaneDisplayMode property to position the pane above the content 
 The NavigationView pane can contain:
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) objects. Navigation items for navigating to specific pages.
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) objects. Separators for grouping navigation items. Set the [Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) property to 0 to render the separator as space.
+- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) objects. Separators for grouping navigation items. Set the [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) property to 0 to render the separator as space.
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects. Headers for labeling groups of items.
 - An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search. Assign the control to the [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) property.
 - An optional entry point for [app settings](../app-settings/app-settings-and-data.md). To hide the settings item, set the [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property to **false**.
