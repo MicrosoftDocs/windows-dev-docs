@@ -244,6 +244,8 @@
           href: ../files/quickstart-listing-files-and-folders.md
         - name: Create, write, and read a file
           href: ../files/quickstart-reading-and-writing-files.md
+        - name: Best practices for writing to files
+          href: ../files/best-practices-for-writing-to-files.md
         - name: Get file properties
           href: ../files/quickstart-getting-file-properties.md
         - name: Open files and folders with a picker
