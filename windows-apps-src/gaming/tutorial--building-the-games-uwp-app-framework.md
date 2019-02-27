@@ -22,7 +22,7 @@ The view provider object implements the __IFrameworkView__ interface, which cons
 
 You'll need to implement these five methods that the app singleton calls:
 * [__Initialize__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behavior)
+* [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Load__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
 * [__Uninitialize__](#uninitialize-method-of-the-view-provider)

@@ -365,7 +365,7 @@ With C++/CX, you can access the [**Platform::String::Data**](https://docs.micros
 auto var{ titleRecord->TitleName->Data() };
 ```
 
-To do the same with C++/WinRT, you can use the [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) function to get a null-terminated C-style string version, just as you can from **std::wstring**.
+To do the same with C++/WinRT, you can use the [**hstring::c_str**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) function to get a null-terminated C-style string version, just as you can from **std::wstring**.
 
 ```cppwinrt
 auto var{ titleRecord.TitleName().c_str() };

@@ -18,13 +18,6 @@ Aside from the move process, XIM networks managed using out-of-band reservations
 
 The subsequent topics describe how to leverage out-of-band reservations in XIM. Because of the relatively few differences from "standard" XIM usage described in previous sections, some discussion is abbreviated. Familiarity with [Using XIM](using-xim.md) is recommended.
 
-Topics:
-
-1. [Moving to a new out-of-band reservation XIM network](#moving)
-1. [Adding players to a XIM network managed using out-of-band reservations](#adding)
-1. [Configuring chat targets in a XIM network managed using out-of-band reservations](#targets)
-1. [Removing players from a XIM network managed using out-of-band reservations](#remove)
-1. [Cleaning up a XIM network managed using out-of-band reservations](#clean)
 
 ## Moving to a new out-of-band reservation XIM network
 

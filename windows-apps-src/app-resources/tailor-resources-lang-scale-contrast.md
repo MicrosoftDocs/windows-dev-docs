@@ -124,7 +124,7 @@ The `contrast` qualifier is used to provide resources that best match high contr
 
 ## Custom
 
-Your app can set a value for the `custom` qualifier, and then resources are loaded that best match that value. For example, you may want to load resources based on your app’s license. When your app launches, it checks its license and uses that as the value for the `custom` qualifier by calling [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_), as shown in the code example.
+Your app can set a value for the `custom` qualifier, and then resources are loaded that best match that value. For example, you may want to load resources based on your app’s license. When your app launches, it checks its license and uses that as the value for the `custom` qualifier by calling [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), as shown in the code example.
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -257,7 +257,7 @@ The `theme` qualifier is used to provide resources that best match the default a
 ## Important APIs
 
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## Related topics
 

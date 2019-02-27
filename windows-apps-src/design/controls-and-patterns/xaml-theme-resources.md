@@ -424,7 +424,7 @@ Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with
 
 ## Troubleshooting theme resources
 
-If you don’t follow the [guidelines for using theme resources](#guidelines-for-using-theme-resources), you might see unexpected behavior related to themes in your app.
+If you don’t follow the [guidelines for using theme resources](#guidelines-for-custom-theme-resources), you might see unexpected behavior related to themes in your app.
 
 For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
 

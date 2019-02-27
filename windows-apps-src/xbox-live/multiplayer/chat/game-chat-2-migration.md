@@ -9,24 +9,7 @@ ms.localizationpriority: medium
 ---
 # Migration from Game Chat to Game Chat 2
 
-This document details the similarities between Game Chat and Game Chat 2 and how to migrate from Game Chat to Game Chat 2. As such, it is for titles that have an existing Game Chat implementation that wish to migrate to Game Chat 2. If you don't already have a Game Chat implementation, the suggested starting point is [Using Game Chat 2](using-game-chat-2.md). This document contains the following topics:
-
-1. [Preface](#preface)
-2. [Prerequisites](#prerequisites)
-3. [Initialization](#initialization)
-4. [Configuring Users](#configuring-users)
-5. [Processing data](#processing-data)
-6. [Processing events](#processing-events)
-7. [Text chat](#text-chat)
-8. [Accessibility](#accessibility)
-9. [UI](#UI)
-10. [Muting](#muting)
-11. [Bad reputation auto-mute](#bad-reputation-auto-mute)
-12. [Privilege and privacy](#privilege-and-privacy)
-13. [Cleanup](#cleanup)
-14. [Failure model and debugging](#failure-model-and-debugging)
-15. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
-16. [Pre-encode and post-decode audio manipulation](#pre-encode-and-post-decode-audio-manipulation)
+This document details the similarities between Game Chat and Game Chat 2 and how to migrate from Game Chat to Game Chat 2. As such, it is for titles that have an existing Game Chat implementation that wish to migrate to Game Chat 2. If you don't already have a Game Chat implementation, the suggested starting point is [Using Game Chat 2](using-game-chat-2.md). 
 
 ## Preface
 
@@ -60,7 +43,7 @@ Before you get started coding with Game Chat 2, you must have configured your ap
 
 Compiling Game Chat 2 requires including the primary GameChat2.h header. In order to link properly, your project must also include GameChat2Impl.h in at least one compilation unit (a common precompiled header is recommended since these stub function implementations are small and easy for the compiler to generate as "inline").
 
-The Game Chat 2 interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. The implementation does, however, throw exceptions as a means of fatal error reporting (see [Failure model](#failure) for more detail).
+The Game Chat 2 interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. The implementation does, however, throw exceptions as a means of fatal error reporting (see [Failure model](#failure-model-and-debugging) for more detail).
 
 ## Initialization
 

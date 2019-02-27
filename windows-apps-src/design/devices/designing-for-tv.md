@@ -118,7 +118,7 @@ Interactive UI elements should be sized at a minimum height of 32 epx (effective
 
 #### Number of clicks
 
-When the user is navigating from one edge of the TV screen to the other, it should take no more than **six clicks** to simplify your UI. Again, the principle of **simplicity** applies here. For more details, see [Path of least clicks](#path-of-least-clicks).
+When the user is navigating from one edge of the TV screen to the other, it should take no more than **six clicks** to simplify your UI. Again, the principle of **simplicity** applies here. 
 
 ![6 icons across](images/designing-for-tv/six-clicks.png)
 
@@ -458,7 +458,7 @@ While the standard UWP buttons work well on TV, some visual styles of buttons ca
 
 Nested UI exposes nested actionable items enclosed inside a container UI element where both the nested item as well as the container item can take independent focus from each other.
 
-Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a `ContextFlyout` (see [CommandBar and ContextFlyout](#commandbar-and-contextflyout)).
+Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a `ContextFlyout`.
 
 For more information on nested UI, see [Nested UI in list items](../controls-and-patterns/nested-ui.md).
 
@@ -555,7 +555,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
                     "Windows.Xbox");
 ```
 
-Then, you can make the appropriate adjustments to your UI in the code block following this check. An example of this is shown in [UWP color sample](#uwp-color-sample).
+Then, you can make the appropriate adjustments to your UI in the code block following this check. 
 
 ## Summary
 

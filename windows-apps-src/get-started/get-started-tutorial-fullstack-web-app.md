@@ -34,7 +34,7 @@ If you decide to bail on (or postpone) the Azure part, simply skip the final sec
 
 We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](https://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
 
-If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-appl), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
+If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-application), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
 
 ### Game overview
 

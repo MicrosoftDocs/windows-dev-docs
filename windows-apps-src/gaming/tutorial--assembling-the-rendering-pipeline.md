@@ -66,7 +66,7 @@ void App::Initialize(
 
 ## Display the graphics by rendering the frame
 
-The game scene needs to render when the game is launched. The instructions for rendering start in the  [__GameMain::Run__](#gameamainrun-method) method, as shown below.
+The game scene needs to render when the game is launched. The instructions for rendering start in the  [__GameMain::Run__](#gamemainrun-method) method, as shown below.
 
 The simple flow is:
 1. __Update__
@@ -125,7 +125,7 @@ See the [Game flow management](tutorial-game-flow-management.md) article for mor
 
 Rendering is implemented by calling the [__GameRenderer::Render__](#gamerendererrender-method) method in __GameMain::Run__.
 
-If [stereo rendering](#stereo-rendering) is enabled, there are two rendering passes: one for the right eye and one for the left eye. In each rendering pass, we bind the render target and the [depth-stencil view](#depth-stencil-view) to the device. We also clear the depth-stencil view afterward.
+If [stereo rendering](#stereo-rendering) is enabled, there are two rendering passes: one for the right eye and one for the left eye. In each rendering pass, we bind the render target and the depth-stencil view to the device. We also clear the depth-stencil view afterward.
 
 > [!Note]
 > Stereo rendering can be achieved using other methods such as single pass stereo using vertex instancing or geometry shaders. The two rendering pass method is a slower, but more convenient way to achieve stereo rendering.
@@ -141,7 +141,7 @@ In this game sample, the renderer is designed to use a standard vertex layout ac
 
 Set the Direct3D context to use an input vertex layout. Input-layout objects describe how vertex buffer data is streamed into the [rendering pipeline](#rendering-pipeline). 
 
-Next, we set the Direct3D context to use the [constant buffers](#constant-buffers) defined earlier, that are used by the [vertex shader](#vertex-shaders-and-pixel-shaders) pipeline stage and the [pixel shader](#vertex-shaders-and-pixel-shaders) pipeline stage. 
+Next, we set the Direct3D context to use the constant buffers defined earlier, that are used by the [vertex shader](#vertex-shaders-and-pixel-shaders) pipeline stage and the [pixel shader](#vertex-shaders-and-pixel-shaders) pipeline stage. 
 
 > [!Note]
 > See [Rendering framework II: Game rendering](tutorial-game-rendering.md) for more information about definition of the constant buffers.
@@ -333,11 +333,11 @@ When rendering the scene, you loop through all the objects that need to be rende
 * The  __m\_constantBufferChangesEveryPrim__ contains parameters for each object.  It includes the object to world transformation matrix as well as material properties like color and specular exponent for lighting calculations.
 * Set Direct3D context to use the input vertex layout for the mesh object data to be streamed into the input-assembler (IA) stage of the [rendering pipeline](#rendering-pipeline)
 * Set Direct3D context to use an [index buffer](#index-buffer) in the IA stage. Provide the primitive info: type, data order.
-* Submit a draw call to draw the indexed, non-instanced primitive. The __GameObject::Render__ method updates the primitive [constant buffer](#constant-buffer-or-shader-constant-buffer) with the data specific to a given primitive. This results in a __DrawIndexed__ call on the context to draw the geometry of that each primitive. Specifically, this draw call queues commands and data to the graphics processing unit (GPU), as parameterized by the constant buffer data. Each draw call executes the [vertex shader](#vertex-shaders-and-pixel-shaders) one time per vertex, and then the [pixel shader](#vertex-shaders-and-pixel-shaders) one time for every pixel of each triangle in the primitive. The textures are part of the state that the pixel shader uses to do the rendering.
+* Submit a draw call to draw the indexed, non-instanced primitive. The __GameObject::Render__ method updates the primitive [constant buffer](#constant-buffer-or-shader-constant-buffer) with the data specific to a given primitive. This results in a __DrawIndexed__ call on the context to draw the geometry of that each primitive. Specifically, this draw call queues commands and data to the graphics processing unit (GPU), as parameterized by the constant buffer data. Each draw call executes the vertex shader one time per vertex, and then the [pixel shader](#vertex-shaders-and-pixel-shaders) one time for every pixel of each triangle in the primitive. The textures are part of the state that the pixel shader uses to do the rendering.
 
 Reasons for multiple constant buffers:
     * The game uses multiple constant buffers but only needs to update these buffers one time per primitive. As mentioned earlier, constant buffers are like inputs to the shaders that run for each primitive. Some data is static (__m\_constantBufferNeverChanges__); some data is constant over the frame (__m\_constantBufferChangesEveryFrame__), like the position of the camera; and some data is specific to the primitive, like its color and textures (__m\_constantBufferChangesEveryPrim__)
-    * The game [renderer](#renderer) separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use. This approach also helps to minimize the amount of data the GPU needs to keep track of. The GPU has a big queue of commands, and each time the game calls __Draw__, that command is queued along with the data associated with it. When the game updates the primitive constant buffer and issues the next __Draw__ command, the graphics driver adds this next command and the associated data to the queue. If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue. To minimize the amount of data the game is sending to the GPU, the game uses a separate primitive constant buffer that only contains the updates for each primitive.
+    * The game renderer separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use. This approach also helps to minimize the amount of data the GPU needs to keep track of. The GPU has a big queue of commands, and each time the game calls __Draw__, that command is queued along with the data associated with it. When the game updates the primitive constant buffer and issues the next __Draw__ command, the graphics driver adds this next command and the associated data to the queue. If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue. To minimize the amount of data the game is sending to the GPU, the game uses a separate primitive constant buffer that only contains the updates for each primitive.
 
 #### GameObject::Render method
 

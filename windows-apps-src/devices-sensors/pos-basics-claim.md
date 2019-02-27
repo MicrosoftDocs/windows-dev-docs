@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 After you have successfully created a PointOfService device object, you must claim it using the appropriate claim method for the device type before you can use the device for input or output.  Claim grants the application exclusive access to many of the device's functions to ensure that one application does not interfere with the use of the device by another application.  Only one application can claim a PointOfService device for exclusive use at a time. 
 
 > [!Note]
-> The claim action establishes an exclusive lock to a device, but does not put it into an operational state.  See [Enable device for I/O operations](#Enable-device-for-I/O-operations) for more information.
+> The claim action establishes an exclusive lock to a device, but does not put it into an operational state.  See [Enable device for I/O operations](#enable-device-for-io-operations) for more information.
 
 ### APIs used to claim / release
 
