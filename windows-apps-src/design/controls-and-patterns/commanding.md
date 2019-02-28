@@ -991,7 +991,7 @@ namespace UICommand1
 
 ## Summary
 
-THe Universal Windows Platform provides a robust and flexible commanding system that lets you build apps that share and manage commands across control types, devices, and input types.
+The Universal Windows Platform provides a robust and flexible commanding system that lets you build apps that share and manage commands across control types, devices, and input types.
 
 Use the following approaches when building commands for your UWP apps:
 
@@ -1003,7 +1003,7 @@ Use the following approaches when building commands for your UWP apps:
 
 ## Next steps
 
-For a complete example that demonstrates a [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) implementation, see the [XAML Controls Gallery](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) sample.
+For a complete example that demonstrates a [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) implementation, see the [XAML Controls Gallery](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) sample.
 
 ## See also
 
