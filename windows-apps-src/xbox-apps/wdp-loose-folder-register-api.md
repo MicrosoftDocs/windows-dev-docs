@@ -16,7 +16,7 @@ You can register an app in a loose folder by using the following request format.
 Method      | Request URI
 :------     | :------
 POST | /api/app/packagemanager/register
-<br />
+
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
@@ -24,7 +24,6 @@ You can specify the following additional parameters on the request URI:
 URI Parameter      | Description
 :------     | :-----
 folder (required) | The destination folder name of the package to be registered. This folder must exist under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is in a subfolder under LooseApps.
-<br />
 
 **Request headers**
 
@@ -45,7 +44,7 @@ HTTP status code      | Description
 200 | Deploy request accepted and being processed
 4XX | Error codes
 5XX | Error codes
-<br />
+
 **Available device families**
 
 * Windows Xbox

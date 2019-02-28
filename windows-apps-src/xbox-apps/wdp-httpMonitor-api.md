@@ -17,7 +17,7 @@ You can get whether the HTTP monitor has been enabled in Dev Home.
 Method      | Request URI
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **URI parameters**
 
 - None
@@ -46,6 +46,7 @@ HTTP status code      | Description
 5XX | Error codes
 
 ## Get HTTP traffic from the focused app
+
 **Request**
 
 Get HTTP traffic from the focused app on the Xbox, as long as it is not a system app, in real-time, if the HTTP monitor has been enabled from Dev Home.
@@ -53,7 +54,7 @@ Get HTTP traffic from the focused app on the Xbox, as long as it is not a system
 Method      | Request URI
 :------     | :-----
 Websocket | /ext/httpmonitor/sessions
-<br />
+
 **URI parameters**
 
 - None
@@ -92,7 +93,7 @@ HTTP status code      | Description
 403 | HTTP Monitor disabled, must be enabled in Dev Home
 5XX | Error codes
 
-<br />
+
 **Available device families**
 
 * Windows Xbox

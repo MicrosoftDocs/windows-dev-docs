@@ -8,7 +8,7 @@ ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
 ---
 #Xbox Live User Management#
 
-**Request**
+## Request
 
 You can get the list of users on the console, or update the list--adding, removing, signing in, signing out, or modifying existing users.
 
@@ -16,7 +16,7 @@ You can get the list of users on the console, or update the list--adding, removi
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
-<br>
+
 
 **URI parameters**
 
@@ -39,7 +39,7 @@ Calls to PUT should include a JSON array with the following structure:
   * SponsoredUser (optional) : bool specifying whether to add a sponsored user.
   * Delete (optional) : bool specifying to delete this user from the console
 
-###Response###
+## Response
 
 **Response body**
 
@@ -64,6 +64,3 @@ This API has the following expected status codes.
 | 204                | Call to PUT was successful and the users on the console have been updated |
 | 4XX                | Various errors for invalid request data or format |
 | 5XX                | Error codes for unexpected failures |
-<br>
-
-
