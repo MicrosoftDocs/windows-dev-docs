@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
-ms.date: 05/07/2018
+ms.date: 03/04/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
@@ -43,9 +43,9 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> When registered the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
-There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down on the page). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
+There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -61,7 +61,25 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 
 The syntax of the function call operator is also helpful to see. It tells you what your delegate's parameters need to be. As you can see, in this case the function call operator syntax matches the parameters of our **MainPage::ClickHandler**.
 
-If you're not doing much work in your event handler, then you can use a lambda function instead of a member function. Again, it may not be obvious from the code example below, but a **RoutedEventHandler** delegate is being constructed from a lambda function which, again, needs to match the syntax of the function call operator.
+> [!NOTE]
+> For any given event, to figure out the details of its delegate, and that delegate's parameters, go first to the documentation topic for the event itself. Let's take the [UIElement.KeyDown event](/uwp/api/windows.ui.xaml.uielement.keydown) as an example. Visit that topic, and  choose *C++/WinRT* from the **Language** drop-down. In the syntax block at the beginning of the topic, you'll see this.
+> 
+> ```cppwinrt
+> // Register
+> event_token KeyDown(KeyEventHandler const& handler) const;
+> ```
+>
+> That info tells us that the **UIElement.KeyDown** event (the topic we're on) has a delegate type of **KeyEventHandler**, since that's the type that you pass when you register a delegate with this event type. So, now follow the link on the topic to that [KeyEventHandler delegate](/uwp/api/windows.ui.xaml.input.keyeventhandler) type. Here, the syntax block contains a function call operator. And, as mentioned above, that tells you what your delegate's parameters need to be.
+> 
+> ```cppwinrt
+> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> ```
+>
+>  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) as the args.
+>
+> To take another example, let's look at the [Popup.Closed event](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Its delegate type is [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). So, your delegate will take an **IInspectable** as the sender, and another **IInspectable** (because that's the **EventHandler**'s type parameter ) as the args.
+
+If you're not doing much work in your event handler, then you can use a lambda function instead of a member function. Again, it may not be obvious from the code example below, but a **RoutedEventHandler** delegate is being constructed from a lambda function which, again, needs to match the syntax of the function call operator that we discussed above.
 
 ```cppwinrt
 MainPage::MainPage()
