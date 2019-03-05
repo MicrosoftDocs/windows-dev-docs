@@ -56,7 +56,7 @@ In this last picture, the center of rotation has been defined by the application
 
  
 
-Windows 8 supports three types of rotation: free, constrained, and combined.
+Windows 10 supports three types of rotation: free, constrained, and combined.
 
 <table>
 <colgroup>
