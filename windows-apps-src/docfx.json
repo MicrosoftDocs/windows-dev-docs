@@ -20,6 +20,12 @@
         "uhfHeaderId": "MSDocsHeader-WinUWP",
         "titleSuffix": "Windows UWP applications",
         "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+	"_op_documentIdPathDepotMapping": {
+	  "./": {
+            "depot_name": "MSDN.windows-uwp",
+            "folder_relative_path_in_docset": "./"
+	  }
+	}		  
         "feedback_system": "GitHub",
         "feedback_github_repo": "MicrosoftDocs/windows-uwp",
         "feedback_product_url": "https://wpdev.uservoice.com/",
