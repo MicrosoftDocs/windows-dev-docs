@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Author COM components with C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
@@ -70,7 +70,7 @@ More background about the toast notification feature area can be found at [Send 
 
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
 
-Open `pch.h`, and add `#include <unknwn.h>` before the includes for any C++/WinRT headers.
+Open `pch.h`, and add `#include <unknwn.h>` before the includes for any C++/WinRT headers. Here's the result; you can replace the contents of your `pch.h` with this listing.
 
 ```cppwinrt
 // pch.h
@@ -79,9 +79,16 @@ Open `pch.h`, and add `#include <unknwn.h>` before the includes for any C++/WinR
 #include <winrt/Windows.Foundation.h>
 ```
 
-Open `main.cpp`, and remove the using-directives that the project template generates. In their place, paste the following code (which gives us the libs, headers, and type names that we need).
+Open `main.cpp`, and remove the using-directives that the project template generates. In their place, insert the following code (which gives us the libs, headers, and type names that we need). Here's the result; you can replace the contents of your `main.cpp` with this listing (we've also removed the code from `main` in the listing below, because we'll be replacing that function later).
 
 ```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+
+#pragma comment(lib, "advapi32")
+#pragma comment(lib, "ole32")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -96,7 +103,11 @@ Open `main.cpp`, and remove the using-directives that the project template gener
 using namespace winrt;
 using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
+
+int main() { }
 ```
+
+The project won't build yet; after we've finished adding code, you'll be prompted to build and run.
 
 ## Implement the coclass and class factory
 
@@ -170,7 +181,7 @@ However, you mustn't allow exceptions to escape your COM method implementations.
 
 ## Add helper types and functions
 
-In this step, we'll add some helper types and functions that the rest of the code makes use of. So, before `main`, add the following.
+In this step, we'll add some helper types and functions that the rest of the code makes use of. So, immediately before `main`, add the following.
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -242,7 +253,7 @@ std::wstring get_shortcut_path()
 
 ## Implement the remaining functions, and the wmain entry point function
 
-The project template generates a `main` function for you. Delete that `main` function, and in its place paste this code listing, which includes code to register your coclass, and then to deliver a toast capable of calling back your application.
+Delete your `main` function, and in its place paste this code listing, which includes code to register your coclass, and then to deliver a toast capable of calling back your application.
 
 ```cppwinrt
 void register_callback()
@@ -339,6 +350,7 @@ void create_toast()
     ToastNotification toast{ xml };
     ToastNotifier notifier{ ToastNotificationManager::CreateToastNotifier(this_app_name) };
     notifier.Show(toast);
+    ::Sleep(50); // Give the callback chance to display.
 }
 
 void LaunchedNormally(HANDLE, INPUT_RECORD &, DWORD &);
@@ -370,7 +382,7 @@ void LaunchedNormally(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD & event
     try
     {
         bool runningAsAdmin{ ::IsUserAnAdmin() == TRUE };
-        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (Administrator)." : L".") << std::endl;
+        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (administrator)." : L" (NOT as administrator).") << std::endl;
 
         if (runningAsAdmin)
         {
@@ -402,7 +414,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## How to test the example application
 
-Build the application, and then run it at least once as Administrator to cause the registration, and other setup, code to run. Whether or not you're running it as Administrator, then press 'T' to cause a toast to be displayed. You can then click the **Call back ToastAndCallback** button either directly from the toast notification that pops up, or from the Action Center, and your application will be launched, the coclass instantiated, and the **INotificationActivationCallback::Activate** method executed.
+Build the application, and then run it at least once as an administrator to cause the registration, and other setup, code to run. One way to do that is to run Visual Studio as an administrator, and then run the app from Visual Studio. Right-click Visual Studio in the taskbar to display the jump list, right-click Visual Studio on the jump list, and then click **Run as administrator**. Agree to the prompt, and then open the project. When you run the application, a message is displayed indicating whether or not the application is running as an administrator. If it isn't, then the registration and other setup won't run. That registration and other setup has to run at least once in order for the application to work correctly.
+
+Whether or not you're running the application as an administrator, press 'T' to cause a toast to be displayed. You can then click the **Call back ToastAndCallback** button either directly from the toast notification that pops up, or from the Action Center, and your application will be launched, the coclass instantiated, and the **INotificationActivationCallback::Activate** method executed.
 
 ## In-process COM server
 
