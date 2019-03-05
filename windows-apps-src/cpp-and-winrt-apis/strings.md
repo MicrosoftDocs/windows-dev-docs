@@ -54,7 +54,7 @@ public:
     winrt::hstring Domain();
 ```
 
-But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/api/hstring#hstringoperator-stdwstringview).
+But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstringview).
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
