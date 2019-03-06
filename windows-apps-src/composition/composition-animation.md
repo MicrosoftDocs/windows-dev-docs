@@ -31,7 +31,7 @@ Here, a visual parallax effect moves different objects at different rates when t
 
 ## Using CompositionAnimations to create Motion
 
-To generate motion in UI, developers can access animations in either XAML (link to Storyboards here), or the Visual Layer. Animations at the Visual Layer provide developers with a series of benefits:
+To generate motion in UI, developers can access animations in either XAML or the Visual Layer. Animations at the Visual Layer provide developers with a series of benefits:
 
 - Performance – instead of the traditional UI Thread-bound animation, animations on the Windows UI platform operate on an independent thread at 60 FPS, enabling smooth motion experiences.
 - Templating Model – animations in the Windows UI layer are templates, meaning can use a single animation on multiple objects and tweak properties or parameters without worrying of obstructing previous uses.
