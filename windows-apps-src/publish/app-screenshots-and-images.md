@@ -2,7 +2,7 @@
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
 ms.localizationpriority: medium
@@ -138,7 +138,7 @@ To remove a trailer from a listing, click the **X** next to its file name. You c
 
 When providing your trailers, be sure to follow these requirements:
 
-- The video format must be MOV or MP4. 
+- The video format must be MOV or MP4. If you're uploading 4K video, only MP4 is supported.
 - The video duration shouldn't exceed 60 seconds.
 - The file size of the trailer shouldn't exceed 2 GB. 
 - The video resolution must be either 1920 x 1080 pixels or 3840 x 2160 pixels.
@@ -152,61 +152,19 @@ There are additional requirements depending on the type of file.
 
 #### MOV
 
-<table>
-<tr>
-<td>
+| Video | Audio | 
+| --- | --- | 
+| <ul><li>1080p ProRes (HQ where appropriate)</li><li>Native framerate; 29.97 FPS preferred</li></ul> | <ul><li>Stereo required</li><li>Recommended Audio Level: -16 LKFS/LUFS</li></ul> |
 
-**Video:**
-
-<ul>
-<li>1080p ProRes (HQ where appropriate)</li>
-<li>Native framerate; 29.97 FPS preferred</li>
-</ul>
-</td>
-<td>
-
-**Audio:**
-
-<ul>
-<li>Stereo required</li>
-<li>Recommended Audio Level: -16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### MP4
 
-<table>
-<tr>
-<td>
+| Video | Audio |
+| --- | --- |
+| <ul><li>Codec: [H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
 
-**Video:**
-
-<ul>
-<li>Codec: H.264</li>
-<li>Progressive scan (no interlacing)</li>
-<li>High Profile</li>
-<li>2 consecutive B frames</li>
-<li>Closed GOP. GOP of half the frame rate</li>
-<li>CABAC</li>
-<li>50 MB/s </li>
-<li>Color Space: 4.2.0</li>
-</ul>
-</td>
-<td>
-
-**Audio:**
-
-<ul>
-<li>Codec: AAC-LC</li>
-<li>Channels: Stereo or surround sound</li>
-<li>Sample rate: 48 KHz</li>
-<li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> Customers may not hear audio for MP4 files encoded with codecs other than AVC1.
 
 For H.264 Mezzanine files, we recommend the following:
 - Container: MP4
