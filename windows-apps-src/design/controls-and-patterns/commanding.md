@@ -555,7 +555,7 @@ The most basic way to support a structured commanding experience is to define an
 
 *ICommand example*
  
-In this example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.
+In this basic example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.
 
 We use two [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), one populated with five items and the other empty, and two buttons, one for moving items from the ListView on the left to the ListView on the right, and the other for moving items from the right to the left. Each button is bound to a corresponding command (ViewModel.MoveRightCommand and ViewModel.MoveLeftCommand, respectively), and are enabled and disabled automatically based on the number of items in their associated ListView.
 
@@ -601,7 +601,7 @@ We use two [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.contro
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Grid Grid.Column="1" Margin="0,0,5,0"
+        <Grid Grid.Column="1" Margin="0,0,0,0"
               HorizontalAlignment="Center" 
               VerticalAlignment="Center">
             <Grid.RowDefinitions>
@@ -612,10 +612,11 @@ We use two [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.contro
             <StackPanel Grid.Row="1">
                 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
                           FontSize="40" Glyph="&#xE893;" 
-                          Opacity="{x:Bind Path=ViewModel.listItemLeft.Count, Mode=OneWay, Converter={StaticResource opaque}}"/>
-                <Button Name="MoveItemRightButton" ToolTipService.ToolTip="Tooltip"
+                          Opacity="{x:Bind Path=ViewModel.ListItemLeft.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}"/>
+                <Button Name="MoveItemRightButton"
                         Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
-                        Command="{x:Bind Path=ViewModel.MoveRightCommand, Mode=OneWay}">
+                        Command="{x:Bind Path=ViewModel.MoveRightCommand}">
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator 
                             Modifiers="Control" 
@@ -628,7 +629,7 @@ We use two [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.contro
                 </Button>
                 <Button Name="MoveItemLeftButton" 
                             Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
-                            Command="{x:Bind Path=ViewModel.MoveLeftCommand, Mode=OneWay}">
+                            Command="{x:Bind Path=ViewModel.MoveLeftCommand}">
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator 
                             Modifiers="Control" 
@@ -641,7 +642,8 @@ We use two [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.contro
                 </Button>
                 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
                           FontSize="40" Glyph="&#xE892;"
-                          Opacity="{x:Bind Path=ViewModel.listItemRight.Count, Mode=OneWay, Converter={StaticResource opaque}}"/>
+                          Opacity="{x:Bind Path=ViewModel.ListItemRight.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}"/>
             </StackPanel>
         </Grid>
         <ListView Grid.Column="2" 
@@ -737,9 +739,7 @@ Our view model is where we define the execution details for the two commands in 
 ```csharp
 using System;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 
@@ -763,25 +763,21 @@ namespace UICommand1.ViewModel
     /// <summary>
     /// View Model that sets up a command to handle invoking the move item buttons.
     /// </summary>
-    public class UICommand1ViewModel : INotifyPropertyChanged
+    public class UICommand1ViewModel
     {
         /// <summary>
         /// The command to invoke when the Move item left button is pressed.
         /// </summary>
-        public RelayCommand moveLeftCommand;
-        public RelayCommand MoveLeftCommand { get => moveLeftCommand; private set { } }
+        public RelayCommand MoveLeftCommand { get; private set; }
 
         /// <summary>
         /// The command to invoke when the Move item right button is pressed.
         /// </summary>
-        public RelayCommand moveRightCommand;
-        public RelayCommand MoveRightCommand { get => moveRightCommand; private set { } }
+        public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> listItemLeft;
-        public ObservableCollection<ListItemData> ListItemLeft { get => listItemLeft; private set { } }
-        public ObservableCollection<ListItemData> listItemRight;
-        public ObservableCollection<ListItemData> ListItemRight { get => listItemRight; private set { } }
+        public ObservableCollection<ListItemData> ListItemLeft { get; } = new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemRight { get; } = new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
 
@@ -790,11 +786,8 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            moveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            moveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
-
-            listItemLeft = new ObservableCollection<ListItemData>();
-            listItemRight = new ObservableCollection<ListItemData>();
+            MoveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
         }
@@ -807,9 +800,9 @@ namespace UICommand1.ViewModel
             for (var x = 0; x <= 4; x++)
             {
                 listItem = new ListItemData();
-                listItemLeft.Add(listItem);
-                listItem.ListItemText = "Item " + listItemLeft.Count.ToString();
+                listItem.ListItemText = "Item " + (ListItemLeft.Count + 1).ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
+                ListItemLeft.Add(listItem);
             }
         }
 
@@ -819,7 +812,7 @@ namespace UICommand1.ViewModel
         /// <returns>True, if count is greater than 0.</returns>
         private bool CanExecuteMoveLeftCommand()
         {
-            return listItemRight.Count > 0;
+            return ListItemRight.Count > 0;
         }
 
         /// <summary>
@@ -828,7 +821,7 @@ namespace UICommand1.ViewModel
         /// <returns>True, if count is greater than 0.</returns>
         private bool CanExecuteMoveRightCommand()
         {
-            return listItemLeft.Count > 0;
+            return ListItemLeft.Count > 0;
         }
 
         /// <summary>
@@ -836,15 +829,15 @@ namespace UICommand1.ViewModel
         /// </summary>
         public void MoveRight()
         {
-            if (listItemLeft.Count > 0)
+            if (ListItemLeft.Count > 0)
             {
                 listItem = new ListItemData();
-                listItemRight.Add(listItem);
-                listItem.ListItemText = "Item " + listItemRight.Count.ToString();
+                ListItemRight.Add(listItem);
+                listItem.ListItemText = "Item " + ListItemRight.Count.ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
-                listItemLeft.RemoveAt(listItemLeft.Count - 1);
-                moveRightCommand.RaiseCanExecuteChanged();
-                moveLeftCommand.RaiseCanExecuteChanged();
+                ListItemLeft.RemoveAt(ListItemLeft.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -853,15 +846,34 @@ namespace UICommand1.ViewModel
         /// </summary>
         public void MoveLeft()
         {
-            if (listItemRight.Count > 0)
+            if (ListItemRight.Count > 0)
             {
                 listItem = new ListItemData();
-                listItemLeft.Add(listItem);
-                listItem.ListItemText = "Item " + listItemRight.Count.ToString();
+                ListItemLeft.Add(listItem);
+                listItem.ListItemText = "Item " + ListItemLeft.Count.ToString();
                 listItem.ListItemIcon = Symbol.Emoji;
-                listItemRight.RemoveAt(listItemRight.Count - 1);
-                moveRightCommand.RaiseCanExecuteChanged();
-                moveLeftCommand.RaiseCanExecuteChanged();
+                ListItemRight.RemoveAt(ListItemRight.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        /// <summary>
+        /// Views subscribe to this event to get notified of property updates.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notify subscribers of updates to the named property
+        /// </summary>
+        /// <param name="propertyName">The full, case-sensitive, name of a property.</param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                PropertyChangedEventArgs args = new PropertyChangedEventArgs(propertyName);
+                handler(this, args);
             }
         }
     }
@@ -874,7 +886,7 @@ namespace UICommand1.ViewModel
         /// <summary>
         /// Converts a collection count to an opacity value of 0.0 or 1.0.
         /// </summary>
-        /// <param name="value">The bool passed in</param>
+        /// <param name="value">The count passed in</param>
         /// <param name="targetType">Ignored.</param>
         /// <param name="parameter">Ignored</param>
         /// <param name="language">Ignored</param>
