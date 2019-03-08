@@ -94,6 +94,8 @@
           href: controls-and-patterns/lists.md
         - name: Flip view
           href: controls-and-patterns/flipview.md
+        - name: Items repeater
+          href: controls-and-patterns/items-repeater.md
         - name: List view and grid view
           href: controls-and-patterns/listview-and-gridview.md
           items:
@@ -103,18 +105,18 @@
               href: controls-and-patterns/item-templates-listview.md
             - name: Item templates for grid view
               href: controls-and-patterns/item-templates-gridview.md
-        - name: Inverted lists
-          href: controls-and-patterns/inverted-lists.md
-        - name: Pull-to-refresh
-          href: controls-and-patterns/pull-to-refresh.md
-        - name: Nested UI
-          href: controls-and-patterns/nested-ui.md
-        - name: Collection commanding
-          href: controls-and-patterns/collection-commanding.md
-        - name: Swipe
-          href: controls-and-patterns/swipe.md
         - name: Tree view
           href: controls-and-patterns/tree-view.md
+        - name: Collection commanding
+          href: controls-and-patterns/collection-commanding.md
+        - name: Inverted lists
+          href: controls-and-patterns/inverted-lists.md
+        - name: Nested UI
+          href: controls-and-patterns/nested-ui.md
+        - name: Pull-to-refresh
+          href: controls-and-patterns/pull-to-refresh.md
+        - name: Swipe
+          href: controls-and-patterns/swipe.md
     - name: Dialogs and flyouts
       items:
         - name: Overview
