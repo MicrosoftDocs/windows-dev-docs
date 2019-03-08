@@ -36,7 +36,13 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/windows/arm/breadcrumb/toc.json",
-      "extendBreadcrumb": true
+      "extendBreadcrumb": true,
+      "_op_documentIdPathDepotMapping": {
+        "./": {
+          "depot_name": "MSDN.arm",
+          "folder_relative_path_in_docset": "./"
+        }
+      }
     },
     "fileMetadata": {},
     "template": [],

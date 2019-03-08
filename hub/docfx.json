@@ -28,7 +28,14 @@
     ],
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
+    "globalMetadata": {
+      "_op_documentIdPathDepotMapping": {
+        "./": {
+          "depot_name": "MSDN.hub",
+          "folder_relative_path_in_docset": "./"
+        }
+      }
+    },
     "fileMetadata": {},
     "template": [],
     "dest": "hub"
