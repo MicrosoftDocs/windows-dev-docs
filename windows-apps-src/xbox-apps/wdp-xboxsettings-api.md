@@ -7,7 +7,8 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ---
-# Developer settings API reference   
+# Developer settings API reference
+
 You can access Xbox One settings that are useful for development using this API.
 
 ## Get all developer settings at once
@@ -19,7 +20,7 @@ You can use the following request to get all developer settings in a single requ
 Method      | Request URI
 :------     | :-----
 GET | /ext/settings
-<br />
+
 **URI parameters**
 
 - None
@@ -43,10 +44,12 @@ The response is a Settings JSON array containing all the settings. Each settings
 * Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
 
 If the setting is a number:
+
 * Min - (Number) This field indicates the minimal numerical value of the setting.
 * Max - (Number) This field indicates the maximum numerical value of the setting.
 
 If the setting is select:
+
 * OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.
 * Options - JSON array containing the valid select options as strings.
 
@@ -61,6 +64,7 @@ HTTP status code      | Description
 5XX | Error codes
 
 ## Get settings one at a time
+
 Settings can also be retrieved individually.
 
 **Request**
@@ -70,7 +74,7 @@ You can use the following request to get information about an individual setting
 Method      | Request URI
 :------     | :-----
 GET | /ext/settings/\<setting name\>
-<br />
+
 **URI parameters**
 
 - None
@@ -94,10 +98,12 @@ The response is a JSON object with following fields:
 * Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
 
 If the setting is a number:
+
 * Min - (Number) This field indicates the minimal numerical value of the setting.
 * Max - (Number) This field indicates the maximum numerical value of the setting.
 
 If the setting is select:
+
 * OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.
 * Options - JSON array containing the valid select options as strings.
 
@@ -112,6 +118,7 @@ HTTP status code      | Description
 5XX | Error codes
 
 ## Set the value of a setting
+
 You can set the value of a setting.
 
 **Request**
@@ -121,7 +128,7 @@ You can use the following request to set the value for a setting.
 Method      | Request URI
 :------     | :-----
 PUT | /ext/settings/\<setting name\>
-<br />
+
 **URI parameters**
 
 - None
@@ -148,7 +155,6 @@ HTTP status code      | Description
 4XX | Error codes
 5XX | Error codes
 
-<br />
 **Available device families**
 
 * Windows Xbox

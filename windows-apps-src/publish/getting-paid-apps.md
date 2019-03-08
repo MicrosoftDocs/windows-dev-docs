@@ -2,7 +2,7 @@
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 10/31/2018
+ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, payments, app sales, app proceeds, payout, store fee, payout hold, percentage
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ Here’s some important info about receiving payment for your apps, add-ons, and
 
 When you [sign up for a developer account](https://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
 
-In most cases, the Store fee is 30%. Fees are officially defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Always review that document if you have any questions.
+Fees are officially defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Always review that document if you have any questions.
 
 The Store fee is applied to all app sales collected by the Microsoft Store, including add-ons.
 

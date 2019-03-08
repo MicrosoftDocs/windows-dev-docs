@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ---
 # Media Capture API reference #
 
-**Request**
+## Request
 
 You can capture a PNG representation of the current screen by using the following request format.
 
 | Method        | Request URI     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
-<br>
+
 
 **URI parameters**
 
@@ -26,7 +26,6 @@ You can specify the following additional parameters on the request URI:
 | URI parameter      | Description     | 
 | ------------------ |-----------------|
 | download (optional)| A boolean value indicating if HTTP response headers should be set indicating that the host browser should download the screenshot as an attachment rather than rendering it in the browser.  |
-<br>
 
 **Request headers**
 
@@ -36,7 +35,7 @@ You can specify the following additional parameters on the request URI:
 
 * None
 
-###Response###
+## Response
 
 **Status code**
 

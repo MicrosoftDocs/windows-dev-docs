@@ -19,7 +19,7 @@ You can read the current value for the device's Xbox Live sandbox using the foll
 Method      | Request URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
+
 **URI parameters**
 
 - None
@@ -55,7 +55,7 @@ You can set the current value for the device's Xbox Live sandbox using the follo
 Method      | Request URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
+
 **URI parameters**
 
 - None
@@ -81,7 +81,6 @@ HTTP status code      | Description
 4XX | Error codes
 5XX | Error codes
 
-<br />
 **Available device families**
 
 * Windows Xbox

@@ -81,7 +81,7 @@ When customizing the Surface Dial user experience, you should always ensure that
 
 Here we discuss both UX and developer guidance for customizing the tools exposed on the Surface Dial menu.
 
-### UX guidance
+### UX guidance for custom tools
 
 **Ensure your tools correspond to the current context** 
 When you make it clear and intuitive what a tool does and how the Surface Dial interaction works, you help users learn quickly and stay focused on their task.
@@ -129,6 +129,8 @@ You can customize the Surface Dial experience to complement the functionality in
 As previously mentioned, the default Surface Dial menu is pre-populated with a set of built-in tools covering a broad range of basic system features (system volume, system brightness, scroll, zoom, undo, and media control when the system detects ongoing audio or video playback). However, these default tools might not provide the functionality required by your app. 
 
 In the following sections, we describe how to add a custom tool to the Surface Dial menu and specify which built-in tools are exposed.
+
+Download a more robust version of this sample from [RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip).
 
 **Add a custom tool**
 
@@ -295,7 +297,7 @@ The device can be rotated both clockwise and counter-clockwise, and can also pro
 > [!NOTE]
 > Haptic feedback can be disabled by the user in the **Windows Settings -> Devices -> Wheel** page.
 
-#### UX guidance
+#### UX guidance for custom interactions
 
 **Tools with continuous or high rotational sensitivity should disable haptic feedback**
 
@@ -388,12 +390,13 @@ When the Surface Dial is clicked, a [**RadialController.ButtonClicked**](https:/
 As described earlier, the Surface Dial can be used in conjunction with the Surface Studio to display the Surface Dial menu in a special on-screen mode. 
 
 When in this mode, you can integrate and customize your Dial interaction experiences with your apps even further. Examples of unique experiences only possible with the Surface Dial and Surface Studio include:
+
 - Displaying contextual tools (such as a color palette) based on the position of the Surface Dial, which makes them easier to find and use
 - Setting the active tool based on the UI the Surface Dial is placed on
 - Magnifying a screen area based on location of the Surface Dial
 - Unique game interactions based on screen location
 
-#### UX guidance
+#### UX guidance for on-screen interactions
 
 **Apps should respond when the Surface Dial is detected on-screen**
 
@@ -405,7 +408,7 @@ The device (and the user's body) can occlude critical UI depending on where the 
 
 **Adjust Surface Dial-related UI based on user interaction**
 
-In addition to hardware occlusion, a user’s hand and arm can occlude part of the screen when using the device. 
+In addition to hardware occlusion, a user’s hand and arm can occlude part of the screen when using the device.
 
 The occluded area depends on which hand is being used with the device. As the device is designed to be used primarily with the non-dominant hand, Surface Dial-related UI should adjust for the opposite hand specified by the user (**Windows Settings > Devices > Pen & Windows Ink > Choose which hand you write with** setting).
 
@@ -642,6 +645,8 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 ## Related articles
 
+[Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app](radialcontroller-walkthrough.md)
+
 ### API reference
 
 - [**RadialController** class](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
@@ -658,6 +663,12 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 - [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### Samples
+
+[RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+[Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [Universal Windows Platform samples (C# and C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 

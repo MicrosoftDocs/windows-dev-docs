@@ -178,19 +178,6 @@ int main()
 {
     init_apartment();
 
-    Windows::Web::Http::HttpClient httpClient;
-
-    Uri requestUri{ L"https://www.contoso.com/post" };
-
-    Windows::Web::Http::HttpMultipartFormDataContent postContent;
-    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
-    postContent.Headers().ContentDisposition(disposition);
-    // The 'name' directive contains the name of the form field representing the data.
-    disposition.Name(L"fileForUpload");
-    // Here, the 'filename' directive is used to indicate to the server a file name
-    // to use to save the uploaded data.
-    disposition.FileName(L"file.dat");
-
     auto buffer{
         Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
             L"A sentence of text to encode into binary to serve as sample data.",
@@ -202,6 +189,15 @@ int main()
     // it's not necessarily an image file.
     binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
 
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    binaryContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
     postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
@@ -211,6 +207,8 @@ int main()
     try
     {
         // Send the POST request.
+        Uri requestUri{ L"https://www.contoso.com/post" };
+        Windows::Web::Http::HttpClient httpClient;
         httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
         httpResponseMessage.EnsureSuccessStatusCode();
         httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();

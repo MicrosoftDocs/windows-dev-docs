@@ -2,7 +2,7 @@
 title: Create and register an out-of-process background task
 description: Create an out-of-process background task class and register it to run when your app is not in the foreground.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
@@ -11,6 +11,7 @@ dev_langs:
   - cppwinrt
   - cpp
 ---
+
 # Create and register an out-of-process background task
 
 **Important APIs**
@@ -144,7 +145,7 @@ The following sample code gets the deferral, saves it, and releases it when the 
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:

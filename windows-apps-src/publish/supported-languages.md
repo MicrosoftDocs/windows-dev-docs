@@ -2,7 +2,7 @@
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -29,7 +29,7 @@ Language codes that are not included here are not supported by the Store. We rec
 | Amharic               | am, am-et                                                                                                                                                                                             |
 | Armenian              | hy, hy-am                                                                                                                                                                                             |
 | Assamese              | as, as-in                                                                                                                                                                                             |
-| Azerbaijani           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Azerbaijani           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
 | Basque (Basque)       | eu, eu-es                                                                                                                                                                                             |
 | Belarusian            | be, be-by                                                                                                                                                                                             |
 | Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |

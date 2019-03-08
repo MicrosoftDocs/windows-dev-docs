@@ -11,14 +11,14 @@ You can access Xbox One device information using this API.
 
 ## Get Xbox One device information
 
-**Request**
+## Request
 
 You can get device information about your Xbox One.
 
 Method      | Request URI
 :------     | :-----
 GET | /ext/xbox/info
-<br />
+
 **URI parameters**
 
 - None
@@ -31,7 +31,7 @@ GET | /ext/xbox/info
 
 - None
 
-**Response**   
+## Response
 A JSON object with the following fields:
 
 * OsVersion - (String) The version of the OS.
@@ -53,7 +53,6 @@ HTTP status code      | Description
 4XX | Error codes
 5XX | Error codes
 
-<br />
 **Available device families**
 
 * Windows Xbox
