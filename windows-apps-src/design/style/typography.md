@@ -66,7 +66,7 @@ Because of how the scaling system works, you're designing in effective pixels, n
 
 The UWP type ramp establishes crucial relationships between the type styles on a page, helping users read content easily. All sizes are in effective pixels and are optimized for UWP apps running on all devices.
 
-![Type ramp](images/type/type-ramp.svg)
+![Type ramp](images/type/type-ramp.png)
 
 ### Using the type ramp
 
