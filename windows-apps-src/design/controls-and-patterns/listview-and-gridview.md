@@ -176,7 +176,7 @@ In this example, the data item is a simple string. You use a DataTemplate to add
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
