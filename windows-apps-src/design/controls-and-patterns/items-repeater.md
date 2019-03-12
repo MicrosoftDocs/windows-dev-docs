@@ -240,6 +240,7 @@ This list shows the available values. The definitions assume the default **Orien
 - **End**: Items are aligned with the end of the row. Extra space is left unused at the start of the row.
 - **SpaceAround**: Items are distributed evenly. An equal amount of space is added before and after each item.
 - **SpaceBetween**: Items are distributed evenly. An equal amount of space is added between each item. No space is added at the start and end of the row.
+- **SpaceEvenly**: Items are distributed evenly with an equal amount of space both between each item and at the start and end of the row.
 
 This image shows the effect of the **ItemsStretch** values in a vertical layout (applied to columns instead of rows).
 
