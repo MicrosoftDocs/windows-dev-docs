@@ -35,6 +35,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [What's new in C++/WinRT](news.md) | News and changes to C++/WinRT. |
 | [Frequently-asked questions](faq.md) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
 | [Troubleshooting](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
+| [Photo Editor C++/WinRT sample application](photo-editor-sample.md) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. | 
 | [String handling](strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types. |
 | [Boxing and unboxing scalar values to IInspectable](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |

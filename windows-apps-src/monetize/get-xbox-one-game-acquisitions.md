@@ -39,7 +39,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the Xbox One game for which you are retrieving acquisition data. To get the product ID of your game, navigate to your game in the XDP Analytics Program and retrieve the product ID from the URL. Alternatively, if you download your acquisitions data from the Partner Center analytics report, the product ID is included in the .tsv file.  |  Yes  |
+| applicationId | string | The product ID of the Xbox One game for which you are retrieving acquisition data. Note that this is the Store ID and not the XDP Product ID. To get the product ID of your game, navigate to your game in the XDP Analytics Program and retrieve the product ID from the URL. Alternatively, if you download your acquisitions data from the Partner Center analytics report, the product ID is included in the .tsv file.  |  Yes  |
 | startDate | date | The start date in the date range of acquisition data to retrieve. The default is the current date. |  No  |
 | endDate | date | The end date in the date range of acquisition data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
@@ -81,7 +81,7 @@ Elements in the *Value* array contain the following values.
 | Value               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | date                | string | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId       | string | The product ID of the Xbox One game for which you are retrieving acquisition data. |
+| applicationId       | string | The product ID of the Xbox One game for which you are retrieving acquisition data. Note that this is the Store ID and not the XDP Product ID.  |
 | applicationName     | string | The display name of the game.       |
 | acquisitionType     | string | One of the following strings that indicates the type of acquisition:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>Subscription Iap</strong></li><li><strong>Private Audience</strong></li><li><strong>Pre Order</strong></li><li><strong>Xbox Game Pass</strong> (or <strong>Game Pass</strong> if querying for data before March 23, 2018)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li><li><strong>Charged Pre Order</strong></li><li><strong>Cancelled Pre Order</strong></li><li><strong>Failed Pre Order</strong></li></ul>    |
 | age                 | string | One of the following strings that indicates the age group of the user who made the acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |

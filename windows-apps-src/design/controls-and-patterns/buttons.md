@@ -218,7 +218,7 @@ This example shows how to create a drop down button with a flyout that contains 
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E4;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8E4;"/>
     <DropDownButton.Flyout>
         <MenuFlyout Placement="BottomEdgeAlignedLeft">
             <MenuFlyoutItem Text="Left" Icon="AlignLeft" Tag="left"
@@ -395,7 +395,7 @@ The following example shows how a toggle split button could be used to turn list
                    ToolTipService.ToolTip="List style"
                    Click="ListButton_Click"
                    IsCheckedChanged="ListStyleButton_IsCheckedChanged">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8FD;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
     <ToggleSplitButton.Flyout>
         <Flyout Placement="BottomEdgeAlignedLeft">
             <ListView x:Name="ListStylesListView"
