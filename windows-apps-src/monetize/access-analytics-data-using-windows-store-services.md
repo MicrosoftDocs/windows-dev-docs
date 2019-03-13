@@ -2,7 +2,7 @@
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Microsoft Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Partner Center account.
 title: Access analytics data using Store services
-ms.date: 06/04/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API
 ms.localizationpriority: medium
@@ -69,13 +69,19 @@ After your access token expires, you can refresh it by following the instruction
 
 After you have an Azure AD access token, you are ready to call the Microsoft Store analytics API. You must pass the access token to the **Authorization** header of each method.
 
-### Methods for UWP apps
+### Methods for UWP apps and games
+The following methods are available for apps and games acquisitions and add-on acquisitions: 
+
+* [Get acquisitions data for your games and apps](acquisitions-data.md)
+* [Get add-on acquisitions data for your games and apps](add-on-acquisitions-data.md)
+
+### Methods for UWP apps 
 
 The following analytics methods are available for UWP apps in Partner Center.
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| Acquisitions, conversions, installs, and usage |  <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get app acquisition funnel data](get-acquisition-funnel-data.md)</li><li>[Get app conversions by channel](get-app-conversions-by-channel.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get subscription add-on acquisitions](get-subscription-acquisitions.md)</li><li>[Get add-on conversions by channel](get-add-on-conversions-by-channel.md)</li><li>[Get app installs](get-app-installs.md)</li><li>[Get daily app usage](get-app-usage-daily.md)</li><li>[Get monthly app usage](get-app-usage-monthly.md)</li></ul> |
+| Acquisitions, conversions, installs, and usage |  <ul><li>[Get app acquisitions](get-app-acquisitions.md) (legacy)</li><li>[Get app acquisition funnel data](get-acquisition-funnel-data.md) (legacy)</li><li>[Get app conversions by channel](get-app-conversions-by-channel.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get subscription add-on acquisitions](get-subscription-acquisitions.md)</li><li>[Get add-on conversions by channel](get-add-on-conversions-by-channel.md)</li><li>[Get app installs](get-app-installs.md)</li><li>[Get daily app usage](get-app-usage-daily.md)</li><li>[Get monthly app usage](get-app-usage-monthly.md)</li></ul> |
 | App errors | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | Insights | <ul><li>[Get insights data for your app](get-insights-data-for-your-app.md)</li></ul>  |
 | Ratings and reviews | <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |

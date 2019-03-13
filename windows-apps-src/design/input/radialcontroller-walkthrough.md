@@ -631,6 +631,11 @@ Congratulations, you've completed the *Get Started Tutorial: Support the Surface
 
 ### Samples
 
+#### Topic samples
+
+[RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### Other samples
 [Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
 [Universal Windows Platform samples (C# and C++)](https://go.microsoft.com/fwlink/?linkid=832713)

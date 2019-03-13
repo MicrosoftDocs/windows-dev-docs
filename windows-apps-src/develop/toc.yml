@@ -481,15 +481,19 @@
             - name: Access analytics data
               href: ../monetize/access-analytics-data-using-windows-store-services.md
               items:
+                - name: Get acquisitions data for your games and apps
+                  href: ../monetize/acquisitions-data.md
+                - name: Get add-on acquisitions data for your games and apps
+                  href: ../monetize/add-on-acquisitions-data.md
                 - name: UWP apps
                   items:
                     - name: Get acquisitions and installs data
                       items:
-                        - name: Get app acquisitions
+                        - name: Get app acquisitions (legacy)
                           href: ../monetize/get-app-acquisitions.md
                         - name: Get app installs
                           href: ../monetize/get-app-installs.md
-                        - name: Get app acquisition funnel data
+                        - name: Get app acquisition funnel data (legacy)
                           href: ../monetize/get-acquisition-funnel-data.md
                         - name: Get app conversions by channel
                           href: ../monetize/get-app-conversions-by-channel.md

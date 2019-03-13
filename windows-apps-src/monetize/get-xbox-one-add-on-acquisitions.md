@@ -1,7 +1,7 @@
 ---
 description: Use this method in the Microsoft Store analytics API to get aggregate add-on acquisition data.
 title: Get Xbox One add-on acquisitions
-ms.date: 10/18/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, Xbox One add-on acquisitions
 ms.localizationpriority: medium
@@ -40,7 +40,7 @@ The *applicationId* or *addonProductId* parameter is required. To retrieve acqui
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The *productId* of the Xbox One game for which you are retrieving acquisition data. To get the *productId* of your game, navigate to your game in the XDP Analytics Program and retrieve the *productId* from the URL. Alternatively, if you download your acquisitions data from the Partner Center analytics report, the *productId* is included in the .tsv file. |  Yes  |
+| applicationId | string | The *productId* of the Xbox One game for which you are retrieving acquisition data. Note that this is the Store ID and not the XDP Product ID. To get the *productId* of your game, navigate to your game in the XDP Analytics Program and retrieve the *productId* from the URL. Alternatively, if you download your acquisitions data from the Partner Center analytics report, the *productId* is included in the .tsv file. |  Yes  |
 | addonProductId | string | The *productId* of the add-on for which you want to retrieve acquisition data.  | Yes  |
 | startDate | date | The start date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
 | endDate | date | The end date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
@@ -90,7 +90,7 @@ Elements in the *Value* array contain the following values.
 | date                | string  | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | addonProductId      | string  | The *productId* of the add-on for which you are retrieving acquisition data.                                                                                                                                                                 |
 | addonProductName    | string  | The display name of the add-on. This value only appears in the response data if the *aggregationLevel* parameter is set to **day**, unless you specify the **addonProductName** field in the *groupby* parameter.                                                                                                                                                                                                            |
-| applicationId       | string  | The *productId* of the app for which you want to retrieve add-on acquisition data.                                                                                                                                                           |
+| applicationId       | string  | The *productId* of the app for which you want to retrieve add-on acquisition data. Note that this is the Store ID and not the XDP Product ID.                                                                                                                                                           |
 | applicationName     | string  | The display name of the game.                                                                                                                                                                                                             |
 | deviceType          | string  | <p>One of the following strings that specifies the type of device that completed the acquisition:</p> <ul><li>"PC"</li><li>"Phone"</li><li>"Console"</li><li>"IoT"</li><li>"Server"</li><li>"Tablet"</li><li>"Holographic"</li><li>"Unknown"</li></ul>                                                                                                  |
 | storeClient         | string  | <p>One of the following strings that indicates the version of the Store where the acquisition occurred:</p> <ul><li>"Windows Phone Store (client)"</li><li>"Microsoft Store (client)" (or "Windows Store (client)" if querying for data before March 23, 2018)</li><li>"Microsoft Store (web)" (or "Windows Store (web)" if querying for data before March 23, 2018)</li><li>"Volume purchase by organizations"</li><li>"Other"</li></ul>                                                                                            |
