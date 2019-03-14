@@ -2,7 +2,7 @@
 Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp, listing, description, store page, release notes, title
 ms.localizationpriority: medium
@@ -124,7 +124,7 @@ A shorter, catchy description that may be used in the top of your product’s St
 
 For games, the short description may also appear in the Information section of the Game Hub on Xbox One.
 
-For best results, keep your short description under 270 characters. The field has a 500 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
+For best results, keep your short description under 270 characters. The field has a 1000 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
 
 
 ### Additional system requirements
