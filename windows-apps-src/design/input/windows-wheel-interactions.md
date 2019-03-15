@@ -664,7 +664,11 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 ### Samples
 
+#### Topic samples
+
 [RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### Other samples
 
 [Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 

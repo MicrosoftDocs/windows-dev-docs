@@ -52,7 +52,10 @@ General-use capabilities apply to the most common app scenarios.
 
 ## Device capabilities
 
-Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using the **DeviceCapability** element in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/Dn263092) and [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430).
+Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using the **DeviceCapability** element in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) and [**DeviceCapability Schema reference**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
+
+> [!NOTE]
+> You can have multiple **DeviceCapability** and **Capability** elements under the **Capabilities** element, but all **DeviceCapability** elements must come after the **Capability** elements.
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|

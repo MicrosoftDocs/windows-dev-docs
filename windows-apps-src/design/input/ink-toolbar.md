@@ -1117,17 +1117,18 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 
 ## Related articles
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Topic samples**
-* [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-* [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+### Topic samples
 
-**Other samples**
-* [Simple ink sample (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
-* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+- [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+- [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 
+### Other samples
+
+- [Simple ink sample (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+- [Complex ink sample (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
+- [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
+- [Family notes sample](https://aka.ms/cpubsample-familynotessample)

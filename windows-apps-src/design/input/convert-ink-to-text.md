@@ -7,8 +7,6 @@ template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Recognize Windows Ink strokes as text and shapes
@@ -16,7 +14,6 @@ ms.localizationpriority: medium
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
 
 > **Important APIs**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
-
 
 ## Free-form recognition with ink analysis
 
@@ -29,7 +26,7 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 **Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
-1.  First, we set up the UI (MainPage.xaml). 
+1. First, we set up the UI (MainPage.xaml). 
 
     The UI includes a "Recognize" button, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
 ```xaml
@@ -852,19 +849,18 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 
 ## Related articles
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Topic samples**
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+### Topic samples
 
-**Other samples**
-* [Simple ink sample (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
-* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+- [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
+### Other samples
 
- 
+- [Simple ink sample (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+- [Complex ink sample (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
+- [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
+- [Family notes sample](https://aka.ms/cpubsample-familynotessample)

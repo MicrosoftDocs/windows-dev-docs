@@ -139,9 +139,9 @@ You can also bind the ItemsSource property to a collection in XAML. For more inf
 
 ### Data template
 
-An item’s data template defines how the data is visualized. By default, a data item is displayed in the view as the string representation of the data object it's bound to. However, you typically want to show a more rich presentation of your data. To specify exactly how items are displayed, you create a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property of the ItemsRepeater.
+An item’s data template defines how the data is visualized. By default, the item is displayed in the view as the string representation of the data object to which it's bound using a TextBlock. However, you typically want to show a more rich presentation of your data. To specify exactly how items are displayed, you define a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property of the ItemsRepeater.
 
-In this example, the data item is a simple string. You use a DataTemplate to add an image to the left of the string, and show the string in teal.
+In this example, the data object is a simple string. You use a DataTemplate to add an image to the left of the text, and style the TextBlock to display the string in teal.
 
 > [!NOTE]
 > When you use the [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
@@ -161,14 +161,14 @@ In this example, the data item is a simple string. You use a DataTemplate to add
 </DataTemplate>
 ```
 
-Here's what the data items look like when displayed with this data template.
+Here's how the items would appear when displayed with this data template.
 
 ![Items displayed with a data template](images/listview-itemstemplate.png)
 
-Data templates can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use data templates to define the look of items in your list, see [Item containers and templates](item-containers-templates.md).
+The number of elements used in the data template for an item can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use data templates to define the look of items in your list, see [Item containers and templates](item-containers-templates.md).
 
 > [!TIP]
-> ItemsRepeater doesn't wrap the contents of the DataTemplate in an item container like ListView and other collection controls. Instead, ItemsRepeater presents just what is defined in the DataTemplate. If you want your items to have the same look as a list view item, you can use a container, like ListViewItem, in your data template. ItemsRepeater will show the ListViewItem visuals, but doesn't make use of other functionality, like selection or showing the multi-select checkbox.
+> ItemsRepeater doesn't wrap the contents of the DataTemplate in an item container like ListView and other collection controls. Instead, ItemsRepeater presents only what is defined in the DataTemplate. If you want your items to have the same look as a list view item, you can use a container, like ListViewItem, in your data template. ItemsRepeater will show the ListViewItem visuals, but doesn't make use of other functionality, like selection or showing the multi-select checkbox.
 >
 > Similarly, if your data collection is a collection of actual controls, like Button (`List<Button>`), you can put a ContentPresenter in your DataTemplate to display the control.
 
@@ -240,6 +240,7 @@ This list shows the available values. The definitions assume the default **Orien
 - **End**: Items are aligned with the end of the row. Extra space is left unused at the start of the row.
 - **SpaceAround**: Items are distributed evenly. An equal amount of space is added before and after each item.
 - **SpaceBetween**: Items are distributed evenly. An equal amount of space is added between each item. No space is added at the start and end of the row.
+- **SpaceEvenly**: Items are distributed evenly with an equal amount of space both between each item and at the start and end of the row.
 
 This image shows the effect of the **ItemsStretch** values in a vertical layout (applied to columns instead of rows).
 
@@ -485,9 +486,9 @@ This example shows a layout for an app that has various categories that can chan
 
 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not automatically set automation properties for each item. You need to manage setting the appropriate automation properties, such as values for **PositionInSet** and **SizeOfSet**, and ensure they remain up-to-date when items are added, moved, removed, etc.
 
-Most users expect that the values for these properties match the order they appear in the data (offset by 1 to match natural counting versus being 0-based), not the order they appear in the visual layout.
+Users expect that the values for these properties match the order they appear in the data (offset by 1 to match natural counting versus being 0-based), not the order they appear in the visual layout.
 
-The best way to achieve this is by having the automation peer for the item control implement the [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) and [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) methods and report the position of the item in the data set represented by the control. The value is only computed at run-time when accessed by an AT and keeping it up-to-date becomes a non-issue. The value matches the data order.
+The best way to achieve this is by having the automation peer for the item control implement the [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) and [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) methods and report the position of the item in the data set represented by the control. The value is only computed at run-time when accessed by an assistive technology and keeping it up-to-date becomes a non-issue. The value matches the data order.
 
 This example shows how you could do this in a custom control called _CardControl_.
 

@@ -1084,6 +1084,19 @@ For a complete example that demonstrates a [XamlUICommand](https://docs.microsof
 
 [Controls and patterns for UWP apps](index.md)
 
+### Samples
+
+#### Topic samples
+
+- [UWP commanding sample (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
+- [UWP commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
+- [UWP commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
+
+#### Other samples
+
+- [Universal Windows Platform samples (C# and C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
+
 <!---Some context for the following links goes here
 - [link to next logical step for the customer](global-quickstart-template.md)--->
 

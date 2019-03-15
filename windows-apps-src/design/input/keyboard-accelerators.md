@@ -624,12 +624,9 @@ public class MyListView : ListView
 
 ## Related articles
 
-* [Keyboard interactions](keyboard-interactions.md)
-* [Access keys](access-keys.md)
+- [Keyboard interactions](keyboard-interactions.md)
+- [Access keys](access-keys.md)
 
-**Samples**
-* [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### Samples
 
-
- 
-
+- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
