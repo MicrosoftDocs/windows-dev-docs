@@ -10,9 +10,8 @@ ms.localizationpriority: medium
 ---
 # Get started with Windows 10 apps 
  
-Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.  
-<br>
-<ul id="cardtypes-K" class="cardsK panelContent">
+<p>Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.</p>  
+<ul class="cardsK panelContent">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -74,7 +73,6 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         </div>
     </li>
 </ul>
-
 <ul class="panelContent cardsF">
   <li>
     <div class="cardSize">
@@ -140,9 +138,6 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     </div>
   </li>
 </ul>
-
-
-<div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
             <a href="//developer.microsoft.com/windows/apps/design">
@@ -200,8 +195,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         </li>
     </ul>
 </div>
-
----
+<hr />
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
