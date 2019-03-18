@@ -1865,6 +1865,2736 @@
       "source_path": "windows-apps-src/publish/dev-center-insider-program.md",
       "redirect_url": "/windows/uwp/publish",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/advanced-xbox-live-sandboxes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/advanced-xbox-live-sandboxes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/developer-program-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/developer-program-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/flatc-async-patterns.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/flatc-async-patterns.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/index.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/index.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/introduction-to-xbox-live-apis.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/introduction-to-xbox-live-apis.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/samples.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/samples.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/testing-on-console.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/testing-on-console.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/what-is-xbox-live.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/what-is-xbox-live.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-resources.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-resources.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-sandboxes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-sandboxes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-service-configuration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-service-configuration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-test-accounts.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-test-accounts.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xboxlive-policies.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xboxlive-policies.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xboxservices-config.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xboxservices-config.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xsapi-flat-c.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xsapi-flat-c.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/achievements-2017/achievement-rewards.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/achievements-2017/achievement-rewards.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/achievements-2017/achievements.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/achievements-2017/achievements.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/achievements-2017/simplified-achievements.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/achievements-2017/simplified-achievements.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/windows-dev-center.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/windows-dev-center.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/access-policies-udc.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/access-policies-udc.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/achievements-in-udc.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/achievements-in-udc.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/featured-stats-and-leaderboards.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/featured-stats-and-leaderboards.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/game-dvr.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/game-dvr.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/localized-strings.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/localized-strings.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/privileges.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/privileges.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/rich-presence-configuration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/rich-presence-configuration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/single-sign-on.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/single-sign-on.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/summary.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/summary.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/title-storage.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/title-storage.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/web-services.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/web-services.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/xbox-live-setup.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/configure-xbl/dev-center/xbox-live-setup.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/contextual-search/configuring-contextual-search.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/contextual-search/configuring-contextual-search.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/contextual-search/introduction-to-contextual-search.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/contextual-search/introduction-to-contextual-search.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/data-platform/data-platform.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/data-platform/data-platform.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/data-platform/designing-xbox-live-experiences.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/data-platform/designing-xbox-live-experiences.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/add-multi-user-support.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/add-multi-user-support.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/add-stats-and-leaderboards-in-unity.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/add-stats-and-leaderboards-in-unity.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/check-user-privileges-in-unity.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/check-user-privileges-in-unity.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/configure-xbox-live-in-unity.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/configure-xbox-live-in-unity.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/creators-step-by-step-guide.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/develop-creators-title-with-visual-studio.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/develop-creators-title-with-visual-studio.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/playerauthentication-prefab-sign-in.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/playerauthentication-prefab-sign-in.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/setup-leaderboard-example-scene.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/setup-leaderboard-example-scene.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-manager.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/sign-in-manager.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/test-visual-studio-build.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/test-visual-studio-build.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/unity-leaderboard-from-scratch-pre1804.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/unity-leaderboard-from-scratch-pre1804.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/unity-leaderboard-from-scratch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/unity-leaderboard-from-scratch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/xbox-live-service-configuration-creators.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/xbox-live-service-configuration-creators.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-apis-binary-to-a-uwp-project.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/add-xbox-live-apis-binary-to-a-uwp-project.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/add-xbox-live-to-an-xdk-project.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/add-xbox-live-to-an-xdk-project.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/compile-the-xdk-xbox-live-api-source.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/compile-the-xdk-xbox-live-api-source.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/configure-your-development-console.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/configure-your-development-console.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/create-a-new-title.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/create-a-new-title.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/get-started-with-cross-play-games.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/get-started-with-cross-play-games.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/get-started-with-visual-studio-and-uwp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/get-started-with-visual-studio-and-uwp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partner-unity-xdk-il2cpp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/partner-unity-xdk-il2cpp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/partners-step-by-step-guide.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/use-xbox-live-nuget-with-xdk.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/use-xbox-live-nuget-with-xdk.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/using-xbox-live-apis-built-into-the-xdk.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/using-xbox-live-apis-built-into-the-xdk.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/where-to-get-xdk.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/where-to-get-xdk.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-partner/xdk-developers.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/xdk-developers.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/leaderboards.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/leaderboards-and-stats-2017/leaderboards.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/player-stats-configure-2017.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/leaderboards-and-stats-2017/player-stats-configure-2017.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/player-stats-updating.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/leaderboards-and-stats-2017/player-stats-updating.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/player-stats.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/leaderboards-and-stats-2017/player-stats.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/leaderboards-and-stats-2017/stats2017.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/leaderboards-and-stats-2017/stats2017.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-concepts.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-concepts.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-intro.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-intro.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-roles.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-roles.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-scenarios.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-scenarios.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/session-browse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/session-browse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-apis-metadata.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-apis-metadata.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-notifications.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-notifications.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-title-integration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-title-integration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-user-scenarios.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-user-scenarios.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-ux-join-tournament.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-ux-join-tournament.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/arena-ux-match-engagement.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/arena-ux-match-engagement.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/discovering-xbox-tournaments.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/discovering-xbox-tournaments.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/operations-portal.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/operations-portal.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/arena/xbox-arena.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/arena/xbox-arena.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/chat/game-chat-2-migration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/chat/game-chat-2-migration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/chat/game-chat-2-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/chat/real-time-audio-manipulation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/chat/real-time-audio-manipulation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/chat/using-game-chat-2-winrt.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/chat/using-game-chat-2-winrt.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/chat/using-game-chat-2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/chat/using-game-chat-2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/common-issues-when-adapting-multiplayer.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/common-issues-when-adapting-multiplayer.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/flows-for-multiplayer-game-invites.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/flows-for-multiplayer-game-invites.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/game-session-and-game-party-visibility-and-joinability.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/game-session-and-game-party-visibility-and-joinability.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/introduction-to-the-multiplayer-system.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/introduction-to-the-multiplayer-system.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/migrating-an-arbiter.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/migrating-an-arbiter.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/mpsd-session-details.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/mpsd-session-details.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-2015-faq.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-2015-faq.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-appendix.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-appendix.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-how-tos.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-how-tos.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-directory.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-directory.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-status-codes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/multiplayer-session-status-codes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/smartmatch-matchmaking.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/using-smartmatch-matchmaking.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/using-smartmatch-matchmaking.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-appendix/xbox-one-multiplayer-session-directory.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-appendix/xbox-one-multiplayer-session-directory.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/handle-protocol-activation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/handle-protocol-activation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/multiplayer-manager-api-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/multiplayer-manager-api-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/play-multiplayer-with-friends.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/play-multiplayer-with-friends.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/play-multiplayer-with-matchmaking.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/play-multiplayer-with-matchmaking.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/send-game-invites.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/send-game-invites.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-fill-open-slots.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-fill-open-slots.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-host-migration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-host-migration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-on-protocol-activation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-on-protocol-activation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-play-with-friends.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-play-with-friends.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-send-invites.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-send-invites.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-shut-down.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-shut-down.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-use-matchmaking-and-qos.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/multiplayer-manager/mpm-flowcharts/mpm-use-matchmaking-and-qos.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/configure-the-multiplayer-service.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/service-configuration/configure-the-multiplayer-service.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/configure-your-appxmanifest-for-multiplayer.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/service-configuration/configure-your-appxmanifest-for-multiplayer.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/large-sessions.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/service-configuration/large-sessions.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/session-template-constants.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/service-configuration/session-template-constants.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/service-configuration/session-templates.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/service-configuration/session-templates.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/using-xim-cs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/using-xim-cs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/using-xim.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/using-xim.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-manifest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-manifest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-release-notes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-release-notes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-reservations.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-reservations.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-unity-uwp-il2cpp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/multiplayer/xbox-integrated-multiplayer/xim-unity-uwp-il2cpp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/real-time-activity-service/programming-the-real-time-activity-service.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/real-time-activity-service/programming-the-real-time-activity-service.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/real-time-activity-service/real-time-activity-service.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/real-time-activity-service/real-time-activity-service.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/real-time-activity-service/register-for-stat-notifications.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/real-time-activity-service/register-for-stat-notifications.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/real-time-activity-service/rta-best-practices.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/real-time-activity-service/rta-best-practices.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/intro-to-social-manager.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/intro-to-social-manager.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/social-manager-memory-and-performance-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/social-manager-memory-and-performance-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/social-platform.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/social-platform.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/displaying-people-from-the-people-system.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/people-system/displaying-people-from-the-people-system.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/programming-social-services.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/people-system/programming-social-services.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/reputation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/people-system/reputation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/sending-player-feedback-from-your-title.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/people-system/sending-player-feedback-from-your-title.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-live-people-system.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/people-system/xbox-live-people-system.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/programming-rich-presence.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/programming-rich-presence.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-appendix.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-appendix.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-best-practices.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-best-practices.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-configuration.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-configuration.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-policies-and-limitations.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-policies-and-limitations.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-updating-strings.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/social-platform/rich-presence-strings/rich-presence-strings-updating-strings.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/storage-platform.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/storage-platform.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-best-practices.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-best-practices.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-deleting.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-deleting.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-loading-on-demand.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-loading-on-demand.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-loading.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-loading.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-saving.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-saving.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-technical-overview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-technical-overview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-using-buffers.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-using-buffers.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-xb-storage.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/connected-storage/connected-storage-xb-storage.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/reading-binary-blobs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/reading-binary-blobs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/reading-configuration-blobs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/reading-configuration-blobs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/reading-jsonblobs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/reading-jsonblobs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/storing-binary-blobs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/storing-binary-blobs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/storing-jsonblobs.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/storing-jsonblobs.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/storage-platform/xbox-live-title-storage/xbox-live-title-storage.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/storage-platform/xbox-live-title-storage/xbox-live-title-storage.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/tools/analyze-service-calls.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/tools/analyze-service-calls.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/tools/tools.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/tools/tools.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/tools/xbox-live-account-tool.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/tools/xbox-live-account-tool.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/using-xbox-live.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/using-xbox-live.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/authentication-for-UWP-projects.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/auth/authentication-for-UWP-projects.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/authentication-for-XDK-projects.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/auth/authentication-for-XDK-projects.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/authentication.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/auth/authentication.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/retrieving-windows-system-user-on-UWP.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/auth/retrieving-windows-system-user-on-UWP.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/auth/single-point-of-presence.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/auth/single-point-of-presence.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/best-practices/best-practices-for-calling-xbox-live.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/best-practices/best-practices-for-calling-xbox-live.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/best-practices/best-practices-for-offline.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/best-practices/best-practices-for-offline.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/error-handling/error-handling-cpp.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/error-handling/error-handling-cpp.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/error-handling/error-handling-winrt.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/error-handling/error-handling-winrt.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/error-handling/error-handling.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/error-handling/error-handling.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/how-to-set-up-fiddler-for-debugging.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/troubleshooting/how-to-set-up-fiddler-for-debugging.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/troubleshooting-pc-setup.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting-pc-setup.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/troubleshooting-sign-in.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting-sign-in.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/troubleshooting-the-xbox-live-services-api.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting-the-xbox-live-services-api.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/using-xbox-live/troubleshooting/troubleshooting.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/using-xbox-live/troubleshooting/troubleshooting.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1506-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1506-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1508-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1508-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1509-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1509-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1510-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1510-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1602-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1602-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1603-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1603-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1604-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1604-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1606-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1606-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1608-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1608-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1611-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1611-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1612-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1612-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1703-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1703-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1704-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1704-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1705-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1705-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1706-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1706-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1707-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1707-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/1708-whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/1708-whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/whats-new/whats-new.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/whats-new/whats-new.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/atoc-xboxlivews-reference.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/atoc-xboxlivews-reference.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/atoc-xboxlivews-reference-additional.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/atoc-xboxlivews-reference-additional.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/authorizationtypes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/authorizationtypes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/datatypeoverview.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/datatypeoverview.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/eds-apis.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/eds-apis.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edsauthorization.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edsauthorization.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edscommonheaders.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edscommonheaders.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edsparameters.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edsparameters.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edsqueryrefiners.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edsqueryrefiners.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edsreverselookup.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edsreverselookup.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/edstables.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/edstables.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/httpstandardheaders.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/httpstandardheaders.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/httpstatuscodes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/httpstatuscodes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/additional/pagingparameters.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/additional/pagingparameters.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/atoc-xboxlivews-reference-enums.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/atoc-xboxlivews-reference-enums.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipsource.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipsource.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipstate.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipstate.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-gamecliptypes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-gamecliptypes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipuritype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipuritype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipvisibility.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-gameclipvisibility.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-thumbnailsource.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-thumbnailsource.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/gvr-enum-thumbnailtype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/gvr-enum-thumbnailtype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/enums/privacy-enum-permissionid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/enums/privacy-enum-permissionid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/atoc-xboxlivews-reference-json.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/atoc-xboxlivews-reference-json.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-achievementv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-achievementv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-activityrecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-activityrecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-activityrequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-activityrequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-aggregatesessionsresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-aggregatesessionsresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-batchrequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-batchrequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-deviceendpoint.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-deviceendpoint.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-devicerecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-devicerecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-feedback.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-feedback.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gameclip.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gameclip.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gameclipsserviceerrorresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gameclipsserviceerrorresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gameclipthumbnail.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gameclipthumbnail.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gameclipuri.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gameclipuri.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gamemessage.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gamemessage.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gameresult.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gameresult.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gamesession.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gamesession.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-gamesessionsummary.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-gamesessionsummary.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-getclipresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-getclipresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-hopperstatsresults.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-hopperstatsresults.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-initialuploadrequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-initialuploadrequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-initialuploadresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-initialuploadresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-inventoryitem.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-inventoryitem.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-lastseenrecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-lastseenrecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-matchticket.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-matchticket.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-mediaasset.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-mediaasset.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-mediarecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-mediarecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-mediarequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-mediarequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-multiplayeractivitydetails.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-multiplayeractivitydetails.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-multiplayersession.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-multiplayersession.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-multiplayersessionreference.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-multiplayersessionreference.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-multiplayersessionrequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-multiplayersessionrequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-paginginfo.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-paginginfo.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-peoplelist.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-peoplelist.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-permissioncheckbatchrequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-permissioncheckbatchrequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-permissioncheckbatchresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-permissioncheckbatchresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-permissioncheckbatchuserresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-permissioncheckbatchuserresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-permissioncheckresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-permissioncheckresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-permissioncheckresult.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-permissioncheckresult.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-person.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-person.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-personsummary.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-personsummary.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-player.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-player.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-presencerecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-presencerecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-profile.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-profile.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-progression.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-progression.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-property.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-property.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-queryclipsresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-queryclipsresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-quota.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-quota.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-requirement.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-requirement.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-resetreputation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-resetreputation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-reward.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-reward.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-richpresencerequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-richpresencerequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-serviceerror.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-serviceerror.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-serviceerrorresponse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-serviceerrorresponse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-sessionentry.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-sessionentry.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-titleassociation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-titleassociation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-titleblob.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-titleblob.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-titlerecord.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-titlerecord.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-titlerequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-titlerequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-updatemetadatarequest.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-updatemetadatarequest.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-user.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-user.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-userclaims.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-userclaims.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-userlist.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-userlist.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-usersettings.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-usersettings.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-usertitlev2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-usertitlev2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-verifystringresult.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-verifystringresult.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/json/json-xuidlist.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/json/json-xuidlist.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/atoc-xboxlivews-reference-uris.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/atoc-xboxlivews-reference-uris.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/achievements/atoc-reference-achievementsv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/achievements/atoc-reference-achievementsv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/achievements/uri-achievementsusersxuidachievementsgetv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/achievements/uri-achievementsusersxuidachievementsgetv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/achievements/uri-achievementsusersxuidachievementsv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/achievements/uri-achievementsusersxuidachievementsv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/achievements/uri-usersxuidachievementsscidachievementid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/achievements/uri-usersxuidachievementsscidachievementid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/achievements/uri-usersxuidachievementsscidachievementidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/achievements/uri-usersxuidachievementsscidachievementidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/atoc-reference-dvr.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/atoc-reference-dvr.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-publicscidclips.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-publicscidclips.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-publicscidclipsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-publicscidclipsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-uri.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-uri.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-uriget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-uriget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-uriput.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-uriput.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclips.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclips.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipiddelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipiddelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipidpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipsgameclipidpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipspost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersmescidclipspost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridclips.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridclips.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridclipsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridclipsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridscidclipsgameclipid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridscidclipsgameclipid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridscidclipsgameclipidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/dvr/uri-usersowneridscidclipsgameclipidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gamerpic/atoc-reference-gamerpic.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gamerpic/atoc-reference-gamerpic.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gamerpic/uri-usersmegamerpic.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gamerpic/uri-usersmegamerpic.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gamerpic/uri-usersmegamerpicput.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gamerpic/uri-usersmegamerpicput.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/atoc-gsdk-uri-reference.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/atoc-gsdk-uri-reference.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-qosservers-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-qosservers-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-qosservers.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-qosservers.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidclusters-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidclusters-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidclusters.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidclusters.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionhosts-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionhosts-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionhosts.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionhosts.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionssessionidallocationstatus-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionssessionidallocationstatus-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionssessionidallocationstatus.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidsessionssessionidallocationstatus.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidvariants-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidvariants-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidvariants.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/gsdk/uri-titlestitleidvariants.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/atoc-reference-leaderboard.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/atoc-reference-leaderboard.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardname.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardname.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardnameget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardnameget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/uri-usersxuidscidstatnamepeople.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/uri-usersxuidscidstatnamepeople.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/leaderboard/uri-usersxuidscidstatnamepeopleget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/leaderboard/uri-usersxuidscidstatnamepeopleget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/atoc-reference-lists.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/atoc-reference-lists.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistname.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistname.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamecontainsitems.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamecontainsitems.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamecontainsitemspost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamecontainsitemspost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamedelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamedelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameindex.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameindex.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameindexpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameindexpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamepost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnamepost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameput.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameput.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitems.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitems.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitemsdelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitemsdelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitemspost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/lists/uri-usersxuidlistspinslistnameremoveitemspost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/atoc-reference-marketplace.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/atoc-reference-marketplace.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventory.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventory.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryconsumablesitemurl.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryconsumablesitemurl.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryconsumablesitemurlpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryconsumablesitemurlpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryitemurl.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryitemurl.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryitemurlget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-inventoryitemurlget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-localecrossmediagroupsearch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-localecrossmediagroupsearch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-localecrossmediagroupsearchget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-localecrossmediagroupsearchget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalebrowse.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalebrowse.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalebrowseget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalebrowseget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalecontentrating.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalecontentrating.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalecontentratingget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalecontentratingget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocaledetails.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocaledetails.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocaledetailsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocaledetailsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalefields.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalefields.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalefieldsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalefieldsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroups.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroups.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsmediaitemtypes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsmediaitemtypes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsmediaitemtypesget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediagroupsmediaitemtypesget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypefields.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypefields.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypefieldsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypefieldsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefiners.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefiners.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinernameget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinernameget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypes.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypes.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesortorders.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesortorders.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesortordersget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalemetadatamediaitemtypesortordersget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalesinglemediagroupsearch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalesinglemediagroupsearch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalesinglemediagroupsearchget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/marketplace/uri-medialocalesinglemediagroupsearchget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/atoc-reference-matchtickets.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/atoc-reference-matchtickets.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-scidhoppernameticketid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-scidhoppernameticketid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-scidhoppernameticketiddelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-scidhoppernameticketiddelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppername.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppername.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamepost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamepost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestats.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestats.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/atoc-reference-people.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/atoc-reference-people.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeople.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeople.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopleget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopleget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopletargetid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopletargetid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopletargetidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeopletargetidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeoplexuids.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeoplexuids.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeoplexuidspost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridpeoplexuidspost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridsummary.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridsummary.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/people/uri-usersowneridsummaryget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/people/uri-usersowneridsummaryget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/atoc-reference-presence.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/atoc-reference-presence.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersbatch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersbatch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersbatchpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersbatchpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersme.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersme.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersmeget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersmeget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersmegroupsmoniker.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersmegroupsmoniker.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersmegroupsmonikerget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersmegroupsmonikerget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrent.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrent.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrentdelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrentdelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrentpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuiddevicescurrenttitlescurrentpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmoniker.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmoniker.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcasting.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcasting.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingcount.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingcount.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingcountget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingcountget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerbroadcastingget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/presence/uri-usersxuidgroupsmonikerget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/atoc-reference-privacyv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/atoc-reference-privacyv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersowneridpeoplemute.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersowneridpeoplemute.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersowneridpeoplemuteget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersowneridpeoplemuteget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidate.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidate.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidateget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidateget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidatepost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersrequestoridpermissionvalidatepost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersxuidpeopleavoid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersxuidpeopleavoid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersxuidpeopleavoidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/privacy/uri-privacyusersxuidpeopleavoidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/profileV2/atoc-reference-profiles.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/profileV2/atoc-reference-profiles.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/profileV2/uri-usersbatchprofilesettings.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/profileV2/uri-usersbatchprofilesettings.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/profileV2/uri-usersbatchprofilesettingspost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/profileV2/uri-usersbatchprofilesettingspost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/profileV2/uri-usersuseridprofilesettingspeopleuserlist.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/profileV2/uri-usersuseridprofilesettingspeopleuserlist.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/profileV2/uri-usersuseridprofilesettingspeopleuserlistget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/profileV2/uri-usersuseridprofilesettingspeopleuserlistget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/atoc-reference-reputation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/atoc-reference-reputation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersbatchfeedback.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersbatchfeedback.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersbatchfeedbackpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersbatchfeedbackpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersxuidfeedback.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersxuidfeedback.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersxuidfeedbackpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-reputationusersxuidfeedbackpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersmeresetreputation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersmeresetreputation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersmeresetreputationpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersmeresetreputationpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuiddeleteuserdata.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuiddeleteuserdata.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuiddeleteuserdatapost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuiddeleteuserdatapost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuidresetreputation.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuidresetreputation.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuidresetreputationpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/reputation/uri-usersxuidresetreputationpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/atoc-reference-sessiondirectory.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/atoc-reference-sessiondirectory.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handles.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handles.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleiddelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleiddelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsession.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsession.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsessionget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsessionget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsessionput.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handleshandleidsessionput.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlespost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlespost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesquery.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesquery.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesqueryincludepost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesqueryincludepost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesquerypost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-handlesquerypost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidbatch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidbatch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidbatchpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidbatchpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessions.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessions.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessionsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessionsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplates.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplates.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatesget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatesget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatename.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatename.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindexdelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindexdelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessions.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessions.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/sessiondirectory/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/atoc-reference-storagev2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/atoc-reference-storagev2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidsscid-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidsscid-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidsscid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidsscid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapath-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapath-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapath.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapath.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapathandfilenametype-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapathandfilenametype-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-globalscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidsscid-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidsscid-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidsscid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidsscid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapath-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapath-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapath.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapath.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-jsonusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidsscid-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidsscid-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidsscid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidsscid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapath-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapath-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapath.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapath.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-delete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-delete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-put.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype-put.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-sessionssessionidscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidsscid-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidsscid-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidsscid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidsscid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapath-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapath-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapath.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapath.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype-post.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidsscid-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidsscid-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidsscid.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidsscid.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapath-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapath-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapath.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapath.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-delete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-get.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-put.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/storage/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/stringserver/atoc-reference-systemstringsvalidate.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/stringserver/atoc-reference-systemstringsvalidate.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/stringserver/uri-systemstringsvalidate.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/stringserver/uri-systemstringsvalidate.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/stringserver/uri-systemstringsvalidatepost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/stringserver/uri-systemstringsvalidatepost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/titlehistory/atoc-reference-titlehistoryv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/titlehistory/atoc-reference-titlehistoryv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/titlehistory/uri-titlehistoryusersxuidhistorytitlesgetv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/titlehistory/uri-titlehistoryusersxuidhistorytitlesgetv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/titlehistory/uri-titlehistoryusersxuidhistorytitlesv2.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/titlehistory/uri-titlehistoryusersxuidhistorytitlesv2.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/atoc-reference-users.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/atoc-reference-users.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinbox.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinbox.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxmessageiddelete.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxmessageiddelete.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxmessageidget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidinboxmessageidget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidoutbox.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidoutbox.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/users/uri-usersxuidoutboxpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/users/uri-usersxuidoutboxpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/atoc-reference-userstats.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/atoc-reference-userstats.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-batch.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-batch.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-batchpost.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-batchpost.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstats.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstats.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsget.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsget.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsgetvaluemetadata.md",
+      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsgetvaluemetadata.md",
+      "redirect_document_id": true
     }
   ]
 }
