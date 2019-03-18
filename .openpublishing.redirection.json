@@ -1851,7 +1851,7 @@
       "redirect_url": "https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-configure",
       "redirect_document_id": true
     },
-	  {
+    {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
       "redirect_url": "https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos",
       "redirect_document_id": true
@@ -1859,6 +1859,46 @@
     {
       "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/data-sharing-udc.md",
       "redirect_url": "/windows/uwp/xbox-live/configure-xbl/dev-center/access-policies-udc",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/appinstaller-root.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/app-installer-root",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/create-appinstallerfile-vs.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/create-appinstallerfile-vs",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/installing-UWP-apps-web.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/installing-windows10-apps-web",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/install-related-set.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/install-related-set",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/troubleshoot-appinstaller-issues.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/troubleshoot-appinstaller-issues",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/web-install-azure.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/web-install-azure",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/web-install-IIS.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/web-install-iis",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/web-install-aws.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/app-installer/web-install-aws",
       "redirect_document_id": true
     },
     {

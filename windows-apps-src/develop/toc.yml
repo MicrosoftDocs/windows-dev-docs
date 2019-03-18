@@ -767,23 +767,6 @@
           items:
             - name: Optional packages with executable code
               href: ../packaging/optional-packages-with-executable-code.md
-        - name: Install UWP apps with App Installer
-          href: ../packaging/appinstaller-root.md
-          items:
-            - name: Create an App Installer file with Visual Studio
-              href: ../packaging/create-appinstallerfile-vs.md
-            - name: Install UWP apps from a web page
-              href: ../packaging/installing-UWP-apps-web.md
-            - name: Install a related set using an App Installer file
-              href: ../packaging/install-related-set.md
-            - name: Troubleshoot installation issues with App Installer file
-              href: ../packaging/troubleshoot-appinstaller-issues.md
-            - name: Install a UWP app from an Azure Web App
-              href: ../packaging/web-install-azure.md
-            - name: Install a UWP app from an IIS server
-              href: ../packaging/web-install-iis.md
-            - name: Hosting UWP app packages on AWS for web install
-              href: ../packaging/web-install-aws.md
         - name: Install apps with the WinAppDeployCmd.exe tool
           href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: App capability declarations
