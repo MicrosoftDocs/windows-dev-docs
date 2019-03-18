@@ -31,7 +31,7 @@ The **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Win
 > [!NOTE]
 > This article focuses on the **FileIO** methods in examples and discussions. However, the **PathIO** methods follow a similar pattern and most of the guidance in this article applies to those methods too. 
 
-## Conveience vs. control
+## Convenience vs. control
 
 A [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) object is not a file handle like the native Win32 programming model. Instead, a [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) is a representation of a file with methods to manipulate its contents.
 
