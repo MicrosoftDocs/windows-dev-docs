@@ -954,11 +954,20 @@
           href: ../composition/composition-native-interop.md
         - name: Tailoring your UI
           href: ../composition/composition-tailoring.md
-        - name: Using XAML
+        - name: Using UWP XAML
           href: ../composition/using-the-visual-layer-with-xaml.md
           items:
             - name: XAML lighting
               href: ../composition/xaml-lighting.md
+        - name: Modernize desktop apps
+          href: ../composition/visual-layer-in-desktop-apps.md
+          items:
+            - name: Using WPF
+              href: ../composition/using-the-visual-layer-with-wpf.md
+            - name: Using Windows Forms
+              href: ../composition/using-the-visual-layer-with-windows-forms.md
+            - name: Using Win32
+              href: ../composition/using-the-visual-layer-with-win32.md
     - name: Windows as a service
       href: ../updates-and-versions/application-development-for-windows-as-a-service.md
     - name: Windows Runtime components
