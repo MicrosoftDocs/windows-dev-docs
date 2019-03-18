@@ -80,7 +80,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>
     <tr>
         <td>Xbox Live documentation</td>
-        <td><a href="../xbox-live/index.md">Xbox Live developer guide</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Xbox Live developer guide</a></td>
     </tr>
     <tr>
         <td>Xbox One development documentation (XGD)</td>
@@ -1736,7 +1736,7 @@ To update your published game, submit a new app package with a higher version nu
 Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game’s audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
 
 > [!Note]
-> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](../xbox-live/developer-program-overview.md).
+> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>
@@ -1745,19 +1745,19 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Xbox Live overview</td>
-        <td><a href="../xbox-live/index.md">Xbox Live developer guide</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Xbox Live developer guide</a></td>
     </tr>
     <tr>
         <td>Understand which features are available depending on program</td>
-        <td><a href="../xbox-live/developer-program-overview.md#feature-table">Developer program overview: Feature table</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Developer program overview: Feature table</a></td>
     </tr>
     <tr>
         <td>Links to useful resources for developing Xbox Live games</td>
-        <td><a href="../xbox-live/xbox-live-resources.md">Xbox Live resources</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Xbox Live resources</a></td>
     </tr>
     <tr>
         <td>Learn how to get info from Xbox Live services</td>
-        <td><a href="../xbox-live/introduction-to-xbox-live-apis.md">Introduction to Xbox Live APIs</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Introduction to Xbox Live APIs</a></td>
     </tr>
 </table>
 
@@ -1771,23 +1771,23 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Overview</td>
-        <td><a href="../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Get started with the Xbox Live Creators Program</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Get started with the Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your game</td>
-        <td><a href="../xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Step by step guide to integrate Xbox Live Creators Program</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Step by step guide to integrate Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your UWP game created using Unity</td>
-        <td><a href="../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Get started developing an Xbox Live Creators Program title with the Unity game engine</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Get started developing an Xbox Live Creators Program title with the Unity game engine</a></td>
     </tr>
     <tr>
         <td>Set up your development sandbox</td>
-        <td><a href="../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live sandboxes introduction</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Xbox Live sandboxes introduction</a></td>
     </tr>
     <tr>
         <td>Set up accounts for testing</td>
-        <td><a href="../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Authorize Xbox Live accounts in your test environment</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Authorize Xbox Live accounts in your test environment</a></td>
     </tr>
     <tr>
         <td>Samples for Xbox Live Creators Program</td>
@@ -1808,19 +1808,19 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </colgroup>
     <tr>
         <td>Overview</td>
-        <td><a href="../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Get started with Xbox Live as a managed partner or an ID developer</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Get started with Xbox Live as a managed partner or an ID developer</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your game</td>
-        <td><a href="../xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Step by step guide to integrate Xbox Live for managed partners and ID members</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Step by step guide to integrate Xbox Live for managed partners and ID members</a></td>
     </tr>
     <tr>
         <td>Add Xbox Live to your UWP game created using Unity</td>
-        <td><a href="../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners</a></td>
     </tr>
     <tr>
         <td>Set up your development sandbox</td>
-        <td><a href="../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Advanced Xbox Live sandboxes</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Advanced Xbox Live sandboxes</a></td>
     </tr>
     <tr>
         <td>Requirements for games that use Xbox Live (GDN)</td>

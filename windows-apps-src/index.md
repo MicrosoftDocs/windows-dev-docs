@@ -156,7 +156,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                             <a href="xbox-apps/index.md">UWP on Xbox One</a>
                         </p>
                         <p>
-                            <a href="xbox-live/index.md">Xbox Live</a>
+                            <a href="https://docs.microsoft.com/gaming/xbox-live">Xbox Live</a>
                         </p>
                     </div>
                 </div>
