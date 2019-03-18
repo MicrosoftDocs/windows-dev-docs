@@ -8,10 +8,10 @@ ms.localizationpriority: medium
 ---
 # Get Xbox Live analytics data
 
-Use this method in the Microsoft Store analytics API to get the last 30 days of general analytics data for customers playing your [Xbox Live-enabled game](../xbox-live/index.md), including device accessory usage, internet connection type, gamerscore distribution, game statistics, and friends and followers data. This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get the last 30 days of general analytics data for customers playing your [Xbox Live-enabled game](https://docs.microsoft.com/gaming/xbox-live//index.md), including device accessory usage, internet connection type, gamerscore distribution, game statistics, and friends and followers data. This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in Partner Center.
 
 > [!IMPORTANT]
-> This method only supports games for Xbox or games that use Xbox Live services. These games must go through the [concept approval process](../gaming/concept-approval.md), which includes games published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) and games submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). This method does not currently support games published via the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+> This method only supports games for Xbox or games that use Xbox Live services. These games must go through the [concept approval process](../gaming/concept-approval.md), which includes games published by [Microsoft partners](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) and games submitted via the [ID@Xbox program](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). This method does not currently support games published via the [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 Additional analytics data for Xbox Live-enabled games is available via the following methods:
 * [Get Xbox Live achievements data](get-xbox-live-achievements-data.md)

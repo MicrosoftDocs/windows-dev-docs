@@ -20,7 +20,7 @@ Of course, the Fall Creators Update is right around the corner, so stay tuned fo
 
 ### Xbox Live Creators Program
 
-The Xbox Live Creators Program is now live, allowing you to easily build and publish UWP games that can run on both Windows 10 PCs and Xbox One consoles. For more information, see [Get started with the Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+The Xbox Live Creators Program is now live, allowing you to easily build and publish UWP games that can run on both Windows 10 PCs and Xbox One consoles. For more information, see [Get started with the Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## Developer Guidance
 
