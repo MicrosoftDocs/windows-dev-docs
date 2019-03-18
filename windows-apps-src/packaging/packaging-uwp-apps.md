@@ -2,7 +2,7 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Packaging UWP apps
 description: To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords: ["vs.packagewizard",  "vs.storeassociationwizard"]
@@ -141,12 +141,12 @@ To sideload your app on a Windows 10 Mobile device, use the [WinAppDeployCmd.ex
 
 ### Sideload your app package on Windows 10 Anniversary Update or later
 
-Introduced in the Windows 10 Anniversary Update, app packages can be installed simply by double clicking the app package file. To use this, navigate to your app package or app bundle file, and double click it. The App Installer launches and provides the basic app information as well as an install button, installation progress bar, and any relevant error messages.
+Introduced in the Windows 10 Anniversary Update (Windows 10, version 1607), app packages can be installed simply by double clicking the app package file. To use this, navigate to your app package or app bundle file, and double click it. [App Installer](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) launches and provides the basic app information as well as an install button, installation progress bar, and any relevant error messages.
 
 ![App Installer display for installing a sample app called Contoso](images/appinstaller-screen.png)
 
 > [!NOTE]
-> The App Installer assumes that the app is trusted by the device. If you are sideloading a developer or enterprise app, you will need to install the signing certificate to the Trusted People or Trusted Publishers Certification Authorities store on the device. If you're not sure how to do this, see [Installing Test Certificates](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
+> App Installer assumes that the app is trusted by the device. If you are sideloading a developer or enterprise app, you will need to install the signing certificate to the Trusted People or Trusted Publishers Certification Authorities store on the device. If you're not sure how to do this, see [Installing Test Certificates](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
 
 ### Sideload your app package on previous versions of Windows
 
