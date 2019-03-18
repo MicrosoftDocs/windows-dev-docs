@@ -1,4 +1,4 @@
-﻿---
+---
 layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Publish Windows apps
@@ -262,5 +262,3 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         </li>
     </ul>
 </div>
-
----
