@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Publish Windows apps and games  
  
-<p>You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. <a href="https://developer.microsoft.com/store/register">Sign up today!</a></p>
+<p>You can use <a href="https://partner.microsoft.com/dashboard">Partner Center</a> to publish your apps and games to the Microsoft Store. <a href="https://developer.microsoft.com/store/register">Sign up today!</a></p>
 
 <ul class="panelContent cardsK">
     <li>
