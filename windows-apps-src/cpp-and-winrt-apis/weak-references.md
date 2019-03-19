@@ -51,7 +51,7 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync** does work for a while, and then eventually it returns a copy of the `MyClass::m_value` data member. Calling **RetrieveValueAsync** causes an asynchronous object to be created, and that object has an implicit *this* pointer (through which, eventually, `m_value` is accessed).
+**MyClass::RetrieveValueAsync** spends some time working, and eventually it returns a copy of the `MyClass::m_value` data member. Calling **RetrieveValueAsync** causes an asynchronous object to be created, and that object has an implicit *this* pointer (through which, eventually, `m_value` is accessed).
 
 Here's the full sequence of events.
 

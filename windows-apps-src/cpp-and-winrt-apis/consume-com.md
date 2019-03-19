@@ -41,7 +41,7 @@ The code above calls the [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2
 
 ## COM functions that return a specific interface pointer
 
-The [**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns an [**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596) interface pointer via its antepenultimate parameter, which has **ID3D11Device\*\*** type. For functions that return a specific interface pointer like that, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).
+The [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) function returns an [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) interface pointer via its third-from-last parameter, which has **ID3D11Device\*\*** type. For functions that return a specific interface pointer like that, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
