@@ -58,3 +58,12 @@ These articles help you create a flexible UI that looks great on different scree
         Use transforms to rotate, skew, and scale elements.
     :::column-end:::
 :::row-end:::
+
+:::row:::
+    :::column:::
+        ### [Attached layouts](attached-layouts.md)
+        Learn advanced layout concepts in XAML and how to create a custom virtualizing layout.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
