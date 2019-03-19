@@ -42,7 +42,7 @@
       href: layout/show-multiple-views.md
     - name: Alignment, margin, and padding
       href: layout/alignment-margin-padding.md
-    - name: Layout panels
+    - name: Panels
       items:
         - name: Overview
           href: layout/layout-panels.md
@@ -54,6 +54,8 @@
           href: layout/custom-panels-overview.md
         - name: "Custom panel example: BoxPanel"
           href: layout/boxpanel-example-custom-panel.md
+    - name: Attached Layout
+      href: layout/attached-layouts.md
     - name: Transforms
       items:
         - name: Overview
