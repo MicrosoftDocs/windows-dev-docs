@@ -6,12 +6,10 @@ keywords:
 - Stencil buffers
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
-# Stencil buffers
 
+# Stencil buffers
 
 A *stencil buffer* is used to mask pixels in an image, to produce special effects. The mask controls whether the pixel is drawn or not. These special effects include compositing; decaling; dissolves, fades, and swipes; outlines and silhouettes; and two-sided stencil. Some of the more common effects are shown below.
 
@@ -21,7 +19,6 @@ Stencil buffer information is embedded in the z-buffer data.
 
 ## <span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>How the stencil buffer works
 
-
 Direct3D performs a test on the contents of the stencil buffer on a pixel-by-pixel basis. For each pixel in the target surface, it performs a test using the corresponding value in the stencil buffer, a stencil reference value, and a stencil mask value. If the test passes, Direct3D performs an action. The test is performed using the following steps.
 
 1.  Perform a bitwise AND operation of the stencil reference value with the stencil mask.
@@ -30,7 +27,7 @@ Direct3D performs a test on the contents of the stencil buffer on a pixel-by-pix
 
 The above steps are shown in the following line of code:
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

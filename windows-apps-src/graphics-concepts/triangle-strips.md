@@ -6,17 +6,14 @@ keywords:
 - Triangle strips
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
-# Triangle strips
 
+# Triangle strips
 
 A triangle strip is a series of connected triangles. Because the triangles are connected, the application does not need to repeatedly specify all three vertices for each triangle. For example, you need only seven vertices to define the following triangle strip.
 
 ## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example
-
 
 ![illustration of a triangle strip with seven vertices](images/tristrip.png)
 
@@ -30,7 +27,7 @@ The following illustration depicts a rendered triangle strip.
 
 The following code shows how to create vertices for this triangle strip.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -49,7 +46,7 @@ CUSTOMVERTEX Vertices[] =
 
 The code example below shows how to render this triangle strip in Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

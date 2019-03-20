@@ -16,7 +16,7 @@ To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/in
 ## A C++/WinRT quick-start
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
@@ -114,7 +114,7 @@ Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULT
 
 This section shows you how you can add C++/WinRT support to a Windows Desktop application project that you might have. If you don't have an existing Windows Desktop application project, then you can follow along with these steps by first creating one. For example, open Visual Studio and create a **Visual C++** \> **Windows Desktop** \> **Windows Desktop Application** project.
 
-You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix). For details, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) and the NuGet package. For details, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### Set project properties
 
