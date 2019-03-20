@@ -66,4 +66,3 @@ To exempt an app in battery saver, users must go to the "Battery Usage by App" i
 ## Related topics
 - [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
 - [Requesting permission to run in the background](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
-- 
