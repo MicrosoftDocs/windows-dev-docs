@@ -95,11 +95,11 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Because a C++/WinRT object directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template, the C++/WinRT object can call its [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable; just calling **get_strong** increments your reference count, and keeps your implicit *this* pointer valid.
+Because a C++/WinRT object directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template, the C++/WinRT object can call its [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable; just calling **get_strong** increments your reference count, and keeps your implicit *this* pointer valid.
 
 This resolves the problem that we previously had when we got to step 4. Even if all other references to the class instance disappear, the coroutine has taken the precaution of guaranteeing that its dependencies are stable.
 
-If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) to retrieve a weak reference to *this*. Just confirm that you can retrieve a strong reference before accessing *this*.
+If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) to retrieve a weak reference to *this*. Just confirm that you can retrieve a strong reference before accessing *this*.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -237,7 +237,7 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 
 ### The solution
 
-The solution is to capture a strong reference. A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function), which retrieves a strong reference to our *this* pointer.
+The solution is to capture a strong reference. A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -255,7 +255,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) to retrieve a weak reference to *this*. Just confirm that you can still retrieve a strong reference from it before accessing members.
+If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) to retrieve a weak reference to *this*. Just confirm that you can still retrieve a strong reference from it before accessing members.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -290,13 +290,13 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 
 This is the standard, conventional way to refer to an object and its member function. To make this safe, you can&mdash;as of version 10.0.17763.0 (Windows 10, version 1809) of the Windows SDK&mdash;establish a strong or a weak reference at the point where the handler is registered. At that point, the event recipient object is known to be still alive.
 
-For a strong reference, just call [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) in place of the raw *this* pointer. C++/WinRT ensures that the resulting delegate holds a strong reference to the current object.
+For a strong reference, just call [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) in place of the raw *this* pointer. C++/WinRT ensures that the resulting delegate holds a strong reference to the current object.
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-For a weak reference, call [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function). C++/WinRT ensures that the resulting delegate holds a weak reference. At the last minute, and behind the scenes, the delegate attempts to resolve the weak reference to a strong one, and only calls the member function if it's successful.
+For a weak reference, call [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function). C++/WinRT ensures that the resulting delegate holds a weak reference. At the last minute, and behind the scenes, the delegate attempts to resolve the weak reference to a strong one, and only calls the member function if it's successful.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
@@ -362,7 +362,7 @@ if (Class strong = weak.get())
 }
 ```
 
-Provided that some other strong reference still exists, the [**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weakrefget-function) call increments the reference count and returns the strong reference to the caller.
+Provided that some other strong reference still exists, the [**weak_ref::get**](/uwp/cpp-ref-for-winrt/weak-ref#weak_refget-function) call increments the reference count and returns the strong reference to the caller.
 
 ### Opting out of weak reference support
 Weak reference support is automatic. But you can choose explicitly to opt out of that support by passing the [**winrt::no_weak_ref**](/uwp/cpp-ref-for-winrt/no-weak-ref) marker struct as a template argument to your base class.
@@ -388,7 +388,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 It doesn't matter where in the variadic parameter pack the marker struct appears. If you request a weak reference for an opted-out type, then the compiler will help you out with "*This is only for weak ref support*".
 
 ## Important APIs
-* [implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
+* [implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [winrt::make_weak function template](/uwp/cpp-ref-for-winrt/make-weak)
 * [winrt::no_weak_ref marker struct](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref struct template](/uwp/cpp-ref-for-winrt/weak-ref)

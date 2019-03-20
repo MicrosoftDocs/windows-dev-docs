@@ -7,10 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript
-
-
-
 
 This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 
@@ -26,7 +24,6 @@ This walkthrough illustrates the following tasks. After you've completed the fir
 -   Microsoft Visual Studio 2015 or Microsoft Visual Studio Community 2015
 
 ## Creating a simple Windows Runtime class
-
 
 This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime Component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
 
@@ -65,7 +62,6 @@ This section creates a Universal Windows app built for Windows using JavaScript,
 
 ## Call the component from JavaScript
 
-
 To use the Windows Runtime type from JavaScript, add the following code in the anonymous function in the default.js file (in the js folder of the project) that is provided by the Visual Studio template. It should go after the app.oncheckpoint event handler and before the call to app.start.
 
 ```javascript
@@ -94,7 +90,6 @@ Notice that the first letter of each member name is changed from uppercase to lo
 In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for UWP apps and Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## Create a simple user interface
-
 
 In your JavaScript project, open the default.html file and update the body as shown in the following code. This code includes the complete set of controls for the example app and specifies the function names for the click events.
 
@@ -155,10 +150,9 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello World" app (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216).
+This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello, World" app (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ## Build and run the app
-
 
 Before you build, change the target platform for all projects to ARM, x64, or x86, as appropriate for your computer.
 
@@ -177,18 +171,13 @@ Choose the Basics 2 button to increment the value of the SampleProperty property
 
 > **Note**  By default, you can set breakpoints only in your JavaScript code. To debug your Visual Basic or C# code, see Creating Windows Runtime Components in C# and Visual Basic.
 
- 
-
 To stop debugging and close your app, switch from the app to Visual Studio, and choose Shift+F5.
 
 ## Using the Windows Runtime from JavaScript and managed code
 
-
 The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and the .NET Framework support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
 
 > **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime Components](raising-events-in-windows-runtime-components.md).
-
- 
 
 In the SampleComponent project, add a new **public sealed** class (**Public NotInheritable** class in Visual Basic) named PropertySetStats. The class wraps a PropertySet collection and handles its MapChanged event. The event handler tracks the number of changes of each kind that occur, and the DisplayStats method produces a report that is formatted in HTML. Notice the additional **using** statement (**Imports** statement in Visual Basic); be careful to add this to the existing **using** statements rather than overwriting them.
 
@@ -372,7 +361,6 @@ To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. 
 By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Returning managed types from your component
-
 
 As discussed previously, you can pass native Windows Runtime types back and forth freely between your JavaScript code and your C# or Visual Basic code. Most of the time, the type names and member names will be the same in both cases (except that the member names start with lowercase letters in JavaScript). However, in the preceding section, the PropertySet class appeared to have different members in managed code. (For example, in JavaScript you called the insert method, and in the .NET Framework code you called the Add method.) This section explores the way those differences affect .NET Framework types passed to JavaScript.
 

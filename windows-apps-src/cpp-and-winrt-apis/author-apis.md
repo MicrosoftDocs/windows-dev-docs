@@ -252,7 +252,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > However, if you're referencing your type from your XAML UI, then there will be both an implementation type and a projected type in the same project. In that case, **make** returns an instance of the projected type. For a code example of that scenario, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-We can only use `istringable` (in the code example above) to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) on it to query for other projected types or interfaces, which you can also either use or return.
+We can only use `istringable` (in the code example above) to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) on it to query for other projected types or interfaces, which you can also either use or return.
 
 ```cppwinrt
 istringable.ToString();
@@ -288,7 +288,7 @@ void ImplFromIClosable(IClosable const& from)
 }
 ```
 
-But only the original interface object holds on to a reference. If *you* want to hold on to it, then you can call [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function).
+But only the original interface object holds on to a reference. If *you* want to hold on to it, then you can call [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function).
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
@@ -388,7 +388,7 @@ Until you make the edit described above (to pass that constructor parameter on t
 
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
 * [winrt::from_abi function template](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
