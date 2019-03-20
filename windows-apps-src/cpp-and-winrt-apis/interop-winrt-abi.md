@@ -16,13 +16,13 @@ A Windows Runtime class (runtime class) is really an abstraction. This abstracti
 
 The Windows SDK headers in the folder "%WindowsSdkDir%Include\10.0.17134.0\winrt" (adjust the SDK version number for your case, if necessary), are the Windows Runtime ABI header files. They were produced by the MIDL compiler. Here's an example of including one of these headers.
 
-```
+```cpp
 #include <windows.foundation.h>
 ```
 
 And here's a simplified example of one of the ABI types that you'll find in that particular SDK header. Note the **ABI** namespace; **Windows::Foundation**, and all other Windows namespaces, are declared by the SDK headers within the **ABI** namespace.
 
-```
+```cpp
 namespace ABI::Windows::Foundation
 {
     IUriRuntimeClass : public IInspectable
@@ -46,7 +46,7 @@ For example, if you look in the folder "%WindowsSdkDir%Include\10.0.17134.0\cppw
 
 And, from that header, here (simplified) is the C++/WinRT equivalent of that ABI type we just saw.
 
-```
+```cppwinrt
 namespace winrt::Windows::Foundation
 {
     struct Uri : IUriRuntimeClass, ...
