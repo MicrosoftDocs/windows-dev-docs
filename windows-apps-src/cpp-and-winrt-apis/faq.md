@@ -58,7 +58,7 @@ We don't support the LLVM and Clang toolchain for C++/WinRT, but we do make use 
 
 Go to the [LLVM Download Page](https://releases.llvm.org/download.html), look for **Download LLVM 6.0.0** > **Pre-Built Binaries**, and download **Clang for Windows (64-bit)**. During installation, opt to add LLVM to the PATH system variable so that you'll be able to invoke it from a command prompt. For the purposes of this experiment, you can ignore any "Failed to find MSBuild toolsets directory" and/or "MSVC integration install failed" errors, if you see them. There are a variety of ways to invoke LLVM/Clang; the example below shows just one way.
 
-```
+```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
 // main.cpp
 #pragma comment(lib, "windowsapp")
@@ -116,7 +116,7 @@ int main()
 
 For the call to **ToString** above, the **Go To Declaration** command in Visual Studio shows that the projection of the Windows Runtime **IStringable::ToString** into C++/WinRT looks like this.
 
-```
+```cppwinrt
 winrt::hstring ToString() const;
 ```
 

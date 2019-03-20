@@ -6,12 +6,10 @@ keywords:
 - Hull Shader (HS) stage
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
-# Hull Shader (HS) stage
 
+# Hull Shader (HS) stage
 
 The Hull Shader (HS) stage is one of the tessellation stages, which efficiently break up a single surface of a model into many triangles. The Hull Shader (HS) stage produces a geometry patch (and patch constants) that correspond to each input patch (quad, triangle, or line). A hull shader is invoked once per patch, and it transforms input control points that define a low-order surface into control points that make up a patch. It also does some per-patch calculations to provide data for the [Tessellator (TS) stage](tessellator-stage--ts-.md) and the [Domain Shader (DS) stage](domain-shader-stage--ds-.md).
 
@@ -48,7 +46,7 @@ Between 1 and 32 output control points, which together make up a patch.
 ## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,
