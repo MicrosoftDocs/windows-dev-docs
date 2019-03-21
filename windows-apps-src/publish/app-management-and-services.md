@@ -2,7 +2,7 @@
 Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
 title: App management and services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -21,7 +21,7 @@ The **Services** section lets you manage several different services for your app
 
 If you are publishing a game, you can enable the [Xbox Live Creators Program](https://xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
 
-For more info, see [Get started with the Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) and [Create a new Xbox Live Creators Program title and publish to the test environment](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/create-and-test-a-new-creators-title.md).
+For more info, see [Get started with the Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) and [Create a new Xbox Live Creators Program title and publish to the test environment](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
 ## Experimentation
 
