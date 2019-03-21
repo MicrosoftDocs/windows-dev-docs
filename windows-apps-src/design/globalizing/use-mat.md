@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
+
 # Use the Multilingual App Toolkit 4.0
 
 The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
@@ -87,9 +88,7 @@ In addition to character replacement and expansion, the pseudo engine provides a
 
 In this "Hello, World!" text example, the pseudo translation expands to take about 30 percent more screen space, and then applies the resource tracker.
 
-```
-"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
-```
+`"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
 ### Step 6. Translate your app into selected languages
 

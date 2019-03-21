@@ -24,7 +24,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights` |
 
 
 ### Request header
@@ -51,14 +51,14 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to list all the package flights for an app.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 The following example demonstrates how to list the first package flight for an app.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -95,7 +95,7 @@ The following example demonstrates the JSON response body returned by a successf
 
 | Value      | Type   | Description       |
 |------------|--------|---------------------|
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 2 but there are 4 package flights for the app, the response body will include a @nextLink value of ```applications/{applicationid}/listflights/?skip=2&top=2```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` to request the next 2 package flights. |
+| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 2 but there are 4 package flights for the app, the response body will include a @nextLink value of `applications/{applicationid}/listflights/?skip=2&top=2`, which indicates that you can call `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` to request the next 2 package flights. |
 | value      | array  | An array of objects that provide information about package flights for the specified app. For more information about the data in each object, see [Flight resource](get-app-data.md#flight-object).               |
 | totalCount | int    | The total number of rows in the data result for the query (that is, the total number of package flights for the specified app).   |
 

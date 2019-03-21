@@ -27,7 +27,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### Request header
@@ -52,7 +52,7 @@ The request body has the following parameters.
 
 The following example demonstrates how to create a new consumable add-on for an app.
 
-```syntax
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q...
 Content-Type: application/json

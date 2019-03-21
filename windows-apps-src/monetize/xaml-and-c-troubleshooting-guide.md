@@ -165,7 +165,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated it will not be available.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Partner Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -230,7 +230,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     This C# code retrieves the error message and displays it in the **TextBlock**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
 
@@ -247,7 +247,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     The following example demonstrates how to call the **Refresh** method.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
 

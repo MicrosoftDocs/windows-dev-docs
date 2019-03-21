@@ -86,7 +86,7 @@ To validate a receipt's authenticity, you need your back-end system (a web servi
 Here's an example of that validation process. This code runs in a .NET Framework console application that includes a reference to the **System.Security** assembly.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 

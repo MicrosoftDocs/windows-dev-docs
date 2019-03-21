@@ -96,7 +96,7 @@ The following diagram illustrates the relationship between campaigns, delivery l
 
 The following code example demonstrates how to obtain an Azure AD access token and call the Microsoft Store promotions API from a C# console app. To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario. This example requires the [Json.NET package](https://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Microsoft Store promotions API.
 
-[!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
+[!code-csharp[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 
 ## Related topics
 

@@ -24,7 +24,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### Request header
@@ -50,7 +50,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to retrieve information about a package flight with the ID 43e448df-97c9-4a43-a0bc-2a445e736bcd for an app with the Store ID value 9WZDNCRD91MD.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -99,7 +99,7 @@ The *lastPublishedFlightSubmission* and *pendingFlightSubmission* values in the 
 | Value           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.               |
+| resourceLocation   | string  | A relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to retrieve the complete data for the submission.               |
 
 
 ## Error codes

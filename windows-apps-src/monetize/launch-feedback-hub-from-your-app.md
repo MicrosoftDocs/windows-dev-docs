@@ -42,13 +42,13 @@ To launch Feedback Hub from your app:
 
     If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]
       > Although Feedback Hub is not supported on Xbox devices at this time, the **IsSupported** property currently returns **true** on Xbox devices that run version 10.0.14271 or later of Windows 10. This is a known issue that will be fixed in a future release of the Microsoft Store Services SDK.  
 
 8. In the event handler that runs when the user clicks the control, get a [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) object and call the [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) method to launch the Feedback Hub app. There are two overloads for this method: one without parameters, and another one that accepts a dictionary of key and value pairs that contain metadata that you want to associate with the feedback. The following example demonstrates how to launch Feedback Hub in the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event handler for a [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button).
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
 ## Design recommendations for your feedback UI
 

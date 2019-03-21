@@ -46,7 +46,7 @@ To follow this walkthrough, you must have a Partner Center account and you must 
 6. Drag a **Button** from **Toolbox** to the page.
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
 8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from Partner Center in the previous section.
-    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. Save the code file and build the project.
 

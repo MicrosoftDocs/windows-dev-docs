@@ -24,37 +24,37 @@ This section demonstrates how to use the [UWP Payment Request API](https://docs.
 > [!Note]
 > Replace the **merchant-id-from-seller-portal** text with the merchant ID that you received from the Seller Center.
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### 2. Pull the payment details together. 
 
 These details will be shown to the user in the payment app. 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### 3. Include the sales tax. 
 
 > [!Important]
 > The API does not add up items or calculate the sales tax for you. Remember that tax rates vary by jurisdiction. For clarity, we use a hypothetical 9.5% tax rate.
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### 4. (Optional)  Add discounts or other modifiers to the total. 
 
 Here's an example of adding a discount for using a specific Contoso credit card to the display items. (*Contoso* is a fictitious name.)
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### 5. Assemble all the payment details.
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### 6. Submit the payment request. 
 
 Call the **SubmitPaymentRequestAsync** method to submit your payment request. This brings up the payment app showing the available payment options.
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 The user is prompted to sign in with their Microsoft account.
 
@@ -64,7 +64,7 @@ After the user signs in, they can select payment options and shipping address th
 
 Your app waits for the user to tap **Pay**, then completes the order.
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 After payment is complete, the user is presented with an **Order confirmed** screen.
 

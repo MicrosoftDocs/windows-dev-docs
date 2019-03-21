@@ -36,7 +36,7 @@ The code in these examples assume:
 To get Store product info about the current app, use the [GetStoreProductForCurrentAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync) method. This is an asynchronous method that returns a [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object that you can use to get info such as the price.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
 ## Get info for add-ons with known Store IDs that are associated with the current app
 
@@ -48,7 +48,7 @@ To get Store product info for add-ons that are associated with the current app a
 This example retrieves info for durable add-ons with the specified Store IDs that are associated with the current app.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
 ## Get info for add-ons that are available for purchase from the current app
 
@@ -60,7 +60,7 @@ To get Store product info for the add-ons that are currently available for purch
 The following example retrieves info for all durable add-ons, Store-managed consumable add-ons, and developer-managed consumable add-ons that are available for purchase from the current app.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
 
 ## Get info for add-ons for the current app that the user has purchased
@@ -73,7 +73,7 @@ To get Store product info for add-ons that the current user has purchased, use t
 The following example retrieves info for durable add-ons with the specified [Store IDs](in-app-purchases-and-trials.md#store_ids).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
 
 ## Related topics
 
