@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 
 Developers sometimes run into a set of common problems when using the **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes to perform file system I/O operations. For example, common problems include:
 
-•	A file is partially written
-•	The app receives an exception when calling one of the methods. 
-•	The operations leave behind .TMP files  with a file name similar to the target file name.
+* A file is partially written.
+* The app receives an exception when calling one of the methods.
+* The operations leave behind .TMP files  with a file name similar to the target file name.
 
 The **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes include the following:
 
