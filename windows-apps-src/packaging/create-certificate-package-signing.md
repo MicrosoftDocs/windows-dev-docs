@@ -32,7 +32,8 @@ A self signed certificate is useful for testing your app before you're ready to 
 To use a certificate to sign your app package, the "Subject" in the certificate **must** match the "Publisher" section in your app's manifest.
 
 For example, the "Identity" section in your app's AppxManifest.xml file should look something like this:
-```
+
+```xml
   <Identity Name="Contoso.AssetTracker" 
     Version="1.0.0.0" 
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
@@ -41,21 +42,24 @@ For example, the "Identity" section in your app's AppxManifest.xml file should l
 The "Publisher", in this case, is "CN=Contoso Software, O=Contoso Corporation, C=US" which needs to be used for creating your certificate. 
 
 ### Use **New-SelfSignedCertificate** to create a certificate
+
 Use the **New-SelfSignedCertificate** PowerShell cmdlet to create a self signed certificate. **New-SelfSignedCertificate** has several parameters for customization, but for the purpose of this article, we'll focus on creating a simple certificate that will work with **SignTool**. For more examples and uses of this cmdlet, see [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate).
 
 Based on the AppxManifest.xml file from the previous example, you should use the following syntax to create a certificate. In an elevated PowerShell prompt:
-```
+
+```powershell
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
 After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the command will also produce the certificate's thumbprint.  
 
-**Note**  
 You can view your certificate in a PowerShell window by using the following commands:
-```
+
+```powershell
 Set-Location Cert:\LocalMachine\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
+
 This will display all of the certificates in your local store.
 
 ## Export a certificate 
@@ -64,18 +68,21 @@ To export the certificate in the local store to a Personal Information Exchange 
 
 When using **Export-PfxCertificate**, you must either create and use a password or use the "-ProtectTo" parameter to specify which users or groups can access the file without a password. Note that an error will be displayed if you don't use either the "-Password" or "-ProtectTo" parameter.
 
-- **Password usage**
-```
+### Password usage
+
+```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo usage**
-```
+### ProtectTo usage
+
+```powershell
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 After you create and export your certificate, you're ready to sign your app package with **SignTool**. For the next step in the manual packaging process, see [Sign an app package using SignTool](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
-## Security Considerations 
+## Security considerations
+
 By adding a certificate to [local machine certificate stores](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores), you affect the certificate trust of all users on the computer. It is recommended that you remove those certificates when they are no longer necessary to prevent them from being used to compromise system trust.
