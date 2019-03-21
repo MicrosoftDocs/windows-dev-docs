@@ -68,7 +68,7 @@ Menus and context menus are similar in how they look and what they can contain. 
 
 When should you use a menu or a context menu?
 
-- If the host element is a button or some other command element who's primary role is to present additional commands, use a menu.
+- If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.
 - If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu.
 
 For example, use a menu on a button to provide filtering and sorting options for a list. In this scenario, the primary purpose of the button control is to provide access to a menu.
@@ -124,15 +124,17 @@ Don't feel obligated to provide icons for commands that don't have a standard vi
 
 ## Create a menu flyout or a context menu
 
-To create a menu flyout or a context menu, you use the [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030). You define the contents of the menu by adding [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), and [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) objects to the MenuFlyout.
+To create a menu flyout or a context menu, you use the [MenuFlyout class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
 
 These objects are for:
 
-- [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)—Performing an immediate action.
-- [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)—Switching an option on or off.
-- [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)—Visually separating menu items.
+- [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutitem)—Performing an immediate action.
+- [MenuFlyoutSubItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutsubitem)—Containing a cascading list of menu items.
+- [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)—Switching an option on or off.
+- [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)—Switching between mutually-exclusive menu items.
+- [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator)—Visually separating menu items.
 
-This example creates a [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) and uses the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property, a property available to most controls, to show the MenuFlyout as a context menu.
+This example creates a [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) and uses the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property, a property available to most controls, to show the MenuFlyout as a context menu.
 
 ````xaml
 <Rectangle
@@ -163,7 +165,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-The next example is nearly identical, but instead of using the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property to show the [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu.
+The next example is nearly identical, but instead of using the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property to show the [MenuFlyout class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu.
 
 ````xaml
 <Rectangle
@@ -202,7 +204,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### Light dismiss
 
-Light dismiss controls, such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families, but apps can choose to force the overlay to be always **On** or always **Off**.
+Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -221,8 +223,8 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 > This example shows only how to create the UI structure, but does not show implementation of any of the commands.
 
 ```xaml
-<MenuBar>
-    <MenuBarItem Title="File">
+<muxc:MenuBar>
+    <muxc:MenuBarItem Title="File">
         <MenuFlyoutSubItem Text="New">
             <MenuFlyoutItem Text="Plain Text Document"/>
             <MenuFlyoutItem Text="Rich Text Document"/>
@@ -230,21 +232,32 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
         </MenuFlyoutSubItem>
         <MenuFlyoutItem Text="Open..."/>
         <MenuFlyoutItem Text="Save"/>
-        <MenuFlyoutSeparator/>
+        <MenuFlyoutSeparator />
         <MenuFlyoutItem Text="Exit"/>
-    </MenuBarItem>
+    </muxc:MenuBarItem>
 
-    <MenuBarItem Title="Edit">
+    <muxc:MenuBarItem Title="Edit">
         <MenuFlyoutItem Text="Undo"/>
         <MenuFlyoutItem Text="Cut"/>
         <MenuFlyoutItem Text="Copy"/>
         <MenuFlyoutItem Text="Paste"/>
-    </MenuBarItem>
+    </muxc:MenuBarItem>
 
-    <MenuBarItem Title="Help">
+    <muxc:MenuBarItem Title="View">
+        <MenuFlyoutItem Text="Output"/>
+        <MenuFlyoutSeparator/>
+        <muxc:RadioMenuFlyoutItem Text="Landscape" GroupName="OrientationGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Portrait" GroupName="OrientationGroup" IsChecked="True"/>
+        <MenuFlyoutSeparator/>
+        <muxc:RadioMenuFlyoutItem Text="Small icons" GroupName="SizeGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Medium icons" IsChecked="True" GroupName="SizeGroup"/>
+        <muxc:RadioMenuFlyoutItem Text="Large icons" GroupName="SizeGroup"/>
+    </muxc:MenuBarItem>
+
+    <muxc:MenuBarItem Title="Help">
         <MenuFlyoutItem Text="About"/>
-    </MenuBarItem>
-</MenuBar>
+    </muxc:MenuBarItem>
+</muxc:MenuBar>
 ```
 
 ## Get the sample code
@@ -254,5 +267,5 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 
 ## Related articles
 
-- [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [MenuBar class](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)
+- [MenuFlyout class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout)
+- [MenuBar class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubar)
