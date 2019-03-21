@@ -28,7 +28,7 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
 ### MainPage.xaml.cs
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
+[!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
 
  
 ## Related topics

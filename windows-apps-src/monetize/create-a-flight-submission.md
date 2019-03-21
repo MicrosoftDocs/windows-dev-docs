@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, create flight submission
 ms.localizationpriority: medium
 ---
+
 # Create a package flight submission
 
 Use this method in the Microsoft Store submission API to create a new submission for a package flight for an app. After you successfully create a new submission by using this method, [update the submission](update-a-flight-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-a-flight-submission.md) for ingestion and publishing.
@@ -30,7 +31,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions` |
 
 
 ### Request header
@@ -56,7 +57,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to create a new package flight submission for an app that has the Store ID 9WZDNCRD91MD.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -112,7 +113,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The package flight submission could not be created because the request is invalid. |
 | 409  | The package flight submission could not be created because of the current state of the app, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
 
 ## Related topics
 

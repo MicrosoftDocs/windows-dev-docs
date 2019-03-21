@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, create app submission
 ms.localizationpriority: medium
 ---
+
 # Create an app submission
 
 Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account. After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.
 
 For more information about how this method fits into the process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
-
 
 ## Prerequisites
 
@@ -28,8 +28,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
-
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions` |
 
 ### Request header
 
@@ -37,13 +36,11 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-
 ### Request parameters
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app for which you want to create a submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-
 
 ### Request body
 
@@ -53,7 +50,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to create a new submission for an app.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -181,7 +178,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The submission could not be created because the request is invalid. |
 | 409  | The submission could not be created because of the current state of the app, or the app uses a Partner Center  feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
 
 ## Related topics
 

@@ -29,7 +29,7 @@ The initial purchase request is made with [RequestProductPurchaseAsync](https://
 The following example shows a consumable in-app product purchase request. You'll notice code comments indicating when your app should conduct its local fulfillment of the consumable in-app product for two different scenarios—when the request is successful, and when the request is not successful because of an unfulfilled purchase of that same product.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
 
 ## Step 2: Tracking local fulfillment of the consumable
 
@@ -41,7 +41,7 @@ When granting your customer access to the consumable in-app product, it's import
 The following example demonstrates use of the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) properties from the [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) call in the previous step to identify the purchased product for fulfillment. A collection is used to store the product information in a location that can later be referenced to confirm that local fulfillment was successful.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
 
 This next example shows how to use the array from the previous example to access product ID/transaction ID pairs that are later used when reporting fulfillment to the Store.
 
@@ -49,7 +49,7 @@ This next example shows how to use the array from the previous example to access
 > Whatever methodology your app uses to track and confirm fulfillment, your app must demonstrate due diligence to ensure that your customers are not charged for items they haven't received.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
 
 ## Step 3: Reporting product fulfillment to the Store
 
@@ -59,7 +59,7 @@ After local fulfillment is completed, your app must make a [ReportConsumableFulf
 > Failure to report fulfilled consumable in-app products to the Store will result in the user being unable to purchase that product again until fulfillment for the previous purchase is reported.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
 
 ## Step 4: Identifying unfulfilled purchases
 
@@ -68,7 +68,7 @@ Your app can use the [GetUnfulfilledConsumablesAsync](https://docs.microsoft.com
 The following example demonstrates how [GetUnfulfilledConsumablesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) can be used to enumerate unfulfilled consumables, and how your app can iterate through this list to complete local fulfillment.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
 
 ## Related topics
 

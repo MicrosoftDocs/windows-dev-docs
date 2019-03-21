@@ -85,7 +85,7 @@ To create a submission for an app, follow this process.
 
 3. [Create an app submission](create-an-app-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
     ```
 
@@ -98,7 +98,7 @@ To create a submission for an app, follow this process.
 
 5. Revise the [app submission](#app-submission-object) data with any required changes for the new submission, and execute the following method to [update the app submission](update-an-app-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ To create a submission for an app, follow this process.
 
 5. [Commit the app submission](commit-an-app-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
     ```
 
 6. Check on the commit status by executing the following method to [get the status of the app submission](get-status-for-an-app-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status
     ```
 

@@ -7,8 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, commit app submission
 ms.localizationpriority: medium
 ---
-# Commit an app submission
 
+# Commit an app submission
 
 Use this method in the Microsoft Store submission API to commit a new or updated app submission to  Partner Center. The commit action alerts Partner Center that the submission data has been uploaded (including any related packages and images). In response, Partner Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in Partner Center.
 
@@ -28,7 +28,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` |
+| POST    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit` |
 
 
 ### Request header
@@ -45,7 +45,6 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app that contains the submission you want to commit. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
-
 ### Request body
 
 Do not provide a request body for this method.
@@ -54,7 +53,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to commit an app submission.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243610/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -75,7 +74,6 @@ The following example demonstrates the JSON response body for a successful call 
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
-
 ## Error codes
 
 If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
@@ -85,7 +83,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
 | 409  | The specified submission was found but it could not be committed in its current state, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
-
 
 ## Related topics
 

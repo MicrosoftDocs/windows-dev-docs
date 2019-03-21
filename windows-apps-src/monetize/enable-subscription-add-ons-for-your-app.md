@@ -84,14 +84,14 @@ This example demonstrates how to request the purchase of a known subscription ad
 4. Finally, the code calls [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) method to request the purchase of the subscription. If a trial is available for the subscription, the trial will be offered to the customer for purchase. Otherwise, the full subscription will be offered for purchase.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### Get info about subscription add-ons for the current app
 
 This code example demonstrates how to get info for all the subscription add-ons that are available in your app. To get this info, first use the [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) method to get the collection of [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) objects that represent each of the available add-ons for the app. Then, get the [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) for each product and use the [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) and [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) properties to access the subscription info.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 
