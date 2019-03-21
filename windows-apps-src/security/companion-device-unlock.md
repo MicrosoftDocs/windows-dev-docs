@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 ---
 # Windows Unlock with Windows Hello companion (IoT) devices
 
+> [!WARNING]
+> Some information relates to prereleased product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+
 A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 
 > **Note** Microsoft will be deprecating the Windows Hello companion device framework in the future and will publish the date early to ensure customers have adequate lead time to deploy alternative solutions.
@@ -67,6 +70,8 @@ Each Windows Hello companion device should be combined with an app that supports
 Any number of these user signals can be combined into one. User presence and intent signals must be required on each use.
 
 ### Registration and future communication between a PC and Windows Hello companion devices
+
+> In the next major release of Windows following 1809, there is a behavioral change to companion device registration. For users that currently have provisioned and are using a companion device and upgrade to this release, there will be no changes. For users that are not using the companion device framework and upgrade, policy must be enabled before setting up a companion device with Windows Hello.  
 
 Before a Windows Hello companion device can be plugged into the Windows Hello companion device framework, it needs to be registered with the framework. The experience for registration is completely owned by the Windows Hello companion device app.
 
@@ -159,6 +164,8 @@ Enterprises have two options for controlling the Windows Hello companion device 
 
 - Turn the feature on or off
 - Define the whitelist of Windows Hello companion devices allowed using Windows app locker
+
+The feature can be controlled using MDM policy or group policy. For MDM, this feature is managed through the Policy CSP under Authentication/AllowSecondaryAuthenticationDevice. For group policy, this feature is managed using the Allow companion device for secondary authentication policy which is under the Windows Components/Microsoft Secondary Authentication Factor path.  
 
 The Windows Hello companion device framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a Windows Hello companion device type is allowed (for example, only a companion device with a serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
 
