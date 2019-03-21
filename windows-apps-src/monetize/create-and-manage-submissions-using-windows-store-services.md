@@ -7,8 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API
 ms.localizationpriority: medium
 ---
-# Create and manage submissions
 
+# Create and manage submissions
 
 Use the *Microsoft Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Partner Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
@@ -76,7 +76,7 @@ Before you call any of the methods in the Microsoft Store submission API, you mu
 
 To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8

@@ -30,7 +30,7 @@ Whether your app is free or not, you can sell content, other apps, or new app fu
 When your app is initializing, get the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) object for your app by initializing the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) or [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) to enable purchases of an in-app product.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
 
 ## Step 2: Add the in-app offers to your app
 
@@ -57,7 +57,7 @@ For each feature that you want to make available through an in-app product, crea
     Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**,is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
 
 3.  **Add the purchase UI for this feature**
 
@@ -66,7 +66,7 @@ For each feature that you want to make available through an in-app product, crea
     Here's how to test to see if your customer already owns an in-app product and, if they don't, displays the purchase dialog so they can buy it. Replace the comment "show the purchase dialog" with your custom code for the purchase dialog (such as a page with a friendly "Buy this app!" button).
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
 
 ## Step 3: Change the test code to the final calls
 

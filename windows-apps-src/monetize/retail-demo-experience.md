@@ -152,7 +152,7 @@ console.log(pro.retailInfo.properties[pro.KnownRetailInfoProperties.price);
 
 #### IDL
 
-```
+```cpp
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 //
 //  WindowsRuntimeAPISet

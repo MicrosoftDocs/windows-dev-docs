@@ -79,7 +79,7 @@ To create a submission for a package flight, follow this process.
 
 3. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
     ```
 
@@ -92,7 +92,7 @@ To create a submission for a package flight, follow this process.
 
 5. Revise the [flight submission](#flight-submission-object) data with any required changes for the new submission, and execute the following method to [update the package flight submission](update-a-flight-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -115,13 +115,13 @@ To create a submission for a package flight, follow this process.
 
 5. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
 6. Check on the commit status by executing the following method to [get the status of the package flight submission](get-status-for-a-flight-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 

@@ -25,7 +25,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ` |
 
 
 ### Request header
@@ -51,7 +51,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to get an add-on submission.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

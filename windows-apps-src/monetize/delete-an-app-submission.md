@@ -24,7 +24,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}` |
 
 
 ### Request header
@@ -51,7 +51,7 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to delete an app submission.
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243610 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

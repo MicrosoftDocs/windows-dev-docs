@@ -27,7 +27,7 @@ In your app's code, get a Microsoft Account (MSA) token for the current signed-i
 
 To get the MSA token, use the [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) class to request a token using the scope ```devcenter_implicit.basic,wl.basic```. The following example demonstrates how to do this. This example is an excerpt from the [complete example](#code-example), and it requires **using** statements that are provided in the complete example.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
 For more information about getting MSA tokens, see [Web account manager](../security/web-account-manager.md).
 
@@ -41,7 +41,7 @@ This method returns the product IDs of the add-ons that that are associated with
 
 The following example demonstrates how to get the targeted offers for the current user. This example is an excerpt from the [complete example](#code-example). It requires the [Json.NET](https://www.newtonsoft.com/json) library from Newtonsoft and additional classes and **using** statements that are provided in the complete example.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
 <span id="code-example" />
 
@@ -55,7 +55,7 @@ The following code example demonstrates the following tasks:
 
 This example requires the [Json.NET](https://www.newtonsoft.com/json) library from Newtonsoft. The example uses this library to serialize and deserialize JSON-formatted data.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 
 ## Related topics
 

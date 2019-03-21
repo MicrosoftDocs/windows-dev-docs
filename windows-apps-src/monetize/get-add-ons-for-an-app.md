@@ -24,7 +24,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` |
 
 
 ### Request header
@@ -52,14 +52,14 @@ Do not provide a request body for this method.
 
 The following example demonstrates how to list all the add-ons for an app.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 The following example demonstrates how to list the first 10 add-ons for an app.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listinappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -91,7 +91,7 @@ The following example demonstrates the JSON response body returned by a successf
 
 | Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 50 add-ons for the app, the response body will include a @nextLink value of ```applications/{applicationid}/listinappproducts/?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` to request the next 10 add-ons. |
+| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 50 add-ons for the app, the response body will include a @nextLink value of `applications/{applicationid}/listinappproducts/?skip=10&top=10`, which indicates that you can call `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` to request the next 10 add-ons. |
 | value      | array  | An array of objects that list the Store ID of each add-on for the specified app. For more information about the data in each object, see [add-on resource](get-app-data.md#add-on-object).                                                                                                                           |
 | totalCount | int    | The total number of rows in the data result for the query (that is, the total number of add-ons for the specified app).    |
 

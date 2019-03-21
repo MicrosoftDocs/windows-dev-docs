@@ -22,11 +22,11 @@ This article provides Python code examples that demonstrate how to use the [Micr
 
 This code calls other example classes and functions to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer. To adapt this code for your own use:
 
-* Assign the ```tenant``` variable to the tenant ID for your app, and assign the ```client``` and ```secret``` variables to the client ID and key for your app. For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
-* Assign the ```application_id``` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.
+* Assign the `tenant` variable to the tenant ID for your app, and assign the `client` and `secret` variables to the client ID and key for your app. For more information, see [How to associate an Azure AD application with your Partner Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* Assign the `application_id` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
 
 <span id="token" />
 
@@ -34,11 +34,11 @@ This code calls other example classes and functions to use the Microsoft Store s
 
 The following example defines the following classes:
 
-* The ```DevCenterAccessTokenClient``` class defines a helper method that uses the your ```tenantId```, ```clientId``` and ```clientSecret``` values to create an Azure AD access token to use with the Microsoft Store submission API.
-* The ```DevCenterClient``` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
+* The `DevCenterAccessTokenClient` class defines a helper method that uses the your `tenantId`, `clientId` and `clientSecret` values to create an Azure AD access token to use with the Microsoft Store submission API.
+* The `DevCenterClient` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
 
 <span id="token" />
 
@@ -47,7 +47,7 @@ The following example defines the following classes:
 The following example defines helper functions that return JSON-formatted listing data for a new sample app submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py#L1-L170)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py#L1-L170)]
 
 ## Related topics
 

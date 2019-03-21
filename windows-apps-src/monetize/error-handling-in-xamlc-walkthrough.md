@@ -63,7 +63,7 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
     ```
 
 4.  Build and run the project. After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.
-    ```
+    ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 

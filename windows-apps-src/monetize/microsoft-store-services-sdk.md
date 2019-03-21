@@ -56,7 +56,7 @@ To install the Microsoft Store Services SDK via the MSI installer:
 1.  Close all instances of Visual Studio.
 
 2. If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now. Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -79,7 +79,7 @@ To install the Microsoft Store Services SDK libraries via NuGet:
 1.  Close all instances of Visual Studio.
 
 2. If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now. Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -93,7 +93,7 @@ To install the Microsoft Store Services SDK libraries via NuGet:
 
 5. In the search box, type **Microsoft.Services.Store.Engagement** and install the Microsoft.Services.Store.Engagement package. When the package is done installing, save your solution.
     > [!NOTE]
-    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path. The problem could also be caused by your global packages path being too long. In this case, add the ```globalPackagesFolder``` value into your nuget.config file.
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the `repositoryPath` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path. The problem could also be caused by your global packages path being too long. In this case, add the `globalPackagesFolder` value into your nuget.config file.
 
 6. Close the Visual Studio solution that contains your project and then reopen the solution.
 
