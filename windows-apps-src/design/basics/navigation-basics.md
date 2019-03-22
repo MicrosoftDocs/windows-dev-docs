@@ -191,6 +191,22 @@ Once you've decided on a page structure, you need to decide how users navigate t
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+	[**Pivot**](../controls-and-patterns/pivot.md)
+	
+	Similar to [Navigation View](../controls-and-patterns/navigationview.md), but with additional support for touch and slightly different navigation behavior.
+	
+	Use a pivot when:
+                - You want your app to allow touch-swiping between categories
+		- You want navigation options to carousel infintely
+		- You do not need extensive control over navigation behavior between categories
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
 	:::column span="2":::
@@ -201,9 +217,9 @@ Once you've decided on a page structure, you need to decide how users navigate t
 		- The pages exist at the top level.
 		- There are many navigation items (more than 5)
 		- You don't expect users to switch between pages frequently.
-		
-:::row-end:::
 
+:::row-end:::
+		
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)
