@@ -23,7 +23,7 @@ We focus on the following:
 * Supporting basic shape recognition
 * Saving and loading ink
 
-For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions).
+For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 ## Introduction
 

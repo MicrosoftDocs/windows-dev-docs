@@ -7,32 +7,26 @@ template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
 ms.date: 02/08/2017
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Define custom recognition constraints
-
-
 
 Learn how to define and use custom constraints for speech recognition.
 
 > **Important APIs**: [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
-
 Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
-
 
 ## Add constraints
 
-
 Use the [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) property to add constraints to a speech recognizer.
 
-Here, we cover the three kinds of speech recognition constraints used from within an app. (For voice command constraints, see [Launch a foreground app with voice commands in Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Launch a foreground app with voice commands in Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
+- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
+- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
+- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
 
 Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
 
@@ -84,13 +78,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## Specify a programmatic list constraint (SpeechRecognitionListConstraint)
 
-
 List constraints must be added to the constraints collection of a speech recognizer.
 
 Keep the following points in mind:
 
--   You can add multiple list constraints to a constraints collection.
--   You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
+- You can add multiple list constraints to a constraints collection.
+- You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
 
 Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.
 
@@ -124,28 +117,27 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 ## Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)
 
-
 SRGS grammar files must be added to the constraints collection of a speech recognizer.
 
 The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.
 
 SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:
 
--   Specify the order in which words and phrases must be spoken to be recognized.
--   Combine words from multiple lists and phrases to be recognized.
--   Link to other grammars.
--   Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
--   Include optional words or phrases.
--   Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
--   Use semantics to define what speech recognition means to your app.
--   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
+- Specify the order in which words and phrases must be spoken to be recognized.
+- Combine words from multiple lists and phrases to be recognized.
+- Link to other grammars.
+- Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
+- Include optional words or phrases.
+- Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
+- Use semantics to define what speech recognition means to your app.
+- Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
 For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](https://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](https://go.microsoft.com/fwlink/p/?LinkID=269887).
 
 Keep the following points in mind:
 
--   You can add multiple grammar-file constraints to a constraints collection.
--   Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
+- You can add multiple grammar-file constraints to a constraints collection.
+- Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
 
 This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the **Package Action** is set to **Content** with **Copy to Output Directory** set to **Copy always**:
 
@@ -215,7 +207,6 @@ Here, we listen for variants of "yes" and "no".
 
 ## Manage constraints
 
-
 After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property of a constraint to **true** or **false**. The default setting is **true**.
 
 It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property, as required.
@@ -228,15 +219,8 @@ To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.
 
 ## Related articles
 
+- [Speech interactions](speech-interactions.md)
 
-* [Speech interactions](speech-interactions.md)
+### Samples
 
-**Samples**
-* [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
-
-
-
-
+- [Speech recognition and speech synthesis sample](https://go.microsoft.com/fwlink/p/?LinkID=619897)
