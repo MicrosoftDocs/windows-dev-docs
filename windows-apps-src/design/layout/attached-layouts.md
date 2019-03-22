@@ -21,7 +21,7 @@ In this topic, we cover what's involved in creating an attached layout (virtuali
 > **Important APIs**:
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](/uwp/design/controls-and-patterns/items-repeater)
+> * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
 > * [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -38,7 +38,7 @@ Performing layout requires that two questions be answered for every element:
 
 2. What will the ***position*** of this element be?
 
-XAML's layout system, which answers these questions, is briefly covered as part of the discussion of [Custom panels](/uwp/design/layout/custom-panels-overview).
+XAML's layout system, which answers these questions, is briefly covered as part of the discussion of [Custom panels](/windows/uwp/design/layout/custom-panels-overview).
 
 ### Containers and Context
 
@@ -49,7 +49,7 @@ Conceptually, XAML's [Panel](/uwp/api/windows.ui.xaml.controls.panel) fills two 
 
 For this reason, a Panel in XAML has often been synonymous with layout, but technically-speaking, does more than just layout.
 
-The [ItemsRepeater](/uwp/design/controls-and-patterns/items-repeater) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
+The [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
 > [!NOTE]
 > The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI package.
@@ -61,18 +61,17 @@ Conceptually, [Panel](/uwp/api/windows.ui.xaml.controls.panel) is a container of
 The concept of **attached layout** makes the distinction between the two roles of container and layout more clear.  If the container delegates its layout logic to another object we would call that object the attached layout as seen in the snippet below. Containers that inherit from [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), such as the LayoutPanel, automatically expose the common properties that provide input to XAML's layout process (e.g. Height and Width).
 
 ```xaml
-<LayoutPanel Height=""
-             Width=""
-             Margin=""
-             HorizontalAlignment=""
-             VerticalAlignment="">
+<LayoutPanel>
     <LayoutPanel.Layout>
-        <ExampleLayout/>
+        <UniformGridLayout/>
     </LayoutPanel.Layout>
+    <Button Content="1"/>
+    <Button Content="2"/>
+    <Button Content="3"/>
 </LayoutPanel>
 ```
 
-During the layout process the container relies on the attached *ExampleLayout* to measure and arrange its children.
+During the layout process the container relies on the attached *UniformGridLayout* to measure and arrange its children.
 
 #### Per-Container State
 
@@ -123,7 +122,7 @@ First, decide whether the layout you need to create should support UI virtualiza
 **A few things to keep in mind…**
 
 1. Non-virtualizing layouts are easier to author. If the number of items will always be small then authoring a non-virtualizing layout is recommended.
-2. The platform provides a set of [virtualizing attached layouts that work with the ItemsRepeater](/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) to cover the most common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
+2. The platform provides a set of attached layouts that work with the [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) and [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
 3. Virtualizing layouts always have some additional CPU and memory cost/complexity/overhead compared to a non-virtualizing layout.  As a general rule of thumb if the children the layout will need to manage will likely fit in an area that is 3x the size of the viewport, then there may not be much gain from a virtualizing layout. The 3x size is discussed in greater detail later in this doc, but is due to the asynchronous nature of scrolling on Windows and its impact on virtualization.
 
 > [!TIP]
@@ -140,7 +139,7 @@ The base [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) type has two deriv
 
 ## Non-Virtualizing Layout
 
-The approach for creating a non-virtualizing layout should feel familiar to anyone that has created a [Custom Panel](/uwp/design/layout/custom-panels-overview).  The same concepts apply.  The primary difference is that a [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) is used to access the [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) collection, and layout may choose to store state.
+The approach for creating a non-virtualizing layout should feel familiar to anyone that has created a [Custom Panel](/windows/uwp/design/layout/custom-panels-overview).  The same concepts apply.  The primary difference is that a [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) is used to access the [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) collection, and layout may choose to store state.
 
 1. Derive from the base type [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (instead of Panel).
 2. *(Optional)* Define dependency properties that when changed will invalidate the layout.
@@ -150,6 +149,8 @@ The approach for creating a non-virtualizing layout should feel familiar to anyo
 6. *(**New**/Optional)* Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.unititializeforcontextcore).
 
 ### Example: A Simple Stack Layout (Varying-Sized Items)
+
+![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
 Here is a very basic non-virtualizing stack layout of varying sized items. It lacks any properties to adjust the layout’s behavior. The implementation below illustrates how the layout relies on the context object provided by the container to:
 
@@ -177,7 +178,7 @@ public class MyStackLayout : NonVirtualizingLayout
         foreach (var element in context.Children)
         {
             element.Arrange(
-                new Rect(0, offset, element.DesiredSize.Width, element.DesiredSize.Height));
+                new Rect(0, offset, finalSize.Width, element.DesiredSize.Height));
             offset += element.DesiredSize.Height;
         }
 
@@ -187,16 +188,15 @@ public class MyStackLayout : NonVirtualizingLayout
 ```
 
 ```xaml
- <LayoutPanel>
+ <LayoutPanel MaxWidth="196">
     <LayoutPanel.Layout>
         <local:MyStackLayout/>
     </LayoutPanel.Layout>
 
-    <Button>1</Button>
-    <Button>2</Button>
-    <Button>3</Button>
+    <Button HorizontalAlignment="Stretch">1</Button>
+    <Button HorizontalAlignment="Right">2</Button>
+    <Button HorizontalAlignment="Center">3</Button>
     <Button>4</Button>
-    <Button>5</Button>
 
 </LayoutPanel>
 ```
@@ -240,7 +240,7 @@ Scrolling on Windows happens asynchronous to the UI thread. It is not controlled
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
-Since element creation is costly, virtualizing containers (e.g. [ItemsRepeater](/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontent.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
+Since element creation is costly, virtualizing containers (e.g. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontent.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
 
 **Re-using Elements (Recycling)**
 
@@ -578,7 +578,7 @@ internal class ActivityFeedLayoutState
 
 ### (Optional) Managing the Item to UIElement Mapping
 
-By default, the [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) maintains a mapping between the realized elements and the index in the data source they represent.  A layout can choose to manage this mapping itself by always requesting the option to [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) when retrieving an element via the [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method which prevents the default aut-recycling behavior.  A layout may choose to do this, for example, if it will only be used when scrolling is restricted to one direction and the items it considers will always be contiguous (i.e. knowing the index of the first and last element is enough to know all the elements that should be realized).
+By default, the [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) maintains a mapping between the realized elements and the index in the data source they represent.  A layout can choose to manage this mapping itself by always requesting the option to [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) when retrieving an element via the [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method which prevents the default auto-recycling behavior.  A layout may choose to do this, for example, if it will only be used when scrolling is restricted to one direction and the items it considers will always be contiguous (i.e. knowing the index of the first and last element is enough to know all the elements that should be realized).
 
 #### Example: Xbox Activity Feed measure
 
@@ -807,7 +807,7 @@ public class VirtualizingStackLayout : VirtualizingLayout
 
     protected override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
     {
-        Debug.WriteLine("ArrangeOverride: Viewport" + context.RealizationRect);
+        DebugTrace("ArrangeOverride: Viewport" + context.RealizationRect);
         for (int realizationIndex = 0; realizationIndex < m_realizedElementBounds.Count; realizationIndex++)
         {
             int currentDataIndex = m_firstRealizedDataIndex + realizationIndex;
