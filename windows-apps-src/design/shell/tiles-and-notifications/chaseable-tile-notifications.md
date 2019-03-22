@@ -134,6 +134,49 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
+### Accessing OnLaunched from desktop applications
+
+Desktop apps (like Win32, WPF, etc) using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root).
+
+> [!IMPORTANT]
+> **Requires October 2018 Update**: To use the `AppInstance.GetActivatedEventArgs()` API, you must target SDK 17763 and be running build 17763 or higher.
+
+For desktop applications, to access the launch arguments, do the following...
+
+```csharp
+
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    // API only available on build 17763 or higher
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+
+            var launchArgs = args as LaunchActivatedEventArgs;
+
+            // If clicked on from tile
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
+    
+            break;
+```
+
+
 ## Raw XML example
 
 If you're using raw XML instead of the Notifications library, here's the XML.
