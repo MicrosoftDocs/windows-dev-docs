@@ -23,9 +23,9 @@ An app containing an AppxManifest.xml file. You will need to reference the manif
 - **Public Key Infrastructure (PKI) Cmdlets**  
 You need PKI cmdlets to create and export your signing certificate. For more information, see [Public Key Infrastructure Cmdlets](https://docs.microsoft.com/powershell/module/pkiclient/).
 
-## Create a self signed certificate
+## Create a self-signed certificate
 
-A self signed certificate is useful for testing your app before you're ready to publish it to the store. Follow the steps outlined in this section to create a self signed certificate.
+A self-signed certificate is useful for testing your app before you're ready to publish it to the Store. Follow the steps outlined in this section to create a self-signed certificate.
 
 ### Determine the subject of your packaged app  
 
@@ -39,7 +39,7 @@ For example, the "Identity" section in your app's AppxManifest.xml file should l
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-The "Publisher", in this case, is "CN=Contoso Software, O=Contoso Corporation, C=US" which needs to be used for creating your certificate. 
+The "Publisher", in this case, is "CN=Contoso Software, O=Contoso Corporation, C=US" which needs to be used for creating your certificate.
 
 ### Use **New-SelfSignedCertificate** to create a certificate
 
@@ -48,8 +48,18 @@ Use the **New-SelfSignedCertificate** PowerShell cmdlet to create a self signed 
 Based on the AppxManifest.xml file from the previous example, you should use the following syntax to create a certificate. In an elevated PowerShell prompt:
 
 ```powershell
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
+
+Note the following details about some of the parameters:
+
+- **KeyUsage**: This parameter defines what the certificate may be used for. For a self-signing certificate, this parameter should be set to **DigitalSignature**.
+
+- **TextExtension**: This parameter includes settings for the following extensions:
+
+  - Extended Key Usage (EKU): This extension indicates additional purposes for which the certified public key may be used. For a self-signing certificate, this parameter should include the extension string **"2.5.29.37={text}1.3.6.1.5.5.7.3.3"**, which indicates that the certificate is to be used for code signing.
+
+  - Basic Constraints: This extension indicates whether or not the certificate is a Certificate Authority (CA). For a self-signing certificate, this parameter should include the extension string **"2.5.29.19={text}"**, which indicates that the certificate is an end entity (not a CA).
 
 After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter. The result of the command will also produce the certificate's thumbprint.  
 
