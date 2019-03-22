@@ -1109,7 +1109,7 @@ By default, ink input is processed on a low-latency background thread and render
 
 The ink platform enables you to override this behavior and completely customize the inking experience by custom drying the ink input.
 
-For more info on custom drying, see [Pen interactions and Windows Ink in UWP apps](https://msdn.microsoft.com/windows/uwp/input/pen-and-stylus-interactions#custom-ink-rendering).
+For more info on custom drying, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
 
 > [!NOTE]
 > Custom drying and the [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
