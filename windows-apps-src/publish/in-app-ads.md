@@ -2,7 +2,7 @@
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of Partner Center to manage your use of ads.
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -111,7 +111,7 @@ The following table lists the paid networks we currently support for each ad typ
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |
 | Revcontent |  Select this option to serve ads from [Revcontent](https://www.revcontent.com/). |  Banner, Native  |
 | Smaato |  Select this option to serve ads from [Smaato](https://www.smaato.com/). |  Banner  |
-| smartclip |  Select this option to serve ads from [smartclip](https://www.smartclip.com/). |  Video interstitial  |
+| smartclip |  Select this option to serve ads from [smartclip](http://www.smartclip.com/). |  Video interstitial  |
 | SpotX |  Select this option to serve ads from [SpotX](https://www.spotx.tv/). |  Video interstitial  |
 | Taboola |  Select this option to serve ads from [Taboola](https://www.taboola.com/). |  Banner  |
 | Undertone | Select this option to serve ads from [Undertone](https://www.undertone.com/). | Banner interstitial |
