@@ -57,64 +57,6 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 
 When you use an ItemsRepeater, you should provide scrolling functionality by wrapping it in a [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) or [Scroller](/uwp/api/microsoft.ui.xaml.controls.scroller) control.
 
-## Configure the data source
-
-Use the [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to specify the collection to use to generate the content of items. You can set the ItemsSource to any type that implements **IEnumerable**. Additional collection interfaces implemented by your data source determine what functionality is available to the ItemsRepeater to interact with your data.
-
-This list shows available interfaces and when to consider using each one.
-
-- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)
-
-  - Can be used for small, static data sets.
-
-    At a minimum, the data source must implement the IEnumerable / IIterable interface. If this is all that's supported then the control will iterate through everything once to create a copy that it can use to access items via an index value.
-
-- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview_t_)
-
-  - Can be used for static, read-only data sets.
-
-    Enables the control to access items by index and avoids the redundant internal copy.
-
-- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-
-  - Can be used for static data sets.
-
-    Enables the control to access items by index and avoids the redundant internal copy.
-
-    **Warning**:
-    Changes to the list/vector without implementing [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) won't be reflected in the UI.
-
-- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
-
-  - Recommended to support change notification.
-
-    Enables the control to observe and react to changes in the data source and reflect those changes in the UI.
-
-- [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-
-  - Supports change notification
-
-    Like the **INotifyCollectionChanged** interface, this enables the control to observe and react to changes in the data source.
-
-    **Warning**:
-    The Windows.Foundation.IObservableVector\<T> doesn’t support a 'Move' action. This can cause the UI for an item to lose its visual state.  For example, an item that is currently selected and/or has focus where the move is achieved by a ‘Remove’ followed by an ‘Add’ will lose focus and no longer be selected.
-
-    The Platform.Collections.Vector\<T> uses IObservableVector\<T> and has this same limitation. If support for a 'Move' action is required then use the **INotifyCollectionChanged** interface.  The .NET ObservableCollection\<T> class uses **INotifyCollectionChanged**.
-
-- [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
-
-  - When a unique identifier can be associated with each item.  Recommended when using 'Reset' as the collection change action.
-
-    Enables the control to very efficiently recover the existing UI after receiving a hard 'Reset' action as part of an **INotifyCollectionChanged** or **IObservableVector** event. After receiving a reset the control will use the provided unique ID to associate the current data with elements it had already created. Without the key to index mapping the control would have to assume it needs to start over from scratch in creating UI for the data.
-
-The interfaces listed above, other than IKeyIndexMapping, provide the same behavior in ItemsRepeater as they do in ListView and GridView.
-
-The following interfaces on an ItemsSource enable special functionality in the ListView and GridView controls, but currently have no effect on an ItemsRepeater:
-
-- [ISupportIncrementalLoading](/uwp/api/windows.ui.xaml.data.isupportincrementalloading)
-- [IItemsRangeInfo](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)
-- [ISelectionInfo](/uwp/api/windows.ui.xaml.data.iselectioninfo)
-
 ## Create an ItemsRepeater
 
 To use an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), you need to give it the data to display by setting the ItemsSource property. Then, tell it how to display the items by setting the [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property.
@@ -178,6 +120,99 @@ The items you display in your view do not need to be of the same type. [ItemsRep
 
 > [!NOTE]
 > An alternative to using DataTemplate or DataTemplateSelector is to implement your own class derived from [Microsoft.UI.Xaml.Controls.ElementFactory](/uwp/api/microsoft.ui.xaml.controls.elementfactory) that is responsible for generating content when requested.
+
+## Configure the data source
+
+Use the [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to specify the collection to use to generate the content of items. You can set the ItemsSource to any type that implements **IEnumerable**. Additional collection interfaces implemented by your data source determine what functionality is available to the ItemsRepeater to interact with your data.
+
+This list shows available interfaces and when to consider using each one.
+
+- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)
+
+  - Can be used for small, static data sets.
+
+    At a minimum, the data source must implement the IEnumerable / IIterable interface. If this is all that's supported then the control will iterate through everything once to create a copy that it can use to access items via an index value.
+
+- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview_t_)
+
+  - Can be used for static, read-only data sets.
+
+    Enables the control to access items by index and avoids the redundant internal copy.
+
+- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
+
+  - Can be used for static data sets.
+
+    Enables the control to access items by index and avoids the redundant internal copy.
+
+    **Warning**:
+    Changes to the list/vector without implementing [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) won't be reflected in the UI.
+
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
+
+  - Recommended to support change notification.
+
+    Enables the control to observe and react to changes in the data source and reflect those changes in the UI.
+
+- [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+
+  - Supports change notification
+
+    Like the **INotifyCollectionChanged** interface, this enables the control to observe and react to changes in the data source.
+
+    **Warning**:
+    The Windows.Foundation.IObservableVector\<T> doesn’t support a 'Move' action. This can cause the UI for an item to lose its visual state.  For example, an item that is currently selected and/or has focus where the move is achieved by a ‘Remove’ followed by an ‘Add’ will lose focus and no longer be selected.
+
+    The Platform.Collections.Vector\<T> uses IObservableVector\<T> and has this same limitation. If support for a 'Move' action is required then use the **INotifyCollectionChanged** interface.  The .NET ObservableCollection\<T> class uses **INotifyCollectionChanged**.
+
+- [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
+
+  - When a unique identifier can be associated with each item.  Recommended when using 'Reset' as the collection change action.
+
+    Enables the control to very efficiently recover the existing UI after receiving a hard 'Reset' action as part of an **INotifyCollectionChanged** or **IObservableVector** event. After receiving a reset the control will use the provided unique ID to associate the current data with elements it had already created. Without the key to index mapping the control would have to assume it needs to start over from scratch in creating UI for the data.
+
+The interfaces listed above, other than IKeyIndexMapping, provide the same behavior in ItemsRepeater as they do in ListView and GridView.
+
+
+The following interfaces on an ItemsSource enable special functionality in the ListView and GridView controls, but currently have no effect on an ItemsRepeater:
+
+- [ISupportIncrementalLoading](/uwp/api/windows.ui.xaml.data.isupportincrementalloading)
+- [IItemsRangeInfo](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo)
+- [ISelectionInfo](/uwp/api/windows.ui.xaml.data.iselectioninfo)
+
+> [!TIP]
+> We want your feedback! Let us know what you think on the [Windows UI Library GitHub project](https://github.com/Microsoft/microsoft-ui-xaml/issues). Consider adding your thoughts on existing proposals such as [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Add incremental loading support for ItemsRepeater.
+
+An alternative approach to incrementally load your data as the user scrolls up or down is to observe the position of the ScrollViewer's viewport and load more data as the viewport approaches the extent.
+
+```xaml
+<ScrollViewer ViewChanged="ScrollViewer_ViewChanged">
+    <ItemsRepeater ItemsSource="{x:Bind MyItemsSource} .../>
+</ScrollViewer>
+```
+
+```csharp
+private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+{
+    if (!e.IsIntermediate)
+    {
+        var scroller = (ScrollViewer)sender;
+        var distanceToEnd = scroller.ExtentHeight - (scroller.VerticalOffset + scroller.ViewportHeight);
+
+        // trigger if within 2 viewports of the end
+        if (distanceToEnd <= 2.0 * scroller.ViewportHeight
+                && MyItemsSource.HasMore && !itemsSource.Busy)
+        {
+            // show an indeterminate progress UI
+            myLoadingIndicator.Visibility = Visibility.Visible;
+
+            await MyItemsSource.LoadMoreItemsAsync(/*DataFetchSize*/);
+
+            loadingIndicator.Visibility = Visibility.Collapsed;
+        }
+    }
+}
+```
 
 ## Change the layout of items
 
@@ -338,6 +373,152 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 }
 ```
 
+## Sorting, Filtering and Resetting the Data
+
+When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction) action instead.
+
+Typically, a reset causes a control to release existing child elements and start over, building the UI from the beginning at scroll position 0 as it has no awareness of exactly how the data has changed during the reset.
+
+However, if the collection assigned as the ItemsSource supports unique identifiers by implementing the [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping) interface, then the ItemsRepeater can quickly identify:
+
+- reusable UIElements for data that existed both before and after the reset
+- previously visible items that were removed
+- new items added that will be visible
+
+This lets the ItemsRepeater avoid starting over from scroll position 0. It also lets it quickly restore the UIElements for data that didn't change in a reset, resulting in better performance.
+
+This example shows how to display a list of items in a vertical stack where _MyItemsSource_ is a custom data source that wraps an underlying list of items. It exposes a _Data_ property that can be used to re-assign a new list to use as the items source, which then triggers a reset.
+
+```xaml
+<ScrollViewer x:Name="sv">
+    <ItemsRepeater x:Name="repeater"
+                ItemsSource="{x:Bind MyItemsSource}"
+                ItemTemplate="{StaticResource MyTemplate}">
+       <ItemsRepeater.Layout>
+           <StackLayout ItemSpacing="8"/>
+       </ItemsRepeater.Layout>
+   </ItemsRepeater>
+</ScrollViewer>
+```
+
+```csharp
+public MainPage()
+{
+    this.InitializeComponent();
+
+    // Similar to an ItemsControl, a developer sets the ItemsRepeater's ItemsSource.
+    // Here we provide our custom source that supports unique IDs which enables
+    // ItemsRepeater to be smart about handling resets from the data.
+    // Unique IDs also make it easy to do things apply sorting/filtering
+    // without impacting any state (i.e. selection).
+    MyItemsSource myItemsSource = new MyItemsSource(data);
+
+    repeater.ItemsSource = myItemsSource;
+
+    // ...
+
+    // We can sort/filter the data using whatever mechanism makes the
+    // most sense (LINQ, database query, etc.) and then reassign
+    // it, which in our implementation triggers a reset.
+    myItemsSource.Data = someNewData;
+}
+
+// ...
+
+
+public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyCollectionChanged
+{
+    private IList<ItemBase> _data;
+
+    public MyItemsSource(IEnumerable<ItemBase> data)
+    {
+        if (data == null) throw new ArgumentNullException();
+
+        this._data = data.ToList();
+    }
+
+    public IList<ItemBase> Data
+    {
+        get { return _data; }
+        set
+        {
+            _data = value;
+
+            // Instead of tossing out existing elements and re-creating them,
+            // ItemsRepeater will reuse the existing elements and match them up
+            // with the data again.
+            this.CollectionChanged?.Invoke(
+                this,
+                new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+    }
+
+    #region IReadOnlyList<T>
+
+    public ItemBase this[int index] => this.Data != null
+        ? this.Data[index]
+        : throw new IndexOutOfRangeException();
+
+    public int Count => this.Data != null ? this.Data.Count : 0;
+    public IEnumerator<ItemBase> GetEnumerator() => this.Data.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+
+    #endregion
+
+    #region INotifyCollectionChanged
+
+    public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+    #endregion
+
+    #region IKeyIndexMapping
+
+    private int lastRequestedIndex = IndexNotFound;
+    private const int IndexNotFound = -1;
+
+    // When UniqueIDs are supported, the ItemsRepeater caches the unique ID for each item
+    // with the matching UIElement that represents the item.  When a reset occurs the
+    // ItemsRepeater pairs up the already generated UIElements with items in the data
+    // source.
+    // ItemsRepeater uses IndexForUniqueId after a reset to probe the data and identify
+    // the new index of an item to use as the anchor.  If that item no
+    // longer exists in the data source it may try using another cached unique ID until
+    // either a match is found or it determines that all the previously visible items
+    // no longer exist.
+    public int IndexForUniqueId(string uniqueId)
+    {
+        // We'll try to increase our odds of finding a match sooner by starting from the
+        // position that we know was last requested and search forward.
+        var start = lastRequestedIndex;
+        for (int i = start; i < this.Count; i++)
+        {
+            if (this[i].PrimaryKey.Equals(uniqueId))
+                return i;
+        }
+
+        // Then try searching backward.
+        start = Math.Min(this.Count - 1, lastRequestedIndex);
+        for (int i = start; i >= 0; i--)
+        {
+            if (this[i].PrimaryKey.Equals(uniqueId))
+                return i;
+        }
+
+        return IndexNotFound;
+    }
+
+    public string UniqueIdForIndex(int index)
+    {
+        var key = this[index].PrimaryKey;
+        lastRequestedIndex = index;
+        return key;
+    }
+
+    #endregion
+}
+
+```
+
 ## Create a custom collection control
 
 You can use the [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) to create a custom collection control complete with its own type of control to present each item.
@@ -482,15 +663,85 @@ This example shows a layout for an app that has various categories that can chan
 </ScrollViewer>
 ```
 
-## Enable accessibility
+## Bringing an Element Into View
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not automatically set automation properties for each item. You need to manage setting the appropriate automation properties, such as values for **PositionInSet** and **SizeOfSet**, and ensure they remain up-to-date when items are added, moved, removed, etc.
+The XAML framework already handles bringing a FrameworkElement into view when it either 1) receives keyboard focus or 2) receives Narrator focus. There may be other cases where you need to explicitly bring an element into view. For example, in response to a user action or to restore the state of the UI after a page navigation.
 
-Users expect that the values for these properties match the order they appear in the data (offset by 1 to match natural counting versus being 0-based), not the order they appear in the visual layout.
+Bringing a virtualized element into view involves the following:
+1. Realize a UIElement for an item
+2. Run the layout to ensure the element has a valid position
+3. Initiate a request to bring the realized element into view
+
+The example below demonstrates these steps as part of restoring the scroll position of an item in a flat, vertical list after a page navigation. In the case of hierarchical data using nested ItemsRepeaters the approach is essentially the same, but must be done at each level of the hierarchy.
+
+```xaml
+<ScrollViewer x:Name="scrollviewer">
+  <ItemsRepeater x:Name="repeater" .../>
+</ScrollViewer>
+```
+
+```csharp
+public class MyPage : Page
+{
+    // ...
+
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
+        base.OnNavigatedTo(e);
+
+            // retrieve saved offset + index(es) of the tracked element and then bring it into view.
+            // ... 
+
+            var element = repeater.GetOrCreateElement(index);
+
+            // ensure the item is given a valid position
+            element.UpdateLayout();
+
+            element.StartBringIntoView(new BringIntoViewOptions()
+            {
+                VerticalOffset = relativeVerticalOffset
+            });
+    }
+
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+    {
+        base.OnNavigatingFrom(e);
+
+        // retrieve and save the relative offset and index(es) of the scrollviewer's current anchor element ...
+        var anchor = this.scrollviewer.CurrentAnchor;
+        var index = this.repeater.GetElementIndex(anchor);
+        var anchorBounds = anchor.TransformToVisual(this.scrollviewer).TransformBounds(new Rect(0, 0, anchor.ActualWidth, anchor.ActualHeight));
+        relativeVerticalOffset = this.sv.VerticalOffset – anchorBounds.Top;
+    }
+}
+
+```
+
+## Enable Accessibility
+
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for UWP apps](/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/uwp/design/accessibility/custom-automation-peers).
+
+### Keyboarding
+The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
+
+![Direction Navigation](/uwp/design/input/images/keyboard/directional-navigation.png)
+
+The ItemsRepeater's [XYFocusKeyboardNavigation mode](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](/uwp/design/input/keyboard-interactions) such as Home, End, PageUp, and PageDown.
+
+The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
+
+> [!NOTE]
+> The ItemsRepeater does not automatically remember the last focused item.  This means that when a user is using Shift+Tab they may be taken to the last realized item.
+
+### Announcing "Item _X_ of _Y_" in Screen Readers
+
+You need to manage setting the appropriate automation properties, such as values for **PositionInSet** and **SizeOfSet**, and ensure they remain up-to-date when items are added, moved, removed, etc.
+
+In some custom layouts there may not be an obvious sequence to the visual order.  Users minimally expect that the values for the PositionInSet and SizeOfSet properties used by screen readers will match the order the items appear in the data (offset by 1 to match natural counting versus being 0-based).
 
 The best way to achieve this is by having the automation peer for the item control implement the [GetPositionInSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) and [GetSizeOfSetCore](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) methods and report the position of the item in the data set represented by the control. The value is only computed at run-time when accessed by an assistive technology and keeping it up-to-date becomes a non-issue. The value matches the data order.
 
-This example shows how you could do this in a custom control called _CardControl_.
+This example shows how you could do this when presenting a custom control called _CardControl_.
 
 ```xaml
 <ScrollViewer >
@@ -522,152 +773,6 @@ internal sealed class CardControl : CardControlBase
           => ((ItemsRepeater)owner.Parent)?.ItemsSourceView?.Count ?? base.GetSizeOfSetCore();
     }
 }
-```
-
-## Reset with Data that Supports Unique IDs
-
-When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction) action instead.
-
-Typically, a reset causes a control to release existing child elements and start over, building the UI from the beginning at scroll position 0 as it has no awareness of exactly how the data has changed during the reset.
-
-However, if the collection assigned as the ItemsSource supports unique identifiers, the ItemsRepeater can quickly identify:
-
-- reusable UIElements for data that existed both before and after the reset
-- previously visible items that were removed
-- new items added that will be visible
-
-This lets the ItemsRepeater avoid starting over from scroll position 0. It also lets it quickly restore the UIElements for data that didn't change in a reset, resulting in better performance.
-
-This example shows how to display a list of items in a vertical stack where _MyItemsSource_ is a custom data source that wraps an underlying list of items. It exposes a _Data_ property that can be used to re-assign a new list to use as the items source, which then triggers a reset.
-
-```xaml
-<ScrollViewer x:Name="sv">
-    <ItemsRepeater x:Name="repeater"
-                ItemsSource="{x:Bind MyItemsSource}"
-                ItemTemplate="{StaticResource MyTemplate}">
-       <ItemsRepeater.Layout>
-           <StackLayout ItemSpacing="8"/>
-       </ItemsRepeater.Layout>
-   </ItemsRepeater>
-</ScrollViewer>
-```
-
-```csharp
-public MainPage()
-{
-    this.InitializeComponent();
-
-    // Similar to an ItemsControl, a developer sets the ItemsRepeater's ItemsSource.
-    // Here we provide our custom source that supports unique IDs which enables
-    // ItemsRepeater to be smart about handling resets from the data.
-    // Unique IDs also make it easy to do things apply sorting/filtering
-    // without impacting any state (i.e. selection).
-    MyItemsSource myItemsSource = new MyItemsSource(data);
-
-    repeater.ItemsSource = myItemsSource;
-
-    // ...
-
-    // We can sort/filter the data using whatever mechanism makes the
-    // most sense (LINQ, database query, etc.) and then reassign
-    // it, which in our implementation triggers a reset.
-    myItemsSource.Data = someNewData;
-}
-
-// ...
-
-
-public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyCollectionChanged
-{
-    private IList<ItemBase> _data;
-
-    public MyItemsSource(IEnumerable<ItemBase> data)
-    {
-        if (data == null) throw new ArgumentNullException();
-
-        this._data = data.ToList();
-    }
-
-    public IList<ItemBase> Data
-    {
-        get { return _data; }
-        set
-        {
-            _data = value;
-
-            // Instead of tossing out existing elements and re-creating them,
-            // ItemsRepeater will reuse the existing elements and match them up
-            // with the data again.
-            this.CollectionChanged?.Invoke(
-                this,
-                new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
-        }
-    }
-
-    #region IReadOnlyList<T>
-
-    public ItemBase this[int index] => this.Data != null
-        ? this.Data[index]
-        : throw new IndexOutOfRangeException();
-
-    public int Count => this.Data != null ? this.Data.Count : 0;
-    public IEnumerator<ItemBase> GetEnumerator() => this.Data.GetEnumerator();
-    IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
-
-    #endregion
-
-    #region INotifyCollectionChanged
-
-    public event NotifyCollectionChangedEventHandler CollectionChanged;
-
-    #endregion
-
-    #region IKeyIndexMapping
-
-    private int lastRequestedIndex = IndexNotFound;
-    private const int IndexNotFound = -1;
-
-    // When UniqueIDs are supported, the ItemsRepeater caches the unique ID for each item
-    // with the matching UIElement that represents the item.  When a reset occurs the
-    // ItemsRepeater pairs up the already generated UIElements with items in the data
-    // source.
-    // ItemsRepeater uses IndexForUniqueId after a reset to probe the data and identify
-    // the new index of an item to use as the anchor.  If that item no
-    // longer exists in the data source it may try using another cached unique ID until
-    // either a match is found or it determines that all the previously visible items
-    // no longer exist.
-    public int IndexForUniqueId(string uniqueId)
-    {
-        // We'll try to increase our odds of finding a match sooner by starting from the
-        // position that we know was last requested and search forward.
-        var start = lastRequestedIndex;
-        for (int i = start; i < this.Count; i++)
-        {
-            if (this[i].PrimaryKey.Equals(uniqueId))
-                return i;
-        }
-
-        // Then try searching backward.
-        start = Math.Min(this.Count - 1, lastRequestedIndex);
-        for (int i = start; i >= 0; i--)
-        {
-            if (this[i].PrimaryKey.Equals(uniqueId))
-                return i;
-        }
-
-        return IndexNotFound;
-    }
-
-    public string UniqueIdForIndex(int index)
-    {
-        var key = this[index].PrimaryKey;
-        lastRequestedIndex = index;
-        return key;
-    }
-
-    #endregion
-}
-
 ```
 
 ## Related articles
