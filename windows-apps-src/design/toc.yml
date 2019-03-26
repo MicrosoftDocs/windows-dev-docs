@@ -127,6 +127,8 @@
           href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
         - name: Flyouts
           href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+        - name: Teaching tip
+          href: controls-and-patterns/dialogs-and-flyouts/teaching-tip.md
     - name: Forms
       href: controls-and-patterns/forms.md
     - name: Media, graphics, and shapes
