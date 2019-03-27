@@ -187,7 +187,7 @@ An alternative approach to incrementally load your data as the user scrolls up o
 
 ```xaml
 <ScrollViewer ViewChanged="ScrollViewer_ViewChanged">
-    <ItemsRepeater ItemsSource="{x:Bind MyItemsSource} .../>
+    <ItemsRepeater ItemsSource="{x:Bind MyItemsSource}" .../>
 </ScrollViewer>
 ```
 
@@ -375,7 +375,7 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 
 ## Sorting, Filtering and Resetting the Data
 
-When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction) action instead.
+When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/uwp/api/windows.ui.xaml.interop.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/uwp/api/windows.ui.xaml.interop.notifycollectionchangedaction) action instead.
 
 Typically, a reset causes a control to release existing child elements and start over, building the UI from the beginning at scroll position 0 as it has no awareness of exactly how the data has changed during the reset.
 
@@ -719,14 +719,14 @@ public class MyPage : Page
 
 ## Enable Accessibility
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for UWP apps](/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for UWP apps](/windows/uwp/design/usability) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](/windows/uwp/design/accessibility/custom-automation-peers).
 
 ### Keyboarding
-The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
+The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
 
-![Direction Navigation](/uwp/design/input/images/keyboard/directional-navigation.png)
+![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-The ItemsRepeater's [XYFocusKeyboardNavigation mode](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](/uwp/design/input/keyboard-interactions) such as Home, End, PageUp, and PageDown.
+The ItemsRepeater's [XYFocusKeyboardNavigation mode](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](/windows/uwp/design/input/keyboard-interactions) such as Home, End, PageUp, and PageDown.
 
 The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
 
