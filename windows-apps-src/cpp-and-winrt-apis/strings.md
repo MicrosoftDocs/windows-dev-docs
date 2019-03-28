@@ -86,7 +86,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-You can use the [**hstring::c_str function**](/uwp/api/windows.foundation.uri#hstringcstr-function) to get a standard wide string from an **hstring** (just as you can from a **std::wstring**).
+You can use the [**hstring::c_str function**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) to get a standard wide string from an **hstring** (just as you can from a **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
