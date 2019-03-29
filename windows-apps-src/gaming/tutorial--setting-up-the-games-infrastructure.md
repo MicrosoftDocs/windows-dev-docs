@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, games, setup, directx
 ms.localizationpriority: medium
 ---
+
 # Set up the game project
 
 This topic goes through how to setup a simple UWP DirectX game using the templates in Visual Studio. The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. Learn to save set up time when you use the right template and configure the project specifically for game development.
@@ -83,9 +84,9 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-In this method, it creates an instance of the Direct3D view provider from the view provider factory (**Direct3DApplicationSource**, defined in **App.h**), and passes it to the app singleton by calling ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). This means that the starting point for your game lives in the body of the implementation of the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method, and in this case, it's the **App::Run**. 
+This method creates an instance of the Direct3D view provider from the view provider factory (**Direct3DApplicationSource**, defined in `App.h`), and passes it to the app singleton by calling [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run). The methods of your framework view (which is the **App** class in this example) are called in the order **Initialize**-**SetWindow**-**Load**-**OnActivated**-**Run**-**Uninitialize**. Calling **CoreApplication::Run** kicks off that lifycycle. The main loop of your game resides in the body of the implementation of the [**IFrameworkView::Run** method](/uwp/api/windows.applicationmodel.core.iframeworkview.run), and in this case, it's the **App::Run**.
 
-Scroll to find the **App::Run** method in **App.cpp**. Here's the code:
+Scroll to find the **App::Run** method in **App.cpp**. Here's the code.
 
 ```cpp
 //This method is called after the window becomes active.
