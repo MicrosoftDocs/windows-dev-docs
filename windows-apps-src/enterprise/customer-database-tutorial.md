@@ -244,7 +244,7 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();
