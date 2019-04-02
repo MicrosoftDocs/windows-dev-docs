@@ -1,7 +1,7 @@
 ---
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.date: 01/31/2019
+ms.date: 04/02/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
@@ -16,7 +16,7 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](index.md#topics-about-cwinrt) includes info about both interoperating with, and porting from, C++/CX and WRL.
 
 > [!IMPORTANT]
-> Two of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Some of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
@@ -25,12 +25,12 @@ The Windows Runtime is based on Component Object Model (COM) APIs, and it's desi
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## SDK support for C++/WinRT
-As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains a header-file-based standard C++ library for consuming first-party Windows APIs (Windows Runtime APIs in Windows namespaces). C++/WinRT also comes with the `cppwinrt.exe` tool, which you can point at a Windows Runtime metadata (`.winmd`) file to generate a header-file-based standard C++ library that *projects* the APIs described in the metadata for consumption from C++/WinRT code. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. By pointing `cppwinrt.exe` at metadata, you can generate a library for use with any runtime class implemented in a second- or third-party Windows Runtime component, or implemented in your own application. For more info, see [Consume APIs with C++/WinRT](consume-apis.md).
+As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains a header-file-based standard C++ library for consuming first-party Windows APIs (Windows Runtime APIs in Windows namespaces).
 
-With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
+For compatibility, the Windows SDK also comes with the `cppwinrt.exe` tool. However, we recommend that you instead install and use the most recent version of `cppwinrt.exe`, which is included with the **Microsoft.Windows.CppWinRT** NuGet package. That package, and `cppwinrt.exe`, are described in the next section.
 
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
-For Visual Studio support, in addition to a minimum Windows SDK target version of 10.0.17134.0 (Windows 10, version 1803), you'll need Visual Studio 2017 (at least version 15.6; we recommend at least 15.7), or Visual Studio 2019. If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
+For Visual Studio support, in addition to a minimum Windows SDK target version of 10.0.17134.0 (Windows 10, version 1803), you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
 
 You'll need to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
@@ -49,7 +49,11 @@ The Visual Studio project templates for C++/WinRT are described below. When you 
 
 With your system set up as described above, you'll be able to create and build, or open, a C++/WinRT project in Visual Studio, and deploy it.
 
-Alternatively, you can convert an existing project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or updating to) the latest version of the VSIX extension, open the existing project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. Once you've added the package, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+Alternatively, you can convert an existing project by manually installing the **Microsoft.Windows.CppWinRT** NuGet package. After installing (or updating to) the latest version of the VSIX extension, open the existing project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. Once you've added the package, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool. As of version 2.0, the **Microsoft.Windows.CppWinRT** NuGet package includes the `cppwinrt.exe` tool.
+
+You can point the `cppwinrt.exe` tool at a Windows Runtime metadata (`.winmd`) file to generate a header-file-based standard C++ library that *projects* the APIs described in the metadata for consumption from C++/WinRT code. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. By pointing `cppwinrt.exe` at metadata, you can generate a library for use with any runtime class implemented in a second- or third-party Windows Runtime component, or implemented in your own application. For more info, see [Consume APIs with C++/WinRT](consume-apis.md).
+
+With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
 
 You can identify a project that uses the C++/WinRT MSBuild support by the presence of the **Microsoft.Windows.CppWinRT** NuGet package installed within the project.
 
