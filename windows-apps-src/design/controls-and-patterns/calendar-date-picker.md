@@ -85,7 +85,7 @@ When you set the Date in code, the value is constrained by the [MinDate](https:/
 You can handle the [DateChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) event to be notified when the Date value has changed.
 
 > [!NOTE]
-For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
+> For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
 
 ### Setting a header and placeholder text
 
