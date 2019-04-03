@@ -205,7 +205,8 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard Button with a flyout; only the appearance is different.
 
-The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked.
+The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked. 
+Be sure to specify the [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property of your flyout to ensure the desired placement in relation to the button. The default placement algorithm might not produce the intended placement in all situations.
 
 > [!TIP]
 > For more info about flyouts, see [Menus and context menus](menus.md).
@@ -278,6 +279,7 @@ The typical behavior for a split button is:
 ### Example - Split button
 
 This example shows how to create a split button that is used to change the foreground color of selected text in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+Split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A split button for selecting foreground color](images/split-button-rtb.png)
 
@@ -286,7 +288,7 @@ This example shows how to create a split button that is used to change the foreg
              Click="BrushButtonClick">
     <Border x:Name="SelectedColorBorder" Width="20" Height="20"/>
     <SplitButton.Flyout>
-        <Flyout x:Name="BrushFlyout" Placement="BottomEdgeAlignedLeft">
+        <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
             <GridView ItemsSource="{x:Bind ColorOptions}" 
@@ -374,7 +376,7 @@ A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) has t
 A toggle split button is typically used to enable or disable a feature when the feature has multiple options that the user can choose from. For example, in a document editor, it could be used to turn lists on or off, while the drop down is used to choose the style of the list.
 
 > [!NOTE]
-> When invoked with touch, the split button behaves as a drop down button. With other methods of input, a user can invoke either half of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.
+> When invoked with touch, the toggle split button behaves as a drop down button. With other methods of input, a user can toggle and invoke the two halves of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.
 
 ### Differences with ToggleButton
 
@@ -387,6 +389,7 @@ Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)
 ### Example - Toggle split button
 
 The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+Toggle split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
 
@@ -397,7 +400,7 @@ The following example shows how a toggle split button could be used to turn list
                    IsCheckedChanged="ListStyleButton_IsCheckedChanged">
     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
     <ToggleSplitButton.Flyout>
-        <Flyout Placement="BottomEdgeAlignedLeft">
+        <Flyout>
             <ListView x:Name="ListStylesListView"
                       SelectionChanged="ListStylesListView_SelectionChanged" 
                       SingleSelectionFollowsFocus="False">

@@ -171,7 +171,9 @@ When the [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xam
 
 ## Open and closed states
 
-The command bar can be open or closed. When open, the primary command buttons are shown with text labels, and the overflow menu is open if secondary commands are present.
+The command bar can be open or closed. When it's open, it shows primary command buttons with text labels and it opens the overflow menu  (if there are secondary commands).
+The command bar opens the overflow menu upwards (above the primary commands) or downwards (below the primary commands). 
+The default direction is up, but if there's not enough space to open the overflow menu upwards, the command bar opens it downwards. 
 
 A user can switch between these states by pressing the "see more" \[•••\] button. You can switch between them programmatically by setting the [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) property. 
 
@@ -210,7 +212,7 @@ private void CommandBar_Closing(object sender, object e)
 
 If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called *light dismiss*. You can control light dismiss behavior by setting the [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) property. When `IsSticky="true"`, the bar remains open until the user presses the "see more" \[•••\] button or selects an item from the overflow menu. 
 
-We recommend avoiding sticky command bars because they don't conform to users' expectations around light dismiss.
+We recommend avoiding sticky command bars because they don't conform to users' expectations for [light dismiss and keyboard focus behavior](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss).
 
 ### Display Mode
 
