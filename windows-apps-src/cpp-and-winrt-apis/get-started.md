@@ -1,11 +1,12 @@
 ---
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
-ms.date: 10/19/2018
+ms.date: 04/03/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ---
+
 # Get started with C++/WinRT
 
 To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), this topic walks through a simple code example based on a new **Windows Console Application (C++/WinRT)** project. This topic also shows how to [add C++/WinRT support to a Windows Desktop application project](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
@@ -16,7 +17,7 @@ To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/in
 ## A C++/WinRT quick-start
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
@@ -26,7 +27,7 @@ Edit `pch.h` and `main.cpp` to look like this.
 // pch.h
 ...
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ...
 ```
@@ -57,7 +58,7 @@ int main()
 Let's take the short code example above piece by piece, and explain what's going on in each part.
 
 ```cppwinrt
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
@@ -126,9 +127,9 @@ Because C++/WinRT uses features from the C++17 standard, set project property **
 
 ### The precompiled header
 
-Rename your `stdafx.h` and `stdafx.cpp` to `pch.h` and `pch.cpp`, respectively. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
+The default project template creates a precompiled header for you, named either `framework.h`, or `stdafx.h`. Rename that to `pch.h`. If you have a `stdafx.cpp` file, then rename that to `pch.cpp`. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
 
-Find and replace all `#include "stdafx.h"` with `#include "pch.h"`.
+Find and replace all `#include "framework.h"` (or `#include "stdafx.h"`) with `#include "pch.h"`.
 
 In `pch.h`, include `winrt/base.h`.
 
@@ -150,7 +151,7 @@ You can also use project link settings to explicitly link `WindowsApp.lib`. Or, 
 #pragma comment(lib, "windowsapp")
 ```
 
-You can now compile and link, and add C++/WinRT code to your project (for example, the code shown in the [A C++/WinRT quick-start](#a-cwinrt-quick-start) section, above)
+You can now compile and link, and add C++/WinRT code to your project (for example, code similar to that shown in the [A C++/WinRT quick-start](#a-cwinrt-quick-start) section, above).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
