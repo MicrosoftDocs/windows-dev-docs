@@ -18,7 +18,6 @@ All Device Portal functionality is built on REST APIs that developers can call d
 
 ## App deployment
 
----
 ### Install an app
 
 **Request**
