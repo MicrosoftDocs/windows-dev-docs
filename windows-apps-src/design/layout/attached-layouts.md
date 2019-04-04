@@ -3,7 +3,7 @@ Description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 03/013/2019
+ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -108,7 +108,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](../../xaml-platform/x-load-attribute.md). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 
@@ -146,7 +146,7 @@ The approach for creating a non-virtualizing layout should feel familiar to anyo
 3. _(**New**/Optional)_ Initialize any state object required by the layout as part of the [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Stash it with the host container by using the [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) provided with the context.
 4. Override the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) and call the [Measure](/uwp/api/windows.ui.xaml.uielement.measure) method on all the children.
 5. Override the [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) and call the [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) method on all the children.
-6. *(**New**/Optional)* Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.unititializeforcontextcore).
+6. *(**New**/Optional)* Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
 ### Example: A Simple Stack Layout (Varying-Sized Items)
 
@@ -211,7 +211,7 @@ Similar to a non-virtualizing layout, the high-level steps for a virtualizing la
 4. Override the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) and call the [Measure](/uwp/api/windows.ui.xaml.uielement.measure) method for each child that should be realized.
    1. The [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method is used to retrieve a UIElement that has been prepared by the framework (e.g. data bindings applied).
 5. Override the [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) and call the [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) method for each realized child.
-6. (Optional) Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.unititializeforcontextcore).
+6. (Optional) Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
 > [!TIP]
 > The value returned by the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) is used as the size of the virtualized content.
@@ -240,17 +240,17 @@ Scrolling on Windows happens asynchronous to the UI thread. It is not controlled
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
-Since element creation is costly, virtualizing containers (e.g. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontent.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
+Since element creation is costly, virtualizing containers (e.g. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
 
 **Re-using Elements (Recycling)**
 
-The layout is expected to size and position the elements to fill the [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontent.realizationrect) each time it is run. By default the [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) will recycle any unused elements at the end of each layout pass.
+The layout is expected to size and position the elements to fill the [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) each time it is run. By default the [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) will recycle any unused elements at the end of each layout pass.
 
 The [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) that is passed to the layout as part of the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) and [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) provides the additional information a virtualizing layout needs. Some of the most commonly used things it provides are the ability to:
 
 1. Query the number of items in the data ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)).
 2. Retrieve a specific item using the [GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat) method.
-3. Retrieve a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontent.realizationrect) that represents the viewport and buffer that the layout should fill with realized elements.
+3. Retrieve a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that represents the viewport and buffer that the layout should fill with realized elements.
 4. Request the UIElement for a specific item with the [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) method.
 
 Requesting an element for a given index will cause that element to be marked as "in use" for that pass of the layout. If the element does not already exist, then it will be realized and automatically prepared for use (e.g. inflating the UI tree defined in a DataTemplate, processing any data binding, etc.).  Otherwise, it will be retrieved from a pool of existing instances.

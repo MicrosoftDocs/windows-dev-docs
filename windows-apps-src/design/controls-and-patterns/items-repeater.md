@@ -55,7 +55,7 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 
 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not derive from [Control](/uwp/api/windows.ui.xaml.controls.control), so it doesn't have a control template. Therefore, it doesn't contain any built-in scrolling like a ListView or other collection controls do.
 
-When you use an ItemsRepeater, you should provide scrolling functionality by wrapping it in a [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) or [Scroller](/uwp/api/microsoft.ui.xaml.controls.scroller) control.
+When you use an ItemsRepeater, you should provide scrolling functionality by wrapping it in a [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) control.
 
 ## Create an ItemsRepeater
 
