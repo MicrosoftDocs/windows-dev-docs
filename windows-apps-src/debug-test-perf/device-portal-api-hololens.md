@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 Everything in the Windows Device Portal is built on top of REST API's that you can use to access the data and control your device programmatically.
 
 ## Holographic OS
----
+
 ### Get HTTPS requirements for the Device Portal
 
 **Request**
@@ -44,7 +44,6 @@ You can get the HTTPS requirements for the Device Portal by using the following 
 
 - Standard status codes.
 
----
 ### Get the stored interpupillary distance (IPD)
 
 **Request**
@@ -76,7 +75,6 @@ You can get the stored IPD value by using the following request format. The valu
 
 - Standard status codes.
 
----
 ### Get a list of HoloLens specific ETW providers
 
 **Request**
@@ -108,7 +106,7 @@ You can get a list of HoloLens specific ETW providers that are not registered wi
 
 - Standard status codes.
 
----
+
 ### Return the state for all active services
 
 **Request**
@@ -140,7 +138,7 @@ You can get the state of all services that are currently running by using the fo
 
 - Standard status codes.
 
----
+
 ### Set the HTTPS requirement for the Device Portal.
 
 **Request**
@@ -176,7 +174,7 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
+
 ### Set the interpupillary distance (IPD)
 
 **Request**
@@ -212,9 +210,9 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
+
 ## Holographic perception
----
+
 ### Accept websocket upgrades and run a mirage client that sends updates
 
 **Request**
@@ -250,9 +248,9 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
+
 ## Holographic thermal
----
+
 ### Get the thermal stage of the device
 
 **Request**
@@ -289,9 +287,7 @@ The possible values are indicated by the following table.
 
 - Standard status codes.
 
----
 ## HSimulation control
----
 ### Create a control stream or post data to a created stream
 
 **Request**
@@ -328,7 +324,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Delete a control stream
 
 **Request**
@@ -360,7 +355,6 @@ You can delete a control stream by using the following request format.
 
 - Standard status codes.
 
----
 ### Get a control stream
 
 **Request**
@@ -392,8 +386,7 @@ You can open a web socket connection for a control stream by using the following
 
 - Standard status codes.
 
----
-### Get the simluation mode
+### Get the simulation mode
 
 **Request**
 
@@ -424,8 +417,7 @@ You can get the simluation mode by using the following request format.
 
 - Standard status codes.
 
----
-### Set the simluation mode
+### Set the simulation mode
 
 **Request**
 
@@ -460,9 +452,8 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ## HSimulation playback
----
+
 ### Delete a recording
 
 **Request**
@@ -498,7 +489,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Get all recordings
 
 **Request**
@@ -530,7 +520,6 @@ You can get all the available recordings by using the following request format.
 
 - Standard status codes.
 
----
 ### Get the types of data in a loaded recording
 
 **Request**
@@ -566,7 +555,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Get all the loaded recordings
 
 **Request**
@@ -598,7 +586,6 @@ You can get all the loaded recordings by using the following request format.
 
 - Standard status codes.
 
----
 ### Get the current playback state of a recording 
 
 **Request**
@@ -634,7 +621,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Load a recording
 
 **Request**
@@ -670,7 +656,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Pause a recording
 
 **Request**
@@ -706,7 +691,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Play a recording
 
 **Request**
@@ -742,7 +726,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Stop a recording
 
 **Request**
@@ -778,7 +761,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Unload a recording
 
 **Request**
@@ -814,7 +796,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Upload a recording
 
 **Request**
@@ -846,9 +827,8 @@ You can upload a recording by using the following request format.
 
 - Standard status codes.
 
----
 ## HSimulation recording
----
+
 ### Get the recording state
 
 **Request**
@@ -880,7 +860,6 @@ You can get the current recording state by using the following request format.
 
 - Standard status codes.
 
----
 ### Start a recording
 
 **Request**
@@ -923,7 +902,6 @@ For these parameters, exactly one of the following parameters must be set to 1: 
 
 - Standard status codes.
 
----
 ### Stop the current recording
 
 **Request**
@@ -955,9 +933,8 @@ You can stop the current recording by using the following request format. The re
 
 - Standard status codes.
 
----
 ## Mixed reality capture
----
+
 ### Delete a mixed reality capture (MRC) recording from the device
 
 **Request**
@@ -993,7 +970,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Download a mixed reality capture (MRC) file
 
 **Request**
@@ -1030,7 +1006,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Get the mixed reality capture (MRC) settings
 
 **Request**
@@ -1062,7 +1037,6 @@ You can get the MRC settings by using the following request format.
 
 - Standard status codes.
 
----
 ### Get the status of the mixed reality capture (MRC) recording
 
 **Request**
@@ -1094,7 +1068,6 @@ You can get the MRC recording status by using the following request format. The 
 
 - Standard status codes.
 
----
 ### Get the list of mixed reality capture (MRC) files
 
 **Request**
@@ -1126,7 +1099,6 @@ You can get the MRC files stored on the device by using the following request fo
 
 - Standard status codes.
 
----
 ### Set the mixed reality capture (MRC) settings
 
 **Request**
@@ -1158,7 +1130,6 @@ You can set the MRC settings by using the following request format.
 
 - Standard status codes.
 
----
 ### Starts a mixed reality capture (MRC) recording
 
 **Request**
@@ -1190,7 +1161,6 @@ You can start an MRC recording by using the following request format.
 
 - Standard status codes.
 
----
 ### Stop the current mixed reality capture (MRC) recording
 
 **Request**
@@ -1222,7 +1192,6 @@ You can stop the current MRC recording by using the following request format.
 
 - Standard status codes.
 
----
 ### Take a mixed reality capture (MRC) photo
 
 **Request**
@@ -1254,9 +1223,8 @@ You can take an MRC photo by using the following request format. The photo is re
 
 - Standard status codes.
 
----
 ## Mixed reality streaming
----
+
 ### Initiates a chunked download of a fragmented mp4
 
 **Request**
@@ -1295,7 +1263,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Initiates a chunked download of a fragmented mp4
 
 **Request**
@@ -1334,7 +1301,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Initiates a chunked download of a fragmented mp4
 
 **Request**
@@ -1373,7 +1339,6 @@ You can specify the following additional parameters on the request URI:
 
 - Standard status codes.
 
----
 ### Initiates a chunked download of a fragmented mp4
 
 **Request**
