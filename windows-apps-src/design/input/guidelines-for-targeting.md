@@ -59,7 +59,7 @@ Compact sizing can be applied at the page or grid level.
 
 ## Target size
 
-In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). On average UWP controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns).
+In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). Typically, UWP controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns). See [Control size and density](../style/spacing.md) for more detail.
 
 These target size recommendations can be adjusted as required by your particular scenario. Here are some things to consider:
 
@@ -73,6 +73,7 @@ These target size recommendations can be adjusted as required by your particular
 ## Related articles
 
 - [Introduction to UWP app design](../basics/design-and-ui-intro.md)
+- [Control size and density](../style/spacing.md)
 - [Alignment, margin, padding](../layout/alignment-margin-padding.md)
 
 ### Samples

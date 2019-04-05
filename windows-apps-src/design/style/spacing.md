@@ -41,13 +41,17 @@ This next image shows the changes made to control sizes for the Windows 10 Octob
 
 ## Fluent Compact sizing
 
-Compact sizing was added to enable information rich, dense groups of controls. This size and density should be used when you need to display as much information as possible.
+Compact sizing enables dense, information-rich groups of controls and can help with the following:
+
+- Browsing  large amounts of content.
+- Maximizing visible content on a page.
+- Navigating and interacting with controls and content
 
 **Compact sizing is designed primarily to accommodate pointer input.**
 
 ### Examples
 
-Compact sizing is implemented as a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is hosted in the [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget package.
+Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) Nuget package.
 
 The following examples show how the the `Compact` style can be applied for the page and an individual Grid control.
 
