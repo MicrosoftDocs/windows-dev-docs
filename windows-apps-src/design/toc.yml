@@ -241,6 +241,8 @@
       href: style/reveal-focus.md
     - name: Sound
       href: style/sound.md
+    - name: Spacing
+      href: style/spacing.md
     - name: Writing style
       href: style/writing-style.md
     - name: XAML brushes
