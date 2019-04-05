@@ -16,9 +16,9 @@ This article covers the three types of UWP push notification channels (primary, 
 
 There are three types of push channels that can be used to send notifications to a UWP app. They are: 
 
-[Primary channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications (Link to descriptions of toast/tiles/badge)
+[Primary channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications. [Learn more here](windows-push-notification-services--wns--overview.md).
 
-[Secondary tile channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates for a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
+[Secondary tile channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates to a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
 
 [Alternate channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any UWP app, including those which aren't registered in the Store. 
 
@@ -78,21 +78,21 @@ PushNotificationChannel channel =
 Alternate channels enable apps to send push notifications without registering to the Microsoft Store or creating push channels outside of the primary one used for the app. 
  
 ### What do alternate channels enable?
--   Send raw push notifications to a UWP running on any Windows device. Alternate channels only allow for raw notifications.
+-   Send raw push notifications to a UWP running on any Windows device. Alternate channels only allow for raw notifications (however you can still wake up a background task to locally show toast or tile notifications).
 -   Allows apps to create multiple raw push channels for different features within the app. An app can create up to 1000 alternate channels, and each one is valid for 30 days. Each of these channels can be managed or revoked separately by the app.
 -   Alternate push channels can be created without registering an app with the Microsoft Store. If you app is going to be installed on devices without registering it in the Microsoft Store, it will still be able to receive push notifications.
 -   Servers can push notifications using the W3C standard REST APIs and VAPID protocol. Alternate channels use the W3C standard protocol, this allows you to simplify the server logic that needs to be maintained.
 -   Full, end-to-end, message encryption. While the primary channel provides encryption while in transit, if you want to be extra secure, alternate channels enable your app to pass through encryption headers to protect a message. 
 
 ### Limitations of alternate channels
--   Apps cannot send toast, tile, or badge type notifications. The alternate channel limits your ability to send other notification types. Your app is still able to send local notifications from your background task. 
+-   Your app's server cannot send push toast, tile, or badge type notifications. You can only send push raw notifications. Your app is still able to send local notifications from your background task. 
 -   Requires a different REST API than either primary or secondary tile channels. Using the standard W3C REST API means that your app will need to have different logic for sending push toast or tile updates
 
 ### Creating an alternate channel 
 
 ```csharp
 PushNotificationChannel webChannel = 
-	await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+	await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
 ```
 
 ## Channel type comparison
