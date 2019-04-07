@@ -33,7 +33,7 @@ You can install an app by using the following request format.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | package   | (**required**) The file name of the package to be installed. |
 
 **Request headers**
@@ -65,7 +65,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Install a related set
 
 **Request**
@@ -73,7 +73,7 @@ This API has the following expected status codes.
 You can install a [related set](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) by using the following request format.
 
 | Method      | Request URI |
-| :------     | :----- |
+| :------     | :------ |
 | POST | /api/app/packagemanager/package |
 
 **URI parameters**
@@ -81,7 +81,7 @@ You can install a [related set](https://blogs.msdn.microsoft.com/appinstaller/20
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | package   | (**required**) The file names of the packages to be installed. |
 
 **Request headers**
@@ -113,7 +113,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Register an app in a loose folder
 
 **Request**
@@ -164,7 +164,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Register a related set in loose file folders
 
 **Request**
@@ -224,7 +224,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get app installation status
 
 **Request**
@@ -267,7 +267,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Uninstall an app
 
 **Request**
@@ -281,7 +281,7 @@ You can uninstall an app by using the following request format.
 **URI parameters**
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | package   | (**required**) The PackageFullName (from GET /api/app/packagemanager/packages) of the target app |
 
 **Request headers**
@@ -312,7 +312,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get installed apps
 
 **Request**
@@ -381,9 +381,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Bluetooth
----
+<hr>
 
 ### Get the Bluetooth radios on the machine
 
@@ -392,7 +392,7 @@ This API has the following expected status codes.
 You can get a list of the Bluetooth radios that are installed on the machine by using the following request format. This can be upgraded to a WebSocket connection as well, with the same JSON data.
  
 | Method        | Request URI |
-| :---          | :--- |
+| :------          | :------ |
 | GET           | /api/bt/getradios |
 | GET/WebSocket | /api/bt/getradios |
 
@@ -430,7 +430,7 @@ The response includes a JSON array of Bluetooth radios attached to the device.
 This API has the following expected status codes.
 
 | HTTP status code | Description |
-| :---             | :--- |
+| :------             | :------ |
 | 200              | OK |
 | 4XX              | Error codes |
 | 5XX              | Error codes |
@@ -441,7 +441,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Turn the Bluetooth radio on or off
 
 **Request**
@@ -449,7 +449,7 @@ This API has the following expected status codes.
 Sets a specific Bluetooth radio to On or Off.
  
 | Method | Request URI |
-| :---   | :--- |
+| :------   | :------ |
 | POST   | /api/bt/setradio |
 
 **URI parameters**
@@ -457,7 +457,7 @@ Sets a specific Bluetooth radio to On or Off.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | ID            | (**required**) The device ID for the Bluetooth radio and must be base 64 encoded. |
 | State         | (**required**) This can be `"On"` or `"Off"`. |
 
@@ -476,7 +476,7 @@ You can specify the following additional parameters on the request URI:
 This API has the following expected status codes.
 
 | HTTP status code | Description |
-| :---             | :--- |
+| :------             | :------ |
 | 200              | OK |
 | 4XX              | Error codes |
 | 5XX              | Error codes |
@@ -487,9 +487,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Device manager
----
+<hr>
 ### Get the installed devices on the machine
 
 **Request**
@@ -545,7 +545,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get data on connected USB Devices/Hubs
 
 **Request**
@@ -629,9 +629,9 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ## Dump collection
----
+<hr>
 ### Get the list of all crash dumps for apps
 
 **Request**
@@ -676,7 +676,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the crash dump collection settings for an app
 
 **Request**
@@ -693,7 +693,7 @@ You can get the crash dump collection settings for a sideloaded app by using the
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | packageFullname   | (**required**) The full name of the package for the sideloaded app. |
 
 **Request headers**
@@ -728,7 +728,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Delete a crash dump for a sideloaded app
 
 **Request**
@@ -776,7 +776,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Disable crash dumps for a sideloaded app
 
 **Request**
@@ -823,7 +823,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Download the crash dump for a sideloaded app
 
 **Request**
@@ -840,7 +840,7 @@ You can download a sideloaded app's crash dump by using the following request fo
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | packageFullname   | (**required**) The full name of the package for the sideloaded app. |
 | fileName   | (**required**) The name of the dump file that you want to download. |
 
@@ -873,7 +873,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Enable crash dumps for a sideloaded app
 
 **Request**
@@ -918,7 +918,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the list of bugcheck files
 
 **Request**
@@ -967,7 +967,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Download a bugcheck dump file
 
 **Request**
@@ -984,7 +984,7 @@ You can download a bugcheck dump file by using the following request format.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | filename   | (**required**) The file name of the dump file. You can find this by using the API to get the dump list. |
 
 
@@ -1015,7 +1015,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get the bugcheck crash control settings
 
 **Request**
@@ -1076,7 +1076,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get a live kernel dump
 
 **Request**
@@ -1119,7 +1119,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get a dump from a live user process
 
 **Request**
@@ -1136,7 +1136,7 @@ You can get the dump for live user process by using the following request format
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | pid   | (**required**) The unique process id for the process you are interested in. |
 
 **Request headers**
@@ -1166,7 +1166,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Set the bugcheck crash control settings
 
 **Request**
@@ -1214,9 +1214,9 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ## ETW
----
+<hr>
 ### Create a realtime ETW session over a websocket
 
 **Request**
@@ -1310,7 +1310,7 @@ Example:
 }
 ```
 
----
+<hr>
 ### Enumerate the registered ETW providers
 
 **Request**
@@ -1361,7 +1361,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Enumerate the custom ETW providers exposed by the platform.
 
 **Request**
@@ -1409,9 +1409,9 @@ You can enumerate through the registered providers by using the following reques
 * HoloLens
 * IoT
 
----
+<hr>
 ## Location
----
+<hr>
 
 ### Get location override mode
 
@@ -1622,9 +1622,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## OS information
----
+<hr>
 ### Get the machine name
 
 **Request**
@@ -1674,7 +1674,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the operating system information
 
 **Request**
@@ -1730,7 +1730,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the device family 
 
 **Request**
@@ -1784,7 +1784,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Set the machine name
 
 **Request**
@@ -1801,7 +1801,7 @@ You can set the name of a machine by using the following request format.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | name | (**required**) The new name for the machine. |
 
 **Request headers**
@@ -1830,9 +1830,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## User information
----
+<hr>
 ### Get the active user
 
 **Request**
@@ -1893,9 +1893,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Performance data
----
+<hr>
 ### Get the list of running processes
 
 **Request**
@@ -1956,7 +1956,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the system performance statistics
 
 **Request**
@@ -2035,9 +2035,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Power
----
+<hr>
 ### Get the current battery state
 
 **Request**
@@ -2094,7 +2094,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Get the active power scheme
 
 **Request**
@@ -2140,7 +2140,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get the sub-value for a power scheme
 
 **Request**
@@ -2183,7 +2183,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get the power state of the system
 
 **Request**
@@ -2230,7 +2230,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Set the active power scheme
 
 **Request**
@@ -2275,7 +2275,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Set the sub-value for a power scheme
 
 **Request**
@@ -2292,7 +2292,7 @@ You can set the sub-value for a power scheme by using the following request form
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | valueAC | (**required**) The value to use for A/C power. |
 | valueDC | (**required**) The value to use for battery power. |
 
@@ -2319,7 +2319,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get a sleep study report
 
 **Request**
@@ -2332,7 +2332,7 @@ You can get a sleep study report by using the following request format.
 
 **URI parameters**
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | FileName | (**required**) The full name for the file you want to download. This value should be hex64 encoded. |
 
 **Request headers**
@@ -2362,7 +2362,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Enumerate the available sleep study reports
 
 **Request**
@@ -2413,7 +2413,7 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ### Get the sleep study transform
 
 **Request**
@@ -2456,9 +2456,9 @@ This API has the following expected status codes.
 * Windows Desktop
 * IoT
 
----
+<hr>
 ## Remote control
----
+<hr>
 ### Restart the target computer
 
 **Request**
@@ -2500,7 +2500,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Shut down the target computer
 
 **Request**
@@ -2544,9 +2544,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Task manager
----
+<hr>
 ### Start a modern app
 
 **Request**
@@ -2595,7 +2595,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Stop a modern app
 
 **Request**
@@ -2644,7 +2644,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Kill process by PID
 
 **Request**
@@ -2661,7 +2661,7 @@ You can kill a process by using the following request format.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | pid   | (**required**) The unique process id for the process to stop. |
 
 **Request headers**
@@ -2690,9 +2690,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Networking
----
+<hr>
 ### Get the current IP configuration
 
 **Request**
@@ -2778,7 +2778,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Set a static IP address (IPV4 configuration)
 
 **Request**
@@ -2835,7 +2835,7 @@ This API has the following expected status codes.
 * Xbox
 * HoloLens
 * IoT
----
+<hr>
 ### Enumerate wireless network interfaces
 
 **Request**
@@ -2897,7 +2897,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Enumerate wireless networks
 
 **Request**
@@ -2914,7 +2914,7 @@ You can enumerate the list of wireless networks on the specified interface by us
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | interface   | (**required**) The GUID for the network interface to use to search for wireless networks, without brackets. |
 
 **Request headers**
@@ -2967,7 +2967,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Connect and disconnect to a Wi-Fi network.
 
 **Request**
@@ -2984,7 +2984,7 @@ You can connect or disconnect to a Wi-Fi network by using the following request 
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | interface   | (**required**) The GUID for the network interface you use to connect to the network. |
 | op   | (**required**) Indicates the action to take. Possible values are connect or disconnect.|
 | ssid   | (**required if *op* == connect**) The SSID to connect to. |
@@ -3017,7 +3017,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Delete a Wi-Fi profile
 
 **Request**
@@ -3034,7 +3034,7 @@ You can delete a profile associated with a network on a specific interface by us
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | interface   | (**required**) The GUID for the network interface associated with the profile to delete. |
 | profile   | (**required**) The name of the profile to delete. |
 
@@ -3064,9 +3064,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Windows Error Reporting (WER)
----
+<hr>
 ### Download a Windows error reporting (WER) file
 
 **Request**
@@ -3083,7 +3083,7 @@ You can download a WER-related file by using the following request format.
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | user   | (**required**) The user name associated with the report. |
 | type   | (**required**) The type of report. This can be either **queried** or **archived**. |
 | name   | (**required**) The name of the report. This should be base64 encoded. |
@@ -3117,7 +3117,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Enumerate files in a Windows error reporting (WER) report
 
 **Request**
@@ -3134,7 +3134,7 @@ You can enumerate the files in a WER report by using the following request forma
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | user   | (**required**) The user associated with the report. |
 | type   | (**required**) The type of report. This can be either **queried** or **archived**. |
 | name   | (**required**) The name of the report. This should be base64 encoded. |
@@ -3172,7 +3172,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### List the Windows error reporting (WER) reports
 
 **Request**
@@ -3230,9 +3230,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## Windows Performance Recorder (WPR) 
----
+<hr>
 ### Start tracing with a custom profile
 
 **Request**
@@ -3284,7 +3284,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Start a boot performance tracing session
 
 **Request**
@@ -3301,7 +3301,7 @@ You can start a boot WPR tracing session by using the following request format. 
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | profile   | (**required**) This parameter is required on start. The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json. |
 
 **Request headers**
@@ -3340,7 +3340,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Stop a boot performance tracing session
 
 **Request**
@@ -3385,7 +3385,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Start a performance tracing session
 
 **Request**
@@ -3402,7 +3402,7 @@ You can start a WPR tracing session by using the following request format. This 
 You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | profile   | (**required**) The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json. |
 
 **Request headers**
@@ -3441,7 +3441,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Stop a performance tracing session
 
 **Request**
@@ -3486,7 +3486,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Retrieve the status of a tracing session
 
 **Request**
@@ -3538,7 +3538,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### List completed tracing sessions (ETLs)
 
 **Request**
@@ -3595,7 +3595,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Download a tracing session (ETL)
 
 **Request**
@@ -3612,7 +3612,7 @@ You can download a tracefile (boot trace or user-mode trace) using the following
 You can specify the following additional parameter on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | filename   | (**required**) The name of the ETL trace to download.  These can be found in /api/wpr/tracefiles |
 
 **Request headers**
@@ -3644,7 +3644,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Delete a tracing session (ETL)
 
 **Request**
@@ -3661,7 +3661,7 @@ You can delete a tracefile (boot trace or user-mode trace) using the following r
 You can specify the following additional parameter on the request URI:
 
 | URI parameter | Description |
-| :---          | :--- |
+| :------          | :------ |
 | filename   | (**required**) The name of the ETL trace to delete.  These can be found in /api/wpr/tracefiles |
 
 **Request headers**
@@ -3693,9 +3693,9 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ## DNS-SD Tags 
----
+<hr>
 ### View Tags
 
 **Request**
@@ -3749,7 +3749,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Delete Tags
 
 **Request**
@@ -3794,7 +3794,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
----
+<hr>
 ### Delete Tag
 
 **Request**
@@ -3840,7 +3840,7 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
  
----
+<hr>
 ### Add a Tag
 
 **Request**
@@ -3889,7 +3889,7 @@ This API has the following expected status codes.
 
 ## App File Explorer
 
----
+<hr>
 ### Get known folders
 
 **Request**
@@ -3940,7 +3940,7 @@ This API has the following expected status codes.
 * Xbox
 * IoT
 
----
+<hr>
 ### Get files
 
 **Request**
@@ -4001,7 +4001,7 @@ This API has the following expected status codes.
 * Xbox
 * IoT
 
----
+<hr>
 ### Download a file
 
 **Request**
@@ -4049,7 +4049,7 @@ This API has the following expected status codes.
 * Xbox
 * IoT
 
----
+<hr>
 ### Rename a file
 
 **Request**
@@ -4101,7 +4101,7 @@ This API has the following expected status codes.
 * Xbox
 * IoT
 
----
+<hr>
 ### Delete a file
 
 **Request**
@@ -4151,7 +4151,7 @@ This API has the following expected status codes.
 * Xbox
 * IoT
 
----
+<hr>
 ### Upload a file
 
 **Request**
