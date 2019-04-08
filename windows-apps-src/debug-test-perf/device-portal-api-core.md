@@ -1,13 +1,9 @@
 ---
-
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
-
-ms.date: 03/22/2017
+ms.date: 4/8/2019
 ms.topic: article
-
-
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
@@ -2802,7 +2798,8 @@ Sets the IPV4 configuration with static IP and DNS. If a static IP is not specif
 | SecondayDNS | (**required** if *PrimaryDNS* is not null) The static secondary DNS to set. |
 
 For clarity, to set an interface to DHCP, serialize just the `AdapterName` on the wire:
-```
+
+```json
 {
     "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
 }

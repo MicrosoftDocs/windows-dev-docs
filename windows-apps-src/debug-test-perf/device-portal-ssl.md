@@ -2,23 +2,26 @@
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Provision Device Portal with a custom SSL certificate
 description: TBD
-ms.date: 07/11/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
+
 # Provision Device Portal with a custom SSL certificate
-In the Windows 10 Creators Update, Windows Device Portal added a way for device administrators to install a custom certificate for use in HTTPS communication. 
+
+In the Windows 10 Creators Update, Windows Device Portal added a way for device administrators to install a custom certificate for use in HTTPS communication.
 
 While you can do this on your own PC, this feature is mostly intended for enterprises that have an existing certificate infrastructure in place.  
 
-For example, a company might have a certificate authority (CA) that it uses to sign certificates for intranet websites served over HTTPS. This feature stands on top of that infrastructure. 
+For example, a company might have a certificate authority (CA) that it uses to sign certificates for intranet websites served over HTTPS. This feature stands on top of that infrastructure.
 
 ## Overview
+
 By default, Device Portal generates a self-signed root CA, and then uses that to sign SSL certificates for every endpoint it is listening on. This includes `localhost`, `127.0.0.1`, and `::1` (IPv6 localhost).
 
-Also included are the device's hostname (for example, `https://LivingRoomPC`) and each link-local IP address assigned to the device (up to two [IPv4, IPv6] per network adaptor). 
-You can see the link-local IP addresses for a device by looking at the Networking tool in Device Portal. They'll start with `10.` or `192.` for IPv4, or `fe80:` for IPv6. 
+Also included are the device's hostname (for example, `https://LivingRoomPC`) and each link-local IP address assigned to the device (up to two [IPv4, IPv6] per network adaptor).
+You can see the link-local IP addresses for a device by looking at the Networking tool in Device Portal. They'll start with `10.` or `192.` for IPv4, or `fe80:` for IPv6.
 
 In the default setup, a certificate warning may appear in your browser because of the untrusted root CA. Specifically, the SSL cert provided by Device Portal is signed by a root CA that the browser or PC doesn't trust. This can be fixed by creating a new trusted root CA.
 
@@ -37,7 +40,7 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-Once this is created, you can use the _WdpTestCA.cer_ file to sign SSL certs. 
+Once this is created, you can use the _WdpTestCA.cer_ file to sign SSL certs.
 
 ## Create an SSL certificate with the root CA
 
@@ -61,18 +64,19 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 
 If you have multiple devices, you can reuse the localhost .pfx files, but you'll still need to create IP address and hostname certificates for each device separately.
 
-When the bundle of .pfx files is generated, you will need to load them into Windows Device Portal. 
+When the bundle of .pfx files is generated, you will need to load them into Windows Device Portal.
 
 ## Provision Device Portal with the certification(s)
 
 For each .pfx file that you've created for a device, you'll need to run the following command from an elevated command prompt.
 
-```
-WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
+```cmd
+WebManagement.exe -SetCert <Path to .pfx file> <password for pfx>
 ```
 
 See below for example usage:
-```
+
+```cmd
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
@@ -80,7 +84,7 @@ WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 
 Once you have installed the certificates, simply restart the service so the changes can take effect:
 
-```
+```cmd
 sc stop webmanagement
 sc start webmanagement
 ```
