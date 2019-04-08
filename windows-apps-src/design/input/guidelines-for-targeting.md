@@ -22,22 +22,44 @@ In this topic, we describe these default behaviors so you can design your app fo
 
 > **Important APIs**: [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-## Fluent standard sizing
+## Fluent Standard sizing
 
-*Fluent standard sizing* was created to provide a balance between information density and user comfort. Effectively, all items on the screen align to a 40x40 effective pixels (epx) target, which lets UI elements align to a grid and scale appropriately based on system level scaling.
+*Fluent Standard sizing* was created to provide a balance between information density and user comfort. Effectively, all items on the screen align to a 40x40 effective pixels (epx) target, which lets UI elements align to a grid and scale appropriately based on system level scaling.
 
 > [!NOTE]
 >For more info on effective pixels and scaling, see [Introduction to UWP app design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > For more info on system level scaling, see [Alignment, margin, padding](../layout/alignment-margin-padding.md).
 
-## Fluent compact sizing
+## Fluent Compact sizing
 
-Applications can display a higher level of information density with *Fluent compact sizing*. Compact sizing aligns UI elements to a 32x32 epx target, which lets UI elements to align to a tighter grid and scale appropriately based on system level scaling.
+Applications can display a higher level of information density with *Fluent Compact sizing*. Compact sizing aligns UI elements to a 32x32 epx target, which lets UI elements to align to a tighter grid and scale appropriately based on system level scaling.
+
+### Examples
+
+Compact sizing can be applied at the page or grid level.
+
+### Page level
+
+```xaml
+<Page.Resources>
+    <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+</Page.Resources>
+```
+
+### Grid level
+
+```xaml
+<Grid>
+    <Grid.Resources>
+        <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+    </Grid.Resources>
+</Grid>
+```
 
 ## Target size
 
-In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). On average UWP controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns).
+In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). Typically, UWP controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns). See [Control size and density](../style/spacing.md) for more detail.
 
 These target size recommendations can be adjusted as required by your particular scenario. Here are some things to consider:
 
@@ -51,6 +73,7 @@ These target size recommendations can be adjusted as required by your particular
 ## Related articles
 
 - [Introduction to UWP app design](../basics/design-and-ui-intro.md)
+- [Control size and density](../style/spacing.md)
 - [Alignment, margin, padding](../layout/alignment-margin-padding.md)
 
 ### Samples
