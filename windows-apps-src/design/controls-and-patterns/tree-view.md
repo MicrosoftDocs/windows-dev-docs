@@ -79,7 +79,7 @@ You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui
 > [!IMPORTANT]
 > ItemsSource and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
-> ItemsSource is an alternative mechanism to TreeView.RootNodes for putting content into the TreeView control. You cannot set both ItemsSource and RootNodes at the same time. When you use ItemsSource, nodes created for you, and you can access them from TreeView.RootNodes property.
+> ItemsSource is an alternative mechanism to TreeView.RootNodes for putting content into the TreeView control. You cannot set both ItemsSource and RootNodes at the same time. When you use ItemsSource, nodes are created for you, and you can access them from TreeView.RootNodes property.
 
 Here's an example of a simple tree view declared in XAML. You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.
 
