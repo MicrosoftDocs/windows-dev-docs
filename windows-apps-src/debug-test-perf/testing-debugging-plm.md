@@ -1,12 +1,13 @@
 ---
 description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
 title: Testing and debugging tools for Process Lifetime Management (PLM)
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ---
+
 # Testing and debugging tools for Process Lifetime Management (PLM)
 
 One of the key differences between UWP apps and traditional desktop applications is that UWP titles reside in an app container subject to Process Lifecycle Management (PLM). UWP apps can be suspended, resumed, or terminated across all platforms by the Runtime Broker service, and there are dedicated tools for you to use to force those transitions when you are testing or debugging the code that handles them.
@@ -19,11 +20,11 @@ The built-in debugger in Visual Studio 2015 can help you investigate potential i
 
 ## The PLMDebug tool
 
-PLMDebug.exe is a command-line tool that allows you to control the PLM state of an application package, and is shipped as part of the Windows SDK. After it is installed, the tool resides in *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* by default. 
+PLMDebug.exe is a command-line tool that allows you to control the PLM state of an application package, and is shipped as part of the Windows SDK. After it is installed, the tool resides in *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* by default.
 
 PLMDebug also allows you to disable PLM for any installed app package, which is necessary for some debuggers. Disabling PLM prevents the Runtime Broker service from terminating your app before you have a chance to debug. To disable PLM, use the **/enableDebug** switch, followed by the *full package name* of your UWP app (the short name, package family name, or AUMID of a package will not work):
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -35,7 +36,7 @@ Optionally, you can specify an absolute path to a debugger that will automatical
 
 You can work around this limitation by writing a script or tool that identifies your game’s process, and then the shell runs VSJITDebugger.exe, passing in the PID of your UWP app. The following C# code sample illustrates a straightforward approach to accomplish this.
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -70,13 +71,15 @@ namespace VSJITLauncher
 
 Example usage of this in conjunction with PLMDebug:
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 where `Game` is the process name, and `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` is the full package name of the example UWP app package.
 
 Note that every call to **/enableDebug** must be later coupled to another PLMDebug call with the **/disableDebug** switch. Furthermore, the path to a debugger must be absolute (relative paths are not supported).
 
 ## Related topics
+
 - [Deploying and debugging UWP apps](deploying-and-debugging-uwp-apps.md)
 - [Debugging, testing, and performance](index.md)
