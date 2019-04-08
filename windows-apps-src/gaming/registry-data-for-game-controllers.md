@@ -2,11 +2,12 @@
 title: Registry data for game controllers
 description: Learn about the data that you can add to the PC's registry to enable your controller to be used in UWP games.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom
 ms.localizationpriority: medium
 ---
+
 # Registry data for game controllers
 
 > [!NOTE]
@@ -605,7 +606,7 @@ The table below lists the values that are needed to map a button. For example, i
         <td>
             <p>Indicates the switch position that will cause the mapped button to report that it's being pressed. The position values can be one of these strings:</p>
             <ul>
-                <li>Up</li> 
+                <li>Up</li>
                 <li>UpRight</li>
                 <li>Right</li>
                 <li>DownRight</li>
@@ -1116,10 +1117,10 @@ The **Axes** key will map each of the axis positions in the **RawGameController*
 
 ### Switch labels
 
-The **Switches** key maps switch positions to labels. The values follow this naming convention: to label a position of a switch, whose index is *x* in the **RawGameController**'s switch array, add these values under the **Switches** subkey: 
+The **Switches** key maps switch positions to labels. The values follow this naming convention: to label a position of a switch, whose index is *x* in the **RawGameController**'s switch array, add these values under the **Switches** subkey:
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1127,7 +1128,7 @@ The **Switches** key maps switch positions to labels. The values follow this nam
 * SwitchxUpLeft
 * SwitchxLeft
 
-The following table shows an example set of labels for switch positions of a 4-way switch which shows up at index 0 in the **RawGameController**: 
+The following table shows an example set of labels for switch positions of a 4-way switch which shows up at index 0 in the **RawGameController**:
 
 <table>
     <tr>
@@ -1227,7 +1228,7 @@ The following table shows an example set of labels for switch positions of a 4-w
 
 To show how all of these mappings and values come together, here is an example registry file for a generic **RacingWheel**:
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
