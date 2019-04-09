@@ -300,8 +300,6 @@
               href: ../debug-test-perf/device-portal-desktop.md
             - name: Device Portal for Mobile
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: Device Portal for Xbox
-              href: ../debug-test-perf/device-portal-xbox.md
             - name: Device Portal for Hololens
               href: ../debug-test-perf/device-portal-hololens.md
             - name: Device Portal core APIs
