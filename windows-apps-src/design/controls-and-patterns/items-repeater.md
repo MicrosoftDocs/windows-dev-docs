@@ -121,6 +121,19 @@ The items you display in your view do not need to be of the same type. [ItemsRep
 > [!NOTE]
 > An alternative to using DataTemplate or DataTemplateSelector is to implement your own class derived from [Microsoft.UI.Xaml.Controls.ElementFactory](/uwp/api/microsoft.ui.xaml.controls.elementfactory) that is responsible for generating content when requested.
 
+> [!NOTE]
+> If you're app will run on versions of Windows prior to Windows 10 (1809) then you need to host the ScrollViewer inside the [ItemsRepeaterScrollHost](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> ```xaml
+> <muxc:ItemsRepeaterScrollHost>
+>     <ScrollViewer>
+>         <muxc:ItemsRepeater ... />
+>     </ScrollViewer>
+> </muxc:ItemsRepeaterScrollHost>
+> ```
+> If your app will only run on versions of Windows 1809 or higher, then there is no need to use the [ItemsRepeaterScrollHost](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
+>
+> The ItemsRepeater and ScrollViewer coordinate to preserve the visible location of the item the user is currently viewing. They do this so that the item doesn't appear to move or disappear when the scrolled list is changed or resized.  This item is the anchor element. Prior to the 1809 build of Windows 10 the ScrollViewer did not implement the [IScrollAnchorProvider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) interface.
+
 ## Configure the data source
 
 Use the [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to specify the collection to use to generate the content of items. You can set the ItemsSource to any type that implements **IEnumerable**. Additional collection interfaces implemented by your data source determine what functionality is available to the ItemsRepeater to interact with your data.
@@ -628,6 +641,7 @@ This example shows a layout for an app that has various categories that can chan
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind Categories}"
                       Background="LightGreen">
@@ -635,6 +649,7 @@ This example shows a layout for an app that has various categories that can chan
       <DataTemplate x:DataType="local:Category">
         <StackPanel Margin="12,0">
           <TextBlock Text="{x:Bind Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
+          <!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
           <ScrollViewer HorizontalScrollMode="Enabled"
                                           VerticalScrollMode="Disabled"
                                           HorizontalScrollBarVisibility="Auto" >
