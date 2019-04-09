@@ -3,7 +3,7 @@ Description: Learn how to implement backwards navigation for traversing the user
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 06/21/2018
+ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
-To implement backwards navigation in your app, place a [back button](#Back-button) at the top left corner of your app's UI. If your app uses the [NavigationView](../controls-and-patterns/navigationview.md) control, then you can use [NavigationView's built-in back button](../controls-and-patterns/navigationview.md#backwards-navigation).
+To implement backwards navigation in your app, place a [back button](#back-button) at the top left corner of your app's UI. If your app uses the [NavigationView](../controls-and-patterns/navigationview.md) control, then you can use [NavigationView's built-in back button](../controls-and-patterns/navigationview.md#backwards-navigation).
 
 The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
 

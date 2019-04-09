@@ -585,6 +585,8 @@
           href: ../xbox-apps/xbox-dev-mode-companion.md
         - name: Fiddler
           href: ../xbox-apps/uwp-fiddler.md
+        - name: Device Portal for Xbox
+          href: ../xbox-apps/device-portal-xbox.md
     - name: Xbox best practices
       href: ../xbox-apps/tailoring-for-xbox.md
       items:
