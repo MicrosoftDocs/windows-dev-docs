@@ -146,7 +146,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## Cross-platform and Service-to-service integration
 
 If your app runs cross-platform (for example on Android and iOS), or maintains user state in the cloud, you can publish UserActivities via [Microsoft Graph](https://developer.microsoft.com/graph/).
-Once your application or service is authenticated with a Microsoft Account, it just takes two simple REST calls to generate [Activity](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity) and [History](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem) objects, using the same data as described above.
+Once your application or service is authenticated with a Microsoft Account, it just takes two simple REST calls to generate [Activity](https://docs.microsoft.com/graph/api/resources/projectrome-activity) and [History](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem) objects, using the same data as described above.
 
 ## Summary
 
