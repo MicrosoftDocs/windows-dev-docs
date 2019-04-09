@@ -2,7 +2,7 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 02/19/2019
+ms.date: 4/9/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -21,8 +21,11 @@ The functionality of the Windows Device Portal is implemented with [REST APIs](d
 ## Setup
 
 Each device has specific instructions for connecting to Device Portal, but each requires these general steps:
+
 1. Enable Developer Mode and Device Portal on your device (configured in the Settings app).
+
 2. Connect your device and PC through a local network or with USB.
+
 3. Navigate to the Device Portal page in your browser. This table shows the ports and protocols used by each device family.
 
 Device family | On by default? | HTTP | HTTPS | USB
@@ -36,10 +39,11 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Port Settings](device-portal-desktop.md#registry-based-configuration-for-device-portal) section for desktop.  
 
 For device-specific setup instructions, see:
+
 - [Device Portal for HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device Portal for Mobile](device-portal-mobile.md)
-- [Device Portal for Xbox](device-portal-xbox.md)
+- [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
 - [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## Features
@@ -47,6 +51,7 @@ For device-specific setup instructions, see:
 ### Toolbar and navigation
 
 The toolbar at the top of the page provides access to commonly used features.
+
 - **Power**: Access power options.
   - **Shutdown**: Turns off the device.
   - **Restart**: Cycles power on the device.
@@ -70,9 +75,9 @@ The Apps manager provides install/uninstall and management functionality for app
 
 You can sideload apps during development using Windows Device Portal:
 
-1.	When you've created an app package, you can remotely install it onto your device. After you build it in Visual Studio, an output folder is generated.
+1. When you've created an app package, you can remotely install it onto your device. After you build it in Visual Studio, an output folder is generated.
 
-  ![App install](images/device-portal/iot-installapp0.png)
+    ![App install](images/device-portal/iot-installapp0.png)
 
 2. In Windows Device Portal, navigate to the **Apps manager** page.
 
@@ -103,9 +108,10 @@ Alternatively, you can install the certificate via Windows Device Portal, and in
 5. If the device is running Windows 10 in S mode, and it is the first time that the given certificate has been installed on the device, restart the device.
 
 #### Uninstall an app
-1.	Ensure that your app is not running. 
-2.	If it is, go to **Running apps** and close it. If you attempt to uninstall while the app is running, it will cause issues when you attempt to reinstall the app. 
-3.	Select the app from the dropdown and click **Remove**.
+
+1. Ensure that your app is not running.
+2. If it is, go to **Running apps** and close it. If you attempt to uninstall while the app is running, it will cause issues when you attempt to reinstall the app.
+3. Select the app from the dropdown and click **Remove**.
 
 ### Running processes
 
@@ -115,7 +121,7 @@ This page shows details about processes currently running on the host device. Th
 
 ### File explorer
 
-This page allows you to view and manipulate files stored by any sideloaded apps. See the [Using the App File Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) blog post to learn more about the File explorer and how to use it. 
+This page allows you to view and manipulate files stored by any sideloaded apps. See the [Using the App File Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) blog post to learn more about the File explorer and how to use it.
 
 ![Device Portal File explorer page](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -124,12 +130,12 @@ This page allows you to view and manipulate files stored by any sideloaded apps.
 The Performance page shows real-time graphs of system diagnostic info like power usage, frame rate, and CPU load.
 
 These are the available metrics:
+
 - **CPU**: Percent of total available CPU utilization
 - **Memory**: Total, in use, available, committed, paged, and non-paged
 - **I/O**: Read and write data quantities
 - **Network**: Received and sent data
 - **GPU**: Percent of total available GPU engine utilization
-
 
 ![Device Portal Performance page](images/device-portal/mob-device-portal-perf.png)
 
@@ -140,6 +146,7 @@ The ETW logging page manages real-time Event Tracing for Windows (ETW) informati
 ![Device Portal ETW logging page](images/device-portal/mob-device-portal-etw.png)
 
 Check **Hide providers** to show the Events list only.
+
 - **Registered providers**: Select the event provider and the tracing level. The tracing level is one of these values:
   1. Abnormal exit or termination
   2. Severe errors
@@ -153,7 +160,7 @@ Check **Hide providers** to show the Events list only.
 - **Providers history**: This shows the ETW providers that were enabled during the current session. Click or tap **Enable** to activate a provider that was disabled. Click or tap **Clear** to clear the history.
 - **Filters / Events**: The **Events** section lists ETW events from the selected providers in table format. The table is updated in real time. Use the **Filters** menu to set up custom filters for which events will be displayed. Click the **Clear** button to delete all ETW events from the table. This does not disable any providers. You can click **Save to file** to export the currently collected ETW events to a local CSV file.
 
-For more details on using ETW logging, see the [Use Device Portal to view debug logs](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) blog post. 
+For more details on using ETW logging, see the [Use Device Portal to view debug logs](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) blog post.
 
 ### Performance tracing
 
@@ -177,6 +184,7 @@ The Device manager page enumerates all peripherals attached to your device. You 
 ### Networking
 
 The Networking page manages network connections on the device. Unless you are connected to Device Portal through USB, changing these settings will likely disconnect you from Device Portal.
+
 - **Available networks**: Shows the WiFi networks available to the device. Clicking or tapping on a network will allow you to connect to it and supply a passkey if needed. Device Portal does not yet support Enterprise Authentication. You can also use the **Profiles** dropdown to attempt to connect to any of the WiFi profiles known to the device.
 - **IP configuration**: Shows address information about each of the host device's network ports.
 
@@ -188,25 +196,25 @@ The Networking page manages network connections on the device. Unless you are co
 
 Device Portal advertises its presence on the local network using DNS-SD. All Device Portal instances, regardless of their device type, advertise under "WDP._wdp._tcp.local". The TXT records for the service instance provide the following:
 
-Key | Type | Description 
+Key | Type | Description
 ----|------|-------------
-S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections. 
+S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections.
 D | string | Type of device. This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
 A | string | Device architecture. This will be ARM, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
-Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record. 
+Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record.
 
 ### CSRF Protection and Scripting
 
 In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
 
 > [!IMPORTANT]
-> This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways: 
-> - Use an "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection. 
-> - Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests. 
-> - Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above. 
+> This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways:
+> - Use an "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection.
+> - Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests.
+> - Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above.
 
 #### Cross-Site WebSocket Hijacking (CSWSH) protection
 
-To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header. This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application. Without the Origin header your request will be rejected. 
+To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header. This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application. Without the Origin header your request will be rejected.

@@ -3,12 +3,11 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Enable your device for development
 
 ## Activate Developer Mode, sideload apps and access other developer features
@@ -93,7 +92,7 @@ For device specific setup instructions, see:
 - [Device Portal for HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Device Portal for IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
-- [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
+- [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
 
 If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package.
 
