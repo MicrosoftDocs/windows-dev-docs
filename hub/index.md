@@ -2,9 +2,11 @@
 layout: HubPage
 hide_bc: true
 ms.prod: windows
+ms.technology: hub
+ms.date: 04/09/2019
+ms.topic: hub-page
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
-ms.technology: hub
 localizationpriority: medium
 ---
 <div id="main" class="v2">
