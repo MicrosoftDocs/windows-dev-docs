@@ -86,6 +86,14 @@ Next, a **SoftwareBitmap** is created to be used as the target of the blur opera
 
 A new instance of **OpenCVHelper** is created, and the **Blur** method is called, passing in the source and target bitmaps. Finally, a **SoftwareBitmapSource** is created to assign the output image to a XAML **Image** control.
 
+The following using statements are required in the app:
+```
+using OpenCVBridge; //Wasn't required
+using Windows.Storage;
+using Windows.Storage.Streams;
+using Windows.Graphics.Imaging;
+using Windows.UI.Xaml.Media.Imaging;
+```
 
 [!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
 
