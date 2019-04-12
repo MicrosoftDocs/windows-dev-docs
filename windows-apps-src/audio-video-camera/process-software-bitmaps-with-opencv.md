@@ -86,6 +86,9 @@ Next, a **SoftwareBitmap** is created to be used as the target of the blur opera
 
 A new instance of **OpenCVHelper** is created, and the **Blur** method is called, passing in the source and target bitmaps. Finally, a **SoftwareBitmapSource** is created to assign the output image to a XAML **Image** control.
 
+This sample code uses APIs from the following namespaces, in addition to the namespaces included by the default project template.
+
+[!code-cs[OpenCVMainPageUsing](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVMainPageUsing)]
 
 [!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
 
