@@ -27,6 +27,9 @@ You need PKI cmdlets to create and export your signing certificate. For more inf
 
 A self-signed certificate is useful for testing your app before you're ready to publish it to the Store. Follow the steps outlined in this section to create a self-signed certificate.
 
+> [!NOTE]
+> Self-signed certificates are strictly for testing. When you are ready to publish your app either to the store or from other venues, switch the certificate to reputable source. Failure to do this may result in the inability for your app to get installed by your customers.
+
 ### Determine the subject of your packaged app  
 
 To use a certificate to sign your app package, the "Subject" in the certificate **must** match the "Publisher" section in your app's manifest.
