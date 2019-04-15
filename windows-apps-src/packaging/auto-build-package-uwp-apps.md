@@ -61,7 +61,7 @@ The default template tries to sign the package with the certificate specified in
 
 **Add the certificate of your project to a source code repository**
 
-Pipelines works with both TFS and GIT based code repositories.
+Pipelines works with both Azure Repos Git and TFVC based code repositories.
 If you use a Git repository, add the certificate file of your project to the repository so that the build agent can sign the app package. If you don’t do this, the Git repository will ignore the certificate file.
 To add the certificate file to your repository, right-click the certificate file in Solution Explorer, and then in the shortcut menu, choose the Add Ignored File to Source Control command.
 
