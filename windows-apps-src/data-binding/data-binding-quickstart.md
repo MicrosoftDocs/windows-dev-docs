@@ -698,6 +698,9 @@ public:
 ...
 ```
 
+> [NOTE!]
+> For the C++/WinRT code listing above, in `StringFormatter.idl`, we use the [default attribute](https://docs.microsoft.com/windows/desktop/midl/default) to declare **IValueConverter** as the default interface. In the listing, **StringFormatter** has only a constructor, and no methods, so no default interface is generated for it. The `default` attribute is optimal if you won't be adding instance members to **StringFormatter**, because no QueryInterface will be required to call the **IValueConverter** methods. Alternatively, you can prompt a default **IStringFormatter** interface to be generated, and you do that by annotating the runtime class itself with the [default_interface attribute](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). That option is optimal if you add instance members to **StringFormatter** that are called more often than the methods of **IValueConverter** are, because then no QueryInterface will be required to call the instance members.
+
 Now we can add an instance of **StringFormatter** as a page resource and use it in the binding of the **TextBlock** that displays the **ReleaseDateTime** property.
 
 ```xml
