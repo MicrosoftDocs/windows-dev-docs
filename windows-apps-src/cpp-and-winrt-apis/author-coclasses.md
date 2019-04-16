@@ -123,24 +123,24 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
-	HRESULT __stdcall Activate(
-		LPCWSTR app,
-		LPCWSTR args,
-		[[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
-		[[maybe_unused]] ULONG count) noexcept final
-	{
-		try
-		{
-			std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-			std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-			std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+    HRESULT __stdcall Activate(
+        LPCWSTR app,
+        LPCWSTR args,
+        [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
+        [[maybe_unused]] ULONG count) noexcept final
+    {
+        try
+        {
+            std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+            std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+            std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
             return S_OK;
         }
-		catch (...)
-		{
+        catch (...)
+        {
             return winrt::to_hresult();
-		}
-	}
+        }
+    }
 };
 
 struct callback_factory : implements<callback_factory, IClassFactory>
