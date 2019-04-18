@@ -1,8 +1,8 @@
----
+﻿---
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: Composition brushes
 description: A brush paints the area of a Visual with its output. Different brushes have different types of output.
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp

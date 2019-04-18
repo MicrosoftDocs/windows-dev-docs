@@ -1,9 +1,9 @@
----
+﻿---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
 ms.custom: 19H1
-ms.date: 4/8/2019
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium

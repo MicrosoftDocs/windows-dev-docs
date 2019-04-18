@@ -1,8 +1,8 @@
----
+﻿---
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
-ms.date: 03/18/2019
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

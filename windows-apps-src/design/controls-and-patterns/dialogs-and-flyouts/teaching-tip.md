@@ -1,8 +1,8 @@
----
+﻿---
 Description: A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.
 title: Teaching tips
 template: detail.hbs
-ms.date: 04/04/2019
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
