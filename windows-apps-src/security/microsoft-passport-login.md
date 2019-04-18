@@ -218,10 +218,14 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
     }
     ```
 
--   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it. Additional namespaces will be need to be referenced.
+-   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it.
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;
