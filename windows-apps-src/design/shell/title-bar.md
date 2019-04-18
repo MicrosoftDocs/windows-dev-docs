@@ -183,7 +183,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### Interactive content
 
-You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, there are a few rules you must follow to unsure that your interactive elements receive user input.
+You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, there are a few rules you must follow to ensure that your interactive elements receive user input.
 - You must call SetTitleBar to define an area as the draggable title bar region. If you don’t, the system sets the default draggable region at the top of the page. The system will then handle all user input to this area, and prevent input from reaching your controls.
 - Place your interactive controls over the top of the draggable region defined by the call to SetTitleBar (with a higher z-order). Don’t make your interactive controls children of the UIElement passed to SetTitleBar. After you pass an element to SetTitleBar, the system treats it like the system title bar and handles all pointer input to that element.
 
@@ -369,7 +369,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## Do's and don'ts
 
-- Do make is obvious when your window is active or inactive. At a minimum, change the color of the text, icons, and buttons in your title bar.
+- Do make it obvious when your window is active or inactive. At a minimum, change the color of the text, icons, and buttons in your title bar.
 - Do define a draggable region along the top edge of the app canvas. Matching the placement of system title bars makes it easier for users to find.
 - Do define a draggable region that matches the visual title bar (if any) on the app’s canvas.
 
