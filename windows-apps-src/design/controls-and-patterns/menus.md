@@ -1,9 +1,9 @@
----
+﻿---
 Description: Menus and context menus display a list of commands or options when the user requests them.
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
-ms.date: 04/04/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp

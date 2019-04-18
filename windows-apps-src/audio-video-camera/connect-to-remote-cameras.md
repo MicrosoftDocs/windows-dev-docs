@@ -1,8 +1,8 @@
----
+﻿---
 ms.assetid: 
 description: This article shows you how to connect to remote cameras and get a MediaFrameSourceGroup to retrieve frames from each camera.
 title: Connect to remote cameras
-ms.date: 03/12/2017
+ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
