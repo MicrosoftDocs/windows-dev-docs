@@ -67,7 +67,7 @@ A project template for a Universal Windows Platform (UWP) app that has a XAML us
 
 Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement your local runtime classes. We recommend that you declare each runtime class in its own IDL file.
 
-Visual Studio's XAML design surface support for C++/WinRT is close to parity with C#. One exception is the **Events** tab of the **Properties** window. With a C# project, you can use that tab to add event handlers; with a C++/WinRT project, that facility is not present. But see [Handle events by using delegates in C++/WinRT](handle-events.md) for info on how to add event handlers to your code.
+The XAML design surface support in Visual Studio 2019 for C++/WinRT is close to parity with C#. In Visual Studio 2019, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
 
 ### Core App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.

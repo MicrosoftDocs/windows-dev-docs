@@ -220,7 +220,7 @@ If you stick with delegates instead of a coroutine, then you can opt for a simpl
 async_op_with_progress.Completed(
     [](auto&& /*sender*/, AsyncStatus const /* args */)
 {
-	// ...
+    // ...
 });
 ```
 

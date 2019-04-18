@@ -6,9 +6,10 @@ ms.date: 01/08/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: 19H1
 ---
-# Launch the Windows Settings app
 
+# Launch the Windows Settings app
 
 **Important APIs**
 
@@ -58,7 +59,6 @@ Use the following URIs to open various pages of the Settings app.
 
 <!-- TODO: 
 * ms-settings:controlcenter
-* ms-settings:cortana-windowssearch
 * ms-settings:holographic
 * ms-settings:keyboard-advanced
 * ms-settings:regionlanguage-adddisplaylanguage (crashed)
@@ -69,7 +69,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Accounts
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Access work or school | ms-settings:workplace |
 | Email & app accounts  | ms-settings:emailandaccounts |
@@ -82,7 +82,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Apps
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Apps & Features | ms-settings:appsfeatures |
 | App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app)|
@@ -95,11 +95,12 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Cortana
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
-| Permissions & History | ms-settings:cortana-permissions |
-| More details | ms-settings:cortana-moredetails |
 | Cortana across my devices | ms-settings:cortana-notifications |
+| More details | ms-settings:cortana-moredetails |
+| Permissions & History | ms-settings:cortana-permissions |
+| Searching Windows | ms-settings:cortana-windowssearch |
 | Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
 > [!NOTE] 
@@ -107,9 +108,8 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Devices
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
-| Audio and speech | ms-settings:holographic-audio (only available if the Mixed Reality Portal app is installed--available in the Microsoft Store) |
 | AutoPlay | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | Connected Devices | ms-settings:connecteddevices |
@@ -125,7 +125,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Ease of Access
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
@@ -135,7 +135,6 @@ Use the following URIs to open various pages of the Settings app.
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
 | High contrast | ms-settings:easeofaccess-highcontrast |
-| Holographic headset | ms-settings:holographic-headset (requires holographic hardware) |
 | Keyboard | ms-settings:easeofaccess-keyboard |
 | Magnifier | ms-settings:easeofaccess-magnifier |
 | Mouse | ms-settings:easeofaccess-mouse |
@@ -145,13 +144,13 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Extras
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Extras | ms-settings:extras (only available if "settings apps" are installed, e.g. by a 3rd party) |
 
 ## Gaming
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Broadcasting | ms-settings:gaming-broadcasting |
 | Game bar | ms-settings:gaming-gamebar |
@@ -163,14 +162,25 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Home page
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Settings home page | ms-settings: |
 
+## Mixed reality
+
+> [!NOTE]
+> These settings are only available if the Mixed Reality Portal app is installed.
+
+| Settings page | URI |
+|---------------|-----|
+| Audio and speech | ms-settings:holographic-audio |
+| Environment | ms-settings:privacy-holographic-environment |
+| Headset display | ms-settings:holographic-headset |
+| Uninstall | ms-settings:holographic-management |
 
 ## Network & internet
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Airplane mode | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Cellular & SIM | ms-settings:network-cellular |
@@ -189,7 +199,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Personalization
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Background | ms-settings:personalization-background |
 | Choose which folders appear on Start | ms-settings:personalization-start-places |
@@ -204,13 +214,13 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Phone
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Your phone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Your Phone** app) |
 
 ## Privacy
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Accessory apps | ms-settings:privacy-accessoryapps (**Deprecated in Windows 10, version 1809 and later**) |
 | Account info | ms-settings:privacy-accountinfo |
@@ -241,10 +251,11 @@ Use the following URIs to open various pages of the Settings app.
 | Speech, inking & typing |ms-settings:privacy-speechtyping |
 | Tasks | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
+| Voice activation | ms-settings:privacy-voiceactivation |
 
 ## Surface Hub
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Accounts | ms-settings:surfacehub-accounts |
 | Session cleanup | ms-settings:surfacehub-sessioncleanup |
@@ -254,10 +265,11 @@ Use the following URIs to open various pages of the Settings app.
 
 ## System
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | About | ms-settings:about |
 | Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
+| App volume and device preferences | ms-settings:apps-volume |
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
@@ -288,7 +300,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Time and language
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
@@ -299,7 +311,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## Update & security
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Activation | ms-settings:activation |
 | Backup | ms-settings:backup |
@@ -317,7 +329,7 @@ Use the following URIs to open various pages of the Settings app.
 
 ## User  Accounts
 
-|Settings Page| URI |
+|Settings page| URI |
 |-------------|-----|
 | Provisioning | ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package) |
 | Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |

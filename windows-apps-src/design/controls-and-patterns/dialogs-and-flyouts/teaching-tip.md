@@ -1,3 +1,18 @@
+---
+Description: A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.
+title: Teaching tips
+template: detail.hbs
+ms.date: 04/04/2019
+ms.topic: article
+keywords: windows 10, uwp
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: niallm
+ms.custom: 19H1
+ms.localizationpriority: medium
+---
+
+
 # Teaching tip
 
 A teaching tip is a semi-persistent and content-rich flyout that provides contextual information. It is often used for informing, reminding, and teaching users about important and new features that may enhance their experience.
@@ -139,11 +154,10 @@ XAML
 ![A sample app with a teaching tip in the bottom left corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-non-targeted-preferred-placement.png)
 
 The diagram below depicts the result of all 13 PreferredPlacement modes that can be set for targeted teaching tips.
-![Three objects labeled "target" with targeted teaching tips used around them to show teaching tip's targeted preferred placement modes. Centered in the middle of the first target is a targeted teaching tip labeled "Center" pointing down at the target with its tail. Centered above the first target is a targeted teaching tip labeled "Top" pointing down at the target with its tail. Centered right of the first target is a targeted teaching tip labeled "Right" pointing left at the target with its tail. Centered below the first target is a targeted teaching tip labeled "Bottom" pointing up at the target with its tail. Centered left of the first target is a targeted teaching tip labeled "Left" pointing right at the target with its tail. To the left of the second target is a teaching tip labeled "LeftTop" that points right at the target and has its body shifted upward. Above the second target is a teaching tip labeled "TopLeft" that points down at the target and has its body shifted leftward. To the right of the second target is a teaching tip labeled "RightBottom" that points left at the target and has its body shifted downward. Below the second target is a teaching tip labeled "BottomRight" that points up at the target and has its body shifted rightward. Above the third target is a teaching tip labeled "TopRight" that points down at the target and has its body shifted rightward. To the right of the third target is a teaching tip labeled "RightTop" that points left at the target and has its body shifted upward. Below the third target is a teaching tip labeled "BottomLeft" that points up at the target and has its body shifted leftward. To the left of the third target is a teaching tip labeled "LeftBottom" that points right at the target and has its body shifted downward.](../images/teaching-tip-targeted-preferred-placement-modes.png)
+![Illustration containing 13 teaching tips, each demonstrating a different targeted placement mode. Each teaching tip is labeled with the mode it represents. The first word of a placement mode indicates the side of the target that the teaching tip will appear centered on. The tail of the teaching tip will always be located at the center of that side of the target and will point towards the target. If there is a second word in the placement mode, the body of the teaching tip will not be centered, but will instead be shifted in the specified direction. For example, the placement mode "TopRight" will make the teaching tip appear above the target and shifted right, with its tail pointing down at the center of the target's top edge. Because the body is shifted right, the tail is almost on the leftmost edge of the body of the teaching tip, and the teaching tip extends past the right edge of the target. The placement mode "Center" in unique and will make the teaching tip's tail point at the center of the target and the teaching tip will be centered over the top half of the target.](../images/teaching-tip-targeted-preferred-placement-modes.png)
 
 The diagram below depicts the result of all 13 PreferredPlacement modes that can be set for non-targeted teaching tips.
-![An app window showing nine non-targeted teaching tips to demonstrate teaching tip's non-targeted preferred placement modes. The teaching tip in the top left corner of the app is labeled "TopLeft or LeftTop." The teaching tip centered at the app's top edge is labeled "Top." The teaching tip in the top right corner of the app is labeled "TopRight or RightTop." The teaching tip centered at the app's left edge is labeled "Left." The teaching tip centered in the middle of the app is labeled "Center."
-The teaching tip centered at the app's right edge is labeled "Right." The teaching tip in the bottom left corner of the app is labeled "BottomLeft or LeftBottom." The teaching tip centered at the app's bottom edge is labeled "Bottom." The teaching tip in the bottom right corner of the app is labeled "BottomRight or RightBottom."](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
+![Illustration containing nine teaching tips, each demonstrating a different non-targeted placement mode. Each teaching tip is labeled with the mode it represents. The first word of a placement mode indicates the side of the xaml root that the teaching tip will appear centered on. If there is a second word in the placement mode, the teaching tip will position itself toward that specified corner of the xaml root. For example, the placement mode "TopRight" will make the teaching tip appear in the top right corner of the xaml root. For non-targeted placement modes, the order of the two words does not affect the placement. TopRight is equivalent to RightTop. The placement mode "Center" in unique and will make the teaching tip appear in the vertical and horizontal center of the xaml root.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
 ### Add a placement margin  
 

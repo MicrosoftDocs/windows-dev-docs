@@ -2,6 +2,7 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
+ms.custom: 19H1
 ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
@@ -62,6 +63,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Install a related set
 
 **Request**
@@ -110,6 +112,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Register an app in a loose folder
 
 **Request**
@@ -161,6 +164,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Register a related set in loose file folders
 
 **Request**
@@ -221,6 +225,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get app installation status
 
 **Request**
@@ -264,6 +269,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Uninstall an app
 
 **Request**
@@ -309,6 +315,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get installed apps
 
 **Request**
@@ -378,7 +385,9 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Bluetooth
+
 <hr>
 
 ### Get the Bluetooth radios on the machine
@@ -438,6 +447,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Turn the Bluetooth radio on or off
 
 **Request**
@@ -483,9 +493,171 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
-<hr>
+---
+### Get a list of paired Bluetooth devices
+
+**Request**
+
+You can get a list of the currently paired Bluetooth devices by using the following request format. This can be upgraded to a WebSocket connection with the same JSON data. During the lifetime of the WebSocket connection, the device list can change. A complete list of devices will be sent over the WebSocket connection each time there is an update.
+
+| Method        | Request URI       |
+| :---          | :---              |
+| GET           | /api/bt/getpaired |
+| GET/WebSocket | /api/bt/getpaired |
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes a JSON array of Bluetooth devices that are currently paired.
+```json
+{"PairedDevices": [
+    {
+        "Name" : string,
+        "ID" : string,
+        "AudioConnectionStatus" : string
+    },...
+]}
+```
+The *AudioConnectionStatus* field will be present if the device can be used for audio on this system. (Policies and optional components may affect this.) *AudioConnectionStatus* will be either "Connected" or "Disconnected".
+
+---
+### Get a list of available Bluetooth devices
+
+**Request**
+
+You can get a list of the Bluetooth devices available for pairing by using the following request format. This can be upgraded to a WebSocket connection with the same JSON data. During the lifetime of the WebSocket connection, the device list can change. A complete list of devices will be sent over the WebSocket connection each time there is an update.
+
+| Method        | Request URI          |
+| :---          | :---                 |
+| GET           | /api/bt/getavailable |
+| GET/WebSocket | /api/bt/getavailable |
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes a JSON array of Bluetooth devices that are currently available for pairing.
+```json
+{"AvailableDevices": [
+    {
+        "Name" : string,
+        "ID" : string
+    },...
+]}
+```
+
+---
+### Connect a Bluetooth device
+
+**Request**
+
+Will connect to the device if the device can be used for audio on this system. (Policies and optional components may affect this.)
+
+| Method       | Request URI           |
+| :---         | :---                  |
+| POST         | /api/bt/connectdevice |
+
+**URI parameters**
+
+| URI parameter | Description |
+| :---          | :--- |
+| ID            | (**required**) The Association Endpoint ID for the Bluetooth device and must be Base64-encoded. |
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+| HTTP status code | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Error codes |
+| 5XX              | Error codes |
+
+**Available device families**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+
+---
+### Disconnect a Bluetooth device
+
+**Request**
+
+Will disconnect the device if the device can be used for audio on this system. (Policies and optional components may affect this.)
+
+| Method       | Request URI              |
+| :---         | :---                     |
+| POST         | /api/bt/disconnectdevice |
+
+**URI parameters**
+
+| URI parameter | Description |
+| :---          | :--- |
+| ID            | (**required**) The Association Endpoint ID for the Bluetooth device and must be Base64-encoded. |
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+| HTTP status code | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Error codes |
+| 5XX              | Error codes |
+
+**Available device families**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
 ## Device manager
 <hr>
+
 ### Get the installed devices on the machine
 
 **Request**
@@ -542,6 +714,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get data on connected USB Devices/Hubs
 
 **Request**
@@ -626,8 +799,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Dump collection
+
 <hr>
+
 ### Get the list of all crash dumps for apps
 
 **Request**
@@ -673,6 +849,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the crash dump collection settings for an app
 
 **Request**
@@ -725,6 +902,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete a crash dump for a sideloaded app
 
 **Request**
@@ -773,6 +951,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Disable crash dumps for a sideloaded app
 
 **Request**
@@ -820,6 +999,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Download the crash dump for a sideloaded app
 
 **Request**
@@ -870,6 +1050,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Enable crash dumps for a sideloaded app
 
 **Request**
@@ -915,6 +1096,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the list of bugcheck files
 
 **Request**
@@ -964,6 +1146,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Download a bugcheck dump file
 
 **Request**
@@ -1012,6 +1195,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the bugcheck crash control settings
 
 **Request**
@@ -1073,6 +1257,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get a live kernel dump
 
 **Request**
@@ -1116,6 +1301,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get a dump from a live user process
 
 **Request**
@@ -1163,6 +1349,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Set the bugcheck crash control settings
 
 **Request**
@@ -1211,8 +1398,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## ETW
+
 <hr>
+
 ### Create a realtime ETW session over a websocket
 
 **Request**
@@ -1307,6 +1497,7 @@ Example:
 ```
 
 <hr>
+
 ### Enumerate the registered ETW providers
 
 **Request**
@@ -1358,6 +1549,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Enumerate the custom ETW providers exposed by the platform.
 
 **Request**
@@ -1406,7 +1598,9 @@ You can enumerate through the registered providers by using the following reques
 * IoT
 
 <hr>
+
 ## Location
+
 <hr>
 
 ### Get location override mode
@@ -1619,8 +1813,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## OS information
+
 <hr>
+
 ### Get the machine name
 
 **Request**
@@ -1671,6 +1868,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the operating system information
 
 **Request**
@@ -1727,6 +1925,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the device family 
 
 **Request**
@@ -1781,6 +1980,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Set the machine name
 
 **Request**
@@ -1827,8 +2027,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## User information
+
 <hr>
+
 ### Get the active user
 
 **Request**
@@ -1890,8 +2093,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Performance data
+
 <hr>
+
 ### Get the list of running processes
 
 **Request**
@@ -1953,6 +2159,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the system performance statistics
 
 **Request**
@@ -2032,8 +2239,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Power
+
 <hr>
+
 ### Get the current battery state
 
 **Request**
@@ -2091,6 +2301,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the active power scheme
 
 **Request**
@@ -2137,6 +2348,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the sub-value for a power scheme
 
 **Request**
@@ -2180,6 +2392,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the power state of the system
 
 **Request**
@@ -2227,6 +2440,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Set the active power scheme
 
 **Request**
@@ -2272,6 +2486,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Set the sub-value for a power scheme
 
 **Request**
@@ -2316,6 +2531,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get a sleep study report
 
 **Request**
@@ -2359,6 +2575,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Enumerate the available sleep study reports
 
 **Request**
@@ -2410,6 +2627,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get the sleep study transform
 
 **Request**
@@ -2453,8 +2671,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Remote control
+
 <hr>
+
 ### Restart the target computer
 
 **Request**
@@ -2497,6 +2718,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Shut down the target computer
 
 **Request**
@@ -2541,8 +2763,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Task manager
+
 <hr>
+
 ### Start a modern app
 
 **Request**
@@ -2592,6 +2817,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Stop a modern app
 
 **Request**
@@ -2641,6 +2867,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Kill process by PID
 
 **Request**
@@ -2687,8 +2914,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Networking
+
 <hr>
+
 ### Get the current IP configuration
 
 **Request**
@@ -2775,6 +3005,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Set a static IP address (IPV4 configuration)
 
 **Request**
@@ -2832,7 +3063,9 @@ This API has the following expected status codes.
 * Xbox
 * HoloLens
 * IoT
+
 <hr>
+
 ### Enumerate wireless network interfaces
 
 **Request**
@@ -2895,6 +3128,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Enumerate wireless networks
 
 **Request**
@@ -2965,6 +3199,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Connect and disconnect to a Wi-Fi network.
 
 **Request**
@@ -3015,6 +3250,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete a Wi-Fi profile
 
 **Request**
@@ -3062,8 +3298,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Windows Error Reporting (WER)
+
 <hr>
+
 ### Download a Windows error reporting (WER) file
 
 **Request**
@@ -3115,6 +3354,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Enumerate files in a Windows error reporting (WER) report
 
 **Request**
@@ -3170,6 +3410,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### List the Windows error reporting (WER) reports
 
 **Request**
@@ -3228,8 +3469,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## Windows Performance Recorder (WPR) 
+
 <hr>
+
 ### Start tracing with a custom profile
 
 **Request**
@@ -3282,6 +3526,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Start a boot performance tracing session
 
 **Request**
@@ -3338,6 +3583,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Stop a boot performance tracing session
 
 **Request**
@@ -3383,6 +3629,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Start a performance tracing session
 
 **Request**
@@ -3439,6 +3686,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Stop a performance tracing session
 
 **Request**
@@ -3484,6 +3732,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Retrieve the status of a tracing session
 
 **Request**
@@ -3536,6 +3785,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### List completed tracing sessions (ETLs)
 
 **Request**
@@ -3593,6 +3843,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Download a tracing session (ETL)
 
 **Request**
@@ -3642,6 +3893,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete a tracing session (ETL)
 
 **Request**
@@ -3691,8 +3943,11 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ## DNS-SD Tags 
+
 <hr>
+
 ### View Tags
 
 **Request**
@@ -3747,6 +4002,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete Tags
 
 **Request**
@@ -3792,6 +4048,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete Tag
 
 **Request**
@@ -3838,6 +4095,7 @@ This API has the following expected status codes.
 * IoT
  
 <hr>
+
 ### Add a Tag
 
 **Request**
@@ -3887,6 +4145,7 @@ This API has the following expected status codes.
 ## App File Explorer
 
 <hr>
+
 ### Get known folders
 
 **Request**
@@ -3938,6 +4197,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Get files
 
 **Request**
@@ -3999,6 +4259,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Download a file
 
 **Request**
@@ -4047,6 +4308,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Rename a file
 
 **Request**
@@ -4099,6 +4361,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Delete a file
 
 **Request**
@@ -4149,6 +4412,7 @@ This API has the following expected status codes.
 * IoT
 
 <hr>
+
 ### Upload a file
 
 **Request**

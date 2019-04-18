@@ -87,8 +87,8 @@ In `BookSku.cpp`, implement the functions like this.
 namespace winrt::Bookstore::implementation
 {
     BookSku::BookSku(winrt::hstring const& title) : m_title{ title }
-	{
-	}
+    {
+    }
 
     winrt::hstring BookSku::Title()
     {

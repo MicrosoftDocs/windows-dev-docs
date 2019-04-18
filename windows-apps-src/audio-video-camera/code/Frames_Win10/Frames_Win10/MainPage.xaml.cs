@@ -750,6 +750,11 @@ namespace Frames_Win10
             return settings;
         }
 
+        private void StartDeviceWatcherButton_Click(object sender, RoutedEventArgs e)
+        {
+            var remoteCameraHelper = new RemoteCameraPairingHelper(this.Dispatcher);
+        }
+
         //</SnippetGetSettingsWithProfile>
 
 

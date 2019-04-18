@@ -1,29 +1,61 @@
 ---
 description: This article describes how to host UWP XAML UI in your desktop application.
 title: Using the UWP XAML hosting API in a desktop application
-ms.date: 01/11/2019
+ms.date: 04/16/2019
 ms.topic: article
-keywords: windows 10, uwp, windows forms, wpf, win32
+keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
 ms.localizationpriority: medium
+ms.custom: 19H1
 ---
 # Using the UWP XAML hosting API in a desktop application
 
+Starting in Windows 10, version 1903, non-UWP desktop applications (including WPF, Windows Forms, and C++ Win32 applications) can use the *UWP XAML hosting API* to host UWP controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop applications to use the latest Windows 10 UI features that are only available via UWP controls. For example, non-UWP desktop applications can use this API to host UWP controls that use the [Fluent Design System](../design/fluent-design-system/index.md) and support [Windows Ink](../design/input/pen-and-stylus-interactions.md).
+
+The UWP XAML hosting API provides the foundation for a broader set of controls that we are providing to enable developers to bring Fluent UI to non-UWP desktop applications. This feature is called *XAML Islands*. For an overview of this feature, see [UWP controls in desktop applications](xaml-host-controls.md).
+
 > [!NOTE]
-> The UWP XAML hosting API and XAML islands are currently available as a developer preview. Although we encourage you to try them out in your own prototype code now, we do not recommend that you use them in production code at this time. These features will continue to mature and stabilize in future Windows releases. Microsoft makes no warranties, express or implied, with respect to the information provided here.
->
-> If you have feedback about XAML islands, create a new issue in the [WindowsCommunityToolkit repo](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
+> If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
 
-Starting in Windows 10 Insider Preview SDK build 17709, non-UWP desktop applications (including WPF, Windows Forms, and C++ Win32 applications) can use the *UWP XAML hosting API* to host UWP controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop applications to use the latest Windows 10 UI features that are only available via UWP controls. For example, non-UWP desktop applications can use this API to host UWP controls that use the [Fluent Design System](../design/fluent-design-system/index.md) and support [Windows Ink](../design/input/pen-and-stylus-interactions.md).
-
-The UWP XAML hosting API provides the foundation for a broader set of controls that we are providing to enable developers to bring Fluent UI to non-UWP desktop applications. This scenario is sometimes called *XAML islands*. For more details about this developer scenario, see [UWP controls in desktop applications](xaml-host-controls.md).
-
-## Is the UWP XAML hosting API right for your desktop application?
+## Should you use the UWP XAML hosting API?
 
 The UWP XAML hosting API provides the low-level infrastructure for hosting UWP controls in desktop applications. Some types of desktop applications have the option of using alternative, more convenient APIs to accomplish this goal.  
 
 * If you have a C++ Win32 desktop application and you want to host UWP controls in your application, you must use the UWP XAML hosting API. There are no alternatives for these types of applications.
 
-* For WPF and Windows Forms applications, we recommend that you use the [wrapped controls](xaml-host-controls.md#wrapped-controls) and [host controls](xaml-host-controls.md#host-controls) in the Windows Community Toolkit instead of the UWP XAML hosting API. These controls use the UWP XAML hosting API internally and provide a simpler development experience. However, you can use the UWP XAML hosting API directly in these types of applications if you choose.
+* For WPF and Windows Forms applications, we strongly recommend that you use the [wrapped controls](xaml-host-controls.md#wrapped-controls) and [host controls](xaml-host-controls.md#host-controls) in the Windows Community Toolkit instead of using the UWP XAML hosting API directly. These controls use the UWP XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the UWP XAML hosting API directly, including keyboard navigation and layout changes. However, you can use the UWP XAML hosting API directly in these types of applications if you choose.
+
+This article describes how to use the UWP XAML hosting API directly in your application instead of the controls provided by the Windows Community Toolkit.
+
+## Prerequisites
+
+The UWP XAML hosting API has these prerequisites:
+
+* Windows 10, version 1903 (or later) and the corresponding build of the Windows SDK.
+* Configure your project to use Windows Runtime APIs and enable XAML Islands by following [these instructions](xaml-host-controls.md#requirements).
+
+## Architecture of XAML Islands
+
+The UWP XAML hosting API includes these main Windows Runtime types and COM interfaces:
+
+* [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager). This class represents the UWP XAML framework. This class provides a single static [**InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) method that initializes the UWP XAML framework on the current thread in the desktop application.
+
+* [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource). This class represents an instance of UWP XAML content that you are hosting in your desktop application. The most important member of this class is the [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) property. You assign this property to a [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) that you want to host. This class also has other members for routing keyboard focus navigation into and out of the XAML Islands.
+
+* **IDesktopWindowXamlSourceNative** and **IDesktopWindowXamlSourceNative2** COM interfaces. **IDesktopWindowXamlSourceNative** provides the **AttachToWindow** method, which you use to attach a XAML Island in your application to a parent UI element. **IDesktopWindowXamlSourceNative2** provides the **PreTranslateMessage** method, which enables the UWP XAML framework to process certain Windows messages correctly.
+    > [!NOTE]
+    > These interfaces are declared in the **windows.ui.xaml.hosting.desktopwindowxamlsource.h** header file in the Windows SDK. By default, this file is in %programfiles(x86)%\Windows Kits\10\Include\\<build number\>\um. In a C++ Win32 project, you can reference this header file directly. In a WPF or Windows Forms project, you'll need to declare the interfaces in your application code using the [**ComImport**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) attribute. Make sure your interface declarations exactly match the declarations in **windows.ui.xaml.hosting.desktopwindowxamlsource.h**.
+
+The following diagram illustrates the hierarchy of objects in a XAML Island that is hosted in a desktop application.
+
+![DesktopWindowXamlSource architecture](images/xaml-hosting-api-rev2.png)
+
+* At the base level is the UI element in your application where you want to host the XAML Island. This UI element must have a window handle (HWND). Examples of UI elements in which you can host a XAML Island include [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) for WPF applications, [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) for Windows Forms applications, and a [window](https://docs.microsoft.com/windows/desktop/winmsg/about-windows) for C++ Win32 applications.
+
+* At the next level is a **DesktopWindowXamlSource** object. This object provides the infrastructure for hosting the XAML Island. Your code is responsible for creating this object and attaching it to the parent UI element.
+
+* When you create a **DesktopWindowXamlSource**, this object automatically creates a native child window to host your UWP control. This native child window is mostly abstracted away from your code, but you can access its handle (HWND) if necessary.
+
+* Finally, at the top level is the UWP control you want to host in your desktop application. This can be any UWP object that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls.
 
 ## Related samples
 
@@ -31,49 +63,17 @@ The way you use the UWP XAML hosting API in your code depends on your applicatio
 
 ### C++ Win32
 
-There are several samples on GitHub that demonstrate how to use the UWP XAML hosting API in a C++ Win32 application:
-
-  * [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting). This sample demonstrates how to add the UWP [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), and [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) controls to a C++ Win32 application.
-  * [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32). This sample demonstrates how to add several basic UWP controls to a C++ Win32 application and handle DPI changes.
+[C++ Win32 Sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island). This sample demonstrates a complete implementation of hosting a UWP user control in an unpackaged C++ Win32 application (that is, an application that is not built into an MSIX package).
 
 ### WPF and Windows Forms
 
 The [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit acts as a reference sample for using the UWP hosting API in WPF and Windows Forms applications. The source code is available at the following locations:
 
   * For the WPF version of the control, [go here](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost). The WPF version derives from [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
+
   * For the Windows Forms version of the control, [go here](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). The Windows Forms version derives from [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
-## Prerequisites
-
-The UWP XAML hosting API has these prerequisites.
-
-* Windows 10 Insider Preview build 17709 (or a later build) and the corresponding Insider Preview build of the Windows SDK. Because this is an evolving feature, for the best experience we recommend using the latest available build.
-
-* To use the UWP XAML hosting API in your desktop application, you'll need to configure your project so that you can call UWP APIs.
-
-    * **C++ Win32:** We recommend that you configure your project to use [C++/WinRT](../cpp-and-winrt-apis/index.md). For instructions, see [Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
-
-    * **Windows Forms and WPF:** Follow [these instructions](../porting/desktop-to-uwp-enhance.md).
-
-## Architecture of XAML islands
-
-The UWP XAML hosting API includes [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource), [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager), and other related types in the [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) namespace. Desktop applications can use this API to render UWP controls and route keyboard focus navigation into and out of the elements. Desktop applications can also size and position the UWP controls as desired.
-
-When you create a XAML island using the XAML hosting API in a desktop application, you will have the following hierarchy of objects:
-
-* At the base level is the UI element in your application where you want to host the XAML island. This UI element must have a window handle (HWND). Examples of UI elements in which you can host a XAML island include [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) for WPF applications, [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) for Windows Forms applications, and a [window](https://docs.microsoft.com/windows/desktop/winmsg/about-windows) for C++ Win32 applications.
-
-* At the next level is a **DesktopWindowXamlSource** object. This object provides the infrastructure for hosting the XAML island. Your code is responsible for creating this object and attaching it to the parent UI element.
-
-* When you create a **DesktopWindowXamlSource**, this object automatically creates a native child window to host your UWP control. This native child window is mostly abstracted away from your code, but you can access its handle (HWND) if necessary.
-
-* Finally, at the top level is the UWP control you want to host in your desktop application. This can be any UWP object that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls.
-
-The following diagram illustrates the hierarchy of objects in a XAML island.
-
-![DesktopWindowXamlSource architecture](images/xaml-hosting-api-rev2.png)
-
-## How to host UWP XAML controls
+## Host UWP XAML controls
 
 Here are the main steps for using the UWP XAML hosting API to host a UWP control in your application.
 
@@ -100,11 +100,11 @@ Here are the main steps for using the UWP XAML hosting API to host a UWP control
 
     To do this, you'll need to follow these steps:
 
-    1. Create a **DesktopWindowXamlSource** object and cast it to the **IDesktopWindowXamlSourceNative** COM interface. This interface is declared in the ```windows.ui.xaml.hosting.desktopwindowxamlsource.h``` header file in the Windows SDK. In a C++ Win32 project, you can reference this header file directly. In a WPF or Windows Forms project, you'll need to declare this interface in your application code using the [**ComImport**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) attribute. Make sure your interface declaration exactly matches the interface declaration in ```windows.ui.xaml.hosting.desktopwindowxamlsource.h```.
+    1. Create a **DesktopWindowXamlSource** object and cast it to the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** COM interface.
 
-    2. Call the **AttachToWindow** method of the **IDesktopWindowXamlSourceNative** interface, and pass in the window handle of the parent UI element in your application.
+    2. Call the **AttachToWindow** method of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface, and pass in the window handle of the parent UI element in your application.
 
-    3. Set the initial size of the internal child window contained in the **DesktopWindowXamlSource**. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any UWP controls you add to the **DesktopWindowXamlSource** will not be visible. To access the internal child window in the **DesktopWindowXamlSource**, use the **WindowHandle** property of the **IDesktopWindowXamlSourceNative** interface. The following examples use the [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function to set the size of the window.
+    3. Set the initial size of the internal child window contained in the **DesktopWindowXamlSource**. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any UWP controls you add to the **DesktopWindowXamlSource** will not be visible. To access the internal child window in the **DesktopWindowXamlSource**, use the **WindowHandle** property of the **IDesktopWindowXamlSourceNative** or **IDesktopWindowXamlSourceNative2** interface. The following examples use the [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function to set the size of the window.
 
     Here are some code examples that demonstrate this process.
 
@@ -123,7 +123,7 @@ Here are the main steps for using the UWP XAML hosting API to host a UWP control
 
     ```csharp
     // This WPF example assumes you already have an HwndHost named 'parentHwndHost'
-    // that will act as the parent UI elemnt for your XAML island. It also assumes
+    // that will act as the parent UI element for your XAML Island. It also assumes
     // you have used the DllImport attribute to import SetWindowPos from user32.dll
     // as a static method into a class named NativeMethods.
     Windows.UI.Xaml.Hosting.DesktopWindowXamlSource desktopWindowXamlSource =
@@ -154,138 +154,94 @@ Here are the main steps for using the UWP XAML hosting API to host a UWP control
 
 For complete examples that demonstrate these tasks in the context of a working sample application, see the following code files:
 
-  * **C++ Win32:** See the [Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp) file in the [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting) sample or the [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) file in the [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sample.
+  * **C++ Win32:** See the [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp) file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+
   * **WPF:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.  
+
   * **Windows Forms:** See the [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) and  [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) files in the Windows Community Toolkit.
 
+## Handle keyboard input and focus navigation
 
-## How to host custom UWP XAML controls
+There are several things your app needs to do to properly handle keyboard input and focus navigation when it hosts XAML Islands.
 
-> [!IMPORTANT]
-> Currently, custom UWP XAML controls from 3rd parties are only supported in C# WPF and Windows Forms applications. You must have the source code for the controls so you can compile against it in your application.
+### Keyboard input
 
-If you want to host a custom UWP XAML control (either a control you define yourself or a control provided by a 3rd party), you must perform the following additional tasks in addition to the process described in the [previous section](#how-to-host-uwp-xaml-controls).
+To properly handle keyboard input for each XAML Island, your application must pass all Windows messages to the UWP XAML framework so that certain messages can be processed correctly. To do this, in some place in your application that can access the message loop, cast the **DesktopWindowXamlSource** object for each XAML Island to an **IDesktopWindowXamlSourceNative2** COM interface. Then, call the **PreTranslateMessage** method of this interface and pass in the current message.
 
-1. Define a custom type that derives from [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) and also implements [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
+  * A C++ Win32 application can call **PreTranslateMessage** directly in its main message loop. For an example, see the [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61) code file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-    For an example that demonstrates how to do this, see the [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) code file in the Windows Community Toolkit. This file is part of the shared implementation of the **WindowsXamlHost** classes for WPF and Windows Forms, which help illustrate how to use the UWP XAML hosting API in those types of apps.
+  * A WPF application can call **PreTranslateMessage** from the event handler for the [**ComponentDispatcher.ThreadFilterMessage**](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) event. For an example, see the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) file in the Windows Community Toolkit.
 
-2. Call the [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) method of your root metadata provider when the type name of the UWP XAML control is assigned (this could be assigned in code at run time, or you might choose to enable this to be assigned in the Visual Studio Properties window).
+  * A Windows Forms application can call **PreTranslateMessage** from an override for the [**Control.PreprocessMessage**](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2) method. For an example, see the [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) file in the Windows Community Toolkit.
 
-    For an example that demonstrates how to do this, see the [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) code file in the Windows Community Toolkit. This file is part of the shared implementation of the **WindowsXamlHost** classes for WPF and Windows Forms.
-
-3. Integrate the source code for the custom UWP XAML control into your host application solution, build the custom control, and use it in your application by following [these instructions](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control).
-
-## How to handle keyboard focus navigation
+### Keyboard focus navigation
 
 When the user navigates through the UI elements in your application using the keyboard (for example, by pressing **Tab** or direction/arrow key), you'll need to programmatically move focus into and out of the **DesktopWindowXamlSource** object. When the user's keyboard navigation reaches the **DesktopWindowXamlSource**, move focus into the first [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) object in the navigation order for your UI, continue to move focus to the following **Windows.UI.Xaml.UIElement** objects as the user cycles through the elements, and then move focus back out of the **DesktopWindowXamlSource** and into the parent UI element.  
 
 The UWP XAML hosting API provides several types and members to help you accomplish these tasks.
 
-1. When the keyboard navigation enters your **DesktopWindowXamlSource**, the [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) event is raised. Handle this event and programmatically move focus to the first hosted **Windows.UI.Xaml.UIElement** by using the [**NavigateFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) method.
+* When the keyboard navigation enters your **DesktopWindowXamlSource**, the [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) event is raised. Handle this event and programmatically move focus to the first hosted **Windows.UI.Xaml.UIElement** by using the [**NavigateFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) method.
 
-2. When the user is on the last focusable element in your **DesktopWindowXamlSource** and presses the **Tab** key or an arrow key, the [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) event is raised. Handle this event and programmatically move focus to the next focusable element in the host application. For example, in a WPF application where the **DesktopWindowXamlSource** is hosted in a [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost), you can use the [**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) method to transfer focus to the next focusable element in the host application.
+* When the user is on the last focusable element in your **DesktopWindowXamlSource** and presses the **Tab** key or an arrow key, the [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) event is raised. Handle this event and programmatically move focus to the next focusable element in the host application. For example, in a WPF application where the **DesktopWindowXamlSource** is hosted in a [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost), you can use the [**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) method to transfer focus to the next focusable element in the host application.
 
 For examples that demonstrate how to do this in the context of a working sample application, see the following code files:
+
   * **WPF:** See the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) file in the Windows Community Toolkit.  
+
   * **Windows Forms:** See the [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) file in the Windows Community Toolkit.
 
-## How to handle layout changes
+## Handle layout changes
 
 When the user changes the size of the parent UI element, you'll need to handle any necessary layout changes to make sure your UWP controls display as you expect. Here are some important scenarios to consider.
 
-1. When the parent UI element needs to get the size of the rectangular area needed to fit the **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**, call the [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) method of the **Windows.UI.Xaml.UIElement**. For example:
-    * In a WPF application you might do this from the [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) method of the [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) that hosts the **DesktopWindowXamlSource**.
-    * In a Windows Forms application you might do this from the [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) method of the [**Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) that hosts the **DesktopWindowXamlSource**.
+* In a C++ Win32 application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function. For an example, see the [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) code file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-2. When the size of the parent UI element changes, call the [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) method of the root **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**. For example:
-    * In a WPF application you might do this from the [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) method of the [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) object that hosts the **DesktopWindowXamlSource**.
-    * In a Windows Forms application you might do this from the handler for the [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) event of the [**Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) that hosts the **DesktopWindowXamlSource**.
+* When the parent UI element needs to get the size of the rectangular area needed to fit the **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**, call the [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) method of the **Windows.UI.Xaml.UIElement**. For example:
 
-For examples that demonstrate how to do this in the context of a working sample application, see the following code files:
-  * **WPF:** See the [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.  
-  * **Windows Forms:** See the [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.
+    * In a WPF application you might do this from the [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) method of the [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) that hosts the **DesktopWindowXamlSource**. For an example, see the [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.
 
-## How to handle DPI changes
+    * In a Windows Forms application you might do this from the [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) method of the [**Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) that hosts the **DesktopWindowXamlSource**. For an example, see the [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.
 
-If you want to handle DPI changes in the window that hosts your UWP control (for example, if the user drags the window between monitors with different screen DPI), you'll need to configure the UWP control with a render transform, listen for DPI changes in your app, and update the window position and render transform of the UWP control in response to the DPI changes.
+* When the size of the parent UI element changes, call the [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) method of the root **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**. For example:
 
-The following steps illustrate one way to handle this process in the context of a C++ Win32 application. For a complete example, see the [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) and [Desktop.h](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.h) code files in the [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sample on GitHub.
+    * In a WPF application you might do this from the [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) method of the [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) object that hosts the **DesktopWindowXamlSource**. For an example, see the [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.
 
-1. Maintain a [**ScaleTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.scaletransform) object in your app and assign it to the [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) method of your UWP control. The following example does this for a [**Windows.UI.Xaml.Controls.Grid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) control in a C++ Win32 application.
+    * In a Windows Forms application you might do this from the handler for the [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) event of the [**Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) that hosts the **DesktopWindowXamlSource**. For an example, see the [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) file in the Windows Community Toolkit.
 
-    ```cppwinrt
-    // Private fields maintained by your app, such as in a window class you have defined.
-    Windows::UI::Xaml::Media::ScaleTransform m_scale;
-    Windows::UI::Xaml::Controls::Grid m_rootGrid;
+## Handle DPI changes
 
-    // Code that runs during initialization, such as the constructor for a window class you have defined.
-    m_rootGrid.RenderTransform(m_scale);
-    ```
+The UWP XAML framework handles DPI changes for hosted UWP controls automatically (for example, when the user drags the window between monitors with different screen DPI). For the best experience, we recommend that your Windows Forms, WPF, or C++ Win32 application is configured to be per-monitor DPI aware.
 
-2. In your [**WindowProc**](https://msdn.microsoft.com/library/windows/desktop/ms633573.aspx) function, listen for the [**WM_DPICHANGED**](https://docs.microsoft.com/windows/desktop/hidpi/wm-dpichanged) message. In response to this message:
-    * Use the [**SetWindowPos**](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) function to resize the window that contains the UWP control to the rectangle passed to the message.
-    * Update the x-axis and y-axis scale factors of your **ScaleTransform** object according to the new DPI value.
-    * Make any necessary adjustments to the appearance and layout of your UWP control. The following code example adjusts the [**Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.padding) of the hosted **Windows.UI.Xaml.Controls.Grid** control in response to DPI changes.
+To configure your application to be per-monitor DPI aware, add a [side-by-side assembly manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and set ```<dpiAwareness>``` element to ```PerMonitorV2```. For more information about this value, see the description for [**DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2**](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
 
-    ```cppwinrt
-    LRESULT HandleDpiChange(HWND hWnd, WPARAM wParam, LPARAM lParam)
-    {
-        HWND hWndStatic = GetWindow(hWnd, GW_CHILD);
-        if (hWndStatic != nullptr)
-        {
-            UINT uDpi = HIWORD(wParam);
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <application xmlns="urn:schemas-microsoft-com:asm.v3">
+        <windowsSettings>
+            <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
+        </windowsSettings>
+    </application>
+</assembly>
+```
 
-            // Resize the window
-            auto lprcNewScale = reinterpret_cast<RECT*>(lParam);
+## Host custom UWP XAML controls
 
-            SetWindowPos(hWnd, nullptr, lprcNewScale->left, lprcNewScale->top,
-                lprcNewScale->right - lprcNewScale->left, lprcNewScale->bottom - lprcNewScale->top,
-                SWP_NOZORDER | SWP_NOACTIVATE);
+> [!IMPORTANT]
+> To host a custom UWP XAML control, you must have the source code for the control so you can compile against it in your application.
 
-            NewScale(uDpi);
-          }
-          return 0;
-    }
+If you want to host a custom UWP XAML control (either a control you define yourself or a control provided by a 3rd party), you must perform the following additional tasks in addition to the process described in the [previous section](#host-uwp-xaml-controls).
 
-    void NewScale(UINT dpi) {
+1. Define a custom type that derives from [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) and also implements [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
 
-        auto scaleFactor = (float)dpi / 100;
+2. Call the [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) method of your root metadata provider when the type name of the UWP XAML control is assigned (this could be assigned in code at run time, or you might choose to enable this to be assigned in the Visual Studio Properties window).
 
-        if (m_scale != nullptr) {
-            m_scale.ScaleX(scaleFactor);
-            m_scale.ScaleY(scaleFactor);
-        }
+    For examples, see the following code files:
+      * **C++ Win32:** See the [XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp) code file in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-        ApplyCorrection(scaleFactor);
-    }
+      * **WPF and Windows Forms**: See the [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) and [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) code files in the Windows Community Toolkit. These files are part of the shared implementation of the **WindowsXamlHost** classes for WPF and Windows Forms, which help illustrate how to use the UWP XAML hosting API in those types of apps.
 
-    void ApplyCorrection(float scaleFactor) {
-        float rightCorrection = (m_rootGrid.Width() * scaleFactor - m_rootGrid.Width()) / scaleFactor;
-        float bottomCorrection = (m_rootGrid.Height() * scaleFactor - m_rootGrid.Height()) / scaleFactor;
-
-        m_rootGrid.Padding(Windows::UI::Xaml::ThicknessHelper::FromLengths(0, 0, rightCorrection, bottomCorrection));
-    }
-    ```
-
-2. To configure your application to be per-monitor DPI aware, add a [side-by-side assembly manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and set ```<dpiAwareness>``` element to ```PerMonitorV2```. For more information about this value, see the description for [**DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2**](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
-
-    ```xml
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-        <application xmlns="urn:schemas-microsoft-com:asm.v3">
-            <windowsSettings>
-                <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
-            </windowsSettings>
-        </application>
-    </assembly>
-    ```
-
-    For a complete example side-by-side assembly manifest, see the [XamlIslandsWin32.exe.manifest](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/XamlIslandsWin32.exe.manifest) file in the [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sample on GitHub.
-
-## Limitations
-
-The XAML hosting API shares the same limitations as all other types of XAML host controls for Windows 10. For a detailed list, see [XAML host control limitations](xaml-host-controls.md#limitations).
+3. Integrate the source code for the custom UWP XAML control into your host application solution, build the custom control, and use it in your application. For instructions for a WPF or Windows Forms application, see [these instructions](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control). For an example for a C++ Win32 application, see the [Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup) and [MyApp](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp) projects in the [C++ Win32 sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
 ## Troubleshooting
 
@@ -299,14 +255,15 @@ The XAML hosting API shares the same limitations as all other types of XAML host
 
 | Issue | Resolution |
 |-------|------------|
-| Your app receives a **COMException** with the following message: "AttachToWindow method failed because the specified HWND was created on a different thread." | This error indicates that your application called the **IDesktopWindowXamlSourceNative.AttachToWindow** method and passed it the HWND of a window that was created on a different thread. You must pass this method the HWND of a window that was created on the same thread as the code from which you are calling the method. |
+| Your app receives a **COMException** with the following message: "AttachToWindow method failed because the specified HWND was created on a different thread." | This error indicates that your application called the **IDesktopWindowXamlSourceNative::AttachToWindow** method and passed it the HWND of a window that was created on a different thread. You must pass this method the HWND of a window that was created on the same thread as the code from which you are calling the method. |
 
 ### Error attaching to a window on a different top-level window
 
 | Issue | Resolution |
 |-------|------------|
-| Your app receives a **COMException** with the following  message: "AttachToWindow method failed because the specified HWND descends from a different top-level window than the HWND that was previously passed to AttachToWindow on the same thread." | This error indicates that your application called the **IDesktopWindowXamlSourceNative.AttachToWindow** method and passed it the HWND of a window that descends from a different top-level window than a window you specified in a previous call to this method on the same thread.</p></p>After your application calls **IDesktopWindowXamlSourceNative.AttachToWindow** on a particular thread, all other [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) objects on the same thread can only attach to windows that are descendants of the same top-level window that was passed in the first call to **IDesktopWindowXamlSourceNative.AttachToWindow**. When all the **DesktopWindowXamlSource** objects are closed for a particular thread, the next **DesktopWindowXamlSource** is then free to attach to any window again.</p></p>To resolve this issue, either close all **DesktopWindowXamlSource** objects that are bound to other top-level windows on this thread, or create a new thread for this **DesktopWindowXamlSource**. |
+| Your app receives a **COMException** with the following  message: "AttachToWindow method failed because the specified HWND descends from a different top-level window than the HWND that was previously passed to AttachToWindow on the same thread." | This error indicates that your application called the **IDesktopWindowXamlSourceNative::AttachToWindow** method and passed it the HWND of a window that descends from a different top-level window than a window you specified in a previous call to this method on the same thread.</p></p>After your application calls **IDesktopWindowXamlSourceNative::AttachToWindow** on a particular thread, all other [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) objects on the same thread can only attach to windows that are descendants of the same top-level window that was passed in the first call to **IDesktopWindowXamlSourceNative::AttachToWindow**. When all the **DesktopWindowXamlSource** objects are closed for a particular thread, the next **DesktopWindowXamlSource** is then free to attach to any window again.</p></p>To resolve this issue, either close all **DesktopWindowXamlSource** objects that are bound to other top-level windows on this thread, or create a new thread for this **DesktopWindowXamlSource**. |
 
 ## Related topics
 
 * [UWP controls in desktop applications](xaml-host-controls.md)
+* [C++ Win32 XAML Islands sample](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)
