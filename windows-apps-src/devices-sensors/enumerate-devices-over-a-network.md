@@ -6,6 +6,7 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: 19H1
 ---
 # Enumerate devices over a network
 
@@ -40,6 +41,7 @@ When you build your own selector, it is strongly recommended that you limit your
 | Wi-Fi provisioning for HP printers           | **{c85ef710-f344-4792-bb6d-85a4346f1e69}** |
 | Bluetooth                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
 | Bluetooth LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
+| Network Camera                               | **{b8238652-b500-41eb-b4f3-4234f7f5ae99}** |
 
  
 

@@ -3,8 +3,9 @@ Description: Menus and context menus display a list of commands or options when 
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
-ms.date: 01/08/2019
+ms.date: 04/04/2019
 ms.topic: article
+ms.custom: 19H1
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
@@ -12,7 +13,7 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
+ms.custom: RS5, 19H1
 ---
 # Menus and context menus
 

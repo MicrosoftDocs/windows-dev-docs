@@ -65,6 +65,8 @@
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Capture from multiple sources using MediaFrameSourceGroup
           href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
+        - name: Connect to remote cameras
+          href: ../audio-video-camera/connect-to-remote-cameras.md
         - name: Get a preview frame
           href: ../audio-video-camera/get-a-preview-frame.md
     - name: Media playback

@@ -62,6 +62,8 @@
           href: layout/transforms.md
         - name: 3-D perspective effects
           href: layout/3-d-perspective-effects.md
+    - name: Z-depth and shadow
+      href: layout/depth-shadow.md
 - name: Controls
   items:
     - name: Overview
