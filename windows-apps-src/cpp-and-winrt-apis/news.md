@@ -256,7 +256,7 @@ The traditional way of implementing a coroutine type may allow locals within the
 
 ## News, and changes, in Windows SDK version 10.0.17763.0 (Windows 10, version 1809)
 
-The table below contains news and changes to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) in the latest generally-available version of the Windows SDK, which is 10.0.17763.0 (Windows 10, version 1809). These changes may also be present in later SDK Insider Preview versions.
+The table below contains news and changes for C++/WinRT in the Windows SDK version 10.0.17763.0 (Windows 10, version 1809).
 
 | New or changed feature | More info |
 | - | - |
