@@ -60,23 +60,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [Media transport control](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [Connected animation](../motion/connected-animation.md)
 
-### Disabling default ThemeShadow on custom Flyout controls
-
-Controls based on [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
-
-If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
-
-```xaml
-<Flyout>
-    <Flyout.FlyoutPresenterStyle>
-        <Style TargetType="FlyoutPresenter">
-            <Setter Property="IsDefaultShadowEnabled" Value="False" />
-        </Style>
-    </Flyout.FlyoutPresenterStyle>
-</Flyout>
-```
-
-Controls based on [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout) will automatically use ThemeShadow only if the application is compiled against Windows 10 version 1903 or a more recent SDK, otherwise the shadow is available but turned off by default. For Flyout UI compiled against older SDKs, we recommend turning the shadow on by specifying `IsDefaultShadowEnabled` to True in the same manner above.
+Note: Flyouts will only apply ThemeShadow when compiled against Windows 10 version 1903 or a more recent SDK.
 
 ### ThemeShadow in Popups
 
@@ -105,6 +89,22 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 ```
 
 ![A single rectangular popup with a shadow.](images/elevation-shadow/PopupRectangle.png)
+
+### Disabling default ThemeShadow on custom Flyout controls
+
+Controls based on [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
+
+If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
+
+```xaml
+<Flyout>
+    <Flyout.FlyoutPresenterStyle>
+        <Style TargetType="FlyoutPresenter">
+            <Setter Property="IsDefaultShadowEnabled" Value="False" />
+        </Style>
+    </Flyout.FlyoutPresenterStyle>
+</Flyout>
+```
 
 ### ThemeShadow in other elements
 
