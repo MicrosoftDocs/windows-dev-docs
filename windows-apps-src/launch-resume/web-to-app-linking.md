@@ -42,7 +42,7 @@ For example, if your website’s address is “msn.com” you would make the fol
 </Applications>
 ```
 
-The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
+The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www\.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
 
 ## Associate your app and website with a JSON file
 
@@ -183,7 +183,7 @@ If you would like to follow the protocol activation logic, set a breakpoint in t
 ## AppUriHandlers tips:
 
 - Make sure to only specify links that your app can handle.
-- List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.
+- List all of the hosts that you will support.  Note that www\.example.com and example.com are different hosts.
 - Users can choose which app they prefer to handle websites in Settings.
 - Your JSON file must be uploaded to an https server.
 - If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
