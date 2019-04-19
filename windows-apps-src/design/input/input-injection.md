@@ -46,7 +46,7 @@ In this example, we demonstrate how to use the input injection APIs ([Windows.UI
 1. First, we set up the UI (MainPage.xaml).
 
     We have two Grid areas (one for mouse input and one for injected touch input), each with four buttons.
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
 
     When any mouse clicks are detected in the input area, a corresponding touch event is injected into the input injection area. Button clicks from inject input are reported in the title area.
 
