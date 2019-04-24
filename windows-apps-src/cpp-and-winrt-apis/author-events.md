@@ -1,7 +1,7 @@
 ---
 description: This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events.
 title: Author events in C++/WinRT
-ms.date: 07/18/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event
 ms.localizationpriority: medium
@@ -18,7 +18,7 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 
 ## Create a Windows Runtime Component (BankAccountWRC)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Universal** > **Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
+Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component"). Don't built the project yet.
 
 The newly-created project contains a file named `Class.idl`. Rename that file `BankAccount.idl` (renaming the `.idl` file automatically renames the dependent `.h` and `.cpp` files, too). Replace the contents of `BankAccount.idl` with the listing below.
 
@@ -35,7 +35,9 @@ namespace BankAccountWRC
 }
 ```
 
-Save the file. The project won't build to completion at the moment, but building now is a useful thing to do because it generates the source code files in which you'll implement the **BankAccount** runtime class. So go ahead and build now (the build errors you can expect to see at this stage have to do with `Class.h` and `Class.g.h` not being found). During the build process, the `midl.exe` tool is run to create your component's Windows Runtime metadata file (which is `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Then, the `cppwinrt.exe` tool is run (with the `-component` option) to generate source code files to support you in authoring your component. These files include stubs to get you started implementing the **BankAccount** runtime class that you declared in your IDL. Those stubs are `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` and `BankAccount.cpp`.
+Save the file. The project won't build to completion at the moment, but building now is a useful thing to do because it generates the source code files in which you'll implement the **BankAccount** runtime class. So go ahead and build now (the build errors you can expect to see at this stage have to do with `Class.h` and `Class.g.h` not being found).
+
+During the build process, the `midl.exe` tool is run to create your component's Windows Runtime metadata file (which is `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Then, the `cppwinrt.exe` tool is run (with the `-component` option) to generate source code files to support you in authoring your component. These files include stubs to get you started implementing the **BankAccount** runtime class that you declared in your IDL. Those stubs are `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` and `BankAccount.cpp`.
 
 Right-click the project node and click **Open Folder in File Explorer**. This opens the project folder in File Explorer. There, copy the stub files `BankAccount.h` and `BankAccount.cpp` from the folder `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` and into the folder that contains your project files, which is `\BankAccountWRC\BankAccountWRC\`, and replace the files in the destination. Now, let's open `BankAccount.h` and `BankAccount.cpp` and implement our runtime class. In `BankAccount.h`, add two private members to the implementation (*not* the factory implementation) of BankAccount.
 
@@ -70,7 +72,7 @@ namespace winrt::BankAccountWRC::implementation
         return m_accountIsInDebitEvent.add(handler);
     }
 
-    void BankAccount::AccountIsInDebit(winrt::event_token const& token)
+    void BankAccount::AccountIsInDebit(winrt::event_token const& token) noexcept
     {
         m_accountIsInDebitEvent.remove(token);
     }
@@ -91,7 +93,7 @@ If any warnings prevent you from building, then either resolve them or set the p
 
 ## Create a Core App (BankAccountCoreApp) to test the Windows Runtime Component
 
-Now create a new project (either in your `BankAccountWRC` solution, or in a new one). Create a **Visual C++** > **Windows Universal** > **Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
+Now create a new project (either in your `BankAccountWRC` solution, or in a new one). Create a **Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
 
 Add a reference, and browse to `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (or add a project-to-project reference, if the two projects are in the same solution). Click **Add**, and then **OK**. Now build BankAccountCoreApp. In the unlikely event that you see an error that the payload file `readme.txt` doesn't exist, exclude that file from the Windows Runtime Component project, rebuild it, then rebuild BankAccountCoreApp.
 
@@ -116,7 +118,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
     {
         m_eventToken = m_bankAccount.AccountIsInDebit([](const auto &, float balance)
         {
-            WINRT_ASSERT(balance < 0.f);
+            WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
         });
     }
     ...

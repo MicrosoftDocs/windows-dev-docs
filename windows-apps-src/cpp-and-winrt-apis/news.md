@@ -1,7 +1,7 @@
 ---
 description: News and changes to C++/WinRT.
 title: What's new in C++/WinRT
-ms.date: 04/02/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium

@@ -1,7 +1,7 @@
 ---
 description: Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 title: Frequently-asked questions about C++/WinRT
-ms.date: 04/15/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
