@@ -1,7 +1,7 @@
 ---
 description: This topic discusses strategies for handling errors when programming with C++/WinRT.
 title: Error handling with C++/WinRT
-ms.date: 05/21/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception
 ms.localizationpriority: medium
@@ -24,11 +24,16 @@ Throwing exceptions tends to be slower than using error codes. If you only throw
 But a more likely performance hit involves the runtime overhead of ensuring that the appropriate destructors are called in the unlikely event that an exception is thrown. The cost of this assurance comes whether an exception is actually thrown or not. So, you should ensure that the compiler has a good idea of what functions can potentially throw exceptions. If the compiler can prove that there won't be any exceptions from certain functions (the `noexcept` specification), then it can optimize the code it generates.
 
 ## Catching exceptions
-An error condition that arises at the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer is returned in the form of a HRESULT value. But you don't need to handle HRESULTs in your code. The C++/WinRT projection code that's generated for an API on the consuming side detects an error HRESULT code at the ABI layer and converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) exception, which you can catch and handle.
+An error condition that arises at the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer is returned in the form of a HRESULT value. But you don't need to handle HRESULTs in your code. The C++/WinRT projection code that's generated for an API on the consuming side detects an error HRESULT code at the ABI layer and converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) exception, which you can catch and handle. If you *do* wish to handle HRESULTS, then use the **winrt::hresult** type.
 
 For example, if the user happens to delete an image from the Pictures Library while your application is iterating over that collection, then the projection throws an exception. And this is a case where you'll have to catch and handle that exception. Here's a code example showing this case.
 
 ```cppwinrt
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Storage.h>
+#include <winrt/Windows.UI.Xaml.Media.Imaging.h>
+#include <winrt/coroutine.h>
+
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage;
@@ -48,7 +53,7 @@ IAsyncAction MakeThumbnailsAsync()
         }
         catch (winrt::hresult_error const& ex)
         {
-            HRESULT hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
+            winrt::hresult hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
             winrt::hstring message = ex.message(); // The system cannot find the file specified.
         }
     }

@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
-ms.date: 05/08/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
 ms.localizationpriority: medium
@@ -13,9 +13,10 @@ This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intr
 ## If the API is in a Windows namespace
 This is the most common case in which you'll consume a Windows Runtime API. For every type in a Windows namespace defined in metadata, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace using C++ syntax. For example, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is projected into C++/WinRT as **winrt::Windows::Foundation::Uri**.
 
-Here's a simple code example.
+Here's a simple code example. If you want to copy-paste the following code examples directly into the main source code file of a **Windows Console Application (C++/WinRT)** project, then first set **Not Using Precompiled Headers** in project properties.
 
 ```cppwinrt
+// main.cpp
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -80,6 +81,7 @@ WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInter
 This convenience is achieved via a query for the appropriate interface. But you're always in control. You can opt to give away a little of that convenience for a little performance by retrieving the IStringable interface yourself and using it directly. In the code example below, you obtain an actual IStringable interface pointer at run time (via a one-time query). After that, your call to **ToString** is direct, and avoids any further call to **QueryInterface**.
 
 ```cppwinrt
+...
 IStringable stringable = contosoUri; // One-off QueryInterface.
 WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 ```
@@ -89,10 +91,21 @@ You might choose this technique if you know you'll be calling several methods on
 Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](interop-winrt-abi.md).
 
 ```cppwinrt
-int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+#include <Windows.Foundation.h>
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+using namespace winrt::Windows::Foundation;
 
-winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
-HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+int main()
+{
+    winrt::init_apartment();
+    Uri contosoUri{ L"http://www.contoso.com" };
+
+    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
+}
 ```
 
 ## Delayed initialization
@@ -101,6 +114,8 @@ Even the default constructor of a projected type causes a backing Windows Runtim
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
 using namespace winrt::Windows::Storage::Streams;
+
+#define MAX_IMAGE_SIZE 1024
 
 struct Sample
 {
@@ -113,11 +128,19 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+
+int main()
+{
+    winrt::init_apartment();
+    Sample s;
+    // ...
+    s.DelayedInit();
+}
 ```
 
 All constructors on the projected type *except* the `nullptr_t` constructor cause a backing Windows Runtime object to be created. The `nullptr_t` constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
 
-This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example.
+This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example, for which you'll need a **Blank App (C++/WinRT)** project.
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -157,6 +180,8 @@ For more details, code, and a walkthrough of consuming APIs implemented in a Win
 A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
 
 For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its `nullptr` constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+
+You'll need a **Blank App (C++/WinRT)** project for this code example.
 
 ```cppwinrt
 // MainPage.h

@@ -69,8 +69,8 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
-    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
+    m_bookSku{ winrt::make<Bookstore::implementation::BookSku>(L"Atticus") };
+    m_bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>() };
     m_bookSkus.Append(m_bookSku);
 }
 
