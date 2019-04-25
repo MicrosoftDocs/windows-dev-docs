@@ -1,7 +1,7 @@
 ---
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.date: 08/21/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
 ms.localizationpriority: medium
@@ -21,7 +21,7 @@ A XAML text element, or control, can bind to, and handle, these events by retrie
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Create a Blank App (Bookstore)
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Universal** > **Blank App (C++/WinRT)** project, and name it *Bookstore*.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *Bookstore*.
 
 We're going to author a new class to represent a book that has an observable title property. We're authoring and consuming the class within the same compilation unit. But we want to be able to bind to this class from XAML, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
@@ -55,7 +55,6 @@ Now, let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement
 ```cppwinrt
 // BookSku.h
 #pragma once
-
 #include "BookSku.g.h"
 
 namespace winrt::Bookstore::implementation
@@ -83,6 +82,7 @@ In `BookSku.cpp`, implement the functions like this.
 // BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
+#include "BookSku.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -163,6 +163,7 @@ namespace winrt::Bookstore::implementation
 // BookstoreViewModel.cpp
 #include "pch.h"
 #include "BookstoreViewModel.h"
+#include "BookstoreViewModel.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -234,6 +235,7 @@ In `\Bookstore\Bookstore\MainPage.cpp`, call [**winrt::make**](/uwp/cpp-ref-for-
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
+#include "MainPage.g.cpp"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;

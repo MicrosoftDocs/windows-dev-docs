@@ -1,7 +1,7 @@
 ---
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
-ms.date: 04/15/2019
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
@@ -27,10 +27,10 @@ An example of an asynchronous Windows function is [**SyndicationClient::Retrieve
 
 The code example below receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread until the results of the asynchronous operation are available.
 
+If you want to copy-paste this example directly into the main source code file of a **Windows Console Application (C++/WinRT)** project, then first set **Not Using Precompiled Headers** in project properties.
+
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Web.Syndication.h>
 
@@ -67,12 +67,10 @@ C++/WinRT integrates C++ coroutines into the programming model to provide a natu
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
+#include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
-#include <winrt/coroutine.h>
-#include <iostream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -116,12 +114,10 @@ In this next example we wrap a call to **RetrieveFeedAsync**, for a specific URI
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
+#include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
-#include <winrt/coroutine.h>
-#include <iostream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -183,12 +179,10 @@ If you're asynchronously returning a type that's *not* a Windows Runtime type, t
 
 ```cppwinrt
 // main.cpp
-
-#include "pch.h"
-#include <winrt/Windows.Foundation.Collections.h>
-#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
 #include <ppltasks.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Web.Syndication.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -437,6 +431,9 @@ If you want to do something more advanced, then you could write your own await a
 > The code example below is provided for educational purposes only; it's to get you started understanding how await adapters work. If you want to use this technique in your own codebase, then we recommend that you develop and test your own await adapter struct(s). For example, you could write **complete_on_any**, **complete_on_current**, and **complete_on(dispatcher)**. Also consider making them templates that take the **IAsyncXxx** type as a template parameter.
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 struct no_switch
 {
     no_switch(Windows::Foundation::IAsyncAction const& async) : m_async(async)
@@ -469,6 +466,9 @@ private:
 To understand how to use the **no_switch** await adapters, you'll first need to know that when the C++ compiler encounters a `co_await` expression it looks for functions called **await_ready**, **await_suspend**, and **await_resume**. The C++/WinRT library provides those functions so that you get reasonable behavior by default, like this.
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await async;
 ```
@@ -476,6 +476,9 @@ co_await async;
 To use the **no_switch** await adapters, just change the type of that `co_await` expression from **IAsyncXxx** to **no_switch**, like this.
 
 ```cppwinrt
+...
+#include <winrt/coroutine.h>
+...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await static_cast<no_switch>(async);
 ```
@@ -495,9 +498,10 @@ The Windows Runtime's features for asynchronous programming allow you to cancel 
 
 // MainPage.h
 ...
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.Search.h>
-#include <winrt/coroutine.h>
+
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
@@ -546,14 +550,11 @@ private:
 For the implementation side of cancellation, let's begin with a simple example.
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
 #include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -620,14 +621,11 @@ The Windows Runtime's cancellation doesn't automatically flow to other asynchron
 In this next code example, **NestedCoroutineAsync** does the work, but it has no special cancellation logic in it. **CancellationPropagatorAsync** is essentially a wrapper on the nested coroutine; the wrapper forwards cancellation pre-emptively.
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
 #include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -675,14 +673,11 @@ int main()
 If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
 
 ```cppwinrt
-// pch.h
-#pragma once
+// main.cpp
 #include <iostream>
-#include <winrt/Windows.Foundation.h>
 #include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -755,13 +750,10 @@ For more info about completion handlers, see [Delegate types for asynchronous ac
 Sometimes, you have a task that can be done concurrently with other work, and you don't need to wait for that task to complete (no other work depends on it), nor do you need it to return a value. In that case, you can fire off the task and forget it. You can do that by writing a coroutine whose return type is [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) (instead of one of the Windows Runtime asynchronous operation types, or **concurrency::task**).
 
 ```cppwinrt
-// pch.h
-#pragma once
-#include <winrt/Windows.Foundation.h>
+// main.cpp
 #include <winrt/coroutine.h>
+#include <winrt/Windows.Foundation.h>
 
-// main.cpp : Defines the entry point for the console application.
-#include "pch.h"
 using namespace winrt;
 using namespace std::chrono_literals;
 
