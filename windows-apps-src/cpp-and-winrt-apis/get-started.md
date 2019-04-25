@@ -130,7 +130,7 @@ Because C++/WinRT uses features from the C++17 standard, set project property **
 
 ### The precompiled header
 
-The default project template creates a precompiled header for you, named either `framework.h`, or `stdafx.h`. Rename that to `pch.h`. If you have a `stdafx.cpp` file, then rename that to `pch.cpp`. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header File** to *pch.h*.
+The default project template creates a precompiled header for you, named either `framework.h`, or `stdafx.h`. Rename that to `pch.h`. If you have a `stdafx.cpp` file, then rename that to `pch.cpp`. Set project property **C/C++** > **Precompiled Headers** > **Precompiled Header** to *Create (/Yc)*, and **Precompiled Header File** to *pch.h*.
 
 Find and replace all `#include "framework.h"` (or `#include "stdafx.h"`) with `#include "pch.h"`.
 
