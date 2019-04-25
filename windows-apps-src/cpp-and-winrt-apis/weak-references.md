@@ -1,7 +1,7 @@
 ---
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
 title: Weak references in C++/WinRT
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
 ms.localizationpriority: medium
@@ -13,12 +13,13 @@ The Windows Runtime is a reference-counted system; and in such a system it's imp
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
-The code listing below shows a typical example of a coroutine that's a member function of a class.
+The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.

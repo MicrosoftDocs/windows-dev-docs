@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes.
 title: Author COM components with C++/WinRT
-ms.date: 09/06/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Author COM components with C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project.
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
@@ -68,7 +68,7 @@ More background about the toast notification feature area can be found at [Send 
 
 ## Create a Windows Console Application project (ToastAndCallback)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
 
 Open `pch.h`, and add `#include <unknwn.h>` before the includes for any C++/WinRT headers. Here's the result; you can replace the contents of your `pch.h` with this listing.
 
@@ -83,7 +83,6 @@ Open `main.cpp`, and remove the using-directives that the project template gener
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
 
 #include "pch.h"
 

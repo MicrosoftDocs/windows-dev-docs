@@ -1,7 +1,7 @@
 ---
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
 title: XAML items controls; bind to a C++/WinRT collection
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, collection
 ms.localizationpriority: medium
@@ -24,9 +24,6 @@ If a runtime class that represents a collection chooses to raise the [**IObserva
 ## Add a **BookSkus** collection to **BookstoreViewModel**
 
 In [XAML controls; bind to a C++/WinRT property](binding-property.md), we added a property of type **BookSku** to our main view model. In this step, we'll use the [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) factory function template to help us implement an observable collection of **BookSku** on the same view model.
-
-> [!NOTE]
-> If you haven't installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later, then see [If you have an older version of the Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) for a listing of an observable vector template that you can use instead of **winrt::single_threaded_observable_vector**.
 
 Declare a new property in `BookstoreViewModel.idl`.
 
@@ -69,8 +66,8 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku{ winrt::make<Bookstore::implementation::BookSku>(L"Atticus") };
-    m_bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>() };
+    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
 
