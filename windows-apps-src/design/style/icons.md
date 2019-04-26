@@ -80,7 +80,7 @@ There are many ways to create an icon. You can use a symbol font like Segoe MDL2
 ### Use a predefined icon.
 :::row:::
     :::column:::
-Microsoft provides over 1000 icons in the form of the Segoe MDL2 Assets font. It might not be intuitive to get an icon from a font, but our font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size. 
+Microsoft provides over 1000 icons in the form of the Segoe MDL2 Assets font. It might not be intuitive to get an icon from a font, but our font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size. For instructions, see [Segoe MDL2 icons](segoe-ui-symbol-font.md).
     :::column-end:::
     :::column:::
         ![pre-defined icon image](images/icons/predefined-icon.png)
@@ -100,7 +100,7 @@ You don't have to use the Segoe MDL2 Assets font--you can use any font the user 
 ### Use a Scalable Vector Graphics (SVG) file.
 :::row:::
     :::column:::
-SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. 
+SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. For instructions, see [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource).
     :::column-end:::
     :::column:::
         ![SVG image](images/icons/icon-scale.gif)
