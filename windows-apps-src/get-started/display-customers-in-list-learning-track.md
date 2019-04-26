@@ -13,7 +13,7 @@ Displaying and manipulating real data in the UI is crucial to the functionality 
 
 This is not a tutorial. If you want one, see our [data binding tutorial](../data-binding/xaml-basics-data-binding.md), which will provide you with a step-by-step guided experience.
 
-We’ll start with a quick discussion of data binding - what it is and how it works. Then we'll add a **ListView** to the UI, add data binding, and customize the data binding with additional features. 
+We’ll start with a quick discussion of data binding - what it is and how it works. Then we'll add a **ListView** to the UI, add data binding, and customize the data binding with additional features.
 
 ## What do you need to know?
 

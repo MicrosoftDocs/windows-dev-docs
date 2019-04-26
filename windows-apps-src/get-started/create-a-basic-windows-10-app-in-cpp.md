@@ -10,16 +10,16 @@ ms.localizationpriority: medium
 # Create a "Hello world" app in C++/CX
 
 > [!IMPORTANT]
-> This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
+> This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
 
-With Microsoft Visual Studio 2017, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
+With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
 > [!NOTE]
 > This tutorial uses Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
 ## Before you start
 
--   To complete this tutorial, you must use Visual Studio Community 2017, or one of the non-Community versions of Visual Studio 2017, on a computer that's running Windows 10. To download, see [Get the tools](https://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows 10. To download, see [Get the tools](https://go.microsoft.com/fwlink/p/?LinkId=532666).
 -   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
@@ -59,7 +59,7 @@ Our first app is a "Hello World" that demonstrates some basic features of intera
 
 We'll start with the basics:
 
--   How to create a Universal Windows project in Visual Studio 2017.
+-   How to create a Universal Windows project in Visual Studio.
 
 -   How to understand the projects and files that are created.
 
@@ -138,7 +138,7 @@ In the following code, we use the fully qualified name to instantiate an object,
 ```cpp
 Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
      ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
-      
+
 bitmapImage->SetSource(fileStream);
 ```
 
@@ -286,7 +286,7 @@ It's easy to customize the look and feel of your app. By default, your app uses 
 
     Here's the full [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag with the dark theme :
 
-    ```xaml 
+    ```xaml
         <Application
         x:Class="HelloWorld.App"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -401,4 +401,3 @@ Congratulations, you've completed the first tutorial! It taught how to add conte
 If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://msdn.microsoft.com/library/windows/apps/Mt188203) and [Porting to the Universal Windows Platform (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525).
 
 If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](https://go.microsoft.com/fwlink/p/?LinkId=619623).
-

@@ -15,9 +15,12 @@ It's easier than you think to get going. Follow these instructions and start cre
 
 ## 1. Download or update Visual Studio
 
-Microsoft Visual Studio 2017 helps you design, code, test, and debug your apps.
+> [!NOTE]
+> New versions of Visual Studio might look different than the screenshots that accompany these instructions. Don't worry! You'll still be set up if you follow these instructions.
 
-If you don't already have Visual Studio 2017, you can install the free Microsoft Visual Studio Community 2017. This download includes device simulators for testing your apps:
+Microsoft Visual Studio 2019 helps you design, code, test, and debug your apps.
+
+If you don't already have Visual Studio 2019, you can install the free Microsoft Visual Studio Community 2019. This download includes device simulators for testing your apps:
 
 -   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
