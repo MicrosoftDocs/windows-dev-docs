@@ -34,8 +34,8 @@ The timing of motion in Fluent uses 500ms (or one-half second) as a baseline bec
 
 :::row:::
     :::column:::
-        Use for objects or pages that are exiting the scene or closing.​
-        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+Use for objects or pages that are exiting the scene or closing.​
+Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
     :::column-end:::
     :::column:::
         ![150ms motion](images/150msAlt.gif)
@@ -46,8 +46,8 @@ The timing of motion in Fluent uses 500ms (or one-half second) as a baseline bec
 
 :::row:::
     :::column:::
-        Use for objects or pages that are entering the scene or opening.​
-        Allows a reasonable amount of time to celebrate content as it enters the scene.​
+Use for objects or pages that are entering the scene or opening.​
+Allows a reasonable amount of time to celebrate content as it enters the scene.​
     :::column-end:::
     :::column:::
         ![300ms motion](images/300ms.gif)
@@ -58,7 +58,7 @@ The timing of motion in Fluent uses 500ms (or one-half second) as a baseline bec
 
 :::row:::
     :::column:::
-        Use for objects which are translating across a single scene or multiple scenes. ​
+Use for objects which are translating across a single scene or multiple scenes. ​
     :::column-end:::
     :::column:::
         ![500ms motion](images/500ms.gif)
@@ -81,10 +81,10 @@ The code examples show how to apply recommended easing values to Storyboard anim
 
 :::row:::
     :::column:::
-        Use for UI or objects that are exiting the scene.
+Use for UI or objects that are exiting the scene.
 
-        Objects become powered and gain momentum until they reach escape velocity.​
-        The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.​
+Objects become powered and gain momentum until they reach escape velocity.​
+The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.​
     :::column-end:::
     :::column:::
         ![accelerate easing](images/accelEase.gif)
@@ -120,12 +120,12 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-        Use for objects or UI entering the scene, either navigating or spawning​.
+Use for objects or UI entering the scene, either navigating or spawning​.
 
-        Once on-scene, the object is met with extreme friction, which slows the object to rest.​
-        The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.​
+Once on-scene, the object is met with extreme friction, which slows the object to rest.​
+The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.​
 
-        Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.​
+Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.​
     :::column-end:::
     :::column:::
         ![decelerate easing](images/decelEase.gif)
@@ -161,10 +161,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-        This is the baseline easing for any animated parameter change inside of the system.
-        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
+This is the baseline easing for any animated parameter change inside of the system.
+Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
 
-        The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.​
+The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.​
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)
