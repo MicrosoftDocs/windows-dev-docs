@@ -69,7 +69,7 @@ This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. N
 
 ## Property path
 
-*PropertyPath* sets the **Path** for an **{x:Bind}** expression. **Path** is a property path specifying the value of the property, sub-property, field, or method that you're binding to (the source). You can mention the name of the **Path** property explicitly: `{Binding Path=...}`. Or you can omit it: `{Binding ...}`.
+*PropertyPath* sets the **Path** for an **{x:Bind}** expression. **Path** is a property path specifying the value of the property, sub-property, field, or method that you're binding to (the source). You can mention the name of the **Path** property explicitly: `{x:Bind Path=...}`. Or you can omit it: `{x:Bind ...}`.
 
 ### Property path resolution
 
@@ -86,9 +86,9 @@ With **x:Bind**, you do not need to use **ElementName=xxx** as part of the bindi
 
 If the data source is a collection, then a property path can specify items in the collection by their position or index. For example, "Teams\[0\].Players", where the literal "\[\]" encloses the "0" that requests the first item in a zero-indexed collection.
 
-To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&lt;T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **INotifyCollectionChanged** or **IObservableVector** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
+To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&lt;T&gt;** on the type of the property that is going to be indexed. (Note that IReadOnlyList&lt;T&gt; and IVectorView&lt;T&gt; do not support the indexer syntax.) If the type of the indexed property supports **INotifyCollectionChanged** or **IObservableVector** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
 
-If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. Its usually easiest to use alternate quotes from those used for the XAML attribute.
+If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. Its usually easiest to use alternate quotes from those used for the XAML attribute. (Note that IReadOnlyDictionary&lt;T&gt; and IMapView&lt;T&gt; do not support the indexer syntax.)
 
 To use an string indexer, the model needs to implement **IDictionary&lt;string, T&gt;** or **IMap&lt;string, T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **IObservableMap** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
 
