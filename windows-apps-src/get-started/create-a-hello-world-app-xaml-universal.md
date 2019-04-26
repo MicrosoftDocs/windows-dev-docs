@@ -13,7 +13,7 @@ This tutorial teaches you how to use XAML and C# to create a simple "Hello, worl
 
 Here you'll learn how to:
 
--   Create a new **Visual Studio 2017** project that targets **Windows 10** and the **UWP**.
+-   Create a new **Visual Studio** project that targets **Windows 10** and the **UWP**.
 -   Write XAML to change the UI on your start page.
 -   Run the project on the local desktop in Visual Studio.
 -   Use a SpeechSynthesizer to make the app talk when you press a button.
@@ -36,7 +36,7 @@ Here you'll learn how to:
 
 ## Step 1: Create a new project in Visual Studio.
 
-1.  Launch Visual Studio 2017.
+1.  Launch Visual Studio.
 
 2.  From the **File** menu, select **New > Project** to open the *New Project* dialog.
 

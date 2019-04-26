@@ -17,19 +17,19 @@ This tutorial teaches you how to use JavaScript and HTML to create a simple "Hel
 
 Here you'll learn how to:
 
--   Create a new **Visual Studio 2017** project that targets **Windows 10** and the **UWP**.
+-   Create a new **Visual Studio** project that targets **Windows 10** and the **UWP**.
 -   Add HTML and JavaScript content
 -   Run the project on the local desktop in Visual Studio
 
 ## Before you start...
 
 -   [What's a UWP app?](universal-application-platform-guide.md).
--   To complete this tutorial, you need Windows 10 and Visual Studio 2017. [Get set up](get-set-up.md).
+-   To complete this tutorial, you need Windows 10 and Visual Studio. [Get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 ## Step 1: Create a new project in Visual Studio.
 
-1.  Launch Visual Studio 2017.
+1.  Launch Visual Studio.
 
 2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
 
@@ -59,7 +59,7 @@ Although the **Blank App (Universal Window)** is a minimal template, it still co
 
 ### What's in the files?
 
-To view and edit a file in your project, double-click the file in the **Solution Explorer**. 
+To view and edit a file in your project, double-click the file in the **Solution Explorer**.
 
 *default.css*
 
@@ -153,5 +153,3 @@ Congratulations, you've created a JavaScript app for Windows 10 and the UWP! Th
 
 * [A simple 2D UWP game for the Microsoft Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
 * [A 3D UWP game for the Microsoft Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
-
-

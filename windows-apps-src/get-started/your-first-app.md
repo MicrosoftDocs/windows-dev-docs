@@ -24,7 +24,6 @@ If you want to learn the basics, or just refresh your memory, try reading these:
 * [C# Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850801)
 * [VB Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850802)
 * [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](https://www.microsoftvirtualacademy.com/)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
@@ -40,8 +39,8 @@ Take advantage of your C++ programming expertise to build apps using Visual C++
 
 Learn more about C++ here:
 
-* [C++: A General Purpose Language and Library Jump Start](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++ for UWP apps](https://docs.microsoft.com/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
+* [C++ for Desktop apps](https://docs.microsoft.com/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
@@ -63,11 +62,6 @@ Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and p
 * [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 * [Convert your web application to a UWP app](../porting/hwa-create-windows.md)
 
-Need to brush up on your web skills?
-
-* [JavaScript Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [HTML5 & CSS3 Fundamentals for Absolute Beginners](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## See Also
 
