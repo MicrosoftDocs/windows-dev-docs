@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 
 // <SnippetSimpleCameraPreviewUsing>
+using Windows.UI.Core;
 using Windows.UI.Xaml.Navigation;
 using Windows.Media.Capture;
 using Windows.ApplicationModel;
