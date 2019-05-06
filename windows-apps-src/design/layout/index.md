@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Layout
 
-![hero image](images/header-layout2.jpg)
+![Layout icon](../images/layout-2x.png)
 
 These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.
 

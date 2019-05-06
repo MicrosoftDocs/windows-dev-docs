@@ -6,13 +6,13 @@ label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
-
-
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ---
-# Controls and patterns for UWP apps
- 
+
+# Controls for UWP apps 
+
+![Controls](../images/controls-2x.png)
 
 In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
 

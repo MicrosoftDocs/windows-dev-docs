@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Design basics for UWP apps
 
-![hero image](images/header-design-basics.svg)
+![Design basics icon](../images/basics-2x.png)
 
 The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving Fluent Design System as well as the needs of our app-building community. 
 

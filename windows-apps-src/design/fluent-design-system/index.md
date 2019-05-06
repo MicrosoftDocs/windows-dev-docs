@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # The Fluent Design System for Windows app creators
 
-![Fluent Design header](images/fluentdesign-app-header.jpg)
+![Fluent Design header](../images/ficon-2x.png)
 
 ## Introduction
 
