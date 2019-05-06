@@ -8,9 +8,11 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
+![Design basics](../images/downloads-2x.png)
+
 # Design toolkits and samples for UWP apps
  
-
 Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
 
 

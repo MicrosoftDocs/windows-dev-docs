@@ -12,6 +12,7 @@ ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
 ---
+![Inputs icon](../images/inputs-2x.png)
 # Input and interactions
 
 <!-- <div>

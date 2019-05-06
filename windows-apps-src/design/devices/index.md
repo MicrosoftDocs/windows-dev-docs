@@ -1,6 +1,6 @@
 ---
 Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
-title: Device primer for Universal Windows Platform (UWP) apps
+title: UI considerations for UWP devices
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -11,13 +11,15 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-#  Device primer for Universal Windows Platform (UWP) apps
+#  UI considerations for UWP devices
 
+![Devices](../images/devices-2x.png)
 
+Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
 
 ![windows-powered devices](images/device-primer/device-primer-ramp.png)
 
-Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
+ When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
 
 ## PCs and laptops
 
