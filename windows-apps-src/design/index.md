@@ -8,7 +8,7 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Design and code UWP apps
+# Design and code Windows apps
 
 ![hero image](images/ficon-1x.png)
 
