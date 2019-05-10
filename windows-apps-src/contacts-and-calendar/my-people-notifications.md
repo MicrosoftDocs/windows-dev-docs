@@ -62,7 +62,7 @@ The image node inside the binding should include the following parameters:
 In addition, the top-level toast node must include the **hint-people** parameter to specify the sending contact. This parameter can have any the following values:
 
 + **Email address** 
-    + E.g. mailto:johndoe@mydomain.com
+    + E.g. ` mailto:johndoe@mydomain.com `
 + **Telephone number** 
     + E.g. tel:888-888-8888
 + **Remote ID** 
