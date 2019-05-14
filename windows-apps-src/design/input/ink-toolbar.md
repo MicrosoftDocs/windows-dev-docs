@@ -244,7 +244,7 @@ You can also use binding to look after UI updates based on changes to user prefe
         ```
 
         - VerticalAlignmentFromAppViewConverter positions the ink toolbar to the center of the app for portrait orientation and to the top of the app for landscape orientation (while intended to improve usability, this is just an arbitrary choice for demonstration purposes).
-        ````csharp
+        ```csharp
         using System;
 
         using Windows.UI.Xaml;
