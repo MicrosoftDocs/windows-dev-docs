@@ -110,7 +110,7 @@ Since your **App** type *is an* **IFrameworkViewSource**, you can just pass one 
 using namespace Windows::ApplicationModel::Core;
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App{});
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
