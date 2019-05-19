@@ -20,8 +20,8 @@ The maximum memory available to an app running in the background is 128 MB. Back
 
 Exceeding these limitations will cause memory allocation failures. For more information about monitoring memory use, see the [MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) reference.
     
-    > [!NOTE]
-    > When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
+> [!NOTE]
+> When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
 
 * CPU
     * Apps: share of 2-4 CPU cores depending on the number of apps and games running on the system.
