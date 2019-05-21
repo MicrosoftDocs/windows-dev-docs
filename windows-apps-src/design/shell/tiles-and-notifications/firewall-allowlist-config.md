@@ -12,7 +12,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
 ms.localizationpriority: medium
 ---
-# Allowing Windows Notification Traffic Through Enterprise Firewalls
+# Allowing Windows Notification traffic through enterprise firewalls
 
 ## Background
 Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped. To avoid this, network admins can add the list of approved WNS channels to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add. 
@@ -25,11 +25,11 @@ Below is a list that contains the FQDNs, VIPs, and IP address ranges used by the
 > We strongly suggest that you allow list by FQDN, because these will not change. If you allow list by FQDN, you do not need to also allow the IP address ranges.
 
 > [!IMPORTANT]
-> The IP address ranges will change periodically; because of this, they are not included on this page. If you want to see the list of IP ranges, you can download the file from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=44238). Please check back regularly to make sure you have the most up-to-date information. 
+> The IP address ranges will change periodically; because of this, they are not included on this page. If you want to see the list of IP ranges, you can download the file from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/download/details.aspx?id=44238). Please check back regularly to make sure you have the most up-to-date information. 
 
 
 ### FQDNs, VIPs, and IPs
-Each of the elements in the following XML document is explained in the table that follows it (in [Terms and Notations](#terms-and-notations). The IP ranges were intentionally left out of this document to encourage you to use only the FQDNs as the FQDNs will remain constant. However, you can download the XML file containing the complete list from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=44238). New VIPs or IP ranges will be **effective one week after they are uploaded**.
+Each of the elements in the following XML document is explained in the table that follows it (in [Terms and Notations](#terms-and-notations). The IP ranges were intentionally left out of this document to encourage you to use only the FQDNs as the FQDNs will remain constant. However, you can download the XML file containing the complete list from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/download/details.aspx?id=44238). New VIPs or IP ranges will be **effective one week after they are uploaded**.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -54,7 +54,7 @@ Each of the elements in the following XML document is explained in the table tha
 
 ```
 
-### Terms and Notations
+### Terms and notations
 Below are explanations on the notations and elements used in the above XML snippet.
 
 | Term | Explanation |
@@ -66,8 +66,8 @@ Below are explanations on the notations and elements used in the above XML snipp
 | **CloudServiceIPs** | CloudServiceIPs are the IPv4 addresses of the servers used for cloud services to send notifications to WNS  |
 
 
-## Micrsoft Push Notifications Service (MPNS) Puclic IP Ranges
-If you are using the legacy notification service, MPNS, the IP address ranges that you will need to add to the allow list are available from Download Center: [Microsoft Push Notifications Service (MPNS) Public IP ranges](https://www.microsoft.com/en-us/download/details.aspx?id=44535).
+## Microsoft Push Notifications Service (MPNS) public IP ranges
+If you are using the legacy notification service, MPNS, the IP address ranges that you will need to add to the allow list are available from Download Center: [Microsoft Push Notifications Service (MPNS) Public IP ranges](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
 ## Related topics
