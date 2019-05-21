@@ -279,13 +279,13 @@ Place the border approach brush on the elements' backplates as well as their bor
 
 ## Reveal and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
 
 ## Related articles
 
 - [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
 - [Composition Effects](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [Fluent Design for UWP](../fluent-design-system/index.md)
+- [Fluent Design for UWP](/windows/apps/fluent-design-system)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

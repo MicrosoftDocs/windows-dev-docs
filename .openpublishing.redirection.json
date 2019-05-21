@@ -1126,11 +1126,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/fluent-design-system/index.md",
-      "redirect_url": "/windows/uwp/design/fluent-design-system/index",
-      "redirect_document_id": true
-    },
-    {
       "source_path": "windows-apps-src/in-app-help/external-help.md",
       "redirect_url": "/windows/uwp/design/in-app-help/external-help",
       "redirect_document_id": true
@@ -4639,6 +4634,121 @@
     {
       "source_path": "windows-apps-src/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsgetvaluemetadata.md",
       "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/xbox-live-rest/uri/userstats/uri-usersxuidscidsscidstatsgetvaluemetadata",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/composition/visual-layer-in-desktop-apps.md",
+      "redirect_url": "/windows/apps/desktop/modernize/visual-layer-in-desktop-apps",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/composition/using-the-visual-layer-with-wpf.md",
+      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-wpf",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/composition/using-the-visual-layer-with-windows-forms.md",
+      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/composition/using-the-visual-layer-with-win32.md",
+      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-win32",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xaml-platform/xaml-host-controls.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xaml-platform/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/apps/desktop/modernize/using-the-xaml-hosting-api",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-root.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-prepare.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-prepare",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-packaging-dot-net.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-manual-conversion.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-manual-conversion",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-r2r.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-r2r",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-behind-the-scenes.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-known-issues.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-known-issues",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/package-support-framework.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/psf/package-support-framework",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-debug.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-debug",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-test-windows-s.md",
+      "redirect_url": "https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-distribute.md",
+      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-distribute",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-enhance.md",
+      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-enhance",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/package-support-extend.md",
+      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extend",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-extensions.md",
+      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extensions",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/desktop-to-uwp-supported-api.md",
+      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-supported-api",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/fluent-design-system/index.md",
+      "redirect_url": "/windows/apps/fluent-design-system",
       "redirect_document_id": true
     }
   ]

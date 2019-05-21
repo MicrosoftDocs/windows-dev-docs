@@ -18,7 +18,7 @@ The Universal Windows Platform (UWP) design guidance is a resource to help you d
 
 An introduction to UWP features combined with best practices for creating apps that scale beautifully on all types of Windows-powered devices.
 
-[**Fluent Design System**](../fluent-design-system/index.md)
+[**Fluent Design System**](/windows/apps/fluent-design-system)
 
 The Fluent Design System presents our goals and principles for creating adaptive, empathetic, and beautiful user interfaces.
 

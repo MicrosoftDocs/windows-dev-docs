@@ -709,4 +709,4 @@ This example shows how to override the theme resources in App.xaml. When you ove
 - [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Master/details](master-details.md)
 - [Navigation basics](../basics/navigation-basics.md)
-- [Fluent Design for UWP overview](../fluent-design-system/index.md)
+- [Fluent Design for UWP overview](/windows/apps/fluent-design-system)

@@ -6,8 +6,6 @@
       href: basics/index.md
     - name: Intro to app design
       href: basics/design-and-ui-intro.md
-    - name: Fluent Design System
-      href: fluent-design-system/index.md
     - name: Navigation basics
       items:
         - name: Overview

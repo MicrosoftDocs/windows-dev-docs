@@ -56,6 +56,12 @@ You can get to a Visual created by the XAML framework, and backing a visible Fra
 
 For more information, see the [Using the Visual layer with XAML](using-the-visual-layer-with-xaml.md) overview.
 
+### Working with your desktop app
+
+You can use the Visual layer to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 desktop apps. You can migrate islands of content to use the Visual layer and keep the rest of your UI in its existing framework. This means you can make significant updates and enhancements to your application UI without needing to make extensive changes to your existing code base.
+
+For more information, see [Modernize your desktop app using the Visual layer](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
+
 ## Additional resources
 
 * [**Full reference documentation for the API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)

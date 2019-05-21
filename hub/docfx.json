@@ -1,43 +1,39 @@
 {
   "build": {
-    "content": [
-      {
-        "files": [
-          "**/*.md"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE"
-        ]
-      }
-    ],
+    "content":
+      [
+        {
+          "files": ["**/**.md", "**/**.yml"],
+          "exclude": ["**/obj/**", "**/includes/**", "README.md", "LICENSE", "LICENSE-CODE"]
+        }
+      ],
     "resource": [
-      {
-        "files": [
-          "**/*.png",
-          "**/*.jpg"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**"
-        ]
-      }
+        {
+          "files": ["**/images/**"],
+          "exclude": ["**/obj/**"]
+        }
     ],
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "ROBOTS": "INDEX, FOLLOW",
+      "titleSuffix": "Windows apps",
+      "uhfHeaderId": "MSDocsHeader-WinDevCenter",
+      "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/windows-uwp",
+      "feedback_product_url": "https://wpdev.uservoice.com/",
+      "extendBreadcrumb": false,
       "_op_documentIdPathDepotMapping": {
-        "./": {
+          "./": {
           "depot_name": "MSDN.hub",
           "folder_relative_path_in_docset": "./"
-        }
-      }
-    },
+          }
+        }		  
+      },
     "fileMetadata": {},
     "template": [],
-    "dest": "hub"
+    "dest": "hub",
+    "markdownEngineName": "markdig"
   }
 }
