@@ -2213,7 +2213,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/get-started-with-partner/configure-your-development-console.md",
-      "redirect_url": "https://docs.microsoft.com//gaming/xbox-live/get-started-with-partner/configure-your-development-console",
+      "redirect_url": "https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/managed-partners/vs-xbox/configure-your-development-console",
       "redirect_document_id": true
     },
     {
