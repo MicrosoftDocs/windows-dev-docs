@@ -38,7 +38,7 @@ This might make sense if you want greater control over the distribution experien
 
 To distribute your application to other devices without placing it in the Store, you have to obtain a certificate, sign your application by using that certificate, and then sideload your application onto those devices.
 
-You can [create a certificate](/windows/uwp/packaging/create-certificate-package-signing.md) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
+You can [create a certificate](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
 
 If you plan to distribute your application onto devices that run Windows 10 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
 
@@ -47,9 +47,9 @@ If you create a certificate, you have to install it into the **Trusted Root** or
 > [!IMPORTANT]
 > Make sure that the publisher name on your certificate matches the publisher name of your app.
 
-To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md).
+To sign your application by using a certificate, see [Sign an application package using SignTool](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
-To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
 
 **Videos**
 
