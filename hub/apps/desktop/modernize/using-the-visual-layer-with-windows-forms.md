@@ -4,6 +4,8 @@ description: Learn techniques for using the Visual Layer APIs in combination wit
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
 ---
 

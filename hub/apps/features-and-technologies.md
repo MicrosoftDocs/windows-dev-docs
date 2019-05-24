@@ -3,6 +3,9 @@ Description: This section helps you understand how certain key Windows features 
 title: Features and technologies
 ms.topic: article
 ms.date: 05/08/2019
+ms.localizationpriority: medium
+ms.author: mcleans
+author: mcleanbyron
 ---
 
 # Features and technologies for Windows apps

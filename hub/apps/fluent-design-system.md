@@ -6,6 +6,8 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.author: mcleans
+author: mcleanbyron
 ---
 
 # The Fluent Design System for Windows app creators

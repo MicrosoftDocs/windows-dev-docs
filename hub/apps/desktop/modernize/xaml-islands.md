@@ -4,6 +4,8 @@ title: UWP controls in desktop apps
 ms.date: 04/16/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ---

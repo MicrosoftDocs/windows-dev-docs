@@ -17,7 +17,9 @@
     "externalReference": [],
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
+      "ms.prod": "windows",
       "titleSuffix": "Windows apps",
+      "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-WinDevCenter",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_system": "GitHub",
@@ -31,7 +33,13 @@
           }
         }		  
       },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "ms.technology":
+      {
+      "apps/**.md": "windows",
+      "apps/desktop/**.md": "desktop"
+      }
+    },
     "template": [],
     "dest": "hub",
     "markdownEngineName": "markdig"
