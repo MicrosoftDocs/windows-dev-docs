@@ -14,6 +14,18 @@ Accessible apps are designed to be inclusive by improving usability for as many 
 
 This page provides information on how the various Windows development frameworks support accessibility for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
+## Videos
+
+:::row:::
+    :::column:::
+        <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+    :::column-end:::
+    :::column:::
+        <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+    :::column-end:::
+:::row-end:::
+
+
 ## Platform-specific documentation
 
 :::row:::
