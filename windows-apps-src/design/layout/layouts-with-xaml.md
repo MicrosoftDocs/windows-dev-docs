@@ -21,7 +21,7 @@ In practice, you use a combination of static and fluid elements to create your U
 Here, we discuss how to use XAML properties and layout panels to create a fluid layout.
 
 ### Layout properties
-Layout properties control the size and position of an element. To create a fluid layout, use automatic or proportional sizing for elements, and allow layout panels position their children as needed. 
+Layout properties control the size and position of an element. To create a fluid layout, use automatic or proportional sizing for elements, and allow layout panels to position their children as needed. 
 
 Here are some common layout properties and how to use them to create fluid layouts.
 
