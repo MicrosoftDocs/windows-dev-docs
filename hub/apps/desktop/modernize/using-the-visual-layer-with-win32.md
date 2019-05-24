@@ -5,6 +5,8 @@ template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
 keywords: UWP, rendering, composition, win32
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
 ---
 # Using the Visual Layer with Win32

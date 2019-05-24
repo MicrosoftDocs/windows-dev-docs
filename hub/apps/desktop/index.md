@@ -5,6 +5,9 @@ title: Build desktop apps for Windows PCs
 ms.topic: landing-page
 ms.date: 04/18/2019
 keywords: windows win32, desktop development
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
 ---
 
 # Build desktop apps for Windows PCs

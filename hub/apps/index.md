@@ -4,7 +4,10 @@ Description: Learn how to get started building desktop apps for Windows PCs, inc
 title: Build apps for Windows
 ms.topic: landing-page
 ms.date: 04/18/2019
+ms.author: mcleans
+author: mcleanbyron
 keywords: windows win32, desktop development
+ms.localizationpriority: medium
 ---
 
 # Build apps for Windows

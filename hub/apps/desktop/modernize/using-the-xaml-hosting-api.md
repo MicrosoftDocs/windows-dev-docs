@@ -4,6 +4,8 @@ title: Using the UWP XAML hosting API in a desktop application
 ms.date: 04/16/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, win32, xaml islands
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

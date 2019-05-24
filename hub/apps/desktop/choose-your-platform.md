@@ -4,6 +4,9 @@ ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: Choose your app platform
 ms.topic: article
 ms.date: 03/18/2019
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
 ---
 
 # Choose your app platform

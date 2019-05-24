@@ -4,6 +4,8 @@ title: Use UWP APIs in desktop apps
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
