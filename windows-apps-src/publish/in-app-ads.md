@@ -114,6 +114,7 @@ The following table lists the paid networks we currently support for each ad typ
 | smartclip |  Select this option to serve ads from [smartclip](http://www.smartclip.com/). |  Video interstitial  |
 | SpotX |  Select this option to serve ads from [SpotX](https://www.spotx.tv/). |  Video interstitial  |
 | Taboola |  Select this option to serve ads from [Taboola](https://www.taboola.com/). |  Banner  |
+| Vungle | Select this option to serve ads from [Vungle](https://vungle.com/) | Video interstitial |
 | Undertone | Select this option to serve ads from [Undertone](https://www.undertone.com/). | Banner interstitial |
 
 
