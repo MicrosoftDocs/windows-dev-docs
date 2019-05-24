@@ -21,7 +21,7 @@ This page provides information on how the various Windows development frameworks
         <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
     :::column-end:::
     :::column:::
-        <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+        <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
     :::column-end:::
 :::row-end:::
 
