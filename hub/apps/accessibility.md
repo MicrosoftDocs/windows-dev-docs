@@ -16,9 +16,11 @@ This page provides information on how the various Windows development frameworks
 
 ## Videos
 
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> -->
+
 :::row:::
     :::column:::
-        <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+        <iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
     :::column-end:::
     :::column:::
         <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
