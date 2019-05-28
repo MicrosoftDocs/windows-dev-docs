@@ -24,7 +24,10 @@ All of these application platforms let you create desktop apps like Word, Excel,
 
 * **Win32 API**. The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT. This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware.
 
-This article describes these platforms in more detail and helps you determine the best one for your application.
+This article describes these platforms in more detail and helps you determine the best one for your application. 
+
+> [!NOTE]
+> No matter which app platform you choose, you can use many features of the Universal Windows Platform (UWP) to deliver a modern experience in your app on Windows 10. For example, even if your desktop app is built using WPF, Windows Forms, or the Win32 API, you can still use many features first introduced with UWP, such as MSIX package deployment and UWP XAML controls. For more information, see [Modernize your desktop apps](modernize/index.md).
 
 ## UWP
 

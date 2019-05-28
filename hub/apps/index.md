@@ -115,6 +115,25 @@ Whether you're building a new app for Windows 10 or you're enhancing an existing
       </a>
     </li>
     <li>
+      <a href="/windows/msix/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-get-started-download.svg?branch=master" alt="MSIX packaging illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>MSIX packaging and deployment</h3>
+                    <p>Package and deploy any Windows app in a universal packaging experience that is safe, secure, and reliable.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
       <a href="fluent-design-system.md">
         <div class="cardSize">
             <div class="cardPadding">
@@ -127,6 +146,25 @@ Whether you're building a new app for Windows 10 or you're enhancing an existing
                     <div class="cardText">
                     <h3>Fluent Design System</h3>
                     <p>Learn how to design and code the user interface for Windows apps by using the Fluent Design System.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/uwp/toolkits/winui/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/virtualization-containers-samples.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>Windows UI Library</h3>
+                    <p>Use native Windows UI controls and other user interface elements in apps for earlier versions of Windows 10.</p>
                   </div>
                 </div>
             </div>
