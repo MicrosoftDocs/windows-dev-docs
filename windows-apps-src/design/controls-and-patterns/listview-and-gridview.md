@@ -80,11 +80,11 @@ Here's the list view created in code. The resulting list is the same as the one 
 ```csharp
 // Create a new ListView and add content. 
 ListView listView1 = new ListView(); 
-listView1.Items.Add("Item 1"); 
-listView1.Items.Add("Item 2"); 
-listView1.Items.Add("Item 3"); 
-listView1.Items.Add("Item 4"); 
-listView1.Items.Add("Item 5");
+listView1.Items.Append("Item 1"); 
+listView1.Items.Append("Item 2"); 
+listView1.Items.Append("Item 3"); 
+listView1.Items.Append("Item 4"); 
+listView1.Items.Append("Item 5");
  
 // Add the ListView to a parent container in the visual tree. 
 stackPanel1.Children.Add(listView1); 
