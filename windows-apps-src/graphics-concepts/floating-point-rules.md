@@ -80,13 +80,13 @@ Some of these rules are a single option where IEEE-754 offers choices.
 -   x +/- 0.0f always results in x (except denorm flushed). But -0 + 0 = +0.
 -   Fused operations (such as mad, dp3) produce results that are no less accurate than the worst possible serial ordering of evaluation of the unfused expansion of the operation. The definition of the worst possible ordering, for the purpose of tolerance, is not a fixed definition for a given fused operation; it depends on the particular values of the inputs. The individual steps in the unfused expansion are each allowed 1 ULP tolerance (or for any instructions Direct3D calls out with a more lax tolerance than 1 ULP, the more lax tolerance is allowed).
 -   Fused operations adhere to the same NaN rules as non-fused operations.
--   sqrt and rcp have 1 ULP tolerance. The shader reciprocal and reciprocal square-root instructions, [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) and [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221), have their own separate relaxed precision requirement.
+-   sqrt and rcp have 1 ULP tolerance. The shader reciprocal and reciprocal square-root instructions, [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) and [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-), have their own separate relaxed precision requirement.
 -   Multiply and divide each operate at the 32-bit floating-point precision level (accuracy to 0.5 ULP for multiply, 1.0 ULP for reciprocal). If x/y is implemented directly, results must be of greater or equal accuracy than a two-step method.
 
 ## <span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64-bit (double precision) floating point rules
 
 
-Hardware and display drivers optionally support double-precision floating-point. To indicate support, when you call [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) with [**D3D11\_FEATURE\_DOUBLES**](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles), the driver sets **DoublePrecisionFloatShaderOps** of [**D3D11\_FEATURE\_DATA\_DOUBLES**](https://msdn.microsoft.com/library/windows/desktop/ff476127) to TRUE. The driver and hardware must then support all double-precision floating-point instructions.
+Hardware and display drivers optionally support double-precision floating-point. To indicate support, when you call [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) with [**D3D11\_FEATURE\_DOUBLES**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), the driver sets **DoublePrecisionFloatShaderOps** of [**D3D11\_FEATURE\_DATA\_DOUBLES**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) to TRUE. The driver and hardware must then support all double-precision floating-point instructions.
 
 Double-precision instructions follow IEEE 754R behavior requirements.
 
@@ -146,9 +146,9 @@ A float11/float10 value (v) follows the following rules:
 
 [Appendices](appendix.md)
 
-[Resources](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[Resources](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Textures](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

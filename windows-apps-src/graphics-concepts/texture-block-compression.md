@@ -15,9 +15,9 @@ ms.localizationpriority: medium
 
 Block Compression (BC) support for textures has been extended in Direct3D 11 to include the BC6H and BC7 algorithms. BC6H supports high-dynamic range color source data, and BC7 provides better-than-average quality compression with less artifacts for standard RGB source data.
 
-For more specific information about block compression algorithm support prior to Direct3D 11, including support for the BC1 through BC5 formats, see [Block Compression (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531).
+For more specific information about block compression algorithm support prior to Direct3D 11, including support for the BC1 through BC5 formats, see [Block Compression (Direct3D 10)](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-block-compression).
 
-**Note about File Formats:  ** The BC6H and BC7 texture compression formats use the DDS file format for storing the compressed texture data. For more information, see the [Programming Guide for DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991) for details.
+**Note about File Formats:  ** The BC6H and BC7 texture compression formats use the DDS file format for storing the compressed texture data. For more information, see the [Programming Guide for DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) for details.
 
 ## <span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Block Compression Formats Supported in Direct3D 11
 
@@ -63,7 +63,7 @@ The BC1, BC2, and BC3 formats are equivalent to the Direct3D 9 DXTn texture comp
 ## <span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H Format
 
 
-For more detailed information about this format, see the [BC6H Format](https://msdn.microsoft.com/library/windows/desktop/hh308952) documentation.
+For more detailed information about this format, see the [BC6H Format](https://docs.microsoft.com/windows/desktop/direct3d11/bc6h-format) documentation.
 
 | Block compression format | DXGI format                                                                      | Direct3D 9 equivalent format | Bytes per 4x4 pixel block |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
@@ -76,7 +76,7 @@ The BC6H format can select different encoding modes for each 4x4 pixel block. A 
 ## <span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>BC7 Format
 
 
-For more detailed information about this format, see the [BC7 Format](https://msdn.microsoft.com/library/windows/desktop/hh308953) documentation.
+For more detailed information about this format, see the [BC7 Format](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format) documentation.
 
 | Block compression format | DXGI format                                                                           | Direct3D 9 equivalent format | Bytes per 4x4 pixel block |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
@@ -91,7 +91,7 @@ The BC7 format can select different encoding modes for each 4x4 pixel block. A t
 
 [Appendices](appendix.md)
 
-[Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Textures](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

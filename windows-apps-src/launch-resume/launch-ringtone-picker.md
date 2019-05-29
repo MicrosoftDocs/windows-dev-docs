@@ -17,7 +17,7 @@ This topic describes how to use the **ms-tonepicker:** URI scheme. This URI sche
 
 ## ms-tonepicker: URI scheme reference
 
-This URI scheme does not pass arguments via the URI scheme string, but instead passes arguments via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). All strings are case-sensitive.
+This URI scheme does not pass arguments via the URI scheme string, but instead passes arguments via a [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset). All strings are case-sensitive.
 
 The sections below indicate which arguments should be passed to accomplish the specified task.
 
@@ -43,7 +43,7 @@ The arguments you can pass to display the tone picker are as follows:
 | CurrentToneFilePath | string | no | An existing tone token. | The tone to show as the current tone in the tone picker. If this value is not set, the first tone on the list is selected by default.<br>This is not, strictly speaking, a file path. You can get a suitable value for `CurrenttoneFilePath` from the `ToneToken` value returned from the tone picker.  |
 | TypeFilter | string | no | "Ringtones", "Notifications", "Alarms", "None" | Selects which tones to add to the picker. If no filter is specified then all tones are displayed. |
 
-The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result):
 
 | Return values | Type | Possible values | Description |
 |--------------|------|-------|-------------|
@@ -87,10 +87,10 @@ The arguments you can pass to display the tone saver are as follows:
 | Parameter | Type | Required | Possible values | Description |
 |-----------|------|----------|-------|-------------|
 | Action | string | yes | "SaveRingtone" | Opens the picker to save a ringtone. |
-| ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
+| ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
 | DisplayName | string | no | The specified tone’s friendly name. | Sets the display name to use when saving the specified ringtone. |
 
-The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result):
 
 | Return values | Type | Possible values | Description |
 |--------------|------|-------|-------------|
@@ -153,7 +153,7 @@ The arguments you can pass to get the friendly name of a tone are as follows:
 | Action | string | yes | "GetToneName" | Indicates that you want to get the friendly name of a tone. |
 | ToneToken | string | yes | The tone token | The tone token from which to obtain a display name. |
 
-The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result):
 
 | Return value | Type | Possible values | Description |
 |--------------|------|-------|-------------|

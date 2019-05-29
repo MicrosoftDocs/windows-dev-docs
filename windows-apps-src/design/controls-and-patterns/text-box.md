@@ -18,11 +18,11 @@ The TextBox control lets a user type text into an app. It's typically used to ca
 
 TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
 
-> **Important APIs**: [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [Text property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
+> **Important APIs**: [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## Is this the right control?
 
-Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
+Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) property to get and set the text in a TextBox.
 
 You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [TextBlock](text-block.md) instead.
 
@@ -75,7 +75,7 @@ Here's the text box that results from this XAML.
 
 ### Use a text box for data input in a form
 
-It’s common to use a text box to accept data input on a form, and use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) or [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) event if you need to do something when the text changes.
+It’s common to use a text box to accept data input on a form, and use the [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) or [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) event if you need to do something when the text changes.
 
 This example shows how to get and set the current content of a text box.
 
@@ -89,9 +89,9 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-You can add a [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (or label) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) property instead of Header. *For design info, see Guidelines for labels*.
+You can add a [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header) (or label) and [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) property instead of Header. *For design info, see Guidelines for labels*.
 
-You can restrict the number of characters the user can type by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event to modify pasted text if this is important for your app.
+You can restrict the number of characters the user can type by setting the [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) event to modify pasted text if this is important for your app.
 
 The text box includes a clear all button ("X") that appears when text is entered in the box. When a user clicks the "X", the text in the text box is cleared. It looks like this.
 
@@ -120,7 +120,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### Make a text box read-only
 
-You can make a text box read-only by setting the [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
+You can make a text box read-only by setting the [IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
 
 You can make a TextBox read-only by setting the IsReadOnly property to true. For example, you might have a TextBox for a user to enter comments that is enabled only under certain conditions. You can make the TextBox read-only until the conditions are met. If you need only to display text, consider using a TextBlock or RichTextBlock instead.
 
@@ -132,14 +132,14 @@ IsEnabled
 
 There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
 
-- To let the text box allow and display the newline or return characters, set the [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
-- To enable text wrapping, set the [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
+- To let the text box allow and display the newline or return characters, set the [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) property to **true**.
+- To enable text wrapping, set the [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
 
 > **Note**&nbsp;&nbsp;TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
 
-A multi-line text box will continue to grow vertically as text is entered unless it’s constrained by its [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) or [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) property, or by a parent container. You should test that a multi-line text box doesn’t grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
+A multi-line text box will continue to grow vertically as text is entered unless it’s constrained by its [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) or [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) property, or by a parent container. You should test that a multi-line text box doesn’t grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
 
-Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) to **Auto** on the embedded ScrollViewer, as shown here.
+Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) to **Auto** on the embedded ScrollViewer, as shown here.
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -163,9 +163,9 @@ Here's what the text box looks like after text is added.
 
 ### Format the text display
 
-Use the [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) and [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) properties.
+Use the [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) and [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) properties.
 
-While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) properties like [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx), and [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
+While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) properties like [FontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize), [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontstyle), [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background), [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground), and [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.characterspacing) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
 
 This example shows a read-only text box with several properties set to customize the appearance of the text.
 
@@ -209,15 +209,15 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) event. For an example of this, see Scenario 2 of the [ContextMenu sample](https://go.microsoft.com/fwlink/p/?linkid=234891). For design info, see Guidelines for context menus.
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see Scenario 2 of the [ContextMenu sample](https://go.microsoft.com/fwlink/p/?linkid=234891). For design info, see Guidelines for context menus.
 
 ### Select, copy, and paste
 
-You can get or set the selected text in a text box using the [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) property. Use the [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) and [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) properties, and the [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) and [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) methods, to manipulate the text selection. Handle the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) property.
+You can get or set the selected text in a text box using the [SelectedText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectedtext) property. Use the [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) and [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) properties, and the [Select](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.select) and [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectall) methods, to manipulate the text selection. Handle the [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionhighlightcolor) property.
 
-TextBox supports copy and paste by default. You can provide custom handling of the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event.
+TextBox supports copy and paste by default. You can provide custom handling of the [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) event.
 
-Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) and [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) properties are shown in two text blocks. This is done using the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event.
+Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) and [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) properties are shown in two text blocks. This is done using the [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged) event.
 
 ```xaml
 <StackPanel>
@@ -251,13 +251,13 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
 
 > **Important**&nbsp;&nbsp;The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
 
-Other properties that affect the touch keyboard are [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx), and [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
+Other properties that affect the touch keyboard are [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled), and [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
 
-For more info and examples, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229) and the property documentation.
+For more info and examples, see [Use input scope to change the touch keyboard](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard) and the property documentation.
 
 ## Recommendations
 
@@ -309,8 +309,8 @@ For more info and examples, see [Use input scope to change the touch keyboard](h
 
 - [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md)
-- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Adding search](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [Guidelines for text input](text-controls.md)
-- [TextBox class](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [PasswordBox class](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

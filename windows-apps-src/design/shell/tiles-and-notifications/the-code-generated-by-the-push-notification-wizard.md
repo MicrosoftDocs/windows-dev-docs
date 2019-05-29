@@ -210,20 +210,20 @@ The sendNotifications function sends a single notification as a toast notificati
 
 Windows supports notifications that aren't push notifications. For general information about notifications, see [Choosing a notification delivery method](choosing-a-notification-delivery-method.md).
 
-Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)).
 
 Because Windows responds to push notifications, it can handle most of these notifications when the app isn't running. For example, a push notification could let a user know when a new mail message is available even when the local mail app isn't running. Windows handles a toast notification by displaying a message, such as the first line of a text message. Windows handles a tile or badge notification by updating an app's live tile to reflect the number of new mail messages. In this way, you can prompt users of your app to check it for new information. Your app can receive raw notifications when it's running, and you can use them to send data to your app. If your app isn't running, you can set up a background task to monitor push notifications.
 
-You should use push notifications according to the guidelines for Universal Windows Platform (UWP) apps, because those notifications use up a user's resources and can be distracting if overused. See [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462).
+You should use push notifications according to the guidelines for Universal Windows Platform (UWP) apps, because those notifications use up a user's resources and can be distracting if overused. See [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview).
 
-If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](https://msdn.microsoft.com/library/windows/apps/hh465403).
+If you're updating live tiles with push notifications, you should also follow the guidelines in [Guidelines and checklist for tiles and badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles).
 
 ## Next steps
 
 
 ### Using the Windows Push Notification Services (WNS)
 
-You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) or [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
+You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) or [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10)).
 
 You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=301694).
 
@@ -236,9 +236,9 @@ You can also send push notifications by running a scheduled task in your mobile 
 
 * [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md)
 * [Raw notification overview](raw-notification-overview.md)
-* [Connecting to Windows Azure Mobile Services (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [Quickstart: Adding push notifications for a mobile service (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [Connecting to Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [Quickstart: Adding push notifications for a mobile service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

@@ -14,7 +14,7 @@ The topics in this section show you how to make lightweight code run in the back
 
 ## Playing media in the background
 
-Starting in Windows 10, version 1607, playing audio in the background is much easier. See [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio) for more information.
+Starting in Windows 10, version 1607, playing audio in the background is much easier. See [Play media in the background](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio) for more information.
 
 ## In-process and out-of-process background tasks
 
@@ -27,7 +27,7 @@ In-process background support was introduced in Windows 10, version 1607, to sim
 
 Out-of-process background tasks are more resilient because the background process can't bring down your app process if something goes wrong. But the resiliency comes at the price of greater complexity to manage the cross-process communication between the app and the background task.
 
-Out-of-process background tasks are implemented as lightweight classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface that the OS runs in a separate process (backgroundtaskhost.exe). Register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
+Out-of-process background tasks are implemented as lightweight classes that implement the [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface that the OS runs in a separate process (backgroundtaskhost.exe). Register a background task by using the [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) class. The class name is used to specify the entry point when you registering the background task.
 
 In Windows 10, version 1607, you can enable background activity without creating a background task. You can instead run your background code directly inside the foreground application's process.
 
@@ -40,7 +40,7 @@ To get started quickly with out-of-process background tasks, see [Create and reg
 
 ## Background tasks for system events
 
-Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
+Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType))
 
 | Trigger name                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -54,7 +54,7 @@ For more info see [Respond to system events with background tasks](respond-to-sy
 
 ## Conditions for background tasks
 
-You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
+You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) enumeration) can be used.
 
 | Condition name           | Description                       |
 |--------------------------|-----------------------------------|
@@ -81,21 +81,21 @@ The following real-time triggers can be used to run lightweight custom code in t
 
 | Real-time trigger  | Description |
 |--------------------|-------------|
-| **Control Channel** | Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone. |
-| **Timer** | Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md). |
-| **Push Notification** | Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications. |
+| **Control Channel** | Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). The **ControlChannelTrigger** is not supported on Windows Phone. |
+| **Timer** | Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md). |
+| **Push Notification** | Background tasks respond to the [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) to receive raw push notifications. |
 
 **Note**  
 
-Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+Universal Windows apps must call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any of the background trigger types.
 
-To ensure that your Universal Windows app continues to run properly after you release an update, call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+To ensure that your Universal Windows app continues to run properly after you release an update, call [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess) and then call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-**Limits on the number of trigger instances:** There are limits to how many instances of some triggers an app can register. An app can only register   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) and [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) once per instance of the app. If an app goes over this limit, registration will throw an exception.
+**Limits on the number of trigger instances:** There are limits to how many instances of some triggers an app can register. An app can only register   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) and [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) once per instance of the app. If an app goes over this limit, registration will throw an exception.
 
 ## System event triggers
 
-The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration represents the following system event triggers:
+The [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) enumeration represents the following system event triggers:
 
 | Trigger name            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
@@ -123,11 +123,11 @@ Background tasks are limited to 30 seconds of wall-clock usage.
 
 Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception--which the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately.  
 
-You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
+You can use the [**MemoryManager**](https://docs.microsoft.com/uwp/api/Windows.System.MemoryManager) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
 ### Per-device limit for apps with background tasks for low-memory devices
 
-On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
+On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync), which is required to register all background tasks, will fail.
 
 ### Battery Saver
 
@@ -137,9 +137,9 @@ However, for enterprise apps, and apps that will not be published in the Microso
 
 ## Background task resource guarantees for real-time communication
 
-To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
+To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) and [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
 
-Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
+Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) and [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) background tasks. The system always treats these as critical background tasks.
 
 ## Maintenance trigger
 
@@ -147,12 +147,12 @@ Maintenance tasks only run when the device is plugged in to AC power. For more i
 
 ## Background tasks for sensors and devices
 
-Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
+Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
 
 > [!IMPORTANT]
 > The **DeviceUseTrigger** and **DeviceServicingTrigger** cannot be used with in-process background tasks.
 
-Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Microsoft Store device apps](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Microsoft Store device apps](https://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## Managing background tasks
 
@@ -182,7 +182,7 @@ Check your background task registration during app launch. Ensure that your app'
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
 * [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Play media in the background](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Register a background task](register-a-background-task.md)
 * [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)

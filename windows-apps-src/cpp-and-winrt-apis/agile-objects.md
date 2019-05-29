@@ -14,7 +14,7 @@ In the vast majority of cases, an instance of a Windows Runtime class can be acc
 But you can opt out. You might have a compelling reason to require an object of your type to reside, for example, in a given single-threaded apartment. This typically has to do with reentrancy requirements. But increasingly, even user interface (UI) APIs offer agile objects. In general, agility is the simplest and most performant option. Also, when you implement an activation factory, it must be agile even if your corresponding runtime class isn't.
 
 > [!NOTE]
-> The Windows Runtime is based on COM. In COM terms, an agile class is registered with `ThreadingModel` = *Both*. For more info about COM threading models, and apartments, see [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).
+> The Windows Runtime is based on COM. In COM terms, an agile class is registered with `ThreadingModel` = *Both*. For more info about COM threading models, and apartments, see [Understanding and Using COM Threading Models](/previous-versions/ms809971(v=msdn.10)).
 
 ## Code examples
 
@@ -32,7 +32,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Because we haven't opted out, this implementation is agile. The [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct implements [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) and [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). The **IMarshal** implementation uses **CoCreateFreeThreadedMarshaler** to do the right thing for legacy code that doesn't know about **IAgileObject**.
+Because we haven't opted out, this implementation is agile. The [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct implements [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) and [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). The **IMarshal** implementation uses **CoCreateFreeThreadedMarshaler** to do the right thing for legacy code that doesn't know about **IAgileObject**.
 
 This code checks an object for agility. The call to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) throws an exception if `myimpl` is not agile.
 
@@ -110,7 +110,7 @@ The [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function)
 
 ## Important APIs
 
-* [IAgileObject interface](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [IAgileObject interface](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal interface](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
@@ -121,4 +121,4 @@ The [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function)
 
 ## Related topics
 
-* [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971)
+* [Understanding and Using COM Threading Models](/previous-versions/ms809971(v=msdn.10))

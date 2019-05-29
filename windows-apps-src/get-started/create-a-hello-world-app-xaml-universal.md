@@ -70,7 +70,7 @@ Although the **Blank App (Universal Window)** is a minimal template, it still co
 
 To view and edit a file in your project, double-click the file in the **Solution Explorer**. Expand a XAML file just like a folder to see its associated code file. XAML files open in a split view that shows both the design surface and the XAML editor.
 > [!NOTE]
-> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
 
 *App.xaml and App.xaml.cs*
 
@@ -83,7 +83,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 
 -   MainPage.xaml is where you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio.
 -   MainPage.xaml.cs is the code-behind page for MainPage.xaml. It's where you add your app logic and event handlers.
--   Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), in the `HelloWorld` namespace.
+-   Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), in the `HelloWorld` namespace.
 
 *Package.appxmanifest*
 -   A manifest file that describes your app: its name, description, tile, start page, etc.
@@ -220,7 +220,7 @@ Make sure the method signature now includes the **async** keyword, or you'll get
 
 ### What did we just do?
 
-This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx) docs.)
+This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis) docs.)
 
 When you run the app and click on the button, your computer (or phone) will literally say "Hello, World!".
 

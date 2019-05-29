@@ -85,7 +85,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 
 ```xaml
@@ -101,7 +101,7 @@ However, you typically want to show a more rich presentation of your data by usi
 In this example, the data object is a simple string. The **DataTemplate** includes an image to the left of the text, and styles the **TextBlock** to display the string in a teal color.
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a **DataTemplate**, you have to specify the data type (`x:DataType`) on the **DataTemplate**.
+> When you use the [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">

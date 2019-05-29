@@ -98,7 +98,7 @@ Learn how other developers have implemented cloud solutions in their games.
             <ul>
                 <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Building games with Service Fabric: Age of Ascent MMO game (video)</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Manage game components as microservices using Azure Service Fabric (video)</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
             </ul>
         </td>
     </tr>
@@ -236,7 +236,7 @@ We are constantly innovating and adding new features. For more information, see 
 
 ## Related links
 
-* [Windows 10 game development guide](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 game development guide](https://docs.microsoft.com/windows/uwp/gaming/e2e)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

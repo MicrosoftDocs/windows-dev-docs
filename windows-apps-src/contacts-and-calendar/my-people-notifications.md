@@ -120,7 +120,7 @@ When you start the notification, it should look like this:
 ![spritesheet notification](images/pizza-notification-small.gif)
 
 ## Starting the notification
-To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. When you have defined the toast in an XML file (here named "content.xml"), you can use this code to start it:
+To start a My People notification, we need to convert the toast template into an [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) object. When you have defined the toast in an XML file (here named "content.xml"), you can use this code to start it:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

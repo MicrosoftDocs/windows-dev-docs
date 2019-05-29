@@ -53,7 +53,7 @@ For both rectangles, the same pixels are affected, as shown in the following ill
 
 Points are rendered the same as point sprites, which are both rendered as screen-aligned quadrilaterals and thus adhere to the same rules as polygon rendering.
 
-Non-antialiased line rendering rules are exactly the same as those for [GDI lines](https://msdn.microsoft.com/library/windows/desktop/dd145027).
+Non-antialiased line rendering rules are exactly the same as those for [GDI lines](https://docs.microsoft.com/windows/desktop/gdi/lines).
 
 ## <span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Point Sprite Rules
 

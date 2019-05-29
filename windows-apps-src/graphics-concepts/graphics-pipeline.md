@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 The Direct3D graphics pipeline is designed for generating graphics for realtime gaming applications. Data flows from input to output through each of the configurable or programmable stages.
 
-All of the stages can be configured using the Direct3D API. Stages that feature common shader cores (the rounded rectangular blocks) are programmable by using the [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) programming language. This makes the pipeline extremely flexible and adaptable.
+All of the stages can be configured using the Direct3D API. Stages that feature common shader cores (the rounded rectangular blocks) are programmable by using the [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) programming language. This makes the pipeline extremely flexible and adaptable.
 
 The most commonly used are the Vertex Shader (VS) stage and the Pixel Shader (PS) stage. If you don't provide even these shader stages, a default no-op, pass-through vertex and pixel shader are used.
 
@@ -62,7 +62,7 @@ The most commonly used are the Vertex Shader (VS) stage and the Pixel Shader (PS
 |-|-|
 |Purpose|The [Geometry Shader (GS) stage](geometry-shader-stage--gs-.md) processes entire primitives: triangles, lines, and points, along with their adjacent vertices. It supports geometry amplification and de-amplification. It is useful for algorithms including Point Sprite Expansion, Dynamic Particle Systems, Fur/Fin Generation, Shadow Volume Generation, Single Pass Render-to-Cubemap, Per-Primitive Material Swapping, and Per-Primitive Material Setup - including generation of barycentric coordinates as primitive data so that a pixel shader can perform custom attribute interpolation. |
 |Input|Unlike vertex shaders, which operate on a single vertex, the geometry shader's inputs are the vertices for a full primitive (three vertices for triangles, two vertices for lines, or single vertex for point).|
-|Output|The Geometry Shader (GS) stage is capable of outputting multiple vertices forming a single selected topology. Available geometry shader output topologies are <strong>tristrip</strong>, <strong>linestrip</strong>, and <strong>pointlist</strong>. The number of primitives emitted can vary freely within any invocation of the geometry shader, though the maximum number of vertices that could be emitted must be declared statically. Strip lengths emitted from a geometry shader invocation can be arbitrary, and new strips can be created via the [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL function.|
+|Output|The Geometry Shader (GS) stage is capable of outputting multiple vertices forming a single selected topology. Available geometry shader output topologies are <strong>tristrip</strong>, <strong>linestrip</strong>, and <strong>pointlist</strong>. The number of primitives emitted can vary freely within any invocation of the geometry shader, though the maximum number of vertices that could be emitted must be declared statically. Strip lengths emitted from a geometry shader invocation can be arbitrary, and new strips can be created via the [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL function.|
 
 ## Stream Output stage
 

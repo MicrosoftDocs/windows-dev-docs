@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
 
-The Windows Runtime (WinRT) is the technology that lets you build Universal Windows Platform (UWP) apps. You can refer to [What's a Universal Windows Platform (UWP) app?](https://msdn.microsoft.com/library/windows/apps/dn726767) for more background on WinRT and UWP apps.
+The Windows Runtime (WinRT) is the technology that lets you build Universal Windows Platform (UWP) apps. You can refer to [What's a Universal Windows Platform (UWP) app?](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) for more background on WinRT and UWP apps.
 
-This porting guide explains the differences between your current app's technology and the Universal Windows Platform (UWP). Once the path between technologies is understood, you'll be able to dive into the rest of the Developer Center, which is a comprehensive resource for developing UWP apps. A good way to do that, when you're ready, is to start with [How to develop a Store app](https://msdn.microsoft.com/library/windows/apps/dn726537).
+This porting guide explains the differences between your current app's technology and the Universal Windows Platform (UWP). Once the path between technologies is understood, you'll be able to dive into the rest of the Developer Center, which is a comprehensive resource for developing UWP apps. A good way to do that, when you're ready, is to start with [How to develop a Store app](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10)).
 
 | Topic | Description |
 |-------|-------------|
@@ -27,6 +27,6 @@ This porting guide explains the differences between your current app's technolog
 
 ## Related topics
 
-* [Move from WPF and Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Move from Android to WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Move from the web to WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [Move from WPF and Silverlight to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10))
+* [Move from Android to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10))
+* [Move from the web to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10))

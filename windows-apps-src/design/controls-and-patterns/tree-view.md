@@ -1,4 +1,4 @@
-﻿---
+---
 description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
 title: Tree view
 label: Tree view
@@ -926,5 +926,5 @@ End Sub
 ## Related articles
 
 - [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [ListView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView and GridView](listview-and-gridview.md)

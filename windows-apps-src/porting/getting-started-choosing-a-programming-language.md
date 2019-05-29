@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 ## Choosing a programming language
 
-Before we go any further, you should know about the programming languages that you can choose from when you develop Universal Windows Platform (UWP) apps. Although the walkthroughs in this article use C#, you can develop UWP apps using one or more programming languages (see [Languages, tools and frameworks](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+Before we go any further, you should know about the programming languages that you can choose from when you develop Universal Windows Platform (UWP) apps. Although the walkthroughs in this article use C#, you can develop UWP apps using one or more programming languages (see [Languages, tools and frameworks](https://docs.microsoft.com/previous-versions/windows/apps/dn465799(v=win.10))).
 
 You can develop using C++, C#, Microsoft Visual Basic, and JavaScript. JavaScript uses HTML5 markup for UI layout, and the other languages use a markup language called *Extensible Application Markup Language (XAML)* to describe their UI.
 
@@ -24,9 +24,9 @@ Although we're focusing on C# in this article, the other languages offer unique 
 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://code.google.com/p/angleproject/)
--   [Create your first UWP app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [Create your first UWP app using DirectX](https://docs.microsoft.com/previous-versions/windows/apps/br229580(v=win.10))
 -   [UWP app samples that use DirectX](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Where is the DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [Where is the DirectX SDK?](https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-)
 
 ## Giving C# a go
 

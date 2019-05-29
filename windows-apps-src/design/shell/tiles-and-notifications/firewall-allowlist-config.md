@@ -72,10 +72,10 @@ If you are using the legacy notification service, MPNS, the IP address ranges th
 
 ## Related topics
 
-* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [How to intercept notifications for running applications](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [How to authenticate with the Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

@@ -27,7 +27,7 @@ Visual Studio 2015 includes three DirectX and UWP templates:
 
 -   DirectX 11 App (Universal Windows) - The DirectX 11 App (Universal Windows) template creates a UWP project, which renders directly to an app window using DirectX 11.
 -   DirectX 12 App (Universal Windows) - The DirectX 12 App (Universal Windows) template creates a project UWP, which renders directly to an app window using DirectX 12.
--   DirectX 11 and XAML App (Universal Windows) - The DirectX 11 and XAML App (Universal Windows) template creates a UWP project, which renders inside a XAML control using DirectX 11. This template uses a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), so you can use XAML UI controls. This can make adding user interface elements easier, but using the XAML template may result in lower performance.
+-   DirectX 11 and XAML App (Universal Windows) - The DirectX 11 and XAML App (Universal Windows) template creates a UWP project, which renders inside a XAML control using DirectX 11. This template uses a [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel), so you can use XAML UI controls. This can make adding user interface elements easier, but using the XAML template may result in lower performance.
 
 Which template you choose depends on the performance and what technologies you want to use.
 

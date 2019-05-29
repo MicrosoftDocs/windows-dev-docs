@@ -42,7 +42,7 @@ The app can be protocol-activated by using the command line with the command sta
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
+The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri). 
 
 Examples:
 

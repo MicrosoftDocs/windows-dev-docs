@@ -24,7 +24,7 @@ The Geometry Shader stage processes entire primitives: triangles (3 vertices wit
 
 The Geometry Shader also supports limited geometry amplification and de-amplification. Given an input primitive, the Geometry Shader can discard the primitive, or emit one or more new primitives.
 
-The Geometry Shader (GS) stage is a programmable-shader stage; it is shown as a rounded block in the [graphics pipeline](graphics-pipeline.md) diagram. This shader stage exposes its own unique functionality, built on the shader models (see [common-shader core](https://msdn.microsoft.com/library/windows/desktop/bb509580)).
+The Geometry Shader (GS) stage is a programmable-shader stage; it is shown as a rounded block in the [graphics pipeline](graphics-pipeline.md) diagram. This shader stage exposes its own unique functionality, built on the shader models (see [common-shader core](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)).
 
 The Geometry Shader stage is well-suited for algorithms including:
 
@@ -58,7 +58,7 @@ Common vertex abbreviations:
 ## <span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
-The Geometry Shader (GS) stage is capable of outputting multiple vertices forming a single selected topology. Available geometry shader output topologies are **tristrip**, **linestrip**, and **pointlist**. The number of primitives emitted can vary freely within any invocation of the geometry shader, though the maximum number of vertices that could be emitted must be declared statically. Strip lengths emitted from a geometry shader invocation can be arbitrary, and new strips can be created via the [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL function.
+The Geometry Shader (GS) stage is capable of outputting multiple vertices forming a single selected topology. Available geometry shader output topologies are **tristrip**, **linestrip**, and **pointlist**. The number of primitives emitted can vary freely within any invocation of the geometry shader, though the maximum number of vertices that could be emitted must be declared statically. Strip lengths emitted from a geometry shader invocation can be arbitrary, and new strips can be created via the [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL function.
 
 Execution of a geometry shader instance is atomic from other invocations, except that data added to the streams is serial. The outputs of a given invocation of a geometry shader are independent of other invocations (though ordering is respected). A geometry shader generating triangle strips will start a new strip on every invocation.
 

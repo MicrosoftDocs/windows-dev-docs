@@ -15,7 +15,7 @@ Learn how to develop and incorporate music and sounds into your DirectX game, an
 
 For audio programming, we recommend using the XAudio2 library in DirectX, and we use it here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
 
-You can also implement simple sounds and music playback with [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
+You can also implement simple sounds and music playback with [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
 
 ## Concepts at a glance
 
@@ -57,43 +57,43 @@ XAudio2 is the audio mixing library for DirectX, and is primarily intended for d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415813">Introduction to XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction">Introduction to XAudio2</a></p></td>
 <td align="left"><p>The topic provides a list of the audio programming features supported by XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415762">Getting Started with XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/getting-started">Getting Started with XAudio2</a></p></td>
 <td align="left"><p>This topic provides information on key XAudio2 concepts, XAudio2 versions, and the RIFF audio format.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415692">Common Audio Programming Concepts</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/common-audio-concepts">Common Audio Programming Concepts</a></p></td>
 <td align="left"><p>This topic provides an overview of common audio concepts with which an audio developer should be familiar.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415825">XAudio2 Voices</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-voices">XAudio2 Voices</a></p></td>
 <td align="left"><p>This topic contains an overview of XAudio2 voices, which are used to submix, operate on, and master audio data.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415745">XAudio2 Callbacks</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a></p></td>
 <td align="left"><p>This topic covers the XAudio 2 callbacks, which are used to prevent breaks in the audio playback.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415739">XAudio2 Audio Graphs</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs">XAudio2 Audio Graphs</a></p></td>
 <td align="left"><p>This topic covers the XAudio2 audio processing graphs, which take a set of audio streams from the client as input, process them, and deliver the final result to an audio device.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415756">XAudio2 Audio Effects</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-audio-effects">XAudio2 Audio Effects</a></p></td>
 <td align="left"><p>The topic covers XAudio2 audio effects, which take incoming audio data and perform some operation on the data (such as a reverb effect) before passing it on.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415821">Streaming Audio Data with XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-streaming-audio-data">Streaming Audio Data with XAudio2</a></p></td>
 <td align="left"><p>This topic covers audio streaming with XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415714">X3DAudio</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/x3daudio">X3DAudio</a></p></td>
 <td align="left"><p>this topic covers X3DAudio, an API used in conjunction with XAudio2 to create the illusion of a sound coming from a point in 3D space.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415899">XAudio2 Programming Reference</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference">XAudio2 Programming Reference</a></p></td>
 <td align="left"><p>This section contains the complete reference for the XAudio2 APIs.</p></td>
 </tr>
 </tbody>
@@ -116,71 +116,71 @@ XAudio2 is the audio mixing library for DirectX, and is primarily intended for d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">How to: Initialize XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2">How to: Initialize XAudio2</a></p></td>
 <td align="left"><p>Learn how to initialize XAudio2 for audio playback by creating an instance of the XAudio2 engine, and creating a mastering voice.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415781">How to: Load Audio Data Files in XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2">How to: Load Audio Data Files in XAudio2</a></p></td>
 <td align="left"><p>Learn how to populate the structures required to play audio data in XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415787">How to: Play a Sound with XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2">How to: Play a Sound with XAudio2</a></p></td>
 <td align="left"><p>Learn how to play previously-loaded audio data in XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415794">How to: Use Submix Voices</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-submix-voices">How to: Use Submix Voices</a></p></td>
 <td align="left"><p>Learn how to set groups of voices to send their output to the same submix voice.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415769">How to: Use Source Voice Callbacks</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</a></p></td>
 <td align="left"><p>Learn how to use XAudio2 source voice callbacks.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415774">How to: Use Engine Callbacks</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-engine-callbacks">How to: Use Engine Callbacks</a></p></td>
 <td align="left"><p>Learn how to use XAudio2 engine callbacks.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">How to: Build a Basic Audio Processing Graph</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</a></p></td>
 <td align="left"><p>Learn how to create an audio processing graph, constructed from a single mastering voice and a single source voice.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415772">How to: Dynamically Add or Remove Voices From an Audio Graph</a></p></td>
-<td align="left"><p>Learn how to add or remove submix voices from a graph that has been created following the steps in <a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">How to: Build a Basic Audio Processing Graph</a>.</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--dynamically-add-or-remove-voices-from-an-audio-graph">How to: Dynamically Add or Remove Voices From an Audio Graph</a></p></td>
+<td align="left"><p>Learn how to add or remove submix voices from a graph that has been created following the steps in <a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</a>.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415789">How to: Create an Effect Chain</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-effect-chain">How to: Create an Effect Chain</a></p></td>
 <td align="left"><p>Learn how to apply an effect chain to a voice to allow custom processing of the audio data for that voice.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415730">How to: Create an XAPO</a></p></td>
-<td align="left"><p>Learn how to implement <a href="https://msdn.microsoft.com/library/windows/desktop/ee415893"><strong>IXAPO</strong></a> to create an XAudio2 audio processing object (XAPO).</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-xapo">How to: Create an XAPO</a></p></td>
+<td align="left"><p>Learn how to implement <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapo"><strong>IXAPO</strong></a> to create an XAudio2 audio processing object (XAPO).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415728">How to: Add Run-time Parameter Support to an XAPO</a></p></td>
-<td align="left"><p>Learn how to add run-time parameter support to an XAPO by implementing the <a href="https://msdn.microsoft.com/library/windows/desktop/ee415896"><strong>IXAPOParameters</strong></a> interface.</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--add-run-time-parameter-support-to-an-xapo">How to: Add Run-time Parameter Support to an XAPO</a></p></td>
+<td align="left"><p>Learn how to add run-time parameter support to an XAPO by implementing the <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapoparameters"><strong>IXAPOParameters</strong></a> interface.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415733">How to: Use an XAPO in XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-an-xapo-in-xaudio2">How to: Use an XAPO in XAudio2</a></p></td>
 <td align="left"><p>Learn how to use an effect implemented as an XAPO in an XAudio2 effect chain.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415723">How to: Use XAPOFX in XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">How to: Use XAPOFX in XAudio2</a></p></td>
 <td align="left"><p>Learn how to use one of the effects included in XAPOFX in an XAudio2 effect chain.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415791">How to: Stream a Sound from Disk</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">How to: Stream a Sound from Disk</a></p></td>
 <td align="left"><p>Learn how to stream audio data in XAudio2 by creating a separate thread to read an audio buffer, and to use callbacks to control that thread.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415798">How to: Integrate X3DAudio with XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--integrate-x3daudio-with-xaudio2">How to: Integrate X3DAudio with XAudio2</a></p></td>
 <td align="left"><p>Learn how to use X3DAudio to provide the volume and pitch values for XAudio2 voices as well as the parameters for the XAudio2 built-in reverb effect.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415783">How to: Group Audio Methods as an Operation Set</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--group-audio-methods-as-an-operation-set">How to: Group Audio Methods as an Operation Set</a></p></td>
 <td align="left"><p>Learn how to use XAudio2 operation sets to make a group of method calls take effect at the same time.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415765">Debugging Audio Glitches in XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/debugging-audio-glitches-in-xaudio2">Debugging Audio Glitches in XAudio2</a></p></td>
 <td align="left"><p>Learn how to set the debug logging level for XAudio2.</p></td>
 </tr>
 </tbody>
@@ -205,43 +205,43 @@ Media Foundation (MF) is a media platform for streaming audio and video playback
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms696274">About Media Foundation</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/about-the-media-foundation-sdk">About Media Foundation</a></p></td>
 <td align="left"><p>This section contains general information about the Media Foundation APIs, and the tools available to support them.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee663601">Media Foundation: Essential Concepts</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming--essential-concepts">Media Foundation: Essential Concepts</a></p></td>
 <td align="left"><p>This topic introduces some concepts that you will need to understand before writing a Media Foundation application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms696219">Media Foundation Architecture</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-architecture">Media Foundation Architecture</a></p></td>
 <td align="left"><p>This section describes the general design of Microsoft Media Foundation, as well as the media primitives and processing pipeline it uses.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd317910">Audio/Video Capture</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-capture">Audio/Video Capture</a></p></td>
 <td align="left"><p>This topic describes how to use Microsoft Media Foundation to perform audio and video capture.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd317914">Audio/Video Playback</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-playback">Audio/Video Playback</a></p></td>
 <td align="left"><p>This topic describes how to implement audio/video playback in your app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd757927">Supported Media Formats in Media Foundation</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/supported-media-formats-in-media-foundation">Supported Media Formats in Media Foundation</a></p></td>
 <td align="left"><p>This topic lists the media formats that Microsoft Media Foundation supports natively. (Third parties can support additional formats by writing custom plug-ins.)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd318778">Encoding and File Authoring</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/encoding-and-file-authoring">Encoding and File Authoring</a></p></td>
 <td align="left"><p>This topic describes how to use Microsoft Media Foundation to perform audio and video encoding, and author media files.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ff819508">Windows Media Codecs</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/windows-media-codecs">Windows Media Codecs</a></p></td>
 <td align="left"><p>This topic describes how to use the features of the Windows Media Audio and Video codecs to produce and consume compressed data streams.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms704847">Media Foundation Programming Reference</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-programming-reference">Media Foundation Programming Reference</a></p></td>
 <td align="left"><p>This section contains reference information for the Media Foundation APIs.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa371827">Media Foundation SDK Samples</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/media-foundation-sdk-samples">Media Foundation SDK Samples</a></p></td>
 <td align="left"><p>This section lists sample apps that demonstrate how to use Media Foundation.</p></td>
 </tr>
 </tbody>
@@ -251,7 +251,7 @@ Media Foundation (MF) is a media platform for streaming audio and video playback
 
 ### Windows Runtime XAML media types
 
-If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
+If you are using [DirectX-XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
 
 <table>
 <colgroup>
@@ -266,23 +266,23 @@ If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windo
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br242926"><strong>Windows.UI.Xaml.Controls.MediaElement</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>Windows.UI.Xaml.Controls.MediaElement</strong></a></p></td>
 <td align="left"><p>XAML element that represents an object that contains audio, video, or both.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt203788">Audio, video, and camera</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/index">Audio, video, and camera</a></p></td>
 <td align="left"><p>Learn how to incorporate basic audio and video in your Universal Windows Platform (UWP) app.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt187272">MediaElement</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback">MediaElement</a></p></td>
 <td align="left"><p>Learn how to play a locally-stored media file in your UWP app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt187272">MediaElement</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback">MediaElement</a></p></td>
 <td align="left"><p>Learn how to stream a media file with low-latency in your UWP app.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt282143">Media casting</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/media-casting">Media casting</a></p></td>
 <td align="left"><p>Learn how to use the Play To contract to stream media from your UWP app to another device.</p></td>
 </tr>
 </tbody>
@@ -293,16 +293,16 @@ If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windo
 ## Reference
 
 
--   [XAudio2 Introduction](https://msdn.microsoft.com/library/windows/desktop/ee415813)
--   [XAudio2 Programming Guide](https://msdn.microsoft.com/library/windows/desktop/ee415737)
--   [Microsoft Media Foundation overview](https://msdn.microsoft.com/library/windows/desktop/ms694197)
+-   [XAudio2 Introduction](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction)
+-   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
+-   [Microsoft Media Foundation overview](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)
 
  
 
 ## Related topics
 
 
--   [XAudio2 Programming Guide](https://msdn.microsoft.com/library/windows/desktop/ee415737)
+-   [XAudio2 Programming Guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
 
  
 

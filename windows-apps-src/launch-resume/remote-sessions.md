@@ -316,4 +316,4 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 
 ## Related topics
 * [Connected apps and devices (Project Rome)](connected-apps-and-devices.md)
-* [Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Remote Systems API reference](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)
