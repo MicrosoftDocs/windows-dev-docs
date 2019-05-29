@@ -105,7 +105,7 @@ Okay, we now have the basic UWP app that we’ll use throughout the rest of this
 
 ## Step 2: Basic RadialController functionality
 
-With the app running and in the foreground, press and hold the Surface Dial to display the **RadialController ** menu.
+With the app running and in the foreground, press and hold the Surface Dial to display the **RadialController** menu.
 
 We haven't done any customization for our app yet, so the menu contains a default set of contextual tools. 
 
