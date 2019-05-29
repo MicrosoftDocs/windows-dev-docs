@@ -246,12 +246,12 @@ are targeting (Windows 10) and the version of Visual Studio in use.
     rem erase "$(TargetPath)"
 ```
 
-Once the reference **winmd** is created (in folder “reference” under the
+Once the reference **winmd** is created (in folder “reference” under the
 project’s Target folder), it is hand carried (copied) to each consuming
 side-loaded application project and referenced. This will be described
 further in the next section. The project structure embodied in the build
 rules above ensure that the implementation and the
-reference **winmd** are in clearly segregated directories in the build
+reference **winmd** are in clearly segregated directories in the build
 hierarchy to avoid confusion.
 
 ## Side-loaded applications in detail
@@ -742,13 +742,13 @@ have your install process call DllRegisterServer on the proxy dll. Note
 that since the feature only supports servers built for x86 (i.e. no
 64-bit support), the simplest configuration is to use a 32-bit server, a
 32-bit proxy, and a 32-bit side-loaded application. The proxy normally
-sits alongside the implementation **winmd** for the desktop component.
+sits alongside the implementation **winmd** for the desktop component.
 
 One additional configuration step must be performed. In order for the
 side-loaded process to load and execute the proxy, the directory must be
 marked "read / execute" for ALL_APPLICATION_PACKAGES. This is done via
-the **icacls.exe** command line tool. This command should execute in the
-directory where the implementation **winmd** and proxy/stub dll resides:
+the **icacls.exe** command line tool. This command should execute in the
+directory where the implementation **winmd** and proxy/stub dll resides:
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
@@ -794,14 +794,14 @@ struct PersonStruct
 }
 ```
 
-Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
+Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
 This gets all the data across in one cross-process "hop"
 
 As with all performance considerations, measurement and testing is
 critical. Ideally telemetry should be inserted into the various
 operations to determine how long they take. It is important to measure
 across a range: for example, how long does it actually take to consume
-all the *People* objects for a particular query in the side-loaded
+all the *People* objects for a particular query in the side-loaded
 application?
 
 Another technique is variable load testing. This can be done by putting
