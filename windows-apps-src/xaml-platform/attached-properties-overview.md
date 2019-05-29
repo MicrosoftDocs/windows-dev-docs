@@ -21,7 +21,7 @@ We assume that you understand the basic concept of dependency properties, and ha
 
 ## Attached properties in XAML
 
-In XAML, you set attached properties by using the syntax _AttachedPropertyProvider.PropertyName_. Here is an example of how you can set [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML.
+In XAML, you set attached properties by using the syntax _AttachedPropertyProvider.PropertyName_. Here is an example of how you can set [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) in XAML.
 
 ```xaml
 <Canvas>
@@ -30,21 +30,21 @@ In XAML, you set attached properties by using the syntax _AttachedPropertyProvid
 ```
 
 > [!NOTE]
-> We're just using [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) handles its layout children, see the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) reference topic or [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+> We're just using [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) handles its layout children, see the [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) reference topic or [Define layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 ## Why use attached properties?
 
 Attached properties are a way to escape the coding conventions that might prevent different objects in a relationship from communicating information to each other at run time. It's certainly possible to put properties on a common base class so that each object could just get and set that property. But eventually the sheer number of scenarios where you might want to do this will bloat your base classes with shareable properties. It might even introduce cases where there might just be two of hundreds of descendants trying to use a property. That's not good class design. To address this, the attached property concept enables an object to assign a value for a property that its own class structure doesn't define. The defining class can read the value from child objects at run time after the various objects are created in an object tree.
 
-For example, child elements can use attached properties to inform their parent element of how they are to be presented in the UI. This is the case with the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. **Canvas.Left** is created as an attached property because it is set on elements that are contained within a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element, rather than on the **Canvas** itself. Any possible child element then uses **Canvas.Left** and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) to specify its layout offset within the **Canvas** layout container parent. Attached properties make it possible for this to work without cluttering the base element's object model with lots of properties that each apply to only one of the many possible layout containers. Instead, many of the layout containers implement their own attached property set.
+For example, child elements can use attached properties to inform their parent element of how they are to be presented in the UI. This is the case with the [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) attached property. **Canvas.Left** is created as an attached property because it is set on elements that are contained within a [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) element, rather than on the **Canvas** itself. Any possible child element then uses **Canvas.Left** and [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) to specify its layout offset within the **Canvas** layout container parent. Attached properties make it possible for this to work without cluttering the base element's object model with lots of properties that each apply to only one of the many possible layout containers. Instead, many of the layout containers implement their own attached property set.
 
-To implement the attached property, the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) class defines a static [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field named [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272). Then, **Canvas** provides the [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) and [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) methods as public accessors for the attached property, to enable both XAML setting and run-time value access. For XAML and for the dependency property system, this set of APIs satisfies a pattern that enables a specific XAML syntax for attached properties, and stores the value in the dependency property store.
+To implement the attached property, the [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) class defines a static [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) field named [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty). Then, **Canvas** provides the [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) and [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) methods as public accessors for the attached property, to enable both XAML setting and run-time value access. For XAML and for the dependency property system, this set of APIs satisfies a pattern that enables a specific XAML syntax for attached properties, and stores the value in the dependency property store.
 
 ## How the owning type uses attached properties
 
-Although attached properties can be set on any XAML element (or any underlying [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)), that doesn't automatically mean that setting the property produces a tangible result, or that the value is ever accessed. The type that defines the attached property typically follows one of these scenarios:
+Although attached properties can be set on any XAML element (or any underlying [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)), that doesn't automatically mean that setting the property produces a tangible result, or that the value is ever accessed. The type that defines the attached property typically follows one of these scenarios:
 
-- The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
+- The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged), etc.)
 - The type that defines the attached property is used as the child element for a variety of possible parent elements and content models, but the info isn't necessarily layout info.
 - The attached property reports info to a service, not to another UI element.
 
@@ -60,15 +60,15 @@ There are two ways to set an attached property in code: use the property-system 
 
 Attached properties for the Windows Runtime are implemented as dependency properties, so that the values can be stored in the shared dependency-property store by the property system. Therefore attached properties expose a dependency property identifier on the owning class.
 
-To set an attached property in code, you call the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method, and pass the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier for that attached property. (You also pass the value to set.)
+To set an attached property in code, you call the [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) method, and pass the [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) field that serves as the identifier for that attached property. (You also pass the value to set.)
 
-To get the value of an attached property in code, you call the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) method, again passing the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier.
+To get the value of an attached property in code, you call the [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) method, again passing the [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) field that serves as the identifier.
 
 ### Using the XAML accessor pattern
 
 A XAML processor must be able to set attached property values when XAML is parsed into an object tree. The owner type of the attached property must implement dedicated accessor methods named in the form **Get**_PropertyName_ and **Set**_PropertyName_. These dedicated accessor methods are also one way to get or set the attached property in code. From a code perspective, an attached property is similar to a backing field that has method accessors instead of property accessors, and that backing field can exist on any object rather than having to be specifically defined.
 
-The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
+The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
 
 ```csharp
     Canvas myC = new Canvas();
@@ -119,13 +119,13 @@ The dot in an attached property name is a key part of the identification pattern
 > [!WARNING]
 > An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
 
-- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element `<TextBlock x:Uid="Title" />`, the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element `<TextBlock x:Uid="Title" />`, the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
 ## Related topics
 
 - [Custom attached properties](custom-attached-properties.md)
 - [Dependency properties overview](dependency-properties-overview.md)
-- [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
-- [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/hh943060)
-- [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-- [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+- [Define layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+- [Quickstart: Translating UI resources](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
+- [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
+- [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

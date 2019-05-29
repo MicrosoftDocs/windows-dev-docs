@@ -135,6 +135,6 @@ Then, remove the `AppxBundle` MSBuild argument from the build step.
 ## Related topics
 
 - [Build your .NET app for Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
-- [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Packaging UWP apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 - [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
 - [Create a certificate for package signing](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

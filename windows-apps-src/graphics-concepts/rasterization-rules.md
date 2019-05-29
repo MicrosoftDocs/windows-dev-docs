@@ -93,7 +93,7 @@ Rasterization rules for primitives are, in general, unchanged by multisample ant
 
 -   For a point, a coverage test is performed for each sample location (not for a pixel center).
 
-Multisampling formats can be used in render targets which can be read back into shaders using [load](https://msdn.microsoft.com/library/windows/desktop/bb509694), since no resolve is required for individual samples accessed by the shader. Depth formats are not supported for multisample resource, therefore, depth formats are restricted to render targets only.
+Multisampling formats can be used in render targets which can be read back into shaders using [load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load), since no resolve is required for individual samples accessed by the shader. Depth formats are not supported for multisample resource, therefore, depth formats are restricted to render targets only.
 
 Typeless formats support multisampling to allow a resource view to interpret data in different ways. For instance, you could create a multisample resource using R8G8B8A8\_TYPELESS, render to it using a render-target-view resource with a R8G8B8A8\_UINT format, then resolve the contents to another resource with a R8G8B8A8\_UNORM data format.
 

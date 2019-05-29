@@ -15,7 +15,7 @@ We discuss the use of 2D bitmap graphics and effects, and how to use them in you
 
 2D graphics are a subset of 3D graphics that deal with 2D primitives or bitmaps. More generally, they don't use a z-coordinate in the way a 3D game might, since the game play is usually confined to the x-y plane. They sometimes use 3D graphics techniques to create their visual components, and they are generally simpler to develop. If you are new to gaming, a 2D game is a great place to start, and 2D graphics development can be a good place for you to get a handle on DirectX.
 
-You can develop 2D gaming graphics in DirectX using either Direct2D or Direct3D, or some combination. Many of the more useful classes for 2D game development are in Direct3D, such as the [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) class. Direct2D is a set of APIs that primarily target user interfaces and apps that require support for drawing primitives (such as circles, lines, and flat polygon shapes). With that in mind, it still provides a powerful and performant set of classes and methods for creating game graphics as well, especially when creating game overlays, interfaces, and heads-up displays (HUDs) -- or for creating a variety of 2D games, from simple to reasonably detailed. The most effective approach when creating 2D games, though, is to use elements from both libraries, and that's the way we will approach 2D graphics development in this topic.
+You can develop 2D gaming graphics in DirectX using either Direct2D or Direct3D, or some combination. Many of the more useful classes for 2D game development are in Direct3D, such as the [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite) class. Direct2D is a set of APIs that primarily target user interfaces and apps that require support for drawing primitives (such as circles, lines, and flat polygon shapes). With that in mind, it still provides a powerful and performant set of classes and methods for creating game graphics as well, especially when creating game overlays, interfaces, and heads-up displays (HUDs) -- or for creating a variety of 2D games, from simple to reasonably detailed. The most effective approach when creating 2D games, though, is to use elements from both libraries, and that's the way we will approach 2D graphics development in this topic.
 
 ## Concepts at a glance
 
@@ -50,6 +50,6 @@ Great artwork will be your greatest asset, when it comes to visuals. While your 
 ## Reference
 
 
--   [Direct2D overview](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D quickstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D and Direct3D interoperability overview](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Direct2D overview](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D quickstart](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D and Direct3D interoperability overview](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

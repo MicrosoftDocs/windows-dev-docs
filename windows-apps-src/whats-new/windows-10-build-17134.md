@@ -38,7 +38,7 @@ Writing style | We've upgraded and expanded our article on voice and tone, trans
 Feature | Description
  :------ | :------
 Getting started for game development | Interested in developing games for Windows 10? The new [Getting started for game development](../gaming/getting-started.md) page gives you a full overview of what you need to do to get yourself set up, registered, and ready to submit your apps and games.
-Graphics adapters | The following DXGI APIs have been added, which are related to graphics adapter preference and removal: </br> * The [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) interface enables a single method that enumerates graphics adapters based on a given GPU preference. </br> * The [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) function allows a process to indicate that it's resilient to any of its graphics devices being removed. </br> * The [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) enumeration describes the preference of GPU for the app to run on.
+Graphics adapters | The following DXGI APIs have been added, which are related to graphics adapter preference and removal: </br> * The [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) interface enables a single method that enumerates graphics adapters based on a given GPU preference. </br> * The [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) function allows a process to indicate that it's resilient to any of its graphics devices being removed. </br> * The [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) enumeration describes the preference of GPU for the app to run on.
 
 ## Develop Windows apps
 
@@ -110,7 +110,7 @@ The Xbox Live Creators Program allows developers to quickly publish their UWP ga
 
 ### One Dev Question - Why was Docments and Settings renamed Users?
 
-Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://blogs.msdn.microsoft.com/oldnewthing/)
+Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## Samples

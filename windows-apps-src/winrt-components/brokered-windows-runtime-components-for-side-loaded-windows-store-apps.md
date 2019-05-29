@@ -17,7 +17,7 @@ code responsible for key business-critical operations.
 
 >**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). The Microsoft Visual Studio template to build Brokered Windows Runtime
 Components can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
-10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 Windows includes a new feature called *Brokered Windows Runtime
 Components for side-loaded applications*. We use the term IPC
@@ -85,7 +85,7 @@ The contract between the side-loaded application and the desktop
 component is described in terms of the UWP type system. This involves
 declaring one or more C\# classes that can represent a UWP. See MSDN
 topic [Creating Windows Runtime Components in C\# and Visual
-Basic](https://msdn.microsoft.com/library/br230301.aspx) for
+Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) for
 specific requirement of creating Windows Runtime Class using C\#.
 
 >**Note**  Enums are not supported in the Windows Runtime Components Contract
@@ -554,7 +554,7 @@ Once the references are properly configured, the next task is to
 implement the server's functionality. See the MSDN topic [Best practices
 for interoperability with Windows Runtime Components (UWP apps
 using C\#/VB/C++ and
-XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
 The task is to create a Windows Runtime component dll that is able to
 call desktop code as part of its implementation. The accompanying sample
 includes the major patterns used in Windows Runtime:
@@ -672,7 +672,7 @@ stub must be used.
 The process for creating and registering proxies and stubs for use
 inside a regular UWP app package are described in the
 topic [Raising Events in Windows Runtime
-Components](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
+Components](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
 The steps described in this article are more complicated than the
 process described below because it involves registering the proxy/stub
 inside the application package (as opposed to registering it globally).
@@ -839,7 +839,7 @@ list of loaded modules.
 
 ## Resources
 
--   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 -   [NorthwindRT Brokered WinRT Component
     Sample](https://go.microsoft.com/fwlink/p/?LinkID=397349)
@@ -848,9 +848,9 @@ list of loaded modules.
     apps](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [App contracts and extensions (Windows
-    Store apps)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
+    Store apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [How to sideload apps on Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
+-   [How to sideload apps on Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 -   [Deploying UWP apps to
     businesses](https://go.microsoft.com/fwlink/p/?LinkID=264770)

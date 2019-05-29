@@ -28,7 +28,7 @@ You can now preview [conditional XAML](../debug-test-perf/conditional-xaml.md) t
 
 ### Game Mode
 
-The [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
+The [Game Mode](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
 
 ![Game Mode](images/game-mode.png)
 
@@ -41,7 +41,7 @@ The [Microsoft Store submission API](../monetize/create-and-manage-submissions-u
 
 ### Data schemas for Store products
 
-We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace, including [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace, including [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### Desktop Bridge
 

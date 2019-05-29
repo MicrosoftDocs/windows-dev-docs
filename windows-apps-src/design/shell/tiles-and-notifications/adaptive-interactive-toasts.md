@@ -16,7 +16,7 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 > **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## Getting started

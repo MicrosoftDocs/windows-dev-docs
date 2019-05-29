@@ -28,14 +28,14 @@ Periodic notifications enable your app to get live tile updates with minimal clo
 
 Periodic notifications require that your app hosts a cloud service. The service will be polled periodically by all users who have the app installed. At each polling interval, such as once an hour, Windows sends an HTTP GET request to the URI, downloads the requested tile or badge content (as XML) that is supplied in response to the request, and displays the content on the app's tile.
 
-Note that periodic updates cannot be used with toast notifications. Toast is best delivered through [scheduled](https://msdn.microsoft.com/library/windows/apps/hh465417) or [push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) notifications.
+Note that periodic updates cannot be used with toast notifications. Toast is best delivered through [scheduled](https://docs.microsoft.com/previous-versions/windows/apps/hh465417(v=win.10)) or [push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)) notifications.
 
 ## URI location and XML content
 
 
 Any valid HTTP or HTTPS web address can be used as the URI to be polled.
 
-The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiration-of-tile-and-badge-notifications) or tag for the notification.
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](adaptive-tiles-schema.md) or [Badge](https://docs.microsoft.com/uwp/schemas/tiles/badgeschema/schema-root) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiration-of-tile-and-badge-notifications) or tag for the notification.
 
 ## Polling Behavior
 
@@ -78,13 +78,13 @@ For example, during a stock market's active trading day, you can set the expirat
 ## Periodic notifications in the notification queue
 
 
-You can use periodic tile updates with [notification cycling](https://msdn.microsoft.com/library/windows/apps/hh781199). By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification. When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.
+You can use periodic tile updates with [notification cycling](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)). By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification. When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.
 
-If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue. However, by setting tags on your notifications, you can affect the queue's replacement policy. A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP header in the response payload. Windows compares the tag of an incoming notification with the tags of all notifications already in the queue. If a match is found, the new notification replaces the queued notification with the same tag. If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.
+If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue. However, by setting tags on your notifications, you can affect the queue's replacement policy. A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) HTTP header in the response payload. Windows compares the tag of an incoming notification with the tags of all notifications already in the queue. If a match is found, the new notification replaces the queued notification with the same tag. If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.
 
 You can use notification queuing and tagging to implement a variety of rich notification scenarios. For example, a stock app could send five notifications, each about a different stock and each tagged with a stock name. This prevents the queue from ever containing two notifications for the same stock, the older of which is out of date.
 
-For more information, see [Using the notification queue](https://msdn.microsoft.com/library/windows/apps/hh781199).
+For more information, see [Using the notification queue](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)).
 
 ### Enabling the notification queue
 
@@ -97,7 +97,7 @@ You must provide a unique URI for each notification that you'd like Windows to d
 ## Related topics
 
 
-* [Guidelines for periodic notifications](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [How to set up periodic notifications for badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [How to set up periodic notifications for tiles](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Guidelines for periodic notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [How to set up periodic notifications for badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [How to set up periodic notifications for tiles](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

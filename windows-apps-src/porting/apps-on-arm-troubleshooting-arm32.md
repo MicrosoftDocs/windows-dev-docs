@@ -1,4 +1,4 @@
-﻿---
+---
 title: Troubleshooting ARM32 UWP apps
 description: Common issues with ARM32 apps when running on ARM, and how to fix them.
 ms.date: 01/03/2019
@@ -28,7 +28,7 @@ Universal Windows Platform (UWP) apps that aren't properly built with Visual Stu
 
 These issues can be resolved by: removing the unavailable dependencies and rebuilding the app by using the latest Microsoft Visual Studio and UWP SDK versions; or as a last resort, removing the ARM app from the Microsoft Store, so that the x86 version of the app (if available) is downloaded to users’ PCs.
 
-For more info on .NET APIs available for UWP apps, see [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)
+For more info on .NET APIs available for UWP apps, see [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
 ### Compiling an app with an older version of Visual Studio and SDK
 If you're running into issues, be sure to use the latest versions of Microsoft Visual Studio and the Windows SDK to compile your app. Apps compiled with an earlier version of Visual Studio and the SDK may have issues that have been fixed in later versions.

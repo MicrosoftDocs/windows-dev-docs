@@ -34,12 +34,12 @@ Before you can send notifications using WNS, your app must be registered with th
 
 Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
 
-For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407).
+For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)).
 
 ## Requesting a notification channel
 
 
-When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). For a full discussion and example code, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
+When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). For a full discussion and example code, see [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
 After the app has successfully created a channel URI, it sends it to its cloud service, together with any app-specific metadata that should be associated with this URI.
 
@@ -48,7 +48,7 @@ After the app has successfully created a channel URI, it sends it to its cloud s
 -   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
 -   The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.
 -   It is important that the cloud service always ensures that the channel URI uses the domain "notify.windows.com". The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could be potentially disclose information to this attacker unknowingly.
--   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). In response to that code, your service should no longer attempt to send notifications to that URI.
+-   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). In response to that code, your service should no longer attempt to send notifications to that URI.
 
 ## Authenticating your cloud service
 
@@ -64,7 +64,7 @@ At a high level, the information chain is as follows:
 
 ![wns diagram for cloud service authentication](images/wns-diagram-02.png)
 
-In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request) reference.
+In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) reference.
 
 **Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
 
@@ -81,7 +81,7 @@ In the authentication with WNS, the cloud service submits an HTTP request over S
 
 The WNS authenticates the cloud service and, if successful, sends a response of "200 OK". The access token is returned in the parameters included in the body of the HTTP response, using the "application/json" media type. After your service has received the access token, you are ready to send notifications.
 
-The following example shows a successful authentication response, including the access token. For syntax details, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435).
+The following example shows a successful authentication response, including the access token. For syntax details, see [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
 ``` http
  HTTP/1.1 200 OK   
@@ -107,13 +107,13 @@ The following example shows a successful authentication response, including the 
 
 Using the channel URI, the cloud service can send a notification whenever it has an update for the user.
 
-The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
+The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification response codes](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
 1.  The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.
 
-    An example request is shown here. For syntax details, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
+    An example request is shown here. For syntax details, see [Push notification response codes](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
-    For details on composing the notification payload, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined [Adaptive tiles schema](adaptive-tiles-schema.md) or [Legacy tiles schema](https://msdn.microsoft.com/library/windows/apps/br212853). The payload of a raw notification does not have a specified structure. It is strictly app-defined.
+    For details on composing the notification payload, see [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)). The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined [Adaptive tiles schema](adaptive-tiles-schema.md) or [Legacy tiles schema](https://docs.microsoft.com/uwp/schemas/tiles/tiles-xml-schema-portal). The payload of a raw notification does not have a specified structure. It is strictly app-defined.
 
     ``` http
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -139,7 +139,7 @@ This diagram illustrates the data flow:
 -   Notifications should never include confidential or sensitive data.
 -   To send a notification, the cloud service must first authenticate with WNS and receive an access token.
 -   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
--   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Note that toast notifications are never stored when the device is offline.
+-   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)). Note that toast notifications are never stored when the device is offline.
 -   In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.
 
 ## Expiration of tile and badge notifications
@@ -147,7 +147,7 @@ This diagram illustrates the data flow:
 
 By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.
 
-Your cloud service can set an expiration for each notification by setting the X-WNS-TTL HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
+Your cloud service can set an expiration for each notification by setting the X-WNS-TTL HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
 For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
 
@@ -238,14 +238,14 @@ This is the XAML for the [**ContentDialog**](https://docs.microsoft.com/uwp/api/
 
 
 * [Send a local tile notification](sending-a-local-tile-notification.md)
-* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [How to update a badge through push notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [How to intercept notifications for running applications](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [How to authenticate with the Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Guidelines and checklist for push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Raw notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh761488(v=win.10))
  
 
  

@@ -17,7 +17,7 @@ To call this code, declare the **chat**, **smsSend**, and **chatSystem** capabil
 
 ## Launch the compose SMS dialog
 
-Create a new [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) to show the dialog.
+Create a new [**ChatMessage**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatmessage) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeSmsMessageAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) to show the dialog.
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,

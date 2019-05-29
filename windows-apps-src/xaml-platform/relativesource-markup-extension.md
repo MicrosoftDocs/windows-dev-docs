@@ -32,18 +32,18 @@ Provides a means to specify the source of a binding in terms of a relative relat
 
 | Term | Description |
 |------|-------------|
-| {RelativeSource Self} | Produces a [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) value of <strong>Self</strong>. The target element should be used as the source for this binding. This is useful for binding one property of an element to another property on the same element. |
-| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) that is applied as the source for this binding. This is useful for applying runtime information to bindings at the template level. | 
+| {RelativeSource Self} | Produces a [<strong>Mode</strong>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.relativesource.mode) value of <strong>Self</strong>. The target element should be used as the source for this binding. This is useful for binding one property of an element to another property on the same element. |
+| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) that is applied as the source for this binding. This is useful for applying runtime information to bindings at the template level. | 
 
 ## Remarks
 
-A [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) can set [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) either as an attribute on a **Binding** object element or as a component within a [{Binding} markup extension](binding-markup-extension.md). This is why two different XAML syntaxes are shown.
+A [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) can set [**Binding.RelativeSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource) either as an attribute on a **Binding** object element or as a component within a [{Binding} markup extension](binding-markup-extension.md). This is why two different XAML syntaxes are shown.
 
-**RelativeSource** is similar to [{Binding} markup extension](binding-markup-extension.md).  It is a markup extension that is capable of returning instances of itself, and supporting a string-based construction that essentially passes an argument to the constructor. In this case, the argument being passed is the [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) value.
+**RelativeSource** is similar to [{Binding} markup extension](binding-markup-extension.md).  It is a markup extension that is capable of returning instances of itself, and supporting a string-based construction that essentially passes an argument to the constructor. In this case, the argument being passed is the [**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.relativesource.mode) value.
 
-The **Self** mode is useful for binding one property of an element to another property on the same element, and is a variation on [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) binding but does not require naming and then self-referencing the element. If you bind one property of an element to another property on the same element, either the properties must use the same property type, or you must also use a [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) on the binding to convert the values. For example, you could use [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) as a source for [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) without conversion, but you'd need a converter to use [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) as a source for [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006).
+The **Self** mode is useful for binding one property of an element to another property on the same element, and is a variation on [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname) binding but does not require naming and then self-referencing the element. If you bind one property of an element to another property on the same element, either the properties must use the same property type, or you must also use a [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter) on the binding to convert the values. For example, you could use [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) as a source for [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) without conversion, but you'd need a converter to use [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) as a source for [**Visibility**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility).
 
-Here's an example. This [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) uses a [{Binding} markup extension](binding-markup-extension.md) so that its [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) are always equal and it renders as a square. Only the Height is set as a fixed value. For this **Rectangle** its default [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null**, not **this**. So to establish the data context source to be the object itself (and enable binding to its other properties) we use the `RelativeSource={RelativeSource Self}` argument in the {Binding} markup extension usage.
+Here's an example. This [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) uses a [{Binding} markup extension](binding-markup-extension.md) so that its [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) are always equal and it renders as a square. Only the Height is set as a fixed value. For this **Rectangle** its default [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) is **null**, not **this**. So to establish the data context source to be the object itself (and enable binding to its other properties) we use the `RelativeSource={RelativeSource Self}` argument in the {Binding} markup extension usage.
 
 ```XML
 <Rectangle
@@ -52,15 +52,15 @@ Here's an example. This [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangl
 />
 ```
 
-Another use of `RelativeSource={RelativeSource Self}` is as a way to set an object's [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) to itself.  For example, you may see this technique in some of the SDK examples where the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class has been extended with a custom property that's already providing a ready-to-go view model for its own data binding such as: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+Another use of `RelativeSource={RelativeSource Self}` is as a way to set an object's [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) to itself.  For example, you may see this technique in some of the SDK examples where the [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) class has been extended with a custom property that's already providing a ready-to-go view model for its own data binding such as: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Note**  The XAML usage for **RelativeSource** shows only the usage for which it is intended: setting a value for [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) in XAML as part of a binding expression. Theoretically, other usages are possible if setting a property where the value is [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Note**  The XAML usage for **RelativeSource** shows only the usage for which it is intended: setting a value for [**Binding.RelativeSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource) in XAML as part of a binding expression. Theoretically, other usages are possible if setting a property where the value is [**RelativeSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.RelativeSource).
 
 ## Related topics
 
 * [XAML overview](xaml-overview.md)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
 * [{Binding} markup extension](binding-markup-extension.md)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
+* [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**RelativeSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.RelativeSource)
 

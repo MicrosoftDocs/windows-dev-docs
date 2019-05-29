@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-To get your app [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) or prepare it for [publication to the Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) to ensure your app is safe and efficient.
+To get your app [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) or prepare it for [publication to the Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) to ensure your app is safe and efficient.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ The installation of a more recent [Windows App Certification Kit]( https://go.mi
 
 6.  Open the report file and review the results of the test.
 
-**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://msdn.microsoft.com/library/windows/apps/Mt627715) to learn how.
+**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) to learn how.
 
  
 
@@ -80,14 +80,14 @@ The installation of a more recent [Windows App Certification Kit]( https://go.mi
 
 The performance test thresholds of the Windows App Certification Kit are based on the performance of a low-power computer.
 
-The characteristics of the computer on which the test is performed can influence the test results. To determine if your app’s performance meets the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+The characteristics of the computer on which the test is performed can influence the test results. To determine if your app’s performance meets the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
 
-As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
+As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
 
 ## Related topics
 
 * [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
-* [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  
 
  

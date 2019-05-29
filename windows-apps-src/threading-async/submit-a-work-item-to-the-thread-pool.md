@@ -13,19 +13,19 @@ ms.localizationpriority: medium
 
 <b>Important APIs</b>
 
--   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
 
 Learn how to do work in a separate thread by submitting a work item to the thread pool. Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.
 
 ## Create and submit the work item
 
-Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.
+Create a work item by calling [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) object; store this object for use in the next step.
 
-Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
+Three versions of [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
 
 >[!NOTE]
->Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.
+>Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to access the UI thread and show progress from the work item.
 
 The following example creates a work item and supplies a lambda to do the work:
 
@@ -263,13 +263,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
+Following the call to [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
 
-Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.
+Note that the work item checks the [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) property, and exits if the work item is cancelled.
 
 ## Handle work item completion
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.
+Provide a completion handler by setting the [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to access the UI thread and show the result.
 
 The following example updates the UI with the result of the work item submitted in step 1:
 

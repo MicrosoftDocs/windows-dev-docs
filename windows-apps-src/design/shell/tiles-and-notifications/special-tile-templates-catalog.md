@@ -90,7 +90,7 @@ The tile's badge will update accordingly.
 
 **Step 5: Putting it all together**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10)) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
 ![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 

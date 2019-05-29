@@ -16,9 +16,9 @@ This topic shows how to save important system state and app data when the system
 ## Register the suspending event handler
 
 
-First, register to handle the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, which is raised when your app is moved to a suspended state by a user or system action.
+First, register to handle the [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) event, which is raised when your app is moved to a suspended state by a user or system action.
 
-Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider:
+Add this code to your implementation of the [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) method of your view provider:
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -35,7 +35,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## Save any app data before suspending
 
 
-When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously. If you are developing a game, save any critical game state information. Don't forget to suspend the audio processing!
+When your app handles the [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) storage API to save simple application data synchronously. If you are developing a game, save any critical game state information. Don't forget to suspend the audio processing!
 
 Now, implement the callback. Save the app data in this method.
 
@@ -59,9 +59,9 @@ void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
 }
 ```
 
-This callback must complete with 5 seconds. During this callback, you must request a deferral by calling [**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690), which starts the countdown. When your app completes the save operation, call [**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) to tell the system that your app is now ready to be suspended. If you do not request a deferral, or if your app takes longer than 5 seconds to save the data, your app is automatically suspended.
+This callback must complete with 5 seconds. During this callback, you must request a deferral by calling [**SuspendingOperation::GetDeferral**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.suspendingoperation.getdeferral), which starts the countdown. When your app completes the save operation, call [**SuspendingDeferral::Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.suspendingdeferral.complete) to tell the system that your app is now ready to be suspended. If you do not request a deferral, or if your app takes longer than 5 seconds to save the data, your app is automatically suspended.
 
-This callback occurs as an event message processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
+This callback occurs as an event message processed by the [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) for the app's [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) method of your view provider).
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -91,7 +91,7 @@ void App::Run()
 ## Call Trim()
 
 
-Starting in Windows 8.1, all DirectX UWP apps must call [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) when suspending. This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state. This is a certification requirement for Windows 8.1.
+Starting in Windows 8.1, all DirectX UWP apps must call [**IDXGIDevice3::Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) when suspending. This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state. This is a certification requirement for Windows 8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -126,14 +126,14 @@ void DX::DeviceResources::Trim()
 ## Release any exclusive resources and file handles
 
 
-When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it also has the opportunity to release exclusive resources and file handles. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them. When the app is activated after termination, it should open its exclusive resources and file handles.
+When your app handles the [**CoreApplication::Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) event, it also has the opportunity to release exclusive resources and file handles. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them. When the app is activated after termination, it should open its exclusive resources and file handles.
 
 ## Remarks
 
 
 The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its handler for the **CoreApplicationView::Activated** event.
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) event and should restore its application data in its handler for the **CoreApplicationView::Activated** event.
 
 The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 

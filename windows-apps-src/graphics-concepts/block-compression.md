@@ -342,13 +342,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-To reinterpret 'f' as the type of 'u', use [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx):
+To reinterpret 'f' as the type of 'u', use [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy):
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-In the preceding reinterpretation, the underlying value of the data doesn’t change; [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) reinterprets the float as an unsigned integer.
+In the preceding reinterpretation, the underlying value of the data doesn’t change; [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) reinterprets the float as an unsigned integer.
 
 To perform the more typical type of conversion, use assignment:
 

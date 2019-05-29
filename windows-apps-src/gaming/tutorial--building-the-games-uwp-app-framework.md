@@ -70,7 +70,7 @@ IFrameworkView^ DirectXApplicationSource::CreateView()
 
 ## Initialize the view provider
 
-After the view provider object is created, the app singleton calls the [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method on application launch. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
+After the view provider object is created, the app singleton calls the [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) method on application launch. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
 
 At this point, the game app can handle a suspend (or resume) message. But there's still no window to work with and the game is uninitialized. There's a few more things that need to happen!
 
@@ -104,11 +104,11 @@ void App::Initialize(
 
 ## Configure the window and display behaviors
 
-Now, let's look at the implementation of [__SetWindow__](https://msdn.microsoft.com/library/windows/apps/hh700509). In the __SetWindow__ method, you configure the window and display behaviors.
+Now, let's look at the implementation of [__SetWindow__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow). In the __SetWindow__ method, you configure the window and display behaviors.
 
 ### App::SetWindow method
 
-The app singleton provides a [__CoreWindow__](https://msdn.microsoft.com/library/windows/apps/br208225) object that represents the game's main window, and makes its resources and events available to the game. Now that there's a window to work with, the game can now start adding in the basic UI components and events.
+The app singleton provides a [__CoreWindow__](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) object that represents the game's main window, and makes its resources and events available to the game. Now that there's a window to work with, the game can now start adding in the basic UI components and events.
 
 Then, create a pointer using __CoreCursor__ method which can be used by both mouse and touch controls.
 
@@ -161,7 +161,7 @@ void App::SetWindow(
 
 ## Load method of the view provider
 
-After the main window is set, the app singleton calls [__Load__](https://msdn.microsoft.com/library/windows/apps/hh700501). A set of asynchronous tasks is used in this method to create the game objects, load graphics resources, and initialize the game’s state machine. If you want to pre-fetch game data or assets, this is a better place for it than in **SetWindow** or **Initialize**. 
+After the main window is set, the app singleton calls [__Load__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load). A set of asynchronous tasks is used in this method to create the game objects, load graphics resources, and initialize the game’s state machine. If you want to pre-fetch game data or assets, this is a better place for it than in **SetWindow** or **Initialize**. 
 
 Because Windows imposes restrictions on the time your game can take before it must start processing input, by using the async task pattern, you need to design for the __Load__ method to complete quickly so it can start processing input. If loading takes awhile or if there are lots of resources, provide your users with a regularly updated progress bar. This method is also used to do any necessary preparations before the game begins, like setting any starting states or global values.
 
@@ -310,9 +310,9 @@ The sample code transitions to one of two states in the game engine state machin
     * __Deactivated__: The game window gets deactivated (loses focus) or snapped. When this happens, the game suspends event processing and waits for the window to focus or unsnap.
     * __TooSmall__: The game updates its own state and renders the graphics for display.
 
-When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which can make your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
+When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which can make your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
 
-When the game is not visible, suspended or snapped, you don't want it to consume any resources cycling to dispatch messages that will never arrive. In this case, your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) then immediately returns after the queue has been processed.
+When the game is not visible, suspended or snapped, you don't want it to consume any resources cycling to dispatch messages that will never arrive. In this case, your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) then immediately returns after the queue has been processed.
 
 ```cpp
 void App::Run()

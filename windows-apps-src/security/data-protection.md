@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
+This article explains how to use the [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) class in the [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) namespace to encrypt and decrypt digital data in a UWP app.
 
 You can use the data protection APIs in multiple ways:
 
@@ -20,12 +20,12 @@ You can use the data protection APIs in multiple ways:
 -   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
 -   To protect data to the credentials (password) used during logon to a website.
 
-To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
+To protect data, when you create a [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) object you must specify a protection descriptor before calling [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) or [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync). The following example shows possible sample protection descriptors.
 
 ## Protecting static data
 
 
-The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
+The following example shows how to use the [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) and [**UnprotectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) methods to asynchronously protect static data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -110,7 +110,7 @@ namespace SampleProtectAsync
 ## Protecting stream data
 
 
-The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
+The following example shows how to use the [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) and [**UnprotectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) methods to asynchronously protect stream data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;

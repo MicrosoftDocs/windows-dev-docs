@@ -18,7 +18,7 @@ This article describes how to take advantage of several formats of timed metadat
 * Fragmented mp4 emsg boxes
 
 
-This article builds on the concepts discussed  in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md), which includes the basics of working with the [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem), and [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) classes and general guidance for using timed metadata in your app.
+This article builds on the concepts discussed  in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md), which includes the basics of working with the [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem), and [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.TimedMetadataTrack) classes and general guidance for using timed metadata in your app.
 
 The basic implementation steps are the same for all of the different types of timed metadata described in this article:
 

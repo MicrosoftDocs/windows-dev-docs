@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Use pointer animations to provide users with visual feedback when the user taps on an item. The pointer down animation slightly shrinks and tilts the pressed item, and plays when an item is first tapped. The pointer up animation, which restores the item to its original position, is played when the user releases the pointer.
 
 
-> **Important APIs**: [**PointerUpThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969168), [**PointerDownThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **Important APIs**: [**PointerUpThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**PointerDownThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
 
 ## Do's and don'ts
@@ -23,11 +23,11 @@ Use pointer animations to provide users with visual feedback when the user taps 
 
 ## Related articles
 
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating pointer clicks](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**PointerUpThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969168)
-* [**PointerDownThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+* [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Animating pointer clicks](https://docs.microsoft.com/previous-versions/windows/apps/jj649432(v=win.10))
+* [Quickstart: Animating your UI using library animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**PointerUpThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
+* [**PointerDownThemeAnimation class**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
  
 

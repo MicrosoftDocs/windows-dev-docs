@@ -10,15 +10,15 @@ ms.localizationpriority: medium
 # Create a certificate for package signing
 
 
-This article explains how to create and export a certificate for app package signing using PowerShell tools. It's recommended that you use Visual Studio for [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), but you can still package a Store ready app manually if you did not use Visual Studio to develop your app.
+This article explains how to create and export a certificate for app package signing using PowerShell tools. It's recommended that you use Visual Studio for [Packaging UWP apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), but you can still package a Store ready app manually if you did not use Visual Studio to develop your app.
 
 > [!IMPORTANT] 
-> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to import a certificate and sign your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to import a certificate and sign your app package. For more information, see [Package a UWP app with Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 ## Prerequisites
 
 - **A packaged or unpackaged app**  
-An app containing an AppxManifest.xml file. You will need to reference the manifest file while creating the certificate that will be used to sign the final app package. For details on how to manually package an app, see [Create an app package with the MakeAppx.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
+An app containing an AppxManifest.xml file. You will need to reference the manifest file while creating the certificate that will be used to sign the final app package. For details on how to manually package an app, see [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
 - **Public Key Infrastructure (PKI) Cmdlets**  
 You need PKI cmdlets to create and export your signing certificate. For more information, see [Public Key Infrastructure Cmdlets](https://docs.microsoft.com/powershell/module/pkiclient/).
@@ -94,8 +94,8 @@ Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -Fi
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
-After you create and export your certificate, you're ready to sign your app package with **SignTool**. For the next step in the manual packaging process, see [Sign an app package using SignTool](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
+After you create and export your certificate, you're ready to sign your app package with **SignTool**. For the next step in the manual packaging process, see [Sign an app package using SignTool](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
 ## Security considerations
 
-By adding a certificate to [local machine certificate stores](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores), you affect the certificate trust of all users on the computer. It is recommended that you remove those certificates when they are no longer necessary to prevent them from being used to compromise system trust.
+By adding a certificate to [local machine certificate stores](https://docs.microsoft.com/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores), you affect the certificate trust of all users on the computer. It is recommended that you remove those certificates when they are no longer necessary to prevent them from being used to compromise system trust.

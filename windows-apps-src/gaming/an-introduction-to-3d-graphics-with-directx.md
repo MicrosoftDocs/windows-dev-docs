@@ -25,15 +25,15 @@ We assume that you are familiar with C++. You also need basic experience with gr
 ## Where to go from here
 
 
-Here, we talk about how to develop 3D graphics with DirectX and C++\\Cx. This five-part tutorial introduces you to the [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API and the concepts and code that are also used in many of the other DirectX samples. These parts build upon each other, from configuring DirectX for your UWP C++ app to texturing primitives and adding effects.
+Here, we talk about how to develop 3D graphics with DirectX and C++\\Cx. This five-part tutorial introduces you to the [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) API and the concepts and code that are also used in many of the other DirectX samples. These parts build upon each other, from configuring DirectX for your UWP C++ app to texturing primitives and adding effects.
 
-> **Note**  This tutorial uses a right-handed coordinate system with column vectors. Many DirectX samples and apps use a left-handed coordinate system with row vectors. For a more complete graphics math solution and one that supports a left-handed coordinate system with row vectors, consider using [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). For more info, see [Using DirectXMath with Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
+> **Note**  This tutorial uses a right-handed coordinate system with column vectors. Many DirectX samples and apps use a left-handed coordinate system with row vectors. For a more complete graphics math solution and one that supports a left-handed coordinate system with row vectors, consider using [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal). For more info, see [Using DirectXMath with Direct3D](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration-d3dx).
 
  
 
 We show you how to:
 
--   Initialize [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) interfaces by using the Windows Runtime
+-   Initialize [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) interfaces by using the Windows Runtime
 -   Apply per-vertex shader operations
 -   Set up the geometry
 -   Rasterize the scene (flattening the 3D scene to a 2D projection)
@@ -50,9 +50,9 @@ Next, we create a Direct3D device, swap chain, and render-target view, and prese
 ## Related topics
 
 
-* [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080)
-* [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
-* [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
+* [Direct3D 11 Graphics](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)
+* [DXGI](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi)
+* [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)
 
  
 

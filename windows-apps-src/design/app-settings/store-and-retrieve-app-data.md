@@ -29,9 +29,9 @@ There are two types of app data: settings and files.
     -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
     -   **Boolean**
     -   **Char16**, **String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
-    -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
+    -   [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+    -   **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
 -   **Files**
 
     Use files to store binary data or to enable your own, customized serialized types.
@@ -50,7 +50,7 @@ Local app data should be used for any information that needs to be preserved bet
 
 ### Retrieve the local app data store
 
-Before you can read or write local app data, you must retrieve the local app data store. To retrieve the local app data store, use the [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) property to get the app's local settings as an [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) object. Use the [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) property to get the files in a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object. Use the [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) property to get the folder in the local app data store where you can save files that are not included in backup and restore.
+Before you can read or write local app data, you must retrieve the local app data store. To retrieve the local app data store, use the [**ApplicationData.LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) property to get the app's local settings as an [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer) object. Use the [**ApplicationData.LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) property to get the files in a [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) object. Use the [**ApplicationData.LocalCacheFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder) property to get the folder in the local app data store where you can save files that are not included in backup and restore.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -61,7 +61,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### Create and retrieve a simple local setting
 
-To create or write a setting, use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `localSettings` container we got in the previous step. This example creates a setting named `exampleSetting`.
+To create or write a setting, use the [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) property to access the settings in the `localSettings` container we got in the previous step. This example creates a setting named `exampleSetting`.
 
 ```CSharp
 // Simple setting
@@ -69,7 +69,7 @@ To create or write a setting, use the [**ApplicationDataContainer.Values**](http
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-To retrieve the setting, you use the same [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property that you used to create the setting. This example shows how to retrieve the setting we just created.
+To retrieve the setting, you use the same [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) property that you used to create the setting. This example shows how to retrieve the setting we just created.
 
 ```CSharp
 // Simple setting
@@ -78,7 +78,7 @@ Object value = localSettings.Values["exampleSetting"];
 
 ### Create and retrieve a local composite value
 
-To create or write a composite value, create an [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) object. This example creates a composite setting named `exampleCompositeSetting` and adds it to the `localSettings` container.
+To create or write a composite value, create an [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) object. This example creates a composite setting named `exampleCompositeSetting` and adds it to the `localSettings` container.
 
 ```CSharp
 // Composite setting
@@ -111,7 +111,7 @@ else
 
 ### Create and read a local file
 
-To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) and [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) enumeration indicates to replace the file if it already exists.
 
 ```csharp
 async void WriteTimestamp()
@@ -125,7 +125,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), and [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -148,7 +148,7 @@ async void ReadTimestamp()
 
 If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
 
-The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
+The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
 
 Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
 
@@ -156,11 +156,11 @@ Roaming data for an app is available in the cloud as long as it is accessed by t
 
 -   Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
 -   Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
--   Handle the [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
+-   Handle the [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
 -   Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
--   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624).
+-   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
 -   Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
--   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
+-   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
 -   Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
 -   Don't use roaming for frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
 
@@ -168,7 +168,7 @@ Roaming data for an app is available in the cloud as long as it is accessed by t
 
 Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data will be local to each device.
 
-Data stored in the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
+Data stored in the [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
 
 ### Conflict resolution
 
@@ -192,7 +192,7 @@ App data only roams between installed apps with the same version number. For exa
 
 Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
 
--   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) for details).
+-   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) for details).
 -   Your files are closed and released properly.
 -   There are at least two devices running the same version of the app.
 
@@ -203,7 +203,7 @@ To use roaming app data, you need to register for roaming data changes and retri
 
 1.  Register to receive notification when roaming data changes.
 
-    The [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
+    The [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
 
 ```csharp
 void InitHandlers()
@@ -220,7 +220,7 @@ void InitHandlers()
 
 2.  Get the containers for the app's settings and files.
 
-    Use the [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) property to get the settings and the [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) property to get the files.
+    Use the [**ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) property to get the settings and the [**ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder) property to get the files.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -231,7 +231,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### Create and retrieve roaming settings
 
-Use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
+Use the [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
 
 ```csharp
 // Simple setting
@@ -275,7 +275,7 @@ else
 
 ### Create and retrieve roaming files
 
-To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) and [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) enumeration indicates to replace the file if it already exists.
 
 ```csharp
 async void WriteTimestamp()
@@ -289,7 +289,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), and [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -311,11 +311,11 @@ async void ReadTimestamp()
 ## Temporary app data
 
 
-The temporary app data store works like a cache. Its files do not roam and could be removed at any time. The System Maintenance task can automatically delete data stored at this location at any time. The user can also clear files from the temporary data store using Disk Cleanup. Temporary app data can be used for storing temporary information during an app session. There is no guarantee that this data will persist beyond the end of the app session as the system might reclaim the used space if needed. The location is available via the [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property.
+The temporary app data store works like a cache. Its files do not roam and could be removed at any time. The System Maintenance task can automatically delete data stored at this location at any time. The user can also clear files from the temporary data store using Disk Cleanup. Temporary app data can be used for storing temporary information during an app session. There is no guarantee that this data will persist beyond the end of the app session as the system might reclaim the used space if needed. The location is available via the [**temporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) property.
 
 ### Retrieve the temporary data container
 
-Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
+Use the [**ApplicationData.TemporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) property to get the files. The next steps use the `temporaryFolder` variable from this step.
 
 ```csharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
@@ -323,7 +323,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### Create and read temporary files
 
-To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) and [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) enumeration indicates to replace the file if it already exists.
 
 
 ```csharp
@@ -338,7 +338,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), and [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -359,9 +359,9 @@ async void ReadTimestamp()
 ## Organize app data with containers
 
 
-To help you organize your app data settings and files, you create containers (represented by [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) objects) instead of working directly with directories. You can add containers to the local, roaming, and temporary app data stores. Containers can be nested up to 32 levels deep.
+To help you organize your app data settings and files, you create containers (represented by [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer) objects) instead of working directly with directories. You can add containers to the local, roaming, and temporary app data stores. Containers can be nested up to 32 levels deep.
 
-To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) enumeration indicates that the container is created if it doesn't already exist.
+To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.createcontainer) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) enumeration indicates that the container is created if it doesn't already exist.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -382,7 +382,7 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 ## Delete app settings and containers
 
 
-To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) method. This example deletesthe `exampleSetting` local setting that we created earlier.
+To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainersettings.remove) method. This example deletesthe `exampleSetting` local setting that we created earlier.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -395,7 +395,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
+To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue.remove) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -408,7 +408,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) method. This example deletes the local `exampleContainer` settings container we created earlier.
+To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.deletecontainer) method. This example deletes the local `exampleContainer` settings container we created earlier.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -424,12 +424,12 @@ localSettings.DeleteContainer("exampleContainer");
 ## Versioning your app data
 
 
-You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) property and the [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) method.
+You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) property and the [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.) method.
 
 ## Related articles
 
-* [**Windows.Storage.ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)
-* [**Windows.Storage.ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624)
-* [**Windows.Storage.ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623)
-* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
-* [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
+* [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
+* [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [**Windows.Storage.ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**Windows.Storage.ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)

@@ -219,9 +219,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 You can register apps as options for **AutoPlay** device events. **AutoPlay** device events are raised when a device is connected to a PC.
 
-Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://msdn.microsoft.com/library/windows/hardware/ff597729).
+Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85)).
 
-**Important**  The [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) APIs are part of the [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). Apps can use these APIs only on Windows 10 devices in the desktop device family, such as PCs.
+**Important**  The [**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) APIs are part of the [desktop device family](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Apps can use these APIs only on Windows 10 devices in the desktop device family, such as PCs.
 
  
 
@@ -244,7 +244,7 @@ The **Action Display Name** setting identifies the string that AutoPlay displays
 
 ### Step 2: Add assembly reference for the desktop extensions
 
-The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), are part of the desktop [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
+The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice), are part of the desktop [desktop device family](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
 
 1.  In **Solution Explorer**, right click on **References** and then **Add Reference...**.
 2.  Expand **Universal Windows** and click **Extensions**.
@@ -280,7 +280,7 @@ Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&g
 
 ### Step 4: Add activation code
 
-The code in this step references the camera as a [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) by passing the device information Id of the camera to the [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) method. The device information Id of the camera is obtained by first casting the event arguments as [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710), and then getting the value from the [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) property.
+The code in this step references the camera as a [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) by passing the device information Id of the camera to the [**FromId**](https://docs.microsoft.com/uwp/api/windows.devices.portable.storagedevice.fromid) method. The device information Id of the camera is obtained by first casting the event arguments as [**DeviceActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.DeviceActivatedEventArgs), and then getting the value from the [**DeviceInformationId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.deviceactivatedeventargs.deviceinformationid) property.
 
 Open the App.xaml.cs file and add the following code to the **App** class.
 
@@ -334,7 +334,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 ### Step 5: Add code to display device information
 
-You can obtain information about the camera from the properties of the [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) class. The code in this step displays the device name and other info to the user when the app runs. The code then calls the GetImageList and GetThumbnail methods, which you will add in the next step, to display thumbnails of the images stored on the camera
+You can obtain information about the camera from the properties of the [**StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) class. The code in this step displays the device name and other info to the user when the app runs. The code then calls the GetImageList and GetThumbnail methods, which you will add in the next step, to display thumbnails of the images stored on the camera
 
 In the MainPage.xaml.cs file, add the following code to the **MainPage** class.
 
@@ -409,7 +409,7 @@ You can identify a volume device such as a memory card or thumb drive as an **Au
 
 Here we show how to identify your volume device as an **AutoPlay** device.
 
-To identify your volume device as an **AutoPlay** device, add an autorun.inf file to the root drive of your device. In the autorun.inf file, add a **CustomEvent** key to the **AutoRun** section. When your volume device connects to a PC, **AutoPlay** will find the autorun.inf file and treat your volume as a device. **AutoPlay** will create an **AutoPlay** event by using the name that you supplied for the **CustomEvent** key. You can then create an app and register the app as a handler for that **AutoPlay** event. When the device is connected to the PC, **AutoPlay** will show your app as a handler for your volume device. For more info on autorun.inf files, see [autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+To identify your volume device as an **AutoPlay** device, add an autorun.inf file to the root drive of your device. In the autorun.inf file, add a **CustomEvent** key to the **AutoRun** section. When your volume device connects to a PC, **AutoPlay** will find the autorun.inf file and treat your volume as a device. **AutoPlay** will create an **AutoPlay** event by using the name that you supplied for the **CustomEvent** key. You can then create an app and register the app as a handler for that **AutoPlay** event. When the device is connected to the PC, **AutoPlay** will show your app as a handler for your volume device. For more info on autorun.inf files, see [autorun.inf entries](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds).
 
 ### Step 1: Create an autorun.inf file
 
@@ -529,9 +529,9 @@ The **AutoPlay** system allows apps to register for a variety of device and volu
 | Handle writeable optical disks                                     | **HandleCDBurningOnArrival** <br />**HandleDVDBurningOnArrival** <br />**HandleBDBurningOnArrival** | When a disk is inserted into the optical drive, AutoPlay will examine the files to determine the type of content. When a writable disk is found, the event corresponding to the type of optical disk is raised. |
 | Handle any other device or volume connection                       | **UnknownContentOnArrival**        | Raised for all events in case content is found that does not match any of the AutoPlay content events. Use of this event is not recommended. You should only register your application for the specific AutoPlay events that it can handle. |
 
-You can specify that AutoPlay raise a custom AutoPlay Content event using the **CustomEvent** entry in the autorun.inf file for a volume. For more info, see [Autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+You can specify that AutoPlay raise a custom AutoPlay Content event using the **CustomEvent** entry in the autorun.inf file for a volume. For more info, see [Autorun.inf entries](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds).
 
-You can register your app as an AutoPlay Content or AutoPlay Device event handler by adding an extension to the package.appxmanifest file for your app. If you are using Visual Studio, you can add an **AutoPlay Content** or **AutoPlay Device** declaration in the **Declarations** tab. If you are editing the package.appxmanifest file for your app directly, add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element to your package manifest that specifies either **windows.autoPlayContent** or **windows.autoPlayDevice** as the **Category**. For example, the following entry in the package manifest adds an **AutoPlay Content** extension to register the app as a handler for the **ShowPicturesOnArrival** event.
+You can register your app as an AutoPlay Content or AutoPlay Device event handler by adding an extension to the package.appxmanifest file for your app. If you are using Visual Studio, you can add an **AutoPlay Content** or **AutoPlay Device** declaration in the **Declarations** tab. If you are editing the package.appxmanifest file for your app directly, add an [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) element to your package manifest that specifies either **windows.autoPlayContent** or **windows.autoPlayDevice** as the **Category**. For example, the following entry in the package manifest adds an **AutoPlay Content** extension to register the app as a handler for the **ShowPicturesOnArrival** event.
 
 ```xml
   <Applications>

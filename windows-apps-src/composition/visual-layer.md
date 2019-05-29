@@ -32,7 +32,7 @@ The primary functions of the Visual layer are:
 
 ### Content
 
-Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) to allow for children to create trees of visuals and [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
+Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) to allow for children to create trees of visuals and [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
 
 For more information, see the [Composition Visual](composition-visual-tree.md) overview.
 
@@ -52,7 +52,7 @@ For more information, see the [Composition animations](composition-animation.md)
 
 ### Working with your XAML UWP app
 
-You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) class in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
+You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) class in [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
 
 For more information, see the [Using the Visual layer with XAML](using-the-visual-layer-with-xaml.md) overview.
 
@@ -64,7 +64,7 @@ For more information, see [Modernize your desktop app using the Visual layer](/w
 
 ## Additional resources
 
-* [**Full reference documentation for the API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**Full reference documentation for the API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
 * [Windows.UI.Composition Sample Gallery](https://aka.ms/winuiapp)
 * [@windowsui Twitter feed ](https://twitter.com/windowsui)

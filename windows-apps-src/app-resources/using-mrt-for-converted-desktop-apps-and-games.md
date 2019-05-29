@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 .NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an MSIX or AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 
-There are many ways to localize a traditional Win32 application, but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
+There are many ways to localize a traditional Win32 application, but Windows 8 introduced a [new resource-management system](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
 
 Combined with MSIX-based or AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
@@ -67,7 +67,7 @@ Here's a simple example of an application that has text labels on two buttons (`
 In the graphic, the application code references the three logical resource names. At runtime, the `GetResource` pseudo-function uses MRT to look those resource names up in the resource table (known as PRI file) and find the most appropriate candidate based on the ambient conditions (the user's language and the display's scale-factor). In the case of the labels, the strings are used directly. In the case of the logo image, the strings are interpreted as filenames and the files are read off disk. 
 
 If the user speaks a language other than English or
-German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [Resource Management System](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) for more background).
+German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) for more background).
 
 Note that MRT supports resources that are tailored to more than one qualifier - for example, if the logo image contained embedded text that also needed to be localized, the logo would have four candidates: EN/Scale-100, DE/Scale-100, EN/Scale-300 and DE/Scale-300.
 
@@ -152,7 +152,7 @@ but a basic package manifest file that runs the desktop executable named `Contos
 
 For more information about the package manifest file and package layout, see [App package manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
 
-Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [Create a "Hello, world" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a pure UWP app. These changes are outside the scope of this document.
+Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [Create a "Hello, world" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a pure UWP app. These changes are outside the scope of this document.
 
 ## Phase 1: Localize the manifest
 

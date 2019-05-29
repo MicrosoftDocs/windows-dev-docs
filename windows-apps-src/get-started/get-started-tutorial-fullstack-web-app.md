@@ -630,7 +630,7 @@ The basic steps for publishing to the Microsoft Store are:
 
  1. Create a [Windows Developer](https://developer.microsoft.com/en-us/store/register) account
  2. Use the app submission [checklist](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
- 3. Submit your app for [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 3. Submit your app for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Here are some useful resources for going further:
 

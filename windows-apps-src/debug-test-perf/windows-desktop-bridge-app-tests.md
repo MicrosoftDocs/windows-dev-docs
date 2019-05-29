@@ -112,7 +112,7 @@ The image {image name} is missing from the package.  | A required image is missi
 The image {image name} is not a valid image file.  | Ensure that all the app images adhere to the proper file format type restrictions. In the actual message, {image name} contains the name of the image that is not valid. 
 The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. The pixel must be white (##FFFFFF) or transparent (00######)  | The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. This image must be monochromatic (it can contain only white and transparent pixels). In the actual message, {value} contains the color value in the image that is not valid. 
 The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. The pixel must be (##2A2A2A) or darker, or transparent (00######).  | The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. Because the badge logo appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo. In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent. In the actual message, {value} contains the color value in the image that is not valid. 
-The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.  | For more info, see the guides on [responsive design](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) and [app resources](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
+The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.  | For more info, see the guides on [responsive design](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) and [app resources](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 The package is missing a "resources.pri" file.  | If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file. 
 The "resources.pri" file must contain a resource map with a name that matches the package name {package full name}  | You can get this error if the manifest changed and the name of the resource map in resources.pri no longer matches the package name in the manifest. In the actual message, {package full name} contains the package name that resources.pri must contain. To fix this, you need to rebuild resources.pri and the easiest way to do that is by rebuilding the app's package. 
 The "resources.pri" file must not have AutoMerge enabled.  | MakePRI.exe supports an option called AutoMerge. The default value of AutoMerge is off. When enabled, AutoMerge merges an app's language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through the Microsoft Store. The resources.pri of an app that is distributed through the Microsoft Store must be in the root of the app's package and contain all the language references that the app supports. 
@@ -150,7 +150,7 @@ Your app may declare the file types that it can be associated with. A declaratio
 * **Framework dependency rule**  
 This test enforces the requirement that apps declare appropriate dependencies on the UWP. If there is an inappropriate dependency, this test will fail. If there is a mismatch between the OS version the app targets and the framework dependencies made, the test will fail. The test also fails if the app refers to any "preview" versions of the framework dlls.
 * **Inter-process communication (IPC) verification**  
-This test enforces the requirement that Desktop Bridge apps do not communicate outside of the app container to desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to `DesktopApplicationPath` will fail this test.  
+This test enforces the requirement that Desktop Bridge apps do not communicate outside of the app container to desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) with name equal to `DesktopApplicationPath` will fail this test.  
 
 **Corrective action**  
 Review the app's manifest against the requirements described in the [App package requirements](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements).
@@ -211,10 +211,10 @@ This test checks all the UWP components in the app:
 This can be corrected by ensuring that the app was compiled as a release build and not as a debug build. 
 
 > [!NOTE]
-> The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Review the error messages to identify the API present that is not an allowed API for UWP apps. 
+> The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://docs.microsoft.com/uwp/). Review the error messages to identify the API present that is not an allowed API for UWP apps. 
 
 > [!NOTE]
-> C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See [Alternatives to Windows APIs in UWP apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) for more information.
+> C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See [Alternatives to Windows APIs in UWP apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) for more information.
 
 ### 6. User account control (UAC) test  
 
@@ -280,4 +280,4 @@ Remove any private code signing keys (such as .pfx and .snk files) from the pack
 
 ## Related topics
 
-* [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies)
