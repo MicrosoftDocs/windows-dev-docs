@@ -166,6 +166,8 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
+The code below uses the [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) where possible.
+
 ```cppwinrt
 #include "pch.h"
 #include <d2d1_1.h>
