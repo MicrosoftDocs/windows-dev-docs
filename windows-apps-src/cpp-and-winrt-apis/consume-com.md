@@ -258,7 +258,7 @@ namespace
         winrt::check_hresult(dxdevice->GetAdapter(adapter.put()));
 
         winrt::com_ptr<IDXGIFactory2> factory;
-        winrt::check_hresult(adapter->GetParent(__uuidof(factory), factory.put_void()));
+        factory.capture(adapter, &IDXGIAdapter::GetParent);
         return factory;
     }
 
@@ -270,7 +270,7 @@ namespace
         WINRT_ASSERT(target);
 
         winrt::com_ptr<IDXGISurface> surface;
-        winrt::check_hresult(swapchain->GetBuffer(0, __uuidof(surface), surface.put_void()));
+        surface.capture(swapchain, &IDXGISwapChain1::GetBuffer, 0);
 
         D2D1_BITMAP_PROPERTIES1 const props{ D2D1::BitmapProperties1(
             D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
@@ -478,7 +478,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## Working with COM types, such as BSTR and VARIANT
 
-As you can see, C++/WinRT provides support for both implementing and calling COM interfaces. For using COM types, such as BSTR and VARIANT, there is always the option to use those in their raw form (together with the appropriate APIs). Alternatively, you can use wrappers provided by a framework such as the [Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts), or by the Visual C++ compiler's [COM Support](/cpp/cpp/compiler-com-support), or even by your own wrappers.
+As you can see, C++/WinRT provides support for both implementing and calling COM interfaces. For using COM types, such as BSTR and VARIANT, we recommend that you use wrappers provided by the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil), such as **wil::unique_bstr** and **wil::unique_variant** (which manage resources lifetimes).
+
+[WIL](https://github.com/Microsoft/wil) supersedes frameworks such as the Active Template Library (ATL), and the Visual C++ compiler's COM Support. And we recommend it over writing your own wrappers, or using COM types such as BSTR and VARIANT in their raw form (together with the appropriate APIs).
 
 ## Important APIs
 * [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
