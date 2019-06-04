@@ -71,6 +71,8 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
 
+* Placing ads in a viewbox to reduce the size of the ads in order to allow more ads on a page than normal.
+
 <span id="interstitialbestpractices10" />
 
 ## Guidelines for interstitial ads
