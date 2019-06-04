@@ -1,4 +1,4 @@
----
+﻿---
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
@@ -269,7 +269,7 @@ Use the following URIs to open various pages of the Settings app.
 |-------------|-----|
 | About | ms-settings:about |
 | Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
-| App volume and device preferences | ms-settings:apps-volume |
+| App volume and device preferences | ms-settings:apps-volume (**Added in Windows 10, version 1903**)|
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
