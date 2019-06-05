@@ -2,7 +2,7 @@
 description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 02/08/2017
+ms.date: 6/5/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -224,6 +224,49 @@ int main()
 To POST the contents of an actual binary file (rather than the explicit binary data used above), you'll find it easier to use an [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) object. Construct one and, as the argument to its constructor, pass the value returned from a call to [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). That method returns a stream for the data inside your binary file.
 
 Also, if you're uploading a large file (larger than about 10MB), then we recommend that you use the Windows Runtime [Background Transfer](/uwp/api/windows.networking.backgroundtransfer) APIs.
+
+## POST JSON data over HTTP
+
+The following example posts some JSON to an endpoint, then writes out the response body.
+
+```cs
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Windows.Storage.Streams;
+using Windows.Web.Http;
+
+private async Task TryPostJsonAsync()
+{
+    try
+    {
+        // Construct the HttpClient and Uri. This endpoint is for test purposes only.
+        HttpClient httpClient = new HttpClient();
+        Uri uri = new Uri("https://www.contoso.com/post");
+
+        // Construct the JSON to post.
+        HttpStringContent content = new HttpStringContent(
+            "{ \"firstName\": \"Eliot\" }",
+            UnicodeEncoding.Utf8,
+            "application/json");
+
+        // Post the JSON and wait for a response.
+        HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(
+            uri,
+            content);
+
+        // Make sure the post succeeded, and write out the response.
+        httpResponseMessage.EnsureSuccessStatusCode();
+        var httpResponseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+        Debug.WriteLine(httpResponseBody);
+    }
+    catch (Exception ex)
+    {
+        // Write out any exceptions.
+        Debug.WriteLine(ex);
+    }
+}
+```
 
 ## Exceptions in Windows.Web.Http
 
