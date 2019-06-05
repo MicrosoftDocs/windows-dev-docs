@@ -155,13 +155,17 @@ This optimization avoids the #include dependencies in `module.g.cpp` so that it 
 
 The `module.g.cpp` file now also contains two additional composable helpers, named **winrt_can_unload_now**, and **winrt_get_activation_factory**. These have been designed for larger projects where a DLL is composed of a number of libs, each with its own runtime classes. In that situation, you need to manually stitch together the DLL's **DllGetActivationFactory** and **DllCanUnloadNow**. These helpers make it much easier for you to do that, by avoiding spurious origination errors. The `cppwinrt.exe` tool's `-lib` flag may also be used to give each individual lib its own preamble (rather than `winrt_xxx`) so that each lib's functions may be individually named, and thus combined unambiguously.
 
-#### New `winrt/coroutine.h` header
+#### Coroutine support
 
-The `winrt/coroutine.h` header is the new home for all of C++/WinRT's coroutine support. Previously, this support resided in a few places, which we felt was too limiting. Since the Windows Runtime async interfaces are now generated, rather than hand-written, they now reside in `winrt/Windows.Foundation.h`. Apart from being more maintainable and supportable, it means that coroutine helpers such as [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) no longer have to be tacked on to the end of a specific namespace header. Instead, they can more naturally include their dependencies. This further allows **resume_foreground** to support not only resuming on a given [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), but it can now also support resuming on a given [**Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Previously, only one could be supported; but not both, since the definition could only reside in one namespace.
+Coroutine support is included automatically. Previously, the support resided in multiple places, which we felt was too limiting. And then temporarily for v2.0, a `winrt/coroutine.h` header file was necessary, but that's no longer needed. Since the Windows Runtime async interfaces are now generated, rather than hand-written, they now reside in `winrt/Windows.Foundation.h`. Apart from being more maintainable and supportable, it means that coroutine helpers such as [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) no longer have to be tacked on to the end of a specific namespace header. Instead, they can more naturally include their dependencies. This further allows **resume_foreground** to support not only resuming on a given [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), but it can now also support resuming on a given [**Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Previously, only one could be supported; but not both, since the definition could only reside in one namespace.
 
 Here's an example of the **DispatcherQueue** support.
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 fire_and_forget Async(DispatcherQueueController controller)
 {
     bool queued = co_await resume_foreground(controller.DispatcherQueue());

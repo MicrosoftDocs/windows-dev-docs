@@ -32,7 +32,6 @@ For example, if the user happens to delete an image from the Pictures Library wh
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
-#include <winrt/coroutine.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
