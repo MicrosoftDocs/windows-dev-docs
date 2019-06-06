@@ -246,4 +246,4 @@ The **PayPal** column indicates whether PayPal is a supported payment method tha
 | Zambia                            | 19 USD              | 99 USD           | ZMK paid to bank | No     |  
 | Zimbabwe                          | 19 USD              | 99 USD           | USD paid to bank | No     |
 
-\*  PayPal can be used as a payment method for payout accounts in this market, but can't be used to pay fo r the developer account registration fee.
+\*  PayPal can be used as a payment method for payout accounts in this market, but can't be used to pay for the developer account registration fee.
