@@ -74,7 +74,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
     :::column:::
-        ![WPF platform](images/platform-wpf.png)
+        ![WPF platform](images/platform-wpf2.png)
 
         ### Windows Presentation Foundation (WPF)
 
