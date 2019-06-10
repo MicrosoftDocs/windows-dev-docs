@@ -2,12 +2,13 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Packaging UWP apps
 description: To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.
-ms.date: 03/18/2019
+ms.date: 06/10/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords: ["vs.packagewizard",  "vs.storeassociationwizard"]
 ms.localizationpriority: medium
 ---
+
 # Package a UWP app with Visual Studio
 
 To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to package it. If you don't want to distribute your app through Microsoft Store, you can sideload the app package directly to a device or distribute it via [Web Install](installing-UWP-apps-web.md). This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about managing and deploying line-of-business (LOB) apps, see [Enterprise app management](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
@@ -46,7 +47,7 @@ The app manifest file (Package.appxmanifest) is an XML file that contains the pr
 
 The Visual Studio manifest designer allows you to update the manifest file without editing the raw XML of the file.
 
-**Configure a package with the manifest designer**
+### Configure a package with the manifest designer
 
 1.  In **Solution Explorer**, expand the project node of your UWP app.
 2.  Double-click the **Package.appxmanifest** file. If the manifest file is already open in the XML code view, Visual Studio prompts you to close the file.
@@ -73,7 +74,7 @@ To distribute an app through Microsoft Store you must create an app package (.ap
 >[!NOTE]
 > If you want to create an app package (.appx or .msix) or app bundle (.appxbundle or .msixbundle) manually, see [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
-### To create your app package upload file using Visual Studio
+### Create your app package upload file using Visual Studio
 
 1.  In **Solution Explorer**, open the solution for your UWP app project.
 2.  Right-click the project and choose **Store**->**Create App Packages**. If this option is disabled or does not appear at all, check that the project is a Universal Windows project.  
@@ -92,11 +93,10 @@ To distribute an app through Microsoft Store you must create an app package (.ap
     ![Create App Packages window with package configuration shown](images/packaging-screen5.jpg)
 7.  Include full PDB symbol files to [Analyze app performance](https://docs.microsoft.com/windows/uwp/publish/analytics) from Partner Center after your app has been published. Configure any additional details such as version numbering or the package output location.
 8.  Click **Create** to generate the app package. If you selected one of the **I want to create packages to upload to the Microsoft Store** options in step 3 and are creating a package for Partner Center submission, the wizard will create a package upload (.appxupload or .msixupload) file. If you selected **I want to create packages for sideloading** in step 3, the wizard will create either a single app package or an app bundle based on your selections in step 6.
-9. When your app has been successfully packaged, you will see this dialog and you can retrieve your app package upload file from the specified output location. At this point, you can [validate your app package on the local machine or a remote machine](#validate-your-app-package) and [automate store submission](#automate-store-submission).
+9. When your app has been successfully packaged, you will see this dialog and you can retrieve your app package upload file from the specified output location. At this point, you can [validate your app package on the local machine or a remote machine](#validate-your-app-package) and [automate store submissions](#automate-store-submissions).
     ![Package creation completed window with validation options shown](images/packaging-screen6.jpg)
 
-
-### To create your app package upload file manually
+### Create your app package upload file manually
 
 1. Place the following files in a folder:
     - One or more app packages (.msix or .appx) or an app bundle (.msixbundle or .appxbundle).
@@ -104,46 +104,74 @@ To distribute an app through Microsoft Store you must create an app package (.ap
 2. Zip the folder.
 3. Change the zipped folder extension name from .zip to .msixupload or .appxupload.
 
-### Validate your app package
+## Validate your app package
 
 Validate your app before you submit it to Partner Center for certification on a local or remote machine. You can only validate release builds for your app package, not debug builds. For more information on submitting your app to Partner Center, see [App submissions](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-**To validate your app package locally**
+### Validate your app package locally
 
 1. In the final **Package Creation Completed** page of the **Create App Packages** wizard, leave the **Local machine** option selected and click **Launch Windows App Certification Kit**. For more information about testing your app with the Windows App Certification Kit, see [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    The Windows App Certification Kit performs various tests and returns the results. See [Windows App Certification Kit tests](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) for more specific information.
+    The Windows App Certification Kit (WACK) performs various tests and returns the results. See [Windows App Certification Kit tests](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) for more specific information.
 
     If you have a remote Windows 10 device that you want to use for testing, you will need to install the Windows App Certification Kit manually on that device. The next section will walk you through these steps. After you've done that, then you can select **Remote machine** and click **Launch Windows App Certification Kit** to connect to the remote device and run the validation tests.
 
 2. After WACK has finished and your app has passed certification, you are ready to submit your app to Partner Center. Make sure you upload the correct file. The default location of the file can be found in the root folder of your solution `\[AppName]\AppPackages` and it will end with the .appxupload or .msixupload file extension. The name will be of the form `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` or `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` if you opted for an app bundle with all of the package architecture selected.
 
-**To validate your app package on a remote Windows 10 device**
+### Validate your app package on a remote Windows 10 device
 
-1.  Enable your Windows 10 device for development by following the [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) instructions.
+1. Enable your Windows 10 device for development by following the [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) instructions.
     >[!IMPORTANT]
     > You cannot validate your app package on a remote ARM device for Windows 10.
-2.  Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run UWP apps on a remote machine](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
-3.  Download the required [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) and then install it on your remote Windows 10 device.
-4.  On the **Package Creation Completed** page of the wizard, choose the **Remote Machine** option button, and then choose the ellipsis button next to the **Test Connection** button.
+2. Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run UWP apps on a remote machine](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
+3. Download the required [Windows App Certification Kit](https://go.microsoft.com/fwlink/p/?LinkID=309666) and then install it on your remote Windows 10 device.
+4. On the **Package Creation Completed** page of the wizard, choose the **Remote Machine** option button, and then choose the ellipsis button next to the **Test Connection** button.
     >[!NOTE]
     > The **Remote Machine** option button is available only if you selected at least one solution configuration that supports validation. For more information about testing your app with the WACK, see [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
-5.  Specify a device form inside your subnet, or provide the Domain Name Server (DNS) name or IP address of a device that's outside of your subnet.
-6.  In the **Authentication Mode** list, choose **None** if your device doesn't require you to log onto it by using your Windows credentials.
-7.  Choose the **Select** button, and then choose the **Launch Windows App Certification Kit** button. If the remote tools are running on that device, Visual Studio connects to the device and then performs the validation tests. See [Windows App Certification Kit tests](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+5. Specify a device form inside your subnet, or provide the Domain Name Server (DNS) name or IP address of a device that's outside of your subnet.
+6. In the **Authentication Mode** list, choose **None** if your device doesn't require you to log onto it by using your Windows credentials.
+7. Choose the **Select** button, and then choose the **Launch Windows App Certification Kit** button. If the remote tools are running on that device, Visual Studio connects to the device and then performs the validation tests. See [Windows App Certification Kit tests](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
-### Automate store submission
+## Automate Store submissions
 
-Starting in Visual Studio 2019, you can submit the generated .appxupload file  to the Microsoft Store directly from the IDE by selecting the **Automatically submit to the Microsoft Store after Windows App Certification Kit validation** option. You must specify the credentials used for the submission. These credentials are comprised of three parts: the **Azure Tenant ID**, the **Client ID** and the **Client secret**. Follow these steps to obtain them:
+Starting in Visual Studio 2019, you can submit the generated .appxupload file to the Microsoft Store directly from the IDE by selecting the **Automatically submit to the Microsoft Store after Windows App Certification Kit validation** option at the end of the [Create App Packages wizard](#create-your-app-package-upload-file-using-visual-studio). This feature leverages Azure Active Directory for accessing the Partner Center account info needed to publish your app. To use this feature, you'll need associate Azure Active Directory with your Partner Center account and retrieve several credentials required for submissions.
 
-1. In Partner Center, go to your **Developer settings**, click **Users**, and associate your organization's Dev Center account with your organization's Azure AD directory. For detailed instructions, see [Manage account users](https://docs.microsoft.com/windows/uwp/publish/manage-account-users).
-2. In the **Users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access submissions for your Dev Center account, and assign it the Manager role. If this application already exists in your Azure AD directory, you can select it on the Add Azure AD applications page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add users, groups, and Azure AD applications to your Partner Center account](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-3. Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy the **Tenant ID** and **Client ID** values.
-4. Click **Add new key**. On the following screen, copy the Key value, which corresponds to the Client secret. You will not be able to access this info again after you leave this page, so make sure to not lose it. For more information, see the information about managing keys in [Add users, groups, and Azure AD applications to your Partner Center account](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-    ![Verify and Publish progress](images/packaging-screen8.jpg)
-    > [!Important] 
+### Associate Azure Active Directory with your Partner Center account
+
+Before you can retrieve the credentials that are required for automatic Store submissions, you must first follow these steps in the [Partner Center dashboard](https://partner.microsoft.com/dashboard) if you have not done so already.
+
+1. [Associate your Partner Center account with your organization's Azure Active Directory](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can create a new Azure AD tenant from within Partner Center at no additional charge.
+
+2. [Add an Azure AD application to your partner Center account](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). This Azure AD application represents the app or service that you will use to access submissions for your Dev Center account. You must assign this application to the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page.
+
+### Retrieve the credentials required for submissions
+
+Next, you can retrieve the Partner Center credentials required for submissions: the **Azure Tenant ID**, the **Client ID** and the **Client key**.
+
+1. Go to the [Partner Center dashboard](https://partner.microsoft.com/dashboard) and sign in with your Azure AD credentials.
+
+2. On the Partner Center dashboard, select the gear icon (near the upper right corner of the dashboard) and then select **Developer settings**.
+
+3. In the **Settings** menu in the left pane, click **Users**.
+
+4. Click the name of your Azure AD application to go to the application's settings. On this page, copy the **Tenant ID** and **Client ID** values.
+
+5. In the **Keys** section, click **Add new key**. On the next screen, copy the **Key** value, which corresponds to the client secret. You will not be able to access this info again after you leave this page, so make sure to not lose it. For more information, see [Manage keys for an Azure AD application](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+
+### Configure automatic Store submissions in Visual Studio
+
+After you complete the previous steps, you can configure automatic Store submissions in Visual Studio 2019.
+
+1. At the end of the [Create App Packages wizard](#create-your-app-package-upload-file-using-visual-studio), select **Automatically submit to the Microsoft Store after Windows App Certification Kit validation** and click **Reconfigure**.
+
+2. In the **Configure Microsoft Store Submission settings** dialog, enter the Azure tenant ID, Client ID, and Client key.
+
+    ![Configure Microsoft Store Submission settings](images/packaging-screen8.jpg)
+
+    > [!Important]
     > Your credentials can be saved to your profile to be used in future submissions
-5. Click **OK**.
+
+3. Click **OK**.
 
 The submission will start after the WACK test have finished. You can track the submission progress in the **Verify and Publish** window.
 
