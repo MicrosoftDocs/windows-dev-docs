@@ -279,9 +279,28 @@ A framework package can access its own resources with an absolute resource ident
 
 ## Loading strings from non-packaged applications
 
+To get better interopability between web apps and other non-packaged platforms, minimize localization bugs, and reduce testing overhead, follow these steps:
 
+1. Design your UWP user controls/libraries in the usual way, leveraging x:Uid in XAML or subtrees in code behind to resolve resources with resw. For example:
+    - `<MenuFlyoutItem x:Uid="Option1"/>`
+    - `ResourceManager.Current.MainResourceMap.GetSubtree("ManagedWinRT\\Resources").GetValue("Header").ValueAsString`
+    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetString("Header")`
+    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))`
+    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))`
+        > [!NOTE]
+        > To support non-packaged scenarios, use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: Resource Contexts may not be created on threads that do not have a CoreWindow.
+1. Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of <OUTPUTFILE>`
+    - The default priconfig of [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes the PRI indexer which merges all PRIs found under the project root.
+    - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this).
+    - [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) merges PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
+        > [!NOTE]
+        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set  to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID).
+1. Copy the PRI file to the build output directory of the .exe
+1. Run the .exe
+    > [!NOTE]
+    > MRT uses the display language rather than the UPLL to be consistent with the host
 
-Here's an example of a Win32 manifest:
+Here's an example of a fusion manifest for an unpackaged Win32 app:
 
 ``` xaml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
