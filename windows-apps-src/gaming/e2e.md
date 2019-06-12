@@ -515,7 +515,7 @@ C++/CX is a high-performance, low overhead language that provides the powerful c
     </tr>
     <tr>
         <td>Visual C++ programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2017</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
     </tr>
 </table>
  

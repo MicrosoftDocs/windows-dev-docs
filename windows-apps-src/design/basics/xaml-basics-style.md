@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 This tutorial shows you how to customize the UI of our XAML app. Warning: this tutorial might or might not involve a unicorn. (It does!)  
 
 ## Prerequisites
-* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2019.
 
 The PhotoLab app has two primary pages:
 
@@ -50,7 +50,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 2. In the Solution Explorer panel, double-click **DetailPage.xaml** to open it. 
 
-    ![The DetailPage.xaml file in the Visual Studio 2017 solution explorer.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![The DetailPage.xaml file in the Visual Studio 2019 solution explorer.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Use a Polygon element to create a background shape for the exposure slider.
 

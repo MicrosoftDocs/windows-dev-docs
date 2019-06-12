@@ -259,7 +259,7 @@ The requirement of enabling dependent animations falling onto the app developer 
 As an app developer, you can also choose to apply an app-wide setting that always disables dependent animations, even those where **EnableDependentAnimation** is **true**. See [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> If you're using the Animation Pane in Blend for Visual Studio 2017, whenever you attempt to apply a dependent animation to a visual state property, warnings will be displayed in the designer. 
+> If you're using the Animation Pane in Blend for Visual Studio 2019, whenever you attempt to apply a dependent animation to a visual state property, warnings will be displayed in the designer. 
 > Warnings will not show in the build output or Error List. 
 > If you're editing XAML by hand, the designer will not show a warning. 
 > At runtime when debugging, the Output pane's Debug output will show a warning that the animation is not independent and will be skipped.

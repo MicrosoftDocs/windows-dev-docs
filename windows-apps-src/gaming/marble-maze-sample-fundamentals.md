@@ -34,7 +34,7 @@ When we created the Visual Studio project for Marble Maze, we started with an ex
 
 1. In Visual Studio 2017, select **File > New > Project...**
 
-2. In the **New Project** window, in the left sidebar, select **Installed > Templates > Visual C++**.
+2. In the **Create a new project** window, select **Installed > Templates > Visual C++**.
 
 3. In the middle list, select **DirectX 11 App (Universal Windows)**. If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2017 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
 

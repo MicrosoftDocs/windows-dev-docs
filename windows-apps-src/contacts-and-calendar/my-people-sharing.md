@@ -14,7 +14,7 @@ The My People feature allows users to pin contacts to their taskbar, enabling th
 
 ## Requirements
 
-+ Windows 10 and Microsoft Visual Studio 2017. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 and Microsoft Visual Studio 2019. For installation details, see [Get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Overview
