@@ -246,7 +246,7 @@ Use the following URIs to open various pages of the Settings app.
 | Notifications | ms-settings:privacy-notifications |
 | Other devices | ms-settings:privacy-customdevices |
 | Pictures | ms-settings:privacy-pictures |
-| Phone calls | ms-settings:privacy-phonecall (**Deprecated in Windows 10, version 1809 and later**) |
+| Phone calls | ms-settings:privacy-phonecalls (**Deprecated in Windows 10, version 1809 and later**) |
 | Radios | ms-settings:privacy-radios |
 | Speech, inking & typing |ms-settings:privacy-speechtyping |
 | Tasks | ms-settings:privacy-tasks |
