@@ -12,12 +12,12 @@ ms.localizationpriority: medium
 This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
 
 > [!NOTE]
-> This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
+> This tutorial is using Visual Studio Community 2019. If you are using a different version of Visual Studio, it may look a little different for you.
 
 
 Here you'll learn how to:
 
--   Create a new **Visual Studio** project that targets **Windows 10** and the **UWP**.
+-   Create a new **Visual Studio 2019** project that targets **Windows 10** and the **UWP**.
 -   Add HTML and JavaScript content
 -   Run the project on the local desktop in Visual Studio
 
@@ -29,17 +29,15 @@ Here you'll learn how to:
 
 ## Step 1: Create a new project in Visual Studio.
 
-1.  Launch Visual Studio.
+1.  Launch Visual Studio 2019.
 
-2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
+2.  From the **File** menu, select **New > Project...** to open the *Create a new project* dialog.
 
-3.  From the list of templates on the left, open **Installed > Templates > JavaScript**, and then choose **Windows Universal** to see the list of UWP project templates.
+3.  Choose **Blank App (Universal Windows) JavaScript**, and then select **Next**.
 
-    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](get-set-up.md)
+    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *Create a new project* dialog. See [Get set up](get-set-up.md)
 
-4.  Choose the **Blank App (Universal Windows)** template, and enter "HelloWorld" as the **Name**. Select **OK**.
-
-    ![The new project window](images/win10-js-01.png)
+4.  In the *Configure your new project* dialog, enter "HelloWorld" as the **Project name**, and then select **Create**.
 
 > [!NOTE]
 > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.

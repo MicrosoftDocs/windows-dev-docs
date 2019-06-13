@@ -19,7 +19,7 @@ This topic describes the fundamental characteristics of the Marble Maze project&
 
 Here are some of the key points that this document discusses for when you plan and develop your Universal Windows Platform (UWP) game.
 
--   Use the **DirectX 11 App (Universal Windows)** Visual C++ template in Visual Studio to create your DirectX UWP game.
+-   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
 -   The Windows Runtime provides classes and interfaces so that you can develop UWP apps in a more modern, object-oriented manner.
 -   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
 -   In most cases, use exception handling, instead of result codes, to deal with unexpected errors.
@@ -30,19 +30,19 @@ Here are some of the key points that this document discusses for when you plan a
 
 If you've downloaded and extracted the sample, you can open the **MarbleMaze_VS2017.sln** file (in the **C++** folder) in Visual Studio, and you'll have the code in front of you.
 
-When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3D application. To do this, follow these steps:
+When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. To do this, follow these steps:
 
-1. In Visual Studio 2017, select **File > New > Project...**
+1. In Visual Studio 2019, select **File > New > Project...**
 
-2. In the **Create a new project** window, select **Installed > Templates > Visual C++**.
+2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)**. If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
 
-3. In the middle list, select **DirectX 11 App (Universal Windows)**. If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2017 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
+![New Project](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-4. Give your project a **Name**, a **Location** for the files to be stored, and a **Solution name**, and click **OK**.
+3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
 
-![New Project](images/marble-maze-sample-fundamentals-1.png)
 
-One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
+
+One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
 
 > **Caution**   The **/ZW** option is not compatible with options such as **/clr**. In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
 
