@@ -21,7 +21,7 @@ Making this metadata searchable instantly allows for users to be exponentially m
 For decades, the solution for fast searching on Windows has been the indexer, and in the Creators Update it has been updated to support these new scenarios. Apps are now able to tag files with additional properties beyond those which are extracted by the system. These properties are treated as first class citizens  
 
 ## Windows Properties 
-The [Windows Property system](https://msdn.microsoft.com/library/windows/desktop/ff728898) has been a key part of interacting with files for years. It allows apps to read properties from files without having to understand the internals of all the different file formats or languages a file could be in. All that is abstracted away for you as a developer, all you have to do is ask for a list and specify ascending or descending.  
+The [Windows Property system](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) has been a key part of interacting with files for years. It allows apps to read properties from files without having to understand the internals of all the different file formats or languages a file could be in. All that is abstracted away for you as a developer, all you have to do is ask for a list and specify ascending or descending.  
 
 The property system is intertwined with the Windows Indexer – it reads all the properties from files within its scope and stores them. Later when an app asks for a list of all the .docx in a folder to be sorted by date modified, excluding those authored by John Smith the indexer can return the list instantly.  
 

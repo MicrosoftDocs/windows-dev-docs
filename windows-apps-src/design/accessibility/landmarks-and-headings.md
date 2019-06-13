@@ -27,7 +27,7 @@ There is a search edit box which is wrapped within a search landmark. The naviga
 
 The Settings app would be accessible without landmarks and headings, but it becomes more usable with them. A screen reader user can quickly and easily get to the group (landmark) they need and then quickly get to the sub group (heading) as well. 
 
-Use [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to setup the UI element as the [type of landmark](https://msdn.microsoft.com/library/windows/desktop/mt759299) you wish. This landmark UI element would encapsulate all the other UI elements which make sense for that landmark. 
+Use [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to setup the UI element as the [type of landmark](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers) you wish. This landmark UI element would encapsulate all the other UI elements which make sense for that landmark. 
 
 Use [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to specifically name the landmark. If you select a predefined landmark type such as main or navigational, these names will be used for the landmark name. However, if you set the landmark type to custom you must specifically name the landmark through this property. You can also use this property to override the default names from the non-custom landmark types. 
 

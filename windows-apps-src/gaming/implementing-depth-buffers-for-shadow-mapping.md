@@ -69,13 +69,13 @@ You should [Prepare your dev environment for Universal Windows Platform (UWP) Di
 
 **Direct3D**
 
-* [Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Writing HLSL Shaders in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Create a new DirectX 11 project for UWP](user-interface.md)
 
 **Shadow mapping technical articles**
 
-* [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Cascaded Shadow Maps](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Common Techniques to Improve Shadow Depth Maps](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [Cascaded Shadow Maps](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

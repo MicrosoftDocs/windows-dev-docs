@@ -1,4 +1,4 @@
-﻿---
+---
 Description: Menus and context menus display a list of commands or options when the user requests them.
 title: Menus and context menus
 label: Menus and context menus
@@ -27,7 +27,7 @@ Menus and context menus display a list of commands or options when the user requ
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
-| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## Is this the right control?
 
@@ -65,7 +65,7 @@ You can also use a MenuBar in conjunction with a CommandBar. Use the MenuBar to 
 
 ## Menus vs. context menus
 
-Menus and context menus are similar in how they look and what they can contain. In fact, you can use the same control, [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), to create them. The difference is how you let the user access it.
+Menus and context menus are similar in how they look and what they can contain. In fact, you can use the same control, [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), to create them. The difference is how you let the user access it.
 
 When should you use a menu or a context menu?
 
@@ -85,13 +85,13 @@ If you want to add commands (such as cut, copy, and paste) to a text element, us
 - Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.
 - Are usually attached to a button or a parent menu item.
 - Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
-- Are associated with an element via its [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) or [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) properties, or grouped in a menu bar at the top of the app window.
+- Are associated with an element via its [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) properties, or grouped in a menu bar at the top of the app window.
 
 ### Context menus
 
 - Are attached to a single element and display secondary commands.
 - Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).
-- Are associated with an element via its [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property.
+- Are associated with an element via its [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) property.
 
 ## Icons
 
@@ -135,7 +135,7 @@ These objects are for:
 - [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)—Switching between mutually-exclusive menu items.
 - [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator)—Visually separating menu items.
 
-This example creates a [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) and uses the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property, a property available to most controls, to show the MenuFlyout as a context menu.
+This example creates a [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) and uses the [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) property, a property available to most controls, to show the MenuFlyout as a context menu.
 
 ````xaml
 <Rectangle
@@ -166,7 +166,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-The next example is nearly identical, but instead of using the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property to show the [MenuFlyout class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu.
+The next example is nearly identical, but instead of using the [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) property to show the [MenuFlyout class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu.
 
 ````xaml
 <Rectangle
@@ -205,7 +205,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### Light dismiss
 
-Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
+Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />

@@ -15,27 +15,27 @@ dev_langs:
 
 **Important APIs**
 
-- [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
-- [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
-- [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+- [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
+- [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
+- [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Learn how to set conditions that control when your background task will run.
 
-Sometimes, background tasks require certain conditions to be met for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired. The background task will then be queued, but it will not run until all the required conditions are satisfied.
+Sometimes, background tasks require certain conditions to be met for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) when registering your background task. The condition will be checked after the trigger has been fired. The background task will then be queued, but it will not run until all the required conditions are satisfied.
 
-Putting conditions on background tasks saves battery life and CPU by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
+Putting conditions on background tasks saves battery life and CPU by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
 
-It is also possible to combine multiple conditions by calling **AddCondition** multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
+It is also possible to combine multiple conditions by calling **AddCondition** multiple times on the same [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
 
 ## Create a SystemCondition object
 
-This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object named **taskBuilder**.  See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) or [Create and register an out-of-process background task](create-and-register-a-background-task.md) if you need to create a background task first.
+This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object named **taskBuilder**.  See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) or [Create and register an out-of-process background task](create-and-register-a-background-task.md) if you need to create a background task first.
 
 This topic applies to background tasks that run out-of-process as well as those that run in the same process as the foreground app.
 
-Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object to represent the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met with a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
+Before adding the condition, create a [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) object to represent the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met with a [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) enumeration value.
 
-The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object that specifies the **InternetAvailable** condition:
+The following code creates a [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) object that specifies the **InternetAvailable** condition:
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -52,7 +52,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ## Add the SystemCondition object to your background task
 
-To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
+To add the condition, call the [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) method on the [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) object, and pass it the [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) object.
 
 The following code uses **taskBuilder** to add the **InternetAvailable** condition.
 
@@ -70,7 +70,7 @@ taskBuilder->AddCondition(internetCondition);
 
 ## Register your background task
 
-Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the background task will not start until the specified condition is met.
+Now you can register your background task with the [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) method, and the background task will not start until the specified condition is met.
 
 The following code registers the task and stores the resulting BackgroundTaskRegistration object:
 
@@ -87,16 +87,16 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+> Universal Windows apps must call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering any of the background trigger types.
 
-To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess) and then call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
 > [!NOTE]
 > Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
 ## Place multiple conditions on your background task
 
-To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method. These calls must come before task registration to be effective.
+To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) method. These calls must come before task registration to be effective.
 
 > [!NOTE]
 > Take care not to add conflicting conditions to a background task.
@@ -172,7 +172,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## Remarks
 
 > [!NOTE]
-> Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. See [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) for descriptions of the different background task conditions.
+> Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. See [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) for descriptions of the different background task conditions.
 
 ## Related topics
 

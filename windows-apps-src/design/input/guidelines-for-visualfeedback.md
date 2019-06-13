@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
 
-> **Important APIs**:  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **Important APIs**:  [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## Recommendations
 
@@ -23,7 +23,7 @@ Use visual feedback to show users when their interactions are detected, interpre
     - See [XAML styles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) for more info on customizing the properties of a control, including visual state properties.
     - See the [UserControl Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
     - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
+- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
 - Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
 - Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
 
@@ -40,7 +40,7 @@ Using the default XAML platform controls available ensures that your app works c
 
 Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.
 
-Use [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) to set feedback behavior for the platform gestures.
+Use [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) to set feedback behavior for the platform gestures.
 
 If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.
 
@@ -69,7 +69,7 @@ To change the thickness of either border type (primary or secondary) use the **F
 ```
 ![High visibility focus visual margin thicknesses](images/FocusMargin.png)
 
-The margin is a property of type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
+The margin is a property of type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN), and therefore the margin can be customized to appear only on certain sides of the control. See below:
 ![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
 
 The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
@@ -109,7 +109,7 @@ To change the colors on a per-control basis, just edit the focus visual properti
 * [Guidelines for panning](guidelines-for-panning.md)
 
 **For developers**
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Custom user interactions](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **Samples**
 * [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)

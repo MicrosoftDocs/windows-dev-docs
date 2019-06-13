@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Sample**
 

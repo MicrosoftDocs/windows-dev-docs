@@ -37,7 +37,7 @@ The included header `winrt/Windows.Foundation.h` is part of the SDK, found insid
 
 In the code example above, after initializing C++/WinRT, we stack-allocate a value of the **winrt::Windows::Foundation::Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's typically all you have to do. Once you have a C++/WinRT projected type value, you can treat it as if it were an instance of the actual Windows Runtime type, since it has all the same members.
 
-In fact, that projected value is a proxy; it's essentially just a smart pointer to a backing object. The projected value's constructor(s) call [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to create an instance of the backing Windows Runtime class (**Windows.Foundation.Uri**, in this case), and store that object's default interface inside the new projected value. As illustrated below, your calls to the projected value's members actually delegate, via the smart pointer, to the backing object; which is where state changes occur.
+In fact, that projected value is a proxy; it's essentially just a smart pointer to a backing object. The projected value's constructor(s) call [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to create an instance of the backing Windows Runtime class (**Windows.Foundation.Uri**, in this case), and store that object's default interface inside the new projected value. As illustrated below, your calls to the projected value's members actually delegate, via the smart pointer, to the backing object; which is where state changes occur.
 
 ![The projected Windows::Foundation::Uri type](images/uri.png)
 
@@ -162,7 +162,7 @@ This section applies whether you authored the component yourself, or it came fro
 
 In your application project, reference the Windows Runtime component's Windows Runtime metadata (`.winmd`) file, and build. During the build, the `cppwinrt.exe` tool generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface for the component. In other words, the generated library contains the projected types for the component.
 
-Then, just as for a Windows namespace type, you include a header and construct the projected type via one of its constructors. Your application project's startup code registers the runtime class, and the projected type's constructor calls [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to activate the runtime class from the referenced component.
+Then, just as for a Windows namespace type, you include a header and construct the projected type via one of its constructors. Your application project's startup code registers the runtime class, and the projected type's constructor calls [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate the runtime class from the referenced component.
 
 ```cppwinrt
 #include <winrt/BankAccountWRC.h>
@@ -230,7 +230,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - You can access the members of all of the interfaces of a projected type.
 - You can return a projected type to a caller.
-- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521).
+- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)).
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -275,8 +275,8 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## Important APIs
-* [QueryInterface interface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [RoActivateInstance function](https://msdn.microsoft.com/library/br224646)
+* [QueryInterface interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [RoActivateInstance function](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)

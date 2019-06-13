@@ -58,11 +58,11 @@ This resource has the following values.
 
 | Value           | Type    | Description       |
 |-----------------|---------|---------------------|
-| id            | string  | The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| id            | string  | The Store ID of the app. For more information about the Store ID, see [View app identity details](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
 | primaryName   | string  | The primary name of the app.      |
 | packageFamilyName | string  | The package family name of the app.      |
 | packageIdentityName          | string  | The package identity name of the app.                       |
-| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in Partner Center.       |
+| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in Partner Center.       |
 | firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.   |
 | lastPublishedApplicationSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the app.    |
 | pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
@@ -121,8 +121,8 @@ This resource has the following values.
 | friendlyName           | string  | The name of the package flight, as specified by the developer.   |
 | lastPublishedFlightSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the package flight.   |
 | pendingFlightSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the package flight.  |    
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />

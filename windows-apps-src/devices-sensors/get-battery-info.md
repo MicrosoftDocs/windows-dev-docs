@@ -12,19 +12,19 @@ ms.localizationpriority: medium
 
 ** Important APIs **
 
--   [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
--   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432)
+-   [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power)
+-   [**DeviceInformation.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
 
-Learn how to get detailed battery information using APIs in the [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) namespace. A *battery report* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) describes the charge, capacity, and status of a battery or aggregate of batteries. This topic demonstrates how your app can get battery reports and be notified of changes. Code examples are from the basic battery app that's listed at the end of this topic.
+Learn how to get detailed battery information using APIs in the [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power) namespace. A *battery report* ([**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)) describes the charge, capacity, and status of a battery or aggregate of batteries. This topic demonstrates how your app can get battery reports and be notified of changes. Code examples are from the basic battery app that's listed at the end of this topic.
 
 ## Get aggregate battery report
 
 
-Some devices have more than one battery and it's not always obvious how each battery contributes to the overall energy capacity of the device. This is where the [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) class comes in. The *aggregate battery* represents all battery controllers connected to the device and can provide a single overall [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) object.
+Some devices have more than one battery and it's not always obvious how each battery contributes to the overall energy capacity of the device. This is where the [**AggregateBattery**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.aggregatebattery) class comes in. The *aggregate battery* represents all battery controllers connected to the device and can provide a single overall [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) object.
 
-**Note**  A [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) class actually corresponds to a battery controller. Depending on the device, sometimes the controller is attached to the physical battery and sometimes it's attached to the device enclosure. Thus, it's possible to create a battery object even when no batteries are present. Other times, the battery object may be **null**.
+**Note**  A [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) class actually corresponds to a battery controller. Depending on the device, sometimes the controller is attached to the physical battery and sometimes it's attached to the device enclosure. Thus, it's possible to create a battery object even when no batteries are present. Other times, the battery object may be **null**.
 
-Once you have an aggregate battery object, call [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) to get the corresponding [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
+Once you have an aggregate battery object, call [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) to get the corresponding [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport).
 
 ```csharp
 private void RequestAggregateBatteryReport()
@@ -42,7 +42,7 @@ private void RequestAggregateBatteryReport()
 
 ## Get individual battery reports
 
-You can also create a [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) object for individual batteries. Use [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) with the [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) method to obtain a collection of [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects that represent any battery controllers that are connected to the device. Then, using the **Id** property of the desired **DeviceInformation** object, create a corresponding [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) with the [**FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) method. Finally, call [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) to get the individual battery report.
+You can also create a [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) object for individual batteries. Use [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getdeviceselector) with the [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) method to obtain a collection of [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) objects that represent any battery controllers that are connected to the device. Then, using the **Id** property of the desired **DeviceInformation** object, create a corresponding [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) with the [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.fromidasync) method. Finally, call [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) to get the individual battery report.
 
 This example shows how to create a battery report for all batteries connected to the device.
 
@@ -71,7 +71,7 @@ async private void RequestIndividualBatteryReports()
 
 ## Access report details
 
-The [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) object provides a lot of battery information. For more info, see the API reference for its properties: **Status** (a [**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) enumeration), [**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx), and [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). This example shows some of the battery report properties used by the basic battery app, that's provided later in this topic.
+The [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) object provides a lot of battery information. For more info, see the API reference for its properties: **Status** (a [**BatteryStatus**](https://docs.microsoft.com/previous-versions/windows/dn818458(v=win.10)) enumeration), [**ChargeRateInMilliwatts**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.chargerateinmilliwatts), [**DesignCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.designcapacityinmilliwatthours), [**FullChargeCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours), and [**RemainingCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). This example shows some of the battery report properties used by the basic battery app, that's provided later in this topic.
 
 ```csharp
 ...
@@ -85,7 +85,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## Request report updates
 
-The [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) object triggers the [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) event when charge, capacity, or status of the battery changes. This typically happens immediately for status changes and periodically for all other changes. This example shows how to register for battery report updates.
+The [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) object triggers the [**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated) event when charge, capacity, or status of the battery changes. This typically happens immediately for status changes and periodically for all other changes. This example shows how to register for battery report updates.
 
 ```csharp
 ...
@@ -95,7 +95,7 @@ Battery.AggregateBattery.ReportUpdated += AggregateBattery_ReportUpdated;
 
 ## Handle report updates
 
-When a battery update occurs, the [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) event passes the corresponding [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) object to the event handler method. However, this event handler is not called from the UI thread. You'll need to use the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) object to invoke any UI changes, as shown in this example.
+When a battery update occurs, the [**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated) event passes the corresponding [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) object to the event handler method. However, this event handler is not called from the UI thread. You'll need to use the [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) object to invoke any UI changes, as shown in this example.
 
 ```csharp
 async private void AggregateBattery_ReportUpdated(Battery sender, object args)
@@ -330,7 +330,7 @@ If your app isn't named **App1**, you'll need to rename the namespace in the pre
 
 Finally, to run this basic battery app: on the **Debug** menu, click **Start Debugging** to test the solution.
 
-**Tip**  To receive numeric values from the [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) object, debug your app on the **Local Machine** or an external **Device** (such as a Windows Phone). When debugging on a device emulator, the **BatteryReport** object returns **null** to the capacity and rate properties.
+**Tip**  To receive numeric values from the [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) object, debug your app on the **Local Machine** or an external **Device** (such as a Windows Phone). When debugging on a device emulator, the **BatteryReport** object returns **null** to the capacity and rate properties.
 
  
 

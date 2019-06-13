@@ -48,7 +48,7 @@ The **App** class inherits from the **IFrameworkView** class.
 
 ### Inspect **App.h**.
 
-Let's quickly look at the 5 methods in **App.h** &mdash; [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) when implementing the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) interface that defines a view provider. These methods are run by the app singleton that is created when your game is launched, and load all your app's resources as well as connect the appropriate event handlers.
+Let's quickly look at the 5 methods in **App.h** &mdash; [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), [**SetWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), [**Load**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), and [**Uninitialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) when implementing the [**IFrameworkView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run) interface that defines a view provider. These methods are run by the app singleton that is created when your game is launched, and load all your app's resources as well as connect the appropriate event handlers.
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -124,7 +124,7 @@ Launch the **manifest designer** by double-clicking the **Package.appxmanifest**
 
 ![screenshot of the package.appx manifest editor.](images/simple-dx-game-setup-app-manifest.png)
 
-For more info about the **package.appxmanifest** file and packaging, see [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). For now, take a look at the **Capabilities** tab and look at the options provided.
+For more info about the **package.appxmanifest** file and packaging, see [Manifest Designer](https://docs.microsoft.com/previous-versions/br230259(v=vs.140)). For now, take a look at the **Capabilities** tab and look at the options provided.
 
 ![screenshot with the default capabilities of a direct3d app.](images/simple-dx-game-setup-capabilities.png)
 

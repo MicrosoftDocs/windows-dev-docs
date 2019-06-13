@@ -224,7 +224,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows 10 devi
                 <div class="card">
                     <div class="cardText">
                         <h3>Related docs</h3>
-                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX packaging and deployment</a></p>
+                        <p><a href="/windows/msix">MSIX packaging and deployment</a></p>
                         <p><a href="https://docs.microsoft.com/dotnet/csharp/index">C# Guide</a></p>
                         <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>

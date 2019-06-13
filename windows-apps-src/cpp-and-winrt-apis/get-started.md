@@ -26,7 +26,6 @@ Edit `pch.h` and `main.cpp` to look like this.
 ```cppwinrt
 // pch.h
 #pragma once
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
@@ -58,7 +57,6 @@ int main()
 Let's take the short code example above piece by piece, and explain what's going on in each part.
 
 ```cppwinrt
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 ```

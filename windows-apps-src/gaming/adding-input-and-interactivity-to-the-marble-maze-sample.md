@@ -22,7 +22,7 @@ Here are some of the key points that this document discusses for when you work w
 
 -   When possible, support multiple input devices to enable your game to accommodate a wider range of preferences and abilities among your customers. Although game controller and sensor usage is optional, we strongly recommend it to enhance the player experience. We designed the game controller and sensor APIs to help you more easily integrate these input devices.
 
--   To initialize touch, you must register for window events such as when the pointer is activated, released, and moved. To initialize the accelerometer, create a [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) object when you initialize the application. The Xbox controller doesn't require initialization.
+-   To initialize touch, you must register for window events such as when the pointer is activated, released, and moved. To initialize the accelerometer, create a [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application. The Xbox controller doesn't require initialization.
 
 -   For single-player games, consider whether to combine input from all possible Xbox controllers. This way, you don’t have to track what input comes from which controller. Or, simply track input only from the most recently added controller, as we do in this sample.
 
@@ -50,7 +50,7 @@ Marble Maze supports the Xbox controller, mouse, and touch to select menu items,
 ## Initializing input devices
 
 
-The Xbox controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, the player presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) object when you initialize the application.
+The Xbox controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, the player presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) object when you initialize the application.
 
 The following example shows how the **App::SetWindow** method registers for the [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased), and [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved) pointer events. These events are registered during application initialization and before the game loop.
 
@@ -484,7 +484,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### Processing accelerometer input
 
-To process accelerometer input, the **MarbleMazeMain::Update** method calls the [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://msdn.microsoft.com/library/windows/apps/br225699) method. This method returns a [Windows::Devices::Sensors::AccelerometerReading](https://msdn.microsoft.com/library/windows/apps/br225688) object, which represents an accelerometer reading. The **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** and **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** properties hold the g-force acceleration along the X and Y axes, respectively.
+To process accelerometer input, the **MarbleMazeMain::Update** method calls the [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading) method. This method returns a [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading) object, which represents an accelerometer reading. The **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** and **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** properties hold the g-force acceleration along the X and Y axes, respectively.
 
 The following example shows how the **MarbleMazeMain::Update** method polls the accelerometer and updates the combined input values. As you tilt the device, gravity causes the marble to move faster.
 
@@ -542,7 +542,7 @@ Devices report input values in different ways. For example, pointer input might 
 
  
 
-After the **MarbleMazeMain::Update** method processes input, it creates a vector that represents the effect of the tilt of the maze on the marble. The following example shows how Marble Maze uses the [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) function to create a normalized gravity vector. The **maxTilt** variable constrains the amount by which the maze tilts and prevents the maze from tilting on its side.
+After the **MarbleMazeMain::Update** method processes input, it creates a vector that represents the effect of the tilt of the maze on the marble. The following example shows how Marble Maze uses the [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) function to create a normalized gravity vector. The **maxTilt** variable constrains the amount by which the maze tilts and prevents the maze from tilting on its side.
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;

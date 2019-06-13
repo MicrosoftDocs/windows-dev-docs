@@ -36,7 +36,7 @@ Load resources in your DirectX game topic guides you through the basic steps for
 <td align="left"><p>Create 2D graphics using DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D graphics learning guide</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D graphics learning guide</a></p></td>
 <td align="left"><p>Understand Direct3D graphics concepts.</p></td>
 </tr>
 <tr class="odd">

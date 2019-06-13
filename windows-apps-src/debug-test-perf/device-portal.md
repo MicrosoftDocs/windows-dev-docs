@@ -164,7 +164,7 @@ For more details on using ETW logging, see the [Use Device Portal to view debug 
 
 ### Performance tracing
 
-The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx) traces from the host device.
+The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
 
 ![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -173,7 +173,7 @@ The Performance tracing page allows you for view the [Windows Performance Record
 
 To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has finished downloading.
 
-Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx).
+Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### Device manager
 

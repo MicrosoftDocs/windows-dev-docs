@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
 > [!IMPORTANT]
-> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to implement trial functionality. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about implementing trial functionality using the **Windows.Services.Store** namespace, see [this article](implement-a-trial-version-of-your-app.md).
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to implement trial functionality. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about implementing trial functionality using the **Windows.Services.Store** namespace, see [this article](implement-a-trial-version-of-your-app.md).
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ A Windows app in which to add features for customers to buy.
 
 ## Step 1: Pick the features you want to enable or disable during the trial period
 
-The current license state of your app is stored as properties of the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
+The current license state of your app is stored as properties of the [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
 
 Also, decide how you want to handle changes to the app's license while the app is running. Your trial app can be full-featured, but have in-app ad banners where the paid-for version doesn't. Or, your trial app can disable certain features, or display regular messages asking the user to buy it.
 
@@ -57,9 +57,9 @@ If you want to detect the license change and take some action in your app, you m
 
 ## Step 2: Initialize the license info
 
-When your app is initializing, get the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) object for your app as shown in this example. We assume that **licenseInformation** is a global variable or field of type **LicenseInformation**.
+When your app is initializing, get the [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) object for your app as shown in this example. We assume that **licenseInformation** is a global variable or field of type **LicenseInformation**.
 
-For now, you will get simulated license information by using [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) instead of [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Before you submit the release version of your app to the **Store**, you must replace all **CurrentAppSimulator** references in your code with **CurrentApp**.
+For now, you will get simulated license information by using [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) instead of [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Before you submit the release version of your app to the **Store**, you must replace all **CurrentAppSimulator** references in your code with **CurrentApp**.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
@@ -107,14 +107,14 @@ After you test your app with the simulated license server, and before you submit
 
 Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior.
 
-For more info about describing your app, see [Create app descriptions](https://msdn.microsoft.com/library/windows/apps/mt148529).
+For more info about describing your app, see [Create app descriptions](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).
 
 ## Related topics
 
 * [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Set app pricing and availability](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [Set app pricing and availability](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)
+* [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
+* [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
  
 
  

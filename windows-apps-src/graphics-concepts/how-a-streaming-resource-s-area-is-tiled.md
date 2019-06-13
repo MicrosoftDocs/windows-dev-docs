@@ -42,11 +42,11 @@ The layout of data within a tile doesn't depend on where the tile is mapped in a
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D and Texture2DArray subresource tiling</a></p></td>
-<td align="left"><p>These tables show how <a href="https://msdn.microsoft.com/library/windows/desktop/ff471525"><strong>Texture2D</strong></a> and <a href="https://msdn.microsoft.com/library/windows/desktop/ff471526"><strong>Texture2DArray</strong></a> subresources are tiled.</p></td>
+<td align="left"><p>These tables show how <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d"><strong>Texture2D</strong></a> and <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray"><strong>Texture2DArray</strong></a> subresources are tiled.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="texture3d-subresource-tiling.md">Texture3D subresource tiling</a></p></td>
-<td align="left"><p>This table shows how <a href="https://msdn.microsoft.com/library/windows/desktop/ff471562"><strong>Texture3D</strong></a> subresources are tiled.</p></td>
+<td align="left"><p>This table shows how <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d"><strong>Texture3D</strong></a> subresources are tiled.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="buffer-tiling.md">Buffer tiling</a></p></td>

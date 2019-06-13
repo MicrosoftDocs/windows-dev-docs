@@ -5,6 +5,9 @@ title: Build desktop apps for Windows PCs
 ms.topic: landing-page
 ms.date: 04/18/2019
 keywords: windows win32, desktop development
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
 ---
 
 # Build desktop apps for Windows PCs
@@ -22,7 +25,7 @@ keywords: windows win32, desktop development
                     </div>
                     <div class="cardText">
                         <h3>Choose your platform</h3>
-                        <p></p>Learn about the app platforms for desktop Windows apps, including UWP, WPF, Windows Forms, and Win32.</p>
+                        <p></p>Get started building a new desktop app by choosing your app platform: UWP, WPF, Windows Forms, or Win32.</p>
                     </div>
                 </div>
             </div>
@@ -68,19 +71,19 @@ keywords: windows win32, desktop development
       </a>
     </li>
 </ul>
-    <ul class="cardsY panelContent featuredContent">
+<ul class="cardsY panelContent featuredContent">
        <li>
-            <a href="/windows/desktop/appxpkg/windows-desktop-application-program">
+            <a href="https://developer.microsoft.com/windows/downloads">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-performance.svg?branch=master" src="/media/common/i_code-performance.svg?branch=master" alt="Performance icon" />
+                                    <img data-hoverimage="/media/common/i_tools.svg?branch=master" src="/media/common/i_tools.svg?branch=master" alt="Tools icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Windows Desktop Application Program</h3>
+                                <h3>Download tools</h3>
                             </div>
                         </div>
                     </div>
@@ -88,17 +91,17 @@ keywords: windows win32, desktop development
             </a>
         </li>
         <li>
-            <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">
+            <a href="https://developer.microsoft.com/windows/samples">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-quality.svg?branch=master" src="/media/common/i_code-quality.svg?branch=master" alt="App compatibility icon" />
+                                    <img data-hoverimage="/media/common/i_code-samples.svg?branch=master" src="/media/common/i_code-samples.svg?branch=master" alt="Samples icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Stay compatible with Windows 10</h3>
+                                <h3>Samples</h3>
                             </div>
                         </div>
                     </div>
@@ -106,24 +109,24 @@ keywords: windows win32, desktop development
             </a>
         </li>
        <li>
-            <a href="https://developer.microsoft.com/windows/enterprise">
+            <a href="/windows/desktop/apiindex/api-index-portal">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
                                 <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_form.svg?branch=master" src="/media/common/i_form.svg?branch=master" alt="Enterprise icon" />
+                                    <img data-hoverimage="/media/common/i_api-reference.svg?branch=master" src="/media/common/i_api-reference.svg?branch=master" alt="API index icon" />
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Enterprise applications</h3>
+                                <h3>API index</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
         </li>
-    </ul>
+</ul>
 <hr />
 <h2>Platforms and features</h2>
 <ul class="cardsK panelContent">
@@ -241,6 +244,62 @@ keywords: windows win32, desktop development
         </div>
       </a>
     </li>
+</ul>
+<ul class="cardsY panelContent featuredContent">
+       <li>
+            <a href="/windows/desktop/appxpkg/windows-desktop-application-program">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-performance.svg?branch=master" src="/media/common/i_code-performance.svg?branch=master" alt="Performance icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Windows Desktop Application Program</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_code-quality.svg?branch=master" src="/media/common/i_code-quality.svg?branch=master" alt="App compatibility icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Stay compatible with Windows 10</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+       <li>
+            <a href="https://developer.microsoft.com/windows/enterprise">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="/media/common/i_form.svg?branch=master" src="/media/common/i_form.svg?branch=master" alt="Enterprise icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Enterprise applications</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
 </ul>
 <hr/>
 </div>

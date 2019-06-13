@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ---
 # Log custom events for Partner Center
 
-The [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in Partner Center lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.
+The [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) in Partner Center lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.
 
-To log a custom event from your app, pass the custom event string to the [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in Partner Center.
+To log a custom event from your app, pass the custom event string to the [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) in Partner Center.
 
 > [!NOTE]
-> Custom events that you log to Partner Center are unrelated to [Windows events](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), and they do not appear in **Event Viewer**.
+> Custom events that you log to Partner Center are unrelated to [Windows events](https://docs.microsoft.com/windows/desktop/Events/windows-events), and they do not appear in **Event Viewer**.
 
 ## Prerequisites
 
@@ -39,10 +39,10 @@ Before you can review custom logging events in the **Usage report** for your app
     [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
-    > The [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) may take a long time to load if your app logs many custom events with long names. We recommend that you use brief names for your custom events. 
+    > The [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) may take a long time to load if your app logs many custom events with long names. We recommend that you use brief names for your custom events. 
 
 ## Related topics
 
-* [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report)
 * [Log method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
-* [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

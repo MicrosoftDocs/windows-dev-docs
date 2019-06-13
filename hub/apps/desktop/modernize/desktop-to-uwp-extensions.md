@@ -5,6 +5,8 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -92,7 +94,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.
 
-To do that, you'll specify the [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) of each application from which you want to inherit file associations.
+To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) of each application from which you want to inherit file associations.
 
 #### XML namespaces
 
@@ -116,8 +118,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associated with your file type association. You can use this Id to manage changes in future versions of your app. |
-|MigrationProgId |The [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
+|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associated with your file type association. You can use this Id to manage changes in future versions of your app. |
+|MigrationProgId |The [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
 
 #### Example
 
@@ -175,7 +177,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associated with your file type association. You can use this Id to manage changes in future versions of your app.   |
+|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associated with your file type association. You can use this Id to manage changes in future versions of your app.   |
 |FileType |The file extension supported by your app. |
 
 #### Example
@@ -403,7 +405,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 Use an extension to identify those folders. That way, the system can find and load the files that you place in them. Think of this extension as a replacement of the _%PATH%_ environment variable.
 
-If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
 
 Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
 
@@ -458,6 +460,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Show file contents in a Preview pane of File Explorer](#preview)
 * [Enable users to group files by using the Kind column in File Explorer](#enable)
 * [Make file properties available to search, index, property dialogs, and the details pane](#make-file-properties)
+* [Specify a context menu handler for a file type](#context-menu)
 * [Make files from your cloud service appear in File Explorer](#cloud-files)
 
 <a id="define" />
@@ -666,7 +669,7 @@ You can associate one or more predefined values for your file types with the **K
 
 In File Explorer, users can group those files by using that field. System components also use this field for various purposes such as indexing.
 
-For more information about the **Kind** field and the values that you can use for this field, see [Using Kind Names](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx).
+For more information about the **Kind** field and the values that you can use for this field, see [Using Kind Names](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
 #### XML namespaces
 
@@ -695,7 +698,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |A unique Id for your app. |
 |FileType |The relevant file extensions. |
-|value |A valid [Kind value](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy) |
+|value |A valid [Kind value](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### Example
 
@@ -777,6 +780,104 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
             <desktop2:DesktopPropertyHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
           </uap3:FileTypeAssociation>
         </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+<a id="context-menu" />
+
+### Specify a context menu handler for a file type
+
+If your desktop application defines a [context menu handler](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers), use this extension to register the menu handler.
+
+#### XML namespaces
+
+* http://schemas.microsoft.com/appx/manifest/foundation/windows10
+* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+
+#### Elements and attributes of this extension
+
+```XML
+<Extensions>
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="[AppID]" DisplayName="[DisplayName]">
+                <com:Class Id="[Clsid]" Path="[Path]" ThreadingModel="[Model]"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type="[Type]">
+                <desktop4:Verb Id="[ID]" Clsid="[Clsid]" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+</Extensions>
+```
+
+Find the complete schema reference here: [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) and [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus).
+
+#### Instructions
+
+To register your context menu handler, follow these instructions.
+
+1. In your desktop application, implement a [context menu handler](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
+
+    ```cpp
+    class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
+    ```
+
+2. In your package manifest, specify a [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.
+
+    ```xml
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
+                <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    ```
+
+2. In your package manifest, specify a [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) application extension that registers your context menu handler implementation.
+
+    ```xml
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".rar">
+                <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+    ```
+
+#### Example
+
+```XML
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  IgnorableNamespaces="desktop4">
+  <Applications>
+    <Application>
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
+              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+          </com:ComServer>
+        </com:Extension>
+        <desktop4:Extension Category="windows.fileExplorerContextMenus">
+          <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".contoso">
+              <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+          </desktop4:FileExplorerContextMenus>
+        </desktop4:Extension>
       </Extensions>
     </Application>
   </Applications>
@@ -1062,8 +1163,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |The class ID of the application that implements the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
 |Parameters |You don't have to implement the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
 |DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
-|HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
-|InitCmdLine |The string parameter that you want to pass into the [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) method of the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
+|HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
+|InitCmdLine |The string parameter that you want to pass into the [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) method of the [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
 
 ### Example
 
@@ -1094,14 +1195,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 If your application is open when users install an update to it, the application closes.
 
-If you want that application to restart after the update completes, call the  [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function in every process that you want to restart.
+If you want that application to restart after the update completes, call the  [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function in every process that you want to restart.
 
-Each active window in your application receives a [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) message. At this point, your application can call the [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function again to update the command line if necessary.
+Each active window in your application receives a [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) message. At this point, your application can call the [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function again to update the command line if necessary.
 
-When each active window in your application receives the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message, your application should save data and shut down.
+When each active window in your application receives the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message, your application should save data and shut down.
 
 >[!NOTE]
-Your active windows also receive the [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) message in case the application doesn't handle the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message.
+Your active windows also receive the [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) message in case the application doesn't handle the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message.
 
 At this point, your application has 30 seconds to close it's own processes or the platform terminates them forcefully.
 

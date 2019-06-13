@@ -50,7 +50,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -69,7 +69,7 @@ For more in-depth information on conditions and types of background triggers, se
 
 ##  Call RequestAccessAsync()
 
-Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
+Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -126,9 +126,9 @@ var result = await _AppTrigger.RequestAsync();
 
 ## Manage resources for your background task
 
-Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.  
+Use [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.  
 
-- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
+- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
 - CPU time: Background tasks are limited by the amount of wall-clock usage time they get based on trigger type. Background tasks triggered by the Application trigger are limited to about 10 minutes.
 
 See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
@@ -137,7 +137,7 @@ See [Support your app with background tasks](support-your-app-with-background-ta
 
 Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks.
 
-A background task will only run using an **ApplicationTrigger** if you have called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) first.
+A background task will only run using an **ApplicationTrigger** if you have called [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) first.
 
 ## Related topics
 

@@ -207,8 +207,8 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## Related articles
 
 - [Keyboard interactions](keyboard-interactions.md)
-- [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
-- [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
+- [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [Custom automation peers](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
 **Samples**
 

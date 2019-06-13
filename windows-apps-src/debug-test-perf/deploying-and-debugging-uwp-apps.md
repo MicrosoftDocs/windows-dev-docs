@@ -87,7 +87,7 @@ To deploy to a pre-Creators Update remote PC, the target PC must have the Visual
 
 To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
-To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
+To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
 For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
 
@@ -174,7 +174,7 @@ For help with this, see the following examples:
   - **Layout folder path** = `\\NETWORK-SHARE\Layouts\App1`
   - **Package registration path** = `\\NETWORK-SHARE\Layouts\App1`
 
-When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command.
+When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command.
 
 You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device.
 
@@ -187,7 +187,7 @@ On the remote device, the layout gets registered to the following default locati
 
 ## Debugging options
 
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
+On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode.
 
 Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package** by selecting the **Activate app with Prelaunch** check box). For more information, see [Debug UWP Prelaunch](https://go.microsoft.com/fwlink/p/?LinkId=717245).
 
@@ -224,7 +224,7 @@ To load symbols in a debugging session with [WinDbg](#windbg), set the **sympath
 .reload
 ```
 
-You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://msdn.microsoft.com/library/windows/hardware/ff553493).
+You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## WinDbg
 
@@ -244,7 +244,7 @@ One of the most popular commands in WinDbg is `!analyze -v`, which is used to re
 - EXCEPTION_RECORD: address, code, and flags of the current exception
 - STACK_TEXT: stack trace prior to exception
 
-For a complete list of all WinDbg commands, see [Debugger Commands](https://msdn.microsoft.com/library/ff540507).
+For a complete list of all WinDbg commands, see [Debugger Commands](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
 
 ## Related topics
 

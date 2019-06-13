@@ -20,7 +20,6 @@ The code listing below shows a typical example of a coroutine that's a member fu
 // pch.h
 #pragma once
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.

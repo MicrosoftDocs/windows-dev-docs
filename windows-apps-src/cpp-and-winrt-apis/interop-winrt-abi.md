@@ -99,7 +99,7 @@ int main()
 }
 ```
 
-The implementations of the **as** functions call [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). If you want lower-level conversions that only call [**AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
+The implementations of the **as** functions call [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
 
 ```cppwinrt
 int main()
@@ -168,7 +168,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-The function simply calls [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) to query for the default interface of the requested C++/WinRT type.
+The function simply calls [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) to query for the default interface of the requested C++/WinRT type.
 
 As we've seen, a helper function is not required to convert from a C++/WinRT object to the equivalent ABI interface pointer. Simply use the [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) member function to query for the requested interface. The **as** and **try_as** functions return a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
 
@@ -239,8 +239,8 @@ int main()
 ```
 
 ## Important APIs
-* [AddRef function](https://msdn.microsoft.com/library/windows/desktop/ms691379)
-* [QueryInterface function](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)

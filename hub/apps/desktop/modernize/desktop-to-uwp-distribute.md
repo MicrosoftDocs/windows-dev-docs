@@ -5,12 +5,14 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
 # Distribute your packaged desktop app
 
-If you decide to [package your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), you can publish your packaged application to the Microsoft Store or sideload it onto one or more devices.
+If you decide to [package your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root), you can publish your packaged application to the Microsoft Store or sideload it onto one or more devices.
 
 > [!NOTE]
 > Do you have a plan for how you might transition users to your packaged application? Before you distribute your app, see the [Transition users to your packaged app](#transition-users) section of this guide to get some ideas.
@@ -21,12 +23,12 @@ The [Microsoft Store](https://www.microsoft.com/store/apps) is a convenient way 
 
 Publish your application to the Microsoft Store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
 
-If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named **runFullTrust**, and we need to approve your application's use of that capability. You can read more about this requirement here: [Restricted capabilities](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named **runFullTrust**, and we need to approve your application's use of that capability. You can read more about this requirement here: [Restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 You don't have to sign your application before you submit it to the Store.
 
 >[!IMPORTANT]
-> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load" />
 
@@ -38,7 +40,7 @@ This might make sense if you want greater control over the distribution experien
 
 To distribute your application to other devices without placing it in the Store, you have to obtain a certificate, sign your application by using that certificate, and then sideload your application onto those devices.
 
-You can [create a certificate](/windows/uwp/packaging/create-certificate-package-signing.md) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
+You can [create a certificate](/windows/uwp/packaging/create-certificate-package-signing) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
 
 If you plan to distribute your application onto devices that run Windows 10 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
 
@@ -47,9 +49,9 @@ If you create a certificate, you have to install it into the **Trusted Root** or
 > [!IMPORTANT]
 > Make sure that the publisher name on your certificate matches the publisher name of your app.
 
-To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md).
+To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
-To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
 **Videos**
 

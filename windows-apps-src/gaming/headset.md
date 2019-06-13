@@ -59,7 +59,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 The [Headset][] class is made up of two strings that represent XAudio endpoint IDs--one for audio capture (recording from the headset microphone) and one for audio rendering (playback through the headset earpiece).
 
-The details of working with XAudio are not discussed here, for more information see the [XAudio2 programming guide](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) and [XAudio2 API reference](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
+The details of working with XAudio are not discussed here, for more information see the [XAudio2 programming guide](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) and [XAudio2 API reference](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx

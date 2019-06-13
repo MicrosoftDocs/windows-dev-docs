@@ -17,7 +17,7 @@ In most cases, you have to specify the **removableStorage** capability in the ap
 
 You can store and access files on the optional SD card by using the following methods:
 - File pickers.
-- The [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) APIs.
+- The [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) APIs.
 
 ## What you can and can't access on the SD card
 
@@ -30,7 +30,7 @@ You can store and access files on the optional SD card by using the following me
 
 - Your app can't see or access system folders and the files that they contain.
 - Your app can't see files that are marked with the Hidden attribute. The Hidden attribute is typically used to reduce the risk of deleting data accidentally.
-- Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). However you can access the Documents library on the SD card by traversing the file system.
+- Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary). However you can access the Documents library on the SD card by traversing the file system.
 
 ## Security and privacy considerations
 
@@ -39,7 +39,7 @@ When an app saves files in a global location on the SD card, those files are not
 - While the SD card is in the device, your files are accessible to other apps that have registered to handle the same file type.
 - When the SD card is removed from the device and opened from a PC, your files are visible in File Explorer and accessible to other apps.
 
-When an app installed on the SD card saves files in its [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), however, those files are encrypted and are not accessible to other apps.
+When an app installed on the SD card saves files in its [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder), however, those files are encrypted and are not accessible to other apps.
 
 ## Requirements for accessing files on the SD card
 
@@ -56,9 +56,9 @@ To access media files stored in the media librariesâ€”Music, Photos, or Videosâ€
 
 ### Getting a reference to the SD card
 
-The [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) folder is the logical root [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) for the set of removable devices currently connected to the device. If an SD card is present, the first (and only) **StorageFolder** underneath the **KnownFolders.RemovableDevices** folder represents the SD card.
+The [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) folder is the logical root [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) for the set of removable devices currently connected to the device. If an SD card is present, the first (and only) **StorageFolder** underneath the **KnownFolders.RemovableDevices** folder represents the SD card.
 
-Use code like the following to determine whether an SD card is present and to get a reference to it as a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
+Use code like the following to determine whether an SD card is present and to get a reference to it as a [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder).
 
 ```csharp
 using Windows.Storage;
@@ -84,16 +84,16 @@ else
 
 ### Querying the contents of the SD card
 
-The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) to get the contents of the SD card efficiently.
+The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) to get the contents of the SD card efficiently.
 
 We recommend that you use a background thread to traverse the SD card. An SD card may contain many gigabytes of data.
 
 Your app can also require the user to choose specific folders by using the folder picker.
 
-When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), the following methods behave in the following way.
+When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices), the following methods behave in the following way.
 
--   The [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
--   The [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) method fails if you have not registered to handle the file extension of the file you are trying to access.
+-   The [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
+-   The [**GetFileFromPathAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) method fails if you have not registered to handle the file extension of the file you are trying to access.
 
 ## Identifying the individual SD card
 

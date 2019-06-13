@@ -28,7 +28,7 @@ ms.localizationpriority: medium
                         <ul>
                             <li><a href="app-submissions.md">App submission checklist</a></li>
                             <li><a href="the-app-certification-process.md">The certification process</a></li>                      
-                            <li><a href="//docs.microsoft.com/legal/windows/agreements/store-policies">Microsoft Store Policies</a></li>   
+                            <li><a href="store-policies.md">Microsoft Store Policies</a></li>   
                         </ul>
                     </div>
                 </div>

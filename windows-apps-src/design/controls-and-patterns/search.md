@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 
-> **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **Important APIs**: [AutoSuggestBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## Elements of the search experience
 

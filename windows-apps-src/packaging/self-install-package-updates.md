@@ -24,10 +24,10 @@ This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpda
 
 This code example assumes:
 
-* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
-* The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.
+* The code runs in the context of a [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page).
+* The **Page** contains a [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar) named ```downloadProgressBar``` to provide status for the download operation.
 * The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 ```csharp
 private StoreContext context = null;
@@ -93,7 +93,7 @@ This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpda
 
 This code example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 > [!NOTE]
 > The **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater**, and **RetryInstallLater** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.
@@ -324,7 +324,7 @@ Starting in Windows 10, version 1803, you can use the [RequestUninstallStorePack
 
 The following code example demonstrates how to call [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). This example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -367,7 +367,7 @@ Starting in Windows 10, version 1803, you can use the [GetAssociatedStoreQueueIt
 
 The following code example demonstrates how to call [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) to get the list of in-progress package updates for the current app and retrieve status info for each package. This example assumes:
 * The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.
 
 > [!NOTE]
 > The **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI**, and **MarkInstallPausedInUI** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.

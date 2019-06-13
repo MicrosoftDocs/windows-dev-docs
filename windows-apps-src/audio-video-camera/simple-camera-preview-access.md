@@ -26,7 +26,7 @@ In order for your app to access a device's camera, you must declare that your ap
 
 ## Add a CaptureElement to your page
 
-Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) to display the preview stream within your XAML page.
+Use a [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) to display the preview stream within your XAML page.
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
@@ -34,7 +34,7 @@ Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209
 
 ## Use MediaCapture to start the preview stream
 
-The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) and [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) namespaces, in addition to those included by the default project template.
+The [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) and [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) namespaces, in addition to those included by the default project template.
 
 Add using directives to include the following namespaces in your page's .cs file.
 
@@ -44,19 +44,19 @@ Declare a class member variable for the **MediaCapture** object and a boolean to
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Declare a variable of type [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest) that will be used to make sure the display does not turn off while the preview is running.
+Declare a variable of type [**DisplayRequest**](https://docs.microsoft.com/uwp/api/Windows.System.Display.DisplayRequest) that will be used to make sure the display does not turn off while the preview is running.
 
 [!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
 
 Create a helper method to start up the camera preview, called **StartPreviewAsync** in this example. Depending on your app's scenario, you may want to call this from the **OnNavigatedTo** event handler that is called when the page is loaded or wait and launch the preview in response to UI events.
 
-Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
+Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
 
-**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
+**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
 
-Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property. Start the preview by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613). This method will throw a **FileLoadException** if another app has exclusive control of the capture device. See the next section for information listening for changes in exclusive control.
+Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.captureelement.source) property. Start the preview by calling [**StartPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startpreviewasync). This method will throw a **FileLoadException** if another app has exclusive control of the capture device. See the next section for information listening for changes in exclusive control.
 
-Call [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) to make sure the device doesn't go to sleep while the preview is running. Finally, set the [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) property to [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) to prevent the UI and the **CaptureElement** from rotating when the user changes the device orientation. For more information on handling device orientation changes, see [**Handle device orientation with MediaCapture**](handle-device-orientation-with-mediacapture.md).  
+Call [**RequestActive**](https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest.requestactive) to make sure the device doesn't go to sleep while the preview is running. Finally, set the [**DisplayInformation.AutoRotationPreferences**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) property to [**Landscape**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) to prevent the UI and the **CaptureElement** from rotating when the user changes the device orientation. For more information on handling device orientation changes, see [**Handle device orientation with MediaCapture**](handle-device-orientation-with-mediacapture.md).  
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
@@ -69,23 +69,23 @@ As stated in the previous section, **StartPreviewAsync** will throw a **FileLoad
 
 When you are done using the preview stream, you should always shut down the stream and properly dispose of the associated resources to ensure that the camera is available to other apps on the device. The required steps for shutting down the preview stream are:
 
--   If the camera is currently previewing, call [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) to stop the preview stream. An exception will be thrown if you call **StopPreviewAsync** while the preview is not running.
--   Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property of the **CaptureElement** to null. Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) to make sure this call is executed on the UI thread.
--   Call the **MediaCapture** object's [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) method to release the object. Again, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) to make sure this call is executed on the UI thread.
+-   If the camera is currently previewing, call [**StopPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.stoppreviewasync) to stop the preview stream. An exception will be thrown if you call **StopPreviewAsync** while the preview is not running.
+-   Set the [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.captureelement.source) property of the **CaptureElement** to null. Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to make sure this call is executed on the UI thread.
+-   Call the **MediaCapture** object's [**Dispose**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.dispose) method to release the object. Again, use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to make sure this call is executed on the UI thread.
 -   Set the **MediaCapture** member variable to null.
--   Call [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) to allow the screen to turn off when inactive.
+-   Call [**RequestRelease**](https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest.requestrelease) to allow the screen to turn off when inactive.
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) method.
+You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) method.
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event in your page's constructor.
+You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending) event in your page's constructor.
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) by comparing the page type to the [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method to let the system continue suspending your app.
+In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) by comparing the page type to the [**CurrentSourcePageType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.SuspendingDeferral) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.suspendingdeferral.complete) method to let the system continue suspending your app.
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 

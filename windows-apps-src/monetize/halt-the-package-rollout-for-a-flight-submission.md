@@ -43,7 +43,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission with the package rollout you want to halt. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | string | Required. The Store ID of the app that contains the package flight submission with the package rollout you want to halt. For more information about the Store ID, see [View app identity details](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | string | Required. The ID of the package flight that contains the submission with the package rollout you want to halt. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in Partner Center, this ID is also available in the URL for the flight page in Partner Center.   |
 | submissionId | string | Required. The ID of the submission with the package rollout to halt. This ID is available in the response data for requests to [create a package flight submission](create-a-flight-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 

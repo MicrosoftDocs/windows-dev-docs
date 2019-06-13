@@ -19,5 +19,5 @@ We offer [individual and company accounts in locations around the world](../publ
 
 ## Have a name for your app?
 
-As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).
+As soon as you open your developer account, you can [create your app by reserving a name](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 

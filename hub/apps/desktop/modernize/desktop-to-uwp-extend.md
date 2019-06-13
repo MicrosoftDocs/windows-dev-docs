@@ -4,6 +4,8 @@ title: Extend your desktop application with Windows UIs and components
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -168,7 +170,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 
 ### Start the UWP app
 
-First, from your desktop application, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
+First, from your desktop application, create a [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
 
 ```csharp
 

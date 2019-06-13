@@ -41,7 +41,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to create a package flight. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | string | Required. The Store ID of the app for which you want to create a package flight. For more information about the Store ID, see [View app identity details](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### Request body
@@ -51,8 +51,8 @@ The request body has the following parameters.
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  friendlyName  |  string  |  The name of the package flight, as specified by the developer.  |  No  |
-|  groupIds  |  array  |  An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |  No  |
-|  rankHigherThan  |  string  |  The friendly name of the package flight that is ranked immediately lower than the current package flight. If you do not set this parameter, the new package flight will have the highest rank of all package flights. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).    |  No  |
+|  groupIds  |  array  |  An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |  No  |
+|  rankHigherThan  |  string  |  The friendly name of the package flight that is ranked immediately lower than the current package flight. If you do not set this parameter, the new package flight will have the highest rank of all package flights. For more information about ranking flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).    |  No  |
 
 
 ### Request example
@@ -94,8 +94,8 @@ The following example demonstrates the JSON response body for a successful call 
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | string  | The ID for the package flight. This value is supplied by Partner Center.  |
 | friendlyName           | string  | The name of the package flight, as specified in the request.   |  
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight, as specified in the request. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight, as specified in the request. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight, as specified in the request. For more information about flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight, as specified in the request. For more information about ranking flight groups, see [Package flights](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 ## Error codes

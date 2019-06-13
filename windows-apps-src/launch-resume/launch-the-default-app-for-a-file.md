@@ -11,17 +11,17 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+-   [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)
 
-Learn how to launch the default app for a file. Many apps need to work with files that they can't handle themselves. For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers. These steps show how to use the [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API to launch the default handler for a file that your app can't handle itself.
+Learn how to launch the default app for a file. Many apps need to work with files that they can't handle themselves. For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers. These steps show how to use the [**Windows.System.Launcher**](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) API to launch the default handler for a file that your app can't handle itself.
 
 ## Get the file object
 
-First, get a [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the file.
+First, get a [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) object for the file.
 
-If the file is included in the package for your app, you can use the [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) property to get a [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object and the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+If the file is included in the package for your app, you can use the [**Package.InstalledLocation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation) property to get a [**Windows.Storage.StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) object and the [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) method to get the [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) object.
 
-If the file is in a known folder, you can use the properties of the [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class to get a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) and the [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+If the file is in a known folder, you can use the properties of the [**Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) class to get a [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) and the [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) method to get the [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) object.
 
 ## Launch the file
 
@@ -29,14 +29,14 @@ Windows provides several different options for launching the default handler for
 
 | Option | Method | Description |
 |--------|--------|-------------|
-| Default launch | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Launch the specified file with the default handler. |
-| Open With launch | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Launch the specified file letting the user pick the handler through the Open With dialog. |
-| Launch with a recommended app fallback | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Launch the specified file with the default handler. If no handler is installed on the system, recommend an app in the store to the user. |
-| Launch with a desired remaining view | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | Launch the specified file with the default handler. Specify a preference to stay on screen after the launch and request a specific window size. [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family. |
+| Default launch | [**LaunchFileAsync(IStorageFile)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) | Launch the specified file with the default handler. |
+| Open With launch | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Launch the specified file letting the user pick the handler through the Open With dialog. |
+| Launch with a recommended app fallback | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Launch the specified file with the default handler. If no handler is installed on the system, recommend an app in the store to the user. |
+| Launch with a desired remaining view | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) (Windows-only) | Launch the specified file with the default handler. Specify a preference to stay on screen after the launch and request a specific window size. [**LauncherOptions.DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) isn't supported on the mobile device family. |
 
 ### Default launch
 
-Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) method to launch the default app. This example uses the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to launch an image file, test.png, that is included in the app package.
+Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) method to launch the default app. This example uses the [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) method to launch an image file, test.png, that is included in the app package.
 
 ```csharp
 async void DefaultLaunch()
@@ -149,7 +149,7 @@ void MainPage::DefaultLaunch()
 
 ### Open With launch
 
-Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) set to **true** to launch the app that the user selects from the **Open With** dialog box.
+Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) method with [**LauncherOptions.DisplayApplicationPicker**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.displayapplicationpicker) set to **true** to launch the app that the user selects from the **Open With** dialog box.
 
 We recommend that you use the **Open With** dialog box when the user may want to select an app other than the default for a particular file. For example, if your app allows the user to launch an image file, the default handler will likely be a viewer app. In some cases, the user may want to edit the image instead of viewing it. Use the **Open With** option along with an alternative command in the **AppBar** or in a context menu to let the user bring up the **Open With** dialog and select the editor app in these types of scenarios.
 
@@ -283,7 +283,7 @@ void MainPage::DefaultLaunch()
 
 **Launch with a recommended app fallback**
 
-In some cases the user may not have an app installed to handle the file that you are launching. By default, Windows will handle these cases by providing the user with a link to search for an appropriate app on the store. If you would like to give the user a specific recommendation for which app to acquire in this scenario, you may do so by passing that recommendation along with the file that you are launching. To do this, call the [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) set to the package family name of the app in the Store that you want to recommend. Then, set the [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) to the name of that app. Windows will use this information to replace the general option to search for an app in the store with a specific option to acquire the recommended app from the Store.
+In some cases the user may not have an app installed to handle the file that you are launching. By default, Windows will handle these cases by providing the user with a link to search for an appropriate app on the store. If you would like to give the user a specific recommendation for which app to acquire in this scenario, you may do so by passing that recommendation along with the file that you are launching. To do this, call the [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) method with [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) set to the package family name of the app in the Store that you want to recommend. Then, set the [**LauncherOptions.PreferredApplicationDisplayName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname) to the name of that app. Windows will use this information to replace the general option to search for an app in the store with a specific option to acquire the recommended app from the Store.
 
 > [!NOTE]
 > You must set both of these options to recommend an app. Setting one without the other will result in a failure.
@@ -428,12 +428,12 @@ void MainPage::DefaultLaunch()
 
 ### Launch with a Desired Remaining View (Windows-only)
 
-Source apps that call [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) can request that they remain on screen after a file launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the file. Source apps can use the [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app does not need to remain on screen after the file launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
+Source apps that call [**LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) can request that they remain on screen after a file launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the file. Source apps can use the [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app does not need to remain on screen after the file launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
 
 > [!NOTE]
-> Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), you aren't guaranteed a specific windowing behavior for the source app.
+> Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), you aren't guaranteed a specific windowing behavior for the source app.
 
-**Mobile device family:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family.
+**Mobile device family:  **[**LauncherOptions.DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) isn't supported on the mobile device family.
 
 ```csharp
 async void DefaultLaunch()
@@ -553,9 +553,9 @@ If you try to launch a restricted file type, the launch will fail and your error
 
 ### Guidelines
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Guidelines for file types and URIs](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### Reference
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+* [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+* [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)

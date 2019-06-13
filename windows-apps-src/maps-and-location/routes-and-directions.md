@@ -15,7 +15,7 @@ Request routes and directions, and display them in your app.
 
 >[!Note]
 >To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977).
->If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://msdn.microsoft.com/library/windows/apps/mt228341).
+>If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## An intro to MapRouteFinder results
@@ -23,15 +23,15 @@ Request routes and directions, and display them in your app.
 
 Here's how the classes for routes and directions are related:
 
-* The [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class has methods that get routes and directions. These methods return a [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
+* The [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) class has methods that get routes and directions. These methods return a [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult).
 
-* The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object. Access this object through the [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property of the **MapRouteFinderResult**.
+* The [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) contains a [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) object. Access this object through the [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) property of the **MapRouteFinderResult**.
 
-* The [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) contains a collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects. Access this collection through the [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) property of the **MapRoute**.
+* The [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) contains a collection of [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) objects. Access this collection through the [**Legs**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs) property of the **MapRoute**.
 
-* Each [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. Access this collection through the [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) property of the **MapRouteLeg**.
+* Each [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) contains a collection of [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) objects. Access this collection through the [**Maneuvers**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers) property of the **MapRouteLeg**.
 
-Get a driving or walking route and directions by calling the methods of the [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class. For example, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) or [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953).
+Get a driving or walking route and directions by calling the methods of the [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) class. For example, [**GetDrivingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getdrivingrouteasync) or [**GetWalkingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getwalkingrouteasync).
 
 When you request a route, you can specify the following things:
 
@@ -47,9 +47,9 @@ When you request a route, you can specify the following things:
 
 ## Display directions
 
-The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) object contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object that you can access through its [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property.
+The [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) object contains a [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) object that you can access through its [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) property.
 
-The computed [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) has properties that provide the time to traverse the route, the length of the route, and the collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects that contain the legs of the route. Each **MapRouteLeg** object contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. The **MapRouteManeuver** object contains directions that you can access through its [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) property.
+The computed [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) has properties that provide the time to traverse the route, the length of the route, and the collection of [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) objects that contain the legs of the route. Each **MapRouteLeg** object contains a collection of [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) objects. The **MapRouteManeuver** object contains directions that you can access through its [**InstructionText**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver.instructiontext) property.
 
 >[!IMPORTANT]
 >You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
@@ -132,7 +132,7 @@ You have reached your destination.
 ## Display routes
 
 
-To display a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), construct a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) with the **MapRoute**. Then, add the **MapRouteView** to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the **MapControl**.
+To display a [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) on a [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), construct a [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) with the **MapRoute**. Then, add the **MapRouteView** to the [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) collection of the **MapControl**.
 
 >[!IMPORTANT]
 >You must specify a maps authentication key before you can use map services or the map control. For more info, see [Request a maps authentication key](authentication-key.md).
@@ -184,7 +184,7 @@ private async void ShowRouteOnMap()
 }
 ```
 
-This example displays the following on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) named **MapWithRoute**.
+This example displays the following on a [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) named **MapWithRoute**.
 
 ![map control with route displayed.](images/routeonmap.png)
 
@@ -237,6 +237,6 @@ private async void ShowRouteOnMap()
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP traffic app sample](https://go.microsoft.com/fwlink/p/?LinkId=619982)
