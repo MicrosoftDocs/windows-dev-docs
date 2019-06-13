@@ -211,7 +211,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows 10 devi
                 <div class="card">
                     <div class="cardText">
                         <h3>New to development?</h3>
-                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
+                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
                         <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
                         </div>
                     </div>

@@ -121,7 +121,6 @@ In addition to interaction on different devices, [plan your app](https://docs.mi
 
 - Use [cloud services](https://go.microsoft.com/fwlink/?LinkId=526377) to sync across devices.
 - Learn how to [connect to web services](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
-- Learn how to [Add Cortana to your app](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) so that your app can respond to voice commands.
 - Include [Push notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) and [in-app purchases](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) in your planning. These features should work across devices.
 
 ### Submit your app to the Store
