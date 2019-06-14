@@ -1,5 +1,5 @@
 ---
-Description: ???.
+Description: Use UTF-8 character encoding for optimal compatibility between web apps and other non-packaged platforms, minimize localization bugs, and reduce testing overhead.
 title: Use the UTF-8 code page
 template: detail.hbs
 ms.date: 06/12/2019
