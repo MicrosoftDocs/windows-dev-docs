@@ -9,7 +9,9 @@ ms.topic: article
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
+
 # Localize strings in your UI and app package manifest
+
 For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
 
 If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
@@ -18,7 +20,8 @@ Hardcoded string literals can appear in imperative code or in XAML markup, for e
 
 Unlike image resources, where only one image resource is contained in an image resource file, *multiple* string resources are contained in a string resource file. A string resource file is a Resources File (.resw), and you typically create this kind of resource file in a \Strings folder in your project. For background on how to use qualifiers in the names of your Resources Files (.resw), see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
-## Create a Resources File (.resw) and put your strings in it
+## Store strings in a resources file
+
 1. Set your app's default language.
     1. With your solution open in Visual Studio, open `Package.appxmanifest`.
     2. On the Application tab, confirm that the Default language is set appropriately (for example, "en" or "en-US"). The remaining steps will assume that you have set the default language to "en-US".
@@ -28,7 +31,7 @@ Unlike image resources, where only one image resource is contained in an image r
     2. Under `Strings`, create a new sub-folder and name it "en-US".
     3. Under `en-US`, create a new Resources File (.resw) and confirm that it is named "Resources.resw".
     <br>**Note** If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
-3.  Open `Resources.resw` and add these string resources.
+3. Open `Resources.resw` and add these string resources.
 
     `Strings/en-US/Resources.resw`
 
@@ -40,7 +43,8 @@ Unlike image resources, where only one image resource is contained in an image r
 
     Resource identifiers are case insensitive, and must be unique per resource file. Be sure to use meaningful resource identifiers to provide additional context for translators. And don't change the resource identifiers after the string resources are sent for translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers&mdash;which is also known as "resource identifiers shift"&mdash;require strings to be retranslated, because it will appear as though strings were deleted and others added.
 
-## Refer to a string resource identifier from XAML markup
+## Refer to a string resource identifier from XAML
+
 You use an [x:Uid directive](../xaml-platform/x-uid-directive.md) to associate a control or other element in your markup with a string resource identifier.
 
 ```xaml
@@ -60,6 +64,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## Refer to a string resource identifier from code
+
 You can explicitly load a string resource based on a simple string resource identifier.
 
 > [!NOTE]
@@ -95,7 +100,8 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 ```
 
 ## Refer to a string resource identifier from your app package manifest
-1. Open your app package manifest source file (the `Package.appxmanifest` file), in which by default your app's Display name is expressed as a string literal.
+
+1. Open your app package manifest source file (the `Package.appxmanifest` file), in which by default your app's `Display name` is expressed as a string literal.
 
    ![add resource, english](images/display-name-before.png)
 
@@ -108,6 +114,7 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 4. Repeat this process for each string in your manifest that you want to localize. For example, your app's Short name (which you can configure to appear on your app's tile on Start). For a list of all items in the app package manifest that you can localize, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
 ## Localize the string resources
+
 1. Make a copy of your Resources File (.resw) for another language.
     1. Under "Strings", create a new sub-folder and name it "de-DE" for Deutsch (Deutschland).
    <br>**Note** For the folder name, you can use any [BCP-47 language tag](https://go.microsoft.com/fwlink/p/?linkid=227302). See [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) for details on the language qualifier and a list of common language tags.
@@ -126,11 +133,13 @@ If you like, you can repeat steps 1 and 2 for a further language.
 ![add resource, french](images/addresource-fr-fr.png)
 
 ## Test your app
+
 Test the app for your default display language. You can then change the display language in **Settings** > **Time & Language** > **Region & language** > **Languages** and re-test your app. Look at strings in your UI and also in the shell (for example, your title bar&mdash;which is your Display name&mdash;and the Short name on your tiles).
 
 **Note** If a folder name can be found that matches the display language setting, then the Resources File inside that folder is loaded. Otherwise, fallback takes place, ending with the resources for your app's default language.
 
 ## Factoring strings into multiple Resources Files
+
 You can keep all of your strings in a single Resources File (resw), or you can factor them across multiple Resources Files. For example, you might want to keep your error messages in one Resources File, your app package manifest strings in another, and your UI strings in a third. This is what your folder structure would look like in that case.
 
 ![add resource, english](images/manifest-resources.png)
@@ -178,6 +187,7 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 ```
 
 ## Load a string for a specific language or other context
+
 The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Resources Files (.resw) are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching Resources File to load. For example, you might want your users to be able to select an alternative language for tooltips or error messages.
@@ -212,6 +222,7 @@ Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 ```
 
 ## Updating strings in response to qualifier value change events
+
 Your running app can respond to changes in system settings that affect the qualifier values in the default **ResourceContext**. Any of these system settings invokes the [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) event on [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
 In response to this event, you can reload your strings from the default **ResourceContext**.
@@ -219,32 +230,32 @@ In response to this event, you can reload your strings from the default **Resour
 ```csharp
 public MainPage()
 {
-	this.InitializeComponent();
+    this.InitializeComponent();
 
-	...
+    ...
 
-	// Subscribe to the event that's raised when a qualifier value changes.
-	var qualifierValues = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
-	qualifierValues.MapChanged += new Windows.Foundation.Collections.MapChangedEventHandler<string, string>(QualifierValues_MapChanged);
+    // Subscribe to the event that's raised when a qualifier value changes.
+    var qualifierValues = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
+    qualifierValues.MapChanged += new Windows.Foundation.Collections.MapChangedEventHandler<string, string>(QualifierValues_MapChanged);
 }
 
 private async void QualifierValues_MapChanged(IObservableMap<string, string> sender, IMapChangedEventArgs<string> @event)
 {
-	var dispatcher = this.myXAMLTextBlockElement.Dispatcher;
-	if (dispatcher.HasThreadAccess)
-	{
-		this.RefreshUIText();
-	}
-	else
-	{
-		await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.RefreshUIText());
-	}
+    var dispatcher = this.myXAMLTextBlockElement.Dispatcher;
+    if (dispatcher.HasThreadAccess)
+    {
+        this.RefreshUIText();
+    }
+    else
+    {
+        await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.RefreshUIText());
+    }
 }
 
 private void RefreshUIText()
 {
-	var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
-	this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
+    var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+    this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 }
 ```
 
@@ -277,45 +288,38 @@ The resources for an app package are managed and accessed through the package's 
 
 A framework package can access its own resources with an absolute resource identifier URI. Also see [URI schemes](uri-schemes.md).
 
-## Loading strings from non-packaged applications
+## Loading strings in non-packaged applications
 
-To get better interopability between web apps and other non-packaged platforms, minimize localization bugs, and reduce testing overhead, follow these steps:
+As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resources File management system.
 
-1. Design your UWP user controls/libraries in the usual way, leveraging x:Uid in XAML or subtrees in code behind to resolve resources with resw. For example:
-    - `<MenuFlyoutItem x:Uid="Option1"/>`
-    - `ResourceManager.Current.MainResourceMap.GetSubtree("ManagedWinRT\\Resources").GetValue("Header").ValueAsString`
-    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetString("Header")`
-    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))`
-    - `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))`
-        > [!NOTE]
-        > To support non-packaged scenarios, use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: Resource Contexts may not be created on threads that do not have a CoreWindow.
-1. Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of <OUTPUTFILE>`
+Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file) and then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml) or [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code) as shown here:
+
+- `<MenuFlyoutItem x:Uid="Option1"/>`
+- `ResourceManager.Current.MainResourceMap.GetSubtree("ManagedWinRT\\Resources").GetValue("Header").ValueAsString`
+- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetString("Header")`
+- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))`
+- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))`
+    > [!NOTE]
+    > To support non-packaged scenarios, use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: Resource Contexts may not be created on threads that do not have a CoreWindow.
+
+To use resources in non-packaged applications, you should do a few things:
+
+1. Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
     - The default priconfig of [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes the PRI indexer which merges all PRIs found under the project root.
     - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this).
     - [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) merges PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
-        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set  to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID).
+        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set  to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID). However, you can specify root namespace explicitly as follows:
+        > -	ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))
+        > -	ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))
 1. Copy the PRI file to the build output directory of the .exe
-1. Run the .exe
+1. Run the .exe 
     > [!NOTE]
-    > MRT uses the display language rather than the UPLL to be consistent with the host
+    > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
+1. You can add a manifest to an existing executable via the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
-Here's an example of a fusion manifest for an unpackaged Win32 app:
-
-``` xaml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity type="win32" name="..." version="6.0.0.0"/>
-  <application>
-    <windowsSettings>
-      <activeCodePage xmlns="http://schemas.microsoft.com/SMI/2019/WindowsSettings">UTF-8</activeCodePage>
-    </windowsSettings>
-  </application>
-</assembly>
-```
-
-> [!NOTE]
-> You can add a manifest to an existing executable via the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+> [!Important]
+> You must manually rebuild PRI files if the content of the resource file changes, such as a post-build script that handles the makepri command and copies the resources.pri output to the .exe directory.
 
 ## Important APIs
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
