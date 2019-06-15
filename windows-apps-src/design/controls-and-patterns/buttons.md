@@ -20,33 +20,35 @@ A button gives the user a way to trigger an immediate action. Some buttons are s
 
 ![Example of buttons](images/controls/button.png)
 
-The XAML framework provides a standard button control as well as several specialized button controls.
+The [Extensible Application Markup Language (XAML)](/uwp/xaml-platform/xaml-overview.md) framework provides a standard button control as well as several specialized button controls.
 
 Control | Description
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Initiates an immediate action. Can be used with a Click event or Command binding.
-[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a Click event continuously while pressed.
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink, used for navigation. See [Hyperlinks](hyperlinks.md) for more info.
+[Button](/uwp/api/windows.ui.xaml.controls.button) | A button that initiates an immediate action. Can be used with a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click.md) event or [Command](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command.md) binding.
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click.md) event continuously while pressed.
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
 
 | **Get the Windows UI Library** |
 | - |
-| DropDownButton, SplitButton, and ToggleSplitButton are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
-| [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton class](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton class](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton class](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## Is this the right control?
 
 Use a **Button** to let the user initiate an immediate action, such as submitting a form.
 
-Don't use a button when the action is to navigate to another page; use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) instead. See [Hyperlinks](hyperlinks.md) for more info.
-> Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
+Don't use a **Button** when the action is to navigate to another page; instead, use a **[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)**. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
-Use a **RepeatButton** when the user might want to trigger an action repeatedly. For example, use a RepeatButton to increment or decrement a value in a counter.
+> [!EXCEPTION]
+> For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
+
+Use a **RepeatButton** when the user might want to trigger an action repeatedly. For example, use a **RepeatButton** to increment or decrement a value in a counter.
 
 Use a **DropDownButton** when the button has a flyout that contains more options. The default chevron provides a visual indication that the button includes a flyout.
 
@@ -68,7 +70,7 @@ Use a **SplitButton** when you want the user to be able to initiate an immediate
 </tr>
 </table>
 
-This example uses two buttons, Allow and Block, in a dialog requesting location access.
+This example uses two buttons, **Allow** and **Block**, in a dialog that requests location access.
 
 ![Example of buttons, used in a dialog](images/dialogs/dialog_RS2_two_button.png)
 
@@ -93,7 +95,7 @@ subscribeButton.Click += SubscribeButton_Click;
 stackPanel1.Children.Add(subscribeButton);
 ```
 
-Handle the Click event.
+Handle the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click.md) event.
 
 ```csharp
 private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
@@ -114,23 +116,23 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### Button interaction
 
-When you tap a Button with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the Click event.
+When you tap a **Button** with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the **Click** event.
 
-You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+You generally can't handle low-level **[PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)** events on a **Button** because it has the **Click** behavior instead. For more information, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-You can change how a button raises the Click event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default ClickMode value is **Release**, but you also can set a button's ClickMode to **Hover** or **Press**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
+You can change how a button raises the **Click** event by changing the **[ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode)** property. The default **ClickMode** value is **Release**, but you also can set a button's ClickMode to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 
 
 ### Button content
 
 Button is a [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Its XAML content property is [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
 
-A button's content is usually text. Here are design recommendations for buttons with text content:
--   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
--   Use the default font unless your brand guidelines tell you to use something different.
--   For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
+A button's content is usually text. When you design that text, use the following recommendations:
+-  Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text is a single word that is a verb.
+-  Use the default font, unless your brand guidelines tell you to use something different.
+-  For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
 - For longer text, avoid wide command buttons by limiting text to a maximum length of 26 characters.
--   If the button's text content is dynamic (i.e., it is [localized](../globalizing/globalizing-portal.md)), consider how the button will resize and what will happen to controls around it.
+-  If the button's text content is dynamic (that is, it is [localized](../globalizing/globalizing-portal.md)), consider how the button will be resized and what will happen to controls around it.
 
 <table>
 <tr>
@@ -147,7 +149,7 @@ A button's content is usually text. Here are design recommendations for buttons 
 </tr>
 </table>
 
-You can also customize visuals that make up the button's appearance. For example, you could replace the text with an icon, or use an icon plus text.
+You can also customize visuals that make up the button's appearance. For example, you could replace the text with an icon, or use an icon in addition to text.
 
 Here, a **StackPanel** that contains an image and text is set as the content of a button.
 
@@ -169,9 +171,9 @@ The button looks like this.
 
 ## Create a repeat button
 
-A [RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) is a button that raises [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) events repeatedly from the time it's pressed until it's released. Set the [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) property to specify the time that the RepeatButton waits after it is pressed before it starts repeating the click action. Set the [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.
+A [RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) is a button that raises [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) events repeatedly from the time it's pressed until it's released. Set the [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) property to specify the time that the **RepeatButton** waits after it is pressed before it starts repeating the click action. Set the [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.
 
-The following example shows two RepeatButton controls whose respective Click events are used to increase and decrease the value shown in a text block.
+The following example shows two **RepeatButton** controls whose respective **Click** events are used to increase and decrease the value shown in a text block.
 
 ```xaml
 <StackPanel>
@@ -203,9 +205,9 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 > DropDownButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard Button with a flyout; only the appearance is different.
+A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** with a flyout; only the appearance is different.
 
-The drop down button inherits the Click event, but you typically don't use it. Instead, you use the Flyout property to attach a flyout and invoke actions using menu options in the flyout. The flyout opens automatically when the button is clicked. 
+The drop down button inherits the **Click** event, but you typically don't use it. Instead, you use the **Flyout** property to attach a flyout and invoke actions by using menu options in the flyout. The flyout opens automatically when the button is clicked.
 Be sure to specify the [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property of your flyout to ensure the desired placement in relation to the button. The default placement algorithm might not produce the intended placement in all situations.
 
 > [!TIP]
@@ -213,7 +215,7 @@ Be sure to specify the [Placement](https://docs.microsoft.com/uwp/api/windows.ui
 
 ### Example - Drop down button
 
-This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a **RichEditBox** control. (For more information and code, see [Rich edit box](rich-edit-box.md)).
 
 ![A drop down button with alignment commands](images/drop-down-button-align.png)
 
@@ -261,7 +263,8 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## Create a split button
 
-> SplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+ > [!IMPORTANT]
+ > SplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -291,7 +294,7 @@ Split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uw
         <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
-            <GridView ItemsSource="{x:Bind ColorOptions}" 
+            <GridView ItemsSource="{x:Bind ColorOptions}"
                       SelectionChanged="BrushSelectionChanged"
                       SingleSelectionFollowsFocus="False"
                       SelectedIndex="0" Padding="0">
@@ -402,7 +405,7 @@ Toggle split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft
     <ToggleSplitButton.Flyout>
         <Flyout>
             <ListView x:Name="ListStylesListView"
-                      SelectionChanged="ListStylesListView_SelectionChanged" 
+                      SelectionChanged="ListStylesListView_SelectionChanged"
                       SingleSelectionFollowsFocus="False">
                 <StackPanel Tag="bullet" Orientation="Horizontal">
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7C8;"/>
