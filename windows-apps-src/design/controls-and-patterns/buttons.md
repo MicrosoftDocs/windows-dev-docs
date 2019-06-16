@@ -525,7 +525,6 @@ private void ApplyListStyle(string listStyle)
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
   - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will be automatically right-aligned.
-
   ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
 
