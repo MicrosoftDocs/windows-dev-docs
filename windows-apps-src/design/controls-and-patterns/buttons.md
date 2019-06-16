@@ -95,7 +95,7 @@ subscribeButton.Click += SubscribeButton_Click;
 stackPanel1.Children.Add(subscribeButton);
 ```
 
-Handle the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click.md) event.
+Handle the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event.
 
 ```csharp
 private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
@@ -116,11 +116,11 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### Button interaction
 
-When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the **Click** event.
+When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the **Click** event.
 
-You generally can't handle low-level [PointerPressed](/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more information, see [Events and routed events overview](/uwp/xaml-platform/events-and-routed-events-overview).
+You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more information, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-You can change how a button raises the **Click** event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
+You can change how a button raises the **Click** event by changing the [ClickMode](/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 
 
 ### Button content
@@ -372,10 +372,10 @@ public sealed partial class MainPage : Page
 
 ## Create a toggle split button
 
-A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
-
 > [!NOTE]
 > **ToggleSplitButton** requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+
+A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
 
 A toggle split button is typically used to enable or disable a feature when the feature has multiple options that the user can choose from. For example, in a document editor, it could be used to turn lists on or off, while the drop down is used to choose the style of the list.
 
@@ -384,15 +384,16 @@ A toggle split button is typically used to enable or disable a feature when the 
 
 ### Differences with ToggleButton
 
-Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), ToggleSplitButton does not have an indeterminate state. As a result, you should keep in mind these differences:
+Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), **ToggleSplitButton** does not have an indeterminate state. As a result, you should keep in mind these differences:
 
-- ToggleSplitButton does not have an **IsThreeState** property or **Indeterminate** event.
+- **ToggleSplitButton** does not have an **IsThreeState** property or **Indeterminate** event.
 - The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a **bool**, not a **nullable bool**.
-- ToggleSplitButton has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
+- **ToggleSplitButton** has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
+
 
 ### Example - Toggle split button
 
-The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a RichEditBox. (For more info and code, see [Rich edit box](rich-edit-box.md)).
+The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more information and code, see [Rich edit box](rich-edit-box.md)).
 Toggle split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
@@ -505,7 +506,7 @@ private void ApplyListStyle(string listStyle)
     - OK/[Do it]/Yes
 	- [Don't do it]/No
 	- Cancel
-- Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
+- Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
 - For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
 
 ### Recommended single button layout
@@ -520,7 +521,7 @@ If your layout requires only one button, it should be either left- or right-alig
 
 ![A button within a container](images/pushbutton_doc_container.png)
 
-- In pages that contain a single button (for example, an "Apply" button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+- In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
 
 ![A button on a page](images/pushbutton_doc_page.png)
 
