@@ -33,7 +33,7 @@ Control | Description
 
 | **Get the Windows UI Library** |
 | - |
-| **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see the [Windows UI Library overview](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| **DropDownButton**, **SplitButton**, and **ToggleSplitButton** are included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for UWP apps. For more info, including installation instructions, see [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
@@ -128,10 +128,15 @@ You can change how a button raises the **Click** event by changing the [ClickMod
 **Button** is a content control of the [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) class. Its XAML content property is [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) object, it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
 
 A button's content is usually text. When you design that text, use the following recommendations:
+
 -  Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text is a single word that is a verb.
+
 -  Use the default font, unless your brand guidelines tell you to use something different.
+
 -  For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
+
 - For longer text, avoid wide command buttons by limiting text to a maximum length of 26 characters.
+
 -  If the button's text content is dynamic (that is, it is [localized](../globalizing/globalizing-portal.md)), consider how the button will be resized and what will happen to controls around it.
 
 <table>
@@ -151,7 +156,7 @@ A button's content is usually text. When you design that text, use the following
 
 You can also customize visuals that make up the button's appearance. For example, you could replace the text with an icon, or use an icon in addition to text.
 
-Here, a **StackPanel** object that contains an image and text is set as the content of a button.
+Here, a **StackPanel** that contains an image and text is set as the content of a button.
 
 ```xaml
 <Button Click="Button_Click"
@@ -274,6 +279,7 @@ A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) control has two p
 The typical behavior for a split button is:
 
 - When the user clicks the button part, handle the **Click** event to invoke the option that's currently selected in the drop down.
+
 - When the drop down is open, handle invocation of the items in the drop down to both change which option is selected, and then invoke it. It's important to invoke the flyout item because the button **Click** event doesn't occur when using touch.
 
 > [!TIP]
@@ -381,6 +387,7 @@ A toggle split button is typically used to enable or disable a feature when the 
 
 > [!NOTE]
 > When invoked with touch, the toggle split button behaves as a drop down button. With other methods of input, a user can toggle and invoke the two halves of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.
+
 
 ### Differences with ToggleButton
 
@@ -502,36 +509,45 @@ private void ApplyListStyle(string listStyle)
 ## Recommendations
 
 - Make sure the purpose and state of a button are clear to the user.
+
 - When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
-    - OK/[Do it]/Yes
+  - OK/[Do it]/Yes
 	- [Don't do it]/No
 	- Cancel
+
 - Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
+
 - For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
 
-### Recommended single button layout
+
+### Recommended single-button layout
 
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
-- Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will automatically right-align.
+- Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will be automatically right-aligned.
 
 ![A button within a dialog](images/pushbutton_doc_dialog.png)
+
 
 - If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
 
 ![A button within a container](images/pushbutton_doc_container.png)
 
+
 - In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
 
 ![A button on a page](images/pushbutton_doc_page.png)
+
 
 ## Back buttons
 
 The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [History and backwards navigation](../basics/navigation-history-and-backwards-navigation.md)
 
+
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+
 
 ## Related articles
 
