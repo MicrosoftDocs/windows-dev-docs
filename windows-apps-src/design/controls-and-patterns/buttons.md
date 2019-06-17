@@ -208,7 +208,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## Create a drop down button
 
-> DropDownButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **DropDownButton** requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** control with a flyout; only the appearance is different.
 
@@ -379,7 +379,7 @@ public sealed partial class MainPage : Page
 ## Create a toggle split button
 
 > [!NOTE]
-> **ToggleSplitButton** requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **ToggleSplitButton** requires the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
 A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -400,8 +400,8 @@ Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)
 
 ### Example - Toggle split button
 
-The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more information and code, see [Rich edit box](rich-edit-box.md)).
-Toggle split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
+The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more information about this control, and for example code, see [Rich edit box](rich-edit-box.md)).
+The flyout of the toggle split button uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
 
@@ -527,25 +527,21 @@ If your layout requires only one button, it should be either left- or right-alig
   - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will be automatically right-aligned.
   ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
+  - If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
+  ![A button within a container](images/pushbutton_doc_container.png)
 
-- If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
-
-![A button within a container](images/pushbutton_doc_container.png)
-
-
-- In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
-
-![A button on a page](images/pushbutton_doc_page.png)
+  - In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+  ![A button on a page](images/pushbutton_doc_page.png)
 
 
 ## Back buttons
 
-The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [History and backwards navigation](../basics/navigation-history-and-backwards-navigation.md)
+The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more information, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery): This sample shows all the XAML controls in an interactive format.
 
 
 ## Related articles
