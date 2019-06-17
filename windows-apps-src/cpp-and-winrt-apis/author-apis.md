@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 This topic shows how to author [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
 
+> [!NOTE]
+> This topic touches on the subject of Windows Runtime Components, but only in the context of C++/WinRT. If you're looking for content about Windows Runtime components that covers all Windows Runtime languages, then see [Windows Runtime components](/windows/uwp/winrt-components/).
+
 - You're *not* authoring a Windows Runtime class (runtime class); you just want to implement one or more Windows Runtime interfaces for local consumption within your app. You derive directly from **winrt::implements** in this case, and implement functions.
 - You *are* authoring a runtime class. You might be authoring a component to be consumed from an app. Or you might be authoring a type to be consumed from XAML user interface (UI), and in that case you're both implementing and consuming a runtime class within the same compilation unit. In these cases, you let the tools generate classes for you that derive from **winrt::implements**.
 
