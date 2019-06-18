@@ -24,7 +24,7 @@ This test verifies that all portable executable (PE) files contain a valid signa
 The test scans all of the portable executable files in the package and checks their headers for a signature. All the PE files are recommended to be digitally signed. A warning will be generated if any of the PE files is not signed.
  
 **Corrective actions**  
-Having digitally signed files is always recommended. For more information, see [Introduction to Code Signing](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx).
+Having digitally signed files is always recommended. For more information, see [Introduction to Code Signing](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 ### 2. File association verbs 
 **Background**  
