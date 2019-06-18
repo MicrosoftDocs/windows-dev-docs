@@ -22,7 +22,7 @@ Win32 APIs often offer -A and -W variants. -A variants honor the ANSI code page 
 
 Until recently, -A APIs were considered legacy as Windows has been pushing "Unicode" -W variants for decades. In recent releases though, Windows has leveraged the ANSI code page and -A APIs as a means to introduce UTF-8 support on newer SKUs. If the ANSI code page is configured to UTF-8, -A APIs will operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
-With Windows Version 1903 (May 2019 Update), UTF-8 is the default and only ANSI code page on console, so -A APIs on console will always operate in UTF-8 and are the recommended APIs for optimal portability. -W APIs are also provided for source compatibility with existing Windows code.
+With Windows Version 1903 (May 2019 Update), UTF-8 is the default and only ANSI code page, so -A APIs will always operate in UTF-8 and are the recommended APIs for optimal portability. -W APIs are also provided for source compatibility with existing Windows code.
 
 ## MultiByteToWideChar/WideCharToMultiByte
 
