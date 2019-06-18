@@ -292,7 +292,7 @@ A framework package can access its own resources with an absolute resource ident
 
 As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resource Management System.
 
-Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#loading-strings-from-a-class-library-or-a-windows-runtime-library).
+Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#load-strings-from-a-class-library-or-a-windows-runtime-library).
 
 To use resources in non-packaged applications, you should do a few things:
 
