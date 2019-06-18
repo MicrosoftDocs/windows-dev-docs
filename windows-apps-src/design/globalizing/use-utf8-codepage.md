@@ -20,25 +20,13 @@ Because Windows operates natively in UTF-16 (WCHAR), code page conversions using
   
 Win32 APIs often offer -A and -W variants. -A variants honor the ANSI code page configured on the system and deal with char*. -W variants operate in UTF-16 and deal with ```WCHAR```.
 
-Until recently, -A APIs were considered legacy as Windows has been pushing "Unicode" -W variants for decades. In recent releases though, Windows has leveraged the ANSI code page and -A APIs as a means to introduce UTF-8 support on newer SKUs. If the ANSI code page is configured to UTF-8, -A APIs will operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
-
-With Windows Version 1903 (May 2019 Update), UTF-8 is the default and only ANSI code page, so -A APIs will always operate in UTF-8 and are the recommended APIs for optimal portability. -W APIs are also provided for source compatibility with existing Windows code.
-
-## MultiByteToWideChar/WideCharToMultiByte
-
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (WCHAR) (and other code pages). This is particularly useful when a legacy Win32 API might only understand WCHAR. These functions allow you to convert UTF-8 input to WCHAR to pass into a -W API and then convert any results back if necessary.
-When using these functions in Windows, use CodePage CP_UTF8 with dwFlags of either 0 or MB_ERR_INVALID_CHARS, otherwise you will receive error ERROR_INVALID_FLAGS.
-
-Note: CP_ACP equates to CP_UTF8 only if running on Windows Version 1903 (May 2019 Update) and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using CP_UTF8 explicitly.
+Until recently, -A APIs were considered legacy as Windows has been pushing "Unicode" -W variants for decades. In recent releases though, Windows has leveraged the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured to UTF-8, -A APIs will operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## App manifest
 
 You can force a process to use UTF-8 as the process code page through the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps using the ActiveCodePage property.
 
 You can declare this property and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual (with a minimum target version of 19H1, the process code page will always be UTF-8).
-
-> [!NOTE]
-> Add a manifest to an existing executable from the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
 ## Examples
 
@@ -76,6 +64,18 @@ You can declare this property and target/run on earlier Windows builds, but you 
   </application>
 </assembly>
 ```
+
+> [!NOTE]
+> Add a manifest to an existing executable from the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+
+## Set a process code page to UTF-8
+
+As Windows operates natively in UTF-16 (WCHAR), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.
+
+[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (WCHAR) (and other code pages). This is particularly useful when a legacy Win32 API might only understand WCHAR. These functions allow you to convert UTF-8 input to WCHAR to pass into a -W API and then convert any results back if necessary.
+When using these functions in Windows with CodePage CP_UTF8, use dwFlags of either 0 or MB_ERR_INVALID_CHARS, otherwise an ERROR_INVALID_FLAGS occurs.
+
+Note: CP_ACP equates to CP_UTF8 only if running on Windows Version 1903 (May 2019 Update) and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using CP_UTF8 explicitly.
 
 ## Related topics
 
