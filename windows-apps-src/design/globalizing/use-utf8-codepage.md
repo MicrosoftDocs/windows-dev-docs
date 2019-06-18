@@ -14,7 +14,6 @@ Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility 
 
 UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-4 byte variable-width encoding. It is used pervasively on the web, and competing OS platforms (such as Unix-based systems) operate in UTF-8 by default.
 
-Because Windows operates natively in UTF-16 (WCHAR), code page conversions using [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) are required. This is a unique burden that Windows places on code that targets multiple platforms. Even more challenging is the Windows concept of an ANSI code page which can differ per region and user configuration and can result in wildly inconsistent behavior when relied upon incorrectly.
 
 ## -A vs. -W APIs
   
