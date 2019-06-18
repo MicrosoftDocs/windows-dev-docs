@@ -259,7 +259,7 @@ private void RefreshUIText()
 }
 ```
 
-## Loading strings from a Class Library or a Windows Runtime Library
+## Load strings from a Class Library or a Windows Runtime Library
 
 The string resources of a referenced Class Library (Universal Windows) or [Windows Runtime Library (Universal Windows)](../winrt-components/index.md) are typically added into a subfolder of the package in which they're included during the build process. The resource identifier of such a string usually takes the form *LibraryName/ResourcesFileName/ResourceIdentifier*.
 
@@ -276,7 +276,7 @@ For a Windows Runtime Library (Universal Windows), if the default namespace is s
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-You don't need to do that for a Class Library (Universal Windows). If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump your component or library's PRI file. Each resource's `uri` is shown in the dumped file.
+You don't need to do that for a Class Library (Universal Windows). If in doubt, you can specify [MakePri.exe command line options](makepri-exe-command-options.md) to dump your component or library's PRI file. Each resource's `uri` is shown in the dumped file.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -290,22 +290,16 @@ A framework package can access its own resources with an absolute resource ident
 
 ## Loading strings in non-packaged applications
 
-As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resources File management system.
+As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resource Management System.
 
-Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file) and then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml) or [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code) as shown here:
-
-- `<MenuFlyoutItem x:Uid="Option1"/>`
-- `ResourceManager.Current.MainResourceMap.GetSubtree("ManagedWinRT\\Resources").GetValue("Header").ValueAsString`
-- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetString("Header")`
-- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource:///ManagedWinRT/Resources/Header"))`
-- `ResourceLoader.GetForViewIndependentUse("ManagedWinRT\\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))`
-    > [!NOTE]
-    > To support non-packaged scenarios, use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: Resource Contexts may not be created on threads that do not have a CoreWindow.
+Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#loading-strings-from-a-class-library-or-a-windows-runtime-library).
 
 To use resources in non-packaged applications, you should do a few things:
 
-1. Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
-    - The default priconfig of [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes the PRI indexer which merges all PRIs found under the project root.
+1. To support non-packaged scenarios, use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
+1. Use [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) to manually generate your app's resources.pri file.
+    - Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
+    - The default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes the PRI indexer which merges all PRIs found under the project root.
     - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this).
     - [MakePri](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) merges PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
@@ -316,10 +310,9 @@ To use resources in non-packaged applications, you should do a few things:
 1. Run the .exe 
     > [!NOTE]
     > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
-1. You can add a manifest to an existing executable via the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
 > [!Important]
-> You must manually rebuild PRI files if the content of the resource file changes, such as a post-build script that handles the makepri command and copies the resources.pri output to the .exe directory.
+> You must manually rebuild PRI files if the content of the resource file changes, such as a post-build script that handles the [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) command and copies the resources.pri output to the .exe directory.
 
 ## Important APIs
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
