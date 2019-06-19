@@ -43,6 +43,14 @@ Control | Description
 
 Use a **Button** control to let the user initiate an immediate action, such as submitting a form.
 
+>[!NOTE]
+>This is just a test.
+
+Here's a filler sentence.
+
+> [!NOTE]
+> This is another test.
+
 Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) control. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
 > [!IMPORTANT]
