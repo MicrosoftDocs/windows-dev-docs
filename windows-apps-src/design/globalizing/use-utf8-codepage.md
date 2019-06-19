@@ -12,14 +12,15 @@ ms.localizationpriority: medium
 
 Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
-UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-4 byte variable-width encoding. It is used pervasively on the web, and competing OS platforms (such as Unix-based systems) operate in UTF-8 by default.
-
+UTF-8 is the universal code page for internationalization and supports all Unicode code points using 1-4 byte variable-width encoding. It is used pervasively on the web, and is the default for *nix-based platforms.
 
 ## -A vs. -W APIs
   
-Win32 APIs often offer -A and -W variants. -A variants honor the ANSI code page configured on the system and deal with char*. -W variants operate in UTF-16 and deal with ```WCHAR```.
+Win32 APIs often support both -A and -W variants.
 
-Until recently, -A APIs were considered legacy as Windows has been pushing "Unicode" -W variants for decades. In recent releases though, Windows has leveraged the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured to UTF-8, -A APIs will operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
+-A variants recognize the ANSI code page configured on the system and support char*, while -W variants operate in UTF-16 and support `WCHAR`.
+
+Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## App manifest
 
