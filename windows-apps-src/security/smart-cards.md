@@ -78,7 +78,7 @@ SmartCardProvisioning provisioning = await
 Once [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) has returned the associated [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) object, the virtual smart card is provisioned and ready for use.
 
 >[!NOTE]
->In order to create a VSC using a UWP, the user running the UWP must be a member of the administrators group. If the user is not a member of the administrators group, VSC creation will fail.
+>In order to create a virtual smart card using a UWP app, the user running the app must be a member of the administrators group. If the user is not a member of the administrators group, virtual smart card creation will fail.
 
 ## Handle authentication challenges
 
