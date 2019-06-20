@@ -156,7 +156,7 @@ var writer = new DataWriter();
 // WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
 writer.WriteByte(0x01);
 
-GattReadResult result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
+GattCommunicationStatus result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
 if (result.Status == GattCommunicationStatus.Success)
 {
     // Successfully wrote to device
