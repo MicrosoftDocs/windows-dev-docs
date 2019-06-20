@@ -514,7 +514,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/surface/">
+                            <a href="https://docs.microsoft.com/surface/get-started">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
