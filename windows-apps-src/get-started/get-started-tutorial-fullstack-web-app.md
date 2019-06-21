@@ -227,7 +227,7 @@ This layer of our program represents the memory cards themselves and provides th
  - This [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D) code to your **data\guess.js** file
  - This [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D) code to your **data\new.js** file
 
-For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd use cloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
+For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd use cloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/services/cosmos-db/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
 
 Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [https://localhost:8000](https://localhost:8000)) to test out the game API.
 
@@ -278,7 +278,7 @@ If you've made it this far and Azure is now serving up your swagger UI, there's 
 
 ### Going further
 
-To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](https://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://docs.microsoft.com/en-us/azure/documentdb/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) for your API.
+To make the memory game API a viable back-end service for a production app, you'll want to extend the code to support multiple players and games. For that you'll probably need to plumb in [authentication](https://swagger.io/docs/specification/authentication/) (for managing player identities), a [NoSQL database](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/) (for tracking games and players), and some basic [unit testing](https://apigee.com/about/blog/api-technology/swagger-test-templates-test-your-apis) for your API.
 
 Here are some useful resources for going further:
 
@@ -286,7 +286,7 @@ Here are some useful resources for going further:
 
  - [Azure Web + Mobile docs](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB docs](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB docs](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
 ## Part II: Build a single-page web application
 
@@ -569,7 +569,7 @@ The grid system allows up to 12 columns. Since we only want 4 columns in our gam
 ### 5. Add a card-flip animation with CSS Transforms
 Replace the style.css file in memory\public\stylesheets with the style.css file from the Start folder.
 
-Adding a flip motion using [CSS Transforms](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) gives the cards a realistic, 3D flipping motion. The cards in the game are created by using the following HTML structure and programmatically added to the game board (in the `drawGameBoard()` function shown previously).
+Adding a flip motion using [CSS Transforms](https://developer.mozilla.org/docs/Web/CSS/CSS_Transforms) gives the cards a realistic, 3D flipping motion. The cards in the game are created by using the following HTML structure and programmatically added to the game board (in the `drawGameBoard()` function shown previously).
 
 ``` html
 <div class="flipContainer">
@@ -636,6 +636,6 @@ Here are some useful resources for going further:
 
  - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
 
- - [Publish Windows apps](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Publish Windows apps](https://docs.microsoft.com/windows/uwp/publish/)

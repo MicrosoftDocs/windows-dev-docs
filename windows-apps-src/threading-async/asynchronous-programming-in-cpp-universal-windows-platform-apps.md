@@ -67,7 +67,7 @@ void App::TestAsync()
 }
 ```
 
-The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) if you were using the **IAsyncOperation** interface directly.
+The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_#Windows_Foundation_IAsyncOperation_1_GetResults) if you were using the **IAsyncOperation** interface directly.
 
 The [**task::then**][taskThen] method returns immediately, and its delegate doesn't run until the asynchronous work completes successfully. In this example, if the asynchronous operation causes an exception to be thrown, or ends in the canceled state as a result of a cancellation request, the continuation will never execute. Later, we’ll describe how to write continuations that execute even if the previous task was cancelled or failed.
 

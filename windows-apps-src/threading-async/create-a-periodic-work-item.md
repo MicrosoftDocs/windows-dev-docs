@@ -25,7 +25,7 @@ Use the [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.sys
 
 > **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to access the UI and show progress from the work item.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
 
 The following example creates a work item that runs once every 60 seconds:
 

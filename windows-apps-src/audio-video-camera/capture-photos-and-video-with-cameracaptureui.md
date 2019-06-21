@@ -30,7 +30,7 @@ To capture a photo, create a new [**CameraCaptureUI**](https://docs.microsoft.co
 > [!NOTE]
 > Imaging cropping in the **CameraCaptureUI** is not supported for devices in the Mobile device family. The value of the [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) property is ignored when your app is running on these devices.
 
-Call [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) and specify [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) to specify that a photo should be captured. The method returns a [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) instance containing the image if the capture is successful. If the user cancels the capture, the returned object is null.
+Call [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) and specify [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) to specify that a photo should be captured. The method returns a [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) instance containing the image if the capture is successful. If the user cancels the capture, the returned object is null.
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
@@ -56,7 +56,7 @@ To use the software bitmap in your XAML page, include the using [**Windows.UI.Xa
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-The **Image** control requires that the image source be in BGRA8 format with premultiplied alpha or no alpha, so call the static method [**SoftwareBitmap.Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) to create a new software bitmap with the desired format. Next, create a new [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) object and call [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) to assign the software bitmap to the source. Finally, set the **Image** control's [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) property to display the captured photo in the UI.
+The **Image** control requires that the image source be in BGRA8 format with premultiplied alpha or no alpha, so call the static method [**SoftwareBitmap.Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) to create a new software bitmap with the desired format. Next, create a new [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) object and call [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) to assign the software bitmap to the source. Finally, set the **Image** control's [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) property to display the captured photo in the UI.
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -64,7 +64,7 @@ The **Image** control requires that the image source be in BGRA8 format with pre
 
 To capture a video, create a new [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) object. Using the object's [**VideoSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) property you can specify properties for the returned video such as the format of the video.
 
-Call [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) and specify [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) to specify that a video should be capture. The method returns a [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) instance containing the video if the capture is successful. If the user cancels the capture, the returned object is null.
+Call [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) and specify [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) to specify that a video should be capture. The method returns a [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) instance containing the video if the capture is successful. If the user cancels the capture, the returned object is null.
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 

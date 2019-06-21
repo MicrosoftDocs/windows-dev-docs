@@ -17,7 +17,7 @@ At Microsoft, we’re evolving our design principles and practices. These inform
 
 This new design philosophy is called inclusive design. The idea is to design software with everyone in mind from the very beginning. This is in contrast to viewing accessibility as a technology you bolt on at the end of the development process in order to satisfy some small group of users.
 
-“We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded.”  \- from the [Inclusive](https://www.microsoft.com/design/inclusive) video  
+“We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded.”  \- from the [Inclusive](https://www.microsoft.com/design/inclusive/) video  
 
 Inclusive design creates better products for everyone. It’s about considering the full range of human diversity. Consider the curb cutouts that you now find on most street corner sidewalks. They were clearly intended to be used by people in wheelchairs. But now nearly everyone uses them, including people with baby strollers, bicyclists, skateboarders. Even pedestrians will often use curb cutouts because they are there and provide a better experience. The television remote control could be considered an assistive technology (AT) for someone with physical limitations. And yet, today it is nearly impossible to buy a television without one. Before children learn to tie their shoes, they can wear slip-on or easy fastening shoes. Shoes that are easy to put on and take off are often preferred in cultures where shoes are removed before entering a home. They are also better for people with dexterity issues such as arthritis or even a temporarily broken wrist.
 
@@ -44,7 +44,7 @@ A 2003-2004 study commissioned by Microsoft and conducted by Forrester Research 
 
 Besides permanent disabilities, the severity and types of difficulties an individual experiences can vary throughout their life. There is no such thing as a normal human. Our capabilities are always changing. Margaret Meade said, “We are all unique. Being all unique makes us all the same.”  
 
-Microsoft is dedicated to conducting computer science and software engineering research with goals to enhance the computing experience and invent novel computing technologies. See [Current Microsoft Research and Development Projects](https://www.microsoft.com/enable/microsoft/research.aspx) aimed at making the computer more accessible, and easier to see, hear, and interact with.  
+Microsoft is dedicated to conducting computer science and software engineering research with goals to enhance the computing experience and invent novel computing technologies. See [Current Microsoft Research and Development Projects](https://www.microsoft.com/accessibility/) aimed at making the computer more accessible, and easier to see, hear, and interact with.  
 
 ## Practical design steps  
 If you're all in, then this section is for you. It describes the practical design steps to consider when implementing inclusive design for your app.  
@@ -98,7 +98,7 @@ In summary, follow these seven steps to ensure your software is inclusive.
 7.	Deliver your finished product and document your implementation for those who may work on the project after you.  
 
 ## Related topics  
-* [Inclusive design](https://design.microsoft.com/inclusive)
+* [Inclusive design](https://www.microsoft.com/design/inclusive/)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) 

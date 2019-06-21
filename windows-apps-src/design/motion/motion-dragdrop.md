@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 
-> **Important APIs**: [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+> **Important APIs**: [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## Do's and don'ts
@@ -54,9 +54,9 @@ Use drag-and-drop animations when users move objects, such as moving an item wit
 * [Animations overview](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Animating drag-and-drop sequences](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
 * [Quickstart: Animating your UI using library animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
-* [**DropTargetItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
-* [**DragOverThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
+* [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+* [**DropTargetItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation)
+* [**DragOverThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
  

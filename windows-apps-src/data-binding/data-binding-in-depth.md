@@ -37,7 +37,7 @@ Independent of mode, there are two kinds of binding, and they're both typically 
 **Sample apps that demonstrate {x:Bind}**
 
 -   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989).
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
 -   [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Sample apps that demonstrate {Binding}**
@@ -193,7 +193,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 Now the **NextButtonText** property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the **PropertyChanged** event. When that event is raised, the binding object's handler receives an argument containing the name of the property that has changed. That's how the binding object knows which property's value to go and read again.
 
-So that you don't have to implement the pattern shown above multiple times, if you're using C# then you can just derive from the **BindableBase** bass class that you'll find in the [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) sample (in the "Common" folder). Here's an example of how that looks.
+So that you don't have to implement the pattern shown above multiple times, if you're using C# then you can just derive from the **BindableBase** bass class that you'll find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder). Here's an example of how that looks.
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -598,7 +598,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 Overloaded methods cannot be used to handle an event with this technique. Also, if the method that handles the event has parameters then they must all be assignable from the types of all of the event's parameters, respectively. In this case, [**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) is not overloaded and it has no parameters (but it would still be valid even if it took two **object** parameters). [**Frame.GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) is overloaded, though, so we can't use that method with this technique.
 
-The event binding technique is similar to implementing and consuming commands (a command is a property that returns an object that implements the [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) interface). Both [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) and [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) work with commands. So that you don't have to implement the command pattern multiple times, you can use the **DelegateCommand** helper class that you'll find in the [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) sample (in the "Common" folder).
+The event binding technique is similar to implementing and consuming commands (a command is a property that returns an object that implements the [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) interface). Both [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) and [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) work with commands. So that you don't have to implement the command pattern multiple times, you can use the **DelegateCommand** helper class that you'll find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder).
 
 ## Binding to a collection of folders or files
 

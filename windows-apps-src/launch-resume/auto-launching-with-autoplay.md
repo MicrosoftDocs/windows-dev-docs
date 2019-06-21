@@ -219,7 +219,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 You can register apps as options for **AutoPlay** device events. **AutoPlay** device events are raised when a device is connected to a PC.
 
-Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85)).
+Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85)).
 
 **Important**  The [**Windows.Devices.Portable.StorageDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) APIs are part of the [desktop device family](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Apps can use these APIs only on Windows 10 devices in the desktop device family, such as PCs.
 

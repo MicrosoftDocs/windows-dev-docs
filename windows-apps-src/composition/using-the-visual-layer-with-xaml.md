@@ -19,7 +19,7 @@ XAML and Visual Layer interop functionality can be used to create advanced anima
 - Pixel-perfect drop shadows
 
 These effects and animations can be applied to existing XAML content, so you don't have to dramatically restructure your XAML app to take advantage of the new functionality.
-Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsUIDevLabs repository](https://github.com/Microsoft/WindowsUIDevLabs) also has several other samples for implementing animations, shadows and effects.
+Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems). The [WindowsUIDevLabs repository](https://github.com/microsoft/WindowsCompositionSamples) also has several other samples for implementing animations, shadows and effects.
 
 ## The XamlCompositionBrushBase class
 
@@ -358,6 +358,6 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 - [Visual Layer overview](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview** class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
-- Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
-- [BasicXamlInterop sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [BasicXamlInterop sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
+- [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)

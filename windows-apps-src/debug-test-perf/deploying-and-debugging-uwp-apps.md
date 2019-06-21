@@ -36,7 +36,7 @@ In addition, any installed app package can be attached and debugged by selecting
 
 Selecting **Do not launch, but debug my code when it starts** will cause the Visual Studio debugger to attach to your UWP app when you launch it at a custom time. This is an effective way to debug control paths from [different launch methods](../xbox-apps/automate-launching-uwp-apps.md), such as protocol activation with custom parameters.  
 
-UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://www.visualstudio.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
+UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
 
 ## Package layout
 
@@ -89,7 +89,7 @@ To do this, search for **Remote Debugger** in the **Start** menu, open it, and i
 
 To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
-For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
+For more information, see the [Visual studio Download Center](https://visualstudio.microsoft.com/downloads/) page.
 
 ## Passing command line debug arguments
 

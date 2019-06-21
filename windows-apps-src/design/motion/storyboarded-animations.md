@@ -64,7 +64,7 @@ To connect an animation to a target, you reference the target by its identifying
 
 ### Targeting the dependency property to animate
 
-You set a value for [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) in the animation. This determines which specific property of the targeted object is animated.
+You set a value for [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) in the animation. This determines which specific property of the targeted object is animated.
 
 Sometimes you need to target a property that's not an immediate property of the target object, but that is nested more deeply in an object-property relationship. You often need to do this in order to drill down into a set of contributing object and property values until you can reference a property type that can be animated ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). This concept is called *indirect targeting*, and the syntax for targeting a property in this way is known as a *property path*.
 
@@ -95,7 +95,7 @@ You'll notice some of these examples use square brackets around numbers. This is
 
 You can also animate XAML attached properties. Always enclose the full attached property name in parentheses, for example `(Canvas.Left)`. For more info, see [Animating XAML attached properties](./storyboarded-animations.md#animating-xaml-attached-properties).
 
-For more info on how to use a property path for indirect targeting of the property to animate, see [Property-path syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) or [**Storyboard.TargetProperty attached property**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
+For more info on how to use a property path for indirect targeting of the property to animate, see [Property-path syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) or [**Storyboard.TargetProperty attached property**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 ### Animation types
 
@@ -320,7 +320,7 @@ There is one way to start an animation that can be declared entirely in XAML. Ho
 
 ## Animating XAML attached properties
 
-It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see [Attached properties overview](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Targeting an attached property requires a [property-path syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) that encloses the property name in parentheses. You can animate the built-in attached properties such as [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) by using an [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see [Attached properties overview](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Targeting an attached property requires a [property-path syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) that encloses the property name in parentheses. You can animate the built-in attached properties such as [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) by using an [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
 
 ## More animation types, and next steps for learning about animating your UI
 
@@ -334,7 +334,7 @@ Up to now, we've shown the custom animations that are animating between two valu
 * [Storyboarded animations for visual states](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Control templates](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

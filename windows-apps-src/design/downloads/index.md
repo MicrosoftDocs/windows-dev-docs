@@ -13,7 +13,7 @@ ms.custom: RS5
 
 # Design toolkits and samples for UWP apps
  
-Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
+Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
 
 
 ## Design toolkits
@@ -127,4 +127,4 @@ This sample provides an interactive demo of all of the XAML controls. It shows a
 
 ## Want more code?
 
-Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/samples">Go to the samples portal</a>
+Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/windows/samples">Go to the samples portal</a>

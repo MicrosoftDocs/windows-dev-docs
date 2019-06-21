@@ -98,7 +98,7 @@ Windows Machine Learning allows you to build apps that evaluate pre-trained mach
 
 ### Motion controller tracking
 
-Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
 ### Package a .NET app in Visual Studio
 

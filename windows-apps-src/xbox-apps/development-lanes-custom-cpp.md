@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 If you are writing a custom C++ engine, Xbox One has full support for C++. 
 
-C++ games on the Universal Windows Platform (UWP) use DirectX for rendering. Learn more at [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx).
+C++ games on the Universal Windows Platform (UWP) use DirectX for rendering. Learn more at [DirectX Graphics and Gaming](https://docs.microsoft.com/windows/desktop/directx).
 
 You can write [C++ with component extensions](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++/CX) or [standard C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) (Win32 and COM).
 

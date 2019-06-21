@@ -170,7 +170,7 @@ This guidance is also useful for apps such as photo albums or mapping apps that 
 ## Related articles
 
 
-* [Custom user interactions](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)
 * [Optimize ListView and GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
 * [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 

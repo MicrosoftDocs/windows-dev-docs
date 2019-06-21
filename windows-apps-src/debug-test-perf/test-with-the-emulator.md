@@ -656,6 +656,6 @@ To find answers and solve problems as you start working with the Windows 10 tool
 ## Related topics
 
 * [Run Windows Phone apps in the emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
-* [Windows and Windows Phone SDK archive](https://dev.windows.com/downloads/sdk-archive)
+* [Windows and Windows Phone SDK archive](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 

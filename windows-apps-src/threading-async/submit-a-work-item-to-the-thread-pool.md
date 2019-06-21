@@ -25,7 +25,7 @@ Create a work item by calling [**RunAsync**](https://docs.microsoft.com/uwp/api/
 Three versions of [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
 
 >[!NOTE]
->Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to access the UI thread and show progress from the work item.
+>Use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show progress from the work item.
 
 The following example creates a work item and supplies a lambda to do the work:
 
@@ -269,7 +269,7 @@ Note that the work item checks the [**IAsyncInfo.Status**](https://docs.microsof
 
 ## Handle work item completion
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to access the UI thread and show the result.
+Provide a completion handler by setting the [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show the result.
 
 The following example updates the UI with the result of the work item submitted in step 1:
 

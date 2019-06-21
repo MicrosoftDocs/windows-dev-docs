@@ -14,7 +14,7 @@ Users expect an app to remain responsive while it does computation, regardless o
 
 Your app is event-driven, which means that your code performs work in response to an event and then it sits idle until the next. Platform code for UI (layout, input, raising events, etc.) and your app’s code for UI all are executed on the same UI thread. Only one instruction can execute on that thread at a time so if your app code takes too long to process an event then the framework can’t run layout or raise new events representing user interaction. The responsiveness of your app is related to the availability of the UI thread to process work.
 
-You need to use the UI thread to make almost all changes to the UI thread, including creating UI types and accessing their members. You can't update the UI from a background thread but you can post a message to it with [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to cause code to be run there.
+You need to use the UI thread to make almost all changes to the UI thread, including creating UI types and accessing their members. You can't update the UI from a background thread but you can post a message to it with [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to cause code to be run there.
 
 > **Note**  The one exception is that there's a separate render thread that can apply UI changes that won't affect how input is handled or the basic layout. For example many animations and transitions that don’t affect layout can run on this render thread.
 
@@ -37,7 +37,7 @@ Write event handlers to return quickly. In cases where a non-trivial amount of w
 
 You can schedule work asynchronously by using the **await** operator in C#, the **Await** operator in Visual Basic, or delegates in C++. But this doesn't guarantee that the work you schedule will run on a background thread. Many of the Universal Windows Platform (UWP) APIs schedule work in the background thread for you, but if you call your app code by using only **await** or a delegate, you run that delegate or method on the UI thread. You have to explicitly say when you want to run your app code on a background thread. In C# and Visual Basic you can accomplish this by passing code to [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#overloads).
 
-Remember that UI elements may only be accessed from the UI thread. Use the UI thread to access UI elements before launching the background work and/or use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) or [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) on the background thread.
+Remember that UI elements may only be accessed from the UI thread. Use the UI thread to access UI elements before launching the background work and/or use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) or [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) on the background thread.
 
 An example of work that can be performed on a background thread is the calculating of computer AI in a game. The code that calculates the computer's next move can take a lot of time to execute.
 
@@ -99,4 +99,4 @@ In this example, the `NextMove_Click` handler returns at the **await** in order 
 
 ## Related topics
 
-* [Custom user interactions](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)

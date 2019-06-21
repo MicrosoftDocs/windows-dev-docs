@@ -60,8 +60,7 @@ By default, the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xa
 In this example, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) overlays a background image.
 
 > [!NOTE]
-> An InkCanvas has default [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) and [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) properties of zero, unless it is the child of an element that automatically sizes its child elements, such as [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
-) or [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) controls.
+> An InkCanvas has default [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) and [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) properties of zero, unless it is the child of an element that automatically sizes its child elements, such as [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) or [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) controls.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

@@ -115,7 +115,7 @@ In addition to interaction on different devices, [plan your app](https://docs.mi
 
 - Design your workflow using [Navigation design basics for UWP apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](https://developer.microsoft.com/windows/design/inputs-devices) to learn how users can interact with your app by using [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Speech](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Touch interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), the [Touch keyboard](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](https://docs.microsoft.com/windows/uwp/design/layout/index) to learn how users can interact with your app by using [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Speech](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Touch interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), the [Touch keyboard](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) for more traditional interaction experiences.
 
 ### Add services
 
@@ -135,7 +135,7 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 
 - Learn how to use [User Activities](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) so that user activity in your app appear in Windows Timeline and Cortana's Pick Up Where I Left Off feature.
 - Learn how to use [Tiles, badges, and notifications for UWP apps](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/).
-- For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions//mt186421(v=vs.85)) and [Dlls for UWP apps](https://docs.microsoft.com/previous-versions//mt186422(v=vs.85)).
+- For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
 - For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 - [Compiling apps with .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)

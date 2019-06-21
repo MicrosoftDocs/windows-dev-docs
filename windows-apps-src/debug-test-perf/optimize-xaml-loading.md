@@ -344,7 +344,7 @@ If the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 
 
 ### Borders
 
-Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
+Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
 
 **Inefficient.**
 

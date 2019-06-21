@@ -26,7 +26,7 @@ DirectX provides two powerful libraries for 2D and 3D graphics: Direct2D and Mic
 If you are implementing custom XAML and DirectX interop, you need to know these two concepts:
 
 -   Shared surfaces are sized regions of the display, defined by XAML, that you can use DirectX to draw into indirectly, using [Windows::UI::Xaml::Media::ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagesource) types. For shared surfaces, you don't control the precise timing for when new content appears on-screen. Rather, updates to the shared surface are synced to the XAML framework's updates.
--   [Swap chains](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx) represent a collection of buffers used to display graphics at minimal latency. Typically, swap chains are updated at 60 frames per second separately from the UI thread. However, swap chains use more memory and CPU resources in order to support rapid updates, and are more difficult to use since you have to manage multiple threads.
+-   [Swap chains](https://docs.microsoft.com/windows/desktop/direct3d9/what-is-a-swap-chain-) represent a collection of buffers used to display graphics at minimal latency. Typically, swap chains are updated at 60 frames per second separately from the UI thread. However, swap chains use more memory and CPU resources in order to support rapid updates, and are more difficult to use since you have to manage multiple threads.
 
 Consider what you are using DirectX for. Will it be used to composite or animate a single control that fits within the dimensions of the display window? Will it contain output that needs to be rendered and controlled in real-time, as in a game? If so, you will probably need to implement a swap chain. Otherwise, should be fine using a shared surface.
 
@@ -66,7 +66,7 @@ Here is the basic process for creating and updating a [SurfaceImageSource](https
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  Create the DXGI and D2D devices by first calling [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) and [D2D1CreateDevice](https://msdn.microsoft.com/library/windows/desktop/hh404272(v=vs.85).aspx) then passing the device and context to [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
+3.  Create the DXGI and D2D devices by first calling [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) and [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice) then passing the device and context to [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
 
     > [!NOTE]
     > If you will be drawing to your **SurfaceImageSource** from a background thread, you'll also need to ensure that the DXGI device has enabled multi-threaded access. This should only be done if you will be drawing from a background thread, for performance reasons.

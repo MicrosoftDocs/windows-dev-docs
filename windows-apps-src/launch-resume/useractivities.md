@@ -69,7 +69,7 @@ The first line in the `GenerateActivityAsync()` method above gets a user’s [Us
 
 After getting or creating the **UserActivity**, specify the other two required fields:  `UserActivity.VisualElements.DisplayText`and `UserActivity.ActivationUri`.
 
-Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** is the object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is the [null-conditional operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators) which tests for null before performing the member access).
+Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** is the object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is the [null-conditional operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-) which tests for null before performing the member access).
 
 Since, in this case, the `ActivationUri` is a custom scheme, we also need to register the protocol in the application manifest. This is done in the Package.appmanifest XML file, or by using the designer.
 
@@ -145,7 +145,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## Cross-platform and Service-to-service integration
 
-If your app runs cross-platform (for example on Android and iOS), or maintains user state in the cloud, you can publish UserActivities via [Microsoft Graph](https://developer.microsoft.com/graph/).
+If your app runs cross-platform (for example on Android and iOS), or maintains user state in the cloud, you can publish UserActivities via [Microsoft Graph](https://developer.microsoft.com/graph).
 Once your application or service is authenticated with a Microsoft Account, it just takes two simple REST calls to generate [Activity](https://docs.microsoft.com/graph/api/resources/projectrome-activity) and [History](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem) objects, using the same data as described above.
 
 ## Summary
@@ -154,7 +154,7 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 * Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
 * See [more sophisticated Adaptive Cards](https://adaptivecards.io/).
-* Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).
+* Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph).
 * Learn more about [Project Rome on GitHub](https://github.com/Microsoft/project-rome).
 
 ## Key APIs
@@ -168,4 +168,4 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

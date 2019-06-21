@@ -692,4 +692,4 @@ You must use the [app submission checklist](https://docs.microsoft.com/en-us/win
 
 The app must be submitted for [certification](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
 
-For more details, see [Publishing your UWP app](https://developer.microsoft.com/en-us/store/publish-apps).
+For more details, see [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).

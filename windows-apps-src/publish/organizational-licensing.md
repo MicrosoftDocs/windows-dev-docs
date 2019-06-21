@@ -1,4 +1,4 @@
-﻿---
+---
 Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
@@ -54,7 +54,7 @@ Offline licensing allows organizations to acquire your app on a volume basis, an
 Currently, developer accounts located in certain markets are able to offer paid apps for volume acquisition through Microsoft Store for Business. 
 
 > [!NOTE]
-> In some markets, the price shown for an app in Microsoft Store for Business or Microsoft Store for Education may be different than the price shown to retail customers in the Microsoft Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). For a list of markets where Microsoft Store for Business and Microsoft Store for Education are available, see [Microsoft Store for Business and Microsoft Store for Education overview](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
+> In some markets, the price shown for an app in Microsoft Store for Business or Microsoft Store for Education may be different than the price shown to retail customers in the Microsoft Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). For a list of markets where Microsoft Store for Business and Microsoft Store for Education are available, see [Microsoft Store for Business and Microsoft Store for Education overview](https://docs.microsoft.com/windows/manage/windows-store-for-business-overview#supported-markets).
 
 If your country or region is not listed below, your paid apps currently will not be offered in Microsoft Store for Business and Microsoft Store for Education. If this is the case, the organizational licensing selections you make for your paid apps may be applied at a later time, as we may add support for submissions from additional developer account markets in the future.
 

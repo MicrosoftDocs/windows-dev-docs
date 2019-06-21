@@ -874,5 +874,5 @@ To learn how to handle toast activations (the user clicking your toast or button
 ## Related topics
 
 * [Send a local toast and handle activation](send-local-toast.md)
-* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)
