@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 ## Background
 Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped. To avoid this, network admins can add the list of approved WNS channels to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add. 
 
+> Note: as of today, windows clients **do not** support proxies, the connection to WNS must be a direct connection.
 
 ## What information should be added to the allowlist
 Below is a list that contains the FQDNs, VIPs, and IP address ranges used by the Windows Notification Service. 
