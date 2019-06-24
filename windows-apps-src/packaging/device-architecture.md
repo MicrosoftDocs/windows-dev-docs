@@ -40,6 +40,7 @@ The Windows 10 on ARM configuration includes desktop PCs, mobile devices, and so
 >[!NOTE]
 > To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later, or Visual Studio 2019. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
 
+
 For more information, see [Windows 10 on ARM](../porting/apps-on-arm.md). Check out this //Build talk to see a demo of [Windows 10 on ARM](https://channel9.msdn.com/Events/Build/2017/P4171) and learn more about how it works.
 
 For more information about IoT specific topics, see [Deploying an App with Visual Studio](https://developer.microsoft.com/windows/iot/Docs/AppDeployment).

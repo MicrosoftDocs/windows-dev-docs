@@ -139,7 +139,7 @@ You can use the [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xam
 
 You can use the [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) and [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) properties to add other controls to the Pivot header.
 
-For example, you can add a [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars) in the Pivot's RightHeader.
+For example, you can add a [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars) in the Pivot's RightHeader.
 
 ```xaml
 <Pivot>

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10. With Windows 10, you can create a Universal Windows Platform (UWP) app, which is a single app package that your customers can install onto every kind of device. For more background on Windows 10, UWP apps, and the concepts of adaptive code and adaptive UI that we'll mention in this porting guide, see the [Guide to Universal Windows Platform (UWP) apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-When you port your Windows Phone Silverlight app to a Windows 10 app, you'll be able to catch up on the mobile features that were [introduced in Windows Phone 8.1](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v%3dvs.105)), and go far beyond them to use the Universal Windows Platform (UWP) whose app model and UI framework are universal across all Windows 10 devices. That makes it possible to support PCs, tablets, phones, and a large number of other kinds of devices, from one code base and with one app package. And that will multiply your app's potential audience and create new possibilities with shared data, purchased consumables, and so on. For more info on new features, see [What's new for developers in Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10).
+When you port your Windows Phone Silverlight app to a Windows 10 app, you'll be able to catch up on the mobile features that were [introduced in Windows Phone 8.1](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105)), and go far beyond them to use the Universal Windows Platform (UWP) whose app model and UI framework are universal across all Windows 10 devices. That makes it possible to support PCs, tablets, phones, and a large number of other kinds of devices, from one code base and with one app package. And that will multiply your app's potential audience and create new possibilities with shared data, purchased consumables, and so on. For more info on new features, see [What's new for developers in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest).
 
 If you choose to, the Windows Phone Silverlight version of your app and the Windows 10 version of it can both be available to customers at the same time.
 
@@ -73,7 +73,7 @@ At the feature level, the good news is that there's very little that's not suppo
 ## Related topics
 
 **Documentation**
-* [What's new for developers in Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10)
+* [What's new for developers in Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
 * [Guide to Universal Windows Platform (UWP) apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [Roadmap for Universal Windows Platform (UWP) apps using C# or Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
 * [What's next for Windows Phone 8 developers](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))

@@ -51,7 +51,7 @@ By default, you can only install Universal Windows Platform (UWP) apps from the 
 
 ### Sideload apps
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) and [Get started with app deployment in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
 Device family specific info
 
@@ -89,7 +89,7 @@ To learn more about Device Portal, see [Windows Device Portal overview](../debug
 
 For device specific setup instructions, see:
 - [Device Portal for Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Device Portal for HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [Device Portal for HoloLens](https://developer.microsoft.com/mixed-reality)
 - [Device Portal for IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
@@ -233,8 +233,8 @@ Error : DEP0700 : Registration of the app failed.
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
-* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
+* [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
+* [How-to articles on developing UWP apps](https://docs.microsoft.com/windows/uwp/develop/)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a UWP app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

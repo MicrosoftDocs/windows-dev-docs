@@ -47,7 +47,7 @@ A complex component usually includes Windows resources, but see the note about d
 
 **To create an extension SDK**
 
-1.  Make sure you have the Visual Studio SDK installed. You can download the Visual Studio SDK from the [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs) page.
+1.  Make sure you have the Visual Studio SDK installed. You can download the Visual Studio SDK from the [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs) page.
 2.  Create a new project using the VSIX Project template. You can find the template under Visual C# or Visual Basic, in the Extensibility category. This template is installed as part of the Visual Studio SDK. ([Walkthrough: Creating an SDK using C# or Visual Basic](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015) or [Walkthrough: Creating an SDK using C++](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015), demonstrates the use of this template in a very simple scenario. )
 3.  Determine the folder structure for your SDK. The folder structure begins at the root level of your VSIX project, with the **References**, **Redist**, and **DesignTime** folders.
 

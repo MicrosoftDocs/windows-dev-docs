@@ -52,7 +52,7 @@ For example, consider a business object where there is a list of "Teams" (ordere
 
 ### Attached properties
 
-Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
+Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
 
 ### Combining property path syntax
 
@@ -64,7 +64,7 @@ Because a property path is interpreted by a binding engine and relies on info th
 
 ## Property path for animation targeting
 
-Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
+Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 For more info on the how to define animations in XAML, see [Storyboarded animations](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
@@ -101,7 +101,7 @@ The [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Proper
 
 Most of the time, you can apply a [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) in XAML without using any code at all. But in some cases you may want to define a **PropertyPath** object using code and assign it to a property at run-time.
 
-[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) has a [**PropertyPath(String)**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
+[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) has a [**PropertyPath(String)**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
 
 ## Related topics
 
@@ -110,6 +110,6 @@ Most of the time, you can apply a [**PropertyPath**](https://docs.microsoft.com/
 * [{Binding} markup extension](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**Binding constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**Binding constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

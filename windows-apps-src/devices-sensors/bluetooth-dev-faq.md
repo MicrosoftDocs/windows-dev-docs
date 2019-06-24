@@ -76,5 +76,5 @@ Yes, all these APIs should work. This blog details the way to call [Windows APIs
 **Bluetooth LE**: Yes, all functionality is in OneCore and should be available on most recent devices w/ a functioning Bluetooth LE stack. 
 > Caveat: Peripheral Role is hardware dependent and some Windows Server Editions don't support Bluetooth. 
 
-**Bluetooth BR/EDR (Classic)**: Some variations exist but by and large, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile docs for [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+**Bluetooth BR/EDR (Classic)**: Some variations exist but by and large, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile docs for [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/products/windows?os=windows-10-mobile)
 

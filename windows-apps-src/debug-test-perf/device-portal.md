@@ -207,7 +207,7 @@ Connecting on the HTTPS port is suggested, as not all devices are listening on t
 
 ### CSRF Protection and Scripting
 
-In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
+In order to protect against [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
 
 > [!IMPORTANT]
 > This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways:

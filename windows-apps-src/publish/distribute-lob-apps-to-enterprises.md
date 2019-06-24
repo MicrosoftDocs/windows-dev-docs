@@ -1,4 +1,4 @@
-﻿---
+---
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
@@ -33,7 +33,7 @@ To confirm the association, click **Accept**. Your account will then be able to 
 
 ## Submit LOB apps
 
-Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](the-app-certification-process.md), and must comply with all [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies). There are just a few parts of the process that are different.
+Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](the-app-certification-process.md), and must comply with all [Microsoft Store Policies](store-policies.md). There are just a few parts of the process that are different.
 
 
 ### Visibility
@@ -65,7 +65,7 @@ For LOB apps, the [age ratings](age-ratings.md) step of the submission process w
 After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store for Business or Microsoft Store for Education portal. The enterprise can then deploy the app to its users.
 
 > [!NOTE]
-> In order to get your LOB app, the organization must be located in a [supported market](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](define-pricing-and-market-selection.md) when submitting your app. 
+> In order to get your LOB app, the organization must be located in a [supported market](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](define-pricing-and-market-selection.md) when submitting your app. 
 
 For more info, see [Working with line-of-business apps](https://go.microsoft.com/fwlink/p/?LinkId=698846) and [Distribute apps using your private store](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 

@@ -38,7 +38,7 @@ For reference topics that enumerate all device families and their versions, and 
 
 ## .NET API availability in UWP versions
 
-UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
 
 If you wish to create reusable cross-platform libraries, .NET Standard is supported on UWP. The [.NET Standard documentation](https://docs.microsoft.com/dotnet/standard/net-standard) provides information on which .NET Standard is supported in which UWP versions.
 

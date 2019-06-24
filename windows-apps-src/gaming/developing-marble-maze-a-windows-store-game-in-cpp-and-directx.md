@@ -37,7 +37,7 @@ Marble Maze offers multiple ways for a user to interact with the game board. If 
 
 
 -   Windows 10 Creators Update
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 -   C++ programming knowledge
 -   Familiarity with DirectX and DirectX terminology
 -   Basic knowledge of COM

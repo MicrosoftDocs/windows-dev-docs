@@ -59,7 +59,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
     <!-- TODO reduce size -->
     ![A unicorn](../basics/images/xaml-basics/unicorn.png)
     
-    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article tells you everything you need to know about XAML shapes. 
+    > **Read about it:** The [Draw shapes](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) article tells you everything you need to know about XAML shapes. 
     
     We want to create a triangle-looking widget--something like the shape you'd see on a stereo's volume control.
     

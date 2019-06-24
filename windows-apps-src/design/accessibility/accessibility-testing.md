@@ -89,7 +89,7 @@ Use your app while a high-contrast theme is active to verify that all the UI ele
 
 ## Verify your app with display settings  
 
-Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://developer.microsoft.com/windows/design) and provide additional resources for different scaling factors.
+Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://developer.microsoft.com/windows/apps/design) and provide additional resources for different scaling factors.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -158,4 +158,4 @@ One aspect that you can test is whether there are elements appearing in the UI A
 * [Practices to avoid](practices-to-avoid.md)
 * [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Accessibility in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

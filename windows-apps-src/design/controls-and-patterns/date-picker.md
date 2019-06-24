@@ -53,7 +53,7 @@ The entry point displays the chosen date, and when the user selects the entry po
 This example shows how to create a simple date picker with a header.
 
 ```xaml
-<DatePicker x:Name=birthDatePicker Header="Date of birth"/>
+<DatePicker x:Name="birthDatePicker" Header="Date of birth"/>
 ```
 
 ```csharp

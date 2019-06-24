@@ -36,8 +36,8 @@ If users unenroll their device from the organization's MDM system, or uninstall 
 ![Wip Lifecycle](images/wip-lifecycle.png)
 
 > **Read more about WIP** <br>
-* [Introducing Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Protect your enterprise data using Windows Information Protection (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+* [Introducing Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Protect your enterprise data using Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 If your app is on the allowed list, all data produced by your app is subject to policy restrictions. That means that if administrators revoke the user's access to enterprise data, those users lose access to all of the data that your app produced.
 

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 This article describes the new Windows Hello technology that ships as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
 
-Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](https://technet.microsoft.com/library/mt589441.aspx).
+Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide).
 
 For a complete code sample, see the [Windows Hello code sample on GitHub](https://go.microsoft.com/fwlink/?LinkID=717812).
 
@@ -57,7 +57,7 @@ Windows Hello is not just a replacement for traditional 2FA systems, though. It 
 
 ### 2.2 How Windows Hello works
 
-When the user sets up Windows Hello on his or her machine, it generates a new public–private key pair on the device. The [trusted platform module](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
+When the user sets up Windows Hello on his or her machine, it generates a new public–private key pair on the device. The [trusted platform module](https://docs.microsoft.com/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
 
 To enable Windows Hello on a device, the user must have either their Azure Active Directory account or Microsoft Account connected in Windows settings.
 
@@ -402,8 +402,8 @@ Mission accomplished! You just made the Internet a safer place!
 
 ### 6.1 Articles and sample code
 
-- [Windows Hello overview](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Implementation details for Windows Hello](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide)
+- [Windows Hello overview](https://support.microsoft.com/help/17215)
+- [Implementation details for Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello code sample on GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### 6.2 Terminology

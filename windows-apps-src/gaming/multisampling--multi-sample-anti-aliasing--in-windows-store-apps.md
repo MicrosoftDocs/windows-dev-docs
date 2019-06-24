@@ -24,7 +24,7 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
 
 1.  Call [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://docs.microsoft.com/previous-versions//ff471324(v=vs.85)), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
+    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
 
     The following code checks multisampling support for all the DXGI\_FORMAT values:
 

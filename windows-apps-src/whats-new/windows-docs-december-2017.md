@@ -40,7 +40,7 @@ On devices that support touch interactions, add keyboard functionality with the 
 
 ### Microsoft Collaborate
 
-The Microsoft Collaborate portal provides tools and services to streamline engineering collaboration within the Microsoft ecosystem by enabling the sharing of engineering system work items (bugs, feature requests, etc.) and the distribution of content (builds, documents, specs). [Learn more](https://docs.microsoft.com/en-us/collaborate).
+The Microsoft Collaborate portal provides tools and services to streamline engineering collaboration within the Microsoft ecosystem by enabling the sharing of engineering system work items (bugs, feature requests, etc.) and the distribution of content (builds, documents, specs). [Learn more](https://docs.microsoft.com/collaborate/).
 
 ![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
@@ -48,7 +48,7 @@ The Microsoft Collaborate portal provides tools and services to streamline engin
 
 Visual Studio 2017 version 15.5 has updated the **Windows Application Packaging Project** template so that it's much easier to include a UWP project. You no longer have to use a JavaScript-based packaging project, and then manually tweak the package manifest.  
 
-See [Package an app by using Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net) for guidance on how to use this new template to package your desktop application.
+See [Package an app by using Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) for guidance on how to use this new template to package your desktop application.
 
 See [Extend your desktop application with modern UWP components](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) for guidance about how to add a UWP project to your package.
 

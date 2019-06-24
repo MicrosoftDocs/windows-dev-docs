@@ -234,7 +234,7 @@ You can find these templates in the **Add New Project** dialog box under the **V
 ![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://www.xamarin.com/forms).
+>Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://docs.microsoft.com/xamarin/xamarin-forms/).
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
@@ -273,7 +273,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://developer.xamarin.com/).
+To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://docs.microsoft.com/xamarin).
 
 ## Next steps
 

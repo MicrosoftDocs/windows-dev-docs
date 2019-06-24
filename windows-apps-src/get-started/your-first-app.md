@@ -59,7 +59,7 @@ Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore
 
 Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
 
-* [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Hosted Web Apps](https://developer.microsoft.com/windows/pwa)
 * [Convert your web application to a UWP app](../porting/hwa-create-windows.md)
 
 

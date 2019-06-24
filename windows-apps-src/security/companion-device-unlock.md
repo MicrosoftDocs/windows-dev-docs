@@ -32,7 +32,7 @@ There are numerous ways one can use the Windows Hello companion device framework
 
 ### Biometric enabled Windows Hello companion devices
 
-If the companion device supports biometrics, in some cases the [Windows Biometric framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
+If the companion device supports biometrics, in some cases the [Windows Biometric framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
 
 ### Components of the solution
 

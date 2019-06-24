@@ -472,7 +472,7 @@ Audio graph is a collection of [XAudio2 voices](/windows/desktop/xaudio2/xaudio2
 ### Additional reading
 
 * [How to: Initialize XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
-* [How to: Load Audio Data Files in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [How to: Load Audio Data Files in XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2)
 * [How to: Play a Sound with XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## Key audio .h files

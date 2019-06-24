@@ -14,6 +14,7 @@ If your ARM32 or ARM64 UWP app isn't working correctly on ARM, here's some guida
 >[!NOTE]
 > To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later, or Visual Studio 2019. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
 
+
 ## Common issues
 Here are some common issues to keep in mind when troubleshooting ARM32 and ARM64 apps.
 

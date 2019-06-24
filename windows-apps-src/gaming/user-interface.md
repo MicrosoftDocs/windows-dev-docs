@@ -18,7 +18,7 @@ The DirectX and Universal Windows Platform (UWP) templates allow you to quickly 
 
 To create the project you need to:
 
--   [Download Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 has tools for graphics programming, such as debugging tools. For an overview of DirectX graphics and gaming features and tools, see [Visual Studio tools for DirectX game development](set-up-visual-studio-for-game-development.md).
+-   [Download Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/). Visual Studio 2015 has tools for graphics programming, such as debugging tools. For an overview of DirectX graphics and gaming features and tools, see [Visual Studio tools for DirectX game development](set-up-visual-studio-for-game-development.md).
 
 ## Choosing a template
 
