@@ -95,6 +95,15 @@ Some properties are common across all [**DeviceInformationKind**](https://docs.m
 
  
 
+## DevicePanel properties
+
+| Name                                            | Type    | Description                                                                                                      |
+|-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| **System.Devices.Panel.PanelId**                | String  | The identifier of the **DevicePanel** object.                                                                    |
+| **System.Devices.Panel.PanelGroup**             | String  | The identifier of the parent **PanelGroup**.                                                                      |
+ 
+ 
+ 
 ## AssociationEndpoint properties
 
 | Name                                  | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -149,9 +158,3 @@ Some properties are common across all [**DeviceInformationKind**](https://docs.m
 | **System.Devices.AepService.ServiceClassId**    | GUID    | Iidentity of the service represented by this device.                                                             |
 | **System.Devices.AepService.ServiceId**         | String  | Identity of this service. This is also the value of [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | String  | The best display name for the service.                                                                           |
-
- 
-
- 
-
- 
