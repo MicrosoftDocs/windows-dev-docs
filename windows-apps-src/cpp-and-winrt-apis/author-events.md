@@ -85,7 +85,10 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-You don't need to implement the overload for the event revoker (for details, see [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate))&mdash;that's taken care of for you by the C++/WinRT projection. The other overloads are not baked into the projection, in order to give you the flexibility to implement them optimally for your scenario. Calling [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) and [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) like this is an efficient and concurrency/thread-safe default. But if you have a very large number of events, then you may not want an event field for each, but rather opt for some kind of sparse implementation instead.
+> [!NOTE]
+> For details of what an auto event revoker is, see [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate). You get auto event revoker implementation for free for your event. In other words, you don't need to implement the overload for the event revoker&mdash;that's provided for you by the C++/WinRT projection.
+
+The other overloads (the registration and manual revocation overloads) are *not* baked into the projection. That's to give you the flexibility to implement them optimally for your scenario. Calling [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) and [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) as shown in these implementations is an efficient and concurrency/thread-safe default. But if you have a very large number of events, then you may not want an event field for each, but rather opt for some kind of sparse implementation instead.
 
 You can also see above that the implementation of the **AdjustBalance** function raises the **AccountIsInDebit** event if the balance goes negative.
 
