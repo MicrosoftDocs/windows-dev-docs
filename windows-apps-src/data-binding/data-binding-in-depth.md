@@ -521,6 +521,18 @@ If you bind a text control to a value that is not a string, the data binding eng
 
 <span id="resource-dictionaries-with-x-bind"/>
 
+## Element-to-element binding
+
+You can bind the property of one XAML element to the property of another XAML element. Here's an example of how that looks in markup.
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+> [!IMPORTANT]
+> For the necessary workflow for element-to-element binding using C++/WinRT, see [Element-to-element binding](/windows/uwp/cpp-and-winrt-apis/binding-property#element-to-element-binding).
+
 ## Resource dictionaries with {x:Bind}
 
 The [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) depends on code generation, so it needs a code-behind file containing a constructor that calls **InitializeComponent** (to initialize the generated code). You re-use the resource dictionary by instantiating its type (so that **InitializeComponent** is called) instead of referencing its filename. Here's an example of what to do if you have an existing resource dictionary and you want to use {x:Bind} in it.
