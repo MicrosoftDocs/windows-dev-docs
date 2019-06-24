@@ -38,5 +38,5 @@ Accessibility is about building experiences that make your application available
 | [Control patterns and interfaces](control-patterns-and-interfaces.md) | Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them. |
 
 ## Related topics  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-* [Get started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

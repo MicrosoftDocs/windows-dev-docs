@@ -26,7 +26,7 @@ The assigned reviewer(s) may approve or reject the PR, or work with you to make 
 
 ## Internal contributions
 
-If you are a Microsoft employee, you can contribute through the [private content repository](https://cpubwin.visualstudio.com/_git/windows-uwp). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation on upcoming features must be contributed via the private repository only.
+If you are a Microsoft employee, you can contribute through the [private content repository](https://github.com/microsoftdocs/windows-uwp-pr). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation on upcoming features must be contributed via the private repository only.
 
 ### Editing a file
 

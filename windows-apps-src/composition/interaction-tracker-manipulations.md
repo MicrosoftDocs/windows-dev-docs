@@ -145,7 +145,7 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
     tracker.MinPosition = new Vector3(-1000f);
     tracker.MaxPosition = new Vector3(1000f);
 
-    // #3 Setup the VisualInteractionSourc
+    // #3 Setup the VisualInteractionSource
     var source = VisualInteractionSource.Create(hitTestRoot);
 
     // #4 Set the properties for the VisualInteractionSource

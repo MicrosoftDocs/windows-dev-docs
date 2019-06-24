@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.
 
-> **Important APIs**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Important APIs**: [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -105,7 +105,7 @@ For example, grippers can also be used in image processing apps that support res
 
 
 **For developers**
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Samples**
 * [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)

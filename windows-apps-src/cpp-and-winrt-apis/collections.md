@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
-ms.date: 10/03/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
@@ -15,9 +15,6 @@ Internally, a Windows Runtime collection has a lot of complicated moving parts. 
 
 Also see [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
 
-> [!NOTE]
-> If you haven't installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later, then you won't have access to the functions and base classes that are documented in this topic. Instead, see [If you have an older version of the Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) for a listing of an observable vector template that you can use instead.
-
 ## Helper functions for collections
 
 ### General-purpose collection, empty
@@ -26,12 +23,14 @@ This section covers the scenario where you wish to create a collection that's in
 
 To retrieve a new object of a type that implements a general-purpose collection, you can call the [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector) function template. The object is returned as an [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_), and that's the interface via which you call the returned object's functions and properties.
 
+If you want to copy-paste the following code examples directly into the main source code file of a **Windows Console Application (C++/WinRT)** project, then first set **Not Using Precompiled Headers** in project properties.
+
 ```cppwinrt
-...
+// main.cpp
 #include <winrt/Windows.Foundation.Collections.h>
 #include <iostream>
 using namespace winrt;
-...
+
 int main()
 {
     winrt::init_apartment();
@@ -52,7 +51,7 @@ int main()
 
 As you can see in the code example above, after creating the collection you can append elements, iterate over them, and generally treat the object as you would any Windows Runtime collection object that you might have received from an API. If you need an immutable view over the collection, then you can call [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), as shown. The pattern shown above&mdash;of creating and consuming a collection&mdash;is appropriate for simple scenarios where you want to pass data into, or get data out of, an API. You can pass an **IVector**, or an **IVectorView**, anywhere an [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_) is expected.
 
-In the code example above, the call to **winrt::init_apartment** initializes COM; by default, in a multithreaded apartment.
+In the code example above, the call to **winrt::init_apartment** initializes the thread in the Windows Runtime; by default, in a multithreaded apartment. The call also initializes COM.
 
 ### General-purpose collection, primed from data
 
@@ -74,18 +73,20 @@ for (auto const& el : coll2)
 
 You can pass a temporary object containing your data to **winrt::single_threaded_vector**, as with `coll1`, above. Or you can move a **std::vector** (assuming you won't be accessing it again) into the function. In both cases, you're passing an *rvalue* into the function. That enables the compiler to be efficient and to avoid copying the data. If you want to know more about *rvalues*, see [Value categories, and references to them](cpp-value-categories.md).
 
-If you want to bind a XAML items control to your collection, then you can. But be aware that to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable** (or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)). Here's a code example that produces a collection of a type suitable for binding, and appends an element to it.
+If you want to bind a XAML items control to your collection, then you can. But be aware that to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable** (or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)).
+
+Here's a code example that produces a collection of a type suitable for binding, and appends an element to it. You can find the context for this code example in [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>() };
-bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+bookSkus.Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
 You can create a Windows Runtime collection from data, and get a view on it ready to pass to an API, all without copying anything.
 
 ```cppwinrt
 std::vector<float> values{ 0.1f, 0.2f, 0.3f };
-IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+Windows::Foundation::Collections::IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
 ```
 
 In the examples above, the collection we create *can* be bound to a XAML items control; but the collection isn't observable.

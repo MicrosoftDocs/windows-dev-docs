@@ -1,7 +1,7 @@
 ---
 description: This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.
 title: Consume COM components with C++/WinRT
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
@@ -25,7 +25,7 @@ To be more specific, we're talking about interacting with interface *pointers*. 
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-The code above shows how to declare an uninitialized smart pointer to a [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM interface. The smart pointer is uninitialized, so it's not yet pointing to a **ID2D1Factory1** interface belonging to any actual object (it's not pointing to an interface at all). But it has the potential to do so; and (being a smart pointer) it has the ability via COM reference counting to manage the lifetime of the owning object of the interface that it points to, and to be the medium by which you call functions on that interface.
+The code above shows how to declare an uninitialized smart pointer to a [**ID2D1Factory1**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM interface. The smart pointer is uninitialized, so it's not yet pointing to a **ID2D1Factory1** interface belonging to any actual object (it's not pointing to an interface at all). But it has the potential to do so; and (being a smart pointer) it has the ability via COM reference counting to manage the lifetime of the owning object of the interface that it points to, and to be the medium by which you call functions on that interface.
 
 ## COM functions that return an interface pointer as **void**
 
@@ -67,7 +67,7 @@ D2D1CreateFactory(
 
 ## COM functions that return an interface pointer as **IUnknown**
 
-The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) type. For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), but reinterpret cast that to **IUnknown**.
+The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) type. For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), but reinterpret cast that to **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -166,6 +166,8 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
+The code below uses the [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) where possible.
+
 ```cppwinrt
 #include "pch.h"
 #include <d2d1_1.h>
@@ -258,7 +260,7 @@ namespace
         winrt::check_hresult(dxdevice->GetAdapter(adapter.put()));
 
         winrt::com_ptr<IDXGIFactory2> factory;
-        winrt::check_hresult(adapter->GetParent(__uuidof(factory), factory.put_void()));
+        factory.capture(adapter, &IDXGIAdapter::GetParent);
         return factory;
     }
 
@@ -270,7 +272,7 @@ namespace
         WINRT_ASSERT(target);
 
         winrt::com_ptr<IDXGISurface> surface;
-        winrt::check_hresult(swapchain->GetBuffer(0, __uuidof(surface), surface.put_void()));
+        surface.capture(swapchain, &IDXGISwapChain1::GetBuffer, 0);
 
         D2D1_BITMAP_PROPERTIES1 const props{ D2D1::BitmapProperties1(
             D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
@@ -472,13 +474,15 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
 ## Working with COM types, such as BSTR and VARIANT
 
-As you can see, C++/WinRT provides support for both implementing and calling COM interfaces. For using COM types, such as BSTR and VARIANT, there is always the option to use those in their raw form (together with the appropriate APIs). Alternatively, you can use wrappers provided by a framework such as the [Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts), or by the Visual C++ compiler's [COM Support](/cpp/cpp/compiler-com-support), or even by your own wrappers.
+As you can see, C++/WinRT provides support for both implementing and calling COM interfaces. For using COM types, such as BSTR and VARIANT, we recommend that you use wrappers provided by the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil), such as **wil::unique_bstr** and **wil::unique_variant** (which manage resources lifetimes).
+
+[WIL](https://github.com/Microsoft/wil) supersedes frameworks such as the Active Template Library (ATL), and the Visual C++ compiler's COM Support. And we recommend it over writing your own wrappers, or using COM types such as BSTR and VARIANT in their raw form (together with the appropriate APIs).
 
 ## Important APIs
 * [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)

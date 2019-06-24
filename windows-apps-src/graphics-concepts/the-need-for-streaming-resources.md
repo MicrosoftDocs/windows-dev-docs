@@ -29,7 +29,7 @@ In a graphics system (that is, the operating system, display driver, and graphic
 
 For a [buffer](introduction-to-buffers.md), the entire buffer is the subresource.
 
-For a [Texture](textures.md), (for example, [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)), each mip level is a subresource; for a texture array, (for example, [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)) each mip level at a given array slice is a subresource. The graphics system only exposes the ability to manage the mapping of allocations at this subresource granularity. In the context of streaming resources, "mapping" refers to making data visible to the GPU.
+For a [Texture](textures.md), (for example, [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)), each mip level is a subresource; for a texture array, (for example, [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)) each mip level at a given array slice is a subresource. The graphics system only exposes the ability to manage the mapping of allocations at this subresource granularity. In the context of streaming resources, "mapping" refers to making data visible to the GPU.
 
 ## <span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>Without tiling, can't access only a small portion of mipmap chain
 
@@ -43,7 +43,7 @@ In reality, without streaming resource support, the graphics system can only be 
 
 Software paging can be used to break the surface into tiles that are small enough for the hardware to handle.
 
-Direct3D supports [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) surfaces with up to 16384 pixels on a given side. An image that is 16384 wide by 16384 tall and 4 bytes per pixel would consume 1GB of video memory (and adding mipmaps would double that amount). In practice, all 1GB would rarely need to be referenced in a single rendering operation.
+Direct3D supports [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) surfaces with up to 16384 pixels on a given side. An image that is 16384 wide by 16384 tall and 4 bytes per pixel would consume 1GB of video memory (and adding mipmaps would double that amount). In practice, all 1GB would rarely need to be referenced in a single rendering operation.
 
 Some game developers model terrain surfaces as large as 128K by 128K. The way they get this to work on existing GPUs is to break the surface into tiles that are small enough for hardware to handle. The application must figure out which tiles might be needed and load them into a cache of textures on the GPU - a software paging system.
 

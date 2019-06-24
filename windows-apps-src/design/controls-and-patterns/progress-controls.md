@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 
 A progress control provides feedback to the user that a long-running operation is underway. It can mean that the user cannot interact with the app when the progress indicator is visible, and can also indicate how long the wait time might be, depending on the indicator used.
 
-> **Important APIs**: [ProgressBar class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [IsActive property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **Important APIs**: [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## Types of progress
 
@@ -181,9 +181,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## Related articles
 
-- [ProgressBar class](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [ProgressRing class](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [ProgressBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **For developers (XAML)**
-- [Adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Adding progress controls](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [How to create a custom indeterminate progress bar for Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

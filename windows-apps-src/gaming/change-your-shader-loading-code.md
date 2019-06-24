@@ -14,37 +14,37 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116)
--   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
--   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
+-   [Input-Assembler Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
+-   [Vertex-Shader Stage](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [Pixel-Shader Stage](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
-Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.
+Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) and [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.
 
 ## Reviewing the Direct3D 11 shader pipeline
 
 
-The shader objects are created with methods on the [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) interface, such as [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513).
+The shader objects are created with methods on the [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) interface, such as [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) and [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader).
 
-The Direct3D 11 graphics pipeline is managed by instances of the [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) interface, and has the following stages:
+The Direct3D 11 graphics pipeline is managed by instances of the [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) interface, and has the following stages:
 
--   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116). The input-assembler stage supplies data (triangles, lines and points) to the pipeline. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "IA".
--   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - The vertex-shader stage processes vertices, typically performing operations such as transformations, skinning, and lighting. A vertex shader always takes a single input vertex and produces a single output vertex. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "VS".
--   [Stream-Output Stage](https://msdn.microsoft.com/library/windows/desktop/bb205121) - The stream-output stage streams primitive data from the pipeline to memory on its way to the rasterizer. Data can be streamed out and/or passed into the rasterizer. Data streamed out to memory can be recirculated back into the pipeline as input data or read-back from the CPU. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "SO".
--   [Rasterizer Stage](https://msdn.microsoft.com/library/windows/desktop/bb205125) - The rasterizer clips primitives, prepares primitives for the pixel shader, and determines how to invoke pixel shaders. You can disable rasterization by telling the pipeline there is no pixel shader (set the pixel shader stage to NULL with [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), and disabling depth and stencil testing (set DepthEnable and StencilEnable to FALSE in [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). While disabled, rasterization-related pipeline counters will not update.
--   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - The pixel-shader stage receives interpolated data for a primitive and generates per-pixel data such as color. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "PS".
--   [Output-Merger Stage](https://msdn.microsoft.com/library/windows/desktop/bb205120) - The output-merger stage combines various types of output data (pixel shader values, depth and stencil information) with the contents of the render target and depth/stencil buffers to generate the final pipeline result. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "OM".
+-   [Input-Assembler Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage). The input-assembler stage supplies data (triangles, lines and points) to the pipeline. [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) methods that support this stage are prefixed with "IA".
+-   [Vertex-Shader Stage](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - The vertex-shader stage processes vertices, typically performing operations such as transformations, skinning, and lighting. A vertex shader always takes a single input vertex and produces a single output vertex. [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) methods that support this stage are prefixed with "VS".
+-   [Stream-Output Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage) - The stream-output stage streams primitive data from the pipeline to memory on its way to the rasterizer. Data can be streamed out and/or passed into the rasterizer. Data streamed out to memory can be recirculated back into the pipeline as input data or read-back from the CPU. [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) methods that support this stage are prefixed with "SO".
+-   [Rasterizer Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage) - The rasterizer clips primitives, prepares primitives for the pixel shader, and determines how to invoke pixel shaders. You can disable rasterization by telling the pipeline there is no pixel shader (set the pixel shader stage to NULL with [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)), and disabling depth and stencil testing (set DepthEnable and StencilEnable to FALSE in [**D3D11\_DEPTH\_STENCIL\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)). While disabled, rasterization-related pipeline counters will not update.
+-   [Pixel-Shader Stage](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)) - The pixel-shader stage receives interpolated data for a primitive and generates per-pixel data such as color. [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) methods that support this stage are prefixed with "PS".
+-   [Output-Merger Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage) - The output-merger stage combines various types of output data (pixel shader values, depth and stencil information) with the contents of the render target and depth/stencil buffers to generate the final pipeline result. [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) methods that support this stage are prefixed with "OM".
 
 (There are also stages for geometry shaders, hull shaders, tesselators, and domain shaders, but since they have no analogues in OpenGL ES 2.0, we won't discuss them here.)
-For a complete list of the methods for these stages, refer to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) reference pages. **ID3D11DeviceContext1** extends **ID3D11DeviceContext** for Direct3D 11.
+For a complete list of the methods for these stages, refer to the [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) and [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) reference pages. **ID3D11DeviceContext1** extends **ID3D11DeviceContext** for Direct3D 11.
 
 ## Creating a shader
 
 
-In Direct3D, shader resources are not created before compiling and loading them; rather, the resource is created when the HLSLis loaded. Therefore, there is no directly analogous function to glCreateShader, which creates an initialized shader resource of a specific type (such as GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER). Rather, shaders are created after the HLSL is loaded with specific functions like [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513), and which take the type and the compiled HLSL as parameters.
+In Direct3D, shader resources are not created before compiling and loading them; rather, the resource is created when the HLSLis loaded. Therefore, there is no directly analogous function to glCreateShader, which creates an initialized shader resource of a specific type (such as GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER). Rather, shaders are created after the HLSL is loaded with specific functions like [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) and [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader), and which take the type and the compiled HLSL as parameters.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCreateShader | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object, passing them the CSO as a buffer. |
+| glCreateShader | Call [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) and [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) after successfully loading the compiled shader object, passing them the CSO as a buffer. |
 
  
 
@@ -67,25 +67,25 @@ As noted in the section on creating a shader, Direct3D 11 creates the shader whe
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ShaderSource  | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object. |
+| ShaderSource  | Call [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) and [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) after successfully loading the compiled shader object. |
 
  
 
 ## Setting up the pipeline
 
 
-OpenGL ES 2.0 has the "shader program" object, which contains multiple shaders for execution. Individual shaders are attached to the shader program object. However, in Direct3D 11, you work with the rendering context ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) directly and create shaders on it.
+OpenGL ES 2.0 has the "shader program" object, which contains multiple shaders for execution. Individual shaders are attached to the shader program object. However, in Direct3D 11, you work with the rendering context ([**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)) directly and create shaders on it.
 
 | OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
 | glCreateProgram | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
 | glLinkProgram   | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
 | glUseProgram    | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
-| glGetProgramiv  | Use the reference you created to [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
+| glGetProgramiv  | Use the reference you created to [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). |
 
  
 
-Create an instance of [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) and [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) with the static [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method.
+Create an instance of [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) and [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11device2) with the static [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) method.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11Device1>          m_d3dDevice;
@@ -110,7 +110,7 @@ D3D11CreateDevice(
 ## Setting the viewport(s)
 
 
-Setting a viewport in Direct3D 11 is very similar to how you set a viewport in OpenGL ES 2.0. In Direct3D 11, call [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) with a configured [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722).
+Setting a viewport in Direct3D 11 is very similar to how you set a viewport in OpenGL ES 2.0. In Direct3D 11, call [**ID3D11DeviceContext::RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) with a configured [**CD3D11\_VIEWPORT**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85)).
 
 Direct3D 11: Setting a viewport.
 
@@ -126,33 +126,33 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85)), [**ID3D11DeviceContext::RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) |
 
  
 
 ## Configuring the vertex shaders
 
 
-Configuring a vertex shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795).
+Configuring a vertex shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-vssetconstantbuffers1).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
-| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
+| glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader)                       |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vsgetshader)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-vsgetconstantbuffers1). |
 
  
 
 ## Configuring the pixel shaders
 
 
-Configuring a pixel shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649)
+Configuring a pixel shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-pssetconstantbuffers1)
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
-| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
+| glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)                         |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-psgetshader)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-psgetconstantbuffers1). |
 
  
 
@@ -163,8 +163,8 @@ When the pipeline completes, you draw the results of the shader stages into the 
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or other Draw\* methods on [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
-| eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw), [**ID3D11DeviceContext1::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (or other Draw\* methods on [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)). |
+| eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)                                                                                                                                                                              |
 
  
 
@@ -236,7 +236,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 In this case, SV\_TARGET is the location of the render target that the pixel color (defined as a vector with four float values) is written to when the shader completes execution.
 
-For more details on the use of semantics with Direct3D, read [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+For more details on the use of semantics with Direct3D, read [HLSL Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
  
 

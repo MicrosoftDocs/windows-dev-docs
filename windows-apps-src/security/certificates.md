@@ -47,7 +47,7 @@ The X.509 public key certificate standard has been revised over time. Each succe
 
 ![x.509 certificate versions 1, 2, and 3](images/x509certificateversions.png)
 
-Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
+Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
 
 ### Version 1 fields
 

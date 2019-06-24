@@ -17,7 +17,7 @@ Testing procedures to follow to ensure that your Universal Windows Platform (UWP
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
 
 ## Run accessibility testing tools  
-The Windows Software Development Kit (SDK) includes several accessibility testing tools such as [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). These tools can help you verify the accessibility of your app. Be sure to verify all app scenarios and UI elements.
+The Windows Software Development Kit (SDK) includes several accessibility testing tools such as [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope), [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) and [**UI Accessibility Checker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker). These tools can help you verify the accessibility of your app. Be sure to verify all app scenarios and UI elements.
 
 You can launch the accessibility testing tools either from a Microsoft Visual Studio command prompt or from the Windows SDK tools folder (the bin subdirectory of where the Windows SDK is installed on your development machine).
   
@@ -29,16 +29,16 @@ You can launch the accessibility testing tools either from a Microsoft Visual St
 
 ### **AccScope**  
 
-The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool enables developers and testers to evaluate the accessibility of their app during the app's development and design, potentially in earlier prototype phases, rather than in the late testing phases of an app's development cycle. It's particularly intended for testing Narrator accessibility scenarios with your app.
+The [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) tool enables developers and testers to evaluate the accessibility of their app during the app's development and design, potentially in earlier prototype phases, rather than in the late testing phases of an app's development cycle. It's particularly intended for testing Narrator accessibility scenarios with your app.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
 ### **Inspect**  
 
-[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) attached properties.
+[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) attached properties.
 
-The following image shows the [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) tool querying the UI Automation properties of the **Edit** menu element in Notepad.
+The following image shows the [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) tool querying the UI Automation properties of the **Edit** menu element in Notepad.
 
 ![Screen shot of the Inspect tool.](./images/inspect.png)
 
@@ -58,7 +58,7 @@ The following image shows the [**Inspect**](https://msdn.microsoft.com/library/w
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### **Accessible Event Watcher**  
-[**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. Changes in the UI can occur when the focus changes, or when a UI element is invoked, selected, or has a state or property change.
+[**Accessible Event Watcher (AccEvent)**](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. Changes in the UI can occur when the focus changes, or when a UI element is invoked, selected, or has a state or property change.
 
 > [!NOTE]
 > Most accessibility testing tools mentioned in the documentation run on a PC, not on a phone. You can run some of the tools while developing and using an emulator, but most of these tools can't expose the UI Automation tree within the emulator.
@@ -89,7 +89,7 @@ Use your app while a high-contrast theme is active to verify that all the UI ele
 
 ## Verify your app with display settings  
 
-Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://msdn.microsoft.com/library/windows/apps/Dn611863) and provide additional resources for different scaling factors.
+Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://developer.microsoft.com/windows/apps/design) and provide additional resources for different scaling factors.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -136,9 +136,9 @@ Starting with Windows 10 version 1607, we introduced a new developer mode in Nar
 
     Some controls provide additional actions. To display the full list, enter a single four-finger tap.
 
-    If a control responds to the mouse or keyboard but does not respond to a primary or secondary touch interaction, the control might need to implement additional [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009) control patterns.
+    If a control responds to the mouse or keyboard but does not respond to a primary or secondary touch interaction, the control might need to implement additional [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32) control patterns.
 
-You should also consider using the [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool to test Narrator accessibility scenarios with your app. The [**AccScope tool topic**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) describes how to configure **AccScope** to test Narrator scenarios.
+You should also consider using the [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) tool to test Narrator accessibility scenarios with your app. The [**AccScope tool topic**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) describes how to configure **AccScope** to test Narrator scenarios.
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
@@ -147,15 +147,15 @@ You should also consider using the [**AccScope**](https://msdn.microsoft.com/lib
 ## Examine the UI Automation representation for your app  
 Several of the UI Automation testing tools mentioned previously provide a way to view your app in a way that deliberately does not consider what the app looks like, and instead represents the app as a structure of UI Automation elements. This is how UI Automation clients, mainly assistive technologies, will be interacting with your app in accessibility scenarios.
 
-The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool provides a particularly interesting view of your app because you can see the UI Automation elements either as a visual representation or as a list. If you use the visualization, you can drill down into the parts in a way that you'll be able to correlate with the visual appearance of your app's UI. You can even test the accessibility of your earliest UI prototypes before you've assigned all the logic to the UI, making sure that both the visual interaction and accessibility-scenario navigation for your app is in balance.
+The [**AccScope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) tool provides a particularly interesting view of your app because you can see the UI Automation elements either as a visual representation or as a list. If you use the visualization, you can drill down into the parts in a way that you'll be able to correlate with the visual appearance of your app's UI. You can even test the accessibility of your earliest UI prototypes before you've assigned all the logic to the UI, making sure that both the visual interaction and accessibility-scenario navigation for your app is in balance.
 
-One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.
+One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.
 
 <span id="related_topics"/>
 
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Practices to avoid](practices-to-avoid.md)
-* [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Accessibility in Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

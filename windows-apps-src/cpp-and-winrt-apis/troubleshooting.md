@@ -1,7 +1,7 @@
 ---
 description: The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app.
 title: Troubleshooting C++/WinRT issues
-ms.date: 05/07/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error
 ms.localizationpriority: medium
@@ -34,7 +34,7 @@ If your app terminates and all you know is that an unhandled exception was throw
 | When opening a project, Visual Studio produces the error "*The application for the project is not installed*".|If you haven't already, you need to install **Windows Universal tools for C++ development** from within Visual Studio's **New Project** dialog. If that doesn't resolve the issue, then the project may depend on the C++/WinRT Visual Studio Extension (VSIX) (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).|
 | The Windows App Certification Kit tests produce an error that one of your runtime classes "*does not derive from a Windows base class. All composable classes must ultimately derive from a type in the Windows namespace*".|Any runtime class (that you declare in your application) that derives from a base class is known as a *composable* class. The ultimate base class of a composable class must be a type originating in a Windows.* namespace; for example, [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). See [XAML controls; bind to a C++/WinRT property](binding-property.md) for more details.|
 | The C++ compiler produces a "*must be WinRT type*" error for an EventHandler or TypedEventHandler delegate specialization.|Consider using **winrt::delegate&lt;...T&gt;** instead. See [Author events in C++/WinRT](author-events.md).|
-| The C++ compiler produces a "*must be WinRT type*" error for a Windows Runtime asynchronous operation specialization.|Consider returning a Parallel Patterns Library (PPL) [**task**](https://msdn.microsoft.com/library/hh750113) instead. See [Concurrency and asynchronous operations](concurrency.md).|
+| The C++ compiler produces a "*must be WinRT type*" error for a Windows Runtime asynchronous operation specialization.|Consider returning a Parallel Patterns Library (PPL) [**task**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) instead. See [Concurrency and asynchronous operations](concurrency.md).|
 | The C++ compiler produces "*error C2220: warning treated as error - no 'object' file generated*".|Either correct the warning, or set **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**.|
 | Your app crashes because an event handler in your C++/WinRT object is called after the object has been destroyed.|See [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
 | The C++ compiler produces "*error C2338: This is only for weak ref support*".|You're requesting a weak reference for a type that passed the **winrt::no_weak_ref** marker struct as a template argument to its base class. See [Opting out of weak reference support](weak-references.md#opting-out-of-weak-reference-support).|
@@ -45,6 +45,7 @@ If your app terminates and all you know is that an unhandled exception was throw
 | The C++ compiler produces "*error C2039: 'IUnknown': is not a member of '\`global namespace''*". | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | The C++ linker produces "*error LNK2019: unresolved external symbol _WINRT_CanUnloadNow@0 referenced in function _VSDesignerCanUnloadNow@0*" | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | The build process produces the error message *The C++/WinRT VSIX no longer provides project build support.  Please add a project reference to the Microsoft.Windows.CppWinRT Nuget package*. | Install the **Microsoft.Windows.CppWinRT** NuGet package into your project. For details, see [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension). |
+| The C++ linker produces *error LNK2019: unresolved external symbol*, with a mention of *winrt::impl::consume_Windows_Foundation_Collections_IVector*. | As of [C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), If you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`. |
 
 > [!NOTE]
 > If this topic didn't answer your question, then you might find help by visiting the [Visual Studio C++ developer community](https://developercommunity.visualstudio.com/spaces/62/index.html), or by using the [`c++-winrt` tag on Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

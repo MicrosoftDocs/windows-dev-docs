@@ -41,15 +41,15 @@ Before you start writing code to call the Microsoft Store submission API, make s
 
 * Prepare your app for use with the Microsoft Store submission API:
 
-  * If your app does not yet exist in Partner Center, you must [create your app by reserving its name in Partner Center](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
+  * If your app does not yet exist in Partner Center, you must [create your app by reserving its name in Partner Center](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
 
-  * Before you can create a submission for a given app using this API, you must first [create one submission for the app in Partner Center](https://msdn.microsoft.com/windows/uwp/publish/app-submissions), including answering the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API. You do not need to create an add-on submission or package flight submission before using the API for those types of submissions.
+  * Before you can create a submission for a given app using this API, you must first [create one submission for the app in Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions), including answering the [age ratings](https://docs.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API. You do not need to create an add-on submission or package flight submission before using the API for those types of submissions.
 
-  * If you are creating or updating an app submission and you need to include an app package, [prepare the app package](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements).
+  * If you are creating or updating an app submission and you need to include an app package, [prepare the app package](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
-  * If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
+  * If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
 
-  * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon).
+  * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions).
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -131,7 +131,7 @@ For more information, see our [StoreBroker page on GitHub](https://aka.ms/storeb
 
 | Issue      | Resolution                                          |
 |---------------|---------------------------------------------|
-| After calling the Microsoft Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) cmdlet and then back to JSON format using the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Microsoft Store submission API. When you call the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
+| After calling the Microsoft Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) cmdlet and then back to JSON format using the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Microsoft Store submission API. When you call the [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
 
 ## Additional help
 

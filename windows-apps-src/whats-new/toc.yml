@@ -1,8 +1,8 @@
-- name: What's new in Windows 10 for developers, build 17763
-  href: ../whats-new/windows-10-build-17763.md
+- name: What's new in Windows 10 for developers, build 18362
+  href: ../whats-new/windows-10-build-18362.md
   items:
-    - name: API additions in Windows 10, build 17763
-      href: ../whats-new/windows-10-build-17763-api-diff.md
+    - name: API additions in Windows 10, build 18362
+      href: ../whats-new/windows-10-build-18362-api-diff.md
 - name: What's new in the Windows docs, January 2019
   href: ../whats-new/windows-docs-january-2019.md
   items:
@@ -26,6 +26,11 @@
       href: ../whats-new/windows-docs-july-2017.md
 - name: Previous versions of Windows 10
   items:
+    - name: What's new in Windows 10 for developers, build 17763
+      href: ../whats-new/windows-10-build-17763.md
+      items:
+        - name: API additions in Windows 10, build 17763
+          href: ../whats-new/windows-10-build-17763-api-diff.md
     - name: What's new in Windows 10 for developers, build 17134
       href: ../whats-new/windows-10-build-17134.md
       items:

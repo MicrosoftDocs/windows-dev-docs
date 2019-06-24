@@ -24,7 +24,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ParallaxView">open the app and see the ParallaxView in action</a>.</p>
     <ul>
@@ -37,7 +37,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 ## Parallax and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
 
 ## How it works in a user interface
 
@@ -113,12 +113,8 @@ For the complete list of ways to customize parallax, see the ParallaxView class.
 - Consider using parallax in ListViewItems when ListViewItems contain an image
 - Don’t use it everywhere, overuse can diminish its impact
 
-## Get the sample code
-
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
-
 ## Related articles
 
 - [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [Fluent Design for UWP](../fluent-design-system/index.md)
+- [Fluent Design for UWP](/windows/apps/fluent-design-system)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

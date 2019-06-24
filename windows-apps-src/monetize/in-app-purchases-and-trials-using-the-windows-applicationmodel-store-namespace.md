@@ -9,18 +9,18 @@ ms.localizationpriority: medium
 ---
 # In-app purchases and trials using the Windows.ApplicationModel.Store namespace
 
-You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
+You can use members in the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
 
 The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md). For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. For more information, see [In-app purchases and trials](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
+> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace instead. For more information, see [In-app purchases and trials](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
 
 ## Get started with the CurrentApp and CurrentAppSimulator classes
 
-The main entry point to the **Windows.ApplicationModel.Store** namespace is the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class. This class provides static properties and methods you can use to get info for the current app and its available add-ons, get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks.
+The main entry point to the **Windows.ApplicationModel.Store** namespace is the [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) class. This class provides static properties and methods you can use to get info for the current app and its available add-ons, get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks.
 
-The [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class obtains its data from the Microsoft Store, so you must have a developer account and the app must be published in the Store before you can successfully use this class in your app. Before you submit your app to the Store, you can test your code with a simulated version of this class called [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). After you test your app, and before you submit it to the Microsoft Store, you must replace the instances of **CurrentAppSimulator** with **CurrentApp**. Your app will fail certification if it uses **CurrentAppSimulator**.
+The [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) class obtains its data from the Microsoft Store, so you must have a developer account and the app must be published in the Store before you can successfully use this class in your app. Before you submit your app to the Store, you can test your code with a simulated version of this class called [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator). After you test your app, and before you submit it to the Microsoft Store, you must replace the instances of **CurrentAppSimulator** with **CurrentApp**. Your app will fail certification if it uses **CurrentAppSimulator**.
 
 When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. For more information about this file, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](#proxy).
 
@@ -354,7 +354,7 @@ The root element of this file is the **CurrentApp** element, which represents th
 |  [ListingInformation](#listinginformation)  |    Yes        |  1  |  Contains data from the app's listing.            |
 |  [LicenseInformation](#licenseinformation)  |     Yes       |   1    |   Describes the licenses available for this app and its durable add-ons.     |
 |  [ConsumableInformation](#consumableinformation)  |      No      |   0 or 1   |   Describes the consumable add-ons that are available for this app.      |
-|  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing.    |
+|  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) methods will work in the app during testing.    |
 
 <span id="listinginformation" />
 
@@ -506,7 +506,7 @@ This element describes the license status of a durable add-on in the app. **Prod
 
 #### Simulation element
 
-This element describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing. **Simulation** is an optional child of the **CurrentApp** element, and it contains zero or more [DefaultResponse](#defaultresponse) elements.
+This element describes how calls to various [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) methods will work in the app during testing. **Simulation** is an optional child of the **CurrentApp** element, and it contains zero or more [DefaultResponse](#defaultresponse) elements.
 
 **Simulation** has the following attributes.
 

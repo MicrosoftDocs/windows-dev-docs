@@ -269,8 +269,7 @@ If you have custom UI that appears in response to text input, such as an informa
 
 ![TextBox with custom UI](images/handwritingview/textbox-with-customui.png)
 
-The following example shows how to listen for the [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened), [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
-), and [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) events of the [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) to set the position of a [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups).
+The following example shows how to listen for the [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened), [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed), and [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) events of the [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) to set the position of a [Popup](https://docs.microsoft.com/uwp/api/windows.ui.popups).
 
 ```csharp
 private void Search_HandwritingViewOpened(

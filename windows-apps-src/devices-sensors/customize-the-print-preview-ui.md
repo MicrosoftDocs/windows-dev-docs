@@ -13,9 +13,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
--   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
--   [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426)
+-   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager)
 
 This section describes how to customize the print options and settings in the print preview UI. For more info about printing, see [Print from your app](print-from-your-app.md).
 
@@ -25,20 +25,20 @@ This section describes how to customize the print options and settings in the pr
 
 ## Customize print options
 
-By default, the print preview UI shows the [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479), and [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) print options. In addition to those, there are several other common printer options that you can add to the print preview UI:
+By default, the print preview UI shows the [**ColorMode**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.colormode), [**Copies**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.copies), and [**Orientation**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.orientation) print options. In addition to those, there are several other common printer options that you can add to the print preview UI:
 
--   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
--   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
--   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
--   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
--   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
--   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
--   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+-   [**Binding**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding)
+-   [**Collation**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.collation)
+-   [**Duplex**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex)
+-   [**HolePunch**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.holepunch)
+-   [**InputBin**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.inputbin)
+-   [**MediaSize**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize)
+-   [**MediaType**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype)
+-   [**NUp**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.nup)
+-   [**PrintQuality**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.printquality)
+-   [**Staple**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple)
 
-These options are defined in the [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) class. You can add to or remove options from the list of options displayed in the print preview UI. You can also change the order in which they appear, and set the default settings that are shown to the user.
+These options are defined in the [**StandardPrintTaskOptions**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.StandardPrintTaskOptions) class. You can add to or remove options from the list of options displayed in the print preview UI. You can also change the order in which they appear, and set the default settings that are shown to the user.
 
 However, the modifications that you make by using this method affect only the print preview UI. The user can always access all of the options that the printer supports by tapping **More settings** in the print preview UI.
 
@@ -48,9 +48,9 @@ However, the modifications that you make by using this method affect only the pr
 
 ### Define the options to display
 
-When the app's screen is loaded, it registers for the Print contract. Part of that registration includes defining the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler. The code to customize the options displayed in the print preview UI is added to the **PrintTaskRequested** event handler.
+When the app's screen is loaded, it registers for the Print contract. Part of that registration includes defining the [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) event handler. The code to customize the options displayed in the print preview UI is added to the **PrintTaskRequested** event handler.
 
-Modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to include the [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) instructions that configure the print settings that you want to display in the print preview UI.For the screen in your app for which you want to show a customized list of print options, override the **PrintTaskRequested** event handler in the helper class to include code that specifies the options to display when the screen is printed.
+Modify the [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) event handler to include the [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) instructions that configure the print settings that you want to display in the print preview UI.For the screen in your app for which you want to show a customized list of print options, override the **PrintTaskRequested** event handler in the helper class to include code that specifies the options to display when the screen is printed.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -90,11 +90,11 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Important**  Calling [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() removes all of the print options from the print preview UI, including the **More settings** link. Be sure to append the options that you want to show on the print preview UI.
+**Important**  Calling [**displayedOptions.clear**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions)() removes all of the print options from the print preview UI, including the **More settings** link. Be sure to append the options that you want to show on the print preview UI.
 
 ### Specify default options
 
-You can also set the default values of the options in the print preview UI. The following line of code, from the last example, sets the default value of the [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) option.
+You can also set the default values of the options in the print preview UI. The following line of code, from the last example, sets the default value of the [**MediaSize**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize) option.
 
 ``` csharp
          // Preset the default value of the printer option
@@ -103,9 +103,9 @@ You can also set the default values of the options in the print preview UI. The 
 
 ## Add new print options
 
-This section shows how to create a new print option, define a list of values that the option supports, and then add the option to the print preview. As in the previous section, add the new print option in the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler.
+This section shows how to create a new print option, define a list of values that the option supports, and then add the option to the print preview. As in the previous section, add the new print option in the [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) event handler.
 
-First, get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object. This is used to add the new print option to the print preview UI. Then clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app. After that, create the new print option and initialize the list of option values. Finally, add the new option and assign a handler for the **OptionChanged** event.
+First, get a [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) object. This is used to add the new print option to the print preview UI. Then clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app. After that, create the new print option and initialize the list of option values. Finally, add the new option and assign a handler for the **OptionChanged** event.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -155,7 +155,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 
 The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window. In this example, the custom option is appended last so that it appears at the bottom of the list of options. However, you could put it anywhere in the list; custom print options don't need to be added last.
 
-When the user changes the selected option in your custom option, update the print preview image. Call the [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) method to redraw the image in the print preview UI, as shown below.
+When the user changes the selected option in your custom option, update the print preview image. Call the [**InvalidatePreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.invalidatepreview) method to redraw the image in the print preview UI, as shown below.
 
 ``` csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -179,6 +179,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## Related topics
 
-* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Design guidelines for printing](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP print sample](https://go.microsoft.com/fwlink/p/?LinkId=619984)

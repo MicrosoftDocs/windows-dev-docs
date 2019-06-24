@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 iOS provides the **UINavigationController** class to help with in-app navigation: you can push and pop views to create the hierarchy of **UIViewControllers** that define your app.
 
-In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438).
+In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](https://docs.microsoft.com/windows/uwp/layout/navigation-basics).
 
-One of the ways to manage this navigation in a Windows 10 app is to use the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. The following walkthrough shows you how to try this out.
+One of the ways to manage this navigation in a Windows 10 app is to use the [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) class. The following walkthrough shows you how to try this out.
 
 Continuing with the solution you started earlier, open the **MainPage.xaml** file, and add a button in the **Design** view. Change the button's **Content** property from "Button" to "Go To Page". Then, create a handler for the button's **Click** event, as shown in the following figure. If you don't remember how to do this, review the walkthrough in the previous section (Hint: double-click the button in the **Design** view).
 
@@ -58,9 +58,9 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Now, run the program. Tap the "Go To Page" button to go to the other page, and then tap the back-arrow button to return to the previous page.
 
-Page navigation is managed by the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. As the **UINavigationController** class in iOS uses **pushViewController** and **popViewController** methods, the **Frame** class for UWP apps provides [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) and [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) methods. The **Frame** class also has a method called [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), which does what you might expect.
+Page navigation is managed by the [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) class. As the **UINavigationController** class in iOS uses **pushViewController** and **popViewController** methods, the **Frame** class for UWP apps provides [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) and [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) methods. The **Frame** class also has a method called [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward), which does what you might expect.
 
-This walkthrough creates a new instance of BlankPage each time you navigate to it. (The previous instance will be freed, or *released*, automatically). If you don't want a new instance to be created each time, add the following code to the BlankPage class's constructor in the BlankPage.xaml.cs file. This will enable the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) behavior.
+This walkthrough creates a new instance of BlankPage each time you navigate to it. (The previous instance will be freed, or *released*, automatically). If you don't want a new instance to be created each time, add the following code to the BlankPage class's constructor in the BlankPage.xaml.cs file. This will enable the [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) behavior.
 
 ```csharp
 public BlankPage()
@@ -71,11 +71,11 @@ public BlankPage()
 }
 ```
 
-You can also get or set the **Frame** class's [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) property to manage how many pages in the navigation history can be cached.
+You can also get or set the **Frame** class's [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) property to manage how many pages in the navigation history can be cached.
 
-For more info about navigation, see [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) and [XAML personality animations sample](https://go.microsoft.com/fwlink/p/?LinkID=242401).
+For more info about navigation, see [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) and [XAML personality animations sample](https://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Note**  For info about navigation for UWP apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Note**  For info about navigation for UWP apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10)).
  
 ### Next step
 

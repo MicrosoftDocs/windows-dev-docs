@@ -243,11 +243,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### Path (ms-resource)
 
-The path identifies the hierarchical location of the [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) subtree (see [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)) and the [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) within it. Typically, this corresponds to the filename (excluding extension) of a Resources Files (.resw) and the identifier of a string resource within it.
+The path identifies the hierarchical location of the [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) subtree (see [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) and the [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) within it. Typically, this corresponds to the filename (excluding extension) of a Resources Files (.resw) and the identifier of a string resource within it.
 
 For examples and more info, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md) and [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-The path component of `ms-resource` is, like generic URIs, case sensitive. However, the underlying retrieval does a [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) with *ignoreCase* set to `true`.
+The path component of `ms-resource` is, like generic URIs, case sensitive. However, the underlying retrieval does a [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) with *ignoreCase* set to `true`.
 
 The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a string resource from a Resources File named `Hello#World.resw`, use this URI.
 
@@ -268,5 +268,5 @@ Developers of particular components layered above this URI parsing may choose to
 * [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
-* [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

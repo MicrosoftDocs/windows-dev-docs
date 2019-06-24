@@ -24,7 +24,7 @@ Here are examples of app options that belong in an app settings page:
 -   Options that depend on the user's preferences, like music, sound effects, or color themes.
 -   App information that isn't accessed very often, such as privacy policy, help, app version, or copyright info.
 
-Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be in a settings page. To learn more about command placement, see [Command design basics](https://msdn.microsoft.com/library/windows/apps/dn958433).
+Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be in a settings page. To learn more about command placement, see [Command design basics](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
 
 ## General recommendations
 
@@ -129,17 +129,17 @@ Once you have a list of items that you want to include in your app settings page
     -   [Hyperlinks](../controls-and-patterns/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
     -   [Buttons](../controls-and-patterns/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
 -   Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
--   Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) or [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) animations with a 100px left offset.
+-   Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
 -   Use section headers, paragraphs, and labels to aid organize and clarify content, if necessary.
 -   If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
--   If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](https://msdn.microsoft.com/library/windows/apps/hh465469).
+-   If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
 -   Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
 
 
 
 ## Related articles
 
-* [Command design basics](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [Guidelines for progress controls](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [Store and retrieve app data](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [Command design basics](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [Store and retrieve app data](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

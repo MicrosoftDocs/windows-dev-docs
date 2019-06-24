@@ -93,26 +93,35 @@ The basic form outline that we've put together is already a **fluid layout**, as
 More important to responsive layouts are **visual states.** A visual state defines property values that are applied to a given element when a given condition is true. [Read up on how to do this in xaml](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup), and then implement them into your form. Here's what a *very* basic one might look like in our previous sample:
 
 ```xaml
-<VisualStateManager.VisualStateGroups>
-    <VisualStateGroup>
-        <VisualState>
-            <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="640" />
-            </VisualState.StateTriggers>
+<Page ...>
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
 
-            <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
-            </VisualState.Setters>
-        </VisualState>
-    </VisualStateGroup>
-</VisualStateManager.VisualStateGroups>
+                    <VisualState.Setters>
+                        <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                        <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                        <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
-<RelativePanel>
-    <!--Previous 3 stack panels-->
-</RelativePanel>
+        <RelativePanel>
+            <!-- Customer StackPanel -->
+            <!-- Associate StackPanel -->
+            <!-- Save StackPanel -->
+        </RelativePanel>
+    </Grid>
+</Page>
 ```
+
+> [!IMPORTANT]
+> When you use StateTriggers, always ensure that VisualStateGroups is attacked to the first child of the root. Here, **Grid** is the first child of the root **Page** element.
 
 It's not practical to create visual states for a wide array of screen sizes, nor are more than a couple likely to have significant impact on the user experience of your app. We recommend designing instead for a few key breakpoints - you can [read more here](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
@@ -156,7 +165,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 | [Layout panels](../design/layout/layout-panels.md) | Provides an overview of the types of layout panels and where to use them. |
 | [Master/details pattern](../design/controls-and-patterns/master-details.md) | A design pattern that can be implemented around one or multiple forms. |
 | [Pivot control](../design/controls-and-patterns/pivot.md) | A control that can contain one or multiple forms. |
-| [Responsive design](../design/layout/responsive-design.md) | An overview of large-scale responsive design principles. | 
+| [Responsive design](../design/layout/responsive-design.md) | An overview of large-scale responsive design principles. |
 | [Responsive layouts with XAML](../design/layout/layouts-with-xaml.md) | Specific information on visual states and other implementations of responsive design. |
 | [Screen sizes for responsive design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Guidance on which screen sizes to which responsive layouts should be scoped. |
 
@@ -164,7 +173,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 
 | Code sample | Description |
 |-----------------|---------------|
-| [Adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md) | A step-by-step guided experience through adaptive layouts and responsive design. | 
+| [Adaptive layout tutorial](../design/basics/xaml-basics-adaptive-layout.md) | A step-by-step guided experience through adaptive layouts and responsive design. |
 | [Customer Orders Database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | See layout and forms in action on a multi-page enterprise sample. |
 | [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) | See a selection of XAML controls, and how they're implemented. |
-| [Additional code samples](https://developer.microsoft.com//windows/samples) | Choose **Controls, layout, and text** in the category drop-down list to see related code samples. |
+| [Additional code samples](https://developer.microsoft.com/windows/samples) | Choose **Controls, layout, and text** in the category drop-down list to see related code samples. |

@@ -21,7 +21,7 @@ If you are creating a component for use only in UWP apps that are written in Vis
 
 ## Declaring types in Windows Runtime Components
 
-Internally, the Windows Runtime types in your component can use any .NET Framework functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt185501).
+Internally, the Windows Runtime types in your component can use any .NET Framework functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
 
 Externally, the members of your types can expose only Windows Runtime types for their parameters and return values. The following list describes the limitations on .NET Framework types that are exposed from a Windows Runtime Component.
 
@@ -181,7 +181,7 @@ You can use .NET Framework tasks (the [**Task**](/dotnet/api/system.threading.ta
 
 A method that uses `await` (`Await` in Visual Basic) requires the `async` keyword (`Async` in Visual Basic). If you expose such a method from a Windows Runtime component, apply the `async` keyword to the delegate that you pass to the **Run** method.
 
-For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) or [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the **Task.Run&lt;TResult&gt;** method to start a task. The **AsAsyncOperation&lt;TResult&gt;** extension method returns the task as a Windows Runtime asynchronous operation.
+For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) or [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the **Task.Run&lt;TResult&gt;** method to start a task. The **AsAsyncOperation&lt;TResult&gt;** extension method returns the task as a Windows Runtime asynchronous operation.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -206,7 +206,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-The following JavaScript code shows how the method could be called by using a [**WinJS.Promise**](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) object. The function that is passed to the then method is executed when the asynchronous call completes. The stringList parameter contains the list of strings that is returned by the **DownloadAsStringAsync** method, and the function does whatever processing is required.
+The following JavaScript code shows how the method could be called by using a [**WinJS.Promise**](https://docs.microsoft.com/previous-versions/windows/apps/br211867(v=win.10)) object. The function that is passed to the then method is executed when the asynchronous call completes. The stringList parameter contains the list of strings that is returned by the **DownloadAsStringAsync** method, and the function does whatever processing is required.
 
 ```javascript
 function asyncExample(id) {
@@ -220,7 +220,7 @@ function asyncExample(id) {
 
 For asynchronous actions and operations that support cancellation or progress reporting, use the [**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime) class to generate a started task and to hook up the cancellation and progress reporting features of the task with the cancellation and progress reporting features of the appropriate Windows Runtime interface. For an example that supports both cancellation and progress reporting, see [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Note that you can use the methods of the **AsyncInfo** class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [**IProgress&lt;T&gt;**](https://msdn.microsoft.com/library/hh138298.aspx) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;**](https://msdn.microsoft.com/library/hh779740.aspx)) method overload instead.
+Note that you can use the methods of the **AsyncInfo** class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [**IProgress&lt;T&gt;**](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN)) method overload instead.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -257,17 +257,17 @@ If your component doesn't handle the exception, a corresponding exception is rai
 
     > **Tip**. Currently, the stack trace contains the managed exception type, but we don't recommend parsing the trace to identify the exception type. Instead, use an HRESULT value as described later in this section.
 
--   In C++, the exception appears as a platform exception. If the managed exception's HResult property can be mapped to the HRESULT of a specific platform exception, the specific exception is used; otherwise, a [**Platform::COMException**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) exception is thrown. The message text of the managed exception is not available to C++ code. If a specific platform exception was thrown, the default message text for that exception type appears; otherwise, no message text appears. See [Exceptions (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx).
+-   In C++, the exception appears as a platform exception. If the managed exception's HResult property can be mapped to the HRESULT of a specific platform exception, the specific exception is used; otherwise, a [**Platform::COMException**](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class) exception is thrown. The message text of the managed exception is not available to C++ code. If a specific platform exception was thrown, the default message text for that exception type appears; otherwise, no message text appears. See [Exceptions (C++/CX)](https://docs.microsoft.com/cpp/cppcx/exceptions-c-cx).
 -   In C# or Visual Basic, the exception is a normal managed exception.
 
-When you throw an exception from your component, you can make it easier for a JavaScript or C++ caller to handle the exception by throwing a non-public exception type whose HResult property value is specific to your component. The HRESULT is available to a JavaScript caller through the exception object's number property, and to a C++ caller through the [**COMException::HResult**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) property.
+When you throw an exception from your component, you can make it easier for a JavaScript or C++ caller to handle the exception by throwing a non-public exception type whose HResult property value is specific to your component. The HRESULT is available to a JavaScript caller through the exception object's number property, and to a C++ caller through the [**COMException::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-comexception-class#hresult) property.
 
 > [!NOTE]
 > Use a negative value for your HRESULT. A positive value is interpreted as success, and no exception is thrown in the JavaScript or C++ caller.
 
 ## Declaring and raising events
 
-When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [**EventHandler&lt;TEventArgs&gt;**](https://msdn.microsoft.com/library/db0etb8x.aspx) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET Framework application.
+When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [**EventHandler&lt;TEventArgs&gt;**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET Framework application.
 
 When your Windows Runtime component is used from JavaScript or C++, the event follows the Windows Runtime event pattern that those languages expect. When you use the component from C# or Visual Basic, the event appears as an ordinary .NET Framework event. An example is provided in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript).
 
@@ -275,10 +275,10 @@ If you implement custom event accessors (declare an event with the **Custom** ke
 
 ## Next steps
 
-After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](https://msdn.microsoft.com/library/jj614475.aspx).
+After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](https://docs.microsoft.com/previous-versions/windows/apps/jj614475(v=vs.140)).
 
-For more information about Visual Basic and C# language features, and .NET Framework support for the Windows Runtime, see [Visual Basic and C# language reference](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
+For more information about Visual Basic and C# language features, and .NET Framework support for the Windows Runtime, see [Visual Basic and C# language reference](https://docs.microsoft.com/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
 
 ## Related topics
-* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt185501)
+* [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 * [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

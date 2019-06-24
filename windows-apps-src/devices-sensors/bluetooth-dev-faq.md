@@ -57,7 +57,7 @@ In this example, we initiate pairing with a device using no encryption. Note, th
 
 You don't have to for Bluetooth RFCOMM (classic) devices. Starting with Windows 10 release 1607, you can simply query for nearby devices and connect to them. The updated [RFCOMM Chat Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) shows this functionality. 
 
-**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) APIs in order access these devices.
+**(14393 and below)** This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) APIs in order access these devices.
 
 **(15030 and above)** Pairing Bluetooth devices is no longer needed. Use the new Async APIs like GetGattServicesAsync and GetCharacteristicsAsync in order to query the current state of the remote device. See the [Client docs](gatt-client.md) for more details. 
 
@@ -76,5 +76,5 @@ Yes, all these APIs should work. This blog details the way to call [Windows APIs
 **Bluetooth LE**: Yes, all functionality is in OneCore and should be available on most recent devices w/ a functioning Bluetooth LE stack. 
 > Caveat: Peripheral Role is hardware dependent and some Windows Server Editions don't support Bluetooth. 
 
-**Bluetooth BR/EDR (Classic)**: Some variations exist but by and large, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile docs for [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+**Bluetooth BR/EDR (Classic)**: Some variations exist but by and large, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile docs for [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/products/windows?os=windows-10-mobile)
 

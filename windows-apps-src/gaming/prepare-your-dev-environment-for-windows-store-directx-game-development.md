@@ -19,7 +19,7 @@ First, you need Visual Studio.
 ## Get Visual Studio
 
 
-[Download and install Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Download and install Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/).
 
 <table>
 <colgroup>

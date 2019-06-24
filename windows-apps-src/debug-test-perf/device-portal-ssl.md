@@ -1,11 +1,12 @@
----
+﻿---
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Provision Device Portal with a custom SSL certificate
-description: TBD
-ms.date: 4/8/2019
+description: Learn how to provision Windows Device Portal with a custom certificate for use in HTTPS communication.
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
+ms.custom: 19H1
 ---
 
 # Provision Device Portal with a custom SSL certificate

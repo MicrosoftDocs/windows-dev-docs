@@ -132,7 +132,7 @@ record.UserState(newValue);
 ```
 
 ## Creating an instance of a class
-You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to activate a new instance of the runtime class.
+You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate a new instance of the runtime class.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -194,7 +194,7 @@ private:
 ```
 
 ## Converting from a base runtime class to a derived one
-It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
+It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -359,7 +359,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### Port **Platform::String\^** to **winrt::hstring**
 **Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
 
-With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
+With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

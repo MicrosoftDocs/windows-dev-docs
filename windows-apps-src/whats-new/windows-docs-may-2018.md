@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # What's New in the Windows Developer Docs in May 2018
 
-The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.
+The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build/) developer conference.
 
 [Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 

@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes.
 title: Author COM components with C++/WinRT
-ms.date: 09/06/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Author COM components with C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project.
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
@@ -68,7 +68,7 @@ More background about the toast notification feature area can be found at [Send 
 
 ## Create a Windows Console Application project (ToastAndCallback)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Desktop** > **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Console Application (C++/WinRT)** project, and name it *ToastAndCallback*.
 
 Open `pch.h`, and add `#include <unknwn.h>` before the includes for any C++/WinRT headers. Here's the result; you can replace the contents of your `pch.h` with this listing.
 
@@ -83,7 +83,6 @@ Open `main.cpp`, and remove the using-directives that the project template gener
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
 
 #include "pch.h"
 
@@ -123,24 +122,24 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
-	HRESULT __stdcall Activate(
-		LPCWSTR app,
-		LPCWSTR args,
-		[[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
-		[[maybe_unused]] ULONG count) noexcept final
-	{
-		try
-		{
-			std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-			std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-			std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+    HRESULT __stdcall Activate(
+        LPCWSTR app,
+        LPCWSTR args,
+        [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
+        [[maybe_unused]] ULONG count) noexcept final
+    {
+        try
+        {
+            std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+            std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+            std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
             return S_OK;
         }
-		catch (...)
-		{
+        catch (...)
+        {
             return winrt::to_hresult();
-		}
-	}
+        }
+    }
 };
 
 struct callback_factory : implements<callback_factory, IClassFactory>
@@ -167,7 +166,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](https://msdn.microsoft.com/library/windows/desktop/ms680509) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
@@ -534,7 +533,7 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## Important APIs
 * [IInspectable interface](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [IUnknown interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics

@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer)
 
 In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
 
@@ -124,7 +124,7 @@ In OpenGL ES 2.0, input layouts are implicit; you take a general purpose GL\_ELE
 
 In Direct3D, you must provide an input layout to describe the structure of the vertex data in the vertex buffer when you create the buffer, instead of before you draw the geometry. To do this, you use an input layout which corresponds to layout of the data for our individual vertices in memory. It is very important to specify this accurately!
 
-Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
+Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structures.
 
 Direct3D: Define an input layout description.
 
@@ -145,11 +145,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) or [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) for vector data, and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) for matrices.)
+This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) or [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) for vector data, and [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) for matrices.)
 
-For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
-With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
+With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
 
 Direct3D: Create the input layout used by the vertex buffer.
 
@@ -182,11 +182,11 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
 
 When you set the buffer, you must set the stride (the size of the data element for an individual vertex) as well the offset (where the vertex data array actually starts) from the beginning of the buffer.
 
-Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. If this isn't correct, your mesh will be corrupt or empty!
+Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure. If this isn't correct, your mesh will be corrupt or empty!
 
 Direct3D: Create and set the vertex buffer
 
@@ -242,7 +242,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
+With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure.)
 
 Direct3D: Create the index buffer.
 
@@ -268,7 +268,7 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
+Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (or [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
 
 Direct3D: Draw the indexed vertices.
 
@@ -295,7 +295,7 @@ m_d3dContext->DrawIndexed(
 
 ## Remarks
 
-When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
+When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
 
 ## Related topics
 

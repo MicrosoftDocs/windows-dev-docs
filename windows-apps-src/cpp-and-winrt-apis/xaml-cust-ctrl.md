@@ -1,7 +1,7 @@
 ---
 description: This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls.
 title: XAML custom (templated) controls with C++/WinRT
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, templated, control
 ms.localizationpriority: medium
@@ -15,7 +15,7 @@ ms.custom: RS5
 One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](/windows/uwp/xaml-platform/custom-dependency-properties) and [attached properties](/windows/uwp/xaml-platform/custom-attached-properties), and [control templates](/windows/uwp/design/controls-and-patterns/control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
 ## Create a Blank App (BgLabelControlApp)
-Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++** > **Windows Universal** > **Blank App (C++/WinRT)** project, and name it *BgLabelControlApp*. In a later section of this topic, you'll be directed to build your project (don't build until then).
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *BgLabelControlApp*. In a later section of this topic, you'll be directed to build your project (don't build until then).
 
 We're going to author a new class to represent a custom (templated) control. We're authoring and consuming the class within the same compilation unit. But we want to be able to instantiate this class from XAML markup, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 

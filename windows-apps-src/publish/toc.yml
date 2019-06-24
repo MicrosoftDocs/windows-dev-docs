@@ -11,7 +11,7 @@
       href: ../publish/trademark-and-copyright-protection.md
 - name: Manage account users
   href: ../publish/manage-account-users.md
-  items:
+  items: 
     - name: Associate Azure AD with your Partner Center account
       href: ../publish/associate-azure-ad-with-partner-center.md
     - name: Add users, groups, and Azure AD applications
@@ -200,14 +200,13 @@
     - name: VAT info
       href: ../publish/vat-info.md
 - name: Store Policies and Code of Conduct
-  href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
+  href: ../publish/store-policies-and-code-of-conduct.md
   items:
     - name: Microsoft Store Policies
-      href: https://docs.microsoft.com/legal/windows/agreements/store-policies
-      items:
-        - name: Change history
-          href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
+      href: ../publish/store-policies.md
+    - name: Store Policies change history
+      href: ../publish/store-policies-change-history.md
     - name: App Quality
-      href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
+      href: ../publish/store-app-quality.md
     - name: Developer Code of Conduct
-      href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
+      href: ../publish/store-developer-code-of-conduct.md

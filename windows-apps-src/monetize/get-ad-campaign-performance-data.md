@@ -144,6 +144,6 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Create an ad campaign for your app](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
+* [Create an ad campaign for your app](https://docs.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
 * [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

@@ -34,7 +34,7 @@ The app uses patterns that make use of views and view models. As a result of thi
 
 [Download the QuizGame10 Windows 10 app](https://go.microsoft.com/fwlink/?linkid=532954). This is the state of the app just after  porting. 
 
-[See the latest version of this sample on GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
+[See the latest version of this sample on GitHub](https://github.com/microsoft/Windows-appsample-networkhelper).
 
 ## The WinRT 8.1 solution
 

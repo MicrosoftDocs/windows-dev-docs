@@ -23,7 +23,7 @@ There are three things you need to do to enable your application to use the My P
 
 1. [Declare support for the shareTarget activation contract in your application manifest.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Annotate the contacts that the users can share to using your app.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 When you’ve done this, your application will appear in the contact panel for annotated contacts.
 

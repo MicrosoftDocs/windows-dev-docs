@@ -1,7 +1,7 @@
 ---
 description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
-ms.date: 05/07/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium

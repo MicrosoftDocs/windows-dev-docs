@@ -236,6 +236,10 @@ Here are the surfaces that use unplated app icon assets:
 * Task view
 * ALT+TAB
 
+### Unplated assets and themes
+
+The user's selected theme determines the color of the taskbar. If the unplated asset isn't specifically qualified for the current theme, the system checks the asset for contrast. If it has enough contrast with taskbar, the system uses it. Otherwise, the system looks for a high-contrast version of the asset. If it can't find one, the system draws the plated form of the asset instead. 
+
 
 ### Target and unplated sizing
 
@@ -298,6 +302,17 @@ With full-bleed assets, take into account elements that interact within the marg
 In this example, margins are too tight:
 
 ![full bleed tile with margins that are too small](images/assetguidance15.png)
+
+
+## Optimizing for specific themes, languages, and other conditions 
+
+This article described how to create assets for specific scale factors, but you can also create assets for a wide variety of conditions and combinations of conditions. For example, you can can create icons for high contrast displays or for the light themes and dark themes. You can even create assets for specific languages.
+
+For instructions, see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md).
+
+
+
+
 
 
 

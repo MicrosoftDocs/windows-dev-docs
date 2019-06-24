@@ -53,7 +53,7 @@ Here are the devices and tools discussed in this topic:
 |-----------------------------------|-----------------|
 |Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#on-screen-keyboard).|
 |Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md). For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
-|Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
+|Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
 ## Custom experiences and efficient keyboarding
 As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
@@ -361,7 +361,7 @@ The following image shows an intuitive keyboard navigation behavior for a contro
 
 ### Keyboard and Narrator
 
-Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics) guides you through the Narrator user experience.)
+Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-basics) guides you through the Narrator user experience.)
 
 Some of the differences between UWP keyboard behaviors and those supported by Narrator include:
 -   Extra key combinations for navigation to UI elements that are not exposed through standard keyboard navigation, such as Caps lock + arrow keys to read control labels.

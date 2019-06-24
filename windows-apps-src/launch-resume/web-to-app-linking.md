@@ -1,4 +1,4 @@
-﻿---
+---
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows
@@ -42,7 +42,7 @@ For example, if your website’s address is “msn.com” you would make the fol
 </Applications>
 ```
 
-The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
+The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www\.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
 
 ## Associate your app and website with a JSON file
 
@@ -72,7 +72,7 @@ The JSON file example above demonstrates the use of wildcards. Wildcards allow y
 | **\***       | Represents any substring      |
 | **?**        | Represents a single character |
 
-For example, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not ****msn.com/news/topnews.html****.
+For example, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not **msn.com/news/topnews.html**.
 
 ### Multiple apps
 
@@ -176,23 +176,23 @@ Close your application to verify that the app is activated when you click a link
 
 Verify that your app is closed. Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window. Your app should launch instead of the web browser.
 
-Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API. You can use this API to test on phones as well.
+Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API. You can use this API to test on phones as well.
 
 If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
 
 ## AppUriHandlers tips:
 
 - Make sure to only specify links that your app can handle.
-- List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.
+- List all of the hosts that you will support.  Note that www\.example.com and example.com are different hosts.
 - Users can choose which app they prefer to handle websites in Settings.
 - Your JSON file must be uploaded to an https server.
 - If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
 - All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
-- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
+- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
 ## See also
 
 [Web-to-App example project](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol registration](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Handle URI Activation](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[windows.protocol registration](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+[Handle URI Activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.

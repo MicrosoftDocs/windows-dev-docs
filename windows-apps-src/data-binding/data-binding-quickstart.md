@@ -17,7 +17,7 @@ This topic shows you how to bind a control (or other UI element) to a single ite
 
 ## Prerequisites
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Get started with Windows apps](https://developer.microsoft.com/windows/getstarted).
+This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Get started with Windows apps](https://docs.microsoft.com/windows/uwp/get-started/).
 
 ## Create the project
 
@@ -318,11 +318,11 @@ Here's the result.
 
 ## Binding to a collection of items
 
-A common scenario is to bind to a collection of business objects. In C# and Visual Basic, the generic [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) and [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement **INotifyPropertyChanged**. For more info, see [Data binding in depth](data-binding-in-depth.md).
+A common scenario is to bind to a collection of business objects. In C# and Visual Basic, the generic [**ObservableCollection&lt;T&gt;**](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) and [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement **INotifyPropertyChanged**. For more info, see [Data binding in depth](data-binding-in-depth.md).
 
 If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can learn more about binding to an observable collection in [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection). If you read that topic first, then the intent of the C++/WinRT code listing shown below will be clearer.
 
-This next example binds a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the **RecordingViewModel** class.
+This next example binds a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the **RecordingViewModel** class.
 
 ```csharp
 public class RecordingViewModel
@@ -346,6 +346,8 @@ public class RecordingViewModel
 // RecordingViewModel.idl
 // Add this property:
 ...
+#include <winrt/Windows.Foundation.Collections.h>
+...
 Windows.Foundation.Collections.IVector<IInspectable> Recordings{ get; };
 ...
 
@@ -360,7 +362,7 @@ private:
 ...
 
 // RecordingViewModel.cpp
-// Implement like this:
+// Update/add implementations like this:
 ...
 RecordingViewModel::RecordingViewModel()
 {
@@ -431,7 +433,7 @@ public:
 };
 ```
 
-And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to the **ViewModel.Recordings** property.
+And then bind a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) to the **ViewModel.Recordings** property.
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -442,11 +444,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 </Page>
 ```
 
-We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) for each item in the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). The default implementation of **ToString** is to return the type name.
+We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) for each item in the [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). The default implementation of **ToString** is to return the type name.
 
 ![Binding a list view](images/xaml-databinding1.png)
 
-To remedy this, we can either override [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) property of a content control or the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
+To remedy this, we can either override [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -480,23 +482,23 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 ![Binding a list view](images/xaml-databinding3.png)
 
-For more information about XAML syntax, see [Create a UI with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228349). For more information about control layout, see [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228350).
+For more information about XAML syntax, see [Create a UI with XAML](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui). For more information about control layout, see [Define layouts with XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 ## Adding a details view
 
-You can choose to display all the details of **Recording** objects in [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
+You can choose to display all the details of **Recording** objects in [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
 
-There are two ways to go about this. You can bind the details view to the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) property of the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Or you can use a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), in which case you bind both the **ListView** and the details view to the **CollectionViewSource** (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).
+There are two ways to go about this. You can bind the details view to the [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) property of the [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Or you can use a [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), in which case you bind both the **ListView** and the details view to the **CollectionViewSource** (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).
 
 > [!NOTE]
-> So far in this topic we've only used the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+> So far in this topic we've only used the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension).
 
-If you're using C++/WinRT or Visual C++ component extensions (C++/CX) then, to use the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension, you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to any runtime class that you want to bind to. To use [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), you don't need that attribute.
+If you're using C++/WinRT or Visual C++ component extensions (C++/CX) then, to use the [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) markup extension, you'll need to add the [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) attribute to any runtime class that you want to bind to. To use [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), you don't need that attribute.
 
 > [!IMPORTANT]
-> If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute is available if you've installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension.
+> If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then the [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) attribute is available if you've installed the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), or later. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) markup extension.
 
-First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) technique.
+First, here's the [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) technique.
 
 ```csharp
 // No code changes necessary for C#.
@@ -548,7 +550,7 @@ The only other change necessary is to the markup.
 </Page>
 ```
 
-For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) technique, first add a **CollectionViewSource** as a page resource.
+For the [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) technique, first add a **CollectionViewSource** as a page resource.
 
 ```xml
 <Page.Resources>
@@ -556,7 +558,7 @@ For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/ap
 </Page.Resources>
 ```
 
-And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Note that by binding the details view directly to the **CollectionViewSource**, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity).
+And then adjust the bindings on the [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). Note that by binding the details view directly to the **CollectionViewSource**, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity).
 
 ```xml
 ...
@@ -577,7 +579,7 @@ And here's the identical result in each case.
 
 There is an issue with the rendering above. The **ReleaseDateTime** property is not just a date, it's a [**DateTime**](/uwp/api/windows.foundation.datetime) (if you're using C++, then it's a [**Calendar**](/uwp/api/windows.globalization.calendar)). So, in C#, it's being displayed with more precision than we need. And in C++ it's being rendered as a type name. One solution is to add a string property to the **Recording** class that returns the equivalent of `this.ReleaseDateTime.ToString("d")`. Naming that property **ReleaseDate** would indicate that it returns a date, and not a date-and-time. Naming it **ReleaseDateAsString** would further indicate that it returns a string.
 
-A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add this code to your Recording.cs source code file.
+A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. If you're using C#, then add the code below to your `Recording.cs` source code file. If you're using C++/WinRT, then add a new **Midl File (.idl)** item to the project, named as shown in the C++/WinRT code example listing below, build the project to generate `StringFormatter.h` and `.cpp`, add those files to your project, and then paste the code listings into them. Also add `#include "StringFormatter.h"` to `MainPage.h`.
 
 ```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -612,7 +614,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 // StringFormatter.idl
 namespace Quickstart
 {
-    runtimeclass StringFormatter : Windows.UI.Xaml.Data.IValueConverter
+    runtimeclass StringFormatter : [default] Windows.UI.Xaml.Data.IValueConverter
     {
         StringFormatter();
     }
@@ -645,6 +647,7 @@ namespace winrt::Quickstart::factory_implementation
 // StringFormatter.cpp
 #include "pch.h"
 #include "StringFormatter.h"
+#include "StringFormatter.g.cpp"
 
 namespace winrt::Quickstart::implementation
 {
@@ -695,7 +698,10 @@ public:
 ...
 ```
 
-Now we can add an instance of **StringFormatter** as a page resource and use it in our binding.
+> [NOTE!]
+> For the C++/WinRT code listing above, in `StringFormatter.idl`, we use the [default attribute](https://docs.microsoft.com/windows/desktop/midl/default) to declare **IValueConverter** as the default interface. In the listing, **StringFormatter** has only a constructor, and no methods, so no default interface is generated for it. The `default` attribute is optimal if you won't be adding instance members to **StringFormatter**, because no QueryInterface will be required to call the **IValueConverter** methods. Alternatively, you can prompt a default **IStringFormatter** interface to be generated, and you do that by annotating the runtime class itself with the [default_interface attribute](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). That option is optimal if you add instance members to **StringFormatter** that are called more often than the methods of **IValueConverter** are, because then no QueryInterface will be required to call the instance members.
+
+Now we can add an instance of **StringFormatter** as a page resource and use it in the binding of the **TextBlock** that displays the **ReleaseDateTime** property.
 
 ```xml
 <Page.Resources>
@@ -715,7 +721,7 @@ Here's the result.
 ![displaying a date with custom formatting](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built-in Boolean-to-Visibility converter. The converter maps **true** to the **Visibility.Visible** enumeration value and **false** to **Visibility.Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version-adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Starting in Windows 10, version 1607, the XAML framework provides a built-in Boolean-to-Visibility converter. The converter maps **true** to the **Visibility.Visible** enumeration value and **false** to **Visibility.Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version-adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## See also
 * [Data binding](index.md)

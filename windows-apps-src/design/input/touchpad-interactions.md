@@ -38,7 +38,7 @@ The input data provided by the touchpad sensor can be:
 
 A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your UWP app design for touch input and get touchpad support by default.
 
-Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
+Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
 
 The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.
 
@@ -115,7 +115,7 @@ Here are some examples of touchpad-optimized gestures for performing common task
 ## Hardware
 
 
-Query the mouse device capabilities ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
+Query the mouse device capabilities ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
 
 For more info about querying device capabilities, see [Identify input devices](identify-input-devices.md).
 
@@ -128,14 +128,14 @@ For more info about querying device capabilities, see [Identify input devices](i
 -   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
 -   Display visual feedback concurrently for all elements that represent the same input target.
 
-For more general guidance about visual feedback, see [Guidelines for visual feedback](https://msdn.microsoft.com/library/windows/apps/hh465342).
+For more general guidance about visual feedback, see [Guidelines for visual feedback](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback).
 
 ## Cursors
 
 
 A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.
 
-Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. UWP apps specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
+Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. UWP apps specify a cursor image through the [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) function.
 
 If you need to customize the mouse cursor:
 

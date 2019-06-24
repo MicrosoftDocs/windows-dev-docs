@@ -1,4 +1,4 @@
-﻿---
+---
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
 description: Here's an overview of how to register for a Winodws developer account for the Microsoft Store and other Microsoft programs in Partner Center.
@@ -66,7 +66,7 @@ If you will need to have multiple people access the company account by signing i
 
 We use security info that you provide to raise the security level of your Microsoft account by associating it with multiple forms of identification. This makes unauthorized access to your Microsoft account (and your developer account) substantially more difficult. Also, if you ever forget your password or if someone else tries to access your account, we’ll be able to reach you to confirm ownership and/or reestablish appropriate control of your account.
 
-You must have at least two email addresses and/or phone numbers on your Microsoft account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date. You can manage your security info by going to https://account.microsoft.com/security and signing in with your Microsoft account. See [Security info & security codes](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) for more info.
+You must have at least two email addresses and/or phone numbers on your Microsoft account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date. You can manage your security info by going to https://account.microsoft.com/security and signing in with your Microsoft account. See [Security info & security codes](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) for more info.
 
 When you sign in to Partner Center using your Microsoft account, the system may request that you verify your identity by sending a security code that you must supply to complete the sign-in process. We recommend designating PCs that you use frequently as *trusted devices*. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted in specific situations or if you haven’t signed in on that device in a long time. See [Add a trusted device to your Microsoft account](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) for more info.
 

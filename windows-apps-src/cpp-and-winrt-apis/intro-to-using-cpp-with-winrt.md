@@ -1,7 +1,7 @@
 ---
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.date: 04/02/2019
+ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
@@ -24,20 +24,17 @@ The Windows Runtime is based on Component Object Model (COM) APIs, and it's desi
 ### The C++/WinRT language projection in the Windows UWP API reference content
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
-## SDK support for C++/WinRT
-As of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains a header-file-based standard C++ library for consuming first-party Windows APIs (Windows Runtime APIs in Windows namespaces).
-
-For compatibility, the Windows SDK also comes with the `cppwinrt.exe` tool. However, we recommend that you instead install and use the most recent version of `cppwinrt.exe`, which is included with the **Microsoft.Windows.CppWinRT** NuGet package. That package, and `cppwinrt.exe`, are described in the next section.
-
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
-For Visual Studio support, in addition to a minimum Windows SDK target version of 10.0.17134.0 (Windows 10, version 1803), you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). If you haven't already installed it, you'll need to install the **C++ Universal Windows Platform tools** option from within the Visual Studio Installer. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
+For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, you'll also need to install (in **Installation Details** > **Universal Windows Platform development**) the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
 
-You'll need to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using a version of C++/WinRT that shipped with the Windows SDK prior to 10.0.17763.0 (Windows 10, version 1809), then, to use the the Windows namespaces headers mentioned above, you'll need a minimum Windows SDK target version in your project of 10.0.17134.0 (Windows 10, version 1803).
+
+You'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 - The VSIX extension gives you C++/WinRT project and item templates in Visual Studio, so that you can get started with C++/WinRT development.
 - In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. You can opt into it release builds by defining the symbol WINRT_NATVIS.
 
-The Visual Studio project templates for C++/WinRT are described below. When you create a new C++/WinRT project with the latest version of the VSIX extension installed, the new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). The **Microsoft.Windows.CppWinRT** NuGet package provides C++/WinRT build support (MSBuild properties and targets), making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
+The Visual Studio project templates for C++/WinRT are described in the sections below. When you create a new C++/WinRT project with the latest version of the VSIX extension installed, the new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). The **Microsoft.Windows.CppWinRT** NuGet package provides C++/WinRT build support (MSBuild properties and targets), making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
 
 > [!IMPORTANT]
 > If you have projects that were created with (or upgraded to work with) a version of the VSIX extension earlier than 1.0.190128.4, then see [Earlier versions of the VSIX extension](#earlier-versions-of-the-vsix-extension). That section contains important info about the configuration of your projects, which you'll need to know to upgrade them to use the latest version of the VSIX extension.
@@ -59,20 +56,23 @@ You can identify a project that uses the C++/WinRT MSBuild support by the presen
 
 Here are the Visual Studio project templates provided by the VSIX extension.
 
-### Windows Console Application (C++/WinRT)
-A project template for a C++/WinRT client application for Windows Desktop, with a console user-interface.
-
 ### Blank App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface.
 
 Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement your local runtime classes. We recommend that you declare each runtime class in its own IDL file.
 
-Visual Studio's XAML design surface support for C++/WinRT is close to parity with C#. One exception is the **Events** tab of the **Properties** window. With a C# project, you can use that tab to add event handlers; with a C++/WinRT project, that facility is not present. But see [Handle events by using delegates in C++/WinRT](handle-events.md) for info on how to add event handlers to your code.
+The XAML design surface support in Visual Studio 2019 for C++/WinRT is close to parity with C#. In Visual Studio 2019, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
 
 ### Core App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.
 
 Instead, it uses the C++/WinRT Windows namespace header for the Windows.ApplicationModel.Core namespace. After building and running, click on an empty space to add a colored square; then click on a colored square to drag it.
+
+### Windows Console Application (C++/WinRT)
+A project template for a C++/WinRT client application for Windows Desktop, with a console user-interface.
+
+### Windows Desktop Application (C++/WinRT)
+A project template for a C++/WinRT client application for Windows Desktop, which displays a Windows Runtime [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) inside a Win32 **MessageBox**.
 
 ### Windows Runtime Component (C++/WinRT)
 A project template for a component; typically for consumption from a Universal Windows Platform (UWP).
@@ -113,6 +113,11 @@ As mentioned above, a C++/WinRT project now needs to have the NuGet package inst
 Since the `<CppWinRTEnabled>` element is now obsolete, you can optionally edit your `.vcxproj`, and delete the element. It's not strictly necessary, but it's an option.
 
 Also, if your `.vcxproj` contains `<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`, then you can remove it so that you can build without requiring the C++/WinRT VSIX extension to be installed.
+
+## SDK support for C++/WinRT
+Although it is now present only for compatibility reasons, as of version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK contains a header-file-based standard C++ library for consuming first-party Windows APIs (Windows Runtime APIs in Windows namespaces). Those headers are inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. As of the Windows SDK version 10.0.17763.0 (Windows 10, version 1809), these headers are generated for you inside your project's *$(GeneratedFilesDir)* folder.
+
+Again for compatibility, the Windows SDK also comes with the `cppwinrt.exe` tool. However, we recommend that you instead install and use the most recent version of `cppwinrt.exe`, which is included with the **Microsoft.Windows.CppWinRT** NuGet package. That package, and `cppwinrt.exe`, are described in the sections above.
 
 ## Custom types in the C++/WinRT projection
 In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).

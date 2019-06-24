@@ -21,7 +21,7 @@ You can promote and monetize a UWP game in one or more of these ways:
 
 ## Worldwide distribution channel
 
-The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
+The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ## Set a price for your game
 
@@ -32,30 +32,30 @@ Here are some important concepts regarding the pricing of your game in the Store
 ### Base price
 
 The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
-The process of determining the price may include your [tax responsibilities when selling to different countries](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)
-and [cost considerations for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). You can also [set custom prices for specific markets](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
+The process of determining the price may include your [tax responsibilities when selling to different countries](https://docs.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)
+and [cost considerations for specific markets](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). You can also [set custom prices for specific markets](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
 
 ### Sale price
 
 One way to promote your game is to reduce its price for a limited time. It's also possible to set the sale price to __Free__ to allow your game to be downloaded without payment.
-You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](https://msdn.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
+You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
 
 ## In-game purchases
 
-In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) through Partner Center. You'll also need to enable the add-ons in your game's code.
+In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://docs.microsoft.com/windows/uwp/publish/add-on-submissions) through Partner Center. You'll also need to enable the add-ons in your game's code.
 
 ### Types of add-ons
 
 You can create two types of add-ons in the store: _durables_ or _consumables_. Durables are items that persist over for a specified amount of time and can be purchased only once until they expire. Consumables are items that can be purchased and used again and again.
 
-When creating consumables, decide how you want to keep track of them &mdash; that is whether they're _developer managed_ or _Store managed_ (This feature is available starting in Windows 10, version 1607). With a developer-managed consumable, you are responsible for keeping track of the item's balance for the gamer; with a Store-managed consumable, the Microsoft Store keeps track of the item's balance for you. For more info, see [Overview of consumable add-ons](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
+When creating consumables, decide how you want to keep track of them &mdash; that is whether they're _developer managed_ or _Store managed_ (This feature is available starting in Windows 10, version 1607). With a developer-managed consumable, you are responsible for keeping track of the item's balance for the gamer; with a Store-managed consumable, the Microsoft Store keeps track of the item's balance for you. For more info, see [Overview of consumable add-ons](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases).
 
 ### Create in-game purchases
 
-The latest in-app purchases and license info APIs are part of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace in the Windows SDK (starting in Windows 10, version 1607). If you're developing a new game that targets 1607 or later release, we recommend that you use the __Windows.Services.Store__ namespace because it supports the latest add-on types and has better performance.
-It's also designed to be compatible with future types of products and features supported by the Partner Center and the Store. When developing for previous versions of Windows 10, use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead.
+The latest in-app purchases and license info APIs are part of the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace in the Windows SDK (starting in Windows 10, version 1607). If you're developing a new game that targets 1607 or later release, we recommend that you use the __Windows.Services.Store__ namespace because it supports the latest add-on types and has better performance.
+It's also designed to be compatible with future types of products and features supported by the Partner Center and the Store. When developing for previous versions of Windows 10, use the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace instead.
 
-For more info, go to [In-app purchases and trials](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials).
+For more info, go to [In-app purchases and trials](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials).
 
 #### Simplified purchase example
 
@@ -63,8 +63,8 @@ This section uses a simplified purchase example to illustrate the use of differe
 
 |In-game actions / activity                                                | Game background tasks                  |
 |--------------------------------------------------------------------------|----------------------------------------|
-|Gamer enters a shop. Shop menu pops up to display the available add-ons and purchase price |  Game [retrieves the product info](https://msdn.microsoft.com/windows/uwp/monetize/get-product-info-for-apps-and-add-ons) of the add-ons, [determines whether the add-ons have the proper license](https://msdn.microsoft.com/windows/uwp/monetize/get-license-info-for-apps-and-add-ons), and displays the add-ons that are available for purchase by the gamer on the shop menu.                           |
-|Gamer clicks __Buy__ to purchase an item             |The __Buy__ action sends a request to purchase the item and starts the payment process to acquire it. The implementation varies depending on the item type. If it is [a durable or a one-time purchase item](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-purchases-of-apps-and-add-ons), the customer can own only a single item until it expires. If the item is a [consumable](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases), the customer can own one or more of it. |
+|Gamer enters a shop. Shop menu pops up to display the available add-ons and purchase price |  Game [retrieves the product info](https://docs.microsoft.com/windows/uwp/monetize/get-product-info-for-apps-and-add-ons) of the add-ons, [determines whether the add-ons have the proper license](https://docs.microsoft.com/windows/uwp/monetize/get-license-info-for-apps-and-add-ons), and displays the add-ons that are available for purchase by the gamer on the shop menu.                           |
+|Gamer clicks __Buy__ to purchase an item             |The __Buy__ action sends a request to purchase the item and starts the payment process to acquire it. The implementation varies depending on the item type. If it is [a durable or a one-time purchase item](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-purchases-of-apps-and-add-ons), the customer can own only a single item until it expires. If the item is a [consumable](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases), the customer can own one or more of it. |
 
 ### Test in-game purchases during game development
 
@@ -79,7 +79,7 @@ To create add-ons while your game is still in development:
 
 #### Create a package
 
-For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit), which is part of the Windows 10 SDK,
+For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit), which is part of the Windows 10 SDK,
 to run tests on the game to help ensure that it's ready for publishing to the Store. If you have not already downloaded the Windows 10 SDK that includes the Windows App Certification Kit, go to [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
 To create a package that can be uploaded to the Store:
@@ -88,7 +88,7 @@ To create a package that can be uploaded to the Store:
 2. Within Visual Studio, go to __Project__ > __Store__ > __Create App Packages ...__
 3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
 4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
-5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
+5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.
 7. Fix any errors to create a game package.
 
@@ -98,16 +98,16 @@ To create a package that can be uploaded to the Store:
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to work with. If you have not yet created an app submission, click on __Create a new app__ and reserve a name.
 3. On the __App Overview__ page, click __Start your submission__.
 4. Configure this new submission. On the submission page:
-    * Click __Pricing and availability__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__' to ensure only your development team has access to the game. For more details, go to [Distribution and visibility](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
+    * Click __Pricing and availability__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__' to ensure only your development team has access to the game. For more details, go to [Distribution and visibility](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).
     * Click __Properties__. In the __Category and subcategory__ section, choose __Games__ and then a suitable subcategory for your game.
     * Click __Age ratings__. Fill out the questionnaire accurately.
     * Click __Packages__. Upload the game package created in the earlier step.
 5. Follow any other submission prompts in the dashboard to allow you to successfully publish this game which remains hidden to the public.
 6. Click __Submit to the Store__.
 
-For more info, go to [App submissions](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
+For more info, go to [App submissions](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-After your game is submitted to the Store, it enters the [app certification process](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process). This process can take up to 16 hours before the game is listed.
+After your game is submitted to the Store, it enters the [app certification process](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process). This process can take up to 16 hours before the game is listed.
 
 #### Associate your game solution with the Store
 
@@ -117,24 +117,24 @@ With your game solution opened in Visual Studio:
 2. Sign in to your Partner Center developer account and select the app name to associate this solution with.
 3. Double-click on the __Package.appxmanifest.xml file__ and go to the __Packaging__ tab to check that the game is associated correctly.
 
-If you have associated the solution to a published game that is live and listed in the Store, your solution will have an active license and you are one step closer in creating add-ons for your game. For more info, see [Packaging apps](https://msdn.microsoft.com/windows/uwp/packaging/index).
+If you have associated the solution to a published game that is live and listed in the Store, your solution will have an active license and you are one step closer in creating add-ons for your game. For more info, see [Packaging apps](https://docs.microsoft.com/windows/uwp/packaging/index).
 
 #### Create an add-on in the Store
 
-As you create add-ons, make sure you're associating them with the right game submission. For details about how to configure all the various info associated with an add-on, see [Add-on submissions](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+As you create add-ons, make sure you're associating them with the right game submission. For details about how to configure all the various info associated with an add-on, see [Add-on submissions](https://docs.microsoft.com/windows/uwp/publish/add-on-submissions).
 
 1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to create the add-on for.
 3. On the __App Overview__ page, in the __Add-ons__ section, select __Create a new add-on__.
 4. Select the product type for the add-on: __developer-managed consumable__, __store-managed consumable__, or __durable__.
-5. Enter a unique product ID which will be used as a string variable when integrating this add-on into your game code. This ID will not be seen by consumers. For more info, see [Set your app product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id).
+5. Enter a unique product ID which will be used as a string variable when integrating this add-on into your game code. This ID will not be seen by consumers. For more info, see [Set your app product type and product ID](https://docs.microsoft.com/windows/uwp/publish/set-your-add-on-product-id).
 
 Other configurations for add-ons include:
-* [Properties](https://msdn.microsoft.com/windows/uwp/publish/enter-add-on-properties)
-* [Pricing and availability](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
-* [Store listing](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
+* [Properties](https://docs.microsoft.com/windows/uwp/publish/enter-add-on-properties)
+* [Pricing and availability](https://docs.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
+* [Store listing](https://docs.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-If your game has many add-ons, you can create them programmatically by using the __Microsoft Store submission API__. For more info, see [Create and manage submissions using Microsoft Store services](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
+If your game has many add-ons, you can create them programmatically by using the __Microsoft Store submission API__. For more info, see [Create and manage submissions using Microsoft Store services](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
 
 ## Display ads in your game
 
@@ -159,7 +159,7 @@ For the full list of countries and regions that support ads, see [Supported mark
 
 ### APIs for displaying ads
 
-The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) classes in the Microsoft Advertising SDK are used to help display ads in games.
+The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol), [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and [NativeAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativead) classes in the Microsoft Advertising SDK are used to help display ads in games.
 
 To get started, download and install the [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later version. For more info, see [Install the Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
 
@@ -167,23 +167,23 @@ To get started, download and install the [Microsoft Advertising SDK](https://aka
 
 These walkthroughs show how to implement ads by using __AdControl__, __InterstitialAd__, and __NativeAd__:
 
-* [Create banner ads in XAML and .NET](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
-* [Create banner ads in HTML5 and JavaScript](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
-* [Create interstitial ads](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
-* [Create native ads](https://msdn.microsoft.com/windows/uwp/monetize/native-ads)
+* [Create banner ads in XAML and .NET](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
+* [Create banner ads in HTML5 and JavaScript](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
+* [Create interstitial ads](https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [Create native ads](https://docs.microsoft.com/windows/uwp/monetize/native-ads)
 
 During development, you can make use of the [test ad unit values](../monetize/test-mode-values.md) to see how the ads are rendered. These test ad unit values are also used in the walkthroughs above.
 
 Here are some best practices to help you in the design and implementation process.
 
-* [Best practices for banner ads](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
-* [Best practices for interstitial ads](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
+* [Best practices for banner ads](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
+* [Best practices for interstitial ads](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 
-For solutions to common development issues, like ads not appearing, black box blinking and disappearing, or ads not refreshing, see [Troubleshooting guides](https://msdn.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
+For solutions to common development issues, like ads not appearing, black box blinking and disappearing, or ads not refreshing, see [Troubleshooting guides](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
 
 ### Prepare for release by replacing ad unit test values
 
-When you're ready to move to live testing or to receive ads in published games, you must update the test ad unit values to the actual values provided for your game. To create ad units for your game, see [Set up ad units in your app](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app).
+When you're ready to move to live testing or to receive ads in published games, you must update the test ad unit values to the actual values provided for your game. To create ad units for your game, see [Set up ad units in your app](https://docs.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app).
 
 ### Other ad networks
 
@@ -191,7 +191,7 @@ These are other ad networks that provide SDKs for serving ads to UWP apps and ga
 
 #### Vungle
 
-The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://v.vungle.com/sdk).
+The Vungle SDK for Windows offer video ads in apps and games. To download the SDK, go to [Vungle SDK](https://publisher.vungle.com/sdk/).
 
 #### Smaato
 
@@ -209,21 +209,21 @@ For info about integrating the AdDuplex SDK into Windows 10 UWP games created us
 
 ## Maximize your game's potential through ad campaigns
 
-Take the next step in promoting your game using ads. When you [create an ad campaign](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app) for your game, other apps and games will display ads promoting your game.
+Take the next step in promoting your game using ads. When you [create an ad campaign](https://docs.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app) for your game, other apps and games will display ads promoting your game.
 
 Choose from several types of campaigns that can help increase your gamer base.
 
 |Campaign type             | Ads for your game appear in...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Paid                      |Apps that match your game’s device or category.                                                                                                                                                   |
-|Free community	           |Apps published by other developers who have also opted in to community ad campaigns. For more info, see [About community ads](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads).|
-|Free house	               |Only apps that you've published. For more info, see [About house ads](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads).                                                            |
+|Free community	           |Apps published by other developers who have also opted in to community ad campaigns. For more info, see [About community ads](https://docs.microsoft.com/windows/uwp/publish/about-community-ads).|
+|Free house	               |Only apps that you've published. For more info, see [About house ads](https://docs.microsoft.com/windows/uwp/publish/about-house-ads).                                                            |
 
 ## Related links
 
-* [Getting paid](https://msdn.microsoft.com/windows/uwp/publish/getting-paid-apps)
-* [Account types, locations, and fees](https://msdn.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)
-* [Analytics](https://msdn.microsoft.com/windows/uwp/publish/analytics)
-* [Globalization and localization](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [Implement a trial version of your app](https://msdn.microsoft.com/windows/uwp/monetize/implement-a-trial-version-of-your-app)
-* [Run app experiments with A/B testing](https://msdn.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)
+* [Getting paid](https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps)
+* [Account types, locations, and fees](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)
+* [Analytics](https://docs.microsoft.com/windows/uwp/publish/analytics)
+* [Globalization and localization](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [Implement a trial version of your app](https://docs.microsoft.com/windows/uwp/monetize/implement-a-trial-version-of-your-app)
+* [Run app experiments with A/B testing](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)

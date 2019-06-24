@@ -20,9 +20,9 @@ Nested UI is a user interface (UI) that exposes nested actionable controls enclo
 
 You can use nested UI to present a user with additional options that help accelerate taking important actions. However, the more actions you expose, the more complicated your UI becomes. You need to take extra care when you choose to use this UI pattern. This article provides guidelines to help you determine the best course of action for your particular UI.
 
-> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
-In this article, we discuss the creation of nested UI in [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
+In this article, we discuss the creation of nested UI in [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) and [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
 
 In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
 - *List* refers to a collection of items contained in a list view or grid view.
@@ -31,7 +31,7 @@ In this article, we use the terms *list*, *list item*, and *nested UI* as define
 
 ![Nested UI parts](images/nested-ui-example-1.png)
 
-> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
+> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
 
 ## Primary and secondary actions
 
@@ -131,7 +131,7 @@ When input is from a keyboard, this is the experience user gets:
 - From UI element to the left of List Item, tab key puts focus on **A**.
 - From UI element to the right of List Item, shift tab key puts focus on **C**.
 
-To achieve this UI, set [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **true** on your list. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) can be any value.
+To achieve this UI, set [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) to **true** on your list. [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) can be any value.
 
 For the code to implement this, see the [Example](#example) section of this article.
 
@@ -145,9 +145,9 @@ This kind of UI tends to be much more complicated than the previous examples, wi
 
 
 To achieve this UI, set the following properties on your list:
-- [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) to **None**.
-- [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **false**.
-- [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) to **true**.
+- [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) to **None**.
+- [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) to **false**.
+- [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) to **true**.
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >

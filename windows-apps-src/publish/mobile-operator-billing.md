@@ -19,33 +19,33 @@ We are regularly working with mobile operators to expand the availability of thi
 
 Mobile Operator Billing is currently supported by these mobile operators.
 
-| Country/region  | Mobile operators                 |
-|-----------------|----------------------------------|
-| Australia       | Optus                            |
-| Austria         | Hutchison 3G Austria, A1 Telekom, T-Mobile / tele.ring  |
-| Belgium         | Base, Proximus                   |
-| Canada          | Telus                            |
-| Czech Republic  | T-Mobile                         |
-| Denmark         | 3, TDC / YouSee, Telenor, Telia  |
-| Finland         | DNA, Elisa                       |
-| France          | Orange                           |
-| Germany         | O2, Telekom Deutschland          |
-| Hungary         | Telenor                          |
-| Italy           | Wind, Tre                        |
-| Malaysia        | Digi                             |
-| Netherlands     | KPN / Telfort                    |
-| Norway          | Telenor / Talkmore, Telia / OneCall   |
-| Poland          | Orange, Play                     |
-| Singapore       | M1 Limited, StarHub              |
-| Slovakia        | Slovak Telekom                   |
-| Spain           | Orange                           |
-| Sweden          | Telenor, 3                       |
-| Switzerland     | Swisscom, Sunrise                |
-| Taiwan          | FarEasTone                       |
-| Turkey          | Turkcell                         |
-| United Arab Emirates | Etisalat                    |
-| United States   | Sprint, Verizon                  |
-| United Kingdom  | O2, 3 UK, EE                     |
+| Country/region       | Mobile operators                                        |
+|----------------------|---------------------------------------------------------|
+| Australia            | Optus                                                   |
+| Austria              | Hutchison 3G Austria, A1 Telekom, T-Mobile / tele.ring  |
+| Belgium              | Base, Proximus                                          |
+| Canada               | Telus                                                   |
+| Czech Republic       | T-Mobile                                                |
+| Denmark              | 3, TDC / YouSee, Telenor, Telia                         |
+| Finland              | DNA, Elisa                                              |
+| France               | Orange                                                  |
+| Germany              | O2, Telekom Deutschland, Vodafone                       |
+| Hungary              | Telenor                                                 |
+| Italy                | Wind, Tre                                               |
+| Malaysia             | Digi                                                    |
+| Netherlands          | KPN / Telfort                                           |
+| Norway               | Telenor / Talkmore, Telia / OneCall                     |
+| Poland               | Orange, Play                                            |
+| Singapore            | M1 Limited, StarHub                                     |
+| Slovakia             | Slovak Telekom                                          |
+| Spain                | Orange                                                  |
+| Sweden               | Telenor, 3                                              |
+| Switzerland          | Swisscom, Sunrise                                       |
+| Taiwan               | FarEasTone                                              |
+| Turkey               | Turkcell                                                |
+| United Arab Emirates | Etisalat                                                |
+| United States        | Sprint, Verizon                                         |
+| United Kingdom       | O2, 3 UK, EE                                            |
 
  
 

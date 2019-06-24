@@ -41,7 +41,34 @@ This **xmlns** value, and the "x:" prefix it is mapped to, is also identical to 
 
 The relationship between these declarations is that XAML is a language definition, and the Windows Runtime is one implementation that uses XAML as a language and defines a specific vocabulary where its types are referenced in XAML.
 
-The XAML language specifies certain language elements, and each of these should be accessible through XAML processor implementations working against the XAML namespace. The "x:" mapping convention for the XAML language XAML namespace is followed by project templates, sample code, and the documentation for language features. The XAML language namespace defines several commonly used features that are necessary even for basic Windows Runtime apps using C++, C#, or Visual Basic. For example, to join any code-behind to a XAML file through a partial class, you must name that class as the [x:Class attribute](x-class-attribute.md) in the root element of the relevant XAML file. Or, any element as defined in a XAML page as a keyed resource in a [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273) must have the [x:Key attribute](x-key-attribute.md) set on the object element in question.
+The XAML language specifies certain language elements, and each of these should be accessible through XAML processor implementations working against the XAML namespace. The "x:" mapping convention for the XAML language XAML namespace is followed by project templates, sample code, and the documentation for language features. The XAML language namespace defines several commonly used features that are necessary even for basic Windows Runtime apps using C++, C#, or Visual Basic. For example, to join any code-behind to a XAML file through a partial class, you must name that class as the [x:Class attribute](x-class-attribute.md) in the root element of the relevant XAML file. Or, any element as defined in a XAML page as a keyed resource in a [ResourceDictionary and XAML resource references](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references) must have the [x:Key attribute](x-key-attribute.md) set on the object element in question.
+
+## Code namespaces that map to the default XAML namespace
+
+The folowing is a list of code namespaces that are currently mapped to the default XAML namespace.
+
+* Windows.UI
+* Windows.UI.Xaml
+* Windows.UI.Xaml.Automation
+* Windows.UI.Xaml.Automation.Peers
+* Windows.UI.Xaml.Automation.Provider
+* Windows.UI.Xaml.Automation.Text
+* Windows.UI.Xaml.Controls
+* Windows.UI.Xaml.Controls.Primitives
+* Windows.UI.Xaml.Data
+* Windows.UI.Xaml.Documents
+* Windows.UI.Xaml.Input
+* Windows.UI.Xaml.Interop
+* Windows.UI.Xaml.Markup
+* Windows.UI.Xaml.Media
+* Windows.UI.Xaml.Media.Animation
+* Windows.UI.Xaml.Media.Imaging
+* Windows.UI.Xaml.Media.Media3D
+* Windows.UI.Xaml.Navigation
+* Windows.UI.Xaml.Resources
+* Windows.UI.Xaml.Shapes
+* Windows.UI.Xaml.Threading
+* Windows.UI.Text
 
 <span id="other-XAML-namespaces"/>
 
@@ -53,13 +80,13 @@ In addition to the default namespace and the XAML language XAML namespace "x:", 
 
 The "d:" XAML namespace is intended for designer support, specifically designer support in the XAML design surfaces of Microsoft Visual Studio. The" d:" XAML namespace enables designer or design-time attributes on XAML elements. These designer attributes affect only the design aspects of how XAML behaves. The designer attributes are ignored when the same XAML is loaded by the Windows Runtime XAML parser when an app runs. Generally, the designer attributes are valid on any XAML element, but in practice there are only certain scenarios where applying a designer attribute yourself is appropriate. In particular, many of the designer attributes are intended to provide a better experience for interacting with data contexts and data sources while you are developing XAML and code that use data binding.
 
--   **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
+-   **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
 
    **Note**  If you are migrating XAML from Microsoft Silverlight you might have these attributes on root elements that represent an entire UI page. You might want to remove the attributes in this case. Other features of the XAML designers such as the simulator are probably more useful for designing page layouts that handle scaling and view states well than is a fixed size page layout using **d:DesignHeight** and **d:DesignWidth**.
 
--   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) that object otherwise has.
--   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), overriding [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](https://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) that object otherwise has.
+-   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), overriding [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source).
+-   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](https://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer).
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
@@ -71,7 +98,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 ### **vsm:**
 
-Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://msdn.microsoft.com/library/windows/apps/br229571).
+Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState), [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10)).
 
 ## Mapping custom types to XAML namespaces and prefixes
 
@@ -93,7 +120,7 @@ Don't use nested types (such as nesting an enumeration within a class) when you 
 
 ## Custom types and assemblies
 
-The name of the assembly that defines the backing types for a XAML namespace is not specified in the mapping. The logic for which assemblies are available is controlled at the app-definition level and is part of basic app deployment and security principles. Declare any assembly that you want included as a code-definition source for XAML as a dependent assembly in project settings. For more info, see [Creating Windows Runtime components in C# and Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx).
+The name of the assembly that defines the backing types for a XAML namespace is not specified in the mapping. The logic for which assemblies are available is controlled at the app-definition level and is part of basic app deployment and security principles. Declare any assembly that you want included as a code-definition source for XAML as a dependent assembly in project settings. For more info, see [Creating Windows Runtime components in C# and Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140)).
 
 If you are referencing custom types from the primary app's application definition or page definitions, those types are available without further dependent assembly configuration, but you still must map the code namespace that contains those types. A common convention is to map the prefix "local" for the default code namespace of any given XAML page. This convention is often included in starting project templates for XAML projects.
 
@@ -105,8 +132,8 @@ If you are referencing attached properties, the owner-type portion of the attach
 
 * [XAML overview](xaml-overview.md)
 * [XAML syntax guide](xaml-syntax-guide.md)
-* [Creating Windows Runtime components in C# and Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [C#, VB, and C++ project templates for Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/hh768232)
-* [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://msdn.microsoft.com/library/windows/apps/br229571)
+* [Creating Windows Runtime components in C# and Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
+* [C#, VB, and C++ project templates for Windows Runtime apps](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
+* [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
  
 

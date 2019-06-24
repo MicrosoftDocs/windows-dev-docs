@@ -1,4 +1,4 @@
-﻿---
+---
 Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
@@ -14,7 +14,7 @@ You can create ad campaigns in [Partner Center](https://partner.microsoft.com/da
 You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
 > [!NOTE]
-> This section of the documentation describes how to create an ad campaign in Partner Center. Alternatively, you can use the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
+> This section of the documentation describes how to create an ad campaign in Partner Center. Other campaign options to create and manage ad campaigns programmatically include [Vungle](https://vungle.com/) and the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md).
 
 ## Instructions
 
@@ -84,7 +84,7 @@ Here's how to create an ad campaign to promote an app.
 
 12.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
     * If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
-    * If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Microsoft Store. For more information about install tracking with Kochava and Tune, see the [Kochava](https://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
+    * If you are using Adjust, Kochava, Tune, or Vungle to measure install analytics for your app, enter your install tracking URL. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Microsoft Store. For more information about install tracking with these services, see the [Adjust](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [Tune](https://help.tune.com/hasoffers/), and [Vungle](https://support.vungle.com/hc/en-us) documentation.
     * If you chose **Increase engagement in your app** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
     * If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 

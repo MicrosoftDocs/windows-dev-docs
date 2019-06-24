@@ -23,7 +23,7 @@ Shows how to convert Direct3D 9 initialization code to Direct3D 11, including ho
 ## Initialize the Direct3D device
 
 
-In Direct3D 9, we created a handle to the Direct3D device by calling [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). We started by getting a pointer to [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) and we specified a number of parameters to control the configuration of the Direct3D device and the swap chain. Before doing this we called [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) to make sure we weren't asking the device to do something it couldn't do.
+In Direct3D 9, we created a handle to the Direct3D device by calling [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice). We started by getting a pointer to [**IDirect3D9 interface**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) and we specified a number of parameters to control the configuration of the Direct3D device and the swap chain. Before doing this we called [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps) to make sure we weren't asking the device to do something it couldn't do.
 
 Direct3D 9
 
@@ -63,7 +63,7 @@ m_pD3D->CreateDevice(
 
 In Direct3D 11, the device context and graphics infrastructure is considered separate from the device itself. Initialization is divided into multiple steps.
 
-First we create the device. We get a list of the feature levels the device supports - this informs most of what we need to know about the GPU. Also, we don't need to create an interface just to access Direct3D. Instead we use the [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) core API. This gives us a handle to the device and the device's immediate context. The device context is used to set pipeline state and generate rendering commands.
+First we create the device. We get a list of the feature levels the device supports - this informs most of what we need to know about the GPU. Also, we don't need to create an interface just to access Direct3D. Instead we use the [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) core API. This gives us a handle to the device and the device's immediate context. The device context is used to set pipeline state and generate rendering commands.
 
 After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
 
@@ -119,7 +119,7 @@ Direct3D 11 includes a device API called DirectX graphics infrastructure (DXGI).
 
 The Direct3D device implements a COM interface for DXGI. First we need to get that interface and use it to request the DXGI adapter hosting the device. Then we use the DXGI adapter to create a DXGI factory.
 
-> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). You should use [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) smart pointers instead. Then just call the [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) method, supplying an empty COM pointer of the correct interface type.
+> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). You should use [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) smart pointers instead. Then just call the [**As()**](https://docs.microsoft.com/previous-versions/br230426(v=vs.140)) method, supplying an empty COM pointer of the correct interface type.
 
  
 
@@ -141,7 +141,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Now that we have the DXGI factory, we can use it to create the swap chain. Let's define the swap chain parameters. We need to specify the surface format; we'll choose [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) because it's compatible with Direct2D. We'll turn off display scaling, multisampling, and stereo rendering because they aren't used in this example. Since we are running directly in a CoreWindow we can leave the width and height set to 0 and get full-screen values automatically.
+Now that we have the DXGI factory, we can use it to create the swap chain. Let's define the swap chain parameters. We need to specify the surface format; we'll choose [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) because it's compatible with Direct2D. We'll turn off display scaling, multisampling, and stereo rendering because they aren't used in this example. Since we are running directly in a CoreWindow we can leave the width and height set to 0 and get full-screen values automatically.
 
 > **Note**   Always set the *SDKVersion* parameter to D3D11\_SDK\_VERSION for UWP apps.
 
@@ -161,9 +161,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-To ensure we aren't rendering more often than the screen can actually display, we set frame latency to 1 and use [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). This saves power and is a store certification requirement; we'll learn more about presenting to the screen in part 2 of this walkthrough.
+To ensure we aren't rendering more often than the screen can actually display, we set frame latency to 1 and use [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). This saves power and is a store certification requirement; we'll learn more about presenting to the screen in part 2 of this walkthrough.
 
-> **Note**   You can use multithreading (for example, [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) work items) to continue other work while the rendering thread is blocked.
+> **Note**   You can use multithreading (for example, [**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading) work items) to continue other work while the rendering thread is blocked.
 
  
 

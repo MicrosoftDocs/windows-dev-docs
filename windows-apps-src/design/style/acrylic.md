@@ -32,7 +32,7 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 
 ## Acrylic and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](/windows/apps/fluent-design-system).
 
  ## Video summary
 
@@ -42,14 +42,14 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**XAML Controls Gallery**<br>
+If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -67,7 +67,7 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 ## When to use acrylic
 
 * Use in-app acrylic for supporting UI, such as on surfaces that may overlap content when scrolled or interacted with.
-* Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dimsissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
+* Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dismissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
 
 If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow on your app. Using NavigationView will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
 
@@ -92,7 +92,7 @@ For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is reco
 
 ![Mail app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
-Many of our controls will use acrylic by default. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dimiss popups will all use the transient acrylic when they are invoked.
+Many of our controls will use acrylic by default. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) and similar controls with light-dismiss popups will all use the transient acrylic when they are invoked.
 
 > [!Note]
 > Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter Battery Saver mode, and users can disable acrylic effects for all apps, if they choose.
@@ -313,7 +313,7 @@ In addition, you'll need to draw your app's title, which normally appears automa
 ## Do's and don'ts
 * Do use acrylic as the background material of non-primary app surfaces like navigation panes.
 * Do extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app’s surroundings.
-* Don't put desktop arylic on large background surfaces of your app - this breaks the mental model of acrylic being used primarily for transient surfaces.
+* Don't put desktop acrylic on large background surfaces of your app - this breaks the mental model of acrylic being used primarily for transient surfaces.
 * Don’t place in-app and background acrylics directly adjacent to avoid visual tension at the seams.
 * Don't place multiple acrylic panes with the same tint and opacity next to each other because this results in an undesirable visible seam.
 * Don’t place accent-colored text over acrylic surfaces.

@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input. 
 
-> **Important APIs**: [TimePicker class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx), [Time property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+> **Important APIs**: [TimePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [Time property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## Is this the right control?

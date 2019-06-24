@@ -59,4 +59,4 @@ If you send notifications to your UWP app today, you can view analytics on what 
 * [Toast content](adaptive-interactive-toasts.md)
 * [Raw notifications](raw-notification-overview.md)
 * [Pending update](toast-pending-update.md)
-* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
