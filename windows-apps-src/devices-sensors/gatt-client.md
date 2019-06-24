@@ -153,11 +153,11 @@ if (result.Status == GattCommunicationStatus.Success)
 Writing to a characteristic follows a similar pattern: 
 ```csharp
 var writer = new DataWriter();
-// WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
+// WriteByte used for simplicity. Other common functions - WriteInt16 and WriteSingle
 writer.WriteByte(0x01);
 
-GattReadResult result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
-if (result.Status == GattCommunicationStatus.Success)
+GattCommunicationStatus result = await selectedCharacteristic.WriteValueAsync(writer.DetachBuffer());
+if (result == GattCommunicationStatus.Success)
 {
     // Successfully wrote to device
 }
