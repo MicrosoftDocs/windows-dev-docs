@@ -41,3 +41,8 @@ To investigate your app's behavior in more depth, see [Debugging on ARM](https:/
 
 ## Virtual Machines
 The Windows Hypervisor platform is not supported on the Qualcomm Snapdragon 835 Mobile PC Platform. Hence, running virtual machines using Hyper-V will not work. We continue to make investments in these technologies on future Qualcomm chipsets. 
+
+## Dynamic Code Generation
+X86 desktop apps are emulated on ARM64 by the system generating ARM64 instructions at runtime. This means if an x86 desktop app prevents dynamic code generation or modification in its process, that app cannot be supported to run as x86 on ARM64. 
+
+This is a security mitigation some apps enable on their process using [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API with the `ProcessDynamicCodePolicy` flag. To run successfully on ARM64 as an x86 process, this mitigation policy will have to be disabled. 
