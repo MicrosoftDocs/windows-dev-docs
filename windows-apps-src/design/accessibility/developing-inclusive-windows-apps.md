@@ -76,8 +76,8 @@ For more detail, please see the full [Accessibility checklist](accessibility-che
 
 ## Related topics  
 * [Designing inclusive software](designing-inclusive-software.md)  
-* [Inclusive design](https://design.microsoft.com/inclusive)
+* [Inclusive design](https://www.microsoft.com/design/inclusive/)
 * [Accessibility practices to avoid](practices-to-avoid.md)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft accessibility developer hub](https://msdn.microsoft.com/enable)
+* [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Accessibility](accessibility.md)

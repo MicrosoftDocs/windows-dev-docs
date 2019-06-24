@@ -12,14 +12,14 @@ ms.localizationpriority: medium
 
 At this point we've covered the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, incorporate sounds, and implement controls. You're on your way to creating a game of your own, but if you need more help and info, check out these resources.
 
--   [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 Overview](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 Reference](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX Graphics and Gaming](https://docs.microsoft.com/windows/desktop/directx)
+-   [Direct3D 11 Overview](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+-   [Direct3D 11 Reference](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference)
 
 ## Using XAML for the overlay
 
 
-One alternative that we didn't discuss in depth is the use of XAML instead of [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) for the overlay. XAML has many benefits over Direct2D for drawing user interface elements. The most important benefit is that it makes incorporating the Windows 10 look and feel into your DirectX game more convenient. Many of the common elements, styles, and behaviors that define a UWP app are tightly integrated into the XAML model, making it far less work for a game developer to implement. If your own game design has a complicated user interface, consider using XAML instead of Direct2D.
+One alternative that we didn't discuss in depth is the use of XAML instead of [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) for the overlay. XAML has many benefits over Direct2D for drawing user interface elements. The most important benefit is that it makes incorporating the Windows 10 look and feel into your DirectX game more convenient. Many of the common elements, styles, and behaviors that define a UWP app are tightly integrated into the XAML model, making it far less work for a game developer to implement. If your own game design has a complicated user interface, consider using XAML instead of Direct2D.
 
 With XAML, we can make a game interface that looks similar to the Direct2D one made earlier.
 
@@ -33,8 +33,8 @@ While they have similar end results, there are a number of differences between i
 
 Feature | XAML| Direct2D
 :----------|:----------- | :-----------
-Defining overlay | Defined in a XAML file, `\*.xaml`. Once understanding XAML, creating and configuring more complicated overlays are made simpiler when compared to Direct2D.| Defined as a collection of Direct2D primitives and [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) strings manually placed and written to a Direct2D target buffer. 
-User interface elements | XAML user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) and [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp. | Simple shapes can be drawn like rectangles and ellipses.
+Defining overlay | Defined in a XAML file, `\*.xaml`. Once understanding XAML, creating and configuring more complicated overlays are made simpiler when compared to Direct2D.| Defined as a collection of Direct2D primitives and [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal) strings manually placed and written to a Direct2D target buffer. 
+User interface elements | XAML user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml) and [**Windows::UI::Xaml::Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp. | Simple shapes can be drawn like rectangles and ellipses.
 Window resizing | Naturally handles resize and view state change events, transforming the overlay accordingly | Need to manually specify how to redraw the overlay's components.
 
 
@@ -74,7 +74,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 ```
 
 
-To attach the configured swap chain to the [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) instance defined by your XAML, you must obtain a pointer to the underlying native [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) interface implementation and call [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) on it, passing it your configured swap chain. 
+To attach the configured swap chain to the [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) instance defined by your XAML, you must obtain a pointer to the underlying native [**ISwapChainPanelNative**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) interface implementation and call [**ISwapChainPanelNative::SetSwapChain**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) on it, passing it your configured swap chain. 
 
 The following snippet from  [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) details this for DirectX/XAML interop:
 

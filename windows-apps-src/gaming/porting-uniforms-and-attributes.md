@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 
@@ -28,9 +28,9 @@ Here's the basic mapping.
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniform                   | constant buffer (**cbuffer**) field.                                                                                                                                                |
 | attribute                 | vertex buffer element field, designated by an input layout and marked with a specific HLSL semantic.                                                                                |
-| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and for a general-use buffer definitions. |
-| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) with [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
-| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) with attached [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
+| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) and [**D3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) and for a general-use buffer definitions. |
+| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) with [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d).                                       |
+| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) with attached [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1).                       |
 
  
 
@@ -67,9 +67,9 @@ Other buffers include pixel buffers and maps, like textures. The shader pipeline
 
 In Direct3D 11, buffer data elements are considered "subresources," and can range from individual vertex data elements to MIP-map textures.
 
--   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure with the configuration for a buffer data element.
--   Populate a [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure with the size of the individual elements in the buffer as well as the buffer type.
--   Call [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) with these two structures.
+-   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure with the configuration for a buffer data element.
+-   Populate a [**D3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) structure with the size of the individual elements in the buffer as well as the buffer type.
+-   Call [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) with these two structures.
 
 Direct3D 11: Creating and populating a vertex buffer and an index buffer.
 
@@ -100,7 +100,7 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) or [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
+Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) or [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
 
 Direct3D 11: Creating a frame buffer object.
 
@@ -141,7 +141,7 @@ Open GL ES 2.0: GLSL uniform declaration
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
+Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
 
 Constant buffers must have an associated GPU register used to reference that data on the GPU. The data is packed into the register location as indicated by the layout of the buffer.
 
@@ -218,7 +218,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps).
 
 Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
 
@@ -249,7 +249,7 @@ An input layout is declared and associated with a vertex shader by declaring the
 -   A vertex position coordinate, represented in main memory as an XMFLOAT3, which is an aligned array of 3 32-bit floating point values for the (x, y, z) coordinates.
 -   A vertex color value, represented as an XMFLOAT4, which is an aligned array of 4 32-bit floating point values for the color (RGBA).
 
-You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) when you set up the input assembly during our render method.
+You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) when you set up the input assembly during our render method.
 
 Direct3D 11: Describing an input layout with specific semantics
 

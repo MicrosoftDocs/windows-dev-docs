@@ -166,7 +166,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](https://msdn.microsoft.com/library/windows/desktop/ms680509) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
@@ -533,7 +533,7 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## Important APIs
 * [IInspectable interface](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [IUnknown interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics

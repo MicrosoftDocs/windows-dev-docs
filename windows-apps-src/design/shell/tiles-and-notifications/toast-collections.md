@@ -184,4 +184,4 @@ The toast collections that you create will also be reflected in the user's notif
 
 * [Toast content](adaptive-interactive-toasts.md)
 * [Toast headers](toast-headers.md)
-* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

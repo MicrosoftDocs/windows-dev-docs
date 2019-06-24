@@ -1,5 +1,6 @@
 ---
 layout: HubPage
+uhfHeaderId: "MSDocsHeader-DocsL1"
 hide_bc: true
 ms.prod: windows
 ms.technology: hub
@@ -19,7 +20,7 @@ localizationpriority: medium
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_try-windows.svg" src="/media/hubs/windows/win_try-windows.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_try-windows.svg?branch=master" src="/media/hubs/windows/win_try-windows.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -37,7 +38,7 @@ localizationpriority: medium
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_insider.svg" src="/media/hubs/windows/win_insider.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_insider.svg?branch=master" src="/media/hubs/windows/win_insider.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -55,7 +56,7 @@ localizationpriority: medium
                           <div class="card">
                               <div class="cardImageOuter">
                                   <div class="cardImage">
-                                      <img data-hoverimage="/media/hubs/windows/win_academy.svg" src="/media/hubs/windows/win_academy.png" alt="" />
+                                      <img data-hoverimage="/media/hubs/windows/win_academy.svg?branch=master" src="/media/hubs/windows/win_academy.png?branch=master" alt="" />
                                   </div>
                               </div>
                               <div class="cardText">
@@ -77,24 +78,24 @@ localizationpriority: medium
                 <li>
                     <a href="#developer-all">all</a>
                     <ul id="developer-all" class="cardsC">
-<li>
+                        <li>
                             <div class="container intro">
-                                <p>Build for Windows 10</p>
+                                <p>Build for Windows</p>
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows/uwp/">
+                            <a href="/windows/apps/desktop">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>UWP apps</h3>
-                                                <p>Build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store. </p>
+                                                <h3>Desktop apps for PCs</h3>
+                                                <p>Get the tools, find out which platform is best for your new apps (including UWP, WPF, Windows Forms, and Win32), and learn how to enhance existing apps with the latest Windows features.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -102,18 +103,18 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                            <a href="/windows/uwp/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Desktop applications</h3>
-                                                <p>Get the tools, find out which technology is best for you, and learn how to develop desktop applications in the platform of your choice.</p>
+                                                <h3>UWP apps</h3>
+                                                <p>Build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +128,7 @@ localizationpriority: medium
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -146,7 +147,7 @@ localizationpriority: medium
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -165,7 +166,7 @@ localizationpriority: medium
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -178,18 +179,18 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/microsoft-edge/">
+                            <a href="https://developer.microsoft.com/web/platforms-tech">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
                                                 <h3>Web</h3>
-                                                <p>Create experiences powered by Microsoft Edge and the latest web standards.</p>
+                                                <p>Create Progressive Web Apps, browser extensions for Microsoft Edge, modern web apps using ASP.NET, and more.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +204,7 @@ localizationpriority: medium
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg?branch=master" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -418,7 +419,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/education/windows">
+                            <a href="https://docs.microsoft.com/education/windows/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -475,7 +476,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                            <a href="https://docs.microsoft.com/windows/privacy/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -513,7 +514,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/surface/">
+                            <a href="https://docs.microsoft.com/surface/get-started">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

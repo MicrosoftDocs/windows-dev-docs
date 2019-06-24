@@ -61,7 +61,7 @@ Next, the pixel shader will use the interpolated light space position provided b
 ## Test whether the position is in the light frustum
 
 
-First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) and comparing the result against the original value.
+First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) and comparing the result against the original value.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -83,7 +83,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## Depth test against the shadow map
 
 
-Use a sample comparison function (either [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) or [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
+Use a sample comparison function (either [SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) or [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 

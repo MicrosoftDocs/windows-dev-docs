@@ -8,10 +8,12 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
+![Design basics](../images/downloads-2x.png)
+
 # Design toolkits and samples for UWP apps
  
-
-Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
+Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
 
 
 ## Design toolkits
@@ -20,44 +22,44 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
-        ![hero image](images/figma.png)
-        <b>Figma toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/figmatoolkit">Download</a>
+![hero image](images/figma.png)
+<b>Figma toolkit</b><br>
+v1810, October 2018<br>
+<a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch toolkit</b><br>
-        v1810, October 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
+![hero image](images/sketch.png)
+<b>Sketch toolkit</b><br>
+v1810, October 2018<br>
+<a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::    
     :::column:::
-        ![hero image](images/adobe-xd.png)
-        <b>Adobe XD toolkit</b><br>
-        v1901, January 2019<br>
-        <a href="https://aka.ms/adobexdtoolkit">Download</a>
+![hero image](images/adobe-xd.png)
+<b>Adobe XD toolkit</b><br>
+v1901, January 2019<br>
+<a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![hero image](images/adobe-illustrator.png)
-        <b>Adobe Illustrator toolkit</b><br>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
+![hero image](images/adobe-illustrator.png)
+<b>Adobe Illustrator toolkit</b><br>
+v1806, June 2018<br>
+<a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/adobe-photoshop.png)
-        <b>Adobe Photoshop toolkit</b><br>
-        v1705, May 2017<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
+![hero image](images/adobe-photoshop.png)
+<b>Adobe Photoshop toolkit</b><br>
+v1705, May 2017<br>
+<a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![hero image](images/framer.png)
-        <b>Framer toolkit</b><br>
-        (This toolkit is no longer supported.)<br/>
-        v1806, June 2018<br>
-        <a href="https://aka.ms/framertoolkit">Download</a>
+![hero image](images/framer.png)
+<b>Framer toolkit</b><br>
+(This toolkit is no longer supported.)<br/>
+v1806, June 2018<br>
+<a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
@@ -65,16 +67,16 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 :::row:::
     :::column:::
-        ![WinUI library thumbnail](images/WinUI-library.png)
-        <b>Windows UI Library</b><br>
-        Controls and other UI elements for UWP apps.<br/>
-        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
+![WinUI library thumbnail](images/WinUI-library.png)
+<b>Windows UI Library</b><br>
+Controls and other UI elements for UWP apps.<br/>
+<a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows community thumbnail](images/Windows-community-toolkit.png)
-        <b>Windows Community Toolkit</b><br>
-        Helper functions, custom controls, and app services.<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
+![Windows community thumbnail](images/Windows-community-toolkit.png)
+<b>Windows Community Toolkit</b><br>
+Helper functions, custom controls, and app services.<br />
+<a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -125,4 +127,4 @@ This sample provides an interactive demo of all of the XAML controls. It shows a
 
 ## Want more code?
 
-Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/samples">Go to the samples portal</a>
+Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/windows/samples">Go to the samples portal</a>

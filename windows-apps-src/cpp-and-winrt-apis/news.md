@@ -23,7 +23,7 @@ For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.m
 
 - The `cppwinrt.exe` tool is now included in the Microsoft.Windows.CppWinRT NuGet package, and the tool generates platfom projection headers for each project on demand. Consequently, the `cppwinrt.exe` tool no longer depends on the Windows SDK (although, the tool still ships with the SDK for compatibility reasons).
 - `cppwinrt.exe` now generates projection headers under each platform/configuration-specific intermediate folder ($IntDir) to enable parallel builds.
-- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See [Microsoft.Windows.CppWinRT NuGet Package](https://github.com/Microsoft/xlang/blob/master/src/package/nuget/readme.md).
+- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See [Microsoft.Windows.CppWinRT NuGet Package](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
 - Numerous bug fixes have been made.
 
 ### Changes to C++/WinRT for version 2.0
@@ -155,13 +155,17 @@ This optimization avoids the #include dependencies in `module.g.cpp` so that it 
 
 The `module.g.cpp` file now also contains two additional composable helpers, named **winrt_can_unload_now**, and **winrt_get_activation_factory**. These have been designed for larger projects where a DLL is composed of a number of libs, each with its own runtime classes. In that situation, you need to manually stitch together the DLL's **DllGetActivationFactory** and **DllCanUnloadNow**. These helpers make it much easier for you to do that, by avoiding spurious origination errors. The `cppwinrt.exe` tool's `-lib` flag may also be used to give each individual lib its own preamble (rather than `winrt_xxx`) so that each lib's functions may be individually named, and thus combined unambiguously.
 
-#### New `winrt/coroutine.h` header
+#### Coroutine support
 
-The `winrt/coroutine.h` header is the new home for all of C++/WinRT's coroutine support. Previously, this support resided in a few places, which we felt was too limiting. Since the Windows Runtime async interfaces are now generated, rather than hand-written, they now reside in `winrt/Windows.Foundation.h`. Apart from being more maintainable and supportable, it means that coroutine helpers such as [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) no longer have to be tacked on to the end of a specific namespace header. Instead, they can more naturally include their dependencies. This further allows **resume_foreground** to support not only resuming on a given [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), but it can now also support resuming on a given [**Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Previously, only one could be supported; but not both, since the definition could only reside in one namespace.
+Coroutine support is included automatically. Previously, the support resided in multiple places, which we felt was too limiting. And then temporarily for v2.0, a `winrt/coroutine.h` header file was necessary, but that's no longer needed. Since the Windows Runtime async interfaces are now generated, rather than hand-written, they now reside in `winrt/Windows.Foundation.h`. Apart from being more maintainable and supportable, it means that coroutine helpers such as [**resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) no longer have to be tacked on to the end of a specific namespace header. Instead, they can more naturally include their dependencies. This further allows **resume_foreground** to support not only resuming on a given [**Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), but it can now also support resuming on a given [**Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Previously, only one could be supported; but not both, since the definition could only reside in one namespace.
 
 Here's an example of the **DispatcherQueue** support.
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 fire_and_forget Async(DispatcherQueueController controller)
 {
     bool queued = co_await resume_foreground(controller.DispatcherQueue());
@@ -297,7 +301,7 @@ If you previously left it to C++/WinRT to include any Windows headers in your pr
 
 Currently, the only exceptions to Windows SDK header file isolation are for intrinsics, and numerics. There are no known issues with these last remaining dependencies.
 
-In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
+In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
 
 ### How to retarget your C++/WinRT project to a later version of the Windows SDK
 

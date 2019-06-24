@@ -15,7 +15,7 @@ dev_langs:
 
 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
 
-You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
+You can apply lights to [**Visuals**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## Applying lights to XAML UIElements
 
@@ -492,4 +492,4 @@ The results of this XAML look like this.
 
 ## Additional Resources
 
-* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
+* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples).

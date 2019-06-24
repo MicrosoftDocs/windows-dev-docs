@@ -25,6 +25,22 @@ Starting in Windows 10, version 1809, you can animate properties on a UIElement 
 > [!NOTE]
 > To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see [Version adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
 
+## Examples
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/XamlCompInterop">open the app and see Animation interop in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## New rendering properties replace old rendering properties
 
 This table shows the properties you can use to modify the rendering of a UIElement, that can also be animated with a [CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation).

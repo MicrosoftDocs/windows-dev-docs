@@ -20,16 +20,16 @@ The following learning tracks show you what you need to know to complete some ba
 
 | Task | Description |
 | --- | --- |
-| [Construct a form](construct-form-learning-track.md) | Learn how to create a form that's easy to use and looks good no matter the screen size. | 
-| [Display customers in a list](display-customers-in-list-learning-track.md) | Learn how to display and edit data in your UI. | 
+| [Construct a form](construct-form-learning-track.md) | Learn how to create a form that's easy to use and looks good no matter the screen size. |
+| [Display customers in a list](display-customers-in-list-learning-track.md) | Learn how to display and edit data in your UI. |
 | [Save and load settings](settings-learning-track.md) | Learn how and where to save and retrieve settings. |
-| [Work with files](fileio-learning-track.md) | Learn how to read from and write to files, and which folders you do and don't have access to. | 
+| [Work with files](fileio-learning-track.md) | Learn how to read from and write to files, and which folders you do and don't have access to. |
 
-All our learning tracks are written for experienced devs who are getting familiar with Windows 10. If you're just beginning, start with our content [for new developers](#For-new-developers).
+All our learning tracks are written for experienced devs who are getting familiar with Windows 10. If you're just beginning, start with our content for new developers.
 
 ## For new developers
 
-If you're a new dev, Microsoft has many resources to teach you the basics of how to use the code and tools that you'll need for Windows 10 development. 
+If you're a new dev, Microsoft has many resources to teach you the basics of how to use the code and tools that you'll need for Windows 10 development.
 
 * [Create a "Hello World" app](your-first-app.md)
 
@@ -41,9 +41,8 @@ If you want a more detailed walkthrough on the basics of coding, the C# language
 * [C# Quickstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
 * [Get started with Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
 
-**Videos**
+**Videos:**
 
-* [Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
 * [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
 ## Using the docs

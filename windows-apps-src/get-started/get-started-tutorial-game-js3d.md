@@ -1085,7 +1085,7 @@ Now you have a UWP app, it is possible to publish it to the Microsoft Store (ass
 There are a few steps to the process.
 
 1.	You must be [registered](https://developer.microsoft.com/store/register) as a Windows Developer.
-2.	You must use the app submission [checklist](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
-3.	The app must be submitted for [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
-For more details, see [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
+2.	You must use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+3.	The app must be submitted for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+For more details, see [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
 

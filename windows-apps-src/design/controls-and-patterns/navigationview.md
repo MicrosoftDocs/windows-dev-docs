@@ -44,7 +44,7 @@ For other navigation patterns, see [Navigation design basics](../basics/navigati
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
@@ -709,4 +709,4 @@ This example shows how to override the theme resources in App.xaml. When you ove
 - [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Master/details](master-details.md)
 - [Navigation basics](../basics/navigation-basics.md)
-- [Fluent Design for UWP overview](../fluent-design-system/index.md)
+- [Fluent Design for UWP overview](/windows/apps/fluent-design-system)

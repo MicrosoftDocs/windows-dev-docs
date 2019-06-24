@@ -136,18 +136,17 @@ namespace Bookstore
 }
 ```
 
-Save and build. Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files` folder into the project folder, and include them in the project. Open those files and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type (**winrt::Bookstore::implementation::BookSku**). And we're restoring the default constructor by removing `= delete`.
+Save and build. Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files\sources` folder into the project folder, and include them in the project. Open those files and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type for **BookSku** (which is **winrt::Bookstore::implementation::BookSku**). And we're removing `= default` from the default constructor.
 
 ```cppwinrt
 // BookstoreViewModel.h
 #pragma once
-
 #include "BookstoreViewModel.g.h"
 #include "BookSku.h"
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
 
@@ -203,9 +202,9 @@ Save the file. The project won't build to completion at the moment, but building
 
 If you omit the include of `BookstoreViewModel.idl` (see the listing of `MainPage.idl` above), then you'll see the error **expecting \< near "MainViewModel"**. Another tip is to make sure that you leave all types in the same namespace: the namespace that's shown in the code listings.
 
-To resolve the error that we expect to see, you'll now need to copy the accessor stubs for the **MainViewModel** property out of the generated files (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`) and into `\Bookstore\Bookstore\MainPage.h` and `MainPage.cpp`.
+To resolve the error that we expect to see, you'll now need to copy the accessor stubs for the **MainViewModel** property out of the generated files (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` and `MainPage.cpp`) and into `\Bookstore\Bookstore\MainPage.h` and `MainPage.cpp`. The steps to do that are described next.
 
-In `\Bookstore\Bookstore\MainPage.h`, include `BookstoreViewModel.h`, which declares the implementation type (**winrt::Bookstore::implementation::BookstoreViewModel**). Add a private member to store the view model. Note that the property accessor function (and the member m_mainViewModel) is implemented in terms of **Bookstore::BookstoreViewModel**, which is the projected type. The implementation type is in the same project (compilation unit) as the application, so we construct m_mainViewModel via the constructor overload that takes `nullptr_t`. Also remove the **MyProperty** property.
+In `\Bookstore\Bookstore\MainPage.h`, include `BookstoreViewModel.h`, which declares the implementation type for **BookstoreViewModel** (which is **winrt::Bookstore::implementation::BookstoreViewModel**). Add a private member to store the view model. Note that the property accessor function (and the member m_mainViewModel) is implemented in terms of the projected type for **BookstoreViewModel** (which is **Bookstore::BookstoreViewModel**). The implementation type is in the same project (compilation unit) as the application, so we construct m_mainViewModel via the constructor overload that takes `nullptr_t`. Also remove the **MyProperty** property.
 
 ```cppwinrt
 // MainPage.h

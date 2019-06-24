@@ -98,7 +98,7 @@ Learn how other developers have implemented cloud solutions in their games.
             <ul>
                 <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Building games with Service Fabric: Age of Ascent MMO game (video)</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Manage game components as microservices using Azure Service Fabric (video)</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
             </ul>
         </td>
     </tr>
@@ -123,7 +123,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>
@@ -197,7 +197,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 | Collect and analyze game data| Massive parallel processing of data from both relational and non-relational databases | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| Elastic data warehouse as a service with Enterprise class features   |
 | Engage users to increase usage and retention| Send targeted push notifications to any platform from any back end to generate interest and encourage specific game actions | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Fast broadcast push to reach millions of mobile devices on all major platforms &mdash; iOS, Android, Windows, Kindle, Baidu. Your game can be hosted on any back end &mdash; cloud or on-premises.|
 | Stream media content to your local and worldwide audiences while protecting your content| Broadcast quality game trailers and cinematic clips can be watched from all devices| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| On-demand and live video streaming with integrated Content Delivery Network capabilities. Use one player for all of your playback needs, includes content protection and encryption.| 
-| Develop, distribute, and beta-test your mobile apps | Test and distribute your mobile app. App performance and user experience management. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integrates crash reporting and user metrics with an app distribution and user feedback platform. Supports Android, Cordova, iOS, OS X, Unity, Windows, and Xamarin apps. Also, consider [Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash; mission control for apps that combines rich analytics, crash reporting, push notifications, app distribution, and more. |
+| Develop, distribute, and beta-test your mobile apps | Test and distribute your mobile app. App performance and user experience management. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integrates crash reporting and user metrics with an app distribution and user feedback platform. Supports Android, Cordova, iOS, OS X, Unity, Windows, and Xamarin apps. Also, consider [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; mission control for apps that combines rich analytics, crash reporting, push notifications, app distribution, and more. |
 | Create marketing campaigns to increase usage and retention  |	Send push notifications to targeted players to generate interest and encourage specific game actions according to data analysis | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) - will be retired March 2018 and is currently only available to existing customers |  Increase gameplay time and user retention on all major platforms—iOS, Android, Windows, Windows Phone |
 
 
@@ -221,7 +221,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 ## Tools and other useful links
 
 * [MSDN forums &mdash; Azure platform](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [Cloud Based Load Testing tool](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [Cloud Based Load Testing tool](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
 * [SDKs and command-line tools](https://azure.microsoft.com/downloads/)
     
 ## Software as a Service for game backend
@@ -236,7 +236,7 @@ We are constantly innovating and adding new features. For more information, see 
 
 ## Related links
 
-* [Windows 10 game development guide](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 game development guide](https://docs.microsoft.com/windows/uwp/gaming/e2e)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

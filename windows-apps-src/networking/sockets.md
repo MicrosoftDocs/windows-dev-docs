@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 # Sockets
 Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 
-This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) in a UWP app.
+This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) in a UWP app.
 
 > [!NOTE]
-> As a consequence of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index).
+> As a consequence of [network isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index).
 
 ## Build a basic TCP socket client and server
 A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) sending and receiving data over TCP to form an echo client and server.
@@ -1374,8 +1374,8 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw a
 ## Related topics
 * [App-to-app communication](/windows/uwp/app-to-app/index)
 * [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [How to set network capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [How to set network capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## Samples
 * [StreamSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620609)

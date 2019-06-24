@@ -17,7 +17,7 @@ code responsible for key business-critical operations.
 
 >**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). The Microsoft Visual Studio template to build Brokered Windows Runtime
 Components can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
-10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows includes a new feature called *Brokered Windows Runtime
 Components for side-loaded applications*. We use the term IPC
@@ -85,7 +85,7 @@ The contract between the side-loaded application and the desktop
 component is described in terms of the UWP type system. This involves
 declaring one or more C\# classes that can represent a UWP. See MSDN
 topic [Creating Windows Runtime Components in C\# and Visual
-Basic](https://msdn.microsoft.com/library/br230301.aspx) for
+Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) for
 specific requirement of creating Windows Runtime Class using C\#.
 
 >**Note**  Enums are not supported in the Windows Runtime Components Contract
@@ -246,12 +246,12 @@ are targeting (Windows 10) and the version of Visual Studio in use.
     rem erase "$(TargetPath)"
 ```
 
-Once the reference **winmd** is created (in folder “reference” under the
+Once the reference **winmd** is created (in folder “reference” under the
 project’s Target folder), it is hand carried (copied) to each consuming
 side-loaded application project and referenced. This will be described
 further in the next section. The project structure embodied in the build
 rules above ensure that the implementation and the
-reference **winmd** are in clearly segregated directories in the build
+reference **winmd** are in clearly segregated directories in the build
 hierarchy to avoid confusion.
 
 ## Side-loaded applications in detail
@@ -554,7 +554,7 @@ Once the references are properly configured, the next task is to
 implement the server's functionality. See the MSDN topic [Best practices
 for interoperability with Windows Runtime Components (UWP apps
 using C\#/VB/C++ and
-XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
 The task is to create a Windows Runtime component dll that is able to
 call desktop code as part of its implementation. The accompanying sample
 includes the major patterns used in Windows Runtime:
@@ -672,7 +672,7 @@ stub must be used.
 The process for creating and registering proxies and stubs for use
 inside a regular UWP app package are described in the
 topic [Raising Events in Windows Runtime
-Components](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
+Components](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
 The steps described in this article are more complicated than the
 process described below because it involves registering the proxy/stub
 inside the application package (as opposed to registering it globally).
@@ -742,13 +742,13 @@ have your install process call DllRegisterServer on the proxy dll. Note
 that since the feature only supports servers built for x86 (i.e. no
 64-bit support), the simplest configuration is to use a 32-bit server, a
 32-bit proxy, and a 32-bit side-loaded application. The proxy normally
-sits alongside the implementation **winmd** for the desktop component.
+sits alongside the implementation **winmd** for the desktop component.
 
 One additional configuration step must be performed. In order for the
 side-loaded process to load and execute the proxy, the directory must be
 marked "read / execute" for ALL_APPLICATION_PACKAGES. This is done via
-the **icacls.exe** command line tool. This command should execute in the
-directory where the implementation **winmd** and proxy/stub dll resides:
+the **icacls.exe** command line tool. This command should execute in the
+directory where the implementation **winmd** and proxy/stub dll resides:
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
@@ -794,14 +794,14 @@ struct PersonStruct
 }
 ```
 
-Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
+Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
 This gets all the data across in one cross-process "hop"
 
 As with all performance considerations, measurement and testing is
 critical. Ideally telemetry should be inserted into the various
 operations to determine how long they take. It is important to measure
 across a range: for example, how long does it actually take to consume
-all the *People* objects for a particular query in the side-loaded
+all the *People* objects for a particular query in the side-loaded
 application?
 
 Another technique is variable load testing. This can be done by putting
@@ -839,7 +839,7 @@ list of loaded modules.
 
 ## Resources
 
--   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [NorthwindRT Brokered WinRT Component
     Sample](https://go.microsoft.com/fwlink/p/?LinkID=397349)
@@ -848,9 +848,9 @@ list of loaded modules.
     apps](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [App contracts and extensions (Windows
-    Store apps)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
+    Store apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [How to sideload apps on Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
+-   [How to sideload apps on Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 -   [Deploying UWP apps to
     businesses](https://go.microsoft.com/fwlink/p/?LinkID=264770)

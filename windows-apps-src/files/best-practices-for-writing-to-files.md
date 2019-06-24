@@ -186,7 +186,7 @@ else
 
 ### Synchronize access to the file
 
-The [Parallel Programming with .NET blog](https://blogs.msdn.microsoft.com/pfxteam/) is a great resource for guidance about parallel programming. In particular, the [post about AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) describes how to maintain exclusive access to a file for writes while allowing concurrent read access. Keep in mind that serializing I/O will impact performance.
+The [Parallel Programming with .NET blog](https://devblogs.microsoft.com/pfxteam/) is a great resource for guidance about parallel programming. In particular, the [post about AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) describes how to maintain exclusive access to a file for writes while allowing concurrent read access. Keep in mind that serializing I/O will impact performance.
 
 ## See also
 

@@ -50,14 +50,14 @@ Marble Maze uses Direct3D 11.1 to render the 3D game assets, namely the marble a
 
 Game development requires planning. If you are new to DirectX graphics, we recommend that you read [DirectX: Getting started](directx-getting-started.md) to familiarize yourself with the basic concepts of creating a UWP DirectX game. As you read this document and work through the Marble Maze source code, you can refer to the following resources for more in-depth information about DirectX graphics:
 
--   [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080): Describes Direct3D 11, a powerful, hardware-accelerated 3D graphics API for rendering 3D geometry on the Windows platform.
--   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990): Describes Direct2D, a hardware-accelerated, 2D graphics API that provides high performance and high-quality rendering for 2D geometry, bitmaps, and text.
--   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038): Describes DirectWrite, which supports high-quality text rendering.
--   [Windows Imaging Component](https://msdn.microsoft.com/library/windows/desktop/ee719902): Describes WIC, an extensible platform that provides low-level API for digital images.
+-   [Direct3D 11 Graphics](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11): Describes Direct3D 11, a powerful, hardware-accelerated 3D graphics API for rendering 3D geometry on the Windows platform.
+-   [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal): Describes Direct2D, a hardware-accelerated, 2D graphics API that provides high performance and high-quality rendering for 2D geometry, bitmaps, and text.
+-   [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal): Describes DirectWrite, which supports high-quality text rendering.
+-   [Windows Imaging Component](https://docs.microsoft.com/windows/desktop/wic/-wic-lh): Describes WIC, an extensible platform that provides low-level API for digital images.
 
 ### Feature levels
 
-Direct3D 11 introduces a paradigm named *feature levels*. A feature level is a well-defined set of GPU functionality. Use feature levels to target your game to run on earlier versions of Direct3D hardware. Marble Maze supports feature level 9.1 because it requires no advanced features from the higher levels. We recommend that you support the greatest range of hardware possible and scale your game content so that your customers that have either high or low-end computers all have a great experience. For more information about feature levels, see [Direct3D 11 on Downlevel Hardware](https://msdn.microsoft.com/library/windows/desktop/ff476872).
+Direct3D 11 introduces a paradigm named *feature levels*. A feature level is a well-defined set of GPU functionality. Use feature levels to target your game to run on earlier versions of Direct3D hardware. Marble Maze supports feature level 9.1 because it requires no advanced features from the higher levels. We recommend that you support the greatest range of hardware possible and scale your game content so that your customers that have either high or low-end computers all have a great experience. For more information about feature levels, see [Direct3D 11 on Downlevel Hardware](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel).
 
 ## Initializing Direct3D and Direct2D
 
@@ -138,7 +138,7 @@ void DX::DeviceResources::CreateDeviceIndependentResources()
 
 ###  Creating the Direct3D and Direct2D devices
 
-The **DeviceResources::CreateDeviceResources** method calls [D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082) to create the device object that represents the Direct3D display adapter. Because Marble Maze supports feature level 9.1 and above, the **DeviceResources::CreateDeviceResources** method specifies levels 9.1 through 11.1 in the **featureLevels** array. Direct3D walks the list in order and gives the app the first feature level that is available. Therefore the **D3D\_FEATURE\_LEVEL** array entries are listed from highest to lowest so that the app will get the highest feature level available. The **DeviceResources::CreateDeviceResources** method obtains the Direct3D 11.1 device by querying the Direct3D 11 device that's returned from **D3D11CreateDevice**.
+The **DeviceResources::CreateDeviceResources** method calls [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) to create the device object that represents the Direct3D display adapter. Because Marble Maze supports feature level 9.1 and above, the **DeviceResources::CreateDeviceResources** method specifies levels 9.1 through 11.1 in the **featureLevels** array. Direct3D walks the list in order and gives the app the first feature level that is available. Therefore the **D3D\_FEATURE\_LEVEL** array entries are listed from highest to lowest so that the app will get the highest feature level available. The **DeviceResources::CreateDeviceResources** method obtains the Direct3D 11.1 device by querying the Direct3D 11 device that's returned from **D3D11CreateDevice**.
 
 ```cpp
 // This flag adds support for surfaces with a different color channel ordering
@@ -238,11 +238,11 @@ DX::ThrowIfFailed(
     );
 ```
 
-For more information about DXGI and interoperability between Direct2D and Direct3D, see [DXGI Overview](https://msdn.microsoft.com/library/windows/desktop/bb205075) and [Direct2D and Direct3D Interoperability Overview](https://msdn.microsoft.com/library/windows/desktop/dd370966).
+For more information about DXGI and interoperability between Direct2D and Direct3D, see [DXGI Overview](https://docs.microsoft.com/windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi) and [Direct2D and Direct3D Interoperability Overview](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview).
 
 ### Associating Direct3D with the view
 
-The **DeviceResources::CreateWindowSizeDependentResources** method creates the graphics resources that depend on a given window size such as the swap chain and Direct3D and Direct2D render targets. One important way that a DirectX UWP app differs from a desktop app is how the swap chain is associated with the output window. A swap chain is responsible for displaying the buffer to which the device renders on the monitor. [Marble Maze application structure](marble-maze-application-structure.md) describes how the windowing system for a UWP app differs from a desktop app. Because a UWP app does not work with [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751) objects, Marble Maze must use the [IDXGIFactory2::CreateSwapChainForCoreWindow](https://msdn.microsoft.com/library/windows/desktop/hh404559) method to associate the device output to the view. The following example shows the part of the **DeviceResources::CreateWindowSizeDependentResources** method that creates the swap chain.
+The **DeviceResources::CreateWindowSizeDependentResources** method creates the graphics resources that depend on a given window size such as the swap chain and Direct3D and Direct2D render targets. One important way that a DirectX UWP app differs from a desktop app is how the swap chain is associated with the output window. A swap chain is responsible for displaying the buffer to which the device renders on the monitor. [Marble Maze application structure](marble-maze-application-structure.md) describes how the windowing system for a UWP app differs from a desktop app. Because a UWP app does not work with [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) objects, Marble Maze must use the [IDXGIFactory2::CreateSwapChainForCoreWindow](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) method to associate the device output to the view. The following example shows the part of the **DeviceResources::CreateWindowSizeDependentResources** method that creates the swap chain.
 
 ```cpp
 // Obtain the final swap chain for this window from the DXGI factory.
@@ -257,7 +257,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-To minimize power consumption, which is important to do on battery-powered devices such as laptops and tablets, the **DeviceResources::CreateWindowSizeDependentResources** method calls the [IDXGIDevice1::SetMaximumFrameLatency](https://msdn.microsoft.com/library/windows/desktop/ff471334) method to ensure that the game is rendered only after the vertical blank. Synchronizing with the vertical blank is described in greater detail in the section [Presenting the scene](#presenting-the-scene) in this document.
+To minimize power consumption, which is important to do on battery-powered devices such as laptops and tablets, the **DeviceResources::CreateWindowSizeDependentResources** method calls the [IDXGIDevice1::SetMaximumFrameLatency](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency) method to ensure that the game is rendered only after the vertical blank. Synchronizing with the vertical blank is described in greater detail in the section [Presenting the scene](#presenting-the-scene) in this document.
 
 ```cpp
 // Ensure that DXGI does not queue more than one frame at a time. This both 
@@ -272,8 +272,8 @@ The **DeviceResources::CreateWindowSizeDependentResources** method initializes g
 
 > [!NOTE]
 > The term *view* has a different meaning in the Windows Runtime than it has in Direct3D. In the Windows Runtime, a view refers to the collection of user interface settings for an app, including the display area and the input behaviors, plus the thread it uses for processing. You specify the configuration and settings you need when you create a view. The process of setting up the app view is described in [Marble Maze application structure](marble-maze-application-structure.md).
-> In Direct3D, the term view has multiple meanings. A resource view defines the subresources that a resource can access. For example, when a texture object is associated with a shader resource view, that shader can later access the texture. One advantage of a resource view is that you can interpret data in different ways at different stages in the rendering pipeline. For more information about resource views, see [Resource Views](https://msdn.microsoft.com/library/windows/desktop/ff476900#Views).
-> When used in the context of a view transform or view transform matrix, view refers to the location and orientation of the camera. A view transform relocates objects in the world around the camera’s position and orientation. For more information about view transforms, see [View Transform (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342). How Marble Maze uses resource and matrix views is described in greater detail in this topic.
+> In Direct3D, the term view has multiple meanings. A resource view defines the subresources that a resource can access. For example, when a texture object is associated with a shader resource view, that shader can later access the texture. One advantage of a resource view is that you can interpret data in different ways at different stages in the rendering pipeline. For more information about resource views, see [Resource Views](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-intro).
+> When used in the context of a view transform or view transform matrix, view refers to the location and orientation of the camera. A view transform relocates objects in the world around the camera’s position and orientation. For more information about view transforms, see [View Transform (Direct3D 9)](https://docs.microsoft.com/windows/desktop/direct3d9/view-transform). How Marble Maze uses resource and matrix views is described in greater detail in this topic.
 
  
 
@@ -288,7 +288,7 @@ To ensure a responsive app, Marble Maze loads scene resources asynchronously, or
 
 In Marble Maze, the overlay is the image that appears at the top of the screen. The overlay always appears in front of the scene. In Marble Maze, the overlay contains the Windows logo and the text string **DirectX Marble Maze game sample**. The management of the overlay is performed by the **SampleOverlay** class, which is defined in **SampleOverlay.h**. Although we use the overlay as part of the Direct3D samples, you can adapt this code to display any image that appears in front of your scene.
 
-One important aspect of the overlay is that, because its contents do not change, the **SampleOverlay** class draws, or caches, its contents to an [ID2D1Bitmap1](https://msdn.microsoft.com/library/windows/desktop/hh404349) object during initialization. At draw time, the **SampleOverlay** class only has to draw the bitmap to the screen. In this way, expensive routines such as text drawing do not have to be performed for every frame.
+One important aspect of the overlay is that, because its contents do not change, the **SampleOverlay** class draws, or caches, its contents to an [ID2D1Bitmap1](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1bitmap1) object during initialization. At draw time, the **SampleOverlay** class only has to draw the bitmap to the screen. In this way, expensive routines such as text drawing do not have to be performed for every frame.
 
 The user interface (UI) consists of 2D components, such as menus and heads-up displays (HUDs), which appear in front of your scene. Marble Maze defines the following UI elements:
 
@@ -339,13 +339,13 @@ By providing a common base class for UI elements, the **UserInterface** class, w
 
 Marble Maze uses the **BasicLoader::LoadShader** method to load a shader from a file.
 
-Shaders are the fundamental unit of GPU programming in games today. Nearly all 3D graphics processing is driven through shaders, whether it is model transformation and scene lighting, or more complex geometry processing, from character skinning to tessellation. For more information about the shader programming model, see [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561).
+Shaders are the fundamental unit of GPU programming in games today. Nearly all 3D graphics processing is driven through shaders, whether it is model transformation and scene lighting, or more complex geometry processing, from character skinning to tessellation. For more information about the shader programming model, see [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl).
 
 Marble Maze uses vertex and pixel shaders. A vertex shader always operates on one input vertex and produces one vertex as output. A pixel shader takes numeric values, texture data, interpolated per-vertex values, and other data to produce a pixel color as output. Because a shader transforms one element at a time, graphics hardware that provides multiple shader pipelines can process sets of elements in parallel. The number of parallel pipelines that are available to the GPU can be vastly greater than the number that is available to the CPU. Therefore, even basic shaders can greatly improve throughput.
 
 The **MarbleMazeMain::LoadDeferredResources** method loads one vertex shader and one pixel shader after it loads the overlay. The design-time versions of these shaders are defined in **BasicVertexShader.hlsl** and **BasicPixelShader.hlsl**, respectively. Marble Maze applies these shaders to both the ball and the maze during the rendering phase.
 
-The Marble Maze project includes both .hlsl (the design-time format) and .cso (the run-time format) versions of the shader files. At build time, Visual Studio uses the fxc.exe effect-compiler to compile your .hlsl source file into a .cso binary shader. For more information about the effect-compiler tool, see [Effect-Compiler Tool](https://msdn.microsoft.com/library/windows/desktop/bb232919).
+The Marble Maze project includes both .hlsl (the design-time format) and .cso (the run-time format) versions of the shader files. At build time, Visual Studio uses the fxc.exe effect-compiler to compile your .hlsl source file into a .cso binary shader. For more information about the effect-compiler tool, see [Effect-Compiler Tool](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc).
 
 The vertex shader uses the supplied model, view and projection matrices to transform the input geometry. Position data from the input geometry is transformed and output twice: once in screen space, which is necessary for rendering, and again in world space to enable the pixel shader to perform lighting calculations. The surface normal vector is transformed to world space, which is also used by the pixel shader for lighting. The texture coordinates are passed through unchanged to the pixel shader.
 
@@ -408,7 +408,7 @@ float4 main(sPSInput input) : SV_TARGET
 
  
 
-The **MarbleMazeMain::LoadDeferredResources** method uses the **BasicLoader::LoadShader** method to load the shaders. The following example loads the vertex shader. The run-time format for this shader is **BasicVertexShader.cso**. The **m\_vertexShader** member variable is an [ID3D11VertexShader](https://msdn.microsoft.com/library/windows/desktop/ff476641) object.
+The **MarbleMazeMain::LoadDeferredResources** method uses the **BasicLoader::LoadShader** method to load the shaders. The following example loads the vertex shader. The run-time format for this shader is **BasicVertexShader.cso**. The **m\_vertexShader** member variable is an [ID3D11VertexShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11vertexshader) object.
 
 ```cpp
 BasicLoader^ loader = ref new BasicLoader(m_deviceResources->GetD3DDevice());
@@ -432,9 +432,9 @@ loader->LoadShader(
     );
 ```
 
-The **m\_inputLayout** member variable is an [ID3D11InputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476575) object. The input-layout object encapsulates the input state of the input assembler (IA) stage. One job of the IA stage is to make shaders more efficient by using system-generated values, also known as *semantics*, to process only those primitives or vertices that have not already been processed.
+The **m\_inputLayout** member variable is an [ID3D11InputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout) object. The input-layout object encapsulates the input state of the input assembler (IA) stage. One job of the IA stage is to make shaders more efficient by using system-generated values, also known as *semantics*, to process only those primitives or vertices that have not already been processed.
 
-Use the [ID3D11Device::CreateInputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476512) method to create an input-layout from an array of input-element descriptions. The array contains one or more input elements; each input element describes one vertex-data element from one vertex buffer. The entire set of input-element descriptions describes all of the vertex-data elements from all of the vertex buffers that will be bound to the IA stage. 
+Use the [ID3D11Device::CreateInputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) method to create an input-layout from an array of input-element descriptions. The array contains one or more input elements; each input element describes one vertex-data element from one vertex buffer. The entire set of input-element descriptions describes all of the vertex-data elements from all of the vertex buffers that will be bound to the IA stage. 
 
 **layoutDesc** in the above code snippet shows the layout description that Marble Maze uses. The layout description describes a vertex buffer that contains four vertex-data elements. The important parts of each entry in the array are the semantic name, data format, and byte offset . For example, the **POSITION** element specifies the vertex position in object space. It starts at byte offset 0 and contains three floating-point components (for a total of 12 bytes). The **NORMAL** element specifies the normal vector. It starts at byte offset 12 because it appears directly after **POSITION** in the layout, which requires 12 bytes. The **NORMAL** element contains a four-component, 32-bit unsigned-integer.
 
@@ -471,14 +471,14 @@ sPSInput main(sVSInput input)
 }
 ```
 
-The document [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647) describes each of the available semantics in greater detail.
+The document [Semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) describes each of the available semantics in greater detail.
 
 > [!NOTE]
-> In a layout, you can specify additional components that are not used to enable multiple shaders to share the same layout. For example, the **TANGENT** element is not used by the shader. You can use the **TANGENT** element if you want to experiment with techniques such as normal mapping. By using normal mapping, also known as bump mapping, you can create the effect of bumps on the surfaces of objects. For more information about bump mapping, see [Bump Mapping (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379).
+> In a layout, you can specify additional components that are not used to enable multiple shaders to share the same layout. For example, the **TANGENT** element is not used by the shader. You can use the **TANGENT** element if you want to experiment with techniques such as normal mapping. By using normal mapping, also known as bump mapping, you can create the effect of bumps on the surfaces of objects. For more information about bump mapping, see [Bump Mapping (Direct3D 9)](https://docs.microsoft.com/windows/desktop/direct3d9/bump-mapping).
 
  
 
-For more information about the input assembly stage, see [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116) and [Getting Started with the Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205117).
+For more information about the input assembly stage, see [Input-Assembler Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage) and [Getting Started with the Input-Assembler Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started).
 
 The process of using the vertex and pixel shaders to render the scene are described in the section [Rendering the scene](#rendering-the-scene) later in this document.
 
@@ -486,7 +486,7 @@ The process of using the vertex and pixel shaders to render the scene are descri
 
 Direct3D buffer groups a collection of data. A constant buffer is a kind of buffer that you can use to pass data to shaders. Marble Maze uses a constant buffer to hold the model (or world) view, and the projection matrices for the active scene object.
 
-The following example shows how the **MarbleMazeMain::LoadDeferredResources** method creates a constant buffer that will later hold matrix data. The example creates a **D3D11\_BUFFER\_DESC** structure that uses the **D3D11\_BIND\_CONSTANT\_BUFFER** flag to specify usage as a constant buffer. This example then passes that structure to the [ID3D11Device::CreateBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476501) method. The **m\_constantBuffer** variable is an [ID3D11Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476351) object.
+The following example shows how the **MarbleMazeMain::LoadDeferredResources** method creates a constant buffer that will later hold matrix data. The example creates a **D3D11\_BUFFER\_DESC** structure that uses the **D3D11\_BIND\_CONSTANT\_BUFFER** flag to specify usage as a constant buffer. This example then passes that structure to the [ID3D11Device::CreateBuffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) method. The **m\_constantBuffer** variable is an [ID3D11Buffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) object.
 
 ```cpp
 // Create the constant buffer for updating model and camera data.
@@ -544,7 +544,7 @@ cbuffer ConstantBuffer : register(b0)
 
 The layout of the **ConstantBuffer** structure matches the **cbuffer** object. The **cbuffer** variable specifies register b0, which means that the constant buffer data is stored in register 0. The **MarbleMazeMain::Render** method specifies register 0 when it activates the constant buffer. This process is described in greater detail later in this document.
 
-For more information about constant buffers, see [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898). For more information about the register keyword, see [register](https://msdn.microsoft.com/library/windows/desktop/dd607359).
+For more information about constant buffers, see [Introduction to Buffers in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro). For more information about the register keyword, see [register](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-register).
 
 ###  Loading meshes
 
@@ -758,7 +758,7 @@ The **MarbleMazeMain::Render** method binds the render target and depth stencil 
 
 Before you render your scene, you must set the current render target depth-stencil buffer. If your scene is not guaranteed to draw over every pixel on the screen, also clear the render and stencil views. Marble Maze clears the render and stencil views on every frame to ensure that there are no visible artifacts from the previous frame.
 
-The following example shows how the **MarbleMazeMain::Render** method calls the [ID3D11DeviceContext::OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464) method to set the render target and the depth-stencil buffer as the current ones.
+The following example shows how the **MarbleMazeMain::Render** method calls the [ID3D11DeviceContext::OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) method to set the render target and the depth-stencil buffer as the current ones.
 
 ```cpp
 auto context = m_deviceResources->GetD3DDeviceContext();
@@ -785,7 +785,7 @@ context->ClearDepthStencilView(
     0);
 ```
 
-The [ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582) and [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377) interfaces support the texture view mechanism that is provided by Direct3D 10 and later. For more information about texture views, see [Texture Views (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). The [OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464) method prepares the output-merger stage of the Direct3D pipeline. For more information about the output-merger stage, see [Output-Merger Stage](https://msdn.microsoft.com/library/windows/desktop/bb205120).
+The [ID3D11RenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) and [ID3D11DepthStencilView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) interfaces support the texture view mechanism that is provided by Direct3D 10 and later. For more information about texture views, see [Texture Views (Direct3D 10)](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views). The [OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) method prepares the output-merger stage of the Direct3D pipeline. For more information about the output-merger stage, see [Output-Merger Stage](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage).
 
 ### Preparing the vertex and pixel shaders
 
@@ -800,13 +800,13 @@ Before you render the scene objects, perform the following steps to prepare the 
 
  
 
-The section [Loading shaders](#loading-shaders) in this document describes how the input layout is created when the vertex shader is created. The following example shows how the **MarbleMazeMain::Render** method uses the [ID3D11DeviceContext::IASetInputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476454) method to set this layout as the current layout.
+The section [Loading shaders](#loading-shaders) in this document describes how the input layout is created when the vertex shader is created. The following example shows how the **MarbleMazeMain::Render** method uses the [ID3D11DeviceContext::IASetInputLayout](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) method to set this layout as the current layout.
 
 ```cpp
 m_deviceResources->GetD3DDeviceContext()->IASetInputLayout(m_inputLayout.Get());
 ```
 
-The following example shows how the **MarbleMazeMain::Render** method uses the [ID3D11DeviceContext::VSSetShader](https://msdn.microsoft.com/library/windows/desktop/ff476493) and [ID3D11DeviceContext::PSSetShader](https://msdn.microsoft.com/library/windows/desktop/ff476472) methods to set the vertex and pixel shaders as the current shaders, respectively.
+The following example shows how the **MarbleMazeMain::Render** method uses the [ID3D11DeviceContext::VSSetShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) and [ID3D11DeviceContext::PSSetShader](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) methods to set the vertex and pixel shaders as the current shaders, respectively.
 
 ```cpp
 // Set the vertex shader stage state.
@@ -826,7 +826,7 @@ m_deviceResources->GetD3DDeviceContext()->PSSetSamplers(
     m_sampler.GetAddressOf());  // to use this sampler
 ```
 
-After **MarbleMazeMain::Render** sets the shaders and their input layout, it uses the [ID3D11DeviceContext::UpdateSubresource](https://msdn.microsoft.com/library/windows/desktop/ff476486) method to update the constant buffer with the model, view, and projection matrices for the maze. The **UpdateSubresource** method copies the matrix data from CPU memory to GPU memory. Recall that the model and view components of the **ConstantBuffer** structure are updated in the **MarbleMazeMain::Update** method. The **MarbleMazeMain::Render** method then calls the [ID3D11DeviceContext::VSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476491) and [ID3D11DeviceContext::PSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476470) methods to set this constant buffer as the current one.
+After **MarbleMazeMain::Render** sets the shaders and their input layout, it uses the [ID3D11DeviceContext::UpdateSubresource](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) method to update the constant buffer with the model, view, and projection matrices for the maze. The **UpdateSubresource** method copies the matrix data from CPU memory to GPU memory. Recall that the model and view components of the **ConstantBuffer** structure are updated in the **MarbleMazeMain::Update** method. The **MarbleMazeMain::Render** method then calls the [ID3D11DeviceContext::VSSetConstantBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) and [ID3D11DeviceContext::PSSetConstantBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetconstantbuffers) methods to set this constant buffer as the current one.
 
 ```cpp
 // Update the constant buffer with the new data.
@@ -865,7 +865,7 @@ m_mazeMesh.Render(
 
 The **MarbleMazeMain::Render** method performs similar steps to render the marble.
 
-As mentioned earlier in this document, the **SDKMesh** class is provided for demonstration purposes, but we do not recommend it for use in a production-quality game. However, notice that the **SDKMesh::RenderMesh** method, which is called by **SDKMesh::Render**, uses the [ID3D11DeviceContext::IASetVertexBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [ID3D11DeviceContext::IASetIndexBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476453) methods to set the current vertex and index buffers that define the mesh, and the [ID3D11DeviceContext::DrawIndexed](https://msdn.microsoft.com/library/windows/desktop/ff476410) method to draw the buffers. For more information about how to work with vertex and index buffers, see [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898).
+As mentioned earlier in this document, the **SDKMesh** class is provided for demonstration purposes, but we do not recommend it for use in a production-quality game. However, notice that the **SDKMesh::RenderMesh** method, which is called by **SDKMesh::Render**, uses the [ID3D11DeviceContext::IASetVertexBuffers](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) and [ID3D11DeviceContext::IASetIndexBuffer](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) methods to set the current vertex and index buffers that define the mesh, and the [ID3D11DeviceContext::DrawIndexed](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexedinstanced) method to draw the buffers. For more information about how to work with vertex and index buffers, see [Introduction to Buffers in Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro).
 
 ### Drawing the user interface and overlay
 
@@ -882,7 +882,7 @@ m_sampleOverlay->Render();
 m_deviceResources->GetD3DDeviceContext()->EndEvent();
 ```
 
-The **UserInterface::Render** method uses an [ID2D1DeviceContext](https://msdn.microsoft.com/library/windows/desktop/hh404479) object to draw the UI elements. This method sets the drawing state, draws all active UI elements, and then restores the previous drawing state.
+The **UserInterface::Render** method uses an [ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1devicecontext) object to draw the UI elements. This method sets the drawing state, draws all active UI elements, and then restores the previous drawing state.
 
 ```cpp
 void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
@@ -917,7 +917,7 @@ The **SampleOverlay::Render** method uses a similar technique to draw the overla
 
 After drawing all 2D and 3D scene objects, Marble Maze presents the rendered image to the monitor. It synchronizes drawing to the vertical blank to ensure that time is not spent time drawing frames that will never be actually shown on the display. Marble Maze also handles device changes when it presents the scene.
 
-After the **MarbleMazeMain::Render** method returns, the game loop calls the **DX::DeviceResources::Present** method to send the rendered image to the monitor or display. The **DX::DeviceResources::Present** method calls [IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/bb174576) to perform the present operation, as shown in the following example:
+After the **MarbleMazeMain::Render** method returns, the game loop calls the **DX::DeviceResources::Present** method to send the rendered image to the monitor or display. The **DX::DeviceResources::Present** method calls [IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) to perform the present operation, as shown in the following example:
 
 ```cpp
 // The first argument instructs DXGI to block until VSync, putting the application
@@ -926,11 +926,11 @@ After the **MarbleMazeMain::Render** method returns, the game loop calls the **D
 HRESULT hr = m_swapChain->Present(1, 0);
 ```
 
-In this example, **m\_swapChain** is an [IDXGISwapChain1](https://msdn.microsoft.com/library/windows/desktop/hh404631) object. The initialization of this object is described in the section [Initializing Direct3D and Direct2D](#initializing-direct3d-and-direct2d) in this document.
+In this example, **m\_swapChain** is an [IDXGISwapChain1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) object. The initialization of this object is described in the section [Initializing Direct3D and Direct2D](#initializing-direct3d-and-direct2d) in this document.
 
-The first parameter to [IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/hh446797), *SyncInterval*, specifies the number of vertical blanks to wait before presenting the frame. Marble Maze specifies 1 so that it waits until the next vertical blank.
+The first parameter to [IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1), *SyncInterval*, specifies the number of vertical blanks to wait before presenting the frame. Marble Maze specifies 1 so that it waits until the next vertical blank.
 
-The [IDXGISwapChain::Present](https://msdn.microsoft.com/library/windows/desktop/bb174576) method returns an error code that indicates that the device was removed or otherwise failed. In this case, Marble Maze reinitializes the device.
+The [IDXGISwapChain::Present](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) method returns an error code that indicates that the device was removed or otherwise failed. In this case, Marble Maze reinitializes the device.
 
 ```cpp
 // If the device was removed either by a disconnection or a driver upgrade, we

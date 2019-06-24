@@ -24,7 +24,7 @@ Lists display and enable interactions with collection-based content. The four li
 
 Design guidelines, features, and examples are given for each list pattern.
 
-> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **Important APIs**: [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [ComboBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
@@ -259,11 +259,11 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 - [Master/details](master-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
-- [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Drag and drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Thumbnail images](../../files/thumbnails.md)
 
 **For developers**
-- [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [ListBox class](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)

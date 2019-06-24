@@ -12,13 +12,13 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 Layout is the process of defining the visual structure for your UI. The primary mechanism for describing layout in XAML is through panels, which are container objects that enable you to position and arrange the UI elements within them. Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
 
 ## Reduce layout structure
 
-The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
+The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) or a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
 
 Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
 
@@ -26,7 +26,7 @@ Many UIs are implemented by nesting panels which results in deep, complex trees 
 
 Reducing layout structure in a trivial way—for example, reducing one nested panel from your top-level page—does not have a noticeable effect.
 
-The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). These [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) elements use a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
+The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) or [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView). These [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) elements use a [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
 
 ### Examples
 
@@ -36,7 +36,7 @@ Consider the following UI.
 
 These examples shows 3 ways of implementing the same UI. Each implementation choice results in nearly identical pixels on the screen, but differs substantially in the implementation details.
 
-Option1: Nested [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) elements
+Option1: Nested [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) elements
 
 Although this is the simplest model, it uses 5 panel elements and results in significant overhead.
 
@@ -64,9 +64,9 @@ Although this is the simplest model, it uses 5 panel elements and results in sig
 </StackPanel>
 ```
 
-Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2: A single [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
-The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
+The [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) adds some complexity, but uses only a single panel element.
 
 ```xml
 <Grid>
@@ -97,9 +97,9 @@ The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds so
 </Grid>
 ```
 
-Option 3: A single [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
+Option 3: A single [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel):
 
-This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
+This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid).
 
 ```xml
 <RelativePanel>
@@ -126,9 +126,9 @@ As these examples show, there are many ways of achieving the same UI. You should
 
 ## Use single-cell grids for overlapping UI
 
-A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) control is optimized to improve layout performance for elements that overlap.
+A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) control is optimized to improve layout performance for elements that overlap.
 
-**Important**  To see the improvement, use a single-cell [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704). Do not define [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) or [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Important**  To see the improvement, use a single-cell [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). Do not define [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) or [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### Examples
 
@@ -154,9 +154,9 @@ A common UI requirement is to have a layout where elements overlap each other. T
 
 ## Use a panel's built-in border properties
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), and [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
+[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), and [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
 
-If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
+If your UI has [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
 
 ### Examples
 
@@ -169,15 +169,15 @@ If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR20
 
 ## Use **SizeChanged** events to respond to layout changes
 
-The [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) and [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
+The [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) and [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
 
-For good performance, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) has been updated.
+For good performance, [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) has been updated.
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
+[**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
 
 ## Choosing between panels
 
-Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) , and [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), you should choose the panel that provides the closest mapping to your mental model of the implementation.
+Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) , and [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), you should choose the panel that provides the closest mapping to your mental model of the implementation.
 
 Every XAML panel is optimized for good performance, and all the panels provide similar performance for similar UI.
 

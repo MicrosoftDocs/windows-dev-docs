@@ -1,4 +1,4 @@
-﻿---
+---
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
 ms.date: 04/19/2019
@@ -34,11 +34,11 @@ We highly recommend that new developers and developers writing code for a genera
 
 New and changed APIs for UWP are available in every successive version of Windows 10. For specific information about what features were added in which version, see [What's new for developers in Windows 10](../whats-new/windows-10-version-latest.md).
 
-For reference topics that enumerate all device families and their versions, and all API contracts and their versions, see [Device families](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) and [API contracts](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
+For reference topics that enumerate all device families and their versions, and all API contracts and their versions, see [Device families](https://docs.microsoft.com/uwp/extension-sdks/) and [API contracts](https://docs.microsoft.com/uwp/extension-sdks/).
 
 ## .NET API availability in UWP versions
 
-UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+UWP supports a limited subset of .NET APIs, which are available regardless of the **Target Version** or **Minimum Version** of your project. [This page provides more information on the types available](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).
 
 If you wish to create reusable cross-platform libraries, .NET Standard is supported on UWP. The [.NET Standard documentation](https://docs.microsoft.com/dotnet/standard/net-standard) provides information on which .NET Standard is supported in which UWP versions.
 
@@ -48,7 +48,7 @@ If you are developing a Desktop app, see instead [.NET Framework versions and de
 
 In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**. Additionally, you can change the **Target Version** and **Minimum Version** of your UWP app in the *application* section of the app's **Properties**.
 
-* **Target Version**. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
+* **Target Version**. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 * **Minimum Version**. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
 
 Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different then here are some things to be aware of.

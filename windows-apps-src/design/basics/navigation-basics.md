@@ -23,17 +23,17 @@ We have a huge number of choices to make for navigation. We could:
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
 
-		Require users to go through a series of pages in order.
+Require users to go through a series of pages in order.
     :::column-end:::
 	:::column:::
         ![navigation example 2](images/nav/nav-2.svg)
 
-		Provide a menu that allows users to jump directly to any page.
+Provide a menu that allows users to jump directly to any page.
 	:::column-end:::
 	:::column:::
 		![navigation example 3](images/nav/nav-3.svg)
 
-		Place everything on a single page and provide filtering mechanisms for viewing content.
+Place everything on a single page and provide filtering mechanisms for viewing content.
     :::column-end:::
 :::row-end:::
 
@@ -65,14 +65,14 @@ Fewer navigation items simplify decision making for users. Providing easy access
 
 		![navview good](images/nav/navview-good.svg)
 
-		Present navigation items in a familiar navigation menu.
+Present navigation items in a familiar navigation menu.
     :::column-end:::
 	:::column:::
         ![don't example](images/nav/dont.svg)
 
 		![navview bad](images/nav/navview-bad.svg)
 
-		Overwhelm users with many navigation options.
+Overwhelm users with many navigation options.
 	:::column-end:::
 :::row-end:::
 
@@ -105,14 +105,14 @@ Now that you're familiar with general navigation principles, how should you stru
 	:::column span="2":::
         ### Flat/lateral
 
-		In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
+In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
 
-		We recommend using a flat structure when:
+We recommend using a flat structure when:
 
-        - The pages can be viewed in any order.
-		- The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
-		- There are less than 8 pages in the group. <br>
-		(When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
+- The pages can be viewed in any order.
+- The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
+- There are less than 8 pages in the group. <br>
+(When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
 
     :::column-end:::
 :::row-end:::
@@ -124,15 +124,15 @@ Now that you're familiar with general navigation principles, how should you stru
 	:::column span="2":::
         ### Hierarchical
 
-		In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
+In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
 
-		Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
+Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
 
-		We recommend a hierarchical structure when:
+We recommend a hierarchical structure when:
 		
-		- Pages should be traversed in a specific order.
-	    - There is a clear parent-child relationship between pages.
-		- There are more than 7 pages in the group.
+- Pages should be traversed in a specific order.
+- There is a clear parent-child relationship between pages.
+- There are more than 7 pages in the group.
 		
     :::column-end:::
 :::row-end:::
@@ -144,12 +144,12 @@ Now that you're familiar with general navigation principles, how should you stru
 	:::column span="2":::
         ### Combining structures
 
-		You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
+You don't have to choose one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
 
-		If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
+If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-		- At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
-		- At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
+- At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
+- At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
     :::column-end:::
 :::row-end:::
 
@@ -164,7 +164,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	:::column span="2":::
         [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
-        With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
+With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
@@ -174,18 +174,18 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	:::column span="2":::
         [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
-        Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
+Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
-        Use top navigation when:
+Use top navigation when:
 
-		- You want to show all navigation options on the screen.
-		- You desire more space for your app's content.
-		- Icons cannot clearly describe your navigation categories.
+- You want to show all navigation options on the screen.
+- You desire more space for your app's content.
+- Icons cannot clearly describe your navigation categories.
 		
-        Use tabs when:
+Use tabs when:
 
-        - You want to preserve navigation history and page state.
-        - You expect users to switch between tabs frequently.
+- You want to preserve navigation history and page state.
+- You expect users to switch between tabs frequently.
 
 :::row-end:::
 
@@ -196,12 +196,12 @@ Once you've decided on a page structure, you need to decide how users navigate t
         :::column span="2":::
 	[**Pivot**](../controls-and-patterns/pivot.md)
 	
-	Similar to [Navigation View](../controls-and-patterns/navigationview.md), but with additional support for touch and slightly different navigation behavior.
+Similar to [Navigation View](../controls-and-patterns/navigationview.md), but with additional support for touch and slightly different navigation behavior.
 	
-	Use a pivot when:
-                - You want your app to allow touch-swiping between categories
-		- You want navigation options to carousel infintely
-		- You do not need extensive control over navigation behavior between categories
+Use a pivot when:
+- You want your app to allow touch-swiping between categories
+- You want navigation options to carousel infintely
+- You do not need extensive control over navigation behavior between categories
 
 :::row-end:::
 
@@ -212,11 +212,11 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	:::column span="2":::
         [**Left navigation**](../controls-and-patterns/navigationview.md)
 
-        Displays a vertical list of links to top-level pages. Use when:
+Displays a vertical list of links to top-level pages. Use when:
 		
-		- The pages exist at the top level.
-		- There are many navigation items (more than 5)
-		- You don't expect users to switch between pages frequently.
+- The pages exist at the top level.
+- There are many navigation items (more than 5)
+- You don't expect users to switch between pages frequently.
 
 :::row-end:::
 		
@@ -227,12 +227,12 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	:::column span="2":::
         [**Master/details**](../controls-and-patterns/master-details.md)
 
-        Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
+Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
 		
-		- You expect users to switch between child items frequently.
-		- You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
+- You expect users to switch between child items frequently.
+- You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 
-		Master/details is well suited for email inboxes, contact lists, and data entry.
+Master/details is well suited for email inboxes, contact lists, and data entry.
 :::row-end:::
 
 :::row:::
@@ -242,7 +242,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	:::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
-        Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
+Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
 ## Next: Add navigation code to your app

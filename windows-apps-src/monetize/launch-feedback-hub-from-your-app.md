@@ -14,7 +14,7 @@ You can encourage your customers to leave feedback by adding a control (such as 
 To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
 
 > [!NOTE]
-> Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
+> Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
 
 ## How to launch Feedback Hub from your app
 
@@ -38,9 +38,9 @@ To launch Feedback Hub from your app:
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. In your initialization code for the app page that hosts your feedback control, use the static [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) method of the [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) class to determine whether the Feedback Hub is available on the user's device. Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
+7. In your initialization code for the app page that hosts your feedback control, use the static [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) method of the [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) class to determine whether the Feedback Hub is available on the user's device. Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-    If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+    If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button).
 
     [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]

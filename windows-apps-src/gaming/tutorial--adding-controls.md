@@ -38,11 +38,11 @@ When the **MoveLookController** class in the game sample is initialized, it regi
 
 Event | Description
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | The left or right mouse button was pressed (and held), or the touch surface was touched.
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |The mouse moved, or a drag action was made on the touch surface.
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |The left mouse button was released, or the object contacting the touch surface was lifted.
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |The pointer moved out of the main window.
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | The mouse moved a certain distance. Be aware that we are only interested in mouse movement delta values, and not the current X-Y position.
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | The left or right mouse button was pressed (and held), or the touch surface was touched.
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |The mouse moved, or a drag action was made on the touch surface.
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |The left mouse button was released, or the object contacting the touch surface was lifted.
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |The pointer moved out of the main window.
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | The mouse moved a certain distance. Be aware that we are only interested in mouse movement delta values, and not the current X-Y position.
 
 
 These event handlers are set to start listening for user input as soon as the **MoveLookController** is initialized in the application window.
@@ -100,7 +100,7 @@ During the **Active** state, the **MoveLookController** instance is processing e
 
 
 All pointer input is tracked in the **Active** state, with different pointer IDs corresponding to different pointer actions.
-When a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) event is received, the **MoveLookController** obtains the pointer ID value created by the window. The pointer ID represents a specific type of input. For example, on a multi-touch device, there may be several different active inputs at the same time. The IDs are used to keep track of which input the player is using. If one event is in the move rectangle of the touch screen, a pointer ID is assigned to track any pointer events in the move rectangle. Other pointer events in the fire rectangle are tracked separately, with a separate pointer ID.
+When a [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) event is received, the **MoveLookController** obtains the pointer ID value created by the window. The pointer ID represents a specific type of input. For example, on a multi-touch device, there may be several different active inputs at the same time. The IDs are used to keep track of which input the player is using. If one event is in the move rectangle of the touch screen, a pointer ID is assigned to track any pointer events in the move rectangle. Other pointer events in the fire rectangle are tracked separately, with a separate pointer ID.
 
 
 > [!NOTE]
@@ -155,7 +155,7 @@ Now, let's look at the implementation of each of the three control types in a li
 
 If mouse movement is detected, we want to use that movement to determine the new pitch and yaw of the camera. We do that by implementing relative mouse controls, where we handle the relative distance the mouse has moved—the delta between the start of the movement and the stop—as opposed to recording the absolute x-y pixel coordinates of the motion.
 
-To do that, we obtain the changes in the X (the horizontal motion) and the Y (the vertical motion) coordinates by examining the [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) and **MouseDelta::Y** fields on the [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) argument object returned by the [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) event.
+To do that, we obtain the changes in the X (the horizontal motion) and the Y (the vertical motion) coordinates by examining the [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) and **MouseDelta::Y** fields on the [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) argument object returned by the [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) event.
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -215,8 +215,8 @@ Touch outside of move and fire rectangle | Change the rotation (the pitch and ya
 
 The **MoveLookController** checks the pointer ID to determine where the event occurred, and takes one of the following actions:
 
--   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred in the move or fire rectangle, update the pointer position for the controller.
--   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred somewhere in the rest of the screen (defined as the look controls), calculate the change in pitch and yaw of the look direction vector.
+-   If the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) event occurred in the move or fire rectangle, update the pointer position for the controller.
+-   If the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) event occurred somewhere in the rest of the screen (defined as the look controls), calculate the change in pitch and yaw of the look direction vector.
 
 
 Once we've implemented our touch controls, the rectangles we drew earlier using Direct2D will indicate to players where the move, fire, and look zones are.
@@ -398,7 +398,7 @@ You can see the complete code for the **MoveLookController::OnPointerPressed** m
 
 Here the **MoveLookController** assigns the pointer ID for the pointer that fired the event to a specific variable that corresponds to the look region. In the case of a touch occurring in the look region, the **m\_lookPointerID** variable is set to the pointer ID that fired the event. A boolean variable, **m\_lookInUse**, is also set to indicate that the control has not yet been released.
 
-Now, let's look at how the game sample handles the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) touch screen event.
+Now, let's look at how the game sample handles the [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) touch screen event.
 
 
 Within the **MoveLookController::OnPointerMoved** method, we check to see what kind of pointer ID has been assigned to the event. If it's **m_lookPointerID**, we calculate the change in position of the pointer.
@@ -432,9 +432,9 @@ We then use this delta to calculate how much the rotation should change. Finally
 
 
 
-The last piece we'll look at is how the game sample handles the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) touch screen event.
+The last piece we'll look at is how the game sample handles the [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) touch screen event.
 Once the user has finished the touch gesture and removed their finger from the screen, [**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) is initiated.
-If the ID of the pointer that fired the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) event is the ID of the previously recorded move pointer, the **MoveLookController** sets the velocity to `0` because the player has stopped touching the look area.
+If the ID of the pointer that fired the [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) event is the ID of the previously recorded move pointer, the **MoveLookController** sets the velocity to `0` because the player has stopped touching the look area.
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -466,7 +466,7 @@ Mouse movement | Change the rotation (the pitch and yaw) of the camera view
 Left mouse button | Fire a sphere
 
 
-To use the keyboard, the game sample registers two new events, [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) and [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270), within the [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) method. These events handle the press and release of a key.
+To use the keyboard, the game sample registers two new events, [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) and [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown), within the [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88) method. These events handle the press and release of a key.
 
 ```cpp
 window->KeyDown +=

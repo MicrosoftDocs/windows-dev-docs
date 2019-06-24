@@ -14,7 +14,7 @@ ms.custom: RS5
 
 The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps.
 
-It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving [Fluent Design System](../fluent-design-system/index.md) as well as the needs of our app-building community.
+It's not a list of prescriptive rules - it's a living document, designed to adapt to our evolving [Fluent Design System](/windows/apps/fluent-design-system) as well as the needs of our app-building community.
 
 This introduction provides an overview of the universal design features that are included in every UWP app, helping you build user interfaces (UI) that scale beautifully across a range of devices.
 
@@ -92,7 +92,7 @@ You can also use the [Windows Template Studio](https://github.com/Microsoft/Wind
 
 ## Controls
 
-UWP's design platform provides a set of common controls that are guaranteed to work well on all Windows-powered devices, and they adhere to our [Fluent Design System](../fluent-design-system/index.md) principles. These controls include everything from simple controls, like buttons and text elements, to sophisticated controls that can generate lists from a set of data and a template.
+UWP's design platform provides a set of common controls that are guaranteed to work well on all Windows-powered devices, and they adhere to our [Fluent Design System](/windows/apps/fluent-design-system) principles. These controls include everything from simple controls, like buttons and text elements, to sophisticated controls that can generate lists from a set of data and a template.
 
 ![UWP controls](../style/images/color/windows-controls.svg)
 
@@ -166,10 +166,10 @@ We provide a variety of tools to help your design process:
 
 ## Next: Fluent Design System
 
-If you'd like to learn about the principles behind Fluent Design (Microsoft's design system) and see more features you can incorporate into your UWP app, continue on to [Fluent Design System](../fluent-design-system/index.md).
+If you'd like to learn about the principles behind Fluent Design (Microsoft's design system) and see more features you can incorporate into your UWP app, continue on to [Fluent Design System](/windows/apps/fluent-design-system).
 
 ## Related articles
 
 - [What's a UWP app?](../../get-started/universal-application-platform-guide.md)
-- [Fluent Design System](../fluent-design-system/index.md)
+- [Fluent Design System](/windows/apps/fluent-design-system)
 - [XAML platform overview](../../xaml-platform/index.md)

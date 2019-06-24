@@ -29,12 +29,12 @@ As an illustration of an app that could benefit from raw notifications, let's lo
 
 All raw notifications are push notifications. Therefore, the setup required to send and receive push notifications applies to raw notifications as well:
 
--   You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412).
+-   You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)).
 -   You must include the **Internet** capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**. For more information, see [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 The body of the notification is in an app-defined format. The client receives the data as a null-terminated string (**HSTRING**) that only needs to be understood by the app.
 
-If the client is offline, raw notifications will be cached by WNS only if the [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) header is included in the notification. However, only one raw notification will be cached and delivered once the device comes back online.
+If the client is offline, raw notifications will be cached by WNS only if the [X-WNS-Cache-Policy](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) header is included in the notification. However, only one raw notification will be cached and delivered once the device comes back online.
 
 There are only three possible paths for a raw notification to take on the client: they will be delivered to your running app through a notification delivery event, sent to a background task, or dropped. Therefore, if the client is offline and WNS attempts to deliver a raw notification, the notification is dropped.
 
@@ -44,12 +44,12 @@ There are only three possible paths for a raw notification to take on the client
 Sending a raw notification is similar to sending a tile, toast, or badge push notification, with these differences:
 
 -   The HTTP Content-Type header must be set to "application/octet-stream".
--   The HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) header must be set to "wns/raw".
+-   The HTTP [X-WNS-Type](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) header must be set to "wns/raw".
 -   The notification body can contain any string payload smaller than 5 KB in size.
 
 Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content. Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.
 
-For more information on sending push notifications, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
+For more information on sending push notifications, see [Quickstart: Sending a push notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)).
 
 ## Receiving a raw notification
 
@@ -71,16 +71,16 @@ Your app can use a notification delivery event ([**PushNotificationReceived**](h
 If your app is not running and does not use [background tasks](#background-tasks-triggered-by-raw-notifications)), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
 
 -   **The app notifies the cloud service**: The app can contact its service to let it know that the app is running in the foreground. The disadvantage of this approach is that the app can end up contacting your service very frequently. However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications. Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.
--   **The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) and [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:
+-   **The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) and [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:
 
     -   **X-WNS-NotificationStatus: dropped**: This indicates that the notification was not received by the client. It's a safe assumption that the **dropped** response is caused by your app no longer being in the foreground on the user's device.
-    -   **X-WNS-DeviceConnectionStatus: disconnected** or **X-WNS-DeviceConnectionStatus: tempconnected**: This indicates that the Windows client no longer has a connection to WNS. Note that to receive this message from WNS, you have to ask for it by setting the [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) header in the notification's HTTP POST.
+    -   **X-WNS-DeviceConnectionStatus: disconnected** or **X-WNS-DeviceConnectionStatus: tempconnected**: This indicates that the Windows client no longer has a connection to WNS. Note that to receive this message from WNS, you have to ask for it by setting the [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) header in the notification's HTTP POST.
 
     Your app's cloud service can use the information in these status messages to cease communication attempts through raw notifications. The service can resume sending raw notifications once it is contacted by the app, when the app switches back into the foreground.
 
-    Note that you should not rely on [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) to determine whether the notification was successfully delivered to the client.
+    Note that you should not rely on [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) to determine whether the notification was successfully delivered to the client.
 
-    For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
+    For more information, see [Push notification service request and response headers](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
 
 ### Background tasks triggered by raw notifications
 
@@ -111,9 +111,9 @@ You can learn more by downloading the [Raw notifications sample](https://go.micr
 
 ## Related topics
 
-* [Guidelines for raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [Quickstart: Creating and registering a raw notification background task](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [Quickstart: Intercepting push notifications for running apps](https://msdn.microsoft.com/library/windows/apps/jj709908)
+* [Guidelines for raw notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [Quickstart: Creating and registering a raw notification background task](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [Quickstart: Intercepting push notifications for running apps](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

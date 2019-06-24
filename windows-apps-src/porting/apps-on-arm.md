@@ -21,7 +21,7 @@ The built-in Windows 10 experiences such as Edge, Cortana, Start menu, and Explo
 Windows 10 on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/universal-application-platform-guide.md) from the Microsoft Store. ARM32 and ARM64 apps run natively without any emulation, while x86 apps run under emulation. If you are a UWP developer, please ensure that you submit an ARM package for your app as this will provide the best user experience for the device. For more information see [App package architectures](../packaging/device-architecture.md).
 
 >[!NOTE]
-> To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
 
 >[!IMPORTANT]
 > When a user downloads a UWP app from the Microsoft Store, the ARM32 version will be installed on an ARM64 device unless only an x86 version is available. For more information about architectures, see [App package architectures](../packaging/device-architecture.md).

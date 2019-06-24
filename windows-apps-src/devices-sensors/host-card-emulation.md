@@ -17,7 +17,7 @@ Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure ele
 ## What you need to develop an HCE app
 
 
-To develop an HCE-based card emulation app for Windows 10 Mobile, you will need to get your development environment setup. You can get set up by installing Microsoft Visual Studio 2015, which includes the Windows developer tools and the Windows 10 Mobile emulator with NFC emulation support. For more information about getting setup, see, [Get set up](https://msdn.microsoft.com/library/windows/apps/Dn726766)
+To develop an HCE-based card emulation app for Windows 10 Mobile, you will need to get your development environment setup. You can get set up by installing Microsoft Visual Studio 2015, which includes the Windows developer tools and the Windows 10 Mobile emulator with NFC emulation support. For more information about getting setup, see, [Get set up](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
 
 Optionally, if you want to test with a real Windows 10 Mobile device instead of the included Windows 10 Mobile emulator, you will also need the following items.
 
@@ -88,7 +88,7 @@ Your HCE app has two parts.
 Because of the extremely tight performance requirements for loading your background task in response to an NFC tap, we recommend that your entire background task be implementing in C++/CX native code (including any dependencies, references, or libraries you depend on) rather than C# or managed code. While C# and managed code normally performs well, there is overhead, like loading the .NET CLR, that can be avoided by writing it in C++/CX.
 ## Create and register your background task
 
-You need to create a background task in your HCE app for processing and responding to APDUs routed to it by the system. During the first time your app is launched, the foreground registers an HCE background task that implements the [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803) interface as shown in the following code.
+You need to create a background task in your HCE app for processing and responding to APDUs routed to it by the system. During the first time your app is launched, the foreground registers an HCE background task that implements the [**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) interface as shown in the following code.
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -98,16 +98,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-Notice that the task trigger is set to [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017). **EmulatorHostApplicationActivated**. This means that whenever a SELECT AID command APDU is received by the OS resolving to your app, your background task will be launched.
+Notice that the task trigger is set to [**SmartCardTriggerType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType). **EmulatorHostApplicationActivated**. This means that whenever a SELECT AID command APDU is received by the OS resolving to your app, your background task will be launched.
 
 ## Receive and respond to APDUs
 
-When there is an APDU targeted for your app, the system will launch your background task. Your background task receives the APDU passed through the [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) object’s [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) property and responds to the APDU using the [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) method of the same object. Consider keeping your background task for light operations for performance reasons. For example, respond to the APDUs immediately and exit your background task when all processing is complete. Due to the nature of NFC transactions, users tend to hold their device against the reader for only a very short amount of time. Your background task will continue to receive traffic from the reader until your connection is deactivated, in which case you will receive a [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) object. Your connection can be deactivated because of the following reasons as indicated in the [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) property.
+When there is an APDU targeted for your app, the system will launch your background task. Your background task receives the APDU passed through the [**SmartCardEmulatorApduReceivedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorApduReceivedEventArgs) object’s [**CommandApdu**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu) property and responds to the APDU using the [**TryRespondAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.tryrespondwithcryptogramsasync) method of the same object. Consider keeping your background task for light operations for performance reasons. For example, respond to the APDUs immediately and exit your background task when all processing is complete. Due to the nature of NFC transactions, users tend to hold their device against the reader for only a very short amount of time. Your background task will continue to receive traffic from the reader until your connection is deactivated, in which case you will receive a [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorConnectionDeactivatedEventArgs) object. Your connection can be deactivated because of the following reasons as indicated in the [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) property.
 
 -   If the connection is deactivated with the **ConnectionLost** value, it means that the user pulled their device away from the reader. If your app needs the user to tap to the terminal longer, you might want to consider prompting them with feedback. You should terminate your background task quickly (by completing your deferral) to ensure if they tap again it won’t be delayed waiting for the previous background task to exit.
 -   If the connection is deactivated with the **ConnectionRedirected**, it means that the terminal sent a new SELECT AID command APDU directed to a different AID. In this case, your app should exit the background task immediately (by completing your deferral) to allow another background task to run.
 
-The background task should also register for the [**Canceled event**](https://msdn.microsoft.com/library/windows/apps/BR224798) on [**IBackgroundTaskInstance interface**](https://msdn.microsoft.com/library/windows/apps/BR224797), and likewise quickly exit the background task (by completing your deferral) because this event is fired by the system when it is finished with your background task. Below is code that demonstrates an HCE app background task.
+The background task should also register for the [**Canceled event**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) on [**IBackgroundTaskInstance interface**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance), and likewise quickly exit the background task (by completing your deferral) because this event is fired by the system when it is finished with your background task. Below is code that demonstrates an HCE app background task.
 
 ```csharp
 void BgTask::Run(
@@ -206,7 +206,7 @@ During the first launch of your application when the card is being provisioned, 
 
 Most of the payment cards register for the same AID (which is PPSE AID) along with additional payment network card specific AIDs. Each AID group represents a card and when the user enables the card, all AIDs in the group are enabled. Similarly, when the user deactivates the card, all AIDs in the group are disabled.
 
-To register an AID group, you need to create a [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) object and set its properties to reflect that this is an HCE-based payment card. Your display name should be descriptive to the user because it will show up in the NFC settings menu as well as user prompts. For HCE payment cards, the [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) property should be set to **Payment** and the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
+To register an AID group, you need to create a [**SmartCardAppletIdGroup**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) object and set its properties to reflect that this is an HCE-based payment card. Your display name should be descriptive to the user because it will show up in the NFC settings menu as well as user prompts. For HCE payment cards, the [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) property should be set to **Payment** and the [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -224,7 +224,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-For non-payment HCE cards, the [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) property should be set to **Other** and the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
+For non-payment HCE cards, the [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) property should be set to **Other** and the [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -243,7 +243,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 You can include up to 9 AIDs (of length 5-16 bytes each) per AID group.
 
-Use the [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) method to register your AID group with the system, which will return a [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) object. By default, the [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) property of the registration object is set to **Disabled**. This means even though your AIDs are registered with the system, they are not enabled yet and won’t receive traffic.
+Use the [**RegisterAppletIdGroupAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) method to register your AID group with the system, which will return a [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) object. By default, the [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) property of the registration object is set to **Disabled**. This means even though your AIDs are registered with the system, they are not enabled yet and won’t receive traffic.
 
 ```csharp
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
@@ -255,7 +255,7 @@ You can enable your registered cards (AID groups) by using the [**RequestActivat
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-You can query your app’s registered AID groups with the OS and check their activation policy using the [**GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) method.
+You can query your app’s registered AID groups with the OS and check their activation policy using the [**GetAppletIdGroupRegistrationsAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getappletidgroupregistrationsasync) method.
 
 Users will be prompted when you change the activation policy of a payment card from **Disabled** to **Enabled**, only if your app is not already the default payment app. Users will only be prompted when you change the activation policy of a non-payment card from **Disabled** to **Enabled** if there is an AID conflict.
 
@@ -287,7 +287,7 @@ You can change the [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/a
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-Also, you can register an AID group consisting of a single 0-length AID which will cause the system to route all APDUs regardless of the AID and including any command APDUs sent before a SELECT AID command is received. However, such an AID group only works while your app is in the foreground because it can only be set to **ForegroundOverride** and cannot be permanently enabled. Also, this mechanism works both for **Host** and **UICC** values of the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639) enumeration to either route all traffic to your HCE background task, or to the SIM card.
+Also, you can register an AID group consisting of a single 0-length AID which will cause the system to route all APDUs regardless of the AID and including any command APDUs sent before a SELECT AID command is received. However, such an AID group only works while your app is in the foreground because it can only be set to **ForegroundOverride** and cannot be permanently enabled. Also, this mechanism works both for **Host** and **UICC** values of the [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType) enumeration to either route all traffic to your HCE background task, or to the SIM card.
 
 ```csharp
 public static byte[] AID_Foreground =
@@ -312,7 +312,7 @@ The NFC smart card emulation feature is only enabled on Windows 10 Mobile, so t
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
 ```
 
-You can additionally check to see if the device has NFC hardware capable of some form of card emulation by checking if the [**SmartCardEmulator.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/Dn608008) method returns null. If it does, then no NFC card emulation is supported on the device.
+You can additionally check to see if the device has NFC hardware capable of some form of card emulation by checking if the [**SmartCardEmulator.GetDefaultAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getdefaultasync) method returns null. If it does, then no NFC card emulation is supported on the device.
 
 ```csharp
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
@@ -328,7 +328,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 Windows 10 Mobile has device-level card emulation settings, which can be set by the mobile operator or the manufacturer of the device. By default, "tap to pay" toggle is disabled and the "enablement policy at device level" is set to "Always", unless the MO or OEM overwrites these values.
 
-Your application can query the value of the [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) at device level and take action for each case depending on the desired behavior of your app in each state.
+Your application can query the value of the [**EnablementPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorEnablementPolicy) at device level and take action for each case depending on the desired behavior of your app in each state.
 
 ```csharp
 SmartCardEmulator emulator = await SmartCardEmulator.GetDefaultAsync();
@@ -366,7 +366,7 @@ Your app's background task will be launched even if the phone is locked and/or t
 
 ## AID registration and other updates for SIM based apps
 
-Card emulation apps that use the SIM as the secure element can register with the Windows service to declare the AIDs supported on the SIM. This registration is very similar to an HCE-based app registration. The only difference is the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639), which should be set to Uicc for SIM-based apps. As the result of the payment card registration, the display name of the card will also be populated in the NFC setting menu.
+Card emulation apps that use the SIM as the secure element can register with the Windows service to declare the AIDs supported on the SIM. This registration is very similar to an HCE-based app registration. The only difference is the [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType), which should be set to Uicc for SIM-based apps. As the result of the payment card registration, the display name of the card will also be populated in the NFC setting menu.
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(

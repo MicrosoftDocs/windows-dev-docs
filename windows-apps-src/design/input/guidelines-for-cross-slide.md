@@ -14,9 +14,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 
@@ -48,7 +48,7 @@ This image shows how a user touches an element in the UI, but moves their finger
 
 Here are some guidelines to consider when including cross-slide functionality in your app.
 
-Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](https://msdn.microsoft.com/library/windows/apps/hh465382).
+Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
 **Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
 

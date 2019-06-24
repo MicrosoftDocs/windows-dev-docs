@@ -57,7 +57,7 @@ By adding animation to the offset of the point light, a shimmering effect is eas
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-See the complete [Text Shimmer](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer) sample at the WindowUIDevLabs Sample Galley to learn more.
+See the complete [Text Shimmer](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) sample at the WindowUIDevLabs Sample Galley to learn more.
 
 ## Restrictions
 
@@ -161,4 +161,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Mathematics of Lighting](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

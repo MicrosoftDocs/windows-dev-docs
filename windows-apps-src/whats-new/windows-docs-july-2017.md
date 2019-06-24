@@ -108,8 +108,7 @@ A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-ap
 
 ### Test your Windows app for Windows 10 S
 
-Test your Windows app to ensure that it will operate correctly on devices that run Windows S. 
-Use [this new guide](../porting/desktop-to-uwp-test-windows-s.md) to learn how. 
+Test your Windows app to ensure that it will operate correctly on devices that run Windows S. Use [this new guide](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) to learn how.
 
 ## Samples
 

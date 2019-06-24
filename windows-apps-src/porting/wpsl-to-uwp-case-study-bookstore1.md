@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Windows Phone Silverlight to UWP case study: Bookstore1
 
 
-This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 The app we'll port consists of a **ListBox** bound to a view model. The view model has a list of books that shows title, author, and book cover. The book cover images have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
 
@@ -98,7 +98,7 @@ In Bookstore1WPSL8, we did this:
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In Bookstore1Universal, we use the ms-appx [URI scheme](https://msdn.microsoft.com/library/windows/apps/jj655406). So that we can keep the rest of our code the same, we can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
+In Bookstore1Universal, we use the ms-appx [URI scheme](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)). So that we can keep the rest of our code the same, we can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".

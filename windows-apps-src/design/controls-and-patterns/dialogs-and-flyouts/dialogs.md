@@ -244,9 +244,37 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 
 > Some platforms put the affirmation button on the right instead of the left. So why do we recommend putting it on the left?  If you assume that the majority of users are right-handed and they hold their phone with that hand, it's actually more comfortable to press the affirmation button when it's on the left, because the button is more likely to be within the user's thumb-arc. Buttons on the right-side of the screen require the user to pull their thumb inward into a less-comfortable position.
 
+## ContentDialog in AppWindow or Xaml Islands
 
+> NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](../../../debug-test-perf/version-adaptive-apps.md).
 
+By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](/apps/desktop/modernize/xaml-islands), you need to manually set the [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
 
+To do so, set the ContentDialog's XamlRoot property to the same XamlRoot as an element already in the AppWindow or XAML Island, as shown here.
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        noWifiDialog.XamlRoot = elementAlreadyInMyAppWindow.XamlRoot;
+    }
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+> [!WARNING]
+> There can only be one ContentDialog open per thread at a time. Attempting to open two ContentDialogs will throw an exception, even if they are attempting to open in separate AppWindows.
 
 ## Get the sample code
 

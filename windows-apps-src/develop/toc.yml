@@ -946,15 +946,6 @@
           items:
             - name: XAML lighting
               href: ../composition/xaml-lighting.md
-        - name: Modernize desktop apps
-          href: ../composition/visual-layer-in-desktop-apps.md
-          items:
-            - name: Using WPF
-              href: ../composition/using-the-visual-layer-with-wpf.md
-            - name: Using Windows Forms
-              href: ../composition/using-the-visual-layer-with-windows-forms.md
-            - name: Using Win32
-              href: ../composition/using-the-visual-layer-with-win32.md
     - name: Windows as a service
       href: ../updates-and-versions/application-development-for-windows-as-a-service.md
     - name: Windows Runtime components
@@ -1050,11 +1041,6 @@
           href: ../xaml-platform/custom-attached-properties.md
         - name: Events and routed events overview
           href: ../xaml-platform/events-and-routed-events-overview.md
-        - name: UWP controls in desktop applications
-          href: ../xaml-platform/xaml-host-controls.md
-          items:
-            - name: Using the UWP XAML hosting API
-              href: ../xaml-platform/using-the-xaml-hosting-api.md
 - name: People and places
   items:
     - name: Contacts, My People, and calendar
@@ -1242,27 +1228,8 @@
   items:
     - name: Overview
       href: ../porting/index.md
-    - name: Move from Windows Phone Silverlight to UWP
-      href: ../porting/wpsl-to-uwp-root.md
-      items:
-        - name: Namespace and class mappings
-          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
-        - name: Porting the project
-          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-        - name: Troubleshooting
-          href: ../porting/wpsl-to-uwp-troubleshooting.md
-        - name: Porting XAML and UI
-          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
-        - name: Porting for I/O, device, and app model
-          href: ../porting/wpsl-to-uwp-input-and-sensors.md
-        - name: Porting business and data layers
-          href: ../porting/wpsl-to-uwp-business-and-data.md
-        - name: Porting for form factor and UX
-          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
-        - name: "Case study: Bookstore1"
-          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
-        - name: "Case study: Bookstore2"
-          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
+    - name: Move from desktop to UWP
+      href: ../porting/desktop-to-uwp-migrate.md
     - name: Move from Windows Runtime 8.x to UWP
       href: ../porting/w8x-to-uwp-root.md
       items:
@@ -1280,43 +1247,6 @@
           href: ../porting/w8x-to-uwp-case-study-bookstore2.md
         - name: "Case study: QuizGame"
           href: ../porting/w8x-to-uwp-case-study-quizgame.md
-    - name: Package desktop applications
-      href: ../porting/desktop-to-uwp-root.md
-      items:
-        - name: Prepare to package
-          href: ../porting/desktop-to-uwp-prepare.md
-        - name: Package using the Desktop App Converter
-          href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-        - name: Package using Visual Studio
-          href: ../porting/desktop-to-uwp-packaging-dot-net.md
-        - name: Package manually
-          href: ../porting/desktop-to-uwp-manual-conversion.md
-        - name: Integrate with Windows 10
-          href: ../porting/desktop-to-uwp-extensions.md
-        - name: Enhance for Windows 10
-          href: ../porting/desktop-to-uwp-enhance.md
-          items:
-            - name: Available UWP APIs
-              href: ../porting/desktop-to-uwp-supported-api.md
-            - name: Optimize app binaries with native images
-              href: ../porting/desktop-to-uwp-r2r.md
-        - name: Extend with UWP
-          href: ../porting/desktop-to-uwp-extend.md
-        - name: Run, debug, and test
-          href: ../porting/desktop-to-uwp-debug.md
-          items:
-            - name: Test for Windows 10 in S mode
-              href: ../porting/desktop-to-uwp-test-windows-s.md
-        - name: Apply runtime fixes
-          href: ../porting/package-support-framework.md
-        - name: Distribute
-          href: ../porting/desktop-to-uwp-distribute.md
-        - name: Behind the scenes
-          href: ../porting/desktop-to-uwp-behind-the-scenes.md
-        - name: Known issues
-          href: ../porting/desktop-to-uwp-known-issues.md
-    - name: Share code between desktop and UWP
-      href: ../porting/desktop-to-uwp-migrate.md
     - name: Windows apps concept mapping for Android and iOS developers
       href: ../porting/android-ios-uwp-map.md
     - name: Move from iOS to UWP
@@ -1343,6 +1273,27 @@
               href: ../porting/getting-started-what-next.md
         - name: Setting up your Mac with Windows 10
           href: ../porting/setting-up-your-mac-with-windows-10.md
+    - name: Move from Windows Phone Silverlight to UWP
+      href: ../porting/wpsl-to-uwp-root.md
+      items:
+        - name: Namespace and class mappings
+          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
+        - name: Porting the project
+          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
+        - name: Troubleshooting
+          href: ../porting/wpsl-to-uwp-troubleshooting.md
+        - name: Porting XAML and UI
+          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
+        - name: Porting for I/O, device, and app model
+          href: ../porting/wpsl-to-uwp-input-and-sensors.md
+        - name: Porting business and data layers
+          href: ../porting/wpsl-to-uwp-business-and-data.md
+        - name: Porting for form factor and UX
+          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
+        - name: "Case study: Bookstore1"
+          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
+        - name: "Case study: Bookstore2"
+          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows 10
       href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
       items:

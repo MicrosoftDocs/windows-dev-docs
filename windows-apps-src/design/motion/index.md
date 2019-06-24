@@ -15,9 +15,24 @@ ms.custom: RS5
 ---
 # Motion for UWP apps
 
-![hero image](images/header-motion2.svg)
+![Motion icon](../images/motion-2x.png)
 
 Fluent motion serves a purpose in your app. It gives intelligent feedback based on the user's behavior, keeps the UI feeling alive, and guides the user's navigation through your app. Fluent motion elicits an emotional connection between a user and their digital experience. We build on a foundation of natural movement the user already understands from the physical world, and we extend our system from there.
+
+## Examples
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/category/Motion">open the app and see Motion in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## Fluent motion principles
 
@@ -26,7 +41,7 @@ Fluent motion serves a purpose in your app. It gives intelligent feedback based 
 Objects in motion exhibit behaviors of objects in the real world.​ Fluid, responsive movement makes the experience feel natural, creating emotional connections and adding personality.
 
 ![UI example of physical motion](images/Physical.gif)
-> When you interact with UI via touch, the movement of the UI is directly related to the velocity of the interaction. And because touch is direct manipulation, the object you interect with affects the objects around it.
+> When you interact with UI via touch, the movement of the UI is directly related to the velocity of the interaction. And because touch is direct manipulation, the object you interact with affects the objects around it.
 
 ### Functional
 
@@ -47,7 +62,7 @@ Fluid movement from point to point naturally draws the eye and guides the user.�
 Intelligent motion provides feedback to the user in a manner that's aligned with how they manipulated the UI. Interaction is centered around the user.​ The movement feels appropriate to the form-factor and designed around the scenario.​ It should be comfortable for each user.​
 
 ![UI example of contextual motion](images/Contextual.gif)
-> Animation should tie back to the user interaction. A context menu is deployed from a point where the user activated it. 
+> Animation should tie back to the user interaction. A context menu is deployed from a point where the user activated it.
 
 ## Motion articles
 

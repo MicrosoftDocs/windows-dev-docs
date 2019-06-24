@@ -271,17 +271,17 @@ foreach (uint id in toBeRemoved)
 ## Foreground event for notification added/dismissed
 
 > [!IMPORTANT] 
-> Known issue: The foreground event will cause a CPU loop on recent versions of Windows, and previously did not work before that. Do NOT use the foreground event. In an upcoming update to Windows, we will fix this.
+> Known issue: In builds before Build 17763 / October 2018 Update / Version 1809, The foreground event will cause a CPU loop and/or didn't work. If you need support on those earlier builds, use the background task instead.
 
-Instead of using the foreground event, use the code shown earlier for a [single process model](../../../launch-resume/create-and-register-an-inproc-background-task.md) background task. The background task will also allow you to receive change event notifications both while your app is closed or running.
+You can also listen to notifications from an in-memory event handler...
 
 ```csharp
-// Subscribe to foreground event (DON'T USE THIS)
+// Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
+    // Your code for handling the notification
 }
 ```
 

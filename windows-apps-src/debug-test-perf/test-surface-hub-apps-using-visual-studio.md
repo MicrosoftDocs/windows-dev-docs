@@ -63,7 +63,7 @@ To add Surface Hub resolutions to the simulator:
     ![Visual Studio simulator resolutions](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Turn on Tablet mode](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet) to better simulate the experience of a Surface Hub.
+   > [Turn on Tablet mode](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) to better simulate the experience of a Surface Hub.
 
 ## Deploy apps to a Surface Hub device from Visual Studio
 Manually deploying an app to a Surface Hub is a simple process.
@@ -84,7 +84,7 @@ By default, Surface Hub only installs apps from the Microsoft Store. To install 
 3. Choose **Developer mode** and accept the warning prompt.
 
 ### Deploy your app from Visual Studio
-For more information on the deployment process in general, see [Deploying and debugging UWP apps](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+For more information on the deployment process in general, see [Deploying and debugging UWP apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
    > This feature requires Visual Studio 2015 Update 1 or later, however we recommend that you use the latest most up to date version of Visual Studio. An up to date Visual Studio instance will gibe you all the latest development and security updates.

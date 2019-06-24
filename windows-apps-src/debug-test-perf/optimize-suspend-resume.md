@@ -48,17 +48,17 @@ An app can be suspended when the user moves it to the background or when the sys
 
 ### Serialize only when necessary
 
-Many apps serialize all their data on suspension. If you only need to store a small amount of app settings data, however, you should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) store instead of serializing the data. Use serialization for larger amounts of data and for non-settings data.
+Many apps serialize all their data on suspension. If you only need to store a small amount of app settings data, however, you should use the [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) store instead of serializing the data. Use serialization for larger amounts of data and for non-settings data.
 
 When you do serialize your data, you should avoid reserializing if it hasn't changed. It takes extra time to serialize and save the data, plus extra time to read and deserialize it when the app is activated again. Instead, we recommend that the app determine if its state has actually changed, and if so, serialize and deserialize only the data that changed. A good way to ensure that this happens is to periodically serialize data in the background after it changes. When you use this technique, everything that needs to be serialized at suspension has already been saved so there is no work to do and an app suspends quickly.
 
 ### Serializing data in C# and Visual Basic
 
-The available choices of serialization technology for .NET apps are the [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx), and [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) classes.
+The available choices of serialization technology for .NET apps are the [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN), and [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN) classes.
 
-From a performance perspective, we recommend using the [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) class. The **XmlSerializer** has the lowest serialization and deserialization times, and maintains a low memory footprint. The **XmlSerializer** has few dependencies on the .NET framework; this means that compared with the other serialization technologies, fewer modules need to be loaded into your app to use the **XmlSerializer**.
+From a performance perspective, we recommend using the [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN) class. The **XmlSerializer** has the lowest serialization and deserialization times, and maintains a low memory footprint. The **XmlSerializer** has few dependencies on the .NET framework; this means that compared with the other serialization technologies, fewer modules need to be loaded into your app to use the **XmlSerializer**.
 
-[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) makes it easier to serialize custom classes, although it has a larger performance impact than **XmlSerializer**. If you need better performance, consider switching. In general, you should not load more than one serializer, and you should prefer **XmlSerializer** unless you need the features of another serializer.
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) makes it easier to serialize custom classes, although it has a larger performance impact than **XmlSerializer**. If you need better performance, consider switching. In general, you should not load more than one serializer, and you should prefer **XmlSerializer** unless you need the features of another serializer.
 
 ### Reduce memory footprint
 
@@ -75,11 +75,11 @@ Certain objects, such as files and devices, occupy a large amount of memory. We 
 
 A suspended app can be resumed when the user moves it to the foreground or when the system comes out of a low power state. When an app is resumed from the suspended state, it continues from where it was when it was suspended. No app data is lost because it was stored in memory, even if the app was suspended for a long period of time.
 
-Most apps don't need to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859) event. When your app is resumed, variables and objects have the exact same state they had when the app was suspended. Handle the **Resuming** event only if you need to update data or objects that might have changed between the time your app was suspended and when it was resumed such as: content (for example, update feed data), network connections that may have gone stale, or if you need to reacquire access to a device (for example, a webcam).
+Most apps don't need to handle the [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming) event. When your app is resumed, variables and objects have the exact same state they had when the app was suspended. Handle the **Resuming** event only if you need to update data or objects that might have changed between the time your app was suspended and when it was resumed such as: content (for example, update feed data), network connections that may have gone stale, or if you need to reacquire access to a device (for example, a webcam).
 
 ## Related topics
 
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Guidelines for app suspend and resume](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

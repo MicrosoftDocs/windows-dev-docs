@@ -297,7 +297,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> When you use a ContentLink in a text control with other text elements in XAML, place the content in a [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the ContentLink and other elements.
+> When you use a ContentLink in a text control with other text elements in XAML, place the content in a [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the ContentLink and other elements.
 
 ## Examples
 

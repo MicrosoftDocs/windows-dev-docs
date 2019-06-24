@@ -17,7 +17,7 @@ A Direct3D device can be in either an operational state or a lost state. The *op
 
 By design, the full set of scenarios that can cause a device to become lost is not specified. Some typical examples include loss of focus, such as when the user presses ALT+TAB or when a system dialog is initialized. Devices can also be lost due to a power management event, or when another application assumes full-screen operation. In addition, any failure from reseting a device puts the device into a lost state.
 
-All methods that derive from [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) are guaranteed to work after a device is lost. After device loss, each function generally has the following three options:
+All methods that derive from [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) are guaranteed to work after a device is lost. After device loss, each function generally has the following three options:
 
 -   Fail with a "device lost" error - This means that the application needs to recognize that the device was lost, so that the application identifies that something isn't happening as expected.
 -   Silently fail, returning S\_OK or any other return code - If a function silently fails, the application generally can't distinguish between the result of "success" and a "silent failure."

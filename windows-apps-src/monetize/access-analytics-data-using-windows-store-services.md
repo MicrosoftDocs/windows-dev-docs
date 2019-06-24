@@ -89,7 +89,7 @@ The following analytics methods are available for UWP apps in Partner Center.
 
 ### Methods for desktop applications
 
-The following analytics methods are available for use by developer accounts that belong to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504).
+The following analytics methods are available for use by developer accounts that belong to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program).
 
 | Scenario       | Methods      |
 |---------------|--------------------|
@@ -100,7 +100,7 @@ The following analytics methods are available for use by developer accounts that
 
 ### Methods for Xbox Live services
 
-The following additional methods are available for use by developer accounts with games that use [Xbox Live services](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
+The following additional methods are available for use by developer accounts with games that use [Xbox Live services](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
 | Scenario       | Methods      |
 |---------------|--------------------|
@@ -119,7 +119,7 @@ The following additional methods are available for use by developer accounts wit
 
 ### Methods for hardware and drivers
 
-Developer accounts that belong to the [Windows hardware dashboard program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Developer accounts that belong to the [Windows hardware dashboard program](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## Code example
 

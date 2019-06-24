@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Audio device information properties
 
-This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. 
+This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. 
 For general information about enumerating devices on Windows, see [Enumerate devices](../devices-sensors/enumerate-devices.md) and [Device information properties](../devices-sensors/device-information-properties.md).
 
 

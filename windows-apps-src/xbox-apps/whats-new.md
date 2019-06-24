@@ -17,7 +17,7 @@ Xbox no longer supports x86 app development or x86 app submissions to the store.
 
 ## Apps can now support navigating back to the previous app 
 UWP on Xbox One apps can now support navigating back to the previous app. To do this, subscribe to the 
-[**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595)
+[**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)
 event and set the **Handled** property to **false** in your event handler.
 
 > [!NOTE]

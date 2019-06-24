@@ -12,21 +12,21 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
--   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
--   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
+-   [**Windows.Devices.Scanners**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners)
+-   [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
+-   [**DeviceClass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceClass)
 
 Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
 
-**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631). Apps can use these APIs only on the desktop version of Windows 10.
+**Important**  The [**Windows.Devices.Scanners**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners) APIs are part of the desktop [device family](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Apps can use these APIs only on the desktop version of Windows 10.
 
-To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
+To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object and getting the [**DeviceClass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceClass) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
 
-After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
+After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning).
 
 ## Enumerate available scanners
 
-Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.
+Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) namespace.
 
 1.  First, add these using statements to your class definition file.
 
@@ -82,7 +82,7 @@ Windows does not detect scanners automatically. You must perform this step in or
 
 1.  **Get an ImageScanner object**
 
-For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.
+For each [**ImageScannerScanSource**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners.ImageScannerScanSource) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners.ImageScanner) object by calling the [**ImageScanner.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.scanners.imagescanner.fromidasync) method, like this.
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
@@ -90,7 +90,7 @@ For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows
 
 2.  **Just scan**
 
-To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
+To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://docs.microsoft.com/uwp/api/Windows.Devices.Scanners) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
 
 **Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.
  
@@ -101,7 +101,7 @@ To scan with the default settings, your app relies on the [**Windows.Devices.Sca
 
 3.  **Scan from Auto-configured, Flatbed, or Feeder source**
 
-Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
+Your app can use the device's [Auto-Configured Scanning](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
 
 **Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.
 
@@ -168,4 +168,4 @@ cancellationToken = new CancellationTokenSource();
 
 ## Scanning to the pictures library
 
-Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Users can scan to any folder dynamically using the [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).

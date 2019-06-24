@@ -38,7 +38,7 @@ This configuration is used less frequently than the x86 configuration. It should
 The Windows 10 on ARM configuration includes desktop PCs, mobile devices, and some IoT Core devices (Rasperry Pi 2, Raspberry Pi 3, and DragonBoard). Windows 10 on ARM desktop PCs are a new addition to the Windows family, so if you are UWP app developer, you should submit ARM packages to the Store for the best experience on these PCs.
 
 >[!NOTE]
-> To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
 
 For more information, see [Windows 10 on ARM](../porting/apps-on-arm.md). Check out this //Build talk to see a demo of [Windows 10 on ARM](https://channel9.msdn.com/Events/Build/2017/P4171) and learn more about how it works.
 

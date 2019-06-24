@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # {x:Bind} markup extension
 
-**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** runs in less time and less memory than **{Binding}** and supports better debugging.
 
@@ -23,7 +23,7 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 **Sample apps that demonstrate {x:Bind}**
 
 -   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989)
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## XAML attribute usage
@@ -69,7 +69,7 @@ This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. N
 
 ## Property path
 
-*PropertyPath* sets the **Path** for an **{x:Bind}** expression. **Path** is a property path specifying the value of the property, sub-property, field, or method that you're binding to (the source). You can mention the name of the **Path** property explicitly: `{Binding Path=...}`. Or you can omit it: `{Binding ...}`.
+*PropertyPath* sets the **Path** for an **{x:Bind}** expression. **Path** is a property path specifying the value of the property, sub-property, field, or method that you're binding to (the source). You can mention the name of the **Path** property explicitly: `{x:Bind Path=...}`. Or you can omit it: `{x:Bind ...}`.
 
 ### Property path resolution
 
@@ -86,9 +86,9 @@ With **x:Bind**, you do not need to use **ElementName=xxx** as part of the bindi
 
 If the data source is a collection, then a property path can specify items in the collection by their position or index. For example, "Teams\[0\].Players", where the literal "\[\]" encloses the "0" that requests the first item in a zero-indexed collection.
 
-To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&lt;T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **INotifyCollectionChanged** or **IObservableVector** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
+To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&lt;T&gt;** on the type of the property that is going to be indexed. (Note that IReadOnlyList&lt;T&gt; and IVectorView&lt;T&gt; do not support the indexer syntax.) If the type of the indexed property supports **INotifyCollectionChanged** or **IObservableVector** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
 
-If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. Its usually easiest to use alternate quotes from those used for the XAML attribute.
+If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. Its usually easiest to use alternate quotes from those used for the XAML attribute. (Note that IReadOnlyDictionary&lt;T&gt; and IMapView&lt;T&gt; do not support the indexer syntax.)
 
 To use an string indexer, the model needs to implement **IDictionary&lt;string, T&gt;** or **IMap&lt;string, T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **IObservableMap** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
 
@@ -125,14 +125,14 @@ For more info about the string syntax for a property path, see [Property-path sy
 
 **{x:Bind}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Note that you cannot include line breaks in the binding expression. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{x:Bind}**.
 
-These properties work in much the same way as the properties of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class.
+These properties work in much the same way as the properties of the [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) class.
 
 | Property | Description |
 |----------|-------------|
 | **Path** | See the [Property path](#property-path) section above. |
 | **Converter** | Specifies the converter object that is called by the binding engine. The converter can be set in XAML, but only if you refer to an object instance that you've assigned in a [{StaticResource} markup extension](staticresource-markup-extension.md) reference to that object in the resource dictionary. |
-| **ConverterLanguage** | Specifies the culture to be used by the converter. (If you're setting **ConverterLanguage** you should also be setting **Converter**.) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880). |
-| **ConverterParameter** | Specifies the converter parameter that can be used in converter logic. (If you're setting **ConverterParameter** you should also be setting **Converter**.) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for moderately advanced converter implementations that have more than one logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) for more info. |
+| **ConverterLanguage** | Specifies the culture to be used by the converter. (If you're setting **ConverterLanguage** you should also be setting **Converter**.) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage). |
+| **ConverterParameter** | Specifies the converter parameter that can be used in converter logic. (If you're setting **ConverterParameter** you should also be setting **Converter**.) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for moderately advanced converter implementations that have more than one logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter) for more info. |
 | **FallbackValue** | Specifies a value to display when the source or path cannot be resolved. |
 | **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
 | **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
@@ -159,11 +159,11 @@ Pages and user controls that include Compiled bindings will have a "Bindings" pr
 - **StopTracking()** - This will unhook all listeners created for one-way and two-way bindings. They can be re-initialized using the Update() method.
 
 > [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. Note that this is not a feature of function binding, only property binding. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. Note that this is not a feature of function binding, only property binding. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-**Tip**   If you need to specify a single curly brace for a value, such as in [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) or [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
+**Tip**   If you need to specify a single curly brace for a value, such as in [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) or [**ConverterParameter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter), [**ConverterLanguage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 **{x:Bind}** is a markup extension only, with no way to create or manipulate such bindings programmatically. For more info about markup extensions, see [XAML overview](xaml-overview.md).
 

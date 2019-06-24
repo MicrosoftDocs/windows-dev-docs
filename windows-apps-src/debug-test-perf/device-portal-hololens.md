@@ -15,12 +15,12 @@ ms.localizationpriority: medium
 ### Enable Device Portal
 
 1. Power on your HoloLens and put on the device.
-2. Perform the [bloom](https://dev.windows.com/holographic/Gestures.html#Bloom) gesture to launch the main menu.
-3. Gaze at the **Settings** tile and perform the [air tap](https://dev.windows.com/holographic/Gestures.html#Press_and_release) gesture. Perform a second air tap to place the app in your environment. The Settings app will launch after you place it.
+2. Perform the [bloom](https://developer.microsoft.com/mixed-reality#Bloom) gesture to launch the main menu.
+3. Gaze at the **Settings** tile and perform the [air tap](https://developer.microsoft.com/mixed-reality#Press_and_release) gesture. Perform a second air tap to place the app in your environment. The Settings app will launch after you place it.
 4. Select the **Update** menu item.
 5. Select the **For developers** menu item.
 6. Enable **Developer Mode**.
-7. [Scroll down](https://dev.windows.com/holographic/Gestures.html#Navigation) and enable Device Portal.
+7. [Scroll down](https://developer.microsoft.com/mixed-reality#Navigation) and enable Device Portal.
 
 
 ### Pair your device

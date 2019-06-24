@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.
 
@@ -29,7 +29,7 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Important APIs**: [InkCanvas class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [InkToolbar class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [InkPresenter class](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **Important APIs**: [InkCanvas class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter class](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## Is this the right control?
@@ -41,7 +41,7 @@ By default, strokes are rendered as ink when using the pen tip (a black ballpoin
 Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.
 
 > [!NOTE] 
-> For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object.
+> For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) object.
 
 ## Examples
 
@@ -78,7 +78,7 @@ Adding an InkCanvas to your app requires just one line of markup:
 ```
 
 > [!NOTE]
-> For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](https://windowsstyleguide/input/pen-and-stylus-interactions/) article.
+> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in UWP apps"](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) article.
 
 The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
@@ -164,6 +164,6 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 
 ## Related articles
 
-- [Pen and stylus interactions in UWP apps](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Recognize ink strokes](https://windowsstyleguide/input/convert-ink-to-text/)
-- [Store and retrieve ink strokes](https://windowsstyleguide/input/save-and-load-ink/)
+- [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Recognize Windows Ink strokes as text and shapes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
