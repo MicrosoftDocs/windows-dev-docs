@@ -61,7 +61,7 @@ Use a **SplitButton** control when you want the user to be able to initiate an i
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have [XAML Controls Gallery](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt?activetab=pivot:overviewtab) installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <p>If you have [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
@@ -120,7 +120,7 @@ When you tap a **Button** control with a finger or stylus, or press a left mouse
 
 You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more information, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-You can change how a button raises the **Click** event by changing the [ClickMode](/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
+You can change how a button raises the **Click** event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 
 
 ### Button content
