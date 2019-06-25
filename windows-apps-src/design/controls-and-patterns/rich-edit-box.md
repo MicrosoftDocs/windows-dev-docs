@@ -23,8 +23,7 @@ You can use a RichEditBox control to enter and edit rich text documents that con
 ## Is this the right control?
 
 Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
--   If the primary purpose of the multi-line text box is for creating documents (such as blog entries or the contents of an email message), and those documents require rich text, use a rich text box.
--   If you want users to be able to format their text, use a rich text box.
+-   If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](/windows/uwp/design/controls-and-patterns/rich-text-block) instead.
 -   When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
 -   For all other scenarios, use a plain text input control.
 
