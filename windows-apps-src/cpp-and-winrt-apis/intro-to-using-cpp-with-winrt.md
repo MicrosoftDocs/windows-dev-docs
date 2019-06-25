@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Introduction to C++/WinRT
 &nbsp;
-> [!VIDEO https://https://www.youtube.com/embed/X41j_gzSwOY]
+> [!VIDEO https://www.youtube.com/embed/X41j_gzSwOY]
 
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/nOFNc2uTmGs]
