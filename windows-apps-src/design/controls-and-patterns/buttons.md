@@ -43,18 +43,10 @@ Control | Description
 
 Use a **Button** control to let the user initiate an immediate action, such as submitting a form.
 
->[!NOTE]
->This is just a test.
-
-Here's a filler sentence.
-
-> [!NOTE]
-> This is another test.
-
 Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) control. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
 > [!IMPORTANT]
-> For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
+> For wizard navigation, use buttons labeled *Back* and *Next*. For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
 
 Use a **RepeatButton** control when the user might want to trigger an action repeatedly. For example, use a **RepeatButton** control to increment or decrement a value in a counter.
 
@@ -69,7 +61,7 @@ Use a **SplitButton** control when you want the user to be able to initiate an i
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <p>If you have [XAML Controls Gallery](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt?activetab=pivot:overviewtab) installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
@@ -124,7 +116,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### Button interaction
 
-When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the **Click** event.
+When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar also raises the **Click** event.
 
 You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more information, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
@@ -216,7 +208,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## Create a drop down button
 
-> **DropDownButton** requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **DropDownButton** requires the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** control with a flyout; only the appearance is different.
 
@@ -277,7 +269,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## Create a split button
 
  > [!IMPORTANT]
- > SplitButton requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+ > **SplitButton** requires the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
 A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) control has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -402,7 +394,7 @@ A toggle split button is typically used to enable or disable a feature when the 
 Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), **ToggleSplitButton** does not have an indeterminate state. As a result, you should keep in mind these differences:
 
 - **ToggleSplitButton** does not have an **IsThreeState** property or **Indeterminate** event.
-- The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a **bool**, not a **nullable bool**.
+- The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a Boolean, not a **Nullable<bool>**.
 - **ToggleSplitButton** has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
 
 
@@ -533,12 +525,15 @@ private void ApplyListStyle(string listStyle)
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
   - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will be automatically right-aligned.
+
   ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
   - If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
+
   ![A button within a container](images/pushbutton_doc_container.png)
 
   - In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+  
   ![A button on a page](images/pushbutton_doc_page.png)
 
 
