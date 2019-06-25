@@ -526,15 +526,15 @@ If your layout requires only one button, it should be either left- or right-alig
 
   - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will be automatically right-aligned.
 
-  ![A button within a dialog](images/pushbutton_doc_dialog.png)
+    ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
   - If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
 
-  ![A button within a container](images/pushbutton_doc_container.png)
+    ![A button within a container](images/pushbutton_doc_container.png)
 
   - In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
-  
-  ![A button on a page](images/pushbutton_doc_page.png)
+
+    ![A button on a page](images/pushbutton_doc_page.png)
 
 
 ## Back buttons
