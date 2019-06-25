@@ -61,7 +61,7 @@ Use a **SplitButton** control when you want the user to be able to initiate an i
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <p>If you have <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">XAML Controls Gallery</a> installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
