@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Composition effects
+# Composition Effects
 
-The [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
+The [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a Composition Visual.
 
-To support [Universal Windows Platform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
+To support [Universal Windows Platform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) consistency for developers describing effects in their applications, Composition Effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
 
-Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
+Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 Composition Effect APIs are focused on SpriteVisuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a Composition Visual type that can fill a 2D rectangle with a Composition Brush. The Visual defines the bounds of the rectangle and the Brush defines the pixels used to paint the rectangle.
 
-Effect brushes are used on composition tree visuals whose content comes from the output of an effect graph. Effects can reference existing surfaces/textures, but not the output of other composition trees.
+Effect Brushes are used on Composition TreeVisuals whose content comes from the output of an Effect Graph. Effects can reference existing surfaces/textures, but not the output of other Composition trees.
 
-Effects can also be applied to XAML UIElements using an effect brush with [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Effects can also be applied to XAML UIElements using an Effect Brush with [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## Effect Features
 
