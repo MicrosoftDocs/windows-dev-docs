@@ -26,7 +26,7 @@ Control | Description
 ------- | -----------
 [Button](/uwp/api/windows.ui.xaml.controls.button) | A button that initiates an immediate action. Can be used with a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event or [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) binding.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | A button that raises a [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event continuously while pressed.
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
@@ -43,7 +43,7 @@ Control | Description
 
 Use a **Button** control to let the user initiate an immediate action, such as submitting a form.
 
-Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) control. For more information about hyperlinks, see [Hyperlinks](hyperlinks.md).
+Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) control. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
 > [!IMPORTANT]
 > For wizard navigation, use buttons labeled *Back* and *Next*. For other types of backwards navigation or navigation to an upper level, use a [back button](../basics/navigation-history-and-backwards-navigation.md).
@@ -118,7 +118,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar also raises the **Click** event.
 
-You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more information, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+You generally can't handle low-level [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more info, see [Events and routed events overview](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 You can change how a button raises the **Click** event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 
@@ -220,7 +220,7 @@ Be sure to specify the [Placement](https://docs.microsoft.com/uwp/api/windows.ui
 
 ### Example - Drop down button
 
-This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a **RichEditBox** control. (For more information and code, see [Rich edit box](rich-edit-box.md)).
+This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 
 ![A drop down button with alignment commands](images/drop-down-button-align.png)
 
@@ -287,7 +287,7 @@ The typical behavior for a split button is:
 
 ### Example - Split button
 
-This example shows how to create a split button that is used to change the foreground color of selected text in a **RichEditBox** control. (For more information and code, see [Rich edit box](rich-edit-box.md)).
+This example shows how to create a split button that is used to change the foreground color of selected text in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 Split button's flyout uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A split button for selecting foreground color](images/split-button-rtb.png)
@@ -400,7 +400,7 @@ Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)
 
 ### Example - Toggle split button
 
-The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more information about this control, and for example code, see [Rich edit box](rich-edit-box.md)).
+The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 The flyout of the toggle split button uses [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
@@ -539,7 +539,7 @@ If your layout requires only one button, it should be either left- or right-alig
 
 ## Back buttons
 
-The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more information, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
+The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## Get the sample code
