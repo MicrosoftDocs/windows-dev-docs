@@ -27,7 +27,7 @@ The built-in timer for Universal Windows Platform (UWP) apps that target the des
 
 > [!NOTE]
 > If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
- 
+
 For example, this trigger will cause a background task to run once an hour.
 
 ```cs
