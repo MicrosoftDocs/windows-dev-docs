@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store.
+description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, Xbox One, HoloLens, and more—and publish them to the Store.
 title: UWP Documentation - UWP app developer | Microsoft Docs
 ms.topic: landing-page
 ms.author: mijacobs
