@@ -24,7 +24,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column:::
 ![hero image](images/figma.png)
 <b>Figma toolkit</b><br>
-v1810, October 2018<br>
+v1905, May 2019<br>
 <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
