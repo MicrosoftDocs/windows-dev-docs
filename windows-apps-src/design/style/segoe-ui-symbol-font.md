@@ -5507,26 +5507,6 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
   <td>F847</td>
   <td>Eject</td>
 </tr>
-<tr><td><img src="images/segoe-mdl/F87B.png" width="32" height="32" alt="Spelling" /></td>
-  <td>F87B</td>
-  <td>Spelling</td>
-</tr>
-<tr><td><img src="images/segoe-mdl/F87C.png" width="32" height="32" alt="SpellingKorean" /></td>
-  <td>F87C</td>
-  <td>SpellingKorean</td>
-</tr>
-<tr><td><img src="images/segoe-mdl/F87D.png" width="32" height="32" alt="SpellingSerbian" /></td>
-  <td>F87D</td>
-  <td>SpellingSerbian</td>
-</tr>
-<tr><td><img src="images/segoe-mdl/F87E.png" width="32" height="32" alt="SpellingChinese" /></td>
-  <td>F87E</td>
-  <td>SpellingChinese</td>
-</tr>
-<tr><td><img src="images/segoe-mdl/F89A.png" width="32" height="32" alt="FolderSelect" /></td>
-  <td>F89A</td>
-  <td>FolderSelect</td>
-</tr>
 
 </table>
 
