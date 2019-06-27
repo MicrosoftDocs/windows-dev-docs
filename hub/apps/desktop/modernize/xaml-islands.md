@@ -14,7 +14,7 @@ ms.custom: RS5, 19H1
 
 Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop applications using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) in your existing WPF, Windows Forms, and C++ Win32 applications.
 
-We provide several ways to use XAML Islands in your WPF, Windows Forms, and C++ Win32 applications, depending on the technology or framework you are using.
+We provide several ways to use XAML Islands in your WPF, Windows Forms, and C++ Win32 applications, depending on the technology or framework you are using. 
 
 > [!NOTE]
 > If you have feedback about XAML Islands, create a new issue in the [Microsoft.Toolkit.Win32 repo](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) and leave your comments there. If you prefer to submit your feedback privately, you can send it to XamlIslandsFeedback@microsoft.com. Your insights and scenarios are critically important to us.
@@ -30,7 +30,7 @@ Starting in Windows 10, version 1903, we provide two ways to use XAML Islands in
 > [!NOTE]
 > C++ Win32 desktop applications must use the UWP XAML hosting API to host UWP controls. The XAML Island controls in the Windows Community Toolkit are not available for C++ Win32 desktop applications.
 
-There are two types of XAML Island controls provided by the Windows Community Toolkit for WPF and Windows Forms applications: *wrapped controls* and *host controls*.
+There are two types of XAML Island controls provided by the Windows Community Toolkit for WPF and Windows Forms applications: *wrapped controls* and *host controls*. 
 
 ### Wrapped controls
 
@@ -62,14 +62,6 @@ Here's a quick look at how these controls are organized architecturally.
 ![Host control Architecture](images/xaml-islands/host-controls.png)
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via Nuget packages in the Windows Community Toolkit.
-
-## Feature roadmap
-
-As of the release of Windows 10, version 1903, the wrapped controls and host controls in the Windows Community Toolkit are still in developer preview until the version 1.0 release of the controls is available.
-
-* Version 1.0 of the controls for the .NET Framework 4.6.2 and later are planned to be released in the [6.0 release of the toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
-* Version 1.0 of the controls for .NET Core 3 are planned for a later release of the toolkit.
-* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview3** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
 
 ## Requirements
 
@@ -107,8 +99,19 @@ If you don't want to package your application in an MSIX package, you can add a 
     </assembly>
     ```
 
+## Feature roadmap
+
+As of the release of Windows 10, version 1903, the wrapped controls and host controls in the Windows Community Toolkit are still in developer preview until the version 1.0 release of the controls is available.
+
+* Version 1.0 of the controls for the .NET Framework 4.6.2 and later are planned to be released in the [6.0 release of the toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
+* Version 1.0 of the controls for .NET Core 3 are planned for a later release of the toolkit.
+* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview3** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
+
+For more details, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
+
 ## Additional resources
 
 For more background information and tutorials about using XAML Islands, see the following articles and resources:
 
-* [XAML Islands Lab](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn). This comprehensive lab provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add UWP controls to an existing WPF line-of-business application. This lab includes the [complete code for the WPF application](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab) as well as [detailed instructions](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md) for each step in the process.
+* [Modernize a WPF app tutorial](modernize-wpf-tutorial.md): This tutorial provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add UWP controls to an existing WPF line-of-business application. This tutorial includes the complete code for the WPF application as well as detailed instructions for each step in the process.
+* [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): This blog post discusses many common questions about XAML Islands and provides a detailed development roadmap.

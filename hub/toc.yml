@@ -43,6 +43,20 @@
                 href: apps/desktop/modernize/desktop-to-uwp-extend.md
               - name: Distribute your packaged app
                 href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: "Tutorial: Modernize a WPF app"
+          items: 
+            - name: Overview
+              href: apps/desktop/modernize/modernize-wpf-tutorial.md
+            - name: "Migrate the Contoso Expenses app to .NET Core 3"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: "Add a UWP InkCanvas control using XAML Islands"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: "Add a UWP CalendarView control using XAML Islands"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: "Add Windows 10 user activities and notifications"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: "Package and deploy with MSIX"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
   - name: Fluent Design System
     href: apps/fluent-design-system.md
   - name: Accessibility

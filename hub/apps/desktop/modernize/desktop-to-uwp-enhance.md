@@ -24,20 +24,46 @@ You'll have to make a few changes to your project to use UWP APIs.
 
 ### Modify a .NET project to use Windows Runtime APIs
 
+There are two options for .NET projects:
+
+* If your app targets Windows 10 version 1803 or later, you can install a NuGet package that provides all the necessary references.
+* Alternatively, you can add the references manually.
+
+#### To use the NuGet option
+
+1. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
+
+    1. In Visual Studio, click **Tools -> NuGet Package Manager -> Package Manager Settings**.
+    2. Make sure **PackageReference** is selected for **Default package management format**.
+
+2. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Manage NuGet Packages**.
+
+3. In the **NuGet Package Manager** window, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
+
+4. After the `Microsoft.Windows.SDK.Contracts` package is found, in the right pane of the **NuGet Package Manager** window select the **Version** of the package you want to install based on the version of Windows 10 you want to target:
+
+    * **10.0.18362.xxxx-preview**: Choose this for Windows 10, version 1903.
+    * **10.0.17763.xxxx-preview**: Choose this for Windows 10, version 1809.
+    * **10.0.17134.xxxx-preview**: Choose this for Windows 10, version 1803.
+
+5. Click **Install**.
+
+#### To add the required references manually
+
 1. Open the **Reference Manager** dialog box, choose the **Browse** button, and then select  **All Files**.
 
     ![add reference dialog box](images/desktop-to-uwp/browse-references.png)
 
 2. Add a reference to these files.
 
-  |File|Location|
-  |--|--|
-  |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-  |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-  |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+    |File|Location|
+    |--|--|
+    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 3. In the **Properties** window, set the **Copy Local** field of each *.winmd* file to **False**.
 
