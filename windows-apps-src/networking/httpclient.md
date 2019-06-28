@@ -52,7 +52,7 @@ The [**Windows.Web.Http.Headers**](https://docs.microsoft.com/uwp/api/Windows.We
 
 ## Send a simple GET request over HTTP
 
-As mentioned earlier in this article, the [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http://www.contoso.com using the [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
+As mentioned earlier in this article, the [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http:\//www.contoso.com using the [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
 
 ```csharp
 //Create an HTTP client object
