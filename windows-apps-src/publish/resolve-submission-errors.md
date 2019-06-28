@@ -24,7 +24,7 @@ If you plan to submit a package that contains both Win32 and UWP binaries, make 
 ## Windows Phone 8.x and earlier
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 You may see **error 2001** when problems with Windows Phone packages are detected during preprocessing. In most cases, you will need to rebuild your app's package to correct the error. Once you've done that, replace the old package with the new one on the [Packages](upload-app-packages.md) page of the submission before you click **Submit to the Store** again.
 
