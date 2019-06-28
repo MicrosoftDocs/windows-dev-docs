@@ -16,7 +16,7 @@ The foundation of a responsive layout is the appropriate use of XAML layout prop
 
 The XAML layout system supports both static and fluid layouts. In a static layout, you give controls explicit pixel sizes and positions. When the user changes the resolution or orientation of their device, the UI doesn't change. Static layouts can become clipped across different form factors and display sizes. On the other hand, fluid layouts shrink, grow, and reflow to respond to the visual space available on a device. 
 
-In practice, you use a combination of static and fluid elements to create your UI. You still use static elements and values in some places, but make sure that the overall UI is responds to different resolutions, screen sizes, and views.
+In practice, you use a combination of static and fluid elements to create your UI. You still use static elements and values in some places, but make sure that the overall UI is responsive to different resolutions, screen sizes, and views.
 
 Here, we discuss how to use XAML properties and layout panels to create a fluid layout.
 
