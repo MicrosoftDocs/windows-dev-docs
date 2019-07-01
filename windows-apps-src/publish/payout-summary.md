@@ -7,62 +7,167 @@ ms.topic: article
 keywords: windows 10, uwp, payout summary, statement, payments, earnings, payouts, payment, proceeds
 ms.localizationpriority: medium
 ---
+
 # Payout summary
 
-The **Payout summary** shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+The **Payout summary** shows you details about the money you’ve earned with Microsoft. It also lets you know when you’ll receive payments and how much you'll be paid.
 
-If you use advertising to earn money, you'll see payment info for advertising proceeds in the **Payout summary**. We’ll show the app in which these proceeds were earned, or “unmapped” for ad units utilized in multiple apps or that otherwise can’t be mapped to a specific app. 
-
-If you sell products in the Azure Marketplace, you’ll also see info on successful payouts in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](https://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](https://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about Azure Marketplace payout reporting can be found [here](https://go.microsoft.com/fwlink/p/?LinkID=722439).
+If you sell products in the Azure Marketplace, you’ll also see info on successful payouts in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](https://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](https://go.microsoft.com/fwlink/p/?LinkID=699560 ).
 
 > [!NOTE]
-> To be eligible for payout, your proceeds must reach the applicable [payment threshold](payment-thresholds-methods-and-timeframes.md). If the proceeds are less than the payment threshold, they will remain in the **Reserved** category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). For advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
->
-> Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
+> To be eligible for payout, your proceeds must reach the [payment threshold](payment-thresholds-methods-and-timeframes.md) of $50. For details about the payment threshold see this page and review the app developer agreement.
 
-To view your **Payout summary**, click the **Payout** icon that appears near the upper right hand corner in Partner Center, then select **Payout summary**.
+## Access the payout summary pages
 
-## Current proceeds and payments
+To open one of the payout summary pages:
 
-Near the top of the page, you’ll find your **Current proceeds and payments**, which contains three sections: **Reserved**, **Upcoming payment**, and **Most recent payment**.
+1. Select the Money icon in the upper-right corner.
+2. Select Payments, Transaction history, or Export data.
 
-- **Reserved** shows the amount of money your account has accumulated but which has not yet been scheduled for payment, including advertising proceeds. (Azure Marketplace proceeds do not appear in the **Reserved** section; if you only participate in the Azure Marketplace, you will see $0.00 here.) Proceeds from your most recent app sales remain in a pending state for about 30 days before they become eligible for payout. After that, the proceeds will be scheduled for payment the following month (assuming the [payment threshold](payment-thresholds-methods-and-timeframes.md) has been met). When a payment is attempted, your reserved balance will decrease by the payment amount and you will see the amount reflected in **Upcoming payment**. Note that the amount shown in **Reserved** is an estimate, because exchange rates for sales in other currencies may fluctuate prior to payment creation. You may notice your reserved balance change slightly at the beginning of every month. Your reserved balance is updated monthly to reflect monthly exchange rates, so that it represents a more accurate estimate. You can click **View details** to see additional information, or click the link to **Download your reserved transactions** to view a .csv file of all your **Reserved** transactions.
-- **Upcoming payment** shows the number of upcoming payments, the amount of your next payment(s), and the payment creation date(s). If your eligible proceeds haven’t met the [payment threshold](payment-thresholds-methods-and-timeframes.md) yet, no upcoming payment will be shown here. Select **View details** to see additional information, including the payment amount(s) and their respective revenue source. When an amount is shown in the **Upcoming payment** section, you'll see a temporary link to **Download transactions**.  If you click the link, you can view a .csv file of all the transactions that make up your upcoming payment(s).  Please note: when the **Upcoming payment** amount moves to **Most recent payment**, the **Download transactions** link will no longer appear.
-- **Most recent payment** shows the amount of the last payment attempted. If the payment was successful, the **View details** link will be blue, and you can click the link to see the details for each payment. Note that if we attempted to make multiple payments and only one of them was successful, only the amount of the successful payment will be shown here. If one or more payments failed, the **View details** link will be red and the number of failed payments will be displayed. You can click **View details** to see more details about the problem so that you can remedy the situation.
+## Payments page
 
-## Proceeds by app and adjustments
+The totals on this page represent all of the programs you participate in. You can filter by Participant ID, Program, Payment ID, and Earning type. Amounts are given in US dollars. The paid value is also displayed in pay to currency.
 
-This section breaks down the summary info to let you see specifics by app. If you earned money through advertising, the total amount of your advertising proceeds is shown here as a single line item.
+| Area                   | Description                                                                                  |
+|------------------------|----------------------------------------------------------------------------------------------|
+| Total paid this year   | The combined total paid out to you this year, in US dollars, for all of your programs.       |
+| Next estimated payment | The single next payment coming to you (even if there are others coming soon), in US dollars. |
+| Last payment           | The amount (in US dollars), program name, and program of your most recent payment.           |
+| Payments by source     | Amount of payments, in US dollars, represented by program over the last 12 months.           |
+| Payments               | Select Paid or Pending and then sort as you like. For additional details of a specific payment select View. To download a copy of the payment remittance statement, select Download. Note that transaction history data may take up to 24 hours to appear, so you may not see associated earnings right away. |
 
-By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for advertising proceeds are not currently shown here.)
+To export any of the data on this page, select Export and then follow directions on the Export data page.
 
-## Payment statements
+## Transaction history page
 
-In this section you can view statements for all successful monthly payments and see the total amount of money you've been paid.
+This page displays all of your individual earnings, including the date, type, and earning for each. You can select a time period to view, and you can also filter by Enrollment ID, Program, Payment ID, Earning type, Lever, and Status. Data is available for the current fiscal year (July 1 – June 30) and the previous two fiscal years.
 
-The **Total paid to date** section shows the total amount you've been paid for all your sales. Click **View details** to see the amounts that came from each revenue source.
+To see more details about an earning, select the down arrow at the right-hand side of the page. This will display the lever, revenue amount, and product. If for some reason any of this data is unavailable, but you need access to it, contact [support](https://developer.microsoft.com/en-us/windows/support)]. If the earning is the result of an adjustment, and not a transaction, the product fields will not be displayed.
 
-Below the **Total paid to date** section, you will see your last three statements by default. To see the full statement (for successful payments), click **View**. You can access your historical payment statements through the drop-down box.
+To export any of the transaction data on this page, select Export and then follow directions on the Export data page. Files exported from the Transaction History page show data in transaction currency, earnings in both transaction currency and US dollars,and the paid value in pay to currency.
 
-At the top of each statement, you’ll see the total amount of your monthly payment. Immediately below, in **Payments issued**, you’ll see a summary of how your payment amount was calculated.
+## Payment status
 
-Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Microsoft Store, Windows Store 8, Windows Phone Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
+| Earning status           | Reason                                                                                                                                      | Partner action required?                                   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| Unprocessed              | The earning is eligible for payment. It stays in this state for a cooling period as defined in the program guide for the Incentive program. | No                                                         |
+| Upcoming                 | Payment order generated pending internal reviews before payment is processed.                                                               | No                                                         |
+| Pending tax invoice      | Your tax invoice is incomplete or invalid.                                                                                                  | You need to update your tax invoice before you can be paid |
+| Rejected during review   | The payment was rejected during review.                                                                                                     | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support) for details                      |
+| Failed                   | The payment failed due to a Microsoft system error.                                                                                         | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support)  for details                      |
+| In progress              | The payment is in progress.                                                                                                                 | No                                                         |
+| Incorrect payment        | The payment recouping is in progress.                                                                                                       | No                                                         |
+| Sent                     | The payment has been sent to your bank.                                                                                                     | No                                                         |
+| Reprocessing             | The payment encountered a Microsoft system error and is being reprocessed.                                                                  | No                                                         |
+| Reversed                 | The payment was reversed by your bank and will be sent again in the next payment cycle.                                                     | No                                                         |
+| Tax invoice rejected     | Your tax invoice was rejected during review. All pending payments will be on hold until the tax invoice review is complete.                 | Contact [Microsoft support](https://developer.microsoft.com/en-us/windows/support)  for details                      |
+| Tax invoice under review | Your tax invoice is being reviewed. Your payment will be released once the tax invoice has been approved.                                   | No                                                         |
+| Rejected                 | The payment was rejected by your bank.                                                                                                      | Contact your bank for details.                             |
 
-Note that the sections mentioned above only show info on your proceeds (and adjustments) from app sales; if you earned money through advertising, you’ll see a separate Microsoft Advertising section with details about the payouts and currency conversions.
+## Export data page
 
-## Adjustments
+Follow the instructions on this page to export the data you want.
 
-| Adjustment category     | Description                                                                                                |
-|-------------------------|------------------------------------------------------------------------------------------------------------|
-| Compensatory adjustment | Any adjustment made to your payout balance that does not pertain to the other adjustment categories listed |
-| Historic balance        | Payout balances from a historic payment system                                                             |
-| Passin tax              | Tax adjustment related to sales in Korea                                                                   |
+Notes:
 
-## Downloading payment transactions
+- When you access this page from either the Payments or Transaction history page, your filters do not carry through. You’ll need to redo them on the Export data page.
+- The Export data page does not refresh on its own. You may need to refresh the page manually to see the most recent data.
+- Your filter may result in a No data available error. This probably means you’ve left the default time period selected at three months, and then selected a Payment ID from an earning that’s outside of that period. Expand your time period and try again.
 
-At the top of each statement, you’ll see a link to **Download transactions**. Click this link to get a .csv file with detailed info about each of the transactions included in your payment.
+## Payment download export
 
-The following table describes the fields that appear in the .csv file. Note that the exact fields you see may vary as we continue to update our reporting.
+This option provides a download of the payments you received in your bank for a given program, the associated tax, and aggregated earning amount. This report is used for many Partner Center programs, so some columns may be inapplicable to your report. Those columns are marked below.
+
+| Column name              | Description                                                                                                                             |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| participantID            | The primary identity of the partner earning under the program                                                                           |
+| participantIDType        | Usually program id for Incentive programs and Seller ID for Store programs                                                              |
+| participantName          | Name of the earning partner                                                                                                             |
+| programName              | Incentive/store program name                                                                                                            |
+| earned                   | Amount earned in the Pay To currency for that program/participantID                                                                     |
+| earnedUSD                | Amount earned for the program/participant ID, in USD                                                                                    |
+| withheldTax              | Amount of tax withheld in the Pay To currency for the program/participantID                                                             |
+| salesTax                 | Total amount of sales tax in the Pay To currency for the program/participantID                                                          |
+| totalPayment             | Total payment in local currency excluding the withholding tax and including the sales tax (if applicable) for the program/participantID |
+| currencyCode             | Pay To currency code                                                                                                                    |
+| paymentMethod            | The method used to pay the partner (electronic bank transfer, credit note)                                                              |
+| paymentID                | Unique identifier for the payment. This number is usually visible in your bank statement.                                               |
+| paymentStatus            | Payment status                                                                                                                          |
+| paymentStatusDescription | Friendly description of payment status                                                                                                  |
+| paymentDate              | Date payment was sent from Microsoft                                                                                                    |
+
+## Transaction history download export
+
+This option provides a download of each earning line item you see in the Transaction history page, earning type, date, associated transaction amount, customer, product, and other transactional details applicable to your programs.
+
+| Column name                    | Description                                                                                                                              |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| earningId                      | Unique identifier for each earning                                                                                                       |
+| participantId                  | The primary identity of the partner earning under the program                                                                            |
+| participantIdType              | Seller ID                                                                                                                                |
+| participantName                | Name of the earning partner                                                                                                              |
+| partnerCountryCode             | Location/country of the earning partner                                                                                                  |
+| programName                    | Incentive/store program name                                                                                                             |
+| transactionId                  | Unique identifier for the transaction                                                                                                    |
+| transactionCurrency            | Currency in which the original customer transaction occurred                                                                             |
+| transactionDate                | Date of the transaction. Useful for programs where many transactions contribute to one earning                                           |
+| transactionExchangeRate        | Exchange rate date used to show the corresponding USD amount                                                                             |
+| transactionAmount              | Transaction amount in the original transaction currency based on which earning is generated                                              |
+| transactionAmountUSD           | Transaction amount in USD                                                                                                                |
+| lever                          | Indicates business rule for the earning                                                                                                  |
+| earningRate                    | Incentive rate applied on transaction amount to generate an earning                                                                      |
+| quantity                       | Varies based on program. Indicates billed quantity for transactional programs                                                            |
+| earningType                    | Indicates if it is fee, rebate, coop, sell etc.                                                                                          |
+| earningAmount                  | Earning Amount in the original transaction currency                                                                                      |
+| earningAmountUSD               | Earning Amount in USD                                                                                                                    |
+| earningDate                    | Date of the earning                                                                                                                      |
+| calculationDate                | Date the earning was calculated in the system                                                                                            |
+| earningExchangeRate            | Exchange rate used to show the corresponding USD amount                                                                                  |
+| exchangeRateDate               | Exchange rate date used to calculate EarningAmount USD                                                                                   |
+| claimId                        | Will always be blank                                                                                                                     |
+| paymentId                      | Unique identifier for the payment. This number is usually visible in your bank statement                                                 |
+| paymentStatus                  | Payment status                                                                                                                           |
+| paymentStatusDescription       | Friendly description of payment status                                                                                                   |
+| customerId                     | Will always be blank                                                                                                                     |
+| customerName                   | Will always be blank                                                                                                                     |
+| partNumber                     | Will always be blank                                                                                                                     |
+| productName                    | Product name linked to transaction                                                                                                       |
+| productId                      | Unique product identifier                                                                                                                |
+| parentProductId                | Unique parent product identifier. Please note: if there isn’t a parent product for the transaction, then Parent Product ID = Product ID. |
+| parentProductName              | Name of the parent product. Please note: if there isn’t a parent product for the transaction, then Parent Product Name = Product Name.   |
+| productType                    | Type of product (such as App, Add-on, Game, etc.)                                                                                        |
+| invoiceNumber                  | Will always be blank                                                                                                                     |
+| subscriptionId                 | Will always be blank                                                                                                                     |
+| subscriptionStartDate          | Will always be blank                                                                                                                     |
+| subscriptionEndDate            | Will always be blank                                                                                                                     |
+| resellerId                     | Will always be blank                                                                                                                     |
+| resellerName                   | Will always be blank                                                                                                                     |
+| distributorId                  | Will always be blank                                                                                                                     |
+| distributorName                | Will always be blank                                                                                                                     |
+| agreementNumber                | Will always be blank                                                                                                                     |
+| agreementStartDate             | Will always be blank                                                                                                                     |
+| agreementEndDate               | Will always be blank                                                                                                                     |
+| workload                       | Will always be blank                                                                                                                     |
+| transactionType                | Type of transaction (such as purchase, refund, reversal, chargeback, etc.)                                                               |
+| localProviderSeller            | Local provider/seller of record                                                                                                          |
+| taxRemitted                    | Amount of tax remitted (sales, use, or VAT/GST taxes).                                                                                   |
+| taxRemitModel                  | Party responsible for remitting taxes (sales, use, or VAT/GST taxes).                                                                    |
+| storeFee                       | The amount retained by Microsoft as a fee for making the app or add-on available in the Store.                                           |
+| transactionPaymentMethod       | Customer payment instrument used for the transaction (such as Card, Mobile Carrier Billing, PayPal, etc.)                                |
+| tpan                           | Indicates the third-party ad network                                                                                                     |
+| purchaseTypeCode               | Will always be blank                                                                                                                     |
+| purchaseOrderType              | Will always be blank                                                                                                                     |
+| purchaseOrderCoverageStartDate | Will always be blank                                                                                                                     |
+| purchaseOrderCoverageEndDate   | Will always be blank                                                                                                                     |
+| externalReferenceId            | Will always be blank                                                                                                                     |
+| externalReferenceIdLabel       | Will always be blank                                                                                                                     |
+
+## Payout Statement download export (legacy)
+
+For a limited time in the old payout summary page, payout statements will be available for download. That report contains the following fields.
+
+> [!NOTE]
+> Legacy transaction history has a column called "Reserved" which corresponds to the "Earnings" column in the modern history, except that it excludes all earnings with status = "Payment Sent".
 
 | Field name              | Description                                                                                                                                                             |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -94,13 +199,3 @@ The following table describes the fields that appear in the .csv file. Note that
 | Tax Remit Model         | Party responsible for remitting taxes (sales, use, or VAT/GST taxes).                                                                                                   |
 | Eligibility Date Time   | The date and time when transaction proceeds become eligible for payout (UTC). When a payout is created, it includes transaction proceeds which have an Eligibility Date Time prior to the payout creation date. (Only included in **Reserved** .csv file.) |
 | Charges                 | Shows a breakdown of all the charge details aggregated in the Transaction Amount column. (Only included for Azure Marketplace; not included in **Reserved** .csv file.) |
-
- 
-
- 
-
- 
-
-
-
-
