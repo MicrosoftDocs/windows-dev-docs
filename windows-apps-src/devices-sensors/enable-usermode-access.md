@@ -262,7 +262,7 @@ If a GPIO signal goes through a level shifter before reaching an exposed header,
 Windows supports two pin numbering schemes:
 
 * Sequential Pin Numbering – Users see numbers like 0, 1, 2... up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on.
-* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, ... .
+* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, ...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
