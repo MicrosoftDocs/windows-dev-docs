@@ -22,6 +22,7 @@ In both cases, the type that implements your C++/WinRT APIs is called the *imple
 > It's important to distinguish the concept of an implementation type from that of a projected type. The projected type is described in [Consume APIs with C++/WinRT](consume-apis.md).
 
 ## If you're *not* authoring a runtime class
+
 The simplest scenario is where you're implementing a Windows Runtime interface for local consumption. You don't need a runtime class; just an ordinary C++ class. For example, you might be writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
@@ -118,6 +119,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## If you're authoring a runtime class in a Windows Runtime Component
+
 If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class.
 
 > [!TIP]
@@ -174,6 +176,7 @@ So, in this scenario, at the root of the inheritance hierarchy is the [**winrt::
 For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## If you're authoring a runtime class to be referenced in your XAML UI
+
 If your type is referenced by your XAML UI, then it needs to be a runtime class, even though it's in the same project as the XAML. Although they are typically activated across executable boundaries, a runtime class can instead be used within the compilation unit that implements it.
 
 In this scenario, you're both authoring *and* consuming the APIs. The procedure for implementing your runtime class is essentially the same as that for a Windows Runtime Component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime Component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). The only detail that differs is that, from the IDL, the C++/WinRT toolchain generates not only an implementation type but also a projected type. It's important to appreciate that saying only "**MyRuntimeClass**" in this scenario may be ambiguous; there are several entities with that name, of different kinds.
@@ -204,6 +207,7 @@ For an example walkthrough of implementing the **INotifyPropertyChanged** interf
 The procedure for consuming your runtime class in this scenario is described in [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 
 ## Runtime class constructors
+
 Here are some points to take away from the listings we've seen above.
 
 - Each constructor you declare in your IDL causes a constructor to be generated on both your implementation type and on your projected type. IDL-declared constructors are used to consume the runtime class from *a different* compilation unit.
@@ -230,6 +234,7 @@ Here are some examples.
 The last two are very useful when you're writing an asynchronous event handler.
 
 ## Instantiating and returning implementation types and interfaces
+
 For this section, let's take as an example an implementation type named **MyType**, which implements the [**IStringable**](/uwp/api/windows.foundation.istringable) and [**IClosable**](/uwp/api/windows.foundation.iclosable) interfaces.
 
 You can derive **MyType** directly from [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) (it's not a runtime class).
@@ -260,7 +265,7 @@ namespace MyProject
 }
 ```
 
-To go from **MyType** to an **IStringable** or **IClosable** object that you can use or return as part of your projection, you can call the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) function template. **make** returns the implementation type's default interface.
+To go from **MyType** to an **IStringable** or **IClosable** object that you can use or return as part of your projection, you should call the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) function template. **make** returns the implementation type's default interface.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -346,6 +351,7 @@ void MyType::MemberFunction(MyProject::MyOtherType const& ot)
 ```
 
 ## Deriving from a type that has a non-default constructor
+
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) is an example of a non-default constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
 
 ```idl
@@ -402,6 +408,47 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 The base class constructor expects a **ToggleButton**. And **MySpecializedToggleButton** *is a* **ToggleButton**.
 
 Until you make the edit described above (to pass that constructor parameter on to the base class), the compiler will flag your constructor and point out that there's no appropriate default constructor available on a type called (in this case) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. That's actually the base class of the bass class of your implementation type.
+
+## Namespaces: projected types, implementation types, and factories
+
+As you've seen previously in this topic, a C++/WinRT runtime class exists in the form of more than one C++ class in more than one namespace. So, the name **MyRuntimeClass** has one meaning in the **winrt::MyProject** namespace, and a different meaning in the **winrt::MyProject::implementation** namespace. Be aware of which namespace you currently have in context, and then use namespace prefixes if you need a name from a different namespace. Let's look more closely at the namespaces in question.
+
+- **winrt::MyProject**. This namespace contains projected types. An object of a projected type is a proxy; it's essentially a smart pointer to a backing object, where that backing object might be implemented here in your project, or it might be implemented in another compilation unit.
+- **winrt::MyProject::implementation**. This namespace contains implementation types. An object of an implementation type is not a pointer; it's a value&mdash;a full C++ stack object. Don't construct an implementation type directly; instead, call [**winrt::make**](/uwp/cpp-ref-for-winrt/make), passing your implementation type as the template parameter. We've shown examples of **winrt::make** in action previously in this topic, and there's another example in [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+- **winrt::MyProject::factory_implementation**. This namespace contains factories. An object in this namespace supports [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
+
+This table shows the minimum namespace qualification you need to use in different contexts.
+
+|The namespace that's in context|To specify the projected type|To specify the projected type|
+|-|-|-|
+|**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
+|**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|
+
+> [!IMPORTANT]
+> When you want to return a projected type from your implementation, be careful not to instantiate the implementation type by writing `MyRuntimeClass myRuntimeClass;`. The correct techniques and code for that scenario are shown previously in this topic in the section [Instantiating and returning implementation types and interfaces](#instantiating-and-returning-implementation-types-and-interfaces).
+>
+> The problem with `MyRuntimeClass myRuntimeClass;` in that scenario is that it creates a **winrt::MyProject::implementation::MyRuntimeClass** object on the stack. That object (of implementation type) behaves like the projected type in some ways&mdash;you can invoke methods on it in the same way; and it even converts to a projected type. But the object destructs, as per normal C++ rules, when the scope exits. So, if you returned a projected type (a smart pointer) to that object, then that pointer is now dangling.
+>
+> This memory corruption type of bug is difficult to diagnose. So, for debug builds, a C++/WinRT assertion helps you catch this mistake, using a stack-detector. But coroutines are allocated on the heap, so you won't get help with this mistake if you make it inside a coroutine.
+
+## Using projected types and implementation types with various C++/WinRT features
+
+Here are various places where a C++/WinRT features expects a type, and what kind of type it expects (projected type, implementation type, or both).
+
+|Feature|Accepts|Notes|
+|-|-|-|
+|`T` (representing a smart pointer)|Projected|See the caution in [Namespaces: projected types, implementation types, and factories](#namespaces-projected-types-implementation-types-and-factories) about using the implementation type by mistake.|
+|`agile_ref<T>`|Both|If you use the implementation type, then the constructor argument must be `com_ptr<T>`.|
+|`com_ptr<T>`|Implementation|Using the projected type generates the error: `'Release' is not a member of 'T'`.|
+|`default_interface<T>`|Both|If you use the implementation type, then the first implemented interface is returned.|
+|`get_self<T>`|Implementation|Using the projected type generates the error: `'_abi_TrustLevel': is not a member of 'T'`.|
+|`guid_of<T>()`|Both|Returns the GUID of the default interface.|
+|`IWinRTTemplateInterface<T>`<br>|Projected|Using the implementation type compiles, but it's a mistake&mdash;see the caution in [Namespaces: projected types, implementation types, and factories](#namespaces-projected-types-implementation-types-and-factories).|
+|`make<T>`|Implementation|Using the projected type generates the error: `'implements_type': is not a member of any direct or indirect base class of 'T'`|
+| `make_agile(T const&amp;)`|Both|If you use the implementation type, then the argument must be `com_ptr<T>`.|
+| `make_self<T>`|Implementation|Using the projected type generates the error: `'Release': is not a member of any direct or indirect base class of 'T'`|
+| `name_of<T>`|Projected|If you use the implementation type, then you get the stringified GUID of the default interface.|
+| `weak_ref<T>`|Both|If you use the implementation type, then the constructor argument must be `com_ptr<T>`.|
 
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
