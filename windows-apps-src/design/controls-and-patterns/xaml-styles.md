@@ -171,26 +171,26 @@ In other cases, changing a single control on one page only to look a certain way
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>
-    <CheckBox Content="Special CheckBox" Margin="5">
-        <CheckBox.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.ThemeDictionaries>
-                    <ResourceDictionary x:Key="Light">
-                        <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxForegroundChecked"
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
-                            Color="White"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
-                            Color="Purple"/>
-                    </ResourceDictionary>
-                </ResourceDictionary.ThemeDictionaries>
-            </ResourceDictionary>
-        </CheckBox.Resources>
-    </CheckBox>
+<CheckBox Content="Special CheckBox" Margin="5">
+    <CheckBox.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                        Color="White"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                        Color="Purple"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </CheckBox.Resources>
+</CheckBox>
 <CheckBox Content="Normal CheckBox" Margin="5"/>
 ```
 
