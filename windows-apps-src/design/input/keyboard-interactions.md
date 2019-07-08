@@ -485,17 +485,21 @@ last item in the previous column.
 
 As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your application's UI.
 
-Some controls, such as context menu, CommandBar overflow menu, and AutoSuggest, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space). For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards. There is no guarantee that the menu opens in the same direction every time.
+Some controls (such as the context menu, CommandBar overflow menu, and AutoSuggest menu) display a menu popup in a location and direction (downwards by default) relative to the primary control and available screen space. Note that the opening direction can be affected by a variety of factors at run time.
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item and the Up arrow key always sets focus to the last item on the menu. Similarly, when the last item has focus and the Down arrow key is pressed, focus moves to the first item on the menu and when the first
-item has focus and the Up arrow key is pressed, focus moves to the last item on the menu. This behavior is referred to as *cycling* and aids users' muscle memory. While cycling is helpful in popup menus because they may open in inconsistent directions, cycling should be avoided in non-popup UIs so that users don't feel caught within an endless loop. 
+For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item while the Up arrow key always sets focus to the last item on the menu. 
 
-You should try to emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Programmatic focus navigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) documentation.
+If the last item has focus and the Down arrow key is pressed, focus moves to the first item on the menu. Similarly, if the first item has focus and the Up arrow key is pressed, focus moves to the last item on the menu. This behavior is referred to as *cycling* and is useful for navigating popup menus that can open in unpredictable directions.
+
+> [!NOTE]
+> Cycling should be avoided in non-popup UIs where users might come to feel trapped in an endless loop. 
+
+We recommend that you emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Programmatic focus navigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) documentation.
 
 ## Test your app
 
