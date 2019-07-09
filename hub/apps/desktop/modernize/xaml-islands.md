@@ -36,7 +36,7 @@ There are two types of XAML Island controls provided by the Windows Community To
 
 WPF and Windows Forms applications can use a selection of wrapped UWP controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). These are called *wrapped controls* because they wrap the interface and functionality of a specific UWP control. You can add these controls directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in your designer.
 
-The following wrapped UWP controls for implementing XAML Islands are currently available for WPF and Windows Forms applications.
+The following wrapped UWP controls for implementing XAML Islands are currently available for WPF (see the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) package) and Windows Forms applications (see the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package).
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
@@ -44,7 +44,7 @@ The following wrapped UWP controls for implementing XAML Islands are currently a
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
 | [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
 
-In addition to the wrapped controls for XAML Islands, the Windows Community Toolkit also provides the following controls for hosting web content.
+In addition to the wrapped controls for XAML Islands, the Windows Community Toolkit also provides the following controls for hosting web content in WPF (see the [Microsoft.Toolkit.Wpf.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView) package) and Windows Forms applications (see the [Microsoft.Toolkit.Forms.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView) package).
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
@@ -54,6 +54,8 @@ In addition to the wrapped controls for XAML Islands, the Windows Community Tool
 ### Host controls
 
 For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls. This control supports Windows 10 Insider Preview SDK build 17709 and later releases.
+
+These controls are available in the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) and [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) packages.
 
 ### Architecture overview
 
