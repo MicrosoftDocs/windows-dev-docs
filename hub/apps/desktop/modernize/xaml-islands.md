@@ -81,10 +81,10 @@ Install the Windows 10, version 1903 SDK (or a later release). Then, package you
 
 #### Option 2: Set the maxVersionTested value in your assembly manifest
 
-If you don't want to package your application in an MSIX package, you can add a [side-by-side assembly manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxVersionTested** value to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
+If you don't want to package your application in an MSIX package, you can add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxVersionTested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
 
-1. If you don't already have an assembly manifest in your project, add a new XML file to your project and name it **app.manifest**. For a WPF or Windows Forms application, make sure you also assign the **Manifest** property to **.app.manifest** in the **Application** page of your [project properties](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
-2. In your assembly manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release). 
+1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**. For a WPF or Windows Forms application, make sure you also assign the **Manifest** property to **.app.manifest** in the **Application** page of your [project properties](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
+2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxVersionTested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -98,6 +98,9 @@ If you don't want to package your application in an MSIX package, you can add a 
         </compatibility>
     </assembly>
     ```
+
+> [!NOTE]
+> When you add an **maxVersionTested** element to an application manifest in a C++ Win32 project (that is, a Windows Desktop Application project in Visual Studio), you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1".`. You can ignore this warning.
 
 ## Feature roadmap
 
