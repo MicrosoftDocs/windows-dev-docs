@@ -3,6 +3,7 @@ description:
 title: Content as objects
 template: detail.hbs
 ms.localizationpriority: medium
+ms.date: 04/18/2019
 ---
 # Content as objects
 
