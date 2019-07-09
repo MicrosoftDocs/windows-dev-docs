@@ -106,7 +106,7 @@ HRESULT DoWork() noexcept
 [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) handles exceptions derived from **std::exception**, and [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) and its derived types. In your implementation, you should prefer **winrt::hresult_error**, or a derived type, so that consumers of your API receive rich error information. **std::exception** (which maps to E_FAIL) is supported in case exceptions arise from your use of the Standard Template Library.
 
 ## Assertions
-For internal assumptions in your application, there are assertions. Prefer **static_assert** for compile-time validation, wherever possible. For run-time conditions, use WINRT_ASSERT with a Boolean expression.
+For internal assumptions in your application, there are assertions. Prefer **static_assert** for compile-time validation, wherever possible. For run-time conditions, use `WINRT_ASSERT` with a Boolean expression. `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 WINRT_ASSERT(pos < size());

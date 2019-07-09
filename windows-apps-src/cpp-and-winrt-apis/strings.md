@@ -132,6 +132,8 @@ An **hstring** is a range, so you can use it with range-based `for`, or with `st
 
 We recognize that many C++ libraries use **std::string**, and work exclusively with UTF-8 text. As a convenience, we provide helpers, such as [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) and [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), for converting back and forth.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
 

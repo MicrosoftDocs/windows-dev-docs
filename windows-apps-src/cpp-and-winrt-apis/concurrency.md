@@ -1,7 +1,7 @@
 ---
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
@@ -224,12 +224,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-In a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller. By the time the coroutine resumes, anything might have happened to the source value that a reference parameter references. From the coroutine's perspective, a reference parameter has uncontrolled lifetime. So, in the example above, we're safe to access *value* up until the `co_await`, but not after it. Nor can we safely pass *value* to **DoOtherWorkAsync** if there's any risk that that function will in turn suspend and then try to use *value* after it resumes. To make parameters safe to use after suspending and resuming, your coroutines should use pass-by-value by default to ensure that they capture by value and avoid lifetime issues. Cases when you can deviate from that guidance because you're certain that it's safe to do so are going to be rare.
+In a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller. By the time the coroutine resumes, anything might have happened to the source value that a reference parameter references. From the coroutine's perspective, a reference parameter has uncontrolled lifetime. So, in the example above, we're safe to access *value* up until the `co_await`, but not after it. In the event that *value* is destructed by the caller, attempting to access it inside the coroutine after that results in a memory corruption. Nor can we safely pass *value* to **DoOtherWorkAsync** if there's any risk that that function will in turn suspend and then try to use *value* after it resumes.
+
+To make parameters safe to use after suspending and resuming, your coroutines should use pass-by-value by default to ensure that they capture by value, and avoid lifetime issues. Cases when you can deviate from that guidance because you're certain that it's safe to do so are going to be rare.
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+Passing by value requires that the argument be inexpensive to move or copy; and that's typically the case for a smart pointer.
 
 It's also arguable that (unless you want to move the value) passing by const value is good practice. It won't have any effect on the source value from which you're making a copy, but it makes the intent clear, and helps if you inadvertently modify the copy.
 
@@ -239,6 +243,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 Also see [Standard arrays and vectors](std-cpp-data-types.md#standard-arrays-and-vectors), which deals with how to pass a standard vector into an asynchronous callee.
+
+If you can't change your coroutine's signature, but you can change the implementation, then you can make a local copy before the first `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+If `Param` is expensive to copy, then extract just the pieces you need before the first `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## Safely accessing the *this* pointer in a class-member coroutine
+
+See [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## Offloading work onto the Windows thread pool
 
@@ -717,6 +753,23 @@ int main()
     // Do other work here.
 }
 ```
+
+**winrt::fire_and_forget** is also useful as the return type of your event handler when you need to perform asynchronous operations in it. Here's an example (also see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+The first argument (the *sender*) is left unnamed, because we never use it. For that reason we're safe to leave it as a reference. But observe that *args* is passed by value. See the [Parameter-passing](#parameter-passing) section above.
 
 ## Important APIs
 * [concurrency::task class](/cpp/parallel/concrt/reference/task-class)

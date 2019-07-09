@@ -110,6 +110,8 @@ Include that header in `App.cpp`.
 
 Also in `App.cpp`, add the following code to instantiate a BankAccount (using the projected type's default constructor), register an event handler, and then cause the account to go into debit.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
