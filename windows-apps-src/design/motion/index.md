@@ -68,21 +68,21 @@ Intelligent motion provides feedback to the user in a manner that's aligned with
 
 :::row:::
     :::column:::
-        ### [Timing and easing](timing-and-easing.md)
-        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.​
+### [Timing and easing](timing-and-easing.md)
+Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.​
     :::column-end:::
     :::column:::
-        ### [Directionality and gravity](directionality-and-gravity.md)
-        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.​
+### [Directionality and gravity](directionality-and-gravity.md)
+Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.​
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        ### [Page transitions](page-transitions.md)
-        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+### [Page transitions](page-transitions.md)
+Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
     :::column-end:::
     :::column:::
-        ### [Connected animation](connected-animation.md)
-        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.​
+### [Connected animation](connected-animation.md)
+Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.​
     :::column-end:::
 :::row-end:::

@@ -91,7 +91,7 @@ Helper functions, custom controls, and app services.<br />
 
 :::row:::
     :::column:::
-        <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+<a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
       **Tile and icon generator for Adobe Photoshop**
