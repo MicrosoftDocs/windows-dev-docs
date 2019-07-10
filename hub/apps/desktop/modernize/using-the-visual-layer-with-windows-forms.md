@@ -125,6 +125,7 @@ This is where you do most of the configuration for hosting Composition APIs. In 
         // Build Composition tree of content.
         InitComposition(hwndHost);
     }
+    ```
 
 1. Initialize a thread with a [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher). The core dispatcher is responsible for processing window messages and dispatching events for WinRT APIs. New instances of **Compositor** must be created on a thread that has a CoreDispatcher.
     - Create a method named _InitializeCoreDispatcher_ and add code to set up the dispatcher queue.
