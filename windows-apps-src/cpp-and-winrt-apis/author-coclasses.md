@@ -9,7 +9,55 @@ ms.custom: RS5
 ---
 # Author COM components with C++/WinRT
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. Here's a simple illustration, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. This topic shows you how.
+
+## How C++/WinRT behaves, by default, with respect to COM interfaces
+
+C++/WinRT's [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template is the base from which your runtime classes and activation factories directly or indirectly derive.
+
+By default, **winrt::implements** supports only [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces, and it silently ignores classic COM interfaces. Any **QueryInterface** (QI) calls for classic COM interfaces will consequently fail with **E_NOINTERFACE**.
+
+In a moment you'll see how to overcome that situation, but first here's a code example to illustrate what happens by default.
+
+```idl
+// Sample.idl
+runtimeclass Sample
+{
+    Sample();
+    void DoWork();
+}
+
+// Sample.h
+#include "pch.h"
+#include <shobjidl.h> // Needed only for this file.
+
+namespace winrt::MyProject
+{
+    struct Sample : implements<Sample, IInitializeWithWindow>
+    {
+        IFACEMETHOD(Initialize)(HWND hwnd);
+        void DoWork();
+    }
+}
+```
+
+And here's client code to consume the **Sample** class.
+
+```cppwinrt
+// Client.cpp
+Sample sample; // Construct a Sample object via its projection.
+
+// This next line crashes, because the QI for IInitializeWithWindow fails.
+sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
+```
+
+The good news is that all it takes to cause **winrt::implements** to support classic COM interfaces is to include `unknwn.h` before you include any C++/WinRT headers.
+
+You could do that explicitly, or indirectly by including some other header file such as `ole2.h`. One recommended method is to include the `wil\cppwinrt.h` header file, which is part of the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil). The `wil\cppwinrt.h` header file not only makes sure that `unknwn.h` is included before `winrt/base.h`, it also sets things up so that C++/WinRT and WIL understand each other's exceptions and error codes.
+
+## A basic example
+
+Here's a simple example, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h

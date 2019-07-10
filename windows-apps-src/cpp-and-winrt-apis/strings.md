@@ -168,6 +168,22 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 }
 ```
 
+## The correct way to set a property
+
+You set a property by passing a value to a setter function. Here's an example.
+
+```cppwinrt
+// The right way to set the Text property.
+myTextBlock.Text(L"Hello!");
+```
+
+The code below is incorrect. It compiles, but all it does is to modify the temporary **winrt::hstring** returned by the **Text()** accessor function, and then to throw the result away.
+
+```cppwinrt
+// *Not* the right way to set the Text property.
+myTextBlock.Text() = L"Hello!";
+```
+
 ## Important APIs
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::to_hstring function](/uwp/cpp-ref-for-winrt/to-hstring)

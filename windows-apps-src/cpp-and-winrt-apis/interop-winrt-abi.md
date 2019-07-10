@@ -240,6 +240,22 @@ int main()
 }
 ```
 
+## Interoperating with the ABI's GUID struct
+
+**GUID** is projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
+
+If you don't do that, then you can hard-`reinterpret_cast` between them. For the table that follows, assume these declarations.
+
+```cppwinrt
+winrt::guid winrtguid;
+GUID abiguid;
+```
+
+| Conversion | With `#include <unknwn.h>` | Without `#include <unknwn.h>` |
+|-|-|-|
+| From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
 ## Important APIs
 * [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
 * [QueryInterface function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

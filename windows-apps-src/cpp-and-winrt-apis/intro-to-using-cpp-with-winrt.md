@@ -57,6 +57,8 @@ As of version 2.0, the **Microsoft.Windows.CppWinRT** NuGet package includes the
 
 With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
 
+For a list of customization options for the `cppwinrt.exe` tool, set via project properties, see [https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing].
+
 You can identify a project that uses the C++/WinRT MSBuild support by the presence of the **Microsoft.Windows.CppWinRT** NuGet package installed within the project.
 
 Here are the Visual Studio project templates provided by the VSIX extension.

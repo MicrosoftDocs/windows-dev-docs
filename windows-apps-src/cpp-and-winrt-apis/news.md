@@ -139,13 +139,13 @@ Due to the xlang metadata reader, C++/WinRT now generates all parameterized, or 
 
 #### Component optimizations
 
-This update adds support for several additional opt-in optimizations for C++/WinRT, described in the sections below. Because these optimizations are breaking changes (which you may need to make minor changes to support), you'll need to turn them on explicitly using the `cppwinrt.exe` tool's `-opt` flag.
+This update adds support for several additional opt-in optimizations for C++/WinRT, described in the sections below. Because these optimizations are breaking changes (which you may need to make minor changes to support), you'll need to turn them on explicitly. In Visual Studio, set project property **Common Properties** > **C++/WinRT** > **Optimized** to *Yes*. That has the effect of adding `<CppWinRTOptimized>true</CppWinRTOptimized>` to your project file. And it has the same effect as adding the `-opt[imize]` switch when invoking `cppwinrt.exe` from the command line.
 
 A new project (from a project template) will use `-opt` by default.
 
 ##### Uniform construction, and direct implementation access
 
-These two optimizations allow your component direct access to its own implementation types, even when it's only using the projected types. There's no need to use [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self), nor [**get_self**](/uwp/cpp-ref-for-winrt/get-self) if you simply want to use the public API surface. Your calls will compile down to direct calls into the implementation, and those might even be entirely inlined.
+These two optimizations allow your component direct access to its own implementation types, even when it's only using the projected types. There's no need to use [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self), nor [**get_self**](/uwp/cpp-ref-for-winrt/get-self) if you simply want to use the public API surface. Your calls will compile down to direct calls into the implementation, and those might even be entirely inlined. For more info about uniform construction, see the FAQ [Why am I getting a "class not registered" exception?](faq.md#why-am-i-getting-a-class-not-registered-exception).
 
 ##### Type-erased factories
 
@@ -193,9 +193,13 @@ This update also adds support for [**get_strong**](/uwp/cpp-ref-for-winrt/implem
 
 #### Support for deferred destruction and safe QI during destruction
 
-A XAML application can get itself into difficulty due to its need to perform a [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI) in a destructor, in order to call some cleanup implementation up or down the hierarchy. But, that call involves a QI after the object's reference count has already reached zero. This update adds support for debouncing the reference count, ensuring that once it reaches zero it can never be resurrected; while still allowing QI for any temporary that's required during destruction. This procedure is unavoidable in certain XAML applications/controls, and C++/WinRT is now resilient to it.
+It's not uncommon in the destructor of a runtime class object to call a method that temporarily bumps the reference count. When the reference count returns to zero, the object destructs a second time. In a XAML application, you might need to perform a [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI) in a destructor, in order to call some cleanup implementation up or down the hierarchy. But the object's reference count has already reached zero, so that QI constitutes a reference count bounce, too.
 
-Destruction can be deferred by providing a static **final_release** function, and moving ownership of the **unique_ptr** to some other context.
+This update adds support for debouncing the reference count, ensuring that once it reaches zero it can never be resurrected; while still allowing you to QI for any temporary that you require during destruction. This procedure is unavoidable in certain XAML applications/controls, and C++/WinRT is now resilient to it.
+
+You can defer destruction by providing a static **final_release** function on your implementation type. The last remaining pointer to the object, in the form of a **std::unique_ptr**, is passed to your **final_release**. You can then opt to move ownership of that pointer to some other context. It's safe for you to QI the pointer without triggering a double-destruction. But the net change to the reference count must be zero at the point you destruct the object.
+
+The return value of **final_release** can be `void`, an asynchronous operation object such as [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction), or **winrt::fire_and_forget**.
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
@@ -210,14 +214,16 @@ struct Sample : implements<Sample, IStringable>
         // Called when the unique_ptr below is reset.
     }
 
-    static void final_release(std::unique_ptr<Sample> ptr) noexcept
+    static void final_release(std::unique_ptr<Sample> self) noexcept
     {
-        // Move 'ptr' as needed to delay destruction.
+        // Move 'self' as needed to delay destruction.
     }
 };
 ```
 
-In the example below, once the **MainPage** is released (for the final time), **final_release** is called. That function spends five seconds waiting (on the thread pool), and then it resumes using the page's **Dispatcher** (which requires QI/AddRef/Release to work). It then clears the **unique_ptr**, which causes the **MainPage** destructor to actually get called. Even here, **DataContext** is called, which requires a QI for **IFrameworkElement**. Obviously, you don't have to implement your **final_release** as a coroutine. But that does work, and it makes it very simple to move destruction to a different thread.
+In the example below, once the **MainPage** is released (for the final time), **final_release** is called. That function spends five seconds waiting (on the thread pool), and then it resumes using the page's **Dispatcher** (which requires QI/AddRef/Release to work). It then cleans up a resource on that UI thread. And finally it clears the **unique_ptr**, which causes the **MainPage** destructor to actually get called. Even in that destructor, **DataContext** is called, which requires a QI for **IFrameworkElement**.
+
+You don't have to implement your **final_release** as a coroutine. But that does work, and it makes it very simple to move destruction to a different thread, which is what's happening in this example.
 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
@@ -231,13 +237,17 @@ struct MainPage : PageT<MainPage>
         DataContext(nullptr);
     }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> ptr)
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
     {
         co_await 5s;
 
-        co_await resume_foreground(ptr->Dispatcher());
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        ptr = nullptr;
+        // The object is destructed normally at the end of final_release,
+        // when the std::unique_ptr<MyClass> destructs. If you want to destruct
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
     }
 };
 ```
@@ -277,7 +287,7 @@ Other changes.
 - **Breaking change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) now returns `void*` instead of `HSTRING`. You can use `static_cast<HSTRING>(get_abi(my_hstring));` to get an HSTRING.
 - **Breaking change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) now returns `void**` instead of `HSTRING*`. You can use `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` to get an HSTRING*.
 - **Breaking change**. HRESULT is now projected as **winrt::hresult**. If you need an HRESULT (to do type checking, or to support type traits), then you can `static_cast` a **winrt::hresult**. Otherwise, **winrt::hresult** converts to HRESULT, as long as you include `unknwn.h` before you include any C++/WinRT headers.
-- **Breaking change**. GUID is now projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, **winrt::guid** converts to GUID, as long as you include `unknwn.h` before you include any C++/WinRT headers.
+- **Breaking change**. GUID is now projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, **winrt::guid** converts to GUID, as long as you include `unknwn.h` before you include any C++/WinRT headers. See [Interoperating with the ABI's GUID struct](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct).
 - **Breaking change**. The [**winrt::handle_type constructor**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) instead.
 - **Breaking change**. The signatures of **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** have changed. You mustn't declare these functions at all. Instead, include `winrt/base.h` (which is automatically included if you include any C++/WinRT Windows namespace header files) to include the declarations of these functions.
 - For the [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
