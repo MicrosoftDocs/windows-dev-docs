@@ -22,7 +22,7 @@ Win32 APIs often support both -A and -W variants.
 
 Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
-## App manifest
+## Set a process code page to UTF-8
 
 You can force a process to use UTF-8 as the process code page through the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps using the ActiveCodePage property.
 
