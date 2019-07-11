@@ -136,6 +136,8 @@ Here are other similarly low-level conversions techniques but using raw pointers
 
 For the lowest-level conversions, which only copy addresses, you can use the [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi), and [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi) helper functions.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
     // The code in main() already shown above remains here.
 
@@ -237,6 +239,22 @@ int main()
     WINRT_ASSERT(uri == uri_from_abi);
 }
 ```
+
+## Interoperating with the ABI's GUID struct
+
+**GUID** is projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
+
+If you don't do that, then you can hard-`reinterpret_cast` between them. For the table that follows, assume these declarations.
+
+```cppwinrt
+winrt::guid winrtguid;
+GUID abiguid;
+```
+
+| Conversion | With `#include <unknwn.h>` | Without `#include <unknwn.h>` |
+|-|-|-|
+| From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
 
 ## Important APIs
 * [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)

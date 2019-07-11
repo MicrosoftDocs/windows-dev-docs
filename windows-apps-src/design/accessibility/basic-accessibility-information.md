@@ -91,7 +91,7 @@ XAML
 <span id="LABELS"/>
 
 ## Labels and LabeledBy  
-The preferred way to associate a label with a form element is to use a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, when the user clicks the label, the focus moves to the associated control and assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
+The preferred way to associate a label with a form element is to use a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, when the user clicks the label, the focus moves to the associated control and assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
 
 XAML
 ```xml

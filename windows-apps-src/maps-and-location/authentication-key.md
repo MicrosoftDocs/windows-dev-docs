@@ -42,7 +42,7 @@ To create a new key
     -   **Application name:** The name of your application.
     -   **Application URL (optional):** The URL of your application.
     -   **Key type:** Select **Basic** or **Enterprise**.
-    -   **Application type:** Select **Universal Windows App** for use in your Universal Windows app.
+    -   **Application type:** Select **Windows Application** for use in your Universal Windows app.
 
     This is an example of what the form looks like.
 

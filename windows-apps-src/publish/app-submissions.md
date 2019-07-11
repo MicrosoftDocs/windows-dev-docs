@@ -25,7 +25,7 @@ After your app is published, you can publish an updated version by creating anot
 > This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## App submission checklist
 
@@ -92,10 +92,8 @@ You'll need all the required info for at least one of the languages that your ap
 | **Screenshots**               | Required (at least one screenshot; four or more recommended)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store logos**               | Recommended; required for some OS versions | [Store logos](app-screenshots-and-images.md#store-logos)             |
 | **Trailers**                  | Optional                                    | [Trailers](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 and Xbox image (16:9 Super hero art)**     | Recommended        | [Windows 10 and Xbox image (16:9 Super hero art)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox images**     | Required for proper display if you publish to Xbox        | [Xbox images
-](app-screenshots-and-images.md#xbox-images) |
+| **Windows 10 and Xbox image (16:9 Super hero art)**     | Recommended        | [Windows 10 and Xbox image (16:9 Super hero art)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox images**     | Required for proper display if you publish to Xbox        | [Xbox images](app-screenshots-and-images.md#xbox-images) |
 | **Supplemental fields**  | Optional                                    | [Supplemental fields](create-app-store-listings.md#supplemental-fields) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |

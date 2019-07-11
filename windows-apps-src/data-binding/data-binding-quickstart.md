@@ -17,7 +17,7 @@ This topic shows you how to bind a control (or other UI element) to a single ite
 
 ## Prerequisites
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Get started with Windows apps](https://developer.microsoft.com/windows/getstarted).
+This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Get started with Windows apps](https://docs.microsoft.com/windows/uwp/get-started/).
 
 ## Create the project
 

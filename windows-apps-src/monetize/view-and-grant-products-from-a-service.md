@@ -101,7 +101,7 @@ Depending on which methods you want to call in the Microsoft Store collection AP
 
 ### Create the tokens
 
-To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
+To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
 ``` syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -116,7 +116,7 @@ grant_type=client_credentials
 
 For each token, specify the following parameter data:
 
-* For the *client\_id* and *client\_secret* parameters, specify the application ID and the client secret for your application that you retrieved from the [Azure Management Portal](https://manage.windowsazure.com). Both of these parameters are required in order to create an access token with the level of authentication required by the Microsoft Store collection API or purchase API.
+* For the *client\_id* and *client\_secret* parameters, specify the application ID and the client secret for your application that you retrieved from the [Azure Management Portal](https://portal.azure.com/). Both of these parameters are required in order to create an access token with the level of authentication required by the Microsoft Store collection API or purchase API.
 
 * For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.
 

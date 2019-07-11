@@ -197,4 +197,4 @@ For more info about how to use input scopes, see [Use input scope to change the 
 - [Guidelines for text input](text-controls.md)
 - [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

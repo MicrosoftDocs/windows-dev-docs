@@ -131,7 +131,7 @@ In this example, a print window is displayed in the event handler for a button c
 
 ## Format your app's content
 
-When **ShowPrintUIAsync** is called, the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event is raised. The **PrintTaskRequested** event handler shown in this step creates a [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask) by calling the [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) method and passes the title for the print page and the name of a [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source) delegate. Notice that in this example, the **PrintTaskSourceRequestedHandler** is defined inline. The **PrintTaskSourceRequestedHandler** provides the formatted content for printing and is described later.
+When **ShowPrintUIAsync** is called, the [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) event is raised. The **PrintTaskRequested** event handler shown in this step creates a [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask) by calling the [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) method and passes the title for the print page and the name of a [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source) delegate. Notice that in this example, the **PrintTaskSourceRequestedHandler** is defined inline. The **PrintTaskSourceRequestedHandler** provides the formatted content for printing and is described later.
 
 In this example, a completion handler is also defined to catch errors. It's a good idea to handle completion events because then your app can let the user know if an error occurred and provide possible solutions. Likewise, your app could use the completion event to indicate subsequent steps for the user to take after the print job is successful.
 
@@ -252,7 +252,7 @@ This step creates a new print option, defines a list of values that the option s
 | **Print Selection**  | Print only the content the user selected.|
 | **Print Range**      | Display an edit control into which the user can enter the pages to print.|
 
-First, modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to add the code to get a [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) object.
+First, modify the [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) event handler to add the code to get a [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails) object.
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);

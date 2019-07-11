@@ -23,7 +23,7 @@ For more info about game programming on Windows, check out the following resourc
 ## Game design guidance
 
 
--   [Index of UX guidelines for UWP apps](https://developer.microsoft.com/windows/design)
+-   [Index of UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design)
 
 ## Blogs
 

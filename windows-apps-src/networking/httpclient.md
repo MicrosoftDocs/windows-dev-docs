@@ -2,7 +2,7 @@
 description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 6/5/2019
+ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -52,7 +52,7 @@ The [**Windows.Web.Http.Headers**](https://docs.microsoft.com/uwp/api/Windows.We
 
 ## Send a simple GET request over HTTP
 
-As mentioned earlier in this article, the [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http://www.contoso.com using the [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
+As mentioned earlier in this article, the [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http:\//www.contoso.com using the [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
 
 ```csharp
 //Create an HTTP client object

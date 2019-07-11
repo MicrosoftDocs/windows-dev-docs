@@ -18,8 +18,7 @@ Whenever the reader recognizes a swiped card, it will raise one of three events:
 * [BankCardDataReceived Event](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Occurs when a bank card is swiped.
 * [VendorSpecificDataReceived Event](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): Occurs when a vendor-specific card is swiped.
 
-Your application only needs to subscribe to the events that are supported by the magnetic stripe reader. You can see what types of cards are supported with [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
-).
+Your application only needs to subscribe to the events that are supported by the magnetic stripe reader. You can see what types of cards are supported with [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes).
 
 The following code demonstrates subscribing to the three ***DataReceived** events:
 

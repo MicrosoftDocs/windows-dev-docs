@@ -492,4 +492,4 @@ The results of this XAML look like this.
 
 ## Additional Resources
 
-* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
+* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples).

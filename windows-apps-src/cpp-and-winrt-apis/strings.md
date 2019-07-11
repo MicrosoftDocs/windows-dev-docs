@@ -132,6 +132,8 @@ An **hstring** is a range, so you can use it with range-based `for`, or with `st
 
 We recognize that many C++ libraries use **std::string**, and work exclusively with UTF-8 text. As a convenience, we provide helpers, such as [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) and [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), for converting back and forth.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
 
@@ -164,6 +166,22 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
     wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
     ::OutputDebugString(wstringstream.str().c_str());
 }
+```
+
+## The correct way to set a property
+
+You set a property by passing a value to a setter function. Here's an example.
+
+```cppwinrt
+// The right way to set the Text property.
+myTextBlock.Text(L"Hello!");
+```
+
+The code below is incorrect. It compiles, but all it does is to modify the temporary **winrt::hstring** returned by the **Text()** accessor function, and then to throw the result away.
+
+```cppwinrt
+// *Not* the right way to set the Text property.
+myTextBlock.Text() = L"Hello!";
 ```
 
 ## Important APIs

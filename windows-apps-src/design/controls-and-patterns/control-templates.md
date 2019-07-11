@@ -196,5 +196,5 @@ For some of the attributes in the XAML examples, you may have noticed resource r
 
 ## Get the sample code
 
-* [XAML Controls gallery sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
-* [Custom text edit control sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
+* [XAML Controls gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+* [Custom text edit control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)

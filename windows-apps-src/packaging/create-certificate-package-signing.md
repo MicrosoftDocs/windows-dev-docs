@@ -51,7 +51,7 @@ Use the **New-SelfSignedCertificate** PowerShell cmdlet to create a self signed 
 Based on the AppxManifest.xml file from the previous example, you should use the following syntax to create a certificate. In an elevated PowerShell prompt:
 
 ```powershell
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
 
 Note the following details about some of the parameters:
@@ -69,7 +69,7 @@ After running this command, the certificate will be added to the local certifica
 You can view your certificate in a PowerShell window by using the following commands:
 
 ```powershell
-Set-Location Cert:\LocalMachine\My
+Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
 
@@ -85,13 +85,13 @@ When using **Export-PfxCertificate**, you must either create and use a password 
 
 ```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
-Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
+Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
 ### ProtectTo usage
 
 ```powershell
-Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
+Export-PfxCertificate -cert Cert:\CurrentUser\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 After you create and export your certificate, you're ready to sign your app package with **SignTool**. For the next step in the manual packaging process, see [Sign an app package using SignTool](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).

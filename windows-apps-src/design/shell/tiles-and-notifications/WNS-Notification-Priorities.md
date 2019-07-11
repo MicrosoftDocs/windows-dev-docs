@@ -35,7 +35,7 @@ Note that many apps will have notifications of different priority throughout the
 
 ## Setting the priority
 
-Setting the priority on the notification request is done through an additional header on the POST request, `X-WNS-PRIORITY`. This is an integer value between 0 and 3 which maps to a priority: 
+Setting the priority on the notification request is done through an additional header on the POST request, `X-WNS-PRIORITY`. This is an integer value between 1 and 4 which maps to a priority: 
 
 | Priority Name | X-WNS-PRIORITY Value | Default for: |
 |---------------|----------------------|------------------|

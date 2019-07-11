@@ -162,4 +162,4 @@ See Typography and Guidelines for fonts.
 
 
 **For developers (other)**
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length property](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

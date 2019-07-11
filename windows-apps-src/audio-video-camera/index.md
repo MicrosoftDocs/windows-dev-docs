@@ -34,7 +34,7 @@ This section provides information about creating Universal Windows Platform (UWP
 | [Screen capture](screen-capture.md) | Describes how to use the [Windows.Graphics.Capture namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture) to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences. |
 
 ## See also
-- [Develop UWP apps](https://developer.microsoft.com/windows/develop)
+- [Develop UWP apps](https://docs.microsoft.com/windows/uwp/develop/)
 
  
 

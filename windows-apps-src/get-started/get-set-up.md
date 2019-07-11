@@ -28,7 +28,7 @@ When you install Visual Studio, make sure to select the Universal Windows App De
 
 ![Visual Studio tools for UWP](images/vs-2017-community-setup.png)
 
-Need some help with Visual Studio? See [Get Started with Visual Studio](https://www.visualstudio.com/vs/getting-started).
+Need some help with Visual Studio? See [Get Started with Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/).
 
 If you have already started using Visual Studio, but discover you are missing some components, you can launch the installer again from the *New project* dialog:
 

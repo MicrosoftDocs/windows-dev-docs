@@ -9,15 +9,14 @@ ms.localizationpriority: medium
 ---
 # Create app Store listings
 
-
 The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
 Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once. 
+> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
 
-If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](create-platform-specific-store-listings.md) to show to those customers. 
+If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](create-platform-specific-store-listings.md) to show to those customers.
 
 ## Store listing languages
 
@@ -30,7 +29,7 @@ To add or remove languages for your Store listings, click **Add/remove languages
 
 In the **Additional Store listing languages** section, you can click **Manage additional languages** to add or remove languages that are *not* included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional Store listing languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
 
-When you have finished making your selections, click **Save** to return to the submission overview page. 
+When you have finished making your selections, click **Save** to return to the submission overview page.
 
 ## Add and edit Store listing info
 
@@ -74,16 +73,14 @@ One screenshot is required in order to submit your app. We recommend providing a
 
 For more info, see [App screenshots and images](app-screenshots-and-images.md#screenshots).
 
-
-## Store logos 
+## Store logos
 
 Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
 
 > [!IMPORTANT]
-> If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store. 
+> If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store.
 
 For more info, see [Store logos](app-screenshots-and-images.md#store-logos).
-
 
 ## Trailers and additional assets
 
@@ -103,20 +100,17 @@ A shorter version of your product’s name. If provided, this shorter name may a
 
 This field has a 50 character limit.
 
-
 ### Sort title
 
-If your product could be alphabetized or spelled in different ways, you can enter another version here. This allows customers to find your product more quickly if they type that version in while searching. 
+If your product could be alphabetized or spelled in different ways, you can enter another version here. This allows customers to find your product more quickly if they type that version in while searching.
 
 This field has a 255 character limit.
-
 
 ### Voice title
 
 An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.
 
 This field has a 255 character limit.
-
 
 ### Short description
 
@@ -126,16 +120,14 @@ For games, the short description may also appear in the Information section of t
 
 For best results, keep your short description under 270 characters. The field has a 1000 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
 
-
 ### Additional system requirements
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page. 
+If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page.
 
 You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**. These are displayed to the customer as a bulleted list in your Store listing. Keep these brief, with just a few words (and no more than 200 characters) per item.
 
 > [!NOTE]
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
-
 
 <span id="shared-fields" />
 
@@ -153,7 +145,6 @@ When adding search terms, think about the words that customers might use when se
 
 If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
 
-
 ### Additional license terms
 
 Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)).
@@ -164,16 +155,13 @@ If you enter a single URL into this field, it will be displayed to customers as 
 
 You can also enter up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
 
-
 ### Developed by
 
 Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
 
 This field has a 255 character limit.
  
-
 <span id="privacy-policy" />
 
 > [!NOTE]
 > The **Privacy policy**, **Website**, and **Support contact info** fields are now located on the [Properties](enter-app-properties.md) page.
-

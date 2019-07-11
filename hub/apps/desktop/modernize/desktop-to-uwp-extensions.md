@@ -283,8 +283,8 @@ You can make sure that users open your new packaged application by default for s
 
 #### XML namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+* http:\//schemas.microsoft.com/appx/manifest/uap/windows10
+* http:\//schemas.microsoft.com/appx/manifest/uap/windows10/3"
 
 #### Elements and attributes of this extension
 

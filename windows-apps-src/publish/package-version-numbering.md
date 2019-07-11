@@ -58,7 +58,7 @@ To fix the issue for the customers who have already received the problematic pac
 ## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
 

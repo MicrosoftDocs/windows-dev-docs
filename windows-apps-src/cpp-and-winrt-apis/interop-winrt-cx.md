@@ -49,6 +49,8 @@ This example project also illustrates how you can use namespace aliases for the 
 - In project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**. This turns on project support for C++/CX.
 - Replace the contents of `App.cpp` with the code listing below.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 // App.cpp
 #include "pch.h"

@@ -14,6 +14,8 @@ The Windows Runtime is a reference-counted system; and in such a system it's imp
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
+For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+
 The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
@@ -54,16 +56,18 @@ int main()
 
 **MyClass::RetrieveValueAsync** spends some time working, and eventually it returns a copy of the `MyClass::m_value` data member. Calling **RetrieveValueAsync** causes an asynchronous object to be created, and that object has an implicit *this* pointer (through which, eventually, `m_value` is accessed).
 
+Remember that, in a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller. In **RetrieveValueAsync**, the first `co_await` is the first suspension point. By the time the coroutine resumes (around five seconds later, in this case), anything might have happened to the implicit *this* pointer through which we access `m_value`.
+
 Here's the full sequence of events.
 
 1. In **main**, an instance of **MyClass** is created (`myclass_instance`).
 2. The `async` object is created, pointing (via its *this*) to `myclass_instance`.
-3. The **winrt::Windows::Foundation::IAsyncAction::get** function blocks for a few seconds, and then returns the result of **RetrieveValueAsync**.
+3. The **winrt::Windows::Foundation::IAsyncAction::get** function hits its first suspension point, blocks for a few seconds, and then returns the result of **RetrieveValueAsync**.
 4. **RetrieveValueAsync** returns the value of `this->m_value`.
 
-Step 4 is safe as long as *this* is valid.
+Step 4 is safe only as long as *this* remains valid.
 
-But, what if the class instance is destroyed before the async operation completes? There are all kinds of ways the class instance could go out of scope before the asynchronous method has completed. But, we can simulate it by setting the class instance to `nullptr`.
+But what if the class instance is destroyed before the async operation completes? There are all kinds of ways the class instance could go out of scope before the asynchronous method has completed. But we can simulate it by setting the class instance to `nullptr`.
 
 ```cppwinrt
 int main()

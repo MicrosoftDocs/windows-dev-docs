@@ -20,19 +20,16 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 
 :::row:::
     :::column:::
-        **Implicit animation**
-
-        Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.​
+**Implicit animation**
+Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
     :::column-end:::
     :::column:::
-        **Built-in animation**
-
-        System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
+**Built-in animation**
+System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
     :::column-end:::
     :::column:::
-        **Custom animation following guidance recommendations**
-
-        There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
+**Custom animation following guidance recommendations**
+There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
     :::column-end:::
 :::row-end:::
 
@@ -42,18 +39,16 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 
 :::row:::
     :::column:::
-        <b>Direction Forward Out:</b><br>
-        Fade out: 150m; Easing: Default Accelerate
-
-        <b>Direction Forward In:</b><br>
-        Slide up 150px: 300ms; Easing: Default Decelerate
+<b>Direction Forward Out:</b><br>
+Fade out: 150m; Easing: Default Accelerate
+<b>Direction Forward In:</b><br>
+Slide up 150px: 300ms; Easing: Default Decelerate
     :::column-end:::
     :::column:::
-         <b>Direction Backward Out:</b><br>
-        Slide down 150px: 150ms; Easing: Default Accelerate
-
-        <b>Direction Backward In:</b><br>
-        Fade in: 300ms; Easing: Default Decelerate
+<b>Direction Backward Out:</b><br>
+Slide down 150px: 150ms; Easing: Default Accelerate
+<b>Direction Backward In:</b><br>
+Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
 :::row-end:::
 
@@ -63,12 +58,12 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 
 :::row:::
     :::column:::
-        <b>Direction Expand:</b><br>
-        Grow: 300ms; Easing: Standard
+<b>Direction Expand:</b><br>
+Grow: 300ms; Easing: Standard
     :::column-end:::
     :::column:::
-        <b>Direction Contract:</b><br>
-        Grow: 150ms; Easing: Default Accelerate
+<b>Direction Contract:</b><br>
+Grow: 150ms; Easing: Default Accelerate
     :::column-end:::
 :::row-end:::
 
@@ -80,7 +75,7 @@ Here are 3 ways to apply Fluent motion fundamentals in your app.
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ImplicitTransition">open the app and see Implicit Transitions in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

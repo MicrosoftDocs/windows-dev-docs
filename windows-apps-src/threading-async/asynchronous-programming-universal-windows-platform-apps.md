@@ -65,5 +65,5 @@ In many cases, calling an asynchronous function is almost as simple as calling a
 
 ## Related topics
 * [Call asynchronous APIs in C# or Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Asynchronous Programming with Async and Await (C# and Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Asynchronous Programming with Async and Await (C# and Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [Reversi sample feature scenarios: asynchronous code](https://docs.microsoft.com/previous-versions/windows/apps/jj712233(v=win.10))

@@ -49,6 +49,8 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 ## Determine the type of a boxed value
 If you receive a boxed value and you're unsure what type it contains (you need to know its type in order to unbox it), then you can query the boxed value for its [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) interface, and then call **Type** on that. Here's a code example.
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 float pi = 3.14f;
 auto piInspectable = winrt::box_value(pi);

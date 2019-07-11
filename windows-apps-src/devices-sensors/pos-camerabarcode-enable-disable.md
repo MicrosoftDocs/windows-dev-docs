@@ -1,7 +1,7 @@
 ---
 title: Camera Barcode Scanner Configuration
 description: Camera Barcode Scanner Enable or Disable
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
@@ -38,7 +38,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning]
-> Serious problems might occur if you modify the registry incorrectly.  For added protection, back up the registry before you modify it.  Then, you can restore the registry if a problem occurs.  For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base: <br/><br/> [322756](https://support.microsoft.com/kb/322756) How to back up and restore the registry in Windows.
+> Serious problems might occur if you modify the registry incorrectly.  For added protection, back up the registry before you modify it.  Then, you can restore the registry if a problem occurs.  For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base: <br/><br/> [322756](https://support.microsoft.com/help/322756/how-to-back-up-and-restore-the-registry-in-windows) How to back up and restore the registry in Windows.
 
 > [!NOTE]
 > The software decoder built into Windows 10 is provided courtesy of  [**Digimarc Corporation**](https://www.digimarc.com/).

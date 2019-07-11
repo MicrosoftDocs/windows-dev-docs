@@ -54,7 +54,7 @@ To ensure your UWP app is network ready, you must set any network capabilities t
 
 Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), which defines the methods and properties we'll use to retrieve and display the feed.
 
-The [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
+The [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -87,13 +87,13 @@ try {
 }
 ```
 
-Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) property), proxy credentials (the [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) property), and HTTP headers (the [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) method) needed. With the basic request parameters configured, a valid [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) function to request the feed.
+Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential) property), proxy credentials (the [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential) property), and HTTP headers (the [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader) method) needed. With the basic request parameters configured, a valid [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) function to request the feed.
 
 Assuming the desired feed content was returned, the example code iterates through each feed item, calling **displayCurrentItem** (which we define next), to display items and their contents as a list through the UI.
 
 You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-The [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
+The [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

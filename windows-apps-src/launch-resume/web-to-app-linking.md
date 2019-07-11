@@ -188,7 +188,7 @@ If you would like to follow the protocol activation logic, set a breakpoint in t
 - Your JSON file must be uploaded to an https server.
 - If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
 - All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
-- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
+- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
 ## See also
 

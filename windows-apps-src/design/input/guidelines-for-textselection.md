@@ -105,7 +105,7 @@ For example, grippers can also be used in image processing apps that support res
 
 
 **For developers**
-* [Custom user interactions](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Samples**
 * [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)

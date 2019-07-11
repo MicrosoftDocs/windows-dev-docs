@@ -195,7 +195,7 @@ Windows Phone Silverlight apps use controls defined in the **Microsoft.Phone.Co
 
 **Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps, but not in Windows Phone Silverlight apps. There are other reasons why your existing custom styles/templates may not be appropriate for Windows 10 apps, including system resource keys you are using, changes to the sets of visual states used, and performance improvements made to the Windows 10 default styles/templates. We recommend that you edit a fresh copy of a control's default template for Windows 10 and then re-apply your style and template customization to that.
 
-For more info on UWP controls, see [Controls by function](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Controls list](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/), and [Guidelines for controls](https://developer.microsoft.com/windows/design/controls-patterns).
+For more info on UWP controls, see [Controls by function](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Controls list](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/), and [Guidelines for controls](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  Design language in Windows 10
 
@@ -205,7 +205,7 @@ There are some differences in design language between Windows Phone Silverlight
 
 For localized strings, you can re-use the .resx file from your Windows Phone Silverlight project in your UWP app project. Copy the file over, add it to the project, and rename it to Resources.resw so that the lookup mechanism will find it by default. Set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. You can then use the strings in markup by specifying the **x:Uid** attribute on your XAML elements. See [Quickstart: Using string resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
-Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](https://developer.microsoft.com/windows/design/usability).
+Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](https://docs.microsoft.com/windows/uwp/design/usability/index).
 
 The [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) topic describes how to load device family-specific resources based on the device family resource selection factor.
 

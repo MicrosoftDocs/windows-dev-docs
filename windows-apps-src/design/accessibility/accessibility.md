@@ -39,4 +39,4 @@ Accessibility is about building experiences that make your application available
 
 ## Related topics  
 * [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
-* [Get started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

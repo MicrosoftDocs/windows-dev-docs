@@ -21,7 +21,7 @@ If you decide to [package your desktop app in an MSIX package](/windows/msix/des
 
 The [Microsoft Store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app.
 
-Publish your application to the Microsoft Store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
+Publish your application to the Microsoft Store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the [Microsoft Store for Business](https://businessstore.microsoft.com/store).
 
 If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named **runFullTrust**, and we need to approve your application's use of that capability. You can read more about this requirement here: [Restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
@@ -52,12 +52,6 @@ If you create a certificate, you have to install it into the **Trusted Root** or
 To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
 To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
-
-**Videos**
-
-|Publish your application into the Microsoft Store |Distribute an enterprise application  |
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
 
@@ -162,10 +156,6 @@ private void RemoveDesktopApp()
 
 }
 ```
-
-### Video
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## Next steps
 

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, centr
 ms.localizationpriority: medium
 ---
 # Bluetooth Low Energy
-Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices. Discovery of devices is done through the Generic Access Profile (GAP) protocol. After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol. This topic provides a quick overview of Bluetooth LE in UWP apps. To see more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification) version 4.0, where Bluetooth LE was introduced. 
+Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices. Discovery of devices is done through the Generic Access Profile (GAP) protocol. After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol. This topic provides a quick overview of Bluetooth LE in UWP apps. To see more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/) version 4.0, where Bluetooth LE was introduced. 
 
 ![Bluetooth LE Roles](images/gatt-roles.png)
 
@@ -15,7 +15,7 @@ Bluetooth Low Energy (LE) is a specification that defines protocols for discover
 
 GATT and GAP protocols can be implemented in your UWP app by using the following namespaces.
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
 
 ## Central and Peripheral
 The two primary roles of discovery are called Central and Peripheral. In general, Windows operates in Central mode and connects to various Peripheral devices. 
@@ -35,5 +35,5 @@ In addition to the Central and Peripheral roles, there are Observer and Broadcas
 
 ## See Also
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+- [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)
 - [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification)

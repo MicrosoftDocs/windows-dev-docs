@@ -41,7 +41,7 @@ To set data formats:
 
 ## Handle share activation
 
-When a user selects your app (usually by selecting it from a list of available target apps in the share UI), an [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) event is raised. Your app needs to handle this event to process the data that the user wants to share.
+When a user selects your app (usually by selecting it from a list of available target apps in the share UI), an [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) event is raised. Your app needs to handle this event to process the data that the user wants to share.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -81,7 +81,7 @@ With an extended share, it's possible that the user might dismiss the source app
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-If something goes wrong, call [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) to send an error message to the system. The user will see the message when they check on the status of the share. At that point, your app is shut down and the share is ended. The user will need to start again to share the content to your app. Depending on your scenario, you may decide that a particular error isn't serious enough to end the share operation. In that case, you can choose to not call **ReportError** and to continue with the share.
+If something goes wrong, call [**ReportError**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation#Windows_ApplicationModel_DataTransfer_ShareTarget_ShareOperation_ReportError_System_String_) to send an error message to the system. The user will see the message when they check on the status of the share. At that point, your app is shut down and the share is ended. The user will need to start again to share the content to your app. Depending on your scenario, you may decide that a particular error isn't serious enough to end the share operation. In that case, you can choose to not call **ReportError** and to continue with the share.
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 

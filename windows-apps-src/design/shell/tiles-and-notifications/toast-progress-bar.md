@@ -3,7 +3,7 @@ Description: Learn how to use a progress bar within your toast notification.
 title: Toast progress bar and data binding
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, progress bar, toast progress bar, notification, toast data binding
 ms.localizationpriority: medium

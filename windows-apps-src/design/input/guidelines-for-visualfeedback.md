@@ -109,7 +109,7 @@ To change the colors on a per-control basis, just edit the focus visual properti
 * [Guidelines for panning](guidelines-for-panning.md)
 
 **For developers**
-* [Custom user interactions](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Custom user interactions](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Samples**
 * [Basic input sample](https://go.microsoft.com/fwlink/p/?LinkID=620302)

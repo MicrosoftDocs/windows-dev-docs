@@ -122,11 +122,11 @@ Rebuild your project to cause the translated strings to be copied into the Resou
 
 These third party providers offer localization services, and may be able to assist you.
 
-- [Elanex](https://www.elanex.com/)
+- [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
-- [Moravia](https://www.moravia.com/)
-- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
+- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]

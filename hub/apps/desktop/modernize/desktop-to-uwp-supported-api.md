@@ -45,7 +45,7 @@ Occasionally, APIs in these areas may appear to function correctly. However, if 
 
 The following is a full list of UWP APIs supported in desktop apps. You can view [APIs supported only in packaged apps](#new) or [APIs supported in both packaged apps and desktop applications](#both).
 
-For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

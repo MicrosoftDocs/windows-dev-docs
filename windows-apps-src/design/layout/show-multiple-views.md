@@ -77,7 +77,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  On the new thread, populate the window.
 
-    You use the [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) method to schedule work on the UI thread for the new view. You use a [lambda expression](https://go.microsoft.com/fwlink/p/?LinkId=389615) to pass a function as an argument to the **RunAsync** method. The work you do in the lambda function happens on the new view's thread.
+    You use the [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) method to schedule work on the UI thread for the new view. You use a [lambda expression](https://go.microsoft.com/fwlink/p/?LinkId=389615) to pass a function as an argument to the **RunAsync** method. The work you do in the lambda function happens on the new view's thread.
 
     In XAML, you typically add a [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) to the [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window)'s [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) property, then navigate the **Frame** to a XAML [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) where you've defined your app content. For more info, see [Peer-to-peer navigation between two pages](../basics/navigate-between-two-pages.md).
 
@@ -119,7 +119,7 @@ If secondary views are open, the main view’s window can be hidden – for exam
 Other views, including all views that you create by calling [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) in your app code, are secondary views. Both the main view and secondary views are stored in the [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views) collection. Typically, you create secondary views in response to a user action. In some instances, the system creates secondary views for your app.
 
 > [!NOTE]
-> You can use the Windows *assigned access* feature to run an app in [kiosk mode](https://technet.microsoft.com/library/mt219050.aspx). When you do this, the system creates a secondary view to present your app UI above the lock screen. App-created secondary views are not allowed, so if you try to show your own secondary view in kiosk mode, an exception is thrown.
+> You can use the Windows *assigned access* feature to run an app in [kiosk mode](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use). When you do this, the system creates a secondary view to present your app UI above the lock screen. App-created secondary views are not allowed, so if you try to show your own secondary view in kiosk mode, an exception is thrown.
 
 ## Switch from one view to another
 

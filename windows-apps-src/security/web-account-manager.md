@@ -186,7 +186,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-The rest of this article continues describing the MSA scenario, but the code for AAD is very similar. For more info on AAD/Graph, including a full sample on GitHub, see the [Microsoft Graph documentation](https://graph.microsoft.io/docs/platform/get-started).
+The rest of this article continues describing the MSA scenario, but the code for AAD is very similar. For more info on AAD/Graph, including a full sample on GitHub, see the [Microsoft Graph documentation](https://developer.microsoft.com/graph).
 
 ## Use the token
 

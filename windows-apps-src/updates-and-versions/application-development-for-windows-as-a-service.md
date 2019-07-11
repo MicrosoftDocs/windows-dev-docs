@@ -157,4 +157,4 @@ Let us know how your app is performing against flighted builds. As you discover 
 The [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) website is a directory of software that supports Windows 10. It’s intended for IT administrators at companies and organizations worldwide that are considering Windows 10 for their deployments. IT administrators can check the site to see whether software deployed in their enterprise is supported in Windows 10.
 
 ## Related topics
-[Windows 10 servicing options for updates and upgrades](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

@@ -262,7 +262,7 @@ If a GPIO signal goes through a level shifter before reaching an exposed header,
 Windows supports two pin numbering schemes:
 
 * Sequential Pin Numbering – Users see numbers like 0, 1, 2... up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on.
-* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, ... .
+* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, ...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
@@ -608,7 +608,7 @@ In addition to the memory and interrupt resources typically required by a contro
 * CLIENT_ConnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to apply the specified muxing configuration.
 * CLIENT_DisconnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to revert the muxing configuration.
 
-See [GpioClx Event Callback Functions](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85)) for a description of these routines.
+See [GpioClx Event Callback Functions](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)) for a description of these routines.
 
 In addition to these two new DDIs, existing DDIs should be audited for pin muxing compatibility:
 
