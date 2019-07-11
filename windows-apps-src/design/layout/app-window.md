@@ -1,0 +1,622 @@
+---
+Description: Use the AppWindow class to view different parts of your app in separate windows.
+title: Use the AppWindow class to show secondary windows for an app
+ms.date: 07/19/2019
+ms.topic: article
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+---
+# Show multiple windows with AppWindow
+
+
+
+> **Important APIs**: [Windows.UI.WindowManagement namespace](/uwp/api/windows.ui.windowmanagement), [AppWindow class](/uwp/api/windows.ui.windowmanagement.appwindow)
+
+## API overview
+
+The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class and other APIs in the [WindowManagement](/uwp/api/windows.ui.windowmanagement) namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must [use ApplicationView to create secondary windows](application-view.md). WindowManagement APIs are still under development and have limitations as described in the API reference docs.
+
+Here are some of the important APIs you use to show content in an AppWindow.
+
+### AppWindow
+
+The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class can be used to display a portion of a Windows Runtime app in a secondary window. It is similar in concept to an [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), but not the same in behavior and lifetime. A main feature of AppWindow is that they all share the same UI processing thread (including the event dispatcher) from which they were created, which simplifies multi-window apps.
+
+You can only connect XAML content to your AppWindow, there is no support for native DirectX or Holographic content. However, you can show a XAML [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
+
+### WindowingEnvironment
+
+The [WindowingEnvironment](/uwp/api/windows.ui.windowmanagement.windowingenvironment) API lets you know about the environment where your app is being presented so you can adapt your app as needed. It describes the kind of window the environment supports; for example, Overlapped if the app is running on a PC, or Tiled if the app is running on an Xbox. It also provides a set of DisplayRegion objects that describe the areas in which an app may be shown on a logical display.
+
+### DisplayRegion
+
+The [DisplayRegion](/uwp/api/windows.ui.windowmanagement.displayregion) API describes the region in which a view can be shown to a user on a logical display; for example, on a desktop PC, this is the full display minus the area of the taskbar. It is not necessarily a 1:1 mapping with the physical display area of the backing monitor. There can be multiple display regions within the same monitor, or a DisplayRegion can be configured to span across multiple monitors if those monitors are homogenous in all aspects.
+
+### AppWindowPresenter
+
+The [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) API lets you easily switch windows into pre-defined configurations like FullScreen or CompactOverlay. These configurations give the user a consistent experience across any device that supports the configuration.
+
+### UIContext
+
+[UIContext](/uwp/api/windows.ui.uicontext) is a unique identifier for an app window or view. It's created automatically, and you can use the [UIElement.UIContext](/uwp/api/windows.ui.xaml.uielement.uicontext) property to retrieve the UIContext.
+
+### XamlRoot
+
+The [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class holds a XAML element tree, connects it to the window host object (for example, the AppWindow or ApplicationView), and provides info such as size and visibility. You don't create a XamlRoot object directly. Instead, one is created when you attach a XAML element to an AppWindow. You can then use the [UIElement.XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) property to retrieve the XamlRoot.
+
+For more info about UIContext and XamlRoot, see [Make code portable across windowing hosts]().
+
+## Show a new window
+
+This example shows the essential code required to show a new AppWindow. It's explained in more detail in the following sections.
+
+```csharp
+// Create a new window.
+AppWindow appWindow = await AppWindow.TryCreateAsync();
+
+// Create content to show in the window.
+Frame appWindowFrame = new Frame();
+appWindowFrame.Navigate(typeof(AppWindowMainPage));
+
+// Attach the XAML content to the window.
+ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowFrame);
+
+// Show the window.
+await appWindow.TryShowAsync();
+
+// When the window is closed, be sure to release XAML resources
+// and the reference to the window.
+appWindow.Closed += delegate
+{
+    appWindowFrame.Content = null;
+    appWindow = null;
+};
+```
+
+Let's take a closer look at the steps to create a new window.
+
+**To show a new window**
+
+1. Create a new AppWindow.
+
+    Call the static [AppWindow.TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync) method to create a new AppWindow.
+
+    ```csharp
+    AppWindow appWindow = await AppWindow.TryCreateAsync();
+    ```
+
+    Whether you declare the AppWindow here or with a broader scope depends on the needs of your app.
+
+1. Create the window content.
+
+    Typically, you create a [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame), then navigate the **Frame** to a XAML [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) where you've defined your app content. For more info about frames and pages, see [Peer-to-peer navigation between two pages](../basics/navigate-between-two-pages.md).
+
+    ```csharp
+    Frame appWindowFrame = new Frame();
+    appWindowFrame.Navigate(typeof(AppWindowMainPage));
+    ```
+
+    However, you can show any XAML content in the AppWindow, not just a Frame and Page. For example, you can show just a single control, like ColorPicker, or you can show a [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
+
+1. Attach the XAML content to the AppWindow.
+
+    Call the [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) method to attach the XAML content to the AppWindow.
+
+    ```csharp
+    ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowFrame);
+    ```
+
+    The call to this method creates a XamlRoot object and sets it as the XamlRoot property for the specified UIElement.
+
+    You may only call this method once per AppWindow instance. After the content has been set, further calls to SetAppWindowContent for this AppWindow instance will fail. Also, if you attempt to disconnect the AppWindow content by passing in a null UIElement object, the call will fail.
+
+1. Show the new window.
+
+    After you create a new window, you can show it by calling the [AppWindow.TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) method.
+
+    ```csharp
+    await appWindow.TryShowAsync();
+    ```
+
+    Depending on your app's requirements, you might want to allow only one instance of an AppWindow. For example, in the code shown later, only one instance of the color picker window should be allowed. In this case, you should check whether the instance exists, and if it does, skip the steps to create a new window and just call TryShowAsync on the existing window.
+
+## Release resources when a window is closed
+
+You should always handle the AppWindow.Closed event to release XAML resources (the AppWindow content) and references to the AppWindow.
+
+```csharp
+appWindow.Closed += delegate
+{
+    appWindowFrame.Content = null;
+    appWindow = null;
+};
+```
+
+## Track instances of AppWindow
+
+Depending on how you use multiple windows in your app, you may or may not need to track the instances of AppWindow you create. The HelloAppWindow example shows two different ways you might typically use an AppWindow. Here, we'll look at why these windows should be tracked, and how to do it.
+
+### Single instance
+
+The color picker window hosts a single XAML control, and the code for interacting with the color picker all resides in the MainPage.xaml.cs file. The color picker window only allows a single instance and is essentially an extension of MainWindow. To ensure that only one instance is created, the color picker window is tracked with a page level variable.
+
+```csharp
+AppWindow colorPickerAppWindow;
+
+// ...
+
+private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs e)
+{
+    // Create the color picker window.
+    if (colorPickerAppWindow == null)
+    {
+        // ...
+        // Create a new window
+        colorPickerAppWindow = await AppWindow.TryCreateAsync();
+        // ...
+    }
+    // Show the window.
+    await colorPickerAppWindow.TryShowAsync();
+}
+```
+
+### Multiple instance
+
+The 'AppWindowPage' window hosts a complete XAML page, and the code for interacting with the page resides in AppWindowPage.xaml.cs. It allows multiple instances, each of which functions independently.
+
+The functionality of the page lets you manipulate the window, setting it to FullScreen or CompactOverlay, and also listens for AppWindow.Changed events to show information about the window. In order to call these APIs, `AppWindowPage` needs a reference to the AppWindow instance that is hosting it.
+
+If that's all that you need, you can create a public property in AppWindowPage and assign the AppWindow instance to it when you create it.
+
+**AppWindowPage.xaml.cs**
+
+```csharp
+public sealed partial class AppWindowPage : Page
+{
+    public AppWindow MyAppWindow { get; set; }
+
+    // ...
+}
+```
+
+**MainPage.xaml.cs**
+
+```csharp
+private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
+{
+    // Create a new window.
+    AppWindow appWindow = await AppWindow.TryCreateAsync();
+
+    // Create a Frame and navigate to the Page you want to show in the new window.
+    Frame appWindowFrame = new Frame();
+    appWindowFrame.Navigate(typeof(AppWindowPage));
+
+    // Get a reference to the page instance and assign the
+    // newly created AppWindow to the MyAppWindow property.
+    AppWindowPage page = (AppWindowPage)appWindowFrame.Content;
+    page.MyAppWindow = appWindow;
+
+    // ...
+}
+```
+
+However, you might also want to have access to the AppWindow instances from other parts of your app. For example, MainPage could have a 'close all' button that closes all the tracked instances of AppWindow.
+
+In this case, you should use the UIContext unique identifier to track the window instances in a Dictionary.
+
+TODO: More about UIContext
+
+**MainPage.xaml.cs**
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    // Track open app windows in a Dictionary.
+    public static Dictionary<UIContext, AppWindow> AppWindows { get; set; }
+        = new Dictionary<UIContext, AppWindow>();
+
+    // ...
+
+    private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Create a new window.
+        AppWindow appWindow = await AppWindow.TryCreateAsync();
+
+        // Create a Frame and navigate to the Page you want to show in the new window.
+        Frame appWindowFrame = new Frame();
+        appWindowFrame.Navigate(typeof(AppWindowPage));
+
+        // Attach the XAML content to the window.
+        ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowFrame);
+
+        AppWindows.Add(appWindowFrame.UIContext, appWindow);
+        appWindow.Title = "App Window " + AppWindows.Count.ToString();
+
+        // When the window is closed, be sure to release XAML resources and the reference to the window.
+        appWindow.Closed += delegate
+        {
+            MainPage.AppWindows.Remove(appWindowFrame.UIContext);
+            appWindowFrame.Content = null;
+            appWindow = null;
+        };
+
+        // Show the window.
+        await appWindow.TryShowAsync();
+    }
+
+    private async void CloseAllButton_Click(object sender, RoutedEventArgs e)
+    {
+        while (AppWindows.Count > 0)
+        {
+            await AppWindows.Values.First().CloseAsync();
+        }
+    }
+    // ...
+}
+```
+
+To use the AppWindow instance in your AppWindowPage code, use the page's UIContext to retrieve it from the static Dictionary in MainPage. You should do this in the page's Loaded event handler rather than in the constructor so that UIContext is not null.
+
+**AppWindowPage.xaml.cs**
+
+```csharp
+public sealed partial class AppWindowPage : Page
+{
+    AppWindow window;
+
+    // ...
+    public AppWindowPage()
+    {
+        this.InitializeComponent();
+
+        Loaded += AppWindowPage_Loaded;
+    }
+
+    private void AppWindowPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        // Get the reference to this AppWindow that was stored when it was created.
+        window = MainPage.AppWindows[this.UIContext];
+
+        // Set up event handlers for the window.
+        window.Changed += Window_Changed;
+    }
+    // ...
+}
+```
+
+> [!NOTE]
+> The HelloAppWindow example shows both ways to track multiple instances, but you will typically use one or the other, not both.
+
+## Request window size and placement
+
+The AppWindow class has several methods you can use to control the size and placement of the window. As implied by the method names, the system may or may not honor the requested changes depending on environmental factors.
+
+Call [RequestSize](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize) to specify a desired window size, like this.
+
+```csharp
+colorPickerAppWindow.RequestSize(new Size(300, 428));
+```
+
+The methods to manage window placement are named _RequestMove*_: [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview), [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow), [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion), [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion).
+
+In this example, this code moves the window to be next to the main view that the window is spawned from.
+
+```csharp
+colorPickerAppWindow.RequestMoveAdjacentToCurrentView();
+```
+
+To get information about the current size and placement of the window, call [GetPlacement](/uwp/api/windows.ui.windowmanagement.appwindow.getplacement). This returns an [AppWindowPlacement](/uwp/api/windows.ui.windowmanagement.appwindowplacement) object that provides the current [DisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindowplacement.displayregion), [Offset](/uwp/api/windows.ui.windowmanagement.appwindowplacement.offset), and [Size](/uwp/api/windows.ui.windowmanagement.appwindowplacement.size) of the window.
+
+For example, you could call this code to move the window to the upper-right corner of the display. This code has to be called after the window has been displayed; otherwise, the window Size returned by the call to GetPlacement will be 0,0 and the offset will be incorrect.
+
+```csharp
+DisplayRegion displayRegion = window.GetPlacement().DisplayRegion;
+double displayRegionWidth = displayRegion.WorkAreaSize.Width;
+double windowWidth = window.GetPlacement().Size.Width;
+int horizontalOffset = (int)(displayRegionWidth - windowWidth);
+window.RequestMoveRelativeToDisplayRegion(displayRegion, new Point(horizontalOffset, 0));
+```
+
+## Request a presentation configuration
+
+The AppWindowPresenter class lets you show an AppWindow using a pre-defined configuration appropriate for the device it's shown on. You can use an AppWindowPresentationConfiguration value to place the window in FullScreen or CompactOverlay mode.
+
+This example shows how to do the following:
+
+- Use the [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) event to be notified if the available window presentations change.
+- Use the [AppWindow.Presenter](/uwp/api/windows.ui.windowmanagement.appwindow.presenter) property to get the current [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter).
+- Call [IsPresentationSupported](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.ispresentationsupported) to see if a specific [AppWindowPresentationKind](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind) is supported.
+- Call [GetConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.getconfiguration) to check what kind of configuration is currently used.
+- Call [RequestPresentation](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation) to change the current configuration.
+
+```csharp
+private void Window_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+{
+    if (args.DidAvailableWindowPresentationsChange)
+    {
+        EnablePresentationButtons(sender);
+    }
+
+    if (args.DidSizeChange)
+    {
+        SizeText.Text = window.GetPlacement().Size.ToString();
+    }
+
+    if (args.DidWindowPresentationChange)
+    {
+        ConfigText.Text = window.Presenter.GetConfiguration().ToString();
+    }
+}
+
+private void EnablePresentationButtons(AppWindow window)
+{
+    // Check whether the current AppWindowPresenter supports CompactOverlay.
+    if (window.Presenter.IsPresentationSupported(AppWindowPresentationKind.CompactOverlay))
+    {
+        // Show the CompactOverlay button...
+        compactOverlayButton.Visibility = Visibility.Visible;
+    }
+    else
+    {
+        // Hide the CompactOverlay button...
+        compactOverlayButton.Visibility = Visibility.Collapsed;
+    }
+
+    // Check whether the current AppWindowPresenter supports FullScreen?
+    if (window.Presenter.IsPresentationSupported(AppWindowPresentationKind.FullScreen))
+    {
+        // Show the FullScreen button...
+        fullScreenButton.Visibility = Visibility.Visible;
+    }
+    else
+    {
+        // Hide the FullScreen button...
+        fullScreenButton.Visibility = Visibility.Collapsed;
+    }
+}
+
+private void CompactOverlayButton_Click(object sender, RoutedEventArgs e)
+{
+    if (window.Presenter.GetConfiguration().Kind != AppWindowPresentationKind.CompactOverlay)
+    {
+        window.Presenter.RequestPresentation(AppWindowPresentationKind.CompactOverlay);
+        fullScreenButton.IsChecked = false;
+    }
+    else
+    {
+        window.Presenter.RequestPresentation(AppWindowPresentationKind.Default);
+    }
+}
+
+private void FullScreenButton_Click(object sender, RoutedEventArgs e)
+{
+    if (window.Presenter.GetConfiguration().Kind != AppWindowPresentationKind.FullScreen)
+    {
+        window.Presenter.RequestPresentation(AppWindowPresentationKind.FullScreen);
+        compactOverlayButton.IsChecked = false;
+    }
+    else
+    {
+        window.Presenter.RequestPresentation(AppWindowPresentationKind.Default);
+    }
+}
+```
+
+## Reuse XAML elements
+
+An AppWindow lets you have multiple XAML trees with the same UI thread. However, a XAML element can only be added to a XAML tree once. If you want to move a part of your UI from one window to another, you have to manage it's placement in the XAML tree.
+
+This example shows how to reuse a ColorPicker control while moving it between the main window and a secondary window.
+
+The color picker is declared in the XAML for MainPage, which places it in the MainPage XAML tree.
+
+```xaml
+<StackPanel x:Name="colorPickerContainer" Grid.Column="1" Background="WhiteSmoke">
+    <Button Click="DetachColorPickerButton_Click" HorizontalAlignment="Right">
+        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B4;" />
+    </Button>
+    <ColorPicker x:Name="colorPicker" Margin="12" Width="288"
+                 IsColorChannelTextInputVisible="False"
+                 ColorChanged="ColorPicker_ColorChanged"/>
+</StackPanel>
+```
+
+When the color picker is detached to be placed in a new AppWindow, you first have to remove it from the MainPage XAML tree by removing it from its parent container. Though not required, this example also hides the parent container.
+
+```csharp
+colorPickerContainer.Children.Remove(colorPicker);
+colorPickerContainer.Visibility = Visibility.Collapsed;
+```
+
+Then you can add it to the new XAML tree. Here, you first create a Grid that will be the parent container for the ColorPicker, and add the ColorPicker as a child of the Grid. You then set the Grid as the root of the XAML tree in the new window. This lets you easily remove the ColorPicker from this XAML tree later.
+
+```csharp
+Grid appWindowRootGrid = new Grid();
+appWindowRootGrid.Children.Add(colorPicker);
+
+// Create a new window
+colorPickerAppWindow = await AppWindow.TryCreateAsync();
+
+// Attach the XAML content to our window
+ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
+```
+
+When the AppWindow is closed, you reverse the process. First, remove the ColorPicker from the Grid, then add it as a child of the StackPanel in MainPage.
+
+```csharp
+// Make sure to release the reference to this window,
+// and release XAML resources, when it's closed
+colorPickerAppWindow.Closed += delegate
+{
+    appWindowRootGrid.Children.Remove(colorPicker);
+    appWindowRootGrid = null;
+    colorPickerAppWindow = null;
+
+    colorPickerContainer.Children.Add(colorPicker);
+    colorPickerContainer.Visibility = Visibility.Visible;
+};
+```
+
+```csharp
+private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs e)
+{
+    ColorPickerContainer.Visibility = Visibility.Collapsed;
+
+    // Create the color picker window.
+    if (colorPickerAppWindow == null)
+    {
+        ColorPickerContainer.Children.Remove(colorPicker);
+
+        Grid appWindowRootGrid = new Grid();
+        appWindowRootGrid.Children.Add(colorPicker);
+
+        // Create a new window
+        colorPickerAppWindow = await AppWindow.TryCreateAsync();
+        colorPickerAppWindow.RequestMoveAdjacentToCurrentView();
+        colorPickerAppWindow.RequestSize(new Size(300, 428));
+        colorPickerAppWindow.Title = "Color picker";
+
+        // Attach the XAML content to our window
+        ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
+
+        // Make sure to release the reference to this window, 
+        // and release XAML resources, when it's closed
+        colorPickerAppWindow.Closed += delegate
+        {
+            appWindowRootGrid.Children.Remove(colorPicker);
+            appWindowRootGrid = null;
+            colorPickerAppWindow = null;
+
+            ColorPickerContainer.Children.Add(colorPicker);
+            ColorPickerContainer.Visibility = Visibility.Visible;
+        };
+    }
+    // Show the window.
+    await colorPickerAppWindow.TryShowAsync();
+}
+```
+
+## Show a dialog box
+
+By default, content dialogs display modally relative to the root ApplicationView. When you use a ContentDialog inside an AppWindow, you need to manually set the XamlRoot on the dialog to the root of the XAML host.
+
+To do so, set the ContentDialog's XamlRoot property to the same XamlRoot as an element already in the AppWindow. Here, this code is inside a button's Click event handler, so you can use the _sender_ (the clicked Button) to get the XamlRoot.
+
+```csharp
+if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+{
+    simpleDialog.XamlRoot = ((Button)sender).XamlRoot;
+}
+```
+
+If you have one or more AppWindows open in addition to the main window (ApplicationView), each window can attempt to open a dialog, because the modal dialog will block only the window that it's rooted in. However, there can only be one ContentDialog open per thread at a time. Attempting to open two ContentDialogs will throw an exception, even if they are attempting to open in separate AppWindows.
+
+To manage this, you should at the least open the dialog in a `try/catch` block to catch the exception in case another dialog is already open.
+
+```csharp
+try
+{
+    ContentDialogResult result = await simpleDialog.ShowAsync();
+}
+catch (Exception)
+{
+    // The dialog didn't open, probably because another dialog is already open.
+}
+```
+
+Another way to manage dialogs is to track the currently open dialog, and close it before trying to open a new dialog. Here, you create a static property in MainPage called CurrentDialog for this purpose.
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    // Track the last opened dialog so you can close it if another dialog tries to open.
+    public static ContentDialog CurrentDialog { get; set; } = null;
+
+   // ...
+}
+```
+
+Then, you check whether there is a currently opened dialog, and if there is, call the Hide method to close it. Finally, assign the new dialog to CurrentDialog, and try to show it.
+
+```csharp
+private async void DialogButton_Click(object sender, RoutedEventArgs e)
+{
+    ContentDialog simpleDialog = new ContentDialog
+    {
+        Title = "Content dialog",
+        Content = "Dialog box for " + window.Title,
+        CloseButtonText = "Ok"
+    };
+
+    if (MainPage.CurrentDialog != null)
+    {
+        MainPage.CurrentDialog.Hide();
+    }
+    MainPage.CurrentDialog = simpleDialog;
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        simpleDialog.XamlRoot = ((Button)sender).XamlRoot;
+    }
+
+    try
+    {
+        ContentDialogResult result = await simpleDialog.ShowAsync();
+    }
+    catch (Exception)
+    {
+        // The dialog didn't open, probably because another dialog is already open.
+    }
+}
+```
+
+If it's not desirable to have a dialog closed programmatically, don't assign it as the CurrentDialog. Here, MainPage shows an important dialog that should only be dismissed when the use clicks Ok. Because it's not assigned as the CurrentDialog, no attempt is made to close it programmatically.
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    // Track the last opened dialog so you can close it if another dialog tries to open.
+    public static ContentDialog CurrentDialog { get; set; } = null;
+
+    // ...
+    private async void DialogButton_Click(object sender, RoutedEventArgs e)
+    {
+        ContentDialog importantDialog = new ContentDialog
+        {
+            Title = "Important dialog",
+            Content = "This dialog can only be dismissed by clicking Ok.",
+            CloseButtonText = "Ok"
+        };
+
+        if (MainPage.CurrentDialog != null)
+        {
+            MainPage.CurrentDialog.Hide();
+        }
+        // Do not track this dialog as the MainPage.CurrentDialog. It should only be closed
+        // by clicking the Ok button.
+        MainPage.CurrentDialog = null;
+
+        try
+        {
+            ContentDialogResult result = await importantDialog.ShowAsync();
+        }
+        catch (Exception)
+        {
+            // The dialog didn't open, probably because another dialog is already open.
+        }
+    }
+    // ...
+}
+```
+
+
+
+
+
+## Related topics
+
+- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+ 
