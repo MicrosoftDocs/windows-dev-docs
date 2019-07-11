@@ -8,7 +8,22 @@ ms.localizationpriority: medium
 ---
 # Show multiple windows with AppWindow
 
+AppWindow and it's related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
 
+Here, we show some scenarios for multiple windows with a sample app called HelloAppWindow. The sample app demonstrates the following functionality:
+
+- Un-dock a control from the main page and open it in a new window.
+- Open new instances of a Page in multiple new windows.
+- Programmatically size and position new windows in the app.
+- Associate a ContentDialog with the appropriate window in the app.
+
+![Sample app with a single window](images/hello-app-window-single.png)
+  
+> _Sample app with a single window_
+
+![Sample app with un-docked color picker and secondary window](images/hello-app-window-multi.png)
+
+> _Sample app with un-docked color picker and secondary window_
 
 > **Important APIs**: [Windows.UI.WindowManagement namespace](/uwp/api/windows.ui.windowmanagement), [AppWindow class](/uwp/api/windows.ui.windowmanagement.appwindow)
 
@@ -48,65 +63,38 @@ For more info about UIContext and XamlRoot, see [Make code portable across windo
 
 ## Show a new window
 
-This example shows the essential code required to show a new AppWindow. It's explained in more detail in the following sections.
-
-```csharp
-// Create a new window.
-AppWindow appWindow = await AppWindow.TryCreateAsync();
-
-// Create content to show in the window.
-Frame appWindowFrame = new Frame();
-appWindowFrame.Navigate(typeof(AppWindowMainPage));
-
-// Attach the XAML content to the window.
-ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowFrame);
-
-// Show the window.
-await appWindow.TryShowAsync();
-
-// When the window is closed, be sure to release XAML resources
-// and the reference to the window.
-appWindow.Closed += delegate
-{
-    appWindowFrame.Content = null;
-    appWindow = null;
-};
-```
-
-Let's take a closer look at the steps to create a new window.
+Let's take a look at the steps to show content in a new AppWindow.
 
 **To show a new window**
 
 1. Create a new AppWindow.
 
-    Call the static [AppWindow.TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync) method to create a new AppWindow.
+    Call the static [AppWindow.TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync) method to create a new [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow).
 
     ```csharp
     AppWindow appWindow = await AppWindow.TryCreateAsync();
     ```
 
-    Whether you declare the AppWindow here or with a broader scope depends on the needs of your app.
-
 1. Create the window content.
 
-    Typically, you create a [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame), then navigate the **Frame** to a XAML [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) where you've defined your app content. For more info about frames and pages, see [Peer-to-peer navigation between two pages](../basics/navigate-between-two-pages.md).
+    Typically, you create a XAML [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame), then navigate the Frame to a XAML [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) where you've defined your app content. For more info about frames and pages, see [Peer-to-peer navigation between two pages](../basics/navigate-between-two-pages.md).
 
     ```csharp
-    Frame appWindowFrame = new Frame();
-    appWindowFrame.Navigate(typeof(AppWindowMainPage));
+    Frame appWindowContentFrame = new Frame();
+    appWindowContentFrame.Navigate(typeof(AppWindowMainPage));
     ```
 
-    However, you can show any XAML content in the AppWindow, not just a Frame and Page. For example, you can show just a single control, like ColorPicker, or you can show a [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
+    However, you can show any XAML content in the AppWindow, not just a Frame and Page. For example, you can show just a single control, like [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), or you can show a [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
 
 1. Attach the XAML content to the AppWindow.
 
     Call the [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) method to attach the XAML content to the AppWindow.
 
     ```csharp
-    ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowFrame);
+    ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
     ```
 
-    The call to this method creates a XamlRoot object and sets it as the XamlRoot property for the specified UIElement.
+    The call to this method creates a [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) object and sets it as the [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) property for the specified UIElement.
 
     You may only call this method once per AppWindow instance. After the content has been set, further calls to SetAppWindowContent for this AppWindow instance will fail. Also, if you attempt to disconnect the AppWindow content by passing in a null UIElement object, the call will fail.
 
@@ -122,21 +110,21 @@ Let's take a closer look at the steps to create a new window.
 
 ## Release resources when a window is closed
 
-You should always handle the AppWindow.Closed event to release XAML resources (the AppWindow content) and references to the AppWindow.
+You should always handle the [AppWindow.Closed](/uwp/api/windows.ui.windowmanagement.appwindow.closed) event to release XAML resources (the AppWindow content) and references to the AppWindow.
 
 ```csharp
 appWindow.Closed += delegate
 {
-    appWindowFrame.Content = null;
+    appWindowContentFrame.Content = null;
     appWindow = null;
 };
 ```
 
 ## Track instances of AppWindow
 
-Depending on how you use multiple windows in your app, you may or may not need to track the instances of AppWindow you create. The HelloAppWindow example shows two different ways you might typically use an AppWindow. Here, we'll look at why these windows should be tracked, and how to do it.
+Depending on how you use multiple windows in your app, you may or may not need to keep track of the instances of AppWindow you create. The HelloAppWindow example shows two different ways you might typically use an AppWindow. Here, we'll look at why these windows should be tracked, and how to do it.
 
-### Single instance
+### Simple tracking
 
 The color picker window hosts a single XAML control, and the code for interacting with the color picker all resides in the MainPage.xaml.cs file. The color picker window only allows a single instance and is essentially an extension of MainWindow. To ensure that only one instance is created, the color picker window is tracked with a page level variable.
 
@@ -160,11 +148,11 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 }
 ```
 
-### Multiple instance
+### Passing a reference to the AppWindow content
 
 The 'AppWindowPage' window hosts a complete XAML page, and the code for interacting with the page resides in AppWindowPage.xaml.cs. It allows multiple instances, each of which functions independently.
 
-The functionality of the page lets you manipulate the window, setting it to FullScreen or CompactOverlay, and also listens for AppWindow.Changed events to show information about the window. In order to call these APIs, `AppWindowPage` needs a reference to the AppWindow instance that is hosting it.
+The functionality of the page lets you manipulate the window, setting it to FullScreen or CompactOverlay, and also listens for [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) events to show information about the window. In order to call these APIs, `AppWindowPage` needs a reference to the AppWindow instance that is hosting it.
 
 If that's all that you need, you can create a public property in AppWindowPage and assign the AppWindow instance to it when you create it.
 
@@ -188,21 +176,23 @@ private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
     AppWindow appWindow = await AppWindow.TryCreateAsync();
 
     // Create a Frame and navigate to the Page you want to show in the new window.
-    Frame appWindowFrame = new Frame();
-    appWindowFrame.Navigate(typeof(AppWindowPage));
+    Frame appWindowContentFrame = new Frame();
+    appWindowContentFrame.Navigate(typeof(AppWindowPage));
 
     // Get a reference to the page instance and assign the
     // newly created AppWindow to the MyAppWindow property.
-    AppWindowPage page = (AppWindowPage)appWindowFrame.Content;
+    AppWindowPage page = (AppWindowPage)appWindowContentFrame.Content;
     page.MyAppWindow = appWindow;
 
     // ...
 }
 ```
 
-However, you might also want to have access to the AppWindow instances from other parts of your app. For example, MainPage could have a 'close all' button that closes all the tracked instances of AppWindow.
+### Tracking app windows using UIContext
 
-In this case, you should use the UIContext unique identifier to track the window instances in a Dictionary.
+You might also want to have access to the AppWindow instances from other parts of your app. For example, MainPage could have a 'close all' button that closes all the tracked instances of AppWindow.
+
+In this case, you should use the [UIContext](/uwp/api/windows.ui.uicontext) unique identifier to track the window instances in a [Dictionary](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0).
 
 TODO: More about UIContext
 

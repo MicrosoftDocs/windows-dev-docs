@@ -42,10 +42,14 @@ There are different ways that UWP content can be hosted inside an app.
 
      UWP XAML content in a Win32 app (using HWND) is hosted in a DesktopWindowXamlSource.
 
-The main view for your app is always hosted in an ApplicationView. Content in a secondary window can be hosted in a ApplicationView or in an AppWindow. Here, we look at how to use ApplicationView and AppWindow in UWP apps. For more info about DesktopWindowXamlSource, see [Using the UWP XAML hosting API in a desktop application](/windows/apps/desktop/modernize/using-the-xaml-hosting-api).
+The main view for your app is always hosted in an ApplicationView. Content in a secondary window can be hosted in a ApplicationView or in an AppWindow. Here, we look at how to use ApplicationView and AppWindow in UWP apps. For more info about DesktopWindowXamlSource in a Win32 app, see [Using the UWP XAML hosting API in a desktop application](/windows/apps/desktop/modernize/using-the-xaml-hosting-api).
 
-> [!IMPORTANT]
-> The AppWindow class and other APIs in the WindowManagement namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must use ApplicationView to create secondary windows. WindowManagement APIs are still under development and have limitations as described in the API reference docs.
+The AppWindow class and other APIs in the WindowManagement namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must use ApplicationView to create secondary windows. WindowManagement APIs are still under development and have limitations as described in the API reference docs.
+
+To learn how to use AppWindow to show secondary windows in your app, see [Use AppWindow](app-window.md).
+
+To learn how to use ApplicationView to show secondary windows in your app, see [Use ApplicationView](application-view.md).
+
 
 
 ## Do's and don'ts
