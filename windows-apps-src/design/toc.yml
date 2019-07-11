@@ -39,7 +39,13 @@
     - name: Layouts with XAML
       href: layout/layouts-with-xaml.md
     - name: Show multiple views
-      href: layout/show-multiple-views.md
+      items:
+          - name: Show multiple views
+            href: layout/show-multiple-views.md
+          - name: Use AppWindow
+            href: layout/app-window.md
+          - name: Use ApplicationView
+            href: layout/application-view.md
     - name: Alignment, margin, and padding
       href: layout/alignment-margin-padding.md
     - name: Panels
