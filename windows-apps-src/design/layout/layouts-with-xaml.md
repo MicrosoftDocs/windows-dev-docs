@@ -201,7 +201,7 @@ This example does the same thing as the previous example, but uses the simplifie
                 <VisualState>
                     <VisualState.StateTriggers>
                         <!-- VisualState to be triggered when the
-                             window width is >=720 effective pixels. -->
+                             window width is >=640 effective pixels. -->
                         <AdaptiveTrigger MinWindowWidth="640" />
                     </VisualState.StateTriggers>
 
