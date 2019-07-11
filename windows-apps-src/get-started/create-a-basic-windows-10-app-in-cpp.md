@@ -1,7 +1,7 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Create a Hello World app in C++/CX (Windows 10)
-description: With Microsoft Visual Studio 2017, you can use C++/CX to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
+description: With Microsoft Visual Studio 2019, you can use C++/CX to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
 > [!NOTE]
-> This tutorial uses Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
+> This tutorial uses Visual Studio Community 2019. If you are using a different version of Visual Studio, it may look a little different for you.
 
 ## Before you start
 
@@ -67,22 +67,15 @@ We'll start with the basics:
 
 **First, create a solution in Visual Studio**
 
-1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project**.
+1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project...**.
 
-2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows Universal**.
+2.  In the **Create a new project** dialog box, select **Blank App (Universal Windows - C++/CX)**.  If you don't see this option, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more information.
 
-> [!NOTE]
-> You may be prompted to install the Windows Universal tools for C++ development.
+![C++/CX project templates in the Create a new project dialog box ](images/vs2019-uwp-01.png)
 
-3.  In the center pane, select **Blank App (Universal Windows)**.
+3.  Choose **Next**, and then enter a name for the project. We'll name it HelloWorld.
 
-   (If you don't see these options, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
-
-4.  Enter a name for the project. We'll name it HelloWorld.
-
- ![C++/CX project templates in the New Project dialog box ](images/vs2017-uwp-01.png)
-
-5.  Choose the **OK** button.
+4.  Choose the **Create** button.
 
 > [!NOTE]
 > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
@@ -91,7 +84,7 @@ We'll start with the basics:
 
 Before we go on, let’s look at what's in the solution.
 
-![Univeral app solution with nodes collapsed](images/vs2017-uwp-02.png)
+![Universal app solution with nodes collapsed](images/vs2017-uwp-02.png)
 
 ### About the project files
 

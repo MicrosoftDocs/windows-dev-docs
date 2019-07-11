@@ -14,20 +14,20 @@ ms.localizationpriority: medium
 
 Before you start you will need to do the following:
 -	Set up a PC with the latest version of Windows 10.
-<!-- -	Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -	Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - Have at least five gigabytes of free space on your Xbox One console.
 
 ## Setting up your development PC
 
-1.	Install Visual Studio 2015 Update 3 or Visual Studio 2017.
+1.	Install Visual Studio 2015 Update 3, Visual Studio 2017, or Visual Studio 2019.
 
     If you're installing Visual Studio 2015 Update 3, make sure that you choose **Custom** install and select the **Universal Windows App Development Tools** check box – it's not part of the default install. If you are a C++ developer, make sure that you choose **Custom install** and select **C++**.
 
-    If you're installing Visual Studio 2017, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, in the **Summary** pane on the right, under **Universal Windows Platform development**, make sure that you select the **C++ Universal Windows Platform tools** checkbox. It's not part of the default install.
+    If you're installing Visual Studio 2017 or Visual Studio 2019, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, in the **Summary** pane on the right, under **Universal Windows Platform development**, make sure that you select the **C++ Universal Windows Platform tools** checkbox. It's not part of the default install.
 
     For more information, see [Set up your UWP on Xbox development environment](development-environment-setup.md).
 

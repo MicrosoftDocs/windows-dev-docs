@@ -99,18 +99,18 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 Visual Studio provides a very useful tool for managing your app icons called the **Manifest Designer**. 
 
-> If you don't already have Visual Studio 2017, there are several versions available, including a free version, (Visual Studio 2017 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> If you don't already have Visual Studio 2019, there are several versions available, including a free version, (Visual Studio 2019 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
 To launch the Manifest Designer:
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
-    ![The Visual Studio 2017 Solution Explorer](images/icons/vs-solution-explorer.png)
+    ![The Visual Studio 2019 Solution Explorer](images/icons/vs-solution-explorer.png)
 
     Visual Studio displays the manifest designer.
 
-    ![The Visual Studio 2017 manifest designer](images/icons/vs-manfiest-designer.png)
+    ![The Visual Studio 2019 manifest designer](images/icons/vs-manfiest-designer.png)
 3. Click the **Visual Assets** tab.
 
     ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png) -->
@@ -129,7 +129,7 @@ To launch the Manifest Designer:
         2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::

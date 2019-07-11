@@ -49,7 +49,7 @@ In addition, we've rewritten the following pages with all-new information on the
 
 ### App Installer files in Visual Studio
 
-App Installer files can now be created with Visual Studio 2017, Update 15.7. [Learn how to use Visual Studio to create an App Installer file](../packaging/create-appinstallerfile-vs.md) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](../packaging/troubleshoot-appinstaller-issues.md) to view common issues and solutions.
+App Installer files can now be created with Visual Studio 2017, Update 15.7, and later versions. [Learn how to use Visual Studio to create an App Installer file](../packaging/create-appinstallerfile-vs.md) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](../packaging/troubleshoot-appinstaller-issues.md) to view common issues and solutions.
 
 ### Edge WebView control for Windows Forms and WPF applications
 

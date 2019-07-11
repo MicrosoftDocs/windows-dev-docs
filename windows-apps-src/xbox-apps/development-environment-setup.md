@@ -10,18 +10,19 @@ ms.localizationpriority: medium
 # Set up your UWP on Xbox development environment
 
 The Universal Windows Platform (UWP) on Xbox development environment consists of a development PC connected to an Xbox One console through a local network.
-The development PC requires Windows 10, Visual Studio 2017 or Visual Studio 2015 Update 3, the Windows 10 SDK build 14393 or later, and a range of supporting tools.
-
+The development PC requires Visual Studio 2015 Update 3, Visual Studio 2017, or Visual Studio 2019.
+The development PC also requires Windows 10, the Windows 10 SDK build 14393 or later, and a range of supporting tools.
 
 This article covers the steps to set up and test your development environment.
 
 ## Visual Studio setup
 
-1. Install Visual Studio 2017, Visual Studio 2015 Update 3, or the latest release of Visual Studio. For more information and to install, see [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads). We recommend that you use the latest version of Visual Studio so that you can receive the latest updates for developers and security.
+1. Install Visual Studio 2015 Update 3, Visual Studio 2017, or Visual Studio 2019. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads). We recommend that you use the latest version of Visual Studio so that you can receive the latest updates for developers and security.
 
-2. If you're installing Visual Studio 2017, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, make sure that you also select the **C++ Universal Windows Platform tools** checkbox in the **Summary** pane on the right, under **Universal Windows Platform development**. It's not part of the default installation.
 
-    ![Install Visual Studio 2017](images/development-environment-setup-1.png)
+2. If you're installing Visual Studio 2017 or Visual Studio 2019, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, make sure that you also select the **C++ Universal Windows Platform tools** checkbox in the **Summary** pane on the right, under **Universal Windows Platform development**. It's not part of the default installation.
+
+    ![Install Visual Studio 2019](images/development-environment-setup-1.png)
 
     If you're installing Visual Studio 2015 Update 3, ensure that the **Universal Windows App Development Tools** check box is selected.
 
