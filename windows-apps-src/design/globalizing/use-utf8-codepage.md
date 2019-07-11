@@ -68,7 +68,7 @@ You can declare this property and target/run on earlier Windows builds, but you 
 > [!NOTE]
 > Add a manifest to an existing executable from the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
-## Set a process code page to UTF-8
+## Code page conversion
 
 As Windows operates natively in UTF-16 (WCHAR), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.
 
