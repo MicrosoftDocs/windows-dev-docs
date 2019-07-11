@@ -58,11 +58,16 @@ steps:
 
 The default template tries to sign the package with the certificate specified in the .csproj file. If you want to sign your package during the build you must have access to the private key. Otherwise, you can disable signing by adding the parameter `/p:AppxPackageSigningEnabled=false` to the `msbuildArgs` section in the YAML file.
 
-## Add your project certificate to a repository
+## Add your project certificate to the Secure files library
 
-Pipelines works with both Azure Repos Git and TFVC repositories. If you use a Git repository, add the certificate file of your project to the repository so that the build agent can sign the app package. If you don’t do this, the Git repository will ignore the certificate file. To add the certificate file to your repository, right-click the certificate file in **Solution Explorer**, and then in the shortcut menu, choose the **Add Ignored File to Source Control** command.
+Certificate files should not be submitted to repositories if at all possible; git ignores them by default. Azure DevOps supports [Secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) to manage the safe handling of sensetive files like certificates.
+To upload a certificate navigate to the Library7 under Pipelines, select Secure files, and add a new Secure file.
 
-![how to include a certificate](images/building-screen1.png)
+![how to upload a secure file](images/secure-file1.png)
+
+Once you've added the file, select it to view its properties. Toggle the Pipeline permissions option to Authorize the cert for use in all pipelines.
+
+![how to upload a secure file](images/secure-file2.png)
 
 ## Configure the Build solution build task
 
@@ -76,7 +81,12 @@ This task uses MSBuild arguments. You’ll have to specify the value of those ar
 | AppxBundle | Always | Creates an .msixbundle/.appxbundle with the .msix/.appx files for the platform specified. |
 | UapAppxPackageBuildMode | StoreUpload | Generates the .msixupload/.appxupload file and the **_Test** folder for sideloading. |
 | UapAppxPackageBuildMode | CI | Generates the .msixupload/.appxupload file only. |
-| UapAppxPackageBuildMode | SideloadOnly | Generates the **_Test** folder for sideloading only |
+| UapAppxPackageBuildMode | SideloadOnly | Generates the **_Test** folder for sideloading only. |
+| AppxPackageSigningEnabled | true | Enables package signing. |
+| PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
+| PackageCertificateKeyFile | Path | Path to the certificate to use. We'll get this from the Secure file metadata. |
+
+### Configure the build
 
 If you want to build your solution by using the command line, or by using any other build system, run MSBuild with these arguments.
 
@@ -86,6 +96,43 @@ If you want to build your solution by using the command line, or by using any ot
 /p:AppxBundlePlatforms="$(Build.BuildPlatform)"
 /p:AppxBundle=Always
 ```
+
+### Configure package signing
+
+To sign the appx package we have to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
+This will give you access to the signing certificate via ```signingCert```.
+
+```yml
+- task: DownloadSecureFile@1
+  name: signingCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: '[Your_Pfx].pfx'
+```
+
+Next, update the VSBuild task to reference the signing certificate:
+
+```yml
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" 
+                  /p:AppxPackageDir="$(appxPackageDir)" 
+                  /p:AppxBundle=Always 
+                  /p:UapAppxPackageBuildMode=StoreUpload 
+                  /p:AppxPackageSigningEnabled=true
+                  /p:PackageCertificateThumbprint="" 
+                  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
+```
+
+*Note:* We intentionally set PackageCertificateThumbprint to an empty string as a precaution. If the thumbprint is set in the project but does not match the signing certificate, the build will fail with error: 
+```powershell 
+Certificate does not match supplied signing thumbprint.
+```
+
+### Review parameters
 
 The parameters defined with the `$()` syntax are variables defined in the build definition, and will change in other build systems.
 
