@@ -11,6 +11,8 @@ ms.localizationpriority: medium
 
 This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
+In general, C++/WinRT exposes ABI types as **void\***, so that you don't need to include platform header files.
+
 ## What is the Windows Runtime ABI, and what are ABI types?
 A Windows Runtime class (runtime class) is really an abstraction. This abstraction defines a binary interface (the Application Binary Interface, or ABI) that allows various programming languages to interact with an object. Regardless of programming language, client code interaction with a Windows Runtime object happens at the lowest level, with client language constructs translated into calls into the object's ABI.
 
@@ -240,9 +242,77 @@ int main()
 }
 ```
 
+## Interoperating with ABI COM interface pointers
+
+The helper function template below illustrates how to copy an ABI COM interface pointer of a given type to its equivalent C++/WinRT projected smart pointer type.
+
+```cppwinrt
+template<typename To, typename From>
+To to_winrt(From* ptr)
+{
+    To result{ nullptr };
+    winrt::check_hresult(ptr->QueryInterface(winrt::guid_of<To>(), winrt::put_abi(result)));
+    return result;
+}
+...
+ID2D1Factory1* com_ptr{ ... };
+auto cppwinrt_ptr {to_winrt<winrt::com_ptr<ID2D1Factory1>>(com_ptr)};
+```
+
+This next helper function template is equivalent, except that it copies from the smart pointer type from the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil).
+
+```cppwinrt
+template<typename To, typename From, typename ErrorPolicy>
+To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
+{
+    To result{ nullptr };
+    if constexpr (std::is_same_v<typename ErrorPolicy::result, void>)
+    {
+        ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result));
+    }
+    else
+    {
+        winrt::check_result(ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result)));
+    }
+    return result;
+}
+```
+
+Also see [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+
+### Unsafe interop with ABI COM interface pointers
+
+The table that follows shows (in addition to other operations) unsafe conversions between an ABI COM interface pointer of a given type and its equivalent C++/WinRT projected smart pointer type. For the code in the table, assume these declarations.
+
+```cppwinrt
+winrt::Sample s;
+ISample* p;
+
+void GetSample(_Out_ ISample** pp);
+```
+
+Assume further that **ISample** is the default interface for **Sample**.
+
+You can assert that at compile time with this code.
+
+```cppwinrt
+static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
+```
+
+| Operation | How to do it | Notes |
+|-|-|-|
+| Extract **ISample\*** from **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* still owns the object. |
+| Detach **ISample\*** from **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* no longer owns the object. |
+| Transfer **ISample\*** to new **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* takes ownership of the object. |
+| Set **ISample\*** into **winrt::Sample** | `*put_abi(s) = p;` | *s* takes ownership of the object. Any object previously owned by *s* is leaked (will assert in debug). |
+| Receive **ISample\*** into **winrt::Sample** | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* takes ownership of the object. Any object previously owned by *s* is leaked (will assert in debug). |
+| Replace **ISample\*** in **winrt::Sample** | `attach_abi(s, p);` | *s* takes ownership of the object. The object previously owned by *s* is freed. |
+| Copy **ISample\*** to **winrt::Sample** | `copy_from_abi(s, p);` | *s* makes a new reference to the object. The object previously owned by *s* is freed. |
+| Copy **winrt::Sample** to **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | *p* receives a copy of the object. Any object previously owned by *p* is leaked. |
+
 ## Interoperating with the ABI's GUID struct
 
-**GUID** is projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) is projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
 
 If you don't do that, then you can hard-`reinterpret_cast` between them. For the table that follows, assume these declarations.
 
@@ -255,6 +325,27 @@ GUID abiguid;
 |-|-|-|
 | From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+## Interoperating with the ABI's HSTRING
+
+The table that follows shows conversions between **winrt::hstring** and [**HSTRING**](/windows/win32/winrt/hstring), and other operations. For the code in the table, assume these declarations.
+
+```cppwinrt
+winrt::hstring s;
+HSTRING h;
+
+void GetString(_Out_ HSTRING* value);
+```
+
+| Operation | How to do it | Notes |
+|-|-|-|
+| Extract **HSTRING** from **hstring** | `h = static_cast<HSTRING>(get_abi(s));` | *s* still owns the string. |
+| Detach **HSTRING** from **hstring** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* no longer owns the string. |
+| Set **HSTRING** into **hstring** | `*put_abi(s) = h;` | *s* takes ownership of string. Any string previously owned by *s* is leaked (will assert in debug). |
+| Receive **HSTRING** into **hstring** | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | *s* takes ownership of string. Any string previously owned by *s* is leaked (will assert in debug). |
+| Replace **HSTRING** in **hstring** | `attach_abi(s, h);` | *s* takes ownership of string. The string previously owned by *s* is freed. |
+| Copy **HSTRING** to **hstring** | `copy_from_abi(s, h);` | *s* makes a private copy of the string. The string previously owned by *s* is freed. |
+| Copy **hstring** to **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* receives a copy of the string. Any string previously owned by *h* is leaked. |
 
 ## Important APIs
 * [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)

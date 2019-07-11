@@ -55,9 +55,9 @@ The good news is that all it takes to cause **winrt::implements** to support cla
 
 You could do that explicitly, or indirectly by including some other header file such as `ole2.h`. One recommended method is to include the `wil\cppwinrt.h` header file, which is part of the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil). The `wil\cppwinrt.h` header file not only makes sure that `unknwn.h` is included before `winrt/base.h`, it also sets things up so that C++/WinRT and WIL understand each other's exceptions and error codes.
 
-## A basic example
+## A simple example of a COM component
 
-Here's a simple example, which you can test out if you paste the code into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
+Here's a simple example of a COM component written using C++/WinRT. This is a full listing of a mini-application, so you can the code out if you paste it into the `pch.h` and `main.cpp` of a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
 // pch.h
