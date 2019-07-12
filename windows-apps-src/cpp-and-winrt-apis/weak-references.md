@@ -192,7 +192,9 @@ int main()
 }
 ```
 
-The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object. If you're sure you have a case where the handler won't outlive the *this* that it depends on, then you can capture *this* normally, without consideration for strong or weak lifetime.
+The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object. Another safe case is when the event source raises its events synchronously; you can then revoke your handler with confidence that no more events will be received.
+
+When you're sure you have a case where the handler won't outlive the *this* that it depends on, then you can capture *this* normally, without consideration for strong or weak lifetime.
 
 But there are still cases where *this* doesn't outlive its use in a handler (including handlers for completion and progress events raised by asynchronous actions and operations), and it's important to know how to deal with them.
 
