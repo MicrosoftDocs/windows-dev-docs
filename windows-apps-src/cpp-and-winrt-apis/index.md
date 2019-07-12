@@ -58,6 +58,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
 | [Strong and weak references in C++/WinRT](weak-references.md) | The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references. |
 | [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
+| [A simple C++/WinRT Windows UI Library example](simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 
 ### Topics about the C++ language
 

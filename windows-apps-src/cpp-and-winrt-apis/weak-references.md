@@ -192,7 +192,7 @@ int main()
 }
 ```
 
-The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object. Another safe case is when the event source raises its events synchronously; you can then revoke your handler with confidence that no more events will be received.
+The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object.
 
 When you're sure you have a case where the handler won't outlive the *this* that it depends on, then you can capture *this* normally, without consideration for strong or weak lifetime.
 
@@ -223,7 +223,7 @@ The event recipient is destroyed, but the lambda event handler within it is stil
 > [!IMPORTANT]
 > If you encounter a situation like this, then you'll need to think about the lifetime of the *this* object; and whether or not the captured *this* object outlives the capture. If it doesn't, then capture it with a strong or a weak reference, as we'll demonstrate below.
 >
-> Or&mdash;if it makes sense for your scenario, and if threading considerations make it even possible&mdash;then another option is to revoke the handler after the recipient is done with the event, or in the recipient's destructor. See [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate).
+> Or&mdash;if it makes sense for your scenario, and if threading considerations make it even possible&mdash;then another option is to revoke the handler after the recipient is done with the event, or in the recipient's destructor. See [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate). When an event source raises its events synchronously, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, or continue reading for a robust solution.
 
 This is how we're registering the handler.
 
