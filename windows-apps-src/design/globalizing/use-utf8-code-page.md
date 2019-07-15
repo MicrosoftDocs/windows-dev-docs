@@ -24,7 +24,7 @@ Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. Howev
 
 ## Set a process code page to UTF-8
 
-As of Windows Version 1903 (May 2019 Update), you can force a process to use UTF-8 as the process code page through the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps using the ActiveCodePage property.
+As of Windows Version 1903 (May 2019 Update), you can use the ActiveCodePage property in the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps, to force a process to use UTF-8 as the process code page.
 
 You can declare this property and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8 so legacy code page detection and conversion can be avoided.
 
