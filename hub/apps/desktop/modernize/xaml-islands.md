@@ -100,7 +100,7 @@ If you don't want to package your application in an MSIX package, you can add an
     ```
 
 > [!NOTE]
-> When you add an **maxversiontested** element to an application manifest in a C++ Win32 project (using a Windows Desktop Application project template in Visual Studio), you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+> When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
 
 ## Feature roadmap
 
