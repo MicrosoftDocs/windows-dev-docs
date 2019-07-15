@@ -60,14 +60,19 @@ The default template tries to sign the package with the certificate specified in
 
 ## Add your project certificate to the Secure files library
 
-Certificate files should not be submitted to repositories if at all possible; git ignores them by default. Azure DevOps supports [Secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) to manage the safe handling of sensetive files like certificates.
-To upload a certificate navigate to the Library7 under Pipelines, select Secure files, and add a new Secure file.
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports [Secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
-![how to upload a secure file](images/secure-file1.png)
+To upload a certificate for your automated build:
 
-Once you've added the file, select it to view its properties. Toggle the Pipeline permissions option to Authorize the cert for use in all pipelines.
+1. In Azure Pipelines, expand **Pipelines** in the navigation pane and click **Library**.
+2. Click the **Secure files** tab and then click **+ Secure file**.
 
-![how to upload a secure file](images/secure-file2.png)
+    ![how to upload a secure file](images/secure-file1.png)
+
+3. Browse to the certificate file and click **OK**.
+4. After you upload the certificate, select it to view its properties. Under **Pipeline permissions**, enable the **Authorize for use in all pipelines** toggle.
+
+    ![how to upload a secure file](images/secure-file2.png)
 
 ## Configure the Build solution build task
 
@@ -84,7 +89,7 @@ This task uses MSBuild arguments. You’ll have to specify the value of those ar
 | UapAppxPackageBuildMode | SideloadOnly | Generates the **_Test** folder for sideloading only. |
 | AppxPackageSigningEnabled | true | Enables package signing. |
 | PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
-| PackageCertificateKeyFile | Path | Path to the certificate to use. We'll get this from the Secure file metadata. |
+| PackageCertificateKeyFile | Path | The path to the certificate to use. This is retrieved from the secure file metadata. |
 
 ### Configure the build
 
@@ -99,7 +104,7 @@ If you want to build your solution by using the command line, or by using any ot
 
 ### Configure package signing
 
-To sign the appx package we have to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
+To sign the MSIX (or APPX) package the pipeline needs to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
 This will give you access to the signing certificate via ```signingCert```.
 
 ```yml
@@ -127,10 +132,8 @@ Next, update the VSBuild task to reference the signing certificate:
                   /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
 ```
 
-*Note:* We intentionally set PackageCertificateThumbprint to an empty string as a precaution. If the thumbprint is set in the project but does not match the signing certificate, the build will fail with error: 
-```powershell 
-Certificate does not match supplied signing thumbprint.
-```
+> [!NOTE]
+> The PackageCertificateThumbprint argument is intentionally set to an empty string as a precaution. If the thumbprint is set in the project but does not match the signing certificate, the build will fail with the error: `Certificate does not match supplied signing thumbprint`.
 
 ### Review parameters
 
