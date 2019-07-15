@@ -18,7 +18,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows Template Studio
 
-Use the new [Windows Template Studio](https://aka.ms/wtsinstall) extension for Visual Studio 2017 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
+Use the new [Windows Template Studio](https://aka.ms/wtsinstall) extension for Visual Studio 2019 to quickly build a UWP app with the pages, framework, and features that you want. This wizard-based experience implements proven patterns and best practices to save you time and trouble adding features to your app.
 
 ![Windows Template Studio](images/template-studio.png)
 

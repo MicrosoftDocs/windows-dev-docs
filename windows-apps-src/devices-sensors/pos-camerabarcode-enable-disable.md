@@ -1,7 +1,7 @@
 ---
 title: Camera Barcode Scanner Configuration
 description: Camera Barcode Scanner Enable or Disable
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium

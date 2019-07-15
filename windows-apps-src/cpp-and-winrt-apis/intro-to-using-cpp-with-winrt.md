@@ -57,6 +57,8 @@ As of version 2.0, the **Microsoft.Windows.CppWinRT** NuGet package includes the
 
 With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
 
+For a list of customization options for the `cppwinrt.exe` tool, set via project properties, see [https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing].
+
 You can identify a project that uses the C++/WinRT MSBuild support by the presence of the **Microsoft.Windows.CppWinRT** NuGet package installed within the project.
 
 Here are the Visual Studio project templates provided by the VSIX extension.
@@ -131,6 +133,8 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 
 > [!WARNING]
 > There are also types that you might see if you closely study the C++/WinRT Windows namespace headers. An example is **winrt::param::hstring**, but there are collection examples too. These exist solely to optimize the binding of input parameters, and they yield big performance improvements and make most calling patterns "just work" for related standard C++ types and containers. These types are only ever used by the projection in cases where they add most value. They're highly optimized and they're not for general use; don't be tempted to use them yourself. Nor should you use anything from the `winrt::impl` namespace, since those are implementation types, and therefore subject to change. You should continue to use standard types, or types from the [winrt namespace](/uwp/cpp-ref-for-winrt/winrt).
+>
+> Also see [Passing parameters into the ABI boundary](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
 
 ## Important APIs
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)

@@ -18,10 +18,10 @@ You'll start with a simplified version of the PhotoLab sample. This starter vers
 
 ## Prerequisites
 
-* [Visual Studio 2017 and the latest version of the Windows 10 SDK](https://developer.microsoft.com/windows/downloads).
+* [Visual Studio 2019 and the latest version of the Windows 10 SDK](https://developer.microsoft.com/windows/downloads).
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) folder. After you've cloned or downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) folder. After you've cloned or downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2019.
 
 The PhotoLab app has two primary pages:
 

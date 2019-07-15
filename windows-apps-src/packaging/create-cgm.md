@@ -137,7 +137,7 @@ You can also use wildcards with text for file names. For example, if you want to
 
 ## Convert SourceAppxContentGroupMap.xml to AppxContentGroupMap.xml
 
-To convert the `SourceAppxContentGroupMap.xml` to the final version, `AppxContentGroupMap.xml`, you can use Visual Studio 2017 or the **MakeAppx.exe** command line tool.
+To convert the `SourceAppxContentGroupMap.xml` to the final version, `AppxContentGroupMap.xml`, you can use Visual Studio 2019 or the **MakeAppx.exe** command line tool.
 
 To use Visual Studio to convert your content group map:
 1. Add the `SourceAppxContentGroupMap.xml` to your project folder

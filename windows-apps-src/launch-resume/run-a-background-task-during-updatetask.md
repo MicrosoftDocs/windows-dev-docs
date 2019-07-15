@@ -80,12 +80,12 @@ Next, to ensure that the UpdateTask is triggered, increase the package's version
 
 ![update the version](images/bump-version.png)
 
-Now, in Visual Studio 2017 when you press F5, your app will be updated and the system will activate your UpdateTask component in the background. The debugger will automatically attach to the background process. Your breakpoint will get hit and you can step through your update code logic.
+Now, in Visual Studio 2019 when you press F5, your app will be updated and the system will activate your UpdateTask component in the background. The debugger will automatically attach to the background process. Your breakpoint will get hit and you can step through your update code logic.
 
 When the background task completes, you can launch the foreground app from the Windows start menu within the same debug session. The debugger will again automatically attach, this time to your foreground process, and you can step through your app's logic.
 
 > [!NOTE]
-> Visual Studio 2015 users: The above steps apply to Visual Studio 2017. If you are using Visual Studio 2015, you can use the same techniques to trigger and test the UpdateTask, except Visual Studio will not attach to it. An alternative procedure in VS 2015 is to setup an [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) that sets the UpdateTask as its Entry Point, and trigger the execution directly from the foreground app.
+> Visual Studio 2015 users: The above steps apply to Visual Studio 2017 or Visual Studio 2019. If you are using Visual Studio 2015, you can use the same techniques to trigger and test the UpdateTask, except Visual Studio will not attach to it. An alternative procedure in VS 2015 is to setup an [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) that sets the UpdateTask as its Entry Point, and trigger the execution directly from the foreground app.
 
 ## See also
 

@@ -3,7 +3,7 @@ description: You can create an expandable tree view by binding the ItemsSource t
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.date: 6/14/2019
+ms.date: 06/14/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -11,8 +11,8 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 dev_langs:
-  - csharp
-  - vb
+- csharp
+- vb
 ms.custom: RS5, 19H1
 ---
 

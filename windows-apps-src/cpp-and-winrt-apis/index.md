@@ -49,6 +49,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [XAML controls; bind to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |
+| [Passing parameters into the ABI boundary](pass-parms-to-abi.md) | C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. |
 | [Consume COM components with C++/WinRT](consume-com.md) | This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. |
 | [Author COM components with C++/WinRT](author-coclasses.md) | C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes. |
 | [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md) | This topic shows how to port C++/CX code to its equivalent in C++/WinRT. |
@@ -57,6 +58,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
 | [Strong and weak references in C++/WinRT](weak-references.md) | The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references. |
 | [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
+| [A simple C++/WinRT Windows UI Library example](simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 
 ### Topics about the C++ language
 
