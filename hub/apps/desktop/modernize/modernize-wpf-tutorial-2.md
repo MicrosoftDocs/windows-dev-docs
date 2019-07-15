@@ -33,20 +33,20 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**.
 
-5. In the opened manifest file, locate the **compatibility** section and identify the following commented entry.
+5. In the opened manifest file, locate the **compatibility** section and identify the following commented **supportedOS** element for Windows 10.
 
     ```xml
     <!-- Windows 10 -->
     <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     ```
 
-6. Below this entry, Add the following item.
+6. Below this element, Add the following **maxversiontested** element.
 
     ```xml
     <maxversiontested Id="10.0.18362.0"/>
     ```
 
-7. Uncomment the **supportedOS** entry for Windows 10. This section should now look like this.
+7. Uncomment the **supportedOS** element for Windows 10. This section should now look like this.
 
     ```xml
     <!-- Windows 10 -->
@@ -55,7 +55,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     ```
 
     > [!NOTE]
-    > This entry specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time.
+    > The **maxversiontested** element specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time. After adding this element ou may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
 
 8. In the manifest file, locate the following commented **application** section.
 
