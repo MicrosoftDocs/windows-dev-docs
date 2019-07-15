@@ -6,7 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Show multiple windows with AppWindow
+# Show multiple views with AppWindow
 
 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) and it's related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
 
@@ -997,6 +997,5 @@ namespace HelloAppWindow
 
 ## Related topics
 
-- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
- 
+- [Show multiple views](show-multiple-views.md)
+- [Show multiple views with ApplicationView](application-view.md)
