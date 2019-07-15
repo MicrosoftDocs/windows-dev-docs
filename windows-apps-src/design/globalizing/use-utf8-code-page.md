@@ -73,7 +73,7 @@ You can declare this property and target/run on earlier Windows builds, but you 
 As Windows operates natively in UTF-16 (`WCHAR`), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.
 
 [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (`WCHAR`) (and other code pages). This is particularly useful when a legacy Win32 API might only understand `WCHAR`. These functions allow you to convert UTF-8 input to `WCHAR` to pass into a -W API and then convert any results back if necessary.
-When using these functions in Windows with `CodePage` set to `CP_UTF8`, use `dwFlags` of either `0` or `MB_ERR_INVALID_CHARS`, otherwise an `ERROR_INVALID_FLAGS` occurs.
+When using these functions with `CodePage` set to `CP_UTF8`, use `dwFlags` of either `0` or `MB_ERR_INVALID_CHARS`, otherwise an `ERROR_INVALID_FLAGS` occurs.
 
 Note: `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
 
