@@ -79,8 +79,18 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
       </windowsSettings>
     </application>
     ```
+10. Add this section. This configures the app registration of the native xaml application for Win32.
 
-10. Save and close the `app.manifest` file.
+    ```xml
+  <asmv3:file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll">
+    <activatableClass
+        name="Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication"
+        threadingModel="both"
+        xmlns="urn:schemas-microsoft-com:winrt.v1" />
+  </asmv3:file>
+    ```
+
+11. Save and close the `app.manifest` file.
 
 12. In **Solution Explorer**, right-click the **ContosoExpenses.Core** project and choose **Properties**.
 
