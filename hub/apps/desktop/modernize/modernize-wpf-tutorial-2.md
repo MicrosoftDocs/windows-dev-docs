@@ -24,7 +24,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
     ![Manage NuGet Packages menu in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results.
+2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results. Make sure you install version 6.0.0-preview6.4 or a later version.
 
     > [!NOTE]
     > This package contains all the necessary infrastructure for hosting UWP XAML Islands in a WPF app, including the **InkCanvas** wrapped UWP control. A similar package named `Microsoft.Toolkit.Forms.UI.Controls` is available for Windows Forms apps.
@@ -33,31 +33,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**.
 
-5. In the opened manifest file, locate the `<compatibility>` element and identify the following commented `<supportedOS>` element for Windows 10.
-
-    ```xml
-    <!-- Windows 10 -->
-    <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
-    ```
-
-6. Below this element, Add the following `<maxversiontested>` element.
-
-    ```xml
-    <maxversiontested Id="10.0.18362.0"/>
-    ```
-
-7. Uncomment the `<supportedOS>` element for Windows 10. This section should now look like this.
-
-    ```xml
-    <!-- Windows 10 -->
-    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-    <maxversiontested Id="10.0.18362.0"/>
-    ```
-
-    > [!NOTE]
-    > The `<maxversiontested>` element specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time. After adding this element you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
-
-8. In the manifest file, locate the following commented `<application>` element.
+5. In the manifest file, locate the following commented `<application>` element.
 
     ```xml
     <!--
@@ -69,7 +45,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     -->
     ```
 
-9. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
+6. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
 
     ```xml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -80,27 +56,15 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     </application>
     ```
 
-10. Add the following `<file>` element before the closing `</assembly>` tag. This element configures the registration of the native **XamlApplication** class, which is necessary for hosting XAML Islands (this class is included with the `Microsoft.Toolkit.Wpf.UI.Controls` package and you typically don't access it directly).
+7. Save and close the `app.manifest` file.
 
-    ```xml
-    <file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll"
-          xmlns="urn:schemas-microsoft-com:asm.v3">
-        <activatableClass
-            name="Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication"
-            threadingModel="both"
-            xmlns="urn:schemas-microsoft-com:winrt.v1" />
-    </file>
-    ```
+8. In **Solution Explorer**, right-click the **ContosoExpenses.Core** project and choose **Properties**.
 
-11. Save and close the `app.manifest` file.
-
-12. In **Solution Explorer**, right-click the **ContosoExpenses.Core** project and choose **Properties**.
-
-13. In the **Resources** section of the **Application** tab, make sure the **Manifest** dropdown is set to **app.manifest**.
+9. In the **Resources** section of the **Application** tab, make sure the **Manifest** dropdown is set to **app.manifest**.
 
     ![.NET Core app manifest](images/wpf-modernize-tutorial/NetCoreAppManifest.png)
 
-16. Save the changes to the project properties.
+10. Save the changes to the project properties.
 
 ## Add an InkCanvas control to the app
 
@@ -159,7 +123,7 @@ Now that you have configured your project to use UWP XAML Islands, you are now r
 
 10. Locate the `ExpenseDetail()` constructor.
 
-11. Add the following line of code right after the `InitializeComponent()` method and save the code file.
+11. Add the following line of code after the `InitializeComponent()` method and save the code file.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
