@@ -65,9 +65,11 @@ Here's a quick look at how these controls are organized architecturally.
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via Nuget packages in the Windows Community Toolkit.
 
-## Requirements
+<span id="requirements" />
 
-XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project.
+## Configure your project to use XAML Islands
+
+XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project by following these instructions.
 
 ### Step 1: Modify your project to use Windows Runtime APIs
 
@@ -81,11 +83,12 @@ Make one of the following changes to your project to enable XAML Island support.
 
 Install the Windows 10, version 1903 SDK (or a later release). Then, package your application in an MSIX package by adding a [Windows Application Packaging Project](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your WPF or Windows Forms project.
 
-#### Option 2: Set the maxversiontested value in your assembly manifest
+#### Option 2: Set the maxversiontested value in your application manifest
 
 If you don't want to package your application in an MSIX package, you can add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
 
 1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**. For a WPF or Windows Forms application, make sure you also assign the **Manifest** property to **.app.manifest** in the **Application** page of your [project properties](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
+
 2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
 
     ```xml
@@ -101,8 +104,22 @@ If you don't want to package your application in an MSIX package, you can add an
     </assembly>
     ```
 
-> [!NOTE]
-> When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+    > [!NOTE]
+    > When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+
+### Step 3: Register the XamlApplication class in your application manifest (WPF and Windows Forms only)
+
+If you are using the wrapped controls or host controls from the Windows Community Toolkit in a WPF or Windows Forms app, add the following `<file>` element as a child of the `<assembly>` element in your application manifest. This element configures the registration of the native **XamlApplication** class, which is necessary for hosting XAML Islands (this class is included with the `Microsoft.Toolkit.Wpf.UI.Controls` and `Microsoft.Toolkit.Forms.UI.Controls` packages and you typically don't access it directly).
+
+    ```xml
+    <file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll"
+        xmlns="urn:schemas-microsoft-com:asm.v3">
+    <activatableClass
+        name="Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication"
+        threadingModel="both"
+        xmlns="urn:schemas-microsoft-com:winrt.v1" />
+  </file>
+  ```
 
 ## Feature roadmap
 

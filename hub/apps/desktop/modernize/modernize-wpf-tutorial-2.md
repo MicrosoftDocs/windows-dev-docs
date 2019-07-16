@@ -33,20 +33,20 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**.
 
-5. In the opened manifest file, locate the **compatibility** section and identify the following commented **supportedOS** element for Windows 10.
+5. In the opened manifest file, locate the `<compatibility>` element and identify the following commented `<supportedOS>` element for Windows 10.
 
     ```xml
     <!-- Windows 10 -->
     <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     ```
 
-6. Below this element, Add the following **maxversiontested** element.
+6. Below this element, Add the following `<maxversiontested>` element.
 
     ```xml
     <maxversiontested Id="10.0.18362.0"/>
     ```
 
-7. Uncomment the **supportedOS** element for Windows 10. This section should now look like this.
+7. Uncomment the `<supportedOS>` element for Windows 10. This section should now look like this.
 
     ```xml
     <!-- Windows 10 -->
@@ -55,9 +55,9 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     ```
 
     > [!NOTE]
-    > The **maxversiontested** element specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time. After adding this element you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+    > The `<maxversiontested>` element specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time. After adding this element you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
 
-8. In the manifest file, locate the following commented **application** section.
+8. In the manifest file, locate the following commented `<application>` element.
 
     ```xml
     <!--
@@ -79,6 +79,18 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
       </windowsSettings>
     </application>
     ```
+
+10. Add the following `<file>` element before the closing `</assembly>` tag. This element configures the registration of the native **XamlApplication** class, which is necessary for hosting XAML Islands (this class is included with the `Microsoft.Toolkit.Wpf.UI.Controls` package and you typically don't access it directly).
+
+    ```xml
+    <file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll"
+        xmlns="urn:schemas-microsoft-com:asm.v3">
+    <activatableClass
+        name="Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication"
+        threadingModel="both"
+        xmlns="urn:schemas-microsoft-com:winrt.v1" />
+  </file>
+  ```
 
 10. Save and close the `app.manifest` file.
 
