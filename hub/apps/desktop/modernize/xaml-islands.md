@@ -111,15 +111,15 @@ If you don't want to package your application in an MSIX package, you can add an
 
 If you are using the wrapped controls or host controls from the Windows Community Toolkit in a WPF or Windows Forms app, add the following `<file>` element as a child of the `<assembly>` element in your application manifest. This element configures the registration of the native **XamlApplication** class, which is necessary for hosting XAML Islands (this class is included with the `Microsoft.Toolkit.Wpf.UI.Controls` and `Microsoft.Toolkit.Forms.UI.Controls` packages and you typically don't access it directly).
 
-    ```xml
-    <file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll"
-        xmlns="urn:schemas-microsoft-com:asm.v3">
+```xml
+<file name="Microsoft.Toolkit.Win32.UI.XamlHost.dll"
+      xmlns="urn:schemas-microsoft-com:asm.v3">
     <activatableClass
         name="Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication"
         threadingModel="both"
         xmlns="urn:schemas-microsoft-com:winrt.v1" />
-  </file>
-  ```
+</file>
+```
 
 ## Feature roadmap
 
