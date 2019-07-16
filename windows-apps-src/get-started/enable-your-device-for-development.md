@@ -3,7 +3,7 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
 ---

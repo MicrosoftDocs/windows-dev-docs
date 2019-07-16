@@ -37,7 +37,7 @@ The Dial supports three basic gestures:
 ## Prerequisites
 
 * A computer (or a virtual machine) running Windows 10 Creators Update, or newer
-* [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * A wheel device (only the [Surface Dial](https://aka.ms/purchasesurfacedial) at this time)
 * If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  

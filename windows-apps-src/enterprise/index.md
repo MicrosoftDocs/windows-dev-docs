@@ -15,7 +15,7 @@ This article provides an overview of key enterprise features provided by the Uni
 
 ### Windows Template Studio
 
-Windows Template Studio is a Visual Studio 2017 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
+Windows Template Studio is a Visual Studio 2017 and Visual Studio 2019 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 

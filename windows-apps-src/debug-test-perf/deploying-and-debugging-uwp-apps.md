@@ -2,7 +2,7 @@
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: This article guides you through the steps to target various deployment and debugging targets.
 title: Deploying and debugging Universal Windows Platform (UWP) apps
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, debug, test, performance
 ms.localizationpriority: medium
@@ -93,10 +93,10 @@ For more information, see the [Visual studio Download Center](https://visualstud
 
 ## Passing command line debug arguments
 
-In Visual Studio 2017, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
+In Visual Studio 2019, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
 
 > [!NOTE]
-> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions of Visual Studio 2017. Command line debug arguments are available for all deployment types except for the Simulator.
+> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions. Command line debug arguments are available for all deployment types except for the Simulator.
 
 For C# and VB UWP projects, you will see a **Command line arguments:** field under **Start options**.
 

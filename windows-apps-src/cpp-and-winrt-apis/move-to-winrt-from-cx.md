@@ -175,7 +175,7 @@ private:
 };
 ```
 
-The same code ported to C++/WinRT. Note the use of the `nullptr` constructor. For more info about that constructor, see [Consume APIs with C++/WinRT](consume-apis.md).
+The same code ported to C++/WinRT. Note the use of the **std::nullptr_t** constructor. For more info about that constructor, see [Consume APIs with C++/WinRT](consume-apis.md#delayed-initialization).
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;

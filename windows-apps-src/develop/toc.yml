@@ -822,6 +822,8 @@
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML custom (templated) controls
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Passing parameters into the ABI boundary
+          href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components
           href: ../cpp-and-winrt-apis/consume-com.md
         - name: Author COM components
@@ -838,6 +840,8 @@
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: Agile objects
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: A simple C++/WinRT WinUI example
+          href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: C++ language
           items:
             - name: Value categories, and references

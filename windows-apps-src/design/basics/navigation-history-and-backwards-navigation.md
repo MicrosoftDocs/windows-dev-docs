@@ -3,7 +3,7 @@ Description: Learn how to implement backwards navigation for traversing the user
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -25,7 +25,17 @@ To create a back button, use the [Button](../controls-and-patterns/buttons.md) c
 ![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
@@ -33,8 +43,23 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
 ![Back button on top command bar](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+	    
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don’t need to display the back button at all.

@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ![hero image](images/wts1.png)
 
-Windows Template Studio (WTS) is a Visual Studio 2017 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices. Sprinkled throughout the generated code we have links Docs, Stack Overflow and blogs to provide useful insights. WTS supports creating apps in C# or Visual Basic.
+Windows Template Studio (WTS) is a Visual Studio 2017 and Visual Studio 2019 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices. Sprinkled throughout the generated code we have links Docs, Stack Overflow and blogs to provide useful insights. WTS supports creating apps in C# or Visual Basic.
 
 For more information, please visit the [project repo on GitHub](https://github.com/microsoft/windowsTemplateStudio).
 
