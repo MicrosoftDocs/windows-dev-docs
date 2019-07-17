@@ -2,7 +2,7 @@
 description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
 title: Add a UWP InkCanvas control using XAML Islands
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 07/17/2019
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
@@ -31,9 +31,16 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 3. Right-click **ContosoExpenses.Core** project in **Solution Explorer** and choose **Add -> New item**.
 
-4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**.
+4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**. For more information about application manifests, see [this article](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
 
-5. In the manifest file, locate the following commented `<application>` element.
+5. In the manifest file, locate the **compatibility** section and uncomment the **supportedOS** element for Windows 10.
+
+    ```xml
+    <!-- Windows 10 -->
+    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+    ```
+
+6. In the manifest file, locate the following commented `<application>` element.
 
     ```xml
     <!--
@@ -45,7 +52,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     -->
     ```
 
-6. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
+7. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
 
     ```xml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -56,15 +63,15 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     </application>
     ```
 
-7. Save and close the `app.manifest` file.
+8. Save and close the `app.manifest` file.
 
-8. In **Solution Explorer**, right-click the **ContosoExpenses.Core** project and choose **Properties**.
+9. In **Solution Explorer**, right-click the **ContosoExpenses.Core** project and choose **Properties**.
 
-9. In the **Resources** section of the **Application** tab, make sure the **Manifest** dropdown is set to **app.manifest**.
+10. In the **Resources** section of the **Application** tab, make sure the **Manifest** dropdown is set to **app.manifest**.
 
     ![.NET Core app manifest](images/wpf-modernize-tutorial/NetCoreAppManifest.png)
 
-10. Save the changes to the project properties.
+11. Save the changes to the project properties.
 
 ## Add an InkCanvas control to the app
 

@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop apps
-ms.date: 04/16/2019
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -55,7 +55,7 @@ In addition to the wrapped controls for XAML Islands, the Windows Community Tool
 
 For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls. This control supports Windows 10 Insider Preview SDK build 17709 and later releases.
 
-These controls are available in the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (for WPF) and [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) (for Windows Forms) packages. These packages are included in the packages that contain the wrapped controls (that is, the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) and [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) packages).
+These controls are available in the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (for WPF) and [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) (for Windows Forms) packages. These packages are included in the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) and [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) packages that contain the wrapped controls.
 
 ### Architecture overview
 
@@ -73,21 +73,21 @@ XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in
 
 ### WPF and Windows Forms
 
-1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).\
+1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
 
-2. Install the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) NuGet package (for WPF) or the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) NuGet package (for Windows Forms) in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
+2. Install the latest [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (for WPF) or [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (for Windows Forms) NuGet package in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
 
 ### C++/Win32
 
 1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
 2. Do one of the following:
 
-    **Package your application in an MSIX package**.
-    1. Install the Windows 10, version 1903 SDK (or a later release). 
+    **Package your application in an MSIX package**. Packaging your application in an [MSIX package](https://docs.microsoft.com/windows/msix/) provides many deployment and run time benefits.
+    1. Install the Windows 10, version 1903 SDK (or a later release).
     2. Package your application in an MSIX package by adding a [Windows Application Packaging Project](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your C++/Win32 project.
 
-    **Set the maxversiontested value in your application manifest**. If you don't want to package your application in an MSIX package, you can add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
-    1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**. For a WPF or Windows Forms application, make sure you also assign the **Manifest** property to **.app.manifest** in the **Application** page of your [project properties](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
+    **Set the maxversiontested value in your application manifest**. If you don't want to package your application in an MSIX package, before you can use XAML Islands you must add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
+    1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
     2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
 
         ```xml
