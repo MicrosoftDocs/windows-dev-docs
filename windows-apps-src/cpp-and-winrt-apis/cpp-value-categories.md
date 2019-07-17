@@ -7,6 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, moving, forwar
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Value categories, and references to them
 This topic describes the various categories of values (and references to values) that exist in C++. You will doubtless have heard of *lvalues* and *rvalues*, but you may not think of them in the terms that this topic presents. And there are other kinds of values, too.
 

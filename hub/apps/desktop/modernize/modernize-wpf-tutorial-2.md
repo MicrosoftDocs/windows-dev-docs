@@ -2,7 +2,7 @@
 description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
 title: Add a UWP InkCanvas control using XAML Islands
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 07/17/2019
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
@@ -24,40 +24,23 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
     ![Manage NuGet Packages menu in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results.
+2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results. Make sure you install version 6.0.0-preview6.4 or a later version.
 
     > [!NOTE]
     > This package contains all the necessary infrastructure for hosting UWP XAML Islands in a WPF app, including the **InkCanvas** wrapped UWP control. A similar package named `Microsoft.Toolkit.Forms.UI.Controls` is available for Windows Forms apps.
 
 3. Right-click **ContosoExpenses.Core** project in **Solution Explorer** and choose **Add -> New item**.
 
-4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**.
+4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**. For more information about application manifests, see [this article](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
 
-5. In the opened manifest file, locate the **compatibility** section and identify the following commented entry.
-
-    ```xml
-    <!-- Windows 10 -->
-    <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
-    ```
-
-6. Below this entry, Add the following item.
-
-    ```xml
-    <maxversiontested Id="10.0.18362.0"/>
-    ```
-
-7. Uncomment the **supportedOS** entry for Windows 10. This section should now look like this.
+5. In the manifest file, uncomment the following `<supportedOS>` element for Windows 10.
 
     ```xml
     <!-- Windows 10 -->
     <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-    <maxversiontested Id="10.0.18362.0"/>
     ```
 
-    > [!NOTE]
-    > This entry specifies that the app requires Windows 10, version 1903 (build 18362) or later. This is the first version of Windows 10 that supports XAML Islands. Without this entry in the application manifest, the app will throw an exception at run time.
-
-8. In the manifest file, locate the following commented **application** section.
+6. In the manifest file, locate the following commented `<application>` element.
 
     ```xml
     <!--
@@ -69,7 +52,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
     -->
     ```
 
-9. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
+7. Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.
 
     ```xml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -98,7 +81,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
     ![.NET Core app manifest](images/wpf-modernize-tutorial/NetCoreAppManifest.png)
 
-16. Save the changes to the project properties.
+14. Save the changes to the project properties.
 
 ## Add an InkCanvas control to the app
 
@@ -157,7 +140,7 @@ Now that you have configured your project to use UWP XAML Islands, you are now r
 
 10. Locate the `ExpenseDetail()` constructor.
 
-11. Add the following line of code right after the `InitializeComponent()` method and save the code file.
+11. Add the following line of code after the `InitializeComponent()` method and save the code file.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;

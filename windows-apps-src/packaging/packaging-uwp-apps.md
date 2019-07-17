@@ -2,7 +2,7 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Packaging UWP apps
 description: To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.
-ms.date: 06/10/2019
+ms.date:  07/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords: ["vs.packagewizard",  "vs.storeassociationwizard"]
@@ -58,8 +58,11 @@ The Visual Studio manifest designer allows you to update the manifest file witho
 
     From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate.
 
-    >[!IMPORTANT]
-    >If you're publishing your app in Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate.
+    > [!NOTE]
+    > Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](create-certificate-package-signing.md).
+
+    > [!IMPORTANT]
+    > If you're publishing your app in Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate.
 
     If you are not publishing your app and simply want to sideload an app package, you first need to trust the package. To trust the package, the certificate must be installed on the user's device. For more information about sideloading, see [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 

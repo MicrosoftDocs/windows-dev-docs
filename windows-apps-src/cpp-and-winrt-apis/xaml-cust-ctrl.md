@@ -7,6 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, 
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # XAML custom (templated) controls with C++/WinRT
 
 > [!IMPORTANT]

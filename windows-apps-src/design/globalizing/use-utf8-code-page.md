@@ -18,15 +18,15 @@ UTF-8 is the universal code page for internationalization and supports all Unico
   
 Win32 APIs often support both -A and -W variants.
 
--A variants recognize the ANSI code page configured on the system and support char*, while -W variants operate in UTF-16 and support `WCHAR`.
+-A variants recognize the ANSI code page configured on the system and support `char*`, while -W variants operate in UTF-16 and support `WCHAR`.
 
 Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## Set a process code page to UTF-8
 
-You can force a process to use UTF-8 as the process code page through the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps using the ActiveCodePage property.
+As of Windows Version 1903 (May 2019 Update), you can use the ActiveCodePage property in the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps, to force a process to use UTF-8 as the process code page.
 
-You can declare this property and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual (with a minimum target version of 19H1, the process code page will always be UTF-8).
+You can declare this property and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8 so legacy code page detection and conversion can be avoided.
 
 ## Examples
 
@@ -70,12 +70,12 @@ You can declare this property and target/run on earlier Windows builds, but you 
 
 ## Code page conversion
 
-As Windows operates natively in UTF-16 (WCHAR), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.
+As Windows operates natively in UTF-16 (`WCHAR`), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (WCHAR) (and other code pages). This is particularly useful when a legacy Win32 API might only understand WCHAR. These functions allow you to convert UTF-8 input to WCHAR to pass into a -W API and then convert any results back if necessary.
-When using these functions in Windows with CodePage CP_UTF8, use dwFlags of either 0 or MB_ERR_INVALID_CHARS, otherwise an ERROR_INVALID_FLAGS occurs.
+[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) and [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) let you convert between UTF-8 and UTF-16 (`WCHAR`) (and other code pages). This is particularly useful when a legacy Win32 API might only understand `WCHAR`. These functions allow you to convert UTF-8 input to `WCHAR` to pass into a -W API and then convert any results back if necessary.
+When using these functions with `CodePage` set to `CP_UTF8`, use `dwFlags` of either `0` or `MB_ERR_INVALID_CHARS`, otherwise an `ERROR_INVALID_FLAGS` occurs.
 
-Note: CP_ACP equates to CP_UTF8 only if running on Windows Version 1903 (May 2019 Update) and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using CP_UTF8 explicitly.
+Note: `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
 
 ## Related topics
 

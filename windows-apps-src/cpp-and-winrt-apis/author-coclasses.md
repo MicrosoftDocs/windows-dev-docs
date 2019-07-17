@@ -7,6 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, c
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Author COM components with C++/WinRT
 
 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) can help you to author classic Component Object Model (COM) components (or coclasses), just as it helps you to author Windows Runtime classes. This topic shows you how.
@@ -504,8 +505,7 @@ struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
     {
         try
         {
-            *ppvObject = winrt::make<MyCoclass>().get();
-            return S_OK;
+            return winrt::make<MyCoclass>()->QueryInterface(riid, ppvObject);
         }
         catch (...)
         {

@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ---
+
 # Concurrency and asynchronous operations with C++/WinRT
 
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -218,13 +219,13 @@ IASyncAction DoWorkAsync(Param const& value)
 {
     // While it's ok to access value here...
 
-    co_await DoOtherWorkAsync();
+    co_await DoOtherWorkAsync(); // (this is the first suspension point)...
 
     // ...accessing value here carries no guarantees of safety.
 }
 ```
 
-In a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller. By the time the coroutine resumes, anything might have happened to the source value that a reference parameter references. From the coroutine's perspective, a reference parameter has uncontrolled lifetime. So, in the example above, we're safe to access *value* up until the `co_await`, but not after it. In the event that *value* is destructed by the caller, attempting to access it inside the coroutine after that results in a memory corruption. Nor can we safely pass *value* to **DoOtherWorkAsync** if there's any risk that that function will in turn suspend and then try to use *value* after it resumes.
+In a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller and the calling frame goes out of scope. By the time the coroutine resumes, anything might have happened to the source value that a reference parameter references. From the coroutine's perspective, a reference parameter has uncontrolled lifetime. So, in the example above, we're safe to access *value* up until the `co_await`, but not after it. In the event that *value* is destructed by the caller, attempting to access it inside the coroutine after that results in a memory corruption. Nor can we safely pass *value* to **DoOtherWorkAsync** if there's any risk that that function will in turn suspend and then try to use *value* after it resumes.
 
 To make parameters safe to use after suspending and resuming, your coroutines should use pass-by-value by default to ensure that they capture by value, and avoid lifetime issues. Cases when you can deviate from that guidance because you're certain that it's safe to do so are going to be rare.
 
@@ -770,6 +771,68 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 ```
 
 The first argument (the *sender*) is left unnamed, because we never use it. For that reason we're safe to leave it as a reference. But observe that *args* is passed by value. See the [Parameter-passing](#parameter-passing) section above.
+
+## Awaiting a kernel handle
+
+C++/WinRT provides a **resume_on_signal** class, which you can use to suspend until a kernel event is signaled. You're responsible for ensuring that the handle remains valid until your `co_await resume_on_signal(h)` returns. **resume_on_signal** itself can't do that for you, because you may have lost the handle even before the **resume_on_signal** starts, as in this first example.
+
+```cppwinrt
+IAsyncAction Async(HANDLE event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle is not valid here.
+}
+```
+
+The incoming **HANDLE** is valid only until the function returns, and this function (which is a coroutine) returns at the first suspension point (the first `co_await` in this case). While awaiting **DoWorkAsync**, control has returned to the caller, the calling frame has gone out of scope, and you no longer know whether the handle will be valid when your coroutine resumes.
+
+Technically, our coroutine is receiving its parameters by value, as it should (see [Parameter-passing](#parameter-passing) above). But in this case we need to go a step further so that we're following the *spirit* of that guidance (rather than just the letter). We need to pass a strong reference (in other words, ownership) along with the handle. Here's how.
+
+```cppwinrt
+IAsyncAction Async(winrt::handle event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+}
+```
+
+Passing a [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) by value provides ownership semantics, which ensures that the kernel handle remains valid for the lifetime of the coroutine.
+
+Here's how you might call that coroutine.
+
+```cppwinrt
+namespace
+{
+    winrt::handle duplicate(winrt::handle const& other, DWORD access)
+    {
+        winrt::handle result;
+        if (other)
+        {
+            winrt::check_bool(::DuplicateHandle(::GetCurrentProcess(),
+		        other.get(), ::GetCurrentProcess(), result.put(), access, FALSE, 0));
+        }
+        return result;
+    }
+
+    winrt::handle make_manual_reset_event(bool initialState = false)
+    {
+        winrt::handle event{ ::CreateEvent(nullptr, true, initialState, nullptr) };
+        winrt::check_bool(static_cast<bool>(event));
+        return event;
+    }
+}
+
+IAsyncAction SampleCaller()
+{
+    handle event{ make_manual_reset_event() };
+    auto async{ Async(duplicate(event)) };
+
+    ::SetEvent(event.get());
+    event.close(); // Our handle is closed, but Async still has a valid handle.
+
+    co_await async; // Will wake up when *event* is signaled.
+}
+```
 
 ## Important APIs
 * [concurrency::task class](/cpp/parallel/concrt/reference/task-class)

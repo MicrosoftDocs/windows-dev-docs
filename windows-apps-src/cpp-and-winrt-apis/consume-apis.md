@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
 ms.localizationpriority: medium
 ---
+
 # Consume APIs with C++/WinRT
 
 This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
@@ -113,7 +114,9 @@ int main()
 
 ## Delayed initialization
 
-Even the default constructor of a projected type causes a backing Windows Runtime object to be created. If you want to construct a variable of a projected type without it in turn constructing a Windows Runtime object (so that you can delay that work until later), then you can. Declare your variable or field using the projected type's special C++/WinRT **std::nullptr_t** constructor. The C++/WinRT projection injects this constructor into every runtime class.
+In C++/WinRT, each projected type has a special C++/WinRT **std::nullptr_t** constructor. With the exception of that one, all projected-type constructors&mdash;including the default constructor&mdash;cause a backing Windows Runtime object to be created, and give you a smart pointer to it. So, that rule applies anywhere that the default constructor is used, such as uninitialized local variables, uninitialized global variables, and uninitialized member variables.
+
+If, on the other hand, you want to construct a variable of a projected type without it in turn constructing a backing Windows Runtime object (so that you can delay that work until later), then you can do that. Declare your variable or field using that special C++/WinRT **std::nullptr_t** constructor (which the C++/WinRT projection injects into every runtime class). We use that special constructor with *m_gamerPicBuffer* in the code example below.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -157,6 +160,8 @@ The assignment creates a new **TextBlock**, and then immediately overwrites it w
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
+
+Also see [How the default constructor affects collections](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections).
 
 ### Don't delay-initialize by mistake
 

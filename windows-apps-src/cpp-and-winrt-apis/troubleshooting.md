@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error
 ms.localizationpriority: medium
 ---
+
 # Troubleshooting C++/WinRT issues
 
 > [!NOTE]

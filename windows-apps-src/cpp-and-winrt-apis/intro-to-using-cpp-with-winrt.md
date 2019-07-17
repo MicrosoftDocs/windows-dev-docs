@@ -66,7 +66,7 @@ Here are the Visual Studio project templates provided by the VSIX extension.
 ### Blank App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface.
 
-Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement your local runtime classes. We recommend that you declare each runtime class in its own IDL file.
+Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 The XAML design surface support in Visual Studio 2019 for C++/WinRT is close to parity with C#. In Visual Studio 2019, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
 
@@ -86,7 +86,7 @@ A project template for a component; typically for consumption from a Universal W
 
 This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Windows Runtime metadata (`.winmd`) is generated from IDL, and then implementation and header stubs are generated from the Windows Runtime metadata.
 
-In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. We recommend that you declare each runtime class in its own IDL file.
+In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 Bundle the built Windows Runtime Component binary and its `.winmd` with the UWP app consuming them.
 

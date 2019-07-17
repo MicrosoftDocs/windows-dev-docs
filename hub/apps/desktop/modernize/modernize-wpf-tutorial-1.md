@@ -157,7 +157,7 @@ To configure NuGet packages for the **ContosoExpenses.Core** project:
 
 5. Search for the `MvvmLightLibsStd10` package and install it. This is the .NET Standard version of the `MvvmLightLibs` package. For this package, the author chose to package the .NET Standard version of the library in a separate package than the .NET Framework version.
 
-    !MvvmLightsLibs package[](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![MvvmLightsLibs package](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
 6. In the **ContosoExpenses.Core** project, right-click the **Dependencies** node and choose **Add Reference**.
 
