@@ -122,7 +122,7 @@ In the **Title** mutator function, we check whether a value is being set that's 
 ## Declare and implement **BookstoreViewModel**
 Our main XAML page is going to bind to a main view model. And that view model is going to have several properties, including one of type **BookSku**. In this step, we'll declare and implement our main view model runtime class.
 
-Add a new **Midl File (.idl)** item named `BookstoreViewModel.idl`.
+Add a new **Midl File (.idl)** item named `BookstoreViewModel.idl`. But also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl

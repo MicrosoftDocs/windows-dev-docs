@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
 ---
+
 # Move to C++/WinRT from C++/CX
 
 This topic shows how to port the code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -36,7 +37,88 @@ If you include any C++/WinRT projected Windows API headers (for example, `winrt/
 
 If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) types, then see [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md).
 
+## File-naming conventions
+
+### XAML markup files
+
+| | C++/CX | C++/WinRT |
+| - | - | - |
+| **Developer XAML files** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (see below) |
+| **Generated XAML files** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
+
+Notice that C++/WinRT removes the `.xaml` from the `*.h` and `*.cpp` file names.
+
+C++/WinRT adds an additional developer file, the **Midl file (.idl)**. C++/CX autogenerates this file internally, adding to it every public and protected member. In C++/WinRT, you add and author the file yourself. For more details, code examples, and a walkthrough of authoring IDL, see [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
+Also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)
+
+### Runtime classes
+
+C++/CX doesn't impose restrictions on the names of your header files; it's common to put multiple runtime class definitions into a single header file, especially for small classes. But C++/WinRT requires that each runtime class has its own header file named after the class name. 
+
+| C++/CX | C++/WinRT |
+| - | - |
+| **Common.h**<br>`ref class A { ... }`<br>`ref class B { ... }` | **Common.idl**<br>`runtimeclass A { ... }`<br>`runtimeclass B { ... }` |
+|  | **A.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct A { ... };`<br>`}` |
+|  | **B.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct B { ... };`<br>`}` |
+
+Less common (but still legal) in C++/CX is to use differently-named header files for XAML custom controls. You'll need to rename these header file to match the class name.
+
+| C++/CX | C++/WinRT |
+| - | - |
+| **A.xaml**<br>`<Page x:Class="LongNameForA" ...>` | **A.xaml**<br>`<Page x:Class="LongNameForA" ...>` |
+| **A.h**<br>`partial ref class LongNameForA { ... }` | **LongNameForA.h**<br>`namespace implements {`<br>&nbsp;&nbsp;`struct LongNameForA { ... };`<br>`}` |
+
+## Header file requirements
+
+C++/CX doesn't require you to include any special header files, because it internally autogenerates header files from `.winmd` files. It's common in C++/CX to use `using` directives for namespaces that you consume by name.
+
+```cppcx
+using namespace Windows::Media::Playback;
+
+String^ NameOfFirstVideoTrack(MediaPlaybackItem^ item)
+{
+    return item->VideoTracks->GetAt(0)->Name;
+}
+```
+
+The `using namespace Windows::Media::Playback` directive lets us write `MediaPlaybackItem` without a namespace prefix. We also touched the `Windows.Media.Core` namespace, because `item->VideoTracks->GetAt(0)` returns a **Windows.Media.Core.VideoTrack**. But we didn't have to type the name **VideoTrack** anywhere, so we didn't need a `using Windows.Media.Core` directive.
+
+But C++/WinRT requires you to include a header file corresponding to each namespace that you consume, even if you don't name it.
+
+```cppwinrt
+#include <winrt/Windows.Media.Playback.h>
+#include <winrt/Windows.Media.Core.h> // !!This is important!!
+
+using namespace winrt;
+using namespace Windows::Media::Playback;
+
+winrt::hstring NameOfFirstVideoTrack(MediaPlaybackItem const& item)
+{
+    return item.VideoTracks().GetAt(0).Name();
+}
+```
+
+On the other hand, even though the **MediaPlaybackItem.AudioTracksChanged** event is of type **TypedEventHandler\<MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs\>**, we don't need to include `winrt/Windows.Foundation.Collections.h` because we didn't use that event.
+
+C++/WinRT also requires you to include header files for namespaces that are consumed by XAML markup.
+
+```xaml
+<!-- MainPage.xaml -->
+<Rectangle Height="400"/>
+```
+
+Using the **Rectangle** class means that you have to add this include.
+
+```cppwinrt
+// MainPage.h
+#include <winrt/Windows.UI.Xaml.Shapes.h>
+```
+
+If you forget a header file, then everything will compile okay but you'll get linker errors because the `consume_` classes are missing.
+
 ## Parameter-passing
+
 When writing C++/CX source code, you pass C++/CX types as function parameters as hat (\^) references.
 
 ```cppcx
@@ -53,6 +135,7 @@ IASyncAction LogPresenceRecordAsync(PresenceRecord const record);
 A C++/WinRT object is fundamentally a value that holds an interface pointer to the backing Windows Runtime object. When you copy a C++/WinRT object, the compiler copies the encapsulated interface pointer, incrementing its reference count. Eventual destruction of the copy involves decrementing the reference count. So, only incur the overhead of a copy when necessary.
 
 ## Variable and field references
+
 When writing C++/CX source code, you use hat (\^) variables to reference Windows Runtime objects, and the arrow (-&gt;) operator to dereference a hat variable.
 
 ```cppcx
@@ -75,7 +158,7 @@ if (userList != nullptr)
     ...
 ```
 
-The default constructor for a C++/CX hat pointer initializes it to null. Here's a C++/CX code example in which we create a variable/field of the correct type, but one that's uninitialized. In other words, it doesn't initially refer to a **TextBlock**; we intend to assign a reference later.
+The default constructor for a C++/CX hat reference initializes it to null. Here's a C++/CX code example in which we create a variable/field of the correct type, but one that's uninitialized. In other words, it doesn't initially refer to a **TextBlock**; we intend to assign a reference later.
 
 ```cppcx
 TextBlock^ textBlock;
@@ -89,11 +172,13 @@ class MyClass
 For the equivalent in C++/WinRT, see [Delayed initialization](consume-apis.md#delayed-initialization).
 
 ## Properties
+
 The C++/CX language extensions include the concept of properties. When writing C++/CX source code, you can access a property as if it were a field. Standard C++ does not have the concept of a property so, in C++/WinRT, you call get and set functions.
 
 In the examples that follow, **XboxUserId**, **UserState**, **PresenceDeviceRecords**, and **Size** are all properties.
 
 ### Retrieving a value from a property
+
 Here's how you get a property value in C++/CX.
 
 ```cppcx
@@ -119,6 +204,7 @@ void Sample::LogPresenceRecord(PresenceRecord const& record)
 Note that the **PresenceDeviceRecords** function returns a Windows Runtime object that itself has a **Size** function. As the returned object is also a C++/WinRT projected type, we dereference using the dot operator to call **Size**.
 
 ### Setting a property to a new value
+
 Setting a property to a new value follows a similar pattern. First, in C++/CX.
 
 ```cppcx
@@ -132,6 +218,7 @@ record.UserState(newValue);
 ```
 
 ## Creating an instance of a class
+
 You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate a new instance of the runtime class.
 
 ```cppcx
@@ -156,7 +243,7 @@ private:
 };
 ```
 
-If a resource is expensive to initialize, then it's common to delay initialization of it until it's actually needed.
+If a resource is expensive to initialize, then it's common to delay initialization of it until it's actually needed. As already mentioned, the default constructor for a C++/CX hat reference initializes it to null.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -175,7 +262,7 @@ private:
 };
 ```
 
-The same code ported to C++/WinRT. Note the use of the **std::nullptr_t** constructor. For more info about that constructor, see [Consume APIs with C++/WinRT](consume-apis.md#delayed-initialization).
+The same code ported to C++/WinRT. Note the use of the **std::nullptr_t** constructor. For more info about that constructor, see [Delayed initialization](consume-apis.md#delayed-initialization).
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -193,7 +280,33 @@ private:
 };
 ```
 
+## How the default constructor affects collections
+
+C++ collection types use the default constructor, which can result in unintended object construction.
+
+| Scenario | C++/CX | C++/WinRT (incorrect) | C++/WinRT (correct) |
+| - | - | - | - |
+| Local variable, initially empty | `TextBox^ textBox;` | `TextBox textBox; // Creates a TextBox!` | `TextBox textBox{ nullptr };` |
+| Member variable, initially empty | `class C {`<br/>&nbsp;&nbsp;`TextBox^ textBox;`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textBox; // Creates a TextBox!`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textbox{ nullptr };`<br/>`};` |
+| Global variable, initially empty | `TextBox^ g_textBox;` | `TextBox g_textBox; // Creates a TextBox!` | `TextBox g_textBox{ nullptr };` |
+| Vector of empty references | `std::vector<TextBox^> boxes(10);` | `// Creates 10 TextBox objects!`<br/>`std::vector<TextBox> boxes(10);` | `std::vector<TextBox> boxes(10, nullptr);` |
+| Set a value in a map | `std::map<int, TextBox^> boxes;`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`// Creates a TextBox at 2,`<br/>`// then overwrites it!`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`boxes.insert_or_assign(2, value);` |
+| Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
+| Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
+
+There's no shorthand for creating an array of empty references. You have to repeat `nullptr` for each element in the array. If you have too few, then the extras will be default-constructed.
+
+### More about the **std::map** example
+
+The `[]` subscript operator for **std::map** behaves like this.
+
+- If the key is found in the map, return a reference to the existing value (which you can overwrite).
+- If the key isn't found in the map, then create a new entry in the map consisting of the key (moved, if movable) and *a default-constructed value*, and return a reference to the value (which you can then overwrite).
+
+In other words, the `[]` operator always creates an entry in the map. This is different from C#, Java, and JavaScript.
+
 ## Converting from a base runtime class to a derived one
+
 It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
 
 ```cppcx
@@ -231,6 +344,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ```
 
 ## Event-handling with a delegate
+
 Here's a typical example of handling an event in C++/CX, using a lambda function as a delegate in this case.
 
 ```cppcx
@@ -256,6 +370,7 @@ Instead of a lambda function, you can choose to implement your delegate as a fre
 If you're porting from a C++/CX codebase where events and delegates are used internally (not across binaries), then [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) will help you to replicate that pattern in C++/WinRT. Also see [Parameterized delegates, simple signals, and callbacks within a project](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
 
 ## Revoking a delegate
+
 In C++/CX you use the `-=` operator to revoke a prior event registration.
 
 ```cppcx
@@ -271,6 +386,7 @@ myButton().Click(token);
 For more info and options, see [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate).
 
 ## Mapping C++/CX **Platform** types to C++/WinRT types
+
 C++/CX provides several data types in the **Platform** namespace. These types are not standard C++, so you can only use them when you enable Windows Runtime language extensions (Visual Studio project property **C/C++** > **General** > **Consume Windows Runtime Extension** > **Yes (/ZW)**). The table below helps you port from **Platform** types to their equivalents in C++/WinRT. Once you've done that, since C++/WinRT is standard C++, you can turn off the `/ZW` option.
 
 | C++/CX | C++/WinRT |
@@ -283,6 +399,7 @@ C++/CX provides several data types in the **Platform** namespace. These types ar
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### Port **Platform::Agile\^** to **winrt::agile_ref**
+
 The **Platform::Agile\^** type in C++/CX represents a Windows Runtime class that can be accessed from any thread. The C++/WinRT equivalent is [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
 In C++/CX.
@@ -298,9 +415,11 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### Port **Platform::Array\^**
+
 Your options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
+
 The **Platform::Exception\^** type is produced in C++/CX when a Windows Runtime API returns a non S\_OK HRESULT. The C++/WinRT equivalent is [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 
 To port to C++/WinRT, change all code that uses **Platform::Exception\^** to use **winrt::hresult_error**.
@@ -350,6 +469,7 @@ throw winrt::hresult_invalid_argument{ L"A valid User is required" };
 ```
 
 ### Port **Platform::Object\^** to **winrt::Windows::Foundation::IInspectable**
+
 Like all C++/WinRT types, **winrt::Windows::Foundation::IInspectable** is a value type. Here's how you initialize a variable of that type to null.
 
 ```cppwinrt
@@ -357,6 +477,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ```
 
 ### Port **Platform::String\^** to **winrt::hstring**
+
 **Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
 
 With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).

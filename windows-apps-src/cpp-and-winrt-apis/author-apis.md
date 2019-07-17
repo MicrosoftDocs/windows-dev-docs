@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
 ---
+
 # Author APIs with C++/WinRT
 
 This topic shows how to author [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
@@ -120,12 +121,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## If you're authoring a runtime class in a Windows Runtime Component
 
-If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class.
+If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class. You declare a runtime class in a Microsoft Interface Definition Language (IDL) (.idl) file (see [Factoring runtime classes into Midl files (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
-> [!TIP]
-> We recommend that you declare each runtime class in its own Interface Definition Language (IDL) (.idl) file, in order to optimize build performance when you edit an IDL file, and for logical correspondence of an IDL file to its generated source code files. Visual Studio merges all of the resulting `.winmd` files into a single file with the same name as the root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
+Each IDL file results in a `.winmd` file, and Visual Studio merges all of those into a single file with the same name as your root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
 
-Here's an example.
+Here's an example of declaring a runtime class in an IDL file.
 
 ```idl
 // MyRuntimeClass.idl
@@ -205,6 +205,12 @@ namespace winrt::MyProject
 For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
 The procedure for consuming your runtime class in this scenario is described in [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+
+## Factoring runtime classes into Midl files (.idl)
+
+The Visual Studio project and item templates produce a separate IDL file for each runtime class. That gives a logical correspondence between an IDL file and its generated source code files.
+
+However, if you consolidate all of your project's runtime classes into a single IDL file, then that can significantly improve build time. If you would otherwise have complex (or circular) `import` dependencies among them, then consolidating may actually be necessary. And you may find it easier to author and review your runtime classes if they're together.
 
 ## Runtime class constructors
 
