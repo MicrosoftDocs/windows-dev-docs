@@ -17,7 +17,7 @@
     "externalReference": [],
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
-      "ms.prod": "windows",
+      "ms.prod": "uwp",
       "titleSuffix": "Windows apps",
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-WinDevCenter",
@@ -36,8 +36,7 @@
     "fileMetadata": {
       "ms.technology":
       {
-      "apps/**.md": "windows",
-      "apps/desktop/**.md": "desktop"
+      "apps/**.md": "apps"
       }
     },
     "template": [],
