@@ -59,33 +59,24 @@ If you intend to use the {Binding} markup extension to data bind to your data ty
 
 In C++/WinRT version 2.0.190530.8 and higher, [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) creates an observable vector that supports both **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** and **IObservableVector\<IInspectable\>**.
 
-You can author your **Midl file (.idl)** like this.
+You can author your **Midl file (.idl)** like this (also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)).
 
 ```idl
-// BookSku.idl
 namespace Bookstore
 {
     runtimeclass BookSku { ... }
-}
 
-// BookstoreViewModel.idl
-import "BookSku.idl";
-...
-runtimeclass BookstoreViewModel
-{
-    Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
-}
-...
+    runtimeclass BookstoreViewModel
+    {
+        Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
+    }
 
-// MainPage.idl
-import "BookstoreViewModel.idl";
-...
-runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
-{
-    MainPage();
-    BookstoreViewModel MainViewModel{ get; };
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
 }
-...
 ```
 
 And implement like this.
@@ -132,31 +123,12 @@ C++/WinRT doesn't offer that guarantee. If a C++/WinRT runtime class implements 
 Consequently, here's how the previous example will need to look.
 
 ```idl
-// BookSku.idl
-namespace Bookstore
-{
-    runtimeclass BookSku { ... }
-}
-
-// BookstoreViewModel.idl
-import "BookSku.idl";
 ...
 runtimeclass BookstoreViewModel
 {
     // This is really an observable vector of BookSku.
     Windows.Foundation.Collections.IObservableVector<Object> BookSkus{ get; };
 }
-...
-
-// MainPage.idl
-import "BookstoreViewModel.idl";
-...
-runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
-{
-    MainPage();
-    BookstoreViewModel MainViewModel{ get; };
-}
-...
 ```
 
 And the implementation.

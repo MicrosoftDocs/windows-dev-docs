@@ -505,8 +505,7 @@ struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
     {
         try
         {
-            *ppvObject = winrt::make<MyCoclass>().get();
-            return S_OK;
+			return winrt::make<MyCoclass>()->QueryInterface(riid, ppvObject);
         }
         catch (...)
         {
