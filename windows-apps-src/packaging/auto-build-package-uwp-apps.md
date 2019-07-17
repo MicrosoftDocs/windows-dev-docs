@@ -1,7 +1,7 @@
 ---
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or Store packages.
-ms.date: 09/30/2018
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
@@ -60,7 +60,7 @@ The default template tries to sign the package with the certificate specified in
 
 ## Add your project certificate to the Secure files library
 
-You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports [Secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) feature.
 
 To upload a certificate for your automated build:
 
@@ -73,6 +73,9 @@ To upload a certificate for your automated build:
 4. After you upload the certificate, select it to view its properties. Under **Pipeline permissions**, enable the **Authorize for use in all pipelines** toggle.
 
     ![how to upload a secure file](images/secure-file2.png)
+
+> [!NOTE]
+> Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](create-certificate-package-signing.md).
 
 ## Configure the Build solution build task
 

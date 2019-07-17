@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop apps
-ms.date: 04/16/2019
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -36,15 +36,15 @@ There are two types of XAML Island controls provided by the Windows Community To
 
 WPF and Windows Forms applications can use a selection of wrapped UWP controls in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). These are called *wrapped controls* because they wrap the interface and functionality of a specific UWP control. You can add these controls directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in your designer.
 
-The following wrapped UWP controls for implementing XAML Islands are currently available for WPF and Windows Forms applications.
+The following wrapped UWP controls for implementing XAML Islands are currently available for WPF (see the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) package) and Windows Forms applications (see the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package).
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
 | [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, version 1903 | Provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application. |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
-| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
+| [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
 
-In addition to the wrapped controls for XAML Islands, the Windows Community Toolkit also provides the following controls for hosting web content.
+In addition to the wrapped controls for XAML Islands, the Windows Community Toolkit also provides the following controls for hosting web content in WPF (see the [Microsoft.Toolkit.Wpf.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView) package) and Windows Forms applications (see the [Microsoft.Toolkit.Forms.UI.Controls.WebView](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView) package).
 
 | Control | Minimum supported OS | Description |
 |-----------------|-------------------------------|-------------|
@@ -55,6 +55,8 @@ In addition to the wrapped controls for XAML Islands, the Windows Community Tool
 
 For scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the [Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). This control can host any UWP control that derives from [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), including any UWP control provided by the Windows SDK as well as custom user controls. This control supports Windows 10 Insider Preview SDK build 17709 and later releases.
 
+These controls are available in the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (for WPF) and [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) (for Windows Forms) packages. These packages are included in the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) and [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) packages that contain the wrapped controls.
+
 ### Architecture overview
 
 Here's a quick look at how these controls are organized architecturally.
@@ -63,44 +65,46 @@ Here's a quick look at how these controls are organized architecturally.
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via Nuget packages in the Windows Community Toolkit.
 
-## Requirements
+<span id="requirements" />
+
+## Configure your project to use XAML Islands
 
 XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project.
 
-### Step 1: Modify your project to use Windows Runtime APIs
+### WPF and Windows Forms
 
-For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
 
-### Step 2: Enable XAML Island support in your project
+* Install the latest [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (for WPF) or [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (for Windows Forms) NuGet package in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
 
-Make one of the following changes to your project to enable XAML Island support. For more details, see [this blog post](https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Using-XAML-Islands-on-Windows-10-19H1-fixing-the-quot/ba-p/376330#M117).
+### C++/Win32
 
-#### Option 1: Package your application in an MSIX package  
+* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+* Do one of the following:
 
-Install the Windows 10, version 1903 SDK (or a later release). Then, package your application in an MSIX package by adding a [Windows Application Packaging Project](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your WPF or Windows Forms project.
+    **Package your application in an MSIX package**. Packaging your application in an [MSIX package](https://docs.microsoft.com/windows/msix/) provides many deployment and run time benefits.
+    1. Install the Windows 10, version 1903 SDK (or a later release).
+    2. Package your application in an MSIX package by adding a [Windows Application Packaging Project](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your C++/Win32 project.
 
-#### Option 2: Set the maxversiontested value in your assembly manifest
+    **Set the maxversiontested value in your application manifest**. If you don't want to package your application in an MSIX package, before you can use XAML Islands you must add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
+    1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
+    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
 
-If you don't want to package your application in an MSIX package, you can add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
+        ```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+                <application>
+                    <!-- Windows 10 -->
+                    <maxversiontested Id="10.0.18362.0"/>
+                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+                </application>
+            </compatibility>
+        </assembly>
+        ```
 
-1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**. For a WPF or Windows Forms application, make sure you also assign the **Manifest** property to **.app.manifest** in the **Application** page of your [project properties](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
-2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
-
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-        <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-            <application>
-                <!-- Windows 10 -->
-                <maxversiontested Id="10.0.18362.0"/>
-                <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-            </application>
-        </compatibility>
-    </assembly>
-    ```
-
-> [!NOTE]
-> When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+        > [!NOTE]
+        > When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
 
 ## Feature roadmap
 
@@ -108,7 +112,7 @@ As of the release of Windows 10, version 1903, the wrapped controls and host con
 
 * Version 1.0 of the controls for the .NET Framework 4.6.2 and later are planned to be released in the [6.0 release of the toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
 * Version 1.0 of the controls for .NET Core 3 are planned for a later release of the toolkit.
-* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview3** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
+* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview6.4** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
 
 For more details, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
 
