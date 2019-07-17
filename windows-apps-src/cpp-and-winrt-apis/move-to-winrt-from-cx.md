@@ -280,6 +280,30 @@ private:
 };
 ```
 
+## How the default constructor affects collections
+
+C++ collection types use the default constructor, which can result in unintended object construction.
+
+| Scenario | C++/CX | C++/WinRT (incorrect) | C++/WinRT (correct) |
+| - | - | - | - |
+| Local variable, initially empty | `TextBox^ textBox;` | `TextBox textBox; // Creates a TextBox!` | `TextBox textBox{ nullptr };` |
+| Member variable, initially empty | `class C {`<br/>&nbsp;&nbsp;`TextBox^ textBox;`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textBox; // Creates a TextBox!`<br/>`};` | `class C {`<br/>&nbsp;&nbsp;`TextBox textbox{ nullptr };`<br/>`};` |
+| Global variable, initially empty | `TextBox^ g_textBox;` | `TextBox g_textBox; // Creates a TextBox!` | `TextBox g_textBox{ nullptr };` |
+| Vector of empty references | `std::vector<TextBox^> boxes(10);` | `// Creates 10 TextBox objects!`<br/>`std::vector<TextBox> boxes(10);` | `std::vector<TextBox> boxes(10, nullptr);` |
+| Set a value in a map | `std::map<int, TextBox^> boxes;`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`// Creates a TextBox at 2,`<br/>`// then overwrites it!`<br/>`boxes[2] = value;` | `std::map<int, TextBox> boxes;`<br/>`boxes.insert_or_assign(2, value);` |
+| Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
+| Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
+
+There's no shorthand for creating an array of empty references. You have to repeat `nullptr` for each element in the array. If you have too few, then the extras will be default-constructed.
+
+### More about the **std::map** example
+
+The `[]` subscript operator for **std::map** behaves like this.
+
+- If the key is found in the map, return a reference to the existing value (which you can overwrite).
+- If the key isn't found in the map, then create a new entry in the map consisting of the key (moved, if movable) and *a default-constructed value*, and return a reference to the value (which you can then overwrite).
+
+In other words, the `[]` operator always creates an entry in the map. This is different from C#, Java, and JavaScript.
 
 ## Converting from a base runtime class to a derived one
 
