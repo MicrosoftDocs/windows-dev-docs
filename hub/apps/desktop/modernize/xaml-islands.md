@@ -69,18 +69,18 @@ The APIs that appear at the bottom of this diagram ship with the Windows SDK. Th
 
 ## Configure your project to use XAML Islands
 
-XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project by following these instructions.
+XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project.
 
 ### WPF and Windows Forms
 
-1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
 
-2. Install the latest [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (for WPF) or [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (for Windows Forms) NuGet package in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
+* Install the latest [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (for WPF) or [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (for Windows Forms) NuGet package in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
 
 ### C++/Win32
 
-1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
-2. Do one of the following:
+* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+* Do one of the following:
 
     **Package your application in an MSIX package**. Packaging your application in an [MSIX package](https://docs.microsoft.com/windows/msix/) provides many deployment and run time benefits.
     1. Install the Windows 10, version 1903 SDK (or a later release).

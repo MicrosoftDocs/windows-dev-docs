@@ -33,7 +33,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
 4. Select **Application Manifest File**, name it **app.manifest**, and click **Add**. For more information about application manifests, see [this article](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
 
-5. In the manifest file, locate the **compatibility** section and uncomment the **supportedOS** element for Windows 10.
+5. In the manifest file, uncomment the following `<supportedOS>` element for Windows 10.
 
     ```xml
     <!-- Windows 10 -->
