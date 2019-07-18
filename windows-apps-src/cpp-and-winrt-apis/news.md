@@ -23,7 +23,7 @@ For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.m
 
 - The `cppwinrt.exe` tool is now included in the Microsoft.Windows.CppWinRT NuGet package, and the tool generates platfom projection headers for each project on demand. Consequently, the `cppwinrt.exe` tool no longer depends on the Windows SDK (although, the tool still ships with the SDK for compatibility reasons).
 - `cppwinrt.exe` now generates projection headers under each platform/configuration-specific intermediate folder ($IntDir) to enable parallel builds.
-- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See [Microsoft.Windows.CppWinRT NuGet Package](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
+- The C++/WinRT build support (props/targets) is now fully documented, in case you want to manually customize your project files. See the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
 - Numerous bug fixes have been made.
 
 ### Changes to C++/WinRT for version 2.0
