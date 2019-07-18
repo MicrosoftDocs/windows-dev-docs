@@ -170,6 +170,155 @@ Widget MyPage::BookstoreViewModel(winrt::hstring title)
 }
 ```
 
+## ToString()
+
+C# types provide the [Object.ToString](/dotnet/api/system.object.tostring) method.
+
+```csharp
+int i = 2;
+var s = i.ToString(); // s is a System.String with value "2".
+```
+
+C++/WinRT doesn't directly provide this facility, but you can turn to alternatives.
+
+```cppwinrt
+int i{ 2 };
+auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
+```
+
+C++/WinRT also supports [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) for a limited number of types. You'll need to add overloads for any additional types you want to stringify.
+
+| Language | Stringify int | Stringify enum |
+| - | - | - |
+| C# | `string result = "hello, " + intValue.ToString();`<br>`string result = $"hello, {intValue}";` | `string result = "status: " + status.ToString();`<br>`string result = $"status: {status}";` |
+| C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
+
+In the case of stringifying an enum, you will need to provide the implementation of **winrt::to_hstring**.
+
+```cppwinrt
+namespace winrt
+{
+    hstring to_hstring(StatusEnum status)
+    {
+        switch (status)
+        {
+        case StatusEnum::Success: return L"Success";
+        case StatusEnum::AccessDenied: return L"AccessDenied";
+        case StatusEnum::DisabledByPolicy: return L"DisabledByPolicy";
+        default: return to_hstring(static_cast<int>(status));
+        }
+    }
+}
+```
+
+These stringifications are often consumed implicitly by data binding.
+
+```xaml
+<TextBlock>
+You have <Run Text="{Binding FlowerCount}"/> flowers.
+</TextBlock>
+<TextBlock>
+Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
+</TextBlock>
+```
+
+These bindings will perform **winrt::to_hstring** of the bound property. In the case of the second example (the **StatusEnum**), you must provide your own overload of **winrt::to_hstring**, otherwise you'll get a compiler error.
+
+## String-building
+
+For string building, C# has a built-in [**StringBuilder**](/dotnet/api/system.text.stringbuilder) type.
+
+| | C# | C++/WinRT |
+|-|-|-|
+| Builder class | `StringBuilder builder;` | `std::wstringstream stream;` |
+| Append string, preserving nulls | `builder.Append(s);` | `stream << std::wstring_view{ s };` |
+| Extract result | `s = builder.ToString();` | `ws = stream.str();` |
+
+## Boxing and unboxing
+
+C# automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+
+In the tables that follows, we'll use these definitions.
+
+| C# | C++/WinRT|
+|-|-|
+| `int i;` | `int i;` |
+| `string s;` | `winrt::hstring s;` |
+| `object o;` | `IInspectable o;`|
+
+| Operation | C# | C++/WinRT|
+|-|-|-|
+| Boxing | `o = 1;`<br>`o = "string";` | `o = box_value(1);`<br>`o = box_value(L"string");` |
+| Unboxing | `i = (int)o;`<br>`s = (string)o;` | `i = unbox_value<int>(o);`<br>`s = unbox_value<winrt::hstring>(o);` |
+
+C++/CX and C# raise exceptions if you try to unbox a null pointer to a value type. C++/WinRT considers this a programming error, and it crashes. In C++/WinRT, use the [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) function if you want to handle the case where the object is not of the type that you thought it was.
+
+| Scenario | C# | C++/WinRT|
+|-|-|-|
+| Unbox a known integer |`i = (int)o;` | `i = unbox_value<int>(o);` |
+| If o is null | `System.NullReferenceException` | Crash |
+| If o is not a boxed int | `System.InvalidCastException` | Crash |
+| Unbox int, use fallback if null; crash if anything else | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
+| Unbox int if possible; use fallback for anything else | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+
+### Boxing and unboxing a string
+
+A string is in some ways a value type, and in other ways a reference type. C# and C++/WinRT treat strings differently.
+
+The ABI type [**HSTRING**](/windows/win32/winrt/hstring) is a pointer to a reference-counted string. But it doesn't derive from [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable), so it's not technically an *object*. Furthermore, a null **HSTRING** represents the empty string. Boxing of things not derived from **IInspectable** is done by wrapping them inside an [**IReference\<T\>**](/uwp/api/windows.foundation.ireference_t_), and the Windows Runtime provides a standard implementation in the form of the [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) object (custom types are reported as [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype)).
+
+C# represents a Windows Runtime string as a reference type; while C++/WinRT projects a string as a value type. This means that a boxed null string can have different representations depending how you got there.
+
+| Operation | C# | C++/WinRT|
+|-|-|-|
+| String type category | Reference type | Value type |
+| null **HSTRING** projects as | `""` | `hstring{ nullptr }` |
+| Are null and `""` identical? | No | Yes |
+| Validity of null | `s = null;`<br>`s.Length` raises **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0` (valid) |
+| Box a string | `o = s;` | `o = box_value(s);` |
+| If `s` is `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| If `s` is `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
+| Box a string preserving null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
+| Force-box a string | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
+| Unbox a known string | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
+| If `o` is null | `s == null; // not equivalent to ""` | Crash |
+| If `o` is not a boxed string | `System.InvalidCastException` | Crash |
+| Unbox string, use fallback if null; crash if anything else | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
+| Unbox string if possible; use fallback for anything else | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+
+In the two *unbox with fallback* cases above, it's possible that a null string was force-boxed, in which case the fallback won't be used. The resulting value will be an empty string because that is what was in the box.
+
+## Derived classes
+
+In order to derive from a runtime class, the base class must be *composable*. C# doesn't require that you take any special steps to make your classes composable, but C++/WinRT does. You use the [unsealed keyword](/uwp/midl-3/intro#base-classes) to indicate that you want your class to be usable as a base class.
+
+```idl
+unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page
+{
+    ...
+}
+runtimeclass DerivedPage : BasePage
+{
+    ...
+}
+```
+
+In your implementation header class, you must include the base class header file before you include the autogenerated header for the derived class. Otherwise you'll get errors such as "Illegal use of this type as an expression".
+
+```cppwinrt
+// DerivedPage.h
+#include "BasePage.h"       // This comes first.
+#include "DerivedPage.g.h"  // Otherwise this header file will produce an error.
+
+namespace winrt::MyNamespace::implementation
+{
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        ...
+    }
+}
+```
+
 ## Important APIs
 * [winrt::single_threaded_observable_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
