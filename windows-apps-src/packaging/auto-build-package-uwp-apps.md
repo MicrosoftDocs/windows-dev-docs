@@ -79,8 +79,7 @@ To upload a certificate for your automated build:
 
 ## Configure the Build solution build task
 
-This task compiles any solution that’s in the working folder to binaries and produces the output app package file.
-This task uses MSBuild arguments. You’ll have to specify the value of those arguments. Use the following table as a guide.
+This task compiles any solution that’s in the working folder to binaries and produces the output app package file. This task uses MSBuild arguments. You’ll have to specify the value of those arguments. Use the following table as a guide.
 
 |**MSBuild argument**|**Value**|**Description**|
 |--------------------|---------|---------------|
@@ -93,6 +92,7 @@ This task uses MSBuild arguments. You’ll have to specify the value of those ar
 | AppxPackageSigningEnabled | true | Enables package signing. |
 | PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
 | PackageCertificateKeyFile | Path | The path to the certificate to use. This is retrieved from the secure file metadata. |
+| PackageCertificatePassword | Password | The password for the certificate. We recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml) to access the password in the pipeline. |
 
 ### Configure the build
 
