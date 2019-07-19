@@ -14,7 +14,7 @@ ms.date: 07/19/2019
 
 # Frequently Asked Questions about using Python on Windows
 
-### Why can’t I “pip install” a certain package?
+## Why can’t I “pip install” a certain package?
 
 There are a number of reasons why an installation will fail--in most cases the right solution is to contact the package developer.
 
@@ -24,11 +24,11 @@ Some packages include native code that requires a C or C++ compiler to install. 
 
 [Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-### What is py.exe?
+## What is py.exe?
 
 You may end up with multiple versions of Python installed on your machine because you are working on different types of Python projects. Because these all use the `python` command, it may not be obvious which one you are using. The [py.exe launcher](https://docs.python.org/3/using/windows.html#launcher) will automatically select the most recent version of Python you've installed. You can also use commands like `py -3.7` to select a particular version, or `py --list` to see which versions can be used. **HOWEVER**, the py.exe launcher will only work if you are using a version of Python installed from [python.org](https://www.python.org/downloads/windows/). When you install Python from the Microsoft Store, the `py` command is **not included**. For Linux, macOS, WSL and the Microsoft Store version of Python, you should use the `python3` command.
 
-### Why don’t file paths work in Python when I copy-paste them?
+## Why don’t file paths work in Python when I copy-paste them?
 
 Python strings use “escapes” for special characters. For example, to insert a new line character into a string, you would type `\n`. Because file paths on Windows use backslashes, some parts might be being converted into special characters.
 
@@ -37,7 +37,7 @@ r"C:\Users\MyName\Documents\Document.txt"
 
 When working with paths in Python, we recommend using the standard pathlib module. This will let you convert the string to a rich Path object that can do path manipulations consistently whether it uses forward slashes or backslashes, making your code work better across different operating systems.
 
-### What is PYTHONPATH?
+## What is PYTHONPATH?
 
 The PYTHONPATH environment variable is used by Python to specify a list of directories that modules can be imported from. When running, you can inspect the `sys.path` variable to see which directories will be searched when you import something.
 
@@ -47,20 +47,20 @@ To set this variable from PowerShell, use: `$env:PYTHONPATH=’list;of;paths’`
 
 Setting this variable globally through the **Environment Variables** settings is **not** recommended, as it may be used by any version of Python instead of the one that you intend to use.
 
-### Where can I find help with packaging and deployment?
+## Where can I find help with packaging and deployment?
 
 [Docker](https://code.visualstudio.com/docs/azure/docker): [VSCode extension](https://code.visualstudio.com/docs/azure/docker) helps you quickly package and deploy with Dockerfile and docker-compose.yml templates (generate the proper Docker files for your project).
 
 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/) enables you to deploy and manage containerized applications while scaling resources on demand.
 
-### What if I need to work across different machines?
+## What if I need to work across different machines?
 
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) allows you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them.
 
-### What if I'm used to using PyCharm, Atom, Sublime Text, Emacs, or Vim?
+## What if I'm used to using PyCharm, Atom, Sublime Text, Emacs, or Vim?
 
 The VSCode extension [Keymaps](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) can help your environment feel right at home.
 
-### How do Mac shortcut keys map to Windows shortcut keys?
+## How do Mac shortcut keys map to Windows shortcut keys?
 
 Some of the keyboard buttons and system shortcuts are slightly different between a Windows machine and a Macintosh. This [keyboard mapping guide](https://support.microsoft.com/help/970299/keyboard-mappings-using-a-pc-keyboard-on-a-macintosh) from Microsoft Support covers the basics.
