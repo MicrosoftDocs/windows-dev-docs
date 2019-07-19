@@ -560,7 +560,7 @@ if (!gameStarted)
 
 First we create two Strings, one for each line of text we want to draw. Next, we measure the width and height of each line when printed, using the **SpriteFont.MeasureString(String)** method. This gives us the size as a **Vector2** object, with the **X** property containing its width, and **Y** its height.
 
-Finally, we draw each line. To center the text horizontally, we make the **X** value of it’s position vector equal to **screenWidth / 2 - textSize.X / 2**.
+Finally, we draw each line. To center the text horizontally, we make the **X** value of its position vector equal to **screenWidth / 2 - textSize.X / 2**.
 
 **Challenge:** how would you change the procedure above to center the text vertically as well as horizontally?
 
