@@ -70,7 +70,7 @@ An address book is another example of a data set that can be much easier to navi
 The **SemanticZoom** control doesn’t have any visual representation of its own. It’s a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
 
 The 3 elements you need for a semantic zoom are:
-- A grouped data source
+- A grouped data source. (Groups are defined by the GroupStyle definition in the zoomed-in view.)
 - A zoomed-in view that shows the item-level data.
 - A zoomed-out view that shows the group-level data.
 
