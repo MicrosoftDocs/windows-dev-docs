@@ -74,7 +74,7 @@ To upload a certificate for your automated build:
 
     ![how to upload a secure file](images/secure-file2.png)
 
-5. If the certificate has a password, we recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml). You can use this variable to access the password from the pipeline.
+5. If the certificate has a password, we recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline.
 
 > [!NOTE]
 > Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](create-certificate-package-signing.md).
@@ -94,7 +94,7 @@ This task compiles any solution that’s in the working folder to binaries and p
 | AppxPackageSigningEnabled | true | Enables package signing. |
 | PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
 | PackageCertificateKeyFile | Path | The path to the certificate to use. This is retrieved from the secure file metadata. |
-| PackageCertificatePassword | Password | The password for the certificate. We recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml) so you can pass the variable to this argument. |
+| PackageCertificatePassword | Password | The password for the certificate. We recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can pass the variable to this argument. |
 
 ### Configure the build
 
