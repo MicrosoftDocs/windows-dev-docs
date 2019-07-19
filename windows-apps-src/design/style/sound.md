@@ -85,6 +85,8 @@ The most common control-triggered sound in our system today is the **Invoke** so
 
 Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input/index.md).
 
+<audio src="assets/SelectButtonClick.mp3" type="audio/mpeg" controls>Your browser doesn’t support this HTML 5 audio element.</audio>
+
 <SelectButtonClick.mp3 sound clip here>
 
 To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
