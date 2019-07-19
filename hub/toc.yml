@@ -63,4 +63,29 @@
     href: apps/accessibility.md
   - name: Features and technologies
     href: apps/features-and-technologies.md
-
+- name: Build with Windows
+  items: 
+  - name: Develop with Python
+    items:       
+        - name: Overview
+          href: python/index.md
+        - name: Get started for beginners
+          href: python/get-started/python-for-education.md
+        - name: Get started with web dev
+          href: python/get-started/python-for-web.md
+        - name: Get started with automation
+          href: python/get-started/python-for-scripting.md
+        - name: FAQs
+          href: python/faqs.md
+        - name: Resources
+          href: python/resources.md   
+  # - name: Develop with NodeJS
+  #   items: 
+  #       - name: Overview
+  #         href: https://review.docs.microsoft.com/windows/nodejs/?branch=windows-dev-environment
+  #       - name: Web development
+  #         href: https://review.docs.microsoft.com/windows/nodejs/nodejs-for-web?branch=windows-dev-environment
+  #       - name: FAQs
+  #         href: https://review.docs.microsoft.com/windows/nodejs/faqs?branch=windows-dev-environment
+  #       - name: Resources
+  #         href: https://review.docs.microsoft.com/windows/nodejs/resources?branch=windows-dev-environment
