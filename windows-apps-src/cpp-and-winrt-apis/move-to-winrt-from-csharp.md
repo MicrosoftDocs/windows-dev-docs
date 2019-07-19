@@ -319,6 +319,14 @@ namespace winrt::MyNamespace::implementation
 }
 ```
 
+## Consuming objects from XAML markup
+
+In a C# project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL.
+
+Also, binding to a Boolean displays `true` or `false` in C#, but it shows **Windows.Foundation.IReference`1\<Boolean\>** in C++/WinRT.
+
+For more info, and code examples, see [Consuming objects from markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+
 ## Important APIs
 * [winrt::single_threaded_observable_vector function template](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)

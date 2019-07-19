@@ -488,6 +488,14 @@ The Parallel Patterns Library (PPL) ([**concurrency::task**](/cpp/parallel/concr
 
 For C++/WinRT, you should use coroutines and `co_await` instead. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
+## Consuming objects from XAML markup
+
+In a C++/CX project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL.
+
+Also, binding to a Boolean displays `true` or `false` in C++/CX, but it shows **Windows.Foundation.IReference`1\<Boolean\>** in C++/WinRT.
+
+For more info, and code examples, see [Consuming objects from markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+
 ## Mapping C++/CX **Platform** types to C++/WinRT types
 
 C++/CX provides several data types in the **Platform** namespace. These types are not standard C++, so you can only use them when you enable Windows Runtime language extensions (Visual Studio project property **C/C++** > **General** > **Consume Windows Runtime Extension** > **Yes (/ZW)**). The table below helps you port from **Platform** types to their equivalents in C++/WinRT. Once you've done that, since C++/WinRT is standard C++, you can turn off the `/ZW` option.

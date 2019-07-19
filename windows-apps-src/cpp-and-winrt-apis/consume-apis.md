@@ -375,6 +375,66 @@ auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
 
+## Member/Type ambiguities
+
+When a member function has the same name as a type, there's ambiguity. The rules for C++ unqualified name lookup in member functions cause it to search the class before searching in namespaces. The *substitution failure is not an error* (SFINAE) rule doesn't apply (it applies during overload resolution of function templates). So if the name inside the class doesn't make sense, then the compiler doesn't keep looking for a better match&mdash;it simply reports an error.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+Above, the compiler thinks that you're passing [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style) (which, in C++/WinRT, is a member function) as the template parameter to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). The solution is to force the name `Style` to be interpreted as the type [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style).
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+Unqualified name lookup has a special exception in the case that the name is followed by `::`, in which case it ignores functions, variables, and enum values. This allows you to do things like this.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
+
 ## Important APIs
 * [QueryInterface interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [RoActivateInstance function](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)

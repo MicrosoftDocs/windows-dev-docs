@@ -456,6 +456,49 @@ Here are various places where a C++/WinRT features expects a type, and what kind
 | `name_of<T>`|Projected|If you use the implementation type, then you get the stringified GUID of the default interface.|
 | `weak_ref<T>`|Both|If you use the implementation type, then the constructor argument must be `com_ptr<T>`.|
 
+## Overriding base class virtual methods
+
+Your derived class can have issues with virtual methods if both the base and the derived class are app-defined classes, but the virtual method is defined in a grandparent Windows Runtime class. In practice, this happens if you derive from XAML classes. The rest of this section continues from the example in [Derived classes](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes).
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+The hierarchy is [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. The **BasePage::OnNavigatedFrom** method correctly overrides [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom), but **DerivedPage::OnNavigatedFrom** doesn't override **BasePage::OnNavigatedFrom**.
+
+Here, **DerivedPage** reuses the **IPageOverrides** vtable from **BasePage**, which means that it fails to override the **IPageOverrides::OnNavigatedFrom** method. One potential solution requires **BasePage** to itself be a template class, and to have its implementation entirely in a header file, but that makes things unacceptably complicated.
+
+As a workaround, declare the **OnNavigatedFrom** method as explicitly virtual in the base class. That way, when the vtable entry for **DerivedPage::IPageOverrides::OnNavigatedFrom** calls **BasePage::IPageOverrides::OnNavigatedFrom**, the producer calls **BasePage::OnNavigatedFrom**, which (due to its virtualness), ends up calling **DerivedPage::OnNavigatedFrom**.
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        // Note the `virtual` keyword here.
+        virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+This requires that all members of the class hierarchy agree on the return value and parameter types of the **OnNavigatedFrom** method. If they disagree, then you should use the version above as the virtual method, and wrap the alternates.
+
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
