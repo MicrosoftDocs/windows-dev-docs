@@ -44,22 +44,14 @@ Due to the xlang metadata reader, the `cppwinrt.exe` tool itself has fewer depen
  
 These are the dependencies for `cppwinrt.exe` 2.0.
  
-- api-ms-win-core-processenvironment-l1-1-0.dll
-- api-ms-win-core-libraryloader-l1-2-0.dll
-- XmlLite.dll
-- api-ms-win-core-memory-l1-1-0.dll
-- api-ms-win-core-handle-l1-1-0.dll
-- api-ms-win-core-file-l1-1-0.dll
-- SHLWAPI.dll
 - ADVAPI32.dll
 - KERNEL32.dll
-- api-ms-win-core-rtlsupport-l1-1-0.dll
-- api-ms-win-core-processthreads-l1-1-0.dll
-- api-ms-win-core-heap-l1-1-0.dll
-- api-ms-win-core-console-l1-1-0.dll
-- api-ms-win-core-localization-l1-2-0.dll
+- SHLWAPI.dll
+- XmlLite.dll
 
-Contrasting with these dependencies, which `cppwinrt.exe` 1.0 has.
+All of those DLLs are available not only on Windows 10, but all the way down to Windows 7, and even Windows Vista. If you want it to, your old build server running Windows 7 can now run `cppwinrt.exe` to generate C++ headers for your project. With a bit of work, you can even [run C++/WinRT on Windows 7](https://github.com/kennykerr/win7), if that interests you.
+
+Contrast the list above with these dependencies, which `cppwinrt.exe` 1.0 has.
 
 - ADVAPI32.dll
 - SHELL32.dll
@@ -181,9 +173,11 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 The coroutine helpers are now also decorated with `[[nodiscard]]`, thereby improving their usability. If you forget to (or don't realize you have to) `co_await` them for them to work then, due to `[[nodiscard]]`, such mistakes now produce a compiler warning.
 
-#### Help with diagnosing stack allocations
+#### Help with diagnosing direct (stack) allocations
 
 Since the projected and implementation class names are (by default) the same, and only differ by namespace, it's possible to mistake the one for the other, and to accidentally create an implementation on the stack, rather than using the [**make**](/uwp/cpp-ref-for-winrt/make) family of helpers. This can be hard to diagnose in some cases, because the object may be destroyed while outstanding references are still in flight. An assertion now picks this up, for debug builds. While the assertion doesn't detect stack allocation inside a coroutine, it's nevertheless helpful in catching most such mistakes.
+
+For more info, see [Diagnosing direct allocations](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
 
 #### Improved capture helpers, and variadic delegates
 
