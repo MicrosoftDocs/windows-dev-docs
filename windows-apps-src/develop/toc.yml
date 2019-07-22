@@ -844,6 +844,8 @@
           href: ../cpp-and-winrt-apis/agile-objects.md
         - name: Diagnosing direct allocations
           href: ../cpp-and-winrt-apis/diag-direct-alloc.md
+        - name: Details about destructors
+          href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: A simple C++/WinRT WinUI example
           href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: C++ language
