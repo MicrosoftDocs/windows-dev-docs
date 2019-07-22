@@ -7,7 +7,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: landing-page
 ms.date: 07/19/2019
-keywords: windows, python development
+keywords: windows, python development, how do I start with python on windows, python on windows subystem for linux, python with wsl, set up development environment for python on windows, IDE for python on Windows, where is python installed on windows, run python on windows, python for beginners on windows
 ---
 
 # Develop with Python on Windows
