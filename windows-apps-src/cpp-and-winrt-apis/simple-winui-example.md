@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # A simple C++/WinRT Windows UI Library example
 
-This topic walks you through the process of adding simple support for the Windows UI (WinUI) Library to a C++/WinRT project.
+This topic walks you through the process of adding simple support for the [Windows UI (WinUI) Library](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT project. Incidentally, the Windows UI Library is itself written in C++/WinRT.
 
 > [!NOTE]
 > The Windows UI (WinUI) Library toolkit is available as NuGet packages that you can add to any existing or new project using Visual Studio, as we'll see in this topic. For more background, setup, and support info, see [Getting started with the Windows UI Library](/uwp/toolkits/winui/getting-started).
@@ -44,7 +44,9 @@ Next, open `MainPage.xaml`. In the existing opening **Application** tag there ar
 
 ## Edit MainPage.h and .cpp as necessary
 
-In `MainPage.h`, edit your includes so that they look like this.
+When you add a NuGet package to a C++/WinRT project (such as the **Microsoft.UI.Xaml** package, which you added earlier), the tooling generates a set of projection headers in your project's `\Generated Files\winrt` folder. To bring those headers files into your project, so that references to those new types resolve, you need to include them.
+
+So, in `MainPage.h`, edit your includes so that they look like those in the listing below. If you were to use WinUI from more than one XAML page, then you could go into your precompiled header file (typically `pch.h`) and include them there instead.
 
 ```cppwinrt
 #include "MainPage.g.h"
