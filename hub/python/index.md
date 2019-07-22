@@ -12,7 +12,7 @@ keywords: windows, python development
 
 # Develop with Python on Windows
 
-Whether you’re a seasoned developer or just getting started, one of the most important decisions you need to make is the type of hardware and development environment to use. Windows is making significant advances toward better supporting Python developers. Start here to find guidance on how to set up your development environment, whether to install your tools on native Windows or Windows Subsystem for Linux, and how to integrate tools like VS Code and Git.
+Whether you’re a seasoned developer or just getting started with Python coding, one of the most important decisions you need to make is which development environment to use. Start here for guidance on setting up your development environment, whether to install your tools on native Windows or Windows Subsystem for Linux, and how to integrate tools like VS Code and Git. Windows is making significant improvements supporting Python developers, and we'd like to help you get started.
 
 <ul class="cardsK panelContent">
     <li>
