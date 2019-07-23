@@ -4,7 +4,7 @@ description: How to use the XamlUICommand and StandardUICommand classes (along w
 author: Karl-Bridge-Microsoft
 ms.service: #Required; service per approved list.
 ms.topic: overview
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ---
 
 # Commanding in Universal Windows Platform (UWP) apps using StandardUICommand, XamlUICommand, and ICommand
