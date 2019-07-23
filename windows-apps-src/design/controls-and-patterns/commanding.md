@@ -33,9 +33,9 @@ Commands can operate on a specific context within your app, such as deleting tex
 
 The following image shows two command interfaces (a [CommandBar](app-bars.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
-![Command bar in Microsoft Photos app](images/control-examples/command-bar-photos.png)<br>*Command bar in Microsoft Photos*
+![Command bar in Microsoft Photos](images/control-examples/command-bar-photos.png)<br>*Command bar in Microsoft Photos*
 
-![Context menu in photo gallery](images/ContextMenu_example.png)<br>*Context menu in the Microsoft Photos gallery*
+![Context menu in the Microsoft Photos gallery](images/ContextMenu_example.png)<br>*Context menu in the Microsoft Photos gallery*
 
 ## Command interactions
 
