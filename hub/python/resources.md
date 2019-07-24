@@ -20,6 +20,8 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Microsoft Dev Blogs: Python](https://devblogs.microsoft.com/python/): Read the latest updates about all things Python at Microsoft.
 
+- [An In Depth Tutorial on Linux Development on Windows with WSL and Visual Studio Code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Walkthrough of how to set up your dev evironment, make a Python app, and do some debugging.
+
 - [Using Python on Windows](https://docs.python.org/3/using/windows.html): This Python.org documentation provides an overview of Windows-specific behavior you should know about when using Python on Microsoft Windows.
 
 - [Azure for Python cloud developers](https://docs.microsoft.com/azure/python/): Documentation covering everything from building and deploying a Python web app on Azure to running Python code as a serverless function.
