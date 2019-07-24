@@ -24,9 +24,11 @@ Some packages include native code that requires a C or C++ compiler to install. 
 
 [Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-## What is py.exe?
+### What is py.exe?
 
-You may end up with multiple versions of Python installed on your machine because you are working on different types of Python projects. Because these all use the `python` command, it may not be obvious which one you are using. The [py.exe launcher](https://docs.python.org/3/using/windows.html#launcher) will automatically select the most recent version of Python you've installed. You can also use commands like `py -3.7` to select a particular version, or `py --list` to see which versions can be used. **HOWEVER**, the py.exe launcher will only work if you are using a version of Python installed from [python.org](https://www.python.org/downloads/windows/). When you install Python from the Microsoft Store, the `py` command is **not included**. For Linux, macOS, WSL and the Microsoft Store version of Python, you should use the `python3` command.
+You may end up with multiple versions of Python installed on your machine because you are working on different types of Python projects. Because these all use the `python` command, it may not be obvious which version of Python you are using. As a standard, it is recommended to use the `python3` command (or `python3.7` to select a specific version).
+
+The [py.exe launcher](https://docs.python.org/3/using/windows.html#launcher) will automatically select the most recent version of Python you've installed. You can also use commands like `py -3.7` to select a particular version, or `py --list` to see which versions can be used. **HOWEVER**, the py.exe launcher will only work if you are using a version of Python installed from [python.org](https://www.python.org/downloads/windows/). When you install Python from the Microsoft Store, the `py` command is **not included**. For Linux, macOS, WSL and the Microsoft Store version of Python, you should use the `python3` (or `python3.7`) command.
 
 ## Why don’t file paths work in Python when I copy-paste them?
 

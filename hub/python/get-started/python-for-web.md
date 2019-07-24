@@ -18,10 +18,9 @@ The following is a step-by-step guide to get you started using Python for web de
 
 ## Set up your development environment
 
-We recommend installing Python via WSL specifically for building web applications. Many of the tutorials and instructions for Python web development are written for Linux users and use Linux-based packaging and installation tools. Most web apps are also deployed on Linux, so this will ensure you have consistency between your development and production environments.
+We recommend installing Python on WSL when building web applications. Many of the tutorials and instructions for Python web development are written for Linux users and use Linux-based packaging and installation tools. Most web apps are also deployed on Linux, so this will ensure you have consistency between your development and production environments.
 
-> [!IMPORTANT]
-> If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for Beginners](./python-for-education.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./python-for-scripting.md). <br>For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
+If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for beginners](./python-for-education.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./python-for-scripting.md). For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
 ## Enable Windows Subsystem for Linux
 
@@ -41,26 +40,20 @@ There are several Linux distributions available to run on WSL. You can find and 
 
 2. After the download completes, select **Launch** from the Microsoft Store or launch by typing "Ubuntu 18.04 LTS" into the **Start** menu.
 
-3. You will be asked to create an account name and password when you run the distribution for the first time. After this, you'll be automatically signed in as this user by default. You can choose any user name and password. They have no bearing on your Windows user name. You can check the Linux distribution that you are currently using by entering: `lsb_release -d`.
+3. You will be asked to create an account name and password when you run the distribution for the first time. After this, you'll be automatically signed in as this user by default. You can choose any user name and password. They have no bearing on your Windows user name.
 
-For links to other Linux distributions available in the Microsoft Store, alternative installation methods, or troubleshooting, see [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
-
-> [!NOTE]
-> We recommend updating your Linux distribution regularly. Most Linux distributions ship with an empty or minimal package catalog. An update will ensure it has the most recent packages. Windows doesn't automatically update or upgrade your Linux distributions. Linux users typically prefer to control this task themselves. To update your Ubuntu distribution, use the APT package manager by pasting this command into the terminal: `sudo apt update && sudo apt upgrade`.
+You can check the Linux distribution that you are currently using by entering: `lsb_release -d`. To update your Ubuntu distribution, use: `sudo apt update && sudo apt upgrade`. We recommend updating regularly to ensure you have the most recent packages. Windows doesn't automatically handle this update. For links to other Linux distributions available in the Microsoft Store, alternative installation methods, or troubleshooting, see [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## Set up Visual Studio Code
 
-VS Code integrates nicely with the Windows Subsystem for Linux, providing a [built-in terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) to establish a seamless workflow between your code editor and your command line, in addition to supporting [Git for version control](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) with common Git commands (add, commit, push, pull) built right into the UI.
-
-> [!NOTE]
-> Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), [Linting](https://code.visualstudio.com/docs/python/linting), [Debug support](https://code.visualstudio.com/docs/python/debugging), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) by using VS Code... but you MUST also install the Remote - WSL Extension in order to properly configure VS Code when working with Linux tools on Windows.  
+Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), [Linting](https://code.visualstudio.com/docs/python/linting), [Debug support](https://code.visualstudio.com/docs/python/debugging), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) by using VS Code. VS Code integrates nicely with the Windows Subsystem for Linux, providing a [built-in terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) to establish a seamless workflow between your code editor and your command line, in addition to supporting [Git for version control](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) with common Git commands (add, commit, push, pull) built right into the UI.
 
 1. [Download and install VS Code for Windows](https://code.visualstudio.com). VS Code is also available for Linux, but Windows Subsystem for Linux does not support GUI apps, so we need to install it on Windows. Not to worry, you'll still be able to integrate with your Linux command line and tools using the Remote - WSL Extension.
 
 2. Install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) on VS Code. This allows you to use WSL as your integrated development environment and will handle compatibility and pathing for you. [Learn more](https://code.visualstudio.com/docs/remote/remote-overview).
 
 > [!IMPORTANT]
-> If you already have VS Code installed, you need to ensure that you have the [1.35 May release](https://code.visualstudio.com/updates/v1_35) or later in order to install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). We do not recommend using WSL in VS Code without the Remote-WSL Extension. Without this extension, your WSL project will not have support for auto-complete, debugging, linting, testing, etc. Fun fact: The workspace extensions installed into WSL go under $HOME/.vscode-server/extensions.
+> If you already have VS Code installed, you need to ensure that you have the [1.35 May release](https://code.visualstudio.com/updates/v1_35) or later in order to install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). We do not recommend using WSL in VS Code without the Remote-WSL extension as you will lose support for auto-complete, debugging, linting, etc. Fun fact: This WSL extension is installed in $HOME/.vscode-server/extensions.
 
 ## Create a new project
 
@@ -73,16 +66,13 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 ![Ubuntu terminal](../../images/ubuntu-terminal.png)
 
 > [!TIP]
-> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the /mnt/<drive> folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). <br> We are excited to share that [WSL2 is coming soon to Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) and will offer some great improvements. You can [try it now on Windows Insiders build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install).
+> An important thing to remember when using Windows Subsystem for Linux (WSL) is that **you are now working between two different file systems**: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the /mnt/<drive> folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). We are also excited to share that [WSL2 is coming soon to Windows](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) and will offer some great improvements. You can [try it now on Windows Insiders build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install).
 
 ## Install Python, pip, and venv
 
 Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments.  
 
-1. Confirm that Python3 is already installed by opening your Ubuntu terminal and entering: `python3 --version`. This should return your Python version number.
-
-    > [!NOTE]
-    > If you need to update your version of Python, first update your Ubuntu version by entering: `sudo apt update && sudo apt upgrade`, then update Python using `sudo apt upgrade python3`.
+1. Confirm that Python3 is already installed by opening your Ubuntu terminal and entering: `python3 --version`. This should return your Python version number. If you need to update your version of Python, first update your Ubuntu version by entering: `sudo apt update && sudo apt upgrade`, then update Python using `sudo apt upgrade python3`.
 
 2. Install **pip** by entering: `sudo apt install python3-pip`. Pip allows you to install and manage additional packages that are not part of the Python standard library.
 
@@ -90,10 +80,7 @@ Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come w
 
 ## Create a virtual environment
 
-In Python, virtual environments are used to isolate your projects from each other to avoid conflicts. Let's set one up now.
-
-> [!NOTE]
-> Using virtual environments is a recommended best practice for Python development projects. By creating a virtual environment, we can install a web development framework, but avoid installing that framework into a global Python environment. Installing web frameworks in an isolated virtual environment is very helpful when you are working on multiple projects. One web app project may require an older version of the framework, like Django 1.2, that you don't want to overwrite if you start a new web project using Django 2.2. In addition to preventing accidental version changes or upgrades, virtual environments let you install and manage packages without administrative privileges.
+Using virtual environments is a recommended best practice for Python development projects. By creating a virtual environment, you can isolate your project tools and avoid versioning conflicts with tools for your other projects. For example, you may be maintaining an an older web project that requires the Django 1.2 web framework, but then an exciting new project comes along using Django 2.2. If you update Django globally, outside of a virtual environment, you could run into some versioning issues later on. In addition to preventing accidental versioning conflicts, virtual environments let you install and manage packages without administrative privileges.
 
 1. Open your terminal and, inside your *HelloWorld* project folder, use the following command to create a virtual environment named **.venv**:  `python3 -m venv .venv`.
 
@@ -102,11 +89,11 @@ In Python, virtual environments are used to isolate your projects from each othe
     ![Create a virtual environment](../../images/wsl-venv.png)
 
 > [!TIP]
-> We recommend creating the virtual environment inside the directory in which you plan to have your project. Since each project should have it's own separate directory, each will have it's own virtual environment, so there is not a need for unique naming. Our suggestion is to use the name **.venv** for your virtual environments to follow the Python convention. Some tools (like pipenv) also default to this name if you install into your project directory. You don't want to use **.env** as that conflicts with environment variable definition files. We generally do not recommend non-dot-leading names, as you don't need `ls` constantly reminding you that the directory exists. We also recommend adding **.venv** to your .gitignore file. (Here is [GitHub's default gitignore template for Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106) for reference.) For more information about working with virtual environments in VS Code, see [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
+> We recommend creating the virtual environment inside the directory in which you plan to have your project. Since each project should have it's own separate directory, each will have it's own virtual environment, so there is not a need for unique naming. Our suggestion is to use the name **.venv** to follow the Python convention. Some tools (like pipenv) also default to this name if you install into your project directory. You don't want to use **.env** as that conflicts with environment variable definition files. We generally do not recommend non-dot-leading names, as you don't need `ls` constantly reminding you that the directory exists. We also recommend adding **.venv** to your .gitignore file. (Here is [GitHub's default gitignore template for Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106) for reference.) For more information about working with virtual environments in VS Code, see [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
 
 ## Open a WSL - Remote window
 
-VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment and will handle compatibility and pathing for you. [Learn more](https://code.visualstudio.com/docs/remote/wsl).
+VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl). 
 
 1. Open your project folder in VS Code from your Ubuntu terminal by entering: `code .` (the "." tells VS Code to open the current folder).
 
@@ -119,9 +106,6 @@ VS Code uses the Remote - WSL Extension (installed previously) to treat your Lin
 4. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
 
     ![VS Code with WSL terminal](../../images/vscode-bash-remote.png)
-
-> [!NOTE]
-> If you need to change the type of terminal that you're working with in VS Code, use **Ctrl+Shift+P** to enter the command pallette. Enter **Terminal: Select Default Shell** and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use switch to and enter **Ctrl+Shift+`** (using the backtick) to create a new terminal. *We recommend sticking with the WSL terminal for Python web development.*
 
 ## Install the Microsoft Python extension
 
@@ -137,10 +121,9 @@ You will need to install any VS Code extensions for your Remote - WSL. Extension
 
 ## Run a simple Python program
 
-Let's create and run a simple Python program as a test and ensure that we have the correct Python interpreter selected.
+Python is an interpreted language and supports different types of interpretors (Python2, Anaconda, PyPy, etc). VS Code should default to the interpreter associated with your project. If you have a reason to change it, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the **Command Palette** (Ctrl+Shift+P) and enter the command **Python: Select Interpreter**. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
-> [!NOTE]
-> Python is an interpreted language, meaning that it acts as a virtual machine, emulating a physical computer. There are different types of Python interpreters that you can use: Python 2, Anaconda, PyPy, etc. In order to run Python code and get Python IntelliSense, you must tell VS Code which interpreter to use. We recommend sticking with the interpreter that VS Code has defaulted to (Python 3.6.8 in our case) unless you have a specific reason for choosing something different. To change the Python interpreter, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the **Command Palette** (Ctrl+Shift+P) and enter the command **Python: Select Interpreter**. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+Let's create and run a simple Python program as a test and ensure that we have the correct Python interpreter selected.
 
 1. Open the VS Code File Explorer window by entering **Ctrl+Shift+E** (or use the menu to navigate to **View** > **Explorer**).
 
