@@ -214,6 +214,146 @@ co_await static_cast<no_switch>(async);
 
 Then, instead of looking for the three **await_xxx** functions that match **IAsyncXxx**, the C++ compiler looks for functions that match **no_switch**.
 
+## A deeper dive into **winrt::resume_foreground**
+
+As of [C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20), the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function suspends even if it's called from the dispatcher thread (in previous versions, it could introduce deadlocks in some scenarios because it only suspended if not already on the dispatcher thread).
+
+The current behavior means that you can rely on stack unwinding and re-queuing taking place; and that's important for system stability, especially in low-level systems code. The last code listing in the section [Programming with thread affinity in mind](#programming-with-thread-affinity-in-mind), above, illustrates performing some complex calculation on a background thread, and then switching to the appropriate UI thread in order to update the user interface (UI).
+
+Here's how **winrt::resume_foreground** looks internally.
+
+```cppwinrt
+auto resume_foreground(...) noexcept
+{
+    struct awaitable
+    {
+        bool await_ready() const
+        {
+            return false; // Queue without waiting.
+            // return m_dispatcher.HasThreadAccess(); // The C++/WinRT 1.0 implementation.
+        }
+        void await_resume() const {}
+        void await_suspend(coroutine_handle<> handle) const { ... }
+    };
+    return awaitable{ ... };
+};
+```
+
+This current, versus previous, behavior is analogous to the difference between [**PostMessage**](/windows/win32/api/winuser/nf-winuser-postmessagew) and [**SendMessage**](/windows/win32/api/winuser/nf-winuser-sendmessage) in Win32 application development. **PostMessage** queues the work and then unwinds the stack without waiting for the work to complete. The stack-unwinding can be essential.
+
+The **winrt::resume_foreground** function also initially only supported the [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) (tied to a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow)), which was introduced prior to Windows 10. We've since introduced a more flexible and efficient dispatcher: the [**DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). You can create a **DispatcherQueue** for your own purposes. Consider this simple console application.
+
+```cppwinrt
+using namespace Windows::System;
+
+winrt::fire_and_forget RunAsync(DispatcherQueue queue);
+ 
+int main()
+{
+    auto controller{ DispatcherQueueController::CreateOnDedicatedThread() };
+    RunAsync(controller.DispatcherQueue());
+    getchar();
+}
+```
+
+The example above creates a queue (contained within a controller) on a private thread, and then passes the controller to the coroutine. The coroutine can use the queue to await (suspend and resume) on the private thread. Another common use of **DispatcherQueue** is to create a queue on the current UI thread for a traditional desktop or Win32 app.
+
+```cppwinrt
+DispatcherQueueController CreateDispatcherQueueController()
+{
+    DispatcherQueueOptions options
+    {
+        sizeof(DispatcherQueueOptions),
+        DQTYPE_THREAD_CURRENT,
+        DQTAT_COM_STA
+    };
+ 
+    ABI::Windows::System::IDispatcherQueueController* ptr{};
+    winrt::check_hresult(CreateDispatcherQueueController(options, &ptr));
+    return { ptr, take_ownership_from_abi };
+}
+```
+
+This illustrates how you can call and incorporate Win32 functions into your C++/WinRT projects, by simply calling the Win32-style [**CreateDispatcherQueueController**](/windows/win32/api/dispatcherqueue/nf-dispatcherqueue-createdispatcherqueuecontroller) function to create the controller, and then transfer ownership of the resulting queue controller to the caller as a WinRT object. This is also precisely how you can support efficient and seamless queuing on your existing Petzold-style Win32 desktop application.
+
+```cppwinrt
+winrt::fire_and_forget RunAsync(DispatcherQueue queue);
+ 
+int main()
+{
+    Window window;
+    auto controller{ CreateDispatcherQueueController() };
+    RunAsync(controller.DispatcherQueue());
+    MSG message;
+ 
+    while (GetMessage(&message, nullptr, 0, 0))
+    {
+        DispatchMessage(&message);
+    }
+}
+```
+
+Above, the simple **main** function begins by creating a window. You can imagine that this registers a window class, and calls [**CreateWindow**](/windows/win32/api/winuser/nf-winuser-createwindoww) to create the top-level desktop window. **CreateDispatcherQueueController** function is then called to create the queue controller before calling some coroutine with the dispatcher queue owned by this controller. A traditional message pump is then entered where resumption of the coroutine naturally occurs on this thread. Having done that, you can return to the elegant world of coroutines for your async or message-based workflow within your application.
+
+```cppwinrt
+winrt::fire_and_forget RunAsync(DispatcherQueue queue)
+{
+    ... // Begin on the calling thread...
+ 
+    co_await winrt::resume_foreground(queue);
+ 
+    ... // ...resume on the dispatcher thread.
+}
+```
+
+The call to **winrt::resume_foreground** will always *queue*, and then unwind the stack. You can also optionally set the resumption priority.
+
+```cppwinrt
+winrt::fire_and_forget RunAsync(DispatcherQueue queue)
+{
+    ...
+ 
+    co_await winrt::resume_foreground(queue, DispatcherQueuePriority::High);
+ 
+    ...
+}
+```
+
+Or, using the default queuing order.
+
+```cppwinrt
+winrt::fire_and_forget RunAsync(DispatcherQueue queue)
+{
+    ...
+ 
+    co_await queue;
+ 
+    ...
+}
+```
+
+Or, in this case detecting queue shutdown, and handling it gracefully.
+
+```cppwinrt
+winrt::fire_and_forget RunAsync(DispatcherQueue queue)
+{
+    ...
+ 
+    if (co_await queue)
+    {
+        ... // Resume on dispatcher thread.
+    }
+    else
+    {
+        ... // Still on calling thread.
+    }
+}
+```
+
+The `co_await` expression returns `true`, indicating that resumption will occur on the dispatcher thread. In other words, that queuing was successful. Conversely, it returns `false` to indicate that execution remains on the calling thread because the queue's controller is shutting down and is no longer serving queue requests.
+
+So, you have a great deal of power at your fingertips when you combine C++/WinRT with coroutines; and especially when doing some old-school Petzold-style desktop application development.
+
 ## Canceling an asychronous operation, and cancellation callbacks
 
 The Windows Runtime's features for asynchronous programming allow you to cancel an in-flight asynchronous action or operation. Here's an example that calls [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) to retrieve a potentially large collection of files, and it stores the resulting asynchronous operation object in a data member. The user has the option to cancel the operation.
@@ -576,9 +716,10 @@ IAsyncAction SampleCaller()
 * [IAsyncOperation&lt;TResult&gt; interface](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 * [winrt::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)
 * [winrt::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
-* [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
+* [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground)
 
 ## Related topics
 * [Concurrency and asynchronous operations](concurrency.md)
