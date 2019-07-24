@@ -84,8 +84,8 @@ This table uses ">" characters to represent levels in the entry hierarchy.  It a
 | >>>> park                          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Areas that encompass parks. |
 | >>>> playingField                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Extracted pitches such as a baseball field or tennis court. |
 | >>>> reserve                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Areas that encompass nature reserves. |
-| >> frozenWater                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Frozen water, like glacier. |
-| >> point                           | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | All point features that are drawn with an icon of some sort. |
+| >> frozenWater                     | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | Frozen water, like glacier. |
+| >> point                           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | All point features that are drawn with an icon of some sort. |
 | >>> address                        | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   |  ✔   | Address numbers labels. |
 | >>> naturalPoint                   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Icons that represent natural features. |
 | >>>> peak                          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Icons that represent mountain peaks. |
