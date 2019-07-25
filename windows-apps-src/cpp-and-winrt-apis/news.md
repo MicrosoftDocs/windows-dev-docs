@@ -10,6 +10,8 @@ ms.custom: RS5
 
 # What's new in C++/WinRT
 
+As subsequent versions of C++/WinRT are released, this topic describes what's new, and what's changed.
+
 ## News, and changes, in C++/WinRT 2.0
 
 For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix), the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), and the the `cppwinrt.exe` tool&mdash;including how to acquire and install them&mdash;see [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
