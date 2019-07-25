@@ -24,7 +24,7 @@ Some packages include native code that requires a C or C++ compiler to install. 
 
 [Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-### What is py.exe?
+## What is py.exe?
 
 You may end up with multiple versions of Python installed on your machine because you are working on different types of Python projects. Because these all use the `python` command, it may not be obvious which version of Python you are using. As a standard, it is recommended to use the `python3` command (or `python3.7` to select a specific version).
 
