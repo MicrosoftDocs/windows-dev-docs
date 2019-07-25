@@ -103,7 +103,7 @@ IAsyncAction ProcessFeedAsync()
 The reason you can rely on this behavior is because C++/WinRT provides code to adapt those Windows Runtime asynchronous operation types to the C++ coroutine language support (these pieces of code are called wait adapters). The remaining awaitable types in C++/WinRT are simply thread pool wrappers and/or helpers; so they complete on the thread pool.
 
 ```cppwinrt
-using namespace std::chrono;
+using namespace std::chrono_literals;
 IAsyncOperation<int> return_123_after_5s()
 {
     // No matter what the thread context is at this point...
@@ -709,6 +709,76 @@ IAsyncAction SampleCaller()
     co_await async; // Will wake up when *event* is signaled.
 }
 ```
+
+## Asynchronous timeouts made easy
+
+C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::function**.
+
+```cppwinrt
+using namespace winrt::Windows::Foundation;
+int main()
+{
+    IAsyncAction async = ...
+    async.get();
+    puts("Done!");
+}
+```
+
+The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
+
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
+
+```cppwinrt
+using namespace std::chrono_literals;
+int main()
+{
+    IAsyncAction async = ...
+ 
+    if (async.wait_for(5s) == AsyncStatus::Completed)
+    {
+        puts("done");
+    }
+}
+```
+
+The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the **get** function to retrieve the result.
+
+```cppwinrt
+int main()
+{
+    IAsyncOperation<int> async = ...
+ 
+    if (async.wait_for(5s) == AsyncStatus::Completed)
+    {
+        printf("result %d\n", async.get());
+    }
+}
+```
+
+Because the async object has completed by then, **get** returns the result immediately, without any further wait. As you can see, **wait_for** returns the state of the async object. So, you can use it for more fine-grained control, like this.
+
+```cppwinrt
+switch (async.wait_for(5s))
+{
+case AsyncStatus::Completed:
+    printf("result %d\n", async.get());
+    break;
+case AsyncStatus::Canceled:
+    puts("canceled");
+    break;
+case AsyncStatus::Error:
+    puts("failed");
+    break;
+case AsyncStatus::Started:
+    puts("still running");
+    break;
+}
+```
+
+- Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **get** function to retrieve any result.
+- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded.
+- **AsyncStatus::Error** means that the async object has failed in some way. You can **get** to rethrow the exception if you wish.
+- **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling **get** to retrieve any result. But it's best just to discard the object at this point.
 
 ## Important APIs
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)

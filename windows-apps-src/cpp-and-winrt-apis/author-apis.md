@@ -456,6 +456,199 @@ Here are various places where a C++/WinRT features expects a type, and what kind
 | `name_of<T>`|Projected|If you use the implementation type, then you get the stringified GUID of the default interface.|
 | `weak_ref<T>`|Both|If you use the implementation type, then the constructor argument must be `com_ptr<T>`.|
 
+## Opt in to uniform construction, and direct implementation access
+
+This section describes a C++/WinRT 2.0 feature that's opt-in, although it is enabled by default for new projects. For an existing project, you'll need to opt in by configuring the `cppwinrt.exe` tool. In Visual Studio, set project property **Common Properties** > **C++/WinRT** > **Optimized** to *Yes*. That has the effect of adding `<CppWinRTOptimized>true</CppWinRTOptimized>` to your project file. And it has the same effect as adding the  switch when invoking `cppwinrt.exe` from the command line.
+
+The `-opt[imize]` switch enables what's often called *uniform construction*. With uniform (or *unified*) construction, you use the C++/WinRT language projection itself to create and use your implmentation types (types implemented by your component, for consumption by applications) efficiently and without any loader difficulties.
+
+Before describing the feature, let's first show the situation *without* uniform construction. To illustrate, we'll begin with this example Windows Runtime class.
+
+```idl
+// MyClass.idl
+namespace MyProject
+{
+    runtimeclass MyClass
+    {
+        MyClass();
+        void Method();
+        static void StaticMethod();
+    }
+}
+```
+
+As a C++ developer familiar with using the C++/WinRT library, you might want to use the class like this.
+
+```cppwinrt
+using namespace winrt::MyProject;
+
+MyClass c;
+c.Method();
+MyClass::StaticMethod();
+```
+
+And that would be perfectly reasonable provided that the consuming code shown didn't reside within the same component that implements this class. As a language projection, C++/WinRT shields you as a developer from the ABI (the COM-based application binary interface that the Windows Runtime defines). C++/WinRT doesn't call directly into the implementation; it travels through the ABI.
+
+Consequently, on the line of code where you're constructing a **MyClass** object (`MyClass c;`), the C++/WinRT projection calls [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) to retrieve the class or activation factory, and then uses that factory to create the object. The last line likewise uses the factory to make what appears to be a static method call. All of this requires that your class be registered, and that your module implements the [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) entry point. C++/WinRT has a very fast factory cache, so none of this causes a problem for an application consuming your component. The trouble is that, within your component, you've just done something that's a little problematic.
+
+Firstly, no matter how fast the C++/WinRT factory cache is, calling through **RoGetActivationFactory** (or even subsequent calls through the factory cache) will always be slower than calling directly into the implementation. A call to **RoGetActivationFactory** followed by [**IActivationFactory::ActivateInstance**](/windows/win32/api/activation/nf-activation-iactivationfactory-activateinstance) followed by [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)) is obviously not going to be as efficient as using a C++ `new` expression for a locally-defined type. As a consequence, seasoned C++/WinRT developers are accustomed to using the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) or [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self) helper functions when creating objects within a component.
+
+```cppwinrt
+// MyClass c;
+MyProject::MyClass c{ winrt::make<implementation::MyClass>() };
+```
+
+But, as you can see, that's not nearly as convenient nor concise. You must use a helper function to create the object, and you must also disambiguate between the implementation type and the projected type.
+
+Secondly, using the projection to create the class means that its activation factory will be cached. Normally, that's what you want, but if the factory resides in the same module (DLL) that's making the call, then you've effectively pinned the DLL and prevented it from ever unloading. In many cases, that doesn't matter; but some system components *must* support unloading.
+
+This is where the term *uniform construction* comes in. Regardless of whether creation code resides in a project that's merely consuming the class, or whether it resides in the project that's actually *implementing* the class, you can freely use the same syntax to create the object.
+
+```cppwinrt
+// MyProject::MyClass c{ winrt::make<implementation::MyClass>() };
+MyClass c;
+```
+
+When you build your component project with the `-opt[imize]` switch, the call through the language projection compiles down to the same efficient call to the **winrt::make** function that directly creates the implementation type. That makes your syntax simple and predictable, it avoids any performance hit of calling through the factory, and it avoids pinning the component in the process. In addition to component projects, this is also useful for XAML applications. Bypassing **RoGetActivationFactory** for classes implemented in the same application allows you to construct them (without needing to be registered) in all the same ways you could if they were outside your component.
+
+Uniform construction applies to *any* call that's served by the factory under the hood. Practically, that means that the optimization serves both constructors and static members. Here's that original example again.
+
+```cppwinrt
+MyClass c;
+c.Method();
+MyClass::StaticMethod();
+```
+
+Without `-opt[imize]`, the first and last statements require calls through the factory object. *With* `-opt[imize]`, neither of them do. And those calls are compiled directly against the implementation, and even have the potential to be inlined. Which speaks to the other term often used when talking about `-opt[imize]`, namely *direct implementation* access.
+
+Language projections are convenient but, when you can directly access the implementation, you can and should take advantage of that to produce the most efficient code possible. C++/WinRT can do that for you, without forcing you to leave the safety and productivity of the projection.
+
+This is a breaking change because the component must cooperate in order to allow the language projection to reach in and directly access its implementation types. As C++/WinRT is a header-only library, you can look inside and see what's going on. Without `-opt[imize]`, the **MyClass** constructor, and **StaticMethod** member, are defined by the projection like this.
+
+```cppwinrt
+namespace winrt::MyProject
+{
+    inline MyClass::MyClass() :
+        MyClass(impl::call_factory<MyClass>([](auto&& f){
+		    return f.template ActivateInstance<MyClass>(); }))
+    {
+    }
+    inline void MyClass::StaticMethod()
+    {
+        impl::call_factory<MyClass, MyProject::IClassStatics>([&](auto&& f) {
+		    return f.StaticMethod(); });
+    }
+}
+```
+
+It's not necessary to follow all of the above; the intent is to show that both calls involve a call to a function named **call_factory**. That's your clue that these calls involve the factory cache, and they're not directly accessing the implementation. *With* `-opt[imize]`, these same functions aren't defined at all. Instead, they're declared by the projection, and their definitions are left up to the component.
+
+The component can then provide definitions that call directly into the implementation. Now we've arrived at the breaking change. Those definitions are generated for you when you use both `-component` and `-opt[imize]`, and they appear in a file named `Type.g.cpp`, where *Type* is the name of the runtime class being implemented. That's why you may hit various linker errors when you first enable `-opt[imize]` in an existing project. You need to include that generated file into your implementation in order to stitch things up.
+
+In our example, `MyClass.h` might look like this (regardless of whether `-opt[imize]` is being used).
+
+```cppwinrt
+// MyClass.h
+#pragma once
+#include "MyClass.g.h"
+ 
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : ClassT<MyClass>
+    {
+        MyClass() = default;
+ 
+        static void StaticMethod();
+        void Method();
+    };
+}
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyClass : ClassT<MyClass, implementation::MyClass>
+    {
+    };
+}
+```
+
+Your `MyClass.cpp` is where it all comes together.
+
+```cppwinrt
+#include "pch.h"
+#include "MyClass.h"
+#include "MyClass.g.cpp" // !!It's important that you add this line!!
+ 
+namespace winrt::MyProject::implementation
+{
+    void MyClass::StaticMethod()
+    {
+    }
+ 
+    void MyClass::Method()
+    {
+    }
+}
+```
+
+So, to use uniform construction in an existing project, you need to edit each implementation's `.cpp` file so that you `#include <Sub/Namespace/Type.g.cpp>` after the inclusion (and definition) of the implementation class. That file provides the definitions of those functions that the projection left undefined. Here's what those definitions look like inside the `MyClass.g.cpp` file.
+
+```cppwinrt
+namespace winrt::MyProject
+{
+    MyClass::MyClass() :
+        MyClass(make<MyProject::implementation::MyClass>())
+    {
+    }
+    void MyClass::StaticMethod()
+    {
+        return MyProject::implementation::MyClass::StaticMethod();
+    }
+}
+```
+
+And that nicely completes the projection with efficient calls directly into the implementation, avoiding calls to the factory cache, and satisfying the linker.
+
+The final thing that `-opt[imize]` does for you is to change the implementation of your project's `module.g.cpp` (the file that helps you to implement your DLL's **DllGetActivationFactory** and **DllCanUnloadNow** exports) in such a way that incremental builds will tend to be much faster by eliminating the strong type coupling that was required by C++/WinRT 1.0. This is often referred to as *type-erased factories*. Without `-opt[imize]`, the `module.g.cpp` file that's generated for your component starts off by including the definitions of all of your implementation classes&mdash;the `MyClass.h`, in this example. It then directly creates the implementation factory for each class like this.
+
+```cppwinrt
+if (requal(name, L"MyProject.MyClass"))
+{
+    return winrt::detach_abi(winrt::make<winrt::MyProject::factory_implementation::MyClass>());
+}
+```
+
+Again, you don't need to follow all of the details. What's useful to see is that this requires the complete definition for any and all classes implemented by your component. This can have a dramatic effect on your inner loop, as any change to a single implementation will cause `module.g.cpp` to recompile. With `-opt[imize]`, this is no longer the case. Instead, two things happen to the generated `module.g.cpp` file. The first is that it no longer includes any implementation classes. In this example, it won't include `MyClass.h` at all. Instead, it creates the implementation factories without any knowledge of their implementation.
+
+```cppwinrt
+void* winrt_make_MyProject_MyClass();
+ 
+if (requal(name, L"MyProject.MyClass"))
+{
+    return winrt_make_MyProject_MyClass();
+}
+```
+
+Obviously, there's no need to include their definitions, and it's up to the linker to resolve the **winrt_make_Component_Class** function's definition. Of course, you don't need to think about this, because the `MyClass.g.cpp` file that gets generated for you (and that you previously included in order to support uniform construction) also defines this function. Here's the entirety of the `MyClass.g.cpp` file that's generated for this example.
+
+```cppwinrt
+void* winrt_make_MyProject_MyClass()
+{
+    return winrt::detach_abi(winrt::make<winrt::MyProject::factory_implementation::MyClass>());
+}
+namespace winrt::MyProject
+{
+    MyClass::MyClass() :
+        MyClass(make<MyProject::implementation::MyClass>())
+    {
+    }
+    void MyClass::StaticMethod()
+    {
+        return MyProject::implementation::MyClass::StaticMethod();
+    }
+}
+```
+
+As you can see, the **winrt_make_MyProject_MyClass** function directly creates your implementation's factory. This all means that you can happily change any given implementation, and the `module.g.cpp` needn't be recompiled at all. It's only when you add or remove Windows Runtime classes that `module.g.cpp` will be updated, and need to be recompiled.
+
 ## Overriding base class virtual methods
 
 Your derived class can have issues with virtual methods if both the base and the derived class are app-defined classes, but the virtual method is defined in a grandparent Windows Runtime class. In practice, this happens if you derive from XAML classes. The rest of this section continues from the example in [Derived classes](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes).

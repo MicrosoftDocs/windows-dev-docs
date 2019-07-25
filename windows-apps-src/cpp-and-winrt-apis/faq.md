@@ -58,15 +58,9 @@ One cause can be that your Windows Runtime Component can't be loaded. Make sure 
 
 ### Uniform construction
 
-This error can also happen if you try to instantiate a locally-implemented runtime class via any of the projected type's constructors (other than its **std::nullptr_t** constructor). To do that, you'll need the C++/WinRT 2.0 feature that's often called uniform construction. But, for a way of instantiating your locally-implemented runtime classes that *doesn't* require uniform construction, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
+This error can also happen if you try to instantiate a locally-implemented runtime class via any of the projected type's constructors (other than its **std::nullptr_t** constructor). To do that, you'll need the C++/WinRT 2.0 feature that's often called uniform construction. If you want to opt in to that feature, then for more info, and code examples, see [Opt in to uniform construction, and direct implementation access](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
-If you *do* want uniform construction, then it's enabled by default for new projects. For an existing project, you'll need to opt in to uniform construction by configuring the `cppwinrt.exe` tool. In Visual Studio, set project property **Common Properties** > **C++/WinRT** > **Optimized** to *Yes*. That has the effect of adding `<CppWinRTOptimized>true</CppWinRTOptimized>` to your project file. And it has the same effect as adding the `-opt[imize]` switch when invoking `cppwinrt.exe` from the command line.
-
-When you build your project *without* that setting, your resulting C++/WinRT projection calls [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) to access the constructors and static members of your runtime class. And that requires that the classes be registered, and that your module implements the [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) entry point.
-
-When you build your project *with* the `-opt[imize]` switch, that causes your project to bypass **RoGetActivationFactory** for classes in your component, which allows you to construct them (without needing to be registered) in all the same ways you could if they were outside your component.
-
-To use uniform construction, you also need to edit each implementation's `.cpp` file to `#include <Sub/Namespace/ClassName.g.cpp>` after including the implementation header file.
+For a way of instantiating your locally-implemented runtime classes that *doesn't* require uniform construction, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
 ## Should I implement [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) and, if so, how?
 If you have a runtime class that frees resources in its destructor, and that runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps), then we recommend that you also implement **IClosable** in order to support the consumption of your runtime class by languages that lack deterministic finalization. Make sure that your resources are freed whether the destructor, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close), or both are called. **IClosable::Close** may be called an arbitrary number of times.
