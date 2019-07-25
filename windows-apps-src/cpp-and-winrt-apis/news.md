@@ -137,7 +137,9 @@ A new project (from a project template) will use `-opt` by default.
 
 ##### Uniform construction, and direct implementation access
 
-These two optimizations allow your component direct access to its own implementation types, even when it's only using the projected types. There's no need to use [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self), nor [**get_self**](/uwp/cpp-ref-for-winrt/get-self) if you simply want to use the public API surface. Your calls will compile down to direct calls into the implementation, and those might even be entirely inlined. For more info about uniform construction, see the FAQ [Why am I getting a "class not registered" exception?](faq.md#why-am-i-getting-a-class-not-registered-exception).
+These two optimizations allow your component direct access to its own implementation types, even when it's only using the projected types. There's no need to use [**make**](/uwp/cpp-ref-for-winrt/make), [**make_self**](/uwp/cpp-ref-for-winrt/make-self), nor [**get_self**](/uwp/cpp-ref-for-winrt/get-self) if you simply want to use the public API surface. Your calls will compile down to direct calls into the implementation, and those might even be entirely inlined.
+
+For more info, and code examples, see [Opt in to uniform construction, and direct implementation access](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ##### Type-erased factories
 
