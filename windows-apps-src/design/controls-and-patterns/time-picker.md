@@ -51,7 +51,7 @@ The entry point displays the chosen time, and when the user selects the entry po
 This example shows how to create a simple time picker with a header.
 
 ```xaml
-<TimePicker x:Name=arrivalTimePicker Header="Arrival time"/>
+<TimePicker x:Name="arrivalTimePicker" Header="Arrival time"/>
 ```
 
 ```csharp
