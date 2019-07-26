@@ -238,9 +238,9 @@ Follow these general steps to host a custom UWP XAML control (either a control y
 
 2. Add a UWP application project to your host application solution and add the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package to this project.
 
-3. In the UWP application project, define a custom `Application` type that derives from the **Microsoft.Toolkit.Win32.UI.XamlApplication** class exposed by the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package. This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
+3. In the UWP application project, modify your `App` class so that it from the **Microsoft.Toolkit.Win32.UI.XamlApplication** class exposed by the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package. This type acts as a root metadata provider for loading metadata for custom UWP XAML types in assemblies in the current directory of your application.
 
-4. In the constructor of your custom `Application` type, call the **Initialize** method of the base **Microsoft.Toolkit.Win32.UI.XamlApplication** class.
+4. In the constructor of your `App` class, call the **Initialize** method of the base **Microsoft.Toolkit.Win32.UI.XamlApplication** class.
 
 5. In your host application project, follow the process described in the [previous section](#host-uwp-xaml-controls) to host the custom control in a XAML Island.
 
