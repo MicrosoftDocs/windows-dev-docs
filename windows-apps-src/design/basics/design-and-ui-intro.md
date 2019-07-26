@@ -41,12 +41,12 @@ You can ignore the pixel density and the actual screen resolution when designing
 
 :::row:::
     :::column span:::
-        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
+The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
 
-        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
     :::column:::
-        ![grid](images/4epx.svg)
+![grid](images/4epx.svg)
     :::column-end:::
 :::row-end:::
 
@@ -58,21 +58,21 @@ Since UWP apps automatically scale to all devices, designing a UWP app for any d
 
 :::row:::
     :::column:::
-        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
+When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
     :::column-end:::
     :::column:::
-        ![Frame](images/frame.svg)
+![Frame](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
+You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
 
-        To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
+To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
     :::column:::
-        ![Frame](images/collection-pages.svg)
+![Frame](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -110,14 +110,14 @@ Common controls are highly customizable, too--you can change the foreground colo
 
 :::row:::
     :::column:::
-        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
+Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
 
-        Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
+Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
-        UWP apps have four tile sizes (small, medium, wide, and large) that can be customized with the app's icon and identity. For guidance on designing tiles for your UWP app, see [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md).
+UWP apps have four tile sizes (small, medium, wide, and large) that can be customized with the app's icon and identity. For guidance on designing tiles for your UWP app, see [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md).
     :::column-end:::
     :::column:::
-        ![tiles on start menu](images/shell.svg)
+![tiles on start menu](images/shell.svg)
     :::column-end:::
 :::row-end:::
 
@@ -125,10 +125,10 @@ Common controls are highly customizable, too--you can change the foreground colo
 
 :::row:::
     :::column:::
-        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
+UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
     :::column-end:::
     :::column:::
-        ![inputs](images/inputs.svg)
+![inputs](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
