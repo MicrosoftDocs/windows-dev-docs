@@ -69,10 +69,10 @@ The APIs that appear at the bottom of this diagram ship with the Windows SDK. Th
 
 ## Configure your project to use XAML Islands
 
-XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project.
+XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project:
 
-* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
-* Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
+1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+2. Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
   * WPF: Install [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
   * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
   * C++/Win32: [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
