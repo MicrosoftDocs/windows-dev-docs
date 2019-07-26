@@ -1,7 +1,7 @@
 ---
 description: This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications
 title: UWP controls in desktop apps
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
@@ -69,42 +69,16 @@ The APIs that appear at the bottom of this diagram ship with the Windows SDK. Th
 
 ## Configure your project to use XAML Islands
 
-XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project.
+XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project:
 
-### WPF and Windows Forms
+1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
+2. Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
+    * WPF: Install [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
+    * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
+    * C++/Win32: [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
 
-* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
-
-* Install the latest [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (for WPF) or [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (for Windows Forms) NuGet package in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
-
-### C++/Win32
-
-* Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
-* Do one of the following:
-
-    **Package your application in an MSIX package**. Packaging your application in an [MSIX package](https://docs.microsoft.com/windows/msix/) provides many deployment and run time benefits.
-    1. Install the Windows 10, version 1903 SDK (or a later release).
-    2. Package your application in an MSIX package by adding a [Windows Application Packaging Project](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution and adding a reference to your C++/Win32 project.
-
-    **Set the maxversiontested value in your application manifest**. If you don't want to package your application in an MSIX package, before you can use XAML Islands you must add an [application manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) to your project and add the **maxversiontested** element to the manifest to specify that your application is compatible with Windows 10, version 1903 or later.
-    1. If you don't already have an application manifest in your project, add a new XML file to your project and name it **app.manifest**.
-    2. In your application manifest, include the **compatibility** element and the child elements shown in the following example. Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows 10 you are targeting (this must be Windows 10, version 1903 or a later release).
-
-        ```xml
-        <?xml version="1.0" encoding="UTF-8"?>
-        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-                <application>
-                    <!-- Windows 10 -->
-                    <maxversiontested Id="10.0.18362.0"/>
-                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-                </application>
-            </compatibility>
-        </assembly>
-        ```
-
-        > [!NOTE]
-        > When you add an **maxversiontested** element to an application manifest, you may see the following build warning in your project: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. This warning does not indicate that anything is wrong in your project, and it can be ignored.
+> [!NOTE]
+> Earlier versions of these instructions had you add the **maxversiontested** element to an application manifest in your project. As of the latest preview versions of the NuGet packages, you no longer need to add this element to your manifest.
 
 ## Feature roadmap
 
