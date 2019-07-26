@@ -73,9 +73,9 @@ XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in
 
 1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
 2. Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
-  * WPF: Install [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
-  * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
-  * C++/Win32: [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
+    * WPF: Install [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
+    * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
+    * C++/Win32: [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
 
 > [!NOTE]
 > Earlier versions of these instructions had you add the **maxversiontested** element to an application manifest in your project. As of the latest preview versions of the NuGet packages, you no longer need to add this element to your manifest.
