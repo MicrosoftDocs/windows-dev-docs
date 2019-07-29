@@ -1,12 +1,12 @@
 ---
-Description: View multiple parts of your app in separate windows.
-title: Show multiple views for an app
+Description: Use the ApplicationView class to view different parts of your app in separate windows.
+title: Use the ApplicationView class to show secondary windows for an app
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Show multiple views for an app
+# Show multiple views with ApplicationView
 
 ![Wireframe showing an app with multiple windows](images/multi-view.gif)
 
@@ -123,5 +123,7 @@ When you use [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.vie
 
 ## Related topics
 
-* [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-* [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+- [Show multiple views](show-multiple-views.md)
+- [Show multiple views with AppWindow](app-window.md)
+- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)

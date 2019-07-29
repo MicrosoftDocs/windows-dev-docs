@@ -6,7 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Show multiple windows with AppWindow
+# Show multiple views with AppWindow
 
 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) and it's related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
 
@@ -145,17 +145,17 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 }
 ```
 
-### Track an AppWindow instance in it's hosted content
+### Track an AppWindow instance in its hosted content
 
 The `AppWindowPage` window hosts a complete XAML page, and the code for interacting with the page resides in `AppWindowPage.xaml.cs`. It allows multiple instances, each of which functions independently.
 
 The functionality of the page lets you manipulate the window, setting it to `FullScreen` or `CompactOverlay`, and also listens for [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) events to show information about the window. In order to call these APIs, `AppWindowPage` needs a reference to the AppWindow instance that is hosting it.
 
-If that's all that you need, you can create a public property in `AppWindowPage` and assign the [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) instance to it when you create it.
+If that's all that you need, you can create a property in `AppWindowPage` and assign the [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) instance to it when you create it.
 
 **AppWindowPage.xaml.cs**
 
-In `AppWindowPage`, create a public property to hold the AppWindow reference.
+In `AppWindowPage`, create a property to hold the AppWindow reference.
 
 ```csharp
 public sealed partial class AppWindowPage : Page
@@ -220,10 +220,12 @@ public sealed partial class MainPage : Page
         // Attach the XAML content to the window.
         ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
 
+        // Add the new page to the Dictionary using the UIContext as the Key.
         AppWindows.Add(appWindowContentFrame.UIContext, appWindow);
         appWindow.Title = "App Window " + AppWindows.Count.ToString();
 
-        // When the window is closed, be sure to release XAML resources and the reference to the window.
+        // When the window is closed, be sure to release
+        // XAML resources and the reference to the window.
         appWindow.Closed += delegate
         {
             MainPage.AppWindows.Remove(appWindowContentFrame.UIContext);
@@ -328,14 +330,14 @@ private void Window_Changed(AppWindow sender, AppWindowChangedEventArgs args)
         EnablePresentationButtons(sender);
     }
 
+    if (args.DidWindowPresentationChange)
+    {
+        ConfigText.Text = window.Presenter.GetConfiguration().Kind.ToString();
+    }
+
     if (args.DidSizeChange)
     {
         SizeText.Text = window.GetPlacement().Size.ToString();
-    }
-
-    if (args.DidWindowPresentationChange)
-    {
-        ConfigText.Text = window.Presenter.GetConfiguration().ToString();
     }
 }
 
@@ -435,8 +437,8 @@ ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRoo
 When the [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) is closed, you reverse the process. First, remove the [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) from the [Grid](/uwp/api/windows.ui.xaml.controls.grid), then add it as a child of the [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) in `MainPage`.
 
 ```csharp
-// Make sure to release the reference to this window,
-// and release XAML resources, when it's closed
+// When the window is closed, be sure to release XAML resources
+// and the reference to the window.
 colorPickerAppWindow.Closed += delegate
 {
     appWindowRootGrid.Children.Remove(colorPicker);
@@ -470,8 +472,8 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
         // Attach the XAML content to our window
         ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
 
-        // Make sure to release the reference to this window,
-        // and release XAML resources, when it's closed
+        // When the window is closed, be sure to release XAML resources
+        // and the reference to the window.
         colorPickerAppWindow.Closed += delegate
         {
             appWindowRootGrid.Children.Remove(colorPicker);
@@ -546,7 +548,8 @@ private async void DialogButton_Click(object sender, RoutedEventArgs e)
     MainPage.CurrentDialog = simpleDialog;
 
     // Use this code to associate the dialog to the appropriate AppWindow by setting
-    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already
+    // present in the AppWindow.
     if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
     {
         simpleDialog.XamlRoot = ((Button)sender).XamlRoot;
@@ -585,8 +588,8 @@ public sealed partial class MainPage : Page
         {
             MainPage.CurrentDialog.Hide();
         }
-        // Do not track this dialog as the MainPage.CurrentDialog. It should only be closed
-        // by clicking the Ok button.
+        // Do not track this dialog as the MainPage.CurrentDialog.
+        // It should only be closed by clicking the Ok button.
         MainPage.CurrentDialog = null;
 
         try
@@ -602,8 +605,400 @@ public sealed partial class MainPage : Page
 }
 ```
 
+## Complete code
+
+### MainPage.xaml
+
+```xaml
+<Page
+    x:Class="HelloAppWindow.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloAppWindow"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="NewWindowButton" Content="Open new window" 
+                    Click="ShowNewWindowButton_Click" Margin="0,12"/>
+            <Button Content="Open dialog" Click="DialogButton_Click" 
+                    HorizontalAlignment="Stretch"/>
+            <Button Content="Close all" Click="CloseAllButton_Click" 
+                    Margin="0,12" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+<StackPanel x:Name="colorPickerContainer" Grid.Column="1" Background="WhiteSmoke">
+    <Button Click="DetachColorPickerButton_Click" HorizontalAlignment="Right">
+        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B4;" />
+    </Button>
+            <ColorPicker x:Name="colorPicker" Margin="12" Width="288"
+                 IsColorChannelTextInputVisible="False"
+                 ColorChanged="ColorPicker_ColorChanged"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
+```
+
+### MainPage.xaml.cs
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Windows.Foundation;
+using Windows.UI;
+using Windows.UI.WindowManagement;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Hosting;
+using Windows.UI.Xaml.Media;
+
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+namespace HelloAppWindow
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
+        AppWindow colorPickerAppWindow;
+
+        // Track open app windows in a Dictionary.
+        public static Dictionary<UIContext, AppWindow> AppWindows { get; set; }
+            = new Dictionary<UIContext, AppWindow>();
+
+        // Track the last opened dialog so you can close it if another dialog tries to open.
+        public static ContentDialog CurrentDialog { get; set; } = null;
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new window.
+            AppWindow appWindow = await AppWindow.TryCreateAsync();
+
+            // Create a Frame and navigate to the Page you want to show in the new window.
+            Frame appWindowContentFrame = new Frame();
+            appWindowContentFrame.Navigate(typeof(AppWindowPage));
+
+            // Get a reference to the page instance and assign the
+            // newly created AppWindow to the MyAppWindow property.
+            AppWindowPage page = (AppWindowPage)appWindowContentFrame.Content;
+            page.MyAppWindow = appWindow;
+            page.TextColorBrush = new SolidColorBrush(colorPicker.Color);
+
+            // Attach the XAML content to the window.
+            ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
+
+            // Add the new page to the Dictionary using the UIContext as the Key.
+            AppWindows.Add(appWindowContentFrame.UIContext, appWindow);
+            appWindow.Title = "App Window " + AppWindows.Count.ToString();
+
+            // When the window is closed, be sure to release XAML resources
+            // and the reference to the window.
+            appWindow.Closed += delegate
+            {
+                MainPage.AppWindows.Remove(appWindowContentFrame.UIContext);
+                appWindowContentFrame.Content = null;
+                appWindow = null;
+            };
+
+            // Show the window.
+            await appWindow.TryShowAsync();
+        }
+
+        private async void DialogButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContentDialog importantDialog = new ContentDialog
+            {
+                Title = "Important dialog",
+                Content = "This dialog can only be dismissed by clicking Ok.",
+                CloseButtonText = "Ok"
+            };
+
+            if (MainPage.CurrentDialog != null)
+            {
+                MainPage.CurrentDialog.Hide();
+            }
+            // Do not track this dialog as the MainPage.CurrentDialog.
+            // It should only be closed by clicking the Ok button.
+            MainPage.CurrentDialog = null;
+
+            try
+            {
+                ContentDialogResult result = await importantDialog.ShowAsync();
+            }
+            catch (Exception)
+            {
+                // The dialog didn't open, probably because another dialog is already open.
+            }
+        }
+
+        private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Create the color picker window.
+            if (colorPickerAppWindow == null)
+            {
+                colorPickerContainer.Children.Remove(colorPicker);
+                colorPickerContainer.Visibility = Visibility.Collapsed;
+
+                Grid appWindowRootGrid = new Grid();
+                appWindowRootGrid.Children.Add(colorPicker);
+
+                // Create a new window
+                colorPickerAppWindow = await AppWindow.TryCreateAsync();
+                colorPickerAppWindow.RequestMoveAdjacentToCurrentView();
+                colorPickerAppWindow.RequestSize(new Size(300, 428));
+                colorPickerAppWindow.Title = "Color picker";
+
+                // Attach the XAML content to our window
+                ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
+
+                // Make sure to release the reference to this window, 
+                // and release XAML resources, when it's closed
+                colorPickerAppWindow.Closed += delegate
+                {
+                    appWindowRootGrid.Children.Remove(colorPicker);
+                    appWindowRootGrid = null;
+                    colorPickerAppWindow = null;
+
+                    colorPickerContainer.Children.Add(colorPicker);
+                    colorPickerContainer.Visibility = Visibility.Visible;
+                };
+            }
+            // Show the window.
+            await colorPickerAppWindow.TryShowAsync();
+        }
+
+        private void ColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args)
+        {
+            NewWindowButton.Background = new SolidColorBrush(args.NewColor);
+        }
+
+        private async void CloseAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            while (AppWindows.Count > 0)
+            {
+                await AppWindows.Values.First().CloseAsync();
+            }
+        }
+    }
+}
+
+```
+
+### AppWindowPage.xaml
+
+```xaml
+<Page
+    x:Class="HelloAppWindow.AppWindowPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloAppWindow"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="TitleTextBlock" Text="Hello AppWindow!" FontSize="24" HorizontalAlignment="Center" Margin="24"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Open dialog" Click="DialogButton_Click"
+                    Width="200" Margin="0,4"/>
+            <Button Content="Move window" Click="MoveWindowButton_Click"
+                    Width="200" Margin="0,4"/>
+            <ToggleButton Content="Compact Overlay" x:Name="compactOverlayButton" Click="CompactOverlayButton_Click"
+                          Width="200" Margin="0,4"/>
+            <ToggleButton Content="Full Screen" x:Name="fullScreenButton" Click="FullScreenButton_Click"
+                          Width="200" Margin="0,4"/>
+            <Grid>
+                <TextBlock Text="Size:"/>
+                <TextBlock x:Name="SizeText" HorizontalAlignment="Right"/>
+            </Grid>
+            <Grid>
+                <TextBlock Text="Presentation:"/>
+                <TextBlock x:Name="ConfigText" HorizontalAlignment="Right"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
+```
+
+### AppWindowPage.xaml.cs
+
+```csharp
+using System;
+using Windows.Foundation;
+using Windows.Foundation.Metadata;
+using Windows.UI;
+using Windows.UI.WindowManagement;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace HelloAppWindow
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class AppWindowPage : Page
+    {
+        AppWindow window;
+
+        public AppWindow MyAppWindow { get; set; }
+
+        public SolidColorBrush TextColorBrush { get; set; } = new SolidColorBrush(Colors.Black);
+
+        public AppWindowPage()
+        {
+            this.InitializeComponent();
+
+            Loaded += AppWindowPage_Loaded;
+        }
+
+        private void AppWindowPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Get the reference to this AppWindow that was stored when it was created.
+            window = MainPage.AppWindows[this.UIContext];
+
+            // Set up event handlers for the window.
+            window.Changed += Window_Changed;
+
+            TitleTextBlock.Foreground = TextColorBrush;
+        }
+
+        private async void DialogButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContentDialog simpleDialog = new ContentDialog
+            {
+                Title = "Content dialog",
+                Content = "Dialog box for " + window.Title,
+                CloseButtonText = "Ok"
+            };
+
+            if (MainPage.CurrentDialog != null)
+            {
+                MainPage.CurrentDialog.Hide();
+            }
+            MainPage.CurrentDialog = simpleDialog;
+
+            // Use this code to associate the dialog to the appropriate AppWindow by setting
+            // the dialog's XamlRoot to the same XamlRoot as an element that is already 
+            // present in the AppWindow.
+            if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+            {
+                simpleDialog.XamlRoot = ((Button)sender).XamlRoot;
+            }
+
+            try
+            {
+                ContentDialogResult result = await simpleDialog.ShowAsync();
+            }
+            catch (Exception)
+            {
+                // The dialog didn't open, probably because another dialog is already open.
+            }
+        }
+
+        private void Window_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+        {
+            if (args.DidAvailableWindowPresentationsChange)
+            {
+                EnablePresentationButtons(sender);
+            }
+
+            if (args.DidWindowPresentationChange)
+            {
+                ConfigText.Text = window.Presenter.GetConfiguration().Kind.ToString();
+            }
+
+            if (args.DidSizeChange)
+            {
+                SizeText.Text = window.GetPlacement().Size.ToString();
+            }
+        }
+
+        private void EnablePresentationButtons(AppWindow window)
+        {
+            // Check whether the current AppWindowPresenter supports CompactOverlay.
+            if (window.Presenter.IsPresentationSupported(AppWindowPresentationKind.CompactOverlay))
+            {
+                // Show the CompactOverlay button...
+                compactOverlayButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // Hide the CompactOverlay button...
+                compactOverlayButton.Visibility = Visibility.Collapsed;
+            }
+
+            // Check whether the current AppWindowPresenter supports FullScreen?
+            if (window.Presenter.IsPresentationSupported(AppWindowPresentationKind.FullScreen))
+            {
+                // Show the FullScreen button...
+                fullScreenButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // Hide the FullScreen button...
+                fullScreenButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void CompactOverlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (window.Presenter.GetConfiguration().Kind != AppWindowPresentationKind.CompactOverlay)
+            {
+                window.Presenter.RequestPresentation(AppWindowPresentationKind.CompactOverlay);
+                fullScreenButton.IsChecked = false;
+            }
+            else
+            {
+                window.Presenter.RequestPresentation(AppWindowPresentationKind.Default);
+            }
+        }
+
+        private void FullScreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (window.Presenter.GetConfiguration().Kind != AppWindowPresentationKind.FullScreen)
+            {
+                window.Presenter.RequestPresentation(AppWindowPresentationKind.FullScreen);
+                compactOverlayButton.IsChecked = false;
+            }
+            else
+            {
+                window.Presenter.RequestPresentation(AppWindowPresentationKind.Default);
+            }
+        }
+
+        private void MoveWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayRegion displayRegion = window.GetPlacement().DisplayRegion;
+            double displayRegionWidth = displayRegion.WorkAreaSize.Width;
+            double windowWidth = window.GetPlacement().Size.Width;
+            int horizontalOffset = (int)(displayRegionWidth - windowWidth);
+            window.RequestMoveRelativeToDisplayRegion(displayRegion, new Point(horizontalOffset, 0));
+        }
+    }
+}
+```
+
 ## Related topics
 
-- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
- 
+- [Show multiple views](show-multiple-views.md)
+- [Show multiple views with ApplicationView](application-view.md)
