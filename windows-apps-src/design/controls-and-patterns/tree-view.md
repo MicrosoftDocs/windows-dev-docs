@@ -3,7 +3,7 @@ description: You can create an expandable tree view by binding the ItemsSource t
 title: Tree view
 label: Tree view
 template: detail.hbs
-ms.date: 06/14/2019
+ms.date: 07/24/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -94,7 +94,7 @@ To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.tr
 You can bind a hierarchical data source to the [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) that renders the item.
 
 > [!IMPORTANT]
-> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763 or later](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
 > **ItemsSource** is an alternative mechanism to **TreeView.RootNodes** for putting content into the **TreeView** control. You cannot set both **ItemsSource** and **RootNodes** at the same time. When you use **ItemsSource**, nodes are created for you, and you can access them from the **TreeView.RootNodes** property.
 
