@@ -50,7 +50,7 @@ For Microsoft Visual Basic, it is this.
 
 The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). The *valueType* return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
 
-The signature for the **Set***PropertyName* accessor must be this.
+The signature for the **Set**_PropertyName_ accessor must be this.
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
