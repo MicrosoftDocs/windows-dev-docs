@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) and it's related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
 
+> [!NOTE]
+> AppWindow is currently in preview. This means you can submit apps that use AppWindow to the Store, but some platform and framework components are known to not work with AppWindow (see [Limitations]((/uwp/api/windows.ui.windowmanagement.appwindow#limitations))).
+
 Here, we show some scenarios for multiple windows with a sample app called `HelloAppWindow`. The sample app demonstrates the following functionality:
 
 - Un-dock a control from the main page and open it in a new window.
@@ -29,7 +32,7 @@ Here, we show some scenarios for multiple windows with a sample app called `Hell
 
 ## API overview
 
-The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class and other APIs in the [WindowManagement](/uwp/api/windows.ui.windowmanagement) namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must [use ApplicationView to create secondary windows](application-view.md). WindowManagement APIs are still under development and have limitations as described in the API reference docs.
+The [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class and other APIs in the [WindowManagement](/uwp/api/windows.ui.windowmanagement) namespace are available starting in Windows 10, version 1903 (SDK 18362). If your app targets earlier versions of Windows 10, you must [use ApplicationView to create secondary windows](application-view.md). WindowManagement APIs are still under development and have [limitations](/uwp/api/windows.ui.windowmanagement.appwindow#limitations) as described in the API reference docs.
 
 Here are some of the important APIs you use to show content in an AppWindow.
 
