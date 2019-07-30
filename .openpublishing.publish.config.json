@@ -70,5 +70,6 @@
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": true,
   "targets": {},
-  "need_generate_pdf": false
+  "need_generate_pdf": false,
+  "xref_query_tags": [ "/uwp/api" ]
 }
