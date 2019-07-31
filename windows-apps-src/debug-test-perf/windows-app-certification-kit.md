@@ -46,13 +46,15 @@ The installation of a more recent [Windows App Certification Kit]( https://go.mi
 
 6.  Open the report file and review the results of the test.
 
-**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) to learn how.
+> [!NOTE]
+> If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps) to learn how.
 
  
 
 ## Validate your Windows app using the Windows App Certification Kit from a command line
 
-**Important**  The Windows App Certification Kit must be run within the context of an active user session.
+> [!IMPORTANT]
+> The Windows App Certification Kit must be run within the context of an active user session.
 
 1.  In the command window, navigate to the directory that contains the Windows App Certification Kit.
 

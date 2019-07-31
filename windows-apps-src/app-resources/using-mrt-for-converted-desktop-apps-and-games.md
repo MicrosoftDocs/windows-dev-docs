@@ -248,7 +248,7 @@ You should now be able to build the `.pri` file and deploy the application to ve
 
 If you're building in Visual Studio, simply press `Ctrl+Shift+B` to build the project and then right-click on the project and choose `Deploy` from the context menu.
 
-If you're building manually, follow these steps to create a configuration file for `MakePRI` tool and to generate the `.pri` file itself (more information can be found in [Manual app packaging](https://docs.microsoft.com/en-us/windows/uwp/packaging/manual-packaging-root)):
+If you're building manually, follow these steps to create a configuration file for `MakePRI` tool and to generate the `.pri` file itself (more information can be found in [Manual app packaging](/windows/msix/package/manual-packaging-root)):
 
 1. Open a developer command prompt from the **Visual Studio 2017** or **Visual Studio 2019** folder in the Start menu.
 2. Switch to the project root directory (the one that contains the .appxmanifest file and the **Strings** folder).

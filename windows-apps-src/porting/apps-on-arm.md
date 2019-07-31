@@ -18,14 +18,14 @@ We use the term *ARM* here as a shorthand for PCs that run the desktop version o
 The built-in Windows 10 experiences such as Edge, Cortana, Start menu, and Explorer are all native and run as ARM64 (or ARM32). This also includes all the device drivers such as Graphics, networking or the hard disk. This ensures that you get the best user experience and battery life out of your device running at the full native speed of the Qualcomm Snapdragon processor
 
 ### Universal Windows Platform (UWP) apps
-Windows 10 on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/universal-application-platform-guide.md) from the Microsoft Store. ARM32 and ARM64 apps run natively without any emulation, while x86 apps run under emulation. If you are a UWP developer, please ensure that you submit an ARM package for your app as this will provide the best user experience for the device. For more information see [App package architectures](../packaging/device-architecture.md).
+Windows 10 on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/universal-application-platform-guide.md) from the Microsoft Store. ARM32 and ARM64 apps run natively without any emulation, while x86 apps run under emulation. If you are a UWP developer, please ensure that you submit an ARM package for your app as this will provide the best user experience for the device. For more information see [App package architectures](/windows/msix/package/device-architecture).
 
 >[!NOTE]
 > To build your UWP application to natively target the ARM64 platform, you must have Visual Studio 2017 version 15.9 or later, or Visual Studio 2019. For more information, see [this blog post](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
 
 
 >[!IMPORTANT]
-> When a user downloads a UWP app from the Microsoft Store, the ARM32 version will be installed on an ARM64 device unless only an x86 version is available. For more information about architectures, see [App package architectures](../packaging/device-architecture.md).
+> When a user downloads a UWP app from the Microsoft Store, the ARM32 version will be installed on an ARM64 device unless only an x86 version is available. For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
 
 ### Win32 apps
 In addition to UWP apps, Windows 10 on ARM can also run your x86 Win32 apps (such as Adobe Reader) unmodified, with good performance and seamless user experience, just like any PC. These x86 Win32 apps don’t have to recompiled for ARM and don’t even realize they are running on ARM processor. Note that 64-bit x64 Win32 apps are not supported but the vast majority of apps all have x86 versions of their apps, so from a user perspective, just choose the 32 bit x86 installer to run on the Windows on ARM PC.

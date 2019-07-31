@@ -738,45 +738,15 @@
         - name: Simplify payments with the Payment Request API
           href: ../monetize/payment-request.md
     - name: Packaging apps
-      href: ../packaging/index.md
       items:
-        - name: Package a UWP app with Visual Studio
-          href: ../packaging/packaging-uwp-apps.md
-        - name: Manual app packaging
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: Create an app package with the MakeAppx.exe tool
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: Create a certificate for package signing
-              href: ../packaging/create-certificate-package-signing.md
-            - name: Sign an app package using SignTool
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: Developing with asset packages and package folding
-              href: ../packaging/package-folding.md
-            - name: Flat bundle app packages
-              href: ../packaging/flat-bundles.md
-            - name: Introduction to asset packages
-              href: ../packaging/asset-packages.md
-            - name: Package creation with the packaging layout
-              href: ../packaging/packaging-layout.md
-        - name: App package architectures
-          href: ../packaging/device-architecture.md
-        - name: UWP App Streaming Install
-          href: ../packaging/streaming-install.md
-          items:
-            - name: Create and convert a source content group map
-              href: ../packaging/create-cgm.md
-        - name: Optional packages and related set authoring
-          href: ../packaging/optional-packages.md
-          items:
-            - name: Optional packages with executable code
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: Install apps with the WinAppDeployCmd.exe tool
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Overview
+          href: ../packaging/index.md
         - name: App capability declarations
           href: ../packaging/app-capability-declarations.md
         - name: Set up automated builds for your UWP app
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Install apps with the WinAppDeployCmd.exe tool
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Download and install package updates from the Store
           href: ../packaging/self-install-package-updates.md
 - name: Platform

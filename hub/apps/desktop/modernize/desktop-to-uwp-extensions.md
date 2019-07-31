@@ -407,7 +407,7 @@ Use an extension to identify those folders. That way, the system can find and lo
 
 If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
 
-Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
+Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](/windows/msix/package/optional-packages).
 
 #### XML namespace
 

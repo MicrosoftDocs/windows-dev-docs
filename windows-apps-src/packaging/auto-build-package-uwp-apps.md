@@ -77,7 +77,7 @@ To upload a certificate for your automated build:
 5. If the certificate has a password, we recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline.
 
 > [!NOTE]
-> Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](create-certificate-package-signing.md).
+> Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](/windows/msix/package/create-certificate-package-signing).
 
 ## Configure the Build solution build task
 
@@ -190,6 +190,6 @@ Then, remove the `AppxBundle` MSBuild argument from the build step.
 ## Related topics
 
 - [Build your .NET app for Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [Packaging UWP apps](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps)
 - [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [Create a certificate for package signing](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Create a certificate for package signing](/windows/msix/package/create-certificate-package-signing)

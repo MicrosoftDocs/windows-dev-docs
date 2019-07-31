@@ -77,7 +77,7 @@ The MSIX packaging format is an open source format which makes it easier for our
 
 ### Optional packages with executable code
 
-Optional packages in your app can now contain executable C# code. [Learn how to use Visual Studio to configure optional add-on packages to support your main app package.](../packaging/optional-packages-with-executable-code.md)
+Optional packages in your app can now contain executable C# code. [Learn how to use Visual Studio to configure optional add-on packages to support your main app package.](/windows/msix/package/optional-packages)
 
 ### Page transitions
 

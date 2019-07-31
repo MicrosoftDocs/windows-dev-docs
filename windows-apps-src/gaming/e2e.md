@@ -1553,11 +1553,11 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Divide and group content to enable streaming install</td>
-        <td><a href="../packaging/streaming-install.md">UWP App Streaming install</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/streaming-install">UWP App Streaming install</a></td>
     </tr>
     <tr>
         <td>Create optional packages like DLC game content</td>
-        <td><a href="../packaging/optional-packages.md">Optional packages and related set authoring</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/optional-packages">Optional packages and related set authoring</a></td>
     </tr>
     <tr>
         <td>Package your UWP game</td>
@@ -1573,7 +1573,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Creating app packages and app package bundles using MakeAppx</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
     </tr>
     <tr>
         <td>Signing your files digitally using SignTool</td>

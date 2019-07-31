@@ -4750,6 +4750,76 @@
       "source_path": "windows-apps-src/design/fluent-design-system/index.md",
       "redirect_url": "/windows/apps/fluent-design-system",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/packaging-uwp-apps.md",
+      "redirect_url": "/windows/msix/package/packaging-uwp-apps",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/manual-packaging-root.md",
+      "redirect_url": "/windows/msix/package/manual-packaging-root",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/create-app-package-with-makeappx-tool.md",
+      "redirect_url": "/windows/msix/package/create-app-package-with-makeappx-tool",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/create-certificate-package-signing.md",
+      "redirect_url": "/windows/msix/package/create-certificate-package-signing",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/sign-app-package-using-signtool.md",
+      "redirect_url": "/windows/msix/package/sign-app-package-using-signtool",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/package-folding.md",
+      "redirect_url": "/windows/msix/package/package-folding",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/flat-bundles.md",
+      "redirect_url": "/windows/msix/package/flat-bundles",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/asset-packages.md",
+      "redirect_url": "/windows/msix/package/asset-packages",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/packaging-layout.md",
+      "redirect_url": "/windows/msix/package/packaging-layout",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/device-architecture.md",
+      "redirect_url": "/windows/msix/package/device-architecture",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/streaming-install.md",
+      "redirect_url": "/windows/msix/package/streaming-install",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/create-cgm.md",
+      "redirect_url": "/windows/msix/package/create-cgm",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/optional-packages.md",
+      "redirect_url": "/windows/msix/package/optional-packages",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/packaging/optional-packages-with-executable-code.md",
+      "redirect_url": "/windows/msix/package/optional-packages-with-executable-code",
+      "redirect_document_id": true
     }
   ]
 }

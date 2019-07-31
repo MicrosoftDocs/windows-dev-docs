@@ -1,7 +1,7 @@
 ---
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
-description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
+description: Capabilities must be declared in your Windows app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -10,9 +10,9 @@ ms.custom: 19H1
 ---
 # App capability declarations
 
-Capabilities must be declared in your Universal Windows Platform (UWP) app's [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) to access certain API or resources like pictures, music, or devices such as the camera or the microphone.
+Capabilities must be declared in your Windows app's [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) to access certain Windows 10 APIs or resources, such as pictures, music, or devices such as the camera or the microphone. Capabilities are used by UWP apps as well as other types of desktop apps that are packaged in an MSIX or AppX package for Windows 10.
 
-You request access to specific resources or API by declaring capabilities in your app's [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). You can declare general capabilities by using the [Manifest Designer](packaging-uwp-apps.md#configure-an-app-package) in Microsoft Visual Studio, or you can add them manually. For more information, see [How to specify capabilities in a package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest). It is important to know that when customers get your app from the Store, they're notified of all the capabilities that the app declares. Avoid declaring capabilities that your app doesn't need.
+You request access to specific resources or API by declaring capabilities in your app's [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). You can declare general capabilities by using the [Manifest Designer](/windows/msix/package/packaging-uwp-apps#configure-an-app-package) in Visual Studio, or you can add them manually. For more information, see [How to specify capabilities in a package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest). It is important to know that when customers get your app from the Store, they're notified of all the capabilities that the app declares. Avoid declaring capabilities that your app doesn't need.
 
 Some capabilities provide apps with access to a *sensitive resource*. These resources are considered sensitive because they can access the user's personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://docs.microsoft.com/windows/uwp/security/index). Capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) next to the capability scenario.
 

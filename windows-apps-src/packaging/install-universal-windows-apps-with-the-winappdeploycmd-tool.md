@@ -14,7 +14,7 @@ Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that
 
 You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx/.msix file or AppxManifest(for loose files) to side-load your app onto a Windows 10 device. This command does not install the certificate required for your app. To run the app, the Windows 10 device must be in developer mode or already have the certificate installed.
 
-To deploy to mobile devices, you must first create a package. For more information, see [here](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+To deploy to mobile devices, you must first create a package. For more information, see [here](/windows/msix/package/packaging-uwp-apps).
 
 The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\&lt;SDK Version&gt;\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). 
 > [!NOTE]

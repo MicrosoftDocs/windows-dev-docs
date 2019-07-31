@@ -399,7 +399,7 @@ When you build an extension host and are ready to test how well it supports exte
 
 ## How app extensions differ from optional packages
 
-The key differentiator between [optional packages](https://docs.microsoft.com/windows/uwp/packaging/optional-packages) and app extensions are open ecosystem versus closed ecosystem, and dependent package versus independent package.
+The key differentiator between [optional packages](/windows/msix/package/optional-packages) and app extensions are open ecosystem versus closed ecosystem, and dependent package versus independent package.
 
 App extensions participate in an open ecosystem. If your app can host app extensions, anyone can write an extension for your host as long as they comply with your method of passing/receiving information from the extension. This differs from optional packages which participate in a closed ecosystem where the publisher decides who is allowed to make an optional package that can be used with the app.
 

@@ -22,7 +22,7 @@ For details about what a package includes and how it must be structured, see [Ap
 To upload packages, drag them into the upload field or click to browse your files. The **Packages** page will let you upload .msix, .msixupload, .msixbundle, .appx, .appxupload, and/or .appxbundle files.
 
 > [!IMPORTANT]
-> For Windows 10, we recommend uploading the .msixupload or .appxupload file here rather than .msix, .appx, .msixbundle, or .appxbundle.  For more info about packaging UWP apps for the Store, see [Packaging a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md).
+> For Windows 10, we recommend uploading the .msixupload or .appxupload file here rather than .msix, .appx, .msixbundle, or .appxbundle.  For more info about packaging UWP apps for the Store, see [Packaging a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
 
