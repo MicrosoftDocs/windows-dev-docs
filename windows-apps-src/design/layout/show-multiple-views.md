@@ -48,7 +48,7 @@ There are different ways that UWP content can be hosted inside an app.
     To learn how to use AppWindow to show secondary windows in your app, see [Use AppWindow](app-window.md).
 
     > [!NOTE]
-    > AppWindow is currently in preview. This means you can submit apps that use AppWindow to the Store, but some platform and framework components are known to not work with AppWindow (see [Limitations]((/uwp/api/windows.ui.windowmanagement.appwindow#limitations))).
+    > AppWindow is currently in preview. This means you can submit apps that use AppWindow to the Store, but some platform and framework components are known to not work with AppWindow (see [Limitations](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
 - [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) (XAML Islands)
 
      UWP XAML content in a Win32 app (using HWND), also known as XAML Islands, is hosted in a DesktopWindowXamlSource.
