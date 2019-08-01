@@ -24,7 +24,7 @@ There are a variety of scenarios that can benefit from multiple views. Here are 
 - A note-taking app that lets users copy information from one page of notes to another
 - A reading app that lets users open several articles for reading later, after an opportunity to peruse all high-level headlines
 
-While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the content that can be opened in a new window. Also consider including a [context menu](..\controls-and-patterns\menus.md) option to "Open in a new window".
+While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the content that can be opened in a new window. Also consider including a [context menu](../controls-and-patterns/menus.md) option to "Open in a new window".
 
 To create separate instances of your app (rather than separate windows for the same instance), see [Create a multi-instance UWP app](../../launch-resume/multi-instance-uwp.md).
 
