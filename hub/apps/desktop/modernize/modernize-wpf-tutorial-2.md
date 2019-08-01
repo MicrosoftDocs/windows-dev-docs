@@ -24,7 +24,7 @@ Before you can add an **InkCanvas** control to the Contoso Expenses app, you fir
 
     ![Manage NuGet Packages menu in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results. Make sure you install version 6.0.0-preview6.4 or a later version.
+2. In the **NuGet Package Manager** window, click **Browse**. Select the **Include prerelease** option, search for the `Microsoft.Toolkit.Wpf.UI.Controls` package, and install the latest preview release of the package shown in the results. Make sure you install version 6.0.0-preview7 or a later version.
 
     > [!NOTE]
     > This package contains all the necessary infrastructure for hosting UWP XAML Islands in a WPF app, including the **InkCanvas** wrapped UWP control. A similar package named `Microsoft.Toolkit.Forms.UI.Controls` is available for Windows Forms apps.

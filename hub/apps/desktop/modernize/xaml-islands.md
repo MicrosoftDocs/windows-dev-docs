@@ -72,7 +72,7 @@ The APIs that appear at the bottom of this diagram ship with the Windows SDK. Th
 XAML Islands require Windows 10, version 1903, and later. To use XAML Islands in your application, you must first set up your project:
 
 1. Modify your project to use Windows Runtime APIs. For instructions, see [this article](desktop-to-uwp-enhance.md#set-up-your-project).
-2. Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview6.4 or a later version of the package.
+2. Install one of these NuGet packages in your project. Make sure you install version 6.0.0-preview7 or a later version of the package.
     * WPF: Install [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
     * Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
     * C++/Win32: [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
@@ -86,7 +86,7 @@ As of the release of Windows 10, version 1903, the wrapped controls and host con
 
 * Version 1.0 of the controls for the .NET Framework 4.6.2 and later are planned to be released in the [6.0 release of the toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
 * Version 1.0 of the controls for .NET Core 3 are planned for a later release of the toolkit.
-* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview6.4** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
+* If you want to try the latest previews of the version 1.0 releases of these controls for the .NET Framework and .NET Core 3, see the **6.0.0-preview7** NuGet packages in the [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) gallery.
 
 For more details, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
 
