@@ -49,7 +49,37 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 9. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
 
-10. Press **F5** to start the packaged app in the debugger.
+10. In Solution Explorer, right-click the **ContosoExpenses.Package** project node and select **Edit Project File**.
+
+11. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file.
+
+12. Replace this element with the following XML.
+
+    ``` xml
+    <ItemGroup>
+        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+        <Implicit>true</Implicit>
+        </SDKReference>
+    </ItemGroup>
+    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+        <ItemGroup>
+        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+            <SourceProject>
+            </SourceProject>
+        </_FilteredNonWapProjProjectOutput>
+        </ItemGroup>
+    </Target>
+    ```
+
+13. Save the project file and close it.
+
+14. Press **F5** to start the packaged app in the debugger.
 
 At this point, you can notice some changes that indicate the app is now running as packaged:
 
