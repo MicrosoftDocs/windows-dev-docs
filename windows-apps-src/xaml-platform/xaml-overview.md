@@ -135,7 +135,7 @@ Because of markup extensions, you need special syntax for a literal "{" value in
 
 XAML is a declarative language for objects and their properties, but it also includes a syntax for attaching event handlers to objects in the markup. The XAML event syntax can then integrate the XAML-declared events through the Windows Runtime programming model. You specify the name of the event as an attribute name on the object where the event is handled. For the attribute value, you specify the name of an event-handler function that you define in code. The XAML processor uses this name to create a delegate representation in the loaded object tree, and adds the specified handler to an internal handler list. Nearly all Windows Runtime apps are defined by both markup and code-behind sources.
 
-Here's a simple example. The <xref:Windows.UI.Xaml.Controls.Button> class supports an event named <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click%2A>. You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
+Here's a simple example. The <xref:Windows.UI.Xaml.Controls.Button> class supports an event named <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
 
 ```xml
 <Button Click="showUpdatesButton-Click">Show updates</Button>
