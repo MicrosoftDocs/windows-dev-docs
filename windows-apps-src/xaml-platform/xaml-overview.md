@@ -96,7 +96,7 @@ In XAML attribute syntax, curly braces "{" and "}" indicate a XAML markup extens
 
 Windows Runtime XAML supports these markup extensions that are defined under the default XAML namespace and are understood by the Windows Runtime XAML parser:
 
-- [{xBind}](x-bind-markup-extension.md): supports data binding, which defers property evaluation until run-time by executing special-purpose code, which it generates at compile-time. This markup extension supports a wide range of arguments.
+- [{x:Bind}](x-bind-markup-extension.md): supports data binding, which defers property evaluation until run-time by executing special-purpose code, which it generates at compile-time. This markup extension supports a wide range of arguments.
 - [{Binding}](binding-markup-extension.md): supports data binding, which defers property evaluation until run-time by executing general-purpose runtime object inspection. This markup extension supports a wide range of arguments.
 - [{StaticResource}](staticresource-markup-extension.md): supports referencing resource values that are defined in a <xref:Windows.UI.Xaml.ResourceDictionary>. These resources can be in a different XAML file but must ultimately be findable by the XAML parser at load time. The argument of a `{StaticResource}` usage identifies the key (the name) for a keyed resource in a <xref:Windows.UI.Xaml.ResourceDictionary>.
 - [{ThemeResource}](themeresource-markup-extension.md): similar to [{StaticResource}](staticresource-markup-extension.md) but can respond to run-time theme changes. {ThemeResource} appears quite often in the Windows Runtime default XAML templates, because most of these templates are designed for compatibility with the user switching the theme while the app is running.
