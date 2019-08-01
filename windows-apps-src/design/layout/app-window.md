@@ -64,7 +64,7 @@ The [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter
 
 The [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class holds a XAML element tree, connects it to the window host object (for example, the [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)), and provides info such as size and visibility. You don't create a XamlRoot object directly. Instead, one is created when you attach a XAML element to an AppWindow. You can then use the [UIElement.XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) property to retrieve the XamlRoot.
 
-For more info about UIContext and XamlRoot, see [Make code portable across windowing hosts](show-multiple-views#make-code-portable-across-windowing-hosts).
+For more info about UIContext and XamlRoot, see [Make code portable across windowing hosts](show-multiple-views.md#make-code-portable-across-windowing-hosts).
 
 ## Show a new window
 
