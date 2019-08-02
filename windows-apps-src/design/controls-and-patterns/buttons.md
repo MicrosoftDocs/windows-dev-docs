@@ -30,6 +30,7 @@ Control | Description
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
+[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | A button that can be on or off.
 
 | **Get the Windows UI Library** |
 | - |
@@ -53,6 +54,8 @@ Use a **RepeatButton** control when the user might want to trigger an action rep
 Use a **DropDownButton** control when the button has a flyout that contains more options. The default chevron provides a visual indication that the button includes a flyout.
 
 Use a **SplitButton** control when you want the user to be able to initiate an immediate action or choose from additional options independently.
+
+Use a **ToggleButton** control when you want the user to be able to immediately switch between two mutually exclusive states, and a button is the best fit for your UI needs. Unless your UI benefits from a button, it might be a better choice to use an [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [CheckBox](checkbox.md), [RadioButton](radio-button.md), or [ToggleSwitch](toggles.md).
 
 ## Examples
 
