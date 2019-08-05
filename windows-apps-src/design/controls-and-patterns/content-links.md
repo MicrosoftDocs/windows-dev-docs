@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Content links provide a way to embed rich data in your text controls, which lets a user find and use more information about a person or place without leaving the context of your app.
 
-When the user prefixes an entry with an ampersand (@) symbol in a RichEditBox, they’re shown a list of people and/or place suggestions that matches the entry. Then, for example, when the user picks a place, a ContentLink for that place is inserted into the text. When the user invokes the content link from the RichEditBox, a flyout is shown with a map and additional info about the place.
+When the user prefixes an entry with the at (@) symbol in a RichEditBox, they’re shown a list of people and/or place suggestions that matches the entry. Then, for example, when the user picks a place, a ContentLink for that place is inserted into the text. When the user invokes the content link from the RichEditBox, a flyout is shown with a map and additional info about the place.
 
 > **Important APIs**: [ContentLink class](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo class](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange class](/uwp/api/windows.ui.text.richedittextrange)
 
