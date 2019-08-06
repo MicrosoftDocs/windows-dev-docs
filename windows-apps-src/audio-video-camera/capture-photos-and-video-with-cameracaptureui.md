@@ -1,13 +1,13 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: This article describes how to use the CameraCaptureUI class to capture photos or videos by using the camera UI built into Windows.
-title: Capture photos and video with Windows built-in camera UI
+title: Capture photos and video with the Windows built-in camera UI
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Capture photos and video with Windows built-in camera UI
+# Capture photos and video with the Windows built-in camera UI
 
 
 
