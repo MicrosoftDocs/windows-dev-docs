@@ -24,11 +24,21 @@ Some packages include native code that requires a C or C++ compiler to install. 
 
 [Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-### What is py.exe?
+## What is py.exe?
 
 You may end up with multiple versions of Python installed on your machine because you are working on different types of Python projects. Because these all use the `python` command, it may not be obvious which version of Python you are using. As a standard, it is recommended to use the `python3` command (or `python3.7` to select a specific version).
 
 The [py.exe launcher](https://docs.python.org/3/using/windows.html#launcher) will automatically select the most recent version of Python you've installed. You can also use commands like `py -3.7` to select a particular version, or `py --list` to see which versions can be used. **HOWEVER**, the py.exe launcher will only work if you are using a version of Python installed from [python.org](https://www.python.org/downloads/windows/). When you install Python from the Microsoft Store, the `py` command is **not included**. For Linux, macOS, WSL and the Microsoft Store version of Python, you should use the `python3` (or `python3.7`) command.
+
+## Why does running python.exe open the Microsoft Store?
+
+To help new users find a good installation of Python, we added a shortcut to Windows that will take you directly to the latest version of the community's package published in the Microsoft Store. This package can be installed easily, without administrator permissions, and will replace the default `python` and `python3` commands with the real ones.
+
+Running the shortcut executable with any command-line arguments will return an error code to indicate that Python was not installed. This is to prevent batch files and scripts from opening the Store app when it was probably not intended.
+
+If you install Python using the installers from [python.org](https://www.python.org/downloads/windows/) and select the "add to PATH" option, the new `python` command will take priority over the shortcut. Note that other installers may add `python` at a _lower_ priority than the built-in shortcut.
+
+You can disable the shortcuts without installing Python by opening "Manage app execution aliases" from Start, finding the "App Installer" Python entries and switching them to "Off".
 
 ## Why don’t file paths work in Python when I copy-paste them?
 
