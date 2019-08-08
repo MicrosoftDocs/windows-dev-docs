@@ -23,7 +23,7 @@ This page provides information on how the various Windows development frameworks
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -38,7 +38,7 @@ This page provides information on how the various Windows development frameworks
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -63,7 +63,7 @@ This page provides information on how the various Windows development frameworks
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -86,7 +86,7 @@ This page provides information on how the various Windows development frameworks
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 
