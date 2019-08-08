@@ -12,18 +12,16 @@ ms.localizationpriority: medium
 
 In this tutorial, you'll learn how to create a basic UI for an image editing program by: 
 
-+ Using the XAML tools in Visual Studio, such as XAML Designer, Toolbox, XAML editor, Properties panel, and Document Outline to add controls and content to your UI
-+ Utilizing some of the most common XAML layout panels, such as RelativePanel, Grid, and StackPanel.
++ Using the XAML tools in Visual Studio, such as XAML Designer, Toolbox, the XAML editor, the Properties panel, and Document Outline, to add controls and content to your UI.
++ Using some of the most common XAML layout panels, such as RelativePanel, Grid, and StackPanel.
 
-The image editing program has two pages/screens:
+The image editing program has two pages. The *main page* displays a photo gallery view, along with some information about each image file.
 
-The **main page**, which displays a photo gallery view, along with some information about each image file.
+![Main page](images/xaml-basics/mainpage.png)
 
-![MainPage](images/xaml-basics/mainpage.png)
+The *details page* displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 
-The **details page**, which displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
-
-![DetailPage](images/xaml-basics/detailpage.png)
+![Details page](images/xaml-basics/detailpage.png)
 
 
 ## Prerequisites
@@ -31,12 +29,12 @@ The **details page**, which displays a single photo after it has been selected. 
 * Visual Studio 2019: [Download Visual Studio 2019 Community (free)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
-## Part 0: Get the starter code from github
+## Part 0: Get the starter code from GitHub
 
 For this tutorial, you'll start with a simplified version of the PhotoLab sample. 
 
-1. Go to [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). This takes you to the GitHub page for the sample. 
-2. Next, you'll need to clone or download the sample. Click the **Clone or download** button. A sub-menu appears.
+1. Go to the [GitHub page for the sample](https://github.com/Microsoft/Windows-appsample-photo-lab). 
+2. Next, you'll need to clone or download the sample. Select the **Clone or download** button. A submenu appears.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>The <b>Clone or download</b> menu on the Photo lab sample's GitHub page.</figcaption>
@@ -44,45 +42,47 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 
     **If you're not familiar with GitHub:**
     
-    a. Click **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
-    b. Extract the file. Use the File Explorer to navigate to the .zip file you just downloaded, right-click it, and select **Extract All...**. 
-    c. Navigate to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` directory.    
+    a. Select **Download ZIP** and save the file locally. This step downloads a .zip file that contains all the project files you need.
+    b. Extract the file. Use File Explorer to browse to the .zip file that you just downloaded, right-click it, and select **Extract All**. 
+    c. Browse to your local copy of the sample, and go to the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` directory.    
 
     **If you are familiar with GitHub:**
 
     a. Clone the master branch of the repo locally.
-    b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` directory.
+    b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` directory.
 
-3. Open the project by clicking `Photolab.sln`.
+3. Open the project by selecting **Photolab.sln**.
 
-## Part 1: Add a TextBlock using XAML Designer
+## Part 1: Add a TextBlock by using XAML Designer
 
-Visual Studio provides several tools to make creating your XAML UI easier. XAML Designer lets you drag controls onto the design surface and see what they'll look like before you run the app. The Properties panel lets you view and set all the properties of the control that are active in the designer. Document Outline shows the parent-child structure of the XAML visual tree for your UI. The XAML editor lets you directly enter and modify the XAML markup.
+Visual Studio provides several tools to make creating your XAML UI easier. Use XAML Designer to drag controls onto the design surface and see what they'll look like before you run the app. The Properties panel lets you view and set all the properties of the control that are active in the designer. Document Outline shows the parent/child structure of the XAML visual tree for your UI. Use the XAML editor to directly enter and modify the XAML markup.
 
 Here's the Visual Studio UI with the tools labeled.
 
 ![Visual Studio layout](images/xaml-basics/visual-studio-tools.png)
 
-Each of these tools make creating your UI easier, so we'll use all of them in this tutorial. You'll start by using XAML Designer to add a control. 
+Each of these tools makes creating your UI easier, so we'll use all of them in this tutorial. You'll start by using XAML Designer to add a control. 
 
-**Add a control using XAML Designer:**
+To add a control by using XAML Designer:
 
-1. Double-click **MainPage.xaml** in Solution Explorer to open it. This shows the main page of the app without any UI elements added.
+1. Double-click **MainPage.xaml** in Solution Explorer to open it. This step shows the main page of the app without any UI elements added.
 
-2. Before going further, you need to make some adjustments to Visual Studio.
+2. Before going farther, you need to make some adjustments to Visual Studio:
 
-    - Make sure the Solution Platform is set to x86 or x64, not ARM.
-    - Set the main page XAML Designer to show the 13.3" Desktop preview.
+    - Make sure the solution platform is set to x86 or x64, not ARM.
+    - Set the main page of XAML Designer to show the 13.3" desktop preview.
 
     You should see both settings near the top of the window, as shown here.
 
-    ![VS settings](images/xaml-basics/layout-vs-settings.png)
+    ![Visual Studio settings](images/xaml-basics/layout-vs-settings.png)
 
     You can run the app now, but you won't see much. Let's add some UI elements to make things more interesting.
 
-3. In Toolbox, expand **Common XAML controls** and find the [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) control. Drag a TextBlock onto the design surface near the upper left corner of the page.
+3. In Toolbox, expand **Common XAML controls** and find the [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) control. Drag a TextBlock onto the design surface near the upper-left corner of the page.
 
-    The TextBlock is added to the page, and the designer sets some properties based on its best guess at the layout you want. A blue highlight appears around the TextBlock to indicate that it is now the active object. Notice the margins and other settings added by the designer. Your XAML will look something like this. Don't worry if it's not formatted exactly like this; we abbreviated here to make it easier to read.
+    The TextBlock is added to the page, and the designer sets some properties based on its best guess at the layout you want. A blue highlight appears around the TextBlock to indicate that it is now the active object. Notice the margins and other settings that the designer added. 
+    
+    Your XAML will look something like the following. Don't worry if it's not formatted exactly like this. We abbreviated here to make it easier to read.
 
     ```xaml
     <TextBlock x:Name="textBlock"
@@ -95,9 +95,9 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
 
     In the next steps, you'll update these values.
 
-4. In the Properties panel, change the Name value of the TextBlock from **textBlock** to **TitleTextBlock**. (Make sure the TextBlock is still the active object.)
+4. In the Properties panel, change the **Name** value of the TextBlock from **textBlock** to **TitleTextBlock**. (Make sure the TextBlock is still the active object.)
 
-5. Under **Common**, change the Text value to **Collection**.
+5. Under **Common**, change the **Text** value to **Collection**.
 
     ![TextBlock properties](images/xaml-basics/text-block-properties.png)
 
@@ -112,7 +112,7 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
                VerticalAlignment="Top"/>
     ```
 
-6. To position the TextBlock, you should first remove the property values that were added by Visual Studio. In Document Outline, right-click **TitleTextBlock**, then select **Layout > Reset All**.
+6. To position the TextBlock, you should first remove the property values that Visual Studio added. In Document Outline, right-click **TitleTextBlock**, and then select **Layout** > **Reset All**.
 
 ![Document Outline](images/xaml-basics/doc-outline-reset.png)
 
@@ -120,11 +120,11 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
 
     ![TextBlock margins](images/xaml-basics/margins.png)
 
-    Margins provide the most basic positioning of an element on the page. They're useful for fine-tuning your layout, but using large margin values like those added by Visual Studio makes it difficult for your UI to adapt to various screen sizes, and should be avoided.
+    Margins provide the most basic positioning of an element on the page. They're useful for fine-tuning your layout, but you should avoid using large margin values like those added by Visual Studio. They make it difficult for your UI to adapt to various screen sizes.
 
     For more info, see [Alignment, margins, and padding](../layout/alignment-margin-padding.md).
 
-8. In the Document Outline panel, right-click **TitleTextBlock**, then select **Edit Style > Apply Resource > TitleTextBlockStyle**. This applies a system-defined style to your title text.
+8. In the Document Outline panel, right-click **TitleTextBlock**, and then select **Edit Style** > **Apply Resource** > **TitleTextBlockStyle**. This step applies a system-defined style to your title text.
 
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
@@ -134,28 +134,28 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. In the Properties panel, enter **textwrapping** into the search box to find the **TextWrapping** property. Click the _property marker_ for the **TextWrapping** property to open its menu. (The _property marker_ is the small box symbol to the right of each property value. The _property marker_ is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the TextWrapping property.
+9. In the Properties panel, enter **textwrapping** into the search box to find the **TextWrapping** property. Select the _property marker_ for the **TextWrapping** property to open its menu. (The _property marker_ is the small box symbol to the right of each property value. The _property marker_ is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the TextWrapping property.
 
     Visual Studio adds this property, but it's already set in the style you applied, so you don't need it here.
 
 You've added the first part of the UI to your app! Run the app now to see what it looks like.
 
-You might have noticed that in XAML Designer, your app showed white text on a black background, but when you ran it, it showed black text on a white background. That's because Windows has both a Dark and a Light theme, and the default theme varies by device. On a PC, the default theme is Light. You can click the gear icon at the top of XAML Designer to open Device Preview Settings and change the theme to Light to make the app in XAML Designer look the same as it does on your PC.
+You might have noticed that in XAML Designer, your app showed white text on a black background. When you ran the app, it showed black text on a white background. That's because Windows has both a Dark and a Light theme, and the default theme varies by device. On a PC, the default theme is Light. To make the app in XAML Designer look the same as it does on your PC, select the gear icon at the top of XAML Designer to open Device Preview Settings and change the theme to Light.
 
 > [!NOTE]
-> In this part of the tutorial, you added a control by dragging-and-dropping. You can also add a control by double-clicking it in Toolbox. Give it a try, and see the differences in the XAML that Visual Studio generates.
+> In this part of the tutorial, you added a control by dragging it. You can also add a control by double-clicking it in Toolbox. Give it a try, and see the differences in the XAML that Visual Studio generates.
 
-## Part 2: Add a GridView control using the XAML editor
+## Part 2: Add a GridView control by using the XAML editor
 
 In Part 1, you had a taste of using XAML Designer and some of the other tools provided by Visual Studio. Here, you'll use the XAML editor to work directly with the XAML markup. As you become more familiar with XAML, you might find that this is a more efficient way for you to work.
 
-First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](xaml-basics-adaptive-layout.md) tutorial. 
+First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [RelativePanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](xaml-basics-adaptive-layout.md) tutorial. 
 
 Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) control to display your data.
 
-**Add a control using the XAML editor**
+To add a control by using the XAML editor:
 
-1. In the XAML editor, change the root **Grid** to a **RelativePanel**.
+1. In the XAML editor, change the root **Grid** to **RelativePanel**.
 
     **Before**
     ```xaml
@@ -177,9 +177,9 @@ Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml
     </RelativePanel>
     ```
 
-    For more info about layout using a **RelativePanel**, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel).
+    For more info about layout using a RelativePanel, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel).
 
-2. Below the **TextBlock** element, add a **GridView control** named 'ImageGridView'. Set the **RelativePanel** _attached properties_ to place the control below the title text and make it stretch across the entire width of the screen.
+2. Below the **TextBlock** element, add a **GridView** control named **ImageGridView**. Set the **RelativePanel** _attached properties_ to place the control below the title text and make it stretch across the entire width of the screen.
 
     **Add this XAML**
 
@@ -204,9 +204,9 @@ Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml
     </RelativePanel>
     ```
 
-    For more info about Panel attached properties, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels).
+    For more info about panel attached properties, see [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels).
 
-3. In order for the **GridView** to show anything, you need to give it a collection of data to show. Open MainPage.xaml.cs and find the **GetItemsAsync** method. This method populates a collection called Images, which is a property that we've added to MainPage.
+3. For the **GridView** control to show anything, you need to give it a collection of data to show. Open MainPage.xaml.cs and find the **GetItemsAsync** method. This method populates a collection called **Images**, which is a property that we've added to MainPage.
 
     After the **foreach** loop in **GetItemsAsync**, add this line of code.
 
@@ -214,16 +214,16 @@ Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml
     ImageGridView.ItemsSource = Images;
     ```
 
-    This sets the GridView's **ItemsSource** property to the app's **Images** collection and gives the **GridView** something to show.
+    This step sets the **GridView** control's **ItemsSource** property to the app's **Images** collection. It also gives the **GridView** control something to show.
 
 This is a good place to run the app and make sure everything's working. It should look something like this.
 
 ![App UI checkpoint 1](images/xaml-basics/layout-0.png)
 
-You'll notice that the app isn't showing images yet. By default, it shows the ToString value of the data type that's in the collection. Next, you'll create a data template to define how the data is shown.
+You'll notice that the app isn't showing images yet. By default, it shows the **ToString** value of the data type that's in the collection. Next, you'll create a data template to define how the data is shown.
 
 > [!NOTE]
-> You can find out more about layout using a **RelativePanel** in the [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel) article. Take a look, and then experiment with some different layouts by setting RelativePanel attached properties on the **TextBlock** and **GridView**.
+> You can find out more about layout by using a **RelativePanel** in the [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel) article. Take a look, and then experiment with some different layouts by setting RelativePanel attached properties on the **TextBlock** and **GridView**.
 
 ## Part 3: Add a DataTemplate to display your data
 
