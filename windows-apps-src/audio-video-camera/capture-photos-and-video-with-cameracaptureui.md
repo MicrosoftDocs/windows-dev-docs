@@ -40,7 +40,7 @@ The **StorageFile** containing the captured photo is given a dynamically generat
 
 To use your photo in your app, you may want to create a [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) object that can be used with several different Universal Windows app features.
 
-First, you should include the [**Windows.Graphics.Imaging**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging) namespace in your project.
+First, include the [**Windows.Graphics.Imaging**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging) namespace in your project.
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
