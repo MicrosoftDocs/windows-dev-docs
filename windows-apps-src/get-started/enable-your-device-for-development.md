@@ -41,6 +41,9 @@ Here's the settings page on the desktop device family:
 
 ## Which setting should I choose: sideload apps or Developer Mode?
 
+> [!NOTE]
+> As of Windows Insider Build 18956, sideloading option has been removed and the Developer Mode is now a toggle. See more on sideloading in the next section. 
+
  You can enable a device for development, or just for sideloading.
 
 -   *Microsoft Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
@@ -50,6 +53,9 @@ Here's the settings page on the desktop device family:
 By default, you can only install Universal Windows Platform (UWP) apps from the Microsoft Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
 
 ### Sideload apps
+
+> [!NOTE]
+> As of Windows Insider Build 18956, sideloading is enabled by default. Now, you can deploy a signed MSIX package onto a device without a special configuration. 
 
 The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) and [Get started with app deployment in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
