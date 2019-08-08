@@ -19,7 +19,7 @@ You should use one font throughout your app's UI, and we recommend sticking with
 
 ![Sample text of Segoe UI font](images/type/segoe-sample.svg)
 
-To display non-English languages or to select a different font for your app, please see [Languages](#Languages) and [Fonts](#Fonts) for our recommended fonts for UWP apps.
+To display non-English languages or to select a different font for your app, please see [Languages](#languages) and [Fonts](#fonts) for our recommended fonts for UWP apps.
 
 :::row:::
     :::column:::
