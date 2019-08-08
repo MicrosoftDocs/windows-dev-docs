@@ -43,7 +43,7 @@ This article describes how to register for a Windows developer account in [Partn
 
 10.  Select **Finish** to confirm your registration. Your payment will be processed and we'll send a confirmation message to your email address.
 
-After you've signed up, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, the process takes a little longer, as we also need to confirm that you’re authorized to set up the account for your company. This verification can take from a few days to a couple of weeks, and it often includes a phone call to your company. You can check your verification status on the **Account settings** page.
+After you've signed up, your account will go through verification. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, the process takes a little longer, as we also need to confirm that you’re authorized to set up the account for your company. This verification can take from a few days to a couple of weeks, and it often includes a phone call to your company. You can check your verification status on the **Account settings** page.
 
 
 ## Additional guidelines for company accounts
