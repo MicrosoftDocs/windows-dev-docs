@@ -156,7 +156,7 @@ The following table lists the accelerator support built into the UWP, as well as
 | Page left/right | None | Left/right bumpers | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Views that support horizontal scrolling
 | Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
 | Open/close nav pane | None | View | None | Navigation panes |
-| [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
+| Search | None | Y button | None | Shortcut to the main search function in the app |
 | [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Context menus |
 
 ## XY focus navigation and interaction

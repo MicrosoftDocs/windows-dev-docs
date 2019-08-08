@@ -7,8 +7,6 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
 ms.localizationpriority: medium
 ---
