@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Show multiple views with AppWindow
 
-[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) and it's related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
+[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) and its related APIs simplify the creation of multi-window apps by letting you show your app content in secondary windows while still working on the same UI thread across each window.
 
 > [!NOTE]
 > AppWindow is currently in preview. This means you can submit apps that use AppWindow to the Store, but some platform and framework components are known to not work with AppWindow (see [Limitations](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
