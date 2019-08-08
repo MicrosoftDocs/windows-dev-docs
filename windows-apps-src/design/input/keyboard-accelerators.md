@@ -247,9 +247,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## Override default keyboard behavior
 
-Some controls, when they have focus, support built-in keyboard accelerators that override any app-defined accelerator. For example, when a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) has focus, the Control+C accelerator only copies the currently selected text (any app-defined accelerator is ignored and no other functionality is executed).
+Some controls, when they have focus, support built-in keyboard accelerators that override any app-defined accelerator. For example, when a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) has focus, the Control+C accelerator only copies the currently selected text (app-defined accelerators are ignored and no other functionality is executed).
 
-While we don't recommend overriding default control behaviors due to user familiarity and expectations, in some cases you might need to override a control's built-in keyboard accelerator. The following example shows how to override the Control+C keyboard accelerator behavior for a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) using [PreviewKeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown): 
+While we don't recommend overriding default control behaviors due to user familiarity and expectations, you can override a control's built-in keyboard accelerator. The following example shows how to override the Control+C keyboard accelerator for a [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) through the [PreviewKeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown) event handler: 
 
 ``` csharp
  private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
