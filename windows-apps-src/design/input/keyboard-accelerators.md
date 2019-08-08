@@ -247,11 +247,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## Override default keyboard behavior
 
-Some controls have keyboard accelerators that handled the keystrokes and, as a consequence, the app keyboard accelerators won't be executed when the focus is on these controls. For example, the TextBox control has built-in keyboard accelerator Control+C  for copying the selected text. When the focus is on the TextBox, and the user presses Control+C, only this keyboard accelerator will be executed.  Others Control+C Keyboard Accelerators created using this API are ignored.
+Some controls have built-in keyboard accelerators that override any app-defined accelerator when that control has focus. For example, when a TextBox has focus, the Control+C accelerator only copies the currently selected text (no other functionality is executed).
 
-To override this built-in keyboard accelerator, the PreviewKeyDown API should be used.
-
-Here is a sample that overrides the behavior of Control+C on Textblock: 
+While we don't recommend overriding default control behaviors due to user familiarity and expectations, in some cases you might need to override a control's built-in keyboard accelerator functionality. The following example shows how to override the Control+C keyboard accelerator behavior for a TextBox using PreviewKeyDown: 
 
 ``` csharp
  private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
@@ -261,7 +259,7 @@ Here is a sample that overrides the behavior of Control+C on Textblock:
         ==  (CoreVirtualKeyStates.Down | CoreVirtualKeyStates.Locked);
     if (isCtrlDown && e.Key == Windows.System.VirtualKey.C)
     {
-        // Introduce here what you want to execute on invoking keyboard accelerator
+        // Your custom keyboard accelerator behavior.
         
         e.Handled = true;
     }
