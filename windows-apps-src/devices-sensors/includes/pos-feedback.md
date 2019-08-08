@@ -2,7 +2,7 @@
 title: Support and feedback
 description: Support and feedback include file
 ms.date: 06/12/2018
-ms.topic: article
+ms.topic: include
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
