@@ -544,7 +544,7 @@ To modify the alignment of the images:
 
 Now, the scroll bar is aligned with the edge of the window. Good job! You've created the basic UI for your app.
 
-## Going further
+## Go further
 
 Now that you've created the basic UI, check out these other tutorials. They're also based on the PhotoLab sample. 
 
