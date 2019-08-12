@@ -135,14 +135,25 @@ In most cases we handle the usage of both of them by turning Reveal on automatic
 
 ### When to add Reveal
 You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves.
+* **Does your custom control sit a very UI dense area?**
+Chances are you have need of Reveal - as Reveal works great in scenarios where you want to define control state, and interaction type in a UI dense area.
+Examples of this can be seen in the semantic zoom area in the start menu:
+![Reveal Semantic](images/StartMenuSemantic_Reveal.png)
+And on command bars, like the one in the Photos app:
+![Reveal Semantic](images/CommandBar_Reveal.png)
+
 * **Is your control sitting in a group or list of other similarly sized, interactive items?**
 Then you probably want Reveal on all of them to help the interactivity of each stand out.
-* **Is your custom control part of a [Commanding Collection](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)?**
-Reveal is a great choice for situations like these.
-* **Is your control not placed near any hero content, or is far away from other interactive elements?**
-Reveal actually is not the best choice for these scenarios.
+A good example of situations like these are the tiles on the Start menu:
+![Reveal Tiles](images/StartMenuTiles_Reveal.png)
 
-In general, Reveal highlight brings attention to certain areas of your app, or to pieces of interactive UI that you want most of your user's focus to be drawn to. Adding Reveal to secondary UI can cause distraction, or mislead their attention; however, adding it to primary UI or hero moments in your app is where Reveal really shines.
+* **Is your control placed far away from other interactive elements?**
+Reveal actually is not the best choice for these scenarios.
+Calculator is a great example of this:
+![Reveal Calculator](images/HamburgerButtonCalculator_Reveal.png)
+The hamburger button in the upper left is not crucial to their app's overall experience, not to mention it's not near anything else - and therefore it doesn't need any Reveal enhancements.
+
+In general, Reveal highlight brings attention to certain areas of your app, or helps define interaction in very UI dense surfaces. Consider your control's neighbors, do they have a lot of interactive items nearby? Then you might want to consider adding Reveal.
 
 <!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
 
