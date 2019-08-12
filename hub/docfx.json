@@ -24,7 +24,11 @@
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/windows-uwp",
-      "feedback_product_url": "https://wpdev.uservoice.com/",
+      "feedback_product_url": 
+      {
+        "apps/**.md": "https://wpdev.uservoice.com/",
+        "python/**.md": "https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=367096"
+      },
       "extendBreadcrumb": false,
       "_op_documentIdPathDepotMapping": {
           "./": {
