@@ -5,8 +5,6 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, microsoft, windows 10, tutorials, online courses, blogs, events
 ms.localizationpriority: medium
 ms.date: 07/19/2019
