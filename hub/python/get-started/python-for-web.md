@@ -5,8 +5,6 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: python, windows 10, microsoft, python on windows, python web with wsl, python web app with windows subsystem for linux, python web development on windows, flask app on windows, django app on windows, python web, flask web dev on windows, django web dev on windows, windows web dev with python, vs code python web dev, remote wsl extension, ubuntu, wsl, venv, pip, microsoft python extension, run python on windows, use python on windows, build with python on windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019

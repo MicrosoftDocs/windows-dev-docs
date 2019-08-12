@@ -38,9 +38,14 @@
         }		  
       },
     "fileMetadata": {
+      "ms.prod":
+      {
+        "python/**.md": "dev-environment"
+      },
       "ms.technology":
       {
-      "apps/**.md": "apps"
+      "apps/**.md": "apps",
+      "python/**.md": "windows-python"
       }
     },
     "template": [],
