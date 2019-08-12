@@ -135,12 +135,16 @@ In most cases we handle the usage of both of them by turning Reveal on automatic
 
 ### When to add Reveal
 You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves.
-* **Is your control sitting in a group or list of other similarly sized, interactive items?**
-Then you probably want Reveal on all of them to help the interactivity of each stand out.
-* **Is your custom control part of a [Commanding Collection](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)?**
+
+Add Reveal when
+* **Your control is in a group of other similarly-sized, interactive items**
+Enable Reveal on all of the controls in the group. The Reveal effect will make it easier for users to see which specific control they're interacting with.
+* **Your custom control part of a [Commanding Collection](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)?**
 Reveal is a great choice for situations like these.
-* **Is your control not placed near any hero content, or is far away from other interactive elements?**
-Reveal actually is not the best choice for these scenarios.
+
+Don't add Reveal when
+* **Your control isn't near hero content or is far away from other interactive elements**
+Reveal is not the best choice for these scenarios.
 
 In general, Reveal highlight brings attention to certain areas of your app, or to pieces of interactive UI that you want most of your user's focus to be drawn to. Adding Reveal to secondary UI can cause distraction, or mislead their attention; however, adding it to primary UI or hero moments in your app is where Reveal really shines.
 
