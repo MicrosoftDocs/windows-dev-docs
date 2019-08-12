@@ -304,7 +304,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |UseUrl |Indicates whether to open files directly from a URL target. If you do not set this value, attempts by your application to open a file by using a URL cause the system to first download the file locally. |
-|Parameters |optional parameters. |
+|Parameters | Optional parameters. |
 |FileType |The relevant file extensions. |
 
 #### Example
