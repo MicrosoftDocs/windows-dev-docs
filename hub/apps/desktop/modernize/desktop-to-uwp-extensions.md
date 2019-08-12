@@ -105,7 +105,7 @@ To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.m
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[AppID]">
+<FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -118,7 +118,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associated with your file type association. You can use this Id to manage changes in future versions of your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |MigrationProgId |The [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
 
 #### Example
@@ -132,7 +132,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
@@ -164,7 +164,7 @@ You can associated your packaged application with file type extensions. If a use
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[file extension]"</FileType>
         </SupportedFileTypes>
@@ -177,7 +177,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associated with your file type association. You can use this Id to manage changes in future versions of your app.   |
+|Name | The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.   |
 |FileType |The file extension supported by your app. |
 
 #### Example
@@ -191,9 +191,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="mediafiles">
             <uap:SupportedFileTypes>
-            <uap:FileType>.txt</uap:FileType>
             <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
@@ -226,7 +225,7 @@ You can add options to that menu. These options give users other ways to interac
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedVerbs>
            <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
@@ -239,7 +238,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category | Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |Verb |The name that appears in the File Explorer context menu. This string is localizable that uses ```ms-resource```.|
 |Id |The unique Id of the verb. If your application is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your application is a full-trust packaged app, it receives parameters instead (see the next bullet). |
 |Parameters |The list of argument parameters and values associated with the verb. If your application is a full-trust packaged app, these parameters are passed to the application as event args when the application is activated. You can customize the behavior of your application based on different activation verbs. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. If your application is a UWP app, you can’t pass parameters. The app receives the Id instead (see the previous bullet).|
@@ -258,7 +257,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
               <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
@@ -290,7 +289,7 @@ You can make sure that users open your new packaged application by default for s
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
+    <FileTypeAssociation Name="[Name]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -303,7 +302,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |UseUrl |Indicates whether to open files directly from a URL target. If you do not set this value, attempts by your application to open a file by using a URL cause the system to first download the file locally. |
 |Parameters |optional parameters. |
 |FileType |The relevant file extensions. |
@@ -319,7 +318,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
+            <uap3:FileTypeAssociation Name="myfiletypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
@@ -479,7 +478,7 @@ Specify how your application behaves when a user opens multiple files simultaneo
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" MultiSelectModel="[SelectionModel]">
+    <FileTypeAssociation Name="[Name]" MultiSelectModel="[SelectionModel]">
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
@@ -494,7 +493,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |MultiSelectModel |See below |
 |FileType |The relevant file extensions. |
 
@@ -520,7 +519,7 @@ packaged desktop apps have the same three options as regular desktop apps.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+          <uap3:FileTypeAssociation Name="myfiletypes" MultiSelectModel="Document">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
@@ -554,7 +553,7 @@ Enable users to view a thumbnail image of the file's contents when the icon of t
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -569,7 +568,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |FileType |The relevant file extensions. |
 |Clsid   |The class ID of your app. |
 
@@ -586,7 +585,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
@@ -617,7 +616,7 @@ Enable users to preview a file's contents in the Preview pane of File Explorer.
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -631,7 +630,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |FileType |The relevant file extensions. |
 |Clsid   |The class ID of your app. |
 
@@ -648,7 +647,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
                 </uap2SupportedFileTypes>
@@ -680,7 +679,7 @@ For more information about the **Kind** field and the values that you can use fo
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -696,7 +695,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |FileType |The relevant file extensions. |
 |value |A valid [Kind value](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
@@ -711,7 +710,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-           <uap:FileTypeAssociation Name="Contoso">
+           <uap:FileTypeAssociation Name="mediafiles">
              <uap:SupportedFileTypes>
                <uap:FileType>.m4a</uap:FileType>
                <uap:FileType>.mta</uap:FileType>
@@ -743,7 +742,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 ```XML
 <uap:Extension Category="windows.fileTypeAssociation">
-    <uap:FileTypeAssociation Name="[AppID]">
+    <uap:FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
@@ -757,7 +756,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
-|Name |A unique Id for your app. |
+|Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |FileType |The relevant file extensions. |
 |Clsid  |The class ID of your app. |
 
@@ -773,7 +772,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap:SupportedFileTypes>
