@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![hero image](images/header-reveal-highlight.svg)
 
-Reveal Highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them. 
+Reveal Highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them.
 
 > **Important APIs**: [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -110,7 +110,7 @@ Or change the TargetTheme on the RevealBorderBrush to Dark. Remember! If the Tar
 You can add Reveal to custom controls. Before you do, it's helpful to know a little more about how the Reveal effect works. Reveal is made up of two separate effects: **Reveal border** and **Reveal hover**.
 
 - **Border** shows the borders of interactive elements when a pointer is nearby by. This effect shows you that those nearby objects can take actions similar to the one currently focused.
-- **Hover**  applies a gentle halo shape around the hovered or focused item and plays a press animation on click. 
+- **Hover**  applies a gentle halo shape around the hovered or focused item and plays a press animation on click.
 
 ![Reveal layers](images/RevealLayers.png)
 
@@ -123,7 +123,7 @@ You can add Reveal to custom controls. Before you do, it's helpful to know a lit
 - The background (background of control) -->
 
 
-These effects are defined by two brushes: 
+These effects are defined by two brushes:
 * Border Reveal is defined by  **RevealBorderBrush**
 * Hover Reveal is defined by **RevealBackgroundBrush**
 
@@ -134,15 +134,19 @@ These effects are defined by two brushes:
 In most cases we handle the usage of both of them by turning Reveal on automatically for a certain controls. However, other controls will need to be enabled through applying a style, or changing their templates directly.
 
 ### When to add Reveal
-You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves. 
-* If your custom control is a single interactive element and doesn't have similar controls sharing it's space (such as menu items in a menu), it's likely that your custom control doesn't need Reveal.  
-* If you have a grouping of related interactive content or elements, then it's likely that that region of your app does need Reveal - this is commonly referred to as a [Commanding](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding) surface.
+You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves.
+* **Is your control sitting in a group or list of other similarly sized, interactive items?**
+Then you probably want Reveal on all of them to help the interactivity of each stand out.
+* **Is your custom control part of a [Commanding Collection](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)?**
+Reveal is a great choice for situations like these.
+* **Is your control not placed near any hero content, or is far away from other interactive elements?**
+Reveal actually is not the best choice for these scenarios.
 
-For example, a button by itself shouldn't use reveal, but a set of buttons in a command bar should use Reveal.
+In general, Reveal highlight brings attention to certain areas of your app, or to pieces of interactive UI that you want most of your user's focus to be drawn to. Adding Reveal to secondary UI can cause distraction, or mislead their attention; however, adding it to primary UI or hero moments in your app is where Reveal really shines.
 
 <!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
 
-### Using the control template to add Reveal 
+### Using the control template to add Reveal
 To enable Reveal on custom controls or re-templated controls, you modify the control's control template. Most control templates have a grid at the root; update the [VisualState](/uwp/api/windows.ui.xaml.visualstate) of that root grid to use Reveal:
 
 ```xaml
@@ -247,15 +251,15 @@ Here's an entire template for what a Reveal Button would look like:
 </Style>
 ```
 
-### Fine-tuning the Reveal effect on a custom control 
+### Fine-tuning the Reveal effect on a custom control
 
 When you enable Reveal on a custom or re-templated control or a custom commanding surface, these tips can help you optimize the effect:
  
-* On adjacent items with sizes that do not align either in height or width (particularly in lists): 
+* On adjacent items with sizes that do not align either in height or width (particularly in lists):
 Remove the border approach behavior and keep the borders shown on hover only.
-* For commanding items that frequently go in and out of the disabled state: 
+* For commanding items that frequently go in and out of the disabled state:
 Place the border approach brush on the elements' backplates as well as their borders to emphasize their state.
-* For adjacent commanding elements that are so close they touch: Add a 1px margin between the two elements. 
+* For adjacent commanding elements that are so close they touch: Add a 1px margin between the two elements.
 
 ## Do's and don'ts
 ### Do:
@@ -266,7 +270,6 @@ Place the border approach brush on the elements' backplates as well as their bor
 
 ### Don't
 - Don’t use Reveal on static content (backgrounds, text)
-- Don't use Reveal on popups, flyouts or dropdowns
 - Don’t use Reveal in one-off, isolated situations
 - Don’t use Reveal on very large items (greater than 500epx)
 - Don’t use Reveal in security decisions, as it may draw attention away from the message you need to
