@@ -225,9 +225,9 @@ You'll notice that the app isn't showing images yet. By default, it shows the **
 > [!NOTE]
 > You can learn more about layout using **RelativePanel** in the [Layout panels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel) article. Take a look, and then experiment with some different layouts by setting **RelativePanel** attached properties on **TextBlock** and **GridView**.
 
-## Part 3: Add a DataTemplate control to display your data
+## Part 3: Add a DataTemplate object to display your data
 
-Now, you'll create a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) control that tells the **GridView** control how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls-and-patterns/item-containers-templates.md).
+Now, you'll create a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) object that tells the **GridView** control how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls-and-patterns/item-containers-templates.md).
 
 For now, you'll add only placeholders to help you create the layout you want. In the [XAML data binding](../../data-binding/xaml-basics-data-binding.md) tutorial, you'll replace these placeholders with real data from the **ImageFileInfo** class. You can open the ImageFileInfo.cs file now if you want to see what the data object looks like.
 
@@ -266,7 +266,7 @@ To add a data template to a grid view:
 
     Several things happen when you select **OK**:
 
-    - A **DataTemplate** control is added to the `Page.Resources` section of MainPage.xaml.
+    - A **DataTemplate** object is added to the `Page.Resources` section of MainPage.xaml.
 
         ```xaml
         <Page.Resources>
@@ -276,7 +276,7 @@ To add a data template to a grid view:
         </Page.Resources>
         ```
 
-    - The Document Outline scope is set to this **DataTemplate** control.
+    - The Document Outline scope is set to this **DataTemplate** object.
 
         When you're done creating the data template, you can select the arrow in the upper-left corner of Document Outline to return to page scope.
 
