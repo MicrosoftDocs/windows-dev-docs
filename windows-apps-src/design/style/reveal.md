@@ -153,7 +153,7 @@ Calculator is a great example of this:
 ![Reveal Calculator](images/HamburgerButtonCalculator_Reveal.png)
 The hamburger button in the upper left is not crucial to their app's overall experience, not to mention it's not near anything else - and therefore it doesn't need any Reveal enhancements.
 
-In general, Reveal highlight brings attention to certain areas of your app, or helps define interaction in very UI dense surfaces. Consider your control's neighbors, do they have a lot of interactive items nearby? Then you might want to consider adding Reveal.
+In general, Reveal highlight brings a user's focus to interactive elements while the user is moving their mouse around. Additionally, Reveal also accentuates certain actionable items nearby. Consider your control's neighbors, do they have a lot of interactive items nearby? Then you might want to consider adding Reveal.
 
 <!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
 
