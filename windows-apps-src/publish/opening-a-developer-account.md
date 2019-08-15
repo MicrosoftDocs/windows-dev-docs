@@ -25,15 +25,15 @@ This article describes how to register for a Windows developer account in [Partn
 4.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account.
 5.  Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. For company accounts, be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
 
-   > [!NOTE]
-   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).    
+    > [!NOTE]
+    > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
 6.  Enter the contact info you want to use for your developer account.
 
-   > [!NOTE]
-   > We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation after you complete your registration. After that, we'll send messages when we pay you or if you need to fix something with your account. We may also send informational emails as described earlier, unless you opt out of receiving non-transactional emails.
+    > [!NOTE]
+    > We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation after you complete your registration. After that, we'll send messages when we pay you or if you need to fix something with your account. We may also send informational emails as described earlier, unless you opt out of receiving non-transactional emails.
 
-   If you're registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
+    If you're registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
 
 7.  Select **Next** to move on to the **Payment** section.
 
