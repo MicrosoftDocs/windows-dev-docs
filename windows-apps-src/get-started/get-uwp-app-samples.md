@@ -1,6 +1,6 @@
 ---
 title: Get UWP app samples
-description: Learn how to download the UWP code samples from GitHub
+description: Learn how to download the UWP code samples from GitHub.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sample code, code samples
@@ -9,65 +9,48 @@ ms.localizationpriority: medium
 ---
 # Get UWP app samples
 
-The Universal Windows Platform (UWP) app samples are available through repositories on GitHub. See [Samples](https://developer.microsoft.com/windows/samples%20%22Dev%20Center%20samples%22) for a searchable, categorized list, or browse the
-[Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository")
-repository, which contains samples that demonstrate all of the UWP features
-and their API usage patterns.  
-![GitHub UWP sample repo](images/GitHubUWPSamplesPage.png)
+The Universal Windows Platform (UWP) app samples are available in repositories on GitHub. See [Samples](https://developer.microsoft.com/windows/samples) for a searchable, categorized list, or you can browse the [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") repository. The Windows-universal-samples repository contains samples that demonstrate all of the UWP features and their API use patterns.
+
+![GitHub UWP samples repository](images/GitHubUWPSamplesPage.png)
 
 ## Download the code
 
 To download the samples, go to the
-[repository](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") and
-select **Clone or download**, then **Download ZIP**. Or, just click
-[here](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Universal Windows Platform app samples zip file download").
+[repository](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository"). Select **Clone or download**, and then select **Download ZIP**. 
 
-The zip file will always have the latest samples. You don’t need
-a GitHub account to download it. When an SDK update is released or if
-you want to pick up any recent changes/additions, just check back for
-the latest zip file.
+![Samples download](images/SamplesDownloadButton.png)
 
-![Sample download](images/SamplesDownloadButton.png)
+You can also [download the samples](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Universal Windows Platform app samples zip file download") from this article.
 
+The samples download .zip file always has the latest samples. You don’t need
+a GitHub account to download the file. When an SDK update is released or if
+you want to pick up any recent changes and additions, just download the latest zip file.
 
 > [!NOTE]
-> The UWP samples require Visual Studio 2015 or later and the Windows SDK to open, build, and run. You can get a free copy of Visual
-> Studio Community with support for building UWP apps
-> [here](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads").  
+> To open, build, and run UWP samples, you must have Visual Studio 2015 or later and the Windows SDK. You can get a  [free copy of Visual Studio Community](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads"). Visual Studio Community has support for building UWP apps.  
 >
-> Also, be sure
-> to unzip the entire archive, and not just individual
-> samples. The samples all depend on the SharedContent folder in the
-> archive. The UWP feature samples use Linked files in Visual Studio to
-> reduce duplication of common files, including sample template files
-> and image assets. These common files are stored in the SharedContent
-> folder at the root of the repository, and are referred to in the
-> project files using links.
+> For the samples to work correctly, be sure to unzip the entire archive and not individual samples. The samples all depend on the SharedContent folder in the archive. The UWP feature samples use Linked files in Visual Studio to reduce duplication of common files, including sample template files and image assets. Common files are stored in the SharedContent folder at the root of the repository. Links are used in the project files to refer to common files.
+> 
 
-After you download the zip file, open the samples in Visual Studio:
+## Open the samples
 
-1.  Before you unzip the archive, right-click it, select **Properties** > **Unblock** > **Apply**. Then,
-    unzip the archive to a local folder on your machine.
+After you download the .zip file, open the samples in Visual Studio.
+
+1.  Before you unzip the archive, right-click the file, and then select **Properties** > **Unblock** > **Apply**. Then, unzip the archive in a local folder on your computer.
 
     ![Unzipped archive](images/SamplesUnzip1.png)
-2.  Within the samples folder, you’ll see a number of folders, each
-    of which contains a UWP feature sample.
+2.  Each folder in the Samples folder contains a UWP feature sample.
 
     ![Sample folders](images/SamplesUnzip2.png)
-
-3.  Select a sample, such as Altimeter, and you’ll see multiple folders
-    indicating the languages supported.
+3.  Select a sample, such as Altimeter. Subfolders indicate the supported languages.
 
     ![Language folders](images/SamplesUnzip3.png)
-
-4.  Select the language you’d like to use, such as CS for C\#, and you’ll see a Visual Studio solution file,
-    which you can open in Visual Studio.
+4.  Select the folder for the language you want to use. In the folder contents, you’ll see a Visual Studio solution (.sln) file that you can open in Visual Studio. For example, *Altimeter.sln*.
 
     ![VS solution](images/SamplesUnzip4.png)
 
 ## Give feedback, ask questions, and report issues
 
-If you have problems or questions, just use the Issues tab on the repository to create a new
-issue and we’ll do what we can to help.
+If you have problems or questions, use the **Issues** tab in the repository to create a new issue. We’ll do what we can to help.
 
 ![Feedback image](images/GitHubUWPSamplesFeedback.png)
