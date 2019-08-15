@@ -18,6 +18,6 @@ See also:
 
 |           |             |
 |-----------|-------------|
-| [Analyze the performance of UWP apps using Visual Studio diagnostic tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) | By showing you where the code of your app spends its time as your program executes, the Visual Studio profilers can help you find the performance bottlenecks in your apps, functions, and algorithms. |
+| [Analyze the performance of UWP apps using Visual Studio diagnostic tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools) | By showing you where the code of your app spends its time as your program executes, the Visual Studio profilers can help you find the performance bottlenecks in your apps, functions, and algorithms. |
 | [XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | In this //build session, you will learn about the new platform features, new tooling features and new techniques to dramatically increase the performance of your XAML-based Universal Windows app. |
 | [New XAML Tools in Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | In this //build session, you will learn about some of the new capabilities in Visual Studio 2015, including the re-designed Blend experience, UI debugging tools and the XAML editor enhancements. These tools are also available in Visual Studio 2019 |
