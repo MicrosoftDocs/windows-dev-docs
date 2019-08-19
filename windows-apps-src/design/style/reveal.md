@@ -135,15 +135,15 @@ In most cases we handle the usage of both of them by turning Reveal on automatic
 
 ### When to add Reveal
 You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves.
-* **Does your custom control sit a very UI dense area?**
-Chances are you have need of Reveal - as Reveal works great in scenarios where you want to define control state, and interaction type in a UI dense area.
+* **Does your custom control sit a very UI-dense area?**
+Consider adding Reveal. Reveal is great at helping interactive controls stand out in UI-dense areas.
 Examples of this can be seen in the semantic zoom area in the start menu:
 ![Reveal Semantic](images/StartMenuSemantic_Reveal.png)
 And on command bars, like the one in the Photos app:
 ![Reveal Semantic](images/CommandBar_Reveal.png)
 
 * **Is your control sitting in a group or list of other similarly sized, interactive items?**
-Then you probably want Reveal on all of them to help the interactivity of each stand out.
+Consider adding Reveal to help the individual interactivity of each control stand out.
 A good example of situations like these are the tiles on the Start menu:
 ![Reveal Tiles](images/StartMenuTiles_Reveal.png)
 
@@ -151,9 +151,7 @@ A good example of situations like these are the tiles on the Start menu:
 Reveal actually is not the best choice for these scenarios.
 Calculator is a great example of this:
 ![Reveal Calculator](images/HamburgerButtonCalculator_Reveal.png)
-The hamburger button in the upper left is not crucial to their app's overall experience, not to mention it's not near anything else - and therefore it doesn't need any Reveal enhancements.
-
-In general, Reveal highlight brings a user's focus to interactive elements while the user is moving their mouse around. Additionally, Reveal also accentuates certain actionable items nearby. Consider your control's neighbors, do they have a lot of interactive items nearby? Then you might want to consider adding Reveal.
+The hamburger button in the upper left is not crucial to their app's overall experience, not to mention it's not near anything else, so  it doesn't need any Reveal enhancements.
 
 <!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
 
