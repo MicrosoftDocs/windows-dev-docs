@@ -22,7 +22,11 @@
           items: 
               - name: Overview
                 href: apps/desktop/modernize/xaml-islands.md
-              - name: Using the UWP XAML hosting API
+              - name: Host a standard UWP control in a WPF app
+                href: apps/desktop/modernize/host-standard-control-with-xaml-islands.md
+              - name: Host a custom UWP control in a WPF app
+                href: apps/desktop/modernize/host-custom-control-with-xaml-islands.md
+              - name: Using the UWP XAML hosting API in a C++ Win32 app
                 href: apps/desktop/modernize/using-the-xaml-hosting-api.md
         - name: Using the Visual layer (Windows.UI.Composition)
           items: 

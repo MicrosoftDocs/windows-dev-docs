@@ -19,6 +19,9 @@ In this part of the tutorial, you will migrate the entire Contoso Expenses app f
 * [Open and build the ContosoExpenses sample](modernize-wpf-tutorial.md#get-the-contoso-expenses-sample-app) in Visual Studio 2019.
 * If you're using a release version of Visual Studio 2019, enable preview versions of the .NET Core SDK. In Visual Studio, go to **Tools > Options**, type "Preview" in the search box, and select **Use previews of the .NET Core SDK**. If you're using a [preview version of Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/), you don't need to select this option because .NET Core previews are enabled by default.
 
+> [!NOTE]
+> For more information about migrating a WPF application from the .NET Framework to .NET Core 3, see [this blog series](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
+
 ## Migrate the ContosoExpenses project to .NET Core 3
 
 In this section, you'll migrate the ContosoExpenses project in the Contoso Expenses app to .NET Core 3. You'll do this by creating a new project file that contains the same files as the existing ContosoExpenses project but targets .NET Core 3 instead of the .NET Framework 4.7.2. This enables you to maintain a single solution with both .NET Framework and .NET Core versions of the app.
@@ -87,7 +90,7 @@ When you migrated the **ContosoExpenses.Core** and **ContosoExpenses.Data** proj
 
 To configure NuGet packages for the **ContosoExpenses.Data** project:
 
-1.  In the **ContosoExpenses.Data** project, expand the **Dependencies** node. Note that the **NuGet** section is missing.
+1. In the **ContosoExpenses.Data** project, expand the **Dependencies** node. Note that the **NuGet** section is missing.
 
     ![NuGet packages](images/wpf-modernize-tutorial/NuGetPackages.png)
 
@@ -111,11 +114,11 @@ To configure NuGet packages for the **ContosoExpenses.Data** project:
 
   ![Manage NuGet Packages...](images/wpf-modernize-tutorial/ManageNugetNETCORE3.png)
 
-5. In the **NuGet Package Manager** window, click **Browse**. Search for the `Bogus` package and install it.
+5. In the **NuGet Package Manager** window, click **Browse**. Search for the `Bogus` package and install the latest stable version.
 
     ![Bogus NuGet package](images/wpf-modernize-tutorial/Bogus.png)
 
-6. Search for the `LiteDB` package and install it.
+6. Search for the `LiteDB` package and install the latest stable version.
 
     ![LiteDB NuGet package](images/wpf-modernize-tutorial/LiteDB.png)
 
@@ -151,11 +154,11 @@ To configure NuGet packages for the **ContosoExpenses.Core** project:
 
 3. Right-click the **ContosoExpenses.Core** project and choose **Manage NuGet Packages**.
 
-4. In the **NuGet Package Manager** window, click **Browse**. Search for the `Unity` package and install it.
+4. In the **NuGet Package Manager** window, click **Browse**. Search for the `Unity` package and install the latest stable version.
 
     ![Unity package](images/wpf-modernize-tutorial/UnityPackage.png)
 
-5. Search for the `MvvmLightLibsStd10` package and install it. This is the .NET Standard version of the `MvvmLightLibs` package. For this package, the author chose to package the .NET Standard version of the library in a separate package than the .NET Framework version.
+5. Search for the `MvvmLightLibsStd10` package and install the latest stable version. This is the .NET Standard version of the `MvvmLightLibs` package. For this package, the author chose to package the .NET Standard version of the library in a separate package than the .NET Framework version.
 
     ![MvvmLightsLibs package](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
@@ -227,7 +230,7 @@ To resolve these errors, install the [Windows Compatibility](https://www.nuget.o
 
 1. Right-click on the **ContosoExpenses.Data** project.
 2. Choose **Manage NuGet Packages**.
-3. In the **NuGet Package Manager** window, click **Browse**. Search for the `Microsoft.Windows.Compatibility` package and install it. 
+3. In the **NuGet Package Manager** window, click **Browse**. Search for the `Microsoft.Windows.Compatibility` package and install the latest stable version.
 
     ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 

@@ -14,12 +14,12 @@ ms.custom: RS5, 19H1
 
 This is the final part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 4](modernize-wpf-tutorial-4.md).
 
-In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](https://docs.microsoft.com/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages to the table both for developers and IT Pros, including:
+In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](https://docs.microsoft.com/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:
 
 - Optimized network usage and storage space.
 - Complete clean uninstall, thanks to a lightweight container where the app is executed. No registry keys and temporary files are left on the system.
 - Decouples OS updates from application updates and customizations.
-- Simplifies the install, update, and uninstall process. 
+- Simplifies the install, update, and uninstall process.
 
 In this part of the tutorial you'll learn how to package the Contoso Expenses app in an MSIX package.
 
@@ -43,17 +43,17 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 6. In the **ContosoExpenses.Package** project, right-click the **Applications** node and choose **Add reference**. This node specifies which applications in your solution will be included in the package.
 
-7. In the list of projects, select **ContosoExpenses.Core** and click **OK**.
+6. In the list of projects, select **ContosoExpenses.Core** and click **OK**.
 
-8. Expand the **Applications** node and confirm that the the **ContosoExpense.Core** project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.
+7. Expand the **Applications** node and confirm that the the **ContosoExpense.Core** project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.
 
-9. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
+8. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
 
-10. In Solution Explorer, right-click the **ContosoExpenses.Package** project node and select **Edit Project File**.
+9. In Solution Explorer, right-click the **ContosoExpenses.Package** project node and select **Edit Project File**.
 
-11. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file.
+10. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file.
 
-12. Replace this element with the following XML.
+11. Replace this element with the following XML.
 
     ``` xml
     <ItemGroup>
@@ -77,9 +77,9 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
     </Target>
     ```
 
-13. Save the project file and close it.
+12. Save the project file and close it.
 
-14. Press **F5** to start the packaged app in the debugger.
+13. Press **F5** to start the packaged app in the debugger.
 
 At this point, you can notice some changes that indicate the app is now running as packaged:
 
