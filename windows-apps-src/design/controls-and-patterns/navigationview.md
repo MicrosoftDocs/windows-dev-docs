@@ -703,6 +703,22 @@ This example shows how to override the theme resources in App.xaml. When you ove
     </Application.Resources>
 </Application>
 ```
+### Top whitespace
+Some apps choose to [customize their window's title bar](https://docs.microsoft.com/windows/uwp/design/shell/title-bar), potentially extending their app content into the title bar area. 
+When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](uwp/api/Windows.ApplicationModel.Core.CoreApplicationViewTitleBar.ExtendViewIntoTitleBar.md) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions). 
+![An app extending into the title bar](images/NavigationView_WithTitleBarPadding.png)
+
+If your app specifies the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar.md) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set `IsTitleBarAutoPaddingEnabled` to False.
+
+![App extending into the title bar without extra padding](images/NavigationView_NoTitleBarPadding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### Remarks
+To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource.  
+
 
 ## Related topics
 
