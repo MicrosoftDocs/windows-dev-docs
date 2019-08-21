@@ -718,7 +718,15 @@ If your app specifies the draggable region by calling the [Window.SetTitleBar](h
 ```
 
 #### Remarks
-To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource.  
+To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource, for example in your Page resources.
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+This theme resource modifies the margin around [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
 ## Related topics
 
