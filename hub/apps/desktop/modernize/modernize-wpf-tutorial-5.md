@@ -70,8 +70,8 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
         <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
         <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
         <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject>
-            </SourceProject>
+            <SourceProject></SourceProject>
+            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
         </_FilteredNonWapProjProjectOutput>
         </ItemGroup>
     </Target>
