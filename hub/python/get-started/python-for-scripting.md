@@ -14,6 +14,9 @@ ms.date: 07/19/2019
 
 The following is a step-by-step guide for setting up your developer environment and getting you started using Python for scripting and automating file system operations on Windows.
 
+> [!NOTE]
+> This article will cover setting up your environment to use some of the helpful libraries in Python that can automate tasks across platforms, like searching your file system, accessing the internet, parsing file types, etc., from a Windows-centered approach. For Windows-specific operations, check out [ctypes](https://docs.python.org/3/library/ctypes.html), a C-compatible foreign function library for Python, [winreg](https://docs.python.org/3/library/winreg.html), functions exposing the Windows registry API to Python, and [Python/WinRT](https://pypi.org/project/winrt/), enabling access Windows Runtime APIs from Python.
+
 ## Set up your development environment
 
 When using Python to write scripts that perform file system operations, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates.
