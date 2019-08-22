@@ -51,7 +51,6 @@ For examples on how to use UWP APIs, see the [Desktop Bridge Samples](https://gi
 
 ### APIs supported only in packaged apps
 
-* [Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
 * [Windows.ApplicationModel.DataTransfer.DataRequestDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequestDeferral)
