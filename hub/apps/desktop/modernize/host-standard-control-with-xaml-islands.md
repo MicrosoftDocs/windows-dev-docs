@@ -216,8 +216,8 @@ The following instructions show you how to package the all the components in the
             <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
             <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
             <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject>
-                </SourceProject>
+                <SourceProject></SourceProject>
+                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
             </_FilteredNonWapProjProjectOutput>
             </ItemGroup>
         </Target>
