@@ -16,7 +16,6 @@ Every app has an icon/logo that represents it, and that icon appears in multiple
 
 :::row:::
     :::column:::
-        * The title bar of your app window
         * The app list in the start menu
         * The taskbar and task manager
         * Your app's tiles
