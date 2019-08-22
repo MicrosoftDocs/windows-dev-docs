@@ -20,11 +20,7 @@ Many enterprises use firewalls to block unwanted network traffic; unfortunately,
 > [!Note] 
 Windows clients **do not** support all proxies, the connection to WNS must be a direct connection.
 
-| Proxy type | Supported | Details |
-| -------- | -------- | -------- |
-| Transparent proxy | ✔️ | This is a proxy whereby the border/edge router or local network gateway identify HTTP traffic on TCP/80 and TCP/443 and run them through a proxy filtering process (block or allow list filtering). WNS is supported in this instance because the OS is separated from the network layer. |
-| Explicit proxy | ❌ | This requires a user, group policy, registry, PAC file or similar explicit configuration on the client device to use the proxy. The client device is aware it is using a proxy and sends packets directly to the proxy server. |
-| Auto discovered proxy | ❌ | The network stack on the OS finds a proxy using the WPAD and DHCP protocols. |
+**Coming soon!** We are actively investigating different network configurations, proxies, and firewalls. We will update this page with more details on common enterprise scenarios and WNS support soon.
 
 
 ## What information should be added to the allowlist
