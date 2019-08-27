@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 # Enterprise Firewall and Proxy Configurations to Support WNS Traffic
 
 ## Background
-Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS channels to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add, as well as support for different proxy types.
+Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS FQDNs or VIPs to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add, as well as support for different proxy types.
 
 ## Proxy Support
 
@@ -34,7 +34,7 @@ Below is a list that contains the FQDNs, VIPs, and IP address ranges used by the
 
 
 ### FQDNs, VIPs, and IPs
-Each of the elements in the following XML document is explained in the table that follows it (in [Terms and Notations](#terms-and-notations). The IP ranges were intentionally left out of this document to encourage you to use only the FQDNs as the FQDNs will remain constant. However, you can download the XML file containing the complete list from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/download/details.aspx?id=44238). New VIPs or IP ranges will be **effective one week after they are uploaded**.
+Each of the elements in the following XML document is explained in the table that follows it (in [Terms and Notations](#terms-and-notations)). The IP ranges were intentionally left out of this document to encourage you to use only the FQDNs as the FQDNs will remain constant. However, you can download the XML file containing the complete list from Download Center: [Windows Notification Service (WNS) VIP and IP Ranges](https://www.microsoft.com/download/details.aspx?id=44238). New VIPs or IP ranges will be **effective one week after they are uploaded**.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
