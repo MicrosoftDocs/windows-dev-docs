@@ -57,13 +57,13 @@ ms.localizationpriority: medium
 | Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
 | Zebra         | DS2208<sup>2</sup>                        | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Zebra         | DS2278                         | 2D         | USB          | Handheld     | HID POS Scanner           |
-| Zebra         | DS8108<sup>3</sup                        | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS8108<sup>3</sup>                        | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Zebra         | DS8178<sup>4</sup>                         | 2D         | USB          | Handheld     | HID POS Scanner           | 
 
 
 <sup>1</sup> Upgradable to support 2D barcodes through Honeywell <br/>
 <sup>2</sup> Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
-³<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/> 
+<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/> 
 <sup>4</sup> Minimum firmware 023 (2019.03.11) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
