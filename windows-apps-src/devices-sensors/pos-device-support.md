@@ -33,7 +33,7 @@ ms.localizationpriority: medium
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS Scanner           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | HID POS Scanner           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D<sup>1</sup>   | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS Scanner           |
@@ -55,16 +55,16 @@ ms.localizationpriority: medium
 | Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
 | Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Serial Port Profile (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS2208<sup>2</sup>                        | 2D         | USB          | Handheld     | HID POS Scanner           |
 | Zebra         | DS2278                         | 2D         | USB          | Handheld     | HID POS Scanner           |
-| Zebra         | DS8108³                        | 2D         | USB          | Handheld     | HID POS Scanner           |
-|
+| Zebra         | DS8108<sup>3</sup                        | 2D         | USB          | Handheld     | HID POS Scanner           |
+| Zebra         | DS8178<sup>4</sup>                         | 2D         | USB          | Handheld     | HID POS Scanner           | 
 
 
-¹ Upgradable to support 2D barcodes through Honeywell <br/>
-² Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
-³ Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan). 
-
+<sup>1</sup> Upgradable to support 2D barcodes through Honeywell <br/>
+<sup>2</sup> Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
+³<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/> 
+<sup>4</sup> Minimum firmware 023 (2019.03.11) required. Upgradable using Zebra [123Scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
 
