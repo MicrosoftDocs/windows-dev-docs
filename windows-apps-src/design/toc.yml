@@ -533,12 +533,12 @@
           href: accessibility/practices-to-avoid.md
         - name: Custom automation peers
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: Control patterns and interfaces
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: Control patterns and interfaces
+          href: accessibility/control-patterns-and-interfaces.md
     - name: App settings
-      href: app-settings/guidelines-for-app-settings.md
       items:
+        - name: Guidelines for app settings
+          href: app-settings/guidelines-for-app-settings.md
         - name: Store and retrieve app settings and data
           href: app-settings/store-and-retrieve-app-data.md
     - name: Globalization and localization
@@ -571,8 +571,9 @@
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
     - name: In-app help
-      href: in-app-help/guidelines-for-app-help.md
       items:
+        - name: Guidelines for app help
+          href: in-app-help/guidelines-for-app-help.md
         - name: Instructional UI
           href: in-app-help/instructional-ui.md
         - name: In-app help
