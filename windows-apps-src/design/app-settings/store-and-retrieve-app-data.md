@@ -11,30 +11,30 @@ ms.localizationpriority: medium
 ---
 # Store and retrieve settings and other app data
 
-*App data* is mutable data that is specific to a particular app. It includes runtime state, user preferences, and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
+*App data* is mutable data that is created and managed by a specific app. It includes runtime state, app settings, user preferences, reference content (such as the dictionary definitions in a dictionary app), and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
 
 **Important note about app data:** The lifetime of the app data is tied to the lifetime of the app. If the app is removed, all of the app data will be lost as a consequence. Don't use app data to store user data or anything that users might perceive as valuable and irreplaceable. We recommend that the user's libraries and Microsoft OneDrive be used to store this sort of information. App data is ideal for storing app-specific user preferences, settings, and favorites.
 
 ## Types of app data
 
-
 There are two types of app data: settings and files.
 
--   **Settings**
+### Settings
 
-    Use settings to store user preferences and application state info. The app data API enables you to easily create and retrieve settings (we'll show you some examples later in this article).
+Use settings to store user preferences and application state info. The app data API enables you to easily create and retrieve settings (we'll show you some examples later in this article).
 
-    Here are data types you can use for app settings:
+Here are data types you can use for app settings:
 
-    -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-    -   **Boolean**
-    -   **Char16**, **String**
-    -   [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
-    -   **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
--   **Files**
+- **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
+- **Boolean**
+- **Char16**, **String**
+- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
 
-    Use files to store binary data or to enable your own, customized serialized types.
+### Files
+
+Use files to store binary data or to enable your own, customized serialized types.
 
 ## Storing app data in the app data stores
 
@@ -154,15 +154,15 @@ Roaming data for an app is available in the cloud as long as it is accessed by t
 
 ### Roaming data do's and don'ts
 
--   Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
--   Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
--   Handle the [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
--   Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
--   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
--   Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
--   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
--   Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
--   Don't use roaming for frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
+- Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
+- Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
+- Handle the [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
+- Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
+- For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
+- Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
+- Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
+- Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
+- Don't use roaming for frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
 
 ### Roaming pre-requisites
 
@@ -192,9 +192,9 @@ App data only roams between installed apps with the same version number. For exa
 
 Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
 
--   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) for details).
--   Your files are closed and released properly.
--   There are at least two devices running the same version of the app.
+- Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) for details).
+- Your files are closed and released properly.
+- There are at least two devices running the same version of the app.
 
 
 ### Register to receive notification when roaming data changes

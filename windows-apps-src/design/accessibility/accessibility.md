@@ -9,16 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessibility  
 
+Accessibility is about building experiences that make your Universal Windows Platform (UWP) application usable by people who use technology in a wide range of environments and approach your UI with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
-
-Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
-
-Accessibility is about building experiences that make your application available to people who use technology in a wide range of environments and approach your user interface with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience. There's also a Microsoft Store declaration regarding accessibility for your app.
-
-> [!NOTE]
-> Declaring the app as accessible is only relevant to the Microsoft Store.
+> There's also a Microsoft Store declaration regarding accessibility for your app!
 
 | Article | Description |
 |---------|-------------|

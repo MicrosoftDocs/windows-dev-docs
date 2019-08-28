@@ -537,10 +537,8 @@
             - name: Control patterns and interfaces
               href: accessibility/control-patterns-and-interfaces.md
     - name: App settings
-      href: app-settings/app-settings-and-data.md
+      href: app-settings/guidelines-for-app-settings.md
       items:
-        - name: Guidelines
-          href: app-settings/guidelines-for-app-settings.md
         - name: Store and retrieve app settings and data
           href: app-settings/store-and-retrieve-app-data.md
     - name: Globalization and localization
@@ -572,7 +570,7 @@
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
-    - name: Guidelines for app help
+    - name: In-app help
       href: in-app-help/guidelines-for-app-help.md
       items:
         - name: Instructional UI

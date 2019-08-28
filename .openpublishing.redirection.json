@@ -676,6 +676,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "windows-apps-src/design/app-settings/app-settings-and-data.md",
+      "redirect_url": "/windows/uwp/design/app-settings/guidelines-for-app-settings",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/app-settings/guidelines-for-app-settings.md",
       "redirect_url": "/windows/uwp/design/app-settings/guidelines-for-app-settings",
       "redirect_document_id": true
