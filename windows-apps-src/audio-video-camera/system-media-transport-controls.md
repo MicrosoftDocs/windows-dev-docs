@@ -60,6 +60,12 @@ If your scenario requires it, you can update the metadata displayed by the syste
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
+> [!Note]
+> Apps should set a value for the [SystemMediaTransportControlsDisplayUpdater.Type](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
+) property even if they aren't supplying other media metadata to be displayed by the System Media Transport Controls. 
+This value helps the system handle your media content correctly, including preventing the screen saver from activating during playback.
+
+
 ## Update the system media transport controls timeline properties
 
 The system transport controls display information about the timeline of the currently playing media item, including the current playback position, the start time, and the end time of the media item. To update the system transport controls timeline properties, create a new [**SystemMediaTransportControlsTimelineProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties) object. Set the properties of the object to reflect the current state of the playing media item. Call [**SystemMediaTransportControls.UpdateTimelineProperties**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties) to cause the controls to update the timeline.
