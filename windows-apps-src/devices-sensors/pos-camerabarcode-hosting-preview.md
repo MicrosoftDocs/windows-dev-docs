@@ -52,3 +52,9 @@ try
 
 > [!TIP]
 > See [Display the camera preview](https://docs.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your application.
+
+## See also
+
+### Samples
+
+- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
