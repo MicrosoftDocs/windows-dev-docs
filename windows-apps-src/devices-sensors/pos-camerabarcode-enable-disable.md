@@ -42,3 +42,9 @@ Windows Registry Editor Version 5.00
 
 > [!NOTE]
 > The software decoder built into Windows 10 is provided courtesy of  [**Digimarc Corporation**](https://www.digimarc.com/).
+
+## See also
+
+### Samples
+
+- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
