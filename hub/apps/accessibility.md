@@ -98,16 +98,4 @@ This page provides information on how the various Windows development frameworks
 
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
-<!--         
-   :::column:::
-      ![.NET platform](images/platform-dotnet.png)
-
-      ### .NET
-
-      Develop accessible apps and tools for managed Windows applications with the .NET Framework.
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
- -->    
 :::row-end:::
