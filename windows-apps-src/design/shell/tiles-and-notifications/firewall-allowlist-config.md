@@ -17,7 +17,8 @@ Many enterprises use firewalls to block unwanted network traffic; unfortunately,
 
 ## Proxy Support
 
-> [!Note] Windows clients **do not** support all proxies, the connection to WNS must be a direct connection.
+> [!Note]
+> Windows clients **do not** support all proxies, the connection to WNS must be a direct connection.
 
 **Coming soon!** We are actively investigating different network configurations, proxies, and firewalls. We will update this page with more details on common enterprise scenarios and WNS support soon.
 
