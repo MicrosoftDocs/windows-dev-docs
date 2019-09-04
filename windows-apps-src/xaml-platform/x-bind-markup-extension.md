@@ -94,7 +94,7 @@ To use an string indexer, the model needs to implement **IDictionary&lt;string, 
 
 ### Attached Properties
 
-To bind to attached properties, you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
+To bind to [attached properties](./attached-properties-overview), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
 
 ### Casting
 
