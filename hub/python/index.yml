@@ -19,7 +19,7 @@ landingContent:
   # Card
   - title: Get started for beginners
     linkLists:
-      - linkListType: reference
+      - linkListType: how-to-guide
         links:
           - text: Set up your development environment
             url: get-started/python-for-education.md#set-up-your-development-environment
@@ -27,42 +27,61 @@ landingContent:
         links:
           - text: Run some basic Python code
             url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
-      - linkListType: quickstart
+      - linkListType: tutorial
         links:
           - text: HelloWorld using VS Code
             url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
-      - linkListType: quickstart
-        links:
           - text: Create a simple game with Pygame
             url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+      - linkListType: learn
+        links:
+          - text: Try Python (without installing anything) in this intro course
+            url: https://docs.microsoft.com/learn/modules/intro-to-python/
   
   # Card
-  - title: Gets started with Python web development
+  - title: Get started with web development
     linkLists:
-      - linkListType: reference
+      - linkListType: how-to-guide
         links:
           - text: Set up your development environment
             url: get-started/python-for-web.md#set-up-your-development-environment
-      - linkListType: quickstart
+      - linkListType: tutorial
         links:
           - text: HelloWorld using Flask
             url: get-started/python-for-web.md#hello-world-tutorial-for-flask
-      - linkListType: quickstart
-        links:
           - text: HelloWorld using Django
             url: get-started/python-for-web.md#hello-world-tutorial-for-django
   
   # Card
-  - title: Get started with Python automation scripts
+  - title: Get started with automation scripts
     linkLists:
-      - linkListType: reference
+      - linkListType: how-to-guide
         links:
           - text: Set up your development environment
             url: get-started/python-for-scripting.md#set-up-your-development-environment
-      - linkListType: how-to-guide
+      - linkListType: tutorial
         links:
           - text: Example script - Display my file system
             url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
           - text: Example script - Modify all files in a directory
             url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+
+  # Card
+  - title: Get started with machine learning (Coming soon)
+
+  # Card
+  - title: FAQs & additional resources
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Frequently Asked Questions
+            url: faqs.md
+      - linkListType: learn
+        links:
+          - text: Recommended links
+            url: resources.md
+          - text: Recommended online courses
+            url: resources.md#online-courses
+          - text: Recommended web dev links
+            url: resources.md#web-development
   
