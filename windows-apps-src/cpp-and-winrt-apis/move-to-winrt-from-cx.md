@@ -466,11 +466,11 @@ Furthermore, C++/CX allows you to dereference a null **String^**, in which case 
 | Operation | C++/CX | C++/WinRT|
 |-|-|-|
 | String type category | Reference type | Value type |
-| null **HSTRING** projects as | `(String^)nullptr` | `hstring{ nullptr }` |
+| null **HSTRING** projects as | `(String^)nullptr` | `hstring{}` |
 | Are null and `""` identical? | Yes | Yes |
 | Validity of null | `s = nullptr;`<br>`s->Length == 0` (valid) | `s = nullptr;`<br>`s.size() == 0` (valid) |
 | Box a string | `o = s;` | `o = box_value(s);` |
-| If `s` is `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| If `s` is `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | If `s` is `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | Box a string preserving null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | Force-box a string | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
