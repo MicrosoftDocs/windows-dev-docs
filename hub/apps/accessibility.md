@@ -2,14 +2,7 @@
 title: Accessibility in Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
-<<<<<<< HEAD
 ms.date: 06/06/2019
-=======
-ms.date: 04/03/2019
-ms.localizationpriority: medium
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
->>>>>>> master
 keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
 ---
 
@@ -17,25 +10,24 @@ keywords: Accessibility in Windows 10, Accessibility, building accessible win32 
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive by improving usability for as many people as possible, including those with disabilities, personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities, personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
 
-This page provides information on how the various Windows development frameworks support accessibility for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
+This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
 ## Videos
 
 <!-- <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> -->
 
 :::row:::
-    :::column:::
-        <!-- iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
-        > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+   :::column:::
+      <!-- iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
     :::column-end:::
     :::column:::
-        <!-- iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
-        > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
-    :::column-end:::
+      <!-- iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+   :::column-end:::
 :::row-end:::
-
 
 ## Platform-specific documentation
 
@@ -80,13 +72,8 @@ This page provides information on how the various Windows development frameworks
    :::column-end:::
 :::row-end:::
 :::row:::
-<<<<<<< HEAD
     :::column:::
-        ![WPF platform](images/platform-wpf2-small.png)
-=======
-   :::column:::
-      ![WPF platform](images/platform-wpf.png)
->>>>>>> master
+      ![WPF platform](images/platform-wpf2-small.png)
 
       **Windows Presentation Foundation (WPF)**
 
