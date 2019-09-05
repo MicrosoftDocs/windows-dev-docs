@@ -401,8 +401,10 @@ The sample UI includes a [ListView](https://docs.microsoft.com/uwp/api/windows.u
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <XamlUICommand x:Name="CustomXamlUICommand" ExecuteRequested="DeleteCommand_ExecuteRequested"
-                       Description="Custom XamlUICommand" Label="Custom XamlUICommand">
+        <XamlUICommand x:Name="CustomXamlUICommand" 
+                       ExecuteRequested="DeleteCommand_ExecuteRequested"
+                       Description="Custom XamlUICommand" 
+                       Label="Custom XamlUICommand">
             <XamlUICommand.IconSource>
                 <FontIconSource FontFamily="Wingdings" Glyph="&#x4D;"/>
             </XamlUICommand.IconSource>
@@ -454,7 +456,8 @@ The sample UI includes a [ListView](https://docs.microsoft.com/uwp/api/windows.u
             <muxcontrols:MenuBarItem Title="File">
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Edit">
-                <MenuFlyoutItem x:Name="DeleteFlyoutItem" Command="{StaticResource CustomXamlUICommand}"/>
+                <MenuFlyoutItem x:Name="DeleteFlyoutItem" 
+                                Command="{StaticResource CustomXamlUICommand}"/>
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Help">
             </muxcontrols:MenuBarItem>
@@ -542,7 +545,8 @@ private void ControlExample_Loaded(object sender, RoutedEventArgs e)
 {
     for (var i = 0; i < 5; i++)
     {
-        collection.Add(new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
+        collection.Add(
+           new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
     }
 }
 
@@ -556,7 +560,8 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 3. Next, we define the ICommand ExecuteRequested handler where we implement the item delete command.
 
 ``` csharp
-private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+private void DeleteCommand_ExecuteRequested(
+   XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
     if (args.Parameter != null)
     {
@@ -589,7 +594,9 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
 
 private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse || e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
     {
         VisualStateManager.GoToState(sender as Control, "HoverButtonsShown", true);
     }
@@ -841,8 +848,10 @@ namespace UICommand1.ViewModel
         public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> ListItemLeft { get; } = new ObservableCollection<ListItemData>();
-        public ObservableCollection<ListItemData> ListItemRight { get; } = new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemLeft { get; } = 
+           new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemRight { get; } = 
+           new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
 
@@ -851,8 +860,10 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            MoveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            MoveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
+            MoveLeftCommand = 
+               new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = 
+               new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
         }
@@ -1030,7 +1041,8 @@ namespace UICommand1
         /// Determines whether this <see cref="RelayCommand"/> can execute in its current state.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
@@ -1042,7 +1054,8 @@ namespace UICommand1
         /// Executes the <see cref="RelayCommand"/> on the current command target.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         public void Execute(object parameter)
         {
