@@ -23,20 +23,14 @@ landingContent:
         links:
           - text: Set up your development environment
             url: get-started/python-for-education.md#set-up-your-development-environment
-      - linkListType: quickstart
+      - linkListType: tutorial
         links:
           - text: Run some basic Python code
             url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
-      - linkListType: tutorial
-        links:
           - text: HelloWorld using VS Code
             url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
           - text: Create a simple game with Pygame
             url: get-started/python-for-education.md#create-a-simple-game-with-pygame
-      - linkListType: learn
-        links:
-          - text: Try Python (without installing anything) in this intro course
-            url: https://docs.microsoft.com/learn/modules/intro-to-python/
   
   # Card
   - title: Get started with web development
@@ -70,7 +64,7 @@ landingContent:
   # - title: Get started with machine learning (Coming soon)
 
   # Card
-  - title: FAQs & additional resources
+  - title: Additional resources
     linkLists:
       - linkListType: reference
         links:
@@ -78,6 +72,8 @@ landingContent:
             url: faqs.md
       - linkListType: learn
         links:
+          - text: Try Python (without installing anything) in this intro course
+            url: https://docs.microsoft.com/learn/modules/intro-to-python/
           - text: Recommended links
             url: resources.md
           - text: Recommended online courses
