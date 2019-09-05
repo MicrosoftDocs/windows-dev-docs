@@ -25,7 +25,7 @@ Use styles to extract visual property settings into reusable resources. Here's a
 
 ![styled buttons](images/styles-rainbow-buttons.png)
 
-You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, it's scope is determined by where the resource dictionary is referenced.
+You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, its scope is determined by where the resource dictionary is referenced.
 
 In the [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) definition, you need a [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) attribute and a collection of one or more [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) elements. The **TargetType** attribute is a string that specifies a [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) type to apply the style to. The **TargetType** value must specify a **FrameworkElement**-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the **TargetType** attribute of the style you're trying to apply, an exception occurs.
 
@@ -171,26 +171,26 @@ In other cases, changing a single control on one page only to look a certain way
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>
-    <CheckBox Content="Special CheckBox" Margin="5">
-        <CheckBox.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.ThemeDictionaries>
-                    <ResourceDictionary x:Key="Light">
-                        <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxForegroundChecked"
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
-                            Color="White"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
-                            Color="Purple"/>
-                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
-                            Color="Purple"/>
-                    </ResourceDictionary>
-                </ResourceDictionary.ThemeDictionaries>
-            </ResourceDictionary>
-        </CheckBox.Resources>
-    </CheckBox>
+<CheckBox Content="Special CheckBox" Margin="5">
+    <CheckBox.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                        Color="White"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                        Color="Purple"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                        Color="Purple"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </CheckBox.Resources>
+</CheckBox>
 <CheckBox Content="Normal CheckBox" Margin="5"/>
 ```
 

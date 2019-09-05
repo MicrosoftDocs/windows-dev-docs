@@ -153,7 +153,7 @@ Use the [x:Key attribute](../xaml-platform/x-key-attribute.md) to reference your
 
 ### ResourceDictionary in a UserControl
 
-A ResourceDictionary defined inside of a [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it the page level.
+A ResourceDictionary defined inside of a [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) carries a penalty. The platform creates a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it at the page level.
 
 ### Resource and ResourceDictionary scope
 
@@ -344,7 +344,7 @@ If the [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 
 
 ### Borders
 
-Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
+Use a [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) element to draw a border around an object. In this example, a [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) is used as a makeshift border around a [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). But all the pixels in the center cell are overdrawn.
 
 **Inefficient.**
 

@@ -1,6 +1,6 @@
 ---
 Description: Learn responsive design techniques to tailor your app for specific devices
-label: Responsive design techniques
+title: Responsive design techniques
 template: detail.hbs
 op-migration-status: ready
 ms.date: 10/10/2017

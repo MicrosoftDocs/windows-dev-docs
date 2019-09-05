@@ -1,7 +1,7 @@
 ---
 title: Use a MySQL database in a UWP app
 description: Use a MySQL database in a UWP app.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MySQL, database
 ms.localizationpriority: medium

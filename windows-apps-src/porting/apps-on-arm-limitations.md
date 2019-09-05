@@ -1,4 +1,4 @@
-﻿---
+---
 title: Limitations of apps and experiences on ARM
 
 description: Troubleshooting steps for apps that aren't working correctly on ARM.
@@ -28,8 +28,8 @@ The following table lists some common issues and offers suggestions on how to re
 |Issue|Solution|
 |-----|--------|
 | Your app relies on a driver that isn't designed for ARM. | Recompile your x86 driver to ARM64. See [Building ARM64 Drivers with the WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
-| Your app is available only for x64. | If you develop for Microsoft Store, submit an ARM version of your app. For more info, see [App package architectures](../packaging/device-architecture.md). If you're a Win32 developer, distribute an x86 version of your app. |
-| Your app uses an OpenGL version later than 1.1 or requires hardware-accelerated OpenGL. | x86 apps that use DirectX 9, DirectX 10, DirectX 11, and DirectX 12 will work on ARM. For more info, see [DirectX Graphics and Gaming](https://msdn.microsoft.com/en-us/library/windows/desktop/ee663274(v=vs.85).aspx). |
+| Your app is available only for x64. | If you develop for Microsoft Store, submit an ARM version of your app. For more info, see [App package architectures](/windows/msix/package/device-architecture). If you're a Win32 developer, distribute an x86 version of your app. |
+| Your app uses an OpenGL version later than 1.1 or requires hardware-accelerated OpenGL. | x86 apps that use DirectX 9, DirectX 10, DirectX 11, and DirectX 12 will work on ARM. For more info, see [DirectX Graphics and Gaming](https://docs.microsoft.com/windows/desktop/directx). |
 | Your x86 app does not work as expected. | Try using the Compatibility Troubleshooter by following guidance from [Program Compatibility Troubleshooter on ARM](apps-on-arm-program-compat-troubleshooter.md). For some other troubleshooting steps, see the [Troubleshooting x86 apps on ARM](apps-on-arm-troubleshooting-x86.md) article. |
-| Your x86 app does not detect that it's running on ARM. | Use [IsWow64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318(v=vs.85).aspx) to determine if your app is running on ARM. |
+| Your x86 app does not detect that it's running on ARM. | Use [IsWow64Process2](https://docs.microsoft.com/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2) to determine if your app is running on ARM. |
 | Your UWP ARM32 app does not work as expected. | See [Troubleshooting ARM32 apps on ARM](apps-on-arm-troubleshooting-arm32.md) to learn how to get your app to work properly on ARM. |

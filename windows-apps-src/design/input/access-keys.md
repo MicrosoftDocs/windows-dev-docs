@@ -238,7 +238,7 @@ Localized access keys are specified in your projects resources.resw file:
 
 _Specify the AccessKey property specified in the resources.resw file_
 
-For more info, see [Translating UI resources ](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
+For more info, see [Translating UI resources ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## Key Tip positioning
 

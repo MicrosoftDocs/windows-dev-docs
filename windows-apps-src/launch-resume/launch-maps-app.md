@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 
 
-Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:, *ms-drive-to:, ms-walk-to:** and **ms-settings:** Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
+Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:**, **ms-drive-to:**, **ms-walk-to:**, and **ms-settings:** Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
 
 **Tip** To learn more about launching the Windows Maps app from your app, download the [Universal Windows Platform (UWP) map sample](https://go.microsoft.com/fwlink/p/?LinkId=619977) from the [Windows-universal-samples repo](https://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
@@ -235,13 +235,13 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>sty=a</p></td>
 <td align="left"><p>Defines the map style. Valid values for this parameter include:</p>
 <ul>
-<li>**a**: Display an aerial view of the map.</li>
-<li>**r**: Display a road view of the map.</li>
-<li>**3d**: Display a 3D view of the map. Use in conjunction with the **cp** parameter and optionally with the **rad** parameter.</li>
+<li><b>a</b>: Display an aerial view of the map.</li>
+<li><b>r</b>: Display a road view of the map.</li>
+<li><b>3d</b>: Display a 3D view of the map. Use in conjunction with the <b>cp</b> parameter and optionally with the <b>rad</b> parameter.</li>
 </ul>
 <p>In Windows 10, the aerial view and 3D view styles are the same.</p>
 <div class="alert">
-**Note**  Omitting the **sty** parameter produces the same results as sty=r.
+<b>Note</b>  Omitting the <b>sty</b> parameter produces the same results as sty=r.
 </div>
 <div>
  
@@ -279,7 +279,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>ss=1</p></td>
 <td align="left"><p>Indicates that street-level imagery is shown when <code>ss=1</code>. Omitting the <b>ss</b> parameter produces the same result as <code>ss=0</code>. Use in conjunction with the <b>cp</b> parameter to specify the location of the street-level view.</p>
 <div class="alert">
-**Note**  Street-level imagery is not available in all regions.
+<b>Note</b>  Street-level imagery is not available in all regions.
 </div>
 <div>
  
@@ -293,7 +293,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>trfc=1</p></td>
 <td align="left"><p>Specifies whether traffic information is included on the map. Omitting the trfc parameter produces the same results as <code>trfc=0</code>.</p>
 <div class="alert">
-**Note**  Traffic data is not available in all regions.
+<b>Note</b>  Traffic data is not available in all regions.
 </div>
 <div>
  
@@ -317,12 +317,12 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232_My%20Picnic%20Spot</p></td>
 <td align="left"><p>Defines the start and end of a route to draw on the map, separated by a tilde (<b>~</b>). Each of the waypoints is defined by either a position using ltitude, longitude, and optional title or an address identifier.</p>
 <p>A complete route contains exactly two waypoints. For example, a route with two waypoints is defined by <code>rtp="A"~"B"</code>.</p>
-<p>It's also acceptable to specify an incomplete route. For example, you can define only the start of a route with <code>rtp="A"~</code>. In this case, the directions input is displayed with the provided waypoint in the **From** field and the **To** field has focus.</p>
-<p>If only the end of a route is specified, as with <code>rtp=~"B"</code>, the directions panel is displayed with the provided waypoint in the **To** field. If an accurate current location is available, the current location is pre-populated in the **From** field with focus.</p>
+<p>It's also acceptable to specify an incomplete route. For example, you can define only the start of a route with <code>rtp="A"~</code>. In this case, the directions input is displayed with the provided waypoint in the <b>From</b> field and the <b>To</b> field has focus.</p>
+<p>If only the end of a route is specified, as with <code>rtp=~"B"</code>, the directions panel is displayed with the provided waypoint in the <b>To</b> field. If an accurate current location is available, the current location is pre-populated in the <b>From</b> field with focus.</p>
 <p>No route line is drawn when an incomplete route is given.</p>
-<p>Use in conjunction with the **mode** parameter to specify the mode of transportation (driving, transit, or walking). If **mode** isn't specified, directions will be provided using the user's mode of transportation preference.</p>
+<p>Use in conjunction with the <b>mode</b> parameter to specify the mode of transportation (driving, transit, or walking). If <b>mode</b> isn't specified, directions will be provided using the user's mode of transportation preference.</p>
 <div class="alert">
-**Note**  A title can be used for a location if the location is specified by the **pos** parameter value. Rather than showing the latitude and longitude, the title will be displayed.
+<b>Note</b>  A title can be used for a location if the location is specified by the <b>pos</b> parameter value. Rather than showing the latitude and longitude, the title will be displayed.
 </div>
 <div>
  
@@ -336,11 +336,11 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>mode=d</p></td>
 <td align="left"><p>Defines the transportation mode. Valid values for this parameter include:</p>
 <ul>
-<li>**d**: Displays route overview for driving directions</li>
-<li>**t**: Displays route overview for transit directions</li>
-<li>**w**: Displays route overview for walking directions</li>
+<li><b>d</b>: Displays route overview for driving directions</li>
+<li><b>t</b>: Displays route overview for transit directions</li>
+<li><b>w</b>: Displays route overview for walking directions</li>
 </ul>
-<p>Use in conjunction with the **rtp** parameter for transportation directions. If **mode** isn't specified, directions will be provided using the user's mode of transportation preference. A **mode** can be provided with no route parameter to enter directions input for that mode from the current location.</p></td>
+<p>Use in conjunction with the <b>rtp</b> parameter for transportation directions. If <b>mode</b> isn't specified, directions will be provided using the user's mode of transportation preference. A <b>mode</b> can be provided with no route parameter to enter directions input for that mode from the current location.</p></td>
 </tr>
 
 <tr class="even">
@@ -359,10 +359,10 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>Example:</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>Collection of points to be added to the map and list. The collection of points can be named using the name parameter. A point is specified using a latitude, longitude, and optional title.</p>
-<p>Separate name and multiple points with tildes (**~**).</p>
+<p>Separate name and multiple points with tildes (<b>~</b>).</p>
 <p>If the item you specify contains a tilde, make sure the tilde is encoded as <code>%7E</code>. If not accompanied by Center point and Zoom Level parameters, the collection will provide the best map view.</p>
 
-<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
+<p><b>Important</b> If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
 </tr>
 </tbody>
 </table>

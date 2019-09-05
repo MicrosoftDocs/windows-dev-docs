@@ -169,7 +169,7 @@ The registration workflow of an app might look like the following:
 
 The registration information you collect may include a lot more identifying information than it does in this simple scenario. For example, if your app accesses a secured service such as one for banking, you’d need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the back-end and used to validate the next time the user uses the service.
 
-For more information on Windows Hello, see the [Windows Hello guide](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide) and the [Windows Hello developer guide](microsoft-passport.md).
+For more information on Windows Hello, see the [Windows Hello guide](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide) and the [Windows Hello developer guide](microsoft-passport.md).
 
 ## 3 Data-in-flight security methods
 
@@ -472,14 +472,14 @@ When the data arrives on the device, the Windows app model provides more control
 
 ### 6.2 Code samples
 
--   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Web account management](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
+-   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
+-   [Web account management](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### 6.3 API reference
 

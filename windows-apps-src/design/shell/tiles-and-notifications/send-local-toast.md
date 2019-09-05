@@ -495,7 +495,7 @@ var toast = new ToastNotification(toastXml);
 
 ## Resources
 
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
+* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Toast content documentation](adaptive-interactive-toasts.md)
 * [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

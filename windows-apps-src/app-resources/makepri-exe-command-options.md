@@ -425,7 +425,7 @@ You use the index options option (/io) with `new`, `resourcepack`, and `versione
 
 ## &#47;MappingFile(mf) option
 
-You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file. [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) uses the mapping file to generate app packages.
+You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file. [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) uses the mapping file to generate app packages.
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>

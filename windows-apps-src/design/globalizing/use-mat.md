@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
 ms.date: 01/23/2018
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Use the Multilingual App Toolkit 4.0
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
+The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.
@@ -33,10 +33,10 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 
 There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
-- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2017, in the form of a .vsix installer.
+- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
 - [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
-If you use Visual Studio 2017, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
+If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
 ### Step 3. Enable the Multilingual App Toolkit for your project
 
@@ -122,11 +122,11 @@ Rebuild your project to cause the translated strings to be copied into the Resou
 
 These third party providers offer localization services, and may be able to assist you.
 
-- [Elanex](https://www.elanex.com/)
+- [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
-- [Moravia](https://www.moravia.com/)
-- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
+- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]

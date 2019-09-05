@@ -738,45 +738,15 @@
         - name: Simplify payments with the Payment Request API
           href: ../monetize/payment-request.md
     - name: Packaging apps
-      href: ../packaging/index.md
       items:
-        - name: Package a UWP app with Visual Studio
-          href: ../packaging/packaging-uwp-apps.md
-        - name: Manual app packaging
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: Create an app package with the MakeAppx.exe tool
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: Create a certificate for package signing
-              href: ../packaging/create-certificate-package-signing.md
-            - name: Sign an app package using SignTool
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: Developing with asset packages and package folding
-              href: ../packaging/package-folding.md
-            - name: Flat bundle app packages
-              href: ../packaging/flat-bundles.md
-            - name: Introduction to asset packages
-              href: ../packaging/asset-packages.md
-            - name: Package creation with the packaging layout
-              href: ../packaging/packaging-layout.md
-        - name: App package architectures
-          href: ../packaging/device-architecture.md
-        - name: UWP App Streaming Install
-          href: ../packaging/streaming-install.md
-          items:
-            - name: Create and convert a source content group map
-              href: ../packaging/create-cgm.md
-        - name: Optional packages and related set authoring
-          href: ../packaging/optional-packages.md
-          items:
-            - name: Optional packages with executable code
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: Install apps with the WinAppDeployCmd.exe tool
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Overview
+          href: ../packaging/index.md
         - name: App capability declarations
           href: ../packaging/app-capability-declarations.md
         - name: Set up automated builds for your UWP app
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Install apps with the WinAppDeployCmd.exe tool
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Download and install package updates from the Store
           href: ../packaging/self-install-package-updates.md
 - name: Platform
@@ -816,12 +786,16 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrency and asynchronous operations
           href: ../cpp-and-winrt-apis/concurrency.md
+        - name: More advanced concurrency and asynchrony
+          href: ../cpp-and-winrt-apis/concurrency-2.md
         - name: XAML controls; bind to a property
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML items controls; bind to a collection
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: XAML custom (templated) controls
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Passing parameters into the ABI boundary
+          href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Consume COM components
           href: ../cpp-and-winrt-apis/consume-com.md
         - name: Author COM components
@@ -832,12 +806,20 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: Move to C++/WinRT from C#
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interop with the ABI
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
         - name: Strong and weak references
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: Agile objects
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: Diagnosing direct allocations
+          href: ../cpp-and-winrt-apis/diag-direct-alloc.md
+        - name: Details about destructors
+          href: ../cpp-and-winrt-apis/details-about-destructors.md
+        - name: A simple C++/WinRT WinUI example
+          href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: C++ language
           items:
             - name: Value categories, and references

@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # What's New in the Windows Developer Docs in May 2018
 
-The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.
+The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build/) developer conference.
 
 [Install the tools and SDK](https://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
@@ -49,7 +49,7 @@ In addition, we've rewritten the following pages with all-new information on the
 
 ### App Installer files in Visual Studio
 
-App Installer files can now be created with Visual Studio 2017, Update 15.7. [Learn how to use Visual Studio to create an App Installer file](../packaging/create-appinstallerfile-vs.md) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](../packaging/troubleshoot-appinstaller-issues.md) to view common issues and solutions.
+App Installer files can now be created with Visual Studio 2017, Update 15.7, and later versions. [Learn how to use Visual Studio to create an App Installer file](../packaging/create-appinstallerfile-vs.md) and enable automatic updates to your apps. If you're running into problems, see [troubleshooting installation issues with the App Installer file](../packaging/troubleshoot-appinstaller-issues.md) to view common issues and solutions.
 
 ### Edge WebView control for Windows Forms and WPF applications
 
@@ -77,7 +77,7 @@ The MSIX packaging format is an open source format which makes it easier for our
 
 ### Optional packages with executable code
 
-Optional packages in your app can now contain executable C# code. [Learn how to use Visual Studio to configure optional add-on packages to support your main app package.](../packaging/optional-packages-with-executable-code.md)
+Optional packages in your app can now contain executable C# code. [Learn how to use Visual Studio to configure optional add-on packages to support your main app package.](/windows/msix/package/optional-packages)
 
 ### Page transitions
 

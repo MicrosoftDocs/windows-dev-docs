@@ -27,7 +27,7 @@ To set up a desktop window with a Direct3D 9 viewport, we had to implement the t
 
 The UWP environment has a much simpler system. Instead of setting up a traditional window, a Microsoft Store game using DirectX implements [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) inside the app container.
 
-> **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). See [**Handle to Object Operator (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx).
 
  
 

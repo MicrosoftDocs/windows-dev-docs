@@ -136,7 +136,7 @@ This quick start tutorial shows you how to make use of some of the basic capabil
 
 ### Installing Visual Studio
 
-- If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+- If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs).
 
 ### Creating a new project
 
@@ -231,7 +231,7 @@ LoadImage(surfaceBrush);
 
 ## More Information
 
-- [Microsoft – Composition GitHub](https://github.com/Microsoft/composition)
+- [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [Windows Composition team on Twitter](https://twitter.com/wincomposition)
 - [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)

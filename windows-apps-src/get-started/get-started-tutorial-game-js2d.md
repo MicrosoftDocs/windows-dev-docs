@@ -128,7 +128,7 @@ Find the following code, and remove the comments (\\) from the line that referen
     ];
 ```
 
-JavaScript needs a little help when it comes to loading resources such as images, and so we're using a feature of the CreateJS library that can preload images, called a [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html). We're can't be sure how long it will take the images to load, so we use the LoadQueue to take care of it. Once the images are available, the queue will tell us they are ready. In order to do that, we first create a new object that lists all our images, and then we create a LoadQueue object. You'll see in the code below how it is set-up to call a function called **loadingComplete()** when everything is ready.
+JavaScript needs a little help when it comes to loading resources such as images, and so we're using a feature of the CreateJS library that can preload images, called a [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html). We can't be sure how long it will take the images to load, so we use the LoadQueue to take care of it. Once the images are available, the queue will tell us they are ready. In order to do that, we first create a new object that lists all our images, and then we create a LoadQueue object. You'll see in the code below how it is set-up to call a function called **loadingComplete()** when everything is ready.
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -260,7 +260,7 @@ There are a few steps to the process.
 2. You must use the app submission [checklist](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 3. The app must be submitted for [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 
-For more details, see [Publishing your UWP app](https://developer.microsoft.com/en-us/store/publish-apps).
+For more details, see [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
 
 ## Suggestions for other features.
 

@@ -155,7 +155,7 @@ The next example shows how to use a **Slider** control to show the current playb
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) to make sure it is run on the UI thread.
+The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to make sure it is run on the UI thread.
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 
@@ -183,7 +183,7 @@ Note that if the offset value of a player maps to a negative playback position, 
 ## Play spherical video with MediaPlayer
 Starting with Windows 10, version 1703, **MediaPlayer** supports equirectangular projection for spherical video playback. Spherical video content is no different from regular, flat video in that **MediaPlayer** will render the video as long as the video encoding is supported. For spherical video that contains a metadata tag that specifies that the video uses equirectangular projection, **MediaPlayer** can render the video using a specified field-of-view and view orientation. This enables scenarios such as virtual reality video playback with a head-mounted display or simply allowing the user to pan around within spherical video content using the mouse or keyboard input.
 
-To play back spherical video, use the steps for playing back video content described previously in this article. The one additional step is to register a handler for the [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) event. This event gives you an opportunity to enable and control the spherical video playback parameters.
+To play back spherical video, use the steps for playing back video content described previously in this article. The one additional step is to register a handler for the [**MediaPlayer.MediaOpened**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) event. This event gives you an opportunity to enable and control the spherical video playback parameters.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

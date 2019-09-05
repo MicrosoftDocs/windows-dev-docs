@@ -4,7 +4,7 @@ description: How to use the XamlUICommand and StandardUICommand classes (along w
 author: Karl-Bridge-Microsoft
 ms.service: #Required; service per approved list.
 ms.topic: overview
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ---
 
 # Commanding in Universal Windows Platform (UWP) apps using StandardUICommand, XamlUICommand, and ICommand
@@ -31,9 +31,11 @@ Commands can be invoked directly through UI interactions like clicking a button 
 
 Commands can operate on a specific context within your app, such as deleting text or undoing an action, or they can be context-free, such as muting audio or adjusting brightness.
 
-The following image shows two command interfaces (a [CommandBar](app-bars.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share many of the same commands.
+The following image shows two command interfaces (a [CommandBar](app-bars.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
-![Command interface example](images/commanding/command-interface-example.png)
+![Command bar in Microsoft Photos](images/control-examples/command-bar-photos.png)<br>*Command bar in Microsoft Photos*
+
+![Context menu in the Microsoft Photos gallery](images/ContextMenu_example.png)<br>*Context menu in the Microsoft Photos gallery*
 
 ## Command interactions
 

@@ -70,7 +70,7 @@ sequencevariabledescriptorpreview <br> sequencevariabledescriptorpreview.descrip
 
 tensorvariabledescriptorpreview <br> tensorvariabledescriptorpreview.datatype <br> tensorvariabledescriptorpreview.description <br> tensorvariabledescriptorpreview.modelfeaturekind <br> tensorvariabledescriptorpreview.name <br> tensorvariabledescriptorpreview.shape
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview)
 
 windows.ai.machinelearning.preview
 
@@ -258,7 +258,7 @@ displaymonitorphysicalconnectorkind
 
 displaymonitorusagekind
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.display.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.display)
 
 windows.devices.display
 
@@ -308,7 +308,7 @@ gazemovedprevieweventargs <br> gazemovedprevieweventargs.currentpoint <br> gazem
 
 gazepointpreview <br> gazepointpreview.eyegazeposition <br> gazepointpreview.headgazeposition <br> gazepointpreview.hidinputreport <br> gazepointpreview.sourcedevice <br> gazepointpreview.timestamp
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)
 
 windows.devices.input.preview
 
@@ -394,7 +394,7 @@ barcodescannertriggerstate
 
 barcodesymbologyattributesbuilder <br> barcodesymbologyattributesbuilder.barcodesymbologyattributesbuilder <br> barcodesymbologyattributesbuilder.createattributes <br> barcodesymbologyattributesbuilder.ischeckdigittransmissionsupported <br> barcodesymbologyattributesbuilder.ischeckdigitvalidationsupported <br> barcodesymbologyattributesbuilder.isdecodelengthsupported
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider)
 
 windows.devices.pointofservice.provider
 
@@ -460,7 +460,7 @@ graphicscapturepicker <br> graphicscapturepicker.graphicscapturepicker <br> grap
 
 graphicscapturesession <br> graphicscapturesession.close <br> graphicscapturesession.issupported <br> graphicscapturesession.startcapture
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.capture.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
 
 windows.graphics.capture
 
@@ -646,7 +646,7 @@ previewbuildsmanager <br> previewbuildsmanager.arepreviewbuildsallowed <br> prev
 
 previewbuildsstate <br> previewbuildsstate.properties
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.management.update.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.management.update)
 
 windows.management.update
 
@@ -1154,7 +1154,7 @@ storeuninstallstorepackagestatus
 
 ### [windows.storage.fileproperties](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties)
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties)
 
 windows.storage.fileproperties
 
@@ -1240,7 +1240,7 @@ diagnosticinvoker.rundiagnosticactionfromstringasync
 
 installeddesktopapp <br> installeddesktopapp.displayname <br> installeddesktopapp.displayversion <br> installeddesktopapp.getinventoryasync <br> installeddesktopapp.id <br> installeddesktopapp.publisher <br> installeddesktopapp.tostring
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.system.inventory.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.system.inventory)
 
 windows.system.inventory
 
@@ -1316,7 +1316,7 @@ timezonesettings.autoupdatetimezoneasync
 
 compositorcontroller <br> compositorcontroller.close <br> compositorcontroller.commit <br> compositorcontroller.commitneeded <br> compositorcontroller.compositor <br> compositorcontroller.compositorcontroller <br> compositorcontroller.ensurepreviouscommitcompletedasync
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.core.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.core)
 
 windows.ui.composition.core
 
@@ -1326,7 +1326,7 @@ windows.ui.composition.core
 
 desktopwindowtarget <br> desktopwindowtarget.istopmost
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.desktop.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.desktop)
 
 windows.ui.composition.desktop
 
@@ -1344,7 +1344,7 @@ compositiondebugoverdrawcontentkinds
 
 compositiondebugsettings <br> compositiondebugsettings.heatmaps <br> compositiondebugsettings.trygetsettings
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.diagnostics.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.ui.composition.diagnostics)
 
 windows.ui.composition.diagnostics
 
@@ -1860,7 +1860,7 @@ webviewcontrolprocesscapabilitystate
 
 webviewcontrolprocessoptions <br> webviewcontrolprocessoptions.enterpriseid <br> webviewcontrolprocessoptions.privatenetworkclientservercapability <br> webviewcontrolprocessoptions.webviewcontrolprocessoptions
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.web.ui.interop.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.web.ui.interop)
 
 windows.web.ui.interop
 
@@ -1934,7 +1934,7 @@ webviewcontrolunviewablecontentidentifiedeventargs <br> webviewcontrolunviewable
 
 webviewcontrolwebresourcerequestedeventargs <br> webviewcontrolwebresourcerequestedeventargs.getdeferral <br> webviewcontrolwebresourcerequestedeventargs.request <br> webviewcontrolwebresourcerequestedeventargs.response
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.web.ui.windows)
+#### [windows](https://docs.microsoft.com/uwp/api/windows.web.ui)
 
 windows.web.ui
 

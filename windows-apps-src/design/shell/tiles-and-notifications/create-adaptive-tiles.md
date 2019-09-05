@@ -1388,7 +1388,7 @@ TileWide = new TileBinding()
 * [Tile content schema](../tiles-and-notifications/tile-schema.md)
 * [Send a local tile notification](sending-a-local-tile-notification.md)
 * [Special tile templates](special-tile-templates-catalog.md)
-* [UWP Community Toolkit - Notifications](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [UWP Community Toolkit - Notifications](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Windows Notifications on GitHub](https://github.com/WindowsNotifications)
 
  

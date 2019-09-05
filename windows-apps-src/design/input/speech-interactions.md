@@ -56,7 +56,7 @@ Stop recognition if input is detected from a device other than speech recognitio
 
 Specify the length of time for which no speech input indicates that recognition is over. Do not automatically restart recognition after this period of time as it typically indicates the user has stopped engaging with your app.
 
-Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recogntion requires a network connection.
+Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recognition requires a network connection.
 
 ## Commanding
 
@@ -198,7 +198,7 @@ You should listen to all TTS strings to ensure they are intelligible and sound n
 -   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
 -   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
 
-Both issues can be addressed bu using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) and [Speech Synthesis Markup Language Reference](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) and [Speech Synthesis Markup Language Reference](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## Other articles in this section 
 

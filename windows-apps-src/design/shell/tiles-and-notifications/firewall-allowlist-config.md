@@ -7,15 +7,20 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
 ms.localizationpriority: medium
 ---
-# Allowing Windows Notification traffic through enterprise firewalls
+# Enterprise Firewall and Proxy Configurations to Support WNS Traffic
 
 ## Background
-Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped. To avoid this, network admins can add the list of approved WNS channels to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add. 
+Many enterprises use firewalls to block unwanted network traffic; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS channels to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add, as well as support for different proxy types.
+
+## Proxy Support
+
+> [!Note]
+> Windows clients **do not** support all proxies, the connection to WNS must be a direct connection.
+
+**Coming soon!** We are actively investigating different network configurations, proxies, and firewalls. We will update this page with more details on common enterprise scenarios and WNS support soon.
 
 
 ## What information should be added to the allowlist

@@ -214,7 +214,7 @@ For more details on how to use different surfaces, take a look at <!--[Command d
 
 ![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## Make a good first impression
 
@@ -232,4 +232,4 @@ Think about what you want users to think, feel, or do when they first launch you
 
 Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Microsoft Store. You can use [the Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
 
-Use the [detailed UX guidelines for UWP apps](https://developer.microsoft.com/windows/design) to stay focused on important features. Use the [Visual Studio performance tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) to analyze the performance of each of your app's scenarios.
+Use the [detailed UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design) to stay focused on important features. Use the [Visual Studio performance tools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) to analyze the performance of each of your app's scenarios.

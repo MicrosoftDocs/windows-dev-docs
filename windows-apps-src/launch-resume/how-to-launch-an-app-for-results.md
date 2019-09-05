@@ -14,10 +14,10 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 -   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-Learn how to launch an app from another app and exchange data between the two. This is called *launching an app for results*. The example here shows you how to use [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) to launch an app for results.
+Learn how to launch an app from another app and exchange data between the two. This is called *launching an app for results*. The example here shows you how to use [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) to launch an app for results.
 
 New app-to-app communication APIs in Windows 10 make it possible for Windows apps (and Windows Web apps) to launch an app and exchange data and files. This enables you to build mash-up solutions from multiple apps. Using these new APIs, complex tasks that would have required the user to use multiple apps can now be handled seamlessly. For example, your app could launch a social networking app to choose a contact, or launch a checkout app to complete a payment process.
 
@@ -30,8 +30,8 @@ In the Package.appxmanifest file of the launched app, add a protocol extension t
 
 The **ReturnResults** attribute in the protocol extension accepts one of these values:
 
--   **optional**—The app can be launched for results by using the [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) method, or not for results by using [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). When you use **optional**, the launched app must determine whether it was launched for results. It can do that by checking the [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) event argument. If the argument's [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) property returns [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind), or if the type of the event argument is [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), the app was launched via **LaunchUriForResultsAsync**.
--   **always**—The app can be launched only for results; that is, it can respond only to [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows).
+-   **optional**—The app can be launched for results by using the [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) method, or not for results by using [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). When you use **optional**, the launched app must determine whether it was launched for results. It can do that by checking the [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) event argument. If the argument's [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) property returns [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind), or if the type of the event argument is [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), the app was launched via **LaunchUriForResultsAsync**.
+-   **always**—The app can be launched only for results; that is, it can respond only to [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync).
 -   **none**—The app cannot be launched for results; it can respond only to [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
 In this protocol-extension example, the app can be launched only for results. This simplifies the logic inside the **OnActivated** method, discussed below, because we have to handle only the "launched for results" case and not the other ways that the app could be activated.
@@ -180,7 +180,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## Remarks
 
 
-The example in this how-to provides a "hello world" introduction to launching an app for results. The key things to note are that the new [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) API lets you asynchronously launch an app and communicate via the [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) class. Passing data via a **ValueSet** is limited to 100KB. If you need to pass larger amounts of data, you can share files by using the [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) class to create file tokens that you can pass between apps. For example, given a **ValueSet** named `inputData`, you could store the token to a file that you want to share with the launched app:
+The example in this how-to provides a "hello world" introduction to launching an app for results. The key things to note are that the new [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) API lets you asynchronously launch an app and communicate via the [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet) class. Passing data via a **ValueSet** is limited to 100KB. If you need to pass larger amounts of data, you can share files by using the [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) class to create file tokens that you can pass between apps. For example, given a **ValueSet** named `inputData`, you could store the token to a file that you want to share with the launched app:
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -192,7 +192,7 @@ Then pass it to the launched app via **LaunchUriForResultsAsync**.
 
 
 * [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 * [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  

@@ -3,7 +3,7 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -41,6 +41,9 @@ Here's the settings page on the desktop device family:
 
 ## Which setting should I choose: sideload apps or Developer Mode?
 
+> [!NOTE]
+> As of Windows Insider Build 18956, sideloading option has been removed and the Developer Mode is now a toggle. See more on sideloading in the next section. 
+
  You can enable a device for development, or just for sideloading.
 
 -   *Microsoft Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
@@ -51,11 +54,14 @@ By default, you can only install Universal Windows Platform (UWP) apps from the 
 
 ### Sideload apps
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+> [!NOTE]
+> As of Windows Insider Build 18956, sideloading is enabled by default. Now, you can deploy a signed MSIX package onto a device without a special configuration. 
+
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) and [Get started with app deployment in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
 Device family specific info
 
--   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
+-   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps).
 
 -   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
 
@@ -89,7 +95,7 @@ To learn more about Device Portal, see [Windows Device Portal overview](../debug
 
 For device specific setup instructions, see:
 - [Device Portal for Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Device Portal for HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [Device Portal for HoloLens](https://developer.microsoft.com/mixed-reality)
 - [Device Portal for IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md)
@@ -233,8 +239,8 @@ Error : DEP0700 : Registration of the app failed.
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
-* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
+* [Publishing your UWP app](https://docs.microsoft.com/windows/uwp/publish/).
+* [How-to articles on developing UWP apps](https://docs.microsoft.com/windows/uwp/develop/)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a UWP app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

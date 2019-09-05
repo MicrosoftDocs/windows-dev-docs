@@ -16,7 +16,6 @@ Every app has an icon/logo that represents it, and that icon appears in multiple
 
 :::row:::
     :::column:::
-        * The title bar of your app window
         * The app list in the start menu
         * The taskbar and task manager
         * Your app's tiles
@@ -54,14 +53,13 @@ To ensure these icons look sharp on every screen, you can create multiple versio
 The  scale factor determines the size of UI elements, such as text. Scale factors range from 100% to 400%. Larger values create larger UI elements, making them easier to see on high-DPI displays. 
 
 :::row:::
-    :::column:::
-        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
-
-        (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
-    :::column-end:::
-    :::column:::
-        ![](images/icons/display-settings-screen.png)
-    :::column-end:::
+   :::column:::
+      Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
+      (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
+   :::column-end:::
+   :::column:::
+      ![](images/icons/display-settings-screen.png)
+   :::column-end:::
 :::row-end:::  
 
 
@@ -99,18 +97,18 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 Visual Studio provides a very useful tool for managing your app icons called the **Manifest Designer**. 
 
-> If you don't already have Visual Studio 2017, there are several versions available, including a free version, (Visual Studio 2017 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> If you don't already have Visual Studio 2019, there are several versions available, including a free version, (Visual Studio 2019 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
 To launch the Manifest Designer:
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
-    ![The Visual Studio 2017 Solution Explorer](images/icons/vs-solution-explorer.png)
+    ![The Visual Studio 2019 Solution Explorer](images/icons/vs-solution-explorer.png)
 
     Visual Studio displays the manifest designer.
 
-    ![The Visual Studio 2017 manifest designer](images/icons/vs-manfiest-designer.png)
+    ![The Visual Studio 2019 manifest designer](images/icons/vs-manfiest-designer.png)
 3. Click the **Visual Assets** tab.
 
     ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png) -->
@@ -129,7 +127,7 @@ To launch the Manifest Designer:
         2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::

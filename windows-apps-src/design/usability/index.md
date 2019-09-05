@@ -2,29 +2,26 @@
 description: Learn how to make your app inclusive and accessible to people around the world.
 keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: Usability in UWP apps - Windows app development
-
 layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
-ms.topic: landing-page
-
-
+ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ---
 # Usability for UWP apps
 
-
-
 It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
 
 The design and coding instructions in this section can make your UWP app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
 
-
-## Accessiblity
+## Accessibility
 
 Accessibility is about making your app usable by people who have limitations that prevent or impede the use of conventional user interfaces. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
+[Accessibility portal](../accessibility/accessibility.md)
+
+<!--
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
@@ -170,13 +167,7 @@ Accessibility is about making your app usable by people who have limitations tha
         </div>
     </li>     
 </ul>
-
-
-## Globalization and localization
-
-Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of language, region, and culture system settings. Increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
-
-<a href="../globalizing/globalizing-portal.md">Globalization and localization portal</a>
+-->
 
 ## App settings
 
@@ -207,6 +198,11 @@ App settings let you the user customize your app, optimizing it for their indivi
     </li>
 </ul>
 
+## Globalization and localization
+
+Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of language, region, and culture system settings. Increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
+
+<a href="../globalizing/globalizing-portal.md">Globalization and localization portal</a>
 
 ## In-app help
 No matter how well you’ve designed your app, some users will need a little extra help.

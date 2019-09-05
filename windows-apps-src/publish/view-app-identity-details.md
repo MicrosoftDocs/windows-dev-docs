@@ -17,7 +17,7 @@ To find this info, navigate to one of your apps, then expand **App management** 
 
 ## Values to include in your app package manifest
 
-The following values must be included in your package manifest. If you [use Microsoft Visual Studio to build your packages](../packaging/packaging-uwp-apps.md), and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these items:
+The following values must be included in your package manifest. If you [use Microsoft Visual Studio to build your packages](/windows/msix/package/packaging-uwp-apps), and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these items:
 
 -   **Package/Identity/Name**
 -   **Package/Identity/Publisher**

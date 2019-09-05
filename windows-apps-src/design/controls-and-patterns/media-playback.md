@@ -137,7 +137,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-To set the media source to a media file embedded in the app, initialize a [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) with the path prefixed with **ms-appx:///**, create a [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) with the Uri and then set the [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to the Uri. For example, for a file called **video1.mp4** that is in a **Videos** subfolder, the path would look like: **ms-appx:///Videos/video1.mp4**
+To set the media source to a media file embedded in the app, initialize a [Uri](https://docs.microsoft.com/uwp/api/windows.foundation.uri) with the path prefixed with **ms-appx:///**, create a [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) with the Uri and then set the [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to the Uri. For example, for a file called **video1.mp4** that is in a **Videos** subfolder, the path would look like: **ms-appx:///Videos/video1.mp4**
 
 This code sets the [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property of the [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) defined previously in XAML to **ms-appx:///Videos/video1.mp4**.
 

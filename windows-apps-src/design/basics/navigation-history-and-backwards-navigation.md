@@ -3,7 +3,7 @@ Description: Learn how to implement backwards navigation for traversing the user
 title: Navigation history and backwards navigation (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -25,7 +25,17 @@ To create a back button, use the [Button](../controls-and-patterns/buttons.md) c
 ![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
@@ -33,8 +43,23 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
 ![Back button on top command bar](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+	    
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don’t need to display the back button at all.
@@ -281,17 +306,6 @@ Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.c
 If your app continues using [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI will render the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 
 ![Title bar back button](images/nav-back-pc.png)
-
-### System back bar
-
-> [!NOTE]
-> "System back bar" is only a description, not an official name.
-
-The system back bar is a “band” that is inserted between the tab band and the app’s content area. The band goes across the width of the app, with the back button on the left edge. The band has a vertical height of 32 pixels to ensure adequate touch target size for the back button.
-
-The system back bar is displayed dynamically, based on back button visibility. When the back button is visible, the system back bar is inserted, shifting app content down by 32 pixels below the tab band. When the back button is hidden, the system back bar is dynamically removed, shifting app content up by 32 pixels to meet the tab band. To avoid having your app's UI shift up or down, we recommend drawing an [in-app back button](#back-button).
-
-[Title bar customizations](../shell/title-bar.md) will carry over to both the app tab and the system back bar. If your app specifies background and foreground color properties with [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), then the colors will be applied to the tab and system back bar.
 
 ## Guidelines for custom back navigation behavior
 

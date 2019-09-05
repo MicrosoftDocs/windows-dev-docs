@@ -1,7 +1,7 @@
 ﻿---
 Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 title: Use UWP APIs in desktop apps
-ms.date: 04/19/2019
+ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
@@ -24,30 +24,61 @@ You'll have to make a few changes to your project to use UWP APIs.
 
 ### Modify a .NET project to use Windows Runtime APIs
 
+There are two options for .NET projects:
+
+* If your app targets Windows 10 version 1803 or later, you can install a NuGet package that provides all the necessary references.
+* Alternatively, you can add the references manually.
+
+#### To use the NuGet option
+
+1. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
+
+    1. In Visual Studio, click **Tools -> NuGet Package Manager -> Package Manager Settings**.
+    2. Make sure **PackageReference** is selected for **Default package management format**.
+
+2. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Manage NuGet Packages**.
+
+3. In the **NuGet Package Manager** window, make sure that **Include prerelease** is selected. Then, select the **Browse** tab and search for `Microsoft.Windows.SDK.Contracts`.
+
+4. After the `Microsoft.Windows.SDK.Contracts` package is found, in the right pane of the **NuGet Package Manager** window select the **Version** of the package you want to install based on the version of Windows 10 you want to target:
+
+    * **10.0.18362.xxxx-preview**: Choose this for Windows 10, version 1903.
+    * **10.0.17763.xxxx-preview**: Choose this for Windows 10, version 1809.
+    * **10.0.17134.xxxx-preview**: Choose this for Windows 10, version 1803.
+
+5. Click **Install**.
+
+#### To add the required references manually
+
 1. Open the **Reference Manager** dialog box, choose the **Browse** button, and then select  **All Files**.
 
     ![add reference dialog box](images/desktop-to-uwp/browse-references.png)
 
 2. Add a reference to these files.
 
-  |File|Location|
-  |--|--|
-  |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-  |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-  |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+    |File|Location|
+    |--|--|
+    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 3. In the **Properties** window, set the **Copy Local** field of each *.winmd* file to **False**.
 
     ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
-### Modify a C++ project to use Windows Runtime APIs
+### Modify a C++ Win32 project to use Windows Runtime APIs
 
 Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
-To configure your project for C++/WinRT, See [Modify a Windows Desktop application project to add C++/WinRT support](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+To configure your project for C++/WinRT:
+
+* For new projects, you can install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension.
+* For existing projects, you can install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package in the project.
+
+For more details about these options, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Add Windows 10 experiences
 
@@ -208,10 +239,6 @@ The compiler builds that code only if that constant is defined in your active bu
 You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
 
 The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
-
-## Related Video
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Use-UWP-APIs-in-Your-Code-3d78c6WhD_9506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## Related Samples
 

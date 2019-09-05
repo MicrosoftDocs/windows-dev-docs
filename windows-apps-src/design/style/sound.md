@@ -85,7 +85,6 @@ The most common control-triggered sound in our system today is the **Invoke** so
 
 Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input/index.md).
 
-<SelectButtonClick.mp3 sound clip here>
 
 To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
 ```C#
@@ -98,14 +97,10 @@ There are many flyouts, dialogs and dismissible UIs in XAML, and any action that
 
 When an overlay content window is brought into view, the **Show** sound should be called:
 
-<OverlayIn.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
 Conversely when an overlay content window is closed (or is light dismissed), the **Hide** sound should be called:
-
-<OverlayOut.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
@@ -118,14 +113,10 @@ The audio experience around this navigation concept is encompassed by the **Move
 
 When moving to a view/panel that is considered the *next item* in a list, call:
 
-<PageTransitionRight.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
 And when moving to a previous view/panel in a list considered the *previous item*, call:
-
-<PageTransitionLeft.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -133,8 +124,6 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ### Back Navigation
 
 When navigating from the current page to the previous page within an app the **GoBack** sound should be called:
-
-<BackButtonClick.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
@@ -147,8 +136,6 @@ Focusing happens when a user navigates through an app, this can be with the game
 
 To set up a control to play the **Focus** sound when your control receives focus, call:
 
-<ElementFocus1.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
@@ -160,5 +147,5 @@ The purpose behind this cycling feature is to keep the focus sounds from becomin
 
 ## Related articles
 
-* [Designing for Xbox and TV](https://go.microsoft.com/fwlink/?LinkId=760736)
-* [ElementSoundPlayer class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)
+* [Designing for Xbox and TV](/windows/uwp/design/devices/designing-for-tv)
+* [ElementSoundPlayer class documentation](/uwp/api/windows.ui.xaml.elementsoundplayer)

@@ -14,6 +14,8 @@ The Windows Runtime is a reference-counted system; and in such a system it's imp
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
+For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+
 The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 
 ```cppwinrt
@@ -54,16 +56,18 @@ int main()
 
 **MyClass::RetrieveValueAsync** spends some time working, and eventually it returns a copy of the `MyClass::m_value` data member. Calling **RetrieveValueAsync** causes an asynchronous object to be created, and that object has an implicit *this* pointer (through which, eventually, `m_value` is accessed).
 
+Remember that, in a coroutine, execution is synchronous up until the first suspension point, where control is returned to the caller. In **RetrieveValueAsync**, the first `co_await` is the first suspension point. By the time the coroutine resumes (around five seconds later, in this case), anything might have happened to the implicit *this* pointer through which we access `m_value`.
+
 Here's the full sequence of events.
 
 1. In **main**, an instance of **MyClass** is created (`myclass_instance`).
 2. The `async` object is created, pointing (via its *this*) to `myclass_instance`.
-3. The **winrt::Windows::Foundation::IAsyncAction::get** function blocks for a few seconds, and then returns the result of **RetrieveValueAsync**.
+3. The **winrt::Windows::Foundation::IAsyncAction::get** function hits its first suspension point, blocks for a few seconds, and then returns the result of **RetrieveValueAsync**.
 4. **RetrieveValueAsync** returns the value of `this->m_value`.
 
-Step 4 is safe as long as *this* is valid.
+Step 4 is safe only as long as *this* remains valid.
 
-But, what if the class instance is destroyed before the async operation completes? There are all kinds of ways the class instance could go out of scope before the asynchronous method has completed. But, we can simulate it by setting the class instance to `nullptr`.
+But what if the class instance is destroyed before the async operation completes? There are all kinds of ways the class instance could go out of scope before the asynchronous method has completed. But we can simulate it by setting the class instance to `nullptr`.
 
 ```cppwinrt
 int main()
@@ -188,10 +192,13 @@ int main()
 }
 ```
 
-The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object. If you're sure you have a case where the handler won't outlive the *this* that it depends on, then you can capture *this* normally, without consideration for strong or weak lifetime.
+The pattern is that the event recipient has a lambda event handler with dependencies on its *this* pointer. Whenever the event recipient outlives the event source, it outlives those dependencies. And in those cases, which are common, the pattern works well. Some of these cases are obvious, such as when a UI page handles an event raised by a control that's on the page. The page outlives the button&mdash;so, the handler also outlives the button. This holds true any time the recipient owns the source (as a data member, for example), or any time the recipient and the source are siblings and directly owned by some other object.
+
+When you're sure you have a case where the handler won't outlive the *this* that it depends on, then you can capture *this* normally, without consideration for strong or weak lifetime.
 
 But there are still cases where *this* doesn't outlive its use in a handler (including handlers for completion and progress events raised by asynchronous actions and operations), and it's important to know how to deal with them.
 
+- When an event source raises its events *synchronously*, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, but continue reading for a robust solution.
 - If you're authoring a coroutine to implement an asynchronous method, then it's possible.
 - In rare cases with certain XAML UI framework objects ([**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel), for example), then it's possible, if the recipient is finalized without unregistering from the event source.
 
@@ -241,7 +248,7 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 
 ### The solution
 
-The solution is to capture a strong reference. A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
+The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 > [!IMPORTANT]
 > Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -262,7 +269,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) to retrieve a weak reference to *this*. Just confirm that you can still retrieve a strong reference from it before accessing members.
+If a strong reference isn't appropriate, then you can instead call [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) to retrieve a weak reference to *this*. A weak reference *does not* keep the current object alive. So, just confirm that you can still retrieve a strong reference from the weak reference before accessing members.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -273,6 +280,8 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
     }
 });
 ```
+
+If you capture a raw pointer, then you'll need to make sure you keep the pointed-to object alive.
 
 ### If you use a member function as a delegate
 
@@ -303,11 +312,15 @@ For a strong reference, just call [**get_strong**](/uwp/cpp-ref-for-winrt/implem
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
+Capturing a strong reference means that your object will become eligible for destruction only after the handler has been unregistered and all outstanding callbacks have returned. However, that guarantee is valid only at the time the event is raised. If your event handler is asynchronous, then you'll have to give your coroutine a strong reference to the class instance before the first suspension point (for details, and code, see the [Safely accessing the *this* pointer in a class-member coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) section earlier in this topic). But that creates a circular reference between the event source and your object, so you need to explicitly break that by revoking your event.
+
 For a weak reference, call [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function). C++/WinRT ensures that the resulting delegate holds a weak reference. At the last minute, and behind the scenes, the delegate attempts to resolve the weak reference to a strong one, and only calls the member function if it's successful.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
+
+If the delegate *does* call your member function, then C++/WinRT will keep your object alive until your handler returns. However, if your handler is asynchronous, then it returns at suspension points, and so you'll have to give your coroutine a strong reference to the class instance before the first suspension point. Again, for more info, see [Safely accessing the *this* pointer in a class-member coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) section earlier in this topic.
 
 ### A weak reference example using **SwapChainPanel::CompositionScaleChanged**
 

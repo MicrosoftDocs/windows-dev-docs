@@ -177,6 +177,8 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 ## Examples
 
 ### Using a ScrollViewer in a RefreshContainer
+> [!NOTE]
+> The Content of a RefreshContainer must be a scrollable control, such as ScrollViewer, GridView, ListView, etc. Setting the Content to a control like Grid will result in undefined behavior.
 
 This example shows how to use pull-to-refresh with a scroll viewer.
 

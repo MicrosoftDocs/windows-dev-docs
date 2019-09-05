@@ -21,7 +21,7 @@ When you use a Visual Studio template to create your app, a default image is add
 
     The following screen shot shows the "Package.appxmanifest" window in Visual Studio. Depending on the type of project, you will see a slightly different set of visual assets.
 
-    ![a screen shot of the "package.appxmanifest" window in visual studio 2017](images/appmanifest.png)
+    ![a screen shot of the "package.appxmanifest" window in Visual Studio 2019](images/appmanifest.png)
 
     If you open "Package.appxmanifest" in a text editor, the [**SplashScreen element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) appears as a child of the [**VisualElements element**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements). The default splash screen markup in the manifest file looks like this in a text editor:
 

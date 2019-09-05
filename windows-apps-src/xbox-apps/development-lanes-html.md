@@ -8,9 +8,9 @@ ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ---
 # Bringing HTML games to UWP on Xbox
-Xbox One is an excellent platform for HTML 5 games. HTML 5 games run on the [Edge](https://developer.microsoft.com/microsoft-edge/) browser engine. Edge is fast and fully supports HTML 5 and CSS 3 features such as WebGL and canvas.
+Xbox One is an excellent platform for HTML 5 games. HTML 5 games run on the [Edge](https://developer.microsoft.com/microsoft-edge) browser engine. Edge is fast and fully supports HTML 5 and CSS 3 features such as WebGL and canvas.
 
-Popular game engines such as [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) have support for Xbox One. We haven't tested every HTML framework and engine, but from what we have seen so far, we believe most of them will work on Xbox One.
+Popular game engines such as [Construct 2](https://www.construct.net/en/blogs/construct-official-blog-1/announcing-xbox-one-export-beta-857) have support for Xbox One. We haven't tested every HTML framework and engine, but from what we have seen so far, we believe most of them will work on Xbox One.
 
 HTML games are on a level playing field with any other type of game. Developers can get full access to native APIs such as controller input, Kinect, and more.
 

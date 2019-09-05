@@ -44,15 +44,15 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </colgroup>
     <tr>
         <td>Windows Dev Center main portal</td>
-        <td><a href="https://dev.windows.com">Windows Dev Center</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Windows Dev Center</a></td>
     </tr>
     <tr>
         <td>Developing Windows apps</td>
-        <td><a href="https://dev.windows.com/develop">Develop Windows apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Develop Windows apps</a></td>
     </tr>
     <tr>
         <td>Universal Windows Platform app development</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/">How-to guides for Windows 10 apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">How-to guides for Windows 10 apps</a></td>
     </tr>
     <tr>
         <td>How-to guides for UWP games</td>
@@ -163,7 +163,7 @@ The Xbox Tools and Middleware Program licenses Xbox development kits to professi
 
 ### Game samples
 
-There are many Windows 10 game and app samples available to help you understand Windows 10 gaming features and get a quick start on game development. More samples are developed and published regularly, so don't forget to occasionally check back at sample portals to see what's new. You can also [watch](https://help.github.com/articles/watching-repositories/) GitHub repos to be notified of changes and additions.
+There are many Windows 10 game and app samples available to help you understand Windows 10 gaming features and get a quick start on game development. More samples are developed and published regularly, so don't forget to occasionally check back at sample portals to see what's new. You can also [watch](https://help.github.com/en/articles/watching-and-unwatching-repositories) GitHub repos to be notified of changes and additions.
 
 <table>
     <colgroup>
@@ -300,7 +300,7 @@ Developer blogs are another great resource for the latest information about game
     </tr>
     <tr>
         <td>Visual Studio developer tools blogs</td>
-        <td><a href="https://devblogs.microsoft.com/">Developer Tools Blogs</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Developer Tools Blogs</a></td>
     </tr>
     <tr>
         <td>Somasegar's developer tools blog</td>
@@ -515,7 +515,7 @@ C++/CX is a high-performance, low overhead language that provides the powerful c
     </tr>
     <tr>
         <td>Visual C++ programming guide and reference</td>
-        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2017</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ in Visual Studio 2019</a></td>
     </tr>
 </table>
  
@@ -613,11 +613,11 @@ Universal Windows Platform Bridges are technologies that bring your existing app
     </colgroup>
     <tr>
         <td>UWP bridges</td>
-        <td><a href="https://dev.windows.com/bridges/">Bring your code to Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">Bring your code to Windows</a></td>
     </tr>
     <tr>
         <td>Windows Bridge for iOS</td>
-        <td><a href="https://dev.windows.com/bridges/ios">Bring your iOS apps to Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">Bring your iOS apps to Windows</a></td>
     </tr>
     <tr>
         <td>Windows Bridge for desktop applications (.NET and Win32)</td>
@@ -682,11 +682,11 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </colgroup>
     <tr>
         <td>The Unity game engine</td>
-        <td><a href="https://unity3d.com/">Unity - Game Engine</a></td>
+        <td><a href="https://unity.com/">Unity - Game Engine</a></td>
     </tr>
     <tr>
         <td>Get Unity</td>
-        <td><a href="https://unity3d.com/get-unity">Get Unity</a></td>
+        <td><a href="https://store.unity.com/">Get Unity</a></td>
     </tr>
     <tr>
         <td>Unity documentation for Windows</td>
@@ -750,7 +750,7 @@ Havok’s modular suite of tools and technologies help game creators reach new l
     </tr>
     <tr>
         <td>Havok support forums</td>
-        <td><a href="https://support.havok.com">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
  
@@ -951,7 +951,7 @@ Getting set up and ready to develop a Universal Windows Platform app is quick an
     </colgroup>
     <tr>
         <td>Getting started with UWP development</td>
-        <td><a href="https://dev.windows.com/getstarted">Get started with Windows apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Get started with Windows apps</a></td>
     </tr>
     <tr>
         <td>Getting set up for UWP development</td>
@@ -985,7 +985,7 @@ If you're an "absolute beginner" to UWP programming, and are considering using X
     </colgroup>
     <tr>
         <td>Overview of Universal Windows Platform app development</td>
-        <td><a href="https://dev.windows.com/develop">Develop Windows apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Develop Windows apps</a></td>
     </tr>
     <tr>
         <td>Overview of network programming in the UWP</td>
@@ -1341,7 +1341,7 @@ A tile is your game's representation on the Start Menu. Tiles and notifications 
     </tr>
     <tr>
         <td>UWP Tile Generator extension for Visual Studio</td>
-        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">Tool for creating all required tiles using single image</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">Tool for creating all required tiles using single image</a></td>
     </tr>
     <tr>
         <td>UWP Tile Generator extension for Visual Studio (blog post)</td>
@@ -1391,7 +1391,7 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </colgroup>
     <tr>
         <td>Performance test your code</td>
-        <td><a href="https://www.visualstudio.com/team-services/cloud-load-testing/">Cloud based load testing</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Cloud based load testing</a></td>
     </tr>
     <tr>
         <td>Get Xbox console type using Gaming Device Information</td>
@@ -1524,7 +1524,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </colgroup>
     <tr>
         <td>Partner Center app publishing</td>
-        <td><a href="https://dev.windows.com/publish">Publish Windows apps</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">Publish Windows apps</a></td>
     </tr>
     <tr>
         <td>Partner Center advanced publishing (GDN)</td>
@@ -1553,11 +1553,11 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Divide and group content to enable streaming install</td>
-        <td><a href="../packaging/streaming-install.md">UWP App Streaming install</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/streaming-install">UWP App Streaming install</a></td>
     </tr>
     <tr>
         <td>Create optional packages like DLC game content</td>
-        <td><a href="../packaging/optional-packages.md">Optional packages and related set authoring</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/optional-packages">Optional packages and related set authoring</a></td>
     </tr>
     <tr>
         <td>Package your UWP game</td>
@@ -1573,7 +1573,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </tr>
     <tr>
         <td>Creating app packages and app package bundles using MakeAppx</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
+        <td><a href="https://docs.microsoft.com/windows/msix/package/create-app-package-with-makeappx-tool">Create packages using app packager tool MakeAppx.exe</a></td>
     </tr>
     <tr>
         <td>Signing your files digitally using SignTool</td>
@@ -1652,7 +1652,7 @@ After you've finished development and shipped your game, it's not "game over". Y
     </tr>
     <tr>
         <td>Ways to promote your game</td>
-        <td><a href="https://dev.windows.com/store-promotion">Promote your apps</a></td>
+        <td><a href="https://developer.microsoft.com/store/promote-your-apps">Promote your apps</a></td>
     </tr>
 </table>
  
@@ -1686,7 +1686,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </colgroup>
     <tr>
         <td>Understand player behavior using GameAnalytics</td>
-        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>Connect your UWP game to Google Analytics</td>
@@ -1706,7 +1706,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Use Vungle to add video ads into your games</td>
-        <td><a href="https://v.vungle.com/sdk">Get Windows SDK for Vungle</a></td>
+        <td><a href="https://publisher.vungle.com/sdk/">Get Windows SDK for Vungle</a></td>
     </tr>
 </table>
  

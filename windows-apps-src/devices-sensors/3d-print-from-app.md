@@ -48,7 +48,7 @@ Add a **TextBlock** for UI feedback.
 ## Get the 3D data
 
 
-The method by which your app acquires 3D geometry data will vary. Your app may retrieve data from a 3D scan, download model data from a web resource, or generate a 3D mesh programmatically using mathematical formulas or user input. For the sake of simplicity, this guide will show how to load a 3D data file (of any of several common file types) into program memory from device storage. The [3D Builder model library](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) provides a variety of models that you can easily download to your device.
+The method by which your app acquires 3D geometry data will vary. Your app may retrieve data from a 3D scan, download model data from a web resource, or generate a 3D mesh programmatically using mathematical formulas or user input. For the sake of simplicity, this guide will show how to load a 3D data file (of any of several common file types) into program memory from device storage. The [3D Builder model library](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing) provides a variety of models that you can easily download to your device.
 
 In your `OnLoadClick` method, use the [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class to load a single file into your app's memory.
 

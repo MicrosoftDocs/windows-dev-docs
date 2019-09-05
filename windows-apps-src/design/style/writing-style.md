@@ -35,12 +35,12 @@ Users need to be able to read and understand your text at a glance. Don't pad yo
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Select **filters** to add effects to your image.
+![Do](images/do.svg)
+Select **filters** to add effects to your image.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        If you want to add visual effects or alterations to your image, select **filters.**
+![Don't](images/dont.svg)
+If you want to add visual effects or alterations to your image, select **filters.**
     :::column-end:::
 :::row-end:::
 
@@ -50,12 +50,12 @@ Apps are defined by actions. Users take action when they use the app, and the ap
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Restart the app to see your changes.
+![Do](images/do.svg)
+Restart the app to see your changes.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        The changes will be applied when the app is restarted.
+![Don't](images/dont.svg)
+The changes will be applied when the app is restarted.
     :::column-end:::
 :::row-end:::
 
@@ -65,12 +65,12 @@ Users scan text, and will often skip over larger blocks of words entirely. Don't
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+![Do](images/do.svg)
+We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+![Don't](images/dont.svg)
+An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
     :::column-end:::
 :::row-end:::
 
@@ -87,8 +87,8 @@ Speak directly to the user.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't save your file to that location.
+![Do](images/do.svg)
+We couldn't save your file to that location.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -104,8 +104,8 @@ Speak directly to the user.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+![Do](images/do.svg)
+The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -119,8 +119,8 @@ People are used to contractions, and expect to see them. Avoiding them can make 
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+![Do](images/do.svg)
+When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -134,12 +134,12 @@ People are used to contractions, and expect to see them. Avoiding them can make 
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Do](images/do.svg)
+<b>You’re not connected.</b>
+* Check that your network cables are plugged in.
+* Make sure you're not in airplane mode.
+* See if your wireless switch is turned on.
+* Restart your router.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -153,11 +153,11 @@ While capital letters are important, they're easy to overuse.
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        * I forgot your password.
-        * It won't accept password.
-        * Someone else might be using my account.
+![Do](images/do.svg)
+<b>Which part is giving you trouble?</b>
+* I forgot your password.
+* It won't accept password.
+* Someone else might be using my account.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -177,12 +177,12 @@ More than anything else, it's important that your error message doesn't blame th
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Do](images/do.svg)
+<b>You’re not connected.</b>
+* Check that your network cables are plugged in.
+* Make sure you're not in airplane mode.
+* See if your wireless switch is turned on.
+* Restart your router.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -192,16 +192,16 @@ More than anything else, it's important that your error message doesn't blame th
 
 :::row:::
     :::column:::
-        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
+Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
 
-        But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
+But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        1. I forgot my password
-        2. It won't accept my password
-        3. Someone else might be using my account
+![Do](images/do.svg)
+<b>Which part is giving you trouble?</b>
+1. I forgot my password
+2. It won't accept my password
+3. Someone else might be using my account
     :::column-end:::
 :::row-end:::
 
@@ -209,13 +209,13 @@ More than anything else, it's important that your error message doesn't blame th
 
 :::row:::
     :::column:::
-        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
-        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
+When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        * Install now
-        * Share
+![Do](images/do.svg)
+* Install now
+* Share
     :::column-end:::
 :::row-end:::
 

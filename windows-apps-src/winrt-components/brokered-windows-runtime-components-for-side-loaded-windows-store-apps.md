@@ -17,7 +17,7 @@ code responsible for key business-critical operations.
 
 >**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). The Microsoft Visual Studio template to build Brokered Windows Runtime
 Components can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
-10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows includes a new feature called *Brokered Windows Runtime
 Components for side-loaded applications*. We use the term IPC
@@ -839,7 +839,7 @@ list of loaded modules.
 
 ## Resources
 
--   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [NorthwindRT Brokered WinRT Component
     Sample](https://go.microsoft.com/fwlink/p/?LinkID=397349)

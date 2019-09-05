@@ -285,7 +285,7 @@ ms.localizationpriority: medium
                     </div>                
                     <div class="cardText">
                         <h3>Developer tools</h3>
-                        <p>Get Visual Studio 2017, the Windows 10 SDK, and other developer tools.</p>
+                        <p>Get Visual Studio 2019, the Windows 10 SDK, and other developer tools.</p>
                     </div>
                 </div>
             </div>

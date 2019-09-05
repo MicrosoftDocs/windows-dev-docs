@@ -13,7 +13,7 @@ ms.custom: RS5
 
 # Design toolkits and samples for UWP apps
  
-Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/downloads">our main downloads page</a>. 
+Design and UI-related downloads for Fluent Design/UWP apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>. 
 
 
 ## Design toolkits
@@ -24,7 +24,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
     :::column:::
 ![hero image](images/figma.png)
 <b>Figma toolkit</b><br>
-v1810, October 2018<br>
+v1905, May 2019<br>
 <a href="https://aka.ms/figmatoolkit">Download</a>
     :::column-end:::
     :::column:::
@@ -91,7 +91,7 @@ Helper functions, custom controls, and app services.<br />
 
 :::row:::
     :::column:::
-        <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+<a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
       **Tile and icon generator for Adobe Photoshop**
@@ -127,4 +127,4 @@ This sample provides an interactive demo of all of the XAML controls. It shows a
 
 ## Want more code?
 
-Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/samples">Go to the samples portal</a>
+Check out the Windows sample page for complete list of all our UWP app samples. <a href="https://developer.microsoft.com/windows/samples">Go to the samples portal</a>

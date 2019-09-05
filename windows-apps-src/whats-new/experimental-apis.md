@@ -25,4 +25,4 @@ Documentation for a particular experimental API is at the discretion of the team
 
 ## Providing feedback
 
-If you've tried an experimental API and would like to provide feedback, use the **Developer Platform** category in the [Windows Feedback Hub](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+If you've tried an experimental API and would like to provide feedback, use the **Developer Platform** category in the [Windows Feedback Hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub).

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Windows 10 and the Universal Windows Platform (UWP) offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which parts of Windows 10 and UWP to adopt.
 
-This article describes the Windows 10 and UWP features that you can use in your desktop apps today.
+This article describes the Windows 10 and UWP features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this article, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
 
 > [!NOTE]
 > Do you need assistance migrating desktop apps to Windows 10? The [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). To get started now, [submit your request](https://aka.ms/DesktopAppAssureRequest).

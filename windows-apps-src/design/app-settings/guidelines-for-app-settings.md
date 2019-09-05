@@ -9,35 +9,31 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Guidelines for app settings
 
+App settings are the user-customizable portions of your Universal Windows Platform (UWP) app accessed through an app settings page. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app could let the user choose between Celsius and Fahrenheit. This article provides recommendations and best practices for creating and displaying app settings.
 
-
-App settings are the user-customizable portions of your app and live within an app settings page. For example, app settings in a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app's settings could let the user choose between Celsius and Fahrenheit as the default unit of measurement. This article describes best practices for creating and displaying app settings.
-
-
-## Should I include a settings page in my app?
+## When to provide a settings page
 
 Here are examples of app options that belong in an app settings page:
 
--   Configuration options that affect the behavior of the app and don't require frequent readjustment, like choosing between Celsius or Fahrenheit as default units for temperature in a weather app, changing account settings for a mail app, settings for notifications, or accessibility options.
--   Options that depend on the user's preferences, like music, sound effects, or color themes.
--   App information that isn't accessed very often, such as privacy policy, help, app version, or copyright info.
+- Configuration options that affect the behavior of the app and don't require frequent readjustment, like choosing between Celsius or Fahrenheit as default units for temperature in a weather app, changing account settings for a mail app, settings for notifications, or accessibility options.
+- Options that depend on the user's preferences, like music, sound effects, or color themes.
+- App information that isn't accessed very often, such as privacy policy, help, app version, or copyright info.
 
 Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be in a settings page. To learn more about command placement, see [Command design basics](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
 
 ## General recommendations
 
-
--   Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../controls-and-patterns/toggles.md) is usually the best control for a binary setting.
--   For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../controls-and-patterns/radio-button.md).
--   Create an entry point for all app settings in your app setting's page.
--   Keep your settings simple. Define smart defaults and keep the number of settings to a minimum.
--   When a user changes a setting, the app should immediately reflect the change.
--   Don't include commands that are part of the common app workflow.
+- Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../controls-and-patterns/toggles.md) is usually the best control for a binary setting.
+- For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../controls-and-patterns/radio-button.md).
+- Create an entry point for all app settings in your app setting's page.
+- Keep your settings simple. Define smart defaults and keep the number of settings to a minimum.
+- When a user changes a setting, the app should immediately reflect the change.
+- Don't include commands that are part of the common app workflow.
 
 ## Entry point
-
 
 The way that users get to your app settings page should be based on your app's layout.
 
@@ -111,29 +107,29 @@ Under a "Legal" subheader, place any "Terms of Use" and "Privacy Statement" (sho
 
 Once you have a list of items that you want to include in your app settings page, consider these guidelines:
 
--   Group similar or related settings under one settings label.
--   Try to keep the total number of settings to a maximum of four or five.
--   Display the same settings regardless of the app context. If some settings aren't relevant in a certain context, disable those in the app settings flyout.
--   Use descriptive, one-word labels for settings. For example, name the setting "Accounts" instead of "Account settings" for account-related settings. If you only want one option for your settings and the settings don't lend themselves to a descriptive label, use "Options" or "Defaults."
--   If a setting directly links to the web instead of to a flyout, let the user know this with a visual clue, such as "Help (online)" or "Web forums" styled as a [hyperlink](../controls-and-patterns/hyperlinks.md). Consider grouping multiple links to the web into a flyout with a single setting. For example, an "About" setting could open a flyout with links to your terms of use, privacy policy, and app support.
--   Combine less-used settings into a single entry so that more common settings can each have their own entry. Put content or links that only contain information in an "About" setting.
--   Don't duplicate the functionality in the "Permissions" pane. Windows provides this pane by default and you can't modify it.
+- Group similar or related settings under one settings label.
+- Try to keep the total number of settings to a maximum of four or five.
+- Display the same settings regardless of the app context. If some settings aren't relevant in a certain context, disable those in the app settings flyout.
+- Use descriptive, one-word labels for settings. For example, name the setting "Accounts" instead of "Account settings" for account-related settings. If you only want one option for your settings and the settings don't lend themselves to a descriptive label, use "Options" or "Defaults."
+- If a setting directly links to the web instead of to a flyout, let the user know this with a visual clue, such as "Help (online)" or "Web forums" styled as a [hyperlink](../controls-and-patterns/hyperlinks.md). Consider grouping multiple links to the web into a flyout with a single setting. For example, an "About" setting could open a flyout with links to your terms of use, privacy policy, and app support.
+- Combine less-used settings into a single entry so that more common settings can each have their own entry. Put content or links that only contain information in an "About" setting.
+- Don't duplicate the functionality in the "Permissions" pane. Windows provides this pane by default and you can't modify it.
 
--   Add settings content to Settings flyouts
--   Present content from top to bottom in a single column, scrollable if necessary. Limit scrolling to a maximum of twice the screen height.
--   Use the following controls for app settings:
+- Add settings content to Settings flyouts
+- Present content from top to bottom in a single column, scrollable if necessary. Limit scrolling to a maximum of twice the screen height.
+- Use the following controls for app settings:
 
-    -   [Toggle switches](../controls-and-patterns/toggles.md): To let users set values on or off.
-    -   [Radio buttons](../controls-and-patterns/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
-    -   [Text input box](../controls-and-patterns/text-block.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
-    -   [Hyperlinks](../controls-and-patterns/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
-    -   [Buttons](../controls-and-patterns/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
--   Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
--   Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
--   Use section headers, paragraphs, and labels to aid organize and clarify content, if necessary.
--   If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
--   If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
--   Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
+    - [Toggle switches](../controls-and-patterns/toggles.md): To let users set values on or off.
+    - [Radio buttons](../controls-and-patterns/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
+    - [Text input box](../controls-and-patterns/text-block.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
+    - [Hyperlinks](../controls-and-patterns/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
+    - [Buttons](../controls-and-patterns/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
+- Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
+- Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
+- Use section headers, paragraphs, and labels to aid organize and clarify content, if necessary.
+- If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
+- If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
+- Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
 
 
 

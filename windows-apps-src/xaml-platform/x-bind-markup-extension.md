@@ -23,7 +23,7 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 **Sample apps that demonstrate {x:Bind}**
 
 -   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989)
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI Basics sample](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## XAML attribute usage
@@ -94,7 +94,7 @@ To use an string indexer, the model needs to implement **IDictionary&lt;string, 
 
 ### Attached Properties
 
-To bind to attached properties, you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
+To bind to [attached properties](./attached-properties-overview.md), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
 
 ### Casting
 

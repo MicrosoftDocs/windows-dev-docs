@@ -22,10 +22,10 @@ In this how-to, we'll create everything in one solution for simplicity.
 
 1. In Visual Studio 2015 or later, create a new UWP app project and name it **AppServiceProvider**.
     1. Select **File > New > Project...** 
-    2. In the **New Project** dialog box, select **Installed > Visual C# > Blank App (Universal Windows)**. This will be the app that makes the app service available to other UWP apps.
-    3. Name the project **AppServiceProvider**, choose a location for it, and click **OK**.
+    2. In the **Create a new project** dialog box, select **Blank App (Universal Windows) C#**. This will be the app that makes the app service available to other UWP apps.
+    3. Click **Next**, and then name the project **AppServiceProvider**, choose a location for it, and then click **Create**.
 
-2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 and target **10.0.15063** (**Windows 10 Creators Update**) or higher.
+2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 or Visual Studio 2019, and target **10.0.15063** (**Windows 10 Creators Update**) or higher.
 
 <span id="appxmanifest"/>
 

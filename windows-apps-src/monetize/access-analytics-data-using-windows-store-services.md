@@ -100,7 +100,7 @@ The following analytics methods are available for use by developer accounts that
 
 ### Methods for Xbox Live services
 
-The following additional methods are available for use by developer accounts with games that use [Xbox Live services](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
+The following additional methods are available for use by developer accounts with games that use [Xbox Live services](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
 | Scenario       | Methods      |
 |---------------|--------------------|

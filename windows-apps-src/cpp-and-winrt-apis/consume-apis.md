@@ -6,6 +6,7 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
 ms.localizationpriority: medium
 ---
+
 # Consume APIs with C++/WinRT
 
 This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
@@ -73,6 +74,8 @@ In other words, some APIs are forward-declared in a header that you've included.
 ## Accessing members via the object, via an interface, or via the ABI
 With the C++/WinRT projection, the runtime representation of a Windows Runtime class is no more than the underlying ABI interfaces. But, for your convenience, you can code against classes in the way that their author intended. For example, you can call the **ToString** method of a [**Uri**](/uwp/api/windows.foundation.uri) as if that were a method of the class (in fact, under the covers, it's a method on the separate **IStringable** interface).
 
+`WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
@@ -101,15 +104,19 @@ int main()
     winrt::init_apartment();
     Uri contosoUri{ L"http://www.contoso.com" };
 
-    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+    int port{ contosoUri.Port() }; // Access the Port "property" accessor via C++/WinRT.
 
-    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri{
+        contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>() };
     HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
 }
 ```
 
 ## Delayed initialization
-Even the default constructor of a projected type causes a backing Windows Runtime object to be created. If you want to construct a variable of a projected type without it in turn constructing a Windows Runtime object (so that you can delay that work until later), then you can. Declare your variable or field using the projected type's special C++/WinRT `nullptr_t` constructor.
+
+In C++/WinRT, each projected type has a special C++/WinRT **std::nullptr_t** constructor. With the exception of that one, all projected-type constructors&mdash;including the default constructor&mdash;cause a backing Windows Runtime object to be created, and give you a smart pointer to it. So, that rule applies anywhere that the default constructor is used, such as uninitialized local variables, uninitialized global variables, and uninitialized member variables.
+
+If, on the other hand, you want to construct a variable of a projected type without it in turn constructing a backing Windows Runtime object (so that you can delay that work until later), then you can do that. Declare your variable or field using that special C++/WinRT **std::nullptr_t** constructor (which the C++/WinRT projection injects into every runtime class). We use that special constructor with *m_gamerPicBuffer* in the code example below.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -138,7 +145,7 @@ int main()
 }
 ```
 
-All constructors on the projected type *except* the `nullptr_t` constructor cause a backing Windows Runtime object to be created. The `nullptr_t` constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
+All constructors on the projected type *except* the **std::nullptr_t** constructor cause a backing Windows Runtime object to be created. The **std::nullptr_t** constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
 
 This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example, for which you'll need a **Blank App (C++/WinRT)** project.
 
@@ -152,6 +159,100 @@ The assignment creates a new **TextBlock**, and then immediately overwrites it w
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
+```
+
+Also see [How the default constructor affects collections](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections).
+
+### Don't delay-initialize by mistake
+
+Be careful that you don't invoke the **std::nullptr_t** constructor by mistake. The compiler's conflict resolution favors it over the factory constructors. For example, consider these two runtime class definitions.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox();
+}
+
+// Gift.idl
+runtimeclass Gift
+{
+    Gift(GiftBox giftBox); // You can create a gift inside a box.
+}
+```
+
+Let's say that we want to construct a **Gift** that isn't inside a box (a **Gift** that's constructed with an uninitialized **GiftBox**). First, let's look at the *wrong* way to do that. We know that there'a **Gift** constructor that takes a **GiftBox**. But if we're tempted to pass a null **GiftBox** (invoking the **Gift** constructor via uniform initialization as we do below), then we *won't* get the result we want.
+
+```cppwinrt
+// These are *not* what you intended. Doing it in one of these two ways
+// actually *doesn't* create the intended backing Windows Runtime Gift object;
+// only an empty smart pointer.
+
+Gift gift{ nullptr };
+auto gift{ Gift(nullptr) };
+```
+
+What you get here is an uninitialized **Gift**. You don't get a **Gift** with an uninitialized **GiftBox**. Here's the *correct* way to do that.
+
+```cppwinrt
+// Doing it in one of these two ways creates an initialized
+// Gift with an uninitialized GiftBox.
+
+Gift gift{ GiftBox{ nullptr } };
+auto gift{ Gift(GiftBox{ nullptr }) };
+```
+
+In the incorrect example, passing a `nullptr` literal resolves in favor of the delay-initializing constructor. To resolve in favor of the factory constructor, the type of the parameter must be a **GiftBox**. You still have the option to pass an explicitly delay-initializing **GiftBox**, as shown in the correct example.
+
+This next example is *also* correct, because the parameter has type GiftBox, and not **std::nullptr_t**.
+
+```cppwinrt
+GiftBox giftBox{ nullptr };
+Gift gift{ giftBox }; // Calls factory constructor.
+```
+
+It's only when you pass a `nullptr` literal that the ambiguity arises.
+
+## Don't copy-construct by mistake.
+
+This caution is similar to the one described in the [Don't delay-initialize by mistake](#dont-delay-initialize-by-mistake) section above.
+
+In addition to the delay-initializing constructor, the C++/WinRT projection also injects a copy constructor into every runtime class. It's a single-parameter constructor that accepts the same type as the object being constructed. The resulting smart pointer points to the same backing Windows Runtime object as that pointed to by its constructor parameter. The result is two smart pointer objects pointing to the same backing object.
+
+Here's a runtime class definition that we'll use in the code examples.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox(GiftBox biggerBox); // You can place a box inside a bigger box.
+}
+```
+
+Let's say that we want to construct a **GiftBox** inside a larger **GiftBox**.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These are *not* what you intended. Doing it in one of these two ways
+// copies bigBox's backing-object-pointer into smallBox.
+// The result is that smallBox == bigBox.
+
+GiftBox smallBox{ bigBox };
+auto smallBox{ GiftBox(bigBox) };
+```
+
+The *correct* way to do it is to call the activation factory explicitly.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These two ways call the activation factory explicitly.
+
+GiftBox smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
+auto smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
 ```
 
 ## If the API is implemented in a Windows Runtime component
@@ -179,7 +280,7 @@ For more details, code, and a walkthrough of consuming APIs implemented in a Win
 ## If the API is implemented in the consuming project
 A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
 
-For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its `nullptr` constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its **std::nullptr_t** constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
 
 You'll need a **Blank App (C++/WinRT)** project for this code example.
 
@@ -273,6 +374,66 @@ The classes in the two examples above are types from a Windows namespace. In thi
 auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
+
+## Member/Type ambiguities
+
+When a member function has the same name as a type, there's ambiguity. The rules for C++ unqualified name lookup in member functions cause it to search the class before searching in namespaces. The *substitution failure is not an error* (SFINAE) rule doesn't apply (it applies during overload resolution of function templates). So if the name inside the class doesn't make sense, then the compiler doesn't keep looking for a better match&mdash;it simply reports an error.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+Above, the compiler thinks that you're passing [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style) (which, in C++/WinRT, is a member function) as the template parameter to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). The solution is to force the name `Style` to be interpreted as the type [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style).
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+Unqualified name lookup has a special exception in the case that the name is followed by `::`, in which case it ignores functions, variables, and enum values. This allows you to do things like this.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
 
 ## Important APIs
 * [QueryInterface interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

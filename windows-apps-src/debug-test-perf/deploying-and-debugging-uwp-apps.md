@@ -2,7 +2,7 @@
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: This article guides you through the steps to target various deployment and debugging targets.
 title: Deploying and debugging Universal Windows Platform (UWP) apps
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, debug, test, performance
 ms.localizationpriority: medium
@@ -36,7 +36,7 @@ In addition, any installed app package can be attached and debugged by selecting
 
 Selecting **Do not launch, but debug my code when it starts** will cause the Visual Studio debugger to attach to your UWP app when you launch it at a custom time. This is an effective way to debug control paths from [different launch methods](../xbox-apps/automate-launching-uwp-apps.md), such as protocol activation with custom parameters.  
 
-UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://www.visualstudio.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
+UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.
 
 ## Package layout
 
@@ -89,14 +89,14 @@ To do this, search for **Remote Debugger** in the **Start** menu, open it, and i
 
 To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
-For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
+For more information, see the [Visual studio Download Center](https://visualstudio.microsoft.com/downloads/) page.
 
 ## Passing command line debug arguments
 
-In Visual Studio 2017, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
+In Visual Studio 2019, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab.
 
 > [!NOTE]
-> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions of Visual Studio 2017. Command line debug arguments are available for all deployment types except for the Simulator.
+> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions. Command line debug arguments are available for all deployment types except for the Simulator.
 
 For C# and VB UWP projects, you will see a **Command line arguments:** field under **Start options**.
 

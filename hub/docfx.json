@@ -17,14 +17,13 @@
     "externalReference": [],
     "globalMetadata": {
       "ROBOTS": "INDEX, FOLLOW",
-      "ms.prod": "windows",
+      "ms.prod": "uwp",
       "titleSuffix": "Windows apps",
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-WinDevCenter",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/windows-uwp",
-      "feedback_product_url": "https://wpdev.uservoice.com/",
       "extendBreadcrumb": false,
       "_op_documentIdPathDepotMapping": {
           "./": {
@@ -34,10 +33,19 @@
         }		  
       },
     "fileMetadata": {
+      "ms.prod":
+      {
+        "python/**.md": "dev-environment"
+      },
       "ms.technology":
       {
-      "apps/**.md": "windows",
-      "apps/desktop/**.md": "desktop"
+      "apps/**.md": "apps",
+      "python/**.md": "windows-python"
+      },
+      "feedback_product_url": 
+      {
+        "apps/**.md": "https://wpdev.uservoice.com/",
+        "python/**.md": "https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=367096"
       }
     },
     "template": [],

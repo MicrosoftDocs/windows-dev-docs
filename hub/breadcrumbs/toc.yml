@@ -16,3 +16,9 @@
           - name: Modernize desktop apps
             tocHref: /windows/apps/desktop/modernize/
             topicHref: "/windows/apps/desktop/modernize/"
+      - name: Python
+        tocHref: /windows/python/
+        topicHref: "/windows/python/index"
+      - name: NodeJS
+        tocHref: /windows/nodejs/
+        topicHref: "/windows/nodejs/index"
