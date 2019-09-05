@@ -401,7 +401,8 @@ The sample UI includes a [ListView](https://docs.microsoft.com/uwp/api/windows.u
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <XamlUICommand x:Name="CustomXamlUICommand" ExecuteRequested="DeleteCommand_ExecuteRequested" Description="Custom XamlUICommand" Label="Custom XamlUICommand">
+        <XamlUICommand x:Name="CustomXamlUICommand" ExecuteRequested="DeleteCommand_ExecuteRequested"
+                       Description="Custom XamlUICommand" Label="Custom XamlUICommand">
             <XamlUICommand.IconSource>
                 <FontIconSource FontFamily="Wingdings" Glyph="&#x4D;"/>
             </XamlUICommand.IconSource>
