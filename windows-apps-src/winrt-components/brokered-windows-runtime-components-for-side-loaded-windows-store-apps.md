@@ -1,5 +1,5 @@
 ---
-title: Brokered Windows Runtime Components for a side-loaded UWP app
+title: Brokered Windows Runtime components for a side-loaded UWP app
 description: This paper discusses an enterprise-targeted feature supported by Windows 10, which allows touch-friendly .NET apps to use the existing code responsible for key business-critical operations.
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ---
-# Brokered Windows Runtime Components for a side-loaded UWP app
+# Brokered Windows Runtime components for a side-loaded UWP app
 
 This article discusses an enterprise-targeted feature supported by
 Windows 10, which allows touch-friendly .NET apps to use the existing
@@ -84,11 +84,11 @@ implementation.
 The contract between the side-loaded application and the desktop
 component is described in terms of the UWP type system. This involves
 declaring one or more C\# classes that can represent a UWP. See MSDN
-topic [Creating Windows Runtime Components in C\# and Visual
+topic [Creating Windows Runtime components in C\# and Visual
 Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) for
 specific requirement of creating Windows Runtime Class using C\#.
 
->**Note**  Enums are not supported in the Windows Runtime Components Contract
+>**Note**  Enums are not supported in the Windows Runtime components contract
 between desktop component and side-loaded application at this time.
 
 **Side-loaded application**
@@ -143,7 +143,7 @@ conversations, which is covered in a later section.
 
 The sequence to define the contract is introduced as following:
 
-**Step 1:** Create a new class library in Visual Studio. Make sure to create the project using Class Library template not Windows Runtime Component template
+**Step 1:** Create a new class library in Visual Studio. Make sure to create the project using the **Class Library** template, and not the **Windows Runtime Component** template.
 
 An implementation obviously follows, but this section is only covering
 the definition of the inter-process contract. The accompanying sample
@@ -181,7 +181,7 @@ side-loaded application. This class provides the functionality promised in the
 RuntimeClass. The RuntimeClass can be used to generate the reference
 winmd that will be included in the side-loaded application.
 
-**Step 2:** Edit the project file manually to change the output type of project to Windows Runtime Component
+**Step 2:** Edit the project file manually to change the output type of project to **Windows Runtime Component**.
 
 To do this in Visual Studio, right click on the newly created project
 and select “Unload Project”, then right click again and select “Edit
@@ -552,7 +552,7 @@ add these references as necessary.
 
 Once the references are properly configured, the next task is to
 implement the server's functionality. See the MSDN topic [Best practices
-for interoperability with Windows Runtime Components (UWP apps
+for interoperability with Windows Runtime components (UWP apps
 using C\#/VB/C++ and
 XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
 The task is to create a Windows Runtime component dll that is able to

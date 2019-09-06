@@ -554,9 +554,9 @@ Windows JavaScript apps can access the powerful features of the Universal Window
 </table>
 
 
-#### Use Windows Runtime Components to combine languages
+#### Use Windows Runtime components to combine languages
 
-With the Universal Windows Platform, it’s easy to combine components written in different languages. Create Windows Runtime Components in C++, C#, or Visual Basic, and then call into them from JavaScript, C#, C++, or Visual Basic. This is a great way to program portions of your game in the language of your choice. Components also let you consume external libraries that are only available in a particular language, as well as use legacy code you’ve already written.
+With the Universal Windows Platform, it’s easy to combine components written in different languages. Create Windows Runtime components in C++, C#, or Visual Basic, and then call into them from JavaScript, C#, C++, or Visual Basic. This is a great way to program portions of your game in the language of your choice. Components also let you consume external libraries that are only available in a particular language, as well as use legacy code you’ve already written.
 
 <table>
     <colgroup>
@@ -564,8 +564,8 @@ With the Universal Windows Platform, it’s easy to combine components written i
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>How to create Windows Runtime Components</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Creating Windows Runtime Components</a></td>
+        <td>How to create Windows Runtime components</td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Windows Runtime components with C++/CX</a></td>
     </tr>
 </table>
 

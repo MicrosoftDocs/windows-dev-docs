@@ -368,7 +368,7 @@ auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
 Uri account = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-The classes in the two examples above are types from a Windows namespace. In this next example, **BankAccountWRC::BankAccount** is a custom type implemented in a Windows Runtime Component.
+The classes in the two examples above are types from a Windows namespace. In this next example, **BankAccountWRC::BankAccount** is a custom type implemented in a Windows Runtime component.
 
 ```cppwinrt
 auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();

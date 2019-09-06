@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This topic shows how to author [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly. Synonyms for *author* in this context are *produce*, or *implement*. This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.
 
 > [!NOTE]
-> This topic touches on the subject of Windows Runtime Components, but only in the context of C++/WinRT. If you're looking for content about Windows Runtime components that covers all Windows Runtime languages, then see [Windows Runtime components](/windows/uwp/winrt-components/).
+> This topic touches on the subject of Windows Runtime components, but only in the context of C++/WinRT. If you're looking for content about Windows Runtime components that covers all Windows Runtime languages, then see [Windows Runtime components](/windows/uwp/winrt-components/).
 
 - You're *not* authoring a Windows Runtime class (runtime class); you just want to implement one or more Windows Runtime interfaces for local consumption within your app. You derive directly from **winrt::implements** in this case, and implement functions.
 - You *are* authoring a runtime class. You might be authoring a component to be consumed from an app. Or you might be authoring a type to be consumed from XAML user interface (UI), and in that case you're both implementing and consuming a runtime class within the same compilation unit. In these cases, you let the tools generate classes for you that derive from **winrt::implements**.
@@ -119,9 +119,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-## If you're authoring a runtime class in a Windows Runtime Component
+## If you're authoring a runtime class in a Windows Runtime component
 
-If your type is packaged in a Windows Runtime Component for consumption from an application, then it needs to be a runtime class. You declare a runtime class in a Microsoft Interface Definition Language (IDL) (.idl) file (see [Factoring runtime classes into Midl files (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
+If your type is packaged in a Windows Runtime component for consumption from an application, then it needs to be a runtime class. You declare a runtime class in a Microsoft Interface Definition Language (IDL) (.idl) file (see [Factoring runtime classes into Midl files (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
 Each IDL file results in a `.winmd` file, and Visual Studio merges all of those into a single file with the same name as your root namespace. That final `.winmd` file will be the one that the consumers of your component will reference.
 
@@ -179,7 +179,7 @@ For more details, code, and a walkthrough of authoring APIs in a Windows Runtime
 
 If your type is referenced by your XAML UI, then it needs to be a runtime class, even though it's in the same project as the XAML. Although they are typically activated across executable boundaries, a runtime class can instead be used within the compilation unit that implements it.
 
-In this scenario, you're both authoring *and* consuming the APIs. The procedure for implementing your runtime class is essentially the same as that for a Windows Runtime Component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime Component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). The only detail that differs is that, from the IDL, the C++/WinRT toolchain generates not only an implementation type but also a projected type. It's important to appreciate that saying only "**MyRuntimeClass**" in this scenario may be ambiguous; there are several entities with that name, of different kinds.
+In this scenario, you're both authoring *and* consuming the APIs. The procedure for implementing your runtime class is essentially the same as that for a Windows Runtime component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). The only detail that differs is that, from the IDL, the C++/WinRT toolchain generates not only an implementation type but also a projected type. It's important to appreciate that saying only "**MyRuntimeClass**" in this scenario may be ambiguous; there are several entities with that name, of different kinds.
 
 - **MyRuntimeClass** is the name of a runtime class. But this is really an abstraction: declared in IDL, and implemented in some programming language.
 - **MyRuntimeClass** is the name of the C++ struct **winrt::MyProject::implementation::MyRuntimeClass**, which is the C++/WinRT implementation of the runtime class. As we've seen, if there are separate implementing and consuming projects, then this struct exists only in the implementing project. This is *the implementation type*, or *the implementation*. This type is generated (by the `cppwinrt.exe` tool) in the files `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` and `MyRuntimeClass.cpp`.

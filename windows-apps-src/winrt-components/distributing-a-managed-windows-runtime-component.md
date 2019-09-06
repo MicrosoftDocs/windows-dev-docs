@@ -7,9 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Distributing a managed Windows Runtime Component
-
-
 
 You can distribute your Windows Runtime Component by file copy. However, if your component consists of many files, installation can be tedious for your users. Also, errors in placing files or failure to set references might cause problems for them. You can package a complex component as a Visual Studio extension SDK, to make it easy to install and use. Users only need to set one reference for the entire package. They can easily locate and install your component by using the **Extensions and Updates** dialog box, as described in [Finding and Using Visual Studio Extensions](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2015), in the MSDN Library.
 
@@ -59,7 +58,7 @@ A complex component usually includes Windows resources, but see the note about d
 
     In each configuration folder, you can provide architecture folders for platform-specific files. If you use the same files for all platforms, you can supply a single folder named neutral. You can find details of the folder structure, including other architecture folder names, in [How to: Create a Software Development Kit](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015), in the MSDN Library. (That article discusses both platform SDKs and extension SDKs. You may find it useful to collapse the section about platform SDKs, to avoid confusion. )
 
-4.  Create an SDK manifest file. The manifest specifies name and version information, the architectures your SDK supports, .NET Framework versions, and other information about the way Visual Studio uses your SDK. You can find details and an example in [How to: Create a Software Development Kit](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
+4.  Create an SDK manifest file. The manifest specifies name and version information, the architectures your SDK supports, .NET versions, and other information about the way Visual Studio uses your SDK. You can find details and an example in [How to: Create a Software Development Kit](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
 5.  Build and distribute the extension SDK. For in-depth information, including localizing and signing the VSIX package, see VSIX Deployment in the MSDN Library.
 
 ## Related topics

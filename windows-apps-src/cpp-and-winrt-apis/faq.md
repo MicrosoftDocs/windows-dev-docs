@@ -54,7 +54,7 @@ It's important that you resolve any linker errors that you can by linking **Wind
 
 In this case, the symptom is that&mdash;when constructing a runtime class or accessing a static member&mdash;you see an exception thrown at runtime with a HRESULT value of REGDB_E_CLASSNOTREGISTERED.
 
-One cause can be that your Windows Runtime Component can't be loaded. Make sure that the component's Windows Runtime metadata file (`.winmd`) has the same name as the component binary (the `.dll`), which is also the name of the project and the name of the root namespace. Also make sure that the Windows Runtime metadata and the binary have been corectly copied by the build process to the consuming app's `Appx` folder. And confirm that the consuming app's `AppxManifest.xml` (also in the `Appx` folder) contains an **&lt;InProcessServer&gt;** element correctly declaring the activatable class and the binary name.
+One cause can be that your Windows Runtime component can't be loaded. Make sure that the component's Windows Runtime metadata file (`.winmd`) has the same name as the component binary (the `.dll`), which is also the name of the project and the name of the root namespace. Also make sure that the Windows Runtime metadata and the binary have been corectly copied by the build process to the consuming app's `Appx` folder. And confirm that the consuming app's `AppxManifest.xml` (also in the `Appx` folder) contains an **&lt;InProcessServer&gt;** element correctly declaring the activatable class and the binary name.
 
 ### Uniform construction
 

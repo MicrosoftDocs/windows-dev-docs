@@ -1,5 +1,5 @@
 ---
-title: Creating a Simple Windows Runtime component and calling it from JavaScript
+title: Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript
 description: This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ms.date: 02/08/2017
@@ -8,13 +8,13 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript
+# Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript
 
 This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 
-Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime Component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
+Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
 
-> **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 This walkthrough illustrates the following tasks. After you've completed the first section, which sets up the Windows app with JavaScript, you can complete the remaining sections in any order.
 
@@ -25,7 +25,7 @@ This walkthrough illustrates the following tasks. After you've completed the fir
 
 ## Creating a simple Windows Runtime class
 
-This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime Component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
+This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
 
 1.  In Visual Studio, create a new JavaScript project: On the menu bar, choose **File, New, Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **JavaScript**, and then choose **Windows**, and then **Universal**. (If Windows is not available, make sure you're using Windows 8 or later.) Choose the **Blank Application** template and enter SampleApp for the project name.
 2.  Create the component project: In Solution Explorer, open the shortcut menu for the SampleApp solution and choose **Add**, and then choose **New Project** to add a new C# or Visual Basic project to the solution. In the **Installed Templates** section of the **Add New Project** dialog box, choose **Visual Basic** or **Visual C#**, and then choose **Windows**, and then **Universal**. Choose the **Windows Runtime Component** template and enter **SampleComponent** for the project name.
@@ -87,7 +87,7 @@ function basics2() {
 
 Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](https://docs.microsoft.com/scripting/jswinrt/using-the-windows-runtime-in-javascript). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
-In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for UWP apps and Windows Runtime](https://docs.microsoft.com/dotnet/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime).
+In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for UWP apps and Windows Runtime](https://docs.microsoft.com/dotnet/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime).
 
 ## Create a simple user interface
 
@@ -169,7 +169,7 @@ Choose the Basics 1 button to assign the return value from the static GetAnswer 
 
 Choose the Basics 2 button to increment the value of the SampleProperty property and to display the new value in the output area. Primitive types such as strings and numbers can be used as parameter types and return types, and can be passed between managed code and JavaScript. Because numbers in JavaScript are stored in double-precision floating-point format, they are converted to .NET Framework numeric types.
 
-> **Note**  By default, you can set breakpoints only in your JavaScript code. To debug your Visual Basic or C# code, see Creating Windows Runtime Components in C# and Visual Basic.
+> **Note**  By default, you can set breakpoints only in your JavaScript code. To debug your Visual Basic or C# code, see Creating Windows Runtime components in C# and Visual Basic.
 
 To stop debugging and close your app, switch from the app to Visual Studio, and choose Shift+F5.
 
@@ -177,7 +177,7 @@ To stop debugging and close your app, switch from the app to Visual Studio, and 
 
 The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and the .NET Framework support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
 
-> **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime Components](raising-events-in-windows-runtime-components.md).
+> **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime components](raising-events-in-windows-runtime-components.md).
 
 In the SampleComponent project, add a new **public sealed** class (**Public NotInheritable** class in Visual Basic) named PropertySetStats. The class wraps a PropertySet collection and handles its MapChanged event. The event handler tracks the number of changes of each kind that occur, and the DisplayStats method produces a report that is formatted in HTML. Notice the additional **using** statement (**Imports** statement in Visual Basic); be careful to add this to the existing **using** statements rather than overwriting them.
 
@@ -326,7 +326,7 @@ To add two more items to the PropertySet collection from managed code, add the f
 > End Sub
 > ```
 
-This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in the .NET Framework. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and the .NET Framework. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
+This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in the .NET Framework. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and the .NET Framework. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
 
 Finally, to call the AddMore method with exception handling, add the runtime2 function to default.js.
 
@@ -356,9 +356,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. The JavaScript event handler reports the first change to the collection. The second change, however, has a duplicate key. Users of .NET Framework dictionaries expect the Add method to throw an exception, and that is what happens. JavaScript handles the .NET Framework exception.
 
-> **Note**  You can't display the exception's message from JavaScript code. The message text is replaced by a stack trace. For more information, see "Throwing exceptions" in Creating Windows Runtime Components in C# and Visual Basic.
+> **Note**  You can't display the exception's message from JavaScript code. The message text is replaced by a stack trace. For more information, see "Throwing exceptions" in Creating Windows Runtime components in C# and Visual Basic.
 
-By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Returning managed types from your component
 
@@ -525,7 +525,7 @@ You can declare events by using the standard .NET Framework event pattern or oth
 
 When you expose an event in the Windows Runtime, the event argument class inherits from System.Object. It doesn't inherit from System.EventArgs, as it would in the .NET Framework, because EventArgs is not a Windows Runtime type.
 
-If you declare custom event accessors for your event (**Custom** keyword in Visual Basic), you must use the Windows Runtime event pattern. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md).
+If you declare custom event accessors for your event (**Custom** keyword in Visual Basic), you must use the Windows Runtime event pattern. See [Custom events and event accessors in Windows Runtime components](custom-events-and-event-accessors-in-windows-runtime-components.md).
 
 To handle the Test event, add the events1 function to default.js. The events1 function creates an event handler function for the Test event, and immediately invokes the OnTest method to raise the event. If you place a breakpoint in the body of the event handler, you can see that the object passed to the single parameter includes the source object and both members of TestEventArgs.
 
@@ -719,4 +719,4 @@ To run the app, choose the F5 key. To start the asynchronous operation, choose t
 
 * [.NET for UWP apps Overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

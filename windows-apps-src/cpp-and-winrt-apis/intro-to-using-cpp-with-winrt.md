@@ -88,7 +88,7 @@ This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Wind
 
 In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
-Bundle the built Windows Runtime Component binary and its `.winmd` with the UWP app consuming them.
+Bundle the built Windows Runtime component binary and its `.winmd` with the UWP app consuming them.
 
 ## Earlier versions of the VSIX extension
 We recommend that you install (or update to) the latest version of the [VSIX extension](https://aka.ms/cppwinrt/vsix). It is configured to update itself by default. If you do that, and you have projects that were created with a version of the VSIX extension earlier than 1.0.190128.4, then this section contains important info about upgrading those projects to work with the new version. If you don't update, then you'll still find the info in this section useful.

@@ -1,6 +1,6 @@
 ---
 title: Using Windows Runtime objects in a multithreaded environment | Microsoft Docs
-description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.
+description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
@@ -8,7 +8,7 @@ keywords: windows 10, uwp, timer, threads
 ms.localizationpriority: medium
 ---
 # Using Windows Runtime objects in a multithreaded environment
-This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.
+This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
 
 In the .NET Framework, you can access any object from multiple threads by default, without special handling. All you need is a reference to the object. In the Windows Runtime, such objects are called *agile*. Most Windows Runtime classes are agile, but a few classes are not, and even agile classes may require special handling.
 
