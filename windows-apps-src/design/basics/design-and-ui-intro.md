@@ -10,6 +10,8 @@ ms.custom: RS5
 ---
 # Introduction to UWP app design
 
+<!-- Testing -->
+
 ![sample lighting app](images/introUWP-header.jpg)
 
 The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps.
