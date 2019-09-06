@@ -14,21 +14,6 @@ Accessible apps are designed to be inclusive through improved usability for as m
 
 This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
-## Videos
-
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> -->
-
-:::row:::
-   :::column:::
-      <!-- iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
-    :::column-end:::
-    :::column:::
-      <!-- iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
-      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
-   :::column-end:::
-:::row-end:::
-
 ## Platform-specific documentation
 
 :::row:::
@@ -72,7 +57,7 @@ This page provides information on how the various Windows development frameworks
    :::column-end:::
 :::row-end:::
 :::row:::
-    :::column:::
+   :::column:::
       ![WPF platform](images/platform-wpf2-small.png)
 
       **Windows Presentation Foundation (WPF)**
@@ -94,7 +79,7 @@ This page provides information on how the various Windows development frameworks
       [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
       [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-      :::column-end:::
+   :::column-end:::
    :::column:::
       ![Windows Forms platform apps](images/platform-winforms.png)
 
@@ -109,5 +94,20 @@ This page provides information on how the various Windows development frameworks
       [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+   :::column-end:::
+:::row-end:::
+
+## Videos
+
+<!-- <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> -->
+
+:::row:::
+   :::column:::
+      <!-- iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+   :::column-end:::
+   :::column:::
+      <!-- iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
 :::row-end:::
