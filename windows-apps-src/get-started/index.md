@@ -25,6 +25,7 @@ ms.localizationpriority: medium
                         <h3>Learn about Windows 10 Apps</h3>
                         <p>Windows 10 and the Universal Windows Platform let you build apps that work and look great across all Windows device types, or update existing apps with modern features.</p>
                         <ul>
+                          <li><a href="//docs.microsoft.com/windows/apps/desktop/choose-your-platform">What's UWP platform?</a></li>
                           <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">What's a UWP app?</a></li>
                         </ul>
                     </div>
