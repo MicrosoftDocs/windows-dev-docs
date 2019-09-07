@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Choose your app platform
 
-When you want to create a new desktop application for Windows PCs, the first decision you make is which application platform to use. Windows provides four main application platforms, each with different strengths:
+When you want to create a new application for Windows, the first decision you make is which application platform to use. Windows provides four main application platforms, each with different strengths:
 
 * [Universal Windows Platform (UWP)](#uwp)
 * [WPF (.NET)](#wpf)
