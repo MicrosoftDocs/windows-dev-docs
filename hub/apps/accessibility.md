@@ -101,37 +101,49 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      > **How to get started with accessibility in Windows apps**
+      **How to get started with accessibility in Windows apps**
       > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
    :::column-end:::
    :::column:::
-      > **One Dev Minute: Developing apps for accessibility**
+      **One Dev Minute: Developing apps for accessibility**
       > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      > **Introduction to disability and accessibility**
+      **Introduction to disability and accessibility**
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
    :::column:::
-      > **From hack to product, eye control for Windows 10**
+      **From hack to product, eye control for Windows 10**
       > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      > **Accessibility on Windows 10**
+      **Accessibility on Windows 10**
       > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
    :::column-end:::
    :::column:::
-      > **Introduction to Building Accessible UWP Apps**
+      **Introduction to Building Accessible UWP Apps**
       > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
    :::column-end:::
 :::row-end:::
 
 ### Other resources
 
+:::row:::
+   :::column span="2":::
+      **Web accessibility**
+
+      Articles and samples that provide web developers with the info required to develop accessible web sites.
+
+      - [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+      - [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      - [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+   :::column-end:::
+:::row-end:::
 :::row:::
    :::column:::
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
