@@ -40,10 +40,19 @@ You can complete and submit your tax forms electronically in Partner Center; in 
 
 1. In [Partner Center](https://partner.microsoft.com/dashboard), select the **Account settings** icon in the top right corner, then select **Developer settings**.
 2. In the left navigation menu, select **Payout and tax**, then select **Payout and tax assignments**.
+
+    ![Payout and tax profile assignment](images/payout-tax-profile-assignment.png)
+
 3. Select the program and seller id combination for which you want to configure tax information.
+
+    ![Payout select seller id](images/payout-select-seller-id.png)
+
 4. If you would like to use an existing tax profile, select it from the dropdown. Otherwise, select **Create new profile** and press **Submit**. You will be taken to the tax profiles page.
 5. Click the **Edit** button to edit your tax information.
 6. Select the appropriate radio button, and select your country if prompted. This step determines the Microsoft business entity that will be used to make payouts on your account.
+
+    ![Payout select tax country](images/payout-select-tax-country.png)
+
 7. Depending on your selections in step 6, you will be prompted to provide tax information required for your country.
 
 > [!NOTE]
@@ -70,13 +79,16 @@ A payout account is the bank account to which we send the proceeds from your sal
 ### Create a payment profile
 
 1. In [Partner Center](https://partner.microsoft.com/dashboard), select the **Settings** gear icon in the top right corner, then select **Developer settings**.
-2. Underneath the *Payout and tax* heading, select **Payout and tax assignments**.
+2. Underneath the *Payout and tax* heading, select **Payout and tax profile assignment**.
 
     > [!NOTE]
     > Because this is sensitive info, you may be prompted to sign in again.
 
 3. Select the payment method you would like to configure.
-4. Select an existing payment profile, or click **Create a new payment profile** to create a new profile.
+
+    ![Payout account type selection](images/payout-account-type-selection.png)
+
+4. Select an existing payment profile, or click **Create a new payment profile** to create a new profile for the chosen payment method.
 
 ### Create a bank-based payment profile
 
@@ -88,6 +100,8 @@ If you elected to use a bank account to receive payouts, you'll complete the fol
     > [!NOTE]
     > The fields you use to provide your account info accept only alphanumeric characters.
 
+    ![Payout bank info](images/payout-bank-info.png)
+
 3. Provide beneficiary details.
 4. Back on the *Profile assignment* page, select the currency you would like us to use when we issue your payouts.
 
@@ -95,10 +109,19 @@ If you elected to use a bank account to receive payouts, you'll complete the fol
     > Make sure your bank accepts the payout currency you select.
 
 5. You will need to select a payment profile for each program you participate in, though you can use the same profile for multiple programs.
+
+    ![Payout use bank profile](images/payout-use-bank-profile.png)
+
 6. Click submit to save your changes.
 
 > [!NOTE]
 > Microsoft may take up to 48 hours to validate the information in your profile. When this process is complete *verification status* will show **Complete**
+
+To ensure your payout is successful, please also keep in mind the following:
+
+- The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+- Payouts are transferred directly from Microsoft to your bank account in USD currency.
+- Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
 
 ### Editing existing payment profiles
 
@@ -116,7 +139,7 @@ You can edit existing payment profiles if you need to make changes or correct an
 In select countries and regions, you can create a payment account by entering your PayPal info. However, before choosing PayPal as a payment account option:
 
 - Check [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md) to confirm whether PayPal is a supported payment method in your country or region.
- Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
+- Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
 
 Common questions about using PayPal as a payment method:
 
@@ -162,8 +185,19 @@ If you’re a developer who lives in Ukraine, you may need to provide documentat
 
 Microsoft provides all three documents when your first payout is attempted. For any subsequent payouts, you will only receive the AC document. Please retain the ADA and AA documents in case you need them to receive future payouts from your bank.
 
-To ensure your payout is successful, please also keep in mind the following:
+### Create a PayPal payment profile
 
-- The **Account holder name** entered for your payout account in Partner Center must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
-- Payouts are transferred directly from Microsoft to your bank account in USD currency.
-- Bank information entered in Partner Center in Latin characters is translated to Cyrillic characters.
+If you elected to use a bank account to receive payouts, you'll complete the following process to configure your bank account.
+
+1. On the *PayPal* page, provide the required information about your PayPal account.
+2. Provide your paypal account details.
+
+    > [!NOTE]
+    > The fields you use to provide your account info accept only alphanumeric characters.
+
+    ![Payout paypal info](images/payout-paypal-info.png)
+
+3. Provide beneficiary details.
+4. Back on the *Profile assignment* page, select the currency you would like us to use when we issue your payouts.
+5. You will need to select a payment profile for each program you participate in, though you can use the same profile for multiple programs.
+6. Click submit to save your changes.
