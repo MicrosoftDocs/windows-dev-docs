@@ -96,35 +96,47 @@ This page provides information on how the various Windows development frameworks
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
+
+### Videos
+
 :::row:::
    :::column:::
-      **Videos**
-   :::column-end:::
-   :::column:::
-      **Other resources**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
+      > **How to get started with accessibility in Windows apps**
       > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
    :::column-end:::
    :::column:::
-      [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
+      > **One Dev Minute: Developing apps for accessibility**
       > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
-   :::column:::
-      https://news.microsoft.com/presskits/accessibility/
-   :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      > **Introduction to disability and accessibility**
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
    :::column:::
+      > **From hack to product, eye control for Windows 10**
       > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > **Accessibility on Windows 10**
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541]
+   :::column-end:::
+   :::column:::
+      > **Introduction to Building Accessible UWP Apps**
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497]
+   :::column-end:::
+:::row-end:::
+
+### Other resources
+
+:::row:::
+   :::column:::
+      [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
+   :::column-end:::
+   :::column:::
+      [Microsoft accessibility in the news](https://news.microsoft.com/presskits/accessibility/)
    :::column-end:::
 :::row-end:::
