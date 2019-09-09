@@ -96,18 +96,34 @@ This page provides information on how the various Windows development frameworks
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
-
-## Videos
-
-<!-- <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> -->
-
 :::row:::
    :::column:::
-      <!-- iframe src="https://channel9.msdn.com/Events/Build/2017/P4072" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      **Videos**
+   :::column-end:::
+   :::column:::
+      **Other resources**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
       > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
    :::column-end:::
    :::column:::
-      <!-- iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe -->
+      [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
       > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+   :::column-end:::
+   :::column:::
+      https://news.microsoft.com/presskits/accessibility/
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://youtu.be/Kl4CT4DaypM]
+   :::column-end:::
+   :::column:::
    :::column-end:::
 :::row-end:::
