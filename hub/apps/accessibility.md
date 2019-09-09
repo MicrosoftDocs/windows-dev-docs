@@ -10,7 +10,7 @@ keywords: Accessibility in Windows 10, Accessibility, building accessible win32 
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities, personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Accessible apps are designed to be inclusive by improving usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
 
 This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
@@ -125,6 +125,6 @@ This page provides information on how the various Windows development frameworks
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
    :::column:::
-      > [!VIDEO https://youtu.be/AShNPfmAkvY]
+      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
    :::column-end:::
 :::row-end:::
