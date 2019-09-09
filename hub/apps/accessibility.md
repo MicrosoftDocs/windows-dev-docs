@@ -137,9 +137,14 @@ This page provides information on how the various Windows development frameworks
       **Web accessibility**
 
       Articles and samples that provide web developers with the info required to develop accessible web sites.
-
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
       - [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
       - [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+   :::column-end:::
+   :::column:::
       - [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
       - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
