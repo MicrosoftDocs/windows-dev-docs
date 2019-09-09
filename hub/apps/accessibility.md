@@ -122,11 +122,11 @@ This page provides information on how the various Windows development frameworks
 :::row:::
    :::column:::
       > **Accessibility on Windows 10**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541]
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
    :::column-end:::
    :::column:::
       > **Introduction to Building Accessible UWP Apps**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497]
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
    :::column-end:::
 :::row-end:::
 
