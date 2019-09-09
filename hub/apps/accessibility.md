@@ -130,7 +130,7 @@ This page provides information on how the various Windows development frameworks
    :::column-end:::
 :::row-end:::
 
-### Other resources
+## Other resources
 
 :::row:::
    :::column span="2":::
@@ -149,6 +149,6 @@ This page provides information on how the various Windows development frameworks
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Microsoft accessibility in the news](https://news.microsoft.com/presskits/accessibility/)
+      [In the news](https://news.microsoft.com/presskits/accessibility/)
    :::column-end:::
 :::row-end:::
