@@ -122,7 +122,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      > [!VIDEO https://youtu.be/Kl4CT4DaypM]
+      > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
    :::column:::
       > [!VIDEO https://youtu.be/AShNPfmAkvY]
