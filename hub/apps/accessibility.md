@@ -149,6 +149,9 @@ This page provides information on how the various Windows development frameworks
       - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
+
+## Blogs and news
+
 :::row:::
    :::column:::
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
