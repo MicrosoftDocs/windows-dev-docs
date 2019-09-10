@@ -29,6 +29,12 @@ If you want add or modify the metadata that is displayed for your media items in
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
+
+> [!Note]
+> Apps should set a value for the [**Type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) property even if they aren't supplying other media metadata to be displayed by the System Media Transport Controls. 
+This value helps the system handle your media content correctly, including preventing the screen saver from activating during playback.
+
+
 ## Use CommandManager to modify or override the default SMTC commands
 Your app can modify or completely override the behavior of the SMTC controls with the [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) class. A command manager instance can be obtained for each instance of the **MediaPlayer** class by accessing the [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager) property.
 
