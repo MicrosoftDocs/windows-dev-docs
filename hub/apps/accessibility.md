@@ -145,8 +145,30 @@ This page provides information on how the various Windows development frameworks
    :::column-end:::
 :::row-end:::
 
+https://youtu.be/Y_NJbE7wxlk Designing Windows accessibility features
+https://youtu.be/BseTf-4q9GA Windows 10 accessibility features empower everyone
+https://youtu.be/4UzaF7_T3bw Making the mouse pointers easier to see
+
 ## Other resources
 
+:::row:::
+   :::column span="2":::
+      **Community and support**
+
+      Windows Community: A place where Windows makers and users meet and learn together
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
+   :::column-end:::
+   :::column:::
+      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsaccessibilityandautomation)
+   :::column-end:::
+   :::column:::
+      [UI Automation documentation](https://news.microsoft.com/presskits/accessibility/)
+   :::column-end:::
+:::row-end:::
 :::row:::
    :::column span="2":::
       **Blogs and news**
