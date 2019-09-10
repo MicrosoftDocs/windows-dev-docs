@@ -10,7 +10,7 @@ keywords: Accessibility in Windows 10, Accessibility, building accessible win32 
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive by improving usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Accessible apps are designed to be inclusive by improving usability and  for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
 
 This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
@@ -96,42 +96,6 @@ This page provides information on how the various Windows development frameworks
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
-
-## Videos
-
-:::row:::
-   :::column:::
-      **How to get started with accessibility in Windows apps**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
-   :::column-end:::
-   :::column:::
-      **One Dev Minute: Developing apps for accessibility**
-      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      **Introduction to disability and accessibility**
-      > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
-   :::column-end:::
-   :::column:::
-      **From hack to product, eye control for Windows 10**
-      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      **Accessibility on Windows 10**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
-   :::column-end:::
-   :::column:::
-      **Introduction to Building Accessible UWP Apps**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
-   :::column-end:::
-:::row-end:::
-
-## Other resources
-
 :::row:::
    :::column span="2":::
       **Web accessibility**
@@ -149,6 +113,40 @@ This page provides information on how the various Windows development frameworks
       - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
+
+## Videos
+
+:::row:::
+   :::column:::
+      **How to get started with accessibility in Windows apps**
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+   :::column-end:::
+   :::column:::
+      **One Dev Minute: Developing apps for accessibility**
+      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+   :::column-end:::
+   :::column:::
+      **Introduction to disability and accessibility**
+      > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      **From hack to product, eye control for Windows 10**
+      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
+   :::column-end:::
+   :::column:::
+      **Accessibility on Windows 10**
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
+   :::column-end:::
+   :::column:::
+      **Introduction to Building Accessible UWP Apps**
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
+   :::column-end:::
+:::row-end:::
+
+## Other resources
+
 :::row:::
    :::column span="2":::
       **Blogs and news**
