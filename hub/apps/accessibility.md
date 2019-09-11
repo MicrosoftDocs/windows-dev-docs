@@ -119,10 +119,15 @@ This page provides information on how the various Windows development frameworks
 Download and run full Windows samples that demonstrate various accessibility features and functionality.
 
 :::row:::
-   :::column span="3":::
+   :::column:::
       [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
 
-      The new samples browser that is replacing the MSDN Code Gallery.
+      The new samples browser replacing the MSDN Code Gallery.
+   :::column-end:::
+   :::column:::
+      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+
+      Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -136,17 +141,12 @@ Download and run full Windows samples that demonstrate various accessibility fea
 
       These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
    :::column-end:::
-   :::column:::
-      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
-
-      This app demonstrates the various controls available in the Fluent Design System and Xaml.
-   :::column-end:::
 :::row-end:::
 :::row:::
-   :::column span="3":::
-      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+   :::column span="2":::
+      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
 
-      Download code samples and applications for Windows 8, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products. You can also explore the Official Visual Studio C#, VB.NET, and 101 LINQ samples.
+      This app demonstrates the various Xaml controls supported in the Fluent Design System.
    :::column-end:::
 :::row-end:::
 
