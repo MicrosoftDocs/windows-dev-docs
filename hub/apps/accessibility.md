@@ -119,28 +119,44 @@ This page provides information on how the various Windows development frameworks
 :::row:::
    :::column:::
       **How to get started with accessibility in Windows apps**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
    :::column-end:::
    :::column:::
       **One Dev Minute: Developing apps for accessibility**
-      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
    :::column:::
       **Introduction to disability and accessibility**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+   :::column-end:::
+   :::column:::
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
       **From hack to product, eye control for Windows 10**
-      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
    :::column-end:::
    :::column:::
       **Accessibility on Windows 10**
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
    :::column-end:::
    :::column:::
       **Introduction to Building Accessible UWP Apps**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
+   :::column-end:::
+   :::column:::
       > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
    :::column-end:::
 :::row-end:::
