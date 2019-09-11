@@ -142,8 +142,8 @@ Download and run full Windows samples that demonstrate various accessibility fea
       This app demonstrates the various controls available in the Fluent Design System and Xaml.
    :::column-end:::
 :::row-end:::
-:::row span="3":::
-   :::column:::
+:::row:::
+   :::column span="3":::
       [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
 
       Download code samples and applications for Windows 8, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products. You can also explore the Official Visual Studio C#, VB.NET, and 101 LINQ samples.
