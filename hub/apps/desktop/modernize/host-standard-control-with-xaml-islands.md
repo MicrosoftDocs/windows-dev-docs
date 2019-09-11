@@ -17,13 +17,21 @@ This article demonstrates two ways to host a standard UWP control (that is, a fi
 * It shows how to host a UWP [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](xaml-islands.md#wrapped-controls) in the Windows Community Toolkit. These controls wrap the interface and functionality of a small set of useful UWP controls. You can add them directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in the designer.
 * It also shows how to host a UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) control by using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit. Because only a small set of UWP controls are available as wrapped controls, you can use [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) to host any other standard UWP control.
 
+To host a custom UWP control in a WPF app, you'll need the following components. This article provides instructions for creating each of these components.
+
+* The project and source code for your WPF app.
+* A UWP app project that defines a `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` object. To ensure that your app works well in all XAML Island scenarios, your WPF (or Windows Forms) project must have access to an instance of the `XamlApplication` class provided by the Windows Community Toolkit. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. Although this step isn't required for trivial XAML Island scenarios such as hosting a single first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios. We recommend that you always add this project to any solution in which you are using XAML Islands.
+
+  > [!NOTE]
+  > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. 
+
 Although this article demonstrates how to host these controls in a WPF app, the process is similar for a Windows Forms app.
 
 ## Create a WPF project
 
 Before getting started, follow these instructions to create a WPF project and configure it to host XAML Islands. If you have an existing WPF project, you can adapt these steps and code examples for your project.
 
-1. In Visual Studio 2019, create a new **WPF App (.NET Framework)** or **WPF App (.NET Core)** project.
+1. In Visual Studio 2019, create a new **WPF App (.NET Framework)** or **WPF App (.NET Core)** project. If you want to create a **WPF App (.NET Core)** project, you must first install the latest available preview version of the [.NET Core 3 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 2. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -37,6 +45,51 @@ Before getting started, follow these instructions to create a WPF project and co
 5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) package (version v6.0.0-preview7 or later), and install the package. This package provides everything you need to use the wrapped UWP controls for WPF (including [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) and the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control.
     > [!NOTE]
     > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package (version v6.0.0-preview7 or later).
+
+6. Configure your solution to target a specific platform such as x86 or x64. Most XAML Islands scenarios are not supported in projects that target **Any CPU**.
+
+    1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**. 
+    2. Under **Active solution platform**, select **New**. 
+    3. In the **New Solution Platform** dialog, select **x64** or **x86** and press **OK**. 
+    4. Close the open dialog boxes.
+
+## Create a XamlApplication object in a UWP app project
+
+Next, add a UWP app project to the same solution as your WPF project. You will revise the default `App` class in this project to derive from the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class provided by the Windows Community Toolkit. Although this step isn't required for trivial XAML Island scenarios such as hosting a single first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios. We recommend that you always add this project to any solution in which you are using XAML Islands.
+
+1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
+2. Add a **Blank App (Universal Windows)** project to your solution. Make sure the target version and minimum version are both set to **Windows 10, version 1903** or later.
+3. In the UWP app project, install the [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet package (version v6.0.0-preview7 or later).
+4. Open the **App.xaml** file and replace the contents of this file with the following XAML. Replace `MyUWPApp` with the namespace of your UWP app project.
+
+    ```xml
+    <xaml:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xaml="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns:local="using:MyUWPApp">
+    </xaml:XamlApplication>
+    ```
+
+5. Open the **App.xaml.cs** file and replace the contents of this file with the following code. Replace `MyUWPApp` with the namespace of your UWP app project.
+
+    ```csharp
+    namespace MyUWPApp
+    {
+        sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+        {
+            public App()
+            {
+                this.Initialize();
+            }
+        }
+    }
+    ```
+
+6. Delete the **MainPage.xaml** file from the UWP app project.
+7. Build the UWP app project.
+8. In your WPF project, right-click the **Dependencies** node and add a reference to your UWP app project.
 
 ## Host an InkCanvas and InkToolbar by using wrapped controls
 
