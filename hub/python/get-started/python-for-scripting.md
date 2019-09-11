@@ -91,20 +91,20 @@ Let's begin with a simple script that walks a directory tree and displays the di
 3. Create a few directories to use with our example script:
 
     ```powershell
-    mkdir food, food/fruits, food/fruits/apples, food/fruits/oranges, food/vegetables
+    mkdir food, food\fruits, food\fruits\apples, food\fruits\oranges, food\vegetables
     ```
 
 4. Create a few files within those directories to use with our script:
 
     ```powershell
-    new-item food/fruits/banana.txt, food/fruits/strawberry.txt, food/fruits/blueberry.txt, food/fruits/apples/honeycrisp.txt, food/fruits/oranges/mandarin.txt, food/vegetables/carrot.txt
+    new-item food\fruits\banana.txt, food\fruits\strawberry.txt, food\fruits\blueberry.txt, food\fruits\apples\honeycrisp.txt, food\fruits\oranges\mandarin.txt, food\vegetables\carrot.txt
     ```
 
 5. Create a new python file in your python-scripts directory:
 
     ```powershell
     mkdir src
-    new-item src/list-directory-contents.py
+    new-item src\list-directory-contents.py
     ```
 
 6. Open your project in VS Code by entering: `code .`
@@ -121,14 +121,14 @@ Let's begin with a simple script that walks a directory tree and displays the di
     ```python
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
-        print('Directory: ' + directory)
+        print('Directory:', directory)
         for name in subdir_list:
-            print ('Subdirectory: ' + name)
+            print('Subdirectory:', name)
         for name in file_list:
-            print('File: ' + name)
-        print(os.linesep)
+            print('File:', name)
+        print()
     ```
 
 9. Open the VS Code integrated terminal (**Ctrl+`**, using the backtick character) and enter the src directory where you just saved your Python script:
@@ -146,24 +146,24 @@ Let's begin with a simple script that walks a directory tree and displays the di
     You should see output that looks like this:
 
     ```powershell
-    Directory: ../food
+    Directory: ..\food
     Subdirectory: fruits
     Subdirectory: vegetables
 
-    Directory: ../food\fruits
+    Directory: ..\food\fruits
     Subdirectory: apples
     Subdirectory: oranges
     File: banana.txt
     File: blueberry.txt
     File: strawberry.txt
 
-    Directory: ../food\fruits\apples
+    Directory: ..\food\fruits\apples
     File: honeycrisp.txt
 
-    Directory: ../food\fruits\oranges
+    Directory: ..\food\fruits\oranges
     File: mandarin.txt
 
-    Directory: ../food\vegetables
+    Directory: ..\food\vegetables
     File: carrot.txt
     ```
 
@@ -190,15 +190,15 @@ This example uses the files and directories you just created, renaming each of t
     import datetime
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
         for name in file_list:
-            source_name = '%s%s%s' % (directory, os.path.sep, name)
+            source_name = os.path.join(directory, name)
             timestamp = os.path.getmtime(source_name)
             modified_date = str(datetime.datetime.fromtimestamp(timestamp)).replace(':', '.')
-            target_name = '%s%s%s_%s' % (directory, os.path.sep, modified_date, name)
+            target_name = os.path.join(directory, f'{modified_date}_{name}')
 
-            print ('Renaming: %s to: %s' % (source_name, target_name))
+            print(f'Renaming: {source_name} to: {target_name}')
 
             os.rename(source_name, target_name)
     ```
@@ -215,7 +215,7 @@ This example uses the files and directories you just created, renaming each of t
     Renaming: ..\food\fruits\oranges\mandarin.txt to: ..\food\fruits\oranges\2019-07-18 12.24.46.398151_mandarin.txt
     Renaming: ..\food\vegetables\carrot.txt to: ..\food\vegetables\2019-07-18 12.24.46.402496_carrot.txt
 
-    ~/src/python-scripting/src$ python3 .\list-directory-contents.py
+    PS C:\src\python-scripting\src> python3 .\list-directory-contents.py
     ..\food\
     Directory: ..\food
     Subdirectory: fruits
