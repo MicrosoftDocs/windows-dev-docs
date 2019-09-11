@@ -226,13 +226,13 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
+      [In the news](https://news.microsoft.com/presskits/accessibility/)
+   :::column-end:::
+   :::column:::
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Windows UI Automation blog](https://blogs.msdn.microsoft.com/winuiautomation/)
-   :::column-end:::
-   :::column:::
-      [In the news](https://news.microsoft.com/presskits/accessibility/)
+      [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
 
