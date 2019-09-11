@@ -2,7 +2,7 @@
 title: Accessibility in Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 09/12/2019
 keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
 ---
 
@@ -10,7 +10,7 @@ keywords: Accessibility in Windows 10, Accessibility, building accessible win32 
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive by improving usability and  for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
 
 This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
@@ -132,12 +132,12 @@ Download and run full Windows samples that demonstrate various accessibility fea
 :::row-end:::
 :::row:::
    :::column:::
-      [Windows classic samples](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Windows classic samples on GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
 
       These samples demonstrate the functionality and programming model for Windows and Windows Server. 
    :::column-end:::
    :::column:::
-      [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
 
       These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
    :::column-end:::
