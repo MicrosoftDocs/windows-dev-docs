@@ -113,22 +113,36 @@ This page provides information on how the various Windows development frameworks
       - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
-:::row:::
-   :::column span="3":::
-      **Samples**
 
-      A place where Windows developers and users meet and learn together
-   :::column-end:::
-:::row-end:::
+## Samples
+
+A place where Windows developers and users meet and learn together
+
 :::row:::
    :::column:::
       [Windows classic samples](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
+
+      These samples demonstrate the functionality and programming model for Windows and Windows Server. 
    :::column-end:::
    :::column:::
       [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+
+      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (archived)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
+
+      This app demonstrates the various controls available in the Fluent Design System and Xaml.
+   :::column-end:::
+   :::column:::
+      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+
+      The new samples browser that is replacing the MSDN Code Gallery.
+   :::column-end:::
+   :::column:::
+      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+
+      Download code samples and applications for Windows 8, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products. You can also explore the Official Visual Studio C#, VB.NET, and 101 LINQ samples.
    :::column-end:::
 :::row-end:::
 
