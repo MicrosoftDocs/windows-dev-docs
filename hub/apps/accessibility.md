@@ -100,7 +100,7 @@ This page provides information on how the various Windows development frameworks
    :::column span="2":::
       **Web accessibility**
 
-      Articles and samples that provide web developers with the info required to develop accessible web sites.
+      Design, build, and test accessible web sites in Microsoft Edge.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -206,13 +206,16 @@ Various videos covering how to build accessible Windows applications to general 
 ## Other resources
 
 :::row:::
-   :::column span="2":::
+   :::column span="3":::
       **Blogs and news**
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
       [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
+   :::column-end:::
+   :::column:::
+      [Windows UI Automation blog](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
    :::column:::
       [In the news](https://news.microsoft.com/presskits/accessibility/)
