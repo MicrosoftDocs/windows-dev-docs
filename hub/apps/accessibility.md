@@ -4,6 +4,8 @@ description: This page provides the information for you to get started developin
 ms.topic: article
 ms.date: 09/12/2019
 keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ---
 
 # Accessibility in Windows 10
