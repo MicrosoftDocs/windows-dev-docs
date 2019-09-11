@@ -16,6 +16,9 @@ This is the second part of a tutorial that demonstrates how to modernize a sampl
 
 In the fictional scenario of this tutorial, the Contoso development team wants to add support for digital signatures to the Contoso Expenses app. The UWP **InkCanvas** control is a great option for this scenario, because it supports digital ink and AI-powered features like the capability to recognize text and shapes. To do this, you will use the [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) wrapped UWP control available in the Windows Community Toolkit. This control wraps the interface and functionality of the UWP **InkCanvas** control for use in a WPF app. For more details about wrapped UWP controls, see [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md).
 
+> [!NOTE]
+> In this tutorial, the WPF app will host only first-party UWP controls from the Windows SDK. To support other XAML Island scenarios including custom UWP controls, the app project must have access to an instance of the `XamlApplication` class provided by the Windows Community Toolkit. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`. Because this step isn't required for the basic scenario of hosting first-party UWP controls from the Windows SDK, this tutorial omits this step. For more details, see [this article](host-standard-control-with-xaml-islands.md).
+
 ## Configure the project to use XAML Islands
 
 Before you can add an **InkCanvas** control to the Contoso Expenses app, you first need to configure the project to support UWP XAML Islands.

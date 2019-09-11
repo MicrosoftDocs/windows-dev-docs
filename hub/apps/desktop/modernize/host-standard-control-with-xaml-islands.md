@@ -15,17 +15,20 @@ ms.custom: 19H1
 This article demonstrates two ways to host a standard UWP control (that is, a first-party UWP control provided by the Windows SDK or WinUI library) in a WPF app by using [XAML Islands](xaml-islands.md):
 
 * It shows how to host a UWP [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](xaml-islands.md#wrapped-controls) in the Windows Community Toolkit. These controls wrap the interface and functionality of a small set of useful UWP controls. You can add them directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in the designer.
+
 * It also shows how to host a UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) control by using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit. Because only a small set of UWP controls are available as wrapped controls, you can use [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) to host any other standard UWP control.
 
-To host a custom UWP control in a WPF app, you'll need the following components. This article provides instructions for creating each of these components.
+To host a UWP control in a WPF app, you'll need the following components. This article provides instructions for creating each of these components.
 
 * The project and source code for your WPF app.
-* A UWP app project that defines a `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` object. To ensure that your app works well in all XAML Island scenarios, your WPF (or Windows Forms) project must have access to an instance of the `XamlApplication` class provided by the Windows Community Toolkit. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. Although this step isn't required for trivial XAML Island scenarios such as hosting a single first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios. We recommend that you always add this project to any solution in which you are using XAML Islands.
+* A UWP app project that defines a `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` object.
+
+  To ensure that your app works well in all XAML Island scenarios, your WPF (or Windows Forms) project must have access to an instance of the `XamlApplication` class provided by the Windows Community Toolkit. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`. Although this step isn't required for trivial XAML Island scenarios such as hosting a single first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios, including hosting custom UWP controls. We recommend that you always add a UWP project and define a `XamlApplication` object in any solution in which you are using XAML Islands.
 
   > [!NOTE]
   > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. 
 
-Although this article demonstrates how to host these controls in a WPF app, the process is similar for a Windows Forms app.
+Although this article demonstrates how to host UWP controls in a WPF app, the process is similar for a Windows Forms app.
 
 ## Create a WPF project
 
