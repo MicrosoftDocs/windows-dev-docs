@@ -113,8 +113,28 @@ This page provides information on how the various Windows development frameworks
       - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
+:::row:::
+   :::column span="3":::
+      **Samples**
+
+      A place where Windows developers and users meet and learn together
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Windows classic samples](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
+   :::column-end:::
+   :::column:::
+      [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+   :::column-end:::
+   :::column:::
+      [MSDN Code Gallery (archived)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+   :::column-end:::
+:::row-end:::
 
 ## Videos
+
+Various videos covering how to build accessible Windows applications to general accessibility concerns and how Microsoft addresses them.
 
 :::row:::
    :::column:::
@@ -160,31 +180,31 @@ This page provides information on how the various Windows development frameworks
       > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
    :::column-end:::
 :::row-end:::
-
-https://youtu.be/Y_NJbE7wxlk Designing Windows accessibility features
-https://youtu.be/BseTf-4q9GA Windows 10 accessibility features empower everyone
-https://youtu.be/4UzaF7_T3bw Making the mouse pointers easier to see
+:::row:::
+   :::column:::
+      **Designing Windows accessibility features**
+   :::column-end:::
+   :::column:::
+      **Windows 10 accessibility features empower everyone**
+   :::column-end:::
+   :::column:::
+      **Making the mouse pointers easier to see**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO www.youtube.com/embed/Y_NJbE7wxlk]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/BseTf-4q9GA]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/4UzaF7_T3bw]
+   :::column-end:::
+:::row-end:::
 
 ## Other resources
 
-:::row:::
-   :::column span="2":::
-      **Community and support**
-
-      Windows Community: A place where Windows makers and users meet and learn together
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
-   :::column-end:::
-   :::column:::
-      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsaccessibilityandautomation)
-   :::column-end:::
-   :::column:::
-      [UI Automation documentation](https://news.microsoft.com/presskits/accessibility/)
-   :::column-end:::
-:::row-end:::
 :::row:::
    :::column span="2":::
       **Blogs and news**
@@ -196,5 +216,24 @@ https://youtu.be/4UzaF7_T3bw Making the mouse pointers easier to see
    :::column-end:::
    :::column:::
       [In the news](https://news.microsoft.com/presskits/accessibility/)
+   :::column-end:::
+:::row-end:::
+
+:::row:::
+   :::column span="3":::
+      **Community and support**
+
+      A place where Windows developers and users meet and learn together
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
+   :::column-end:::
+   :::column:::
+      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
+   :::column-end:::
+   :::column:::
+      [Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)
    :::column-end:::
 :::row-end:::
