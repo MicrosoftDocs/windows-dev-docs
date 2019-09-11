@@ -116,8 +116,15 @@ This page provides information on how the various Windows development frameworks
 
 ## Samples
 
-A place where Windows developers and users meet and learn together
+Download and run full Windows samples that demonstrate various accessibility features and functionality.
 
+:::row:::
+   :::column span="3":::
+      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+
+      The new samples browser that is replacing the MSDN Code Gallery.
+   :::column-end:::
+:::row-end:::
 :::row:::
    :::column:::
       [Windows classic samples](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
@@ -134,11 +141,8 @@ A place where Windows developers and users meet and learn together
 
       This app demonstrates the various controls available in the Fluent Design System and Xaml.
    :::column-end:::
-   :::column:::
-      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
-
-      The new samples browser that is replacing the MSDN Code Gallery.
-   :::column-end:::
+:::row-end:::
+:::row span="3":::
    :::column:::
       [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
 
