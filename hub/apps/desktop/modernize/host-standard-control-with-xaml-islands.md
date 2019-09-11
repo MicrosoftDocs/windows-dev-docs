@@ -21,12 +21,11 @@ This article demonstrates two ways to host a standard UWP control (that is, a fi
 To host a UWP control in a WPF app, you'll need the following components. This article provides instructions for creating each of these components.
 
 * The project and source code for your WPF app.
-* A UWP app project that defines a `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` object.
-
-  To ensure that your app works well in all XAML Island scenarios, your WPF (or Windows Forms) project must have access to an instance of the `XamlApplication` class provided by the Windows Community Toolkit. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`. Although this step isn't required for trivial XAML Island scenarios such as hosting a single first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios, including hosting custom UWP controls. We recommend that you always add a UWP project and define a `XamlApplication` object in any solution in which you are using XAML Islands.
-
+* A UWP app project that defines an instance of the `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` class from the Windows Community Toolkit.
   > [!NOTE]
-  > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object. 
+  > To ensure that your app works well in all XAML Island scenarios, your WPF (or Windows Forms) project must have access to a `XamlApplication` object. This object acts as a root metadata provider for loading metadata for UWP XAML types in assemblies in the current directory of your application. The recommended way to do this is to add a **Blank App (Universal Windows)** project to the same solution as your WPF (or Windows Forms) project and revise the default `App` class in this project to derive from `XamlApplication`.
+  >
+  > Although this step isn't required for trivial XAML Island scenarios such as hosting a first-party UWP control, your WPF app needs this `XamlApplication` object to support the full range of XAML Island scenarios, including hosting custom UWP controls. We recommend that you always add a UWP project and define a `XamlApplication` object in any solution in which you are using XAML Islands. Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP controls in your app share the same `XamlApplication` object.
 
 Although this article demonstrates how to host UWP controls in a WPF app, the process is similar for a Windows Forms app.
 
