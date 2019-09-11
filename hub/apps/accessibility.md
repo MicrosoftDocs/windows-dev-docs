@@ -105,12 +105,12 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      - [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
-      - [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      - [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
-      - [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
@@ -226,6 +226,8 @@ Various videos covering how to build accessible Windows applications to general 
 :::row:::
    :::column span="3":::
       **Blogs and news**
+
+      The latest from the world of Microsoft accessibility.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -244,7 +246,7 @@ Various videos covering how to build accessible Windows applications to general 
    :::column span="3":::
       **Community and support**
 
-      A place where Windows developers and users meet and learn together
+      A place where Windows developers and users meet and learn together.
    :::column-end:::
 :::row-end:::
 :::row:::
