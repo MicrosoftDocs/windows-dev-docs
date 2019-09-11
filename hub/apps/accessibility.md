@@ -193,7 +193,7 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
-      > [!VIDEO www.youtube.com/embed/Y_NJbE7wxlk]
+      > [!VIDEO https://www.youtube.com/embed/Y_NJbE7wxlk]
    :::column-end:::
    :::column:::
       > [!VIDEO https://www.youtube.com/embed/BseTf-4q9GA]
