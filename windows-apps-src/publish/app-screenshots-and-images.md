@@ -140,11 +140,14 @@ When providing your trailers, be sure to follow these requirements:
 
 - The video format must be MOV or MP4. If you're uploading 4K video, only MP4 is supported.
 - The video duration shouldn't exceed 60 seconds.
-- The file size of the trailer shouldn't exceed 2 GB. 
+- The file size of the trailer shouldn't exceed 2 GB.
 - The video resolution must be either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
-- The title can’t exceed 255 characters. 
+- The title can’t exceed 255 characters.
 - Do not include age ratings in your trailers.
+
+> [!WARNING]
+> The requirement not to include age ratings in your trailers applies **only** to trailers in the store. For all trailers displayed in any location except for the store, please comply with ratings guidance from the appropriate rating authorities.
 
 Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](store-policies.md).
 
@@ -222,7 +225,7 @@ If your previously-submitted app supports earlier OS versions (Windows 8.x and/o
 > [!TIP]
 > Be sure to provide a 300 x 300 app tile icon image in the [Store logos](#store-logos) section for any submission that supports Windows Phone 8.1 or earlier. This will ensure that your app does not appear in the Store with a blank icon.  
 
-**For Windows 8.1 and earlier**, some promotional layouts may use an image in the **414 x 180** pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this sizen.
+**For Windows 8.1 and earlier**, some promotional layouts may use an image in the **414 x 180** pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this size.
 
 
 
