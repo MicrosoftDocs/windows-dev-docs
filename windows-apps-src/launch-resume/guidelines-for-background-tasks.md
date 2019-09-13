@@ -69,7 +69,7 @@ Universal Windows Platform (UWP) apps can run all supported task types without b
 
 *Applies only to out-of-process background tasks*
 
--   Create your background task in a Windows Runtime Component.
+-   Create your background task in a Windows Runtime component.
 -   Do not display UI other than toasts, tiles, and badge updates from the background task.
 -   In the [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method, request deferrals for each asynchronous method call, and close them when the method is done. Or, use one deferral with **async/await**.
 -   Use persistent storage to share data between the background task and the app.

@@ -97,7 +97,7 @@ A *shortcut* is a keyboard combination that enhances productivity by providing a
 
 It is imperative that you provide an easy way for users who rely on screen readers and other assistive technology to discover your app's shortcut keys. Communicate shortcut keys by using tooltips, accessible names, accessible descriptions, or some other form of on-screen communication. At a minimum, shortcut keys should be well documented in your app's Help content.
 
-You can document access keys through screen readers by setting the [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) attached property to a string that describes the shortcut key. There is also an [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) attached property for documenting non-mnemonic shortcut keys, although screen readers generally treat both properties the same way. Try to document shortcut keys in multiple ways, using tooltips, automation properties, and written Help documentation.
+You can document access keys through screen readers by setting the [**AutomationProperties.AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) attached property to a string that describes the shortcut key. There is also an [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) attached property for documenting non-mnemonic shortcut keys, although screen readers generally treat both properties the same way. Try to document shortcut keys in multiple ways, using tooltips, automation properties, and written Help documentation.
 
 The following example demonstrates how to document shortcut keys for media play, pause, and stop buttons.
 
@@ -138,7 +138,7 @@ XAML
 ```
 
 > [!IMPORTANT]
-> Setting [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) or [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) doesn't enable keyboard functionality. It only reports to the UI Automation framework what keys should be used, so that such information can be passed on to users via assistive technologies. The implementation for key handling still needs to be done in code, not XAML. You will still need to attach handlers for [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) or [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) events on the relevant control in order to actually implement the keyboard shortcut behavior in your app. Also, the underline text decoration for an access key is not provided automatically. You must explicitly underline the text for the specific key in your mnemonic as inline [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) formatting if you wish to show underlined text in the UI.
+> Setting the [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) or [**AutomationProperties.AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) doesn't enable keyboard functionality. It only reports to the UI Automation framework what keys should be used, so that such information can be passed on to users via assistive technologies. The implementation for key handling still needs to be done in code, not XAML. You will still need to attach handlers for [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) or [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) events on the relevant control in order to actually implement the keyboard shortcut behavior in your app. Also, the underline text decoration for an access key is not provided automatically. You must explicitly underline the text for the specific key in your mnemonic as inline [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline) formatting if you wish to show underlined text in the UI.
 
 For simplicity, the preceding example omits the use of resources for strings such as "Ctrl+A". However, you must also consider shortcut keys during localization. Localizing shortcut keys is relevant because the choice of key to use as the shortcut key typically depends on the visible text label for the element.
 
@@ -197,7 +197,7 @@ XAML
 </ControlTemplate>
 ```
 
-So far this is just the composition. To control the focus indicator's visibility, you define visual states that toggle the [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) property. This is done using the [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager?view=netframework-4.8) attached property, as applied to the root element that defines the composition.
+So far this is just the composition. To control the focus indicator's visibility, you define visual states that toggle the [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) property. This is done using the [VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) and the VisualStateManager.VisualStateGroups attached property, as applied to the root element that defines the composition.
 
 XAML
 ```xml
@@ -239,9 +239,9 @@ Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a S
 
 <span id="related_topics"/>
 
-## Related topics  
+## Related topics
+
 * [Accessibility](accessibility.md)
 * [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 * [XAML accessibility sample](https://go.microsoft.com/fwlink/p/?linkid=238570)
-

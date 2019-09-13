@@ -29,6 +29,6 @@ If you haven't done so already, a step that we've seen result in significant per
 | [Optimize animations, media, and images](optimize-animations-and-media.md) | Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback. |
 | [Optimize suspend/resume](optimize-suspend-resume.md) | Create UWP apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination. |
 | [Optimize file access](optimize-file-access.md) | Create UWP apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles. |
-| [Windows Runtime Components and optimizing interop](windows-runtime-components-and-optimizing-interop.md) | Create UWP apps that use UWP Components and interop between native and managed types while avoiding interop performance issues. |
+| [Windows Runtime components and optimizing interop](windows-runtime-components-and-optimizing-interop.md) | Create UWP apps that use UWP Components and interop between native and managed types while avoiding interop performance issues. |
 | [Tools for profiling and performance](tools-for-profiling-and-performance.md) | Microsoft provides several tools to help you improve the performance of your UWP app.|
 

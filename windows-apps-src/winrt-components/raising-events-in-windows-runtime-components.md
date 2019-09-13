@@ -1,5 +1,5 @@
 ---
-title: Raising Events in Windows Runtime Components
+title: Raising events in Windows Runtime components
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: How to raise an event of a user-defined delegate type on a background thread so that JavaScript is able to receive the event.
 ms.date: 07/19/2018
@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Raising Events in Windows Runtime Components
+# Raising events in Windows Runtime components
 > [!NOTE]
 > To learn how to raise events in a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows Runtime Component, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
@@ -417,4 +417,4 @@ The project should now build. Run the project and verify that you can make toast
 
 ## Related topics
 
-* [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
+* [Windows Runtime components with C++/CX](creating-windows-runtime-components-in-cpp.md)

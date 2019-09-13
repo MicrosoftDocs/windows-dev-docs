@@ -1,31 +1,29 @@
 ---
-title: Custom events and event accessors in Windows Runtime Components
-description: .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern.
+title: Custom events and event accessors in Windows Runtime components
+description: .NET support for Windows Runtime components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET event pattern.
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Custom events and event accessors in Windows Runtime Components
 
+# Custom events and event accessors in Windows Runtime components
 
-
-.NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern. However, when you declare custom event accessors in a Windows Runtime Component, you must follow the pattern used in the UWP.
+.NET support for Windows Runtime components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET event pattern. However, when you declare custom event accessors in a Windows Runtime component, you must follow the pattern used in the UWP.
 
 ## Registering events
 
-
 When you register to handle an event in the UWP, the add accessor returns a token. To unregister, you pass this token to the remove accessor. This means that the add and remove accessors for UWP events have different signatures from the accessors you're used to.
 
-Fortunately, the Visual Basic and C# compilers simplify this process: When you declare an event with custom accessors in a Windows Runtime Component, the compilers automatically use the UWP pattern. For example, you get a compiler error if your add accessor doesn't return a token. The .NET Framework provides two types to support the implementation:
+Fortunately, the Visual Basic and C# compilers simplify this process: When you declare an event with custom accessors in a Windows Runtime component, the compilers automatically use the UWP pattern. For example, you get a compiler error if your add accessor doesn't return a token. .NET provides two types to support the implementation:
 
 -   The [EventRegistrationToken](https://docs.microsoft.com/uwp/api/windows.foundation.eventregistrationtoken) structure represents the token.
 -   The [EventRegistrationTokenTable&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1?redirectedfrom=MSDN) class creates tokens and maintains a mapping between tokens and event handlers. The generic type argument is the event argument type. You create an instance of this class for each event, the first time an event handler is registered for that event.
 
 The following code for the NumberChanged event shows the basic pattern for UWP events. In this example, the constructor for the event argument object, NumberChangedEventArgs, takes a single integer parameter that represents the changed numeric value.
 
-> **Note**  This is the same pattern the compilers use for ordinary events that you declare in a Windows Runtime Component.
+> **Note**  This is the same pattern the compilers use for ordinary events that you declare in a Windows Runtime component.
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -112,7 +110,7 @@ Place your own code in the accessors as appropriate. If thread safety is an issu
 
 C# users: When you write custom event accessors in the UWP event pattern, the compiler doesn't provide the usual syntactic shortcuts. It generates errors if you use the name of the event in your code.
 
-Visual Basic users: In the .NET Framework, an event is just a multicast delegate that represents all the registered event handlers. Raising the event just means invoking the delegate. Visual Basic syntax generally hides the interactions with the delegate, and the compiler copies the delegate before invoking it, as described in the note about thread safety. When you create a custom event in a Windows Runtime Component, you have to deal with the delegate directly. This also means that you can, for example, use the [MulticastDelegate.GetInvocationList](https://docs.microsoft.com/dotnet/api/system.multicastdelegate.getinvocationlist?redirectedfrom=MSDN#System_MulticastDelegate_GetInvocationList) method to get an array that contains a separate delegate for each event handler, if you want to invoke the handlers separately.
+Visual Basic users: In .NET, an event is just a multicast delegate that represents all the registered event handlers. Raising the event just means invoking the delegate. Visual Basic syntax generally hides the interactions with the delegate, and the compiler copies the delegate before invoking it, as described in the note about thread safety. When you create a custom event in a Windows Runtime component, you have to deal with the delegate directly. This also means that you can, for example, use the [MulticastDelegate.GetInvocationList](https://docs.microsoft.com/dotnet/api/system.multicastdelegate.getinvocationlist?redirectedfrom=MSDN#System_MulticastDelegate_GetInvocationList) method to get an array that contains a separate delegate for each event handler, if you want to invoke the handlers separately.
 
 ## Related topics
 
@@ -120,4 +118,4 @@ Visual Basic users: In the .NET Framework, an event is just a multicast delegate
 * [Events (C# Programming Guide)](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/events/index)
 * [.NET for UWP apps Overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [.NET for UWP apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

@@ -27,7 +27,7 @@ Menus and context menus display a list of commands or options when the user requ
 
 | **Platform APIs** | **Windows UI Library APIs** |
 | - | - |
-| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar class](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## Is this the right control?
 
@@ -85,7 +85,7 @@ If you want to add commands (such as cut, copy, and paste) to a text element, us
 - Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.
 - Are usually attached to a button or a parent menu item.
 - Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
-- Are associated with an element via its [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) properties, or grouped in a menu bar at the top of the app window.
+- Are associated with an element via its [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
 
 ### Context menus
 

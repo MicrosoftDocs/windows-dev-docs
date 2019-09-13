@@ -70,7 +70,7 @@ The `SupportsMultipleInstances` attribute indicates that each time the app servi
 
 ## Create the app service
 
-1.  An app service can be implemented as a background task. This enables a foreground application to invoke an app service in another application. To create an app service as a background task, add a new Windows Runtime Component project to the solution (**File &gt; Add &gt; New Project**) named **MyAppService**. In the **Add New Project** dialog box, choose **Installed > Visual C# > Windows Runtime Component (Universal Windows)**.
+1.  An app service can be implemented as a background task. This enables a foreground application to invoke an app service in another application. To create an app service as a background task, add a new Windows Runtime component project to the solution (**File &gt; Add &gt; New Project**) named **MyAppService**. In the **Add New Project** dialog box, choose **Installed > Visual C# > Windows Runtime Component (Universal Windows)**.
 2.  In the **AppServiceProvider** project, add a project-to-project reference to the new **MyAppService** project (in the **Solution Explorer**, right-click on the **AppServiceProvider** project > **Add** > **Reference** > **Projects** > **Solution**, select **MyAppService** > **OK**). This step is critical because if you do not add the reference, the app service won't connect at runtime.
 3.  In the **MyAppService** project, add the following **using** statements to the top of **Class1.cs**:
     ```cs

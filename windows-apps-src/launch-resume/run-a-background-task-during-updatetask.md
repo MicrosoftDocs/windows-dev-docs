@@ -18,7 +18,7 @@ The Update Task differs from launching a background task using the [ServicingCom
 
 As with other types of background tasks, you implement the Update Task background task as a Windows Runtime component. To create this component, follow the steps in the **Create the Background Task class** section of [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). The steps include:
 
-- Adding a Windows Runtime Component project to your solution.
+- Adding a Windows Runtime component project to your solution.
 - Creating a reference from your app to the component.
 - Creating a public, sealed class in the component that implements [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
 - Implementing the [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method, which is the required entry point that is called when the Update Task is run. If you are going to make asynchronous calls from your background task, [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explains how to use a deferral in your **Run** method.

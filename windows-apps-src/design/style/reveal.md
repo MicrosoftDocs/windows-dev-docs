@@ -82,7 +82,7 @@ These controls do not have Reveal by default as they are smaller controls that a
 To apply these styles, simply set the control's [Style](/uwp/api/Windows.UI.Xaml.Style) property:
 
 ```xaml
-<Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
+<Button Content="Button Content" Style="{ThemeResource ButtonRevealStyle}"/>
 ```
 
 ### Reveal in themes

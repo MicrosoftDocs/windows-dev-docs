@@ -1,17 +1,19 @@
 ---
-title: Creating Windows Runtime Components in C++
-description: This topic shows how to use C++/CX to create a Windows Runtime component, which is a component that's callable from a Universal Windows app built using C#, Visual Basic, C++, or Javascript.
+title: Windows Runtime components with C++/CX
+description: This topic shows how to use C++/CX to create a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Creating Windows Runtime Components in C++/CX
-> [!NOTE]
-> This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. To learn how to create a Windows Runtime Component using C++/WinRT, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-This topic shows how to use C++/CX to create a Windows Runtime component, which is a component that's callable from a Universal Windows app built using C#, Visual Basic, C++, or Javascript.
+# Windows Runtime components with C++/CX
+
+> [!NOTE]
+> This topic exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. To learn how to create a Windows Runtime component using C++/WinRT, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+
+This topic shows how to use C++/CX to create a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language (C#, Visual Basic, C++, or Javascript).
 
 There are several reasons for building a Windows Runtime component.
 - To get the performance advantage of C++ in complex or computationally intensive operations.
@@ -196,10 +198,10 @@ document.getElementById('P4').innerHTML = num;
 ```
 
 ## .NET
-The .NET languages recognize overloads in a C++/CX ref class just as in any .NET Framework class.
+The .NET languages recognize overloads in a C++/CX ref class just as in any .NET class.
 
 ## DateTime
-In the Windows Runtime, a [Windows::Foundation::DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime) object is just a 64-bit signed integer that represents the number of 100-nanosecond intervals either before or after January 1, 1601. There are no methods on a Windows:Foundation::DateTime object. Instead, each language projects the DateTime in the way that is native to that language: the Date object in JavaScript and the System.DateTime and System.DateTimeOffset types in the .NET Framework.
+In the Windows Runtime, a [Windows::Foundation::DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime) object is just a 64-bit signed integer that represents the number of 100-nanosecond intervals either before or after January 1, 1601. There are no methods on a Windows:Foundation::DateTime object. Instead, each language projects the DateTime in the way that is native to that language: the Date object in JavaScript and the System.DateTime and System.DateTimeOffset types in .NET.
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -232,7 +234,7 @@ function SetAndGetDate() {
 }
 ```
 
-When a .NET language passes a System.DateTime to a C++/CX component, the method accepts it as a Windows::Foundation::DateTime. When the component passes a Windows::Foundation::DateTime to a .NET Framework method, the Framework method accepts it as a DateTimeOffset.
+When a .NET language passes a System.DateTime to a C++/CX component, the method accepts it as a Windows::Foundation::DateTime. When the component passes a Windows::Foundation::DateTime to a .NET method, the Framework method accepts it as a DateTimeOffset.
 
 ```csharp
 private void DateTimeExample()
@@ -339,7 +341,7 @@ private void GetDictionary()
 ```
 
 ## Properties
-A public ref class in C++/CX component extensions exposes public data members as properties, by using the property keyword. The concept is identical to .NET Framework properties. A trivial property resembles a data member because its functionality is implicit. A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value. In this example, the private member variable \_propertyAValue is the backing store for PropertyA. A property can fire an event when its value changes, and a client app can register to receive that event.
+A public ref class in C++/CX component extensions exposes public data members as properties, by using the property keyword. The concept is identical to .NET properties. A trivial property resembles a data member because its functionality is implicit. A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value. In this example, the private member variable \_propertyAValue is the backing store for PropertyA. A property can fire an event when its value changes, and a client app can register to receive that event.
 
 ```cpp
 //Properties
@@ -386,7 +388,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-The .NET languages access properties on a native C++/CX object just as they would on a .NET Framework object.
+The .NET languages access properties on a native C++/CX object just as they would on a .NET object.
 
 ```csharp
 private void GetAProperty()
@@ -437,7 +439,7 @@ function Button_Click() {
 }
 ```
 
-In the .NET languages, subscribing to an event in a C++ component is the same as subscribing to an event in a .NET Framework class:
+In the .NET languages, subscribing to an event in a C++ component is the same as subscribing to an event in a .NET class:
 
 ```csharp
 //Subscribe to event and call method that causes it to be fired.
@@ -531,12 +533,12 @@ document.getElementById('P13').innerHTML =
 Direction[curDirection];
 ```
 
-Both C# and Visual Basic have language support for enums. These languages see a C++ public enum class just as they would see a .NET Framework enum.
+Both C# and Visual Basic have language support for enums. These languages see a C++ public enum class just as they would see a .NET enum.
 
 ## Asynchronous methods
 To consume asynchronous methods that are exposed by other Windows Runtime objects, use the [task Class (Concurrency Runtime)](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class). For more information, see and [Task Parallelism (Concurrency Runtime)](https://docs.microsoft.com/cpp/parallel/concrt/task-parallelism-concurrency-runtime).
 
-To implement asynchronous methods in C++/CX, use the [create\_async](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) function that's defined in ppltasks.h. For more information, see [Creating Asynchronous Operations in C++/CX for UWP apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). For an example, see [Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). The .NET languages consume C++/CX asynchronous methods just as they would any asynchronous method that's defined in the .NET Framework.
+To implement asynchronous methods in C++/CX, use the [create\_async](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) function that's defined in ppltasks.h. For more information, see [Creating Asynchronous Operations in C++/CX for UWP apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). For an example, see [Walkthrough of creating a C++/CX Windows Runtime component, and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). The .NET languages consume C++/CX asynchronous methods just as they would any asynchronous method that's defined in .NET.
 
 ## Exceptions
 You can throw any exception type that's defined by the Windows Runtime. You cannot derive custom types from any Windows Runtime exception type. However, you can throw COMException and provide a custom HRESULT that can be accessed by the code that catches the exception. There's no way to specify a custom Message in a COMException.
@@ -551,4 +553,4 @@ If your JavaScript code doesn't seem to be recognizing the public properties or 
 If you remove a C++/CX Windows Runtime component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
 
 ## Related topics
-* [Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [Walkthrough of creating a C++/CX Windows Runtime component, and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

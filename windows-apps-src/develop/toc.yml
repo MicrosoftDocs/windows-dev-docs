@@ -351,7 +351,7 @@
               href: ../debug-test-perf/optimize-suspend-resume.md
             - name: Optimize file access
               href: ../debug-test-perf/optimize-file-access.md
-            - name: Windows Runtime Components and optimizing interop
+            - name: Windows Runtime components and optimizing interop
               href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
             - name: Tools for profiling and performance
               href: ../debug-test-perf/tools-for-profiling-and-performance.md
@@ -933,11 +933,11 @@
     - name: Windows Runtime components
       href: ../winrt-components/index.md
       items:
-        - name: Creating Windows Runtime components in C++/CX
+        - name: Windows Runtime components with C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: "Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#"
+        - name: Walkthrough of a C++/CX Windows Runtime component
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: Creating Windows Runtime components in C# and Visual Basic
+        - name: Windows Runtime components with C# and Visual Basic
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Custom events and event accessors in Windows Runtime components
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: Distributing a managed Windows Runtime component
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: .NET Framework mappings of Windows Runtime types
+            - name: .NET mappings of Windows Runtime types
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: "Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript"
+        - name: Walkthrough of a C# or Visual Basic Windows Runtime component
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: Raising events in Windows Runtime components
           href: ../winrt-components/raising-events-in-windows-runtime-components.md

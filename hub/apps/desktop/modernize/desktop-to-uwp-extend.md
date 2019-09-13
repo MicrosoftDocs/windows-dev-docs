@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Extend your desktop app with modern UWP components
 
-Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime Components.
+Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime components.
 
 In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
@@ -60,9 +60,9 @@ Your solution will look something like this:
 
 ![Solution with UWP project](images/desktop-to-uwp/uwp-project-reference.png)
 
-### (Optional) Add a Windows Runtime Component
+### (Optional) Add a Windows Runtime component
 
-To accomplish some scenarios, you'll have to add code to a Windows Runtime Component.
+To accomplish some scenarios, you'll have to add code to a Windows Runtime component.
 
 ![runtime component app service](images/desktop-to-uwp/add-runtime-component.png)
 
@@ -464,7 +464,7 @@ Then, choose the desired properties. Our sample uses the **Timer** property.
 
 ![Timer property](images/desktop-to-uwp/timer-property.png)
 
-Provide the fully qualified name of the class in your Windows Runtime Component that implements the background task.
+Provide the fully qualified name of the class in your Windows Runtime component that implements the background task.
 
 ![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
 
