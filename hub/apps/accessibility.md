@@ -108,10 +108,12 @@ This page provides information on how the various Windows development frameworks
 :::row:::
    :::column:::
       [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+
       [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
       [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+
       [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
