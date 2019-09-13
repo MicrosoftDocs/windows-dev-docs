@@ -2,20 +2,19 @@
 title: Accessibility in Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
-ms.date: 04/03/2019
-ms.localizationpriority: medium
+ms.date: 09/12/2019
+keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
 ---
 
 # Accessibility in Windows 10
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive by improving usability for as many people as possible, including those with disabilities, personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
 
-This page provides information on how the various Windows development frameworks support accessibility for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
+This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
 ## Platform-specific documentation
 
@@ -61,7 +60,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![WPF platform](images/platform-wpf.png)
+      ![WPF platform](images/platform-wpf2-small.png)
 
       **Windows Presentation Foundation (WPF)**
 
@@ -82,7 +81,7 @@ This page provides information on how the various Windows development frameworks
       [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
       [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-      :::column-end:::
+   :::column-end:::
    :::column:::
       ![Windows Forms platform apps](images/platform-winforms.png)
 
@@ -97,5 +96,169 @@ This page provides information on how the various Windows development frameworks
       [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
       [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      **Web accessibility**
+
+      Design, build, and test accessible web sites in Microsoft Edge.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Introduction to web accessibility](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Designing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+   :::column-end:::
+   :::column:::
+      [Building accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [Testing accessible websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+   :::column-end:::
+:::row-end:::
+
+## Samples
+
+Download and run full Windows samples that demonstrate various accessibility features and functionality.
+
+:::row:::
+   :::column:::
+      [Code sample browser](https://docs.microsoft.com/en-us/samples/browse/)
+
+      The new samples browser replacing the MSDN Code Gallery.
+   :::column-end:::
+   :::column:::
+      [MSDN Code Gallery (retired)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+
+      Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Windows classic samples on GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
+
+      These samples demonstrate the functionality and programming model for Windows and Windows Server. 
+   :::column-end:::
+   :::column:::
+      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+
+      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
+
+      This app demonstrates the various Xaml controls supported in the Fluent Design System.
+   :::column-end:::
+:::row-end:::
+
+## Videos
+
+Various videos covering how to build accessible Windows applications to general accessibility concerns and how Microsoft addresses them.
+
+:::row:::
+   :::column:::
+      **How to get started with accessibility in Windows apps**
+   :::column-end:::
+   :::column:::
+      **One Dev Minute: Developing apps for accessibility**
+   :::column-end:::
+   :::column:::
+      **Introduction to disability and accessibility**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      **From hack to product, eye control for Windows 10**
+   :::column-end:::
+   :::column:::
+      **Accessibility on Windows 10**
+   :::column-end:::
+   :::column:::
+      **Introduction to Building Accessible UWP Apps**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      **Designing Windows accessibility features**
+   :::column-end:::
+   :::column:::
+      **Windows 10 accessibility features empower everyone**
+   :::column-end:::
+   :::column:::
+      **Making the mouse pointers easier to see**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/Y_NJbE7wxlk]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/BseTf-4q9GA]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://www.youtube.com/embed/4UzaF7_T3bw]
+   :::column-end:::
+:::row-end:::
+
+## Other resources
+
+:::row:::
+   :::column span="3":::
+      **Blogs and news**
+
+      The latest from the world of Microsoft accessibility.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [In the news](https://news.microsoft.com/presskits/accessibility/)
+   :::column-end:::
+   :::column:::
+      [Accessibility blogs](https://blogs.microsoft.com/accessibility/)
+   :::column-end:::
+   :::column:::
+      [Windows UI Automation blogs](https://blogs.msdn.microsoft.com/winuiautomation/)
+   :::column-end:::
+:::row-end:::
+
+:::row:::
+   :::column span="3":::
+      **Community and support**
+
+      A place where Windows developers and users meet and learn together.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Windows community - Accessibility](https://community.windows.com/search?q=accessibility)
+   :::column-end:::
+   :::column:::
+      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
+   :::column-end:::
+   :::column:::
+      [Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)
    :::column-end:::
 :::row-end:::
