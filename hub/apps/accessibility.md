@@ -12,7 +12,13 @@ author: Karl-Bridge-Microsoft
 
 ![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-Accessible apps are designed to be inclusive through improved usability for as many people as possible, including those with disabilities (both temporary and permanent), various personal preferences, specific work styles, or situational constraints (such as driving, cooking, glare, and so on).
+## Build accessibility into your applications to empower people of all abilities
+
+Products and services—including electronic media—are accessible when they are designed to provide full and successful experiences for as many people as possible.
+
+Build accessible and inclusive Windows applications, with improved functionality and usability, for people with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on). Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
+
+**Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.**
 
 This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
 
