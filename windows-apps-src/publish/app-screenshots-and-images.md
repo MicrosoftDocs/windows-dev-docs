@@ -147,7 +147,7 @@ When providing your trailers, be sure to follow these requirements:
 - Do not include age ratings in your trailers.
 
 > [!WARNING]
-> The requirement not to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. For all other trailers, please comply with ratings guidance from the appropriate rating authorities.
+> The exception to the requirement to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. Any trailer posted outside of Partner Center, and/or not intended for display exclusively on the Microsoft Store's product page **must** comply with requirements issued by applicable ratings authorities.
 
 Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](store-policies.md).
 
