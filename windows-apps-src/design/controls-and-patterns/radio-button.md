@@ -181,14 +181,20 @@ This illustration shows the proper way to position and space radio buttons.
 
 ![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+
 ## Related topics
 
-**For designers**
+### For designers
+
 - [Buttons](buttons.md)
 - [Toggle switches](toggles.md)
 - [Checkboxes](checkbox.md)
 - [Lists and combo boxes](lists.md)
 - [Sliders](slider.md)
 
-**For developers (XAML)**
+### For developers (XAML)
+
 - [RadioButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

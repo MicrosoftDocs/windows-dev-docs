@@ -27,6 +27,22 @@ Use pull-to-refresh when you have a list or grid of data that the user might wan
 
 You can also use the [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.
 
+## Examples
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RadioButton">open the app and see the RadioButton in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## Refresh controls
 
 Pull-to-refresh is enabled by 2 controls.
@@ -326,6 +342,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
