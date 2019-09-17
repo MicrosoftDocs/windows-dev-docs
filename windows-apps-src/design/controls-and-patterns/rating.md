@@ -17,8 +17,6 @@ The rating control allows users to view and set ratings that reflect degrees of 
 
 > **Important APIs**: [RatingControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
-![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
-
 ## Examples
 
 <table>
@@ -34,6 +32,8 @@ The rating control allows users to view and set ratings that reflect degrees of 
 </td>
 </tr>
 </table>
+
+![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
 
 ### Editable rating with placeholder value
 
